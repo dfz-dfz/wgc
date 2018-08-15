@@ -1,0 +1,168 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Access-Control-Allow-Origin" content="*">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=8"/>
+<title>{$title}详情 - 微工程</title>
+<meta name="description" content="微工程，微工程APP，装修、材料、家具、饰品一站式服务，让装修更简单，价格更透明！！" />
+<meta name="keywords" content="微工程，微工程，家居商城，微工程家居商城，微工程家居装修商城，办公室装修，写字楼装修，材料，装修材料，家居，办公家具，家居，家具，装修，装饰" />
+	
+
+<link rel="stylesheet" type="text/css" href="/themes/mall/jiaju/css/api.css"/>
+<link rel="stylesheet" type="text/css" href="/themes/mall/jiaju/css/aui.css" />
+<link rel="stylesheet" type="text/css" href="/themes/mall/jiaju/css/aui.1.0.css"/>
+<style type="text/css">
+.jodsearch{margin:0px;padding:0px;vertical-align: middle;}
+.jodsearch .dosearch{margin-left:auto;margin-right:auto;margin-top:10px;padding:0px;width:1100px;height:52px;background-color:#F5F5F5;}
+.jodsearch .dosearch input{margin-top:10px;}
+.jodsearch .dosearch *{vertical-align:middle;}
+.tiaojian a{color:#0066CB;}
+.jobtable{width:100%;text-align:left;margin-left:3px;font-size:13px;}
+.jobtable tr{line-height:30px;}
+.jobtable tr td{border-bottom:1px solid #F0F0F0;}
+.main{margin:0px;padding:0px;}
+.main_body{
+margin:auto;padding:0px;margin-top: 10px;margin-bottom: 10px; width:1200px;overflow:hidden;
+}
+.main_body .main_left{width:79%;float:left;margin-right:10px;}
+.main_body .main_right{width:19%;float:left;margin-left:10px;}
+/**劳务资源*/
+.text-left a{width:23%;background:#ff552e;border-radius:10px;float:left;margin:1%;height:50px;line-height:50px;overflow:hidden;display:block;color:#fff;font-size:16px;font-weight:bold;}
+.aui-list-item-middle{width:16.222222222%;margin:10px 0.11111111111rem;float:left;overflow: hidden;}
+#content img{max-width:100%}
+</style>
+<script type="text/javascript">
+	$(document).ready(function(){
+	$(".tiaojian > .qy > a").click(function(){
+	　　　　$(".tiaojian > .qy > a").css("background-color","F5F5F5");
+			$(this).css("background-color","#62AF00");
+			//这里使用ajax取数据
+			/*var url=$(this).attr("href");
+			$.get(url,function(data,status){
+				alert("Data: " + data + "\nStatus: " + status);
+			  });*/
+	　　});
+	$(".tiaojian > .xz > a").click(function(){
+	　　　　$(".tiaojian > .xz > a").css("background-color","F5F5F5");
+			$(this).css("background-color","#62AF00");
+			//这里使用ajax取数据
+			//var url=$(this).attr("href");
+			/*$.get(url,function(data,status){
+				alert("Data: " + data + "\nStatus: " + status);
+			  });*/
+	　　});
+	}); 
+	
+</script>
+</head>
+<body>
+{include file=header.html}
+<!-- 搜索 -->
+<div style="background:#ff552e;padding-bottom: 8px;"><p style="font-size:18px;color:#fff;height:50px;line-height:50px;width:1200px;margin:0 auto;">详情介绍</p></div>
+
+<div class="main">
+	<!-- 主体 -->
+	<div class="main_body">
+		<!-- 左边 -->
+		<div class="main_left"style="width:100%">
+			
+			<div style="background-color:#F5F5F5;width:100%;border-bottom:1px solid #999;">
+				
+				<div style="width:100%;height:auto;border-bottom:1px solid #999;overflow:hidden;">
+					<span style="width:100%;height:50px;line-height:50px;color:#333;font-size:20px;float:left;text-align:center">{$title}</span><br>
+					发布时间：<span id="times"></span>
+				</div>
+				
+				
+			</div>
+			<div style="width:100%;background-color:#FFFFFF;">
+				<div class="text-left" id="content">
+					
+					<!--描述-->
+					
+				</div>
+			</div>
+		</div>
+		<!-- 左边结束 -->
+		<!-- 右边 -->
+		<div class="main_right" style="display:none;">
+			<div style="width:100%;">
+				<img src="/themes/store/default/images/adwei.png" width="100%">
+			</div>
+		</div>
+		<!-- 右边结束 -->
+	</div>
+{include file=footer.html}
+<!-- 底部include file=footer2.html-->
+<script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+<script src="/themes/mall/jiaju/js/jquery-1.5.2.min.js"></script>
+
+<script type="text/javascript">
+
+$(function(){
+	jQuery.support.cors = true;
+	selectUser();
+});
+
+ // PHP时间戳转时间
+function _trans_php_time_to_str(timestamp, n) {
+
+	update = new Date(timestamp * 1000);
+	//时间戳要乘1000
+	year = update.getFullYear();
+	month = (update.getMonth() + 1 < 10) ? ('0' + (update.getMonth() + 1)) : (update.getMonth() + 1);
+	day = (update.getDate() < 10) ? ('0' + update.getDate()) : (update.getDate());
+	hour = (update.getHours() < 10) ? ('0' + update.getHours()) : (update.getHours());
+	minute = (update.getMinutes() < 10) ? ('0' + update.getMinutes()) : (update.getMinutes());
+	second = (update.getSeconds() < 10) ? ('0' + update.getSeconds()) : (update.getSeconds());
+	if (n == 1) {
+		return (year + '-' + month + '-' + day + ' ' + hour + ':' + minute + ':' + second);
+	} else if (n == 2) {
+		return (year + '-' + month + '-' + day);
+	} else if (n == 3) {
+		return (month + '-' + day);
+	} else if (n == 4) {
+		return (hour + ':' + minute + ':' + second);
+	} else if (n == 5) {
+		return (year + '-' + month + '-' + day + ' ' + hour + ':' + minute );
+	} else {
+		return 0;
+	}
+}
+
+function selectUser(){
+	
+
+	var url = "http://wgcapp.59jiaju.com/index.php/Home/Systemmsg/AdvertisementContent";
+	$.post(url,{id : {$id}},function(ret){
+	
+		var data = ret.message;
+		
+		if(ret.code == 200){
+				var id   = data.id,
+                title    = data.title,
+                content  = data.content,
+                pic      = data.pic,
+                describe = data.describe,
+                times    = _trans_php_time_to_str(data.times,1);
+				
+				$("#times").html(times);
+			   $("#content").html(content);
+			
+		
+		}else{
+			return false;
+		
+		}
+		
+	
+	},"json");
+
+}
+	
+
+</script>
+
+</body>
+</html>

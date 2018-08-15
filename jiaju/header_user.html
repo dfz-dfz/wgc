@@ -1,0 +1,180 @@
+﻿<?php session_start(); ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<base href="{$site_url}/" />
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7 charset={$charset}" />
+<meta http-equiv="Content-Type" content="text/html; charset={$charset}" />
+
+<link type="text/css" href="{res file=css/main.css}" rel="stylesheet"  />
+<link type="text/css" href="/themes/mall/jiaju/styles/css/global.css" rel="stylesheet"  />
+<link type="text/css" href="{res file=css/catalog.css}" rel="stylesheet"  />
+<link type="text/css" href="{res file=css/footer.css}" rel="stylesheet" />
+<link type="text/css" href="/themes/mall/jiaju/styles/css/style.css" rel="stylesheet"  />
+<script type="text/javascript" src="index.php?act=jslang"></script>
+<script type="text/javascript" src="{lib file=jquery.js}" charset="utf-8"></script>
+<script type="text/javascript" src="{lib file=ecmall.js}" charset="utf-8"></script>
+<script type="text/javascript" src="{lib file=cart.js}" charset="utf-8"></script>
+<script type="text/javascript" src="{res file=js/main.js}" charset="utf-8"></script>
+<!--{if $index}-->
+<script type="text/javascript" src="{lib file=kissy/build/kissy.js}"></script>
+<script type="text/javascript" src="{lib file=kissy/build/switchable/switchable-pkg.js}"></script>
+<script type="text/javascript" src="{res file=js/lrtk.js}"></script>
+<!--{/if}-->
+<!--[if lte IE 6]>
+<script type="text/javascript" language="Javascript" src="{res file=js/hoverForIE6.js}"></script>
+<![endif]-->
+<script type="text/javascript">
+var SITE_URL = "{$site_url}";
+var PRICE_FORMAT = '{$price_format}';
+</script>
+{$_head_tags}
+<style type="text/css">
+body{background:url('{$site_poster}') no-repeat center top }
+.mainnav{width:990px; overflow:hidden; margin:0 auto}
+.STYLE1 {color: red}
+</style>
+<script type="text/javascript" src="{res file=js/hover.js}"></script>
+<script>
+  function lxfEndtime(){
+          $(".lxftime").each(function(){
+                var lxfday=$(this).attr("lxfday");//用来判断是否显示天数的变量
+                var endtime = new Date($(this).attr("endtime")).getTime();//取结束日期(毫秒值)
+                var nowtime = new Date().getTime();        //今天的日期(毫秒值)
+                var youtime = endtime-nowtime;//还有多久(毫秒值)
+                var seconds = youtime/1000;
+                var minutes = Math.floor(seconds/60);
+                var hours = Math.floor(minutes/60);
+                var days = Math.floor(hours/24);
+                var CDay= days ;
+                var CHour= hours % 24;
+                var CMinute= minutes % 60;
+                var CSecond= Math.floor(seconds%60);//"%"是取余运算，可以理解为60进一后取余数，然后只要余数。
+                if(endtime<=nowtime){
+                        $(this).html("已过期")//如果结束日期小于当前日期就提示过期啦
+                        }else{
+                                if($(this).attr("lxfday")=="no"){
+                                        $(this).html("<i>剩余时间：</i><span>"+CHour+"</span>时<span>"+CMinute+"</span>分<span >"+CSecond+"</span>秒");          //输出没有天数的数据
+                                        }else{
+                        $(this).html("<span class='f24'>"+days+"</span><span>天</span><span  class='f24'>"+CHour+"</span><span>时</span><span  class='f24'>"+CMinute+"</span><span>分</span><span  class='f24'>"+CSecond+"</span><span>秒</span>");          //输出有天数的数据
+                                }
+                        }
+          });
+   setTimeout("lxfEndtime()",1000);
+  };
+$(function(){
+      lxfEndtime();
+   });
+</script>
+{$_head_tags}
+<script type="text/javascript">
+  $(function (){
+    $('#open-change-city-window').click(function (){
+      $('.change-city-window').slideDown();
+      
+    })
+    $('#close-change-city-window').click(function (){
+      $('.change-city-window').slideUp();
+    })
+  })
+</script>
+</head>
+<body>
+<div id="header" class="w-full">
+	<!--头部导航开始
+		<div id="site-nav" class="w-full" style="background:#333;border-bottom:1px solid #fff;text-align:left;">
+			<div style="overflow:hidden;color:#fff;text-align:left;width:77%;min-width:1100px;margin:0 auto;">http://www.wgc2013.com</div>
+		</div>-->
+		<div id="site-nav" class="w-full" style="background:#333;height:50px;">
+		  <div class="shoptop w clearfix" style="height:50px">
+				<div class="login_info" style="height:50px;line-height:50px">
+				
+					<a href="http://wgcapp.59jiaju.com/apk/index.html" target="_blank" style="color:#fff;font-size:18px;">
+						APP下载
+						<font style="margin-left:5px;">&or;</font>
+					</a>					
+				
+					
+				</div>
+				<ul class="quick-menu"style="min-width:190px;overflow:hidden;">
+				  
+					<li class="service" style="margin-right:10px;height:50px;line-height:50px;background:none;">
+						<!--<a href="/index.php?app=member&amp;act=login&amp;ret_url=" style="color:#fff;font-size:18px;">企业服务</a>      -->  
+					</li>
+					<li class="service" style="margin-right:10px;height:50px;line-height:50px;background:none;">
+						<a href="javascript:;" style="color:#fff;font-size:18px;">|</a>        
+					</li>
+					<li style="background:red;margin-right:0px;padding:0 30px;height:50px;line-height:50px;">
+						 <?php
+							if(empty($_SESSION['user_info']))
+							{
+								echo '&nbsp;&nbsp;&nbsp;';
+								echo '<a  style="color:#fff;margin:0;font-size:18px;" href="/index.php?app=member&amp;act=login&amp;ret_url=">登录</a>';
+								echo '<span style="color:#fff;margin:0 5px;">/</span>';
+								echo '	<a  style="color:#fff;margin:0;font-size:18px;" href="/index.php?app=store&act=reg">注册</a>';
+								echo '&nbsp;&nbsp;&nbsp;';
+							}else{
+								echo '<a href="Javascript:;" style="color:#FFF;font-size:18px;">您好，'.$_SESSION['user_info']["user_name"].'</a>&nbsp;&nbsp;&nbsp;';
+								echo '<a href="/index.php?app=member&amp;act=logout" style="font-size:18px;color:#fff;margin:0;">退出</a>&nbsp;&nbsp;&nbsp;';
+								echo '<a href="/index.php?app=search&act=user_baseinfo" style="font-size:18px;color:#fff;margin:0;">个人中心</a>';
+							}
+						?>  
+					</li>
+				</ul>
+		   </div>
+		 </div>	
+	<!---头部导航结束-->
+    <div class="shop-t w clearfix" style="width: 100%;min-width: 1100px;">
+	
+		<!--logo部分开始--->
+		<div id="h_logos" style="overflow:hidden;" >
+		
+			<div class="logo" style="width:290px;float:left;text-align:left;">
+				 <a href="/"  title="微工程">
+					<img alt="微工程" src='/data/files/mall/settings/logo.png' />
+				  </a>			  
+			</div>
+			<div id="searchbar" style="margin-top:0;width:630px;float:left;overflow:hidden">
+				<img style="height:80px;width:100%;" alt="微工程" src='/themes/mall/jiaju/images/ppbypic.jpg' />				
+            </div>
+			
+			<?php
+			$row11=mysql_num_rows(mysql_query("SELECT user_id FROM ecm_member where types=2"));
+			$row12=mysql_num_rows(mysql_query("SELECT user_id FROM ecm_member where types=3"));
+			?>
+			
+			<!--注册-登陆-->
+			<div style="overflow:hidden;float:right;width:240px;height:100px;">
+				
+					 <?php
+							if(empty($_SESSION['user_info']))
+							{
+								echo '<a href="index.php?app=member&amp;act=login&amp;ret_url="  title="微工程"><img alt="微工程" src="/data/files/mall/settings/user.png" style="width:100%;height:100%" /></a>';
+								
+							}else{
+								echo '<a href="javascript:;"  title="微工程"><img alt="微工程" src="http://wgcapp.59jiaju.com'.$_SESSION['user_info']['userphoto'].'" style="width:100%;height:100%" /></a>';
+							}
+						?>  
+					
+				  
+			</div>
+			
+		</div>
+		
+   	</div>
+	<!---logo部分结束-->
+	
+	
+	<div class="mainnav w-full">
+		<div class="menu">
+			<ul style="overflow:hidden;float:left;">
+				<li class="line"style="text-align:left;width:24%"><a style="font-size:22px;" href="/index.php">首页</a></li>
+				<li class="line"style="text-align:center;width:24%"><a style="font-size:22px;" href="/index.php?app=search&act=zhaopin">热门招聘</a></li>
+				<li class="line"style="text-align:center;width:24%"><a style="font-size:22px;" href="/index.php?app=search&act=caigou">集采信息</a></li>
+				<li class="line"style="text-align:right;width:24%"><a style="font-size:22px;" href="/index.php?app=search&act=joblist2">劳动力资源</a></li>
+				<!--<li class="line"style="width:18%"><a style="font-size:22px;" href="/index.php?app=member&act=login&ret_url=">会员登录</a></li>
+				<li class="line"style="width:20%"><a style="font-size:22px;" href="/index.php?app=store&act=reg">会员注册</a></li>-->
+			</ul>
+		</div>
+	</div>
+</div>

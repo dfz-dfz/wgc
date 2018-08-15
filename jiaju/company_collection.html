@@ -1,0 +1,221 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Access-Control-Allow-Origin" content="*">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=8"/>
+<title>用户中心-项目管理</title>
+<meta name="description" content="微工程，微工程APP，装修、材料、家具、饰品一站式服务，让装修更简单，价格更透明！！" />
+<meta name="keywords" content="微工程，微工程，家居商城，微工程家居商城，微工程家居装修商城，办公室装修，写字楼装修，材料，装修材料，家居，办公家具，家居，家具，装修，装饰" />
+<link type="text/css" href="themes/mall/jiaju/styles/default/css/main.css" rel="stylesheet"  />
+<link type="text/css" href="themes/mall/jiaju/styles/css/global.css" rel="stylesheet"  />
+<link type="text/css" href="http://www.wgc2013.com/themes/mall/jiaju/styles/default/css/catalog.css" rel="stylesheet"  />
+<link type="text/css" href="http://www.wgc2013.com/themes/mall/jiaju/styles/default/css/footer.css" rel="stylesheet" />
+<link type="text/css" href="themes/mall/jiaju/styles/css/style.css" rel="stylesheet"  />
+<script type="text/javascript" src="http://www.wgc2013.com/includes/libraries/javascript/jquery.js" charset="utf-8"></script>
+<script type="text/javascript" src="index.php?act=jslang"></script>
+<script type="text/javascript" src="http://www.wgc2013.com/includes/libraries/javascript/ecmall.js" charset="utf-8"></script>
+<script type="text/javascript" src="http://www.wgc2013.com/includes/libraries/javascript/cart.js" charset="utf-8"></script>
+<script type="text/javascript" src="http://www.wgc2013.com/themes/mall/jiaju/styles/default/js/main.js" charset="utf-8"></script>
+
+<!--[if lte IE 6]>
+<script type="text/javascript" language="Javascript" src="http://www.wgc2013.com/themes/mall/jiaju/styles/default/js/hoverForIE6.js"></script>
+<![endif]-->
+<!--[if IE 8]>
+<link type="text/css" href="themes/mall/jiaju/css/ie8.css" rel="stylesheet"  />
+<![endif]-->
+<script type="text/javascript">
+var SITE_URL = "http://www.wgc2013.com";
+var PRICE_FORMAT = '&yen;%s';
+</script>
+<script charset="utf-8" type="text/javascript" src="http://www.wgc2013.com/includes/libraries/javascript/jquery.plugins/jquery.validate.js" ></script><style type="text/css">
+body{background:url('') no-repeat center top }
+.mainnav{width:990px; overflow:hidden; margin:0 auto}
+.STYLE1 {color: red}
+</style>
+<script type="text/javascript" src="http://www.wgc2013.com/themes/mall/jiaju/styles/default/js/hover.js"></script>
+
+<script charset="utf-8" type="text/javascript" src="http://www.wgc2013.com/includes/libraries/javascript/jquery.plugins/jquery.validate.js" ></script>
+</head>
+<body>
+{include file=header.html}
+
+<!-- 中部主要内容 -->
+ <div class="container" style="overflow: hidden;width: 1200px;margin: 10px auto;">
+ <!-- 左上的导航栏 -->
+ {include file=usercenter.html}
+
+ 	<!-- 右边的内容 -->
+ 	<div class="container_right" style="width: 78%;border: 1px solid #cacaca;float: right;background-color: #f7f7f7;padding: 0 10px 10px 10px;">
+ 		<!-- 消息中心 -->
+
+		<!-- 积分 -->
+
+		<!-- 发布招聘 -->
+
+		<!-- 发布集采 -->
+				<div class="user_collection base_ui_public" style="/*display: none;*/">
+			<ul class="user_collection_ul user_public_ul">
+ 				<li style="margin-right: 10px;background-color: #f8c67b;color: #f34c26;">发布集采</li>
+ 			</ul>
+ 			<div class="user_collection_info base_info_public" style="overflow: hidden;width: 100%;">
+ 				<ul style="margin-top: 30px;width: 400px;margin-left: auto;margin-right: auto;">
+ 					<li>
+						<div class="user_collection_name user_public_name" style="color: #5e5a59;">商店名称：</div>
+						<div class="user_collection_input user_public_input"><input id="office_name" type="text" /></div>
+					</li>
+					<li>
+						<div class="user_collection_name user_public_name" style="color: #5e5a59;">材料名称：</div>
+						<div class="user_collection_input user_public_input"><input id="title" type="text" /></div>
+					</li>
+					<li>
+						<div class="user_collection_name user_public_name" style="color: #5e5a59;">材料品牌：</div>
+						<div class="user_collection_input user_public_input"><input id="brand" type="text" /></div>
+					</li>
+					<li>
+						<div class="user_collection_name user_public_name" style="color: #5e5a59;">材料描述：</div>
+						<div class="user_collection_input user_public_input"><input id="miaoshu" type="text" /></div>
+					</li>
+					<li>
+						<div class="user_collection_name user_public_name" style="color: #5e5a59;">发布地址：</div>
+						<div class="user_collection_input user_public_input"><input id="xiangxi" type="text" /></div>
+					</li>
+					
+					<li style="height: 160px;">
+						<div class="user_collection_name user_public_name" style="color: #5e5a59;">效果图展示：</div>
+						<div style="display: inline-block;width: 260px;height:150px;border:1px solid #c1c1be;position: relative;">
+							<input type="file" id="doc" name="pic" style="display: none;">
+							<label for="doc" style="width: 60px;height: 60px;display: block;border: 1px solid #cfcfcf;position: relative;margin: 10px;">
+								<div style="position: absolute;border-bottom: 1px solid #cfcfcf;width:50px;top: 50%;left: 50%;margin-left: -25px;"></div>
+								<div style="position: absolute;border-right: 1px solid #cfcfcf;height: 50px;left: 50%;top: 50%;margin-top: -25px;"></div>
+							
+								<div style="width:260px;height:150px;position: absolute;top: -10px;left: -10px;" id="localImag">
+							        <img src="" id="preview" alt="">
+								</div>
+							</label>
+						</div>
+					</li>
+					
+ 				</ul>
+ 				<div class="user_collection_send" style="width: 360px;margin-left: auto;margin-right: auto;">
+
+ 				<a href="javascript:;">保存</a>
+
+				<a href="javascript:;" onclick="fabu()">立即发布</a>
+ 				</div>
+ 			</div>
+		</div>
+		<!-- 发布列表 -->
+
+ 		<!-- 创建简历 -->
+
+ 		<!-- 实名认证 -->
+
+ 		</div>
+ 		
+ 	</div>
+
+{include file=footer.html}
+
+
+<script type="text/javascript">
+	$(document).ready(function() {
+			
+	});
+
+	$(".container_nav ul li").click(function(){
+		$(".container_nav ul li").removeClass("bg_li")
+		$(this).addClass("bg_li")
+	})
+
+	// 图片上传
+	$("input[name='pic']").live('change',function(){
+        var file = $(this).val();
+        setImagePreview(file);
+    });
+
+
+	function setImagePreview(avalue) {
+	    var docObj = document.getElementById("doc");//img
+	    var imgObjPreview = document.getElementById("preview"); //div
+	    var divs = document.getElementById("localImag");
+	    if (docObj.files && docObj.files[0]) {
+	       //火狐下，直接设img属性
+	       imgObjPreview.style.display = 'block';
+	       imgObjPreview.style.width = '260px';
+	       imgObjPreview.style.height = '150px';
+	       imgObjPreview.src = window.URL.createObjectURL(docObj.files[0]);
+	    } else {
+	       //IE下，使用滤镜
+	       docObj.select();
+	       var imgSrc = document.selection.createRange().text;
+	       var localImagId = document.getElementById("localImag");
+	       localImagId.style.width = "260px";
+	       localImagId.style.height = "150px";
+	       //图片异常的捕捉，防止用户修改后缀来伪造图片
+	       try {
+	           localImagId.style.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale)"
+	           localImagId.filters.item("DXImageTransform.Microsoft.AlphaImageLoader").src = imgSrc;
+	        } catch(e) {
+	            alert("您上传的图片格式不正确，请重新选择!");
+	            return false;
+	        }
+	        imgObjPreview.style.display = 'none';
+	        document.selection.empty();
+	    }
+	   return true;
+	}
+
+	//发布集采
+	var worker_address = '广东';
+	var region = '广东';
+	var s_province,s_city,s_county
+	function fabu(){
+		var title           = $('#title').val();//材料名称
+		var miaoshu         = $('#miaoshu').val();//材料描述
+		var brand           = $('#brand').val();//材料品牌
+		var xiangxi         = $('#xiangxi').val();//发布地址
+		var UserPhoto       = $("#preview").val();//图片
+		var worker_address  = worker_address;//公司地址
+		var office_name     = $('#office_name').val();//商店名称
+		var region          = region;//显示区域
+		alert(JSON.stringify(UserPhoto));
+		return;
+		if(title == ''){
+			alert('必填项!');
+			return false;
+		}
+
+		$.post('http://wgcapp.wgc2013.com/jingyi.php/Home/Material/addmaterial', {
+			user_id 	   : '<?php echo $_SESSION["user_info"]["user_id"];?>',
+	        m_name         : title,
+	        m_introduce    : miaoshu, 
+		    m_photo        : UserPhoto,
+		    s_province     : s_province,
+			s_city         : s_city,
+			s_county       : s_county,
+			region         : region,
+		    address        : xiangxi,
+		    worker_address : worker_address,
+		    office_name    : office_name,
+		    brand          : brand,
+		    cai_type       : 2,
+		    hasmoney       : 10,
+		    publishingarea : $("#Publishingarea").val(),
+		}, function(ret,err) {
+			if(ret.code == 200){
+				alert('发布材料成功!');
+			}else if(ret.code == 202){
+				alert('发布材料失败!');
+				return false;
+			}else if(ret.status == 205){
+				alert('您的积分余额不足,请充值或开通会员特权！');
+				return false;
+			}else{
+				alert('网络连接失败，请检查网络!');
+			}
+		},'json');
+	}
+</script>
+</body>
+</html>

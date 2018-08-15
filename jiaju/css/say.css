@@ -1,0 +1,255 @@
+html body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,form,fieldset,input,textarea,p,th,td,img,em{margin:0;padding:0;}
+body{font-weight:normal;font-family:Tahoma,"宋体",Arial, Helvetica, sans-serif;font-size:12px;color:#333;background:#f9f9ef;}
+ol,ul{list-style:none;}
+fieldset,img {border:0;}
+table {border-collapse: collapse; border-spacing: 0; font-size:12px;  }
+a{text-decoration:none;color:#333;cursor:pointer;}
+a:hover {text-decoration:none;}
+.none,.hidden{display:none;}
+em{font-style:normal;}
+th{font-weight:normal;}
+.fl{float:left;}
+.fr{float:right;}
+.org {
+    color: #FF6600;
+    font-size: 12px;
+}
+.talk {
+    border-bottom: 1px solid #DEDEDE;
+    border-left: 1px solid #DEDEDE;
+    border-right: 1px solid #DEDEDE;
+    height: 100%;
+    margin: 10px auto;
+    width: 978px;
+    background-color: #FFF;
+}
+
+.talk h1 {
+    border-bottom: 1px solid #DEDEDE;
+    border-top: 1px solid #DEDEDE;
+    clear: both;
+    color: #EC6205;
+    font-family: "黑体";
+    font-size: 20px;
+    font-weight: normal;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 10px;
+}
+
+.talk .talkBox {
+    padding: 20px 30px 20px 32px;
+}
+
+.talk .talkBox p {
+    display: block;
+    padding-left: 50px;
+}
+
+.talk  .talkText {
+    border: 1px solid #FFCEB4;
+    border-radius: 10px 10px 10px 10px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+    height: 90px;
+    padding: 10px;
+    resize: none;
+    width: 840px;
+    background: none
+}
+
+.talk .talkBox .saybtnarea {
+    color: #999999;
+    display: block;
+    font-weight: normal;
+    height: 40px;
+    line-height: 35px;
+    padding: 0px 0 0 50px;font-size: 12px;
+}
+.talk .talkBox .saybtnarea .saybtn{
+    float:right;margin:18px 0;
+}
+
+a.orgline {
+    color: #FF6600;
+    text-decoration: underline;
+}
+.mlr5 {
+    margin: 0 5px;
+}
+
+.btn128 {
+    background: url("../images/a_btn.gif") no-repeat scroll 0 -44px transparent;
+    color: #FFFFFF; display: block; font-size: 16px;
+    font-weight: bold; height: 36px;line-height: 36px;
+    text-align: center;width: 128px;border:none;cursor:pointer;
+}
+.btn128:hover {
+    background: url("../images/a_btn.gif") no-repeat scroll -132px -44px transparent;
+}
+.talk h1 {
+    border-bottom: 1px solid #DEDEDE;
+    border-top: 1px solid #DEDEDE;
+    clear: both;
+    color: #EC6205;
+    font-family: "黑体";
+    font-size: 20px;
+    font-weight: normal;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 10px;
+}
+
+.talk .talkList {
+    padding: 20px 20px 50px 32px;
+}
+
+.talk .talkList ul li {
+    padding: 10px 10px 20px 56px;
+    position: relative;
+    z-index: 0;
+}
+.fr{float:right}
+.talkListIcon {
+    height: 35px;
+    left: 0;
+    position: absolute;
+    top: 40px;
+    width: 60px;
+    z-index: 2;
+}
+.talkListText {
+    border: 1px solid #FBC559;
+    border-radius: 10px 10px 10px 10px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+    font-size: 14px;
+    height: 100%;
+    padding: 20px;
+    z-index: 1;
+}
+.userPic50 {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #DEDEDE;
+    float: left;
+    height: 50px;
+    overflow: hidden;
+    padding: 2px;
+    width: 50px;
+}
+
+.userPic50 img {
+    height: 50px;
+    overflow: hidden;
+    width: 50px;
+}
+.userTalkFont {
+    margin-left: 70px;
+}
+
+.talkListText h3 {
+    color: #DC4900;
+    font-size: 14px;
+    font-weight: bold;
+    height: 24px;
+    line-height: 20px;
+    overflow: hidden;
+}
+
+.talkListText p {
+    font-size: 14px;
+    line-height: 24px;
+}
+
+.talkListText h4 {
+    color: #999999;
+    font-size: 14px;
+    font-weight: normal;
+    height: 30px;
+    line-height: 30px;
+    padding: 5px 0;
+}
+
+.talkListText h4 span {
+    float: right;
+}
+
+.talkListText dl {
+    border: 1px solid #DEDEDE;
+    margin-top: 5px;
+    padding: 5px 20px 20px;
+    position: relative;
+}
+
+.talkHicon2 {
+    background: url("../images/talkH2.gif") no-repeat scroll left top transparent;
+    height: 10px;
+    position: absolute;
+    right: 6px;
+    top: -10px;
+    width: 19px;
+}
+
+.talkListText dl dd {
+    clear: both;
+    display: block;
+    padding: 5px 0;
+}
+
+.userPic30 {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #DEDEDE;
+    float: left;
+    height: 30px;
+    overflow: hidden;
+    padding: 2px;
+    width: 30px;
+}
+
+.userPic30 img {
+    height: 30px;
+    overflow: hidden;
+    width: 30px;
+}
+
+.userTalkFont2 {
+    margin-left: 45px;
+}
+
+.talkListText p {
+    font-size: 14px;
+    line-height: 24px;
+}
+a.btn68 {
+    background: url("../images/a_btn.gif") no-repeat scroll 0 0 transparent;
+    color: #FFFFFF;
+    display: inline-block;
+    height: 25px;
+    line-height: 26px;
+    text-align: center;
+    width: 67px;
+}
+a.btn68:hover {
+    background: url("../images/a_btn.gif") no-repeat scroll -83px 0 transparent;
+}
+.cl{clear:both}
+.talk .tbtn{margin:5px 0 0}
+.talk .tbtn span.wordnum{color:#999999;font-size: 12px;margin:0 0 0 5px}
+/*.talk .ly textarea{width:100%;height:60px;overflow: hidden;font-size: 13px}*/
+.textarea_say{width:100%;height:60px;overflow: hidden;font-size: 13px;padding:5px;}
+.qqFace{margin-top:4px;background:#fff;padding:2px;border:1px #dfe6f6 solid;}
+.qqFace table td{padding:0px;}
+.qqFace table td img{cursor:pointer;border:1px #fff solid;}
+.qqFace table td img:hover{border:1px #0066cc solid;}
+
+span.emotion {
+    background: url("../images/icon.gif") no-repeat scroll 2px 0 transparent;
+    cursor: pointer;
+    height: 20px;
+    padding-left: 24px;
+    width: 42px;
+}
+span.emotion:hover{
+    background-position: 2px -30px;
+}
+.tbtnarea{margin:6px 0 0}
+.ly textarea,.ddreply textarea{border:1px solid #dddddd;resize: none}
+/******说说over********/

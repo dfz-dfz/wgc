@@ -1,0 +1,503 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+   <title>城市切换</title>
+
+    <meta name="keywords" content="城市切换" />
+
+    <meta name="description" content=""/>
+
+    <style type="text/css">
+	body,ul,h1,h2,form,p,dl,dt,dd,p{margin:0; padding:0; list-style:none}img{border:none}a{color:#333; margin: 0px 3px; text-decoration:none} a:hover{color:#e40000;}.c6{color:#585858}#logo,#qianm,#postgg{background:url(images/wpic_2.gif) no-repeat}#header{background:#fff;width:100%; border-bottom:2px solid #ff7200}#headerinside{height:240px;position:relative;width:990px; margin:0 auto;z-index: 10000}#logo{ background-position:9px 63px;position:absolute;left:20px;top:98px; width:230px; padding-bottom:22px; z-index:999;}#postgg{ background-position:0 -54px; width:443px; height:105px; position:absolute; right:-50px; bottom:0; line-height:26px; padding:105px 40px 0 60px; z-index:666}#postgg a{font-size:14px}#qianm{background-position:-474px 0; width:70px; height:50px; position:absolute; left:185px; bottom:10px; display:inline-block; z-index:999}#flashimg{position:absolute; width:300px; height:240px; overflow:hidden; left:232px; bottom:0; z-index:662}#flashimg img{position:absolute; left:0px; bottom:0; background:#fff}.gray{color:#565656;}#clist dd a.lr{color: #e40000;}.ml{margin-left:50px}.c{clear: both}.co16{clear:#0000cc; font-size:16px}.index_bo{width:990px; margin:0 auto; text-align:center; overflow:hidden}.index_bo a{color:#000;}.index_bo a:hover{color:#e40000;}.index_bo a strong{font-weight:normal;}.topcity{width:100%; margin-top:1px;}.topcity .index_bo{padding:28px 20px 20px; width:970px; padding-right:0}.topcity a{margin-right:8px;}#citysear{display:none;line-height:22px; font-size:14px; float:right}#clist{width:1200px; margin:0 auto;clear:both;overflow:hidden;zoom:1;padding:0 0 20px;}#clist dt{color:#545454;float: left;width: 50px;font-family: Arial, Helvetica, sans-serif; font-size: 12px;clear: both;font-weight: bold;margin: 0;padding:3px 0 3px 4px;}#clist dd{width:936px;float: left;margin-left: 0px;padding: 3px 0;}#clist dd a{display: inline-block;font-size: 12px; margin-right:12px; white-space:nowrap; text-decoration:none}.footer{width:990px; margin:0 auto; text-align: center;border-top: 1px solid #ccc;padding: 15px 0px;font-size: 12px;line-height: 180%; overflow:hidden}.footer a{font-size: 12px;color: #666;text-decoration: underline}a.entrance{background:url(images/bgenter.gif) no-repeat 0 0 ;width:205px;margin:0;font-size:18px; line-height:40px;text-align:center;color:#fff;display:block; margin:0 auto 10px;}a.entrance:hover{background-position:0 -42px; color:#fff;}#around{display:none}#clist dt.searchcity{width:287px;}#inputdiv{border:1px solid #cdcdcd;display:inline-block;width:135px;*display:inline;*zoom:1;}#clist dt.searchcity input{vertical-align:middle; height:20px; line-height:20px; padding:2px 4px;border:0;width:127px}#searchspan{padding:3px 14px 3px 0;}#popularspan{padding:3px 14px 3px 34px;}#clist dd.popular{width:681px;}.tooltip{border:1px solid #ccc;background:#fff;margin:-3px 0 0 -1px;*margin:-3px 0 0 0;}.tooltip li{padding:0 5px;overflow:hidden;zoom:1}.tooltip li a{color:#545454;text-decoration:none}.tooltip li a b{color:#545454;font-weight:normal;}.tooltip li .tool_r{float:right;color:#090;font-size:11px}.tooltip li.selected a b,.tooltip li.selected a,.tooltip li.selected .tool_r{color:#545454}.tooltip li.selected,.tag_options li.open_hover{background:#f2f2f2;color:#545454}#tooltipdiv2{width:135px;font-size:12px;text-align:left;}#clist dt.quyu{color:#dcdcdc;width:990px;line-height:34px;height:34px;padding-left:2px;font-size: 16px;background:url(images/line_dot.gif) repeat-x left center;clear:none;}#clist dt.quyu span{background:#f9f9f9;padding-right:4px;}#clist dd.quyu{height:34px;width:952px;background:url(images/line_dot.gif) repeat-x left center;}
+
+    </style>
+	
+
+</head>
+
+<body>
+<div class="topcity">
+    <dl id="clist">
+    <dt class="quyu"></dt>
+    <dt class="searchcity" style="width:50px;">
+        
+		<span id="popularspan" style="padding:0">热门</span>
+    </dt>
+    <dd class="popular">
+		<a href="/index.php?app=search&act=sessions_city&city=北京" id="北京" >北京</a>
+		<a href="/index.php?app=search&act=sessions_city&city=上海" id="上海" >上海</a>
+		<a href="/index.php?app=search&act=sessions_city&city=广州" id="广州" >广州</a>
+		<a href="/index.php?app=search&act=sessions_city&city=深圳" id="深圳" >深圳</a>
+		<a href="/index.php?app=search&act=sessions_city&city=成都" id="成都" >成都</a>
+		<a href="/index.php?app=search&act=sessions_city&city=南京" id="南京" >杭州</a>
+		<a href="/index.php?app=search&act=sessions_city&city=南京" id="南京" >南京</a>
+		<a href="/index.php?app=search&act=sessions_city&city=天津" id="天津" >天津</a>
+		<a href="/index.php?app=search&act=sessions_city&city=武汉" id="武汉" >武汉</a>
+		<a href="/index.php?app=search&act=sessions_city&city=重庆" id="重庆" >重庆</a>
+	</dd>
+    <dt class="quyu"><span>华南</span></dt>
+    <dt>广东</dt>
+	<dd>
+		<a href="http://www.59jiaju.com/" id="广州市">广州 </a>
+        <a href="http://sz.59jiaju.com/" id="深圳市">深圳</a>
+        <a href="/index.php?app=search&act=sessions_city&city=珠海" id="珠海" >珠海</a>
+        <a href="/index.php?app=search&act=sessions_city&city=汕头" id="汕头" >汕头</a>
+		<a href="/index.php?app=search&act=sessions_city&city=佛山" id="佛山" >佛山</a>
+		<a href="/index.php?app=search&act=sessions_city&city=东莞" id="东莞" >东莞</a>
+		<a href="/index.php?app=search&act=sessions_city&city=中山" id="中山" >中山</a>
+		<a href="/index.php?app=search&act=sessions_city&city=江门" id="江门" >江门</a>
+		<a href="/index.php?app=search&act=sessions_city&city=惠州" id="惠州" >惠州</a>
+		<a href="/index.php?app=search&act=sessions_city&city=肇庆" id="肇庆" >肇庆</a>
+		<a href="/index.php?app=search&act=sessions_city&city=阳江" id="阳江" >阳江</a>
+		<a href="/index.php?app=search&act=sessions_city&city=韶关" id="韶关" >韶关</a>
+		<a href="/index.php?app=search&act=sessions_city&city=河源" id="河源" >河源</a>
+		<a href="/index.php?app=search&act=sessions_city&city=梅州" id="梅州" >梅州</a>
+		<a href="/index.php?app=search&act=sessions_city&city=清远" id="清远" >清远</a>
+		<a href="/index.php?app=search&act=sessions_city&city=云浮" id="云浮" >云浮</a>
+		<a href="/index.php?app=search&act=sessions_city&city=茂名" id="茂名" >茂名</a>
+		<a href="/index.php?app=search&act=sessions_city&city=汕尾" id="汕尾" >汕尾</a>
+		<a href="/index.php?app=search&act=sessions_city&city=揭阳" id="揭阳" >揭阳</a>
+		<a href="/index.php?app=search&act=sessions_city&city=潮州" id="潮州" >潮州</a>
+		<a href="/index.php?app=search&act=sessions_city&city=湛江" id="湛江" >湛江</a>	
+	</dd>
+    <dt>福建</dt>
+	<dd>
+		<a href="/index.php?app=search&act=sessions_city&city=福州" id="福州" >福州市</a>
+		<a href="/index.php?app=search&act=sessions_city&city=厦门" id="厦门" >厦门市</a>
+		<a href="/index.php?app=search&act=sessions_city&city=莆田" id="莆田" >莆田市</a>
+		<a href="/index.php?app=search&act=sessions_city&city=三明" id="三明" >三明市</a>
+		<a href="/index.php?app=search&act=sessions_city&city=泉州" id="泉州" >泉州市</a>
+		<a href="/index.php?app=search&act=sessions_city&city=漳州" id="漳州" >漳州市</a>
+		<a href="/index.php?app=search&act=sessions_city&city=南平" id="南平" >南平市</a>
+		<a href="/index.php?app=search&act=sessions_city&city=龙岩" id="龙岩" >龙岩市</a>
+		<a href="/index.php?app=search&act=sessions_city&city=宁德" id="宁德" >宁德市</a>	
+	</dd>
+    <dt>广西</dt>
+	<dd>
+		<a href="/index.php?app=search&act=sessions_city&city=南宁" id="南宁" >南宁</a>
+		<a href="/index.php?app=search&act=sessions_city&city=柳州" id="柳州" >柳州</a>
+		<a href="/index.php?app=search&act=sessions_city&city=桂林" id="桂林" >桂林</a>
+		<a href="/index.php?app=search&act=sessions_city&city=梧州" id="梧州" >梧州</a>
+		<a href="/index.php?app=search&act=sessions_city&city=北海" id="北海" >北海</a>
+		<a href="/index.php?app=search&act=sessions_city&city=防城港" id="防城港" >防城港</a>
+		<a href="/index.php?app=search&act=sessions_city&city=钦州" id="钦州" >钦州</a>
+		<a href="/index.php?app=search&act=sessions_city&city=贵港" id="贵港" >贵港</a>
+		<a href="/index.php?app=search&act=sessions_city&city=玉林" id="玉林" >玉林</a>
+		<a href="/index.php?app=search&act=sessions_city&city=百色" id="百色" >百色</a>
+		<a href="/index.php?app=search&act=sessions_city&city=贺州" id="贺州" >贺州</a>
+		<a href="/index.php?app=search&act=sessions_city&city=河池" id="河池" >河池</a>
+		<a href="/index.php?app=search&act=sessions_city&city=来宾" id="来宾" >来宾</a>
+		<a href="/index.php?app=search&act=sessions_city&city=崇左" id="崇左" >崇左</a>	
+	</dd>
+    <dt>海南</dt>
+	<dd>
+		<a href="/index.php?app=search&act=sessions_city&city=海口" id="海口" >海口市</a>
+		<a href="/index.php?app=search&act=sessions_city&city=三亚" id="三亚" >三亚市</a>	
+	</dd>
+	<dt class="quyu"><span>华东</span></dt>
+    <dt>山东</dt>
+	<dd>
+		<a href="/index.php?app=search&act=sessions_city&city=济南" id="济南" >济南</a>
+		<a href="/index.php?app=search&act=sessions_city&city=青岛" id="青岛" >青岛</a>
+		<a href="/index.php?app=search&act=sessions_city&city=淄博" id="淄博" >淄博</a>
+		<a href="/index.php?app=search&act=sessions_city&city=泰安" id="泰安" >泰安</a>
+		<a href="/index.php?app=search&act=sessions_city&city=济宁" id="济宁" >济宁</a>
+		<a href="/index.php?app=search&act=sessions_city&city=德州" id="德州" >德州</a>
+		<a href="/index.php?app=search&act=sessions_city&city=日照" id="日照" >日照</a>
+		<a href="/index.php?app=search&act=sessions_city&city=潍坊" id="潍坊" >潍坊</a>
+		<a href="/index.php?app=search&act=sessions_city&city=枣庄" id="枣庄" >枣庄</a>
+		<a href="/index.php?app=search&act=sessions_city&city=临沂" id="临沂" >临沂</a>
+		<a href="/index.php?app=search&act=sessions_city&city=莱芜" id="莱芜" >莱芜</a>
+		<a href="/index.php?app=search&act=sessions_city&city=滨州" id="滨州" >滨州</a>
+		<a href="/index.php?app=search&act=sessions_city&city=聊城" id="聊城" >聊城</a>
+		<a href="/index.php?app=search&act=sessions_city&city=菏泽" id="菏泽" >菏泽</a>
+		<a href="/index.php?app=search&act=sessions_city&city=烟台" id="烟台" >烟台</a>
+		<a href="/index.php?app=search&act=sessions_city&city=威海" id="威海" >威海</a>
+		<a href="/index.php?app=search&act=sessions_city&city=东营" id="东营" >东营</a>	
+	</dd>
+    <dt>江苏</dt>
+	<dd>
+		<a href="/index.php?app=search&act=sessions_city&city=南京" id="南京" >南京</a>
+		<a href="/index.php?app=search&act=sessions_city&city=苏州" id="苏州" >苏州</a>
+		<a href="/index.php?app=search&act=sessions_city&city=无锡" id="无锡" >无锡</a>
+		<a href="/index.php?app=search&act=sessions_city&city=常州" id="常州" >常州</a>
+		<a href="/index.php?app=search&act=sessions_city&city=扬州" id="扬州" >扬州</a>
+		<a href="/index.php?app=search&act=sessions_city&city=南通" id="南通" >南通</a>
+		<a href="/index.php?app=search&act=sessions_city&city=镇江" id="镇江" >镇江</a>
+		<a href="/index.php?app=search&act=sessions_city&city=泰州" id="泰州" >泰州</a>
+		<a href="/index.php?app=search&act=sessions_city&city=淮安" id="淮安" >淮安</a>
+		<a href="/index.php?app=search&act=sessions_city&city=徐州" id="徐州" >徐州</a>
+		<a href="/index.php?app=search&act=sessions_city&city=盐城" id="盐城" >盐城</a>
+		<a href="/index.php?app=search&act=sessions_city&city=宿迁" id="宿迁" >宿迁</a>
+		<a href="/index.php?app=search&act=sessions_city&city=连云港" id="连云港" >连云港</a>	
+	</dd>
+    <dt>浙江</dt>
+	<dd>
+		<a href="/index.php?app=search&act=sessions_city&city=杭州" id="杭州" >杭州</a>
+		<a href="/index.php?app=search&act=sessions_city&city=宁波" id="宁波" >宁波</a>
+		<a href="/index.php?app=search&act=sessions_city&city=温州" id="温州" >温州</a>
+		<a href="/index.php?app=search&act=sessions_city&city=嘉兴" id="嘉兴" >嘉兴</a>
+		<a href="/index.php?app=search&act=sessions_city&city=湖州" id="湖州" >湖州</a>
+		<a href="/index.php?app=search&act=sessions_city&city=绍兴" id="绍兴" >绍兴</a>
+		<a href="/index.php?app=search&act=sessions_city&city=金华" id="金华" >金华</a>
+		<a href="/index.php?app=search&act=sessions_city&city=衢州" id="衢州" >衢州</a>
+		<a href="/index.php?app=search&act=sessions_city&city=舟山" id="舟山" >舟山</a>
+		<a href="/index.php?app=search&act=sessions_city&city=台州" id="台州" >台州</a>
+		<a href="/index.php?app=search&act=sessions_city&city=丽水" id="丽水" >丽水</a>	
+	</dd>
+    <dt>安徽</dt>
+	<dd>
+		<a href="/index.php?app=search&act=sessions_city&city=淮北" id="淮北" >淮北市</a>
+		<a href="/index.php?app=search&act=sessions_city&city=合肥" id="合肥" >合肥市</a>
+		<a href="/index.php?app=search&act=sessions_city&city=六安" id="六安" >六安市</a>
+		<a href="/index.php?app=search&act=sessions_city&city=亳州" id="亳州" >亳州市</a>
+		<a href="/index.php?app=search&act=sessions_city&city=宿州" id="宿州" >宿州市</a>
+		<a href="/index.php?app=search&act=sessions_city&city=阜阳" id="阜阳" >阜阳市</a>
+		<a href="/index.php?app=search&act=sessions_city&city=蚌埠" id="蚌埠" >蚌埠市</a>
+		<a href="/index.php?app=search&act=sessions_city&city=淮南" id="淮南" >淮南市</a>
+		<a href="/index.php?app=search&act=sessions_city&city=滁州" id="滁州" >滁州市</a>
+		<a href="/index.php?app=search&act=sessions_city&city=巢湖" id="巢湖" >巢湖市</a>
+		<a href="/index.php?app=search&act=sessions_city&city=芜湖" id="芜湖" >芜湖市</a>
+		<a href="/index.php?app=search&act=sessions_city&city=马鞍山" id="马鞍山" >马鞍山</a>
+		<a href="/index.php?app=search&act=sessions_city&city=安庆" id="安庆" >安庆市</a>
+		<a href="/index.php?app=search&act=sessions_city&city=池州" id="池州" >池州市</a>
+		<a href="/index.php?app=search&act=sessions_city&city=铜陵" id="铜陵" >铜陵市</a>
+		<a href="/index.php?app=search&act=sessions_city&city=宣城" id="宣城" >宣城市</a>
+		<a href="/index.php?app=search&act=sessions_city&city=黄山" id="黄山" >黄山市</a>	
+	</dd>
+    
+    <dt class="quyu"><span>中南</span></dt>
+    <dt>河南</dt>
+	<dd>
+		<a href="/index.php?app=search&act=sessions_city&city=郑州" id="郑州" >郑州市</a>
+		<a href="/index.php?app=search&act=sessions_city&city=洛阳" id="洛阳" >洛阳市</a>
+		<a href="/index.php?app=search&act=sessions_city&city=开封" id="开封" >开封市</a>
+		<a href="/index.php?app=search&act=sessions_city&city=平顶山" id="平顶山" >平顶山市</a>
+		<a href="/index.php?app=search&act=sessions_city&city=南阳" id="南阳" >南阳市</a>
+		<a href="/index.php?app=search&act=sessions_city&city=焦作" id="焦作" >焦作市</a>
+		<a href="/index.php?app=search&act=sessions_city&city=信阳" id="信阳" >信阳市</a>
+		<a href="/index.php?app=search&act=sessions_city&city=济源" id="济源" >济源市</a>
+		<a href="/index.php?app=search&act=sessions_city&city=周口" id="周口" >周口市</a>
+		<a href="/index.php?app=search&act=sessions_city&city=安阳" id="安阳" >安阳市</a>
+		<a href="/index.php?app=search&act=sessions_city&city=驻马店" id="驻马店" >驻马店市</a>
+		<a href="/index.php?app=search&act=sessions_city&city=新乡" id="新乡" >新乡市</a>
+		<a href="/index.php?app=search&act=sessions_city&city=鹤壁" id="鹤壁" >鹤壁市</a>
+		<a href="/index.php?app=search&act=sessions_city&city=商丘" id="商丘" >商丘市</a>
+		<a href="/index.php?app=search&act=sessions_city&city=漯河" id="漯河" >漯河市</a>
+		<a href="/index.php?app=search&act=sessions_city&city=许昌" id="许昌" >许昌市</a>
+		<a href="/index.php?app=search&act=sessions_city&city=三门峡" id="三门峡" >三门峡市</a>
+		<a href="/index.php?app=search&act=sessions_city&city=濮阳" id="濮阳" >濮阳市</a>	
+	</dd>
+    <dt>湖北</dt>
+	<dd>
+		<a href="/index.php?app=search&act=sessions_city&city=武汉" id="武汉" >武汉</a>
+		<a href="/index.php?app=search&act=sessions_city&city=宜昌" id="宜昌" >宜昌</a>
+		<a href="/index.php?app=search&act=sessions_city&city=荆州" id="荆州" >荆州</a>
+		<a href="/index.php?app=search&act=sessions_city&city=十堰" id="十堰" >十堰</a>
+		<a href="/index.php?app=search&act=sessions_city&city=襄樊" id="襄樊" >襄樊</a>
+		<a href="/index.php?app=search&act=sessions_city&city=黄石" id="黄石" >黄石</a>
+		<a href="/index.php?app=search&act=sessions_city&city=黄冈" id="黄冈" >黄冈</a>
+		<a href="/index.php?app=search&act=sessions_city&city=恩施" id="恩施" >恩施</a>
+		<a href="/index.php?app=search&act=sessions_city&city=荆门" id="荆门" >荆门</a>
+		<a href="/index.php?app=search&act=sessions_city&city=咸宁" id="咸宁" >咸宁</a>
+		<a href="/index.php?app=search&act=sessions_city&city=孝感" id="孝感" >孝感</a>
+		<a href="/index.php?app=search&act=sessions_city&city=鄂州" id="鄂州" >鄂州</a>
+		<a href="/index.php?app=search&act=sessions_city&city=天门" id="天门" >天门</a>
+		<a href="/index.php?app=search&act=sessions_city&city=仙桃" id="仙桃" >仙桃</a>
+		<a href="/index.php?app=search&act=sessions_city&city=随州" id="随州" >随州</a>
+		<a href="/index.php?app=search&act=sessions_city&city=潜江" id="潜江" >潜江</a>
+		<a href="/index.php?app=search&act=sessions_city&city=神农架" id="神农架" >神农架</a>	
+	</dd>
+    <dt>湖南</dt>
+	<dd>
+		<a href="/index.php?app=search&act=sessions_city&city=长沙" id="长沙" >长沙市</a>
+		<a href="/index.php?app=search&act=sessions_city&city=株洲" id="株洲" >株洲市</a>
+		<a href="/index.php?app=search&act=sessions_city&city=湘潭" id="湘潭" >湘潭市</a>
+		<a href="/index.php?app=search&act=sessions_city&city=邵阳" id="邵阳" >邵阳市</a>
+		<a href="/index.php?app=search&act=sessions_city&city=吉首" id="吉首" >吉首市</a>
+		<a href="/index.php?app=search&act=sessions_city&city=岳阳" id="岳阳" >岳阳市</a>
+		<a href="/index.php?app=search&act=sessions_city&city=娄底" id="娄底" >娄底市</a>
+		<a href="/index.php?app=search&act=sessions_city&city=怀化" id="怀化" >怀化市</a>
+		<a href="/index.php?app=search&act=sessions_city&city=永州" id="永州" >永州市</a>
+		<a href="/index.php?app=search&act=sessions_city&city=郴州" id="郴州" >郴州市</a>
+		<a href="/index.php?app=search&act=sessions_city&city=常德" id="常德" >常德市</a>
+		<a href="/index.php?app=search&act=sessions_city&city=衡阳" id="衡阳" >衡阳市</a>
+		<a href="/index.php?app=search&act=sessions_city&city=益阳" id="益阳" >益阳市</a>
+		<a href="/index.php?app=search&act=sessions_city&city=张家界" id="张家界" >张家界</a>
+		<a href="/index.php?app=search&act=sessions_city&city=湘西州" id="湘西州" >湘西州</a>	
+	</dd>
+    <dt>江西</dt>
+	<dd>
+		<a href="/index.php?app=search&act=sessions_city&city=南昌" id="南昌" >南昌市</a>
+		<a href="/index.php?app=search&act=sessions_city&city=景德镇" id="景德镇" >景德镇市</a>
+		<a href="/index.php?app=search&act=sessions_city&city=萍乡" id="萍乡" >萍乡市</a>
+		<a href="/index.php?app=search&act=sessions_city&city=九江" id="九江" >九江市</a>
+		<a href="/index.php?app=search&act=sessions_city&city=新余" id="新余" >新余市</a>
+		<a href="/index.php?app=search&act=sessions_city&city=鹰潭" id="鹰潭" >鹰潭市</a>
+		<a href="/index.php?app=search&act=sessions_city&city=赣州" id="赣州" >赣州市</a>
+		<a href="/index.php?app=search&act=sessions_city&city=吉安" id="吉安" >吉安市</a>
+		<a href="/index.php?app=search&act=sessions_city&city=宜春" id="宜春" >宜春市</a>
+		<a href="/index.php?app=search&act=sessions_city&city=抚州" id="抚州" >抚州市</a>
+		<a href="/index.php?app=search&act=sessions_city&city=上饶" id="上饶" >上饶市</a>	
+	</dd>
+    <dt class="quyu"><span>东北</span></dt>
+    <dt>辽宁</dt>
+	<dd>
+		<a href="/index.php?app=search&act=sessions_city&city=沈阳" id="沈阳" >沈阳</a>
+		<a href="/index.php?app=search&act=sessions_city&city=大连" id="大连" >大连</a>
+		<a href="/index.php?app=search&act=sessions_city&city=鞍山" id="鞍山" >鞍山</a>
+		<a href="/index.php?app=search&act=sessions_city&city=抚顺" id="抚顺" >抚顺</a>
+		<a href="/index.php?app=search&act=sessions_city&city=本溪" id="本溪" >本溪</a>
+		<a href="/index.php?app=search&act=sessions_city&city=丹东" id="丹东" >丹东</a>
+		<a href="/index.php?app=search&act=sessions_city&city=锦州" id="锦州" >锦州</a>
+		<a href="/index.php?app=search&act=sessions_city&city=营口" id="营口" >营口</a>
+		<a href="/index.php?app=search&act=sessions_city&city=阜新" id="阜新" >阜新</a>
+		<a href="/index.php?app=search&act=sessions_city&city=辽阳" id="辽阳" >辽阳</a>
+		<a href="/index.php?app=search&act=sessions_city&city=铁岭" id="铁岭" >铁岭</a>
+		<a href="/index.php?app=search&act=sessions_city&city=朝阳" id="朝阳" >朝阳</a>
+		<a href="/index.php?app=search&act=sessions_city&city=盘锦" id="盘锦" >盘锦</a>
+		<a href="/index.php?app=search&act=sessions_city&city=葫芦岛" id="葫芦岛" >葫芦岛</a>	
+	</dd>
+    <dt>黑龙江</dt>
+	<dd>
+		<a href="/index.php?app=search&act=sessions_city&city=哈尔滨" id="哈尔滨" >哈尔滨</a>
+		<a href="/index.php?app=search&act=sessions_city&city=齐齐哈尔" id="齐齐哈尔" >齐齐哈尔</a>
+		<a href="/index.php?app=search&act=sessions_city&city=牡丹江" id="牡丹江" >牡丹江</a>
+		<a href="/index.php?app=search&act=sessions_city&city=佳木斯" id="佳木斯" >佳木斯</a>
+		<a href="/index.php?app=search&act=sessions_city&city=大庆" id="大庆" >大庆</a>
+		<a href="/index.php?app=search&act=sessions_city&city=鸡西" id="鸡西" >鸡西</a>
+		<a href="/index.php?app=search&act=sessions_city&city=伊春" id="伊春" >伊春</a>
+		<a href="/index.php?app=search&act=sessions_city&city=双鸭山" id="双鸭山" >双鸭山</a>
+		<a href="/index.php?app=search&act=sessions_city&city=七台河" id="七台河" >七台河</a>
+		<a href="/index.php?app=search&act=sessions_city&city=鹤岗" id="鹤岗" >鹤岗</a>
+		<a href="/index.php?app=search&act=sessions_city&city=黑河" id="黑河" >黑河</a>
+		<a href="/index.php?app=search&act=sessions_city&city=绥化" id="绥化" >绥化</a>
+		<a href="/index.php?app=search&act=sessions_city&city=大兴安岭" id="大兴安岭" >大兴安岭</a>	
+	</dd>
+    <dt>吉林</dt>
+	<dd>
+		<a href="/index.php?app=search&act=sessions_city&city=长春" id="长春" >长春市</a>
+		<a href="/index.php?app=search&act=sessions_city&city=吉林" id="吉林" >吉林市</a>
+		<a href="/index.php?app=search&act=sessions_city&city=四平" id="四平" >四平市</a>
+		<a href="/index.php?app=search&act=sessions_city&city=辽源" id="辽源" >辽源市</a>
+		<a href="/index.php?app=search&act=sessions_city&city=通化" id="通化" >通化市</a>
+		<a href="/index.php?app=search&act=sessions_city&city=白山" id="白山" >白山市</a>
+		<a href="/index.php?app=search&act=sessions_city&city=松原" id="松原" >松原市</a>
+		<a href="/index.php?app=search&act=sessions_city&city=白城" id="白城" >白城市</a>
+		<a href="/index.php?app=search&act=sessions_city&city=延边州" id="延边州" >延边州</a>	
+	</dd>
+    <dt class="quyu"><span>西南</span></dt>
+    <dt>四川</dt>
+	<dd>
+		<a href="/index.php?app=search&act=sessions_city&city=成都" id="成都" >成都</a>
+		<a href="/index.php?app=search&act=sessions_city&city=自贡" id="自贡" >自贡</a>
+		<a href="/index.php?app=search&act=sessions_city&city=攀枝花" id="攀枝花" >攀枝花</a>
+		<a href="/index.php?app=search&act=sessions_city&city=泸州" id="泸州" >泸州</a>
+		<a href="/index.php?app=search&act=sessions_city&city=德阳" id="德阳" >德阳</a>
+		<a href="/index.php?app=search&act=sessions_city&city=绵阳" id="绵阳" >绵阳</a>
+		<a href="/index.php?app=search&act=sessions_city&city=广元" id="广元" >广元</a>
+		<a href="/index.php?app=search&act=sessions_city&city=遂宁" id="遂宁" >遂宁</a>
+		<a href="/index.php?app=search&act=sessions_city&city=内江" id="内江" >内江</a>
+		<a href="/index.php?app=search&act=sessions_city&city=资阳" id="资阳" >资阳</a>
+		<a href="/index.php?app=search&act=sessions_city&city=乐山" id="乐山" >乐山</a>
+		<a href="/index.php?app=search&act=sessions_city&city=眉山" id="眉山" >眉山</a>
+		<a href="/index.php?app=search&act=sessions_city&city=南充" id="南充" >南充</a>
+		<a href="/index.php?app=search&act=sessions_city&city=宜宾" id="宜宾" >宜宾</a>
+		<a href="/index.php?app=search&act=sessions_city&city=广安" id="广安" >广安</a>
+		<a href="/index.php?app=search&act=sessions_city&city=达州" id="达州" >达州</a>
+		<a href="/index.php?app=search&act=sessions_city&city=巴中" id="巴中" >巴中</a>
+		<a href="/index.php?app=search&act=sessions_city&city=雅安" id="雅安" >雅安</a>
+		<a href="/index.php?app=search&act=sessions_city&city=阿坝" id="阿坝" >阿坝</a>
+		<a href="/index.php?app=search&act=sessions_city&city=甘孜" id="甘孜" >甘孜</a>
+		<a href="/index.php?app=search&act=sessions_city&city=凉山" id="凉山" >凉山</a>	
+	</dd>
+    <dt>云南</dt>
+	<dd>
+		<a href="/index.php?app=search&act=sessions_city&city=昆明" id="昆明" >昆明市</a>
+		<a href="/index.php?app=search&act=sessions_city&city=曲靖" id="曲靖" >曲靖市</a>
+		<a href="/index.php?app=search&act=sessions_city&city=红河哈尼族彝族自治州" id="红河哈尼族彝族自治州" >红河哈尼族彝族自治州</a>
+		<a href="/index.php?app=search&act=sessions_city&city=昭通" id="昭通" >昭通市</a>
+		<a href="/index.php?app=search&act=sessions_city&city=玉溪" id="玉溪" >玉溪市</a>
+		<a href="/index.php?app=search&act=sessions_city&city=德宏傣族景颇族自治州" id="德宏傣族景颇族自治州" >德宏傣族景颇族自治州</a>
+		<a href="/index.php?app=search&act=sessions_city&city=丽江" id="丽江" >丽江市</a>
+		<a href="/index.php?app=search&act=sessions_city&city=迪庆藏族自治州" id="迪庆藏族自治州" >迪庆藏族自治州</a>
+		<a href="/index.php?app=search&act=sessions_city&city=文山壮族苗族自治州" id="文山壮族苗族自治州" >文山壮族苗族自治州</a>
+		<a href="/index.php?app=search&act=sessions_city&city=思茅" id="思茅" >思茅市</a>
+		<a href="/index.php?app=search&act=sessions_city&city=大理白族自治州" id="大理白族自治州" >大理白族自治州</a>
+		<a href="/index.php?app=search&act=sessions_city&city=怒江傈僳族自治州" id="怒江傈僳族自治州" >怒江傈僳族自治州</a>
+		<a href="/index.php?app=search&act=sessions_city&city=保山" id="保山" >保山市</a>
+		<a href="/index.php?app=search&act=sessions_city&city=楚雄彝族自治州" id="楚雄彝族自治州" >楚雄彝族自治州</a>
+		<a href="/index.php?app=search&act=sessions_city&city=西双版纳傣族自治州" id="西双版纳傣族自治州" >西双版纳傣族自治州</a>
+		<a href="/index.php?app=search&act=sessions_city&city=临沧" id="临沧" >临沧市</a>	
+	</dd>
+    <dt>贵州</dt>
+	<dd>
+		<a href="/index.php?app=search&act=sessions_city&city=贵阳" id="贵阳" >贵阳市</a>
+		<a href="/index.php?app=search&act=sessions_city&city=遵义" id="遵义" >遵义市</a>
+		<a href="/index.php?app=search&act=sessions_city&city=安顺" id="安顺" >安顺市</a>
+		<a href="/index.php?app=search&act=sessions_city&city=六盘水" id="六盘水" >六盘水市</a>
+		<a href="/index.php?app=search&act=sessions_city&city=毕节地区" id="毕节地区" >毕节地区</a>
+		<a href="/index.php?app=search&act=sessions_city&city=铜仁地区" id="铜仁地区" >铜仁地区</a>
+		<a href="/index.php?app=search&act=sessions_city&city=黔东南州" id="黔东南州" >黔东南州</a>
+		<a href="/index.php?app=search&act=sessions_city&city=黔南州" id="黔南州" >黔南州</a>
+		<a href="/index.php?app=search&act=sessions_city&city=黔西南州" id="黔西南州" >黔西南州</a>	
+	</dd>
+    <dt>西藏</dt>
+	<dd>
+		<a href="/index.php?app=search&act=sessions_city&city=拉萨" id="拉萨" >拉萨</a>
+		<a href="/index.php?app=search&act=sessions_city&city=日喀则" id="日喀则" >日喀则</a>
+		<a href="/index.php?app=search&act=sessions_city&city=林芝" id="林芝" >林芝</a>
+		<a href="/index.php?app=search&act=sessions_city&city=山南" id="山南" >山南</a>
+		<a href="/index.php?app=search&act=sessions_city&city=那曲" id="那曲" >那曲</a>
+		<a href="/index.php?app=search&act=sessions_city&city=昌都" id="昌都" >昌都</a>
+		<a href="/index.php?app=search&act=sessions_city&city=阿里" id="阿里" >阿里</a>	
+	</dd>
+    <dt class="quyu"><span>华北</span></dt>
+    <dt>河北</dt>
+	<dd>
+		<a href="/index.php?app=search&act=sessions_city&city=石家庄" id="石家庄" >石家庄</a>
+		<a href="/index.php?app=search&act=sessions_city&city=衡水" id="衡水" >衡水</a>
+		<a href="/index.php?app=search&act=sessions_city&city=唐山" id="唐山" >唐山</a>
+		<a href="/index.php?app=search&act=sessions_city&city=秦皇岛" id="秦皇岛" >秦皇岛</a>
+		<a href="/index.php?app=search&act=sessions_city&city=张家口" id="张家口" >张家口</a>
+		<a href="/index.php?app=search&act=sessions_city&city=承德" id="承德" >承德</a>
+		<a href="/index.php?app=search&act=sessions_city&city=邯郸" id="邯郸" >邯郸</a>
+		<a href="/index.php?app=search&act=sessions_city&city=沧州" id="沧州" >沧州</a>
+		<a href="/index.php?app=search&act=sessions_city&city=邢台" id="邢台" >邢台</a>
+		<a href="/index.php?app=search&act=sessions_city&city=保定" id="保定" >保定</a>
+		<a href="/index.php?app=search&act=sessions_city&city=廊坊" id="廊坊" >廊坊</a>	
+	</dd>
+    <dt>山西</dt>
+	<dd>
+		<a href="/index.php?app=search&act=sessions_city&city=太原" id="太原" >太原市</a>
+		<a href="/index.php?app=search&act=sessions_city&city=大同" id="大同" >大同市</a>
+		<a href="/index.php?app=search&act=sessions_city&city=朔州" id="朔州" >朔州市</a>
+		<a href="/index.php?app=search&act=sessions_city&city=忻州" id="忻州" >忻州市</a>
+		<a href="/index.php?app=search&act=sessions_city&city=长治" id="长治" >长治市</a>
+		<a href="/index.php?app=search&act=sessions_city&city=阳泉" id="阳泉" >阳泉市</a>
+		<a href="/index.php?app=search&act=sessions_city&city=晋中" id="晋中" >晋中市</a>
+		<a href="/index.php?app=search&act=sessions_city&city=吕梁" id="吕梁" >吕梁市</a>
+		<a href="/index.php?app=search&act=sessions_city&city=晋城" id="晋城" >晋城市</a>
+		<a href="/index.php?app=search&act=sessions_city&city=临汾" id="临汾" >临汾市</a>
+		<a href="/index.php?app=search&act=sessions_city&city=运城" id="运城" >运城市</a>	
+	</dd>
+    <dt>内蒙古</dt>
+    <dd>
+		<a href="/index.php?app=search&act=sessions_city&city=呼和浩特" id="呼和浩特" >呼和浩特市</a>
+		<a href="/index.php?app=search&act=sessions_city&city=包头" id="包头" >包头市</a>
+		<a href="/index.php?app=search&act=sessions_city&city=乌海" id="乌海" >乌海市</a>
+		<a href="/index.php?app=search&act=sessions_city&city=赤峰" id="赤峰" >赤峰市</a>
+		<a href="/index.php?app=search&act=sessions_city&city=通辽" id="通辽" >通辽市</a>
+		<a href="/index.php?app=search&act=sessions_city&city=鄂尔多斯" id="鄂尔多斯" >鄂尔多斯市</a>
+		<a href="/index.php?app=search&act=sessions_city&city=呼伦贝尔" id="呼伦贝尔" >呼伦贝尔市</a>
+		<a href="/index.php?app=search&act=sessions_city&city=巴彦淖尔" id="巴彦淖尔" >巴彦淖尔市</a>
+		<a href="/index.php?app=search&act=sessions_city&city=乌兰察布" id="乌兰察布" >乌兰察布市</a>
+		<a href="/index.php?app=search&act=sessions_city&city=锡林郭勒盟" id="锡林郭勒盟" >锡林郭勒盟</a>
+		<a href="/index.php?app=search&act=sessions_city&city=兴安盟" id="兴安盟" >兴安盟</a>
+		<a href="/index.php?app=search&act=sessions_city&city=阿拉善盟" id="阿拉善盟" >阿拉善盟</a>	
+	</dd>
+    <dt class="quyu"><span>西北</span></dt>
+    <dt>陕西</dt>
+    <dd>
+		<a href="/index.php?app=search&act=sessions_city&city=西安" id="西安" >西安市</a>
+		<a href="/index.php?app=search&act=sessions_city&city=铜川" id="铜川" >铜川市</a>
+		<a href="/index.php?app=search&act=sessions_city&city=宝鸡" id="宝鸡" >宝鸡市</a>
+		<a href="/index.php?app=search&act=sessions_city&city=咸阳" id="咸阳" >咸阳市</a>
+		<a href="/index.php?app=search&act=sessions_city&city=渭南" id="渭南" >渭南市</a>
+		<a href="/index.php?app=search&act=sessions_city&city=延安" id="延安" >延安市</a>
+		<a href="/index.php?app=search&act=sessions_city&city=汉中" id="汉中" >汉中市</a>
+		<a href="/index.php?app=search&act=sessions_city&city=榆林" id="榆林" >榆林市</a>
+		<a href="/index.php?app=search&act=sessions_city&city=安康" id="安康" >安康市</a>
+		<a href="/index.php?app=search&act=sessions_city&city=商洛" id="商洛" >商洛市</a>	
+	</dd>
+    <dt>新疆</dt>
+    <dd>
+		<a href="/index.php?app=search&act=sessions_city&city=伊犁哈萨克自治州" id="伊犁哈萨克自治州" >伊犁哈萨克自治州</a>
+		<a href="/index.php?app=search&act=sessions_city&city=乌鲁木齐" id="乌鲁木齐" >乌鲁木齐市</a>
+		<a href="/index.php?app=search&act=sessions_city&city=昌吉回族自治州" id="昌吉回族自治州" >昌吉回族自治州</a>
+		<a href="/index.php?app=search&act=sessions_city&city=石河子" id="石河子" >石河子市</a>
+		<a href="/index.php?app=search&act=sessions_city&city=克拉玛依" id="克拉玛依" >克拉玛依市</a>
+		<a href="/index.php?app=search&act=sessions_city&city=阿勒泰地区" id="阿勒泰地区" >阿勒泰地区</a>
+		<a href="/index.php?app=search&act=sessions_city&city=博尔塔拉蒙古自治州" id="博尔塔拉蒙古自治州" >博尔塔拉蒙古自治州</a>
+		<a href="/index.php?app=search&act=sessions_city&city=塔城地区" id="塔城地区" >塔城地区</a>
+		<a href="/index.php?app=search&act=sessions_city&city=和田地区" id="和田地区" >和田地区</a>
+		<a href="/index.php?app=search&act=sessions_city&city=克孜勒苏克尔克孜自治州" id="克孜勒苏克尔克孜自治州" >克孜勒苏克尔克孜自治州</a>
+		<a href="/index.php?app=search&act=sessions_city&city=喀什地区" id="喀什地区" >喀什地区</a>
+		<a href="/index.php?app=search&act=sessions_city&city=阿克苏地区" id="阿克苏地区" >阿克苏地区</a>
+		<a href="/index.php?app=search&act=sessions_city&city=巴音郭楞蒙古自治州" id="巴音郭楞蒙古自治州" >巴音郭楞蒙古自治州</a>
+		<a href="/index.php?app=search&act=sessions_city&city=吐鲁番地区" id="吐鲁番地区" >吐鲁番地区</a>
+		<a href="/index.php?app=search&act=sessions_city&city=哈密地区" id="哈密地区" >哈密地区</a>
+		<a href="/index.php?app=search&act=sessions_city&city=五家渠" id="五家渠" >五家渠市</a>
+		<a href="/index.php?app=search&act=sessions_city&city=阿拉尔" id="阿拉尔" >阿拉尔市</a>
+		<a href="/index.php?app=search&act=sessions_city&city=图木舒克" id="图木舒克" >图木舒克市</a>	
+	</dd>
+    <dt>甘肃</dt>
+    <dd>
+		<a href="/index.php?app=search&act=sessions_city&city=兰州" id="兰州" >兰州市</a>
+		<a href="/index.php?app=search&act=sessions_city&city=嘉峪关" id="嘉峪关" >嘉峪关</a>
+		<a href="/index.php?app=search&act=sessions_city&city=金昌" id="金昌" >金昌市</a>
+		<a href="/index.php?app=search&act=sessions_city&city=白银" id="白银" >白银市</a>
+		<a href="/index.php?app=search&act=sessions_city&city=天水" id="天水" >天水市</a>
+		<a href="/index.php?app=search&act=sessions_city&city=酒泉" id="酒泉" >酒泉市</a>
+		<a href="/index.php?app=search&act=sessions_city&city=张掖" id="张掖" >张掖市</a>
+		<a href="/index.php?app=search&act=sessions_city&city=武威" id="武威" >武威市</a>
+		<a href="/index.php?app=search&act=sessions_city&city=定西" id="定西" >定西市</a>
+		<a href="/index.php?app=search&act=sessions_city&city=陇南" id="陇南" >陇南市</a>
+		<a href="/index.php?app=search&act=sessions_city&city=平凉" id="平凉" >平凉市</a>
+		<a href="/index.php?app=search&act=sessions_city&city=庆阳" id="庆阳" >庆阳市</a>
+		<a href="/index.php?app=search&act=sessions_city&city=临夏州" id="临夏州" >临夏州</a>
+		<a href="/index.php?app=search&act=sessions_city&city=甘南州" id="甘南州" >甘南州</a>	
+	</dd>
+    <dt>宁夏</dt>
+    <dd>
+		<a href="/index.php?app=search&act=sessions_city&city=银川" id="银川" >银川市</a>
+		<a href="/index.php?app=search&act=sessions_city&city=石嘴山" id="石嘴山" >石嘴山市</a>
+		<a href="/index.php?app=search&act=sessions_city&city=吴忠" id="吴忠" >吴忠市</a>
+		<a href="/index.php?app=search&act=sessions_city&city=固原" id="固原" >固原市</a>
+		<a href="/index.php?app=search&act=sessions_city&city=中卫" id="中卫" >中卫市</a>	
+	</dd>
+    <dt>青海</dt>
+    <dd>
+		<a href="/index.php?app=search&act=sessions_city&city=西宁" id="西宁市" >西宁市</a>
+		<a href="/index.php?app=search&act=sessions_city&city=海东行署" id="海东行署" >海东行署</a>
+		<a href="/index.php?app=search&act=sessions_city&city=海北藏族自治州" id="海北藏族自治州" >海北藏族自治州</a>
+		<a href="/index.php?app=search&act=sessions_city&city=海南藏族自治州" id="海南藏族自治州" >海南藏族自治州</a>
+		<a href="/index.php?app=search&act=sessions_city&city=海西州" id="海西州" >海西州</a>
+		<a href="/index.php?app=search&act=sessions_city&city=黄南藏族自治州" id="黄南藏族自治州" >黄南藏族自治州</a>
+		<a href="/index.php?app=search&act=sessions_city&city=玉树藏族自治州" id="玉树藏族自治州" >玉树藏族自治州</a>
+		<a href="/index.php?app=search&act=sessions_city&city=果洛藏族自治州" id="果洛藏族自治州" >果洛藏族自治州</a>	
+	</dd>
+    <dt class="quyu"><span>其他</span></dt>
+    <dt>其他</dt>
+    <dd>
+		
+		<a href="/index.php?app=search&act=sessions_city&city=香港" id="香港" >香港</a>
+		<a href="/index.php?app=search&act=sessions_city&city=澳门" id="澳门" >澳门</a>
+		<a href="/index.php?app=search&act=sessions_city&city=台湾" id="台湾" >台湾</a>
+		<a href="/index.php?app=search&act=sessions_city&city=全国" id="全国" >全国</a>
+		<a href="/index.php?app=search&act=sessions_city&city=其他" id="其他" >其他</a>
+	</dd>
+	
+     
+</dl>
+
+
+</div>
+
+<div class="c"></div>
+
+<div class="footer">
+
+
+
+
+
+
+
+</div>
+
+</body>
+
+</html>

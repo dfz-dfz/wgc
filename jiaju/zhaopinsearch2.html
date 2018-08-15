@@ -1,0 +1,81 @@
+{include file=header.html}
+<style type="text/css">
+.jodsearch{margin:0px;padding:0px;vertical-align: middle;}
+.jodsearch .dosearch{margin-left:auto;margin-right:auto;margin-top:10px;padding:0px;width:1100px;height:52px;background-color:#F5F5F5;}
+.jodsearch .dosearch input{margin-top:10px;}
+.jodsearch .dosearch *{vertical-align:middle;}
+.tiaojian a{color:#0066CB;}
+.jobtable{width:100%;text-align:left;margin-left:3px;font-size:13px;}
+.jobtable tr{line-height:30px;}
+.jobtable tr td{border-bottom:1px solid #F0F0F0;}
+.main{margin:0px;padding:0px;}
+.main_body{
+margin:auto;padding:0px;margin-top: 10px;margin-bottom: 10px; width:1100px;overflow:hidden;
+}
+.main_body .main_left{width:79%;float:left;margin-right:10px;}
+.main_body .main_right{width:19%;float:left;margin-left:10px;}
+</style>
+<script type="text/javascript">
+	$(document).ready(function(){
+	$(".tiaojian > .qy > a").click(function(){
+	　　　　$(".tiaojian > .qy > a").css("background-color","F5F5F5");
+			$(this).css("background-color","#62AF00");
+			//这里使用ajax取数据
+			/*var url=$(this).attr("href");
+			$.get(url,function(data,status){
+				alert("Data: " + data + "\nStatus: " + status);
+			  });*/
+	　　});
+	$(".tiaojian > .xz > a").click(function(){
+	　　　　$(".tiaojian > .xz > a").css("background-color","F5F5F5");
+			$(this).css("background-color","#62AF00");
+			//这里使用ajax取数据
+			//var url=$(this).attr("href");
+			/*$.get(url,function(data,status){
+				alert("Data: " + data + "\nStatus: " + status);
+			  });*/
+	　　});
+	}); 
+	
+</script>
+<!-- 搜索 -->
+<div class="jodsearch">
+		<div class="dosearch">
+			<form id="dosearchform" action="/index.php?app=search&act=joblist2" method="get">
+				<input type="hidden" name="app" value="search" /><input type="hidden" name="act" value="joblist2" />
+				<input type="text" placeholder="输入关键词" name="title" style="width:55%;height:34px;" /><span>　</span><input type="submit"  value="搜索" style="width:12%;height:34px;background:#00AC18;color:#FFFFFF;" /><span style="margin-left:15px;color:#636363;font-family:黑体;font-size:16px;"><a href="/index.php?app=member&act=searchjobs">我要发布</a></span>
+			</form>
+		</div>
+</div>
+<div class="main">
+	<!-- 主体 -->
+	<div class="main_body">
+		<!-- 左边 -->
+		<div class="main_left">
+			<div style="background-color:#F5F5F5;width:100%;border-left:1px solid #F0F0F0;border-bottom:1px solid #808080;border-left:1px solid #808080;">
+				<div style="width:100%;height:30px;border-bottom:2px solid #0196FA;overflow:hidden;"><span style="width:15%;height:30px;background-color:#0196FA;color:#FFFFFF;font-size:20px;float:left;">工程经理搜索</span></div>
+				<div class="tiaojian">
+					<p class="qy" style="line-height:30px;margin-left:5px;"><span style="color:#4B4B4B;">区域：</span><a <?php if($_SESSION['qb']=='n'){echo 'style="background-color:#62AF00;"';}?> href="{$dqlimit}">不限</a>{$dq}</p>
+				</div>
+				<div style="width:100%;overflow:hidden;"><span style="line-height:30px;float:left;margin-left:10px;">已选条件：<?php echo select_already2();?></span></div>
+				
+			</div>
+			<div style="width:100%;background-color:#FFFFFF;">
+				<table class="jobtable">
+					{foreach key=key item=job from=$jobs}
+					 <tr><td style="width:30%;"><a href="index.php?app=search&act=jobsdetail&id={$job.id}">{$job.title}({$job.jobtype_name})</a></td><td style="width:28%;"><a href="index.php?app=search&act=jobsdetail&id={$job.id}">{$job.gname}</a></td><td style="width:20%;"><a href="index.php?app=search&act=jobsdetail&id={$job.id}">{$job.addtime}</a></td></tr>
+					{/foreach}
+				</table>
+			</div>
+		</div>
+		<!-- 左边结束 -->
+		<!-- 右边 -->
+		<div class="main_right" >
+			<div style="width:100%;">
+				<img src="/themes/store/default/images/adwei.png" width="100%">
+			</div>
+		</div>
+		<!-- 右边结束 -->
+	</div>
+{include file=footer2.html}
+<!-- 底部include file=footer2.html-->

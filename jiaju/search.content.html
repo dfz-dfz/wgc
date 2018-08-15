@@ -1,0 +1,306 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>热门招聘详细 - 微工程</title>
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<meta name="description" content="微工程，微工程APP，装修、材料、家具、饰品一站式服务，让装修更简单，价格更透明！！" />
+<meta name="keywords" content="微工程，微工程，家居商城，微工程家居商城，微工程家居装修商城，办公室装修，写字楼装修，材料，装修材料，家居，办公家具，家居，家具，装修，装饰" />
+<style type="text/css">
+*{
+margin:0;padding:0;
+-webkit-touch-callout: none; /* prevent callout to copy image, etc when tap to hold */
+-webkit-text-size-adjust: none; /* prevent webkit from resizing text to fit */
+-webkit-tap-highlight-color: rgba(210,210,210,0.35); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+-webkit-user-select: none; /* prevent copy paste, to allow, change 'none' to 'text' */
+}
+body{font-family:"微软雅黑";font-size:12px;}
+ul,li{list-style:none;}
+.ylcon{width:100%;min-width:320px;}
+.tit{height:26px;line-height:26px;padding:0px 15px;position:relative;font-size:15px;color:#aaa;border-bottom:1px solid rgba(0, 0, 0, 0.15);}
+
+.story{border-bottom:1px dashed #cecece;padding:0 15px 3px;position:relative;}
+.story_t{font-size:1.2em;color:rgba(0,0,0,1);padding-top:5px;padding-bottom:2px;}
+.story_m{color:rgba(110,110,110,1);line-height:21px;word-break:break-all;word-wrap:break-word;overflow:hidden;font-size:1.2em;padding:2px 0;}
+.story_time{color:rgba(154,154,154,1);padding:2px 0;}
+.story_hf{background:rgb(245,245,245);font-size:1.2em;border:1px solid rgba(204,204,204,0.2);border-radius:2px;color:rgba(110,110,110,1);padding:4px;margin-bottom:5px;}
+.opbtn{position:absolute;top: 0;right: 0;}
+</style>
+
+<link type="text/css" href="/themes/mall/jiaju/styles/style/zp/demo.css" rel="stylesheet"  />
+<link type="text/css" href="/themes/mall/jiaju/styles/style/style/style.css" rel="stylesheet"  />
+
+<script type="text/javascript" src="/themes/mall/jiaju/styles/default/js/jquery-1.3.2.min.js"></script>
+<script type="text/javascript">
+	$(function (){
+		$('#open-change-city-window').click(function (){
+			$('.change-city-window').slideDown();
+			
+		})
+		$('#close-change-city-window').click(function (){
+			$('.change-city-window').slideUp();
+		})
+	})
+</script>
+</head>
+
+<body>
+
+{include file=header.html}
+<?php
+	$query="select * from ecm_recruit where id =".$_GET['id'].""; //定义sql
+	$result=mysql_query($query);
+	$rows1=@mysql_fetch_assoc($result);
+	//echo "<pre>";
+	//var_dump($rows1);
+	
+?>
+<!-- main start -->
+<div id="main">
+    
+
+<div class="zhaopin_area w">
+	 	
+		<div class="zhaopin_con"style="width:100%;">
+			<div class="zhaopin_con1">
+			    <ul><a href="javascript:;"> 
+					<li style="height:50px;line-height:50px;padding:0;text-align:center;width: 135px;">职位</li>
+					<li style="height:50px;line-height:50px;padding:0;text-align:center;width: 330px;">公司</li>
+					<li style="height:50px;line-height:50px;padding:0;text-align:center;width: 400px;">公司地址</li>
+					<li style="height:50px;line-height:50px;padding:0;text-align:center;width: 200px;">发布时间</li>
+					<div class="clear"></div>
+				</a></ul>
+				
+			</div>
+			<div class="zhaopin_con3" >
+				<ul>
+					
+					<li style="height:50px;line-height:50px;padding:0;text-align:center;width: 135px;"><?php echo $rows1['zhiwei'];?></li>
+					<li style="height:50px;line-height:50px;padding:0;text-align:center;width: 330px;"><?php echo $rows1['company_name'];?></li>
+					<li style="height:50px;line-height:50px;padding:0;text-align:center;width: 400px;"><?php echo $rows1['company_addr'];?></li>
+					<li style="height:50px;line-height:50px;padding:0;text-align:center;width: 200px;"><?php echo date('Y-m-d H:i:s',$rows1['addtime']);?></li>
+					<div class='clear'></div>
+					
+				</ul>
+			</div>
+			<div style="width:100%;overflow:hidden;">
+				<!--左边-->
+				<div style="width:80%;float:left;">
+					<div class="zhaopin_con2">
+					
+						<div style="margin:20px auto;">
+						
+						<p style="margin:10px auto;">浏&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;览：<span><?php echo $rows1['click'];?></span>次</p>
+						<p style="margin:10px auto;">薪&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;资：<span style="font-size: 1.2rem;color:orange"><?php echo $rows1['xinzi'];?></span>元</p>
+						<p style="margin:10px auto;">招聘人数：<span><?php echo $rows1['renshu'];?></span>人</p>
+						<p style="margin:10px auto;">岗位要求：<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="padding-left:5%;display:block;width:95%"><?php echo $rows1['ask'];?></span></p>
+						
+						
+						</div>
+						<div style="width:100%;min-height:300px;overflow:hidden;margin:40px auto 20px auto;">
+						
+						<?php echo $rows1['content'];?>
+
+						</div>
+					</div>
+					
+					
+				</div>
+				<!--右边广告-->
+				<div style="width:20%;float:left;">
+				<img src="/themes/store/default/images/adzz.png" />
+				</div>
+			</div>
+			<div style="width:100%;overflow: hidden;height: auto">
+				<div style="width:98%;margin:10px; auto;border-top:1px solid #ccc;overflow: hidden;height: auto">
+						<div class="ylcon" style="overflow: hidden;height: auto;">
+							<p class="tit" style="border-bottom:1px solid #ccc;margin-bottom:10px;">
+							<span>所有留言</span>
+							</p>
+							<div  id="message" style="overflow: hidden;height: auto;"></div>
+						</div>
+					
+						<!--<div style="width:98%;margin:10px auto;margin-top:0px;">
+							<form action="index.php?app=search&act=content"method="post"id="actions">
+							<p>如有意向请在下面留言：</p><br />
+							<input type="hidden" name="pid" value="<?php echo $_GET['id']?>"/>
+							<textarea name="content" id="content" style="width:500px;height:100px;border:1px solid #999999;resize:none;border-radius:5px"></textarea><br />				
+							<input type="button" value="提交" onclick="actions()" style="width:100px;height:30px;border:1px solid #999999;text-align:center;margin-top:30px;"/>
+							</form>
+						</div>-->
+					</div>
+			</div>
+	</div>
+
+
+
+
+
+</div>
+
+
+
+<script type="text/javascript" src="/themes/mall/jiaju/styles/style/js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="/themes/mall/jiaju/styles/style/js/superslide.2.1.js"></script>
+<script type="text/javascript" src="/themes/mall/jiaju/js/aui-scroll.js" ></script>
+<script type="text/javascript">
+var serverUrl = "http://wgcapp.59jiaju.com/",page = 1;
+$(function(){
+	selectUser();
+	liuyan_select();
+});
+//下一页
+var scroll = new auiScroll({
+    listen:false, //是否监听滚动高度，开启后将实时返回滚动高度
+    distance:0 //判断到达底部的距离，isToBottom为true
+},function(ret){
+   
+   if(ret.isToBottom){
+		liuyan_select();
+   }
+});
+ // PHP时间戳转时间
+function _trans_php_time_to_str(timestamp, n) {
+
+	update = new Date(timestamp * 1000);
+	//时间戳要乘1000
+	year = update.getFullYear();
+	month = (update.getMonth() + 1 < 10) ? ('0' + (update.getMonth() + 1)) : (update.getMonth() + 1);
+	day = (update.getDate() < 10) ? ('0' + update.getDate()) : (update.getDate());
+	hour = (update.getHours() < 10) ? ('0' + update.getHours()) : (update.getHours());
+	minute = (update.getMinutes() < 10) ? ('0' + update.getMinutes()) : (update.getMinutes());
+	second = (update.getSeconds() < 10) ? ('0' + update.getSeconds()) : (update.getSeconds());
+	if (n == 1) {
+		return (year + '-' + month + '-' + day + ' ' + hour + ':' + minute + ':' + second);
+	} else if (n == 2) {
+		return (year + '-' + month + '-' + day);
+	} else if (n == 3) {
+		return (month + '-' + day);
+	} else if (n == 4) {
+		return (hour + ':' + minute + ':' + second);
+	} else if (n == 5) {
+		return (year + '-' + month + '-' + day + ' ' + hour + ':' + minute );
+	} else {
+		return 0;
+	}
+}
+function yingying(){
+	if(window.confirm('请使用微工程APP进行操作，是否前往去下载？')){
+		 window.open('http://wgcapp.59jiaju.com/apk/index.html');
+		 return true;
+	  }else{
+		 //alert("取消");
+		 return false;
+	 }
+}
+
+function selectUser(){
+	
+
+	var url = "http://wgcapp.59jiaju.com/index.php/Home/Recruit/recruitDetail";
+	$.post(url,{id : {$id},infotype : 'weixin'},function(ret){
+	
+		var data = ret.message;
+		
+		if(ret.code == 200){
+				var Data  = ret.message;
+				var addtime = _trans_php_time_to_str(Data.addtime,1);
+				$("#zhiwei").html(Data.zhiwei);	
+				$("#xinzi").html(Data.xinzi);	
+				$("#renshu").html(Data.renshu);
+				$("#addtime").html(addtime);
+				$("#click").html(Data.click);
+				$("#describ").html(Data.describ);
+				$("#ask").html(Data.ask);
+				$("#welfare").html(Data.welfare);
+				$("#company_name").html(Data.company_name);
+				$("#company_web").html(Data.company_web);
+				$("#company_addr").html(Data.company_addr);
+				$("#company_introduce").html(Data.company_introduce);
+			
+		
+		}else{
+			return false;
+		
+		}
+		
+	
+	},"json");
+
+}
+//留言列表
+function liuyan_select(){
+		
+	$.post(serverUrl+"jingyi.php/Home/Systemmsg/AdvertisementMessagelist",{userid : '',page : page,newsid : {$id},type : 2,infotype : 'pc_zhaopin'},function(ret){//alert(44);
+	
+		var listHtml = '';
+		if(ret.code == 200){
+		
+				page++;
+				var data = ret.message;
+				   for (var i in data) {
+						var id=data[i].id, name=data[i].name,content=data[i].content,pic=data[i].pic,times = _trans_php_time_to_str(data[i].addtime,1);
+							
+							 
+							listHtml += '	<div class="story">';
+							listHtml += '		<div class="opbtn"></div>';
+							listHtml += '		<p class="story_t">'+name+'</p>';
+							listHtml += '		<p class="story_time">'+times+'</p>';
+							listHtml += '		<p class="story_m">'+content+'</p>';
+							listHtml += '		<p class="story_hf"></p>';
+							listHtml += '	</div>';
+			   
+					  
+					 }
+			
+			$("#message").append(listHtml);
+			
+		}else if(ret.code == 202)	{
+			if(page == 1){
+				$("#message").html('<div style="border: none;width:100px;height:100px;margin:50px auto;" class="empty"><img style="width:100%;height:100%" src="/themes/mall/jiaju/images/empty.png"/></div>');
+			}else{
+				//alert('暂无更多了');
+			}
+		}else{
+			return false;
+		
+		}
+		
+	
+	},"json");
+
+}	
+function actions(){
+
+	if($("#content").val() == ''){
+		alert('请输入内容');
+		return false;
+	}
+	$("#actions").submit();
+
+}
+  jQuery(".fullSlide").hover(function() {
+      jQuery(this).find(".prev,.next").stop(true, true).fadeTo("show", 0.5)
+  },
+  function() {
+      jQuery(this).find(".prev,.next").fadeOut()
+  });
+  jQuery(".fullSlide").slide({
+      titCell: ".hd ul",
+      mainCell: ".bd ul",
+      effect: "fold",
+      autoPlay: true,
+      autoPage: true,
+      trigger: "click",
+      startFun: function(i) {
+          var curLi = jQuery(".fullSlide .bd li").eq(i);
+          if ( !! curLi.attr("_src")) {
+              curLi.css("background-image", curLi.attr("_src")).removeAttr("_src")
+          }
+      }
+  });
+</script>
+{include file=footer.html}
+</body>
+</html>

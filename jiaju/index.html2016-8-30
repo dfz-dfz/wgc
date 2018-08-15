@@ -1,0 +1,1520 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>商城首页 - 59家居商城</title>
+	<meta name="description" content="59，59家居，59家居商城，装修、材料、家具、饰品一站式服务，让装修更简单，价格更透明！！" />
+	<meta name="keywords" content="59，59家居，家居商城，59家居商城，59家居装修商城，办公室装修，写字楼装修，材料，装修材料，家居，办公家具，家居，家具，装修，装饰" />
+<link type="text/css" href="/themes/mall/jiaju/styles/style/style/style.css" rel="stylesheet"  />
+<script type="text/javascript" src="http://www.59jiaju.com/themes/mall/jiaju/styles/default/js/jquery-1.3.2.min.js"></script>
+<script type="text/javascript">
+	$(function (){
+		$('#open-change-city-window').click(function (){
+			$('.change-city-window').slideDown();
+			
+		})
+		$('#close-change-city-window').click(function (){
+			$('.change-city-window').slideUp();
+		})
+	})
+	
+</script>
+</head>
+
+<body>
+
+{include file=header.html}
+  
+<!-- main start -->
+<div id="main">
+    <div class="main-top w clearfix"style="min-weight:1100px;width:77%;">
+	
+	{include file=index_nva.html}
+	
+       <!-- <div class="left" area="left" widget_type="area" style="background:#de3635;color: #fff; height:440px;">
+            <div class="hc_lnav jslist">
+              <div class="allbtn">
+                <ul style="width:268px" class="jspop box">
+                  <li class=a1>
+                    <div class=tx><a href="#"><i>&nbsp;</i>瓷砖、瓷片、大理石</a> <span>></span> </div>
+                    <div class=pop>
+                      <div class="popl L">
+                            <h3><a href="#">瓷砖、瓷片、大理石</a></h3>
+                            <dl>
+                              <dt>瓷砖></dt>
+                              <dd>
+                                <a class="ui-link" href="#">萨米特</a>
+                                <a class="ui-link"  href="#">东鹏</a>
+                                <a class="ui-link" href="#">新中源</a>                              </dd>
+                        </dl>
+                          <div class=clr></div>
+                      </div>
+                      <div class="popr R">
+                        <div class="popr1">
+                          <a href="#"><img src="/themes/mall/jiaju/styles/style/images/sj_07.jpg"></a>
+                          <a href="#"><img src="/themes/mall/jiaju/styles/style/images/sj_07.jpg"></a>      
+                          <a href="#"><img src="/themes/mall/jiaju/styles/style/images/sj_07.jpg"></a>
+                          <a href="#"><img src="/themes/mall/jiaju/styles/style/images/sj_07.jpg"></a> 
+                          <a href="#"><img src="/themes/mall/jiaju/styles/style/images/sj_07.jpg"></a>
+                          <a href="#"><img src="/themes/mall/jiaju/styles/style/images/sj_07.jpg"></a>      
+                          <a href="#"><img src="/themes/mall/jiaju/styles/style/images/sj_07.jpg"></a>
+                          <a href="#"><img src="/themes/mall/jiaju/styles/style/images/sj_07.jpg"></a>                                                                           
+                         </div>
+                         <div class="popr2 ">
+                           <a href="#"><img src="themes/mall/jiaju/styles/style/images/sj_12.jpg"></a>
+                            <a href="#"><img src="themes/mall/jiaju/styles/style/images/sj_12.jpg"></a>
+                         </div>
+                      </div>
+                       <div class=clr></div>
+                    </div>
+                  </li>
+                  <li class=a2>
+                    <div class=tx><a href=""><i>&nbsp;</i>地板、地毯、地胶</a>  <span>></span> </div>
+                    <div class=pop>
+                      <div class="popl L">
+                      <h3><a href="">地板、地毯、地胶</a></h3>
+                        <dl>
+                          <dt>地板></dt>
+                          <dd>
+                            <a class="ui-link" href="" >大自然</a>
+                            <a class="ui-link"    href="">圣象</a> 
+                            <a  class="ui-link" href="">博高</a> 
+                            <a class="ui-link"   href="" >生活家</a>
+                          </dd>
+                        </dl>
+                      <div class=clr></div>
+                    </div>
+                      <div class="popr R">
+                   <!--      <div class="popr1">
+                          <a href="#"><img src="/themes/mall/jiaju/styles/style/images/sj_07.jpg"></a>
+                          <a href="#"><img src="/themes/mall/jiaju/styles/style/images/sj_07.jpg"></a>      
+                          <a href="#"><img src="/themes/mall/jiaju/styles/style/images/sj_07.jpg"></a>
+                          <a href="#"><img src="/themes/mall/jiaju/styles/style/images/sj_07.jpg"></a> 
+                          <a href="#"><img src="/themes/mall/jiaju/styles/style/images/sj_07.jpg"></a>
+                          <a href="#"><img src="/themes/mall/jiaju/styles/style/images/sj_07.jpg"></a>      
+                          <a href="#"><img src="/themes/mall/jiaju/styles/style/images/sj_07.jpg"></a>
+                          <a href="#"><img src="/themes/mall/jiaju/styles/style/images/sj_07.jpg"></a>                                                                           
+                         </div>
+                         <div class="popr2 ">
+                           <a href="#"><img src="themes/mall/jiaju/styles/style/images/sj_12.jpg"></a>
+                            <a href="#"><img src="themes/mall/jiaju/styles/style/images/sj_12.jpg"></a>
+                         </div>
+                      </div>
+                       <div class=clr></div>                    
+                  </div>
+                  </li>
+                  <li class=a3>
+                    <div class=tx><a href=""><i>&nbsp;</i>门、门控五金、窗</a> <span>></span>  </div>
+                    <div class=pop>
+                      <div  class="popl L">
+                      <h3><a href="">门、门控五金、窗</a></h3>
+                      <dl>
+                          <dt>内门></dt>
+                          <dd>
+                            <a class="ui-link" href="">盼盼</a>
+                            <a class="ui-link"  href="">星星</a> 
+                            <a class="ui-link" href="" >龙凯斯</a>
+                          </dd>
+                      </dl>
+                      <div class=clr></div>
+                     </div>
+                      <div class="popr R">
+                     <!--    <div class="popr1">
+                          <a href="#"><img src="/themes/mall/jiaju/styles/style/images/sj_07.jpg"></a>
+                          <a href="#"><img src="/themes/mall/jiaju/styles/style/images/sj_07.jpg"></a>      
+                          <a href="#"><img src="/themes/mall/jiaju/styles/style/images/sj_07.jpg"></a>
+                          <a href="#"><img src="/themes/mall/jiaju/styles/style/images/sj_07.jpg"></a> 
+                          <a href="#"><img src="/themes/mall/jiaju/styles/style/images/sj_07.jpg"></a>
+                          <a href="#"><img src="/themes/mall/jiaju/styles/style/images/sj_07.jpg"></a>      
+                          <a href="#"><img src="/themes/mall/jiaju/styles/style/images/sj_07.jpg"></a>
+                          <a href="#"><img src="/themes/mall/jiaju/styles/style/images/sj_07.jpg"></a>                                                                           
+                         </div>
+                         <div class="popr2 ">
+                           <a href="#"><img src="themes/mall/jiaju/styles/style/images/sj_12.jpg"></a>
+                            <a href="#"><img src="themes/mall/jiaju/styles/style/images/sj_12.jpg"></a>
+                         </div>
+                      </div>
+                       <div class=clr></div> 
+                    </div>
+                  </li>
+                  <li class=a4>
+                    <div class=tx><a href=""><i>&nbsp;</i>整体橱柜、浴室柜</a> <span>></span>  </div>
+                    <div class=pop>
+                     <div class="popl">
+                      <h3><a href="">整体橱柜、浴室柜</a></h3>
+                      <dl>
+                        <dl>
+                          <dt>柜子></dt>
+                          <dd>
+                            <a class="ui-link" href="">欧派</a>
+                            <a class="ui-link"   href="">韩丽</a>
+                            <a  class="un ui-link" href="">九牧</a>
+                            <a  class="un ui-link" href="">东鹏</a>
+                          </dd>
+                        </dl>
+                      <div class=clr></div>
+                    </div>
+                      <div class="popr R">
+                      <!--   <div class="popr1">
+                          <a href="#"><img src="/themes/mall/jiaju/styles/style/images/sj_07.jpg"></a>
+                          <a href="#"><img src="/themes/mall/jiaju/styles/style/images/sj_07.jpg"></a>      
+                          <a href="#"><img src="/themes/mall/jiaju/styles/style/images/sj_07.jpg"></a>
+                          <a href="#"><img src="/themes/mall/jiaju/styles/style/images/sj_07.jpg"></a> 
+                          <a href="#"><img src="/themes/mall/jiaju/styles/style/images/sj_07.jpg"></a>
+                          <a href="#"><img src="/themes/mall/jiaju/styles/style/images/sj_07.jpg"></a>      
+                          <a href="#"><img src="/themes/mall/jiaju/styles/style/images/sj_07.jpg"></a>
+                          <a href="#"><img src="/themes/mall/jiaju/styles/style/images/sj_07.jpg"></a>                                                                           
+                         </div>
+                         <div class="popr2 ">
+                           <a href="#"><img src="themes/mall/jiaju/styles/style/images/sj_12.jpg"></a>
+                            <a href="#"><img src="themes/mall/jiaju/styles/style/images/sj_12.jpg"></a>
+                         </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li class=a4>
+                    <div class=tx><a href=""><i>&nbsp;</i>卫浴、卫浴五金、洁具</a>  <span>></span> </div>
+                    <div class=pop>
+                      <div class="popl">
+                       <h3><a href="">卫浴、卫浴五金、洁具</a></h3>
+                        <dl>
+                          <dt>卫浴></dt>
+                          <dd>
+                            <a class="ui-link" href="">科勒</a>
+                            <a class="ui-link"   href="">九牧</a>
+                            <a  class="un ui-link" href="">贝朗</a>
+                          </dd>
+                        </dl>
+                      <div class=clr></div>
+                    </div>
+                      <div class="popr R">
+              <!--           <div class="popr1">
+                          <a href="#"><img src="/themes/mall/jiaju/styles/style/images/sj_07.jpg"></a>
+                          <a href="#"><img src="/themes/mall/jiaju/styles/style/images/sj_07.jpg"></a>      
+                          <a href="#"><img src="/themes/mall/jiaju/styles/style/images/sj_07.jpg"></a>
+                          <a href="#"><img src="/themes/mall/jiaju/styles/style/images/sj_07.jpg"></a> 
+                          <a href="#"><img src="/themes/mall/jiaju/styles/style/images/sj_07.jpg"></a>
+                          <a href="#"><img src="/themes/mall/jiaju/styles/style/images/sj_07.jpg"></a>      
+                          <a href="#"><img src="/themes/mall/jiaju/styles/style/images/sj_07.jpg"></a>
+                          <a href="#"><img src="/themes/mall/jiaju/styles/style/images/sj_07.jpg"></a>                                                                           
+                         </div>
+                         <div class="popr2 ">
+                           <a href="#"><img src="themes/mall/jiaju/styles/style/images/sj_12.jpg"></a>
+                            <a href="#"><img src="themes/mall/jiaju/styles/style/images/sj_12.jpg"></a>
+                         </div>
+                      </div>                    
+                    </div>
+                  </li>
+                  <li class=a4>
+                    <div class=tx><a href=""><i>&nbsp;</i>集成吊顶、天花</a>  <span>></span> </div>
+                    <div class=pop>
+                    <div class="popl">
+                      <h3><a href="">集成吊顶、天花</a></h3>
+                        <dl>
+                          <dt>吊顶></dt>
+                          <dd>
+                            <a class="ui-link" href="">泰迪斯</a>
+                          </dd>
+                        </dl>
+                      <div class=clr></div>
+                    </div>
+                     <div class="popr R">
+ <!--                        <div class="popr1">
+                          <a href="#"><img src="/themes/mall/jiaju/styles/style/images/sj_07.jpg"></a>
+                          <a href="#"><img src="/themes/mall/jiaju/styles/style/images/sj_07.jpg"></a>      
+                          <a href="#"><img src="/themes/mall/jiaju/styles/style/images/sj_07.jpg"></a>
+                          <a href="#"><img src="/themes/mall/jiaju/styles/style/images/sj_07.jpg"></a> 
+                          <a href="#"><img src="/themes/mall/jiaju/styles/style/images/sj_07.jpg"></a>
+                          <a href="#"><img src="/themes/mall/jiaju/styles/style/images/sj_07.jpg"></a>      
+                          <a href="#"><img src="/themes/mall/jiaju/styles/style/images/sj_07.jpg"></a>
+                          <a href="#"><img src="/themes/mall/jiaju/styles/style/images/sj_07.jpg"></a>                                                                           
+                         </div>
+                         <div class="popr2 ">
+                           <a href="#"><img src="themes/mall/jiaju/styles/style/images/sj_12.jpg"></a>
+                            <a href="#"><img src="themes/mall/jiaju/styles/style/images/sj_12.jpg"></a>
+                         </div>
+                      </div>
+                    </div>
+                  </li>
+                   <li class=a4>
+                    <div class=tx><a href=""><i>&nbsp;</i>灯具、开关、插座</a> <span>></span>  </div>
+                    <div class=pop>
+                    <div class="popl">
+                      <h3><a href="">灯具、开关、插座</a></h3>
+                        <dl>
+                          <dt>灯具></dt>
+                          <dd>
+                            <a class="ui-link" href="">欧蕾</a>
+                            <a class="ui-link"   href="">雷士</a>
+                            <a  class="un ui-link" href="">佛山照明</a>
+                            <a class="ui-link"   href="">施耐德</a>
+                            <a  class="un ui-link" href="">西蒙</a>                          
+                          </dd>
+                        </dl>
+                      <div class=clr></div>
+                    </div>
+                      <div class="popr">
+            <!--             <div class="popr1">
+                          <a href="#"><img src="/themes/mall/jiaju/styles/style/images/sj_07.jpg"></a>
+                          <a href="#"><img src="/themes/mall/jiaju/styles/style/images/sj_07.jpg"></a>      
+                          <a href="#"><img src="/themes/mall/jiaju/styles/style/images/sj_07.jpg"></a>
+                          <a href="#"><img src="/themes/mall/jiaju/styles/style/images/sj_07.jpg"></a> 
+                          <a href="#"><img src="/themes/mall/jiaju/styles/style/images/sj_07.jpg"></a>
+                          <a href="#"><img src="/themes/mall/jiaju/styles/style/images/sj_07.jpg"></a>      
+                          <a href="#"><img src="/themes/mall/jiaju/styles/style/images/sj_07.jpg"></a>
+                          <a href="#"><img src="/themes/mall/jiaju/styles/style/images/sj_07.jpg"></a>                                                                           
+                         </div>
+                         <div class="popr2 ">
+                           <a href="#"><img src="themes/mall/jiaju/styles/style/images/sj_12.jpg"></a>
+                            <a href="#"><img src="themes/mall/jiaju/styles/style/images/sj_12.jpg"></a>
+                         </div>
+                      </div>
+                    </div>
+                  </li>
+                   <li class=a4>
+                    <div class=tx><a href=""><i>&nbsp;</i>涂料、油漆、防水</a>  <span>></span> </div>
+                    <div class=pop>
+                    <div class="popl">
+                        <h3><a href="">涂料、油漆、防水</a></h3>
+                          <dl>
+                            <dt>涂料></dt>
+                            <dd>
+                              <a class="ui-link" href="">多乐士</a>
+                              <a class="ui-link"   href="">立邦</a>
+                              <a  class="un ui-link" href="">防水</a>
+                              <a class="ui-link"   href="">德高</a>
+                            </dd>
+                          </dl>
+                        <div class=clr></div>
+                      </div>
+                      <div class="popr R">
+  <!--                       <div class="popr1">
+                          <a href="#"><img src="/themes/mall/jiaju/styles/style/images/sj_07.jpg"></a>
+                          <a href="#"><img src="/themes/mall/jiaju/styles/style/images/sj_07.jpg"></a>      
+                          <a href="#"><img src="/themes/mall/jiaju/styles/style/images/sj_07.jpg"></a>
+                          <a href="#"><img src="/themes/mall/jiaju/styles/style/images/sj_07.jpg"></a> 
+                          <a href="#"><img src="/themes/mall/jiaju/styles/style/images/sj_07.jpg"></a>
+                          <a href="#"><img src="/themes/mall/jiaju/styles/style/images/sj_07.jpg"></a>      
+                          <a href="#"><img src="/themes/mall/jiaju/styles/style/images/sj_07.jpg"></a>
+                          <a href="#"><img src="/themes/mall/jiaju/styles/style/images/sj_07.jpg"></a>                                                                           
+                         </div>
+                         <div class="popr2 ">
+                           <a href="#"><img src="themes/mall/jiaju/styles/style/images/sj_12.jpg"></a>
+                            <a href="#"><img src="themes/mall/jiaju/styles/style/images/sj_12.jpg"></a>
+                         </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li class=a4>
+                    <div class=tx><a href=""><i>&nbsp;</i>家具、民用家具</a> <span>></span>  </div>
+                    <div class=pop>
+                     <div class="popl">
+                      <h3><a href="">家具、民用家具</a></h3>
+                        <!--<dl>
+                          <dt>柜子></dt>
+                          <dd>
+                            <a class="ui-link" href="">欧派</a>
+                            <a class="ui-link"   href="">韩丽</a>
+                            <a  class="un ui-link" href="">九牧</a>
+                            <a  class="un ui-link" href="">东鹏</a>
+                          </dd>
+                        </dl>
+                      <div class=clr></div>
+                    </div>
+                      <div class="popr R">
+<!--                         <div class="popr1">
+                          <a href="#"><img src="/themes/mall/jiaju/styles/style/images/sj_07.jpg"></a>
+                          <a href="#"><img src="/themes/mall/jiaju/styles/style/images/sj_07.jpg"></a>      
+                          <a href="#"><img src="/themes/mall/jiaju/styles/style/images/sj_07.jpg"></a>
+                          <a href="#"><img src="/themes/mall/jiaju/styles/style/images/sj_07.jpg"></a> 
+                          <a href="#"><img src="/themes/mall/jiaju/styles/style/images/sj_07.jpg"></a>
+                          <a href="#"><img src="/themes/mall/jiaju/styles/style/images/sj_07.jpg"></a>      
+                          <a href="#"><img src="/themes/mall/jiaju/styles/style/images/sj_07.jpg"></a>
+                          <a href="#"><img src="/themes/mall/jiaju/styles/style/images/sj_07.jpg"></a>                                                                           
+                         </div>
+                         <div class="popr2 ">
+                           <a href="#"><img src="themes/mall/jiaju/styles/style/images/sj_12.jpg"></a>
+                            <a href="#"><img src="themes/mall/jiaju/styles/style/images/sj_12.jpg"></a>
+                         </div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+        
+          <!--<div class="left_con">
+             <h2><a href="index.php?app=search&amp;cate_id=6417">水暖类</a></h2>
+
+                        
+             <ul>
+               <li>
+                 <a href="index.php?app=search&amp;cate_id=6421">三角阀</a>
+               </li>
+               <li>
+                 <a href="index.php?app=search&amp;cate_id=6432">花洒</a>
+               </li>
+               <li>
+                  <a href="index.php?app=search&amp;cate_id=3436">淋浴器</a>
+               </li>
+               <li>
+                 <a href="index.php?app=search&amp;cate_id=6434">地漏</a>
+               </li>
+               <li>
+                 <a href="index.php?app=search&amp;cate_id=6435">花洒软管</a>
+               </li>
+               <li>
+                 <a href="index.php?app=search&amp;cate_id=3701">分水器</a>
+               </li>
+                <li>
+                 <a href="index.php?app=search&amp;cate_id=3704">接头 </a>
+               </li>
+               <div class="clear"></div>
+             </ul>
+           </div>
+
+
+           <div class="left_con">
+             <h2><a href="index.php?app=search&amp;cate_id=6420">灯饰类</a></h2>
+             <ul>
+               <li>
+                  <a href="index.php?app=search&amp;cate_id=3705">吸顶灯                                    </a>
+               </li>
+               <li>
+                 <a href="index.php?app=search&amp;cate_id=6439">水晶灯                                        </a>
+               </li>
+               <li>
+                 <a href="index.php?app=search&amp;cate_id=6440">吊灯                                        </a>
+               </li>
+               <li>
+                 <a href="index.php?app=search&amp;cate_id=6441">壁灯                                       </a>
+               </li>
+               <li>
+                 <a href="index.php?app=search&amp;cate_id=6442">装饰台灯                                        </a>
+               </li>
+               <li>
+                 <a href="index.php?app=search&amp;cate_id=6443">落地灯                                       </a>
+               </li>
+                <li>
+                 <a href="index.php?app=search&amp;cate_id=6444">LED灯带                                        </a>
+               </li>
+               <li>
+                 <a href="index.php?app=search&amp;cate_id=6652">筒灯                                        </a> 
+               </li>
+               <li>
+                 <a href="index.php?app=search&amp;cate_id=6444">射灯                                       </a>
+               </li>
+               <li>
+                 <a href="index.php?app=search&amp;cate_id=6652">面板灯                                  </a>
+               </li>
+               
+               <div class="clear"></div>
+             </ul>
+           </div>
+
+
+           <div class="left_con">
+
+             <h2><a href="index.php?app=search&amp;cate_id=6422"> 开关插座</a></h2>
+             <ul>
+               <li>
+                 <a href="index.php?app=search&amp;cate_id=5508">瓷砖</a>
+               </li>
+               <li>
+                  <a href="index.php?app=search&amp;cate_id=5508">瓷砖</a>
+               </li>
+               <li>
+                 <a href="index.php?app=search&amp;cate_id=6423">接线插座</a>
+               </li>
+               <li>
+                 <a href="index.php?app=search&amp;cate_id=6440">转换插座</a>
+               </li>
+               <li>
+                 <a href="index.php?app=search&amp;cate_id=6450">智能插座</a>
+               </li>
+               <li>
+                 <a href="index.php?app=search&amp;cate_id=6451">按钮开关</a>
+               </li>
+                <li>
+                 <a href="index.php?app=search&amp;cate_id=6452">墙壁开关</a>
+               </li>
+               <li>
+                 <a href="index.php?app=search&amp;cate_id=6453">船型开关</a>
+               </li>
+               <li>
+                 <a href="index.php?app=search&amp;cate_id=6652">感应开关</a>
+               </li>
+               <li>
+                <a href="index.php?app=search&amp;cate_id=6652">轻触开关</a>
+               </li>
+               
+               <div class="clear"></div>
+             </ul>
+           </div>
+
+
+
+           <div class="left_con">
+             <h2><a href="index.php?app=search&amp;cate_id=6424">胶类</a></h2>
+             <ul>
+               <li>
+                <a href="index.php?app=search&amp;cate_id=6425">复合型胶粒剂</a>
+               </li>
+               <li>
+                 <a href="index.php?app=search&amp;cate_id=6454">万能胶</a>
+               </li>
+               <li>
+                  <a href="index.php?app=search&amp;cate_id=6455">密封胶</a>
+               </li>
+               <li>
+                 <a href="index.php?app=search&amp;cate_id=6456">玻璃胶</a>
+               </li>
+               <li>
+                <a href="index.php?app=search&amp;cate_id=6457">结构胶</a>
+               </li>
+               <li>
+                 <a href="index.php?app=search&amp;cate_id=6458">502胶水</a>
+               </li>
+                
+               <div class="clear"></div>
+             </ul>
+           </div>
+
+           <div class="left_con">
+             <h2><a href="index.php?app=search&amp;cate_id=6426">锁/门控五金</a></h2>
+             <ul>
+				<li>
+					<a href="index.php?app=search&amp;cate_id=6470">家具五金</a>
+				</li>
+               <li>
+                <a href="index.php?app=search&amp;cate_id=6427">挂锁</a>
+               </li>
+               <li>
+                <a href="index.php?app=search&amp;cate_id=6463">密码锁</a>
+               </li>
+               <li>
+                  <a href="index.php?app=search&amp;cate_id=6464">自行车锁</a>
+               </li>
+               <li>
+                 <a href="index.php?app=search&amp;cate_id=6465">摩托车锁</a>
+               </li>
+               <li>
+                <a href="index.php?app=search&amp;cate_id=6466">汽车锁</a>
+               </li>
+               <li>
+                 <a href="index.php?app=search&amp;cate_id=6467">指纹锁</a>
+               </li>
+			   
+			   <li>
+                 <a href="index.php?app=search&amp;cate_id=6468">智能锁</a>
+               </li>
+			   <li>
+                 <a href="index.php?app=search&amp;cate_id=6470">门锁</a>
+               </li>
+                
+               <div class="clear"></div>
+             </ul>
+           </div>
+
+
+
+
+
+
+        </div>-->
+		
+</div>
+
+<div class="new-cat-top" >
+   <h2>行业招聘<i style="font-style: normal;">/</i>装饰公司</h2> 
+</div>
+<div class="new-cat classlist">
+  <dl>
+    <dt>
+    
+      
+         <div class="zplist">
+		 
+		 <?php
+				$city = $_SESSION['city'];
+				$query="select * from ecm_lunbo where city='$city' and types='zhaopin' order by id desc limit 0,1";
+				$result=mysql_query($query);
+				$myrow=@mysql_fetch_array($result);
+				echo '<a href="http://www.59jiaju.com/index.php?app=search&act=zhaopin&cate_id=装饰工程"> <img src="/'.$myrow['path'].'"></a>';
+		?>
+		 
+         
+         
+            <!--<a href="index.php?app=search&act=zhaopin&cate_id=装饰工程"><img src="/themes/mall/jiaju/styles/style/images/jiaju_03.jpg"></a>
+            <a href="index.php?app=search&act=zhaopin&cate_id=机电安装"><img src="/themes/mall/jiaju/styles/style/images/jiaju_05.jpg"></a>
+            <a href="index.php?app=search&act=zhaopin&cate_id=消防"><img src="/themes/mall/jiaju/styles/style/images/jiaju_07.jpg"></a>
+            <a href="index.php?app=search&act=zhaopin&cate_id=家居"><img src="/themes/mall/jiaju/styles/style/images/jiaju_12.jpg"></a>
+            <a href="index.php?app=search&act=zhaopin&cate_id=材料"><img src="/themes/mall/jiaju/styles/style/images/jiaju_13.jpg"></a>
+            <a href="index.php?app=search&act=zhaopin&cate_id=环保"><img src="/themes/mall/jiaju/styles/style/images/jiaju_14.jpg"></a>-->
+<!--            <div class="zplistl">
+              <a href="http://www.59jiaju.com/index.php?app=search&act=zhaopin&cate_id=装饰工程"> <img src="/themes/mall/jiaju/styles/style/images/zpqt_03.jpg"></a>
+              <a> <img src="/themes/mall/jiaju/styles/style/images/zpqt_12.jpg"></a>
+            </div>
+            <div class="zplistr">
+               <a><img src="/themes/mall/jiaju/styles/style/images/zpqt_05.jpg"></a>
+               <dl>
+                 <dt>
+                   <a><img src="/themes/mall/jiaju/styles/style/images/zpqt_08.jpg"></a>
+                 </dt>
+                 <dd>
+                   <a><img src="/themes/mall/jiaju/styles/style/images/zpqt_10.jpg"></a>
+                    <a><img src="/themes/mall/jiaju/styles/style/images/zpqt_14.jpg"></a>
+                 </dd>
+                 <div class="clear"></div> 
+               </dl>
+             
+            </div>-->
+            <div class="clear"></div>
+         </div>
+      <!--<div class="zplist">
+        <i><img src="/themes/mall/jiaju/styles/style/images/index_07.jpg"></i>
+		<a href="index.php?app=search&act=zhaopin&cate_id=施工招标">施工招标</a>
+		<a href="index.php?app=search&act=zhaopin&cate_id=材料招标">材料招标</a>
+		<a href="index.php?app=search&act=zhaopin&cate_id=招牌公司">招牌公司</a>
+		<a href="index.php?app=search&act=zhaopin&cate_id=装饰工程">装饰工程</a>
+		<a href="index.php?app=search&act=zhaopin&cate_id=机电安装">机电安装</a>
+		<a href="index.php?app=search&act=zhaopin&cate_id=除虫">除虫</a>
+      </div>
+      <div class="zplist">
+        <i><img src="/themes/mall/jiaju/styles/style/images/index_07.jpg"></i>
+		<a href="index.php?app=search&act=zhaopin&cate_id=建筑加固">建筑加固</a>
+		<a href="index.php?app=search&act=zhaopin&cate_id=办公家具">办公家具</a>
+		<a href="index.php?app=search&act=zhaopin&cate_id=酒店家具">酒店家具</a>
+		<a href="index.php?app=search&act=zhaopin&cate_id=民用家具">民用家具</a>
+		<a href="index.php?app=search&act=zhaopin&cate_id=餐厅家具">餐厅家具</a>
+		<a href="index.php?app=search&act=zhaopin&cate_id=园林">园林</a>
+      </div>
+      <div class="zplist">
+        <i><img src="/themes/mall/jiaju/styles/style/images/index_07.jpg"></i>
+		<a href="index.php?app=search&act=zhaopin&cate_id=维修">维修</a>
+		<a href="index.php?app=search&act=zhaopin&cate_id=广告">广告</a>
+		<a href="index.php?app=search&act=zhaopin&cate_id=设计">设计</a>
+		<a href="index.php?app=search&act=zhaopin&cate_id=幕墙">幕墙</a>
+		<a href="index.php?app=search&act=zhaopin&cate_id=路政">路政</a>
+		<a href="index.php?app=search&act=zhaopin&cate_id=物流">物流</a>
+		<a href="index.php?app=search&act=zhaopin&cate_id=坼除">坼除</a>
+		<a href="index.php?app=search&act=zhaopin&cate_id=材料">材料</a>
+		<a href="index.php?app=search&act=zhaopin&cate_id=智能化">智能化</a>
+      </div>
+      <div class="zplist">
+        <i><img src="/themes/mall/jiaju/styles/style/images/index_07.jpg"></i>
+		<a href="index.php?app=search&act=zhaopin&cate_id=保险">保险</a>
+		<a href="index.php?app=search&act=zhaopin&cate_id=消防">消防</a>
+		<a href="index.php?app=search&act=zhaopin&cate_id=环保">环保</a>
+		<a href="index.php?app=search&act=zhaopin&cate_id=软装">软装</a>
+		<a href="index.php?app=search&act=zhaopin&cate_id=厨具">厨具</a>
+		<a href="index.php?app=search&act=zhaopin&cate_id=保洁">保洁</a>
+		<a href="index.php?app=search&act=zhaopin&cate_id=设计院">设计院</a>
+      </div>-->
+	 
+    </dt>
+    <dd>
+      <!--<h3><strong>热门公司</strong><span>news</span><a href="index.php?app=search&act=zx" class="right">MORE</a></h3>-->
+      <ul >
+	  
+	 <!--  	<?php
+		$con=mysql_connect('localhost','root','jy0304103') or die("Unable to connect to the MySQL!");
+		mysql_query("SET NAMES UTF8");
+		mysql_query("set character_set_client=utf8"); 
+		mysql_query("set character_set_results=utf8");
+		$db = mysql_select_db('zt55o1_db',$con);
+		
+		//执行语句
+		$qres=mysql_query("SELECT cls_logo,user_id FROM ecm_member where types=3 and cls_logo<>'' limit 12");
+		
+		//提取多条记录
+		
+		while($row = @mysql_fetch_array($qres)){
+		
+			$cls_logo = $row['cls_logo'];
+			$user_id = $row['user_id'];
+			echo "<li style='border: 1px solid #ccc;'><a href='index.php?app=search&act=zx&id=".$user_id."'><img width='170' height='45' src='".$cls_logo."'></a></li>";
+		 
+		
+		}
+		 
+	?>
+	  
+    <a href="index.php?app=store&act=zhaopin"> <img src='/themes/mall/jiaju/images/264005086329313264.jpg'style="width:550px;margin-top: 10px;"></a>-->
+       <li> 
+			
+			
+			 <?php
+				$city = $_SESSION['city'];
+				$query="select * from ecm_lunbo where city='$city' and types='zhuangshi' order by id desc limit 0,1";
+				$result=mysql_query($query);
+				$myrow=@mysql_fetch_array($result);
+				echo '<a href="/index.php?app=search&amp;act=zx&amp;types=3"> <img src="/'.$myrow['path'].'" style="padding-top:10px; float:right;"></a>';
+			?>
+			
+			
+	   </li>
+         <div class="clear"></div>
+      </ul>
+    </dd>
+  </dl>
+</div>
+<!-- new-cat end  -->
+<div class="new-cat-top" >
+   <h2>水电维修五金店<span></span>  <i style="font-style: normal;float: right;"> <span>     </span>综合材料批发市场</i></h2> 
+</div>
+<div class="new-cat">
+  <dl>
+    <dt>
+<!--      <div class="wj_left">
+        <img src="/themes/mall/jiaju/images/wj_03.jpg">
+      </div>
+      <div class="wj_right">
+		<?php
+		$con=mysql_connect('localhost','root','jy0304103') or die("Unable to connect to the MySQL!");
+		mysql_query("SET NAMES UTF8");
+		mysql_query("set character_set_client=utf8"); 
+		mysql_query("set character_set_results=utf8");
+		$db = mysql_select_db('zt55o1_db',$con);
+		$wj=@mysql_query("SELECT user_id FROM ecm_member where types=2 order by user_id limit 12");
+		while($wjd = @mysql_fetch_array($wj)){
+			
+			$user_id = $wjd['user_id'];
+			$wj1=@mysql_query("SELECT name,s_county,uid FROM ecm_store_user where uid='$user_id' and status='0' and name<>''");
+			while($wjd1 = @mysql_fetch_array($wj1)){
+			
+				echo '<a href="index.php?app=search&act=zx&city='.$wjd1['s_county'].'&types=2&id='.$wjd1['uid'].'">'.$wjd1['name'].'</a>';
+				
+			}
+		
+		}
+		
+		?> 
+        
+        
+      </div>-->
+      <li>
+	  
+	 
+	  <?php
+				$city = $_SESSION['city'];
+				$query="select * from ecm_lunbo where city='$city' and types='weixiu' order by id desc limit 0,1";
+				$result=mysql_query($query);
+				$myrow=@mysql_fetch_array($result);
+				echo '<a href="index.php?app=search&act=zx&types=2"> <img src="/'.$myrow['path'].'"></a>';
+		?>
+	  
+	  </li>
+      <div class="clear"></div>
+    </dt>
+    <dd>
+   <!-- <div class="wj_left">
+        <img src="/themes/mall/jiaju/images/wj_05.jpg">
+      </div>
+      <div class="wj_right">
+        <?php
+		/*$con=mysql_connect('localhost','root','jy0304103') or die("Unable to connect to the MySQL!");
+		mysql_query("SET NAMES UTF8");
+		mysql_query("set character_set_client=utf8"); 
+		mysql_query("set character_set_results=utf8");
+		$db = mysql_select_db('zt55o1_db',$con);
+		$wj=@mysql_query("SELECT user_id FROM ecm_member where types=3 order by user_id desc limit 12");
+		while($wjd = @mysql_fetch_array($wj)){
+			
+			$user_id = $wjd['user_id'];
+			$wj1=@mysql_query("SELECT name,s_county,uid FROM ecm_store_user where uid='$user_id' and status='0' and name<>''");
+			while($wjd1 = @mysql_fetch_array($wj1)){
+			
+				echo '<a href="index.php?app=search&act=zx&city='.$wjd1['s_county'].'&types=3&id='.$wjd1['uid'].'">'.$wjd1['name'].'</a>';
+				
+			}
+		
+		}*/
+		
+		?> 
+		<a href="javascript:;">嘉禾盈通材料城</a>
+		<a href="javascript:;">富煌五金</a>
+		<a href="javascript:;">十全十美装饰材料城</a>
+		<a href="javascript:;">欧亚达家居</a>
+		<a href="javascript:;">天州家居建材城</a>
+		<a href="javascript:;">新中南五金批发</a>
+		<a href="javascript:;">丰鑫装饰材料城</a>
+		<a href="javascript:;">金富五金材料城</a>
+		<a href="javascript:;">合成装饰材料城</a>
+		<a href="javascript:;">友合石材城</a>
+		<a href="javascript:;">溪雨装饰商贸城</a>
+		<a href="javascript:;">太古装饰城</a>
+      </div>-->
+      <li>
+	  
+	
+	  <?php
+				$city = $_SESSION['city'];
+				$query="select * from ecm_lunbo where city='$city' and types='pifa' order by id desc limit 0,1";
+				$result=mysql_query($query);
+				$myrow=@mysql_fetch_array($result);
+				echo '<a href="index.php?app=search&act=cailiaocheng"> <img src="/'.$myrow['path'].'"style="float:right"></a>';
+		?>
+		
+	  </li>
+      <div class="clear"></div>
+    </dd>
+  </dl>
+</div>
+
+<div class="new-cat-top" >
+   <h2>热门采购信息<span>sdaskjd</span> <i style="font-style: normal;float: right;"> <span></span><a href="index.php?app=search&act=caigou">更多>></a></i></h2> 
+</div>
+<div class="new-cat">
+  <!--<div class="cg_area">
+    <ul class="cg_ul">
+	
+		
+      
+      <?php
+		$con=mysql_connect('localhost','root','jy0304103') or die("Unable to connect to the MySQL!");
+		mysql_query("SET NAMES UTF8");
+		mysql_query("set character_set_client=utf8"); 
+		mysql_query("set character_set_results=utf8");
+		$db = mysql_select_db('zt55o1_db',$con);
+		$wj=@mysql_query("SELECT * FROM ecm_caigou where status=0 order by id desc limit 9");
+		while($wjd = @mysql_fetch_array($wj)){
+			
+		
+			
+			echo '<li><a href="index.php?app=search&act=content_caigou&id='.$wjd['id'].'"><img src="/themes/mall/jiaju/images/ej_15.jpg"/>'.$wjd['title'].'</a></li>';
+				
+			
+		
+		}
+		
+		?> 
+      
+    </ul>
+  </div>-->
+    <dl>
+		<?php
+				$city = $_SESSION['city'];
+				$query="select * from ecm_lunbo where city='$city' and types='caigou' order by id desc limit 0,1";
+				$result=mysql_query($query);
+				$myrow=@mysql_fetch_array($result)
+				
+		?>
+	
+	
+		<dt>
+			<li><a href="index.php?app=search&act=caigou"><img src="/<?php echo $myrow['path'];?>" /></a></li>
+		  <div class="clear"></div>
+		</dt>
+	
+		<?php
+				$city = $_SESSION['city'];
+				$query="select * from ecm_lunbo where city='$city' and types='caigou' order by id desc limit 1,1";
+				$result=mysql_query($query);
+				$myrow=@mysql_fetch_array($result)
+				
+		?>
+	
+		<dd>
+		   <li> <a href="index.php?app=search&act=hot_index&cate_id=7038"><img src="/<?php echo $myrow['path'];?>" style="float:right"></a></li>
+		  <div class="clear"></div>
+		</dd>
+	
+  </dl>
+</div>
+<!--
+<div class="xinxi">
+<li id="m1"><img src="/themes/mall/jiaju/images/shejishi.jpg" />
+</li>
+<li id="m2" style="padding-left:22px !important;"><img src="/themes/mall/jiaju/images/xiangmujingli.jpg" />
+</li>
+<li id="m3" style="padding-left:22px !important;"><img src="/themes/mall/jiaju/images/changjia.jpg" />
+</li>
+</div>-->
+
+
+
+<div class="ad">
+	<a href="http://www.59jiaju.com/index.php?app=store&act=reg"><img src="/themes/mall/jiaju/styles/style/images/index_12.jpg" width="126"></a>
+    <div class="clear"></div>
+</div>
+<!-- new-cat start  
+<div class="new-cat-top" >
+    <h2>行业招聘<span>sdaskjd</span>
+       <em><a href="#" class="updown">weqww</a><a href="#">weqww</a><a href="#">weqww</a><a href="#">更多>></a></em>
+    </h2> 
+  </div>-->
+<!--
+<div class="webwidget_scroller_tab" id="webwidget_scroller_tab"style="width: 1100px;width: 77%;">
+            <div class="tabContainer new-cat-top"style="position: relative;">
+             <h2>开关灯饰</h2>
+                <ul class="tabHead"style="position: absolute;right: 0;top: 0;">
+                    <li class="currentBtn"><a href="javascript:;">套餐推荐</a></li>
+                    <li><a href="javascript:;">瓷砖</a></li>
+                    <li><a href="javascript:;">门窗</a></li>
+                    <a href="javascript:;">更多>></a>
+                </ul>
+  </div>
+            <div class="tabBody_e"style="width: 1100px;width: 100%;">     
+			<ul style="width: 1100px;width: 100%;">
+                    <li class="tabCot" style="width: 1100px;width: 100%;">
+                          <div class="new-cat1"style="width: 1100px;width: 100%;">
+                                <!-- <div class="dl_left">
+									<a href="http://www.59jiaju.com/index.php?app=goods&id=10418"><img src="http://www.59jiaju.com/themes/mall/jiaju/images/lks4.jpg">									
+								   </a>
+								 </div>
+                                 <div class="dl_right">
+                                    <ul>
+
+                                      <li>
+										  <a href="index.php?app=goods&id=10621">
+											<img src="http://www.59jiaju.com/themes/mall/jiaju/images/xiancheng.jpg">										  </a>									  </li>
+                                      <li>
+										  <a href="index.php?app=goods&id=10618">
+											<img src="http://www.59jiaju.com/themes/mall/jiaju/images/canmeijia.jpg">										  </a>									  </li>
+									  
+									  
+									  
+									  
+										<li>
+											<a href="index.php?app=goods&id=10655">
+												<img src="http://www.59jiaju.com/themes/mall/jiaju/images/a1.jpg">											</a>										</li>
+
+
+										<li>
+											<a href="index.php?app=goods&id=10678">
+												<img src="http://www.59jiaju.com/themes/mall/jiaju/images/a9.jpg">											</a>										</li>
+
+                                    </ul>
+                            </div> 
+                                 <div class="clear"></div>
+								 </style>
+                          </div>                        
+                    </li>
+                    
+					<li class="tabCot"></li>
+              </ul>
+                <div style="clear:both"></div>
+            </div>
+         <div class="modBottom">
+                <span class="modABL">&nbsp;</span><span class="modABR">&nbsp;</span>
+            </div>
+</div>
+
+
+<!-- new-cat end
+<div class="webwidget_scroller_tab" id="webwidget_scroller_tab"style="width: 1100px;width: 77%;">
+            <div class="tabContainer new-cat-top"style="position: relative;">
+             <h2>门窗五金<span></span>防水</h2>
+                <ul class="tabHead"style="position: absolute;right: 0;top: 0;">
+                    <li class="currentBtn"><a href="javascript:;">套餐推荐</a></li>
+                    <li><a href="javascript:;">瓷砖</a></li>
+                    <li><a href="javascript:;">门窗</a></li>
+                    <a href="javascript:;">更多>></a>
+                </ul>
+  </div>
+            <div class="tabBody_e"style="width: 1100px;width: 100%;">     
+			<ul style="width: 1100px;width: 100%;">
+                    <li class="tabCot" style="width: 1100px;width: 100%;">
+                          <div class="new-cat1"style="width: 1100px;width: 100%;">
+                                <!-- <div class="dl_left">
+									<a href="http://www.59jiaju.com/index.php?app=goods&id=10418"><img src="http://www.59jiaju.com/themes/mall/jiaju/images/lks4.jpg">									
+								   </a>
+								 </div> 
+                                 <div class="dl_right">
+                                    <ul>
+                                     
+                                      <li>
+										<a href="index.php?app=goods&id=10581">
+											<img src="http://www.59jiaju.com/themes/mall/jiaju/images/lks1.jpg">
+										</a>
+									</li>
+                                      <li>
+									  <a href="index.php?app=goods&id=10582">
+									  <img src="http://www.59jiaju.com/themes/mall/jiaju/images/lks2.jpg">
+									  </a>
+									  </li>
+                                      <li>
+										  <a href="index.php?app=goods&id=10583">
+											<img src="http://www.59jiaju.com/themes/mall/jiaju/images/lks3.jpg">
+										  </a>
+									  </li>
+                                      <li>
+										  <a href="index.php?app=goods&id=10580">
+											<img src="http://www.59jiaju.com/themes/mall/jiaju/images/lks4.jpg">
+										  </a>
+									  </li>
+                                      <li>
+										  <a href="index.php?app=goods&id=10589">
+											<img src="http://www.59jiaju.com/themes/mall/jiaju/images/yuhong1.jpg">
+										  </a>
+									  </li>
+                                      <li>
+										  <a href="index.php?app=goods&id=10590">
+											<img src="http://www.59jiaju.com/themes/mall/jiaju/images/yuhong2.jpg">
+										  </a>
+									  </li>
+									  
+                                      <li>
+										  <a href="index.php?app=goods&id=10591">
+											<img src="http://www.59jiaju.com/themes/mall/jiaju/images/yuhong3.jpg">
+										  </a>
+									  </li>
+                                      <li>
+										  <a href="index.php?app=goods&id=10592">
+											<img src="http://www.59jiaju.com/themes/mall/jiaju/images/yuhong4.jpg">
+										  </a>
+									  </li> 
+                                                                            <li>
+										  <a href="index.php?app=goods&id=11047">
+											<img src="http://www.59jiaju.com/themes/mall/jiaju/images/haozu-1.jpg">
+										  </a>
+									  </li> 				 									  
+                                    </ul>
+                                 </div> 
+                                 <div class="clear"></div>
+								 </style>
+                          </div>                        
+                    </li>
+                    
+					<li class="tabCot"></li>
+              </ul>
+                <div style="clear:both"></div>
+            </div>
+         <div class="modBottom">
+                <span class="modABL">&nbsp;</span><span class="modABR">&nbsp;</span>
+            </div>
+</div>
+
+<div class="webwidget_scroller_tab" id="webwidget_scroller_tab"style="width: 1100px;width: 77%;">
+            <div class="tabContainer new-cat-top"style="position: relative;">
+             <h2>瓷砖地板</h2>
+                <ul class="tabHead"style="position: absolute;right: 0;top: 0;">
+                    <li class="currentBtn"><a href="javascript:;">套餐推荐</a></li>
+                   <li><a href="javascript:;">瓷砖</a></li>
+                    <li><a href="javascript:;">门窗</a></li>
+                    <a href="javascript:;">更多>></a>
+                </ul>
+  </div>
+            <div class="tabBody_e"style="width: 1100px;width: 100%;">     
+			<ul style="width: 1100px;width: 100%;">
+                    <li class="tabCot" style="width: 1100px;width: 100%;">
+                          <div class="new-cat1"style="width: 1100px;width: 100%;">
+                                <!-- <div class="dl_left">
+									<a href="http://www.59jiaju.com/index.php?app=goods&id=10418"><img src="http://www.59jiaju.com/themes/mall/jiaju/images/lks4.jpg">									
+								   </a>
+								 </div>
+                                 <div class="dl_right">
+                                    <ul>
+										
+										<li>
+											<a href="index.php?app=goods&id=10659">
+												<img src="http://www.59jiaju.com/themes/mall/jiaju/images/a2.jpg">											</a>										</li>
+										
+										<li>
+											<a href="index.php?app=goods&id=10656">
+												<img src="http://www.59jiaju.com/themes/mall/jiaju/images/a3.jpg">											</a>										</li>
+										
+										<li>
+											<a href="index.php?app=goods&id=10666">
+												<img src="http://www.59jiaju.com/themes/mall/jiaju/images/a4.jpg">											</a>										</li>
+										
+										
+										<li>
+											<a href="index.php?app=goods&id=10630">
+												<img src="http://www.59jiaju.com/themes/mall/jiaju/images/a6.jpg">											</a>										</li>
+																				
+										
+										<li>
+											<a href="index.php?app=goods&id=10966">
+											<img src="http://www.59jiaju.com/themes/mall/jiaju/images/taocify.jpg">											</a>										</li>
+
+                                    </ul>
+                            </div> 
+                                 <div class="clear"></div>
+								 </style>
+                          </div>                        
+                    </li>
+                    
+					<li class="tabCot"></li>
+              </ul>
+                <div style="clear:both"></div>
+            </div>
+         <div class="modBottom">
+                <span class="modABL">&nbsp;</span><span class="modABR">&nbsp;</span>
+            </div>
+</div>
+
+
+<div class="webwidget_scroller_tab" id="webwidget_scroller_tab"style="width: 1100px;width: 77%;">
+            <div class="tabContainer new-cat-top"style="position: relative;">
+             <h2>厨房卫浴</h2>
+                <ul class="tabHead"style="position: absolute;right: 0;top: 0;">
+                    <li class="currentBtn"><a href="javascript:;">套餐推荐</a></li>
+                   <li><a href="javascript:;">瓷砖</a></li>
+                    <li><a href="javascript:;">门窗</a></li>
+                    <a href="javascript:;">更多>></a>
+                </ul>
+  </div>
+            <div class="tabBody_e"style="width: 1100px;width: 100%;">     
+			<ul style="width: 1100px;width: 100%;">
+                    <li class="tabCot" style="width: 1100px;width: 100%;">
+                          <div class="new-cat1"style="width: 1100px;width: 100%;">
+                                <!-- <div class="dl_left">
+									<a href="http://www.59jiaju.com/index.php?app=goods&id=10418"><img src="http://www.59jiaju.com/themes/mall/jiaju/images/lks4.jpg">									
+								   </a>
+								 </div> 
+                                 <div class="dl_right">
+                                    <ul>			  
+
+										
+										<li>
+										  <a href="index.php?app=goods&id=10660">
+										  <img src="http://www.59jiaju.com/themes/mall/jiaju/images/a5.jpg">											</a>										</li>										<li>
+										  <a href="index.php?app=goods&id=10668">
+										  <img src="http://www.59jiaju.com/themes/mall/jiaju/images/cgshangya.jpg">											</a>										</li>
+
+										
+										<li>
+										  <a href="index.php?app=goods&id=10662">
+										  <img src="http://www.59jiaju.com/themes/mall/jiaju/images/a7.jpg">											</a>										</li>
+										
+									  <li>
+										<a href="index.php?app=goods&id=10651">
+									  <img src="http://www.59jiaju.com/themes/mall/jiaju/images/a10.jpg">											</a>										</li> 
+             						  <li>
+										<a href="index.php?app=goods&id=10663">
+									  <img src="http://www.59jiaju.com/themes/mall/jiaju/images/weiyutuowo.jpg">											</a>										</li>          
+                                       <li>
+										<a href="index.php?app=goods&id=10667">
+									  <img src="http://www.59jiaju.com/themes/mall/jiaju/images/weiyusl.jpg">											</a>										</li>                  
+           
+                                                <li>
+										<a href="index.php?app=goods&id=10998">
+									  <img src="http://www.59jiaju.com/themes/mall/jiaju/images/tuowo-1.jpg">											</a>										</li>                  
+            
+                                                 <li>
+										<a href="index.php?app=goods&id=10994">
+									  <img src="http://www.59jiaju.com/themes/mall/jiaju/images/tuowo-2.jpg">											</a>										</li>       
+                                                                                      <li>
+										<a href="index.php?app=goods&id=11000">
+									  <img src="http://www.59jiaju.com/themes/mall/jiaju/images/dsijiantao.jpg">											</a>										</li>              
+                                         </ul>
+                            </div> 
+                                 <div class="clear"></div>
+								 </style>
+                          </div>                        
+                    </li>
+                    
+					<li class="tabCot"></li>
+              </ul>
+                <div style="clear:both"></div>
+            </div>
+         <div class="modBottom">
+                <span class="modABL">&nbsp;</span><span class="modABR">&nbsp;</span>
+            </div>
+</div>
+-->
+
+<div class="new-cat-top" >
+   <h2>合作品牌<span>sdaskjd</span> <i style="font-style: normal;float: right;"> <span></span>更多>></i></h2> 
+</div>
+<div class="ad1">
+		<a href="index.php?app=store&id=1056&act=search"><img src="http://www.59jiaju.com/themes/mall/jiaju/styles/style/images/gg_lks.jpg"></a> 
+        <a href="index.php?app=store&id=3226&act=search"><img src="http://www.59jiaju.com/themes/mall/jiaju/styles/style/images/gg_df.jpg"></a> 
+        <a href="index.php?app=store&id=4435&act=search"><img src="http://www.59jiaju.com/themes/mall/jiaju/styles/style/images/canmj.jpg"></a>
+        <a href="index.php?app=store&id=4470&act=search"><img src="http://www.59jiaju.com/themes/mall/jiaju/styles/style/images/HaoZQ.jpg" /></a> 
+        <a href="index.php?app=store&id=4440&act=search"><img src="http://www.59jiaju.com/themes/mall/jiaju/styles/style/images/TianYDB.jpg"></a> 
+        <a href="index.php?app=store&id=4429&act=search"><img src="http://www.59jiaju.com/themes/mall/jiaju/styles/style/images/CenZP.jpg"></a> 
+        <a href="index.php?app=store&id=4454&act=search"><img src="http://www.59jiaju.com/themes/mall/jiaju/styles/style/images/TuoAo.jpg"></a> 
+        <a href="index.php?app=store&id=4453&act=search"><img src="http://www.59jiaju.com/themes/mall/jiaju/styles/style/images/JDFTC.jpg"></a> 
+        <a href="index.php?app=store&id=4458&act=search"><img src="http://www.59jiaju.com/themes/mall/jiaju/styles/style/images/kbl.jpg"></a> 
+        <a href="index.php?app=store&id=4472&act=search"><img src="http://www.59jiaju.com/themes/mall/jiaju/styles/style/images/sble.jpg"></a> 
+        <a href="index.php?app=store&id=4457&act=search"><img src="http://www.59jiaju.com/themes/mall/jiaju/styles/style/images/ahsy.jpg"></a> 
+        <a href="index.php?app=store&id=4455&act=search"><img src="http://www.59jiaju.com/themes/mall/jiaju/styles/style/images/amy.jpg"></a> 
+        <a href="index.php?app=store&id=4467&act=search"><img src="http://www.59jiaju.com/themes/mall/jiaju/styles/style/images/fzy.jpg"></a> 
+        <a href="index.php?app=store&id=4456&act=search"><img src="http://www.59jiaju.com/themes/mall/jiaju/styles/style/images/suilinweiyu.jpg"></a> 
+        <a href="index.php?app=store&id=4431&act=search"><img src="http://www.59jiaju.com/themes/mall/jiaju/styles/style/images/wuyi.jpg"></a> 
+        <a href="index.php?app=store&id=4473&act=search"><img src="http://www.59jiaju.com/themes/mall/jiaju/styles/style/images/zhongyuan.jpg"></a> 
+        <a href="index.php?app=store&id=4452&act=search"><img src="http://www.59jiaju.com/themes/mall/jiaju/styles/style/images/aomeng.jpg"></a> 
+        <a href="index.php?app=store&id=4469&act=search"><img src="http://www.59jiaju.com/themes/mall/jiaju/styles/style/images/dowry.jpg"></a> 
+        <a href="index.php?app=store&id=4447&act=search"><img src="http://www.59jiaju.com/themes/mall/jiaju/styles/style/images/yazhijie.jpg"></a> 
+		
+		
+		
+  <div class="clear"></div>
+</div>
+
+<!--<div class="webwidget_scroller_tab2" id="webwidget_scroller_tab" style="margin:0 auto;">
+            <div class="tabContainer new-cat-top">
+             <h2>瓷砖地板<span>Smallpox condole top</span></h2>
+                <ul class="tabHead">
+                    <li class="currentBtn"><a href="javascript:;">墙纸</a></li>
+                    <li><a href="javascript:;">PVC地板</a></li>
+                    <a href="javascript:;">更多>></a>
+                </ul>
+            </div>
+            <div class="tabBody">-->
+               <!-- <ul>
+                    <li class="tabCot cat_ul1">
+                          <div class="new-cat_ul1">
+                                 <div class="cat_ul1_left">
+                                   <a href="http://www.59jiaju.com/index.php?app=goods&id=9954">
+								   <img style="width:278px;height:350px;"src="http://www.59jiaju.com/data/files/store_608/goods_102/small_201412230805026878.png">
+								   </a>
+                                   
+                                 </div>
+								 
+                                 <div class="cat_ul1_center">
+                                   <a href="http://www.59jiaju.com/index.php?app=goods&id=9947">
+								   <img style="width:700px;height:350px;"src="http://www.59jiaju.com/data/files/store_608/goods_154/small_201412190725546827.jpg">
+								   <!--<h3><img src="/themes/mall/jiaju/styles/style/images/title.png"></h3>-->
+								  <!-- </a>
+                                 </div>
+								 
+                                 <div class="cat_ul1_right">
+                                   <a href="http://www.59jiaju.com/index.php?app=goods&id=9928"><img style="width:220px;height:175px;"src="http://www.59jiaju.com/data/files/store_608/goods_19/small_201412040236591513.jpg"><!--<p>安装价：<br>¥71.50</p>--></a>
+                                 <!--  <a href="http://www.59jiaju.com/index.php?app=goods&id=9927"><img style="width:220px;height:175px;"src="http://www.59jiaju.com/data/files/store_608/goods_192/small_201412031003128074.jpg"><!--<p>安装价：<br>¥165.00</p>--></a>
+                                <!-- </div>
+                                 <div class="clear"></div>
+                          </div> 
+                          <div class="new-cat_ul12">
+                            <ul>
+                              <li><a href="http://www.59jiaju.com/index.php?app=goods&id=9925">
+							  <img style="width:390px;height:170px;"src="http://www.59jiaju.com/data/files/store_608/goods_122/small_201412030955224957.jpg">
+							  </a>
+							  </li>
+                              <li class="mr20"><a href="http://www.59jiaju.com/index.php?app=goods&id=9911" >
+							  <img  style="width:390px;height:170px;"src="http://www.59jiaju.com/data/files/store_608/goods_165/small_201409060906056099.jpg"></a>
+							  </li>
+                              <li><a href="http://www.59jiaju.com/index.php?app=goods&id=9902">
+							  <img  style="width:390px;height:170px;"src="http://www.59jiaju.com/data/files/store_608/goods_84/small_201409060838049148.jpg"></a></li>
+                            </ul>
+                          </div>                       
+                    </li>
+                    <li class="tabCot cat_ul1">
+                          <div class="new-cat_ul1">
+                                 <div class="cat_ul1_left">
+                                   <a href="http://www.59jiaju.com/index.php?app=goods&id=9957">
+								   <img style="width:278px;height:350px;"src="http://www.59jiaju.com/data/files/store_608/goods_181/small_201412230816211007.png"></a>
+                                   
+                                 </div>
+                                 <div class="cat_ul1_center">
+                                   <a href="http://www.59jiaju.com/index.php?app=goods&id=9560">
+								   <img  style="width:700px;height:350px;"src="http://www.59jiaju.com/data/files/store_874/goods_183/small_201401150236239618.jpg"><!--<h3>
+								   <img src="/themes/mall/jiaju/styles/style/images/title.png"></h3>--></a>
+                               <!--  </div>
+                                 <div class="cat_ul1_right">
+                                   <a href="http://www.59jiaju.com/index.php?app=goods&id=9283">
+								   <img style="width:220px;height:175px;"src="http://www.59jiaju.com/data/files/store_847/goods_143/small_201401040225434133.png"><!--<p>安装价：<br>¥45.00</p>--></a>
+                                <!--   <a href="http://www.59jiaju.com/index.php?app=goods&id=9282">
+								   <img style="width:220px;height:175px;"src="http://www.59jiaju.com/data/files/store_847/goods_131/small_201401040215316559.png"><!--<p>安装价：<br>¥72.00</p>--></a>
+                                <!-- </div>
+                                 <div class="clear"></div>
+                          </div> 
+                          <div class="new-cat_ul12">
+                            <ul>
+                              <li><a href="http://www.59jiaju.com/index.php?app=goods&id=9281">
+							  <img style="width:390px;height:170px;"src="http://www.59jiaju.com/data/files/store_847/goods_58/small_201401040157383230.png"><!--<p>安装价：<br>¥145.00</p>--></a></li>
+                             <!-- <li class="mr20"><a href="http://www.59jiaju.com/index.php?app=goods&id=9280" >
+							  <img style="width:390px;height:170px;"src="http://www.59jiaju.com/data/files/store_847/goods_17/small_201401040150174747.png"><!--<p>安装价：<br>¥38.00</p>--></a></li>
+                            <!--  <li><a href="http://www.59jiaju.com/index.php?app=goods&id=9279">
+							<!--  <img style="width:390px;height:170px;"src="http://www.59jiaju.com/data/files/store_847/goods_131/small_201401040142119199.png"><!--<p>安装价：<br>¥29.92</p>--></a></li>
+                         <!--   </ul>
+                          </div>                       
+                    </li>
+                    
+                </ul>
+                <div style="clear:both"></div>
+            </div>
+            <div class="modBottom">
+                <span class="modABL">&nbsp;</span><span class="modABR">&nbsp;</span>
+            </div>
+</div>
+<!-- new-cat end  -->
+<!--<div class="webwidget_scroller_tab3" id="webwidget_scroller_tab" style="margin:0 auto;">
+            <div class="tabContainer new-cat-top">
+             <h2>门窗卫浴五金<span>Smallpox condole top</span></h2>
+                <ul class="tabHead">
+                    <li class="currentBtn"><a href="javascript:;">卫浴洁具</a></li>
+                    <li><a href="javascript:;">五金配件</a></li>
+                    <a href="javascript:;">更多>></a>
+                </ul>
+            </div>
+            <div class="tabBody">-->
+                <!--<ul>
+                    <li class="tabCot cat_ul1">
+                          <div class="new-cat_ul1">
+                                 <div class="cat_ul1_left">
+                                   <a href="http://www.59jiaju.com/index.php?app=goods&id=10145">
+										<img style="width:278px;height:350px;"src="http://www.59jiaju.com/data/files/store_608/goods_42/small_201502040940423416.JPG">
+								   </a>
+                                   
+                                 </div>
+								 
+                                 <div class="cat_ul1_center">
+                                   <a href="http://www.59jiaju.com/index.php?app=goods&id=9938">
+								   <img style="width:700px;height:350px;"src="http://www.59jiaju.com/data/files/store_608/goods_171/small_201412080239317782.jpg">
+								   <!--<h3><img src="/themes/mall/jiaju/styles/style/images/title.png"></h3>-->
+								<!--   </a>
+                                 </div>
+								 
+                                 <div class="cat_ul1_right">
+                                   <a href="http://www.59jiaju.com/index.php?app=goods&id=8876"><img style="width:220px;height:175px;"src="http://www.59jiaju.com/data/files/store_749/goods_118/small_201312070758382470.jpg"></a>
+                                   <a href="http://www.59jiaju.com/index.php?app=goods&id=10168"><img style="width:220px;height:175px;"src="http://www.59jiaju.com/data/files/store_608/goods_29/small_201504070923496056.jpg"><!--<p>安装价：<br>¥41.30</p>--></a>
+                               <!--  </div>
+                                 <div class="clear"></div>
+                          </div> 
+                          <div class="new-cat_ul12">
+                            <ul>
+                              <li><a href="http://www.59jiaju.com/index.php?app=goods&id=10166">
+							  <img style="width:390px;height:170px;"src="http://www.59jiaju.com/data/files/store_608/goods_185/small_201504070916253827.jpg"><!--<p>安装价：<br>¥26.30</p>-->
+							<!--  </a>
+							  </li>
+                              <li class="mr20"><a href="http://www.59jiaju.com/index.php?app=goods&id=10165" >
+							  <img  style="width:390px;height:170px;"src="http://www.59jiaju.com/data/files/store_608/goods_133/small_201504070902134127.jpg"><!--<p>安装价：<br>¥26.30</p>--></a>
+							<!--  </li>
+                              <li><a href="http://www.59jiaju.com/index.php?app=goods&id=10164">
+							  <img  style="width:390px;height:170px;"src="http://www.59jiaju.com/data/files/store_608/goods_47/small_201504070854071727.jpg"><!--<p>安装价：<br>¥26.30</p>--></a></li>
+                         <!--   </ul>
+                          </div>                       
+                    </li>
+					
+					
+                    <li class="tabCot cat_ul1">
+                          <div class="new-cat_ul1">
+                                 <div class="cat_ul1_left">
+                                   <a href="http://www.59jiaju.com/index.php?app=goods&id=10163">
+								   <img style="width:278px;height:350px;"src="http://www.59jiaju.com/data/files/store_608/goods_64/small_201504070851047455.jpg"><!--<p>安装价：<br>¥156.30</p>--></a>
+                                   
+                            <!--     </div>
+                                 <div class="cat_ul1_center">
+                                   <a href="http://www.59jiaju.com/index.php?app=goods&id=10162">
+								   <img  style="width:700px;height:350px;"src="http://www.59jiaju.com/data/files/store_608/goods_107/small_201504070848271020.jpg"><!--<h3>
+								   <img src="/themes/mall/jiaju/styles/style/images/title.png"></h3>--></a>
+                             <!--    </div>
+                                 <div class="cat_ul1_right">
+                                   <a href="http://www.59jiaju.com/index.php?app=goods&id=10161">
+								   <img style="width:220px;height:175px;"src="http://www.59jiaju.com/data/files/store_608/goods_67/small_201504070837475865.jpg"></a>
+                                   <a href="http://www.59jiaju.com/index.php?app=goods&id=10159">
+								   <img style="width:220px;height:175px;"src="http://www.59jiaju.com/data/files/store_608/goods_29/small_201504070820299946.jpg"><!--<p>安装价：<br>¥143.80</p>--></a>
+                             <!--    </div>
+                                 <div class="clear"></div>
+                          </div> 
+                          <div class="new-cat_ul12">
+                            <ul>
+                              <li><a href="http://www.59jiaju.com/index.php?app=goods&id=10156">
+							  <img style="width:390px;height:170px;"src="http://www.59jiaju.com/data/files/store_608/goods_143/small_201504070759032943.jpg"></li>
+                              <li class="mr20"><a href="http://www.59jiaju.com/index.php?app=goods&id=10155" >
+							  <img style="width:390px;height:170px;"src="http://www.59jiaju.com/data/files/store_608/goods_182/small_201504070743023837.jpg"></li>
+                              <li><a href="http://www.59jiaju.com/index.php?app=goods&id=10154">
+							  <img style="width:390px;height:170px;"src="http://www.59jiaju.com/data/files/store_608/goods_164/small_201504070736044690.jpg"></a></li>
+                            </ul>
+                          </div>                       
+                    </li>
+                    
+                </ul>
+                <div style="clear:both"></div>
+            </div>
+            <div class="modBottom">
+                <span class="modABL">&nbsp;</span><span class="modABR">&nbsp;</span>
+            </div>
+</div>
+<div class="ad">
+		<a href="#"><img src="/themes/mall/jiaju/styles/style/images/index_12.jpg"></a>
+    <div class="clear"></div>
+</div>
+
+ new-cat end  -->
+<!--<div class="webwidget_scroller_tab4" id="webwidget_scroller_tab" style="margin:0 auto;">
+            <div class="tabContainer new-cat-top">
+             <h2>灯饰插座<span>Smallpox condole top</span></h2>
+                <ul class="tabHead">
+                    <li class="currentBtn"><a href="javascript:;">筒灯</a></li>
+                    <a href="javascript:;">更多>></a>
+                </ul>
+            </div>
+            <div class="tabBody">-->
+            <!--    <ul>
+				
+                    <li class="tabCot cat_ul1">
+                          <div class="new-cat_ul1">
+                                 <div class="cat_ul1_left">
+                                   <a href="http://www.59jiaju.com/index.php?app=goods&id=9967">
+								   <img style="width:278px;height:350px;"src="http://www.59jiaju.com/data/files/store_608/goods_98/small_201412240324582162.png"><!--<p>安装价：<br>¥39.00</p>--></a>
+                                   
+            <!--                     </div>
+                                 <div class="cat_ul1_center">
+                                   <a href="http://www.59jiaju.com/index.php?app=goods&id=9892">
+								   <img  style="width:700px;height:350px;"src="http://www.59jiaju.com/data/files/store_608/goods_174/small_201409060642542036.jpg"><!--<h3>
+								   <img src="/themes/mall/jiaju/styles/style/images/title.png"></h3>--></a>
+            <!--                     </div>
+                                 <div class="cat_ul1_right">
+                                   <a href="http://www.59jiaju.com/index.php?app=goods&id=9893">
+								   <img style="width:220px;height:175px;"src="http://www.59jiaju.com/data/files/store_608/goods_48/small_201409060647282408.jpg"><!--<p>安装价：<br>¥81.60</p>--></a>
+            <!--                      <a href="http://www.59jiaju.com/index.php?app=goods&id=9890">
+								   <img style="width:220px;height:175px;"src="http://www.59jiaju.com/data/files/store_608/goods_151/small_201409060639119944.jpg"><!--<p>安装价：<br>¥69.60</p>--></a>
+            <!--                     </div>
+                                 <div class="clear"></div>
+                          </div> 
+                          <div class="new-cat_ul12">
+                            <ul>
+                              <li><a href="http://www.59jiaju.com/index.php?app=goods&id=9886">
+							  <img style="width:390px;height:170px;"src="http://www.59jiaju.com/data/files/store_608/goods_157/small_201409060629174974.jpg"><!--<p>安装价：<br>¥82.50</p>--></a></li>
+            <!--                  <li class="mr20"><a href="http://www.59jiaju.com/index.php?app=goods&id=9884" >
+							  <img style="width:390px;height:170px;"src="http://www.59jiaju.com/data/files/store_608/goods_168/small_201409060626082762.jpg"><!--<p>安装价：<br>¥114.00</p>--></a></li>
+            <!--                  <li><a href="http://www.59jiaju.com/index.php?app=goods&id=9578">
+							  <img style="width:390px;height:170px;"src="http://www.59jiaju.com/data/files/store_825/goods_78/small_201401200701183901.png"><!--<p>安装价：<br>¥10.64</p>--></a></li>
+             <!--               </ul>
+                          </div>                       
+                    </li>
+                    
+                </ul>
+                <div style="clear:both"></div>
+            </div>
+            <div class="modBottom">
+                <span class="modABL">&nbsp;</span><span class="modABR">&nbsp;</span>
+            </div>
+</div>
+<!-- <div class="webwidget_scroller_tab5" id="webwidget_scroller_tab" style="margin:0 auto;">
+            <div class="tabContainer new-cat-top">
+             <h2>办公家具<span>Smallpox condole top</span></h2>
+                <ul class="tabHead">
+                    <li class="currentBtn"><a href="javascript:;">班台类</a></li>
+                    <a href="javascript:;">更多>></a>
+                </ul>
+            </div>
+            <div class="tabBody">-->
+            <!--    <ul>
+                    <li class="tabCot cat_ul1">
+                          <div class="new-cat_ul1">
+                                 <div class="cat_ul1_left">
+                                   <a href="http://www.59jiaju.com/index.php?app=goods&id=9780">
+								   <img style="width:278px;height:350px;"src="http://www.59jiaju.com/data/files/store_608/goods_84/small_201405190141241955.jpg"></a>
+                                   
+                                 </div>
+								 
+                                 <div class="cat_ul1_center">
+                                   <a href="http://www.59jiaju.com/index.php?app=goods&id=9766">
+								   <img  style="width:700px;height:350px;"src="http://www.59jiaju.com/data/files/store_608/goods_188/small_201405120916286535.jpg"><!--<h3>
+								   <img src="/themes/mall/jiaju/styles/style/images/title.png"></h3>--></a>
+            <!--                     </div>
+			<!--					 
+                                 <div class="cat_ul1_right">
+                                   <a href="http://www.59jiaju.com/index.php?app=goods&id=9765">
+								   <img style="width:220px;height:175px;"src="http://www.59jiaju.com/data/files/store_608/goods_11/small_201405120956518987.jpg"></a>
+                                   <a href="http://www.59jiaju.com/index.php?app=goods&id=9762">
+								   <img style="width:220px;height:175px;"src="http://www.59jiaju.com/data/files/store_608/goods_189/small_201405120656292952.jpg"></a>
+                                 </div>
+                                 <div class="clear"></div>
+                          </div> 
+                          <div class="new-cat_ul12">
+                            <ul>
+                              <li><a href="http://www.59jiaju.com/index.php?app=goods&id=8885">
+							  <img style="width:390px;height:170px;"src="http://www.59jiaju.com/data/files/store_755/goods_194/small_201312070849549588.jpg"></li>
+                              <li class="mr20"><a href="http://www.59jiaju.com/index.php?app=goods&id=8884" >
+							  <img style="width:390px;height:170px;"src="http://www.59jiaju.com/data/files/store_755/goods_51/small_201312070847315856.jpg"></li>
+                              <li><a href="http://www.59jiaju.com/index.php?app=goods&id=8883">
+							  <img style="width:390px;height:170px;"src="http://www.59jiaju.com/data/files/store_755/goods_140/small_201312070842209509.jpg"></li>
+                            </ul>
+                          </div>                       
+                    </li>
+                </ul>
+                <div style="clear:both"></div>
+            </div>
+            <div class="modBottom">
+                <span class="modABL">&nbsp;</span><span class="modABR">&nbsp;</span>
+            </div>
+</div>-->
+
+
+{include file=footer.html}
+
+<script type="text/javascript" src="/themes/mall/jiaju/styles/style/js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="/themes/mall/jiaju/styles/style/js/superslide.2.1.js"></script>
+<script type="text/javascript">
+  jQuery(".fullSlide").hover(function() {
+      jQuery(this).find(".prev,.next").stop(true, true).fadeTo("show", 0.5)
+  },
+  function() {
+      jQuery(this).find(".prev,.next").fadeOut()
+  });
+  jQuery(".fullSlide").slide({
+      titCell: ".hd ul",
+      mainCell: ".bd ul",
+      effect: "fold",
+      autoPlay: true,
+      autoPage: true,
+      trigger: "click",
+      startFun: function(i) {
+          var curLi = jQuery(".fullSlide .bd li").eq(i);
+          if ( !! curLi.attr("_src")) {
+              curLi.css("background-image", curLi.attr("_src")).removeAttr("_src")
+          }
+      }
+  });
+</script>
+
+<script type='text/javascript' src='/themes/mall/jiaju/styles/style/js/lanrenzhijia.js'></script>
+        <script language="javascript" type="text/javascript">
+
+            /*$(function() {
+                $(".webwidget_scroller_tab").webwidget_scroller_tab({
+                    scroller_time_interval: '500000000000',
+                    scroller_window_padding: '10',
+                    scroller_window_width: '1100',
+                    scroller_window_height: '432',
+                    scroller_head_text_color: '#0099FF',
+                    scroller_head_current_text_color: '#fff',
+                    directory: 'images'
+                });
+                $(".webwidget_scroller_tab1").webwidget_scroller_tab({
+                    scroller_time_interval: '500000000000',
+                    scroller_window_padding: '10',
+                    scroller_window_width: '1100',
+                    scroller_window_height: '432',
+                    scroller_head_text_color: '#0099FF',
+                    scroller_head_current_text_color: '#fff',
+                    directory: 'images'
+                });
+                $(".webwidget_scroller_tab2").webwidget_scroller_tab({
+                    scroller_time_interval: '500000000000',
+                    scroller_window_padding: '10',
+                    scroller_window_width: '1100',
+                    scroller_window_height: '432',
+                    scroller_head_text_color: '#0099FF',
+                    scroller_head_current_text_color: '#fff',
+                    directory: 'images'
+                });
+                $(".webwidget_scroller_tab3").webwidget_scroller_tab({
+                    scroller_time_interval: '500000000000',
+                    scroller_window_padding: '10',
+                    scroller_window_width: '1100',
+                    scroller_window_height: '432',
+                    scroller_head_text_color: '#0099FF',
+                    scroller_head_current_text_color: '#fff',
+                    directory: 'images'
+                });
+                $(".webwidget_scroller_tab4").webwidget_scroller_tab({
+                    scroller_time_interval: '500000000000',
+                    scroller_window_padding: '10',
+                    scroller_window_width: '1100',
+                    scroller_window_height: '432',
+                    scroller_head_text_color: '#0099FF',
+                    scroller_head_current_text_color: '#fff',
+                    directory: 'images'
+                });
+                $(".webwidget_scroller_tab5").webwidget_scroller_tab({
+                    scroller_time_interval: '500000000000',
+                    scroller_window_padding: '10',
+                    scroller_window_width: '1100',
+                    scroller_window_height: '432',
+                    scroller_head_text_color: '#0099FF',
+                    scroller_head_current_text_color: '#fff',
+                    directory: 'images'
+                });
+            });*/
+        </script>
+        <a href="#header"><img src="/themes/mall/jiaju/styles/style/images/top.png" width="25px;" style="position: fixed;bottom: 30px;right: 0px;"></a>
+</body>
+</html>

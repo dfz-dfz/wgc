@@ -1,0 +1,163 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Access-Control-Allow-Origin" content="*">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=8"/>
+<title>用户中心-查阅简历</title>
+<meta name="description" content="微工程，微工程APP，装修、材料、家具、饰品一站式服务，让装修更简单，价格更透明！！" />
+<meta name="keywords" content="微工程，微工程，家居商城，微工程家居商城，微工程家居装修商城，办公室装修，写字楼装修，材料，装修材料，家居，办公家具，家居，家具，装修，装饰" />
+<link rel="stylesheet" type="text/css" href="themes/mall/jiaju/css/api.css"/>
+<link rel="stylesheet" type="text/css" href="themes/mall/jiaju/css/aui.css" />
+<link rel="stylesheet" type="text/css" href="themes/mall/jiaju/css/aui.1.0.css"/>
+<script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+<!-- <script type="text/javascript" src="www.wgc2013.com/themes/mall/jiaju/js/jquery-1.8.3.min.js"></script> -->
+<link type="text/css" href="themes/mall/jiaju/styles/default/css/main.css" rel="stylesheet"  />
+<link type="text/css" href="themes/mall/jiaju/styles/css/global.css" rel="stylesheet"  />
+<link type="text/css" href="http://www.wgc2013.com/themes/mall/jiaju/styles/default/css/catalog.css" rel="stylesheet"  />
+<link type="text/css" href="http://www.wgc2013.com/themes/mall/jiaju/styles/default/css/footer.css" rel="stylesheet" />
+<link type="text/css" href="themes/mall/jiaju/styles/css/style.css" rel="stylesheet"  />
+<script type="text/javascript" src="index.php?act=jslang"></script>
+<script type="text/javascript" src="http://www.wgc2013.com/includes/libraries/javascript/ecmall.js" charset="utf-8"></script>
+<script type="text/javascript" src="http://www.wgc2013.com/includes/libraries/javascript/cart.js" charset="utf-8"></script>
+<script type="text/javascript" src="http://www.wgc2013.com/themes/mall/jiaju/styles/default/js/main.js" charset="utf-8"></script>
+
+<!--[if lte IE 6]>
+<script type="text/javascript" language="Javascript" src="http://www.wgc2013.com/themes/mall/jiaju/styles/default/js/hoverForIE6.js"></script>
+<![endif]-->
+<!--[if IE 8]>
+<link type="text/css" href="themes/mall/jiaju/css/ie8.css" rel="stylesheet"  />
+<![endif]-->
+<script type="text/javascript">
+var SITE_URL = "http://www.wgc2013.com";
+var PRICE_FORMAT = '&yen;%s';
+</script>
+<script charset="utf-8" type="text/javascript" src="http://www.wgc2013.com/includes/libraries/javascript/jquery.plugins/jquery.validate.js" ></script><style type="text/css">
+body{background:url('') no-repeat center top }
+.mainnav{width:990px; overflow:hidden; margin:0 auto}
+.STYLE1 {color: red}
+</style>
+<script type="text/javascript" src="http://www.wgc2013.com/themes/mall/jiaju/styles/default/js/hover.js"></script>
+<script>
+  function lxfEndtime(){
+          $(".lxftime").each(function(){
+                var lxfday=$(this).attr("lxfday");//用来判断是否显示天数的变量
+                var endtime = new Date($(this).attr("endtime")).getTime();//取结束日期(毫秒值)
+                var nowtime = new Date().getTime();        //今天的日期(毫秒值)
+                var youtime = endtime-nowtime;//还有多久(毫秒值)
+                var seconds = youtime/1000;
+                var minutes = Math.floor(seconds/60);
+                var hours = Math.floor(minutes/60);
+                var days = Math.floor(hours/24);
+                var CDay= days ;
+                var CHour= hours % 24;
+                var CMinute= minutes % 60;
+                var CSecond= Math.floor(seconds%60);//"%"是取余运算，可以理解为60进一后取余数，然后只要余数。
+                if(endtime<=nowtime){
+                        $(this).html("已过期")//如果结束日期小于当前日期就提示过期啦
+                        }else{
+                                if($(this).attr("lxfday")=="no"){
+                                        $(this).html("<i>剩余时间：</i><span>"+CHour+"</span>时<span>"+CMinute+"</span>分<span >"+CSecond+"</span>秒");          //输出没有天数的数据
+                                        }else{
+                        $(this).html("<span class='f24'>"+days+"</span><span>天</span><span  class='f24'>"+CHour+"</span><span>时</span><span  class='f24'>"+CMinute+"</span><span>分</span><span  class='f24'>"+CSecond+"</span><span>秒</span>");          //输出有天数的数据
+                                }
+                        }
+          });
+   setTimeout("lxfEndtime()",1000);
+  };
+$(function(){
+      lxfEndtime();
+   });
+</script>
+<script charset="utf-8" type="text/javascript" src="http://www.wgc2013.com/includes/libraries/javascript/jquery.plugins/jquery.validate.js" ></script>
+<script type="text/javascript">
+  $(function (){
+    $('#open-change-city-window').click(function (){
+      $('.change-city-window').slideDown();
+      
+    })
+    $('#close-change-city-window').click(function (){
+      $('.change-city-window').slideUp();
+    })
+
+  
+  })
+</script>
+</head>
+<body>
+{include file=header.html}
+
+<!-- 中部主要内容 -->
+ <div class="container" style="overflow: hidden;width: 1200px;margin: 10px auto;">
+ <!-- 左上的导航栏 -->
+ {include file=usercenter.html}
+
+ 	<!-- 右边的内容 -->
+ 	<div class="container_right" style="width: 80%;border: 1px solid #cacaca;float: right;background-color: #f7f7f7;padding: 0 10px 10px 10px;">
+
+		<!-- 预算报价 -->
+		<div class="worker_make base_ui_public" style="position: relative;">
+
+ 			<div class="worker_make_info base_info_public" style="overflow: hidden;min-height: 250px;margin-top: 10px;padding-top: 0;position: relative;">
+ 				<div style="width: 100%;">
+ 					<img src="data/files/mall/template/resume_bg1.jpg" alt="" width="100%" height="55px;" />
+ 				</div>
+				<!-- 简历详情 -->
+				<div class="resume_content">
+					<div class="resume_left" style="width: 30%;height: 60%;border-right: 2px solid #eee; float: left;margin-top: 100px;">
+						<div style="margin-left: 30%;position: relative;top: -40px;">
+							<a href="#"><img src="data/files/mall/template/user-head.png" alt="用户头像" width="120" height="120" /></a>
+						</div>
+						<!-- 编写简历信息 -->
+						<div style="margin: -20px 0px 50% 15%;">
+							<ul>
+								<li><h1 style="font-size: 18px;font-weight: bold;letter-spacing: 2px;margin-bottom: 10px;">赵生</h1></li>
+								<li style="margin-bottom: 20px;"><span style="width: 40px;color: #000;">男</span><span style="display: inline-block; width: 150px;">23岁(1995-2-15)</span><span style="width: 40px;color: #000;">未婚</span></li>
+								<li><span>贯&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;籍：</span><span>广州</span></li>
+								<li><span>居&nbsp;住&nbsp;&nbsp;地：</span><span>广州市白云区五社工业区</span></li>
+								<li><span>手&nbsp;机&nbsp;&nbsp;号：</span><span>18385666671</span></li>
+								<li><span>邮&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;箱：</span><span>1115554545@qq.com</span></li>
+								<li><h3 style="font-size: 15px;color: #fc9b84;margin: 10px 0;font-weight: bold;">教育经历</h3></li>
+								<li><span>专&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;业：</span><span>计算机应用</span></li>
+								<li><span>学院名称：</span><span>广州工业大学学院</span></li>
+								<li><span>学历学位：</span><span>大专</span></li>
+							</ul>
+						</div>
+					</div>
+					<div class="resume_right" style="width: 70%;float: left;margin-top: 140px;padding-right: 5%;">
+						<div style="margin-left: 5%;">
+						<h3 style="font-size: 15px;color: #fc9b84;margin: 10px 0;font-weight: bold;text-align: left;margin: 20px 0;">个人工作经验</h3>
+						<p style="text-align: left;color: #000;font-size: 12px;letter-spacing: 2px;"><b>2017-3~2017-12 在某某科技公司做软件开发，在职期间担任软件测试员，负责测试所开发软件的功能检测。2017-3~2017-12 在某某科技公司做软件开发，在职期间担任软件测试员，负责测试所开发软件的功能检测.2017-3~2017-12 在某某科技公司做软件开发，在职期间担任软件测试员，负责测试所开发软件的功能检测.2017-3~2017-12 在某某科技公司做软件开发，在职期间担任软件测试员，负责测试所开发软件的功能检测.</b></p>
+						<h3 style="font-size: 15px;color: #fc9b84;margin: 10px 0;font-weight: bold;text-align: left;margin: 20px 0;">求职意向</h3>
+						<ul>
+							<li><span>期望资薪：</span><span>5000-6000</span></li>
+							<li><span>工作地点：</span><span>广州白云区</span></li>
+							<li><span>职&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;能：</span><span>软件数据编程</span></li>
+							<li><span>职&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;位：</span><span>软件工程师</span></li>
+							<li><span>行&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;业：</span><span>计算机、互联网</span></li>
+							<li><span>个人标签：</span><span>冷静处理任何事</span></li>
+							<li><span>自我评价：</span><span>个人心思细致，能够快速的熟悉新的工作环境</span></li>
+						</ul>
+						</div>
+					</div>
+				</div>
+ 				<div style="width: 100%;position: absolute;bottom: 0;">
+ 					<img src="data/files/mall/template/resume_bg2.jpg" alt="" width="100%" height="55px;" />
+ 				</div>
+ 			</div>
+ 			
+			
+		</div>
+		
+		
+ 		</div>
+ 		
+ 	</div>
+
+{include file=footer.html}
+
+<script type="text/javascript">
+
+</script>
+</body>
+</html>

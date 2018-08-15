@@ -1,0 +1,42 @@
+﻿                <script type="text/javascript">
+                $(function(){		   
+				   /* ecodemall jiaju */
+				   $('#use_coupon').click(function(){
+					   $(this).parent('p').next().toggle();
+					   //$(this).hide();
+					   
+					   if($(this).val()=='{$lang.use_coupon}'){
+						   $(this).val('{$lang.close_coupon}');
+						   $("select[name='coupon_sn']")[0].selectedIndex=0;
+					   }else{
+						   $(this).val('{$lang.use_coupon}')
+					   }
+				   }); 
+               });
+                </script>
+                <div class="w price-notice mt10 mb10 pt10 f60 pb10">{$lang.price_notice}</div>
+                <div class="make_sure w mb10">
+                    <p>
+                       {$lang.order_amount}{$lang.colon}
+					   <strong  id="order_amount">{$goods_info.amount|price}</strong>
+					</p>
+					<p class="mb10 mt20">
+                       {if $goods_info.allow_coupon}
+					   <input id="use_coupon" type="button" class="btn-allow-coupon center" value="{$lang.use_coupon}" />{/if}
+					</p>
+                    {if $goods_info.allow_coupon}
+                    <p class="allow-coupon border padding10 mb10 hidden clearfix">  
+                       <select name="coupon_sn">
+                          <option value="">{$lang.pls_coupon}</option>
+                          {foreach from=$coupon_list item=coupon}
+                          <option value="{$coupon.coupon_sn}">SN:{$coupon.coupon_sn}({$coupon.coupon_value|price})</option>
+                          {/foreach}
+                       </select>
+                       <span class="note">{$lang.coupon_note}{$lang.colon}</span>
+                    </p>
+                    {/if}
+                    <p>
+                        <a href="{url app=cart&store_id=$goods_info.store_id}" class="back">{$lang.backto_cart}</a>
+                        <a href="javascript:void($('#order_form').submit());" class="btn-step-three fff center strong fs14">{$lang.shopping_step_three}</a>
+                    </p>
+                </div>

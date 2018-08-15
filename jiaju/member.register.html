@@ -1,0 +1,392 @@
+﻿{include file=header.html}
+<style type="text/css">
+
+a{ color:#006600; text-decoration:none;}
+a:hover{color:#990000;}
+.top{ margin:5px auto; color:#990000; text-align:center;}
+.info select{ border:1px #993300 solid; background:#FFFFFF;}
+.info{ margin:5px; text-align:center;}
+.info #show{ color:#3399FF; }
+.bottom{ text-align:right; font-size:12px; color:#CCCCCC; width:1000px;}
+
+#register{
+    width: 1100px;
+}
+#footer{
+	margin: 0px auto;
+    width: 1100px;
+}
+/*友情链接*/
+.links {
+    width: 100%;
+    height: auto;
+    min-height: 40px;
+    overflow: hidden;
+    text-align: left;
+    line-height: 30px;
+    border: 1px solid #ccc;
+    border-bottom: 0;
+}
+
+
+
+.form{width: 450px;height: auto; margin:100px auto; overflow:hidden;font-size: 16px;color: #1b1b1b;text-align: left; padding:50px; border:1px solid #ccc; border-radius:10px;}
+.form div{padding:5px 0;overflow: hidden;}
+.form label{width: 90px;display: block;float: left;}
+.form .infos{width:200px;height: 26px;line-height: 26px;border:1px solid #BFBFBF;padding:2px;border-radius:4px;float: left;}
+.form .div-phone a.send1{height: 36px;text-decoration:none;line-height: 36px;padding:2px;width: 100px;background: #AA8926;font-family: '宋体';color: #fff;font-size: 12px;text-align: center;display: block;float: left;border-radius:2px;margin-left:2px;-webkit-transition:all 0.2s linear;-moz-transition:all 0.2s linear;-ms-transition:all 0.2s linear;-o-transition:all 0.2s linear;transition:all 0.2s linear;}
+.form .div-phone a.send1:hover{text-decoration: none;background: #866c1b;-webkit-transition:all 0.2s linear;-moz-transition:all 0.2s linear;-ms-transition:all 0.2s linear;-o-transition:all 0.2s linear;transition:all 0.2s linear;}
+.form .div-phone a.send0{height: 36px;text-decoration:none;line-height: 36px;padding:2px;width: 100px;background: #A1A1A1;font-family: '宋体';color: #fff;font-size: 12px;text-align: center;display: block;float: left;border-radius:2px;margin-left:2px;}
+.form .div-phone a.send0:hover{background: #A1A1A1;font-family: '宋体';color: #fff;font-size: 12px;text-decoration: none;}
+.form span.error{height: 26px;line-height: 26px;padding:2px;width: 100px;color: red;padding-left:20px;display: block;float: left;margin-left:10px;font-size: 12px;font-family: '宋体';background: url(../images/error.png) no-repeat left center;}
+.form #phone{width: 140px;}
+.form .div-conform{padding-right:153px;}
+.form .div-conform a.conform{width: 136px;height: 34px;display: block;text-align: left;overflow: hidden;background: url(../images/btn.jpg) no-repeat;float: right;text-indent: -1000px;}
+</style>
+<script type="text/javascript">
+var sends = {
+	checked:1,
+	send:function(){
+			var numbers = /^1\d{10}$/;
+			var val = $('#phone').val().replace(/\s+/g,""); //获取输入手机号码
+			if($('.div-phone').find('span').length == 0 && $('.div-phone a').attr('class') == 'send1'){
+				if(!numbers.test(val) || val.length ==0){
+					$('.div-phone-ti').html('<span class="error">手机格式错误</span>');
+					return false;
+				}
+			}
+			
+			$.post("index.php?app=search&act=send",{phone:$('#phone').val()},function(result){
+				//alert(result )
+				if(result == "1"){
+					alert("手机号已被注册");
+				}else{alert(result );}
+			});
+			
+			if(numbers.test(val)){
+				var time = 30;
+				$('.div-phone span').remove();
+				function timeCountDown(){
+					if(time==0){
+						clearInterval(timer);
+						$('.div-phone a').addClass('send1').removeClass('send0').html("发送验证码");
+						sends.checked = 1;
+						return true;
+					}
+					
+					$('.div-phone a').html(time+"S后再次发送");
+					time--;
+					return false;
+					sends.checked = 0;
+					
+				}
+				$('.div-phone a').addClass('send0').removeClass('send1');
+				timeCountDown();
+				var timer = setInterval(timeCountDown,1000);
+			}
+	}
+}
+
+
+
+</script>
+
+<script type="text/javascript">
+//注册表单验证
+$(function(){
+    $('#register_form').validate({
+        errorPlacement: function(error, element){
+            var error_td = element.parent('td').next('td');
+            error_td.find('.field_notice').hide();
+            error_td.append(error);
+        },
+        success       : function(label){
+            label.addClass('validate_right').text('OK!');
+        },
+        onkeyup: false,
+        rules : {
+            user_name : {
+                required : true,
+                byteRange: [3,100,'{$charset}'],
+                remote   : {
+                    url :'index.php?app=member&act=check_user&ajax=1',
+                    type:'get',
+                    data:{
+                        user_name : function(){
+                            return $('#user_name').val();
+                        }
+                    },
+                    beforeSend:function(){
+                        var _checking = $('#checking_user');
+                        _checking.prev('.field_notice').hide();
+                        _checking.next('label').hide();
+                        $(_checking).show();
+                    },
+                    complete :function(){
+                        $('#checking_user').hide();
+                    }
+                }
+            },
+            password : {
+                required : true,
+                minlength: 6
+            },
+            xiangxi : {
+                required : true,
+                minlength: 2
+            },
+			phone : {
+                required : true,
+                minlength: 11
+            },
+			code : {
+                required : true,
+                minlength: 6
+            },
+            password_confirm : {
+                required : true,
+                equalTo  : '#password'
+            },
+            email : {
+                required : true,
+                email    : true
+            },
+            captcha : {
+                required : true,
+                remote   : {
+                    url : 'index.php?app=captcha&act=check_captcha',
+                    type: 'get',
+                    data:{
+                        captcha : function(){
+                            return $('#captcha1').val();
+                        }
+                    }
+                }
+            },
+            agree : {
+                required : true
+            }
+        },
+        messages : {
+            user_name : {
+                required : '{$lang.user_name_required}',
+                byteRange: '{$lang.user_name_limit}',
+                remote   : '{$lang.user_already_taken}'
+            },
+            password  : {
+                required : '{$lang.password_required}',
+                minlength: '{$lang.password_length_limit}'
+            },
+             xiangxi  : {
+                required : '请输入详细地址',
+                minlength: '请输入详细地址'
+            },
+			phone  : {
+                required : '请输入手机号码',
+                minlength: '请输入手机号码'
+            },
+			code  : {
+                required : '请输入验证码',
+                minlength: '请输入验证码'
+            },
+            password_confirm : {
+                required : '{$lang.password_confirm_please}',
+                equalTo  : '{$lang.password_inconsistent}'
+            },
+            email : {
+                required : '{$lang.email_required}',
+                email    : '{$lang.email_invalid}'
+            },
+            captcha : {
+                required : '{$lang.captcha_required}',
+                remote   : '{$lang.captcha_error}'
+            },
+            agree : {
+                required : '{$lang.agree_required}'
+            }
+        }
+    });
+});
+//手机输入限制
+  function ValidateNumber(e, pnumber){
+      if (!/^\d+$/.test(pnumber)){
+      $(e).val(/^1[\d]+/.exec($(e).val()));
+      }else{
+        $(e).val(/^1\d{0,10}/.exec($(e).val()));
+        if($("#phone_mob").val().length>11){
+          $(e).val(/^1\d{0,10}/.exec($(e).val()));
+        }
+      }
+      return false;
+    }
+</script>
+<div id="register" class="w auto">
+ 
+   <div class="w auto clearfix">
+      {include file="curlocal.html"}
+      <ul class="reg-buchou clearfix">
+         <li class="current">第一步</li>
+         <li>注册</li>
+      </ul>
+   </div>
+   <div class="form clearfix">
+      <form name="" id="register_form" method="post" action="">
+        <table>
+           <tr>
+              <td colspan="3"><strong style="margin-left:40px;">{$lang.user_register}</strong></td>
+           </tr>
+           <tr>
+              <td width="150" align="right">{$lang.user_name}{$lang.colon}</td>
+              <td align="left"><input type="text" class="input" id="user_name" name="user_name" onkeyup="return ValidateNumber($(this),value)" placeholder="请输入手机号" /></td>
+              <td align="left"></td>
+           </tr>
+           <tr>
+
+              <td align="right" >{$lang.password}{$lang.colon}</td>
+              <td align="left"><input class="input" type="password" id="password" name="password" placeholder="请输入密码" /></td>
+              <td align="left"></td>
+           </tr>
+           <tr>
+              <td align="right">{$lang.password_confirm}{$lang.colon}</td>
+              <td align="left"><input class="input" type="password" name="password_confirm" placeholder="确认密码" /></td>
+              <td align="left"></td>
+           </tr>
+           <tr>
+              <td align="right">{$lang.email}{$lang.colon}</td>
+              <td align="left"><input class="input" type="text" name="email" placeholder="请输入电子邮箱" /></td>
+              <td align="left"></td>
+              
+            </tr>
+			
+			 <!--注册手机验证--->
+			 
+			<tr>
+				<td align="right">手机：</td>
+				<td align="left">
+					<div class="div-phone">
+						<input type="text" id="phone" name="phone" class="infos" placeholder="请输入手机" />
+						<span id="sjh" style="display:none;"></span>
+						<a href="javascript:;" class="send1" onclick="sends.send();">发送验证码</a>
+					</div>
+
+				</td>
+				<td align="left"><div class="div-phone-ti"></div></td>
+            </tr>
+			
+			<tr>
+				
+
+				<td align="right">验证码：</td>
+				<td align="left">
+					<input type="text" id="code" class="infos" maxlength="6" name="code" placeholder="请输入验证码"  />
+				</td>
+				<td align="left"></td>
+            </tr>
+			
+			
+		   
+              
+
+            <!--<tr>
+              <td align="right">所在区域：</td>
+              <td align="left">
+
+
+                  <div class="info"style="width:300px;">
+                  <div>
+                  <select id="s_province" name="s_province">
+                   
+                  </select>
+
+                    <select id="s_city" name="s_city" ></select>  
+                    <select id="s_county" name="s_county"></select>
+                    <script class="resources library" src="/themes/mall/jiaju/styles/default/js/area.js" type="text/javascript"></script>
+                    
+                    <script type="text/javascript">_init_area();</script>
+                    </div>
+                    <div id="show"></div>
+                </div>
+                <script type="text/javascript">
+                var Gid  = document.getElementById ;
+                var showArea = function(){
+                  Gid('show').innerHTML = "<h3>广东省" + Gid('s_province').value + " - 市" +  
+                  Gid('s_city').value + " - 县/区" + 
+                  Gid('s_county').value + "</h3>"
+                              }
+                Gid('s_county').setAttribute('onchange','showArea()');
+                </script>
+
+
+
+
+
+              </td>
+
+
+              <tr>
+                <td align="right">详细地址</td>
+                <td align="left"><input class="input" id="xiangxi" type="text" name="xiangxi" /></td>
+                <td align="left"></td>
+                
+              </tr>
+
+
+
+              <td align="left"></td>
+              
+            </tr>-->
+
+
+
+            <!--{if $captcha}-->
+            <tr>
+              <td align="right">{$lang.captcha}{$lang.colon}</td>
+              <td align="left" class="captcha clearfix">
+                 <input type="text" class="input fleft" name="captcha"  id="captcha1" />
+                 <a class="fleft" href="javascript:change_captcha($('#captcha'));" hidefocus="true"><img id="captcha" src="index.php?app=captcha&amp;{$random_number}"/></a>
+              </td>
+              <td align="left"></td>
+           </tr>
+           <!--{/if}-->
+		   
+           <tr>
+              <td></td>
+              <td align="left">
+                 <input id="clause" type="checkbox" name="agree" value="1" class="agree_checkbox" />
+                 <label for="clause">{$lang.i_have_read} <a href="{url app=article&act=system&code=eula}" target="_blank">{$lang.mall_eula}</a></label></td>
+              <td align="left"></td>
+           </tr>
+		   
+		   
+		  
+		   
+		   
+		   
+		   
+		   
+           <tr>
+              <td align="left"></td>
+              <td colspan="2" align="left">
+                 <input type="submit" hidefocus="true" name="Submit" value="" class="btn-register" title="{$lang.register_now}" />
+                  <input type="hidden" name="ret_url" value="{$ret_url}" />
+                   <input type="hidden" name="types" value="{$types}" />
+              </td>
+           </tr>
+        </table>
+      </form>
+      <div class="is_member">
+         <h2 class="mb10">{$lang.attention}{$lang.colon}{$lang.not_member}</h2>
+         <p>{$lang.after_register}</p>
+            <ul>
+               <li>1. {$lang.save_profile}</li>
+               <li>2. {$lang.collect_goods}</li>
+               <li>3. {$lang.subscription_goods}</li>
+            </ul>
+            <h4 class="mt10">{$lang.already_have_account}</h4>
+            <a href="{url app=member&act=login&ret_url=$ret_url}" hidefocus="true" class="enter" title="{$lang.login_now}">{$lang.login_now}</a>
+      </div>                        
+   </div>
+</div>
+
+
+{include file=footer.html}

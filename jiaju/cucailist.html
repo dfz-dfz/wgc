@@ -1,0 +1,226 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Access-Control-Allow-Origin" content="*">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=8"/>
+<title>用户中心-辅材定额列表</title>
+<meta name="description" content="微工程，微工程APP，装修、材料、家具、饰品一站式服务，让装修更简单，价格更透明！！" />
+<meta name="keywords" content="微工程，微工程，家居商城，微工程家居商城，微工程家居装修商城，办公室装修，写字楼装修，材料，装修材料，家居，办公家具，家居，家具，装修，装饰" />
+<link rel="stylesheet" type="text/css" href="themes/mall/jiaju/css/api.css"/>
+<link rel="stylesheet" type="text/css" href="themes/mall/jiaju/css/aui.css" />
+<link rel="stylesheet" type="text/css" href="themes/mall/jiaju/css/aui.1.0.css"/>
+<script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+<!-- <script type="text/javascript" src="www.wgc2013.com/themes/mall/jiaju/js/jquery-1.8.3.min.js"></script> -->
+<link type="text/css" href="themes/mall/jiaju/styles/default/css/main.css" rel="stylesheet"  />
+<link type="text/css" href="themes/mall/jiaju/styles/css/global.css" rel="stylesheet"  />
+<link type="text/css" href="http://www.wgc2013.com/themes/mall/jiaju/styles/default/css/catalog.css" rel="stylesheet"  />
+<link type="text/css" href="http://www.wgc2013.com/themes/mall/jiaju/styles/default/css/footer.css" rel="stylesheet" />
+<link type="text/css" href="themes/mall/jiaju/styles/css/style.css" rel="stylesheet"  />
+<script type="text/javascript" src="index.php?act=jslang"></script>
+<script type="text/javascript" src="http://www.wgc2013.com/includes/libraries/javascript/ecmall.js" charset="utf-8"></script>
+<script type="text/javascript" src="http://www.wgc2013.com/includes/libraries/javascript/cart.js" charset="utf-8"></script>
+<script type="text/javascript" src="http://www.wgc2013.com/themes/mall/jiaju/styles/default/js/main.js" charset="utf-8"></script>
+
+<!--[if lte IE 6]>
+<script type="text/javascript" language="Javascript" src="http://www.wgc2013.com/themes/mall/jiaju/styles/default/js/hoverForIE6.js"></script>
+<![endif]-->
+<!--[if IE 8]>
+<link type="text/css" href="themes/mall/jiaju/css/ie8.css" rel="stylesheet"  />
+<![endif]-->
+<script type="text/javascript">
+var SITE_URL = "http://www.wgc2013.com";
+var PRICE_FORMAT = '&yen;%s';
+</script>
+<script charset="utf-8" type="text/javascript" src="http://www.wgc2013.com/includes/libraries/javascript/jquery.plugins/jquery.validate.js" ></script><style type="text/css">
+body{background:url('') no-repeat center top }
+.mainnav{width:990px; overflow:hidden; margin:0 auto}
+.STYLE1 {color: red}
+</style>
+<script type="text/javascript" src="http://www.wgc2013.com/themes/mall/jiaju/styles/default/js/hover.js"></script>
+<script>
+  function lxfEndtime(){
+          $(".lxftime").each(function(){
+                var lxfday=$(this).attr("lxfday");//用来判断是否显示天数的变量
+                var endtime = new Date($(this).attr("endtime")).getTime();//取结束日期(毫秒值)
+                var nowtime = new Date().getTime();        //今天的日期(毫秒值)
+                var youtime = endtime-nowtime;//还有多久(毫秒值)
+                var seconds = youtime/1000;
+                var minutes = Math.floor(seconds/60);
+                var hours = Math.floor(minutes/60);
+                var days = Math.floor(hours/24);
+                var CDay= days ;
+                var CHour= hours % 24;
+                var CMinute= minutes % 60;
+                var CSecond= Math.floor(seconds%60);//"%"是取余运算，可以理解为60进一后取余数，然后只要余数。
+                if(endtime<=nowtime){
+                        $(this).html("已过期")//如果结束日期小于当前日期就提示过期啦
+                        }else{
+                                if($(this).attr("lxfday")=="no"){
+                                        $(this).html("<i>剩余时间：</i><span>"+CHour+"</span>时<span>"+CMinute+"</span>分<span >"+CSecond+"</span>秒");          //输出没有天数的数据
+                                        }else{
+                        $(this).html("<span class='f24'>"+days+"</span><span>天</span><span  class='f24'>"+CHour+"</span><span>时</span><span  class='f24'>"+CMinute+"</span><span>分</span><span  class='f24'>"+CSecond+"</span><span>秒</span>");          //输出有天数的数据
+                                }
+                        }
+          });
+   setTimeout("lxfEndtime()",1000);
+  };
+$(function(){
+      lxfEndtime();
+   });
+</script>
+<script charset="utf-8" type="text/javascript" src="http://www.wgc2013.com/includes/libraries/javascript/jquery.plugins/jquery.validate.js" ></script>
+<script type="text/javascript">
+  $(function (){
+    $('#open-change-city-window').click(function (){
+      $('.change-city-window').slideDown();
+      
+    })
+    $('#close-change-city-window').click(function (){
+      $('.change-city-window').slideUp();
+    })
+
+  
+  })
+</script>
+</head>
+<body>
+{include file=header.html}
+
+<!-- 中部主要内容 -->
+ <div class="container" style="overflow: hidden;width: 1200px;margin: 10px auto;">
+ <!-- 左上的导航栏 -->
+ {include file=usercenter.html}
+
+ 	<!-- 右边的内容 -->
+ 	<div class="container_right" style="width: 80%;border: 1px solid #cacaca;float: right;background-color: #f7f7f7;padding: 0 10px 10px 10px;">
+
+		<!-- 预算报价 -->
+		<div class="worker_make base_ui_public" style="position: relative;">
+			<ul class="worker_make_ul user_public_ul">
+ 				<li class="change_bg_li" style="margin-right: 10px;">工人定额表</li>
+ 			</ul>
+ 			<div class="worker_make_info base_info_public" style="overflow: hidden;padding-left: 15%;min-height: 250px;">
+ 			<!--工人定额列表 -->
+			<div class="worker_make_list" style="position: relative;left: -16%;width: 115%;">
+				<div style="overflow: hidden;margin-top: 10px;">
+					<div style="position: relative;">
+						<div style="overflow: hidden;margin-top: 10px;">
+						<input type="text" style="width: 265px;height: 30px;float: left;border: 1px solid #808080;border-radius: 0;" />
+
+						<div style="float: left;">
+						<a href="#" style="display: inline-block;width: 75px;height: 30px;line-height: 30px;font-size: 16px;color: #f3552d;border: 1px solid #808080; background-color: #facd89;">搜索</a>
+						<a class="share_dinge" href="javascript:;" style="display: inline-block;width: 60px;height: 30px;line-height: 30px;font-size: 16px;color: #2d2a2a;font-weight: bold;letter-spacing: 4px; background-color: #facd89;border-radius: 5px;position: relative;left: 385px;text-decoration: none;">确定</a>
+						</div>
+			</div>
+			<div class="price_list" style="position: relative;width: 100%;">
+				<div class="price_list_name" style="text-align: left;width: 100%;">
+					<span>序号</span>
+					<span>材料名称</span>
+					<span>品牌</span>
+					<span>规格型号</span>
+					<span>单位</span>
+					<span>单价</span>
+					<span>含税价</span>
+					<span>配送时间</span>
+					<span>供应商</span>
+					<span>联系人</span>
+					<span>联系方式</span>
+					<span>网址</span>
+					<span>邮箱</span>
+					<span>微信号</span>
+					<span>备注</span>
+					<span>图片</span>
+				</div>
+				<div class="price_list_detail" style="text-align: left;width: 100%;">
+					<span><input type="checkbox" style="display: inline-block;" />&nbsp;&nbsp;1</span>
+					<span>• 空调盘机</span>
+					<span>格力</span>
+					<span>BN-12</span>
+					<span>台</span>
+					<span>4200</span>
+					<span>4872</span>
+					<span>3天</span>
+					<span>广东格力空调有限公司</span>
+					<span>王某</span>
+					<span>188xxxxxxxx</span>
+					<span></span>
+					<span></span>
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+
+				<!-- 分页 -->
+				<div class="price_page">
+				<a href="#">首页</a>
+				<a href="#">上一页</a>
+				<a href="#" style="width: 15px;">1</a>
+				<a href="#" style="width: 15px;">2</a>
+				<a href="#" style="width: 15px;">3</a>
+				<a href="#" style="width: 15px;">4</a>
+				<a href="#" style="width: 15px;">5</a>
+				<a href="#" style="width: 15px;">6</a>
+				<a href="#" style="width: 15px;">7</a>
+				<a href="#">...</a>
+				<a href="#">下一页</a>
+				<a href="#">尾页</a>
+				</div>
+			</div>
+			</div>
+				</div>
+			</div>
+			<!-- 预算报价内容 -->
+ 			</div>
+ 			
+			
+		</div>
+		
+		
+ 		</div>
+ 		
+ 	</div>
+
+{include file=footer.html}
+
+<script type="text/javascript">
+	$(".share_show").click(function(e){
+		e.stopPropagation(); 
+		$(".share_form").show();
+		$(".share_form").css({"top":"300px"});
+		$(".price_fucai_info").css("background-color","#eee");
+		$(".price_fucai_info input").css("background-color","#eee");
+
+	})
+	$(".price_fucai_info").click(function(){
+		
+			$(".share_form").hide();
+			$(".price_fucai_info").css("background-color","#fff");
+			$(".price_fucai_info input").css("background-color","#fff");
+		})
+
+	//点击辅材列表
+	$(".price_fucai_ul li:last").click(function(){
+		$(".price_fucai_ul li:first").removeClass("change_bg_li")
+		$(this).addClass("change_bg_li")
+		$(".price_info").hide();
+		$(".price_money").show();
+
+	})
+	$(".price_fucai_ul li:first").click(function(){
+		$(".price_fucai_ul li:last").removeClass("change_bg_li")
+		$(this).addClass("change_bg_li")
+		$(".price_info").show();
+		$(".price_money").hide();
+	})
+
+	$(".share_dinge").click(function(e){
+		e.stopPropagation(); 
+		$(".share_form").show();
+		$(".share_form").css({"top":"50px"});
+		$(".price_fucai_info").css("background-color","#eee");
+		$(".price_fucai_info input").css("background-color","#eee");
+	})
+</script>
+</body>
+</html>

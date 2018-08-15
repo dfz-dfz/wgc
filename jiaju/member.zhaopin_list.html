@@ -1,0 +1,55 @@
+{include file=member.header.html}
+<script type="text/javascript">
+$(function(){
+    $('#add_time_from').datepicker({dateFormat: 'yy-mm-dd'});
+    $('#add_time_to').datepicker({dateFormat: 'yy-mm-dd'});
+});
+</script>
+<style type="text/css">
+.float_right {float: right;}
+</style>
+<div class="content"style="width:1111px;">
+    {include file=member.menu.html}
+    <div id="right"style="width:920px;">
+        <ul class="tab">
+			<li class="normal"><a href="index.php?app=member&act=zhaopin">添加招聘</a></li>
+		</ul>
+        <div class="wrap"style="width:100%;">
+            <div class="public"style="width:100%;">
+                
+                
+                <div class="order_form">
+                    <h2>
+						<p style="text-align:center;width:250px;float:left">标题</p>
+                        <p style="text-align:center;width:150px;float:left">公司</p>
+                        <p style="text-align:center;width:200px;float:left">发布时间</p>
+                        <p style="text-align:center;width:100px;float:left">状态</p>
+						<p style="text-align:center;width:150px;float:left">操作</p>
+                    </h2>
+
+                    
+
+                    {$list}
+					
+                </div>
+                
+              
+                <div class="order_form_page">
+                    <div class="page">
+                        {include file=member.page.bottom.html}
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="wrap_bottom"></div>
+        </div>
+        <div class="clear"></div>
+        <div class="adorn_right1"></div>
+        <div class="adorn_right2"></div>
+        <div class="adorn_right3"></div>
+        <div class="adorn_right4"></div>
+    </div>
+    <div class="clear"></div>
+</div>
+<iframe id='iframe_post' name="iframe_post" src="about:blank" frameborder="0" width="0" height="0"></iframe>
+{include file=footer.html}

@@ -1,0 +1,101 @@
+{include file=header.html}
+<style type="text/css">
+.moremain{width:77%;min-width:1100px;margin-top:10px;margin-bottom:10px;margin-left:auto;margin-right:auto;}
+.divmsg{width:100%;height:20px;border:1px solid #808080;text-align:left;padding-top:5px;}
+.divarea{width:100%;height:30px;border-bottom:1px solid #808080;border-top:1px solid #808080;margin-top:10px;text-align:left;padding-top:9px;}
+.divselect{width:100%;height:38px;border-bottom:1px solid #808080;border-top:1px solid #808080;margin-top:10px;text-align:left;padding-top:13px;}
+.divlogo{width:100%;height:55px;border:1px solid #808080;margin-top:10px;}
+.divmain{width:100%;}
+.maintable{width:100%;}
+.lefttable tr td{border-bottom:1px dotted #808080;}
+</style>
+<div class="moremain">
+	<div class="divmsg">　　　　找到　<span style="color:#FD0000;">{$gtype}</span>　相关信息共　<span style="color:#FD0000;">{$tiao}</span>　条</div>
+	<div class="divarea">　　　　<span>地址：</span><span><a href="index.php?app=search&act=morestore&gtype={$gtype}">全广州</a></span>　<span style="color:#31A4FD;"><?php echo provinceyu2();?></span></div>
+	<div class="divselect">　　　　<span style="font-size:17px;">已选条件：{$selected}</span></div>
+	<div class="divlogo"><img style="width:100%;height:100%;" src="/themes/mall/jiaju/images/morestore.png" /></div>
+	<div class="divmain">
+		<table class="maintable">
+			<tr style="width:100%;">
+			<td style="width:75%;text-align:left;" valign="top">
+				<table class="lefttable" style="width:100%;">
+					{foreach from=$list item=row}
+						<tr><td style="width:22%;"><a href="http://59jiaju.com/index.php?app=goods&act=storeinfo&id={$row.id}"><img style="width:60%;" border="1" src="{$row.gslogourl}"  /></a></td><td style="width:48%;"><div><p><a href="http://59jiaju.com/index.php?app=goods&act=storeinfo&id={$row.id}"><span style="font-size:20px;">{$row.fanwei}</span></a></p></div></td><td style="width:20%;"><a href="javascript:;"><img style="width:70%;" src="/themes/mall/jiaju/images/lxsj.png"  /></a></td></tr>
+					{/foreach}
+
+					<!--<tr><td style="width:25%;"><a href="http://59jiaju.com/index.php?app=goods&act=storeinfo"><img style="width:60%;" border="1" src="/themes/mall/jiaju/images/zs1.png"  /></a></td><td style="width:40%;"><div><p><a href="http://59jiaju.com/index.php?app=goods&act=storeinfo"><span style="font-size:20px;">广州专业承接工装办公室 厂房酒店</span></a></p><p><a href="http://59jiaju.com/index.php?app=goods&act=storeinfo"><span style="font-size:20px;margin-top:5px;">广州专业承接工装办公室 厂房酒店</span></a></p><p><a href="http://59jiaju.com/index.php?app=goods&act=storeinfo"><span style="font-size:20px;margin-top:5px;">广州专业承接工装办公室 厂房酒店</span></a></p></div></td><td style="width:25%;"><a href="javascript:;"><img style="width:70%;" src="/themes/mall/jiaju/images/lxsj.png"  /></a></td></tr>
+					<tr><td style="width:25%;"><a href="http://59jiaju.com/index.php?app=goods&act=storeinfo"><img style="width:60%;" border="1" src="/themes/mall/jiaju/images/zs1.png"  /></a></td><td style="width:40%;"><div><p><a href="http://59jiaju.com/index.php?app=goods&act=storeinfo"><span style="font-size:20px;">广州专业承接工装办公室 厂房酒店</span></a></p><p><a href="http://59jiaju.com/index.php?app=goods&act=storeinfo"><span style="font-size:20px;margin-top:5px;">广州专业承接工装办公室 厂房酒店</span></a></p><p><a href="http://59jiaju.com/index.php?app=goods&act=storeinfo"><span style="font-size:20px;margin-top:5px;">广州专业承接工装办公室 厂房酒店</span></a></p></div></td><td style="width:25%;"><a href="javascript:;"><img style="width:70%;" src="/themes/mall/jiaju/images/lxsj.png"  /></a></td></tr>
+					<tr><td style="width:25%;"><a href="http://59jiaju.com/index.php?app=goods&act=storeinfo"><img style="width:60%;" border="1" src="/themes/mall/jiaju/images/zs1.png"  /></a></td><td style="width:40%;"><div><p><a href="http://59jiaju.com/index.php?app=goods&act=storeinfo"><span style="font-size:20px;">广州专业承接工装办公室 厂房酒店</span></a></p><p><a href="http://59jiaju.com/index.php?app=goods&act=storeinfo"><span style="font-size:20px;margin-top:5px;">广州专业承接工装办公室 厂房酒店</span></a></p><p><a href="http://59jiaju.com/index.php?app=goods&act=storeinfo"><span style="font-size:20px;margin-top:5px;">广州专业承接工装办公室 厂房酒店</span></a></p></div></td><td style="width:25%;"><a href="javascript:;"><img style="width:70%;" src="/themes/mall/jiaju/images/lxsj.png"  /></a></td></tr>
+					<tr><td style="width:25%;"><a href="http://59jiaju.com/index.php?app=goods&act=storeinfo"><img style="width:60%;" border="1" src="/themes/mall/jiaju/images/zs1.png"  /></a></td><td style="width:40%;"><div><p><a href="http://59jiaju.com/index.php?app=goods&act=storeinfo"><span style="font-size:20px;">广州专业承接工装办公室 厂房酒店</span></a></p><p><a href="http://59jiaju.com/index.php?app=goods&act=storeinfo"><span style="font-size:20px;margin-top:5px;">广州专业承接工装办公室 厂房酒店</span></a></p><p><a href="http://59jiaju.com/index.php?app=goods&act=storeinfo"><span style="font-size:20px;margin-top:5px;">广州专业承接工装办公室 厂房酒店</span></a></p></div></td><td style="width:25%;"><a href="javascript:;"><img style="width:70%;" src="/themes/mall/jiaju/images/lxsj.png"  /></a></td></tr>
+					<tr><td style="width:25%;"><a href="http://59jiaju.com/index.php?app=goods&act=storeinfo"><img style="width:60%;" border="1" src="/themes/mall/jiaju/images/zs1.png"  /></a></td><td style="width:40%;"><div><p><a href="http://59jiaju.com/index.php?app=goods&act=storeinfo"><span style="font-size:20px;">广州专业承接工装办公室 厂房酒店</span></a></p><p><a href="http://59jiaju.com/index.php?app=goods&act=storeinfo"><span style="font-size:20px;margin-top:5px;">广州专业承接工装办公室 厂房酒店</span></a></p><p><a href="http://59jiaju.com/index.php?app=goods&act=storeinfo"><span style="font-size:20px;margin-top:5px;">广州专业承接工装办公室 厂房酒店</span></a></p></div></td><td style="width:25%;"><a href="javascript:;"><img style="width:70%;" src="/themes/mall/jiaju/images/lxsj.png"  /></a></td></tr>
+					<tr><td style="width:25%;"><a href="http://59jiaju.com/index.php?app=goods&act=storeinfo"><img style="width:60%;" border="1" src="/themes/mall/jiaju/images/zs1.png"  /></a></td><td style="width:40%;"><div><p><a href="http://59jiaju.com/index.php?app=goods&act=storeinfo"><span style="font-size:20px;">广州专业承接工装办公室 厂房酒店</span></a></p><p><a href="http://59jiaju.com/index.php?app=goods&act=storeinfo"><span style="font-size:20px;margin-top:5px;">广州专业承接工装办公室 厂房酒店</span></a></p><p><a href="http://59jiaju.com/index.php?app=goods&act=storeinfo"><span style="font-size:20px;margin-top:5px;">广州专业承接工装办公室 厂房酒店</span></a></p></div></td><td style="width:25%;"><a href="javascript:;"><img style="width:70%;" src="/themes/mall/jiaju/images/lxsj.png"  /></a></td></tr>
+					<tr><td style="width:25%;"><a href="http://59jiaju.com/index.php?app=goods&act=storeinfo"><img style="width:60%;" border="1" src="/themes/mall/jiaju/images/zs1.png"  /></a></td><td style="width:40%;"><div><p><a href="http://59jiaju.com/index.php?app=goods&act=storeinfo"><span style="font-size:20px;">广州专业承接工装办公室 厂房酒店</span></a></p><p><a href="http://59jiaju.com/index.php?app=goods&act=storeinfo"><span style="font-size:20px;margin-top:5px;">广州专业承接工装办公室 厂房酒店</span></a></p><p><a href="http://59jiaju.com/index.php?app=goods&act=storeinfo"><span style="font-size:20px;margin-top:5px;">广州专业承接工装办公室 厂房酒店</span></a></p></div></td><td style="width:25%;"><a href="javascript:;"><img style="width:70%;" src="/themes/mall/jiaju/images/lxsj.png"  /></a></td></tr>-->
+				</table>
+			</td>
+			<td style="width:25%;" valign="top">
+				<table style="width:100%;">
+				<tr style="width:100%;"><td><a href="javascript:;"><img style="width:100%;" src="/themes/mall/jiaju/images/moreggw.png"  /></a></td></tr>
+				<tr><td><a href="javascript:;"><img style="width:100%;" src="/themes/mall/jiaju/images/moreggw.png"  /></a></td></tr>
+				<tr><td><a href="javascript:;"><img style="width:100%;" src="/themes/mall/jiaju/images/moreggw.png"  /></a></td></tr>
+				</table>
+			</td>
+			</tr>
+		</table>
+	</div>
+</div>
+<script type="text/javascript"> 
+function scrollx(p) { 
+var d = document, dd = d.documentElement, db = d.body, w = window, o = d.getElementById(p.id), ie6 = /msie 6/i.test(navigator.userAgent), style, timer; 
+if (o) { 
+  cssPub = ";position:"+(p.f&&!ie6?'fixed':'absolute')+";"+(p.t!=undefined?'top:'+p.t+'px;':'bottom:0;'); 
+  if (p.r != undefined && p.l == undefined) { 
+   o.style.cssText += cssPub + ('right:'+p.r+'px;'); 
+  } else { 
+   o.style.cssText += cssPub + ('margin-left:'+p.l+'px;'); 
+  } 
+  if(p.f&&ie6){ 
+   cssTop = ';top:expression(documentElement.scrollTop +'+(p.t==undefined?dd.clientHeight-o.offsetHeight:p.t)+'+ "px" );'; 
+   cssRight = ';right:expression(documentElement.scrollright + '+(p.r==undefined?dd.clientWidth-o.offsetWidth:p.r)+' + "px")'; 
+   if (p.r != undefined && p.l == undefined) { 
+    o.style.cssText += cssRight + cssTop; 
+   } else { 
+    o.style.cssText += cssTop; 
+   } 
+   dd.style.cssText +=';background-image: url(about:blank);background-attachment:fixed;'; 
+  }else{ 
+   if(!p.f){ 
+    w.onresize = w.onscroll = function(){ 
+     clearInterval(timer); 
+     timer = setInterval(function(){ 
+      //双选择为了修复chrome 下xhtml解析时dd.scrollTop为 0 
+      var st = (dd.scrollTop||db.scrollTop),c; 
+      c = st - o.offsetTop + (p.t!=undefined?p.t:(w.innerHeight||dd.clientHeight)-o.offsetHeight); 
+      if(c!=0){ 
+       o.style.top = o.offsetTop + Math.ceil(Math.abs(c)/10)*(c<0?-1:1) + 'px'; 
+      }else{ 
+       clearInterval(timer); 
+      } 
+     },10) 
+    } 
+   } 
+  } 
+} 
+} 
+</script> 
+<div id="float_right" ><a href="http://59jiaju.com/index.php?app=search&act=storeadd"><img src="/themes/mall/jiaju/images/float_left.png" /></a></div> 
+<script type="text/javascript">  
+//左侧固定 
+scrollx({id:'float_left2',t:280, f:1}); 
+//右侧固定 
+scrollx({id:'float_right', r:0, t:200, f:1}); 
+/* 
+scrollx参数说明 
+
+id：浮动对象的id 
+r：右边距（窗口右边距，不写为靠左浮动） 
+l：左边距（距离父级对象的左边距） “r”和“l”只能有其中一个参数 
+t：上边距（默认贴着底边，0是贴着顶边） 
+f：1表示固定（不写或者0表示滚动） 
+*/ 
+</script> 
+{include file=footer.html}

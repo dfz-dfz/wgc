@@ -1,0 +1,109 @@
+
+.section {
+	background-color: #fff;
+}
+
+.wages_custom {
+	padding-top: 30px;
+	width: 100%;
+	height: 400px;
+	min-width: 800px;
+}
+
+.wages_custom .base_left {
+	width: 25%;
+	float: left;
+}
+
+.wages_custom .base_right {
+	width: 75%;
+	float: left;
+}
+
+.input_type {
+	letter-spacing: 2px;
+	white-space: pre-wrap;
+	color: #000;
+	font-weight: bold;
+}
+
+.base_right span{
+	font-size: 14px;
+	color: #000;
+	font-weight: bold;
+}
+
+.base_right .left_input {
+	margin-right: 40px;
+
+}
+
+.colon {
+	margin: 0 4px;
+}
+
+.base_right select {
+    height: 24px;
+    width: 173px;
+    margin-left: -5px;
+    cursor: pointer;
+}
+
+.base_right textarea {
+	height: 80px;
+	width: 350px;
+	resize: none;
+	float: left;
+	padding-left: 5px;
+}
+
+.textarea_box {
+	margin-top: 50px;
+}
+
+.wages_custom .sub_btn,
+.wages_list .sub_btn {
+	width: 160px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	border: none;
+	color: #fff;
+	font-size: 20px;
+	font-weight: 600;
+	letter-spacing: 2px;
+	background-color: #ea6200;
+	position: absolute;
+	bottom: 30px;
+	left: 50%;
+	margin-left: -80px;
+	cursor: pointer;
+}
+
+.wages_list .change_password {
+	width: 260px;
+	height: 160px;
+	margin: 0 auto;
+}
+
+.change_password li {
+	margin-bottom: 10px;
+}
+
+.change_password input {
+	height: 20px;
+}
+
+.wages_list .sub_btn {
+	width: 160px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	border: none;
+	color: #fff;
+	font-size: 20px;
+	font-weight: 600;
+	letter-spacing: 2px;
+	background-color: #ea6200;
+	cursor: pointer;	
+}

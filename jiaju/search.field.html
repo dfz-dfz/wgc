@@ -1,0 +1,300 @@
+{include file=header_field.html}
+<link type="text/css" href="http://www.59jiaju.com/themes/mall/jiaju/styles/default/css/lai.css" rel="stylesheet">
+<div class="field-play">
+	<div class="field-big-play">
+		<ul class="field-big-play-ul" id="field_big_play_ul">
+			<li>
+				<a><img src="http://www.59jiaju.com/themes/mall/jiaju/styles/default/images/field/ouyada_01.jpg" alt="" ></a>
+			</li>
+			<li>
+				<a><img src="http://www.59jiaju.com/themes/mall/jiaju/styles/default/images/field/ouyada_02.jpg" alt="" ></a>
+			</li>
+			
+		</ul>
+		<div id="field-small-play">
+			<span class="field-click-a">1</span>
+			<span class="field-click-a">2</span>
+			
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+	$(document).ready(function (){
+		var play_now=0;
+		$('.field-big-play-ul li:first').css('display','block');
+		var oFieldBigPlay=document.getElementById('field_big_play_ul');
+		var aFieldBigPlay=oFieldBigPlay.getElementsByTagName('li');
+		var oFieldSmallPlay=document.getElementById('field-small-play');
+		var aFieldSmallClick=oFieldSmallPlay.getElementsByTagName('span');
+		//alert(aFieldSmallClick.length);
+
+		aFieldSmallClick[0].style.background='#ee0000';
+		aFieldSmallClick[0].style.color='#fff';
+		for (var i = 0; i < aFieldSmallClick.length; i++) {
+			aFieldSmallClick[i].index=i;
+			aFieldSmallClick[i].onclick=function (){
+				play_now=this.index;
+				for (var i = 0; i < aFieldSmallClick.length; i++) {
+					aFieldSmallClick[i].style.background='#fff';
+					aFieldSmallClick[i].style.color='red';
+				};
+				this.style.background='#ee0000';
+				this.style.color='#fff';
+				for (var i = 0; i < aFieldBigPlay.length; i++) {
+					aFieldBigPlay[i].style.display='none';
+				};
+				aFieldBigPlay[this.index].style.display='block';
+			}
+		}
+
+		function AutoPlay(){
+			if (play_now==aFieldSmallClick.length-1) {
+				play_now=0;
+			}
+			else{
+				play_now++;
+			}
+			for (var i = 0; i < aFieldSmallClick.length; i++) {
+				aFieldSmallClick[i].style.background='#fff';
+				aFieldSmallClick[i].style.color='red';
+			};
+			aFieldSmallClick[play_now].style.background='#ee0000';
+			aFieldSmallClick[play_now].style.color='#fff';
+			for (var i = 0; i < aFieldBigPlay.length; i++) {
+				aFieldBigPlay[i].style.display='none';
+			};
+			aFieldBigPlay[play_now].style.display='block';
+		}
+		setInterval(AutoPlay,5000);
+	})
+</script>
+<div class="field-con">
+	<div class="l-left">
+	<div>
+		<h4>店铺分类</h4>
+		
+		<ul>
+			 <!--{foreach from=$scategorys item=scategory}-->
+			<li>
+				<a class="l-bigcat" href="{url app=search&act=store&cate_id=$scategory.id}">{$scategory.value|escape}</a>
+				<!--{if $scategory.children}-->
+				<i></i>
+				<dl>
+					<!--{foreach from=$scategory.children item=child}-->
+					   <dd><a href="{url app=search&act=store&cate_id=$child.id}">{$child.value|escape}</a></dd>
+					<!--{/foreach}-->
+				</dl>
+				<!--{/if}-->
+			</li>
+			<!--{/foreach}-->
+		</ul><br />
+</div>
+<div class="field-list">
+<h4>热门推荐</h4>
+<dl>
+<dt><a target="_blank" href="http://www.59jiaju.com/index.php?app=goods&id=3487"><img src="http://www.59jiaju.com/themes/mall/jiaju/styles/default/images/field/ayd01.jpg" /></a></dt>
+<dd>风韵 悦心马赛克镜面瓷砖</dd>
+<dd style="color:#FF0000;">￥124.00</dd>
+</dl>
+<dl>
+<dt><a target="_blank" href="http://www.59jiaju.com/index.php?app=goods&id=1799"><img src="http://www.59jiaju.com/themes/mall/jiaju/styles/default/images/field/ayd02.jpg" /></a></dt>
+<dd>逸彩佳居 儿童上下组合床</dd>
+<dd style="color:#FF0000;">￥999.00</dd>
+</dl>
+<dl>
+<dt><a target="_blank" href="http://www.59jiaju.com/index.php?app=goods&id=3292"><img src="http://www.59jiaju.com/themes/mall/jiaju/styles/default/images/field/ayd03.jpg" /></a></dt>
+<dd>欧式 真皮皮艺沙发组合</dd>
+<dd style="color:#FF0000;">￥2,980.00</dd>
+</dl>
+</div>
+	</div>
+	<script type="text/javascript">
+	$(function (){
+		$('.l-left ul li').mouseover(function (){
+			$(this).css('background','#A50000');
+			$(this).children('.l-bigcat').css('color','#ffffff');
+			if ($(this).children('dl')) {
+				$(this).children('dl').css('display','block');
+			};
+		});
+		$('.l-left ul li').mouseout(function (){
+			$(this).css('background','#ffffff');
+			$(this).children('.l-bigcat').css('color','#3e3e3e');
+			if ($(this).children('dl')) {
+				$(this).children('dl').css('display','none');
+			};
+		});
+	})
+	</script>
+	<div class="l-con">
+	<h3>入驻品牌店</h3>
+   		<ul>
+   			<li>
+   				<a class="l-img-a" href="{url app=store&id=$store.store_id}">
+   					<img src="http://www.59jiaju.com/themes/mall/jiaju/styles/default/images/field/shiyoudiban_s.jpg" width="180" height="180" />
+   				</a>
+   				<div class="l-con-info">
+   					<h4>
+   						<a href="{url app=store&id=$store.store_id}">
+   							世友地板
+   						</a>
+   					</h4>
+   					<div class="l-tel">
+   						<span>地区：广州市&nbsp;白云区&nbsp;欧亚达</span>
+   						<b>联系电话：</b>
+   					</div>
+   				</div>
+   			</li>
+   			<li>
+   				<a class="l-img-a" href="{url app=store&id=$store.store_id}">
+   					<img src="http://www.59jiaju.com/themes/mall/jiaju/styles/default/images/field/faello_s.jpg" width="180" height="180" />
+   				</a>
+   				<div class="l-con-info">
+   					<h4>
+   						<a href="{url app=store&id=$store.store_id}">
+   							法尔诺衣柜
+   						</a>
+   					</h4>
+   					<div class="l-tel">
+   						<span>地区：广州市&nbsp;白云区&nbsp;欧亚达</span>
+   						<b>联系电话：</b>
+   					</div>
+   				</div>
+   			</li>
+   			<li>
+   				<a class="l-img-a" href="{url app=store&id=$store.store_id}">
+   					<img src="http://www.59jiaju.com/themes/mall/jiaju/styles/default/images/field/sunlot_s.jpg" width="180" height="180" />
+   				</a>
+   				<div class="l-con-info">
+   					<h4>
+   						<a href="{url app=store&id=$store.store_id}">
+   							申鹭达卫浴
+   						</a>
+   					</h4>
+   					<div class="l-tel">
+   						<span>地区：广州市&nbsp;白云区&nbsp;欧亚达</span>
+   						<b>联系电话：</b>
+   					</div>
+   				</div>
+   			</li>
+   			<li>
+   				<a class="l-img-a" href="{url app=store&id=$store.store_id}">
+   					<img src="http://www.59jiaju.com/themes/mall/jiaju/styles/default/images/field/xiyang_s.jpg" width="180" height="180" />
+   				</a>
+   				<div class="l-con-info">
+   					<h4>
+   						<a href="{url app=store&id=$store.store_id}">
+   							西洋
+   						</a>
+   					</h4>
+   					<div class="l-tel">
+   						<span>地区：广州市&nbsp;白云区&nbsp;欧亚达</span>
+   						<b>联系电话：</b>
+   					</div>
+   				</div>
+   			</li>
+   			<li>
+   				<a class="l-img-a" href="{url app=store&id=$store.store_id}">
+   					<img src="http://www.59jiaju.com/themes/mall/jiaju/styles/default/images/field/26_01.jpg" width="180" height="180" />
+   				</a>
+   				<div class="l-con-info">
+   					<h4>
+   						<a href="{url app=store&id=$store.store_id}">
+   							优乐酷
+   						</a>
+   					</h4>
+   					<div class="l-tel">
+   						<span>地区：广州市&nbsp;白云区&nbsp;欧亚达</span>
+   						<b>联系电话：</b>
+   					</div>
+   				</div>
+   			</li>
+   			<li>
+   				<a class="l-img-a" href="{url app=store&id=$store.store_id}">
+   					<img src="http://www.59jiaju.com/themes/mall/jiaju/styles/default/images/field/26_02.jpg" width="180" height="180" />
+   				</a>
+   				<div class="l-con-info">
+   					<h4>
+   						<a href="{url app=store&id=$store.store_id}">
+   							TOTO智能卫浴专家
+   						</a>
+   					</h4>
+   					<div class="l-tel">
+   						<span>地区：广州市&nbsp;白云区&nbsp;欧亚达</span>
+   						<b>联系电话：</b>
+   					</div>
+   				</div>
+   			</li>
+   			<li>
+   				<a class="l-img-a" href="{url app=store&id=$store.store_id}">
+   					<img src="http://www.59jiaju.com/themes/mall/jiaju/styles/default/images/field/26_03.jpg" width="180" height="180" />
+   				</a>
+   				<div class="l-con-info">
+   					<h4>
+   						<a href="{url app=store&id=$store.store_id}">
+   							龙轩木门
+   						</a>
+   					</h4>
+   					<div class="l-tel">
+   						<span>地区：广州市&nbsp;白云区&nbsp;欧亚达</span>
+   						<b>联系电话：</b>
+   					</div>
+   				</div>
+   			</li>
+   			<li>
+   				<a class="l-img-a" href="{url app=store&id=$store.store_id}">
+   					<img src="http://www.59jiaju.com/themes/mall/jiaju/styles/default/images/field/26_04.jpg" width="180" height="180" />
+   				</a>
+   				<div class="l-con-info">
+   					<h4>
+   						<a href="{url app=store&id=$store.store_id}">
+   							米兰.芭比
+   						</a>
+   					</h4>
+   					<div class="l-tel">
+   						<span>地区：广州市&nbsp;白云区&nbsp;欧亚达</span>
+   						<b>联系电话：</b>
+   					</div>
+   				</div>
+   			</li>
+   			<li>
+   				<a class="l-img-a" href="{url app=store&id=$store.store_id}">
+   					<img src="http://www.59jiaju.com/themes/mall/jiaju/styles/default/images/field/26_05.jpg" width="180" height="180" />
+   				</a>
+   				<div class="l-con-info">
+   					<h4>
+   						<a href="{url app=store&id=$store.store_id}">
+   							朗斯
+   						</a>
+   					</h4>
+   					<div class="l-tel">
+   						<span>地区：广州市&nbsp;白云区&nbsp;欧亚达</span>
+   						<b>联系电话：</b>
+   					</div>
+   				</div>
+   			</li>
+   		</ul>
+   		<div class="l-pages">
+   			<span>上一页</span>
+   			<span class="current-page">1</span>
+			<span>下一页</span>
+   		</div>
+     </div>
+</div>
+<div class="sale">
+   <div class="sale-in">
+      <h2>商城简介</h2>
+	  <p style=" width:385px; float:right;"><img src="http://www.59jiaju.com/themes/mall/jiaju/styles/default/images/field/oyd.jpg"  /></p>
+      <p style=" width:530px; float:left;">
+            欧亚达家居广州黄石店，是欧亚达家居集团巨资打造的白云区首家体验式主流建材家具购物广场，是其在中国南方市场战略布局的开篇之作，也是其在全国范围内布局的第28家高端家居连锁商场。
+    黄石店地处广州市传统建材家具商圈，座落于白云区黄石西路222号，紧邻广州市新城市中心 ——白云新城，占据小坪立交和黄石立交两大立交桥之间的中心位置，承启南北，连接东西，交通便利，商业繁华。按照国际标准的购物中心模式精心打造，采用国际最先进的园林式购物广场模式，总体经营面积约12万平米，门前绿化广场面积2000平米，拥有国际标准化设施的泊车位500个。
+    商场内部规划科学，功能分区明确，动线设计合理，设置总服务台、商务中心、钢琴演奏台、休闲水吧等；中央空调、观光电梯、手扶自动电梯、货运电梯等物业设施一应俱全。举行现场签售活动。
+      </p>
+   </div>
+</div>
+<div>
+	<div class="field-ditu">
+		
+		<p><a target="_blank" href="http://www.59jiaju.com"><img src="http://www.59jiaju.com/themes/mall/jiaju/styles/default/images/field/oyddt.jpg"  /></a></p>
+</div>
+{include file=footer.html}

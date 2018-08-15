@@ -1,0 +1,246 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Access-Control-Allow-Origin" content="*">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=8"/>
+<title>用户中心-发布列表</title>
+<meta name="description" content="微工程，微工程APP，装修、材料、家具、饰品一站式服务，让装修更简单，价格更透明！！" />
+<meta name="keywords" content="微工程，微工程，家居商城，微工程家居商城，微工程家居装修商城，办公室装修，写字楼装修，材料，装修材料，家居，办公家具，家居，家具，装修，装饰" />
+<link rel="stylesheet" type="text/css" href="themes/mall/jiaju/css/api.css"/>
+
+<link rel="stylesheet" type="text/css" href="themes/mall/jiaju/css/aui.1.0.css"/>
+<script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+<!-- <script type="text/javascript" src="www.wgc2013.com/themes/mall/jiaju/js/jquery-1.8.3.min.js"></script> -->
+<link type="text/css" href="themes/mall/jiaju/styles/default/css/main.css" rel="stylesheet"  />
+<link type="text/css" href="themes/mall/jiaju/styles/css/global.css" rel="stylesheet"  />
+<link type="text/css" href="http://www.wgc2013.com/themes/mall/jiaju/styles/default/css/catalog.css" rel="stylesheet"  />
+<link type="text/css" href="http://www.wgc2013.com/themes/mall/jiaju/styles/default/css/footer.css" rel="stylesheet" />
+<link type="text/css" href="themes/mall/jiaju/styles/css/style.css" rel="stylesheet"  />
+<script type="text/javascript" src="index.php?act=jslang"></script>
+<script type="text/javascript" src="http://www.wgc2013.com/includes/libraries/javascript/ecmall.js" charset="utf-8"></script>
+<script type="text/javascript" src="http://www.wgc2013.com/includes/libraries/javascript/cart.js" charset="utf-8"></script>
+<script type="text/javascript" src="http://www.wgc2013.com/themes/mall/jiaju/styles/default/js/main.js" charset="utf-8"></script>
+
+<!--[if lte IE 6]>
+<script type="text/javascript" language="Javascript" src="http://www.wgc2013.com/themes/mall/jiaju/styles/default/js/hoverForIE6.js"></script>
+<![endif]-->
+<!--[if IE 8]>
+<link type="text/css" href="themes/mall/jiaju/css/ie8.css" rel="stylesheet"  />
+<![endif]-->
+<script type="text/javascript">
+var SITE_URL = "http://www.wgc2013.com";
+var PRICE_FORMAT = '&yen;%s';
+</script>
+<script charset="utf-8" type="text/javascript" src="http://www.wgc2013.com/includes/libraries/javascript/jquery.plugins/jquery.validate.js" ></script><style type="text/css">
+body{background:url('') no-repeat center top }
+.mainnav{width:990px; overflow:hidden; margin:0 auto}
+.STYLE1 {color: red}
+</style>
+<script type="text/javascript" src="http://www.wgc2013.com/themes/mall/jiaju/styles/default/js/hover.js"></script>
+<script>
+
+</script>
+</head>
+<body>
+{include file=header.html}
+
+<!-- 中部主要内容 -->
+ <div class="container" style="overflow: hidden;width: 1200px;margin: 10px auto;">
+ <!-- 左上的导航栏 -->
+ {include file=usercenter.html}
+
+ 	<!-- 右边的内容 -->
+ 	<div class="container_right" style="width: 80%;border: 1px solid #cacaca;float: right;background-color: #f7f7f7;padding: 0 10px 10px 10px;">
+
+		<!-- 预算报价 -->
+		<div class="budget base_ui_public" style="/*display: none;*/position: relative;">
+			<ul class="budget_ul user_public_ul">
+ 				<li class="change_bg_li" style="margin-right: 10px;">材料采购</li>
+ 			</ul>
+ 			<div class="budget_info base_info_public" style="overflow: hidden;padding-left: 15%;min-height: 250px;">
+ 			<!-- 预算报价 -->
+ 			<div class="budget_detail" style="position: relative;left: -16%;width: 115%;">
+			<div style="overflow: hidden;margin-top: 10px;">
+			<!-- 搜索框 -->
+			<div style="overflow: hidden;margin-top: 10px;">
+			<input type="text" style="width: 265px;height: 30px;float: left;border: 1px solid #808080;border-radius: 0;" />
+
+			<div style="float: left;">
+				<a href="#" style="display: inline-block;width: 75px;height: 30px;line-height: 30px;font-size: 16px;color: #f3552d;border: 1px solid #808080; background-color: #facd89;">搜索</a>
+				<a class="share_dinge" href="javascript:;" style="display: inline-block;width: 60px;height: 30px;line-height: 30px;font-size: 16px;color: #2d2a2a;font-weight: bold;letter-spacing: 4px; background-color: #facd89;border-radius: 5px;position: relative;left: 385px;text-decoration: none;">分享</a>
+			</div>
+			</div>
+				<!-- 预算表格 -->
+				<div class="budget_table">
+				<table style="width: 100%;" border="0" cellspacing="0" cellpadding="0" id="budget_table">
+					<tbody>
+						<tr class="thead" style="background-color: #eee;">
+							<th style="width: 5%"><span style="border-left:  2px solid #bcbcbc">序号</span></th>
+							<th style="width: 16%"><span>材料名称</span></th>
+							<th style="width: 8%"><span>品牌</span></th>
+							<th style="width: 10%"><span>型号</span></th>
+							<th style="width: 10%"><span>需到货时间</span></th>
+							<th style="width: 6%"><span>数量</span></th>
+							<th style="width: 6%"><span>单位</span></th>
+							<th style="width: 6%"><span>单价</span></th>
+							<th style="width: 6%"><span>合计</span></th>
+							<th style="width: 18%"><span style="border-right:  2px solid #bcbcbc">备注</span></th>
+						</tr>
+						<tr class="tmain">
+							<td style="width: 5%"><span>1</span></td>
+							<td style="width: 16%"><span>水泥</span></td>
+							<td style="width: 8%"><span>石井</span></td>
+							<td style="width: 10%"><span>120*600*200</span></td>
+							<td style="width: 10%"><span>2018.12.31</span></td>
+							<td style="width: 6%"><span>1000</span></td>
+							<td style="width: 6%"><span>立方</span></td>
+							<td style="width: 6%"><span>5000</span></td>
+							<td style="width: 6%"><span>500000</span></td>
+							<td style="width: 18%;border-right:2px solid #bcbcbc;"><span>1捆=10根，1根=3米</span></td>
+						</tr>
+					</tbody>
+				</table>
+				<div class="gongchen_total" style="width: 100%;height: 30px;border:  2px solid #979898;border-top: none;">
+						<span class="add_table" style="width: 5.4%;border-left: none;border-right:  2px solid #979898;font-size: 20px;cursor: pointer;">+</span>
+						<span style="width: 6.6%;margin-left: 61.6%;">总计：</span>
+						<span style="width: 6.6%;"><textarea style="height: 100%;border: none;text-align: center;"></textarea></span>
+						<span id="all_total" style="width: 16%;">优惠价:</span>
+					</div>
+					<!-- 材料申购单位 -->
+					<div class="meterial_buy">
+						<table style="width: 100%;" border="0" cellspacing="0" cellpadding="0">
+							<tbody>
+								<tr class="thead" style="background-color: #eee;">
+									<th style="width: 29%"><span style="border-left:  2px solid #bcbcbc">材料申购单位</span></th>
+									<th style="width: 20%"><span>收货地址</span></th>
+									<th style="width: 12%"><span>申购日期</span></th>
+									
+									<th style="width: 6%"><span>联系电话</span></th>
+									<th style="width: 6%"><span>申购人</span></th>
+									<th style="width: 18%"><span style="border-right:  2px solid #bcbcbc">备注</span></th>
+								</tr>
+								<tr class="tmain">
+									<td style="width: 29%"><textarea></textarea></td>
+									<td style="width: 20%"><textarea style="overflow: visible;height: 100%;line-height: 20px;"></textarea></td>
+									<td style="width: 12%"><textarea></textarea></td>
+									
+									<td style="width: 6%"><textarea style="overflow: visible;height: 100%;line-height: 20px;"></textarea></td>
+									<td style="width: 6%"><textarea></textarea></td>
+									<td style="width: 18%;border-right:  2px solid #bcbcbc"><textarea style="overflow: visible;height: 100%;line-height: 20px;"></textarea></td>
+								</tr>
+								<tr class="tmain">
+									<td style="width: 29%"><textarea></textarea></td>
+									<td style="width: 20%"><textarea style="overflow: visible;height: 100%;line-height: 20px;"></textarea></td>
+									<td style="width: 12%"><textarea></textarea></td>
+									
+									<td style="width: 6%"><textarea style="overflow: visible;height: 100%;line-height: 20px;"></textarea></td>
+									<td style="width: 6%"><textarea></textarea></td>
+									<td style="width: 18%;border-right:  2px solid #bcbcbc"><textarea style="overflow: visible;height: 100%;line-height: 20px;"></textarea></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="send_people" style="text-align: center;margin-top: 50px;">
+						<a class="sender" href="javascript:;" style="width: 100px;height: 40px;font-size: 15px;font-weight: bold;background-color: #eb6100;border-radius: 5px;color: #fff;display: inline-block;line-height: 40px;text-align: center;margin: 0 30px;">接收人</a>
+						<a class="share_sure" href="javascript:;" style="width: 100px;height: 40px;font-size: 15px;font-weight: bold;background-color: #eb6100;border-radius: 5px;color: #fff;display: inline-block;line-height: 40px;text-align: center;margin: 0 30px;">确认分享</a>
+					</div>
+				</div>
+			</div>
+			</div>
+			<!-- 分享框 -->
+					<div class="share_form" style="width: 365px;background-color: #fff; height: 230px;padding: 15px 0;position: absolute;top: 30%;left: 30%;display: none;z-index: 5;">
+ 					<div style="overflow: hidden;margin-left: 20px;">
+ 						<div style="float: left;width: 80px;font-size: 14px;font-weight: bold;text-align: right;margin-right: 5px;letter-spacing: 2px;">内容获取:</div>
+ 						<div  style="float: left;">
+ 							
+ 						<textarea name="share_content" id="con_share" placeholder="内容获取" style="width: 200px;height: 80px;padding-left: 10px;"></textarea>
+ 						</div>
+ 					</div>
+ 					<div style="overflow: hidden;margin-top: 15px;margin-left: 20px;">
+ 						<div style="float: left;width: 80px;font-size: 14px;font-weight: bold;text-align: right;margin-right: 5px;letter-spacing: 2px;">接收人:</div>
+						
+						<div style="float: left;">
+							
+						<input type="text" placeholder="选择接收人" style="width: 200px;height: 25px;" />
+						</div>	
+						
+ 					</div>
+
+ 					<div style="position: relative;top: 45px;">
+ 						<a class="share_sure" href="javascript:;" style="display: inline-block;width: 90px;height: 26px;background-color: #facd89;color: #fff;font-size: 15px;line-height: 26px;text-decoration: none;">分享确认</a>
+ 					</div>
+ 				</div>
+
+ 				<!-- 点击人工弹框 -->
+ 				<div class="worker_form" style="width: 365px;height: 100px;line-height: 100px; position: absolute;top: 25%;left: 30%;z-index: 6;background-color: #fff;border: 1px solid #eee;display: none;">
+ 					<div style="text-align: left;">
+ 						<a href="regong.html" style="background-color: #eb6100;display: inline-block;width: 110px;height: 35px;line-height: 35px;font-size: 15px;border-radius: 5px;color: #2ec6ff;text-decoration: none;font-weight: bold;letter-spacing: 2px;text-align: center;margin-right: 100px;margin-left: 20px;">工人定额</a>
+ 						<a href="regong_datalist.html" style="background-color: #eb6100;display: inline-block;width: 110px;height: 35px;line-height: 35px;font-size: 15px;border-radius: 5px;color: #2ec6ff;text-decoration: none;font-weight: bold;letter-spacing: 2px;text-align: center;">数据定额</a>
+ 					</div>
+ 				</div>
+ 				<!-- 点击主材弹框 -->
+ 				<div class="zhucai_form" style="width: 365px;height: 100px;line-height: 100px; position: absolute;top: 25%;left: 30%;z-index: 6;background-color: #fff;border: 1px solid #eee;display: none;">
+ 					<div style="text-align: left;">
+ 						<a href="zhucaidinge.html" style="background-color: #eb6100;display: inline-block;width: 110px;height: 35px;line-height: 35px;font-size: 15px;border-radius: 5px;color: #2ec6ff;text-decoration: none;font-weight: bold;letter-spacing: 2px;text-align: center;margin-right: 100px;margin-left: 20px;">主材定额</a>
+ 						<a href="zhucai_datalist.html" style="background-color: #eb6100;display: inline-block;width: 110px;height: 35px;line-height: 35px;font-size: 15px;border-radius: 5px;color: #2ec6ff;text-decoration: none;font-weight: bold;letter-spacing: 2px;text-align: center;">数据定额</a>
+ 					</div>
+ 				</div>
+ 				<!-- 辅材定额 -->
+ 				<div class="fucai_form" style="width: 365px;height: 100px;line-height: 100px; position: absolute;top: 25%;left: 30%;z-index: 6;background-color: #fff;border: 1px solid #eee;display: none;">
+ 					<div style="text-align: left;">
+ 						<a href="fucaitable.html" style="background-color: #eb6100;display: inline-block;width: 110px;height: 35px;line-height: 35px;font-size: 15px;border-radius: 5px;color: #2ec6ff;text-decoration: none;font-weight: bold;letter-spacing: 2px;text-align: center;margin-right: 100px;margin-left: 20px;">辅材定额</a>
+ 						<a href="fucai_datalist.html" style="background-color: #eb6100;display: inline-block;width: 110px;height: 35px;line-height: 35px;font-size: 15px;border-radius: 5px;color: #2ec6ff;text-decoration: none;font-weight: bold;letter-spacing: 2px;text-align: center;">数据定额</a>
+ 					</div>
+ 				</div>
+ 			</div>
+ 			
+			
+		</div>
+		
+		
+ 		</div>
+ 		
+ 	</div>
+
+{include file=footer.html}
+
+<script type="text/javascript">
+
+	var index = 1;
+	var totalArray = [];
+	$(".share_sure").click(function(e){
+		e.stopPropagation(); 
+		$(".share_form").show();
+		$(".budget_info").css("background-color","#eee");
+	})
+	$(".budget_detail").click(function(){
+		$(".share_form").hide();
+		$(".budget_info").css("background-color","#fff");
+	})
+
+
+    //点击添加表格
+    $(".add_table").click(function(){
+    	index++;
+    	var $html = '';
+    	$html += '<tr class="tmain" id="t'+index+'_">';
+		$html += '<td style="width: 5%"><textarea id="t_xh'+index+'"></textarea></td>';
+		$html += '<td style="width: 16%"><textarea></textarea></td>';
+		$html += '<td style="width: 8%"><textarea></textarea></td>';
+		$html += '<td style="width: 10%"><textarea></textarea></td>';
+		$html += '<td style="width: 10%"><textarea></textarea></td>';
+		$html += '<td style="width: 6%"><textarea></textarea></td>';
+		$html += '<td style="width: 6%"><textarea></textarea></td>';
+		$html += '<td style="width: 6%"><textarea id="t_dj'+index+'"></textarea></td>';
+		$html += '<td style="width: 6%"><textarea id="t_hj'+index+'"></textarea></td>';
+		$html += '<td style="width: 18%;border-right:2px solid #bcbcbc;"><textarea></textarea></td>';
+		$html += '</tr>';
+    	$("#budget_table tbody").append($html);
+    	 $("#t_xh"+index).text(index);
+    	})
+
+
+</script>
+</body>
+</html>

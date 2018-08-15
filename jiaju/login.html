@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Access-Control-Allow-Origin" content="*">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=8"/>
+<title>会员登录 - 微工程</title>
+<meta name="description" content="微工程，微工程APP，装修、材料、家具、饰品一站式服务，让装修更简单，价格更透明！！" />
+<meta name="keywords" content="微工程，微工程，家居商城，微工程家居商城，微工程家居装修商城，办公室装修，写字楼装修，材料，装修材料，家居，办公家具，家居，家具，装修，装饰" />
+<link rel="stylesheet" type="text/css" href="/themes/mall/jiaju/css/api.css"/>
+<link rel="stylesheet" type="text/css" href="/themes/mall/jiaju/css/aui.css" />
+<link rel="stylesheet" type="text/css" href="/themes/mall/jiaju/css/aui.1.0.css"/>
+<script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="/themes/mall/jiaju/js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript">
+	jQuery.support.cors = true;
+//登录
+	function login(){
+
+		var mobile = $("#mobile");
+        var password = $("#password");
+        var tiaokuan = document.getElementById('tiaokuan');
+        
+        if(mobile.val() == ''){ 
+        	mobile.focus();
+        	alert('请输入手机号码?');
+        	return false;
+        }else if(password.val() == ''){
+        	password.focus();
+        	alert('请输入登录密码');
+        	return false;
+      	}else if(!tiaokuan.checked){
+			alert("请先同意微工程服务条款，谢谢！");
+	        return false; 	
+        }else{
+			$.post("http://wgcapp.59jiaju.com/jingyi.php/Home/index/login",{user_name : mobile.val(),password : password.val(),typeinfo : 'pc'},function(ret){
+        	
+        		if(ret.code == 200){
+        			
+        			var data = ret.data;    
+					//alert(data.user_id);alert(data.user_name);alert(data.userphoto);alert(data.regtime);alert(data.utype);
+					window.location.href = "index.php?app=search&act=sessions&user_id="+data.user_id+"&user_name="+data.user_name+"&userphoto="+data.userphoto+"&regtime="+data.regtime+"&utype="+data.utype+"";
+        			//window.location.href = "http%3A%2F%2Flocalhost%2Fecmall%2Findex.php";
+					
+        		}else if(ret.code == 203){
+        		
+        			alert('账号不存在或密码错误');
+        			return false;
+        		
+        		}
+        		
+        	
+        	},"json");
+        }
+        
+	}
+</script>
+
+</head>
+
+<body style="background:#fff;">
+{include file=header.html}
+<div id="login" class="w auto clearfix">
+   
+   <div class="left"><img width="500" height="332" src="/data/files/mall/template/login.png" /></div>
+   <div class="right">
+      <div class="form">
+         <ul class="aui-list aui-form-list" style="border:none;">
+	        
+	        <li class="aui-list-item" style="border:none;">
+	            <div class="aui-list-item-inner">
+	                <div class="aui-list-item-label" style="font-size:14px;">手机号：</div>
+	                <div class="aui-list-item-input">
+	                    <input type="text" style="border:1px solid #ccc;width:300px;margin-left: 10px;height:30px;font-size:14px;margin-top: 10px;" placeholder="手机号码" id="mobile">
+	                </div>
+	            </div>
+	        </li>
+	        <li class="aui-list-item" style="border:none;">
+	            <div class="aui-list-item-inner">
+	                <div class="aui-list-item-label"style="font-size:14px;">密码：</div>
+	                <div class="aui-list-item-input">
+	                    <input type="password" style="border:1px solid #ccc;width:300px;margin-left: 10px;height:30px;font-size:14px;margin-top: 10px;"placeholder="登录密码" id="password">
+	                </div>
+	            </div>
+	        </li>
+	        
+	        <li class="aui-list-item" style="font-size: 14px">
+	            <div class="aui-list-item-inner">
+	                <div class="aui-list-item-label"style="font-size:14px;">服务条款：</div>
+	                <div class="aui-list-item-input" style="">
+	                    <input checked="checked" type="checkbox" id="tiaokuan" style="float: left;margin-top: 0.25rem" >
+	                    <span style="overflow:hidden;display: block;margin-top: 0.15rem;float: left;font-size:12px">我已阅读并同意<a style="color:#3498db;font-size:12px" target="_blank" href="/index.php?app=search&act=tiaokuan">微工程服务条款</a></span>
+	                </div>
+	            </div>
+	        </li>
+	     </ul>
+		 <div class="aui-content-padded" style="margin-top:20px;">
+			<div class="aui-btn aui-btn aui-btn-block" style="color:#fff;background: #4377A9;height:40px;line-height:40px;padding:0;" onclick="login()">登     录</div>
+			<span>还没有账号？<a href="http://59jiaju.com/index.php?app=store&act=reg">免费注册</a></span>
+		</div>
+      </div>
+   </div>
+</div>
+{include file=footer.html}
+</body>
+</html>

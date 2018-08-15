@@ -1,0 +1,457 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Access-Control-Allow-Origin" content="*">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=8"/>
+<title>用户中心-主材定价</title>
+<meta name="description" content="微工程，微工程APP，装修、材料、家具、饰品一站式服务，让装修更简单，价格更透明！！" />
+<meta name="keywords" content="微工程，微工程，家居商城，微工程家居商城，微工程家居装修商城，办公室装修，写字楼装修，材料，装修材料，家居，办公家具，家居，家具，装修，装饰" />
+<link rel="stylesheet" type="text/css" href="themes/mall/jiaju/css/api.css"/>
+<link type="text/css" href="themes/mall/jiaju/styles/default/css/main.css" rel="stylesheet"  />
+<link type="text/css" href="themes/mall/jiaju/styles/css/global.css" rel="stylesheet"  />
+<link type="text/css" href="themes/mall/jiaju/styles/css/worker_quota_price.css" rel="stylesheet"  />
+<link type="text/css" href="themes/mall/jiaju/styles/css/material_pricing.css" rel="stylesheet"  />
+<link type="text/css" href="http://www.wgc2013.com/themes/mall/jiaju/styles/default/css/catalog.css" rel="stylesheet"  />
+<link type="text/css" href="http://www.wgc2013.com/themes/mall/jiaju/styles/default/css/footer.css" rel="stylesheet" />
+<link type="text/css" href="themes/mall/jiaju/styles/css/style.css" rel="stylesheet"  />
+<script type="text/javascript" src="index.php?act=jslang"></script>
+<script type="text/javascript" src="http://www.wgc2013.com/includes/libraries/javascript/ecmall.js" charset="utf-8"></script>
+<script type="text/javascript" src="http://www.wgc2013.com/includes/libraries/javascript/cart.js" charset="utf-8"></script>
+<script type="text/javascript" src="http://www.wgc2013.com/includes/libraries/javascript/jquery.js" charset="utf-8"></script>
+<script type="text/javascript" src="http://www.wgc2013.com/themes/mall/jiaju/styles/default/js/main.js" charset="utf-8"></script>
+<script type="text/javascript" src="http://www.wgc2013.com//themes/mall/jiaju/js/worker_quota.js" charset="utf-8"></script>
+<!--[if lte IE 6]>
+<script type="text/javascript" language="Javascript" src="http://www.wgc2013.com/themes/mall/jiaju/styles/default/js/hoverForIE6.js"></script>
+<![endif]-->
+<!--[if IE 8]>
+<link type="text/css" href="themes/mall/jiaju/css/ie8.css" rel="stylesheet"  />
+<![endif]-->
+<script type="text/javascript">
+var SITE_URL = "http://www.wgc2013.com";
+var PRICE_FORMAT = '&yen;%s';
+</script>
+<script charset="utf-8" type="text/javascript" src="http://www.wgc2013.com/includes/libraries/javascript/jquery.plugins/jquery.validate.js" ></script>
+<style type="text/css">
+	.mainnav{width:990px; overflow:hidden; margin:0 auto}
+</style>
+<script type="text/javascript" src="http://www.wgc2013.com/themes/mall/jiaju/styles/default/js/hover.js"></script>
+<script>
+  function lxfEndtime(){
+          $(".lxftime").each(function(){
+                var lxfday=$(this).attr("lxfday");//用来判断是否显示天数的变量
+                var endtime = new Date($(this).attr("endtime")).getTime();//取结束日期(毫秒值)
+                var nowtime = new Date().getTime();        //今天的日期(毫秒值)
+                var youtime = endtime-nowtime;//还有多久(毫秒值)
+                var seconds = youtime/1000;
+                var minutes = Math.floor(seconds/60);
+                var hours = Math.floor(minutes/60);
+                var days = Math.floor(hours/24);
+                var CDay= days ;
+                var CHour= hours % 24;
+                var CMinute= minutes % 60;
+                var CSecond= Math.floor(seconds%60);//"%"是取余运算，可以理解为60进一后取余数，然后只要余数。
+                if(endtime<=nowtime){
+                        $(this).html("已过期")//如果结束日期小于当前日期就提示过期啦
+                        }else{
+                                if($(this).attr("lxfday")=="no"){
+                                        $(this).html("<i>剩余时间：</i><span>"+CHour+"</span>时<span>"+CMinute+"</span>分<span >"+CSecond+"</span>秒");          //输出没有天数的数据
+                                        }else{
+                        $(this).html("<span class='f24'>"+days+"</span><span>天</span><span  class='f24'>"+CHour+"</span><span>时</span><span  class='f24'>"+CMinute+"</span><span>分</span><span  class='f24'>"+CSecond+"</span><span>秒</span>");          //输出有天数的数据
+                                }
+                        }
+          });
+   setTimeout("lxfEndtime()",1000);
+  };
+$(function(){
+      lxfEndtime();
+   });
+</script>
+<script charset="utf-8" type="text/javascript" src="http://www.wgc2013.com/includes/libraries/javascript/jquery.plugins/jquery.validate.js" ></script>
+</head>
+<body>
+{include file=header.html}
+
+<!-- 中部主要内容 -->
+ <div class="container" style="overflow: hidden;width: 1200px;margin: 10px auto;position: relative;">
+ <!-- 左上的导航栏 -->
+ 	{include file=usercenter.html}
+
+ 	<!-- 右边的内容 -->
+ 	<div class="container_right" style="width: 78.5%;border: 1px solid #cacaca;float: right;background-color: #f7f7f7;padding: 0 10px 10px 10px;">
+
+		<!-- 公司信息 -->
+		<div class="budget base_ui_public" style="/*display: none;*/position: relative;">
+			<div class="head_mun" style="margin-top:10px;height: 30px;">
+				<b class="mun_btn custom" style="height: 30px;line-height: 30px;">自定工价</b>
+				<b class="mun_btn list current" style="height: 30px;line-height: 30px;">工价列表</b>
+			</div>
+ 			<div class="company_info base_info_public" style="min-height: 250px;border: 1px solid #cfcfcf;margin-top: 1px;">
+ 			<!-- 预算报价 -->
+ 			<div class="company_detail" style="position: relative;">
+			<div style="margin-top: 2px;">
+			<!-- 基本信息 -->
+			<div class="section" style="border: none;">
+			<!-- 自定工价 -->
+			<div class="sect current wages_custom">
+				<ul style="padding: 20px 0;width: 380px;margin-left: auto;margin-right: auto;">
+					<li>
+						<span>项&nbsp;目&nbsp;名&nbsp;称</span><span class="colon">:</span><input id="name" type="text">
+					</li>
+					<li>
+						<span>材&nbsp;料&nbsp;品&nbsp;牌</span><span class="colon">:</span><input id="pingpai" type="text">
+					</li>
+					<li>
+						<span style="">规&nbsp;格&nbsp;型&nbsp;号</span><span class="colon">:</span><input id="xinghao" type="text">
+					</li>
+					<li>
+						<span style="">单&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;位</span><span class="colon">:</span><input id="danwei" type="text">
+					</li>
+					<li>
+						<span style="">单&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;价</span><span class="colon">:</span><input id="danjia" type="text">
+					</li>
+					<li>
+						<span style="">含&nbsp;&nbsp;&nbsp;税&nbsp;&nbsp;&nbsp;价</span><span class="colon">:</span><input id="hanshuijiage" type="text">
+					</li>
+					<li>
+						<span>配&nbsp;送&nbsp;时&nbsp;间</span><span class="colon">:</span><input id="peisongtime" type="text">
+					</li>
+					<li>
+						<span style="">供应商名称</span><span class="colon">:</span><input id="gongyingshang" type="text">
+					</li>
+					<li>
+						<span style="">联&nbsp;&nbsp;&nbsp;系&nbsp;&nbsp;&nbsp;人</span><span class="colon">:</span><input id="lianxiren" type="text">
+					</li>
+					<li>
+						<span>联&nbsp;系&nbsp;方&nbsp;式</span><span class="colon">:</span><input id="dianhua" type="text">
+					</li>
+					<li>
+						<span style="">网&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;址</span><span class="colon">:</span><input id="web" type="text">
+					</li>
+					<li>
+						<span style="">邮&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;箱</span><span class="colon">:</span><input id="email" type="text">
+					</li>
+					<li>
+						<span style="">微&nbsp;&nbsp;&nbsp;信&nbsp;&nbsp;&nbsp;号</span><span class="colon">:</span><input id="weixin" type="text">
+					</li>
+					<li>
+						<span style="">备&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;注</span><span class="colon">:</span><input id="content" type="text">
+					</li>
+					<li style="height: 100px">
+						<span style="float: left;">图&nbsp;片&nbsp;参&nbsp;考</span>
+						<span class="colon" style="float: left;">:</span>
+						<div style="display: inline-block;width: 260px;height:90px;border:1px solid #c1c1be;position: relative;">
+							<input type="file" id="doc" name="pic" style="display: none;">
+							<label for="doc" style="width: 60px;height: 60px;display: block;border: 1px solid #cfcfcf;position: relative;">
+								<div style="position: absolute;border-bottom: 1px solid #cfcfcf;width:50px;top: 50%;left: 50%;margin-left: -25px;"></div>
+								<div style="position: absolute;border-right: 1px solid #cfcfcf;height: 50px;left: 50%;top: 50%;margin-top: -25px;"></div>
+							
+								<div style="width:60px;height:60px;position: absolute;top: 0;" id="localImag">
+							        <img src="" id="preview" alt="">
+								</div>
+							</label>
+						</div>
+					</li>
+				</ul>
+				<div class="btn_list">
+					<input type="button" class="btn confirm_btn" onclick="addlist()" value="确认发布" style="border:0;outline: none;">
+					<div class="btn share_btn">分享发布</div>
+				</div>
+
+				<!-- 分享确认 -->
+				<div class="confirm" style="display: none">
+					<form class="confirm_" action="post" method="">
+						<div class="share_text">
+							<span>分享内容</span><span class="colon">:</span>
+							<textarea name="" id="" cols="30" rows="10" placeholder="内容获取"></textarea>
+						</div>
+						<div class="share_sendee">
+							<span style="letter-spacing: 5px;">接收人</span><span class="colon">:</span>
+							<input type="text" placeholder="选择接收人">
+						</div>
+						<input class="share_btn" type="button" value="分享确认">
+					</form>
+				</div>
+				<!-- 分享确认 end -->
+			</div>
+			<!-- 自定工价 end -->
+						<!-- 工价列表 -->
+			<div class="sect wages_list" style="display: none;">
+				<input type="text" class="search_input" />
+				<input type="button" value="搜索" class="search_btn" />
+				<input type="button" value="分享" class="share_btn" />
+					<!-- 分享弹窗 -->
+					<div class="confirm" style="display: none;">
+						<form class="confirm_" action="post" method="">
+							<div class="share_text">
+								<span>分享内容</span><span class="colon">:</span>
+								<textarea name="" id="" cols="30" rows="10" placeholder="内容获取"></textarea>
+							</div>
+							<div class="share_sendee">
+								<span style="letter-spacing: 5px;">接收人</span><span class="colon">:</span>
+								<input type="text" placeholder="选择接收人">
+							</div>
+							<input class="share_btn" type="button" value="分享确认">
+						</form>
+					</div>
+					<!-- 分享弹窗 end -->
+
+				<ul class="list_ul">
+					<li>
+						<ul class="head">
+							<li style="width: 5%;">序号</li>
+							<li style="width: 7.7%;">材料名称</li>
+							<li>品牌</li>
+							<li style="width: 7.5%;">规格/型号</li>
+							<li style="width: 5%;">单位</li>
+							<li style="width: 5%;">单价</li>
+							<li>含税价</li>
+							<li style="width: 6.7%;">配送时间</li>
+							<li>供应商</li>
+							<li>联系人</li>
+							<li style="width: 6.7%;">联系方式</li>
+							<li>网址</li>
+							<li>邮箱</li>
+							<li>微信号</li>
+							<li>备注</li>
+							<li>图片</li>
+						</ul>
+					</li>
+					<!-- <li>
+					    <ul class="main_list">
+							<li style="width: 5%;"><input type="checkbox" />1</li>
+							<li style="width: 7.7%;" class="material_name">空调盘机</li>
+							<li>格力</li>
+							<li style="width: 7.5%;">BN-12</li>
+							<li style="width: 5%;">台</li>
+							<li style="width: 5%;">4200</li>
+							<li>4872</li>
+							<li style="width: 6.7%;">3天</li>
+							<li>广州格力空调有限公司</li>
+							<li>王某</li>
+							<li style="width: 6.7%;">188*********</li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+						</ul>
+					</li> -->
+				</ul>
+				
+				<ul class="page" style="float: none;">
+					<li class="page_btn">首页</li>
+					<li class="page_btn">上一页</li>
+					<li class="page_num current">1</li>
+					<li class="page_num">2</li>
+					<li class="page_num">3</li>
+					<li class="page_num">4</li>
+					<li class="page_num">5</li>
+					<li class="page_num">6</li>
+					<li class="page_num">7</li>
+					<li class="page_num">···</li>
+					<li class="page_btn">下一页</li>
+					<li class="page_btn">尾页</li>
+				</ul>
+			</div>
+			<!-- 工价列表 end -->
+			</div>
+
+
+			</div>
+			</div>
+	
+ 			</div>
+ 			
+			
+		</div>
+		
+		
+ 	</div>
+
+ 		
+ </div>
+
+{include file=footer.html}
+
+</body>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		zhucai_list();
+	});
+
+	// 弹窗控制
+    $('.share_btn').click(function() {
+		$('.confirm').css({
+			display: 'block'
+		});
+	});
+	$('.confirm').click(function() {
+		$('.confirm').css({
+			display: 'none'
+		});
+	});
+	$('.confirm_').click(function() {
+		return false;
+	});
+	// 弹窗控制 end
+
+    // 页面切换
+	$('.list').click(function() {
+		$('.wages_custom').css({
+			display: 'none'
+		});
+		$('.wages_list').css({
+			display: 'block'
+		});
+		$('.list').removeClass('current');
+		$('.custom').addClass('current');
+	});
+
+	$('.custom').click(function() {
+		$('.wages_list').css({
+			display: 'none'
+		});
+		$('.wages_custom').css({
+			display: 'block'
+		});
+		$('.custom').removeClass('current');
+		$('.list').addClass('current');
+	});
+	// 页面切换 end
+
+	// 图片上传
+	$("input[name='pic']").live('change',function(){
+        var file = $(this).val();
+        setImagePreview(file);
+    });
+
+	function setImagePreview(avalue) {
+	    var docObj = document.getElementById("doc");//img
+	    var imgObjPreview = document.getElementById("preview"); //div
+	    var divs = document.getElementById("localImag");
+	    if (docObj.files && docObj.files[0]) {
+	       //火狐下，直接设img属性
+	       imgObjPreview.style.display = 'block';
+	       imgObjPreview.style.width = '60px';
+	       imgObjPreview.style.height = '60px';
+	       imgObjPreview.src = window.URL.createObjectURL(docObj.files[0]);
+	    } else {
+	       //IE下，使用滤镜
+	       docObj.select();
+	       var imgSrc = document.selection.createRange().text;
+	       var localImagId = document.getElementById("localImag");
+	       localImagId.style.width = "60px";
+	       localImagId.style.height = "60px";
+	       //图片异常的捕捉，防止用户修改后缀来伪造图片
+	       try {
+	           localImagId.style.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale)"
+	           localImagId.filters.item("DXImageTransform.Microsoft.AlphaImageLoader").src = imgSrc;
+	        } catch(e) {
+	            alert("您上传的图片格式不正确，请重新选择!");
+	            return false;
+	        }
+	        imgObjPreview.style.display = 'none';
+	        document.selection.empty();
+	    }
+	   return true;
+	}
+
+	//添加主材信息
+	function addlist(){
+		
+		//获取数据
+		var name          = $('#name').val();
+		var pingpai        = $('#pingpai').val(); 
+		var xinghao      = $('#xinghao').val();
+		var danwei    = $('#danwei').val();
+		var danjia     = $('#danjia').val();
+		var hanshuijiage = $('#hanshuijiage').val();
+		var peisongtime = $('#peisongtime').val();
+		var gongyingshang = $('#gongyingshang').val();
+		var lianxiren       = $('#lianxiren').val();
+		var dianhua      = $('#dianhua').val();
+		var weixin    = $('#weixin').val();
+		var web     = $('#web').val();
+		var email = $('#email').val();
+		var content = $('#content').val();
+		var img = $('#preview').val();
+
+		// if($('.sect ul li input').val() == ''){
+		// 	alert('请填写完所有相关信息之后在提交');
+		// 	return false;
+		// }
+
+		$.post('http://wgcapp.wgc2013.com/jingyi.php/Home/Dinge/zhucai_add', {
+			        userid 	     : '<?php echo $_SESSION["user_info"]["user_id"];?>',
+			        name         : name,           
+			        pingpai      : pingpai,         
+			        xinghao      : xinghao,       
+			        danwei       : danwei,     
+			        danjia       : danjia,      
+			        hanshuijiage : hanshuijiage,  
+			        peisongtime  : peisongtime,  
+				    gongyingshang: gongyingshang,  
+				    lianxiren    : lianxiren,
+				    dianhua      : dianhua,  
+				    weixin       : weixin,  
+				    web          : web,  
+				    email        : email,  
+				    content      : content,  
+				    img          : img
+		}, function(ret) {
+			if(ret.code == 200){
+				alert('添加成功!')
+			}else{
+				alert('添加失败!')
+			}
+		},'json');
+	}
+
+	var page = 1,key = '',user_id = null;
+	//主材信息列表
+	function zhucai_list(){
+		var html = '';
+
+		$.post('http://wgcapp.wgc2013.com/jingyi.php/Home/Dinge/zhucai_list', {
+			user_id : '<?php echo $_SESSION["user_info"]["user_id"];?>',
+		}, function(ret) {
+			if(ret.status == 200){
+				var  data = ret.retData;
+
+				for(var i in data) {
+					html += '<li>';
+						html += '<ul class="main_list">';
+							html += '<li style="width: 5%;"><input type="checkbox" />'+[i]+'</li>';
+							html += '<li style="width: 7.7%;" class="material_name">'+data[i].name+'</li>';
+							html += '<li>'+data[i].pingpai+'</li>';
+							html += '<li style="width: 7.5%;">'+data[i].xinghao+'</li>';
+							html += '<li style="width: 5%;">'+data[i].danwei+'</li>';
+							html += '<li style="width: 5%;">'+data[i].danjia+'</li>';
+							html += '<li>'+data[i].hanshuijiage+'</li>';
+							html += '<li style="width: 6.7%;">'+data[i].peisongtime+'</li>';
+							html += '<li>'+data[i].gongyingshang+'</li>';
+							html += '<li>'+data[i].lianxiren+'</li>';
+							html += '<li style="width: 6.7%;">'+data[i].dianhua+'</li>';
+							html += '<li>'+data[i].web+'</li>';
+							html += '<li>'+data[i].email+'</li>';
+							html += '<li>'+data[i].weixin+'</li>';
+							html += '<li>'+data[i].content+'</li>';
+							html += '<li></li>';
+						html += '</ul>';
+					html += '</li>';
+				}
+				$('.list_ul').append(html);
+			}else if(ret.status == 202){
+					alert('暂无更多了');
+			}else {
+				alert(JSON.stringify(ret));
+				// alert('失败，请检查网络连接');
+				return false;
+			}
+		},'json');
+	}
+</script>
+
+</html>

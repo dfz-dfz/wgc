@@ -1,0 +1,51 @@
+.wages_list {
+	width: auto;
+	height: auto;
+}
+
+.wages_list ul li {
+	list-style: none;
+	border: none;
+	margin-top: 6px;
+}
+
+.list_ul li {
+	width: 100%;
+}
+
+.list_ul .head {
+	width: auto;
+	height: 46px;
+	border-bottom: 1px solid #cfcfcf;
+}
+
+.list_ul .head li {
+	float: left;
+	font-size: 14px;
+	font-weight: 600;
+	width: 6.25%;
+	text-align: center;
+}
+
+.main_list li {
+	float: left;
+	width: 6.25%;
+	font-size: 12px;
+	line-height: 12px;
+	text-align: center;
+}
+
+.main_list input {
+	margin-right: 10px;
+}
+
+.main_list .material_name {
+	list-style: inside;
+}
+
+.wages_list .page li {
+    border: 1px solid #cfcfcf;
+}
+.wages_custom li{
+	text-align: left;
+}

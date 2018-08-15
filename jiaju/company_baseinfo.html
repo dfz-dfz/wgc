@@ -1,0 +1,284 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Access-Control-Allow-Origin" content="*">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=8"/>
+<title>用户中心-公司信息</title>
+<meta name="description" content="微工程，微工程APP，装修、材料、家具、饰品一站式服务，让装修更简单，价格更透明！！" />
+<meta name="keywords" content="微工程，微工程，家居商城，微工程家居商城，微工程家居装修商城，办公室装修，写字楼装修，材料，装修材料，家居，办公家具，家居，家具，装修，装饰" />
+
+<!-- 引入个人中心 -->
+<link type="text/css" href="themes/mall/jiaju/styles/css/worker_quota_price.css" rel="stylesheet" />
+<link type="text/css" href="http://www.wgc2013.com/themes/mall/jiaju/styles/default/css/main.css" rel="stylesheet" />
+<link rel="stylesheet" href="themes/mall/jiaju/styles/css/company_message.css" />
+<script type="text/javascript" src="http://www.wgc2013.com/includes/libraries/javascript/jquery.js" charset="utf-8"></script>
+<link type="text/css" href="http://www.wgc2013.com/themes/mall/jiaju/styles/default/css/catalog.css" rel="stylesheet"  />
+<link type="text/css" href="http://www.wgc2013.com/themes/mall/jiaju/styles/default/css/footer.css" rel="stylesheet" />
+<script type="text/javascript" src="index.php?act=jslang"></script>
+<script type="text/javascript" src="http://www.wgc2013.com/includes/libraries/javascript/ecmall.js" charset="utf-8"></script>
+<script type="text/javascript" src="http://www.wgc2013.com/includes/libraries/javascript/cart.js" charset="utf-8"></script>
+<script type="text/javascript" src="http://www.wgc2013.com/themes/mall/jiaju/styles/default/js/main.js" charset="utf-8"></script>
+<!-- 引入的是个人中心的 -->
+<script src="/themes/mall/jiaju/js/worker_quota.js"></script>
+
+<!--[if lte IE 6]>
+<script type="text/javascript" language="Javascript" src="http://www.wgc2013.com/themes/mall/jiaju/styles/default/js/hoverForIE6.js"></script>
+<![endif]-->
+<!--[if IE 8]>
+<link type="text/css" href="themes/mall/jiaju/css/ie8.css" rel="stylesheet"  />
+<![endif]-->
+<script type="text/javascript">
+var SITE_URL = "http://www.wgc2013.com";
+var PRICE_FORMAT = '&yen;%s';
+</script>
+<script charset="utf-8" type="text/javascript" src="http://www.wgc2013.com/includes/libraries/javascript/jquery.plugins/jquery.validate.js" ></script>
+<style type="text/css">
+body{background:url('') no-repeat center top }
+.mainnav{width:990px; overflow:hidden; margin:0 auto}
+.STYLE1 {color: red}
+</style>
+<script type="text/javascript" src="http://www.wgc2013.com/themes/mall/jiaju/styles/default/js/hover.js"></script>
+<script>
+  function lxfEndtime(){
+          $(".lxftime").each(function(){
+                var lxfday=$(this).attr("lxfday");//用来判断是否显示天数的变量
+                var endtime = new Date($(this).attr("endtime")).getTime();//取结束日期(毫秒值)
+                var nowtime = new Date().getTime();        //今天的日期(毫秒值)
+                var youtime = endtime-nowtime;//还有多久(毫秒值)
+                var seconds = youtime/1000;
+                var minutes = Math.floor(seconds/60);
+                var hours = Math.floor(minutes/60);
+                var days = Math.floor(hours/24);
+                var CDay= days ;
+                var CHour= hours % 24;
+                var CMinute= minutes % 60;
+                var CSecond= Math.floor(seconds%60);//"%"是取余运算，可以理解为60进一后取余数，然后只要余数。
+                if(endtime<=nowtime){
+                        $(this).html("已过期")//如果结束日期小于当前日期就提示过期啦
+                        }else{
+                                if($(this).attr("lxfday")=="no"){
+                                        $(this).html("<i>剩余时间：</i><span>"+CHour+"</span>时<span>"+CMinute+"</span>分<span >"+CSecond+"</span>秒");          //输出没有天数的数据
+                                        }else{
+                        $(this).html("<span class='f24'>"+days+"</span><span>天</span><span  class='f24'>"+CHour+"</span><span>时</span><span  class='f24'>"+CMinute+"</span><span>分</span><span  class='f24'>"+CSecond+"</span><span>秒</span>");          //输出有天数的数据
+                                }
+                        }
+          });
+   setTimeout("lxfEndtime()",1000);
+  };
+$(function(){
+      lxfEndtime();
+   });
+</script>
+<script charset="utf-8" type="text/javascript" src="http://www.wgc2013.com/includes/libraries/javascript/jquery.plugins/jquery.validate.js" ></script>
+<script type="text/javascript">
+  $(function (){
+    $('#open-change-city-window').click(function (){
+      $('.change-city-window').slideDown();
+      
+    })
+    $('#close-change-city-window').click(function (){
+      $('.change-city-window').slideUp();
+    })
+
+  
+  })
+</script>
+</head>
+<body>
+{include file=header.html}
+
+<!-- 中部主要内容 -->
+ <div class="container" style="overflow: hidden;width: 1200px;margin: 10px auto;">
+ <!-- 左上的导航栏 -->
+ 	{include file=usercenter.html}
+
+ 	<!-- 右边的内容 -->
+ 	<div class="container_right" style="width: 78.5%;border: 1px solid #cacaca;float: right;background-color: #f7f7f7;padding: 0 10px 10px 10px;">
+
+		<!-- 公司信息 -->
+		<div class="budget base_ui_public" style="/*display: none;*/position: relative;">
+			<ul class="budget_ul user_public_ul">
+ 				<li class="change_bg_li" style="margin-right: 10px;">基本信息</li>
+ 				<li style="margin-right: 10px;">修改密码</li>
+ 			</ul>
+ 			<div class="company_info base_info_public" style="overflow: hidden;min-height: 250px;">
+ 			<!-- 预算报价 -->
+ 			<div class="company_detail" style="position: relative;width: 100%;">
+			<div style="overflow: hidden;margin-top: 10px;">
+			<!-- 基本信息 -->
+			<div class="sect current wages_custom">
+				<div class="base_left">
+					<!-- 更换logo -->
+					<div style="width: 150px;height:auto;margin-left: auto;margin-right: auto;">
+						<div style="width:150px;height:70px;background-color: #f4f4f4;border:1px solid #cfcfcf;" id="localImag">
+					        <img src="/themes/mall/jiaju/images/shangchuan.jpg" id="preview" alt="">
+						</div>
+						<input type="file" id="doc" name="pic" style="display: none;">
+						<label for="doc" style="width: 80px;height: 20px;display: block;border: 1px solid #cfcfcf;text-align: center;line-height: 20px;letter-spacing: 2px;background-color: #5bcdff;border-radius: 5px;margin-left: auto;margin-right: auto;margin-top: 20px;cursor: pointer;">
+							更换LoGo
+						</label>
+					</div>
+					<!-- 更换logo end -->
+				</div>
+				<div class="base_right">
+					<ul>
+						<li style="text-align: left;">
+							<span class="input_type">公司名称</span><span class="colon">:</span><input type="text" class="left_input" />
+							<span class="input_type">公司类型</span><span class="colon">:</span>
+							<select>
+								<option value ="volvo">装饰公司</option>
+								<option value ="saab">饰公司</option>
+								<option value="opel">公司</option>
+								<option value="audi">司</option>
+							</select>
+						</li>
+						<li style="text-align: left;">
+							<span class="input_type">公司法人</span><span class="colon">:</span><input type="text" class="left_input" />
+							<span class="input_type">公司地址</span><span class="colon">:</span><input type="text" />
+						</li>
+						<li style="text-align: left;">
+							<span class="input_type">微 信 号 </span><span class="colon" style="margin-left: 2px">:</span><input type="text" class="left_input" />
+							<span class="input_type">邮	  箱</span><span class="colon" style="margin: 5px">:</span><input type="text" />
+						</li>
+					</ul>
+					<div class="textarea_box">
+						<span class="input_type" style="float: left;">公司简介</span><span class="colon" style="float:left;">:</span>
+						<textarea name="" id="" cols="30" rows="10" ></textarea>
+					</div>
+				</div>
+
+				<input type="button" class="sub_btn" value="保存修改" />
+			</div>
+			<!-- 修改密码 -->
+			<div class="sect wages_list" style="display: none;">
+				<div class="change_password">
+					<ul>
+						<li>
+							<span class="input_type">您的密码</span><span class="colon">:</span><input id="old_password" type="password" />
+						</li>
+						<li>
+							<span class="input_type">新的密码</span><span class="colon">:</span><input id="password" type="password" />
+						</li>
+						<li>
+							<span class="input_type">确认密码</span><span class="colon">:</span><input id="psw" type="password" />
+						</li>
+					</ul>
+					<input type="button" class="sub_btn" value="提交" onclick="clickSubmit()" />
+				</div>
+			</div>
+			<!-- 修改密码 end -->
+
+			</div>
+			</div>
+	
+ 			</div>
+ 			
+			
+		</div>
+		
+		
+ 		</div>
+ 		
+ 	</div>
+
+{include file=footer.html}
+<script type="text/javascript">
+	$(document).ready(function(){
+
+	});
+	// 更换logo
+	$("input[name='pic']").live('change',function(){
+        var file = $(this).val();
+        setImagePreview(file);
+    });
+
+    //列表切换
+     $(".budget_ul li:first").click(function(){
+    	
+    	$(this).addClass("change_bg_li")
+    	$(".budget_ul li:last").removeClass("change_bg_li")
+    	$(".wages_custom").show();
+    	$(".wages_list").hide();
+    })
+
+    $(".budget_ul li:last").click(function(){
+    	
+    	$(this).addClass("change_bg_li")
+    	$(".budget_ul li:first").removeClass("change_bg_li")
+ 		$(".wages_custom").hide();
+    	$(".wages_list").show();
+    })
+
+
+
+	function setImagePreview(avalue) {
+	    var docObj = document.getElementById("doc");//img
+	    var imgObjPreview = document.getElementById("preview"); //div
+	    var divs = document.getElementById("localImag");
+	    if (docObj.files && docObj.files[0]) {
+	       //火狐下，直接设img属性
+	       imgObjPreview.style.display = 'block';
+	       imgObjPreview.style.width = '150px';
+	       imgObjPreview.style.height = '70px';
+	       imgObjPreview.src = window.URL.createObjectURL(docObj.files[0]);
+	    } else {
+	       //IE下，使用滤镜
+	       docObj.select();
+	       var imgSrc = document.selection.createRange().text;
+	       var localImagId = document.getElementById("localImag");
+	       localImagId.style.width = "150px";
+	       localImagId.style.height = "70px";
+	       //图片异常的捕捉，防止用户修改后缀来伪造图片
+	       try {
+	           localImagId.style.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale)"
+	           localImagId.filters.item("DXImageTransform.Microsoft.AlphaImageLoader").src = imgSrc;
+	        } catch(e) {
+	            alert("您上传的图片格式不正确，请重新选择!");
+	            return false;
+	        }
+	        imgObjPreview.style.display = 'none';
+	        document.selection.empty();
+	    }
+	   return true;
+	}
+
+	function clickSubmit(){
+		var passwords = $("#password").val();
+    	var psw       = $("#psw").val();
+    	var old_password = $('#old_password').val();
+
+    	if(old_password == ''){
+    		alert('请填写您的密码!!!');
+    		old_password.focus();
+    		return false;
+    	}
+
+		if(passwords.length < 6){	
+    		alert("密码长度不能小于6个字符");
+    		passwords.focus();
+    		return false;
+    	}else if(psw != passwords){
+    		alert("两次密码输入不一致");
+    		psw.focus();
+    		return false;
+    	}else{
+    		password(passwords);
+    	}
+	}
+
+	function password(password){
+		$.post('http://wgcapp.wgc2013.com/jingyi.php/Home/Index/changePassword', {
+			userid : '<?php echo $_SESSION["user_info"]["user_id"];?>',
+			password : password ,
+		}, function(ret,err) {
+			if(ret.code == 200){
+				alert('修改成功!');
+			}else{
+				alert(JSON.stringify(ret.message));
+			}
+		},'json');
+	}
+</script>
+</body>
+</html>

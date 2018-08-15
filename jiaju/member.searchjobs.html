@@ -1,0 +1,252 @@
+{include file=member.header.html}
+<link type="text/css" href="/themes/mall/jiaju/styles/default/css/css/style.css" rel="stylesheet"  />
+<link type="text/css" href="/themes/mall/jiaju/styles/default/css/css/demo.css" rel="stylesheet"  />
+<script type="text/javascript" src="/ueditor/ueditor.config.js"></script>
+<script type="text/javascript" src="/ueditor/ueditor.all.js"></script>
+<script type="text/javascript">
+    var editor = new UE.ui.Editor();
+    editor.render("myEditor");
+    //1.2.4以后可以使用一下代码实例化编辑器
+    //UE.getEditor('myEditor')		
+</script>
+<script type="text/JavaScript">
+       function gradeChange(){
+			var deal=$("#deal").val();
+			if(deal==2){
+				$("#xinzi").val('0.00');
+				$("#xinzi").attr("readOnly","true");
+				$("#num").removeAttr("readOnly");
+			}else if(deal==1){
+				$("#num").val('0.00');
+				$("#num").attr("readOnly","true");
+				$("#xinzi").removeAttr("readOnly");
+			}else{
+				$("#xinzi").val('');
+				$("#num").val('');
+				$("#xinzi").removeAttr("readOnly");
+				$("#num").removeAttr("readOnly");
+			}
+       }
+	   function gradeChange2(){
+			var jobtypeid=$("#jobtype").val();
+				$.ajax({
+					url:"http://59jiaju.com/index.php?app=member&act=ajax_type&jobtype_id="+jobtypeid,
+						type: "GET",
+					dataType: "json",
+					success: function(result){  
+							//alert(result);
+							var str="";
+							var dataArray=eval(result);
+							//alert(dataArray);
+							for(var i in dataArray)
+							{
+								 //alert(dataArray[i]['bill_name']);
+								str=str+dataArray[i]['bill_name']+', ';
+							} 
+							$("#jobs").val(str);
+						}
+					});
+			
+       }
+</script>
+<div class="content">
+    {include file=member.menu.html}
+    <div class="right">
+
+
+<div style="width: 600px;margin: 0 auto 30px auto">
+    <div class="fubu_right">
+        <div class="fubu_wrap">
+            <p class="fu_text">发布第一次招聘信息时，需要先填写企业资料</p>
+            <form action="index.php?app=member&act=searchjobs" method="post">
+				<input type="hidden" value="{$list.id}" name="id">
+				<input type="hidden" value="up" name="up">
+                <table>
+                    <tbody>
+						
+						<tr>
+                            <td class='w100'><span>*</span>标题：</td>
+                            <td class='w600'>
+                                <input style="border:1px solid #666666" value="{$list.title}" type="text" class="w400" name="title">
+                            </td>
+                        </tr>
+						
+						<tr>
+                            <td class='w100'><span>*</span>招聘性质：</td>
+                            <td class='w600'>
+								<select id="deal" name="deal" onchange="gradeChange()">
+								  <option value ="0">招工</option>
+								  <option value="2">招标</option>
+								</select>
+								<!--<option value ="1">找工</option>-->
+                            </td>
+                        </tr>
+						
+						<!--<tr>
+                            <td class='w100'><span>*</span>公司身份：</td>
+                            <td class='w600'>
+								
+                                <label><input style="border:1px solid #666666" name="company" checked="checked"  type="radio" value="公司直招" />公司直招 </label> 
+                                <label><input style="border:1px solid #666666" name="company" type="radio" value="职业代招" />职业代招<i>（职业招聘或者是劳务公司）</i> </label> 
+                            </td>
+                        </tr>-->
+						
+						<tr>
+                            <td class='w100'><span>*</span>公司名称：</td>
+                            <td class='w600'>
+                                <input style="border:1px solid #666666" value="{$list.gname}" type="text" class="w400" name="gname">
+                            </td>
+                        </tr>
+						
+						
+						
+                        <tr>
+                            <td class='w100'><span>*</span>工种：</td>
+                            <td class='w600'>
+								<!--<select name="jobtype">
+								  <option value ="0">泥水工</option>
+								  <option value ="1">木工</option>
+								  <option value="2">水电工</option>
+								  <option value="3">抹灰工</option>
+								  <option value="4">装修工</option>
+								  <option value="5">电焊工</option>  onchange="gradeChange2()"
+								</select>-->
+								<select id="jobtype" name="jobtype" >
+									<option value ="0">请选择工种</option>
+								{foreach from=$types item=type}
+									<option value ="{$type.jobtype_id}">{$type.jobtype_name}</option><br>
+								{/foreach}
+								</select>
+                            </td>
+                        </tr>
+						
+						<tr>
+                            <td class='w100'><span>*</span>需要人数：</td>
+                            <td class='w600'>
+                                <input style="border:1px solid #666666" value="{$list.renshu}" placeholder="预计需要人数" type="text"  name="renshu">人　&nbsp;完成周期：<input style="border:1px solid #666666" value="{$list.livetime}" placeholder="预计完成时间" type="text"  name="livetime">天
+                            </td>
+                        </tr>
+						
+						<tr>
+                            <td class='w100'><span>*</span>项目清单：</td>
+                            <td class='w600'>
+								<textarea id="jobs" name="jobs" rows="10" cols="80" placeholder="项目清单：">{$list.jobs}</textarea>
+                            </td>
+                        </tr>
+						
+						<tr>
+                            <td class='w100'><span>*</span>数量：</td>
+                            <td class='w600'>
+								<input type="text" id="num" name="num" value="{$list.num}" placeholder="数量" />　&nbsp;单位:<input type="text" name="unit"  placeholder="㎡/平方米..." value="{$list.unit}" />
+                            </td>
+                        </tr>
+						
+
+                        <tr>
+                            <td class='w100'><span>*</span>单价：</td>
+                            <td class='w600'>
+                                <input id="xinzi" style="border:1px solid #666666" value="{$list.xinzi}" type="text" name="xinzi" class="w200"  />
+                            </td>
+                        </tr>
+                        
+                        <!--<tr>
+                            <td class='w100'><span>*</span>联系人：</td>
+                            <td class='w600'>
+                                <input style="border:1px solid #666666" value="{$list.lianxiren}" type="text" name="lianxiren" class="w200">
+                            </td>
+                        </tr>-->
+						<input type="hidden" name="lianxiren" value="59家居" />
+                        <tr>
+                            <td class='w100'><span>*</span>客服电话：</td>
+                            <td class='w600'>
+                               <div class="w600 fu_ipone"><input style="border:1px solid #666666" value="18922273466" readOnly='true' name="dianhua" type="text" class="w200"></div>
+                                
+                            </td>
+                        </tr>
+						<input type="hidden" name="email" value="59jiaju@qq.com" />
+                        <!--<tr>
+                            <td class='w100'><span>*</span>邮箱：</td>
+                            <td class='w600'>
+                                <input style="border:1px solid #666666"value="{$list.email}" type="text" name="email" class="w400">
+                            </td>
+                        </tr>-->
+                        
+
+                        <tr>
+                            <td class='w100'><span>*</span>地址：</td>
+                            <td class='w600'>
+                                <select id="s_province" name="s_province"style="border:1px solid #666666"></select>  
+                                <select id="s_city" name="s_city"style="border:1px solid #666666" ></select>  
+                                <select id="s_county" name="s_county"style="border:1px solid #666666"></select>
+                                <script class="resources library" src="/themes/mall/jiaju/styles/default/js/area.js" type="text/javascript"></script>
+                        
+                                <script type="text/javascript">_init_area();</script> 
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class='w100'><span>*</span>详细地址：</td>
+                            <td class='w600'>
+                                <input style="border:1px solid #666666" value="{$list.xiangxi}" type="text" name="xiangxi" class="w400">
+                            </td>
+                        </tr>
+
+                     <tr>
+                            <td class='w100'><span>*</span>工艺说明：</td>
+                            <td class='w600'>
+                                <textarea style="border:1px solid #666666" name="content" id="myEditor">{$list.content}</textarea>
+                            </td>
+                        </tr>
+						
+						<!--<tr>
+                            <td class='w100'><span>*</span>工艺说明：</td>
+                            <td class='w600'>
+								<textarea name="content" rows="10" cols="80"  placeholder="说明">{$list.content}</textarea>
+                            </td>
+                        </tr>-->
+                                    
+                </table>
+				<input type="hidden" name="id" value="{$id}" />
+                <div class=""><input type="submit" class="save_btn_fabu"></div>         
+            </form>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $("#btn").click(function(){
+
+        var fuli=$('.fuli').val();
+　　$(".sys_spec_text").append(" <li class='selected'><a href='javascript:;' title='"+ fuli +"'> "+ fuli + "</a><i></i></li>");
+　　});
+    $("#btn1").click(function(){
+
+　　$(".fu_ipone").append(' <input value="12123" type="text" class="w200"/>');
+　　});
+</script>
+<script type="text/javascript">
+ $(".sys_item_specpara ul li").click(function(){
+        if($(this).hasClass('selected')){
+        $(this).removeClass('selected');
+        }else{
+        $(this).addClass('selected');
+        };
+});
+</script>
+<script type="text/javascript">
+var Gid  = document.getElementById ;
+var showArea = function(){
+    Gid('show').innerHTML = "<h3>省" + Gid('s_province').value + " - 市" +    
+    Gid('s_city').value + " - 县/区" + 
+    Gid('s_county').value + "</h3>"
+                            }
+Gid('s_county').setAttribute('onchange','showArea()');
+</script>
+
+
+
+
+    </div>
+    <div class="clear"></div>
+</div>
+{include file=footer.html}

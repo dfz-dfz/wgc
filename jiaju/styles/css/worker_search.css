@@ -1,0 +1,68 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+ul,ol li {
+	list-style: none;
+}
+
+body {
+	width: auto;
+	height: auto;
+	border: 1px solid #cfcfcf;
+	background-color: #f7f7f7;
+}
+
+.main {
+	margin: 10px;
+	position: relative;
+}
+
+.section {
+	border: 1px solid #cfcfcf;
+}
+
+.main .title {
+	width: 90px;
+	height: 20px;
+	font-size: 12px;
+	text-align: center;
+	line-height: 20px;
+	border: 1px solid #cfcfcf;
+	background-color: #f7c67a;
+	color: #f2552a;
+	cursor: pointer;
+	float: left;
+}
+
+.main .section {
+	background-color: #fff;
+}
+
+.section .search {
+	width: auto;
+	padding: 30px 0;
+	text-align: center;
+}
+
+.section .phone_input {
+	height: 20px;
+}
+
+.section .search_btn {
+    width: 50px;
+    height: 24px;
+    border: none;
+    line-height: 24px;
+    border-radius: 5px;
+    color: #fff;
+    letter-spacing: 2px;
+    background-color: #fe552c;
+    outline: none;
+    cursor: pointer;
+}
+
+.section ul {
+	padding-top: 50px;
+}

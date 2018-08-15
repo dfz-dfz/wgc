@@ -1,0 +1,33 @@
+.base_info_public .jifenlist {
+	width:100%;
+}
+
+.base_info_public .jifenlist li {
+	width: 96%;
+    	margin-left: auto;
+	margin-right: auto;
+}
+
+.base_info_public .jifenlist li .list_head li {
+	width:33%;
+	float:left;
+	text-align: center;
+	font-size: 16px;
+        color: #000;
+        font-weight: bold;
+	border: 1px solid #000;
+        background-color: #f1f1f1;
+	height: 30px;
+        line-height: 30px;
+}
+
+.base_info_public .jifenlist li .list_main li {
+	width:33%;
+	float:left;
+	text-align: center;
+	font-size: 16px;
+        color: #000;
+	border: 1px solid #000;
+	height: 30px;
+        line-height: 30px;
+}

@@ -1,0 +1,32 @@
+.user_center_ul li span{
+	width: 20px;
+}
+input[type="radio"]{
+	
+	border: none !important;
+	display: none;
+}
+
+.bg_li{
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/Users/Administrator/Desktop/user/www.wgc2013.com/data/files/mall/template/user_center_photo.jpg',sizingMethod='scale');
+}
+.user_photo_button{
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/Users/Administrator/Desktop/user/www.wgc2013.com/data/files/mall/template/user_button.jpg',sizingMethod='scale');
+}
+input{
+	border: 1px solid #bcbcbc !important;
+}
+
+textarea{
+	border: 1px solid #bcbcbc !important;
+}
+
+.boy,.girl{
+	display: inline-block;
+	
+
+}
+
+
+
+

@@ -1,0 +1,179 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{$store.name}-五金店-店铺详情-59家居</title>
+<meta name="description" content="59，59家居，59家居商城，装修、材料、家具、饰品一站式服务，让装修更简单，价格更透明！！" />
+<meta name="keywords" content="59，59家居，家居商城，59家居商城，59家居装修商城，办公室装修，写字楼装修，材料，装修材料，家居，办公家具，家居，家具，装修，装饰" />
+
+  
+<link type="text/css" href="/themes/mall/jiaju/styles/style/zp/style.css" rel="stylesheet"  />
+
+
+
+<link rel="stylesheet" type="text/css" href="/themes/mall/jiaju/styles/style/zp/jquery.ad-gallery.css">
+</head>
+
+<body>
+
+{include file=header.html}
+
+<!-- main start -->
+<div id="main">
+    
+
+<div class="zhaopin_area w">
+	 	
+			<div class="zhaopin_header"style="background:#F1F0F0;font-size:14px;text-align:left;margin: 40px auto 10px auto;padding: 0;width: 100%;height: 30px;line-height: 30px;">
+				
+				<span style="background:red;margin:0 5px;padding: 0 5px;color:red;">.</span>
+				<span style="margin-right:5px;">59家居</span>>>
+				<span style="margin-right:5px;">店铺详情</span>>>
+				<span style="margin-right:5px;">{$store.name}</span>
+					
+	       </div>				   
+
+		
+		<div class="zhaopin_con"style="height:auto;overflow:hidden;border:none;">
+			
+			<div class="zhaopin_con1"style="overflow:hidden;width: 860px;overflow: hidden;min-height: 300px;float:left;padding:5px;">
+			
+				<div class="zhaopin_con1"style="overflow:hidden;width: 100%;overflow: hidden;height: 90px;margin:0 auto 50px auto;">
+					<img src="/themes/mall/jiaju/images/dianpu/1.png" style="margin-right: 10px;float: left;width:205px;height:85px;border:1px solid #ccc" onerror="onerror=null;src='/data/files/mall/settings/site_logo.png'" />
+					<img src="/themes/mall/jiaju/images/dianpu/s2.png" style="margin-right: 10px;float: left;width:205px;height:85px;border:1px solid #ccc" onerror="onerror=null;src='/data/files/mall/settings/site_logo.png'" />
+					<img src="/themes/mall/jiaju/images/dianpu/3.png" style="margin-right: 10px;float: left;width:205px;height:85px;border:1px solid #ccc" onerror="onerror=null;src='/data/files/mall/settings/site_logo.png'" />
+					<img src="/themes/mall/jiaju/images/dianpu/s4.png" style="float: left;width:205px;height:85px;border:1px solid #ccc" onerror="onerror=null;src='/data/files/mall/settings/site_logo.png'" />
+				</div>
+			
+			
+			
+			
+			    <h1 class="title"style="margin-bottom: 20px;text-align:left;font-weight:bold;overflow:hidden;width: 100%;overflow: hidden;min-height: 30px;line-height:25px;font-size:28px;float:left">{$store.name}</h1>
+				
+				<div class="divimg"style="border:1px solid #ccc;overflow:hidden;width: 100%;overflow: hidden;min-height: 150px;">
+ 
+					
+					<p style="font-size:16px;padding:5px;color:#333;text-align:left;width:100%;height:40px;line-height:30px;border-bottom:1px solid #ccc;">公司介绍</p>
+					<p style="font-size:16px;padding:5px;color:#333;text-align:left;overflow:hidden;width:100%;min-height:150px;">
+						
+					
+					</p>
+ 
+				</div>
+				
+				<div class="divimg"style="margin-top: 30px;border:1px solid #ccc;overflow:hidden;width: 100%;overflow: hidden;min-height: 150px;">
+ 
+					
+					<p style="font-size:16px;padding:5px;color:#333;text-align:left;width:100%;height:40px;line-height:30px;border-bottom:1px solid #ccc;">基本资料</p>
+					<div style="font-size:16px;padding:5px;color:#333;text-align:left;overflow:hidden;width:100%;min-height:150px;">
+						<p class="titles">主营产品：
+						
+						<?php
+				
+						$id = $_GET['id'];
+			
+						$user="SELECT brand FROM `ecm_member` where user_id='$id'"; 
+						$user_result = @mysql_fetch_array(mysql_query($user));
+						$cate_id = $user_result['brand'];
+						$cate_id="SELECT cate_name FROM `ecm_gcategory` where cate_id in($cate_id)"; 
+						$cate_id_result = mysql_query($cate_id);
+						
+						while($cate = @mysql_fetch_array($cate_id_result)){
+							$count = count($cate);
+							if($count >=1){
+								$cate_name .= $cate['cate_name'].',';
+							}else{
+								$cate_name .= $cate['cate_name'];
+							}
+						}
+						
+						echo $cate_name;
+				
+						?>
+						
+						
+						</p>
+						<p class="titles">公司地址：{$user.xiangxi}</p>
+						<p class="titles">业务经理：{$user.user_name}</p>
+						<p class="titles">邮政编码：</p>
+						<p class="titles">电话：{$store.tel}</p>
+						<p class="titles">业务经理手机：{$store.mob}</p>
+						<p class="titles">传真：</p>
+						<p class="titles">电子邮箱：{$user.email}</p>
+						<p class="titles">在线留言QQ:<a href="http://wpa.qq.com/msgrd?v=3&uin={$store.im_qq}&site=qq&menu=yes"style="color:#fff">在线沟通</a></p>
+						<p class="titles">注册资金：未知</p>
+						<p class="titles">网站：未知</p>
+						<p class="titles">信用等级：未知</p>
+						<p class="titles">企业人气：第<span style="color:red;">186</span>次浏览</p>
+						<p class="titles">所属分类：
+						
+						<?php
+				
+							$id = $_GET['id'];
+				
+							$store_query="SELECT cate_id FROM `ecm_store_user` where uid='$id'"; 
+							$store_result = @mysql_fetch_array(mysql_query($store_query));
+							$cate_id = $store_result['cate_id'];
+							$cate_id="SELECT cate_name FROM `ecm_gcategory` where cate_id in($cate_id)"; 
+							$cate_id_result = mysql_query($cate_id);
+							
+							while($cate = @mysql_fetch_array($cate_id_result)){
+								$count = count($cate);
+								if($count >=1){
+									$cate_name .= $cate['cate_name'].',';
+								}else{
+									$cate_name .= $cate['cate_name'];
+								}
+							}
+							
+							echo $cate_name;
+						
+						?>
+						
+						</p>
+						<p class="titles">加入日期：2016-08-22</p>
+						<p class="titles">所属城市：{$user.city}</p>
+					</div>
+ 
+					
+ 
+				</div>
+				
+				<div class="zhaopin_con1"style="overflow:hidden;width: 100%;overflow: hidden;height: 90px;margin:20px auto 50px auto;">
+					<img src="/themes/mall/jiaju/images/dianpu/a1.png" style="margin-right: 10px;float: left;width:205px;height:85px;border:1px solid #ccc" onerror="onerror=null;src='/data/files/mall/settings/site_logo.png'" />
+					<img src="/themes/mall/jiaju/images/dianpu/a22.png" style="margin-right: 10px;float: left;width:205px;height:85px;border:1px solid #ccc" onerror="onerror=null;src='/data/files/mall/settings/site_logo.png'" />
+					<img src="/themes/mall/jiaju/images/dianpu/a333.png" style="margin-right: 10px;float: left;width:205px;height:85px;border:1px solid #ccc" onerror="onerror=null;src='/data/files/mall/settings/site_logo.png'" />
+					<img src="/themes/mall/jiaju/images/dianpu/a4.png" style="float: left;width:205px;height:85px;border:1px solid #ccc" onerror="onerror=null;src='/data/files/mall/settings/site_logo.png'" />
+				</div>
+				
+			</div>
+			
+			<div class="zhaopin_con1"style="overflow:hidden;width: 200px;overflow: hidden;min-height: 300px;float:left;margin-left:20px;">
+			    
+				
+				<center>
+						
+					<div class="ad-image" style="width: 100%;">
+					
+						<img src="/themes/mall/jiaju/images/dianpu/gg.png" onerror="onerror=null;src='/data/files/mall/settings/site_logo.png'" style="margin-bottom:10px;width:200px;height:354px;">
+						<img src="/themes/mall/jiaju/images/dianpu/gg.png" onerror="onerror=null;src='/data/files/mall/settings/site_logo.png'" style="margin-bottom:10px;width:200px;height:354px;">
+						<img src="/themes/mall/jiaju/images/dianpu/gg.png" onerror="onerror=null;src='/data/files/mall/settings/site_logo.png'" style="width:200px;height:354px;">
+					</div>
+						
+					 
+					
+				</center>
+				
+				
+				<!--代码结束--->
+				
+				
+			</div>
+			
+		</div>
+	</div>
+
+{include file=footer.html}
+
+</body>
+</html>

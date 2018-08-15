@@ -1,0 +1,213 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Access-Control-Allow-Origin" content="*">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=8"/>
+<title>用户中心-预算报价</title>
+<meta name="description" content="微工程，微工程APP，装修、材料、家具、饰品一站式服务，让装修更简单，价格更透明！！" />
+<meta name="keywords" content="微工程，微工程，家居商城，微工程家居商城，微工程家居装修商城，办公室装修，写字楼装修，材料，装修材料，家居，办公家具，家居，家具，装修，装饰" />
+<link rel="stylesheet" type="text/css" href="/themes/mall/jiaju/css/api.css"/>
+<!-- <link rel="stylesheet" type="text/css" href="themes/mall/jiaju/css/aui.css" /> -->
+<!-- <link rel="stylesheet" type="text/css" href="themes/mall/jiaju/css/aui.1.0.css"/> -->
+
+<!-- 引入个人中心 -->
+<link type="text/css" href="/themes/mall/jiaju/styles/default/css/center.css" rel="stylesheet"  />
+<link type="text/css" href="/themes/mall/jiaju/styles/css/worker_quota_price.css" rel="stylesheet" />
+<script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+<!-- <script type="text/javascript" src="www.wgc2013.com/themes/mall/jiaju/js/jquery-1.8.3.min.js"></script> -->
+<script type="text/javascript">
+	jQuery.support.cors = true;
+
+</script>
+
+</head>
+
+<body style="background:#fff;">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<!-- <base href="http://www.wgc2013.com/" /> -->
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7 charset=utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<link type="text/css" href="themes/mall/jiaju/styles/default/css/main.css" rel="stylesheet"  />
+<link type="text/css" href="themes/mall/jiaju/styles/css/global.css" rel="stylesheet"  />
+<link type="text/css" href="http://www.wgc2013.com/themes/mall/jiaju/styles/default/css/catalog.css" rel="stylesheet"  />
+<link type="text/css" href="http://www.wgc2013.com/themes/mall/jiaju/styles/default/css/footer.css" rel="stylesheet" />
+<link type="text/css" href="themes/mall/jiaju/styles/css/style.css" rel="stylesheet"  />
+<script type="text/javascript" src="index.php?act=jslang"></script>
+<script type="text/javascript" src="http://www.wgc2013.com/includes/libraries/javascript/ecmall.js" charset="utf-8"></script>
+<script type="text/javascript" src="http://www.wgc2013.com/includes/libraries/javascript/cart.js" charset="utf-8"></script>
+<script type="text/javascript" src="http://www.wgc2013.com/themes/mall/jiaju/styles/default/js/main.js" charset="utf-8"></script>
+<!-- 引入的是个人中心的 -->
+
+
+<!--[if lte IE 6]>
+<script type="text/javascript" language="Javascript" src="http://www.wgc2013.com/themes/mall/jiaju/styles/default/js/hoverForIE6.js"></script>
+<![endif]-->
+<!--[if IE 8]>
+<link type="text/css" href="themes/mall/jiaju/css/ie8.css" rel="stylesheet"  />
+<![endif]-->
+<script type="text/javascript">
+var SITE_URL = "http://www.wgc2013.com";
+var PRICE_FORMAT = '&yen;%s';
+</script>
+<script charset="utf-8" type="text/javascript" src="http://www.wgc2013.com/includes/libraries/javascript/jquery.plugins/jquery.validate.js" ></script><style type="text/css">
+body{background:url('') no-repeat center top }
+.mainnav{width:990px; overflow:hidden; margin:0 auto}
+.STYLE1 {color: red}
+</style>
+<script type="text/javascript" src="http://www.wgc2013.com/themes/mall/jiaju/styles/default/js/hover.js"></script>
+
+<script charset="utf-8" type="text/javascript" src="http://www.wgc2013.com/includes/libraries/javascript/jquery.plugins/jquery.validate.js" ></script>
+<script type="text/javascript">
+  $(function (){
+    $('#open-change-city-window').click(function (){
+      $('.change-city-window').slideDown();
+      
+    })
+    $('#close-change-city-window').click(function (){
+      $('.change-city-window').slideUp();
+    })
+
+  
+  })
+</script>
+</head>
+<body>
+{include file=header.html}
+
+<!-- 中部主要内容 -->
+ <div class="container" style="overflow: hidden;width: 1200px;margin: 10px auto;position: relative;">
+ <!-- 左上的导航栏 -->
+ 	 {include file=companycenter.html}
+<!-- 	<include file="usercenter.html"/> -->
+
+ 	<!-- 右边的内容 -->
+ 	<div class="container_right" style="width: 78.5%;border: 1px solid #cacaca;float: right;background-color: #f7f7f7;padding: 0 10px 10px 10px;">
+
+		<!-- 公司信息 -->
+		<div class="budget base_ui_public" style="/*display: none;*/position: relative;">
+			<ul class="budget_ul user_public_ul">
+ 				<li class="change_bg_li" style="margin-right: 10px;">工价询价</li>
+ 			</ul>
+ 			<div class="company_info base_info_public" style="overflow: hidden;/*padding-left: 15%;*/min-height: 250px;">
+ 			<!-- 预算报价 -->
+ 			<div class="company_detail" style="position: relative;/*left: -16%;*//*width: 115%;*/">
+			<div style="overflow: hidden;margin-top: 10px;">
+			<!-- 基本信息 -->
+			<div class="section" style="border: none;">
+						<!-- 自定工价 -->
+			<div class="sect current wages_custom">
+				<ul style="padding: 20px 0;text-align: center;letter-spacing: 2px;">
+					<li>
+						<span>项目名称</span><span class="colon">:</span><input type="text" id="title">
+					</li>
+					<li>
+						<span>计价单位</span><span class="colon">:</span><input type="text" id="unit">
+					</li>
+					<li>
+						<span style="letter-spacing: 0;">数量/范围</span><span class="colon">:</span><input type="text" id="num">
+					</li>
+					<li>
+						<span>联系方式</span><span class="colon">:</span><input type="text" id="tel">
+					</li>
+					<li>
+						<span>工作地点</span><span class="colon">:</span><input type="text" id="xiangxi">
+					</li>
+					<li>
+						<span style="white-space: pre-wrap;">备     注</span><span class="colon">:</span><input type="text" id="ps">
+					</li>
+				</ul>
+				<div class="btn_list" style="width: 140px;">
+					<div class="btn confirm_btn" onclick="fabu()">确认发布</div>
+				</div>
+			</div>
+			<!-- 自定工价 end -->
+			</div>
+
+
+			</div>
+			</div>
+	
+ 			</div>
+ 			
+			
+		</div>
+		
+		
+ 		</div>
+
+ 		
+ 	</div>
+
+
+
+{include file=footer.html}
+
+
+<script type="text/javascript">
+		//提交发布
+function fabu(){
+		
+	    var title 		= $("#title");
+	    var unit 		= $("#unit");
+	    var num 		= $("#num"); 
+	   	var xiangxi 	= $("#xiangxi");
+	    var ps          = $("#ps")
+	    
+		if(title.val() == ''){
+			alert('必填项');
+			title.focus();
+			return false;
+		}else if(unit.val() == ''){
+			alert('必填项');
+			unit.focus();
+			return false;
+		}else if(num.val() == ''){
+			alert('必填项');
+			num.focus();
+			return false;
+		}else if(xiangxi.val() == ''){
+			alert('必填项');
+			xiangxi.focus();
+			return false;
+		}else if(ps.val() == ''){
+			alert('必填项');
+			ps.focus();
+			return false;
+		}else{
+		
+			var url = 'http://wgcapp.wgc2013.com/'+"jingyi.php/Home/Jysearch/searchadd";
+			$.post(url,{
+							userid      : '<?php echo $_SESSION["user_info"]["user_id"];?>',
+						    title       : $("#title").val(),
+						    unit        : $("#unit").val(),
+						    num         : $("#num").val(),
+						    xinzi       : '50',
+						   	pt_price    : '0',
+						    total_price : '20',
+						    jobtype     : '0',     
+						    livetime    : '2018.8.9',
+						    ps          : $("#ps").val(),
+						    hasmoney    : 1,
+						    s_province  : '广东省',
+							s_city      : '广州市',
+							s_county    : '白云区',
+							region      : '嘉禾街鹤边路29号五社工业区',
+						    xiangxi     : $("#xiangxi").val(),
+			
+			},function(ret){
+				console.log(ret)
+				if(ret.status == 200){
+						alert('发布成功')
+				}
+			},'json')
+		}
+					
+		
+	}
+</script>
+</body>
+</html>

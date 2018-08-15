@@ -1,0 +1,221 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Access-Control-Allow-Origin" content="*">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=8"/>
+<title>推荐工人列表 - 微工程</title>
+<meta name="description" content="微工程，微工程APP，装修、材料、家具、饰品一站式服务，让装修更简单，价格更透明！！" />
+<meta name="keywords" content="微工程，微工程，家居商城，微工程家居商城，微工程家居装修商城，办公室装修，写字楼装修，材料，装修材料，家居，办公家具，家居，家具，装修，装饰" />
+	
+<link rel="stylesheet" type="text/css" href="/themes/mall/jiaju/css/api.css"/>
+<link rel="stylesheet" type="text/css" href="/themes/mall/jiaju/css/aui.css" />
+<link rel="stylesheet" type="text/css" href="/themes/mall/jiaju/css/aui.1.0.css"/>
+<style type="text/css">
+.jodsearch{margin:0px;padding:0px;vertical-align: middle;}
+.jodsearch .dosearch{margin-left:auto;margin-right:auto;margin-top:10px;padding:0px;width:1100px;height:52px;background-color:#F5F5F5;}
+.jodsearch .dosearch input{margin-top:10px;}
+.jodsearch .dosearch *{vertical-align:middle;}
+.tiaojian a{color:#0066CB;}
+.jobtable{width:100%;text-align:left;margin-left:3px;font-size:13px;}
+.jobtable tr{line-height:30px;}
+.jobtable tr td{border-bottom:1px solid #F0F0F0;}
+.main{margin:0px;padding:0px;}
+.main_body{
+margin:auto;padding:0px;margin-top: 10px;margin-bottom: 10px; width:1200px;overflow:hidden;
+}
+.main_body .main_left{width:79%;float:left;margin-right:10px;}
+.main_body .main_right{width:19%;float:left;margin-left:10px;}
+/**劳务资源*/
+.text-left a{width:23%;background:#ff552e;border-radius:10px;float:left;margin:1%;height:50px;line-height:50px;overflow:hidden;display:block;color:#fff;font-size:16px;font-weight:bold;}
+.aui-list-item-middle{width:19.88888888888%;margin:10px 0.11111111111rem;float:left;overflow: hidden;}
+</style>
+<script type="text/javascript">
+	$(document).ready(function(){
+	$(".tiaojian > .qy > a").click(function(){
+	　　　　$(".tiaojian > .qy > a").css("background-color","F5F5F5");
+			$(this).css("background-color","#62AF00");
+			//这里使用ajax取数据
+			/*var url=$(this).attr("href");
+			$.get(url,function(data,status){
+				alert("Data: " + data + "\nStatus: " + status);
+			  });*/
+	　　});
+	$(".tiaojian > .xz > a").click(function(){
+	　　　　$(".tiaojian > .xz > a").css("background-color","F5F5F5");
+			$(this).css("background-color","#62AF00");
+			//这里使用ajax取数据
+			//var url=$(this).attr("href");
+			/*$.get(url,function(data,status){
+				alert("Data: " + data + "\nStatus: " + status);
+			  });*/
+	　　});
+	}); 
+	
+</script>
+</head>
+<body>
+{include file=header.html}
+<!-- 搜索 -->
+<div class="jodsearch" style="background:#ccc;padding-bottom: 8px;">
+		<div class="dosearch" style="background:#ccc;overflow:hidden;">
+			<form id="dosearchform" action="/index.php?app=search&act=joblist2" method="get">
+				<input type="hidden" name="app" value="search" />
+				<input type="hidden" name="act" value="joblist2" />
+				<input type="text" placeholder="输入关键词" name="title" style="margin-left:150px;font-size:14px;float:left;padding:0 10px;border:1px solid #ccc;width:55%;height:35px;" />
+				<input type="submit"  value="搜索" style="float:left;width:12%;height:34px;background:#ff552e;color:#FFFFFF;border:1px solid #ff552e" /><span style="margin-left:15px;color:#636363;font-family:黑体;font-size:16px;float:left;margin-top:15px;"></span>
+			</form>
+		</div>
+</div>
+<div class="main">
+	<!-- 主体 -->
+	<div class="main_body">
+		<!-- 左边 -->
+		<div class="main_left"style="width:100%">
+			<div style="background-color:#F5F5F5;width:100%;border-bottom:1px solid #999;">
+				<div style="width:100%;height:30px;border-bottom:1px solid #999;overflow:hidden;"><span style="width:15%;height:30px;color:#333;font-size:20px;float:left;text-align:left">工种类别：{$name}</span></div>
+				
+				
+			</div>
+			<div style="width:100%;background-color:#FFFFFF;">
+				<div class="text-left">
+					<ul class="aui-list aui-media-list" id="lists" style="min-height:300px;overflow:hidden"></ul>
+				</div>
+			</div>
+		</div>
+		<!-- 左边结束 -->
+		<!-- 右边 -->
+		<div class="main_right" style="display:none;">
+			<div style="width:100%;">
+				<img src="/themes/store/default/images/adwei.png" width="100%">
+			</div>
+		</div>
+		<!-- 右边结束 -->
+	</div>
+{include file=footer.html}
+<!-- 底部include file=footer2.html-->
+<script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="/themes/mall/jiaju/js/aui-scroll.js" ></script>
+
+<script type="text/javascript">
+var serverUrl = "http://wgcapp.59jiaju.com/index.php/Home/",page = 1,uploadUrl = "http://wgcapp.59jiaju.com/";
+$(function(){
+	jQuery.support.cors = true;
+	cai_select();
+});
+//下一页
+var scroll = new auiScroll({
+    listen:false, //是否监听滚动高度，开启后将实时返回滚动高度
+    distance:0 //判断到达底部的距离，isToBottom为true
+},function(ret){
+   
+   if(ret.isToBottom){
+		cai_select();
+   }
+});
+ // PHP时间戳转时间
+function _trans_php_time_to_str(timestamp, n) {
+
+	update = new Date(timestamp * 1000);
+	//时间戳要乘1000
+	year = update.getFullYear();
+	month = (update.getMonth() + 1 < 10) ? ('0' + (update.getMonth() + 1)) : (update.getMonth() + 1);
+	day = (update.getDate() < 10) ? ('0' + update.getDate()) : (update.getDate());
+	hour = (update.getHours() < 10) ? ('0' + update.getHours()) : (update.getHours());
+	minute = (update.getMinutes() < 10) ? ('0' + update.getMinutes()) : (update.getMinutes());
+	second = (update.getSeconds() < 10) ? ('0' + update.getSeconds()) : (update.getSeconds());
+	if (n == 1) {
+		return (year + '-' + month + '-' + day + ' ' + hour + ':' + minute + ':' + second);
+	} else if (n == 2) {
+		return (year + '-' + month + '-' + day);
+	} else if (n == 3) {
+		return (month + '-' + day);
+	} else if (n == 4) {
+		return (hour + ':' + minute + ':' + second);
+	} else if (n == 5) {
+		return (year + '-' + month + '-' + day + ' ' + hour + ':' + minute );
+	} else {
+		return 0;
+	}
+}
+
+//材料列表
+function cai_select(){
+	
+	
+	var url = serverUrl+"Systemmsg/Jobdetails";
+	$.post(url,{list    : 'ok',page    : page,type    : {$type},infotype : 'weixin'},function(ret){
+	
+		var data = ret.message;
+		var listHtml = '';
+		if(ret.code == 200){
+				page++;
+				var data = ret.message;
+				for (var i in data) {
+							
+				var id          = data[i].user_id;
+				var postion     = data[i].postion;
+				var type        = (data[i].type =='' || data[i].type == null)?'未分类':data[i].type;
+				var	name        = (data[i].name =='' || data[i].name == null)?'匿名':data[i].name;
+				var	zhiwei 	    = (data[i].zhiwei =='' || data[i].zhiwei == null)?'未填写':data[i].zhiwei;
+				var	guanzhu     = data[i].guanzhu;
+				var	bumen       = (data[i].bumen =='' || data[i].bumen == null)?'1':data[i].bumen;
+				var	huji        = (data[i].huji =='' || data[i].huji == null)?'未填写':data[i].huji;
+				var	gz_jingyan  = (data[i].gz_jingyan =='' || data[i].gz_jingyan == null)?'未填写':data[i].gz_jingyan;
+
+				var	userphoto   = uploadUrl + data[i].userphoto;
+					
+				if(name != '匿名'){
+					listHtml += '<li class="aui-list-item aui-list-item-middle" style="cursor:pointer" title="'+name+'" onclick="openConten('+id+')">';
+					listHtml += '    <div class="aui-media-list-item-inner">';
+					listHtml += '        <div class="aui-list-item-media" style="width: 3rem;">';
+					listHtml += '            <img onerror="javascript:this.src=\'/themes/mall/jiaju/images/logo.jpg\';" src="'+userphoto+'" class="aui-img-round aui-list-img-sm" style="height:70px;width:60px;border-radius: 5px">';
+					listHtml += '        </div>';
+					listHtml += '        <div class="aui-list-item-inner">';
+					listHtml += '            <div class="aui-list-item-text">';
+					listHtml += '                <div class="aui-list-item-title aui-font-size-14 aui-ellipsis-1">'+name+'</div>';
+					listHtml += '            </div>';
+					listHtml += '        	<div class="aui-list-item-text aui-ellipsis-1"><img src="/themes/mall/jiaju/images/xingxing.jpg" style="width:60px;"/></div>';
+					listHtml += '        	<div class="aui-list-item-text aui-ellipsis-1">口碑：<?php echo rand(0,9);?>.0分</div>';
+					listHtml += '        	<div class="aui-list-item-text aui-ellipsis-1">分类：'+type+'</div>';
+					listHtml += '        	<div class="aui-list-item-text aui-ellipsis-1">工种：'+postion+'</div>';
+					listHtml += '        	<div class="aui-list-item-text aui-ellipsis-1">从业：'+bumen+'年</div>';
+					listHtml += '        </div>';
+					listHtml += '    </div>';
+					listHtml += '</li>';
+				}
+				
+				
+			}
+		   
+			$("#lists").show();
+			$("#lists").append(listHtml);
+			
+		}else if(ret.code == 202)	{
+			if(page == 1){
+				$("#lists").html('<div style="border: none;width:100px;margin:50px auto;" class="empty"><img src="/themes/mall/jiaju/images/empty.png"/></div>');
+			}else{
+				//alert('暂无更多了');
+			}
+		}else{
+			return false;
+		
+		}
+		
+	
+	},"json");
+
+}
+	
+//打开详情
+function openConten(id){
+	
+	var url = 'index.php?app=search&act=joblist3_content_user&id='+id+'&name=详细介绍';
+	window.open(url);
+	//_openWin('gongzuo_content_win','../gongzuo/gongzuo_content_win.html',{id : id,type : 1,touid : user_id,f_type : '招工'});
+	
+	
+}
+</script>
+</body>
+</html>

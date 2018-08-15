@@ -1,0 +1,235 @@
+﻿* {
+	margin: 0;
+	padding: 0;
+}
+
+ul,ol li {
+	list-style: none;
+}
+
+body {
+	width: auto;
+	height: auto;
+	border: 1px solid #cfcfcf;
+	background-color: #f7f7f7;
+}
+
+.main {
+	margin: 10px;
+	position: relative;
+}
+
+.section {
+	border: 1px solid #cfcfcf;
+}
+
+.head_mun {
+	width: 100%;
+	height: 22px;
+}
+
+.head_mun .mun_btn {
+	width: 90px;
+	height: 20px;
+	font-size: 12px;
+	text-align: center;
+	line-height: 20px;
+	border: 1px solid #cfcfcf;
+	float: left;
+	background-color: #f7c67a;
+	color: #f2552a;
+	cursor: pointer;
+}
+
+.head_mun .current {
+	color: #000;
+	background-color: #fff;
+}
+
+.head_mun .custom {
+	margin-right: 10px;
+}
+
+.sect {
+	background-color: #fff;
+	width: auto;
+	height: auto;
+}
+
+/*自定工价*/
+.wages_custom li {
+	height: 32px;
+	line-height: 30px;
+	text-align: center;
+	color: #000;
+	font-weight: bold;
+}
+
+
+
+.colon {
+	margin: 0 6px;
+}
+
+.wages_custom .btn_list {
+	height: 30px;
+	text-align: center;
+	margin-left: auto;
+    margin-right: auto;
+    width: 310px;
+    padding: 20px 0 30px 0;
+}
+
+.btn_list .btn {
+	width: 140px;
+	height: 30px;
+	background-color: #ea6200;
+	font-size: 18px;
+	line-height: 30px;
+	font-weight: 600;
+	letter-spacing: 2px;
+	color: #fff;
+	float: left;
+	cursor: pointer;
+}
+
+.btn_list .confirm_btn {
+	margin-right: 30px;
+}
+
+.wages_custom input {
+	height: 20px;
+	padding-left: 5px;
+}
+
+	/*分享弹窗*/
+	.confirm {
+		width: 100%;
+		height: 100%;
+		background-color: rgba(0,0,0,.1);
+		position: absolute;
+		top: 0;
+	}
+	.confirm_ {
+		width: 360px;
+		height: 230px;
+		background-color: #fff;
+	    padding: 20px;
+		position: absolute;
+		left: 50%;
+		margin-left: -180px;
+		top: 10px;
+		z-index: 999;
+	}
+	.confirm textarea {
+		height: 80px;
+		resize:none;
+	}
+	.confirm_ span {
+		float: left;
+		font-weight: 600;
+	}
+	.share_text {
+		margin-bottom: 16px;
+	}
+	.share_sendee input {
+		width: 225px;
+	}
+	.confirm .share_btn {
+		width: 120px;
+		height: 30px;
+		color: #fff;
+		background-color: #f9cc88;
+		border: none;
+	    position: absolute;
+	    bottom: 0;
+	    left: 50%;
+	    margin-left: -60px;
+	    margin-bottom: 20px;
+	    cursor: pointer;
+	}
+	/*分享弹窗 end*/
+
+/*自定工价 end*/
+
+.sect.current {
+	display: block;
+}
+
+/*工价列表*/
+.wages_list {
+	padding: 20px 50px;
+}
+
+.list_ul li {
+	list-style: inside;
+	height: 46px;
+	line-height: 50px;
+	border-bottom: 1px solid #cfcfcf;
+	position: relative;
+}
+
+.search_input {
+    width: 240px;
+    height: 20px;
+}
+
+.wages_list .search_btn {
+	width: 80px;
+	height: 24px;
+	background-color: #f7c67a;
+    color: #f2552a;
+    border: 1px solid #cfcfcf;
+    cursor: pointer;
+}
+
+.wages_list .share_btn {
+	width: 80px;
+	height: 22px;
+	border: none;
+	background-color: #f7c67a;
+	text-align: center;
+	font-weight: 600;
+	position: absolute;
+    right: 80px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.list_ul .list_name {
+	padding-right: 20px;
+}
+
+.list_ul .checkbox {
+	position: absolute;
+    right: 16px;
+    top: 50%;
+}
+
+.page {
+	padding: 40px 0 30px 0;
+	width: 450px;
+    margin-left: 32%;
+}
+
+.page li {
+	float: left;
+	border: 1px solid #cfcfcf;
+	text-align: center;
+	margin-right: 4px;
+}
+
+.page .page_btn {
+	width: 50px;
+	cursor: pointer;
+}
+
+.page .page_num {
+	width: 22px;
+	cursor: pointer;
+}
+
+.page .current {
+	background-color: #fe552c;
+}
+/*工价列表 end*/

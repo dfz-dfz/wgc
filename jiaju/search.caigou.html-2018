@@ -1,0 +1,811 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>采购招标_59家居商城</title>
+<meta name="description" content="59，59家居，59家居商城，装修、材料、家具、饰品一站式服务，让装修更简单，价格更透明！！" />
+<meta name="keywords" content="59，59家居，家居商城，59家居商城，59家居装修商城，办公室装修，写字楼装修，材料，装修材料，家居，办公家具，家居，家具，装修，装饰" />
+	
+<link type="text/css" href="/themes/mall/jiaju/styles/style/zp/style.css" rel="stylesheet"  />
+<link type="text/css" href="/themes/mall/jiaju/styles/style/zp/demo.css" rel="stylesheet"  />
+<link type="text/css" href="/themes/mall/jiaju/styles/style/style/style.css" rel="stylesheet"  />
+<script src="/themes/mall/jiaju/laydate/laydate.js"></script>
+<script type="text/javascript" src="http://www.59jiaju.com/themes/mall/jiaju/styles/default/js/jquery-1.3.2.min.js"></script>
+<script type="text/javascript">
+	$(function (){
+		$('#open-change-city-window').click(function (){
+			$('.change-city-window').slideDown();
+			
+		})
+		$('#close-change-city-window').click(function (){
+			$('.change-city-window').slideUp();
+		})
+	})
+</script>
+<style type="text/css">
+
+body { background-image:url(text.txt); background-attachment:fixed; }
+ #bottomNav { 
+ z-index:999; 
+ position:fixed; 
+ bottom:5%; 
+ right:100px; 
+ width:80px;
+ height:140px;
+ _position:absolute;
+ _top: expression_r(documentElement.scrollTop + documentElement.clientHeight-this.offsetHeight); 
+ overflow:visible; 
+ overflow: hidden;
+ }
+ 
+ 
+  #bottomNav img{
+	width:100%;
+	height:140px;
+  
+  }
+.zhaopin_con{
+	height: auto;
+    overflow: hidden;
+
+}
+.zhaopin_con ul li{
+	width: 98%;
+    height: 100px;
+    overflow: hidden;
+	border-bottom:1px dashed #ccc;
+}
+td{
+color:#666666;
+font-size:12px;
+}
+.tab1 {
+    font-size: 16px;
+    color: #333;
+    height: 46px;
+    line-height: 46px;
+    padding-left: 15px;
+    cursor: pointer;
+    font-weight: bold;
+	text-align:left;
+}
+/*列表*/
+ul li .ico{
+	width:70px;
+    height: 100px;
+    text-align: center;
+    line-height: 30px;
+	float:left;
+}
+ul li .bodys-content{
+	width:700px;
+	height: 100px;
+    text-align: left;
+    line-height: 25px;
+	float:left;
+}
+
+ul li .bodys-content .list-titles{
+	width:100%;
+	height: 30px;
+    text-align: left;
+    line-height: 30px;
+	float:left;
+
+}
+ul li .bodys-content .list-titles a{
+	text-decoration: none;
+	color: #00C;
+
+}
+ul li .bodys-content .list-titles a:hover{
+	text-decoration: none;
+	color: #fd7d00;
+
+}
+ul li .bodys-content .list-ptype{
+	width:100%;
+	height: 30px;
+    text-align: left;
+    line-height: 30px;
+	float:left;
+
+}
+ul li .bodys-content .list-ptype span{
+	width:100%;
+	height: 30px;
+    text-align: left;
+    line-height: 30px;
+	float:left;
+	color: #666666;
+
+}
+
+ul li .bodys-content .list-pmess{
+	width:100%;
+	height: 40px;
+    text-align: left;
+    line-height: 40px;
+	float:left;
+
+}
+
+ul li .chakan{
+	width:150px;
+	height: 100px;
+    text-align: left;
+    line-height: 100px;
+	float:left;
+	
+}
+ul li .chakan a{
+	background-image: url(/themes/mall/jiaju/styles/css/btn_6z.gif);
+	background-repeat: no-repeat;
+	width: 60px;
+	height: 20px;
+	font-size: 12px;
+	line-height: 22px;
+	color: #056ca6;
+	border: 0px;
+	text-align:center;
+	cursor: pointer;
+	margin:65px 0 0 50px;
+}
+.class-right-button{
+	width:980px;;
+	float:right;
+	height: 165px;
+	margin-right: 20px;
+	border: 1px solid #ccc;
+}
+.class-left-button{
+	width:50px;
+	float:left;
+	height: 165px;
+}
+.class-left-button ul li{
+	width:40px;
+	color:#fff;
+	 font-weight: bold;
+	line-height:120px;
+	text-align:center;
+	height: 120px;
+	overflow:hidden; 
+	padding:0;
+	margin:5px 0;
+}
+.class-left-button ul li img{
+	width:40px;
+	height: 120px;
+}
+
+
+.zhaopin_conets{width:980px;float:right;border: 1px solid #ccc;}
+.zhaopin_con1,.zhaopin_con2{width:100%;}
+.zhaopin_con{border:none;width: 1060px;}
+/**头部中间开始*/
+.header-banners{
+	width:100%;
+	height:420px;
+	overflow:hidden;
+	margin:0 auto;
+	text-align:center;
+	background:#e1e1e1;
+}
+.header-banners .bgs{
+	width:1100px;
+	height:420px;
+	overflow:hidden;
+	margin:0 auto;
+    position: relative;
+	background:url('/themes/mall/jiaju/images/zhaobiao/headerBg.jpg') no-repeat 35px top;
+	background-size: 100%;
+	
+
+	
+}
+/*登录*/
+.wrapper{
+width:330px;
+background:url('/themes/mall/jiaju/images/zhaobiao/loginBg.png');
+overflow: hidden;
+margin:10px;
+float:right;
+padding:30px 10px 0 10px;
+*padding:30px 10px 0 15px;
+_padding:30px 10px 0 15px;
+display:inline-block;
+zoom:1;
+
+}
+.left{float:left;}
+.right{float:right;}
+.clearfix:after{content:".";display:block;clear:both;font-size:0;overflow:hidden;height:0;}
+.clearfix{zoom:1;}
+
+/* zcform */
+.zcform{
+	margin: 0;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+	display:inline-block;
+	zoom:1;
+	float:left;
+}
+.zcform p{margin-bottom:10px;}
+.zcform a{ color:#ff7702;}
+.zcform p.last{margin-left:310px;font-size:16px;}
+.zcform p.last input{ cursor:pointer;}
+.zcform label{display:block;float:left;height:48px;line-height:48px;color:#F00;text-indent:10px;}
+.zcform label.one{width:90px;height:48px;text-align:right;color:#000;}
+.zcform input{float:left;font-size:16px;font-family:"微软雅黑";color:#666;}
+.zcform .submit{margin-left:0;background:#F93;font-size:20px;letter-spacing:4px;color:#fff;cursor:pointer;border:1px solid #F93;outline:none;}
+
+#telphone,#password,#confirm_password,.submit,#agent{border:1px solid #ccc;width:300px;height:46px;text-indent:10px;}
+.identifying_code{height:46px;width:180px;_line-height:46px;text-indent:10px;}
+.get_code{height:48px;width:110px;margin-left:10px;border:1px solid #ccc;cursor:pointer;}
+.agreement{margin-left:0;height:30px;line-height:30px;font-size:12px;}
+.agreement input{display:block;line-height:30px;height:12px;margin:8px 8px 0 5px;border:none;width:12px;}
+/*头部-底部*/
+.bgs .bottom-header{
+	position: absolute;
+	width:100%;
+	height:40px;
+	line-height:40px;
+	background:url('/themes/mall/jiaju/images/zhaobiao/loginBg.png');
+	bottom:0;
+	left:0;
+	bottom:0;
+	color:#F7E400;
+	font-size:18px;
+	overflow: hidden;
+	display:inline-block;
+	zoom:1;
+}
+.bgs .bottom-header p{
+	width:100%;
+	height:40px;
+	line-height:40px;
+	overflow: hidden;
+	display:inline-block;
+	zoom:1;
+	margin:0 auto;
+}
+.bgs .bottom-header .a{
+	width:100px;
+	height:40px;
+	text-align:center;
+	background:#333;
+	color:#F7E400;
+	font-size:18px;
+	display:block;
+}
+.bgs .bottom-header .left{
+	float:left;
+	margin-right:15px;
+}
+.bgs .bottom-header .right{
+	right:130px;
+	position: absolute;
+	bottom:0
+}
+.bgs .bottom-header font{
+	margin-left:80px;
+}
+/*内容*/
+.main-centents{
+	width:1100px;
+	height:auto;
+	overflow: hidden;
+	min-height:100px;
+	margin:10px auto;
+}
+.main-centents h1{
+	
+	font-size:22px;
+	font-weight:bold;
+	color:#333;
+	width:100%;
+	height:50px;
+	text-align:center;
+	line-height:50px;
+}
+.main-centents .tishi{
+	font-size:16px;
+	color:#999999;
+	width:100%;
+	text-align:center;
+	height:30px;
+	line-height:30px;
+}
+.main-centents .cates{
+	font-size:16px;
+	width:100%;
+	margin-top:40px;
+	text-align:center;
+	height:auto;
+	overflow: hidden;
+}
+.main-centents .cates a{
+	margin:20px;
+	color:#333;
+}
+.main-centents .cates a img{
+	width:80px;
+	height:80px;
+	
+}
+
+/*搜索*/
+.schos{
+	text-align:center;
+	width:100%;
+	height:430px;
+	overflow: hidden;
+	margin:50px auto 10px auto;
+}
+.schos img{width:100%;height:100%}
+/*列表*/
+.content-list{
+	width:1100px;
+	margin:20px auto;
+	text-align:center;
+	height:auto;
+	min-height:200px;
+	overflow: hidden;
+
+}
+.content-list .left{
+	width:275px;
+	margin-right:10px;
+	text-align:center;
+	height:682px;
+	min-height:100px;
+	overflow: hidden;
+	float:left;
+	border:1px solid #ccc;
+}
+.content-list .left img{
+	width:275px;
+}
+.content-list .center,.content-list .right{
+	width:430px;
+	text-align:center;
+	height:350px;
+	min-height:100px;
+	overflow: hidden;
+	float:left;
+	border:1px solid #ccc;
+	
+}
+.content-list .title{
+	width:100%;
+	text-align:left;
+	height:30px;
+	padding-left:10px;
+	line-height:30px;
+	font-size:14px;
+	color:#333;
+	overflow: hidden;
+	background:url('/themes/mall/jiaju/images/zhaobiao/titlesBg.png');
+	border-bottom:1px solid #ccc;
+	
+}
+.content-list .title a{
+	float:right;
+	font-size:12px;
+	color:#666666;
+	margin-right:10px;
+}
+.content-list .margin-right{
+	margin-right:10px;
+	width: 785px;
+	height:auto;
+	display: inline;
+	
+}
+.content-list .list-caigou{
+	width:98%;
+	text-align:center;
+	height:570px;
+	min-height:100px;
+	overflow: hidden;
+	margin:10px auto;
+}
+.content-list .list-caigou li{
+	width:97%;
+	overflow: hidden;
+	height:28px;
+	line-height:28px;
+	display:inline-block;
+	zoom:1;
+}
+.content-list .list-caigou li .tle{
+	width:330px;
+	_width:250px;
+	*width:250px;
+	overflow: hidden;
+	white-space:nowrap;
+	-o-text-overflow:ellipsis;
+	text-overflow:ellipsis;
+	height:28px;
+	display:inline-block;
+	zoom:1;
+	float:left;
+	line-height:28px;
+}
+
+.content-list .list-caigou li .gname{
+	width:210px;
+	_width:250px;
+	*width:250px;
+	overflow: hidden;
+	white-space:nowrap;
+	-o-text-overflow:ellipsis;
+	text-overflow:ellipsis;
+	height:28px;
+	display:inline-block;
+	zoom:1;
+	float:left;
+	line-height:28px;
+}
+.content-list .list-caigou li .tle a{
+	font-size:14px;
+	color:#333;
+}
+.content-list .list-caigou li .time{
+	width:180px;
+	overflow: hidden;
+	height:28px;
+	line-height:28px;
+	font-size:14px;
+	float:right;
+	color:#333;
+	text-align:right;
+}
+/*bottom-img*/
+.bottom-img{
+	width:1090px;
+	height:90px;
+	margin:10px auto;
+	overflow: hidden;
+	
+}
+.bottom-img a img{
+	float: left;
+    width: 98%;
+}
+
+</style>
+<!--[if IE] >
+<style type="text/css" >
+ input {
+ filter:chroma(color=#000000);
+ }
+ </style>
+<![endif]-->
+</head>
+<body>
+{include file=header.html}
+
+<div id="bottomNav">
+	<a hidefocus="true" target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=461666210&amp;site=qq&amp;menu=yes">
+		<img src="/themes/mall/jiaju/styles/css/60812942416639696.png"/>
+	</a>
+</div>
+<style>
+.content-list .margin-right {
+    border: none;
+}
+.content-list .title{
+	border:1px solid #ccc;
+	border-bottom:none;
+	width: 99%;
+	padding: 0;
+}
+.content-list .list-caigou{
+	border:1px solid #ccc;
+	border-top:none;
+	width: 99%;
+	margin: 0 auto;
+	float: left;
+	display: block;
+}
+/*搜索框开始*/
+ .so{
+	width:99%;
+	height:60px;
+	line-height:60px;
+	text-align:center;
+	margin-bottom: 20px;
+	border:1px solid #ccc;
+ }
+ .so .key{
+	width:450px;
+	height:22px;
+	line-height:22px;
+	margin-left:10px;
+	border-radius: 5px;
+	padding:5px;
+	border:1px solid #ccc;
+ }
+.so .button {
+    width: 80px;
+    height: 34px;
+    line-height: 30px;
+    border-radius: 5px;
+    /* margin-top: 5px; */
+    border: 1px solid #ccc;
+    /* margin-top: -4px; */
+    /* padding-bottom: 22px; */
+    /* display: block; */
+}
+/*搜索框结束*/
+</style>
+
+
+
+
+<!-- 头部中间开始 -->
+<div class="header-banners">
+
+
+	<div class="bgs">
+	
+		<div class="wrapper">
+		    <form id="signupForm" method="post" action="index.php?app=member&act=register&types=3&ret_url=" class="zcform">
+		        <p class="clearfix">
+		        	<input id="telphone" name="user_name" class="required"  placeholder="请输入用户名" />
+		        </p>
+		        
+		        <p class="clearfix">
+		        	<input id="password" name="password" type="password" class="{required:true,rangelength:[8,20],}" value placeholder="请输入密 码" />
+		        </p>
+		        <p class="clearfix">
+		        	<input id="confirm_password" name="password_confirm" type="password" class="{required:true,equalTo:'#password'}" value placeholder="请再次确认密码" />
+		        </p>
+		        <p class="clearfix">
+		        	<input id="agent" name="email" type="text" class="required" value placeholder="请输入电子邮箱" />
+		        </p>
+		        <p class="clearfix"><input class="submit" type="button" value="立即注册"/></p>  
+		        <p class="clearfix agreement">
+		        	<input type="hidden" name="types" value="3" />
+		        	<input type="hidden" name="ret_url" value="http%3A%2F%2Fwww.59jiaju.com%2Findex.php%3Fapp%3Dstore%26act%3Dreg" />
+		        	<input type="checkbox" name="agree" value="1"id="checkeda"checked="checked"/>
+		            <b class="left">已阅读并同意<a href="index.php?app=article&amp;act=system&amp;code=eula" target="_blank">用户服务协议</a></b>
+		        </p>
+		       	 
+		       	
+		      </form>
+		</div>
+	
+	<!-- 底部 -->
+		<div class="bottom-header">
+		<p>
+			<a href="javascript:;"class="a left">
+				<img src="/themes/mall/jiaju/images/zhaobiao/left.png"/>
+			</a>
+			30秒轻松完成注册<font>查询>登录查询最新招标采购信息</font>
+			<a href="index.php?app=member&act=caigou"class="a right">
+				<img src="/themes/mall/jiaju/images/zhaobiao/right.png"/>
+			</a>
+		</p>
+	
+		</div>
+	
+	</div>
+	
+		
+
+</div>
+<!-- 头部中间结束 -->
+
+<!-- main start -->
+
+<div class="main-centents">
+	<h1>广州59家居采购信息</h1>
+	<p class="tishi">可看广州范围内，拟在建项目，招标采购预告，企业招标采购信息等</p>
+	<div class="cates">
+		<a href="index.php?app=search&act=caigou_list&cate=厨房卫浴"><img src="/themes/mall/jiaju/images/zhaobiao/cate1.png"/></a>
+		<a href="index.php?app=search&act=caigou_list&cate=瓷砖地板"><img src="/themes/mall/jiaju/images/zhaobiao/cate2.png"/></a>
+		<a href="index.php?app=search&act=caigou_list&cate=开关门窗五金"><img src="/themes/mall/jiaju/images/zhaobiao/cate3.png"/></a>
+		<a href="index.php?app=search&act=caigou_list&cate=灯饰涂料壁纸"><img src="/themes/mall/jiaju/images/zhaobiao/cate4.png"/></a>
+	
+	</div>
+</div>
+
+<!-- 搜索 -->
+
+<div class="schos">
+
+	<img src="/themes/mall/jiaju/images/zhaobiao/zb-banner.jpg"/>
+
+</div>
+<!-- list -->
+
+
+<div class="content-list">
+	<div class="left">
+		<!--<p class="title">广告赞助</p>-->
+		<img src="/themes/mall/jiaju/images/zhaobiao/1.jpg"style="height:250px;margin-bottom:10px;"/>
+		<img src="/themes/mall/jiaju/images/zhaobiao/2.jpg"style="height:135px;margin-bottom:10px;"/>
+		<img src="/themes/mall/jiaju/images/zhaobiao/3.jpg"style="height:135px;margin-bottom:10px;"/>
+		<img src="/themes/mall/jiaju/images/zhaobiao/4.jpg"style="height:135px;"/>
+	</div>
+	
+	<div class="center margin-right">
+	
+	<form class="so"method="post"action="index.php?app=search&act=caigou">
+		请输入您要采购的产品<input type="text" placeholder="请输入关键字" required name="key" class="key" value="{$key}">
+		<button type="submit" class="button">搜　索</button>
+	</form>
+	
+	
+	<p class="title">工程采购<a href="index.php?app=search&act=caigou_list">更多>></a></p>
+	<ul class="list-caigou">
+		{$con}
+		
+	</ul>
+	</div>
+	
+	<!--<div class="right">
+		<p class="title">单项采购<a href="index.php?app=search&act=caigou_list">更多>></a></p>
+		<ul class="list-caigou"style="margin:10px auto">
+			{$con1}
+			
+		</ul>
+	</div>-->
+
+
+</div>
+
+
+<div class="bottom-img"><a href="index.php?app=member&act=register&types=3&ret_url="><img src="/themes/mall/jiaju/images/zhaobiao/vip.jpg"/></a></div>
+
+<!-- footer -->
+<div id="footer" class="center auto mt10 w-full">
+
+   <div class="foot-service w auto clearfix">
+
+      <dl>
+
+         <dt class="fts-1"></dt>
+
+         
+
+         <dd><a href="http://www.59jiaju.com/index.php?
+
+app=article&amp;act=view&amp;article_id=13">体贴的售后服务</a></dd>
+      </dl>
+
+<dl>
+
+         <dt class="fts-2"></dt>
+
+         <dd><a href="http://www.59jiaju.com/index.php?
+
+app=article&amp;act=view&amp;article_id=15">购物流程</a></dd>
+
+      <dd><a href="http://www.59jiaju.com/index.php?
+
+app=article&amp;act=view&amp;article_id=12">商品退货保障</a></dd>
+     </dl>
+
+   <dl>
+
+         <dt class="fts-3"></dt>
+
+         <dd>王经理：13318706619</dd>
+
+         <dd>黄经理：18922273585</dd>
+
+     </dl>
+
+
+      <dl>
+
+         <dt class="fts-4"></dt>
+
+         <dd><a href="http://www.59jiaju.com/index.php?
+
+app=article&amp;act=view&amp;article_id=11">顾客必读</a></dd>
+
+         <dd><a href="http://www.59jiaju.com/index.php?
+
+app=article&amp;act=view&amp;article_id=14">免责条款</a>
+        
+         </dd>
+      </dl>
+
+  </div>
+
+<div class="foot-nav w-full auto">
+  <p><a href="http://www.59jiaju.com/index.php?app=article&amp;act=view&amp;article_id=28" target="_blank">关于本站</a>
+	    
+	      
+	    
+	   
+	    
+	   
+	   
+</p>
+</div>
+<div class="foot-group">
+
+	<a href="#" target="_blank">亚马逊商城</a> | <a href="www.jd.com" target="_blank">京东商城</a> | <a href="www.yihaodian.com" target="_blank">一号店</a> |
+
+	<a href="http://www.hao123.com/" target="_blank">好123导航</a> |
+
+	<a href="http://www.jyboo.com/" target="_blank">经艺装饰</a> |
+
+	<a href="http://www.taobao.com/" target="_blank">淘宝商城</a> |
+
+	<a href="http://www.tmall.com/" target="_blank">天猫商城</a> |
+
+    <a href="http://china.alibaba.com/" target="_blank">阿里巴巴</a> |
+
+	<a href="http://www.59jiaju.com/xiduo/" target="_blank">喜多装饰</a> |
+    
+    <a href="http://www.59jiaju.com/gs/index.php?
+
+m=content&amp;c=index&amp;a=show&amp;catid=13&amp;id=9" target="_blank">超凡装饰</a> |
+
+	<a href="http://www.dangdang.com/" target="_blank">当当网</a>   
+</div>
+
+  <div class="copyright"><a href="http://netadreg.gzaic.gov.cn/ntmm/WebSear/WebLogoPub.aspx?
+
+logo=440115115022013051700026"><img alt="" src="http://netadreg.gzaic.gov.cn/ntmm/default/images/logo_down.jpg" style="width:19px;height: 20px"></a> &nbsp;Copyright © 2010-2016 我购家居商城 版
+
+权所有 <a href="http://www.miitbeian.gov.cn">粤ICP备09031901号-1</a> 广州市我购家居用品
+
+有限公司</div>
+
+</div>
+<script type="text/javascript" src="/themes/mall/jiaju/styles/style/js/jquery-1.8.3.min.js"></script>
+<script>
+$(function(){
+	$(".submit").click(function(){
+		var user_name = $("input[name='user_name']");
+		var password = $("input[name='password']");
+		var password_confirm = $("input[name='password_confirm']");
+		var email = $("input[name='email']");
+		var filter  = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+		var chk = document.getElementById('checkeda');
+		var checkeda = $("#checkeda");
+		if(user_name.val() == ''){
+			user_name.focus();
+			alert("请输入用户名");
+			return false;
+		}else if(password.val() == ''){
+			password.focus();
+			alert("请输入密码");
+			return false;
+			
+		}else if(password_confirm.val() != password.val()){
+			password_confirm.focus();
+			alert("两次密码不一致");
+			return false;
+			
+		}else if (!filter.test(email.val())){
+			email.focus();
+			alert("邮箱格式不合法");
+			return false;
+			
+		}else if(chk.checked == false){
+			checkeda.focus();
+			alert("请先同意本站协议");
+			return false;
+			
+		}else{
+			$("#signupForm").submit();
+		}
+	})
+})
+
+</script>
+
+       
+</body>
+</html>

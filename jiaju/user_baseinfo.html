@@ -1,0 +1,490 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Access-Control-Allow-Origin" content="*">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=8"/>
+<title>用户中心-微工程</title>
+<meta name="description" content="微工程，微工程APP，装修、材料、家具、饰品一站式服务，让装修更简单，价格更透明！！" />
+<meta name="keywords" content="微工程，微工程，家居商城，微工程家居商城，微工程家居装修商城，办公室装修，写字楼装修，材料，装修材料，家居，办公家具，家居，家具，装修，装饰" />
+<link rel="stylesheet" type="text/css" href="themes/mall/jiaju/css/api.css"/>
+
+<link rel="stylesheet" type="text/css" href="themes/mall/jiaju/css/aui.1.0.css"/>
+<script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+<!-- <script type="text/javascript" src="www.wgc2013.com/themes/mall/jiaju/js/jquery-1.8.3.min.js"></script> -->
+<script type="text/javascript">
+	jQuery.support.cors = true;
+</script>
+
+</head>
+
+<body style="background:#fff;">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<!-- <base href="http://www.wgc2013.com/" /> -->
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7 charset=utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<link type="text/css" href="/themes/mall/jiaju/styles/default/css/main.css" rel="stylesheet"  />
+<link type="text/css" href="/themes/mall/jiaju/styles/css/global.css" rel="stylesheet"  />
+<link type="text/css" href="/themes/mall/jiaju/styles/default/css/center.css" rel="stylesheet"  />
+<link type="text/css" href="http://www.wgc2013.com/themes/mall/jiaju/styles/default/css/catalog.css" rel="stylesheet"  />
+<link type="text/css" href="http://www.wgc2013.com/themes/mall/jiaju/styles/default/css/footer.css" rel="stylesheet" />
+<link type="text/css" href="themes/mall/jiaju/styles/css/style.css" rel="stylesheet"  />
+<script type="text/javascript" src="index.php?act=jslang"></script>
+<script type="text/javascript" src="http://www.wgc2013.com/includes/libraries/javascript/ecmall.js" charset="utf-8"></script>
+<script type="text/javascript" src="http://www.wgc2013.com/includes/libraries/javascript/cart.js" charset="utf-8"></script>
+<script type="text/javascript" src="http://www.wgc2013.com/themes/mall/jiaju/styles/default/js/main.js" charset="utf-8"></script>
+
+<!--[if lte IE 6]>
+<script type="text/javascript" language="Javascript" src="http://www.wgc2013.com/themes/mall/jiaju/styles/default/js/hoverForIE6.js"></script>
+<![endif]-->
+<!--[if IE 8]>
+<link type="text/css" href="themes/mall/jiaju/css/ie8.css" rel="stylesheet"  />
+<![endif]-->
+<script type="text/javascript">
+var SITE_URL = "http://www.wgc2013.com";
+var PRICE_FORMAT = '&yen;%s';
+</script>
+<script charset="utf-8" type="text/javascript" src="http://www.wgc2013.com/includes/libraries/javascript/jquery.plugins/jquery.validate.js" ></script><style type="text/css">
+body{background:url('') no-repeat center top }
+.mainnav{width:990px; overflow:hidden; margin:0 auto}
+.STYLE1 {color: red}
+</style>
+<script type="text/javascript" src="http://www.wgc2013.com/themes/mall/jiaju/styles/default/js/hover.js"></script>
+<script>
+</script>
+<script charset="utf-8" type="text/javascript" src="http://www.wgc2013.com/includes/libraries/javascript/jquery.plugins/jquery.validate.js" ></script>
+</head>
+<body>
+{include file=header.html}
+
+<!-- 中部主要内容 -->
+ <div class="container" style="overflow: hidden;width: 1200px;margin: 10px auto;">
+ <!-- 左上的导航栏 -->
+
+ {include file=companycenter.html}
+
+ 	<!-- 右边的内容 -->
+ 	<div class="container_right" style="width: 80%;border: 1px solid #cacaca;float: right;background-color: #f7f7f7;padding: 0 10px 10px 10px;">
+ 		<div class="base_ui user_ui_public" style="/*display: none*/;">
+ 			<ul class="base_ui_ul">
+ 				<li style="margin-right: 10px;background-color: #f8c67b;color: #f34c26;">基本信息</li>
+ 				<li>修改密码</li>
+ 			</ul>
+ 			<!-- 基本信息 -->
+ 			<div class="base_info" style="overflow: hidden;">
+ 				<!-- 信息里边的内容 -->
+ 				<div class="user_photo" style="width: 20%;height: 100%;float: left;margin-top: 30px;">
+ 					<img class="userphoto_img" src="/themes/mall/jiaju/images/center/user-head.png" alt="用户头像" width="75" height="75" style="position: relative;top: 15px;left: 20px;" />
+ 					<div><button class="user_photo_button" style="background-image: url('/themes/mall/jiaju/images/center/user_button.jpg');background-size: 80px 25px;">更改头像</button></div>
+ 				</div>
+ 				<div class="user_input" style="width: 80%;height: 100%;float: right;margin-top: 30px;">
+ 					<div style="overflow: hidden;">
+ 						<ul  style="float: left;">
+ 							<li>
+ 								<div class="user_info_name">
+ 									姓名：
+ 								</div>
+ 								<div class="user_info_input">
+ 									<input type="text" style="height: 30px;font-size: 14px;" id="name"/>
+ 								</div>
+ 							</li>
+
+ 							<li>
+ 								<div class="user_info_name">
+ 									性别：
+ 								</div>
+ 								<div class="user_info_input">
+ 									<input type="radio" id="male" checked="checked" name="sex" value="0" style="height: 30px;line-height: 30px;font-size: 14px;" />
+ 									<label for="male" class="male"><img class="boy" src="/themes/mall/jiaju/images/center/bg_radio_full.jpg" alt="" width="15" height="15" />&nbsp;&nbsp;&nbsp;男</label>
+ 									<input type="radio" id="female" name="sex" value="1" style="height: 30px;line-height: 30px;font-size: 14px;" />
+ 									<label for="female"><img class="girl" src="/themes/mall/jiaju/images/center/bg_radio_empty.jpg" alt="" width="15" height="15" />&nbsp;&nbsp;&nbsp;女</label>
+ 								</div>
+ 							</li>
+
+ 							<li>
+ 								<div class="user_info_name">
+ 									年龄：
+ 								</div>
+ 								<div class="user_info_input">
+ 									<input type="text" style="height: 30px;font-size: 14px;" id="nianling"/>
+ 								</div>
+ 							</li>
+
+ 							<li>
+ 								<div class="user_info_name">
+ 									户籍：
+ 								</div>
+ 								<div class="user_info_input">
+ 									<input type="text" style="height: 30px;font-size: 14px;" id="huji"/>
+ 								</div>
+ 							</li>
+
+ 							<li>
+ 								<div class="user_info_name">
+ 									工种：
+ 								</div>
+ 								<div class="user_info_input">
+ 									<select id="zhiwei" style="padding-left: 15px;">
+										<option value="">--请选择--</option>
+										<option value="1">施工队长</option>
+										<option value="2">水电工长</option>
+										<option value="3">空调安装工长</option>
+										<option value="4">空调安装工</option>
+										<option value="5">泥水工</option>
+										<option value="6">水电工</option>
+										<option value="7">电焊工</option>
+										<option value="8">家具安装工</option>
+										<option value="9">木工</option>
+										<option value="10">扇灰工</option>
+										<option value="11">保洁工</option>
+										<option value="12">杂工</option>
+										<option value="13">设计师</option>
+										<option value="14">预算员</option>
+										<option value="16">维修工</option>
+										<option value="17">网络维修</option>
+										<option value="18">实习预结算员</option>
+										<option value="19">室内设计师</option>
+										<option value="20">工程经理</option>
+										<option value="21">机电工程师</option>
+										<option value="22">暖通设计师</option>
+										<option value="23">采购经理</option>
+										<option value="24">文案</option>
+										<option value="25">平面设计</option>
+										<option value="26">效果图设计师</option>
+										<option value="27">客服专员</option>
+										<option value="28">行政助理</option>
+										<option value="29">软件销售经理</option>
+										<option value="30">业务员</option>
+										<option value="15">其它</option>
+									</select>
+ 								</div>
+ 							</li>
+
+ 							<li>
+ 								<div class="user_info_name">
+ 									工龄：
+ 								</div>
+ 								<div class="user_info_input">
+ 									<input type="text" style="height: 30px;font-size: 14px;" id="bumen"/>
+ 								</div>
+ 							</li>
+
+ 							<li>
+ 								<div class="user_info_name">
+ 									技能：
+ 								</div>
+ 								<div class="user_info_input">
+ 									<input type="text" style="height: 30px;font-size: 14px;" id="skill"/>
+ 								</div>
+ 							</li>
+
+ 							<li>
+ 								<div class="user_info_name">
+ 									工作经验：
+ 								</div>
+ 								<div class="user_info_input">
+ 									<input type="text" style="height: 30px;font-size: 14px;" id="gz_jingyan"/>
+ 								</div>
+ 							</li>
+ 							
+ 						</ul>
+
+ 						<ul>
+ 							<li>
+ 								<div class="user_info_name">
+ 									手机号：
+ 								</div>
+ 								<div class="user_info_input">
+ 									<input type="text" style="height: 30px;font-size: 14px;" id="mobile"/>
+ 								</div>
+ 							</li>
+ 							<li>
+ 								<div class="user_info_name">
+ 									卡行名称：
+ 								</div>
+ 								<div class="user_info_input">
+ 									<input type="text" style="height: 30px;font-size: 14px;" id="kname"/>
+ 								</div>
+ 							</li>
+ 							<li>
+ 								<div class="user_info_name">
+ 									薪资：
+ 								</div>
+ 								<div class="user_info_input">
+ 									<input type="text" style="height: 30px;font-size: 14px;" id="xinzi"/>
+ 								</div>
+ 							</li>
+ 							<li>
+ 								<div class="user_info_name">
+ 									银行卡号：
+ 								</div>
+ 								<div class="user_info_input">
+ 									<input type="text" style="height: 30px;font-size: 14px;" id="kahao"/>
+ 								</div>
+ 							</li>
+
+
+
+
+ 						</ul>
+ 						
+ 					</div>
+ 					<div>
+ 					<ul>
+ 						<li>
+ 								<div class="user_info_name" style="width: 100px;">
+ 									以往案例介绍：
+ 								</div>
+ 								<div class="user_info_input">
+ 									<textarea style="height: 85px;width: 370px; line-height: 20px;font-size: 14px;padding-left: 15px;" id="intension"></textarea>
+ 									
+ 								</div>
+ 							</li>
+ 					</ul>
+ 					<div class="user_button" onclick="edit()">提交修改</div>
+ 					</div>
+ 				</div>
+ 			</div>
+ 			<!-- 修改密码 -->
+ 			<div class="base_info_paw">
+ 				<div>
+ 					<ul>
+ 						<li>
+ 							<div class="user_info_name">您的密码:</div>
+ 							<div class="user_info_input"><input type="text" style="height: 30px;line-height: 30px;font-size: 14px;" id="old_password" /></div>
+ 						</li>
+ 						<li>
+ 							<div class="user_info_name">新&nbsp;密&nbsp;码:</div>
+ 							<div class="user_info_input"><input id="password" type="text" style="height: 30px;line-height: 30px;font-size: 14px;" /></div>
+ 						</li>
+ 						<li>
+ 							<div class="user_info_name">确认密码:</div>
+ 							<div class="user_info_input"><input id="psw" type="text" style="height: 30px;line-height: 30px;font-size: 14px;" /></div>
+ 						</li>
+
+ 					</ul>
+ 					<div class="base_info_paw_submit">
+ 						<button onclick="clickSubmit()">提交</button>
+ 					</div>
+ 				</div>
+ 			</div>
+ 		</div>
+
+ 		<!-- 消息中心 -->
+
+		<!-- 积分 -->
+
+		<!-- 发布招聘 -->
+
+		<!-- 发布集采 -->
+
+		<!-- 发布列表 -->
+
+ 		<!-- 创建简历 -->
+
+ 		<!-- 实名认证 -->
+
+ 		</div>
+ 		
+ 	</div>
+
+
+
+
+
+{include file=footer.html}
+<script type="text/javascript">
+	  // 点击用户中心的li标签改变样式
+$(".container_nav ul li").click(function(){
+	$(".container_nav ul li").removeClass("bg_li")
+	$(this).addClass("bg_li")
+})
+
+    //点击发布中心的li
+
+    //简历中心
+
+    //点击个人资料
+
+    // 点击修改密码后呈现页面
+
+    $(".base_ui_ul li:first").click(function(){
+    	 $(".base_ui_ul li:last").css({
+    	 	"background-color": "#fff",
+    		"color": "#525455"
+    	 })
+    	$(this).css({
+    		"background-color": "#f8c67b",
+    		"color": "#f34c26"
+    	})
+    	$(".base_info").show();
+    	$(".base_info_paw").hide()
+    })
+    $(".base_ui_ul li:last").click(function(){
+    	 $(".base_ui_ul li:first").css({
+    	 	"background-color": "#fff",
+    		"color": "#525455"
+    	 })
+    	$(this).css({
+    		"background-color": "#f8c67b",
+    		"color": "#f34c26"
+    	})
+    	$(".base_info").hide();
+    	$(".base_info_paw").show()
+    })
+
+
+    //点击消息
+
+    //消息栏中的消息切换
+
+    //点击积分
+
+    //发布招聘
+
+    //发布集采
+
+    //发布列表
+
+    //点击简历创建个人简历
+
+    //点击性别改变样式
+    $(".girl").click(function(){
+    	// console.log()
+    	$(this)[0].src = "/themes/mall/jiaju/images/center//bg_radio_full.jpg";
+    	$(".boy")[0].src = "/themes/mall/jiaju/images/center/bg_radio_empty.jpg";
+		$("#female").attr("checked",true)
+		$("#male").attr("checked",false)
+    })
+    $(".boy").click(function(){
+    	// console.log()
+    	$(this)[0].src = "/themes/mall/jiaju/images/center/bg_radio_full.jpg";
+    	$(".girl")[0].src = "/themes/mall/jiaju/images/center/bg_radio_empty.jpg";
+		$("#female").attr("checked",false)
+		$("#male").attr("checked",true)
+    })
+
+
+
+    function clickSubmit(){
+        var passwords = $("#password").val();
+        var psw       = $("#psw").val();
+        var old_password = $('#old_password').val();
+
+        if(old_password == ''){
+            alert('请填写您的密码!!!');
+            old_password.focus();
+            return false;
+        }
+
+        if(passwords.length < 6){   
+            alert("密码长度不能小于6个字符");
+            passwords.focus();
+            return false;
+        }else if(psw != passwords){
+            alert("两次密码输入不一致");
+            psw.focus();
+            return false;
+        }else{
+            password(passwords);
+        }
+    }
+
+    function password(password){
+        $.post('http://wgcapp.wgc2013.com/jingyi.php/Home/Index/changePassword', {
+            userid : '<?php echo $_SESSION["user_info"]["user_id"];?>',
+            password : password ,
+        }, function(ret,err) {
+            if(ret.code == 200){
+                alert('修改成功!');
+            }else{
+                alert(JSON.stringify(ret.message));
+            }
+        },'json');
+    }
+//文档加载
+
+	$().ready(function(){
+			
+			var url = 'http://wgcapp.wgc2013.com/jingyi.php/Home/Jifen/user';
+			$.post(url,{
+				uid : '<?php echo $_SESSION["user_info"]["user_id"];?>'
+			},function(ret){
+				console.log(ret)
+				if(ret.code == 200){
+				var user = ret.user;
+				var mobile = user.mobile;
+				var userphoto = user.userphoto;
+				var photourl = 'http://wgcapp.wgc2013.com' + userphoto;
+				//头像
+				
+				$(".userphoto_img").attr('src',photourl);
+				$("#name").val(user.name);
+				$("#mobile").val(user.mobile);
+				$("#sex").val(user.sex);
+				$("#nianling").val(user.nianling);
+				$("#huji").val(user.huji);
+				$("#bumen").val(user.bumen);
+				$("#zhiwei").val(2);
+				$("#gz_jingyan").val(user.gz_jingyan);
+				$("#xinzi").val(user.xinzi);
+	         	$("#skill").val(user.skill);
+	         	$("#kname").val(user.kname);
+	         	$("#kahao").val(user.kahao);
+				if(mobile){
+				$("#mobile").attr("readOnly",true);
+				}
+			}else{
+				alert("请检查网络连接")
+			}
+			},'json')
+	})
+	//修改
+	function edit(){
+				var name  =  $("#name").val();
+				var mobile=  $("#mobile").val();
+				var nianling = $("#nianling").val();
+				var huji  =  $("#huji").val();
+				var bumen =  $("#bumen").val();
+				var zhiwei=  $("#zhiwei").val();
+				var gz_jingyan = $("#gz_jingyan").val();
+	         	var skill =  $("#skill").val();
+	         	var kname =  $("#kname").val();
+	         	var kahao =  $("#kahao").val();
+				var email =  $("#email").val();
+				var sex   = $("input[name='sex'][checked]").val()
+				$.post('http://wgcapp.wgc2013.com/jingyi.php/Home/Jifen/user_edit',{
+						user_id     : '<?php echo $_SESSION["user_info"]["user_id"];?>',
+						/*gy_type 	: $("#gy_type").val(),
+						gys_name 	: $("#gys_name").val(),
+						pp_name 	: $("#pp_name").val(),
+						cl_name 	: $("#cl_name").val(),
+						adds 		: $("#adds").val(),*/
+						sex         : sex,
+						name 		: $("#name").val(),
+						nianling 	: $("#nianling").val(),
+						bumen 		: $("#bumen").val(),
+						zhiwei 		: $("#zhiwei").val(),
+						huji 		: $("#huji").val(),
+						kname 		: $("#kname").val(),
+						kahao 		: $("#kahao").val(),
+						shenfenzheng: '441882199919990000',
+						gz_jingyan 	: $("#gz_jingyan").val(),
+						utype 		: 3,
+						xinzi 		: $("#xinzi").val(),
+						skill 		: $("#skill").val(),
+						intension 	: $("#gz_jingyan").val(),
+						mobile 		: $("#mobile").val(),
+						shenfen     : '技术工人',
+						
+				},function(ret){
+						console.log(ret)
+				},'json')
+				
+	}
+</script>
+</body>
+</html>

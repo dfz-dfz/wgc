@@ -1,0 +1,381 @@
+﻿<?php
+$con=mysql_connect('localhost','root','jy0304103') or die("Unable to connect to the MySQL!");
+mysql_query("SET NAMES UTF8");
+mysql_query("set character_set_client=utf8"); 
+mysql_query("set character_set_results=utf8");
+$db = mysql_select_db('zt55o1_db',$con);	
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<base href="{$site_url}/" />
+
+<!-- Use IE7 mode -->
+
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7 charset={$charset}" />
+
+<meta http-equiv="Content-Type" content="text/html; charset={$charset}" />
+
+{$page_seo}
+
+
+
+<meta name="author" content="ecmall.shopex.cn" />
+
+<meta name="generator" content="ECMall {$ecmall_version}" />
+
+<meta name="copyright" content="ShopEx Inc. All Rights Reserved" />
+  <link type="text/css" href="{res file=css/catalog.css}" rel="stylesheet"  />
+
+
+<link type="text/css" href="{res file=css/main.css}" rel="stylesheet"  />
+<link type="text/css" href="{res file=css/main.css}" rel="stylesheet"  />
+
+<link type="text/css" href="{res file=css/footer.css}" rel="stylesheet" />
+
+<script type="text/javascript" src="index.php?act=jslang"></script>
+
+<script type="text/javascript" src="{lib file=jquery.js}" charset="utf-8"></script>
+
+<script type="text/javascript" src="{lib file=ecmall.js}" charset="utf-8"></script>
+
+<script type="text/javascript" src="{lib file=cart.js}" charset="utf-8"></script>
+
+<script type="text/javascript" src="{res file=js/main.js}" charset="utf-8"></script>
+
+
+
+<!--{if $index}-->
+
+<!--<script type="text/javascript" src="{lib file=kissy/build/kissy.js}"></script>-->
+
+<script type="text/javascript" src="{lib file=kissy/build/switchable/switchable-pkg.js}"></script>
+
+<!--{/if}-->
+
+
+
+<!--[if lte IE 6]>
+
+<script type="text/javascript" language="Javascript" src="{res file=js/hoverForIE6.js}"></script>
+
+<![endif]-->
+
+
+
+<script type="text/javascript">
+
+//<!CDATA[
+
+var SITE_URL = "{$site_url}";
+
+var PRICE_FORMAT = '{$price_format}';
+
+//]]>
+
+</script>
+
+
+
+{$_head_tags}
+
+<!--<editmode></editmode>-->
+
+
+
+<!--{if $site_poster_status && $site_poster}-->
+
+<style type="text/css">
+
+body{background:url('{$site_poster}') no-repeat center top }
+
+.mainnav{width:990px; overflow:hidden; margin:0 auto}
+
+</style>
+
+<!--{/if}-->
+
+<script type="text/javascript" src="{res file=js/jquery-1.3.2.min.js}"></script>
+<script type="text/javascript" src="{res file=js/lrtk.js}"></script>
+<script type="text/javascript" src="{res file=js/hover.js}"></script>
+<script>
+  function lxfEndtime(){
+          $(".lxftime").each(function(){
+                var lxfday=$(this).attr("lxfday");//用来判断是否显示天数的变量
+                var endtime = new Date($(this).attr("endtime")).getTime();//取结束日期(毫秒值)
+                var nowtime = new Date().getTime();        //今天的日期(毫秒值)
+                var youtime = endtime-nowtime;//还有多久(毫秒值)
+                var seconds = youtime/1000;
+                var minutes = Math.floor(seconds/60);
+                var hours = Math.floor(minutes/60);
+                var days = Math.floor(hours/24);
+                var CDay= days ;
+                var CHour= hours % 24;
+                var CMinute= minutes % 60;
+                var CSecond= Math.floor(seconds%60);//"%"是取余运算，可以理解为60进一后取余数，然后只要余数。
+                if(endtime<=nowtime){
+                        $(this).html("已过期")//如果结束日期小于当前日期就提示过期啦
+                        }else{
+                                if($(this).attr("lxfday")=="no"){
+                                        $(this).html("<i>剩余时间：</i><span>"+CHour+"</span>时<span>"+CMinute+"</span>分<span >"+CSecond+"</span>秒");          //输出没有天数的数据
+                                        }else{
+                        $(this).html("<span class='f24'>"+days+"</span><span>天</span><span  class='f24'>"+CHour+"</span><span>时</span><span  class='f24'>"+CMinute+"</span><span>分</span><span  class='f24'>"+CSecond+"</span><span>秒</span>");          //输出有天数的数据
+                                }
+                        }
+          });
+   setTimeout("lxfEndtime()",1000);
+  };
+$(function(){
+      lxfEndtime();
+   });
+</script>
+ <script language="javascript" type="text/javascript">
+        /***
+        *功能：隐藏和显示div
+        *参数divDisplay：html标签id
+        ***/
+        var last_div;
+        function click_a(divDisplay)
+        {
+            var obj = document.getElementById(divDisplay);
+            if(obj.style.display != "block")
+            {
+                if (last_div) last_div.style.display = "none";
+                obj.style.display = "block";
+                last_div = obj;
+            }
+            else
+            {
+                obj.style.display = "none";
+                last_div = null;
+            }
+        }
+    </script>
+
+</head>
+
+<body>
+<link type="text/css" href="/themes/mall/jiaju/styles/style/style/style.css" rel="stylesheet"  />
+
+
+
+<div id="site-nav" class="w-full">
+
+  
+  <div class="shoptop w clearfix">
+
+    	<div class="login_info">
+		<?php
+		
+			
+			if(empty($_SESSION['user_info']))
+			{
+				echo '您好 游客&nbsp;&nbsp;&nbsp;';
+				echo '<a href="index.php?
+
+app=member&amp;act=login&amp;ret_url=">登录</a>
+						<a href=" 
+
+http://www.59jiaju.com/gx/reg.html">注册</a>';
+			}
+			else
+			{
+				echo '您好，<a href="index.php?app=member" 
+
+style="color:#0000ff;">'.$_SESSION['user_info']["user_name"].'</a>&nbsp;&nbsp;&nbsp;';
+				echo '<a href="index.php?app=member&amp;act=logout">退
+
+出</a>&nbsp;&nbsp;&nbsp;';
+				echo '<a href="index.php?app=message&amp;act=newpm">站
+
+内消息</a>';
+			}
+		?>
+      </div>
+
+	
+
+      <ul class="quick-menu">
+
+         
+
+         
+
+         <li class="service">
+
+            <a href="index.php?app=article&amp;code=help">帮助中心</a>         
+		</li>
+
+        
+
+         <li class="service">
+
+            <a hidefocus="true"  target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=461666210&site=qq&menu=yes">在线客服</a>         
+		</li>
+
+         <li class="item">
+
+            <div class="menu favorite">
+
+               <a class="menu-hd" href="index.php?app=my_favorite">收藏夹<b></b></a>
+
+               <div class="menu-bd">
+
+                  <div class="menu-bd-panel">
+
+                     <div>
+
+                       <p><a href="index.php?app=my_favorite">收藏的宝贝</a></p>
+
+                       <p><a href="index.php?app=my_favorite&amp;type=store">收藏的店铺
+
+</a></p>
+                    </div>
+                 </div>
+               </div>
+           </div>
+         </li>
+
+         <li class="item" style="background:none">
+
+            <div class="menu sites">
+
+               <a class="menu-hd" href="javascript:;">网站导航<b></b></a>
+
+               <div class="menu-bd padding10">
+
+              </div>
+            </div>
+        </li>
+     </ul>
+
+   </div>
+
+<style type="text/css">
+
+.fixed-top /* 头部固定 */{position:fixed;bottom:auto;top:200px;}
+
+.fixed-bottom /* 底部固定 */{position:fixed;bottom:0px;top:auto;}
+
+.fixed-left /* 左侧固定 */{position:fixed;right:auto;left:0px; z-index:1000;}
+
+.fixed-right /* 右侧固定 */{position:fixed;right:0px;left:auto;}
+
+/* 上面的是除了IE6的主流浏览器通用的方法 */
+
+* html,* html body /* 修正IE6振动bug */{background-image:url(about:blank);background-
+
+attachment:fixed;}
+
+* html .fixed-top /* IE6 头部固定 */{position:absolute;bottom:auto;top:expression(eval
+
+(document.documentElement.scrollTop)+200);}
+
+* html .fixed-right /* IE6 右侧固定 */ {position:absolute;right:auto;left:expression
+
+(eval(document.documentElement.scrollLeft+document.documentElement.clientWidth-
+
+this.offsetWidth)-(parseInt(this.currentStyle.marginLeft,10)||0)-(parseInt
+
+(this.currentStyle.marginRight,10)||0));}
+
+* html .fixed-bottom /* IE6 底部固定  */{position:absolute;bottom:auto;top:expression
+
+(eval(document.documentElement.scrollTop+document.documentElement.clientHeight-
+
+this.offsetHeight-(parseInt(this.currentStyle.marginTop,10)||0)-(parseInt
+
+(this.currentStyle.marginBottom,10)||0)));}
+
+* html .fixed-left /* IE6 左侧固定 */{position:absolute;right:auto;left:expression
+
+(eval(document.documentElement.scrollLeft));}
+
+</style>
+<div id="header" class="w-full">
+    <div class="shop-t w clearfix" style="padding:10px 0;position: relative;height:70px;">
+      	<div class="logo">
+        	 <a style="overflow:hidden; margin-top:20px;_float: left;*float: left;" href="/"  title="59家居商城">
+				<img alt="59家居商城" src='http://www.59jiaju.com/data/files/mall/settings/site_logo.png' />
+			  </a>
+			  
+<!--城市切换开始--->
+            <div style=" width:160px; float:right;padding-top: 30px;" class="change-city">
+				<span style=" font-family:'微软雅黑'; float:left;text-align: center;display:block;width:80px;font-size:14px; color:#f00; margin:0 4px;overflow:hidden;text-overflow:ellipsis;-o-text-overflow:ellipsis;white-space:nowrap;">
+					<?php echo GetIpCity($_COOKIE['city']);?>
+				</span>
+				<span style="padding:0px; background:#f3f3f3;">
+					<a href="index.php?app=search&act=city"style="margin:0;">【切换城市】</a>
+				</span>
+			  <div class="change-city-window"style="top: 50px;">
+				<div class="">
+				  <span id="close-change-city-window">关闭</span>
+				</div>
+				<div>
+					<script type="text/javascript">
+						function saveCity(obj){
+							var city = obj.id;
+							
+							document.cookie="city="+city;
+							 location.reload() ;
+						
+						}
+					</script>
+					<?php echo province();?>
+				  
+				</div>
+			  </div>
+			</div>
+<!--城市切换结束--->
+
+      	</div>
+      	
+		<div class="top-search">
+	        <div class="top-search-box">
+	           	<form method="GET" action="index.php?app=search">
+					<input type="hidden" name="app" value="search">
+	               <input type="hidden" name="act" value="index">
+				   
+	              <input type="text" name="keyword" value="search"   onfocus="if(this.value == 'search') this.value = ''" onblur="if(this.value =='') this.value = 'search'" class="top-search-text" />
+	               <input type="submit" value="搜索" class="submit" hidefocus="true" />
+	           	</form>
+				
+				
+	              <div class="alist">
+	                 <a href="index.php?app=search&cate_id=6431">螺丝刀</a>
+	                 <a href="index.php?app=search&cate_id=6489">扳手</a>
+	                 <a href="index.php?app=search&cate_id=6490">钢丝钳</a>
+	              </div>
+	        </div>
+      	</div>
+		<?php
+		
+		$row11=mysql_num_rows(mysql_query("SELECT user_id FROM ecm_member where types=2"));
+		$row12=mysql_num_rows(mysql_query("SELECT user_id FROM ecm_member where types=3"));
+		
+		?>
+        <div class='erweima'>
+           <p>批发商会员：<span class="textred" style="color: red;">00000<?php echo user_num(7);?></span></p>
+           <p>装修公司会员：<span class="textred" style="color: red;">0000<?php echo user_num(3);?></span></p>
+        </div>
+   	</div>
+	<div class="mainnav w-full">
+		<div class="menu">
+			<ul>
+        <li class="total">所有分类<i><img src="/themes/mall/jiaju/styles/style/images/updown.png"></i></li>
+				<li class="line"><a href="http://www.59jiaju.com/">首页</a></li>
+				<!--<li class="line"><a href="http://www.59jiaju.com/themes/mall/jiaju/cailiao.html">材料城</a></li>-->
+				<li class="line"><a href="index.php?app=search&act=cailiaocheng">材料城</a></li>
+				<li class="line"><a href="index.php?app=search&act=zx&types=2&city=<?php echo $_SESSION['city'];?>">五金店</a></li>
+				<li class="line"><a href="index.php?app=search&act=zhaopin">行业招聘</a></li>
+				<li class="line"><a href="index.php?app=search&act=zx&types=3&city=<?php echo $_SESSION['city'];?>">热门公司</a></li>
+				<li class="line"><a href="index.php?app=article&act=view&article_id=28">关于我们</a></li>
+				<li class="line"><a href="index.php?app=member&act=login&ret_url=">会员登录</a></li>
+				<li class="line"><a href="http://www.59jiaju.com/gx/reg.html">会员注册</a></li>
+			</ul>
+		</div>
+	</div>
+</div>

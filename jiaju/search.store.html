@@ -1,0 +1,185 @@
+{include file=header.html}
+<script type="text/javascript">
+//<!CDATA[
+
+// jiaju ecodemall 
+$(function (){
+    var order = '{$smarty.get.order}';
+	var css = '';
+	
+	if(order){
+		order = order.split(' ');
+        switch (order[1]){
+          case 'desc' : 
+		    css = 'order-down';
+          break;
+		  case 'asc' :
+		    css = 'order-up';
+		  break;
+          default : 
+		    css = 'order-down-gray';
+        }
+		$('#'+order[0]).attr('class','btn-order-click '+css);
+	}
+	$(".btn-order a").click(function(){
+		if(order!='' && order[1]=="desc" && order[0]==this.id)
+			dd = " asc";
+		else dd = " desc";
+		query('order',this.id+dd);
+		return false;
+	});
+	
+	function query(name, value){
+		$("input[name='"+name+"']").val(value);
+		$('#search').submit();
+	}
+});
+
+// end 
+
+
+//]]>
+</script>
+
+<link type="text/css" rel="stylesheet" href="{res file=css/lai.css}" />
+<div class="l-main">
+	<div class="l-left">
+		<h4>店铺分类</h4>
+		<ul>
+			 <!--{foreach from=$scategorys item=scategory}-->
+			<li>
+				<a class="l-bigcat" href="{url app=search&act=store&cate_id=$scategory.id}">{$scategory.value|escape}</a>
+				<!--{if $scategory.children}-->
+				<i></i>
+				<dl>
+					<!--{foreach from=$scategory.children item=child}-->
+					   <dd><a href="{url app=search&act=store&cate_id=$child.id}">{$child.value|escape}</a></dd>
+					<!--{/foreach}-->
+				</dl>
+				<!--{/if}-->
+			</li>
+			<!--{/foreach}-->
+		</ul>
+	</div>
+	<script type="text/javascript">
+	$(function (){
+		$('.l-left ul li').mouseover(function (){
+			$(this).css('background','#A50000');
+			$(this).children('.l-bigcat').css('color','#ffffff');
+			if ($(this).children('dl')) {
+				$(this).children('dl').css('display','block');
+			};
+		});
+		$('.l-left ul li').mouseout(function (){
+			$(this).css('background','#ffffff');
+			$(this).children('.l-bigcat').css('color','#3e3e3e');
+			if ($(this).children('dl')) {
+				$(this).children('dl').css('display','none');
+			};
+		});
+	})
+	</script>
+	<div class="l-right">
+		 {include file=curlocal.html}
+		 <div class="border border-t-0 padding10 mb10">
+		 	<div class="l-field">
+		 		<table cellpadding="0" cellspacing="0" border="0">
+		 			<tr>
+		 				<td width="80">
+		 					<a {if $field_region_name=="广州"}class="l-field-a-show"{/if} href="index.php?app=search&act=store&region_name=广州">广州</a>
+		 				</td>
+		 				<td>
+					 		<a {if $field_region_name=="白云区"}class="l-field-a-show"{/if} {if $cat}href="index.php?app=search&act=store&region_name=白云区&rid=514&cate_id={$cat}"{else}href="index.php?app=search&act=store&region_name=白云区&rid=514"{/if}>白云区</a>
+
+					 		<a {if $field_region_name=="天河区"}class="l-field-a-show"{/if} {if $cat}href="index.php?app=search&act=store&region_name=天河区&rid=1035&cate_id={$cat}"{else}href="index.php?app=search&act=store&region_name=天河区&rid=1035"{/if}>天河区</a>
+
+					 		<a {if $field_region_name=="海珠区"}class="l-field-a-show"{/if} {if $cat}href="index.php?app=search&act=store&region_name=海珠区&rid=1042&cate_id={$cat}"{else}href="index.php?app=search&act=store&region_name=海珠区&rid=1042"{/if}>海珠区</a>
+
+					 		<a {if $field_region_name=="荔湾区"}class="l-field-a-show"{/if} {if $cat}href="index.php?app=search&act=store&region_name=荔湾区&rid=1039&cate_id={$cat}"{else}href="index.php?app=search&act=store&region_name=荔湾区&rid=1039"{/if}>荔湾区</a>
+
+					 		<a {if $field_region_name=="番禺区"}class="l-field-a-show"{/if} {if $cat}href="index.php?app=search&act=store&region_name=番禺区&rid=1038&cate_id={$cat}"{else}href="index.php?app=search&act=store&region_name=番禺区&rid=1038"{/if}>番禺区</a>
+
+					 		<a {if $field_region_name=="越秀区"}class="l-field-a-show"{/if} {if $cat}href="index.php?app=search&act=store&region_name=越秀区&rid=515&cate_id={$cat}"{else}href="index.php?app=search&act=store&region_name=越秀区&rid=515"{/if}>越秀区</a>
+
+					 		<a {if $field_region_name=="黄埔区"}class="l-field-a-show"{/if} {if $cat}href="index.php?app=search&act=store&region_name=黄埔区&rid=1037&cate_id={$cat}"{else}href="index.php?app=search&act=store&region_name=黄埔区&rid=1037"{/if}>黄埔区</a>
+
+					 		<a {if $field_region_name=="花都区"}class="l-field-a-show"{/if} {if $cat}href="index.php?app=search&act=store&region_name=花都区&rid=1036&cate_id={$cat}"{else}href="index.php?app=search&act=store&region_name=花都区&rid=1036"{/if}>花都区</a>
+
+					 		<a {if $field_region_name=="南沙区"}class="l-field-a-show"{/if} {if $cat}href="index.php?app=search&act=store&region_name=南沙区&rid=1105&cate_id={$cat}"{else}href="index.php?app=search&act=store&region_name=南沙区&rid=1105"{/if}>南沙区</a>
+
+					 		<a {if $field_region_name=="萝岗区"}class="l-field-a-show"{/if} {if $cat}href="index.php?app=search&act=store&region_name=萝岗区&rid=1041&cate_id={$cat}"{else}href="index.php?app=search&act=store&region_name=萝岗区&rid=1041"{/if}>萝岗区</a>
+
+					 		<a {if $field_region_name=="增城市"}class="l-field-a-show"{/if} {if $cat}href="index.php?app=search&act=store&region_name=增城市&rid=1040&cate_id={$cat}"{else}href="index.php?app=search&act=store&region_name=增城市&rid=1040"{/if}>增城市</a>
+
+					 		<a {if $field_region_name=="从化市"}class="l-field-a-show"{/if} {if $cat}href="index.php?app=search&act=store&region_name=从化市&rid=1043&cate_id={$cat}"{else}href="index.php?app=search&act=store&region_name=从化市&rid=1043"{/if}>从化市</a>
+		 				</td>
+		 			</tr>
+		 			<tr>
+		 				<td colspan="2" height="20">
+		 					
+		 				</td>
+		 			</tr>
+		 			<tr>
+		 				<td></td>
+		 				<td class="l-field-td">
+		 					<!--{foreach from=$field item=child}-->
+					 		<a {if $fid==$child.region_id}class="l-field-a-show"{/if} {if $child.region_id==1045}href="index.php?app=search&act=field"{else} {if $cat}href="index.php?app=search&act=store&region_id={$child.region_id}&region_name={$field_region_name}&rid={$rid}&cate_id={$cat}"{else}href="index.php?app=search&act=store&region_id={$child.region_id}&region_name={$field_region_name}&rid={$rid}"{/if} {/if}>{$child.region_name}</a>
+					 		<!--{/foreach}-->
+		 				</td>
+		 			</tr>
+		 		</table>
+		 	</div>
+           <!-- <form id="search" method="GET" action="index.php">
+              <input type="hidden" name="app" value="search"/>
+              <input type="hidden" name="act" value="store"/>
+              <input type="hidden" name="cate_id" value="{$smarty.get.cate_id|escape}"/>
+              <input type="hidden" name="order" value="{$smarty.get.order|escape}"/>
+              {$lang.store_name}{$lang.colon}<input class="border input keyword" type="text" name="keyword" value="{$query.keyword|escape}" style="width:120px;" />
+              {$lang.user_name}{$lang.colon}<input class="border input username" type="text" name="user_name" value="{$query.user_name|escape}" style="width:120px;" />
+              {$lang.region_name}{$lang.colon}
+              <select id="region_id" name="region_id">
+                  <option value="">{$lang.region_name}</option>
+                  {html_options options=$regions selected=$query.region_id}
+              </select>
+              <input class="btn-submit border0 pointer" type="submit"  value="搜索" style="width:60px; padding:5px; background:#A50000; color:#fff;" />
+                     </form> -->
+        </div>
+
+		<div class="shop_list mt10">
+            <div class="title padding5">
+                <div class="btn-order">
+                    <span>{$lang.sort_order}{$lang.colon}</span>
+                    <a class="btn-order-click order-down-gray" id="credit_value" href="javascript:;">{$lang.credit_grade}</a>
+                    <a class="btn-order-click order-down-gray" id="add_time" href="javascript:;">{$lang.add_time}</a>
+                    <a class="btn-order-click order-down-gray" id="praise_rate" href="javascript:;">{$lang.praise_rate}</a>
+                    <a class="btn-order-click order-down-gray" id="region_name" href="javascript:;">{$lang.region_name}</a>
+                </div>
+            </div>
+            <div class="l-con">
+           		<ul>
+           			<!--{foreach from=$stores item=store}-->
+           			<li>
+           				<a class="l-img-a" href="{url app=store&id=$store.store_id}">
+           					<img src="{$store.store_logo}" width="180" height="180" />
+           				</a>
+           				<div class="l-con-info">
+           					<h4>
+           						<a href="{url app=store&id=$store.store_id}">
+           							{$store.store_name|escape}
+           						</a>
+           					</h4>
+           					<div class="l-tel">
+           						<span>地区：{$store.region_name|escape}</span>
+           						<b>联系电话：{$store.tel|escape}</b>
+           					</div>
+           				</div>
+           			</li>
+           			 <!--{/foreach}-->
+           		</ul>
+             </div>
+         </div>
+         {include file=page.bottom.html}
+
+	</div>
+</div>
+{include file=footer.html}

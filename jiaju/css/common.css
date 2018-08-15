@@ -1,0 +1,97 @@
+@charset "utf-8";
+*{ margin:0; padding:0;}
+body{ background:url(body_bg.png) repeat-y center 0px; min-width:970px;}
+body,p,div,th,td,input,select,textarea,ul,li,a{ color:#333; font-size:12px;font-family:"宋体",Arial,Verdana; padding:0; margin:0;}
+
+img{ border:0px;}
+ul{ list-style:none;}
+.cl,.clr{ clear:both; height:0px; font-size:0;}
+.disn{ display:none;}
+.disb{ display:block;}
+h1,h2,h3,h4,h5,h6{font-size:13px; font-weight:bold;}
+
+a:link,a:visited,a:hover,a:active{ color:#333333; text-decoration:none;font-size:12px;}
+a:hover{ text-decoration:underline;color:#669900; font-size:12px;}
+
+.header{ height:149px; background:#fff url(../images/v5_repeat_x.png) repeat-x 0 -659px;}
+.header .headercontent{ width:985px; margin:0 auto;}
+.header .logo{ height:55px; width:285px; overflow:hidden; padding:24px 0 2px 15px; margin-bottom:17px; float:left;}
+
+.topnav{ clear:both;}
+.accoutbar{ text-align:right; padding:17px 5px 0 0;}
+.topnav .topallcate{ float:left; position:relative; z-index:9999;}
+.topnav .topallcate .nav{ position:absolute; top:0; left:-2px; width:210px;z-index:9999;}
+.nav .allcate{ position:absolute; top:0; left:1px; z-index:101;}
+.nav .allcate a{ display:block; width:210px; height:39px; background:url(../images/v5_main_img.png) no-repeat -210px -173px; text-indent:-9999px;overflow:hidden;}
+.nav .allcate a.hover{ background-position:-210px -381px}
+.topnav .nav ul{ margin-top:39px;}
+.nav ul{border-right:#83b712 6px solid; border-bottom:#83b712 6px solid; border-left:#83b712 5px solid; margin-top:50px; margin-left:10px;}
+.nav ul li{ height:42px; line-height:42px; padding:0 0 0 13px; background:#f9ffdd url(../images/v5_main_img.png) no-repeat 0 -247px; position:relative; z-index:100;}
+.nav ul li.over{ background-position:-203px -246px;}
+.nav ul li a:link,.nav ul li a:active,.nav ul li a:visited{ font-size:15px; padding-left:12px;color:#333;}
+.nav ul li a:hover{ font-size:15px; padding-left:12px; color:#669900;}
+.nav ul li a strong{ font-weight:normal;}
+.nav ul li.over a:link,.nav ul li.over a:active,.nav ul li.over a:visited,.nav ul li.over a:hover{ font-size:15px; padding-left:12px; color:#fff;}
+.nav .submenubox{ position:absolute; left:189px; top:1px; width:425px; border:#83b712 6px solid; background:#f9ffdd; float:left; line-height:0; overflow:hidden;}
+.nav .submenuboxBottom{top:auto;bottom:1px;}
+.nav .submenubox .subcate{ width:150px; float:left;}
+.nav .submenubox .subcate ul{ border:0; margin:0; padding:2px 0; background:#83b712; margin-bottom:-2000px; padding-bottom:2000px; position:relative;}
+.nav .submenubox .subcate ul li{ background:none; height:auto; line-height:18px; padding:5px 0 5px 0px; position:static; z-index:auto; cursor:default;}
+.nav ul li.over .subcate ul li a:link,.nav ul li.over .subcate ul li a:active,.nav ul li.over .subcate ul li a:visited{ font-size:14px; padding-left:12px; color:#fff;}
+.nav ul li.over .subcate ul li a:hover{ color:#fff;}
+.nav .submenubox .colright{ width:260px; padding:0 0 0 15px; float:left;}
+.nav .submenubox .featuredbrand h3{ height:30px; line-height:30px; padding:5px 0 0 0; font-size:14px; color:#87af1b;}
+.nav .submenubox .featuredbrand ul{ border:0; margin:0; padding:5px 0; float:left;}
+.nav .submenubox .featuredbrand ul li{ background:#fff; width:67px; height:37px; padding:4px; margin:0 7px 7px 0; position:static; z-index:auto; float:left; overflow:hidden;}
+.nav ul li.over .featuredbrand ul li a:link,.nav ul li.over .featuredbrand ul li a:active,.nav ul li.over .featuredbrand ul li a:visited{ padding-left:0px;}
+.nav ul li.over .featuredbrand ul li a:hover{padding-left:0px;}
+.nav .submenubox .merchantpromotion h3{ height:30px; line-height:30px; padding:0; font-size:14px; color:#87af1b;}
+.nav .submenubox .merchantpromotion ul{ border:0; margin:0; padding:0 0 5px 0; float:left; width:260px;}
+.nav .submenubox .merchantpromotion ul li{float:left; white-space:nowrap; background:none; line-height:normal; height:14px; padding:5px 10px 5px 0; position:static; z-index:auto;}
+.nav ul li.over .merchantpromotion ul li a:link,.nav ul li.over .merchantpromotion ul li a:active,.nav ul li.over .merchantpromotion ul li a:visited{ padding-left:0px; color:#585858; font-size:12px;}
+.nav ul li.over .merchantpromotion ul li a:hover{padding-left:0px; color:#669900;font-size:12px;}
+.nav ul li.last .submenubox .subcate{ width:420px;}
+.nav ul li.last .submenubox .subcate ul{ background:none; float:left;}
+.nav ul li.last .submenubox .subcate ul li{ float:left; width:139px;}
+.nav ul li.last .subcate ul li a:link,.nav ul li.last .subcate ul li a:active,.nav ul li.last .subcate ul li a:visited{ font-size:14px; padding-left:12px; color:#585858;}
+.nav ul li.last .subcate ul li a:hover{ color:#669900;}
+.searchbox{width:483px; height:58px; margin-left:448px; padding-top:14px;position:relative; z-index:99;}
+.searchbox .l{ padding-left:36px; background:url(../images/v5_main_img.png) no-repeat 0 -57px; height:58px;}
+.searchbox .m{ background:url(../images/v5_repeat_x.png) repeat-x 0 -123px; height:58px; }
+.searchbox .m .searchkey{ outline:none; border:0; padding:16px 0; height:22px; line-height:22px; background:none; font-size:19px; font-weight:bold; color:#98bc00; width:290px; float:left;font-family: "microsoft yahei";}
+.searchbox .m .searchcleanbut{background:url(../images/filter_del.gif) no-repeat 0 20px; cursor:pointer; border:0; width:20px; height:58px; float:left;}
+.searchbox .m .searchbut{background:url(../images/v5_main_img.png) no-repeat 0 -115px; cursor:pointer; border:0; width:154px; height:58px; float:right;}
+.searchbox .m .searchbutfocus{ background-position:-154px -115px;}
+.header .hotkeywords{ margin-left:486px; padding:6px 0 0 0; color:#6f6f6f; height:15px; overflow:hidden; line-height:15px; width:495px;}
+.header .hotkeywords a:link,.header .hotkeywords a:visited,.header .hotkeywords a:active{ color:#6f6f6f;}
+.header .hotkeywords a:hover{ color:#669900;}
+
+.wrapper{ background:url(../images/v5_maintop_bg.png) no-repeat center 0; clear:both; margin:0 auto; padding-top:4px; max-width:1080px; _width:1010px; }
+.wrapper .main{width:970px; margin:0 auto; background:#fff;min-height:580px; _height:580px;}
+.mainbot{ background:url(../images/main_bot_bg.png) no-repeat center 0; height:16px; font-size:0; margin:0 auto; max-width:1080px; _width:1010px;}
+body{ background:url(../images/body_bg_home.png) repeat-y center 0px; min-width:1210px; }
+body,p,div,th,td,input,select,textarea,ul,li,a{font-family:"microsoft yahei","宋体",Arial,Verdana;}
+.header{ height:115px; background-position:0 0;}
+.header .headercontent{ width:1210px; margin:0 auto;}
+.header .logo{padding:24px 0 2px 33px; float:left;}
+.searchbox{width:653px;}
+.searchbox .m .searchkey{border:0; padding:18px 0; height:22px; line-height:22px; background:none; font-size:19px; font-weight:bold; color:#98bc00; width:460px; float:left;}
+.header .hotkeywords{ width:auto;}
+.wrapper{ background:url(../images/v5_maintop_bg_home.png) no-repeat center 0; max-width:none; _width:auto;}
+.wrapper .main{width:1210px; margin:0 auto; background:#fff; padding-top:0;}
+.mainbot{ background:url(../images/main_bot_bg_home.png) no-repeat center 0; max-width:none; _width:auto;}
+
+.topblock{ padding:12px 12px 0 4px;}
+.nav{ width:210px; float:left; position:relative; z-index:101;}
+.nav .allcate{ left:0;}
+.nav .allcate a{ display:block; width:210px; height:58px; background:url(../images/v5_main_img.png) no-repeat 0px -173px; text-indent:-9999px;}
+.topblock .colr{ width:971px; float:left; margin-left:13px;}
+.topblock .smarteraccount{ float:right; padding:9px 0;}
+.topblock .smarteraccount a{ display:block; float:left; margin:0 5px; width:135px; height:51px;background:url(../images/v5_main_img.png) no-repeat 0 -324px; text-indent:-9999px;}
+.topblock .smarteraccount a.login{ background-position:0 -324px;}
+.topblock .smarteraccount a.register{ background-position:-145px -322px;}
+
+.topblock .logined{float:right; width:265px; height:32px; line-height:16px; padding:14px 10px; background:#e9fac3 url(../images/v5_repeat_x.png) repeat-x 0px -837px; margin-bottom:6px; border-right:#dbf4a0 1px solid; border-bottom:#dbf4a0 1px solid; }
+.topblock .logined strong{ color:#c00;}
+.topblock .logined p{ padding:5px 0 0 0; color:#a4a4a4;}
+/*代码整理：www.97zzw.com - 97站长网*/

@@ -1,0 +1,369 @@
+﻿<!DOCTYPE html>
+
+<!--[if lte IE 6]>
+
+<html lang="zh-CN" class="ie6 lt7 lt8 lt9 lt10">
+
+<![endif]-->
+
+<!--[if IE 7]>
+
+<html lang="zh-CN" class="ie7 lt8 lt9 lt10">
+
+<![endif]-->
+
+<!--[if IE 8]>
+
+<html lang="zh-CN" class="ie8 lt9 lt10">
+
+<![endif]-->
+
+<!--[if IE 9]>
+
+<html lang="zh-CN" class="ie9 lt10">
+
+<![endif]-->
+
+<html lang="zh-CN">
+
+<!--<![endif]-->
+
+<head>
+
+	<title><?php echo $_GET['cate_id']?>-【59家居招聘信息】</title>
+
+	<meta charset="utf-8" />
+
+	<meta name="keywords" content="【59家居招聘信息】招聘信息"/>
+
+	<meta name="description" content="59家居提供广州各公司最新最快速的招聘信息"/>
+
+	<style style="text/css">
+		/*搜索*/
+		input[type=text],
+		  input[type=password] {
+			font-size: 13px;
+			min-height: 32px;
+			margin: 0;
+			padding: 7px 8px;
+			outline: none;
+			color: #333;
+			background-color: #fff;
+			background-repeat: no-repeat;
+			background-position: right center;
+			border: 1px solid #ccc;
+			border-radius: 3px;
+			box-shadow: inset 0 1px 2px rgba(0,0,0,0.075);
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;
+			transition: all 0.15s ease-in;
+			-webkit-transition: all 0.15s ease-in 0;
+			vertical-align: middle;
+		  }
+		  .button {
+			position: relative;
+			display: inline-block;
+			margin: 0;
+			padding: 8px 15px;
+			font-size: 13px;
+			font-weight: bold;
+			color: #333;
+			text-shadow: 0 1px 0 rgba(255,255,255,0.9);
+			white-space: nowrap;
+			background-color: #eaeaea;
+			background-image: -moz-linear-gradient(#fafafa, #eaeaea);
+			background-image: -webkit-linear-gradient(#fafafa, #eaeaea);
+			background-image: linear-gradient(#fafafa, #eaeaea);
+			background-repeat: repeat-x;
+			border-radius: 3px;
+			border: 1px solid #ddd;
+			border-bottom-color: #c5c5c5;
+			box-shadow: 0 1px 3px rgba(0,0,0,.05);
+			vertical-align: middle;
+			cursor: pointer;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;
+			-webkit-touch-callout: none;
+			-webkit-user-select: none;
+			-khtml-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			user-select: none;
+			-webkit-appearance: none;
+		  }
+		  .button:hover,
+		  .button:active {
+			background-position: 0 -15px;
+			border-color: #ccc #ccc #b5b5b5;
+		  }
+		  .button:active {
+			background-color: #dadada;
+			border-color: #b5b5b5;
+			background-image: none;
+			box-shadow: inset 0 3px 5px rgba(0,0,0,.15);
+		  }
+		  .button:focus,
+		  input[type=text]:focus,
+		  input[type=password]:focus {
+			outline: none;
+			border-color: #51a7e8;
+			box-shadow: inset 0 1px 2px rgba(0,0,0,.075), 0 0 5px rgba(81,167,232,.5);
+		  }
+		 
+		  label[for=search] {
+			display: block;
+			text-align: left;
+		  }
+		  #search label {
+			font-weight: 200;
+			padding: 5px 0;
+		  }
+		  #search input[type=text] {
+			font-size: 18px;
+			width: 705px;
+		  }
+		  #search .button {
+			padding: 10px;
+			width: 90px;
+			background:green;
+			color:#fff;
+		  }
+		
+		/*主体*/
+		.category-items{
+			width:100%;
+			height:auto;
+			overflow:hidden;
+		}
+		.tile-head{
+			width:100%;
+			height:40px;
+			line-height:40px;
+			border-bottom:2px solid #0196fa;
+			text-align:left;
+			font-size:14px;
+			color:#999999;
+		}
+		
+		.tile-head .type-left{
+			width:100px;
+			height:30px;
+			line-height:30px;
+			float:left;
+			color:#fff;
+			font-size:14px;
+			text-align:center;
+			background:#0196fa;
+			margin-top:10px;
+			margin-right:10px;
+		}
+		
+		.category-items .types{
+			width:99%;
+			height:125px;
+			padding:10px 4px;
+			background:#fff;
+			border:#ccc solid 1px;
+			text-align:left;
+		}
+		.category-items .types a{
+			font-size:14px;
+			color:#333;
+			float:left;
+			display:block;
+		}
+		
+		.list-ul{
+			width: 100%;
+			height: 30px;
+			overflow:hidden;
+			margin:3px auto;
+			border-bottom:1px solid #ccc;
+		}
+		.list-ul li{
+			width:100%;
+			height:30px;
+			line-height:30px;
+			overflow:hidden;
+		}
+		.list-ul li .title{
+			width:290px;
+			height:30px;
+			line-height:30px;
+			display:block;
+			white-space:nowrap; 
+			overflow:hidden; 
+			text-overflow:ellipsis;
+			float:left;
+			margin:0 5px;
+		}
+		.list-ul li .gname{
+			width:250px;
+			height:30px;
+			line-height:30px;
+			overflow:hidden;
+			text-overflow:ellipsis;
+			-o-text-overflow:ellipsis;
+			white-space:nowrap;
+			margin:0 10px;
+			float:left;
+		}
+		.list-ul li .xinzi{
+			width:150px;
+			height:30px;
+			line-height:30px;
+			overflow:hidden;
+			text-overflow:ellipsis;
+			-o-text-overflow:ellipsis;
+			white-space:nowrap;
+			float:left;
+			text-align:center;
+		}
+		.list-ul li .time{
+			width:200px;
+			height:30px;
+			line-height:30px;
+			overflow:hidden;
+			text-overflow:ellipsis;
+			-o-text-overflow:ellipsis;
+			white-space:nowrap;
+			display:block;white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+			float:left;
+			text-align:right;
+		}
+	</style>
+
+</head>
+
+<body>
+{include file=header.html}
+
+<link rel="stylesheet" type="text/css" href="/themes/mall/jiaju/css/common.css"/>
+
+<!-- footer e -->
+<!--start main-->
+<div class="wrapper">
+
+
+	<div class="container"style="margin:20px auto;">
+	
+	  <div id="search">
+		<form action="index.php?app=search&amp;act=zhaopin_search" method="post">
+			<input type="text" name="key" value="{$key}"/>
+			<input type="hidden" name="cate_id"/> 
+			<input class="button" type="submit" value="搜 索"/>
+			<a href="index.php?app=member&act=zhaopin"style="margin-left:50px;font-size:18px;">我要发布</a>
+		</form>
+		
+	  </div>
+	  
+	</div>
+
+
+
+  <div class="main">
+    <div class="maincontent">
+      <div class="topblock">
+        <div class="nav homenav" id="nav">
+          <div class="allcate"><a href="javascript:;">行业分类</a></div>
+          <ul>
+            <li> 
+				<a href="index.php?app=search&act=zhaopin&cate_id=装饰工程" >装饰</a>
+				<a href="index.php?app=search&act=zhaopin&cate_id=环保" >环保</a>
+            </li>
+            <li> 
+				<a href="index.php?app=search&act=zhaopin&cate_id=消防" >消防</a>
+				<a href="index.php?app=search&act=zhaopin&cate_id=保洁" >保洁</a>
+            </li>
+            <li> 
+				<a href="index.php?app=search&act=zhaopin&cate_id=厨具" >厨具</a>
+				<a href="index.php?app=search&act=zhaopin&cate_id=办公家具" >家具</a>
+            </li>
+           
+            <li> 
+				<a href="index.php?app=search&act=zhaopin&cate_id=软装" >软装</a>
+				<a href="index.php?app=search&act=zhaopin&cate_id=防蚁" >防蚁</a>
+            </li>
+            <li> 
+				<a href="index.php?app=search&act=zhaopin&cate_id=防鼠" >防鼠</a>
+				<a href="index.php?app=search&act=zhaopin&cate_id=物流" >物流</a>
+            </li>
+            <li> 
+				<a href="index.php?app=search&act=zhaopin&cate_id=幕墙" >幕墙</a>
+				<a href="index.php?app=search&act=zhaopin&cate_id=路政" >路政</a>
+              
+            </li>
+            <li> 
+				<a href="index.php?app=search&act=zhaopin&cate_id=园林" >园林</a>
+				<a href="index.php?app=search&act=zhaopin&cate_id=坼除" >拆除</a>
+            </li>
+            <li> 
+				<a href="index.php?app=search&act=zhaopin&cate_id=材料" >材料</a>
+				<a href="index.php?app=search&act=zhaopin&cate_id=招牌公司" >招牌</a>
+            </li>
+            <li> 
+				<a href="index.php?app=search&act=zhaopin&cate_id=维修" >维修</a>
+				<a href="index.php?app=search&act=zhaopin&cate_id=机电安装" >机电</a>
+            </li>
+            <li> 
+				<a href="index.php?app=search&act=zhaopin&cate_id=建筑加固" >建筑加固</a>
+            </li>
+            <li> 
+				<a href="index.php?app=search&act=zhaopin&cate_id=智能化" >智能化</a>
+				<a href="index.php?app=search&act=zhaopin&cate_id=设计院" >设计院</a>
+            </li>
+            
+          </ul>
+        </div>
+       
+      </div>
+      <!--end topblock -->
+     <div style="width:980px;height:auto;overflow:hidden;float:right">
+	 
+		
+		
+		<div class="category-items"style="width:99%;margin:0 auto;">
+				<div class="tile-head">
+					<p class="type-left">{$key}搜索</p>
+					<p style="width:300px;float:left;height:30px;line-height:30px;margin-top:10px;">为您找到<b style="font-size:14px;color:red;margin:0 5px;">{$num}</b>个职位</p>
+					
+					
+				</div>
+				
+				<div class="types"style="height: auto;overflow: hidden;">			
+					
+					{$con1}
+														
+				</div>
+		</div>
+	 
+	 </div>
+      <div class="cl"></div>
+    </div>
+  </div>
+</div>
+<!--end main-->
+	
+	
+{include file=footer.html}
+</body>
+<script language="javascript" type="text/javascript" src="/themes/mall/jiaju/js/topMenu.js"></script>
+<script>
+function so(){
+	var a = $("#key").val();
+	
+	
+	if(window.confirm('本功能为按单次搜索计费，您确定继续操作吗？')){
+		 kaitong()
+	  }else{
+		
+		 return false;
+	 }
+}
+function kaitong(){
+	alert("非常抱歉,功能正在开发当中...");
+}
+</script>
+
+</html>
+

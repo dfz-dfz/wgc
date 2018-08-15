@@ -1,0 +1,81 @@
+.zhaopin_area{padding-top: 20px;padding-bottom: 20px;}
+.zhaopin_header{border: 1px solid #e0e0e0;padding: 10px;overflow:hidden;}
+.zhaopin_header h1{width: 100%;height: 40px;line-height: 40px;border-bottom: 1px solid #b70100;font-weight: normal;float:left;overflow:hidden;}
+.zhaopin_header h1 span{font-size:22px;width: 150px;display: block;color: #fff;background-color: #b70100;text-align: left;border:1px solid #b70100;float:left;text-align:center;}
+.zhaopin_header_con{padding: 20px 0px; width: 100%;}
+
+.zhaopin_header_con select {
+    -moz-appearance: none;
+    border: 1px solid #999;	
+    background: url("../images/down.jpg") no-repeat scroll 253px 14px;
+    border: 1px solid #e0e0e0;
+    color: #333;
+    width: 25%;
+    height: 35px;
+    line-height: 35px;
+    margin-left: 20px;
+}
+.zhaopin_text{margin-left: 30px;padding: 5px;height: 36px;line-height: 36px;width: 300px;color: #999;}
+.zhaopin_btn{width: 16%;text-align: center;padding: 5px;line-height: 25px;background: #b70100;border: none;color: #fff;}
+.zhaopin_con{margin-top: 10px;border: 1px solid #e0e0e0;font-size: 17px;padding-bottom: 20px;height: auto;overflow: hidden;}
+.zhaopin_con1{border-bottom: 1px solid #e0e0e0;padding-left: 10px;padding-right: 10px;}
+.zhaopin_con2 {padding-left: 10px;padding-right: 10px;}
+.zhaopin_con3{font-size:13px;border-bottom:1px solid #e0e0e0;padding-left: 10px;padding-right: 10px;}
+.zhaopin_con1 ul li , .zhaopin_con3 ul li{width: 25%;float: left;line-height: 55px;height: 55px;}
+.zhaopin_con2 ul li{width: 23%;float: left;line-height: 25px;height: 55px;font-size: 14px;padding: 5px 1%;}
+.zhaopin_con2 ul{border-bottom: 1px dashed #e0e0e0;}
+.zhaopin_con2 a{display: block;}
+.zhaopin_con2 a:hover{color: #b70100;}
+.zhaopin_con3 ul li{border-bottom:1px dotted #808080;}
+
+/*发布招聘*/
+.fubu_right{ width: 806px;float: right;padding: 5px 5px 7px;background: #f5f5f5;}
+.fubu_wrap {
+    width: 774px;
+    border: 1px solid #e2e2e2;
+    border-top: 0;
+    background: #fff;
+    position: relative;
+    padding: 15px;
+}
+.fubu_wrap td.w100{width: 100px;text-align: right;}
+.fubu_wrap td span{color: #b70100;padding-right: 5px;}
+.fubu_wrap td  i{font-size: 12px;color: #999;font-style: normal;}
+.fubu_wrap td.w500{width: 500px;}
+.fubu_wrap td input{border: 1px solid #e0e0e0;padding: 5px;line-height: 25px;}
+.fubu_wrap .w200{width: 200px;}
+.fubu_wrap .w400{width: 400px;}
+.fubu_wrap .w600{width: 600px;}
+.fubu_wrap tr{line-height: 50px;height: 50px;font-size: 15px;}
+.fubu_wrap tr td input[type='radio']{
+	vertical-align: text-top;color: #333;
+}
+.fubu_wrap tr td  select{
+	-moz-appearance: none;
+    border: 1px solid #999;	
+    background: url("../images/down.jpg") no-repeat scroll 253px 14px;
+    border: 1px solid #e0e0e0;
+    color: #333;
+    width: 270px;
+    height: 35px;
+    line-height: 35px;
+}
+.fubu_wrap tr td input,.fubu_wrap tr td select{color:#999;}
+.fubu_wrap tr.hei200{height: 200px;}
+.fubu_wrap tr.hei200 textarea{height: 150px;padding: 5px;border: 1px solid #e0e0e0;width: 400px;color: #999;}
+.sys_spec_text li{ float:left; height:28px; position:relative; margin:2px 6px 2px 0; outline:none;}
+.sys_spec_text li a{ height:24px; padding:1px 6px; border:1px solid #ccc; background:#fff; display:inline-block; line-height:24px;}
+.sys_spec_text li a:hover{ border:2px solid #e4393c; padding:0 5px; text-decoration:none;}
+.sys_spec_text li i{ position:absolute; width:10px; height:10px; font-size:0; line-height:0; right:2px; bottom:2px; background:url(../images/sys_item_selected.gif) no-repeat right bottom; z-index:99; display:none;}
+.sys_spec_text li.selected a{ border:2px solid #e4393c; padding:0 5px;}
+.sys_spec_text li.selected i{ display:block;}
+.fubu_wrap tr.sys_item_specpara{height: 28px;line-height: 28px;}
+
+.shangchuan{width: 80px;float:left;text-align: center;border: 1px solid #e0e0e0;padding:10px 0px;}
+.shangchuan img{width: 25px;}
+.fubu_wrap tr td p{width:500px;float: right;line-height: 20px; }
+.fu_ipone{float: left;}
+.fubu_wrap tr td .fu_ipone input{width: 174px;margin-right: 10px;}
+.fubu_wrap tr td  select#s_province,.fubu_wrap tr td  select#s_city,.fubu_wrap tr td  select#s_county{width: 129px;background: url("../images/down.jpg") no-repeat scroll 110px 14px;}
+.fubu_wrap tr td .ditu{border: 1px solid #e0e0e0;}
+.fubu_wrap input.save_btn_fabu{border:none;display:block;margin:0 auto;background:#9f0100;height: 50px;line-height: 50px;width: 150px;border-radius:10px;color: #fff;text-align: center;font-size: 16px;padding: 0px;}

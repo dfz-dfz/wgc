@@ -1,0 +1,156 @@
+{include file=header.html}
+
+<script type="text/javascript" src="{lib file=search_groupbuy.js}" charset="utf-8"></script>
+<script type="text/javascript">
+/* jiaju ecodemall */
+$(function(){
+	
+	var order = '{$smarty.get.order}';
+	var css = '';
+	
+	if(order){
+		order = order.split(' ');
+        switch (order[1]){
+          case 'desc' : 
+		    css = 'order-down';
+          break;
+		  case 'asc' :
+		    css = 'order-up';
+		  break;
+          default : 
+		    css = 'order-down-gray';
+        }
+		$('#'+order[0]).attr('class','btn-order-click '+css);
+	}
+	$(".btn-order a").click(function(){
+		if(this.id=='')
+		{
+			dropParam('order');// default order
+			return false;
+		}
+		else
+		{
+			if(order!='' && order[1]=="desc" && order[0]==this.id)
+			   dd = " asc";
+			else dd = " desc";
+			replaceParam('order', this.id+dd);
+			return false;
+		}
+	});
+	
+	$("#groupbuy .title a").click(function(){
+	   $("#groupbuy .title a").each(function(){
+		   $(this).removeClass("active");
+	   });
+	   $(this).addClass("active");
+	   $("#groupbuy .content .each").each(function(){
+		   $(this).hide();
+	   });
+	   $("#groupbuy .content ."+this.id).show();
+   });
+	
+});
+</script>
+
+
+
+<div id="groupbuy" class="w auto">
+    {include file=curlocal.html}
+    <div class="mt10">
+       <div class="title box">
+          <a class="active" href="javascript:;" id="all"><span>{$lang.all_groupbuy}</span></a>
+          <a href="javascript:;" id="recommend"><span>{$lang.recommended_groupbuy}</span></a>
+          <a href="javascript:;" id="last"><span>{$lang.last_groupbuy}</span></a>
+       </div>
+       <div class="content">
+          <div class="each all clearfix">
+            <div class="shop_con_list">
+               <form method="get" action="index.php">
+                  <input type="hidden" name="app" value="search" />
+                  <input type="hidden" name="act" value="groupbuy" />
+                  <span class="display_span">{$lang.group_name}</span>
+                  <input name="keyword" class="input border"  type="text" value="{$smarty.get.keyword|escape}"  />
+                  <span class="display_span">{$lang.state}</span>
+                  <select class="display_select" ectype="state">
+                     {html_options options=$state selected=$smarty.get.state}
+                  </select>
+                  <input type="submit" class="btn-submit border0 pointer" value=""/>
+                  <span class="display_span">{$lang.order_by}{$lang.colon}</span>
+                  <span class="btn-order">
+                     <a class="btn-order-click order-down-gray" hidefocus="true" id="views" href="javascript:;">{$lang.views}</a>
+                     <a class="btn-order-click order-down-gray" hidefocus="true" id="end_time" href="javascript:;">{$lang.lefttime}</a>
+                  </span>
+               </form>                    
+           </div>
+            <div class="group_shop mt10 mb10">
+              <ul class="hd border border-t-0 padding5 clearfix">
+                 <li class="pic fleft">{$lang.swt}</li>
+                 <li class="group_name fleft">{$lang.group_name}</li>
+                 <li class="fleft">{$lang.group_price}</li>
+                 <li class="fleft">{$lang.group_qty} / {$lang.group_min_qty}</li>
+                 <li class="fleft">{$lang.store}</li>
+                 <li class="fleft">{$lang.lefttime}</li>
+              </ul>
+              <ul class="content border border-t-0 padding5 clearfix">
+                 <!-- {foreach from=$groupbuy_list item=group} -->
+                 <li class="pic fleft"><a target="_blank" href="{url app=groupbuy&id=$group.group_id}"><img src="{$group.default_image}" alt="{$group.group_name|escape}" width="70" height="70" /></a></li>
+                 <li class="group_name fleft"><a target="_blank" href="{url app=groupbuy&id=$group.group_id}">{$group.group_name|escape}</a></li>
+                 <li class="fleft">{$group.group_price|price}</li>
+                 <li class="fleft">{$group.quantity} / {$group.min_quantity}</li>
+                 <li class="fleft"><a target="_blank" href="{url app=store&id=$group.store_id}">{$group.store_name|escape}</a><br /><a class="email" target="_blank" href="{$site_url}/index.php?app=message&amp;act=send&amp;to_id={$group.store_id}"><img src="{res file=images/web_mail.gif}" alt="{$lang.send_pm}" /></a></li>
+                 <li class="fleft"><!-- {if $smarty.get.state eq 'on'} -->{$group.lefttime}<!-- {/if} --></li>
+                 <!--{foreachelse}-->
+                 <li>{$lang.no_groupbuy}</li>
+                 <!-- {/foreach} -->
+              </ul>
+           </div>
+            {include file=page.bottom.html}
+          </div>
+          <div class="each recommend group_shop hidden">
+             <ul class="hd border border-t-0 padding5 clearfix">
+                 <li class="pic fleft">{$lang.swt}</li>
+                 <li class="group_name fleft">{$lang.group_name}</li>
+                 <li class="fleft">{$lang.group_price}</li>
+                 <li class="fleft">{$lang.group_qty} / {$lang.group_min_qty}</li>
+                 <li class="fleft">{$lang.store}</li>
+                 <li class="fleft">{$lang.lefttime}</li>
+             </ul>
+             <ul class="content border border-t-0 padding5 clearfix">
+                <!-- {foreach from=$recommended_groupbuy item=group} -->
+                <li class="pic fleft"><a target="_blank" href="{url app=groupbuy&id=$group.group_id}"><img src="{$group.default_image}" alt="{$group.group_name|escape}" width="70" height="70" /></a></li>
+                <li class="group_name fleft"><a target="_blank" href="{url app=groupbuy&id=$group.group_id}">{$group.group_name|escape}</a></li>
+                <li class="fleft">{$group.price|price}</li>
+                <li class="fleft">{$group.quantity} / {$group.min_quantity}</li>
+                <li class="fleft"><a target="_blank" href="{url app=store&id=$group.store_id}">{$group.store_name|escape}</a><br /><a class="email" target="_blank" href="{$site_url}/index.php?app=message&amp;act=send&amp;to_id={$group.store_id}"><img src="{res file=images/web_mail.gif}" alt="{$lang.send_pm}" /></a></li>
+                <li class="fleft">{$group.lefttime}</li>
+                <!--{foreachelse}-->
+                <li>{$lang.no_groupbuy}</li>
+                <!-- {/foreach} -->
+             </ul>
+          </div>
+          <div class="each last group_shop hidden">
+             <ul class="hd border border-t-0 padding5 clearfix">
+                 <li class="pic fleft">{$lang.swt}</li>
+                 <li class="group_name fleft">{$lang.group_name}</li>
+                 <li class="fleft">{$lang.group_price}</li>
+                 <li class="fleft">{$lang.group_qty} / {$lang.group_min_qty}</li>
+                 <li class="fleft">{$lang.store}</li>
+                 <li class="fleft">{$lang.lefttime}</li>
+             </ul>
+             <ul class="content border border-t-0 padding5 clearfix">
+                <!-- {foreach from=$last_join_groupbuy item=group} -->
+                <li class="pic fleft"><a target="_blank" href="{url app=groupbuy&id=$group.group_id}"><img src="{$group.default_image}" alt="{$group.group_name|escape}" width="70" height="70" /></a></li>
+                <li class="group_name fleft"><a target="_blank" href="{url app=groupbuy&id=$group.group_id}">{$group.group_name|escape}</a></li>
+                <li class="fleft">{$group.price|price}</li>
+                <li class="fleft">{$group.quantity} / {$group.min_quantity}</li>
+                <li class="fleft"><a target="_blank" href="{url app=store&id=$group.store_id}">{$group.store_name|escape}</a><br /><a class="email" target="_blank" href="{$site_url}/index.php?app=message&amp;act=send&amp;to_id={$group.store_id}"><img src="{res file=images/web_mail.gif}" alt="{$lang.send_pm}" /></a></li>
+                <li class="fleft">{$group.lefttime}</li>
+                <!--{foreachelse}-->
+                <li>{$lang.no_groupbuy}</li>
+                <!-- {/foreach} -->
+             </ul>
+         </div>
+      </div>      
+   </div>
+</div>
+{include file=footer.html}

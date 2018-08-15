@@ -1,0 +1,10 @@
+<div class="location clearfix"style="width:99%;">
+<!--{foreach from=$_curlocal item=lnk}-->
+<!--{if $lnk.url}-->
+<a hidefocus="true" href="{$lnk.url}">{$lnk.text|escape}</a> <span></span>
+<!--{else}-->
+{$lnk.text|escape}
+<!--{/if}-->
+<!--{/foreach}-->
+</div>
+

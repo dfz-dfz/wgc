@@ -1,0 +1,258 @@
+﻿<!DOCTYPE html>
+
+<!--[if lte IE 6]>
+
+<html lang="zh-CN" class="ie6 lt7 lt8 lt9 lt10">
+
+<![endif]-->
+
+<!--[if IE 7]>
+
+<html lang="zh-CN" class="ie7 lt8 lt9 lt10">
+
+<![endif]-->
+
+<!--[if IE 8]>
+
+<html lang="zh-CN" class="ie8 lt9 lt10">
+
+<![endif]-->
+
+<!--[if IE 9]>
+
+<html lang="zh-CN" class="ie9 lt10">
+
+<![endif]-->
+
+<html lang="zh-CN">
+
+<!--<![endif]-->
+
+	<head>
+
+		<title><?php echo $_GET['cate_id']?>-【59家居招聘信息】</title>
+
+		<meta charset="utf-8" />
+
+		<meta name="keywords" content="【59家居招聘信息】招聘信息"/>
+
+		<meta name="description" content="59家居提供广州各公司最新最快速的招聘信息"/>
+
+		<link rel="stylesheet" type="text/css" href="/themes/mall/jiaju/styles/css/common_zp.css"/>
+
+		<link rel="stylesheet" type="text/css" href="/themes/mall/jiaju/styles/css/index_zp.css"/>
+
+		<!--[if IE 6]>
+
+		<script src="js/DD_belatedPNG_min.js"></script>
+
+		<script>
+
+		  /* EXAMPLE */
+
+		  DD_belatedPNG.fix('img,.step-one dt i,.step-tow dt i,.step-three dt i,.step-four dt i,.category-link,.category-link:hover,.category-btns a,.category-btns a:hover,.category-btns a.right-arrow,.category-btns a.right-arrow:hover,.icons-more,.head-in h1,.location .location-icon,.location .arrow,.foot-in .logo,.erwma-show,.icons-back-top,.icon-kefu,.icons-erwma');
+
+		</script>
+
+		<![endif]-->
+
+
+	</head>
+    
+	<body>
+{include file=header.html}
+<style type="text/css">
+.bannersBg{
+width:100%;
+background:#FEB101; 
+overflow:hidden;
+margin:0 auto;
+height:239px;
+}
+.bannersBg .banners{
+width:1100px;
+background:url(themes/mall/jiaju/images/zhaopintop.jpg) no-repeat -130px center; 
+overflow:hidden;
+margin:0 auto;
+height:239px;
+}
+.bannersBg .banners .pics-form{
+width:250px;
+background:#CF8C17; 
+overflow:hidden;
+margin:15px 5px 0 0;
+float:right;
+height:180px;
+padding:10px;
+border:1px solid #333;
+-webkit-border-radius:5px;
+-moz-border-radius:5px;
+border-radius:5px
+}
+.bannersBg .banners .pics-form .swiper-slide-input{
+width:100%;
+height:50px;
+overflow:hidden;
+
+line-height:50px;
+text-align:center;
+}
+.bannersBg .banners .pics-form .swiper-slide-input .text-input{
+width:140px;
+height:30px;
+line-height:30px;
+background:#fff;
+text-align:left;
+padding:0 5px;
+display:inline;
+margin-right:5px;
+float:left;
+}
+.bannersBg .banners .pics-form .swiper-slide-input .text-submit{
+width:80px;
+height:30px;
+cursor:pointer;
+line-height:30px;
+font-size:14px;
+float:right;
+background:red;
+color:#fff;
+border:1px solid red;
+text-align:center;
+}
+/*流程*/
+.bannersBg .banners .pics-form .swiper-slide-liucheng{
+width:100%;
+height:50px;
+overflow:hidden;
+border-top:1px solid #333;
+margin-top:5px;
+text-align:center;
+}
+.bannersBg .banners .pics-form .swiper-slide-liucheng a{
+display:block;
+}
+.bannersBg .banners .pics-form .swiper-slide-liucheng a img{
+width:100%;
+height:50px;
+border:none;
+
+}
+/*xinban*/
+.sosuo{
+	width:100%;
+	height:100px;
+	line-height:100px;
+	overflow:hidden;
+	margin:10px auto;
+}
+.contents{
+	width:980px;
+	height:40px;
+	overflow:hidden;
+	border:4px solid #999999;
+	margin:30px auto;	
+}
+.left{
+	width:590px;
+	height:40px;
+	overflow:hidden;
+	padding:0 3px;
+	border-right:4px solid #999999;
+	float:left
+}
+.left .left-input{
+	width:100%;
+	height:40px;
+	line-height:40px;
+	overflow:hidden;
+	background:#fff;
+	float:left
+}
+.left1{
+	width:210px;
+	height:40px;
+	padding:0 10px;
+	overflow:hidden;
+	float:left
+}
+.left1 .left1-input{
+	width:100%;
+	height:40px;
+	line-height:40px;
+	overflow:hidden;
+	float:left;
+	font-size:14px;
+	color:#333;
+}
+.left2{
+	width:146px;
+	height:40px;
+	overflow:hidden;
+	background:green;
+	border-left:4px solid #999999;
+	float:left
+}
+.left2 .left2-img{
+	width:100%;
+	height:40px;
+	line-height:40px;
+	overflow:hidden;
+	float:left;
+	font-size:14px;
+	color:#333;
+	cursor:pointer;
+}
+</style>
+
+		<!-- top s -->
+		<div id="main">
+			<div class="bannersBg">
+				<div class="banners">
+					
+				</div>
+			</div>
+			
+			<!--第一 -->
+			<div class="sosuo">
+				<div class="contents">
+			<!--第一 -->
+					<div class="left"><input name="key" id="key" class="left-input"value="请输入关键字" onfocus="javascript:if(this.value=='请输入关键字')this.value='';"/></div>
+					<div class="left1"><input name="city" class="left1-input"value="全广州"/></div>
+					<div class="left2"><img src="/themes/mall/jiaju/images/ss.jpg" class="left2-img" onclick="so()"/></div>
+
+			<!--第一 -->
+				</div>
+			</div>
+			
+			
+			
+		</div>
+
+		<!-- footer s -->
+
+		<!-- footer s -->
+	<!-- footer e -->
+
+	<!-- footer e -->
+{include file=footer.html}
+</body>
+<script>
+function so(){
+	var a = $("#key").val();
+	
+	
+	if(window.confirm('本功能为按单次搜索计费，您确定继续操作吗？')){
+		 kaitong()
+	  }else{
+		
+		 return false;
+	 }
+}
+function kaitong(){
+	alert("非常抱歉,功能正在开发当中...");
+}
+</script>
+
+</html>
+

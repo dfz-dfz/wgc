@@ -1,0 +1,300 @@
+{include file=header.html}
+<style type="text/css">
+.storelogo{width:100%;}
+.main{margin:0px;padding:0px;width:1100px;min-width:77%;margin-left:auto;margin-right:auto;}
+.torename{padding-bottom:20px;padding-top:20px;border-bottom:1px solid #808080;}
+.storeinfo{width:100%;padding-bottom:10px;padding-top:10px;text-align:left;}
+.torepic{width:100%;text-align:center;border:1px solid #808080;margin-top:20px;margin-top:40px;padding-bottom:10px;padding-top:10px;}
+.toreintroduece{width:100%;text-align:center;border:1px solid #808080;margin-top:40px;padding-bottom:10px;padding-top:10px;}
+.toreround{width:100%;text-align:center;border:1px solid #808080;margin-top:40px;padding-bottom:10px;padding-top:10px;}
+.toreteam{width:100%;text-align:center;border:1px solid #808080;margin-top:40px;padding-bottom:10px;padding-top:10px;}
+.toredemo{width:100%;text-align:center;border:1px solid #808080;margin-top:40px;padding-bottom:10px;padding-top:10px;}
+.confirms{width:100%;text-align:center;padding:20px;}
+
+.a-upload {
+    padding: 4px 10px;
+    height: 20px;
+    line-height: 20px;
+    position: relative;
+    cursor: pointer;
+    color: #888;
+    background: #fafafa;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    overflow: hidden;
+    display: inline-block;
+    *display: inline;
+    *zoom: 1
+}
+
+.a-upload  input {
+    position: absolute;
+    font-size: 100px;
+    right: 0;
+    top: 0;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    cursor: pointer
+}
+
+.a-upload:hover {
+    color: #444;
+    background: #eee;
+    border-color: #ccc;
+    text-decoration: none
+}
+</style>
+<div class="storelogo">
+	<img style="width:100%;" src="/themes/mall/jiaju/images/storelogo.png">
+</div>
+<script type="text/javascript">
+//图片上传
+		function fupload(){
+			$('#imageform').submit();	
+			return true;
+		}
+		function fupload2(){
+			$('#imageform2').submit();	
+			return true;
+		}
+		function fupload3(){
+			$('#imageform3').submit();	
+			return true;
+		}
+		function fupload4(){
+			$('#imageform4').submit();	
+			return true;
+		}
+		function show_img(res){
+			//alert(res);
+			$("#preview").children().remove();
+			 $("#preview").append(res);
+		}
+		function show_img2(res){
+			$("#preview2").children().remove();
+			$("#preview2").append(res);
+		}
+		function show_img3(res){
+			//$("#preview3").empty();
+			 $("#preview3").append(res);
+		}
+		function show_img4(res){
+			//$("#preview3").empty();
+			 $("#preview4").append(res);
+		}
+		function set_gslgpicurl(res){
+			//alert(res);
+			//picurl=picurl+res+',';
+			 $("#gslogourl").val(res);
+		}    
+		function set_teampicurl(res){
+			//alert(res);
+			var picurl=$("#teamurl").val();
+			picurl=picurl+res+',';
+			 $("#teamurl").val(picurl);
+		}
+		function set_hbpicurl(res){
+			//alert(res);
+			 $("#hburl").val(res);
+		}
+		function set_jdpicurl(res){
+			//alert(res);
+			var picurl=$("#jdurl").val();
+			picurl=picurl+res+',';
+			 $("#jdurl").val(picurl);
+		}
+		function apandhidden(hidden){
+			 $("#hiddens").append(hidden);
+		}
+		function fileSelect2(){
+			document.getElementById("gsgd").click();
+		}
+		function fileSelect3(){
+			//alert('ok');
+			document.getElementById("teamlogo").click();
+		}
+		function fileSelect4(){
+			document.getElementById("jddemo").click();
+		}
+		function sureclick(){
+			$("#allforms").submit();
+			//alert("提交");
+		}
+		function qxclick(){
+			$("#gsnc").val("");
+			$("#chongzhi").click();
+			//alert("取消");
+		}
+		
+		function gnamevalue(e, pnumber){
+			//alert(pnumber);
+			$("#gname").val($(e).val());
+			//alert($("#gname").val());
+			return false;
+      }
+	  //删除点击删除团队人物，和经典案例图
+	  function closed(e){
+	  	//ajax删除以前照片
+	  // var picurl=$(e).attr("src");
+	  
+	  // 	var url="http://59jiaju.com/index.php?app=search&act=picture_del&url="+picurl;
+	  // 	$.get(url, {},
+		 //  function(data){
+		 //    if(data=='ok'){
+		 //    	alert('ok');
+		 //    }else{
+		 //    	alert('err');
+		 //    }
+		 //  });
+		$(e).remove();
+		var teamurl="";
+		var imgs = $("#preview3 > img");
+			$.each(imgs, function(){
+			 //alert($(this).attr("src"));
+			 teamurl=teamurl+$(this).attr("src")+',';
+			});
+		//alert(teamurl);
+		$("#teamurl").val(teamurl);
+	  }
+	  function closed2(e){
+	  	//ajax删除以前照片
+	  	// var picurl=$(e).attr("src");
+	  	// var url="http://59jiaju.com/index.php?app=search&act=picture_del&url="+picurl;
+	  	// $.get(url, {},
+		  // function(data){
+		  //   if(data=='ok'){
+		  //   	alert('ok');
+		  //   }else{
+		  //   	alert('err');
+		  //   }
+		  // });
+		$(e).remove();
+		var jdurl="";
+		var imgs = $("#preview4 > img");
+			$.each(imgs, function(){
+			 //alert($(this).attr("src"));
+			 jdurl=jdurl+$(this).attr("src")+',';
+			});
+		//alert(jdurl);
+		$("#jdurl").val(jdurl);
+	  }
+	  function gtypechange(e){
+	  	// alert(e.val());
+	  	// alert($("#gtype").val());
+	  	$("#gtype").val(e.val());
+	  	//alert($("#gtype").val());
+	  }
+</script>
+<div class="main">
+	<div class="torename"><span style="font-size:20px;color:#737373;" >公司名称：<input type="text" id="gsnc" style="width:150px;" value="{$list.gname}" onBlur="return gnamevalue($(this),value)" />&nbsp;　公司类别：
+	<select onchange="gtypechange($(this))" >
+		<option value="装饰公司" {if $list.gtype eq "装饰公司"}selected="selected"{elseif $list.gtype eq ""}{else}{/if}>装饰公司</option>
+		<option value="机电安装" {if $list.gtype eq "机电安装"}selected="selected"{elseif $list.gtype eq ""}{else}{/if}>机电公司</option>
+		<option value="消防" {if $list.gtype eq "消防"}selected="selected"{elseif $list.gtype eq ""}{else}{/if}>消防公司</option>
+		<option value="保洁" {if $list.gtype eq "保洁"}selected="selected"{elseif $list.gtype eq ""}{else}{/if}>保洁公司</option>
+		<option value="厨具" {if $list.gtype eq "厨具"}selected="selected"{elseif $list.gtype eq ""}{else}{/if}>厨具公司</option>
+		<option value="环保" {if $list.gtype eq "环保"}selected="selected"{elseif $list.gtype eq ""}{else}{/if}>环保公司</option>
+		<option value="办公家具" {if $list.gtype eq "办公家具"}selected="selected"{elseif $list.gtype eq ""}{else}{/if}>家具公司</option>
+		<option value="软装" {if $list.gtype eq "软装"}selected="selected"{elseif $list.gtype eq ""}{else}{/if}>软装公司</option>
+		<option value="防鼠" {if $list.gtype eq "防鼠"}selected="selected"{elseif $list.gtype eq ""}{else}{/if}>防鼠/防蚁</option>
+		<option value="幕墙" {if $list.gtype eq "幕墙"}selected="selected"{elseif $list.gtype eq ""}{else}{/if}>幕墙公司</option>
+		<option value="路政" {if $list.gtype eq "路政"}selected="selected"{elseif $list.gtype eq ""}{else}{/if}>路政公司</option>
+		<option value="园林" {if $list.gtype eq "园林"}selected="selected"{elseif $list.gtype eq ""}{else}{/if}>园林公司</option>
+		<option value="材料" {if $list.gtype eq "材料"}selected="selected"{elseif $list.gtype eq ""}{else}{/if}>材料公司</option>
+		<option value="招牌公司" {if $list.gtype eq "招牌公司"}selected="selected"{elseif $list.gtype eq ""}{else}{/if}>招牌公司</option>
+		<option value="维修" {if $list.gtype eq "维修"}selected="selected"{elseif $list.gtype eq ""}{else}{/if}>维修公司</option>
+		<option value="拆除" {if $list.gtype eq "拆除"}selected="selected"{elseif $list.gtype eq ""}{else}{/if}>拆除公司</option>
+		<option value="智能化" {if $list.gtype eq "智能化"}selected="selected"{elseif $list.gtype eq ""}{else}{/if}>智能化公司</option>
+		<option value="建筑加固" {if $list.gtype eq "建筑加固"}selected="selected"{elseif $list.gtype eq ""}{else}{/if}>建筑加固公司</option>
+	</select></span>
+	</div>
+	<div class="storeinfo">
+		<table style="width:100%;">
+			<tr style="height:30px;">
+			<td rowspan='4' style="width:25%;" style="text-align:left;" >
+				<!--<div style="border:1px solid #808080;display:inline;margin-left:10px;"><img width="50%" src="/themes/mall/jiaju/images/storejy.png" /></div>-->
+				<div id="preview" style="width:150px;height:200px;background-color:#E8E8FF;text-align:center;margin-bottom:5px;">
+					<img src="{$list.gslogourl}" style="width:100%;height:100%;" >
+				</div>
+				<form id="imageform" method="post" enctype="multipart/form-data" action="index.php?app=search&act=picture_addmore" target="my_i"><label></label>
+					<a href="javascript:;" class="a-upload"><input id="gslogo" type="file" name="gslogo" style="display:block;" onchange="return fupload()">点击这里上传logo</a>
+				</form><br/>
+				<iframe name="my_i" style="display:none;"></iframe>
+			</td>
+	<form action="" method="post" id="allforms" name="allforms" >
+			<input type="hidden" name="gslogourl" id="gslogourl" value="{$list.gslogourl}" />
+			<input type="hidden" name="teamurl" id="teamurl" value="{$list.teamurl}" />
+			<input type="hidden" name="hburl" id="hburl" value="{$list.hburl}" />
+			<input type="hidden" name="jdurl" id="jdurl" value="{$list.jdurl}" />
+			<input type="hidden" name="gname" id="gname" value="{$list.gname}" />
+			<input type="hidden" name="id" id="id" value="{$list.id}" />
+			<input type="hidden" name="gtype" id="gtype" value="{if $list.gtype eq null}装饰公司{elseif $list.gtype eq ""}装饰公司{else}{$list.gtype}{/if}" />
+			<td style="width:30%;">联系人：<span style="color:#C83D36;"><input type="text" name="lianxiren" value="{$list.lianxiren}" placeholder="联系人" /></span></td><td style="width:45%;">微信：<span style="color:#C83D36;"><input type="text" name="weixin" value="{$list.weixin}" placeholder="微信" /></span></td></tr>
+			<tr style="height:30px;"><td >手　机：<span style="color:#C83D36;"><input type="text" name="phone" value="{$list.phone}" placeholder="手机" /></span></td><td >邮箱：<span style="color:#C83D36;"><input type="text" name="email" value="{$list.email}" placeholder="邮箱" /></span></td></tr>
+			<tr style="height:30px;"><td >电　话：<span style="color:#C83D36;"><input type="text" name="tel" value="{$list.tel}" placeholder="电话" /></span></td><td >网址：<span style="color:#C83D36;"><input type="text" name="weburl" value="{$list.weburl}" placeholder="网址" /></span></td></tr>
+			<tr style="height:30px;"><td >Q　Q：<span style="color:#C83D36;"><input type="text" name="qq" value="{$list.qq}" placeholder="QQ" /></span></td><td >地址：
+								<select id="s_province" name="s_province"style="border:1px solid #666666"></select>  
+                                <select id="s_city" name="s_city"style="border:1px solid #666666" ></select>  
+                                <select id="s_county" name="s_county"style="border:1px solid #666666"></select>
+                                <script class="resources library" src="/themes/mall/jiaju/styles/default/js/area.js" type="text/javascript"></script>
+                                <script type="text/javascript">_init_area();</script><input type="text" name="xiangxi" placeholder="详细地址" value="{$list.xiangxi}" /></td></tr>
+		</table>
+	</div>
+	
+	<div class="toreintroduece">
+		<span style="font-size:23px;color:#424242;">公司简介</span><br/>
+		<textarea name="jianjie" rows="5" cols="120"  placeholder="公司简介">{$list.jianjie}</textarea>
+	</div>
+	<div class="toreround">
+		<span style="font-size:23px;color:#424242;">经营范围</span><br/>
+		<textarea name="fanwei" rows="5" cols="120"  placeholder="经营范围">{$list.fanwei}</textarea>
+	</div>
+	<input type="reset" id="chongzhi" style="display:none;" />
+	</form>
+	<div class="torepic">
+		<div id="preview2" style="width:100%;background-color:#E8E8FF;text-align:center;">
+			{if $list.hburl neq null}<img src="{$list.hburl}" style="width:30%;" >{elseif $list.gtype neq ""}<img src="{$list.hburl}" style="width:30%;" >{else}{/if}
+				
+		</div>
+		<form id="imageform2" method="post" enctype="multipart/form-data" action="index.php?app=search&act=picture_addmore" target="my_i2"><label></label>
+					<input id="gsgd" type="file" name="gsgd" style="display:none;" onchange="return fupload2()">
+		</form><br/>
+		<iframe name="my_i2" style="display:none;"></iframe>
+		<span style="font-size:23px;color:#424242;">公司照片</span><br/>
+		<img src="/themes/mall/jiaju/images/storeadd1.png" onclick="fileSelect2()" />
+	</div>
+	<div class="toreteam">
+		<div id="preview3" style="width:100%;background-color:#E8E8FF;text-align:center;">
+				{foreach from=$list.teamurl2 item=url}
+					<img src="{$url}" style="width:30%;" onclick="closed($(this))" >
+				{/foreach}
+		</div>
+		<form id="imageform3" method="post" enctype="multipart/form-data" action="index.php?app=search&act=picture_addmore" target="my_i3"><label></label>
+					<input id="teamlogo" type="file" name="teamlogo" style="display:none;" onchange="return fupload3()">
+					<input type="hidden" id="pnum" name="pnum" value="0" >
+		</form><br/>
+		<iframe name="my_i3" style="display:none;"></iframe>
+		<span style="font-size:23px;color:#424242;">设计团队</span><br/>
+		<img src="/themes/mall/jiaju/images/storeadd1.png" onclick="fileSelect3()"  />
+	</div>
+	<div class="toredemo">
+		<div id="preview4" style="width:100%;background-color:#E8E8FF;text-align:center;">
+				{foreach from=$list.jdurl2 item=url}
+					<img src="{$url}" style="width:30%;" onclick="closed2($(this))" >
+				{/foreach}	
+		</div>
+		<form id="imageform4" method="post" enctype="multipart/form-data" action="index.php?app=search&act=picture_addmore" target="my_i4"><label></label>
+					<input id="jddemo" type="file" name="jddemo" style="display:none;" onchange="return fupload4()">
+					<input type="hidden" id="pnum" name="pnum" value="0" >
+		</form><br/>
+		<iframe name="my_i4" style="display:none;"></iframe>
+		<span style="font-size:23px;color:#424242;">经典案例</span><br/>
+		<img src="/themes/mall/jiaju/images/storeadd1.png" onclick="fileSelect4()" />
+	</div>
+	<div class="confirms">
+		<input type="button" value="{if $id eq null}确认注册{elseif $id eq ""}确认注册{else}确认编辑{/if}" style="padding:5px;color:#FAB464;font-size:18px;" onclick="sureclick()" /> <input onclick="qxclick()" type="button" value="取消" style="padding:5px;margin-left:25px;color:#FAB464;font-size:18px;" />
+	</div>
+{include file=footer2.html}
+
+
+<!-- 底部include file=footer2.html-->

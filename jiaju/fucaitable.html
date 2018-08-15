@@ -1,0 +1,203 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Access-Control-Allow-Origin" content="*">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=8"/>
+<title>用户中心-辅材定额列表</title>
+<meta name="description" content="微工程，微工程APP，装修、材料、家具、饰品一站式服务，让装修更简单，价格更透明！！" />
+<meta name="keywords" content="微工程，微工程，家居商城，微工程家居商城，微工程家居装修商城，办公室装修，写字楼装修，材料，装修材料，家居，办公家具，家居，家具，装修，装饰" />
+
+<link type="text/css" href="themes/mall/jiaju/styles/default/css/main.css" rel="stylesheet"  />
+<link type="text/css" href="themes/mall/jiaju/styles/css/global.css" rel="stylesheet"  />
+<link type="text/css" href="http://www.wgc2013.com/themes/mall/jiaju/styles/default/css/catalog.css" rel="stylesheet"  />
+<link type="text/css" href="http://www.wgc2013.com/themes/mall/jiaju/styles/default/css/footer.css" rel="stylesheet" />
+<link type="text/css" href="themes/mall/jiaju/styles/css/style.css" rel="stylesheet"  />
+<script type="text/javascript" src="index.php?act=jslang"></script>
+<script type="text/javascript" src="http://www.wgc2013.com/includes/libraries/javascript/ecmall.js" charset="utf-8"></script>
+<script type="text/javascript" src="http://www.wgc2013.com/includes/libraries/javascript/jquery.js" charset="utf-8"></script>
+<script type="text/javascript" src="http://www.wgc2013.com/includes/libraries/javascript/cart.js" charset="utf-8"></script>
+<script type="text/javascript" src="http://www.wgc2013.com/themes/mall/jiaju/styles/default/js/main.js" charset="utf-8"></script>
+
+<!--[if lte IE 6]>
+<script type="text/javascript" language="Javascript" src="http://www.wgc2013.com/themes/mall/jiaju/styles/default/js/hoverForIE6.js"></script>
+<![endif]-->
+<!--[if IE 8]>
+<link type="text/css" href="themes/mall/jiaju/css/ie8.css" rel="stylesheet"  />
+<![endif]-->
+<script type="text/javascript">
+var SITE_URL = "http://www.wgc2013.com";
+var PRICE_FORMAT = '&yen;%s';
+</script>
+<script charset="utf-8" type="text/javascript" src="http://www.wgc2013.com/includes/libraries/javascript/jquery.plugins/jquery.validate.js" ></script><style type="text/css">
+body{background:url('') no-repeat center top }
+.mainnav{width:990px; overflow:hidden; margin:0 auto}
+.STYLE1 {color: red}
+</style>
+<script type="text/javascript" src="http://www.wgc2013.com/themes/mall/jiaju/styles/default/js/hover.js"></script>
+<script charset="utf-8" type="text/javascript" src="http://www.wgc2013.com/includes/libraries/javascript/jquery.plugins/jquery.validate.js" ></script>
+</head>
+<body>
+{include file=header.html}
+
+<!-- 中部主要内容 -->
+ <div class="container" style="overflow: hidden;width: 1200px;margin: 10px auto;">
+ <!-- 左上的导航栏 -->
+ 	{include file=usercenter.html}
+
+
+ 	<!-- 右边的内容 -->
+ 	<div class="container_right" style="width: 78%;border: 1px solid #cacaca;float: right;background-color: #f7f7f7;padding: 0 10px 10px 10px;">
+
+		<!-- 预算报价 -->
+		<div class="worker_make base_ui_public" style="position: relative;">
+			<ul class="worker_make_ul user_public_ul">
+ 				<li class="change_bg_li" style="margin-right: 10px;">辅材定额表</li>
+ 			</ul>
+ 			<div class="worker_make_info base_info_public" style="overflow: hidden;min-height: 250px;">
+ 			<!--工人定额列表 -->
+			<div class="worker_make_list" style="position: relative;width: 100%;">
+				<div style="overflow: hidden;margin-top: 10px;">
+					<div style="position: relative;">
+						<div style="overflow: hidden;margin-top: 10px;">
+						<input type="text" style="width: 265px;height: 30px;float: left;border: 1px solid #808080;border-radius: 0;" />
+
+						<div style="float: left;">
+						<a href="#" style="display: inline-block;width: 75px;height: 30px;line-height: 30px;font-size: 16px;color: #f3552d;border: 1px solid #808080; background-color: #facd89;">搜索</a>
+						<a class="share_dinge" href="javascript:;" style="display: inline-block;width: 60px;height: 30px;line-height: 30px;font-size: 16px;color: #2d2a2a;font-weight: bold;letter-spacing: 4px; background-color: #facd89;border-radius: 5px;position: relative;left: 385px;text-decoration: none;">确定</a>
+						</div>
+			</div>
+			<div class="price_list" style="position: relative;width: 100%;">
+				<div class="price_list_name" style="text-align: left;width: 100%;">
+					<span>序号</span>
+					<span>材料名称</span>
+					<span>品牌</span>
+					<span>规格型号</span>
+					<span>单位</span>
+					<span>单价</span>
+					<span>含税价</span>
+					<span>配送时间</span>
+					<span>供应商</span>
+					<span>联系人</span>
+					<span>联系方式</span>
+					<span>网址</span>
+					<span>邮箱</span>
+					<span>微信号</span>
+					<span>备注</span>
+					<span>图片</span>
+				</div>
+				<div class="price_list_detail" style="text-align: left;width: 100%;">
+					<span><input type="checkbox" style="display: inline-block;" />&nbsp;&nbsp;1</span>
+					<span>• 空调盘机</span>
+					<span>格力</span>
+					<span>BN-12</span>
+					<span>台</span>
+					<span>4200</span>
+					<span>4872</span>
+					<span>3天</span>
+					<span>广东格力空调有限公司</span>
+					<span>王某</span>
+					<span>188xxxxxxxx</span>
+					<span></span>
+					<span></span>
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+
+				<!-- 分页 -->
+				<div class="price_page">
+				<a href="#">首页</a>
+				<a href="#">上一页</a>
+				<a href="#" style="width: 15px;">1</a>
+				<a href="#" style="width: 15px;">2</a>
+				<a href="#" style="width: 15px;">3</a>
+				<a href="#" style="width: 15px;">4</a>
+				<a href="#" style="width: 15px;">5</a>
+				<a href="#" style="width: 15px;">6</a>
+				<a href="#" style="width: 15px;">7</a>
+				<a href="#">...</a>
+				<a href="#">下一页</a>
+				<a href="#">尾页</a>
+				</div>
+			</div>
+			</div>
+				</div>
+			</div>
+			<!-- 预算报价内容 -->
+							<div class="share_form" style="width: 365px;background-color: #fff; height: 230px;padding: 15px 0;position: absolute;top: 300px;left: 270px;display: none;z-index: 5;">
+ 					<div style="overflow: hidden;margin-left: 20px;">
+ 						<div style="float: left;width: 80px;font-size: 14px;font-weight: bold;text-align: right;margin-right: 5px;letter-spacing: 2px;">内容获取:</div>
+ 						<div  style="float: left;">
+ 							
+ 						<textarea name="share_content" id="con_share" placeholder="内容获取" style="width: 200px;height: 80px;padding-left: 10px;"></textarea>
+ 						</div>
+ 					</div>
+ 					<div style="overflow: hidden;margin-top: 15px;margin-left: 20px;">
+ 						<div style="float: left;width: 80px;font-size: 14px;font-weight: bold;text-align: right;margin-right: 5px;letter-spacing: 2px;">接收人:</div>
+						
+						<div style="float: left;">
+							
+						<input type="text" placeholder="选择接收人" style="width: 200px;height: 25px;" />
+						</div>	
+						
+ 					</div>
+
+ 					<div style="position: relative;top: 45px;">
+ 						<a class="share_sure" href="javascript:;" style="display: inline-block;width: 90px;height: 26px;background-color: #facd89;color: #fff;font-size: 15px;line-height: 26px;text-decoration: none;">分享确认</a>
+ 					</div>
+ 				</div>
+ 			</div>
+ 			
+			
+		</div>
+		
+		
+ 		</div>
+ 		
+ 	</div>
+
+
+{include file=footer.html}
+
+<script type="text/javascript">
+	$(".share_show").click(function(e){
+		e.stopPropagation(); 
+		$(".share_form").show();
+		$(".share_form").css({"top":"300px"});
+		$(".price_fucai_info").css("background-color","#eee");
+		$(".price_fucai_info input").css("background-color","#eee");
+
+	})
+	$(".price_fucai_info").click(function(){
+		
+			$(".share_form").hide();
+			$(".price_fucai_info").css("background-color","#fff");
+			$(".price_fucai_info input").css("background-color","#fff");
+		})
+
+	//点击辅材列表
+	$(".price_fucai_ul li:last").click(function(){
+		$(".price_fucai_ul li:first").removeClass("change_bg_li")
+		$(this).addClass("change_bg_li")
+		$(".price_info").hide();
+		$(".price_money").show();
+
+	})
+	$(".price_fucai_ul li:first").click(function(){
+		$(".price_fucai_ul li:last").removeClass("change_bg_li")
+		$(this).addClass("change_bg_li")
+		$(".price_info").show();
+		$(".price_money").hide();
+	})
+
+	$(".share_dinge").click(function(e){
+		e.stopPropagation(); 
+		$(".share_form").show();
+		$(".share_form").css({"top":"50px"});
+		$(".price_fucai_info").css("background-color","#eee");
+		$(".price_fucai_info input").css("background-color","#eee");
+	})
+</script>
+</body>
+</html>

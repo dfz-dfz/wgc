@@ -1,0 +1,675 @@
+@charset "utf-8";
+body,h1,h2,h3,h4,h5,h6,dl,dt,dd,ul,ol,li,table,th,td,p,blockquote,pre,form,fieldset,legend,hr,img{margin:0;padding:0;border:0}
+em,i,cite{font-style:normal}
+body{background:#fff;font-size:12px;font-family:simsun;color:#666}
+h1,h2,h3,h4,h5,h6{font-weight:normal;font-size:12px}
+ul,ol{list-style-type:none}
+select,input,textarea,img{vertical-align:middle;padding:0;margin:0;line-height:150%}
+
+.clearfix{height:1%}
+.clearfix{display:block;}
+.clear{clear:both}
+.clea{clear:both;height:0;overflow:hidden}.left{float:left}.right{float:right}.relative{position:relative}.absolute{position:absolute}.cursor{cursor:pointer}div{word-break:break-all}table{table-layout:nowrap;border-collapse:collapse}.search_h1{height:0;overflow:hidden;font-size:0}.zi1{z-index:1}.zi2{z-index:2}.tal{text-align:left}.tar{text-align:right}.tac{text-align:center}.dpn{display:none}.dpb{display:block}.dpib{display:inline-block}.dpi{display:inline}.wa{width:auto}a{color:#666;text-decoration:none}a:hover{color:#F60}.bg1{background:#f5f5f5}.bj2{background:url(../images/head_foot_bj.png) no-repeat center -62px}.bj3{background:url(http://static.jiaju.com/jiaju/com/images/new_head/bj1.gif) repeat-x left -44px}.f33{color:#333}.f66{color:#666}.f00{color:#000}.fff{color:#fff}.f99{color:#999}.ff6{color:#f60}.fa0{color:#a00000}.fbc{color:#bcbcbc}.f003{color:#03c}.f046{color:#046416}.f337{color:#370}.f06{color:#06C}.ff0{color:#f00}.d70000{color:#d70000}.f14{font-size:14px}.f16{font-size:16px}.fb{font-weight:bold}.f20{font-size:20px}.fyh{font-family:MicrosoftYaHei}.fsum{font-family:tahoma,arial,Helvetica,simsun,sans-serif}.farial{font-family:arial,verdana}.lh18{line-height:18px}.lh20{line-height:20px}.delete_price{text-decoration:line-through}.bd_dc{border:1px
+solid #dcdcdc}.w100w{width:100%;clear:both}.w990{width:990px;margin:0
+auto;clear:both}.w190{width:190px}.w240{width:240px}.w540{width:540px}.w556{width:556px}.w740{width:740px}.w790{width:790px}.w800{width:800px}.h240{height:240px}.prl2{padding:0
+2px}.pt5{padding-top:5px}.pr5{padding-right:5px}.pb5{padding-bottom:5px}.p5{padding:5px}.pl5{padding-left:5px}.pt10{padding-top:10px}.pr10{padding-right:10px}.pb10{padding-bottom:10px}.pl10{padding-left:10px}.p10{padding:10px}.pt20{padding-top:20px}.pr20{padding-right:20px}.pb20{padding-bottom:20px}.pl20{padding-left:20px}.p20{padding:20px}.pt30{padding-top:30px}.pr30{padding-right:30px}.pb30{padding-bottom:30px}.pl30{padding-left:30px}.p30{padding:30px}.pt40{padding-top:40px}.pr40{padding-right:40px}.pb40{padding-bottom:40px}.pl40{padding-left:40px}.p40{padding:40px}.ml3{margin-left:3px}.mt5{margin-top:5px}.mr5{margin-right:5px}.mb5{margin-bottom:5px}.ml5{margin-left:5px}.m5{margin:5px}.mt10{margin-top:10px}.mr10{margin-right:10px}.mb10{margin-bottom:10px}.ml10{margin-left:10px}.m10{margin:10px}.mt20{margin-top:20px}.mr20{margin-right:20px}.mb20{margin-bottom:20px}.ml20{margin-left:20px}.m20{margin:20px}@charset "utf-8";.gy_box{position:absolute;display:block;background:url(../images/xian.gif) 2px top repeat-y;padding:0
+2px 2px 0}.gy_box
+em{border:2px
+solid #a00000;display:block;background-color:#fff;line-height:18px;font-size:12px;padding-bottom:2px}.gy_box em
+i{display:block;margin:3px
+5px}.gy_box em i
+a{display:block;width:60px;padding:0
+6px}.gy_box em i a:hover{background-color:#A10101;color:#fff}.gy_box
+i.bj{height:3px;margin:0;padding:0;position:absolute;line-height:500px;overflow:hidden;width:82px;top:0;left:0;background-color:#DFDFDF;border:solid #a00000;border-width:0 2px}.shop_top{height:25px;width:990px;margin:0
+auto;color:#000}.shop_top .shop_top_left,.shop_top_left a,.shop_top_left
+span{float:left}.shop_top_left a,.shop_top_left
+span{margin-top:5px}.shop_top_left a:hover{color:#d70000;text-decoration:none}.shop_top_left
+a.link_img{margin-top:2px;width:101px;height:19px;background:url(../images/head_foot_bj.png) no-repeat left top;line-height:500px;overflow:hidden}.shop_top
+.shop_top_right{float:right;display:block;color:#D1D1D1;height:25px}.shop_top .shop_top_right
+dl{display:inline;float:left;padding:0
+3px;height:19px;margin:3px
+0 0 0;line-height:20px;position:relative;z-index:1000}.shop_top .shop_top_right dl dt
+a{padding:2px
+6px 1px 6px;float:left;height:16px;line-height:16px}.shop_top .shop_top_right dl dt a:hover{text-decoration:none;color:#d70000}.shop_top .shop_top_right dl dt
+a.shop_top_droplist{padding-right:14px;background:url(../images/head_foot_bj.png) no-repeat -432px -127px;margin-right:1px}.shop_top .shop_top_right dl.on dt
+a.shop_top_droplist{padding-right:14px;background-color:#fff;background-position:-432px -301px;border:#a00000 solid;border-width:1px 1px 0 1px}.shop_top .shop_top_right dl dt
+a.shop_top_droplist_hover{padding-right:14px;background-color:#fff;background-position:-432px -301px;border:#a00000 solid;border-width:1px 1px 0 1px}.shop_top .shop_top_right dl
+dd{z-index:9999;position:absolute;background:#FFF;padding:0;border:#a00000 solid;border-width:0 1px 1px 1px;width:70px;line-height:1.5em;top:19px;padding-top:3px;clear:both;display:none}.shop_top .shop_top_right dl dt
+a.mycart{background:url(http://static.jiaju.com/jiaju/com/images/new_index/pop_ico.gif) no-repeat 0 -139px;padding-left:17px;color:#333;margin-left:5px}.shop_top .shop_top_right dl dt a.mycart
+i{color:#d70000}.shop_top .shop_top_right
+#JJTEL{background:none}.shop_top .shop_top_right #JJTEL
+span{padding:1px
+5px;color:#666}.shop_top .shop_top_right #JJTEL span
+strong{color:#d70000}.shop_top .shop_top_right
+#JJCART{margin-top:0;padding-top:3px;padding-bottom:3px;background:#ececec;border-left:1px solid #e6e6e6;border-right:1px solid #e6e6e6}#JJWB
+.link_wb{padding-left:19px;background:url(http://static.jiaju.com/jiaju/com/images/new_index/pop_ico.gif) no-repeat 0 -218px}.ls{height:71px;position:relative;width:990px;margin:0
+auto 14px;z-index:999}.ls
+.logo{float:left;margin:6px
+0 0 11px}.jj_search{width:500px;height:35px;background:url(http://static.jiaju.com/jiaju/com/images/new_index/search_1.png) no-repeat;position:absolute;right:10px;top:17px;z-index:1}.jj_search_ipt{width:340px;padding:4px;font-size:14px;line-height:normal;border:0
+none;background:url(http://static.jiaju.com/jiaju/com/images/new_index/search_1ipt.png) no-repeat;position:absolute;right:96px;top:6px;font-family:arial,simsun}.jj_search_btn{width:91px;height:26px;padding:0;background:url(http://static.jiaju.com/jiaju/com/images/new_index/btn_91x26.png) no-repeat 0 0;border:0
+none;cursor:pointer;font-size:14px;font-weight:700;color:#fff;position:absolute;right:5px;top:5px}.jj_search_result{width:42px;height:16px;padding:4px
+0 4px 7px;_padding-top:6px;line-height:16px;border-right:1px solid #dcdcdc;color:#666;font-size:12px;background:url(http://static.jiaju.com/jiaju/com/images/new_index/ico_5x3.gif) no-repeat 35px 11px;position:absolute;left:6px;top:6px;cursor:pointer}.jj_search_sel{width:50px;padding:7px
+0 5px 0;border:1px
+solid #c5c5c5;position:absolute;left:5px;top:30px;background:#fff}.jj_search_sel
+li{line-height:21px;float:left;white-space:nowrap}.jj_search_sel
+a{width:50px;display:block;text-indent:7px}.jj_search_sel a:hover{background:#e4e4e4;color:#d70000}.jj_search_info{background:url(http://static.jiaju.com/jiaju/com/images/new_index/ico_12x13_1.png) no-repeat 10px 3px;font-size:14px;line-height:normal;font-family:simsun;line-height:normal;color:#bcbcbc;padding-left:26px;position:absolute;left:56px;top:10px;_padding-top:2px}.jj_search
+.jj_search_keywords{margin:35px
+0 0;padding:5px
+0 0 10px;background-color:#fff}.jj_search .jj_search_keywords,.jj_search .jj_search_keywords
+a{color:#999}.jj_search .jj_search_keywords a:hover{color:#d70000}.jj_search .jj_search_keywords
+a{margin-right:10px}.gy_nav{height:43px;width:990px;margin:0
+auto;position:relative;font-size:14px;z-index:3}.gy_nav
+ul{position:absolute;top:0;left:0}.gy_nav
+ul.ul1{width:694px}.gy_nav ul
+li{float:left;padding:0
+10px;height:33px;line-height:33px;display:inline;position:relative}.gy_nav ul li
+a{color:#fff}.gy_nav ul li.on
+a{color:#404040;text-decoration:none}.gy_nav ul li.on a,.gy_nav ul li.on a:hover{color:#404040;text-decoration:none}.gy_nav ul li a:hover{text-decoration:underline;color:#fff}.gy_nav ul
+li.bj{width:9px;padding:0;margin:0
+16px;background:url(http://static.jiaju.com/jiaju/com/images/new_head/head_foot_bj.png) no-repeat -96px -133px;text-indent:-100000px}.gy_nav ul.ul2
+li.bj{background-position:-109px -133px;margin:0
+8px 0 11px;padding:0}.gy_nav ul
+li.on{background-color:#fff;color:#404040;font-weight:bold}.gy_nav ul.ul1
+li.ztg{background:url(http://static.jiaju.com/jiaju/com/images/new_head/head_foot_bj.png) no-repeat -292px -276px;line-height:36px;width:73px;position:absolute;right:14px}.gy_nav ul.ul1 li.ztg
+a.link1{color:#fff}.gy_nav ul.ul1
+.gy_box{left:-1px;top:33px}.gy_nav ul.ul1 li.ztg
+.gy_box{left:-8px}.gy_nav ul.ul1 .gy_box
+em{border-top:0}.gy_nav ul.ul1 .gy_box em
+a{color:#666;font-weight:400}.gy_nav ul.ul1 .gy_box em a:hover{color:#fff;text-decoration:none}.gy_nav
+ul.ul2{left:732px}.gy_nav ul.ul2
+li{padding:0
+4px}.gy_nav ul.ul2 li
+i.hot{position:absolute;display:block;width:13px;height:13px;top:1px;right:-3px;background:url(http://static.jiaju.com/jiaju/com/images/new_head/head_foot_bj.png) no-repeat -214px 0}.gy_nav ul.ul1 li
+i.jt{width:7px;height:4px;background:url(http://static.jiaju.com/jiaju/com/images/new_head/head_foot_bj.png) no-repeat -354px 0;position:absolute;display:block;right:0;top:15px;overflow:hidden;cursor:pointer}#nav{height:31px;line-height:31px;color:#fff;position:relative;z-index:998}#nav
+li{float:left;height:31px;_display:inline}#nav .nav_main li a,#nav .nav_sub li
+a{padding:0
+10px}#nav li
+a{color:#fff}#nav li a:hover{text-decoration:none}#nav
+.nav_main{width:692px;font-size:14px;float:left}#nav .nav_main li
+a{height:31px}#nav .nav_main
+li.on{background:#b20000}#nav
+.nav_sub{width:290px;padding-left:8px;font-size:12px;float:right}#nav .nav_sub
+a{white-space:nowrap}#nav .nav_sub
+li{_display:inline}#nav .nav_sub
+li.on{background:#484848}#nav
+.nav_in{width:990px;height:31px;margin:0
+auto}#nav
+.now{padding:0
+10px;background:#b20000}.nav_index{background:url(http://static.jiaju.com/jiaju/com/images/new_index/nav.png) no-repeat 50% 0}#nav
+.nav_in{background:url(http://static.jiaju.com/jiaju/com/images/new_index/nav.png) no-repeat 50% 0}.nav_index
+.bg{width:10px;height:31px;background-image:url(http://static.jiaju.com/jiaju/com/images/new_index/nav_index_itembg.png);background-repeat:no-repeat}.nav_index .nav_main
+.bg{width:10px;height:31px;margin:0
+26px;background-position:0 0}.nav_index .nav_sub
+.bg{width:10px;height:31px;margin:0
+10px;background-position:-10px 0}.nav_list{position:relative}.nav_list
+a{cursor:default}.nav_list em i
+a{cursor:pointer}.nav_list
+em{position:absolute;width:76px;left:0;top:31px}.nav_list em
+i{display:block;border-top:1px dotted #a00000}.nav_list em
+i.on{background-color:#d70000}#nav .nav_sub li
+a{padding:0
+8px}.nav_sub_ico,.nav_sub_ico2{position:relative}.nav_sub_ico .ico_new,.nav_sub_ico2
+.ico_new{width:18px;height:11px;overflow:hidden;position:absolute;right:-11px;top:4px}.nav_sub_ico
+.ico_new{background:url(http://static.jiaju.com/jiaju/com/images/new_index/new3.png) no-repeat}.nav_sub_ico2
+.ico_new{background:url(http://static.jiaju.com/jiaju/com/images/new_index/new3.gif) no-repeat}.topbar{height:39px;background:url(http://static.jiaju.com/jiaju/com/images/new_index/index_subnav.png) no-repeat 50% 0;position:relative;z-index:997}.topbar_in{width:990px;height:39px;margin:0
+auto;background:url(http://static.jiaju.com/jiaju/com/images/new_index/index_subnav.png) no-repeat 50% 0;position:relative;z-index:1}.topbar_in
+li{float:left}.topbar_in
+.tit{width:220px;height:25px;padding:14px
+0 0 10px;line-height:normal;font-size:14px;color:#fff;font-weight:700;float:left;position:relative}.topbar_in .tit
+.ico_arrow{width:15px;height:15px;background:url(http://static.jiaju.com/jiaju/com/images/new_index/ico_15x15.png) no-repeat;overflow:hidden;position:absolute;left:128px;top:14px}.topbar_in
+.list{padding-top:2px;padding-right:20px;font-size:12px;float:right}.topbar_in .list
+a{height:30px;line-height:30px;display:inline-block}.topbar_in .list a:hover{color:#d70000;text-decoration:none}.topbar_in .list
+li{margin-right:46px;_display:inline}.topbar_in .list
+.ico{float:left}.topbar_in .tit
+.btn1{width:140px;cursor:pointer}.ico_topbar0 a .ico,.ico_topbar1 a .ico,.ico_topbar2 a .ico,.ico_topbar3 a .ico,.ico_topbar4 a
+.ico{width:30px;height:30px;background-image:url(http://static.jiaju.com/jiaju/com/images/new_index/ico_tobar.png);background-repeat:no-repeat;display:inline-block;vertical-align:middle}.ico_topbar0 a
+.ico{background-position:0 0}.ico_topbar1 a
+.ico{background-position:-60px 0}.ico_topbar2 a
+.ico{background-position:-120px 0}.ico_topbar3 a
+.ico{background-position:-180px 0}.ico_topbar4 a
+.ico{background-position:-240px 0}.ico_topbar0 a:hover
+.ico{background-position:-30px 0}.ico_topbar1 a:hover
+.ico{background-position:-90px 0}.ico_topbar2 a:hover
+.ico{background-position:-151px 0}.ico_topbar3 a:hover
+.ico{background-position:-210px 0}.ico_topbar4 a:hover
+.ico{background-position:-271px 0}.menulist{float:left;padding:10px
+0 0 10px}.menulist
+li{margin:0
+25px 0 0;height:15px;background-image:url(http://static.jiaju.com/jiaju/com/images/new_index/item120x60.png);background-repeat:no-repeat;background-position:0 -30px;line-height:15px;padding:0
+0 0 15px;overflow:hidden;_display:inline}.menulist
+li.on{background-position:0 0}.menulist li
+span{display:inline-block;padding:0
+15px 0 0;background-image:url(http://static.jiaju.com/jiaju/com/images/new_index/item120x60.png);background-repeat:no-repeat;background-position:100% -45px}.menulist li.on
+span{background-position:100% -15px;color:#fff}.menulist li.on span
+a{color:#fff}.menulist li.on span a:hover{color:#fff}.menulist li span
+a{color:#666}.menulist li span a:hover{color:#666}.sub_footer{height:201px;margin-top:20px;border-bottom:1px solid #dfdfdf;background:#f3f3f3;color:#666}.sub_footer_in{width:990px;height:181px;padding-top:20px;margin:0
+auto;position:relative}.sub_ft_item0,.sub_ft_item1,.sub_ft_item2,.sub_ft_item3,.sub_ft_item4{width:175px;height:181px;padding-left:22px;float:left;border-right:1px solid #dfdfdf}.sub_ft_item0 h4 span,.sub_ft_item1 h4 span,.sub_ft_item2 h4 span,.sub_ft_item3 h4 span,.sub_ft_item4 h4
+span{display:none}.sub_ft_item0 h4,.sub_ft_item1 h4,.sub_ft_item2 h4,.sub_ft_item3 h4,.sub_ft_item4
+h4{height:20px;font-family:'microsoft yahei';font-size:0;-webkit-text-size-adjust:none;color:#333;position:relative;overflow:hidden}.sub_ft_item0 h4 a.bg,.sub_ft_item1 h4 a.bg,.sub_ft_item2 h4 a.bg,.sub_ft_item3 h4 a.bg,.sub_ft_item4 h4
+a.bg{width:67px;height:17px;background-image:url(http://static.jiaju.com/jiaju/com/images/new_index/index_sprite01.png);background-repeat:no-repeat;cursor:text;position:absolute;left:0;top:0}.sub_ft_item0 h4
+a.bg{background-position:0 -190px}.sub_ft_item1 h4
+a.bg{background-position:0 -207px}.sub_ft_item2 h4
+a.bg{background-position:0 -224px}.sub_ft_item3 h4
+a.bg{background-position:0 -241px}.sub_ft_item4 h4
+a.bg{background-position:0 -258px}.sub_ft_item0 a,.sub_ft_item1 a,.sub_ft_item2 a,.sub_ft_item3 a,.sub_ft_item4
+a{color:#666}.sub_ft_item0 a:hover,.sub_ft_item1 a:hover,.sub_ft_item2 a:hover,.sub_ft_item3 a:hover,.sub_ft_item4 a:hover{color:#d70000;text-decoration:none}.sub_ft_item4{border-right:0 none}.sub_footer_in
+ul{padding-top:4px}.sub_footer_in
+li{line-height:24px}.sub_footer_in
+.page_top{width:29px;height:24px;padding-left:23px;line-height:24px;position:absolute;right:0;bottom:0;background:#d61213;color:#fff;cursor:pointer}.sub_footer_in .page_top:hover{text-decoration:none;color:#fff}.sub_footer_in .page_top
+i{width:13px;height:9px;background:url(http://static.jiaju.com/jiaju/com/images/new_index/index_sprite01.png) no-repeat -28px -75px;display:inline-block;position:absolute;left:7px;top:8px;overflow:hidden}.tip_sys{background:#FFF6E1;border-bottom:1px solid #E4CE9A;color:#F60;line-height:25px;text-align:center}.change_city_mod2{height:25px;margin:0
+0 0 16px;display:inline-block;*display:inline;*zoom:1;position:relative;z-index:1000}.change_city_mod2
+.change_city_hd2{height:25px;line-height:25px;overflow:hidden;display:inline-block;margin:0;padding:0
+10px 0 9px;border-left:1px solid #e6e6e6;border-right:1px solid #e6e6e6;position:relative;background:#ededed;left:-1px}.change_city_hd2
+a{padding-right:14px;background:url(http://static.jiaju.com/jiaju/com/images/new_index/pop_ico.gif) no-repeat 51px -66px;float:none!important;color:#666}.change_city_hd2 a:hover{color:#d70000}.change_city_mod2.on
+.change_city_hd2{margin:0;padding:0
+10px 0 9px;border-style:solid;border-color:#a00000;border-width:0 1px;background:#fff;z-index:1002}.change_city_mod2.on .change_city_hd2
+a{text-decoration:none;background:url(http://static.jiaju.com/jiaju/com/images/new_index/pop_ico.gif) no-repeat 51px 5px}.change_city_mod2.on .change_city_hd2 a:hover{color:#d70000;text-decoration:none}.change_city_bd2{position:absolute;left:-1px;top:26px;z-index:1001;display:none}.change_city_bd2
+dt{padding:10px
+9px;font-weight:700;color:#666;clear:both;float:none}.change_city_bd2
+.in{width:248px;height:auto!important;line-height:normal!important;padding:0
+0 10px 0;border-width:1px;border-style:solid;border-color:#a00000;background:#fff;position:relative;top:-2px;overflow:hidden}.change_city_bd2
+dd{clear:both;float:none;background:url(http://static.jiaju.com/jiaju/com/images/new_index/pop_bg.gif) no-repeat 11px 100%}.change_city_bd2
+dd.end{border-bottom:1px dashed #fff}.change_city_bd2 dd
+a{margin:0
+13px 7px 9px;padding:0
+1px;_padding:1px
+1px 0;text-align:center;color:#2b2b2b;white-space:nowrap;display:inline-block;float:none}.change_city_bd2 dd a:hover{background:#d70000;color:#fff}.change_city_bd2
+.change_city_iframe{position:absolute;visibility:inherit;top:0;left:0;width:250px;height:262px;z-index:-1;filter:alpha(opacity=0);border-style:none}.change_city_bd2
+.fixenddd{height:1px;background:#fff;overflow:hidden;position:relative;top:-1px;clear:both}.change_city_bd2 .in
+dl{width:260px}.footer{width:100%;height:111px;margin:0;padding:9px
+0 0;background:#f3f3f3!important;line-height:24px;text-align:center;color:#666}.footer
+a{color:#666}.footer a:hover{color:#d70000;text-decoration:none}.bottom-pop{display:inline-block;position:relative;cursor:pointer;color:#333}#bottom-pop-box{position:absolute;bottom:15px;left:-175px;float:left}#bottom-pop-box
+em{border:2px
+#DF6564 solid;border-top:7px #DF6564 solid;background-color:#fff;width:400px;padding-top:5px;padding-bottom:5px;height:115px;display:block}#bottom-pop-box em
+i{height:23px;line-height:23px;width:67px;display:block;float:left;margin-left:10px;display:inline;text-align:left}i.bottom-pop-horn{width:13px;height:12px;background:url(http://static.jiaju.com/jiaju/com/images/new_head/head_foot_bj.png) no-repeat -354px -133px;font-size:0;line-height:12px;overflow:hidden;margin:0
+auto;display:block}.sales02
+img{border:1px
+solid #ccc}.no_br{border-top:none!important}
+#category{width:230px;height:600px;background:#e4e4e4;float:left;position:relative;z-index:1}.category_hd{width:180px;height:22px;padding-left:10px;padding-top:7px;background:url(http://static.jiaju.com/jiaju/com/images/new_index/category.png) no-repeat 0 0;clear:both;font-size:14px;font-weight:700;color:#2b2b2b}.category_hd
+a{color:#2b2b2b}.category_hd a:hover{text-decoration:underline}.category_hd
+.ico{width:11px;height:11px;margin-right:5px;display:inline-block;overflow:hidden;background:url(http://static.jiaju.com/jiaju/com/images/new_index/category.png) 0 -59px;vertical-align:top;position:relative;top:2px}
+.category_bd .item{text-align:left;width:230px;padding:5px 0;border-bottom:1px solid #d4d4d4;border-top:1px solid #eaeaea;cursor:pointer;float:left}.category_bd .item
+.item_hd_tit{whidth:190px;height:30px;line-height:26px;padding-left:10px;font-weight:700;color:#494949;position:relative}.category_bd .item .item_hd_tit
+a{color:#494949}.category_bd .item .item_hd_tit
+.ico{width:7px;height:11px;background:url(http://static.jiaju.com/jiaju/com/images/new_index/category.png) no-repeat 0 -70px;overflow:hidden;position:absolute;right:10px;top:7px}.category_bd .item .item_hd_tit a:hover{text-decoration:underline}.category_bd
+.item_col{height:20px;line-height:20px;overflow:hidden;padding:0
+5px 0 10px}.category_bd .item_col
+a{margin-right:5px}.category_bd .item_col a:hover{color:#d70000;text-decoration:underline}.category_bd
+.item_fixbdr{border-bottom:1px solid #e4e4e4}
+#category .weibo{width:190px;height:30px;background:url(http://static.jiaju.com/jiaju/com/images/new_index/category.png) no-repeat 0 -29px;display:block;position:absolute;left:0;bottom:0}.category_bd li.selected a,.category_bd li.selected .item_hd_tit
+a{color:#fff}.category_bd li.selected a:hover{color:#fff}.category_bd li.selected .item_hd_tit
+.ico{display:none}.category_bd
+li.selected{background:#8e8e8e;border-bottom:1px solid #eaeaea;border-top:1px solid #8e8e8e;color:#fff}#category_other{width:100%;height:45px;background:#e4e4e4;position:absolute;left:0;bottom:0;overflow:hidden}.category_con{width:544px;height:auto!important;min-height:252px;height:252px;padding-bottom:35px;background:#9e9e9e url(http://static.jiaju.com/jiaju/com/images/new_index/lst_subcategory.gif) repeat-y;line-height:22px;position:absolute;left:230px;top:29px}.category_con
+.lst_subcategory{width:264px;padding:15px
+36px 0 22px;float:left}.category_con .lst_subcategory
+dl{width:264px;padding-bottom:10px;margin-bottom:10px;border-bottom:1px dotted #787878;overflow:hidden;zoom:1}.category_con .lst_subcategory
+dt{width:72px;font-size:12px;font-weight:700;color:#AF2026;float:left}.category_con .lst_subcategory dt
+a{color:#fff}.category_con .lst_subcategory
+dd{width:192px;float:left}.category_con .lst_subcategory dd
+a{padding-left:9px;padding-right:2px;border-left:1px solid #787878;color:#fff;white-space:nowrap;position:relative}.category_con
+.lst_top{width:220px;padding-top:18px;float:left}.category_con .lst_top
+h2{padding:17px
+0 8px;margin-bottom:1px;border-bottom:1px solid #E0E0E0;font-weight:700;line-height:14px;color:#fff;zoom:1;clear:both;overflow:hidden}.category_con .lst_top
+a{width:72px;white-space:nowrap;color:#fff;overflow:hidden;float:left}.category_con .lst_subcategory dd a:hover,.category_con .lst_top a:hover{text-decoration:underline}.category_con
+.lst_top_items{padding:0
+42px 0 28px}.category_con
+.lst_recmd{width:180px;height:29px;margin:0
+auto;background:#8e8e8e}.category_con .lst_recmd
+.link{width:180px;height:29px;display:block;cursor:pointer}.category_con .lst_recmd .link:hover{text-decoration:none}.category_con .lst_recmd
+.ico{width:11px;height:11px;margin:0
+5px 0 7px;background:url(http://static.jiaju.com/jiaju/com/images/new_index/category.png) no-repeat -11px -59px}.category_con .lst_recmd .ico,.category_con .lst_recmd .tit,.category_con .lst_recmd
+.goto{display:inline-block;vertical-align:middle}.category_con .lst_recmd .tit,.category_con .lst_recmd
+.goto{line-height:29px}.category_con .lst_recmd
+.tit{margin-right:14px;font-weight:700;font-size:14px}.category_con .lst_recmd
+.goto{color:#e4e4e4}.category_con .lst_recmd
+.ico2{width:12px;height:12px;margin-left:2px;background:url(http://static.jiaju.com/jiaju/com/images/new_index/category.png) no-repeat -22px -59px;position:relative;top:-1px;display:inline-block;vertical-align:middle}.category_hd_selected{background:#8e8e8e;color:#fff;position:relative}.category_hd_selected
+.category_hd_con{display:block}.category_hd_con{width:221px;padding:1px
+0 2px;background:#8e8e8e;position:absolute;left:190px;top:0;display:none}.category_hd_selected .category_hd_con
+.lst_recmd{width:180px;height:29px;margin:14px
+auto;background:#9e9e9e}.category_hd_selected .category_hd_con .lst_recmd
+.link{width:180px;height:29px;display:block;cursor:pointer}.category_hd_selected .category_hd_con .lst_recmd .link:hover{text-decoration:none}.category_hd_selected .category_hd_con .lst_recmd
+.ico{width:11px;height:11px;margin:0
+5px 0 7px;background:url(http://static.jiaju.com/jiaju/com/images/new_index/category.png) no-repeat -11px -59px;position:static;top:auto}.category_hd_selected .category_hd_con .lst_recmd .ico,.category_hd_selected .category_hd_con .lst_recmd .tit,.category_hd_selected .category_hd_con .lst_recmd
+.goto{display:inline-block;vertical-align:middle}.category_hd_selected .category_hd_con .lst_recmd .tit,.category_hd_selected .category_hd_con .lst_recmd
+.goto{line-height:29px}.category_hd_selected .category_hd_con .lst_recmd
+.tit{width:auto;height:auto;float:none;position:static;padding:0;margin-right:14px;font-weight:700;font-size:14px;color:#fff}.category_hd_selected .category_hd_con .lst_recmd
+.goto{color:#e4e4e4;font-size:12px;font-weight:normal}.category_hd_selected .category_hd_con .lst_recmd
+.ico2{width:12px;height:12px;margin-left:2px;background:url(http://static.jiaju.com/jiaju/com/images/new_index/category.png) no-repeat -34px -59px;position:relative;top:-1px;display:inline-block;vertical-align:middle}.zt_category{position:absolute;top:39px;left:0;font-weight:400;font-size:12px;display:none}.zt_category
+#category{height:auto}.flipy{-moz-transform:scaleY(-1);-webkit-transform:scaleY(-1);-o-transform:scaleY(-1);transform:scaleY(-1);filter:FlipV}.case_layer{width:95px;padding-top:28px;background:url(http://static.jiaju.com/jiaju/com/images/new_index/flo_indexsprite2.png) no-repeat -285px 0}.case_layer
+.pickup_layer{cursor:pointer;font-size:0;height:20px;position:absolute;right:0;top:0;width:20px}.case_layer
+.center{background:url(http://static.jiaju.com/jiaju/com/images/new_index/flo_indexsprite2.png) repeat-y -190px 0;padding:10px
+7px 3px 6px}.case_layer
+.bottom{height:5px;background:url(http://static.jiaju.com/jiaju/com/images/new_index/flo_indexsprite2.png) no-repeat -95px 0;overflow:hidden}.case_layer
+.btn_top_box{border-top:1px dashed #ccc;margin:10px
+auto 0;padding:9px
+0 0;text-align:center;width:82px}.case_layer
+.btn_top{width:47px;height:15px;background:url(http://static.jiaju.com/jiaju/com/images/new_index/flo_indexsprite2.png) no-repeat -95px -10px;display:inline-block}.case_layer
+.flo_bg01{background:url(http://static.jiaju.com/jiaju/com/images/new_index/flo_bg01.jpg) no-repeat 50%;height:61px}.case_layer .leyu,.case_layer
+.leyu_off{background-image:url(http://static.jiaju.com/jiaju/com/images/new_index/toly_bj.png);background-repeat:no-repeat;color:#026DB5;display:block;height:25px;line-height:29px;margin:0
+auto;width:75px}.case_layer
+.leyu{background-position:0 0}.case_layer
+.leyu_off{background-position:0 -25px;color:#999}.case_layer .leyu img,.case_layer .leyu_off
+img{padding:0
+3px}.case_layer_on{width:19px;height:84px;background:url(http://static.jiaju.com/jiaju/com/images/new_index/flo_indexsmall.png) no-repeat 0 -120px;cursor:pointer}.case_layer_on
+*{display:none}.seo_indexitem{font-family:Verdana}.seo_indexitem
+a{margin:0
+4px}#j_app_code_side{z-index:1000}#j_app_code_side_close{margin-left:5px}#topnav-l-mobile{padding-left:20px;float:left;display:inline;background:url(http://static.jiaju.com/jiaju/com/images/new_index/pop_ico.gif) 1px -384px no-repeat;color:#666;cursor:pointer}#topnav-l-mimg{position:absolute;top:25px;left:7px;z-index:9999;line-height:0;width:98px;height:103px}.bottom-mimg{position:absolute;right:180px;top:5px}.change_city_mod2{margin-left:10px}textarea{display:none}.lazydom{background:#fff url(http://static.jiaju.com/jiaju/com/images/middleloading.gif) no-repeat 50%}
+
+#box_row0,.w990{width:1100px; margin: 0 auto;clear:both}.slide_r{width:800px;margin-top:-5px;float:left;overflow:hidden}.slide{width:800px;height:420px;border-bottom:2px solid #fff;position:relative;overflow:hidden}.slide_trigger{width:800px;height:34px;overflow:hidden;position:absolute;left:0;bottom:0}.slide_trigger_bg{width:800px;height:34px;overflow:hidden;position:absolute;left:0;bottom:0;background:#000;filter:alpha(opacity=35);-maz-opacity:.35;opacity:.35}.slide_trigger
+.slide_trigger_ls{padding-top:12px;position:absolute;right:10px;top:0}.slide_trigger
+li{width:52px;height:10px;background:url(http://static.jiaju.com/jiaju/com/images/new_index/slide_off_png24.png) no-repeat;_background:none;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src="http://static.jiaju.com/jiaju/com/images/new_index/slide_off_png24.png",sizingMethod="noscale");cursor:pointer;overflow:hidden;float:left;text-indent:-99px}.slide_trigger
+li.on{background:url(http://static.jiaju.com/jiaju/com/images/new_index/slide_on_png24.png) no-repeat;_background:none;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src="http://static.jiaju.com/jiaju/com/images/new_index/slide_on_png24.png",sizingMethod="noscale")}.slide_pannel .slide_pannel_ls
+li{width:800px;height:420px;background:#fff url(http://static.jiaju.com/jiaju/com/images/middleloading.gif) no-repeat 50%;float:left}.slide_pannel_3 a,.slide_pannel_3 img,.slide_pannel a,.slide_pannel
+img{float:left}.slide_pannel{width:800px;height:420px;overflow:hidden;position:relative}.slide_pannel
+.slide_pannel_ls{width:4000px;position:absolute}.slide_pannel_2{width:800px;height:420px}.slide_pannel_2 a,.slide_pannel_2 a
+img{float:left}.slide_pannel_2 a,.slide_pannel_3
+a{position:relative}.slide_pannel_2 .masklayer,.slide_pannel_3
+.masklayer{display:block;position:absolute;left:0;top:0}.slide_pannel_2 a.on .masklayer,.slide_pannel_3 a.on
+.masklayer{background:#000;opacity:.3;filter:alpha(opacity=30)}.slide_pannel_2
+.slide_pic0{width:570px;height:420px}.slide_pannel_2 .slide_pic1,.slide_pannel_2 .slide_pic2,.slide_pannel_2
+.slide_pic3{width:230px;height:140px}.slide_pannel_2 .slide_pic0
+.masklayer{width:570px;height:420px}.slide_pannel_2 .slide_pic1 .masklayer,.slide_pannel_2 .slide_pic2 .masklayer,.slide_pannel_2 .slide_pic3
+.masklayer{width:230px;height:140px}.slide_pannel_3{width:800px;height:420px;position:relative}.slide_pannel_3 .slide_pic0,.slide_pannel_3 .slide_pic1,.slide_pannel_3 .slide_pic0 .masklayer,.slide_pannel_3 .slide_pic1
+.masklayer{width:270px;height:210px}.slide_pannel_3 .slide_pic2,.slide_pannel_3 .slide_pic2
+.masklayer{width:260px;height:420px}.slide_pannel_3 .slide_pic3,.slide_pannel_3 .slide_pic3
+.masklayer{width:540px;height:210px;position:absolute;left:0;bottom:0}.v1pai{width:190px;float:left}.v1pai_hd{width:190px;height:23px;position:relative}.v1pai_hd
+h4{width:190px;font:italic 700 16px/18px 'microsoft yahei';color:#2b2b2b;text-indent:-999px;overflow:hidden}.v1pai_hd h4
+i{font-style:italic;color:#d70000}.v1pai_hd
+.bg{width:190px;height:21px;background:url(http://static.jiaju.com/jiaju/com/images/new_index/index_sprite01.png) no-repeat -30px -36px;position:absolute;left:1px;top:1px}.v1pai_bd{width:190px;height:207px;overflow:hidden}.brand{width:800px;height:176px}.brand_hd{width:800px;height:47px;overflow:hidden;position:relative}.brand_hd
+h4{padding:20px
+0 0 10px;font:italic 700 16px/normal 'microsoft yahei';color:#2b2b2b}.brand_hd
+.bg{width:790px;height:18px;background:#fff url(http://static.jiaju.com/jiaju/com/images/new_index/tit_790x17.png) no-repeat;position:absolute;left:10px;top:21px}.brand_bd{width:790px;height:120px;margin-left:10px;background:url(http://static.jiaju.com/jiaju/com/images/new_index/box_row1_bd_bg2.gif) repeat-x 0 90px;overflow:hidden}.brand_bd
+a{width:190px;height:120px;margin-left:6px;_display:inline;float:left}.brand_bd
+img{float:left}.sales{width:790px;height:230px;background:#f3f3f3 url(http://static.jiaju.com/jiaju/com/images/new_index/bg_790x23.png) no-repeat;float:right;position:relative}.sales_hd{width:100px;position:absolute;left:0;top:0}.sales_hd
+h4{font:italic 700 12px/15px 'microsoft yahei';color:#2b2b2b}.sales_hd
+.bg{width:66px;height:17px;background:#fff url(http://static.jiaju.com/jiaju/com/images/new_index/index_sprite01.png) no-repeat -28px -57px;position:absolute;left:0;top:1px}.sales_bd{width:790px}.sales_bd_pic{float:left}.sales_bd_pic
+img{margin-top:23px;float:left}#sales_tab{width:540px;height:230px;float:right;overflow:hidden;position:relative}#sales_trigger{height:31px;padding:9px
+0 0 143px}#sales_trigger
+li{height:24px;margin-right:3px;border-bottom:1px solid #e9e7ec;line-height:22px;_display:inline;float:left}#sales_trigger li
+a{height:22px;padding:0
+20px;background:#fff;border:1px
+solid #e0e0e0;white-space:nowrap;display:block;float:left}#sales_trigger li a:hover,#sales_trigger li.on
+a{color:#fff;background:#f10f01;border:1px
+solid #f10f01}#sales_trigger
+li.on{color:#fff}.sales_pannel{width:2000em!important;height:190px;position:relative;overflow:hidden}.sales_pannel
+ul{width:540px;height:190px;float:left;position:relative}.sales_pannel
+li{width:237px;height:90px;position:absolute}.sales_pannel
+.item_0{left:0;top:2px}.sales_pannel
+.item_1{left:248px;top:0}.sales_pannel
+.item_2{left:40px;top:98px}.sales_pannel
+.item_3{left:296px;top:91px}.sales_pannel
+.product_info{width:144px;padding-top:21px;padding-left:3px}.sales_pannel .product_info
+h4{font-weight:normal}.col1{width:990px;height:26px;margin:0
+auto;background-color:#e4e4e4;background-image:url(http://static.jiaju.com/jiaju/com/images/new_index/column.gif);background-repeat:no-repeat;line-height:26px;clear:both}.col1
+.grid_l{height:24px;padding:2px
+0 0 158px;line-height:24px;float:left}.col1 .grid_l
+a{margin-right:19px}.col1 .grid_l a:hover{color:#d70000;text-decoration:none}.col1 .grid_l
+a.more{position:relative;padding-left:11px}.col1 .grid_l a.more i,.col1 .grid_l span.more
+i{width:10px;height:10px;position:absolute;left:0;top:2px;_top:1px;background-image:url(http://static.jiaju.com/jiaju/com/images/new_index/arrow_index.png);background-repeat:no-repeat;overflow:hidden}.col1
+.grid_r{height:17px;padding-left:6px;line-height:17px;float:right;margin-right:11px;_display:inline;margin-top:5px;background:url(http://static.jiaju.com/jiaju/com/images/new_index/index_sprite01.png) no-repeat 0 0}.col1 .grid_r
+a{display:inline-block;padding-right:19px;height:17px;background:url(http://static.jiaju.com/jiaju/com/images/new_index/index_sprite01.png) no-repeat 100% -17px;position:relative}.col1 .grid_r a:hover{text-decoration:none}.col1 .grid_r a
+i{width:11px;height:11px;background-image:url(http://static.jiaju.com/jiaju/com/images/new_index/index_sprite01.png);background-repeat:no-repeat;position:absolute;right:6px;top:3px;overflow:hidden}.box_row1 .grid_l,.box_row1 .grid_c,.box_row1
+.grid_r{float:left;_display:inline}.box_row1_bd0{width:988px;height:240px;padding-top:12px;margin:0
+auto;border-width:0 1px;border-style:solid;border-color:#f2f2f2;clear:both}.box_row1_bd0
+.grid_l{width:180px;height:240px;margin-left:10px;position:relative;overflow:hidden}.box_row1_bd0
+.grid_c{width:585px;height:240px;position:relative;margin:0
+10px;overflow:hidden}.box_row1_bd0
+.grid_r{width:183px}.box_row1_bd0
+.trigger0{position:absolute;right:8px;top:7px;width:72px;height:14px}.box_row1_bd0 .trigger0
+ul{padding-top:5px}.box_row1_bd0 .trigger0
+li{width:5px;height:5px;margin-right:4px;overflow:hidden;float:left;_display:inline;background-image:url(http://static.jiaju.com/jiaju/com/images/new_index/index_sprite01.png);background-repeat:no-repeat;cursor:pointer}.box_row1_bd0 .trigger0
+li.on{background-image:url(http://static.jiaju.com/jiaju/com/images/new_index/index_sprite01.png);background-repeat:no-repeat;cursor:pointer}.box_row1_bd0 .trigger0
+.btn_prev{width:14px;height:14px;position:absolute;right:13px;top:0;background:url(http://static.jiaju.com/jiaju/com/images/new_index/index_sprite01.png) no-repeat -46px -106px}.box_row1_bd0 .trigger0
+.btn_next{width:13px;height:14px;position:absolute;right:0;top:0;background:url(http://static.jiaju.com/jiaju/com/images/new_index/index_sprite01.png) no-repeat -60px -106px}.box_row1_bd0
+.pannel0{position:relative;width:904px!important}.box_row1_bd0 .pannel0
+a{width:180px;height:240px;float:left;display:inline}.box_row1_bd0
+.trigger1{width:588px;height:25px;position:absolute;left:0;bottom:0;overflow:hidden}.box_row1_bd0 .trigger1
+li{width:195px;height:25px;line-height:25px;text-align:center;float:left;_display:inline;margin-right:1px;position:relative;cursor:pointer;color:#fff}.box_row1_bd0 .trigger1
+.bg{width:195px;height:25px;background-color:#3d3d3d;filter:alpha(opacity=40);-maz-opacity:.4;opacity:.4;position:absolute;left:0;top:0}.box_row1_bd0 .trigger1
+.txt{width:195px;height:25px;position:absolute;left:0;top:0}.box_row1_bd0
+.pannel1{width:585px;height:240px;overflow:hidden;position:relative}.box_row1_bd0
+.pannel1_in{position:absolute}.box_row1_bd0 .pannel1_in
+img{display:block}.box_row1_bd0 .pannel1_in
+a{width:585px;height:240px;background:#fff url(http://static.jiaju.com/jiaju/com/images/middleloading.gif) no-repeat 50%;display:block}.box_row1_bd1{width:988px;height:140px;padding-top:10px;margin:0
+auto;background:url(http://static.jiaju.com/jiaju/com/images/new_index/box_row1_bd_bg.gif) repeat-x 0 100%;border-width:0 1px;border-style:solid;border-color:#f2f2f2;clear:both}.box_row1_bd1 .grid_0,.box_row1_bd1 .grid_1,.box_row1_bd1
+.grid_2{float:left;_display:inline}.box_row1_bd1
+.grid_0{width:316px;margin-left:10px}.box_row1_bd1
+.grid_1{width:316px;margin:0
+10px}.box_row1_bd1
+.grid_2{width:316px}.box_row1_bd1
+.product_info{width:170px;padding-top:33px;padding-left:6px}.product_info
+h4{font-weight:700;color:#2b2b2b;padding-bottom:6px}.product_info h4
+a{color:#2b2b2b}.product_info h4 a:hover{color:#d70000;text-decoration:none}.product_info
+p{color:#2b2b2b;padding-bottom:5px}.product_info
+strong{padding-left:11px;background:url(http://static.jiaju.com/jiaju/com/images/new_index/ico_yen_red.png) no-repeat 0 50%;color:#d70000;font-size:18px;font-family:arial}.product_info
+del{color:#999}.product_info del
+span{padding-left:8px;background:url(http://static.jiaju.com/jiaju/com/images/new_index/ico_yen.gif) no-repeat 0 50%}.product_pic,.product_pic img,.product_info{float:left}#jzjc
+.col1{background-position:0 0}#jzjc .box_row1_bd0 .trigger0
+li{background-position:-9px -83px}#jzjc .box_row1_bd0 .trigger0
+li.on{background-position:0 -83px}#jzjc .box_row1_bd0 .trigger1 .on
+.bg{background-color:#347a00}#jzjc .col1 .grid_l a.more
+i{background-position:-11px -52px}#jzjc .col1 .grid_r
+a{color:#347a00}#jzjc .col1 .grid_r a
+i{background-position:0 -34px}#cfwy
+.col1{background-position:0 -156px}#cfwy .box_row1_bd0 .trigger0
+li{background-position:-97px -225px}#cfwy .box_row1_bd0 .trigger0
+li.on{background-position:-88px -225px}#cfwy .box_row1_bd0 .trigger1 .on
+.bg{background-color:#0964a3}#cfwy .col1 .grid_l
+a.more{color:#0964a3}#cfwy .col1 .grid_l a.more
+i{background-position:0 -18px}#cfwy .col1 .grid_r
+a{color:#0964a3}#cfwy .col1 .grid_r a
+i{background-position:-88px -173px}#kgwj
+.col1{background-position:0 -182px}#kgwj .box_row1_bd0 .trigger0
+li{background-position:-97px -238px}#kgwj .box_row1_bd0 .trigger0
+li.on{background-position:-88px -238px}#kgwj .box_row1_bd0 .trigger1 .on
+.bg{background-color:#047788}#kgwj .col1
+.grid_l{padding-left:198px}#kgwj .col1 .grid_l
+a.more{color:#047788}#kgwj .col1 .grid_l a.more
+i{background-position:-13px -18px}#kgwj .col1 .grid_r
+a{color:#047788}#kgwj .col1 .grid_r a
+i{background-position:-88px -184px}#dsbz
+.col1{background-position:0 -208px}#dsbz .box_row1_bd0 .trigger0
+li{background-position:-97px -251px}#dsbz .box_row1_bd0 .trigger0
+li.on{background-position:-88px -251px}#dsbz .box_row1_bd0 .trigger1 .on
+.bg{background-color:#d9781a}#dsbz .col1
+.grid_l{padding-left:198px}#dsbz .col1 .grid_l
+a.more{color:#d9781a}#dsbz .col1 .grid_l a.more
+i{background-position:-27px -18px}#dsbz .col1 .grid_r
+a{color:#d9781a}#dsbz .col1 .grid_r a
+i{background-position:-88px -195px}#czdb
+.col1{background-position:0 -234px}#czdb .box_row1_bd0 .trigger0
+li{background-position:-97px -264px}#czdb .box_row1_bd0 .trigger0
+li.on{background-position:-88px -264px}#czdb .box_row1_bd0 .trigger1 .on
+.bg{background-color:#b64b16}#czdb .col1 .grid_l
+a.more{color:#b64b16}#czdb .col1 .grid_l a.more
+i{background-position:-42px -18px}#czdb .col1 .grid_r
+a{color:#b64b16}#czdb .col1 .grid_r a
+i{background-position:-88px -206px}#jpjj
+.col1{background-position:0 -26px}#jpjj .box_row1_bd0 .trigger0
+li{background-position:-9px -111px}#jpjj .box_row1_bd0 .trigger0
+li.on{background-position:0 -111px}#jpjj .box_row1_bd0 .trigger1 .on
+.bg{background-color:#e24242}#jpjj .col1 .grid_l a.more
+i{background-position:-11px -34px}#jpjj .col1 .grid_r
+a{color:#d70000}#jpjj .col1 .grid_r a
+i{background-position:0 -45px}#rsjj
+.col1{background-position:0 -52px}#rsjj .box_row1_bd0 .trigger0
+li{background-position:-9px -97px}#rsjj .box_row1_bd0 .trigger0
+li.on{background-position:0 -97px}#rsjj .box_row1_bd0 .trigger1 .on
+.bg{background-color:#f05f8a}#rsjj .col1 .grid_l a.more
+i{background-position:-11px -58px}#rsjj .col1 .grid_r
+a{color:#ec3d73}#rsjj .col1 .grid_r a
+i{background-position:0 -56px}#zxsj
+.col1{background-position:0 -78px}#zxsj .col1 .grid_l a.more
+i{background-position:-11px -40px}#zxsj .col1 .grid_r
+a{color:#ee8527}#zxsj .col1 .grid_r a
+i{background-position:-43px -75px}#zxsj
+.box_row1_bd0{height:249px;padding-top:10px;border-bottom:1px solid #F2F2F2}#zxsj .box_row1_bd0 .trigger1 .on
+.bg{background-color:#fe8630}#zxsj .box_row1_bd0
+.grid_r{width:228px}#zxsj .box_row1_bd0
+.grid_c{width:540px}#zxsj .box_row1_bd0
+.pannel1{width:540px}#zxsj .box_row1_bd0
+.trigger1{width:548px}#zxsj .box_row1_bd0 .trigger1 li,#zxsj .box_row1_bd0 .trigger1 .bg,#zxsj .box_row1_bd0 .trigger1
+.txt{width:179px}.ico_triangle0,.ico_triangle1,.ico_triangle2{background-image:url(http://static.jiaju.com/jiaju/com/images/new_index/index_sprite01.png);background-repeat:no-repeat;position:absolute;left:0;top:0;overflow:hidden}.ico_triangle0{width:6px;height:6px;background-position:-17px -47px}.ico_triangle1{width:6px;height:6px;background-position:-17px -53px}.ico_triangle2{width:9px;height:9px;background-position:-28px -85px}.case_hd,.bidding_hd,.apply_hd{height:17px;padding:7px
+10px 0}.case_hd .more,.bidding_hd .more,.apply_hd
+.more{padding-left:11px;float:right;position:relative;color:#000}.case_hd .more:hover,.bidding_hd .more:hover,.apply_hd .more:hover{color:#d70000;text-decoration:none}.case_hd .more i,.bidding_hd .more i,.apply_hd .more
+i{width:6px;height:6px;position:absolute;left:0;top:4px;_top:3px;background-image:url(http://static.jiaju.com/jiaju/com/images/new_index/index_sprite01.png);background-repeat:no-repeat;overflow:hidden;background-position:-11px -40px}.case_hd h4,.bidding_hd h4,.apply_hd
+h4{font-size:12px;font-weight:700;color:#2b2b2b}.case,.bidding,.apply{background:#f3f3f3;position:relative}.case_bd{width:160px;height:217px;margin:0
+auto;overflow:hidden;position:relative}.case_bd
+ul{width:160px;height:217px;text-align:center;position:absolute}.case_bd ul
+li{height:217px;float:left;width:160px}.case_bd
+.piclink{display:block}.case_bd
+.txt{width:100px;margin:0
+auto;padding-top:9px;display:block;color:#000}.case_btn_prev,.case_btn_next{width:11px;height:13px;background-image:url(http://static.jiaju.com/jiaju/com/images/new_index/index_sprite01.png);background-repeat:no-repeat;overflow:hidden;position:absolute;bottom:7px}.case_btn_prev{background-position:-17px -97px;left:13px}.case_btn_next{background-position:-17px -110px;right:13px}.bidding_bd{width:208px;height:119px;margin:0
+10px;padding-top:5px;border-top:1px solid #e6e6e6}.bidding_bd
+table{width:100%;table-layout:fixed;text-align:center;line-height:22px}.bidding_bd
+th{width:20%;color:#d70000;font-weight:normal;white-space:nowrap}.bidding_bd
+td{white-space:nowrap}.apply{margin-top:10px}.apply_bd{width:208px;height:51px;padding-top:5px;margin:0
+10px;line-height:23px;border-top:1px solid #e6e6e6}.apply_bd a:hover{color:#d70000;text-decoration:none}.btn_join{float:right;color:#d70000}.btn_join:hover{color:#d70000;text-decoration:none}#zxsq
+.col1{background-position:0 -104px}#zxsq .col1 .grid_l a.more
+i{background-position:-11px -46px}#zxsq .col1 .grid_r
+a{color:#177bec}#zxsq .col1 .grid_r a
+i{background-position:0 -67px}.box_row1_bd2{width:968px;height:596px;padding:10px;margin:0
+auto;border-width:0 1px 1px;border-style:solid;border-color:#f2f2f2;clear:both}.share,.daren,.note,.exercise,.online{background:#f3f3f3;overflow:hidden;position:relative}.share_hd,.daren_hd,.note_hd,.exercise_hd,.online_hd{margin:0
+auto;border-bottom:1px solid #e6e6e6}.share_hd h4,.daren_hd h4,.note_hd h4,.exercise_hd h4,.online_hd
+h4{font-size:12px;font-weight:700;color:#2b2b2b}.share_hd .more,.daren_hd .more,.note_hd .more,.exercise_hd .more,.online_hd
+.more{padding-left:11px;float:right;position:relative;color:#000}.share_hd .more:hover,.daren_hd .more:hover,.note_hd .more:hover,.exercise_hd .more:hover,.online_hd .more:hover{color:#d70000;text-decoration:none}.share_hd .more i,.daren_hd .more i,.note_hd .more i,.exercise_hd .more i,.online_hd .more
+i{width:6px;height:6px;position:absolute;left:0;top:4px;_top:3px;background-image:url(http://static.jiaju.com/jiaju/com/images/new_index/index_sprite01.png);background-repeat:no-repeat;overflow:hidden;background-position:-11px -46px}.share{width:778px;height:375px;float:left}.share_hd{width:758px;height:17px;padding:7px
+0 2px}.share_bd{width:1000px;padding:10px
+0 0 10px}.share_bd
+.pic{width:180px;height:330px;margin:0
+13px 0 0;background:#fff;float:left;_display:inline}.share_bd
+.trans{padding:9px
+0}.share_bd
+.trans_a{float:right;color:#03c;margin-right:10px;_display:inline}.share_bd .trans_a:hover{color:#d70000;text-decoration:none}.share_bd
+.icon_trans{width:12px;height:13px;margin:0
+6px -2px 0;display:inline-block;background:url(http://static.jiaju.com/jiaju/com/images/new_index/index_sprite01.png) no-repeat -17px -34px;overflow:hidden}.share_bd
+.feed_list{padding:0
+0 10px 10px}.share_bd .feed_list
+.face{_display:inline;float:left;padding:6px
+0;width:30px}.share_bd .feed_list
+.content{line-height:21px;margin:0
+0 0 35px}.share_bd .feed_list .content
+a{color:#03c}.share_bd .feed_list .content a:hover{color:#d70000;text-decoration:none}.daren{width:180px;height:375px;float:right}.daren_hd{width:160px;padding:6px
+0 4px}.daren_bd{padding:0
+0 0 10px}.daren_bd
+li{height:50px;padding:10px
+0;border-bottom:1px dotted #e4e4e4;clear:both}.daren_bd
+.piclink{margin-right:8px;_display:inline}.daren_bd .piclink,.daren_bd .piclink
+img{float:left}.daren_bd
+.name{margin:6px
+0;display:inline-block}.daren_bd .name
+a{color:#2b2b2b}.daren_bd .name a:hover{color:#d70000;text-decoration:none}.note{width:190px;height:211px;margin-top:10px;float:left}.note_hd{width:170px;padding:6px
+0 4px}.note_bd{padding:7px
+0 0 10px;line-height:22px}.note_bd
+li{background:url(http://static.jiaju.com/jiaju/com/images/new_index/ico_dot3x3.gif) no-repeat 3px 50%;padding-left:11px}.note_bd li a:hover{color:#d70000;text-decoration:none}.exercise{width:578px;height:211px;margin:10px
+0 0 10px;float:left;_display:inline}.exercise_hd{width:558px;padding:6px
+0 4px}.exercise_bd{width:578px;overflow:hidden}.exercise_bd
+ul{padding:16px
+0 0 4px}.exercise_bd
+li{width:160px;float:left;margin:0
+15px;text-align:center;_display:inline}.exercise_bd li
+a{display:block}.exercise_bd li
+a.txt{height:31px;line-height:31px;background:#fff;color:#03c}.exercise_bd li a.txt:hover{color:#d70000;text-decoration:none}.online{width:180px;height:211px;margin-top:10px;float:right}.online_hd{width:160px;padding:6px
+0 4px}.online_bd{padding:10px
+0 0 10px}.online_bd
+.piclink{margin-right:8px;_display:inline}.online_bd .piclink,.online_bd .piclink
+img{float:left}.online_bd
+.name{margin:6px
+0;display:inline-block}.online_bd .name
+a{color:#03c;font-weight:700}.online_bd .name a:hover{color:#d70000;text-decoration:none}.online_bd
+.info{padding:6px
+0 1px;line-height:18px}.online_bd
+.time{color:#a1a1a1;line-height:18px}.online
+.btn_consult{width:98px;height:28px;padding:0
+2px 2px 0;margin:7px
+auto 0;line-height:28px;text-align:center;background:url(http://static.jiaju.com/jiaju/com/images/new_index/index_sprite01.png) no-repeat 0 -123px;display:block;font-size:14px;font-weight:700;color:#f3f3f3}.online .btn_consult:hover{color:#fff}.addnew{cursor:pointer;float:left;font-family:Arial;font-size:17px;font-weight:bold;line-height:18px;margin:0
+1px 0 3px}.addfollow,.addfollow:link,.addfollow:visited{background:#E3FFD5;border:1px
+solid #CFF3BB;color:#0082cb;cursor:pointer;display:block;height:18px;line-height:18px;overflow:hidden;text-align:left;width:56px}.addfollow:hover{background:#4FBE4F;border:1px
+solid #393;color:#fff;text-decoration:none!important}.concernbtn_yet{background:#EAEAEA;border:1px
+solid #D7D7D7;color:#666;cursor:default;display:block;height:18px;line-height:18px;overflow:hidden;text-align:left;text-decoration:none;width:56px}.concernbtn_yet:hover{text-decoration:none!important;color:#666!important}.concernbtn_yet
+.add_yet{height:16px;padding-left:14px;background:url(http://static.jiaju.com/jiaju/com/images/new_index/ico_7x6.png) no-repeat 3px center}.business{width:990px;height:149px;margin:0
+auto;background:#f3f3f3;position:relative}.business_hd{width:970px;padding:6px
+0 4px;margin:0
+auto;border-bottom:1px solid #e6e6e6}.business_hd
+h4{font-size:12px;font-weight:700;color:#2b2b2b}.business_hd
+.more{padding-left:11px;float:right;position:relative;color:#000}.business_hd .more:hover{text-decoration:none}.business_hd .more
+i{width:6px;height:6px;position:absolute;left:0;top:4px;_top:3px;background-image:url(http://static.jiaju.com/jiaju/com/images/new_index/index_sprite01.png);background-repeat:no-repeat;overflow:hidden;background-position:-11px -40px}.business_bd{width:959px;height:107px;padding:13px
+0 0 31px;position:relative}.business_bd_in{width:928px;height:84px;overflow:hidden;position:relative}.business_bd_in
+ul{position:absolute;top:0}.business_bd_in
+li{width:232px;float:left}.business_bd_in .linkpic,.business_bd_in .linkpic
+img{float:left}.business_bd_in .linkpic
+img{border:1px
+solid #e6e6e6}.business_bd_in
+.linkpic{margin-right:9px;_display:inline}.business_bd_in
+h4{padding:3px
+0 4px;font-weight:700}.business_bd_in h4
+a{color:#2b2b2b}.business_bd_in h4 a:hover{color:#d70000;text-decoration:none}.business_bd_in
+.info{padding:4px
+0}.business_bd_in
+.star{padding-bottom:8px;_padding-bottom:7px}.business_bd_in
+.btn_view{width:72px;height:20px;line-height:20px;_line-height:22px;overflow:hidden;text-align:center;color:#666;background:url(http://static.jiaju.com/jiaju/com/images/new_index/index_sprite01.png) no-repeat 0 -153px;display:inline-block}.business_bd_in .btn_view:hover{color:#d70000;text-decoration:none}.bus_btn_prev,.bus_btn_next{width:10px;height:19px;background-image:url(http://static.jiaju.com/jiaju/com/images/new_index/index_sprite01.png);background-repeat:no-repeat;position:absolute;overflow:hidden;top:40px}.bus_btn_prev{background-position:-17px -59px;left:10px}.bus_btn_next{background-position:-17px -78px;right:10px}#zxkjty{width:990px;margin:0
+auto}.zxkjty_hd{height:40px;background:#f3f3f3;border-top:2px solid #ef8b29}.zxkjty_hd
+h4{width:96px;height:40px;padding:0
+21px 0 12px;display:block;font-family:microsoftyahei;font-size:15px;float:left;line-height:40px;color:#2b2b2b;text-indent:-999px;overflow:hidden;position:relative}.zxkjty_hd h4
+.bg{width:107px;height:17px;background:url(http://static.jiaju.com/jiaju/com/images/new_index/index_sprite01.png) no-repeat 0 -173px;overflow:hidden;position:absolute;left:12px;top:12px}.zxkjty_trigger{float:left}.zxkjty_trigger
+li{float:left}.zxkjty_trigger li
+a{height:40px;line-height:40px;padding:0
+20px;border-right:1px solid #e1e1e1;color:#2b2b2b;float:left}.zxkjty_trigger li.on
+a{background:#ef8b29;border-right:1px solid #ef8b29;color:#fdfcfa}.zxkjty_trigger li a:hover{background:#ef8b29;color:#fdfcfa}#zxkjty_price{width:343px;height:25px;padding-left:37px;margin:7px
+12px 0 0;background-image:url(http://static.jiaju.com/jiaju/com/images/new_index/progress.png);background-repeat:no-repeat;_display:inline;overflow:hidden;float:right}#zxkjty_price
+li{float:left}#zxkjty_price li
+a{height:25px;float:left;_display:inline}.zxkjty_price0{background-position:0 -1px}.zxkjty_price1{background-position:0 -42px}.zxkjty_price2{background-position:0 -83px}.zxkjty_price3{background-position:0 -124px}#zxkjty_range0
+a{width:88px}#zxkjty_range1
+a{width:96px;margin-left:-19px}#zxkjty_range2
+a{width:102px;margin-left:-19px}#zxkjty_range3
+a{width:113px;margin-left:-19px}.zxkjty_pannel{width:990px;height:452px;position:relative;background:#fff}.zxkjty_pannel
+a{position:absolute}.zxkjty_pannel a
+img{display:block}.zxkjty_pannel0
+a.linkpic0{left:1px;top:1px}.zxkjty_pannel0
+a.linkpic1{left:1px;top:302px}.zxkjty_pannel0
+a.linkpic2{left:258px;top:1px}.zxkjty_pannel0
+a.linkpic3{left:258px;top:196px}.zxkjty_pannel0
+a.linkpic4{left:595px;top:1px}.zxkjty_pannel0
+a.linkpic5{left:801px;top:1px}.zxkjty_pannel0
+a.linkpic6{left:595px;top:226px}.zxkjty_pannel1
+.linkpic0{left:396px;top:0}.zxkjty_pannel1
+.linkpic1{left:396px;top:301px}.zxkjty_pannel1
+.linkpic2{left:653px;top:0}.zxkjty_pannel1
+.linkpic3{left:653px;top:195px}.zxkjty_pannel1
+.linkpic4{left:0;top:227px}.zxkjty_pannel1
+.linkpic5{left:206px;top:227px}.zxkjty_pannel1
+.linkpic6{left:0;top:0}.zxkjty_pannel2
+.linkpic0{left:733px;top:0}.zxkjty_pannel2
+.linkpic1{left:733px;top:301px}.zxkjty_pannel2
+.linkpic2{left:0;top:0}.zxkjty_pannel2
+.linkpic3{left:0;top:195px}.zxkjty_pannel2
+.linkpic4{left:337px;top:227px}.zxkjty_pannel2
+.linkpic5{left:543px;top:227px}.zxkjty_pannel2
+.linkpic6{left:337px;top:0}.zxkjty_pannel3
+.linkpic0{left:733px;top:0}.zxkjty_pannel3
+.linkpic1{left:733px;top:301px}.zxkjty_pannel3
+.linkpic2{left:396px;top:0}.zxkjty_pannel3
+.linkpic3{left:396px;top:195px}.zxkjty_pannel3
+.linkpic4{left:0;top:227px}.zxkjty_pannel3
+.linkpic5{left:206px;top:227px}.zxkjty_pannel3
+.linkpic6{left:0;top:0}.zxkjty_pannel4
+.linkpic0{left:733px;top:151px}.zxkjty_pannel4
+.linkpic1{left:733px;top:0}.zxkjty_pannel4
+.linkpic2{left:396px;top:257px}.zxkjty_pannel4
+.linkpic3{left:396px;top:0}.zxkjty_pannel4
+.linkpic4{left:0;top:227px}.zxkjty_pannel4
+.linkpic5{left:206px;top:227px}.zxkjty_pannel4
+.linkpic6{left:0;top:0}.service_layer{width:95px;padding-top:28px;background:url(http://static.jiaju.com/jiaju/com/images/new_index/flo_indexsprite2.png) no-repeat 0 0;z-index:999}.service_layer
+.pickup_layer{cursor:pointer;font-size:0;height:20px;position:absolute;right:0;top:0;width:20px}.service_layer
+.center{background:url(http://static.jiaju.com/jiaju/com/images/new_index/flo_indexsprite2.png) repeat-y -190px 0;padding:5px
+7px 15px 6px}.service_layer
+.bottom{height:6px;background:url(http://static.jiaju.com/jiaju/com/images/new_index/flo_indexsprite2.png) no-repeat -95px 0;overflow:hidden}.service_layer
+.service_connect{width:95px;height:19px;background:url(http://static.jiaju.com/jiaju/com/images/new_index/flo_connect2.png) no-repeat;overflow:hidden}.service_layer
+.service_pt_mod{padding-left:1px;background:url(http://static.jiaju.com/jiaju/com/images/new_index/flo_indexsprite2.png) repeat-y -190px 0}.service_layer
+.service_pt_in{margin:0
+1px;background:url(http://static.jiaju.com/jiaju/com/images/shop/service_pt_modbg.png) no-repeat 0 0}.service_layer
+.listen{padding-top:5px;text-align:center}.service_layer .listen
+.tit{width:52px;padding:8px
+0 10px;color:#a10101;font-weight:700;padding-left:33px;background:url(http://static.jiaju.com/jiaju/com/images/new_index/ico_radio26x28.png) no-repeat;display:inline-block}.service_layer .listen
+.btn{width:75px;height:25px;background:url(http://static.jiaju.com/jiaju/com/images/new_index/btn_listen75x25.png) no-repeat;display:inline-block}.service_layer
+.btn_top_box{width:82px;padding:8px
+0 4px;margin:0
+auto;border-top:1px dashed #ccc;text-align:center}.service_layer
+.btn_top{width:47px;height:15px;background:url(http://static.jiaju.com/jiaju/com/images/shop/flo_sprite.png) no-repeat -200px -10px;display:inline-block}.service_layer
+.flo_bg01{height:61px;background:url(http://static.jiaju.com/jiaju/com/images/new_index/flo_bg01.jpg) no-repeat 50%}.service_layer
+.flo_btnzx{width:75px;height:25px;margin:0
+auto;background:url(http://static.jiaju.com/jiaju/com/images/new_index/btn_zx75x25.png) no-repeat;display:block}.service_layer
+.service_app{background:url(http://static.jiaju.com/jiaju/com/images/new_index/app_code_bg.png) no-repeat;padding-top:29px;padding:20px
+4px 0 6px}.service_layer .service_app
+div{text-align:center;line-height:30px;color:#608faf}.service_layer .service_app div
+i{color:#ba0000;font-weight:bold}.service_layer
+.service_pt_in{background:none}.service_layer
+.leyu{background:url(http://static.jiaju.com/jiaju/com/images/new_index/toly_bj.png) no-repeat scroll 0 0 transparent;display:block;height:25px;line-height:29px;margin:0
+auto;width:75px;color:#026db5}.service_layer .leyu
+img{padding:0
+3px}.service_layer a:hover{color:#026db5}.service_layer_on{width:19px;height:113px;padding:0;margin:0;background:url(http://static.jiaju.com/jiaju/com/images/new_index/flo_indexsmall.png) no-repeat;overflow:hidden;cursor:pointer}.service_layer_on
+*{display:none}.star_hollow2{width:64px;height:9px;background:url(http://static.jiaju.com/jiaju/com/images/new_head/icon_bj.png) no-repeat 0 -217px;overflow:hidden}.star_full2{width:64px;height:9px;background:url(http://static.jiaju.com/jiaju/com/images/new_head/icon_bj.png) no-repeat 0 -203px}.cooperation{width:100%;height:193px;margin-top:30px;background:url(http://static.jiaju.com/jiaju/com/images/new_index/cooperation.gif) repeat-x}.cooperation_in{width:990px;height:185px;padding-top:8px;margin:0
+auto;overflow:hidden}.cooperation_ls{width:1040px}.cooperation_ls a,.cooperation_ls a
+img{float:left}.cooperation_ls
+a{margin-right:46px;margin-top:20px;_display:inline}#jzjc .col1 .grid_l a.more
+i{background-position:1px -3px}#jzjc .col1 .grid_l
+a.more{color:#387D05}#jzjc .col1 .grid_l
+.acolor{color:#347a00}#jpjj .col1 .grid_l a.more
+i{background-position:-13px -3px}#jpjj .col1 .grid_l
+a.more{color:#D70505}#jpjj .col1 .grid_l
+.acolor{color:#d70101}#rsjj .col1 .grid_l a.more
+i{background-position:-30px -3px}#rsjj .col1 .grid_l
+a.more{color:#EB4175}#rsjj .col1 .grid_l
+.acolor{color:#eb3d72}#zxsj .col1 .grid_l a.more
+i{background-position:-45px -3px}#zxsj .col1 .grid_l
+.acolor{color:#ee8627}#zxsq .col1 .grid_l a.more
+i{background-position:-62px -3px}#zxsq .col1 .grid_l
+.acolor{color:#177beb}#rsjjhoverfn{display:inline;height:20px;position:relative;z-index:10}#rsjjhoverfn
+a{margin-right:0}#rsjj
+.list{background-color:#E4E4E4;display:none;left:-10px;position:absolute;top:18px;top:9px\0;width:114px;z-index:10}#rsjj .list
+i{margin:8px
+0 0 10px}#rsjj .list
+a{display:inline-block;white-space:nowrap}#rsjj .list
+a.more{padding-left:22px;height:31px;line-height:31px}#rsjj
+.line{background:url(http://static.jiaju.com/jiaju/com/images/new_index/line_index.png) no-repeat 0 -2px;width:97px;height:1px;overflow:hidden;margin-left:7px}.enter{display:inline-block;height:20px;line-height:20px}#itop{top:5px}.space_show_box
+.col1{background-position:0 -130px}.space_show_box .col1 .grid_r
+a{color:#fb4460}.space_show_box .col1 .grid_r a
+i{background-position:-56px -75px}.box_row1_bd3{width:968px;height:440px;padding:10px;margin:0
+auto;border-width:0 1px 1px;border-style:solid;border-color:#f2f2f2;clear:both}.space_show_bd{width:968px;height:440px;position:relative;margin:0
+auto;overflow:hidden}.space_show_panel{width:968px;height:440px;position:relative}.space_show0,.space_show1{position:relative;width:968px;height:440px;float:left}.space_show0 span,.space_show1
+span{position:absolute;left:0;bottom:-440px;width:100%;height:29px;line-height:29px;color:#fff;text-align:center;overflow:hidden;text-align:center;cursor:pointer}.space_show0 span.mask,.space_show1
+span.mask{background:#000;filter:alpha(opacity=40);opacity:.4}.space_show0 a,.space_show1
+a{position:absolute;overflow:hidden;display:block}.space_show0 a:hover,.space_show1 a:hover{text-indent:0}.space_show0 a:hover span,.space_show1 a:hover
+span{bottom:-1px}.space_show0
+.space_show_0{width:250px;left:0;top:0}.space_show0
+.space_show_1{width:327px;left:252px;top:0}.space_show0
+.space_show_2{width:200px;left:581px;top:0}.space_show0
+.space_show_3{width:184px;left:783px;top:0}.space_show0
+.space_show_4{width:250px;left:0;top:292px}.space_show0
+.space_show_5{width:327px;left:252px;top:191px}.space_show0
+.space_show_6{width:387px;left:581px;top:242px}.space_show1
+.space_show_0{width:250px;left:329px;top:0}.space_show1
+.space_show_1{width:327px;left:0;top:0}.space_show1
+.space_show_2{width:200px;left:581px;top:200px}.space_show1
+.space_show_3{width:184px;left:783px;top:200px}.space_show1
+.space_show_4{width:250px;left:329px;top:292px}.space_show1
+.space_show_5{width:327px;left:0;top:191px}.space_show1
+.space_show_6{width:387px;left:581px;top:0}.space_show_prev,.space_show_next{width:57px;height:56px;position:absolute;overflow:hidden;top:202px;cursor:pointer}.space_show_prev div,.space_show_next
+div{width:57px;height:116px;background:url(http://static.jiaju.com/jiaju/com/images/new_index/index_prevnext_png24.png) no-repeat;position:absolute;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true',sizingMethod='noscale',src="http://static.jiaju.com/jiaju/com/images/new_index/index_prevnext_png24.png");_background:none}.space_show_next
+div{left:0;top:-60px}.space_show_prev{left:-57px}.space_show_next{right:-57px}#qgzzx
+.col1{background-image:url("http://static.jiaju.com/jiaju/com/images/new_index/column.gif");background-position:0 -260px}#qgzzx .col1
+ul{padding-left:180px;width:400px;float:left}#qgzzx .col1 ul
+li{width:auto;white-space:nowrap;float:left;margin-right:21px}#qgzzx .col1 ul li a:hover{text-decoration:underline}.col1
+.grid_r{background-image:url("http://static.jiaju.com/jiaju/com/images/new_index/index_sprite01.png")}#qgzzx .grid_r
+a{color:#ffc000}#qgzzx .grid_r a
+i{background-image:url("http://static.jiaju.com/jiaju/com/images/new_index/index_sprite01.png");background-position:-88px -162px}#qgzzx
+.box_row1{padding:10px}.box_row_l{width:780px;float:left}.box_row_r{float:right;width:180px}.box_title{position:relative;background:#f3f3f3;height:30px;line-height:30px;color:#2b2b2b;font-weight:bold;letter-spacing:1px}.box_title
+i{background-image:url("http://static.jiaju.com/jiaju/com/images/new_index/index_sprite01.png");background-position:-28px -97px}.box_row_l
+.box_title{padding-left:13px;border-bottom:1px solid #e4e4e4;margin-bottom:10px}.anli_spare{overflow:hidden}.anli_spare
+ul{width:790px}.anli_spare ul
+li{float:left;width:384px;margin-right:10px}.anli_top{position:relative}.anli_top
+img{display:block;width:384px;height:288px}.anli_top .anli_mask,.anli_top
+.anli_txt{position:absolute;height:26px;color:#FFF;bottom:0;left:0;width:100%;line-height:26px}.anli_top
+.anli_mask{background:#000;opacity:.6;filter:alpha(opacity=60)}.anli_time{margin:0
+14px 0 8px}.anli_gongzhang{float:right;margin-right:11px}.anli_bot{color:#2b2b2b}.anli_bot
+h4{margin-top:12px;font-weight:bold}.anli_bot
+p{line-height:1.8;margin:2px
+0 12px;height:42px;overflow:hidden}#qgzzx{margin-bottom:-22px}.box_r_div{background:#f3f3f3;color:#2b2b2b}.box_r_div
+.box_title{padding:0
+10px}.box_r_div .box_title
+p{border-bottom:1px solid #e4e4e4}.qgz_l_service{padding:0
+10px 30px}#qgz_l_one{position:relative}#qgz_l_one
+.goto_order{position:absolute;right:10px;bottom:15px;color:#d70000}.mb15{margin-bottom:15px}.qgz_l_service{line-height:1.6;padding-top:5px}#qgz_l_one .goto_order:hover{text-decoration:underline}.red_a,.red_p{color:#d70000}.red_a:hover{text-decoration:underline}#qgz_l_two .box_title
+.red_a{float:right;font-weight:normal}.qgz_activity{padding:5px
+10px 40px;position:relative;color:#2b2b2b}.qgz_activity
+.block{display:block}.qgz_activity
+img{margin-top:5px;width:160px;display:block;height:110px}.qgz_activity
+.goto_map{position:absolute;right:10px;bottom:15px}.sign_num
+span{font-size:18px;font-family:arial;margin-right:1px}.sign_num{margin:10px
+0 15px}.qgz_activity
+h4{margin-bottom:4px;font-weight:bold}.activity_pot,.activity_time{line-height:1.6}.quzhu_content{padding:0
+10px 20px}.quzhu_content
+.block{display:block;text-align:center}.quzhu_content
+p{line-height:1.6}.qz_icon{width:104px;height:27px;margin:10px
+auto}.goto_quanzhu{width:100px;height:30px;color:#FFF;font-size:14px;margin:10px
+auto 0;background:url("http://static.jiaju.com/jiaju/com/images/new_index/index_sprite01.png") no-repeat 0 -123px;line-height:30px}.goto_quanzhu:hover{color:#FFF}

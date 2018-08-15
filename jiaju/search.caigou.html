@@ -1,0 +1,369 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Access-Control-Allow-Origin" content="*">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=8"/>
+<title>集采列表 - 微工程</title>
+<meta name="description" content="微工程，微工程APP，装修、材料、家具、饰品一站式服务，让装修更简单，价格更透明！！" />
+<meta name="keywords" content="微工程，微工程，家居商城，微工程家居商城，微工程家居装修商城，办公室装修，写字楼装修，材料，装修材料，家居，办公家具，家居，家具，装修，装饰" />
+	
+<link type="text/css" href="/themes/mall/jiaju/styles/style/zp/style.css" rel="stylesheet"  />
+<link type="text/css" href="/themes/mall/jiaju/styles/style/zp/demo.css" rel="stylesheet"  />
+<link type="text/css" href="/themes/mall/jiaju/styles/style/style/style.css" rel="stylesheet"  />
+<script src="/themes/mall/jiaju/laydate/laydate.js"></script>
+<script type="text/javascript" src="http://www.59jiaju.com/themes/mall/jiaju/styles/default/js/jquery-1.3.2.min.js"></script>
+<script type="text/javascript">
+	$(function (){
+		$('#open-change-city-window').click(function (){
+			$('.change-city-window').slideDown();
+			
+		})
+		$('#close-change-city-window').click(function (){
+			$('.change-city-window').slideUp();
+		})
+	})
+</script>
+<style type="text/css">
+
+body { background-image:url(text.txt); background-attachment:fixed; }
+ 
+
+
+/*搜索*/
+.schos{
+	text-align:center;
+	width:100%;
+	height:430px;
+	overflow: hidden;
+	margin:0px auto 10px auto;
+}
+.schos img{width:100%;height:100%}
+/*列表*/
+.content-list{
+	width:1100px;
+	margin:20px auto;
+	text-align:center;
+	height:auto;
+	min-height:200px;
+	overflow: hidden;
+
+}
+.content-list .left{
+	width:275px;
+	margin-right:10px;
+	text-align:center;
+	height:682px;
+	min-height:100px;
+	overflow: hidden;
+	float:left;
+	border:1px solid #ccc;
+}
+.content-list .left img{
+	width:275px;
+}
+.content-list .center,.content-list .right{
+	width:430px;
+	text-align:center;
+	height:350px;
+	min-height:100px;
+	overflow: hidden;
+	float:left;
+	border:1px solid #ccc;
+	
+}
+.content-list .title{
+	width:100%;
+	text-align:left;
+	height:30px;
+	padding-left:10px;
+	line-height:30px;
+	font-size:14px;
+	color:#333;
+	overflow: hidden;
+	background:url('/themes/mall/jiaju/images/zhaobiao/titlesBg.png');
+	border-bottom:1px solid #ccc;
+	
+}
+.content-list .title a{
+	float:right;
+	font-size:12px;
+	color:#666666;
+	margin-right:10px;
+}
+.content-list .margin-right{
+	margin-right:10px;
+	width: 785px;
+	height:auto;
+	display: inline;
+	
+}
+.content-list .list-caigou{
+	width:98%;
+	text-align:center;
+	height:auto;
+	min-height:100px;
+	overflow: hidden;
+	margin:10px auto;
+}
+.content-list .list-caigou li{
+	width:97%;
+	overflow: hidden;
+	height:28px;
+	line-height:28px;
+	display:inline-block;
+	zoom:1;
+}
+.content-list .list-caigou li .tle{
+	width:330px;
+	_width:250px;
+	*width:250px;
+	overflow: hidden;
+	white-space:nowrap;
+	-o-text-overflow:ellipsis;
+	text-overflow:ellipsis;
+	height:28px;
+	display:inline-block;
+	zoom:1;
+	float:left;
+	line-height:28px;
+}
+
+.content-list .list-caigou li .gname{
+	width:210px;
+	_width:250px;
+	*width:250px;
+	overflow: hidden;
+	white-space:nowrap;
+	-o-text-overflow:ellipsis;
+	text-overflow:ellipsis;
+	height:28px;
+	display:inline-block;
+	zoom:1;
+	float:left;
+	line-height:28px;
+}
+.content-list .list-caigou li .tle a{
+	font-size:14px;
+	color:#333;
+}
+.content-list .list-caigou li .time{
+	width:180px;
+	overflow: hidden;
+	height:28px;
+	line-height:28px;
+	font-size:14px;
+	float:right;
+	color:#333;
+	text-align:right;
+}
+/*bottom-img*/
+.bottom-img{
+	width:1090px;
+	height:90px;
+	margin:10px auto;
+	overflow: hidden;
+	
+}
+.bottom-img a img{
+	float: left;
+    width: 98%;
+}
+.content-list .margin-right {
+    border: none;
+}
+.content-list .title{
+	border:1px solid #ccc;
+	border-bottom:none;
+	width: 99%;
+	padding: 0;
+}
+.content-list .list-caigou{
+	border:1px solid #ccc;
+	border-top:none;
+	width: 99%;
+	margin: 0 auto;
+	float: left;
+	display: block;
+}
+/*搜索框开始*/
+ .so{
+	width:99%;
+	height:60px;
+	line-height:60px;
+	text-align:center;
+	margin-bottom: 20px;
+	border:1px solid #ccc;
+ }
+ .so .key{
+	width:450px;
+	height:22px;
+	line-height:22px;
+	margin-left:10px;
+	border-radius: 5px;
+	padding:5px;
+	border:1px solid #ccc;
+ }
+.so .button {
+    width: 80px;
+    height: 34px;
+    line-height: 30px;
+    border-radius: 5px;
+    /* margin-top: 5px; */
+    border: 1px solid #ccc;
+    /* margin-top: -4px; */
+    /* padding-bottom: 22px; */
+    /* display: block; */
+}
+/*搜索框结束*/
+</style>
+<!--[if IE] >
+<style type="text/css" >
+ input {
+ filter:chroma(color=#000000);
+ }
+ </style>
+<![endif]-->
+</head>
+<body>
+{include file=header.html}
+
+<div class="schos">
+
+	<img src="/themes/mall/jiaju/images/zhaobiao/zb-banner.jpg"/>
+
+</div>
+<!-- list -->
+
+
+<div class="content-list">
+	<div class="left">
+		<!--<p class="title">广告赞助</p>-->
+		<img src="/themes/mall/jiaju/images/zhaobiao/1.jpg"style="height:250px;margin-bottom:10px;"/>
+		<img src="/themes/mall/jiaju/images/zhaobiao/2.jpg"style="height:135px;margin-bottom:10px;"/>
+		<img src="/themes/mall/jiaju/images/zhaobiao/3.jpg"style="height:135px;margin-bottom:10px;"/>
+		<img src="/themes/mall/jiaju/images/zhaobiao/4.jpg"style="height:135px;"/>
+	</div>
+	
+	<div class="center margin-right">
+	
+	<form class="so"method="post"action="index.php?app=search&act=caigou">
+		请输入您要采购的产品<input type="text" placeholder="请输入关键字" required name="key" class="key" value="{$key}">
+		<button type="submit" class="button">搜　索</button>
+	</form>
+	
+	
+	<p class="title">集采</p>
+	<ul class="list-caigou" id="lists"></ul>
+	</div>
+	
+	<!--<div class="right">
+		<p class="title">单项采购<a href="index.php?app=search&act=caigou_list">更多>></a></p>
+		<ul class="list-caigou"style="margin:10px auto">
+			{$con1}
+			
+		</ul>
+	</div>-->
+
+
+</div>
+
+
+<div class="bottom-img"><a target='_blank' href="/index.php?app=search&act=cailiaoshangshenqing"><img src="/themes/mall/jiaju/images/zhaobiao/vip.jpg"/></a></div>
+
+<!-- footer -->
+{include file=footer.html}
+<script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="/themes/mall/jiaju/js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="/themes/mall/jiaju/js/aui-scroll.js" ></script>
+<script>
+var serverUrl = "http://wgcapp.59jiaju.com/",page = 1;
+$(function(){
+	jQuery.support.cors = true;
+	cai_select();
+});
+//下一页
+var scroll = new auiScroll({
+    listen:false, //是否监听滚动高度，开启后将实时返回滚动高度
+    distance:0 //判断到达底部的距离，isToBottom为true
+},function(ret){
+   
+   if(ret.isToBottom){
+		cai_select();
+   }
+});
+ // PHP时间戳转时间
+function _trans_php_time_to_str(timestamp, n) {
+
+	update = new Date(timestamp * 1000);
+	//时间戳要乘1000
+	year = update.getFullYear();
+	month = (update.getMonth() + 1 < 10) ? ('0' + (update.getMonth() + 1)) : (update.getMonth() + 1);
+	day = (update.getDate() < 10) ? ('0' + update.getDate()) : (update.getDate());
+	hour = (update.getHours() < 10) ? ('0' + update.getHours()) : (update.getHours());
+	minute = (update.getMinutes() < 10) ? ('0' + update.getMinutes()) : (update.getMinutes());
+	second = (update.getSeconds() < 10) ? ('0' + update.getSeconds()) : (update.getSeconds());
+	if (n == 1) {
+		return (year + '-' + month + '-' + day + ' ' + hour + ':' + minute + ':' + second);
+	} else if (n == 2) {
+		return (year + '-' + month + '-' + day);
+	} else if (n == 3) {
+		return (month + '-' + day);
+	} else if (n == 4) {
+		return (hour + ':' + minute + ':' + second);
+	} else if (n == 5) {
+		return (year + '-' + month + '-' + day + ' ' + hour + ':' + minute );
+	} else {
+		return 0;
+	}
+}
+//材料列表
+function cai_select(){
+		
+		$.post(serverUrl+"jingyi.php/Home/Material/materialListe",{s_city : '广州市',page : page,cai_type :2,infotype : 'pc_caigou'},function(ret){
+		
+			var listHtml = '';
+			if(ret.code == 200){
+			
+					page++;
+					var data = ret.message;
+					   for (var i in data) {
+						  var m_name=data[i].m_name,cai_type=data[i].cai_type,expire_time=data[i].expire_time,m_introduce=data[i].m_introduce,count=data[i].count,addtime = _trans_php_time_to_str(data[i].addtime,1),office_name = data[i].office_name;
+								
+								 
+								  
+								listHtml +=  '<li>';
+								listHtml +=  '<img src="/themes/mall/jiaju/images/zhaobiao/bglist.png"style="display: inline;float:left;margin: 5px;height:15px;width:15px;"/>';
+								listHtml +=  '<p class="tle">';
+								listHtml +=  '<a target="_blank" href="/index.php?app=search&act=content_caigou&id='+data[i].id+'&cai_type=2">'+m_name+'</a>';
+								
+								listHtml +=  '</p>';
+								listHtml +=  '<span class="gname">'+office_name+'</span>';
+								listHtml +=  '<p class="time">'+addtime+'</p>';
+								listHtml +=  '</li>';
+				   
+						  
+						 }
+				
+				$("#lists").append(listHtml);
+				
+			}else if(ret.code == 202)	{
+				if(page == 1){
+					$("#lists").html('<div style="border: none;width:100px;height:100px;margin:50px auto;" class="empty"><img src="__PUBLIC__/aui/image/empty.png"/></div>');
+				}else{
+					//alert('暂无更多了');
+				}
+			}else{
+				return false;
+			
+			}
+			
+		
+		},"json");
+
+}
+</script>
+
+       
+</body>
+</html>

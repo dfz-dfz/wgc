@@ -1,0 +1,136 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Access-Control-Allow-Origin" content="*">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=8"/>
+<title>用户中心-消息</title>
+<meta name="description" content="微工程，微工程APP，装修、材料、家具、饰品一站式服务，让装修更简单，价格更透明！！" />
+<meta name="keywords" content="微工程，微工程，家居商城，微工程家居商城，微工程家居装修商城，办公室装修，写字楼装修，材料，装修材料，家居，办公家具，家居，家具，装修，装饰" />
+<link rel="stylesheet" type="text/css" href="themes/mall/jiaju/css/api.css"/>
+<link rel="stylesheet" type="text/css" href="themes/mall/jiaju/css/aui.css" />
+<link rel="stylesheet" type="text/css" href="themes/mall/jiaju/css/aui.1.0.css"/>
+<script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+<!-- <script type="text/javascript" src="www.wgc2013.com/themes/mall/jiaju/js/jquery-1.8.3.min.js"></script> -->
+<link type="text/css" href="themes/mall/jiaju/styles/default/css/main.css" rel="stylesheet"  />
+<link type="text/css" href="themes/mall/jiaju/styles/css/global.css" rel="stylesheet"  />
+<link type="text/css" href="http://www.wgc2013.com/themes/mall/jiaju/styles/default/css/catalog.css" rel="stylesheet"  />
+<link type="text/css" href="http://www.wgc2013.com/themes/mall/jiaju/styles/default/css/footer.css" rel="stylesheet" />
+<link type="text/css" href="themes/mall/jiaju/styles/css/style.css" rel="stylesheet"  />
+<script type="text/javascript" src="index.php?act=jslang"></script>
+<script type="text/javascript" src="http://www.wgc2013.com/includes/libraries/javascript/ecmall.js" charset="utf-8"></script>
+<script type="text/javascript" src="http://www.wgc2013.com/includes/libraries/javascript/cart.js" charset="utf-8"></script>
+<script type="text/javascript" src="http://www.wgc2013.com/themes/mall/jiaju/styles/default/js/main.js" charset="utf-8"></script>
+
+<!--[if lte IE 6]>
+<script type="text/javascript" language="Javascript" src="http://www.wgc2013.com/themes/mall/jiaju/styles/default/js/hoverForIE6.js"></script>
+<![endif]-->
+<!--[if IE 8]>
+<link type="text/css" href="themes/mall/jiaju/css/ie8.css" rel="stylesheet"  />
+<![endif]-->
+<script type="text/javascript">
+var SITE_URL = "http://www.wgc2013.com";
+var PRICE_FORMAT = '&yen;%s';
+</script>
+<script charset="utf-8" type="text/javascript" src="http://www.wgc2013.com/includes/libraries/javascript/jquery.plugins/jquery.validate.js" ></script><style type="text/css">
+body{background:url('') no-repeat center top }
+.mainnav{width:990px; overflow:hidden; margin:0 auto}
+.STYLE1 {color: red}
+</style>
+<script type="text/javascript" src="http://www.wgc2013.com/themes/mall/jiaju/styles/default/js/hover.js"></script>
+
+<script charset="utf-8" type="text/javascript" src="http://www.wgc2013.com/includes/libraries/javascript/jquery.plugins/jquery.validate.js" ></script>
+<script type="text/javascript">
+  $(function (){
+    $('#open-change-city-window').click(function (){
+      $('.change-city-window').slideDown();
+      
+    })
+    $('#close-change-city-window').click(function (){
+      $('.change-city-window').slideUp();
+    })
+
+  
+  })
+</script>
+</head>
+<body>
+{include file=header.html}
+
+<!-- 中部主要内容 -->
+ <div class="container" style="overflow: hidden;width: 1200px;margin: 10px auto;">
+ <!-- 左上的导航栏 -->
+ {include file=usercenter.html}
+
+ 	<!-- 右边的内容 -->
+ 	<div class="container_right" style="width: 80%;border: 1px solid #cacaca;float: right;background-color: #f7f7f7;padding: 0 10px 10px 10px;">
+ 		<!-- 消息中心 -->
+		<div class="user_message user_ui_public" style="/*display: none;*/">
+			<ul class="user_message_ul user_public_ul">
+ 				<li class="change_bg_li" style="margin-right: 10px;">未读信息</li>
+ 				<li class="user_message_ul_li">系统消息</li>
+ 			</ul>
+
+ 			<!-- 消息内容 -->
+ 			<div class="user_message_noinfo base_info_public" style="overflow: hidden;min-height: 200px;line-height: 200px;">
+ 				<h1 style="font-size: 20px;font-weight: bold;">没有未读消息</h1>
+ 			</div>
+ 			<div class="user_message_syinfo base_info_public" style="overflow: hidden;min-height: 200px;line-height: 200px;display: none;">
+ 				<h1 style="font-size: 20px;font-weight: bold;">没有系统消息</h1>
+ 			</div>
+		</div>
+
+		<!-- 积分 -->
+
+		<!-- 发布招聘 -->
+
+		<!-- 发布集采 -->
+
+		<!-- 发布列表 -->
+
+ 		<!-- 创建简历 -->
+
+ 		<!-- 实名认证 -->
+
+ 		</div>
+ 		
+ 	</div>
+
+{include file=footer.html}
+
+<script type="text/javascript">
+	$(".container_nav ul li").click(function(){
+		$(".container_nav ul li").removeClass("bg_li")
+		$(this).addClass("bg_li")
+	})
+    //点击消息
+    $(".user_message_li").click(function(){
+    	$(".user_message_ul li:first").addClass("change_bg_li")
+    	$(".user_ui_public").hide();
+    	$(".base_ui_public").hide();
+    	$(".user_message").show();
+    })
+
+    //消息栏中的消息切换
+    $(".user_message_ul li:first").click(function(){
+    	
+    	$(".user_message_ul li:first").addClass("change_bg_li")
+    	$(".user_message_ul_li").removeClass("change_bg_li")
+    	$(".user_message_noinfo").show();
+    	$(".user_message_syinfo").hide();
+    })
+
+    $(".user_message_ul_li").click(function(){
+    	
+    	$(".user_message_ul_li").addClass("change_bg_li")
+    	$(".user_message_ul li:first").removeClass("change_bg_li")
+    	$(".user_message_noinfo").hide();
+    	$(".user_message_syinfo").show();
+    })
+
+
+
+
+</script>
+</body>
+</html>

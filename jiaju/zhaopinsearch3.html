@@ -1,0 +1,93 @@
+{include file=header.html}
+<style type="text/css">
+.jodsearch{margin:0px;padding:0px;vertical-align: middle;}
+.jodsearch .dosearch{margin-left:auto;margin-right:auto;margin-top:10px;padding:0px;width:1100px;height:52px;background-color:#F5F5F5;}
+.jodsearch .dosearch input{margin-top:10px;}
+.jodsearch .dosearch *{vertical-align:middle;}
+.tiaojian a{color:#0066CB;}
+.jobtable{width:100%;text-align:left;margin-left:3px;font-size:13px;}
+.jobtable tr{line-height:30px;}
+.jobtable tr td{border-bottom:1px solid #F0F0F0;}
+.main{margin:0px;padding:0px;}
+.main_body{
+margin:auto;padding:0px;margin-top: 10px;margin-bottom: 10px; width:1100px;overflow:hidden;
+}
+.main_body .main_left{width:79%;float:left;margin-right:10px;}
+.main_body .main_right{width:19%;float:left;margin-left:10px;}
+/**劳务资源*/
+.text-left a{width:23%;background:#ff552e;border-radius:10px;float:left;margin:1%;height:50px;line-height:50px;overflow:hidden;display:block;color:#fff;font-size:16px;font-weight:bold;}
+</style>
+<script type="text/javascript">
+	$(document).ready(function(){
+	$(".tiaojian > .qy > a").click(function(){
+	　　　　$(".tiaojian > .qy > a").css("background-color","F5F5F5");
+			$(this).css("background-color","#62AF00");
+			//这里使用ajax取数据
+			/*var url=$(this).attr("href");
+			$.get(url,function(data,status){
+				alert("Data: " + data + "\nStatus: " + status);
+			  });*/
+	　　});
+	$(".tiaojian > .xz > a").click(function(){
+	　　　　$(".tiaojian > .xz > a").css("background-color","F5F5F5");
+			$(this).css("background-color","#62AF00");
+			//这里使用ajax取数据
+			//var url=$(this).attr("href");
+			/*$.get(url,function(data,status){
+				alert("Data: " + data + "\nStatus: " + status);
+			  });*/
+	　　});
+	}); 
+	
+</script>
+<!-- 搜索 -->
+<div class="jodsearch" style="background:#ccc;padding-bottom: 8px;">
+		<div class="dosearch" style="background:#ccc">
+			<form id="dosearchform" action="/index.php?app=search&act=joblist2" method="get">
+				<input type="hidden" name="app" value="search" />
+				<input type="hidden" name="act" value="joblist2" />
+				<input type="text" placeholder="输入关键词" name="title" style="padding:0 10px;width:55%;height:34px;" /><input type="submit"  value="搜索" style="width:12%;height:38px;background:#ff552e;color:#FFFFFF;border:1px solid #ff552e" /><span style="margin-left:15px;color:#636363;font-family:黑体;font-size:16px;"><a href="/index.php?app=member&act=searchjobs">我要发布</a></span>
+			</form>
+		</div>
+</div>
+<div class="main">
+	<!-- 主体 -->
+	<div class="main_body">
+		<!-- 左边 -->
+		<div class="main_left"style="width:100%">
+			<div style="background-color:#F5F5F5;width:100%;border-bottom:1px solid #999;">
+				<div style="width:100%;height:30px;border-bottom:1px solid #999;overflow:hidden;"><span style="width:30%;height:30px;color:#333;font-size:20px;float:left;text-align:left">工种类别：{$type}</span></div>
+				
+				
+			</div>
+			<div style="width:100%;background-color:#FFFFFF;">
+				<div class="text-left">
+					<a href="index.php?app=search&act=joblist3_content&type=36&name=油漆工">油漆工</a>
+					<a href="index.php?app=search&act=joblist3_content&type=5&name=泥水工">泥水工</a>
+					<a href="index.php?app=search&act=joblist3_content&type=35&name=拆除工">拆除工</a>
+					<a href="index.php?app=search&act=joblist3_content&type=6&name=水电工">水电工</a>
+					<a href="index.php?app=search&act=joblist3_content&type=7&name=电焊工">电焊工</a>
+					<a href="index.php?app=search&act=joblist3_content&type=16&name=维修工">维修工</a>
+					<a href="index.php?app=search&act=joblist3_content&type=1&name=施工工长">施工工长</a>
+					<a href="index.php?app=search&act=joblist3_content&type=2&name=水电工长">水电工长</a>
+					<a href="index.php?app=search&act=joblist3_content&type=3&name=空调工长">空调工长</a>
+					<a href="index.php?app=search&act=joblist3_content&type=9&name=木工">木工</a>
+					<a href="index.php?app=search&act=joblist3_content&type=12&name=杂工">杂工</a>
+					<a href="index.php?app=search&act=joblist3_content&type=11&name=保洁">保洁</a>
+					<a href="index.php?app=search&act=joblist3_content&type=4&name=空调安装">空调安装</a>
+					<a href="index.php?app=search&act=joblist3_content&type=8&name=家具安装">家具安装</a>
+					<a href="index.php?app=search&act=joblist3_content&type=17&name=网络维修">网络维修</a>
+				</div>
+			</div>
+		</div>
+		<!-- 左边结束 -->
+		<!-- 右边 -->
+		<div class="main_right" style="display:none;">
+			<div style="width:100%;">
+				<img src="/themes/store/default/images/adwei.png" width="100%">
+			</div>
+		</div>
+		<!-- 右边结束 -->
+	</div>
+{include file=footer.html}
+<!-- 底部include file=footer2.html-->

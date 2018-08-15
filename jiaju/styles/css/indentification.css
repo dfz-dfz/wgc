@@ -1,0 +1,58 @@
+.ident {
+	width: 500px;
+	height: auto;
+	margin: 0 auto;
+}
+
+.ident li {
+	margin-bottom: 10px;
+}
+
+.ident .input_type {
+	white-space: pre-wrap;
+	letter-spacing: 2px;
+}
+
+.ident .colon {
+	margin: 0 4px;
+}
+
+.ident input {
+	height: 20px;
+}
+
+.pic_box {
+	margin-left: -36px;
+}
+
+.ident .tip_list {
+    width: 300px;
+    margin: 0 auto;
+    padding-top: 10px;
+}
+
+.tip_list li {
+	list-style: decimal;
+	font-size: 12px;
+	letter-spacing: 2px;
+}
+
+.tip_list .spic {
+	list-style: none;
+	color: #fe760a;
+	margin-left: -18px;
+}
+
+.ident .sub_btn {
+	height: 40px;
+	width: 180px;
+	text-align: center;
+	line-height: 40px;
+	font-size: 16px;
+	font-weight: 600;
+	color: #fff;
+	background-color: #fe552e;
+	margin: 30px 0 30px -100px;
+	border: none;
+	cursor: pointer;
+}

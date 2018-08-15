@@ -1,0 +1,312 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Access-Control-Allow-Origin" content="*">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=8"/>
+<title>工价详情 - 微工程</title>
+<meta name="description" content="微工程，微工程APP，装修、材料、家具、饰品一站式服务，让装修更简单，价格更透明！！" />
+<meta name="keywords" content="微工程，微工程，家居商城，微工程家居商城，微工程家居装修商城，办公室装修，写字楼装修，材料，装修材料，家居，办公家具，家居，家具，装修，装饰" />
+	
+
+<link rel="stylesheet" type="text/css" href="/themes/mall/jiaju/css/api.css"/>
+<link rel="stylesheet" type="text/css" href="/themes/mall/jiaju/css/aui.css" />
+<link rel="stylesheet" type="text/css" href="/themes/mall/jiaju/css/aui.1.0.css"/>
+<style type="text/css">
+.jodsearch{margin:0px;padding:0px;vertical-align: middle;}
+.jodsearch .dosearch{margin-left:auto;margin-right:auto;margin-top:10px;padding:0px;width:1100px;height:52px;background-color:#F5F5F5;}
+.jodsearch .dosearch input{margin-top:10px;}
+.jodsearch .dosearch *{vertical-align:middle;}
+.tiaojian a{color:#0066CB;}
+.jobtable{width:100%;text-align:left;margin-left:3px;font-size:13px;}
+.jobtable tr{line-height:30px;}
+.jobtable tr td{border-bottom:1px solid #F0F0F0;}
+.main{margin:0px;padding:0px;}
+.main_body{
+margin:auto;padding:0px;margin-top: 10px;margin-bottom: 10px; width:1200px;overflow:hidden;
+}
+.main_body .main_left{width:79%;float:left;margin-right:10px;}
+.main_body .main_right{width:19%;float:left;margin-left:10px;}
+/**劳务资源*/
+.text-left a{width:23%;background:#ff552e;border-radius:10px;float:left;margin:1%;height:50px;line-height:50px;overflow:hidden;display:block;color:#fff;font-size:16px;font-weight:bold;}
+.aui-list-item-middle{width:16.222222222%;margin:10px 0.11111111111rem;float:left;overflow: hidden;}
+</style>
+<script type="text/javascript">
+	$(document).ready(function(){
+	$(".tiaojian > .qy > a").click(function(){
+	　　　　$(".tiaojian > .qy > a").css("background-color","F5F5F5");
+			$(this).css("background-color","#62AF00");
+			//这里使用ajax取数据
+			/*var url=$(this).attr("href");
+			$.get(url,function(data,status){
+				alert("Data: " + data + "\nStatus: " + status);
+			  });*/
+	　　});
+	$(".tiaojian > .xz > a").click(function(){
+	　　　　$(".tiaojian > .xz > a").css("background-color","F5F5F5");
+			$(this).css("background-color","#62AF00");
+			//这里使用ajax取数据
+			//var url=$(this).attr("href");
+			/*$.get(url,function(data,status){
+				alert("Data: " + data + "\nStatus: " + status);
+			  });*/
+	　　});
+	}); 
+	
+</script>
+</head>
+<body>
+{include file=header.html}
+<?php
+	$query="select * from ecm_search as A,ecm_member as B,ecm_gongyingshang as C where C.user_id=A.userid and B.user_id=A.userid and A.id =".$_GET['id'].""; //定义sql
+	$result=mysql_query($query);
+	$rows1=@mysql_fetch_assoc($result);
+	//echo "<pre>";
+	//var_dump($rows1);
+	
+?>
+<!-- 搜索 -->
+<div style="background:#ff552e;padding-bottom: 8px;"><p style="font-size:18px;color:#fff;height:50px;line-height:50px;width:1200px;margin:0 auto;">详情介绍</p></div>
+<div style="background:#ccc;padding: 20px 0 8px 0;">
+		<div class="dosearch" style="margin:0 auto;width:1200px;background:#ccc;overflow:hidden;">
+			<form id="dosearchform" action="/index.php?app=search&act=joblist2" method="get">
+				<input type="hidden" name="app" value="search" />
+				<input type="hidden" name="act" value="joblist2" />
+				<input type="text" placeholder="输入关键词" name="title" style="margin-left:150px;font-size:14px;float:left;padding:0 10px;border:1px solid #ccc;width:55%;height:35px;" />
+				<input type="submit"  value="搜索" style="float:left;width:12%;height:34px;background:#ff552e;color:#FFFFFF;border:1px solid #ff552e" /><span style="margin-left:15px;color:#636363;font-family:黑体;font-size:16px;float:left;margin-top:15px;"></span>
+			</form>
+		</div>
+</div>
+<div class="main">
+	<!-- 主体 -->
+	<div class="main_body">
+		<!-- 左边 -->
+		<div class="main_left"style="width:100%">
+			
+			<div style="background-color:#F5F5F5;width:100%;border-bottom:1px solid #999;">
+				<table border="1" style="border-collapse:collapse;border:1px solid #e3e3e3;margin:20px auto;width:100%;background:#fff;">
+					<tr style="background:#e3e3e3;">
+						<td style="text-align:left;font-weight:bold;height:50px;font-size:18px;color:#333;background:#e3e3e3;border:1px solid #e3e3e3">工程项目名称</td>
+						<td style="font-weight:bold;height:50px;font-size:18px;color:#333;background:#e3e3e3;border:1px solid #e3e3e3">单位</td>
+						<td style="font-weight:bold;height:50px;font-size:18px;color:#333;background:#e3e3e3;border:1px solid #e3e3e3">工价</td>
+						<td style="font-weight:bold;height:50px;font-size:18px;color:#333;background:#e3e3e3;border:1px solid #e3e3e3">发布时间</td>
+					</tr>
+					
+					
+					<!--列表开始-->
+					<tr>
+						<td style="color:#333;font-size:16px;text-align:left;height:40px;" id="xmname"><?php echo $rows1['xmname'];?></td>
+						<td style="color:#333;font-size:16px;height:40px;" id="unit"><?php echo $rows1['unit'];?></td>
+						<td style="color:#333;font-size:16px;height:40px;" id="xinzi"><?php echo $rows1['xinzi'];?>元</td>
+						<td style="color:#333;font-size:16px;height:40px;" id="addtime"><?php echo $rows1['addtime'];?></td>
+					</tr>
+					
+				</table>
+				<div style="width:100%;height:30px;border-bottom:1px solid #999;overflow:hidden;">
+					<span style="width:15%;height:30px;color:#333;font-size:20px;float:left;text-align:left">详细介绍</span>
+				</div>
+				
+				
+			</div>
+			<div style="width:100%;background-color:#FFFFFF;">
+				<div class="text-left">
+					<div class="aui-list aui-media-list" id="lists" style="height:auto;overflow:hidden">
+						<div class="aui-content aui-margin-b-15">
+							<ul class="aui-list aui-media-list" id="lists">
+								<li class="aui-list-item aui-list-item-middle" style="width:100%;">
+									<div class="aui-media-list-item-inner">
+										<div class="aui-list-item-media" style="width: 3rem;">
+											<img id="userphotos" style="width:50px;height: 50px;" onerror="javascript:this.src='/themes/mall/jiaju/images/logo.jpg';" src="/themes/mall/jiaju/images/logo.jpg" class="aui-img-round aui-list-img-sm">
+										</div>
+										<div class="aui-list-item-inner">
+											<div class="aui-list-item-text">
+											   <div class="aui-list-item-title aui-font-size-14 aui-ellipsis-1" id="name">加载中</div>
+											</div>
+											<div class="aui-list-item-text aui-ellipsis-1"><div>浏览量：<span id="guanzhu"></span><span style="margin-left:20px;float:right;height:40px;">好评：<strong style="color:red;"><?php echo rand(0,10);?>&uarr;</strong></span></div></div>
+										
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<!--描述-->
+					<div class="aui-content aui-margin-b-15">
+						<ul class="aui-list aui-list-in">
+							<li class="aui-list-item">
+								<div class="aui-list-item-inner">
+									<div class="aui-list-item-title">职位：</div>
+									<div class="aui-list-item-right"style="float:right;height:40px;line-height:40px;" id="zhiwei"></div>
+								</div>
+							</li>
+							
+							<li class="aui-list-item">
+								<div class="aui-list-item-inner">
+									<div class="aui-list-item-title">口碑：</div>
+									<div class="aui-list-item-right">5.0分</div>
+								</div>
+							</li>
+							
+							<li class="aui-list-item">
+								<div class="aui-list-item-inner">
+									<div class="aui-list-item-title">星级：</div>
+									<div class="aui-list-item-right"><img src="/themes/mall/jiaju/images/xingxing.jpg" style="height:25px;width:100px;"/></div>
+								</div>
+							</li>
+							
+							<li class="aui-list-item">
+								<div class="aui-list-item-inner">
+									<div class="aui-list-item-title">实名认证信息：</div>
+									<div class="aui-list-item-right">已认证</div>
+								</div>
+							</li>
+							
+							<li class="aui-list-item">
+								<div class="aui-list-item-inner">
+									<div class="aui-list-item-title">专业认证信息：</div>
+									<div class="aui-list-item-right">已认证</div>
+								</div>
+							</li>
+							
+							<li class="aui-list-item">
+								<div class="aui-list-item-inner">
+									<div class="aui-list-item-title">从业工龄：</div>
+									<div class="aui-list-item-right" id="bumen">1年</div>
+								</div>
+							</li>
+							
+							<li class="aui-list-item">
+								<div class="aui-list-item-inner">
+									<div class="aui-list-item-title">联系地址：</div>
+									<div class="aui-list-item-right" id="huji">广东省</div>
+								</div>
+							</li>
+							
+							<li class="aui-list-item">
+								<div class="aui-list-item-inner">
+									<div class="aui-list-item-title">描述介绍：<span id="gz_jingyan"></span></div>
+								</div>
+							</li>
+						</ul>
+					</div>
+
+					<!--描述-->
+					<div class="aui-content-padded aui-margin-b-15 aui-margin-t-15" onclick="yingying()">
+						<div class="aui-btn aui-btn-danger aui-btn-block">点击联系</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 左边结束 -->
+		<!-- 右边 -->
+		<div class="main_right" style="display:none;">
+			<div style="width:100%;">
+				<img src="/themes/store/default/images/adwei.png" width="100%">
+			</div>
+		</div>
+		<!-- 右边结束 -->
+	</div>
+{include file=footer.html}
+<!-- 底部include file=footer2.html-->
+<script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+
+<script type="text/javascript">
+
+$(function(){
+	jQuery.support.cors = true;
+	selectUser();
+	
+
+});
+
+ // PHP时间戳转时间
+function _trans_php_time_to_str(timestamp, n) {
+
+	update = new Date(timestamp * 1000);
+	//时间戳要乘1000
+	year = update.getFullYear();
+	month = (update.getMonth() + 1 < 10) ? ('0' + (update.getMonth() + 1)) : (update.getMonth() + 1);
+	day = (update.getDate() < 10) ? ('0' + update.getDate()) : (update.getDate());
+	hour = (update.getHours() < 10) ? ('0' + update.getHours()) : (update.getHours());
+	minute = (update.getMinutes() < 10) ? ('0' + update.getMinutes()) : (update.getMinutes());
+	second = (update.getSeconds() < 10) ? ('0' + update.getSeconds()) : (update.getSeconds());
+	if (n == 1) {
+		return (year + '-' + month + '-' + day + ' ' + hour + ':' + minute + ':' + second);
+	} else if (n == 2) {
+		return (year + '-' + month + '-' + day);
+	} else if (n == 3) {
+		return (month + '-' + day);
+	} else if (n == 4) {
+		return (hour + ':' + minute + ':' + second);
+	} else if (n == 5) {
+		return (year + '-' + month + '-' + day + ' ' + hour + ':' + minute );
+	} else {
+		return 0;
+	}
+}
+function yingying(){
+	if(window.confirm('请使用微工程APP进行操作，是否前往去下载？')){
+		 window.open('http://wgcapp.59jiaju.com/apk/index.html');
+		 return true;
+	  }else{
+		 //alert("取消");
+		 return false;
+	 }
+}
+
+function selectUser(){
+	
+
+	var url = "http://wgcapp.59jiaju.com/index.php/Home/Jysearch/jobinfo";
+	$.post(url,{id : {$id},infotype : 'pc'},function(ret){
+	
+	
+	
+		var data = ret.retData;
+
+		if(ret.status == 200){
+		
+				var	huji        = (data.xiangxi =='' || data.xiangxi == null)?'未填写':data.xiangxi;
+				var zhiwei 	    = (data.jobtype =='' || data.jobtype == null)?'未填写':data.jobtype;
+				var	name        = (data.sender =='' || data.sender == null)?'匿名':data.sender;
+				var	gz_jingyan  = (data.ps =='' || data.ps == null)?'未填写':data.ps;
+	            var	guanzhu     = data.click;
+				
+	            var	bumen       = (data.bumen =='' || data.bumen == null)?'未填写':data.bumen;
+	            
+	            
+	           
+	            var	userphoto   = 'http://wgcapp.59jiaju.com/' + data.userphoto;
+	            var targetId        = data.user_id;
+	            var targetName      = name;
+				//工价详情
+				$("#xmname").html(data.title);
+				$("#unit").html(data.unit);
+				$("#xinzi").html(data.xinzi+'元');
+				$("#addtime").html(data.addtime);
+	            
+			   //用户
+		       $("#userphotos").attr('src',userphoto);
+	           $("#name").html(name);
+	           $("#zhiwei").html(zhiwei);
+	           $("#guanzhu").html(guanzhu);
+	           $("#bumen").html(bumen+'年');
+	           $("#huji").html(huji);
+	           $("#gz_jingyan").html(gz_jingyan);
+			
+		
+		}else{
+			return false;
+		
+		}
+		
+	
+	},"json");
+
+}
+	
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,878 @@
+@charset "utf-8";
+/* CSS Document */
+*{font-family:"Microsoft yahei"}
+body{font-size:12px;margin:0;padding:0;}
+ins{text-decoration:none;}
+em,p{font-style:normal; margin:0;padding:0; font-family:Arial}
+ul{ list-style:none; margin:0;padding:0;}
+dl,dt,dd,ins,h1,h2,h3,h4,form{margin:0;padding:0;font-size:12px}
+input,select{ vertical-align:middle;}
+.clr,.clear{clear:both; overflow:hidden;width:0;margin:0;padding:0; height:0; line-height:0; font-size:0;}
+.clearfix:after{ content:'\20'; display:block; overflow:hidden; height:0; clear:both;}
+img{border:0;}
+.banner{margin:0;padding:0;}
+.banner img{display:block}
+.price{ font-family:arial, verdana;color:#979fac}
+a{text-decoration:none;color:#3e3e3e;blr:expression(this.onFocus=this.blur());outline:none; font-weight:normal;}
+/*a:hover{color:#A00000; text-decoration:underline}*/
+/* common */
+.w{width:1212px; margin:0 auto;}
+.hidden{ display:none}
+.w220{width:220px;}
+.w760{width:760px; overflow:hidden}
+.fleft{float:left;}
+.center{ text-align:center}
+.margin5{margin:5px;}
+.margin10{margin:10px;}
+.mt5{margin-top:5px;}
+.mt10{margin-top:10px;}
+.mt20{margin-top:20px;}
+.ml10{margin-left:10px;}
+.padding10{padding:10px;}
+.padding5{padding:5px;}
+.pb10{padding-bottom:10px;}
+.pt10{padding-top:10px;}
+.mb10{margin-bottom:10px;}
+.mb5{margin-bottom:5px;}
+.w-full{width:100%}
+.box{margin-bottom:10px;}
+.box h2{font-size:14px;padding:5px;}
+.border{border:1px #ddd solid}
+.border0{border:0;}
+.border-t-0{border-top:0;}
+.bgw{ background-color:#fff;}
+.fff{color:#fff;}
+.f60{color:#ff6600;}
+.a50{ color:#A50000}
+.color666{color:#666;}
+.strong{font-weight:bold;}
+.fs14{font-size:14px}
+.fs12{ font-size:12px;}
+.block{ display:block}
+.inline-block{ display:inline-block}
+.d_inline{display:inline;}
+.input{ background:url(../images/input.png) repeat-x; height:20px; line-height:20px; border:1px #ccc solid}
+.linehei20{ line-height:20px;}
+.pointer{ cursor:pointer}
+.fixed-top /* 头部固定 */{position:fixed;bottom:auto;top:200px;}
+
+.fixed-bottom /* 底部固定 */{position:fixed;bottom:0px;top:auto;}
+
+.fixed-left /* 左侧固定 */{position:fixed;right:auto;left:0px; z-index:1000;}
+
+.fixed-right /* 右侧固定 */{position:fixed;right:0px;left:auto;}
+
+/* 上面的是除了IE6的主流浏览器通用的方法 */
+
+* html,* html body /* 修正IE6振动bug */{background-image:url(about:blank);background-
+
+attachment:fixed;}
+
+* html .fixed-top /* IE6 头部固定 */{position:absolute;bottom:auto;top:expression(eval
+
+(document.documentElement.scrollTop)+200);}
+
+* html .fixed-right /* IE6 右侧固定 */ {position:absolute;right:auto;left:expression
+
+(eval(document.documentElement.scrollLeft+document.documentElement.clientWidth-
+
+this.offsetWidth)-(parseInt(this.currentStyle.marginLeft,10)||0)-(parseInt
+
+(this.currentStyle.marginRight,10)||0));}
+
+* html .fixed-bottom /* IE6 底部固定  */{position:absolute;bottom:auto;top:expression
+
+(eval(document.documentElement.scrollTop+document.documentElement.clientHeight-
+
+this.offsetHeight-(parseInt(this.currentStyle.marginTop,10)||0)-(parseInt
+
+(this.currentStyle.marginBottom,10)||0)));}
+
+* html .fixed-left /* IE6 左侧固定 */{position:absolute;right:auto;left:expression
+
+(eval(document.documentElement.scrollLeft));}
+/* header */
+#header{ position: relative; }
+#header .shop-t{padding:20px 0;}
+#header .logo{float:left;margin-left:0px;width: 460px;}
+#header .top-search{float:left;width:422px; position:relative;margin-top:10px; overflow:hidden; position: relative; z-index: 0;margin-left: 62px;}
+#header .top-search-box{ width:420px; height:60px;color:#666; z-index: 0;}
+#header .top-search-box .top-search-text{width: 414px;border: 1px solid #b61d1d;height: 28px;line-height: 28px;padding-left: 6px;color: #bebebe;}
+#header .top-search-box input{ vertical-align:middle; line-height:150%;}
+#header .top-search-box .keyword{border:1px #fff solid;height:19px;width:300px;padding:0 0 0 2px;line-height:19px; position:absolute;left:6px; top:27px;color:#666;}
+#header .top-search-box .kw_bj{background:url(http://www.59jiaju.com/themes/mall/jiaju/styles/default/images/head_foot_bj.png) no-repeat 3px -232px;}
+#header .top-search-box .index_bj{background-position:3px -232px;}
+#header .top-search-box .groupbuy_bj{background-position:3px -212px;}
+#header .top-search-box .store_bj{background-position:3px -193px;}
+#header .erweima{text-align:right;top:20px;padding: 10px;width: 248px;font-size: 14px;float: left;}
+#header .erweima ul li{width: 33.33%;float: left;text-align: center;}
+#header .erweima ul li img{width: 64px;}
+#header .erweima ul li p{width: 90%;margin: 0 auto;}
+.alist{color: #999;line-height: 28px;height: 28px;}
+.alist a{color: #999;padding-left: 10px;padding-right:10px;}
+
+/*首页轮播图*/
+.fullSlide {
+	width:100%;
+	position:relative;
+	height:509px;
+	background:#000;
+}
+.fullSlide .bd {
+	margin:0 auto;
+	position:relative;
+	z-index:0;
+	overflow:hidden;
+}
+.fullSlide .bd ul {
+	width:100% !important;
+}
+.fullSlide .bd li {
+	width:100% !important;
+	height:509px;
+	overflow:hidden;
+	text-align:center;
+}
+.fullSlide .bd li a {
+	display:block;
+	height:509px;
+}
+.fullSlide .hd {
+	width:100%;
+	position:absolute;
+	z-index:1;
+	bottom:0;
+	left:0;
+	height:30px;
+	line-height:30px;
+}
+.fullSlide .hd ul {
+	text-align:center;
+}
+.fullSlide .hd ul li {
+	cursor:pointer;
+	display:inline-block;
+	*display:inline;
+	zoom:1;
+	width:42px;
+	height:11px;
+	margin:1px;
+	overflow:hidden;
+	background:#fff;
+	line-height:999px;
+	border-radius: 5px;
+}
+.fullSlide .hd ul .on {
+	background:#f00;
+}
+.fullSlide .prev,.fullSlide .next {
+    display:block;
+    position:absolute;
+    z-index:1;
+    top:50%;
+    margin-top:-30px;
+    left:15%;
+    z-index:1;
+    width:40px;
+    height:60px;
+    background:url(http://www.59jiaju.com/themes/mall/jiaju/styles/default/images/slider-arrow.png) -126px -137px #000 no-repeat;
+    cursor:pointer;
+    filter:alpha(opacity=50);
+    opacity:0.5;
+    display:none;
+}
+.fullSlide .next {
+    left:auto;
+    right:15%;
+    background-position:-6px -137px;
+}
+#site-nav {
+    background: rgba(0, 0, 0, 0) url("http://www.59jiaju.com/themes/mall/jiaju/styles/default/images/T1CCRNXmRFXXXXXXXX.png") repeat-x scroll 0 -44px;
+}
+#site-nav .shoptop {
+    height: 22px;
+    line-height: 22px;
+    padding-bottom: 2px;
+    padding-top: 2px;
+    position: relative;
+    vertical-align: baseline;
+    z-index: 999;
+}
+#site-nav .login_info {
+    float: left;
+    font-family: Arial;
+}
+#site-nav .login_info a {
+    margin-right: 5px;
+}
+#site-nav .login_info a span {
+    color: #0092d2;
+}
+#site-nav .login_info a:hover {
+    color: #0092d2;
+    text-decoration: underline;
+}
+#site-nav .quick-menu {
+    position: absolute;
+    right: 0;
+    top: 1px;
+}
+#site-nav .quick-menu li {
+    background: rgba(0, 0, 0, 0) url("http://www.59jiaju.com/themes/mall/jiaju/styles/default/images/T1CCRNXmRFXXXXXXXX.png") no-repeat scroll right 6px;
+    float: left;
+    margin-left: -1px;
+    padding-bottom: 0;
+    padding-top: 1px;
+    position: relative;
+}
+#site-nav .quick-menu li.home, #site-nav .quick-menu li.service {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+#site-nav .menu-hd {
+    cursor: pointer;
+    display: block;
+    height: 20px;
+    line-height: 17px;
+    margin: 3px 1px 0;
+    padding: 1px 22px 0 10px;
+    position: relative;
+    z-index: 901;
+}
+#site-nav .sites .menu-hd {
+    width: 48px;
+}
+#site-nav .mytb .menu-hd {
+    width: 48px;
+}
+#site-nav .favorite .menu-hd {
+    width: 36px;
+}
+#site-nav .menu-hd b, #site-nav .mini-cart b {
+    border-color: #666 #eee #eee;
+    border-style: solid;
+    border-width: 4px;
+    font-size: 0;
+    height: 0;
+    line-height: 0;
+    position: absolute;
+    right: 10px;
+    top: 7px;
+    transition: transform 0.2s ease-in 0s;
+    width: 0;
+}
+#site-nav .menu-bd {
+    background: #fff none repeat scroll 0 0;
+    border-color: #bfbfbf;
+    border-style: solid;
+    border-width: 1px;
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 21px;
+    z-index: 900;
+}
+#site-nav .menu-bd-panel {
+    padding: 10px 10px 6px;
+}
+#site-nav .menu {
+    position: relative;
+}
+#site-nav .item:hover .menu-hd, #site-nav .hover .menu-hd {
+    background: white none repeat scroll 0 0;
+    border-color: #bfbfbf #bfbfbf -moz-use-text-color;
+    border-style: solid solid none;
+    border-width: 1px 1px medium;
+    margin: 2px 0 0;
+}
+#site-nav .item:hover .menu-bd, #site-nav .hover .menu-bd {
+    display: block;
+}
+#site-nav .item:hover .menu-hd b, #site-nav .hover .menu-hd b, #site-nav .item:hover .mini-cart b, #site-nav .hover .mini-cart b {
+    border-color: #666 #fff #fff;
+    top: 6px;
+    transform: rotate(180deg);
+    transform-origin: 50% 30% 0;
+}
+#site-nav .quick-menu .mini-cart a.ac {
+    background: #fff none repeat scroll 0 0;
+    border: 1px solid #d8d8d8;
+    display: block;
+    height: 17px;
+    line-height: 17px;
+    margin-top: 3px;
+    padding-left: 25px;
+    padding-right: 6px;
+    padding-top: 0;
+    position: relative;
+    width: 76px;
+}
+#site-nav .item:hover .mini-cart a.ac, #site-nav .hover .mini-cart a.ac {
+    border-bottom: medium none;
+    z-index: 901;
+}
+#site-nav .quick-menu .mini-cart .mini-cart-hd {
+    color: #3e3e3e;
+    font-weight: bold;
+    margin: 10px 0;
+}
+#site-nav .quick-menu .mini-cart .mini-cart-each {
+    height: 45px;
+}
+#site-nav .quick-menu .mini-cart .mini-cart-img {
+    display: inline-block;
+    float: left;
+    height: 40px;
+    margin-right: 10px;
+    overflow: hidden;
+    text-align: center;
+    width: 40px;
+}
+#site-nav .quick-menu .mini-cart .mini-cart-title {
+    float: left;
+    height: 40px;
+    line-height: 20px;
+    overflow: hidden;
+    width: 190px;
+}
+#site-nav .quick-menu .mini-cart .mini-cart-bt {
+    border-top: 1px solid #f2f2f2;
+    float: left;
+    margin-top: 10px;
+    text-align: center;
+}
+#site-nav .quick-menu .mini-cart .mini-cart-bt a {
+    background: white url("http://www.59jiaju.com/themes/mall/jiaju/styles/default/images/T1lxl1XcNGXXXXXXXX-113-50.png") repeat scroll 0 0;
+    border: medium none;
+    color: white;
+    display: inline-block;
+    height: 20px;
+    line-height: 19px;
+    padding: 0;
+    text-align: center;
+    width: 113px;
+}
+#site-nav .quick-menu .mini-cart .mini-cart-bt a:hover {
+    color: #fff;
+}
+#site-nav .quick-menu .mini-cart .price-admin {
+    float: right;
+    text-align: right;
+}
+#site-nav .quick-menu .mini-cart .mini-cart-del a {
+    color: #0092d2;
+}
+#site-nav .quick-menu .mini-cart .mini-cart-del a:hover {
+    color: #0092d2;
+    text-decoration: underline;
+}
+#site-nav .quick-menu .mini-cart .mini-cart-empty {
+    color: #999;
+    margin-right: 30px;
+}
+#site-nav .mytb .menu-bd {
+    height: 75px;
+    line-height: 1.7;
+    width: 94px;
+}
+#site-nav .favorite .menu-bd {
+    height: 57px;
+    line-height: 1.7;
+    width: 82px;
+}
+#site-nav .mytb .menu-bd-panel {
+    padding: 8px 10px;
+}
+#site-nav .favorite .menu-bd-panel {
+    padding: 8px 10px;
+}
+#site-nav .quick-menu .mini-cart s {
+    background: rgba(0, 0, 0, 0) url("http://www.59jiaju.com/themes/mall/jiaju/styles/default/images/T1CCRNXmRFXXXXXXXX.png") no-repeat scroll -100px -20px;
+    height: 11px;
+    left: 6px;
+    position: absolute;
+    top: 2px;
+    width: 14px;
+}
+#site-nav .quick-menu .mini-cart a:hover {
+    color: #f50;
+}
+#site-nav .quick-menu .mini-cart strong {
+    color: #f50;
+    padding: 0 2px;
+}
+#site-nav .quick-menu .mini-cart .menu-bd {
+    border: 1px solid #d8d8d8;
+    left: 0;
+    overflow: hidden;
+    padding: 0 10px 10px;
+    top: 17px;
+    width: 304px;
+    z-index: 900;
+}
+#site-nav .sites .menu-bd {
+    width: 202px;
+}
+#site-nav .sites .menu-bd a {
+    color: #057bd2;
+}
+#site-nav .iwantbuy .menu-bd {
+    width: 82px;
+}
+#site-nav .seller-center .menu-hd {
+    width: 48px;
+}
+#site-nav .seller-center .menu-bd {
+    line-height: 1.7;
+    width: 94px;
+}
+#site-nav .seller-center .menu-bd-panel {
+    padding: 8px 10px;
+}
+#site-nav .shoptop a {
+    color: #666;
+}
+#site-nav .shoptop a:hover {
+    color: #a00000;
+    text-decoration: none;
+}
+#site-nav .fixed {
+    position: fixed;
+    right: 0;
+    top: 300px;
+}
+#site-nav .fixed .gotop {
+    background: rgba(0, 0, 0, 0) url("http://www.59jiaju.com/themes/mall/jiaju/styles/default/images/gotop.png") repeat scroll 0 0;
+    display: block;
+    height: 23px;
+    width: 19px;
+}
+#site-nav .fixed .feedbacklink {
+    background: rgba(0, 0, 0, 0) url("http://www.59jiaju.com/themes/mall/jiaju/styles/default/images/feedbacklink.png") repeat scroll 0 0;
+    display: block;
+    height: 92px;
+    width: 19px;
+}
+#site-nav .fixed .zhaoping {
+    background: rgba(0, 0, 0, 0) url("http://www.59jiaju.com/themes/mall/jiaju/styles/default/images/zhaoping.png") repeat scroll 0 0;
+    display: block;
+    height: 66px;
+    width: 19px;
+}
+/* change city start */
+.change-city{position: relative; z-index: 1;}
+.change-city-window{overflow: hidden; position: absolute; left: 0; top: 40px; width: 400px; border: 2px solid #ccc; background: #fff; z-index: 1000; display: none; line-height: 20px; border-radius: 5px; padding: 10px;}
+.change-city-window div{overflow: hidden;}
+.change-city-window div span{display: block; padding: 3px 7px; color: #ff9900; text-align: center; border: 1px solid #ff9900; float: right; cursor: pointer;}
+.change-city-window div a{display: inline-block; padding: 0px 20px;}
+.change-city-window div a:hover{background: #eee; color: #333; text-decoration: none;}
+#open-change-city-window{cursor: pointer;}
+/* change city end */
+#header .top-search-box .submit{background: #b61d1d;width:100px;color:#fff;height:30px;position:absolute;border:0;right:0px;top:1px; cursor:pointer;}
+#header .top-search ul{width:480px;margin-left:20px;}
+#header .top-search ul li{float:left;width:50px; height:20px; line-height:20px; text-align:center;color:#666; cursor:pointer}
+
+#header .mainnav {
+    border-bottom: 2px solid #b1191a;
+    height: 41px;
+    line-height: 41px;
+}
+#header .mainnav a {
+    color: #000;
+    font-size: 16px;
+    padding: 20px;
+}
+#header .mainnav ul li {
+    float: left;
+}
+#header .mainnav ul li.bj {
+    background: rgba(0, 0, 0, 0) url("http://www.59jiaju.com/themes/mall/jiaju/styles/default/images/head_foot_bj.png") no-repeat scroll -96px -133px;
+    height: 34px;
+    margin: 0 10px;
+    padding: 0;
+    width: 9px;
+}
+.mainnav .menu{ width:1212px; height:41px;margin: 0 auto; }
+.mainnav .menu ul{ width:1212px; margin:0 auto;}
+.mainnav .menu li{float:left; line-height:41px; text-align:center;}
+.mainnav .menu a{ color:#000; font-size:16px;padding: 20px; }
+.mainnav .menu li.total{width: 268px;height: 41px;line-height: 41px;color: #000;font-size: 16px;}
+
+#main .main-top .left, #main .main-top .center {
+    background: #fff none repeat scroll 0 0;
+    float: left;
+}
+#main .main-top .right {
+    float: right;
+    width: 215px;
+}
+.main-top .left {
+    height: 509px;
+    position: relative;
+    width: 268px;
+    z-index: 99;
+}
+.left_con{padding: 10px;color: #fff;}
+.left_con a{color: #fff;}
+.left_con h2{font-size: 16px;line-height: 35px;}
+.left_con ul li{float: left;}
+.left_con ul li a{padding-left: 5px;padding-right: 5px;line-height: 21px;}
+
+.new-cat-top {
+    border-bottom: 1px solid #a00100;
+    clear: both;
+    height: 30px;
+    margin: 20px auto 0;
+    overflow: hidden;
+    padding: 0 0 5px;
+    width: 1195px;
+}
+.new-cat-top h2 {
+    font-size: 20px;
+    font-weight: normal;
+    height: 30px;
+    line-height: 30px;
+    padding-left: 7px;
+    border-left: 7px solid #a00100;
+}
+.new-cat-top h2 span {
+    color: #333;
+    font-size: 13px;
+    padding-left: 7px;
+    text-transform: uppercase;
+}
+.new-cat-top h2 em {
+    float: right;
+}
+.new-cat-top h2 em a {
+    margin-right: 0;
+    padding-left: 10px;
+}
+/*产品类别*/
+.new-cat {
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 10px;
+    width: 1180px;
+}
+.new-cat-top a {
+    font-size: 13px;
+    margin-right: 18px;
+    line-height: 35px;
+}
+.new-cat h3 {
+    border-bottom: 1px solid #cdcdcd;
+    font-weight: normal;
+    height: 33px;
+    line-height: 32px;
+    width: 96%;
+}
+.new-cat h3 strong {
+    border-bottom: 3px solid #68000d;
+    color: #68000d;
+    font-size: 20px;
+}
+.new-cat h3 span {
+    color: #fe100e;
+    padding-left: 10px;
+}
+.new-cat h3 a {
+    font-size: 16px;
+    padding-right: 10px;
+}
+
+.new-cat h3  .right {
+	float: right;
+}
+
+.new-cat dl dt {
+    border-right: 1px solid #cdcdcd;
+    float: left;
+    width: 52%;
+}
+.new-cat dl dd {
+    float: right;
+    width: 46%;
+}
+.new-cat dl dd ul li { 
+    float: left;
+    height: 45px;
+    margin-right: 9px;
+    margin-top: 9px;
+    width: 169px;
+}
+.zplist {
+    border-bottom: 1px dashed #cdcdcd;
+    color: #fc6495;
+    width: 96%;
+    margin-top:10px;
+}
+.zplist a{
+   
+}
+.ad {
+    height: 60px;
+    margin: 50px auto;
+    width: 1212px;
+}
+.ad ul li{width: 16.66%;float: left;text-align: center;}
+.ad ul li a{display: block;width: 169px;height:45px;margin:0 auto;margin-top: 7px;}
+.ad  a img{width:1212px;}
+.zplist a {
+    font-size: 14px;
+}
+
+.new-cat1{width: 1212px;margin:20px auto;}
+.new-cat1 .dl_left{width:283px;margin-right:2px;float: left; height: 461px;position: relative;}
+.new-cat1 .dl_left h3{position: absolute; bottom: 0px;left: 0px;text-align: center;color: #fff;height: 60px;line-height: 60px;width: 100%;background: #a00100;}
+.new-cat1 .dl_left p{position: absolute;bottom:0px;height: 30px;line-height: 30px;}
+.new-cat1 .dl_right{width:915px;float: right;}
+.dl_right ul li{width: 303px;float: left;margin-right: 2px;margin-bottom: 15px;margin-top: 6px;position: relative;}
+.dl_right ul li a{display: block;}
+.dl_right ul li img{width: 300px;}
+.dl_right ul li p{position: absolute;bottom: 0px;height: 30px;line-height: 30px;background: #dcdcdc;width: 300px;color: #a00100;text-align: center;}
+.new-cat .new-cat2 li{width: 350px;float: left;position: relative;}
+.new-cat .new-cat2 li.mt81{margin-left: 65px;margin-right: 65px;}
+.new-cat .new-cat2 li a{display:block;height: 190px;background: #000;}
+.new-cat .new-cat2 li a img{width: 350px;height: 190px;}
+.new-cat .new-cat2 li span{width: 90%;display: block;position: absolute;left:5%;font-size:30px;text-align:center;line-height:56px;background: #a00100;color: #fff;height: 56px;top:67px;}
+/*tab*/
+#webwidget_scroller_tab {
+	font-size: 12px;
+	font-family:Verdana, Geneva, sans-serif;
+	width:500px
+}
+.tabContainer {
+	width:100%;
+	background:url(../images/tab.gif) repeat-x bottom;
+	overflow:hidden;
+}
+.tabContainer li {
+	float:left;
+	margin-right:2px;
+	background:url(../images/tabOff_right.gif) no-repeat right top;
+}
+.tabContainer h2{width: 400px;float: left;}
+.tabContainer li a {
+	display:block!important;
+	display:inline-block;
+	padding:0 10px;
+	height:35px;
+	line-height:35px;
+	background:url(../images/tabOff_left.gif) no-repeat left top;
+}
+#webwidget_scroller_tab .tabHead {
+	list-style-type: none;
+	margin:0px;
+	padding:0px;
+	float: right;
+}
+#webwidget_scroller_tab .tabBody {
+	height: 150px;
+	background-color: white;
+	overflow: hidden;
+	width:100%;
+	position: relative;
+}
+#webwidget_scroller_tab .tabBody ul, li {
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+}
+#webwidget_scroller_tab .tabBody ul {
+	width: 915px;
+	position: absolute;
+}
+#webwidget_scroller_tab .tabBody ul li {
+	float: left;
+}
+#webwidget_scroller_tab .tabHead li a {
+	font-weight: bold;
+	text-decoration: none;
+	color: #0099FF;
+}
+#webwidget_scroller_tab .tabCot {
+	float: left;
+}
+#webwidget_scroller_tab.tabCot p {
+	margin: 0px;
+	padding:5px;
+}
+
+#webwidget_scroller_tab .tabContainer li.currentBtn a {
+	height:35px;
+	background: #a00100;
+	color:#fff;
+}
+#webwidget_scroller_tab .modA {
+	margin:10px;
+}
+#webwidget_scroller_tab .modBody {
+	border-left:#dbdbdb solid 1px;
+	border-right:#dbdbdb solid 1px;
+	background-color: white;
+}
+#webwidget_scroller_tab .modTop h3 {
+	padding:0px;
+	margin:0px;
+	height:28px;
+	background:url(../images/modAT.gif) repeat-x left top;
+	color:#2C6A78;
+	font-size:12px;
+	line-height:25px;
+}
+.modTop span.modATL, .modTop span.modATR {
+	float:left;
+	width:4px;
+	height:28px;
+	background:url(../images/bg.gif) no-repeat left top;
+	overflow:hidden;
+}
+.modTop span.modATR {
+	float:right;
+	background:url(../images/bg.gif) no-repeat -4px top;
+}
+.modA #sideNav dd a:hover {
+	background:url(../images/bg.gif) no-repeat left -110px;
+	color:#FFF;
+	text-decoration:none;
+}
+#webwidget_scroller_tab .modBottom {
+	width:100%;
+	height:4px;
+	background:url(../images/modAB.gif) repeat-x left top;
+	overflow:hidden;
+}
+#webwidget_scroller_tab .modBottom span.modABL, .modBottom span.modABR, .modTopB span.modATR, .modTopB span.modATL {
+	float:left;
+	width:4px;
+	height:4px;
+	background:url(../images/bg.gif) no-repeat left -28px;
+	overflow:hidden;
+}
+#webwidget_scroller_tab .modBottom span.modABR {
+	float:right;
+	background:url(../images/bg.gif) no-repeat -4px -28px;
+}
+/*tab2*/
+.new-cat_ul1{padding-top: 20px;}
+.cat_ul1_left{width: 278px;float: left;margin-right: 5px;}
+.cat_ul1_center{width:697px;float: left;margin-right: 5px; }
+.cat_ul1_right{width:221px;float: left;}
+.cat_ul1_right a{display: block;margin-bottom: 1px;}
+.new-cat_ul12{padding-top: 5px;}
+#webwidget_scroller_tab .tabBody .new-cat_ul12 ul{width: 1210px;}
+.new-cat_ul12 ul li{width: 391px;float: left;}
+.cat_ul1 a{display: block;position: relative;}
+.cat_ul1 p{position: absolute;top:0px;left: 0px;background: url(../images/red_bg.png);width:102px;height: 82px;color: #fff; font-size: 14px;padding-left: 10px;padding-top: 10px;}
+.cat_ul1 h3{position: absolute; bottom: 0px;left: 0px;text-align: center;color: #fff;height: 60px;line-height: 60px;width: 100%;background: #a00100;}
+.mr20{margin-left: 16px;margin-right: 16px;}
+/*tab3*/
+.new-cat_ul2{padding-top: 20px;}
+.cat_ul2_left{width: 399px;float: left;}
+.cat_ul2_left a{display: block;float: left;width: 195px;margin-right: 4px;margin-bottom: 7px;}
+.cat_ul2_left a img{width: 195px;}
+.cat_ul2_center a{margin-bottom: 7px;}
+.cat_ul2_center{width: 394px;float: left;margin-left: 8px;margin-right: 8px;}
+.cat_ul2 a{display: block;position: relative;}
+.cat_ul2 p{position: absolute;bottom:0px;right: 0px;background: url(../images/blue_bg.png);text-align:center;width:71px;height: 56px;color: #fff; font-size: 14px;padding-top: 15px}
+.cat_ul2 h3{position: absolute; bottom: 0px;left: 0px;text-align: center;color: #fff;height: 60px;line-height: 60px;width: 100%;background: #a00100;}
+
+/*页面底部*/
+#footer {
+    background: rgba(0, 0, 0, 0) url("../images/bj1.gif") repeat-x scroll left -44px;
+}
+#footer a {
+    color: #3566cf;
+    text-decoration: none;
+}
+#footer a:hover {
+    color: #ff6600;
+    text-decoration: underline;
+}
+#footer .foot-service dl {
+    color: #666;
+    float: left;
+    margin-top: 30px;
+    padding-bottom: 20px;
+    text-align: left;
+    width: 25%;
+}
+#footer .foot-service dt {
+    background: rgba(0, 0, 0, 0) url("../images/foot-service.gif") no-repeat scroll 0 0;
+    height: 27px;
+    overflow: hidden;
+    width: 198px;
+}
+#footer .foot-service dt.fts-2 {
+    background-position: 0 -28px;
+}
+#footer .foot-service dt.fts-3 {
+    background-position: 0 -55px;
+}
+#footer .foot-service dt.fts-4 {
+    background-position: 0 -84px;
+}
+#footer .foot-service dd {
+    line-height: 30px;
+    padding-left: 30px;
+}
+#footer .foot-service dd a {
+    color: #666;
+}
+#footer .foot-service dd a:hover {
+    color: #ff6600;
+    text-decoration: none;
+}
+#footer .foot-nav {
+    border-top: 1px solid #ddd;
+    height: 20px;
+    padding-top: 15px;
+}
+#footer .foot-nav a {
+    margin: 0 7px;
+}
+#footer .foot-group {
+    margin: 5px auto 10px;
+}
+#footer .copyright {
+    font-family: Arial;
+    margin: 5px auto 10px;
+}
+
+
+
+/*左侧菜单栏*/
+.hc_lnav{z-index:9999;position:relative;width:268px;}
+.hc_lnav .allbtn{z-index:99999;position:relative}
+.hc_lnav .allbtn ul{z-index:99999;position:absolute;background-color:#60a411;width:268px;height:486px;top:0px;left:0px}
+body.hc_home .hc_lnav .allbtn ul{display:block}
+body.hc_list .hc_lnav .allbtn ul{display:block}
+.hc_lnav .allbtn ul li{padding-bottom:7px;zoom:1;clear:both;cursor:default}
+.hc_lnav .allbtn ul li .tx{line-height:35px;padding-left:10px;background-repeat:no-repeat;background-position:right center;height:35px;_background-image:none}
+.hc_lnav .allbtn ul li .tx a{font-family:微软雅黑, 黑体;color:#ffffff;font-size:14px;-webkit-transition:color 0.1s ease-out 0s;-moz-transition:color 0.1s ease-out 0s;-ms-transition:color 0.1s ease-out 0s;-o-transition:color 0.1s ease-out 0s;transition:color 0.1s ease-out 0s}
+.hc_lnav .allbtn ul li .tx  span{float: right;font-family: '宋体';padding-right:10px;}
+.hc_lnav .allbtn ul li dl{zoom:1;color:#ffffff;clear:both;overflow:auto;padding-top:4px;height: 35px;line-height: 35px;}
+.hc_lnav .allbtn ul li dl a{line-height:35px;white-space:nowrap;float:left;color:#d9e7ce;margin-left:6px;margin-right:6px;-webkit-transition:color 0.1s ease-out 0s;-moz-transition:color 0.1s ease-out 0s;-ms-transition:color 0.1s ease-out 0s;-o-transition:color 0.1s ease-out 0s;transition:color 0.1s ease-out 0s}
+.hc_lnav .allbtn ul li dt{padding-left:10px;width:30px;float:left;padding-top:6px;font-family: '宋体';}
+.hc_lnav .allbtn ul li dd{width:150px;float:left;padding-top:2px}
+.hc_lnav .allbtn ul li .pop{z-index:9999;position:absolute;padding-bottom:10px;background-color:#fcfcfc;min-height:466px;padding-left:30px;width:884px;padding-right:30px;display:none;height:464px;border-top:medium none;top:0px;padding-top:10px;left:268px;}
+.hc_lnav .allbtn ul li .pop h3{display:none;font-size:14px}
+.hc_lnav .allbtn ul li .pop dl{padding-bottom:6px;color:#666666;padding-top:6px}
+.hc_lnav .allbtn ul li .pop dl a{color:#666666;margin-left:12px;margin-right:12px}
+.hc_lnav .allbtn ul li .pop dl a.un{color:#a5a5a5}
+.hc_lnav .allbtn ul li .pop dt{padding-left:0px;width:42px}
+.hc_lnav .allbtn ul li .pop dd{width:565px;margin-left:-12px;border-bottom: 1px dashed #eee;}
+.hc_lnav .allbtn ul li .pop .act{width:640px;height:80px;overflow:hidden;padding-top:10px}
+.hc_lnav .allbtn:hover ul{display:block}
+.hc_lnav .allbtn ul li:hover{background-color:#fcfcfc}
+.hc_lnav .allbtn ul li:hover .tx{background-color:#f5f5f5}
+.hc_lnav .allbtn ul li:hover .tx a{color:#333333}
+.hc_lnav .allbtn ul li:hover .tx a i{background-position:0px -25px}
+.hc_lnav .allbtn ul li:hover .pop{display:block;top:0px;left:268px}
+.hc_lnav .allbtn ul li:hover .pop dl a.un{color:#a5a5a5;text-decoration:none}
+.hc_lnav .allbtn ul li:hover dl{color:#6e6e6e}
+.hc_lnav .allbtn ul li:hover a{color:#666666}
+.hc_lnav .allbtn ul li:hover a:hover{color:#cd0606}
+.popl{width: 670px;}
+.popr{width: 300px;}

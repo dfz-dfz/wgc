@@ -1,0 +1,401 @@
+<?php 
+session_start(); 
+
+header("Content-Type: text/html; charset=utf-8");//防止界面乱码
+$con=mysql_connect('localhost','root','Hll72xiwr43p0ia5padma');//数据库用户名，密码
+if(!$con){
+	die('connect failed!');
+}
+mysql_select_db("wgc_db", $con);
+mysql_query("SET NAMES utf8");//解决数据库中有汉字时显示在前台出现乱码问题
+
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>集采合作供应商 - 微工程</title>
+<meta name="description" content="微工程，微工程APP，装修、材料、家具、饰品一站式服务，让装修更简单，价格更透明！！" />
+<meta name="keywords" content="微工程，微工程，家居商城，微工程家居商城，微工程家居装修商城，办公室装修，写字楼装修，材料，装修材料，家居，办公家具，家居，家具，装修，装饰" />
+	
+<link rel="stylesheet" type="text/css" href="/themes/mall/jiaju/css/api.css"/>
+<link rel="stylesheet" type="text/css" href="/themes/mall/jiaju/css/aui.css" />
+<link rel="stylesheet" type="text/css" href="/themes/mall/jiaju/css/aui.1.0.css"/>
+<style type="text/css">
+.jodsearch{margin:0px;padding:0px;vertical-align: middle;}
+.jodsearch .dosearch{margin-left:auto;margin-right:auto;margin-top:10px;padding:0px;width:1100px;height:52px;background-color:#F5F5F5;}
+.jodsearch .dosearch input{margin-top:10px;}
+.jodsearch .dosearch *{vertical-align:middle;}
+.tiaojian a{color:#0066CB;}
+.jobtable{width:100%;text-align:left;margin-left:3px;font-size:13px;}
+.jobtable tr{line-height:30px;}
+.jobtable tr td{border-bottom:1px solid #F0F0F0;}
+.main{margin:0px;padding:0px;}
+.main_body{
+margin:auto;padding:0px;margin-top: 10px;margin-bottom: 10px; width:1100px;overflow:hidden;
+}
+.main_body .main_left{width:79%;float:left;margin-right:10px;}
+.main_body .main_right{width:19%;float:left;margin-left:10px;}
+/**劳务资源*/
+.text-left a{width:23%;background:#ff552e;border-radius:10px;float:left;margin:1%;height:50px;line-height:50px;overflow:hidden;display:block;color:#fff;font-size:16px;font-weight:bold;}
+.aui-list-item-middle{width:19.88888888888%;margin:10px 0.11111111111rem;float:left;overflow: hidden;}
+</style>
+
+</head>
+<body>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<base href="{$site_url}/" />
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7 charset={$charset}" />
+<meta http-equiv="Content-Type" content="text/html; charset={$charset}" />
+<link rel="stylesheet" type="text/css" href="/themes/mall/jiaju/css/api.css"/>
+<link rel="stylesheet" type="text/css" href="/themes/mall/jiaju/css/aui.css" />
+<link type="text/css" href="{res file=css/main.css}" rel="stylesheet"  />
+<link type="text/css" href="/themes/mall/jiaju/styles/css/global.css" rel="stylesheet"  />
+<link type="text/css" href="{res file=css/catalog.css}" rel="stylesheet"  />
+<link type="text/css" href="{res file=css/footer.css}" rel="stylesheet" />
+<link type="text/css" href="/themes/mall/jiaju/styles/css/style.css" rel="stylesheet"  />
+<script type="text/javascript" src="index.php?act=jslang"></script>
+<script type="text/javascript" src="{lib file=jquery.js}" charset="utf-8"></script>
+<script type="text/javascript" src="{lib file=ecmall.js}" charset="utf-8"></script>
+<script type="text/javascript" src="{lib file=cart.js}" charset="utf-8"></script>
+<script type="text/javascript" src="{res file=js/main.js}" charset="utf-8"></script>
+<!--{if $index}-->
+<script type="text/javascript" src="{lib file=kissy/build/kissy.js}"></script>
+<script type="text/javascript" src="{lib file=kissy/build/switchable/switchable-pkg.js}"></script>
+<script type="text/javascript" src="{res file=js/lrtk.js}"></script>
+<!--{/if}-->
+<!--[if lte IE 6]>
+<script type="text/javascript" language="Javascript" src="{res file=js/hoverForIE6.js}"></script>
+<![endif]-->
+<script type="text/javascript" src="{res file=js/hover.js}"></script>
+<style type="text/css">
+.aui-col-xs-3{margin-top:0!important;width:100px;}
+.aui-col-xs-3 img{width:1.90rem;height:1.90rem;margin:0 auto;}
+</style>
+</head>
+<body>
+<div id="header" class="w-full">
+	<!--头部导航开始
+		<div id="site-nav" class="w-full" style="background:#333;border-bottom:1px solid #fff;text-align:left;">
+			<div style="overflow:hidden;color:#fff;text-align:left;width:77%;min-width:1100px;margin:0 auto;">http://www.wgc2013.com</div>
+		</div>-->
+		<div id="site-nav" class="w-full" style="background:#333;height:50px;">
+		  <div class="shoptop w clearfix" style="height:50px">
+				<div class="login_info" style="height:50px;line-height:50px">
+				
+					<a href="http://wgcapp.59jiaju.com/apk/index.html" target="_blank" style="color:#fff;font-size:18px;">
+						APP下载
+						<font style="margin-left:5px;">&or;</font>
+					</a>					
+				
+					
+				</div>
+				<ul class="quick-menu"style="min-width:190px;overflow:hidden;">
+				  
+					<li class="service" style="margin-right:10px;height:50px;line-height:50px;background:none;">
+						<!--<a href="/index.php?app=member&amp;act=login&amp;ret_url=" style="color:#fff;font-size:18px;">企业服务</a>      -->  
+					</li>
+					<li class="service" style="margin-right:10px;height:50px;line-height:50px;background:none;">
+						<a href="javascript:;" style="color:#fff;font-size:18px;">|</a>        
+					</li>
+					<li style="background:red;margin-right:0px;padding:0 30px;height:50px;line-height:50px;">
+						 <?php
+							if(empty($_SESSION['user_info']))
+							{
+								echo '&nbsp;&nbsp;&nbsp;';
+								echo '<a  style="color:#fff;margin:0;font-size:18px;" href="/index.php?app=member&amp;act=login&amp;ret_url=">登录</a>';
+								echo '<span style="color:#fff;margin:0 5px;">/</span>';
+								echo '	<a  style="color:#fff;margin:0;font-size:18px;" href="/index.php?app=store&act=reg">注册</a>';
+								echo '&nbsp;&nbsp;&nbsp;';
+							}else{
+								echo '您好，<a href="index.php?app=member" style="color:#0000ff;">'.$_SESSION['user_info']["user_name"].'</a>&nbsp;&nbsp;&nbsp;';
+								echo '<a href="/index.php?app=member&amp;act=logout" style="font-size:18px;color:#fff;margin:0;">退出</a>&nbsp;&nbsp;&nbsp;';
+								echo '<a href="/index.php?app=message&amp;act=newpm" style="font-size:18px;color:#fff;margin:0;">站内消息</a>';
+							}
+						?>  
+					</li>
+				</ul>
+		   </div>
+		 </div>	
+	<!---头部导航结束-->
+    <div class="shop-t w clearfix" style="width: 100%;min-width: 1100px;">
+	
+		<!--logo部分开始--->
+		<div id="h_logos" style="overflow:hidden;" >
+		
+			<div class="logo" style="width:290px;float:left;">
+				 <a href="/"  title="微工程">
+					<img alt="微工程" src='/data/files/mall/settings/logo.png' />
+				  </a>			  
+			</div>
+			<div id="searchbar" style="margin-top:0;width:630px;float:left;overflow:hidden">
+				<img style="height:80px;width:100%;" alt="微工程" src='/themes/mall/jiaju/images/ppbypic.jpg' />				
+            </div>
+			
+			<?php
+			$row11=mysql_num_rows(mysql_query("SELECT user_id FROM ecm_member where types=2"));
+			$row12=mysql_num_rows(mysql_query("SELECT user_id FROM ecm_member where types=3"));
+			?>
+			
+			<!--注册-登陆-->
+			<div style="overflow:hidden;float:right;width:240px;height:100px;">
+				<a href="index.php?app=member&amp;act=login&amp;ret_url="  title="微工程">
+					<img alt="微工程" src='/data/files/mall/settings/user.png' style="width:100%;height:100%" />
+				  </a>	
+			</div>
+			
+		</div>
+		
+   	</div>
+	<!---logo部分结束-->
+	
+	
+	<div class="mainnav w-full">
+		<div class="menu">
+			<ul style="overflow:hidden;float:left;">
+				<li class="line"style="width:18%"><a style="font-size:22px;" href="/index.php">首页</a></li>
+				<li class="line"style="width:18%"><a style="font-size:22px;" href="/index.php?app=search&act=zhaopin">热门招聘</a></li>
+				<li class="line"style="width:18%"><a style="font-size:22px;" href="/index.php?app=search&act=caigou">集采信息</a></li>
+				<li class="line"style="width:18%"><a style="font-size:22px;" href="/index.php?app=search&act=joblist2">劳动力资源</a></li>
+				<!--<li class="line"style="width:18%"><a style="font-size:22px;" href="/index.php?app=member&act=login&ret_url=">会员登录</a></li>
+				<li class="line"style="width:20%"><a style="font-size:22px;" href="/index.php?app=store&act=reg">会员注册</a></li>-->
+			</ul>
+		</div>
+	</div>
+</div>
+
+
+<!-- 搜索 -->
+<div class="jodsearch" style="background:red;padding-bottom: 8px;">
+		<div class="dosearch" style="background:red;overflow:hidden;color:#fff;height:50px;line-height:50px;font-size:22px;">
+			集采合作供应商
+		</div>
+</div>
+<div class="main">
+	<!-- 主体 -->
+	<div class="main_body">
+		<!-- 左边 -->
+		<div class="main_left"style="width:100%">
+			<div style="background-color:#fff;width:100%;">
+				
+					<div style="width:100%;height:auto;overflow:hidden;margin:20px auto;">
+						<section class="aui-grid aui-margin-b-15">
+							<div class="aui-row">
+								<a href="/index.php?app=search&act=gongyingshang&type=1">
+									<div class="aui-col-xs-3" onclick="cl('厨房设备',1)">
+									   <img src="/themes/mall/jiaju/images/cl1.png" alt=""/>
+									   <div class="aui-grid-label">厨房设备</div>
+									</div>
+								</a>
+								<a href="/index.php?app=search&act=gongyingshang&type=2">
+									<div class="aui-col-xs-3" onclick="cl('瓷砖石材',2)">
+									   <img src="/themes/mall/jiaju/images/cl2.png" alt=""/>
+									   <div class="aui-grid-label">瓷砖石材</div>
+									</div>
+								</a>
+								<a href="/index.php?app=search&act=gongyingshang&type=3">
+									<div class="aui-col-xs-3" onclick="cl('板材',3)">
+										<img src="/themes/mall/jiaju/images/cl3.png" alt=""/>
+										<div class="aui-grid-label">板材</div>
+									</div>
+								</a>
+								<a href="/index.php?app=search&act=gongyingshang&type=4">
+									<div class="aui-col-xs-3" onclick="cl('家具',4)">
+										<img src="/themes/mall/jiaju/images/cl4.png" alt=""/>
+										<div class="aui-grid-label">家具</div>
+									</div>
+								</a>
+								<a href="/index.php?app=search&act=gongyingshang&type=5">
+									<div class="aui-col-xs-3" onclick="cl('门窗',5)">
+										<img src="/themes/mall/jiaju/images/cl5.png" alt=""/>
+										<div class="aui-grid-label">门窗</div>
+									</div>
+								</a>
+								<a href="/index.php?app=search&act=gongyingshang&type=6">
+									<div class="aui-col-xs-3" onclick="cl('家饰',6)">
+										<img src="/themes/mall/jiaju/images/cl6.png" alt=""/>
+										<div class="aui-grid-label">家饰</div>
+									</div>
+								</a>
+								<a href="/index.php?app=search&act=gongyingshang&type=7">
+									<div class="aui-col-xs-3" onclick="cl('地板',7)">
+									   <img src="/themes/mall/jiaju/images/cl7.png" alt=""/>
+									   <div class="aui-grid-label">地板</div>
+									</div>
+								</a>
+								<a href="/index.php?app=search&act=gongyingshang&type=8">
+									<div class="aui-col-xs-3" onclick="cl('卫浴洁具',8)">
+									   <img src="/themes/mall/jiaju/images/cl8.png" alt=""/>
+									   <div class="aui-grid-label">卫浴洁具</div>
+									</div>
+								</a>
+								<a href="/index.php?app=search&act=gongyingshang&type=9">
+									<div class="aui-col-xs-3" onclick="cl('五金管件',9)">
+										<img src="/themes/mall/jiaju/images/cl9.png" alt=""/>
+										<div class="aui-grid-label">五金管件</div>
+									</div>
+								</a>
+								<a href="/index.php?app=search&act=gongyingshang&type=10">
+									<div class="aui-col-xs-3" onclick="cl('油漆涂装',10)">
+										<img src="/themes/mall/jiaju/images/cl10.png" alt=""/>
+										<div class="aui-grid-label">油漆涂装</div>
+									</div>
+								</a>
+								<!--<div class="aui-col-xs-3" onclick="cl('灯饰开关',11)">
+									<img src="/themes/mall/jiaju/images/cl11.png" alt=""/>
+									<div class="aui-grid-label">灯饰开关</div>
+								</div>-->
+								<a href="/index.php?app=search&act=gongyingshang&type=14">
+									<div class="aui-col-xs-3" onclick="cl('消防',14)">
+										<img src="/themes/mall/jiaju/images/cl14.png" alt=""/>
+										<div class="aui-grid-label">消防</div>
+									</div>
+								</a>
+								<a href="/index.php?app=search&act=gongyingshang&type=15">
+									<div class="aui-col-xs-3" onclick="cl('防水涂料',15)">
+										<img src="/themes/mall/jiaju/images/cl15.png" alt=""/>
+										<div class="aui-grid-label">防水涂料</div>
+									</div>
+								</a>
+								<a href="/index.php?app=search&act=gongyingshang&type=16">
+									<div class="aui-col-xs-3" onclick="cl('电气',16)">
+										<img src="/themes/mall/jiaju/images/cl16.png" alt=""/>
+										<div class="aui-grid-label">电气</div>
+									</div>
+								</a>
+								<a href="/index.php?app=search&act=gongyingshang&type=17">
+									<div class="aui-col-xs-3" onclick="cl('给排水',17)">
+										<img src="/themes/mall/jiaju/images/cl17.png" alt=""/>
+										<div class="aui-grid-label">给排水</div>
+									</div>
+								</a>
+								<a href="/index.php?app=search&act=gongyingshang&type=19">
+									<div class="aui-col-xs-3" onclick="cl('环评',19)">
+										<img src="/themes/mall/jiaju/images/cl19.png" alt=""/>
+										<div class="aui-grid-label">环评</div>
+									</div>
+								</a>
+								<a href="/index.php?app=search&act=gongyingshang&type=20">
+									<div class="aui-col-xs-3" onclick="cl('钢材',20)">
+										<img src="/themes/mall/jiaju/images/cl20.png" alt=""/>
+										<div class="aui-grid-label">钢材</div>
+									</div>
+								</a>
+								<a href="/index.php?app=search&act=gongyingshang&type=21">
+									<div class="aui-col-xs-3" onclick="cl('饰面板',21)">
+										<img src="/themes/mall/jiaju/images/cl21.png" alt=""/>
+										<div class="aui-grid-label">饰面板</div>
+									</div>
+								</a>
+								<a href="/index.php?app=search&act=gongyingshang&type=22">
+									<div class="aui-col-xs-3" onclick="cl('粘合剂',22)">
+										<img src="/themes/mall/jiaju/images/cl22.png" alt=""/>
+										<div class="aui-grid-label">粘合剂</div>
+									</div>
+								</a>
+								<a href="/index.php?app=search&act=gongyingshang&type=23">
+									<div class="aui-col-xs-3" onclick="cl('定制加工',23)">
+										<img src="/themes/mall/jiaju/images/cl23.png" alt=""/>
+										<div class="aui-grid-label">定制加工</div>
+									</div>
+								</a>
+								<a href="/index.php?app=search&act=gongyingshang&type=24">
+									<div class="aui-col-xs-3" onclick="cl('暖通空调',24)">
+										<img src="/themes/mall/jiaju/images/cl24.png" alt=""/>
+										<div class="aui-grid-label">暖通空调</div>
+									</div>
+								</a>
+								<a href="/index.php?app=search&act=gongyingshang&type=25">
+									<div class="aui-col-xs-3" onclick="cl('不锈钢制品',25)">
+										<img src="/themes/mall/jiaju/images/cl25.png" alt=""/>
+										<div class="aui-grid-label">不锈钢制品</div>
+									</div>
+								</a>
+								<a href="/index.php?app=search&act=gongyingshang&type=18">
+									<div class="aui-col-xs-3" onclick="cl('智能化',18)">
+										<img src="/themes/mall/jiaju/images/cl18.png" alt=""/>
+										<div class="aui-grid-label">智能化</div>
+									</div>
+								</a>
+								<a href="/index.php?app=search&act=gongyingshang&type=26">
+									<div class="aui-col-xs-3" onclick="cl('地毯',26)">
+										<img src="/themes/mall/jiaju/images/cl26.png" alt=""/>
+										<div class="aui-grid-label">地毯</div>
+									</div>
+								</a>
+								<a href="/index.php?app=search&act=gongyingshang&type=25">
+									<div class="aui-col-xs-3" onclick="cl('其它种类',25)">
+										<img src="/themes/mall/jiaju/images/cl13.png" alt=""/>
+										<div class="aui-grid-label">其它种类</div>
+									</div>
+								</a>
+							</div>
+						</section>
+					</div>
+					<?php 
+						if(isset($_GET['type']) && !empty($_GET['type'])){
+					?>
+					<table border="1" style="padding:0 10px;border-collapse:collapse;border:1px solid #666666;margin:20px auto;width:100%;background:#fff;">
+						<tr style="background:#e3e3e3;">
+							<td style="text-align:left;font-weight:bold;height:50px;font-size:18px;color:#333;background:#fff;border-bottom:2px solid #333">供应商名称</td>
+							<td style="font-weight:bold;height:50px;font-size:18px;color:#333;background:#fff;border-bottom:2px solid #333">品牌</td>
+							
+						</tr>
+						<?php
+								$type = $_GET['type'];
+								$query="select id,office_name,businessscope from ecm_cailiaoshang_mianpian where type=$type  order by id desc"; //定义sql
+								$result=mysql_query($query);
+								while($rows1=@mysql_fetch_array($result)){
+									 //var_dump($rows1);
+										echo  '<tr style="border-bottom:1px solid #ccc;">';
+										echo  '	<td style="text-align:left;height:40px;font-size:14px;color:#333;background:#fff;">';
+										echo  '<a title="'.$rows1['office_name'].'" target="_blank" href="index.php?app=search&act=content_gongyingshang&id='.$rows1['id'].'">';
+										echo  $rows1['office_name'];
+										echo  '</a>';
+										echo  '</td>';
+										echo  '	<td style="height:40px;font-size:14px;color:#333;background:#fff;">';
+										echo  '<a title="'.$rows1['businessscope'].'"target="_blank" href="index.php?app=search&act=content_gongyingshang&id='.$rows1['id'].'">';
+										echo  '<div style="width:400px;overflow:hidden;margin:0 auto;text-overflow:ellipsis;white-space: nowrap;">'.$rows1['businessscope'].'</div>';
+										echo  '</a>';
+										echo  '</td>';
+										echo  '</tr>';
+								}
+							
+							
+						?>
+							
+						<!--列表开始-->
+						
+						
+					</table>
+					<?php 
+					
+					}
+					
+					?>
+				
+				
+			</div>
+			
+		</div>
+		<!-- 左边结束 -->
+		
+		<!-- 右边结束 -->
+	</div>
+{include file=footer.html}
+<!-- 底部include file=footer2.html-->
+<script src="/themes/mall/jiaju/js/jquery-1.5.2.min.js"></script>
+<script type="text/javascript" src="/themes/mall/jiaju/js/aui-scroll.js" ></script>
+
+<script type="text/javascript">
+var serverUrl = "http://wgcapp.59jiaju.com/index.php/Home/",page = 1,uploadUrl = "http://wgcapp.59jiaju.com/";
+$(function(){
+	cai_select();
+});
+
+</script>
+</body>
+</html>

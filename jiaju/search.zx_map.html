@@ -1,0 +1,228 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>商城首页 - 59家居商城</title>
+<meta name="description" content="59，59家居，59家居商城，装修、材料、家具、饰品一站式服务，让装修更简单，价格更透明！！" />
+<meta name="keywords" content="59，59家居，家居商城，59家居商城，59家居装修商城，办公室装修，写字楼装修，材料，装修材料，家居，办公家具，家居，家具，装修，装饰" />
+<link type="text/css" href="/themes/mall/jiaju/styles/css.css" rel="stylesheet"  />
+<link type="text/css" href="/themes/mall/jiaju/styles/demo.css" rel="stylesheet"  />
+<link type="text/css" href="/themes/mall/jiaju/styles/style.css" rel="stylesheet"  />
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+<style type="text/css">
+	html,body{text-align:center;zoom:1;} 
+	#allmap {
+		width: 100%;
+		height:900px;
+		overflow:hidden;
+		zoom:1;
+		margin:0;
+		clear:both; 
+		font-size:0;
+		font-family:"微软雅黑";
+	}
+	#min{
+		margin: 0px auto;
+		width: 100%;
+		overflow:hidden;
+		zoom:1;
+		background:#333;
+		clear:both; 
+		font-size:0;
+	}
+	
+	.zhaopin_area,.w {
+		width: 100%;
+		height:auto;
+		overflow:hidden;
+		margin: 0 auto;
+		padding: 0;
+
+	}
+	.position_area_con {
+		border: 1px solid #ccc;
+		padding: 0; 
+		height:auto;
+		clear:both; 
+		font-size:0;
+		overflow:hidden;
+	}
+</style>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=nY0GwqkkU1Xh9M2esO7WLavSWcd2EKsl"></script>
+</head>
+
+<body>
+
+{include file=header.html}
+
+<!-- main start -->
+<div id="main">
+    
+<div class="zhaopin_area w"style="width:100%;height: auto;overflow: hidden;">
+	 	
+			
+			
+			<div class="position_area_con">
+				 
+				  <div class="area_select"style="width:100%;min-height:70px;margin:10px auto;">
+					<a href="index.php?app=search&act=zx&city=广州市&types=<?php echo $_GET['types']?>"> 全广州</a>
+					<a href="index.php?app=search&act=zx&city=天河区&types=<?php echo $_GET['types']?>">天河区 </a>
+					<a href="index.php?app=search&act=zx&city=海珠区&types=<?php echo $_GET['types']?>">海珠区 </a>
+					<a href="index.php?app=search&act=zx&city=越秀区&types=<?php echo $_GET['types']?>">越秀区 </a>
+					<a href="index.php?app=search&act=zx&city=白云区&types=<?php echo $_GET['types']?>">白云区 </a>
+					<a href="index.php?app=search&act=zx&city=荔湾区&types=<?php echo $_GET['types']?>">荔湾区 </a>
+					<a href="index.php?app=search&act=zx&city=番禺区&types=<?php echo $_GET['types']?>">番禺区 </a>
+					<a href="index.php?app=search&act=zx&city=黄埔区&types=<?php echo $_GET['types']?>">黄埔区 </a>
+					<a href="index.php?app=search&act=zx&city=花都区&types=<?php echo $_GET['types']?>">花都区 </a>
+					<a href="index.php?app=search&act=zx&city=增城区&types=<?php echo $_GET['types']?>">增城区 </a>
+					<a href="index.php?app=search&act=zx&city=萝岗区&types=<?php echo $_GET['types']?>">萝岗区 </a>
+					<a href="index.php?app=search&act=zx&city=南沙区&types=<?php echo $_GET['types']?>">南沙区 </a>
+					<a href="index.php?app=search&act=zx&city=经济开发区&types=<?php echo $_GET['types']?>">经济开发区 </a>
+							
+				  </div>
+					<div style="width:100%;min-height:300px;margin:10px auto;border-top:1px dashed #ccc">
+						
+						
+						<div id="allmap"></div>
+						
+					</div>
+			</div>
+			
+			</div>
+		</div>
+	</div>
+
+
+
+
+
+
+<script type="text/javascript" src="/themes/mall/jiaju/styles/default/js/jquery-1.3.2.min.js"></script>
+<script type="text/javascript">
+
+
+	
+	
+		var map = new BMap.Map("allmap");  // 创建Map实例
+	
+		myFun();
+		addr();
+		Cursor();
+		
+	
+	//定位获取城市
+	function myFun(){
+		var myCity = "<?php echo $cailiaoshang = !empty($_COOKIE['cailiaoshang']) ? $_COOKIE['cailiaoshang'] : '白云区';?>";
+		var city = '<?php echo GetIpCity();?>';
+		searchByStationName(myCity,city);
+	}
+	
+	
+	//添加点击事件
+	function attribute(){
+		var p = marker.getPosition();  //获取marker的位置
+		alert("marker的位置是" + p.lng + "," + p.lat);    
+	}
+	
+	//设置多个点
+	function addOverlays(lng,lat){
+	
+		// 百度地图API功能
+
+		var point = new BMap.Point(lng, lat);
+		var marker = new BMap.Marker(point); // 创建点
+		map.centerAndZoom(point, 15);
+		marker.addEventListener("click",attribute);
+		addMarker(point);
+		
+		
+	}
+	
+	function adds(lng,lat){
+
+		var point = new BMap.Point(lng, lat);
+		addMarker(point);
+		
+		
+		
+	}
+	
+	function addr(){
+		var addrs = {$s_county};
+		var j=1;
+		for (var i = 0; i < {$num}; i++) {
+			
+			getLocations(addrs[j], '<?php echo GetIpCity();?>');
+			j++
+		}
+	
+		
+	}
+	
+	//根据城市获取坐标
+	function getLocations(addr, city) {
+	
+		$.ajax({
+			url: "http://restapi.amap.com/v3/geocode/geo",
+			dataType: "jsonp",
+			type: "get",
+			data: { address: addr, output: "json", key: "7486e10d3ca83a934438176cf941df0c", city: city },
+			success: function (data) {
+				var lng = data.geocodes[0].location.split(',')[0] ;
+				var lat = data.geocodes[0].location.split(',')[1];
+				adds(lng,lat);
+			},
+			error: function (data) {
+				//alert("检查网络和地址是否正确！");
+			}
+		});
+	}
+	
+	// 编写自定义函数,创建标注
+	function addMarker(point){
+	
+		var marker = new BMap.Marker(point);
+		marker.addEventListener("click",attribute);
+		map.addOverlay(marker);
+	  
+	}
+	
+	//鼠标滚轮设置
+	function Cursor(){
+		map.setDefaultCursor("url('bird.cur')");   //设置地图默认的鼠标指针样式
+		map.enableScrollWheelZoom();   //启用滚轮放大缩小，默认禁用
+		map.enableContinuousZoom();    //启用地图惯性拖拽，默认禁用
+	}
+	
+	//获取城市经纬度
+	function searchByStationName(keyword,city) {
+		getLocation(keyword,city);
+		
+	}
+	//根据城市获取坐标
+	function getLocation(addr, city) {
+		$.ajax({
+			url: "http://restapi.amap.com/v3/geocode/geo",
+			dataType: "jsonp",
+			type: "get",
+			data: { address: addr, output: "json", key: "7486e10d3ca83a934438176cf941df0c", city: city },
+			success: function (data) {
+				var lng = data.geocodes[0].location.split(',')[0] ;
+				var lat = data.geocodes[0].location.split(',')[1];
+				addOverlays(lng,lat);
+			},
+			error: function (data) {
+				alert("检查网络和地址是否正确！");
+			}
+		});
+	}
+	
+	
+
+	
+	
+</script>
+
+</body>
+</html>
+

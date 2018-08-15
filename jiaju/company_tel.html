@@ -1,0 +1,198 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Access-Control-Allow-Origin" content="*">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=8"/>
+<title>用户中心-通讯录</title>
+<meta name="description" content="微工程，微工程APP，装修、材料、家具、饰品一站式服务，让装修更简单，价格更透明！！" />
+<meta name="keywords" content="微工程，微工程，家居商城，微工程家居商城，微工程家居装修商城，办公室装修，写字楼装修，材料，装修材料，家居，办公家具，家居，家具，装修，装饰" />
+<link rel="stylesheet" type="text/css" href="themes/mall/jiaju/css/api.css"/>
+<link rel="stylesheet" href="themes/mall/jiaju/styles/css/address_list.css">
+<link type="text/css" href="themes/mall/jiaju/styles/default/css/main.css" rel="stylesheet"  />
+<link type="text/css" href="themes/mall/jiaju/styles/css/global.css" rel="stylesheet"  />
+<link type="text/css" href="themes/mall/jiaju/styles/css/tel_list.css" rel="stylesheet"  />
+<link type="text/css" href="http://www.wgc2013.com/themes/mall/jiaju/styles/default/css/catalog.css" rel="stylesheet"  />
+<link type="text/css" href="http://www.wgc2013.com/themes/mall/jiaju/styles/default/css/footer.css" rel="stylesheet" />
+<link type="text/css" href="themes/mall/jiaju/styles/css/style.css" rel="stylesheet"  />
+<script type="text/javascript" src="index.php?act=jslang"></script>
+<script type="text/javascript" src="http://www.wgc2013.com/includes/libraries/javascript/ecmall.js" charset="utf-8"></script>
+<script type="text/javascript" src="http://www.wgc2013.com/includes/libraries/javascript/cart.js" charset="utf-8"></script>
+<script type="text/javascript" src="http://www.wgc2013.com/includes/libraries/javascript/jquery.js" charset="utf-8"></script>
+<script type="text/javascript" src="http://www.wgc2013.com/themes/mall/jiaju/styles/default/js/main.js" charset="utf-8"></script>
+<script type="text/javascript" src="http://www.wgc2013.com//themes/mall/jiaju/js/worker_quota.js" charset="utf-8"></script>
+
+<!--[if lte IE 6]>
+<script type="text/javascript" language="Javascript" src="http://www.wgc2013.com/themes/mall/jiaju/styles/default/js/hoverForIE6.js"></script>
+<![endif]-->
+<!--[if IE 8]>
+<link type="text/css" href="themes/mall/jiaju/css/ie8.css" rel="stylesheet"  />
+<![endif]-->
+<script type="text/javascript">
+var SITE_URL = "http://www.wgc2013.com";
+var PRICE_FORMAT = '&yen;%s';
+</script>
+<script charset="utf-8" type="text/javascript" src="http://www.wgc2013.com/includes/libraries/javascript/jquery.plugins/jquery.validate.js" ></script><style type="text/css">
+body{background:url('') no-repeat center top }
+.mainnav{width:990px; overflow:hidden; margin:0 auto}
+.STYLE1 {color: red}
+</style>
+<script type="text/javascript" src="http://www.wgc2013.com/themes/mall/jiaju/styles/default/js/hover.js"></script>
+<script charset="utf-8" type="text/javascript" src="http://www.wgc2013.com/includes/libraries/javascript/jquery.plugins/jquery.validate.js" ></script>
+</head>
+<body>
+
+{include file=header.html}
+<!-- 中部主要内容 -->
+ <div class="container" style="overflow: hidden;width: 1200px;margin: 10px auto;position: relative;">
+ <!-- 左上的导航栏 -->
+ 	{include file=usercenter.html}
+
+ 	<!-- 右边的内容 -->
+ 	<div class="container_right" style="width: 78.5%;border: 1px solid #cacaca;float: right;background-color: #f7f7f7;padding:10px;">
+
+		<!-- 公司信息 -->
+		<div class="budget base_ui_public" style="/*display: none;*/position: relative;">
+			<div class="head_mun">
+				<b>通讯录</b>
+			</div>
+ 			<div class="section">
+			<img class="add_btn" src="/themes/mall/jiaju/images/add_friend.jpg" />
+
+			<div class="adress_list"></div>
+		</div>
+ 			
+			
+		</div>
+		
+		
+ 		</div>
+ 		<!-- 添加好友弹窗 -->
+		<div class="confirm" style="display: none;top: 130px;left: 80px;">
+			<form class="confirm_" action="post" method="">
+				<div>
+					<div class="add_text">添加好友</div>
+					<div class="close_btn">×</div>
+				</div>
+				<div class="confirm_main">
+					<div class="gap"></div>
+					<div class="share_sendee">
+						<span style="letter-spacing: 5px;">手机号</span><span class="colon" style="margin: 0 6px;">:</span>
+						<input type="text" class="" id="phone_num">
+					</div>
+					<input class="share_btn" type="button" onclick="add_tel()" value="添加好友">
+				</div>
+			</form>
+		</div>
+		<!-- 添加好友弹窗 end -->
+ 		
+ 	</div>
+
+
+{include file=footer.html}
+
+<script type="text/javascript">
+	// 弹窗控制
+	$('.add_btn').click(function() {
+		$('.confirm').css({
+			display: 'block'
+		});
+	});
+	$('.close_btn').click(function() {
+		$('.confirm').css({
+			display: 'none'
+		});
+	});
+	// 弹窗控制 end
+	 
+	$(document).ready(function() {
+		tel_list();
+	});
+
+	var pages = 1;
+	function tel_list(){
+		if('<?php echo $_SESSION["user_info"]["user_id"];?>' == ''){
+			$(".adress_list").append('请登录之后在查看!');
+		}else {
+			$.post('http://wgcapp.wgc2013.com/jingyi.php/Home/index/getAllMyRelative', {
+				uid : '<?php echo $_SESSION["user_info"]["user_id"];?>',
+				type:'PRIVATE',
+	        	types:'user_list',
+	        	page : pages,
+			}, function(ret,err){
+				var message = ret.data.message;
+				var code = ret.code;
+				var datas = ret.data;
+				var num = ret.num;
+			    if(code == 200){
+			    	pages++;
+			    	var html = '';
+
+			    	for(var j in datas){
+			    		var message = datas[j].message;
+
+						html +='<div class="tel_list">'+datas[j].zhiwei+'</div>';
+						html += '<ul>';
+						for(var i in message){
+							html += '<li class="tel_li">';
+								html += '<div class="head_img">';
+									html += '<img src="http://wgcapp.wgc2013.com/'+message[i].userphoto+'" alt=""/>';
+								html += '</div>';
+								html += '<div class="tel_data">';
+									html += '<span>'+message[i].name+'</span>';
+									html += '<p>'+message[i].user_name+'</p>';
+								html += '</div>';
+							html += '</li>';
+						}
+						html += '</ul>';
+			    	}
+			    	$(".adress_list").append(html);
+			    }else if(code == 201 ){
+						alert('暂无更多了');
+			    }else{
+			    	alert('请检查网络连接');
+					return false;
+			    }
+			},'json');
+		}
+	}
+
+	//添加好友
+	function add_tel(){
+		var adduid = $('#phone_num').val();
+		if(!(/^1[3|5|7|8][0-9]\d{4,8}$/.test(adduid))){
+			alert('请输入正确的手机号码');
+			return false;
+		}
+		$.post('http://wgcapp.wgc2013.com/jingyi.php/Home/Index/addfriendfrees', {
+			touid : adduid,   //需要添加的用户
+			thisuid : '<?php echo $_SESSION["user_info"]["user_id"];?>',
+			storeid : '<?php echo $_SESSION["user_info"]["user_name"];?>',
+		}, function(ret) {
+			if(ret.code == 200){
+				alert('添加好友成功!');
+				tel_list();
+			}else if(ret.code == 201){
+				alert('添加好友失败');
+				return false;
+			}else if(ret.code == 205){
+				alert('添加失败,因对方长时间未登录验证!');
+				return false;
+				
+			}else if(ret.code == 202 && ret.code == 203){
+				alert('已经是好友');
+				return false;
+				
+			}else if(ret.code == 204){
+				alert('不能添加自己为好友');
+				return false;
+				
+			}else{
+			   alert('网络连接失败');
+				
+			}
+		},'json');
+	}
+</script>
+</body>
+</html>

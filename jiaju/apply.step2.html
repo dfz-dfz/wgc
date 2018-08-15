@@ -1,0 +1,303 @@
+{include file=header.html}
+<style type="text/css">
+th{width:90px;}
+
+</style>
+<script src="{lib file=mlselection.js}" charset="utf-8"></script>
+<script src="{lib file=jquery.plugins/jquery.validate.js}" charset="utf-8"></script>
+<div class="content">
+<script type="text/javascript">
+//<!CDATA[
+var SITE_URL = "{$site_url}";
+$(function(){
+    //regionInit("region");
+    $("#region > input:button[class='edit_region']").click(regionEdit);
+	$("#region > select").change(function(){
+				$(this).nextAll("select").remove();
+				var selects = $(this).siblings("select").andSelf();
+				var id = 0;
+				var names = new Array();
+				for (i = 0; i < selects.length; i++)
+				{
+					sel = selects[i];
+					if (sel.value > 0)
+					{
+						id = sel.value;
+						name = sel.options[sel.selectedIndex].text;
+						names.push(name);
+					}
+				}
+				$(".mls_id").val(id);
+				$(".mls_name").val(name);
+				$(".mls_names").val(names.join("\t"));
+		 });
+    $("#apply_form").validate({
+        errorPlacement: function(error, element){
+            var error_td = element.parents('td').next('td');
+            error_td.find('.field_notice').hide();
+            error_td.find('.fontColor3').hide();
+            error_td.append(error);
+        },
+        success: function(label){
+            label.addClass('validate_right').text('OK!');
+        },
+        onkeyup: false,
+        rules: {
+            owner_name: {
+                required: true
+            },
+            store_name: {
+                required: true,
+                remote : {
+                    url  : 'index.php?app=apply&act=check_name&ajax=1',
+                    type : 'get',
+                    data : {
+                        store_name : function(){
+                            return $('#store_name').val();
+                        },
+                        store_id : '{$store.store_id}'
+                    }
+                },
+                maxlength: 20
+            },
+            tel: {
+                required: true,
+                minlength:6,
+                checkTel:true
+            },
+            address: {
+                required: true,
+                minlength:2,
+            },
+            
+            image_1: {
+                accept: "jpg|jpeg|png|gif"
+            },
+            image_2: {
+                accept: "jpg|jpeg|png|gif"
+            },
+            image_3: {
+                accept: "jpg|jpeg|png|gif"
+            },
+            notice: {
+                required : true
+            }
+        },
+        messages: {
+            owner_name: {
+                required: '{$lang.input_owner_name}'
+            },
+            store_name: {
+                required: '{$lang.input_store_name}',
+                remote: '{$lang.name_exist}',
+                maxlength: '{$lang.note_for_store_name}'
+            },
+            
+            tel: {
+                required: '{$lang.input_tel}',
+                minlength: '{$lang.phone_tel_error}',
+                checkTel: '{$lang.phone_tel_error}'
+            },
+            address: {
+                required: '请填写店铺地址',
+                minlength: '请填写店铺地址',
+                checkTel: '请填写店铺地址'
+            },
+            image_1: {
+                accept: '{$lang.select_valid_image}'
+            },
+            image_2: {
+                accept: '{$lang.select_valid_image}'
+            },
+            image_3: {
+                accept: '{$lang.select_valid_image}'
+            },
+            notice: {
+                required: '{$lang.check_notice}'
+            }
+        }
+    });
+});
+//]]>
+</script>
+<div id="apply" class="w auto">
+   <div class="title border padding5 fs14 strong">
+      {$lang.i_want_open_store}
+   </div>
+   <div class="content border border-t-0 padding10 apply2"style="text-align: left;">
+      <form method="post" enctype="multipart/form-data" id="apply_form">
+         <table>
+           <tr>
+              <th>{$lang.owner_name}{$lang.colon}</th>
+              <td class="width7"><input type="text" class="input border" name="owner_name" value="{$store.owner_name|escape}"/></td>
+              <td class="padding3"><span class="fontColor3">*</span> <span class="field_notice">{$lang.note_for_owner_name}</span></td>
+           </tr>
+           <tr>
+              <th>{$lang.owner_card}{$lang.colon}</th>
+              <td><input type="text" class="input border" name="owner_card" value="{$store.owner_card|escape}" /></td>
+              <td class="padding3"> <span class="field_notice">{$lang.note_for_owner_card}</span></td>
+           </tr>
+           <tr>
+              <th>{$lang.store_name}{$lang.colon}</th>
+              <td><input type="text" class="input border" name="store_name" id="store_name" value="{$store.store_name|escape}"/></td>
+              <td class="padding3"><span class="fontColor3">*</span> <span class="field_notice">{$lang.note_for_store_name}</span></td>
+           </tr>
+           <tr>
+              <th>{$lang.store_category}{$lang.colon}</th>
+              <td>
+                 <div class="select_add">
+                    <select name="cate_id">
+                       
+                       {html_options options=$scategories selected=$scategory.cate_id}
+                    </select>
+                 </div>
+              </td>
+              <td></td>
+           </tr>
+           <tr>
+              <th>{$lang.region}{$lang.colon}</th>
+              <td>
+                  <div class="select_add" id="region" style="width:500px;">
+                      <input type="hidden" name="region_id" value="{$store.region_id}" class="mls_id" />
+                      <input type="hidden" name="region_name" value="{$store.region_name}" class="mls_names" />
+
+
+
+                      <div>
+                  
+
+
+
+                    <select id="s_province" name="s_province"></select>
+
+                    <select id="s_city" name="s_city" ></select>  
+                    <select id="s_county" name="s_county" onChange="showRightsq(this.value);"></select>
+					<select id="cailiaocheng" name="cailiaocheng"style="display:none;"></select>
+                    <script class="resources library" src="/themes/mall/jiaju/styles/default/js/area.js" type="text/javascript"></script>
+                    
+                    <script type="text/javascript">_init_area();</script>
+                  </div>
+
+                    <div id="show"></div>
+                    
+                </div>
+				<script type="text/javascript" src="/themes/mall/jiaju/styles/default/js/jquery-1.3.2.min.js"></script>
+									<script type="text/javascript">
+									//获取材料城
+									function showRightsq(v){
+										
+										document.getElementById('cailiaocheng').style.display = 'none';
+										$.post("index.php?app=member&act=clc",{clc:'clc',id:v},function(data){
+											if(data != null){
+												document.getElementById('cailiaocheng').style.display = '';
+												$("#cailiaocheng").html(data);
+											}else{
+											
+												document.getElementById('cailiaocheng').style.display = 'none';
+											
+											}
+											
+										  },"json");
+									}
+                                </script>
+                <script type="text/javascript">
+                var Gid  = document.getElementById ;
+                var showArea = function(){
+                  Gid('show').innerHTML = "<h3>广东省" + Gid('s_province').value + " - 市" +  
+                  Gid('s_city').value + " - 县/区" + 
+                  Gid('s_county').value + "</h3>"
+                              }
+                Gid('s_county').setAttribute('onchange','showArea()');
+                </script>
+
+
+
+
+
+
+                   </div>
+               </td>
+               <td></td>
+            </tr>
+            <tr>
+                <th>{$lang.address}{$lang.colon}</th>
+                <td><input type="text" class="input border" name="address" value="{$store.address|escape}"/></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>{$lang.zipcode}{$lang.colon}</th>
+                <td><input type="text" class="input border" name="zipcode" value="{$store.zipcode|escape}"/></td>
+                <td></td>
+             </tr>
+             <tr>
+                 <th>{$lang.tel}{$lang.colon}</th>
+                 <td>
+                     <input type="text" class="input border" name="tel"  value="{$store.tel|escape}"/>
+                 </td>
+                <td class="padding3"><span class="fontColor3">*</span> <span class="field_notice">{$lang.input_tel}</span></td>
+              </tr>
+			  
+			   <tr>
+                 <th>手机号码{$lang.colon}</th>
+                 <td>
+                     <input type="text" class="input border" name="mob"  value="{$store.mob|escape}"/>
+                 </td>
+                <td class="padding3"><span class="fontColor3">*</span> <span class="field_notice">手机号码不能为空</span></td>
+              </tr>
+			  
+			   <tr>
+                 <th>邮箱{$lang.colon}</th>
+                 <td>
+                     <input type="text" class="input border" name="email"  value="{$store.email|escape}"/>
+                 </td>
+                <td class="padding3"><span class="fontColor3">*</span> <span class="field_notice">邮箱不能为空</span></td>
+              </tr>
+			  
+			  <tr>
+                 <th>开通商品代发：</th>
+                 <td>
+                     <input type="radio"name="daifa"value="不开通"checked="checked"/>不开通　<input type="radio"name="daifa"value="开通"/>开通
+                 </td>
+                <td class="padding3"><span class="fontColor3">*</span> <span class="field_notice">开通即可商品代发布和上架</span></td>
+              </tr>
+
+               <!--<tr>
+                 <th>店铺角色：</th>
+                 <td>
+                     <input type="radio"name="otypes"value="五金店铺"checked="checked"/>五金店铺
+                     <input type="radio"name="otypes"value="装修店铺"/>装修店铺
+                     <input type="radio"name="otypes"value="生产厂家"/>生产厂家
+                     
+                 </td>
+                <td class="padding3"><span class="fontColor3">*</span> <span class="field_notice"></span></td>
+              </tr>-->
+
+			  
+              <tr>
+                 <th>{$lang.upload_image}{$lang.colon}</th>
+                 <td><input type="file" name="image_1" />
+                       {if $store.image_1}<p class="d_inline"><a href="{$site_url}/{$store.image_1}" target="_blank">{$lang.view}</a></p>{/if}
+                 </td>
+                 <td><span class="field_notice">{$lang.note_for_image}</span></td>
+              </tr>
+              <tr>
+                 <th>{$lang.upload_permit}{$lang.colon}</th>
+                 <td><input type="file" name="image_2" />
+                     {if $store.image_2}<p class="d_inline"><a href="{$site_url}/{$store.image_2}" target="_blank">{$lang.view}</a></p>{/if}
+                 </td>
+                 <td><span class="field_notice">{$lang.note_for_image}</span></td>
+              </tr>
+              <tr>
+                 <td colspan="2" class="warning"><p><input type="checkbox"{if $store} checked="checked"{/if} name="notice" value="1" id="warning" /> <label for="warning">{$lang.notice}</label></p></td>
+                 <td class="padding3"></td>
+              </tr>
+              <tr>
+                  <td colspan="3"><input class="btn-apply border0 fs14 strong fff pointer" type="submit" value="{$lang.submit}" /></td>
+				  
+              </tr>
+           </table>
+       </form>
+    </div>
+</div>
+
+{include file=footer.html}

@@ -1,0 +1,385 @@
+﻿<!DOCTYPE html>
+
+<!--[if lte IE 6]>
+
+<html lang="zh-CN" class="ie6 lt7 lt8 lt9 lt10">
+
+<![endif]-->
+
+<!--[if IE 7]>
+
+<html lang="zh-CN" class="ie7 lt8 lt9 lt10">
+
+<![endif]-->
+
+<!--[if IE 8]>
+
+<html lang="zh-CN" class="ie8 lt9 lt10">
+
+<![endif]-->
+
+<!--[if IE 9]>
+
+<html lang="zh-CN" class="ie9 lt10">
+
+<![endif]-->
+
+<html lang="zh-CN">
+
+<!--<![endif]-->
+
+	<head>
+
+		<title><?php echo $_GET['cate_id']?>-【59家居招聘信息】</title>
+
+		<meta charset="utf-8" />
+
+		<meta name="keywords" content="【59家居招聘信息】招聘信息"/>
+
+		<meta name="description" content="59家居提供广州各公司最新最快速的招聘信息"/>
+
+		<link rel="stylesheet" type="text/css" href="/themes/mall/jiaju/styles/css/common_zp.css"/>
+
+		<link rel="stylesheet" type="text/css" href="/themes/mall/jiaju/styles/css/index_zp.css"/>
+
+		<!--[if IE 6]>
+
+		<script src="js/DD_belatedPNG_min.js"></script>
+
+		<script>
+
+		  /* EXAMPLE */
+
+		  DD_belatedPNG.fix('img,.step-one dt i,.step-tow dt i,.step-three dt i,.step-four dt i,.category-link,.category-link:hover,.category-btns a,.category-btns a:hover,.category-btns a.right-arrow,.category-btns a.right-arrow:hover,.icons-more,.head-in h1,.location .location-icon,.location .arrow,.foot-in .logo,.erwma-show,.icons-back-top,.icon-kefu,.icons-erwma');
+
+		</script>
+
+		<![endif]-->
+
+
+	</head>
+    
+	<body>
+{include file=header.html}
+<style type="text/css">
+.bannersBg{
+width:100%;
+background:#FEB101; 
+overflow:hidden;
+margin:0 auto;
+height:239px;
+}
+.bannersBg .banners{
+width:1100px;
+background:url(themes/mall/jiaju/images/zhaopintop.jpg) no-repeat -130px center; 
+overflow:hidden;
+margin:0 auto;
+height:239px;
+}
+.bannersBg .banners .pics-form{
+width:250px;
+background:#CF8C17; 
+overflow:hidden;
+margin:15px 5px 0 0;
+float:right;
+height:180px;
+padding:10px;
+border:1px solid #333;
+-webkit-border-radius:5px;
+-moz-border-radius:5px;
+border-radius:5px
+}
+.bannersBg .banners .pics-form .swiper-slide-input{
+width:100%;
+height:50px;
+overflow:hidden;
+
+line-height:50px;
+text-align:center;
+}
+.bannersBg .banners .pics-form .swiper-slide-input .text-input{
+width:140px;
+height:30px;
+line-height:30px;
+background:#fff;
+text-align:left;
+padding:0 5px;
+display:inline;
+margin-right:5px;
+float:left;
+}
+.bannersBg .banners .pics-form .swiper-slide-input .text-submit{
+width:80px;
+height:30px;
+cursor:pointer;
+line-height:30px;
+font-size:14px;
+float:right;
+background:red;
+color:#fff;
+border:1px solid red;
+text-align:center;
+}
+/*流程*/
+.bannersBg .banners .pics-form .swiper-slide-liucheng{
+width:100%;
+height:50px;
+overflow:hidden;
+border-top:1px solid #333;
+margin-top:5px;
+text-align:center;
+}
+.bannersBg .banners .pics-form .swiper-slide-liucheng a{
+display:block;
+}
+.bannersBg .banners .pics-form .swiper-slide-liucheng a img{
+width:100%;
+height:50px;
+border:none;
+
+}
+/*xinban*/
+
+.category-items{
+	width:100%;
+	height:auto;
+	overflow:hidden;
+
+
+}
+.tile-head{
+	width:100%;
+	height:40px;
+	line-height:40px;
+	border-bottom:2px solid #06C137;
+	text-align:left;
+	font-size:14px;
+	color:#999999;
+}
+.tile-head .type-left{
+	width:100px;
+	height:25px;
+	line-height:25px;
+	float:left;
+	color:#fff;
+	font-size:14px;
+	text-align:center;
+	background:#06C137;
+	margin-top:10px;
+	margin-right:10px;
+}
+.tile-head .right-div{
+	height:40px;
+	line-height:40px;
+	float:right;
+	color:#fff;
+	font-size:14px;
+	text-align:right;
+	width:500px;
+	overflow:hidden;
+
+}
+.right-div .type-right{
+	width:100px;
+	height:25px;
+	line-height:25px;
+	float:right;
+	color:#fff;
+	font-size:14px;
+	text-align:center;
+	background:#06C137;
+	margin-top:10px;
+}
+.right-div .type-right a{
+	font-size:14px;
+	color:#fff;
+}
+.right-div .myform{
+	width:380px;
+	height:40px;
+	line-height:40px;
+	float:left;
+	color:#fff;
+	font-size:14px;
+	text-align:right;
+	margin-right:10px;
+}
+.right-div .myform .text-input{
+	width:200px;
+	height:25px;
+	line-height:25px;
+	text-align:left;
+	border:1px solid #ccc;
+	padding:0 5px;
+	font-size:14px;
+}
+.right-div .myform .text-submit{
+	width:80px;
+	height:25px;
+	line-height:20px;
+	text-align:center;
+	border:1px solid #D69603;
+	background:#D69603;
+	color:#fff;
+	font-size:14px;
+	padding:2px 0;
+}
+.category-items .types{
+	width:99%;
+	height:125px;
+	padding:30px 4px;
+	background:#fff;
+	border:#ccc solid 1px;
+	text-align:left;
+}
+.category-items .types a{
+	font-size:14px;
+	color:#333;
+	width:95px;
+	float:left;
+	margin:10px 6px;
+	display:block;
+}
+</style>
+
+		<!-- top s -->
+		<div id="main">
+			<div class="bannersBg">
+				<div class="banners">
+					
+				</div>
+			</div>
+			<!--第一 -->
+			<div class="category">
+					<div class="category-items"style="width:1100px;margin:0 auto;">
+							<div class="tile-head">
+								<p class="type-left">行业分类</p>装修行业涉及的各类司职公司
+								
+								<div class="right-div">
+									<form action="index.php?app=search&amp;act=zhaopin" class="myform" method="post">
+										
+										<input type="text" class="text-input" name="key"/>
+										<input type="hidden" name="cate_id" value="全部"/>  
+										<input type="submit" class="text-submit" value="搜索"/>
+										
+									</form>
+									<p class="type-right"><a href="index.php?app=member&act=zhaopin">我要发布</a></p>
+								</div>
+							
+							</div>
+							
+							<div class="types">			
+								
+								<a href="index.php?app=search&act=zhaopin&cate_id=装饰工程">装饰公司</a>
+								<a href="index.php?app=search&act=zhaopin&cate_id=环保">环保公司</a>
+								<a href="index.php?app=search&act=zhaopin&cate_id=消防">消防公司</a>
+								<a href="index.php?app=search&act=zhaopin&cate_id=保洁">保洁公司</a>
+								<a href="index.php?app=search&act=zhaopin&cate_id=厨具">厨具公司</a>
+								<a href="index.php?app=search&act=zhaopin&cate_id=办公家具">办公家具公司</a>
+								<a href="index.php?app=search&act=zhaopin&cate_id=酒店家具">酒店家具公司</a>
+								<a href="index.php?app=search&act=zhaopin&cate_id=民用家具">民用家具公司</a>
+								<a href="index.php?app=search&act=zhaopin&cate_id=餐厅家具">餐厅家具公司</a>
+								<a href="index.php?app=search&act=zhaopin&cate_id=软装">软装公司</a>
+								<a href="index.php?app=search&act=zhaopin&cate_id=防蚁">防蚁公司</a>
+								<a href="index.php?app=search&act=zhaopin&cate_id=防鼠">防鼠公司</a>
+								<a href="index.php?app=search&act=zhaopin&cate_id=物流">物流公司</a>
+								<a href="index.php?app=search&act=zhaopin&cate_id=幕墙">幕墙公司 </a>
+								<a href="index.php?app=search&act=zhaopin&cate_id=建筑加固">建筑加固公司</a>
+								<a href="index.php?app=search&act=zhaopin&cate_id=机电安装">机电安装公司</a>
+								<a href="index.php?app=search&act=zhaopin&cate_id=智能化">智能化公司</a>
+								<a href="index.php?app=search&act=zhaopin&cate_id=设计院">设计院</a>
+								<a href="index.php?app=search&act=zhaopin&cate_id=维修">维修公司</a>
+								<a href="index.php?app=search&act=zhaopin&cate_id=路政">路政公司</a>
+								<a href="index.php?app=search&act=zhaopin&cate_id=园林">园林公司</a>
+								<a href="index.php?app=search&act=zhaopin&cate_id=坼除">坼除公司</a>
+								<a href="index.php?app=search&act=zhaopin&cate_id=材料">材料公司</a>
+								<a href="index.php?app=search&act=zhaopin&cate_id=招牌公司">招牌公司</a>
+								<a href="index.php?app=search&act=zhaopin&cate_id=环保"></a>
+								<a href="index.php?app=search&act=zhaopin&cate_id=办公家具"></a>
+								<a href="index.php?app=search&act=zhaopin&cate_id=材料"></a>
+								<a href="index.php?app=search&act=zhaopin&cate_id=材料"></a>
+																	
+							</div>
+					</div>	
+				
+			</div>
+			
+			<!--第一 -->
+			<div class="category">
+					<div class="category-items"style="width:1100px;margin:0 auto;">
+							<div class="tile-head">
+								<p class="type-left">名企热招</p>
+								
+							
+							
+							</div>
+							
+							<div class="types"style="height:165px;">			
+								
+								
+								<a href="javascript:;"style="border:1px solid #ccc;width:190px;height:80px;"><img src="/themes/mall/jiaju/images/87251979993369431.jpg"style="width:100%;height:100%;"/></a>						
+								
+			  		
+								<a href="javascript:;"style="border:1px solid #ccc;width:190px;height:80px;"><img src="/themes/mall/jiaju/images/252266537258850497.jpg"style="width:100%;height:100%;"/></a>					
+								
+			  		
+								<a href="javascript:;"style="border:1px solid #ccc;width:190px;height:80px;"><img src="/themes/mall/jiaju/images/584215526869907029.jpg"style="width:100%;height:100%;"/></a>
+					
+																	
+							</div>
+					</div>	
+				
+			</div>
+			
+			<!--第一 -->
+			<div class="category">
+					<div class="category-items"style="width:1100px;margin:0 auto;">
+							<div class="tile-head">
+								<p class="type-left">热门职位</p>
+								
+							</div>
+							
+							<div class="types"style="height: auto;min-height: 165px;overflow: hidden;">			
+								
+								
+								{$con}
+																	
+							</div>
+					</div>	
+				
+			</div>
+			
+			<!--第一 -->
+			<div class="category">
+					<div class="category-items"style="width:1100px;margin:0 auto;">
+							<div class="tile-head">
+								<p class="type-left">最新招聘</p>
+								
+								
+							</div>
+							
+							<div class="types"style="height:165px;">			
+								
+								{$con1}
+																	
+							</div>
+					</div>	
+				
+			</div>
+			
+			
+			
+			
+		</div>
+
+		<!-- footer s -->
+
+		<!-- footer s -->
+	<!-- footer e -->
+
+	<!-- footer e -->
+{include file=footer.html}
+</body>
+
+</html>
+

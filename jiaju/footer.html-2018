@@ -1,0 +1,145 @@
+﻿<div id="footer" class="center auto mt10 w-full">
+
+     <div class="links"width="990" border="0" align="center">
+		<strong>友情链接：</strong>
+        <a href="http://www.jyboo.com/">经艺装饰</a></td>
+        <a href="/gs/index.php?m=content&c=index&a=show&catid=13&id=2">喜多装饰</a>
+        <a href="/gs/index.php?m=content&c=index&a=show&catid=13&id=9">超凡装饰</a>
+            
+    </div>
+
+<div class="foot-nav w-full auto">
+  <p><a href="index.php?app=article&act=view&article_id=28" target="_blank">关于本站</a>
+	    
+	     
+	      <a href="index.php?app=search&act=zhaopin" target="_blank">专业招聘</a>
+	    
+	      <a href="index.php?app=article&act=view&article_id=28">联系我们</a>
+	    
+	      </p>
+</div>
+<div class="foot-group">
+
+<a href="http://www.jd.com" target="_blank">京东商城</a> | <a href="www.yihaodian.com" target="_blank">一号店</a> |
+
+	<a href="http://www.hao123.com/" target="_blank">好123导航</a> |
+
+	<a href="http://www.jyboo.com/" target="_blank">经艺装饰</a> |
+
+	<a href="http://www.taobao.com/" target="_blank">淘宝商城</a> |
+
+	<a href="http://www.tmall.com/" target="_blank">天猫商城</a> |
+
+    <a href="http://china.alibaba.com/" target="_blank">阿里巴巴</a> |
+
+	<a href="/gs/index.php?m=content&c=index&a=show&catid=13&id=2" target="_blank">喜多装饰</a> |
+    
+    <a href="/gs/index.php?m=content&c=index&a=show&catid=13&id=9" target="_blank">超凡装饰</a> |
+
+	<a href="http://www.dangdang.com/" target="_blank">当当网</a>   </div>
+
+  <div class="copyright">Copyright &copy; 2013-2017 我购家居商城 版权所有 <!--{if $icp_number}--><br />
+    <a href="http://www.miitbeian.gov.cn">粤ICP备09031901号-1</a>
+    <!--{/if}-->
+   {$statistics_code}广州市我购家居用品有限公司<a href='http://netadreg.gzaic.gov.cn/ntmm/WebSear/WebLogoPub.aspx?logo=440115115022013051700026'><img alt='' src='http://netadreg.gzaic.gov.cn/ntmm/default/images/logo_down.jpg' style='width:37px;height: 38px' /></a></div>
+
+   </div>
+
+</div>
+<script>
+function MM_over(mmObj) {
+	//var mSubObj = mmObj.getElementsByTagName("div")[0];
+	//mSubObj.style.display = "block";
+	$("#kefu_QQ").show();
+	//mSubObj.style.backgroundColor = "#f60";
+}
+function MM_out(mmObj) {
+	//var mSubObj = mmObj.getElementsByTagName("div")[0];
+	//mSubObj.style.display = "none";
+	$("#kefu_QQ").hide();
+}
+
+$(document).ready(function(){
+     $('#a_kefu').mouseover(function(){
+         $("#kefu_QQ").css("display","block");
+     });
+
+    
+	 
+	 $('#kefu_QQ').mouseover(function(){
+         $("#kefu_QQ").css("display","block");
+     });
+
+     $('#kefu_QQ').mouseout(function(){
+         $("#kefu_QQ").css("display","none");
+     });
+ })
+</script>
+
+<!-- 代码部分begin -->
+<link href="/themes/mall/jiaju/top/css/style.css" type="text/css" rel="stylesheet" />
+<div class="fixed-bar">
+	<div class="wide-bar"style="background:none;position: relative;">
+		<div class="consult-box"><img src="/themes/mall/jiaju/top/images/1.png"style="width:134px;">
+			<div class="consult-header clearfix">
+			
+				<a href="javascript:scrollTo(0,0)" class="gotop" title="回到顶部" style="display:block;">
+					<img src="/themes/mall/jiaju/top/images/2.png"style="width:130px;height:40px;">
+				</a>
+				
+				<a>
+					<img src="/themes/mall/jiaju/top/images/3.png"style="width:130px;height:40px;">
+				</a>
+				
+				<a href="javascript:;" id="a_kefu">
+					<img src="/themes/mall/jiaju/top/images/4.png"style="width:130px;height:40px;">
+				</a>
+				
+				<a>
+					<img src="/themes/mall/jiaju/top/images/5.png"style="width:130px;height:40px;">
+				</a>
+			
+				
+			</div>
+			
+		</div>
+		<!--<a href="javascript:scrollTo(0,0)" class="gotop" title="回到顶部" style="display:none;"><i class="icon">返回顶部</i><span>返回顶部</span></a>-->
+	</div>
+	
+	<!--qq列表-->
+	<div class="kefu_QQ" id="kefu_QQ">
+	
+		<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=3384284980&site=qq&menu=yes">
+			<img border="0" src="http://wpa.qq.com/pa?p=2:3384284980:51" alt="客服小静" title="客服小静"/>
+		</a>
+		
+		<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=3358567150&site=qq&menu=yes">
+			<img border="0" src="http://wpa.qq.com/pa?p=2:3358567150:41" alt="客服小娟" title="客服小娟"/>
+		</a>
+		
+		<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=3405922643&site=qq&menu=yes">
+			<img border="0" src="http://wpa.qq.com/pa?p=2:3405922643:41" alt="客服小婷" title="客服小婷"/>
+		</a>
+		
+		<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=3535812761&site=qq&menu=yes">
+			<img border="0" src="http://wpa.qq.com/pa?p=2:3535812761:51" alt="客服小飞" title="客服小飞"/>
+		</a>
+		
+	
+	</div>
+</div>
+
+<script>    
+$(function(){
+$(document).scroll(function(){ 
+	var  scrollTop =  $(document).scrollTop(),bodyHeight = $(window).height(); 
+	if(scrollTop > bodyHeight){ 
+		$('.fixed-bar .gotop').css('display','block');
+	}else{
+		$('.fixed-bar .gotop').css('display','block');
+	} 
+})
+})
+</script>
+<!-- 代码部分end -->
+  

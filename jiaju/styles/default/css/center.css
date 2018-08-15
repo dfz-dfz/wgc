@@ -1,0 +1,721 @@
+/*login way*/
+.login-way{
+	width: 100%;
+	height: 880px;
+	background-color: red;
+	
+}
+
+/*用户中心*/
+
+.base_ui,.user_resume,.user_ui_public{
+	
+	overflow: hidden;
+}
+.base_ui ul,.user_resume_ul,.user_public_ul{
+	overflow: hidden;
+}
+.base_ui .base_ui_ul li,.user_resume_ul li,.user_public_ul li{
+	float: left;
+	width: 100px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	font-size: 15px;
+	letter-spacing: 2px;
+	color: #525455;
+	border: 1px solid #808080;
+	margin-top: 10px;
+	font-weight: bold;
+	cursor: default;
+
+}
+.bg_li{
+	background-image: url('/themes/mall/jiaju/images/center/user_center_photo.jpg');
+	background-size: 224px 30px;
+	-webkit-background-size:224px 30px;
+	
+}
+.show_tool ul li:hover{
+	cursor: pointer;
+	background-color: #eee;
+}
+.user_center_ul li:hover{
+	cursor: pointer;
+	background-color: #eee;
+}
+.base_info,.user_message_noinfo,.base_info_public{
+	width: 100%;
+	height: 80%;
+	background: #fff;
+	border: 1px solid #bcbcbc;
+	padding: 10px 0;
+
+}
+.user_photo_button{
+	width: 80px;
+	height: 25px;
+	line-height: 9px;
+	font-size: 14px;
+	position: relative;
+	border: none;
+	color: #525455;
+	font-weight: bold;
+	top: 20px;
+	left: 20px;
+}
+.user_input li,.base_info_paw li{
+	width: 320px;
+	height: 45px;
+	margin-top: 10px;
+	letter-spacing: 2px;
+	font-weight: bold;
+
+}
+
+.user_info_name,.user_info_name_public{
+	float: left;
+	width: 70px;
+	height: 30px;
+	line-height: 30px;
+	/*margin-right: 15px;*/
+	color: #323030;
+	
+
+}
+.user_info_input{
+	float: left;
+	width: 195px;	
+
+}
+
+
+.user_button{
+	width: 160px;
+	height: 30px;
+	background-color: #eb6100;
+	line-height: 30px;
+	font-size: 18px;
+	color: #fff;
+	letter-spacing: 2px;
+	margin-top: 30px;
+	margin-left: 130px;
+}
+
+input[type="radio"]{
+	/*position: absolute;
+	clip: rect(0, 0, 0, 0);
+	opacity: 0;
+
+	z-index: 10;*/
+	display: none;
+
+}
+
+input[type="radio"] + label{
+	margin-right: 20px;
+}
+
+/*input[type="radio"] + label::before{
+	content: "\a0"; 
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 18px;
+    width: 10px;
+    height: 10px;
+    margin-right: 15px;
+    border-radius: 50%;
+    border: 1px solid #eb6100;
+    position: relative;
+    top: 0px;
+    left: -4px;
+
+   
+}*/
+
+.male{
+	margin-left: 10px;
+}
+/*input[type="radio"]:checked + label::before {
+    background-color: #eb6100;
+    background-clip: content-box;
+   /* padding: .2em;*/
+}*/
+.base_ui_ul li{
+	cursor: pointer;
+}
+
+
+/*修改密码*/
+.base_info_paw{
+	width: 100%;
+	height: 80%;
+	background: #fff;
+	border: 1px solid #bcbcbc;
+	padding: 10px 0;
+	display: none;
+}
+
+.base_info_paw ul,.base_info_paw li{
+	overflow: hidden;
+}
+.base_info_paw li{
+	margin-left: 50px;
+}
+.base_info_paw_submit button{
+	width: 120px;
+	height: 30px;
+	line-height: 18px;
+	font-size: 18px;
+	color: #fff;
+	background-color: #eb6100;
+}
+
+.user_resume_input li{
+	height: 35px;
+	margin-top: 5px;
+}
+.user_resume_name{
+	width: 70px;
+	height: 20px;
+	line-height: 20px;
+	letter-spacing: 0px;
+}
+
+textarea::-webkit-input-placeholder{
+	color: #b0b0b0;
+	font-size: 12px;
+	font-weight: normal;
+}
+textarea::-ms-input-placeholder{
+	color: #b0b0b0;
+	font-size: 12px;
+	font-weight: normal;
+}
+
+.user_resume_agree{
+	text-align: left;
+	padding-left: 70px;
+	margin-top: 10px;
+
+}
+
+.user_resume_button button{
+
+}
+.change_bg_li{
+	background-color: #f8c67b;
+	color: #f34c26 !important;
+}
+
+
+/*实名认证*/
+.user_resume_info ul li{
+	overflow: hidden;
+}
+.base_info_public ul li{
+	overflow: hidden;
+}
+.user_resure_name{
+	float: left;
+	width: 160px;
+	text-align: right;
+	font-size: 14px;
+	font-weight: bold;
+	letter-spacing: 2px;
+	margin-right: 5px;
+}
+.user_resure_input{
+	float: left;
+	width: 200px;
+	height: 40px;
+	line-height: 40px;
+}
+.user_resure_input input{
+	height: 20px;
+}
+
+.user_resure_button,.user_resure_agree{
+
+	 -webkit-transform-origin-x: 0;
+     -webkit-transform: scale(0.90);
+}
+
+.user_employ_name,.user_public_name{
+	float: left;
+	width: 160px;
+	text-align: right;
+	font-size: 14px;
+	font-weight: bold;
+	letter-spacing: 2px;
+	margin-right: 10px;
+}
+
+.user_employ_input,.user_public_input{
+	float: left;
+	width: 260px;
+	height: 40px;
+	line-height: 40px;
+}
+.user_employ_input input,.user_public_input input{
+	height: 30px;
+
+}
+#work_des{
+	width: 470px;
+	height: 150px;
+	padding-left: 15px;
+	line-height: 20px;
+}
+
+/*招聘的发布*/
+.user_empoly_send a,.user_collection_send a{
+	display: inline-block;
+	font-size: 16px;
+	width: 95px;
+	height: 40px;
+	line-height: 40px;
+	background-color: #ff552e;
+	color: #fff;
+	border-radius: 5px;
+	margin: 10px 40px;
+	text-decoration: none;
+}
+
+.user_employ_info h3{
+	position: relative;
+	left: 80px; 
+}
+.user_collection_name{
+	text-align: left;
+	width: 100px;
+}
+.user_collection_input{
+	width: 200px;
+}
+
+.show_center ul li:hover,.cart_center li:hover{
+	cursor: pointer;
+	background-color: #eee;
+}
+
+.boy,.girl,.resume_boy,.resume_girl,.resume_marry,.resume_demarry{
+	display: inline-block;
+	
+	
+}
+
+
+/*辅材定价*/
+.price_collection_send a{
+	display: inline-block;
+	font-size: 18px;
+	width: 165px;
+	height: 40px;
+	line-height: 40px;
+	background-color: #eb6100;
+	color: #fff;
+	border-radius: 5px;
+	margin: 10px 40px;
+	text-decoration: none;
+}
+
+.price_list_name span{
+	display: inline-block;
+	width: 5.84%;
+	font-size: 12px;
+	font-weight: bold;
+	text-align: center;
+	
+
+	
+}
+
+.price_list_detail span{
+	display: inline-block;
+	width: 5.84%;
+	font-size: 10px;
+	vertical-align: middle;
+	text-align: center;
+	-webkit-transform-origin-x: 0;
+    -webkit-transform: scale(0.90);
+}
+
+
+.price_page{
+	margin: 20px 0;
+}
+.price_page a{
+	border: 1px solid #b5b5b5;
+	display: inline-block;
+	font-size: 10px;
+	-webkit-transform-origin-x: 0;
+    -webkit-transform: scale(0.90);
+}
+
+.budget_detail h3{
+	font-size: 15px;
+	text-align: left;
+	font-weight: bold;
+	color: #3d3d3d;
+	letter-spacing: 2px;
+}
+.budget_table{
+	text-align: left;
+	width: 100%;
+	overflow: hidden;
+}
+
+tr{
+	text-align: center;
+	
+}
+tr span{
+	display: inline-block;
+	width: 100%;
+}
+.thead span{
+	border-left: 2px solid #fff;
+	border-top: 2px solid #bcbcbc;
+	color: #3d3d3d;
+}
+.tcontent td{
+	color: #3d3d3d;
+	border-left: 2px solid #979898;
+	border-bottom: 2px solid #979898;
+	min-height: 180px;
+}
+.tmain td{
+	color: #3d3d3d;
+	border-left: 2px solid #979898;
+	border-bottom: 2px solid #979898;
+	min-height: 30px;
+	height: 40px;
+
+}
+.tmain td textarea{
+	border: none;
+	text-align: center;
+	height: 50%;
+
+
+}
+.tcontent textarea{
+	border: none;
+}
+.gongchen_total span{
+	display: inline-block;
+	height: 100%;
+	float: left;
+	line-height: 30px;
+	text-align: center;
+	border-left: 2px solid #979898;
+}
+.total{
+	margin: 20px 0;
+}
+.total span{
+	font-size: 14px;
+	font-weight: bold;
+	display: inline-block;
+	margin-right: 15%;
+}
+.share_dow a{
+	text-decoration: none;
+	display: block;
+	font-size: 16px;
+	color: #fff;
+	width: 105px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	margin-bottom: 10px;
+	background-color: #f8b551;
+}
+
+/*人工定额列表*/
+.list_detail li{
+	width: 98%;
+	height: 45px;
+	line-height: 45px;
+	border-bottom: 1px solid #979898;
+}
+.list_detail li span{
+	display: inline-block;
+	color: #4a4b4b;
+	width: 32%;
+	font-size: 15px;
+}
+
+/*//收取简历*/
+.resume_left li,.resume_right li{
+	margin: 10px 0;
+	font-weight: bold;
+	color: #000;
+	height: 35px;
+	overflow: hidden;
+	vertical-align: middle;
+
+
+}
+.resume_left span,.resume_right span{
+	display: inline-block;
+	height: 35px;
+	float: left;
+}
+.resume_left li span:nth-of-type(even){
+	letter-spacing: 2px;
+	width: 160px;
+}
+.resume_left li span:nth-of-type(odd){
+	width: 70px;
+	color: #979898;
+}
+.resume_right li span:nth-of-type(even){
+	letter-spacing: 2px;
+	color: #000;
+}
+.resume_right li span:nth-of-type(odd){
+	display: inline-block;
+	width: 70px;
+	color: #979898;
+}
+
+
+
+/*companycenter*/
+* {
+	margin: 0;
+	padding: 0;
+}
+
+ul,ol li {
+	list-style: none;
+}
+
+body {
+	width: auto;
+	height: auto;
+	border: 1px solid #cfcfcf;
+	background-color: #f7f7f7;
+}
+
+.main {
+	margin: 10px;
+	position: relative;
+}
+
+.section {
+	border: 1px solid #cfcfcf;
+}
+
+.head_mun {
+	width: 100%;
+	height: 22px;
+}
+
+.head_mun .mun_btn {
+	width: 90px;
+	height: 20px;
+	font-size: 12px;
+	text-align: center;
+	line-height: 20px;
+	border: 1px solid #cfcfcf;
+	float: left;
+	background-color: #f7c67a;
+	color: #f2552a;
+	cursor: pointer;
+}
+
+.head_mun .current {
+	color: #000;
+	background-color: #fff;
+}
+
+.head_mun .custom {
+	margin-right: 10px;
+}
+
+.sect {
+	background-color: #fff;
+	width: auto;
+	height: auto;
+}
+
+/*自定工价*/
+.wages_custom li {
+	height: 32px;
+	line-height: 30px;
+	text-align: center;
+	color: #000;
+	font-weight: bold;
+}
+
+
+
+.colon {
+	margin: 0 6px;
+}
+
+.wages_custom .btn_list {
+	height: 30px;
+	text-align: center;
+	margin-left: auto;
+    margin-right: auto;
+    width: 310px;
+    padding: 20px 0 30px 0;
+}
+
+.btn_list .btn {
+	width: 140px;
+	height: 30px;
+	background-color: #ea6200;
+	font-size: 18px;
+	line-height: 30px;
+	font-weight: 600;
+	letter-spacing: 2px;
+	color: #fff;
+	float: left;
+	cursor: pointer;
+}
+
+.btn_list .confirm_btn {
+	margin-right: 30px;
+}
+
+.wages_custom input {
+	height: 20px;
+	padding-left: 5px;
+}
+
+	/*分享弹窗*/
+	.confirm {
+		width: 100%;
+		height: 100%;
+		background-color: rgba(0,0,0,.1);
+		position: absolute;
+		top: 0;
+	}
+	.confirm_ {
+		width: 360px;
+		height: 230px;
+		background-color: #fff;
+	    padding: 20px;
+		position: absolute;
+		left: 50%;
+		margin-left: -180px;
+		top: 10px;
+		z-index: 999;
+	}
+	.confirm textarea {
+		height: 80px;
+		resize:none;
+	}
+	.confirm_ span {
+		float: left;
+		font-weight: 600;
+	}
+	.share_text {
+		margin-bottom: 16px;
+	}
+	.share_sendee input {
+		width: 225px;
+	}
+	.confirm .share_btn {
+		width: 120px;
+		height: 30px;
+		color: #fff;
+		background-color: #f9cc88;
+		border: none;
+	    position: absolute;
+	    bottom: 0;
+	    left: 50%;
+	    margin-left: -60px;
+	    margin-bottom: 20px;
+	    cursor: pointer;
+	}
+	/*分享弹窗 end*/
+
+/*自定工价 end*/
+
+.sect.current {
+	display: block;
+}
+
+/*工价列表*/
+.wages_list {
+	padding: 20px 50px;
+}
+
+.list_ul li {
+	list-style: inside;
+	height: 46px;
+	line-height: 50px;
+	border-bottom: 1px solid #cfcfcf;
+	position: relative;
+}
+
+.search_input {
+    width: 240px;
+    height: 20px;
+}
+
+.wages_list .search_btn {
+	width: 80px;
+	height: 24px;
+	background-color: #f7c67a;
+    color: #f2552a;
+    border: 1px solid #cfcfcf;
+    cursor: pointer;
+}
+
+.wages_list .share_btn {
+	width: 80px;
+	height: 22px;
+	border: none;
+	background-color: #f7c67a;
+	text-align: center;
+	font-weight: 600;
+	position: absolute;
+    right: 80px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.list_ul .list_name {
+	padding-right: 20px;
+}
+
+.list_ul .checkbox {
+	position: absolute;
+    right: 16px;
+    top: 50%;
+}
+
+.page {
+	padding: 40px 0 30px 0;
+	width: 450px;
+    margin-left: 32%;
+}
+
+.page li {
+	float: left;
+	border: 1px solid #cfcfcf;
+	text-align: center;
+	margin-right: 4px;
+}
+
+.page .page_btn {
+	width: 50px;
+	cursor: pointer;
+}
+
+.page .page_num {
+	width: 22px;
+	cursor: pointer;
+}
+
+.page .current {
+	background-color: #fe552c;
+}
+/*工价列表 end*/

@@ -1,0 +1,88 @@
+
+.aui-list-item-inner{
+	
+}
+
+.aui-list-item-label{
+	position: absolute !important;
+	left: -80px;
+	top: -5px;
+
+}
+.aui-list-item-input{
+	width: 80% !important;
+	
+	
+}
+
+.aui-list-item-input input{
+	line-height: 10px;
+}
+
+.aui-list-type{
+	top: -10px !important;
+	left: -80px !important;
+}
+.com-jia{
+	top:15px !important;
+	left: 15px !important;
+}
+.telcode{
+	left: 55% !important;
+	top: 6px !important;
+	font-size: 14px !important;
+}
+.xieyi{
+	margin-top: 8px !important;
+}
+#agreewgc{
+	margin-top: 10px !important;
+}
+#rember-paw{
+	margin-top: 2px !important;
+}
+.wgc-xieyi input{
+	margin-top: 12px !important;
+}
+.wgc-xieyi span{
+	margin-top: 10px !important;
+}
+
+.aui-btn-block{
+	line-height: 30px !important;
+	
+}
+
+.com-agree{
+	left: 55% !important;
+}
+
+#agreeinfo{
+	margin-top: 5px !important;
+}
+.wanshan{
+	line-height: 30px !important;
+}
+
+.changeinfo{
+	
+}
+
+.aui-content{
+	padding-top: 30px !important;
+}
+
+.aui-list-ie{
+	
+}
+.login-ie{
+	left: 20%;
+	background-color: transparent;
+}
+.agree-ie{
+	margin-left: -40px !important;
+}
+
+.regist{
+	left: -20%;
+}

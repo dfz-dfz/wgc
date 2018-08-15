@@ -1,0 +1,248 @@
+{include file=member.header.html}
+<link type="text/css" href="/themes/mall/jiaju/styles/default/css/css/style.css" rel="stylesheet"  />
+<link type="text/css" href="/themes/mall/jiaju/styles/default/css/css/demo.css" rel="stylesheet"  />
+<script type="text/javascript" src="/ueditor/ueditor.config.js"></script>
+<script type="text/javascript" src="/ueditor/ueditor.all.js"></script>
+<script src="/themes/mall/jiaju/laydate/laydate.js"></script>
+<script type="text/javascript">
+    var editor = new UE.ui.Editor();
+    editor.render("myEditor");
+    //1.2.4以后可以使用一下代码实例化编辑器
+    //UE.getEditor('myEditor')
+</script>
+<div class="content">
+    {include file=member.menu.html}
+    <div class="right">
+
+
+
+
+<div style="width: 600px;margin: 0 auto 30px auto">
+    <div class="fubu_right">
+        <div class="fubu_wrap">
+            
+            <form action="index.php?app=member&act=addcaigou" method="post" id="submit">
+				<input type="hidden" value="{$list.id}" name="id">
+				<input type="hidden" value="up" name="up">
+                <table>
+                    <tbody>
+
+						<tr>
+                            <td class='w100'><span>*</span>标题：</td>
+                            <td class='w600'>
+                                <input value="{$list.title}" type="text" class="w400" id="title"  name="title">
+                            </td>
+                        </tr>
+						<tr>
+                            <td class='w100'><span>*</span>性质：</td>
+                            <td class='w600'>
+                              
+								<input value="工程采购" name="xingzhi" type="radio"checked="checked">工程采购
+                            </td>
+                        </tr>
+						
+						<tr>
+                            <td class='w100'><span>*</span>分类：</td>
+                            <td class='w600'>
+                               <div class="w600 fu_ipone">
+							   
+									<select name="hangye">
+										<option value="厨房卫浴">厨房卫浴</option>
+										<option value="瓷砖地板">瓷砖地板</option>
+										<option value="开关门窗五金">开关门窗五金</option>
+										<option value="灯饰涂料壁纸">灯饰涂料壁纸</option>
+									</select>
+							   
+							   </div>
+                                
+                            </td>
+                        </tr>
+						
+						<tr>
+							  <td  class='w100'>开始日期：</td>
+							  <td class='w600'>
+								<input name="addtime" readonly="readonly" value="{$list.addtime}" id="addtime"  class="w400" onclick="laydate({istime: true, format: 'YYYY-MM-DD hh:mm:ss'})" type="text">
+							  </td>
+							  
+						</tr>
+						
+						<tr>
+							<td class='w100'>结束日期：</td>
+							  <td  class='w600'>
+								<input name="andtime" readonly="readonly" value="{$list.andtime}" id="andtime" class="w400" onclick="laydate({istime: true, format: 'YYYY-MM-DD hh:mm:ss'})" type="text">
+							  </td>
+						</tr>
+						
+                       
+						
+                        <tr>
+                            <td class='w100'><span>*</span>公司名称：</td>
+                            <td class='w600'>
+                                <input type="text" class="w400" id="gname" value="{$list.gname}" name="gname">
+                            </td>
+                        </tr>
+                        
+                        
+                       
+                        
+                        
+                        <tr>
+                            <td class='w100'><span>*</span>联系人：</td>
+                            <td class='w600'>
+                                <input value="{$list.lianxiren}" type="text" name="lianxiren" id="lianxiren" class="w200">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class='w100'><span>*</span>电话：</td>
+                            <td class='w600'>
+                               <div class="w600 fu_ipone"><input value="{$list.dianhua}" name="dianhua" id="dianhua" type="text" class="w200"></div>
+                                
+                            </td>
+                        </tr>
+
+                        
+                        <tr>
+                            <td class='w100'><span>*</span>地址：</td>
+                            <td class='w600'>
+                                <select id="s_province" name="s_province"></select>  
+                                <select id="s_city" name="s_city" ></select>  
+                                <select id="s_county" name="s_county"></select>
+                                <script class="resources library" src="/themes/mall/jiaju/styles/default/js/area.js" type="text/javascript"></script>
+                        
+                                <script type="text/javascript">_init_area();</script> 
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class='w100'><span>*</span>详细地址：</td>
+                            <td class='w600'>
+                                <input value="{$list.xiangxi}" type="text" name="xiangxi" id="xiangxi" class="w400">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class='w100'><span>*</span>简介：</td>
+                            <td class='w600'>
+                                <textarea name="content" id="myEditor" id="myEditor">{$list.content}</textarea>
+                            </td>
+                        </tr>
+                                    
+                </table>
+                <div class=""><input type="button" class="save_btn_fabu" value="立即发布" id="save_btn_fabu"></div>         
+            </form>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+
+
+	$(function(){
+		$("#save_btn_fabu").click(function(){
+		
+			var  title= $("#title");
+			var  addtime= $("#addtime");
+			var  andtime= $("#andtime");
+			var  gname= $("#gname");
+			var  lianxiren= $("#lianxiren");
+			var  dianhua= $("#dianhua");
+			var  s_province= $("#s_province");
+			var  s_city= $("#s_city");
+			var  s_county= $("#s_county");
+			var  xiangxi= $("#xiangxi");
+			var  myEditor= $("#myEditor");
+			
+			if(title.val() == ''){
+				title.focus();
+				title.css("border","1px solid red");
+				alert('请输入标题');
+				return false;
+			}else if(addtime.val() == ''){
+				addtime.focus();
+				alert('请选择开始日期');
+				addtime.css("border","1px solid red");
+				return false;
+			}else if(andtime.val() == ''){
+				andtime.focus();
+				andtime.css("border","1px solid red");
+				alert('请选择结束日期');
+				return false;
+			}else if(gname.val() == ''){
+				gname.focus();
+				alert('请输入公司名称');
+				gname.css("border","1px solid red");
+				return false;
+			}else if(lianxiren.val() == ''){
+				lianxiren.focus();
+				alert('请输入联系人');
+				lianxiren.css("border","1px solid red");
+				return false;
+			}else if(dianhua.val() == ''){
+				dianhua.focus();
+				alert('请输入联系电话');
+				dianhua.css("border","1px solid red");
+				return false;
+			}else if(s_province.val() == '请选择'){
+				s_province.focus();
+				s_province.css("border","1px solid red");
+				alert('请选择省会');
+				return false;
+			}else if(s_city.val() == '请选择'){
+				s_city.focus();
+				s_city.css("border","1px solid red");
+				alert('请选择城市');
+				return false;
+			}else if(s_county.val() == '请选择'){
+				s_county.focus();
+				s_county.css("border","1px solid red");
+				alert('请选择地区');
+				return false;
+			}else if(xiangxi.val() == ''){
+				xiangxi.focus();
+				xiangxi.css("border","1px solid red");
+				alert('请输入详细地址');
+				return false;
+			
+			}else{
+				$("#submit").submit();
+			}
+		})
+	})
+	
+    $("#btn").click(function(){
+
+        var fuli=$('.fuli').val();
+　　$(".sys_spec_text").append(" <li class='selected'><a href='javascript:;' title='"+ fuli +"'> "+ fuli + "</a><i></i></li>");
+　　});
+    $("#btn1").click(function(){
+
+　　$(".fu_ipone").append(' <input value="12123" type="text" class="w200"/>');
+　　});
+</script>
+<script type="text/javascript">
+ $(".sys_item_specpara ul li").click(function(){
+        if($(this).hasClass('selected')){
+        $(this).removeClass('selected');
+        }else{
+        $(this).addClass('selected');
+        };
+});
+</script>
+<script type="text/javascript">
+var Gid  = document.getElementById ;
+var showArea = function(){
+    Gid('show').innerHTML = "<h3>省" + Gid('s_province').value + " - 市" +    
+    Gid('s_city').value + " - 县/区" + 
+    Gid('s_county').value + "</h3>"
+                            }
+Gid('s_county').setAttribute('onchange','showArea()');
+</script>
+
+
+
+
+    </div>
+    <div class="clear"></div>
+</div>
+{include file=footer.html}

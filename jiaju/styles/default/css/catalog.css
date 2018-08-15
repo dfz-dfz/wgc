@@ -1,0 +1,27 @@
+﻿/*商品分类*/
+#catalog{ width:211px;overflow:visible;}
+#catalog .title{height:24px;padding:3px 8px;background:url(../images/bg_tit_home.gif) #C40000 no-repeat 0 0;line-height:24px;}
+#catalog h2{float:left;color:#fff; font-size:14px;}
+#catalog .title a:link,#catalog .title a:visited{color:#fff;}
+#catalog .title .extra{float:right;}
+#catalog .content{overflow:visible;width:209px;padding:2px 0 3px;border:solid #C40000;border-width:0 1px 1px;background:#FFFFF5; text-align:left;}
+#catalog h3{padding:4px 8px; text-align:left;}
+#catalog h3 a:link,#catalog h3 a:visited{color:#c00;font-size:14px;}
+#catalog .item{width:209px;height:25px;}
+#catalog span{display:block;overflow:hidden;width:200px;height:20px;padding:3px 1px 2px 8px;line-height:20px;}
+#catalog h4{float:left;font-size:12px;font-weight:normal;}
+#catalog ins{float:left;width:140px;padding-right:8px;font-style:normal;text-decoration:none;background:url(../images/shadow20100415.gif) no-repeat -350px -2px;color:#999;}
+#catalog .item div{display:none; position:absolute;left:180px;top:0;z-index:12; text-align:left;}
+#catalog dl,#catalog dt,#catalog dd{width:200px;background-image:url(../images/shadow20100415.gif);background-repeat:no-repeat;}
+#catalog dl{background-position:left bottom;}
+#catalog dt{position:relative;padding:0 4px 0 15px;margin-left:1px;overflow:hidden;height:6px;background-position:right -36px;}
+#catalog dd{position:relative;padding:0 5px 5px 0;margin-left:15px;overflow:hidden;background-position:right bottom; line-height:19px;}
+#catalog dd em{float:left;width:90px;padding:0 0 5px 10px;background:url(../images/shadow20100415.gif) no-repeat -489px -5px;}
+#catalog .item:hover{position:relative;z-index:110;}
+#catalog .item:hover span{height:22px;padding:0 1px 2px 8px;border-top:1px solid #6C6C6C;background:url(../images/shadow20100415.gif) repeat-x 0 -11px;overflow:hidden;}
+#catalog .item:hover ins{position:absolute;right:20px;top:1px;z-index:13;overflow:hidden;width:120px;height:19px;background:#fff;line-height:19px;text-indent:200px;}
+#catalog .item:hover div{display:block; }
+#catalog .content .extra{padding:5px 8px 0;border-top:1px dotted #ccc;text-align:right;}
+#catalog .content .extra a:link,#catalog .content .extra a:visited{color:#c00;}
+*html #catalog dl{overflow:hidden;}
+/*end*/

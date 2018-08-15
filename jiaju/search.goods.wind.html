@@ -1,0 +1,354 @@
+{include file=header.html}
+<script type="text/javascript" src="{lib file=search_goods.js}" charset="utf-8"></script>
+<script type="text/javascript">
+var upimg   = '{res file=images/up.gif}';
+var downimg = '{res file=images/down.gif}';
+imgUping = new Image();
+imgUping.src = upimg;
+
+/* jiaju ecodemall */
+$(function(){
+	
+	var order = '{$smarty.get.order}';
+	var css = '';
+	
+	if(order){
+		order = order.split(' ');
+        switch (order[1]){
+          case 'desc' : 
+		    css = 'order-down';
+          break;
+		  case 'asc' :
+		    css = 'order-up';
+		  break;
+          default : 
+		    css = 'order-down-gray';
+        }
+		$('.btn-order a[ectype='+order[0]+']').attr('class','btn-order-click '+css);
+	}
+	$(".btn-order a").click(function(){
+		if(this.id=='')
+		{
+			dropParam('order');// default order
+			return false;
+		}
+		else
+		{
+			if(order!='' && order[1]=="desc" && order[0]==this.id)
+			   dd = " asc";
+			else dd = " desc";
+			replaceParam('order', this.id+dd);
+			return false;
+		}
+	});
+	
+	$(".display_mod a").each(function(){
+		$(this).show();
+	});
+	if($.getCookie("goodsDisplayMode")) {
+		$(".display_mod #"+$.getCookie('goodsDisplayMode')).hide();
+	} else {
+		$(".display_mod #squares").hide();
+	}
+
+	$(".display_mod a").click(function(){
+		$("div[ectype='current_display_mode']").attr("class",this.id + " clearfix");
+		$(".display_mod a").each(function(){
+			$(this).show();
+		});
+		$(".display_mod #"+this.id).hide();
+		$.setCookie('goodsDisplayMode', this.id);
+	});
+	
+	$("#goodslist .category dt span").click(function(){
+		alternate_class = $(this).attr('alternate_class'); 
+		//alert(alternate_class);
+		if(alternate_class!=undefined){  
+        	$(this).attr('alternate_class',$(this).attr('class'));
+			$(this).attr('class',alternate_class);
+			$(this).parent().next().slideToggle('slow');// slideToggle 竖向  toggle 横向
+		}
+	});
+	
+	
+	
+});
+
+
+</script>
+<div id="goodslist" class="w auto clearfix"style="margin:20px auto;">
+   <div class="left w220">
+   
+   	  <div class="category box">
+         <div class="title clearfix"style="width: 203px;"><a href="{url app=category}"><em></em>查看全部分类</a></div>
+         <div class="content">
+      		<!--{foreach from=$allcategories item=gcategory name=fe_gcategory}-->
+            <dl {if $smarty.foreach.fe_gcategory.last} style="background:none"{/if}>
+                <dt>
+                	<span {$gcategory.style}></span>
+                	<a href="{url app=search&cate_id=$gcategory.cate_id}" {if $gcategory.selected}style="color:#A50000;"{/if}>{$gcategory.cate_name|escape}</a><b>({$gcategory.goods_count})</b>
+                </dt>
+                <dd {if $gcategory.expanded}style="display:block"{/if}>
+                    <!--{foreach from=$gcategory.children item=child name=fe_child}-->
+                    <dl>
+                       <dt>
+                       	  <span {$child.style}></span>
+                          <a href="{url app=search&cate_id=$child.cate_id}" {if $child.selected}style="color:#A50000;"{/if}>{$child.cate_name|escape}</a><b>({$child.goods_count})</b>
+                       </dt>
+                       <dd {if $child.expanded}style="display:block"{/if}>
+                          <!--{foreach from=$child.children item=child2 name=fe_child2}-->
+                          <dl>
+                              <dt>
+                              	<span {$child2.style}></span>
+                              	<a href="{url app=search&cate_id=$child2.cate_id}" {if $child2.selected}style="color:#A50000;"{/if}>{$child2.cate_name|escape}</a><b>({$child2.goods_count})</b>
+                              </dt>
+                              <dd {if $child2.expanded}style="display:block"{/if}>
+                              	<!--{foreach from=$child2.children item=child3 name=fe_child3}-->
+                              	<dl>
+                                	<dt>
+                                    	<span {$child3.style}></span>
+                                        <a href="{url app=search&cate_id=$child3.cate_id}" {if $child3.selected}style="color:#A50000;"{/if}>{$child3.cate_name|escape}</a><b>({$child3.goods_count})</b>
+                                    </dt>
+                                </dl>
+                             	<!--{/foreach}-->
+                              </dd>
+                           </dl>
+                           <!--{/foreach}-->
+                         </dd>
+                      </dl>
+                    <!--{/foreach}-->
+                </dd>
+            </dl>
+            <!--{/foreach}-->
+          </div>
+      </div>
+
+      <!--{if $brands || $price_intervals || $regions}-->
+      <div class="sidebar">
+         <div class="hd">价格</div>
+        
+         <!--{if $brands}-->
+         <!-- {if !$filters.brand} -->
+         <div class="box">
+            <div class="title">{$lang.by_brand}</div>
+            <ul class="content" ectype="ul_brand">
+               <!--{foreach from=$brands item=row name=fe_brand}-->
+               <li><a href="javascript:void(0);" title="{$row.brand}" id="{$row.brand|escape:url}">{$row.brand|escape}</a> ({$row.count})</li>
+               <!--{/foreach}-->
+            </ul>
+         </div>
+         <!--{/if}-->
+         <!-- {/if} -->
+         
+         <!--{if $price_intervals}-->
+         <!--{if !$filters.price}-->
+         <div class="box">
+            <div class="title">{$lang.by_price}</div>
+            <ul class="content" ectype="ul_price">
+               <!--{foreach from=$price_intervals item=row}-->
+               <li><a href="javascript:void(0);" id="{$row.min} - {$row.max}">{$row.min|price} - {$row.max|price}</a> ({$row.count})</li>
+               <!--{/foreach}-->
+            </ul>
+         </div>
+         <!--{/if}-->
+         <!--{/if}-->
+         
+         <!--{if $regions}-->
+         <!-- {if !$filters.region_id}-->
+         <div class="box">
+            <div class="title">{$lang.by_region}</div>
+            <ul class="content" ectype="ul_region">
+               <!--{foreach from=$regions item=row name=fe_region}-->
+               <li><a href="javascript:void(0);" id="{$row.region_id}" title="{$row.region_name|escape}">{$row.region_name|escape}</a> ({$row.count})</li>
+               <!--{/foreach}-->
+            </ul>
+         </div>
+         <!--{/if}-->
+         <!--{/if} -->
+       </div>
+      <!--{/if}-->
+      
+      <!--{if $rank_goods}-->
+      <div class="rank rank-list mt10">
+         <h3><strong>排行</strong>商品</h3>
+         <ul class="clearfix">
+             <!--{foreach from=$rank_goods item=goods name=fe_goods}-->
+             <li class="each {if $smarty.foreach.fe_goods.first}current{/if} clearfix">
+                <span>{$smarty.foreach.fe_goods.iteration}</span>
+                <a class="pic" href="{url app=goods&id=$goods.goods_id}"><img width="50" height="50" src="{$goods.default_image}"></a>
+                <a class="link" href="{url app=goods&id=$goods.goods_id}">{$goods.goods_name|escape|truncate:28}</a>
+                <em>{$goods.price|price}</em>
+                <div class="cuxiao"></div>
+             </li>
+             <!--{/foreach}-->
+          </ul>
+       </div>
+      <script type="text/javascript">
+		    $(function(){
+				$(".rank-list .each").hover(function(){
+					$(".rank-list .each").each(function(){
+						$(this).removeClass("current");
+					});
+					$(this).addClass("current");
+				});
+			});
+	  </script>  
+      <!--{/if}-->
+       
+   </div>
+   <div class="right w760">
+       {include file=curlocal.html}
+       
+       <div class="attribute mt10">
+          <!--{if $goods_list}-->
+          <div class="selected-attr title">
+             <!--{if $filters}-->
+             <strong>{$lang.you_selected}{$lang.colon}</strong>
+             <!--{foreach from=$filters item=filter}-->
+             <a href="javascript:;" id="{$filter.key}"><b>{$filter.name}{$lang.colon}</b>{$filter.value}<span></span></a>
+             <!--{/foreach}-->
+             <!--{else}-->
+             <strong>条件</strong>
+             <!--{/if}-->
+          </div>
+          <!--{/if}-->
+         
+          <!--{if $brands || $price_intervals || $regions}-->
+          <div class="content">
+             <!--{if $brands}-->
+             <!-- {if !$filters.brand} -->
+             <div class="each clearfix">
+                <h4>{$lang.by_brand}</h4>
+                <div class="pv" ectype="ul_brand">
+                   <!--{foreach from=$brands item=row name=fe_brand}-->
+                   <a href="javascript:void(0);" title="{$row.brand}" id="{$row.brand|escape:url}">{$row.brand|escape}</a>
+                   <!--{/foreach}-->
+                </div>
+             </div>
+             <!--{/if}-->
+             <!--{/if}-->
+             
+             <!--{if $price_intervals}-->
+             <!--{if !$filters.price}-->
+             <div class="each clearfix">
+                <h4>{$lang.by_price}</h4>
+                <div class="pv" ectype="ul_price">
+                   <!--{foreach from=$price_intervals item=row}-->
+                   <a href="javascript:void(0);" id="{$row.min} - {$row.max}">{$row.min|price} - {$row.max|price}</a>
+                   <!--{/foreach}-->
+                </div>
+             </div>
+             <!--{/if}-->
+             <!--{/if}-->
+             
+             <!--{if $regions}-->
+             <!-- {if !$filters.region_id} -->
+             <div class="each clearfix">
+                <h4>{$lang.by_region}</h4>
+                <div class="pv" ectype="ul_region">
+                   <!--{foreach from=$regions item=row name=fe_region}-->
+                   <a href="javascript:void(0);" hidefocus="true" id="{$row.region_id}" title="{$row.region_name|escape}">{$row.region_name|escape}</a>
+                   <!--{/foreach}-->
+                </div>
+             </div>
+             <!--{/if}-->
+             <!--{/if}-->
+			 <div class="each clearfix">
+                <h4>搜索本类</h4>
+                <div class="pv" ectype="ul_region" style="width: 300px;">
+					<?php 
+					$cate_id="";
+					$price="";
+					$brand="";
+					$order="";
+					if(isset($_GET['cate_id'])){
+						$cate_id='&cate_id='.$_GET['cate_id'];
+					}
+					if(isset($_GET['price'])){
+						$price='&price='.$_GET['price'];
+					}
+					if(isset($_GET['brand'])){
+						$brand='&brand='.$_GET['brand'];
+					}
+					if(isset($_GET['order'])){
+						$order='&order='.$_GET['order'];
+					}
+					
+					$url = '/index.php?app=search'.$cate_id.''.$price.''.$brand.''.$order;
+					?>
+					<script>
+						function husou(){
+							var s = $("#husou").val();
+							alert(s);
+						}
+					</script>
+					
+					<form action="<?PHP ECHO $url;?>" method="get">
+					  <p><input type="text" name="keyword" id="husou" style="float:left;" /></p>
+					  <input type="button" onclick='window.location.href="<?php echo $url;?>&keyword="+$("#husou").val(); ' value="搜索" style="float:left;" />
+					</form>
+					
+                </div>
+             </div>
+          </div>
+          <!--{/if}-->
+          
+       </div>
+       
+       <div class="glist mt10">
+          <div class="clearfix">
+             <div class="list-sort clearfix">
+                <div class="display_mod fleft">
+               <a class="qh-list" hidefocus="true" id="list"  href="javascript:;"></a>
+               <a class="qh-squares"  hidefocus="true" id="squares"  href="javascript:;"></a>
+             </div>
+                <div class="fleft btn-order">
+                <span>{$lang.order_by}{$lang.colon}</span>
+                <!--{foreach from=$orders item=order key=k name=fe_order}-->
+                <!--{if !$k}-->
+               
+                <!--{else}-->
+                <a class="btn-order-click order-down-gray" ectype="{$k}" id="{$k}" href="javascript:;">{$order}</a>
+                <!--{/if}-->
+                <!--{/foreach}-->
+             </div>
+             </div>
+             <div class="{$display_mode} clearfix" ectype="current_display_mode">
+             <!-- {if $goods_list} -->
+             <!--{foreach from=$goods_list item=goods}-->
+             <dl class="clearfix">
+                <dt><a href="{url app=goods&id=$goods.goods_id}" target="_blank"><img src="{$goods.default_image}" /></a></dt>
+                <dd class="desc"><a href="{url app=goods&id=$goods.goods_id}" target="_blank">{$goods.goods_name|escape|truncate:48}</a></dd>
+                <dd class="price clearfix"><em>{$goods.goods_id|modifier:jia}</em><span>{$goods.sales}笔</span></dd>
+                <dd class="service"></dd>
+             </dl> 
+             <!--{/foreach}-->
+             <!-- {else} -->
+             <div class="goods-empty padding10 mb10"><!--{$lang.no_records}--><a href="index.php?app=store&act=reg"> <img src="/themes/mall/jiaju/styles/style/images/clzhaoshang1.jpg"/> </a><img src="/themes/mall/jiaju/styles/style/images/clzhaoshang2.jpg"/></div>
+             <!-- {/if} -->
+          </div>
+             <!--{if $goods_list}-->{include file=page.bottom.html}<!--{/if}-->
+          </div>
+          <!--{if $recommend_goods}-->
+          <div class="recommend">
+             <div class="title"><span></span>推荐</div>
+             <div class="content clearfix">
+                <!--{foreach from=$recommend_goods item=goods name=fe_recommend_goods}-->
+                <!--{if $smarty.foreach.fe_recommend_goods.iteration le 4}-->
+                <dl>
+                   <dt><a href="{url app=goods&id=$goods.goods_id}" target="_blank"><img width="160" height="160" src="{$goods.default_image}" /></a></dt>
+                   <dd class="desc"><a href="{url app=goods&id=$goods.goods_id}" target="_blank">{$goods.goods_name|escape|truncate:48}</a></dd>
+                   <dd class="price clearfix"><em>{$goods.goods_id|modifier:jia}</em><span>{$goods.sales}笔</span></dd>
+                   <dd class="service"></dd>
+                </dl> 
+                <!--{/if}-->
+                <!--{/foreach}-->
+             </div>
+          </div>
+          <!--{/if}-->
+          
+       </div>
+   </div>
+</div>
+
+{include file=footer.html}

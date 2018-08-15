@@ -1,0 +1,164 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>材料城列表</title>
+<link rel="stylesheet" type="text/css" href="style/style.css">
+<link rel="stylesheet" type="text/css" href="css/cailiao.css">
+<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+
+</head>
+
+<body>
+
+<div class="dpxq_area w">
+<div class="dpxq_title">
+	关于店铺
+</div>
+	<div class="dpxq_left">
+		<div class="dpxq_left1">
+		   <h2>广州市顺成五金电器批发部</h2>
+		   <p><img src="images/xq_03.jpg"></p>
+		   <a href="#">关注店铺</a>
+		</div>
+		<ul>
+			<li>店铺：广州市顺成五金电器批发部</li>
+			<li>地址：广州市白云区百元</li>
+			<li>创建时间：2012-12-12</li>
+			<li>联系人：林先生</li>
+			<li>QQ：*******</li>
+			<li>电话：13423453224</li>
+			<li>邮箱：123@123.com</li>
+		</ul>
+	</div>
+	<div class="dpxq_right">
+	  <div class="dpxq_title">
+	     店铺相片  
+      </div>
+      <div class="dpxq_con1">
+		      	<div class="v_out v_out_p">
+				<div class="prev"><a href="javascript:void(0)"><img src="images/prev.jpg"></a></div>
+				
+			    <div class="v_show">
+					<div class="v_cont">
+						<ul>
+							<li index="0" style="background:#f00"><img src="images/xq_061.jpg"></li>
+							<li index="1" style="background:#ff0"><img src="images/xq_06.jpg"></li>
+							<li index="2" style="background:#f0f"><img src="images/xq_061.jpg"></li>
+							<li index="3" style="background:#999"><img src="images/xq_06.jpg"></li>
+							<li index="4" style="background:#666"><img src="images/xq_061.jpg"></li>
+						</ul>
+					</div>
+				</div>
+				
+			    <div class="next"><a href="javascript:void(0)"><img src="images/next.jpg"></a></div>
+
+				<ul class="circle">
+					<li class="circle-cur"><img src="images/xq_131.jpg"><div></div></li>
+					<li><img src="images/xq_13.jpg"><div></div></li>
+					<li><img src="images/xq_131.jpg"><div></div></li>
+					<li><img src="images/xq_13.jpg"><div></div></li>
+					<li><img src="images/xq_131.jpg"><div></div></li>
+				</ul>
+				<div class="clear"></div>
+			</div>
+      </div>
+      <div class="dpxq_title">
+	     店铺经营  
+      </div>
+      <div class="dpxq_con2">
+      	<p>分类:庆丰电线电缆、保利来电线、各场电线电缆定做、灯饰照明、金星、松本系列开关插座、定做电箱等</p>
+      	<form>
+      		备注：<textarea></textarea>
+      		<div><input value="保存" type="submit" class="save_btn"></div>
+      	</form>
+      </div>
+	</div>
+</div>
+<script>
+$(function() {
+	$(".next a").click(function() {
+		nextscroll()
+	});
+
+	function nextscroll() {
+		var vcon = $(".v_cont ");
+		var offset = ($(".v_cont li").width()) * -1;
+		vcon.stop().animate({
+			left: offset
+		}, "slow", function() {
+			var firstItem = $(".v_cont ul li").first();
+			vcon.find("ul").append(firstItem);
+			$(this).css("left", "0px");
+			circle()
+		})
+	};
+
+	function circle() {
+		var currentItem = $(".v_cont ul li").first();
+		var currentIndex = currentItem.attr("index");
+		$(".circle li").removeClass("circle-cur");
+		$(".circle li").eq(currentIndex).addClass("circle-cur")
+	}
+	$(".prev a").click(function() {
+		var vcon = $(".v_cont ");
+		var offset = ($(".v_cont li").width() * -1);
+		var lastItem = $(".v_cont ul li").last();
+		vcon.find("ul").prepend(lastItem);
+		vcon.css("left", offset);
+		vcon.animate({
+			left: "0px"
+		}, "slow", function() {
+			circle()
+		})
+	});
+	var animateEnd = 1;
+	$(".circle li").click(function() {
+		if (animateEnd == 0) {
+			return
+		}
+		$(this).addClass("circle-cur").siblings().removeClass("circle-cur");
+		var nextindex = $(this).index();
+		var currentindex = $(".v_cont li").first().attr("index");
+		var curr = $(".v_cont li").first().clone();
+		if (nextindex > currentindex) {
+			for (var i = 0; i < nextindex - currentindex; i++) {
+				var firstItem = $(".v_cont li").first();
+				$(".v_cont ul").append(firstItem)
+			}
+			$(".v_cont ul").prepend(curr);
+			var offset = ($(".v_cont li").width()) * -1;
+			if (animateEnd == 1) {
+				animateEnd = 0;
+				$(".v_cont").stop().animate({
+					left: offset
+				}, "slow", function() {
+					$(".v_cont ul li").first().remove();
+					$(".v_cont").css("left", "0px");
+					animateEnd = 1
+				})
+			}
+		} else {
+			var curt = $(".v_cont li").last().clone();
+			for (var i = 0; i < currentindex - nextindex; i++) {
+				var lastItem = $(".v_cont li").last();
+				$(".v_cont ul").prepend(lastItem)
+			}
+			$(".v_cont ul").append(curt);
+			var offset = ($(".v_cont li").width()) * -1;
+			$(".v_cont").css("left", offset);
+			if (animateEnd == 1) {
+				animateEnd = 0;
+				$(".v_cont").stop().animate({
+					left: "0px"
+				}, "slow", function() {
+					$(".v_cont ul li").last().remove();
+					animateEnd = 1
+				})
+			}
+		}
+	})
+})
+</script>
+</body>
+</html>

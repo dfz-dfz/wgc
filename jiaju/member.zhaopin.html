@@ -1,0 +1,255 @@
+{include file=member.header.html}
+<link type="text/css" href="/themes/mall/jiaju/styles/default/css/css/style.css" rel="stylesheet"  />
+<link type="text/css" href="/themes/mall/jiaju/styles/default/css/css/demo.css" rel="stylesheet"  />
+<script type="text/javascript" src="/ueditor/ueditor.config.js"></script>
+<script type="text/javascript" src="/ueditor/ueditor.all.js"></script>
+<script type="text/javascript">
+    var editor = new UE.ui.Editor();
+    editor.render("myEditor");
+    //1.2.4以后可以使用一下代码实例化编辑器
+    //UE.getEditor('myEditor')		
+</script>
+
+<div class="content">
+    {include file=member.menu.html}
+    <div class="right">
+
+
+<div style="width: 600px;margin: 0 auto 30px auto">
+    <div class="fubu_right">
+        <div class="fubu_wrap">
+            <p class="fu_text">发布第一次招聘信息时，需要先填写企业资料</p>
+            <form action="index.php?app=member&act=addzhaopin" method="post">
+				<input type="hidden" value="{$list.id}" name="id">
+				<input type="hidden" value="up" name="up">
+                <table>
+                    <tbody>
+
+                        <tr>
+                            <td class='w100'><span>*</span>公司身份：</td>
+                            <td class='w600'>
+								
+                                <label><input style="border:1px solid #666666"name="company" checked="checked"  type="radio" value="公司直招" />公司直招 </label> 
+                                <label><input style="border:1px solid #666666"name="company" type="radio" value="职业代招" />职业代招<i>（职业招聘或者是劳务公司）</i> </label> 
+                            </td>
+                        </tr>
+
+						<tr>
+                            <td class='w100'><span>*</span>标题：</td>
+                            <td class='w600'>
+                                <input style="border:1px solid #666666"value="{$list.title}" type="text" class="w400" name="title">
+                            </td>
+                        </tr>
+						
+                        <tr>
+                            <td class='w100'><span>*</span>公司名称：</td>
+                            <td class='w600'>
+                                <input style="border:1px solid #666666"value="{$list.gname}" type="text" class="w400" name="gname">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class='w100'><span>*</span>所属行业：</td>
+                            <td class='w600'>
+                                <select name="hangye"style="border:1px solid #666666">  
+                                        <option value ="施工招标">施工招标</option>  
+                                        <option value ="材料招标">材料招标</option>   
+										<option value ="招牌公司">招牌公司</option>  
+                                        <option value ="装饰工程">装饰工程</option> 
+										<option value ="机电安装">机电安装</option>  
+                                        <option value ="防蚁">防蚁</option> 
+										<option value ="防鼠">防鼠</option> 
+										<option value ="建筑加固">建筑加固</option>  
+                                        <option value ="办公家具">办公家具</option> 
+										<option value ="酒店家具">酒店家具</option>  
+                                        <option value ="民用家具">民用家具</option> 
+										<option value ="餐厅家具">餐厅家具</option>  
+                                        <option value ="园林">园林</option> 
+										<option value ="维修">维修</option>  
+                                        <option value ="广告">广告</option> 
+										<option value ="设计">设计</option>  
+                                        <option value ="幕墙">幕墙</option>   
+										<option value ="路政">路政</option>  
+                                        <option value ="物流">物流</option> 
+										<option value ="坼除">坼除</option>  
+                                        <option value ="材料">材料</option> 
+										<option value ="智能化">智能化</option>  
+                                        <option value ="保险">保险</option> 
+										<option value ="消防">消防</option>  
+                                        <option value ="环保">环保</option> 
+										<option value ="软装">软装</option>  
+                                        <option value ="厨具">厨具</option> 
+										<option value ="保洁">保洁</option>  
+                                        <option value ="设计院">设计院</option>
+										<option value ="计算机 | 互联网 | 通信 | 电子">计算机 | 互联网 | 通信 | 电子</option>
+										<option value ="会计/金融/银行/保险">会计/金融/银行/保险</option>
+										<option value ="贸易/消费/制造/营运">贸易/消费/制造/营运</option>
+										<option value ="制药/医疗">制药/医疗</option>
+										<option value ="广告/媒体">广告/媒体</option>
+										<option value ="房地产/建筑">房地产/建筑</option>
+										<option value ="专业服务/教育/培训">专业服务/教育/培训</option>
+										<option value ="服务业">服务业</option>
+										<option value ="物流/运输">物流/运输</option>
+										<option value ="能源/原材料">能源/原材料</option>
+										<option value ="政府/非赢利机构">政府/非赢利机构</option>
+										<option value ="超市连锁">超市连锁</option>
+										<option value ="服装行业">服装行业</option>
+										<option value ="钢铁行业">钢铁行业</option>
+										<option value ="家电行业">家电行业</option>
+										<option value ="酒店行业">酒店行业</option>
+										<option value ="零售行业">零售行业</option>
+										<option value ="旅游行业">旅游行业</option>
+										<option value ="媒体广告">媒体广告</option>
+										<option value ="汽车行业">汽车行业</option>
+										<option value ="日化用品">日化用品</option>
+										<option value ="石化行业">石化行业</option>
+										<option value ="物业装修">物业装修</option>
+										<option value ="烟草行业">烟草行业</option>
+										<option value ="饮食酒料">饮食酒料</option>
+										<option value ="数码/电子">数码/电子</option>
+										<option value ="家用电器/照明 ">家用电器/照明 </option>
+										<option value ="日用化工">日用化工</option>
+										<option value ="食品/饮料">食品/饮料</option>
+										<option value ="玩具/礼品/工艺">玩具/礼品/工艺</option>
+										<option value ="纺织/服饰/鞋业">纺织/服饰/鞋业</option>
+										<option value ="机械/五金 ">机械/五金 </option>
+										<option value ="印刷/包装">印刷/包装</option>
+										<option value ="租赁/中介/服务">租赁/中介/服务</option>
+										<option value ="农/林/牧/渔">农/林/牧/渔</option>
+										<option value ="旅游/餐饮/酒店">旅游/餐饮/酒店</option>
+										<option value ="建筑/建材/设计">建筑/建材/设计</option>
+										<option value ="其他行业">其他行业</option>
+                                </select>  
+                            </td>
+                        </tr> 
+                        <tr>
+                            <td class='w100'><span>*</span>公司性质：</td>
+                            <td class='w600'>
+                                <select name="xingzhi"style="border:1px solid #666666">  
+                                        <option value ="外资(欧美)">外资(欧美)</option>  
+                                        <option value ="外资(非欧美)">外资(非欧美)</option>
+										<option value ="合资">合资</option>
+										<option value ="国企">国企</option>
+										<option value ="民营公司">民营公司</option>
+										<option value ="外企代表处">外企代表处</option>
+										<option value ="政府机关">政府机关</option>
+										<option value ="事业单位">事业单位</option>
+										<option value ="非营利机构">非营利机构</option>
+										<option value ="上市公司">上市公司</option>
+										<option value ="创业公司">创业公司</option>
+                                </select>  
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class='w100'><span>*</span>公司规模：</td>
+                            <td class='w600'>
+                                <select name="guimo"style="border:1px solid #666666">  
+                                        <option value ="20人以下">20人以下</option>  
+                                        <option value ="20人~50人">20人~50人</option>   
+                                        <option value ="50人~100人">50人~100人</option>
+                                        <option value ="100人~300人">100人~300人</option>
+										<option value ="300人~1000人">300人~1000人</option>
+										<option value ="1000人以上">1000人以上</option>
+                                </select>  
+                            </td>
+                        </tr>
+                        
+                        <tr>
+                            <td class='w100'><span>*</span>薪资：</td>
+                            <td class='w600'>
+                                <input style="border:1px solid #666666"value="{$list.xinzi}" type="text" name="xinzi" class="w200">/月
+                            </td>
+                        </tr>
+                        
+                        <tr>
+                            <td class='w100'><span>*</span>联系人：</td>
+                            <td class='w600'>
+                                <input style="border:1px solid #666666"value="{$list.lianxiren}" type="text" name="lianxiren" class="w200">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class='w100'><span>*</span>招聘电话：</td>
+                            <td class='w600'>
+                               <div class="w600 fu_ipone"><input style="border:1px solid #666666"value="{$list.dianhua}" name="dianhua" type="text" class="w200"></div>
+                                
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class='w100'><span>*</span>招聘邮箱：</td>
+                            <td class='w600'>
+                                <input style="border:1px solid #666666"value="{$list.email}" type="text" name="email" class="w400">
+                            </td>
+                        </tr>
+                        
+
+                        <tr>
+                            <td class='w100'><span>*</span>地址：</td>
+                            <td class='w600'>
+                                <select id="s_province" name="s_province"style="border:1px solid #666666"></select>  
+                                <select id="s_city" name="s_city"style="border:1px solid #666666" ></select>  
+                                <select id="s_county" name="s_county"style="border:1px solid #666666"></select>
+                                <script class="resources library" src="/themes/mall/jiaju/styles/default/js/area.js" type="text/javascript"></script>
+                        
+                                <script type="text/javascript">_init_area();</script> 
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class='w100'><span>*</span>详细地址：</td>
+                            <td class='w600'>
+                                <input style="border:1px solid #666666"value="{$list.xiangxi}" type="text" name="xiangxi" class="w400">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class='w100'><span>*</span>简介：</td>
+                            <td class='w600'>
+                                <textarea style="border:1px solid #666666" name="content" id="myEditor">{$list.content}</textarea>
+                            </td>
+                        </tr>
+                                    
+                </table>
+                <div class=""><input type="submit" class="save_btn_fabu"></div>         
+            </form>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $("#btn").click(function(){
+
+        var fuli=$('.fuli').val();
+　　$(".sys_spec_text").append(" <li class='selected'><a href='javascript:;' title='"+ fuli +"'> "+ fuli + "</a><i></i></li>");
+　　});
+    $("#btn1").click(function(){
+
+　　$(".fu_ipone").append(' <input value="12123" type="text" class="w200"/>');
+　　});
+</script>
+<script type="text/javascript">
+ $(".sys_item_specpara ul li").click(function(){
+        if($(this).hasClass('selected')){
+        $(this).removeClass('selected');
+        }else{
+        $(this).addClass('selected');
+        };
+});
+</script>
+<script type="text/javascript">
+var Gid  = document.getElementById ;
+var showArea = function(){
+    Gid('show').innerHTML = "<h3>省" + Gid('s_province').value + " - 市" +    
+    Gid('s_city').value + " - 县/区" + 
+    Gid('s_county').value + "</h3>"
+                            }
+Gid('s_county').setAttribute('onchange','showArea()');
+</script>
+
+
+
+
+    </div>
+    <div class="clear"></div>
+</div>
+{include file=footer.html}

@@ -1,0 +1,47 @@
+{include file=../../mall/jiaju/header.html}
+
+<div id="article" class="w auto clearfix">
+   <div class="left">
+	  <div class="title">{$lang.acategory}</div>
+	  <ul class="content box">
+	     <!-- {foreach from=$acategories item=acategory} -->
+         <li><a href="{url app=article&cate_id=$acategory.cate_id}">{$acategory.cate_name|escape}</a></li>
+         <!-- {/foreach} -->
+	  </ul>
+	  <div class="title">{$lang.new_article}</div>
+	 <!-- <ul class="content">
+	      <!-- {foreach from=$new_articles item=new_article} -->
+          <!--<li><a {if $new_article.link}target="_blank"{/if} href="{url app=article&act=view&article_id=$new_article.article_id}">{$new_article.title|escape}</a></li>
+		  <!-- {foreachelse} -->
+		  <!--<li>{$lang.no_new_article}</li>
+          <!-- {/foreach} -->
+	  </ul>-->
+	  
+	  <ul class="content">
+			<li><a href="index.php?app=article&amp;act=view&amp;article_id=28">关于我们</a></li>
+			<li><a href="index.php?app=article&amp;act=view&amp;article_id=25">加盟资料</a></li>
+	  </ul>
+	  
+	  
+   </div>
+   <div class="right"style="width: 840px;">
+      <div class="title">{include file=curlocal.html}</div>
+      <div class="content">
+	     <div class="article-info">
+	       
+         </div>
+		 <div class="article-detail">
+            <!-- {if $article.store_id} -->
+            {$article.content|escape:editor}
+            <!-- {else} -->
+            {$article.content}
+            <!-- {/if} -->
+		 </div>
+         <div class="more-article mt20">
+            <h3>{$lang.pre_article}{$lang.colon}<!--{if $pre_article}--><a target="{$pre_article.target}" href="{url app=article&act=view&article_id=$pre_article.article_id}">{$pre_article.title|escape}</a><!--{else}-->{$lang.no_records}<!--{/if}--></h3>
+            <h3>{$lang.next_article}{$lang.colon}<!--{if $next_article}--><a target="{$next_article.target}" href="{url app=article&act=view&article_id=$next_article.article_id}">{$next_article.title|escape}</a><!--{else}-->{$lang.no_records}<!--{/if}--></h3>
+         </div>
+	  </div>
+   </div>
+</div>
+{include file=footer.html}

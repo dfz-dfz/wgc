@@ -1,0 +1,87 @@
+    <div id="left">
+        <h2>
+            <strong title="{$lang.user_center}"></strong>
+            <div class="adorn1"></div>
+            <div class="adorn2"></div>
+        </h2>
+              <div class="zp">
+      
+           
+       
+				<a style="margin: 10px 0 10px 40px;"href="index.php?app=member&act=zhaopin" class="active">发布招聘</a><br>
+				<a style="margin: 10px 0 10px 40px;"href="index.php?app=member&act=zhaopin_list" class="active">招聘列表</a><br>				
+				<?php 
+				
+				$user_id = $_SESSION['user_info']['user_id'];
+				
+				$types_user = @mysql_fetch_array(mysql_query("SELECT types,cls_logo from `ecm_member` where user_id='$user_id'"));
+				
+				
+				if($types_user['types'] == 3){
+				
+					echo '<a style="margin-left: 40px;"href="index.php?app=member&act=caigou_list" class="active">采购招标</a><br>';
+				}
+				if($types_user['types'] < 7){
+				
+					echo '<a style="margin-left: 40px;"href="index.php?app=member&act=ziliao" class="active">上传资料</a><br>';
+				}
+				
+				?>
+                <a style="margin: 10px 0 10px 40px;"href="index.php?app=member&act=searchjobs"  class="active">招工/找工</a><br/>
+				<a style="margin: 10px 0 10px 40px;"href="index.php?app=search&act=storeadd&user_id=<?php echo $user_id;?>"  class="active">公司资料</a>
+        
+</div>
+    <!--{foreach from=$_member_menu item=item}-->
+        <!--{if $item.submenu}-->
+        <dl>
+            <dt>{$item.text}</dt>
+        <!--{foreach from=$item.submenu item=subitem k=k}-->
+            <dd>
+            <!--{if $subitem.name eq $_curitem}-->
+                <a href="{$subitem.url}" class="active"><span class="{$subitem.icon}">{$subitem.text}</span></a>
+            <!--{else}-->
+                <a href="{$subitem.url}" class="normal"><span class="{$subitem.icon}">{$subitem.text}</span></a>
+
+            <!--{/if}-->
+            </dd>
+        <!--{/foreach}-->
+        </dl>
+        <!--{/if}-->
+    <!--{/foreach}-->
+      
+		<?php
+		
+		
+		$con=mysql_connect('localhost','root','Hll72xiwr43p0ia5padma') or die("Unable to connect to the MySQL!");
+		mysql_query("SET NAMES UTF8");
+		mysql_query("set character_set_client=utf8"); 
+		mysql_query("set character_set_results=utf8");
+		$db = mysql_select_db('zt55o1_db',$con);
+		//查询身份是否是厂家执行语句
+		$user_id = $_SESSION['user_info']['user_id'];
+		$qres=mysql_query("SELECT `types` FROM ecm_member where user_id='$user_id' and (types=6 or types=7) limit 1");
+		$rowss = @mysql_fetch_array($qres);
+		
+		
+		if(!empty($rowss) || $rowss != false){
+			if(empty($_SESSION['user_info']['store_id'])){
+			
+		?>
+		
+		
+        <div class="application">
+            <p>{$lang.not_seller}: </p>
+            <a href="index.php?app=apply" title="{$_member_menu.overview.text}"></a>
+        </div>
+		
+		
+		<?php 
+			}
+		
+		} ?>
+		
+		
+        <div class="clear"></div> 
+        
+        <div class="adorn_bottom"></div>
+    </div>

@@ -1,0 +1,168 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+ul,ol li {
+	list-style: none;
+}
+
+body {
+	width: auto;
+	height: auto;
+	border: 1px solid #cfcfcf;
+	background-color: #f7f7f7;
+}
+
+.main {
+	margin: 10px;
+	position: relative;
+}
+
+.section {
+	background-color: #fff;
+	border: 1px solid #cfcfcf;
+}
+
+.head_mun {
+	width: 100%;
+	height: 30px;
+}
+
+.head_mun b {
+	width: 90px;
+	height: 30px;
+	font-size: 15px;
+	text-align: center;
+	line-height: 30px;
+	border: 1px solid #cfcfcf;
+	float: left;
+	background-color: #f7c67a;
+	color: #f2552a;
+	cursor: pointer;
+}
+
+/**/
+
+.section .add_btn {
+	width: 100px;
+	height: 24px;
+	background-size: 100%;
+	margin-left: auto;
+    margin-right: 20px;
+    margin: 16px 20px  60px auto;
+    display: block;
+}
+.tel_ul li{
+	margin: 10px;
+	border: 1px solid #eee;
+}
+
+.adress_list {
+	text-align: center;
+	padding-bottom: 30px;
+}
+
+.tel_div {
+	float: left;
+}
+.tel_div span{
+	display: block;
+	margin: 5px;
+}
+
+/*添加好友弹窗*/
+	.confirm {
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+	}
+	.confirm_ {
+		width: 360px;
+		height: 200px;
+		background-color: #fff;
+		padding: 12px;
+		position: absolute;
+		left: 50%;
+		margin-left: -180px;
+		top: 100px;
+		z-index: 999;
+		border: 4px solid #bcbcbc;
+		box-shadow: 8px 8px 3px #888;
+	}
+
+	.confirm_main {
+		width: 100%;
+		height: 84%;
+		border: 2px solid #ee731d;
+		position: relative;
+	}
+
+	.confirm_main .gap {
+		position: absolute;
+		width: 90px;
+	    height: 2px;
+	    left: 0;
+	    top: -2px;
+	    background-color: #fff;
+	}
+
+	.confirm_ .add_text {
+		width: 90px;
+	    height: 30px;
+	    line-height: 30px;
+	    text-align: center;
+	    border: 2px solid #ee731d;
+	    border-bottom: 0;
+	}
+
+	.confirm_ .close_btn {
+		float: right;
+		width: 20px;
+		height: 20px;
+		text-align: center;
+		line-height: 20px;
+		background-color: #bcbcbc;
+		box-shadow: 2px 3px 2px #888;
+		font-size: 24px;
+	    color: #fff;
+	    margin-top: -30px;
+	    cursor: pointer;
+	}
+
+	.confirm_ span {
+		float: left;
+		font-weight: 600;
+	}
+
+	.share_text {
+		margin-bottom: 16px;
+	}
+
+	.share_sendee {
+	    margin-left: auto;
+	    margin-right: auto;
+	    width: 310px;
+        margin-top: 50px;
+	}
+
+	.share_sendee input {
+		width: 225px;
+		height: 20px;
+	}
+	.confirm .share_btn {
+		width: 120px;
+		height: 30px;
+		color: #fff;
+		background-color: #f5bb02;
+		border: 1px solid #ee731d;
+		border-radius: 5px;
+	    position: absolute;
+	    bottom: 0;
+	    left: 50%;
+	    margin-left: -60px;
+	    margin-bottom: 20px;
+	    cursor: pointer;
+	}
+	/*添加好友弹窗 end*/

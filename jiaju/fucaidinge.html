@@ -1,0 +1,372 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Access-Control-Allow-Origin" content="*">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=8"/>
+<title>用户中心-辅材定额</title>
+<meta name="description" content="微工程，微工程APP，装修、材料、家具、饰品一站式服务，让装修更简单，价格更透明！！" />
+<meta name="keywords" content="微工程，微工程，家居商城，微工程家居商城，微工程家居装修商城，办公室装修，写字楼装修，材料，装修材料，家居，办公家具，家居，家具，装修，装饰" />
+<link type="text/css" href="themes/mall/jiaju/styles/default/css/main.css" rel="stylesheet"  />
+<link rel="stylesheet" href="themes/mall/jiaju/styles/css/tel_list.css">
+<link type="text/css" href="themes/mall/jiaju/styles/css/worker_quota_price.css" rel="stylesheet"  />
+<link type="text/css" href="http://www.wgc2013.com/themes/mall/jiaju/styles/default/css/catalog.css" rel="stylesheet"  />
+<link type="text/css" href="http://www.wgc2013.com/themes/mall/jiaju/styles/default/css/footer.css" rel="stylesheet" />
+<link type="text/css" href="themes/mall/jiaju/styles/css/style.css" rel="stylesheet"  />
+<script type="text/javascript" src="index.php?act=jslang"></script>
+<script type="text/javascript" src="http://www.wgc2013.com/includes/libraries/javascript/jquery.js" charset="utf-8"></script>
+<script type="text/javascript" src="http://www.wgc2013.com/includes/libraries/javascript/ecmall.js" charset="utf-8"></script>
+<script type="text/javascript" src="http://www.wgc2013.com/themes/mall/jiaju/styles/default/js/main.js" charset="utf-8"></script>
+
+<!--[if lte IE 6]>
+<script type="text/javascript" language="Javascript" src="http://www.wgc2013.com/themes/mall/jiaju/styles/default/js/hoverForIE6.js"></script>
+<![endif]-->
+<!--[if IE 8]>
+<link type="text/css" href="themes/mall/jiaju/css/ie8.css" rel="stylesheet"  />
+<![endif]-->
+</head>
+<body>
+{include file=header.html}
+
+<!-- 中部主要内容 -->
+ <div class="container" style="overflow: hidden;width: 1200px;margin: 10px auto;">
+ <!-- 左上的导航栏 -->
+ {include file=usercenter.html}
+
+ 	<!-- 右边的内容 -->
+ 	<div class="container_right" style="width: 78%;border: 1px solid #cacaca;float: right;background-color: #f7f7f7;padding: 0 10px 10px 10px;">
+
+		<!-- 辅材定额 -->
+		<div class="price_fucai base_ui_public" style="/*display: none;*/position: relative;">
+			<ul class="price_fucai_ul user_public_ul">
+ 				<li class="change_bg_li" style="margin-right: 10px;">辅材定价</li>
+ 				<li style="margin-right: 10px;">辅材列表</li>
+ 			</ul>
+ 			<div class="price_fucai_info base_info_public" style="overflow: hidden;min-height: 250px;">
+ 				<div class="price_info" style="/*display: none;*/">
+ 				<form action="" id="fucai_form" name="fucai_form" method="post" enctype="multipart/form-data">
+	 				<ul style="margin-top: 30px;">
+	 					<li>
+							<div class="price_fucai_name user_public_name" style="color: #5e5a59;">材料名称：</div>
+							<div class="price_fucai_input user_public_input"><input type="text" id="cl_name"/></div>
+						</li>
+						<li>
+							<div class="price_fucai_name user_public_name" style="color: #5e5a59;">材料品牌：</div>
+							<div class="price_fucai_input user_public_input"><input type="text" id="cl_pinp" /></div>
+						</li>
+						<li>
+							<div class="price_fucai_name user_public_name" style="color: #5e5a59;">规格型号：</div>
+							<div class="price_fucai_input user_public_input"><input type="text" id="kg_id" /></div>
+						</li>
+						<li>
+							<div class="price_fucai_name user_public_name" style="color: #5e5a59;">单&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;位：</div>
+							<div class="price_fucai_input user_public_input"><input type="text" id="danwei" /></div>
+						</li>
+						<li>
+							<div class="price_fucai_name user_public_name" style="color: #5e5a59;">单&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;价：</div>
+							<div class="price_fucai_input user_public_input"><input type="text" id="danjia" /></div>
+						</li>
+						<li>
+							<div class="price_fucai_name user_public_name" style="color: #5e5a59;">含&nbsp;税&nbsp;价：</div>
+							<div class="price_fucai_input user_public_input"><input type="text" id="hsuijia" /></div>
+						</li>
+						<li>
+							<div class="price_fucai_name user_public_name" style="color: #5e5a59;">配送时间：</div>
+							<div class="price_fucai_input user_public_input"><input type="text" id="ps_time" /></div>
+						</li>
+						<li>
+							<div class="price_fucai_name user_public_name" style="color: #5e5a59;">供&nbsp;应&nbsp;商：</div>
+							<div class="price_fucai_input user_public_input"><input type="text" id="gys" /></div>
+						</li>
+						<li>
+							<div class="price_fucai_name user_public_name" style="color: #5e5a59;">联&nbsp;系&nbsp;人：</div>
+							<div class="price_fucai_input user_public_input"><input type="text" id="lxr" /></div>
+						</li>
+						<li>
+							<div class="price_fucai_name user_public_name" style="color: #5e5a59;">联系方式：</div>
+							<div class="price_fucai_input user_public_input"><input type="text" id="lxfs" /></div>
+						</li>
+						<li>
+							<div class="price_fucai_name user_public_name" style="color: #5e5a59;">网&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;址：</div>
+							<div class="price_fucai_input user_public_input"><input type="text" id="wangzhi" /></div>
+						</li>
+						<li>
+							<div class="price_fucai_name user_public_name" style="color: #5e5a59;">邮&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;箱：</div>
+							<div class="price_fucai_input user_public_input"><input type="text" id="youxiang" /></div>
+						</li>
+						<li>
+							<div class="price_fucai_name user_public_name" style="color: #5e5a59;">微&nbsp;信&nbsp;号：</div>
+							<div class="price_fucai_input user_public_input"><input type="text" id="weixinhao" /></div>
+						</li>
+						<li>
+							<div class="price_fucai_name user_public_name" style="color: #5e5a59;">备&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;注：</div>
+							<div class="price_fucai_input user_public_input"><input type="text" id="beizhu" /></div>
+						</li>
+						<li style="height: 160px;">
+							<div class="price_fucai_name user_public_name" style="color: #5e5a59;">图片参考:</div>
+							<div style="display: inline-block;width: 260px;height:90px;border:1px solid #c1c1be;position: relative;">
+								<input type="file" id="doc" name="pic" style="display: none;">
+								<label for="doc" style="width: 60px;height: 60px;display: block;border: 1px solid #cfcfcf;position: relative;">
+									<div style="position: absolute;border-bottom: 1px solid #cfcfcf;width:50px;top: 50%;left: 50%;margin-left: -25px;"></div>
+									<div style="position: absolute;border-right: 1px solid #cfcfcf;height: 50px;left: 50%;top: 50%;margin-top: -25px;"></div>
+								
+									<div style="width:60px;height:60px;position: absolute;top: 0;" id="localImag">
+								        <img src="" id="preview" alt="">
+									</div>
+								</label>
+							</div>
+						</li>
+						
+	 				</ul>
+
+	 				<div class="price_collection_send">
+		 				<input type="button" class="show_resure" style="position: relative;left: -200px;width: 165px;height: 40px;border: none;border-radius: 5px;background: #eb6100;color: #fff;font-size: 18px;margin-top: -6px;" id="sub_btn" value="确认发布">
+						<input type="button" class="share_show" style="position: relative;left: -90px;width: 165px;height: 40px;border: none;border-radius: 5px;background: #eb6100;color: #fff;font-size: 18px;margin-top: -6px;" value="分享发布">
+	 				</div>
+ 				</form>
+ 			</div>
+ 			<!-- 辅材定额 -->
+ 			<div class="price_money" style="position: relative;display: none;">
+			<div style="overflow: hidden;margin-top: 10px;">
+			<input type="text" style="width: 265px;height: 30px;float: left;border: 1px solid #808080;border-radius: 0;" />
+
+			<div style="float: left;">
+				<a href="#" style="display: inline-block;width: 75px;height: 30px;line-height: 30px;font-size: 16px;color: #f3552d;border: 1px solid #808080; background-color: #facd89;">搜索</a>
+				<a class="share_dinge" href="javascript:;" style="display: inline-block;width: 60px;height: 30px;line-height: 30px;font-size: 16px;color: #2d2a2a;font-weight: bold;letter-spacing: 4px; background-color: #facd89;border-radius: 5px;position: relative;left: 385px;text-decoration: none;">分享</a>
+			</div>
+			</div>
+			<div class="price_list" style="position: relative;width: 100%;">
+				<div class="price_list_name" style="text-align: left;width: 100%;">
+					<span>序号</span>
+					<span>材料名称</span>
+					<span>品牌</span>
+					<span>规格型号</span>
+					<span>单位</span>
+					<span>单价</span>
+					<span>含税价</span>
+					<span>配送时间</span>
+					<span>供应商</span>
+					<span>联系人</span>
+					<span>联系方式</span>
+					<span>网址</span>
+					<span>邮箱</span>
+					<span>微信号</span>
+					<span>备注</span>
+					<span>图片</span>
+				</div>
+				<div class="price_list_detail" style="text-align: left;width: 100%;">
+					<span><input type="checkbox" style="display: inline-block;" />&nbsp;&nbsp;1</span>
+					<span>• 空调盘机</span>
+					<span>格力</span>
+					<span>BN-12</span>
+					<span>台</span>
+					<span>4200</span>
+					<span>4872</span>
+					<span>3天</span>
+					<span>广东格力空调有限公司</span>
+					<span>王某</span>
+					<span>188xxxxxxxx</span>
+					<span></span>
+					<span></span>
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+
+				<!-- 分页 -->
+				<div class="price_page">
+				<a href="#">首页</a>
+				<a href="#">上一页</a>
+				<a href="#" style="width: 15px;">1</a>
+				<a href="#" style="width: 15px;">2</a>
+				<a href="#" style="width: 15px;">3</a>
+				<a href="#" style="width: 15px;">4</a>
+				<a href="#" style="width: 15px;">5</a>
+				<a href="#" style="width: 15px;">6</a>
+				<a href="#" style="width: 15px;">7</a>
+				<a href="#">...</a>
+				<a href="#">下一页</a>
+				<a href="#">尾页</a>
+				</div>
+			</div>
+			</div>
+			<!-- 列表内容 -->
+ 			</div>
+ 			
+		
+ 				<div class="confirm" style="display: none;">
+					<form class="confirm_" action="post" method="">
+						<div class="share_text">
+							<span>分享内容</span><span class="colon">:</span>
+							<textarea name="" id="" cols="30" rows="10" placeholder="内容获取"></textarea>
+						</div>
+						<div class="share_sendee">
+							<span style="letter-spacing: 5px;">接收人</span><span class="colon">:</span>
+							<input type="text" placeholder="选择接收人">
+						</div>
+						<input class="share_btn" type="button" value="分享确认">
+					</form>
+				</div>
+		</div>
+
+		
+
+ 		</div>
+ 		
+ 	</div>
+
+{include file=footer.html}
+
+<script type="text/javascript">
+	//点击辅材列表
+	$(".price_fucai_ul li:last").click(function(){
+		$(".price_fucai_ul li:first").removeClass("change_bg_li")
+		$(this).addClass("change_bg_li")
+		$(".price_info").hide();
+		$(".price_money").show();
+
+	})
+	$(".price_fucai_ul li:first").click(function(){
+		$(".price_fucai_ul li:last").removeClass("change_bg_li")
+		$(this).addClass("change_bg_li")
+		$(".price_info").show();
+		$(".price_money").hide();
+	})
+
+	$('.share_dinge').click(function() {
+		$('.confirm').css({
+			display: 'block'
+		});
+	});
+	$('.confirm').click(function() {
+		$('.confirm').css({
+			display: 'none'
+		});
+	});
+	$('.confirm_').click(function() {
+		return false;
+	});
+
+	// 图片上传
+	$("input[name='pic']").live('change',function(){
+        var file = $(this).val();
+        setImagePreview(file);
+    });
+
+	function setImagePreview(avalue) {
+	    var docObj = document.getElementById("doc");//img
+	    var imgObjPreview = document.getElementById("preview"); //div
+	    var divs = document.getElementById("localImag");
+	    if (docObj.files && docObj.files[0]) {
+	       //火狐下，直接设img属性
+	       imgObjPreview.style.display = 'block';
+	       imgObjPreview.style.width = '60px';
+	       imgObjPreview.style.height = '60px';
+	       imgObjPreview.src = window.URL.createObjectURL(docObj.files[0]);
+	    } else {
+	       //IE下，使用滤镜
+	       docObj.select();
+	       var imgSrc = document.selection.createRange().text;
+	       var localImagId = document.getElementById("localImag");
+	       localImagId.style.width = "60px";
+	       localImagId.style.height = "60px";
+	       //图片异常的捕捉，防止用户修改后缀来伪造图片
+	       try {
+	           localImagId.style.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale)"
+	           localImagId.filters.item("DXImageTransform.Microsoft.AlphaImageLoader").src = imgSrc;
+	        } catch(e) {
+	            alert("您上传的图片格式不正确，请重新选择!");
+	            return false;
+	        }
+	        imgObjPreview.style.display = 'none';
+	        document.selection.empty();
+	    }
+	   return true;
+	}
+
+	// 表单提交
+
+	$('#sub_btn').click(function(event) {
+		var cl_name = $('#cl_name').val();
+		var cl_pinp = $('#cl_pinp').val();
+		var kg_id = $('#kg_id').val();
+		var danwei = $('#danwei').val();
+		var danjia = $('#danjia').val();
+		var hsuijia = $('#hsuijia').val();
+		var ps_time = $('#ps_time').val();
+		var gys = $('#gys').val();
+		var lxr = $('#lxr').val();
+		var lxfs = $('#lxfs').val();
+		var wangzhi = $('#wangzhi').val();
+		var youxiang = $('#youxiang').val();
+		var weixinhao = $('#weixinhao').val();
+		var beizhu = $('#beizhu').val();
+		var preview = $('#preview').attr('src');
+
+		var myForm = $('#fucai_form');
+		var formdata = new FormData(myForm[0]);
+			formdata.append('cl_name',cl_name);
+			formdata.append('cl_pinp',cl_pinp);
+			formdata.append('kg_id',kg_id);
+			formdata.append('danwei',danwei);
+			formdata.append('danjia',danjia);
+			formdata.append('hsuijia',hsuijia);
+			formdata.append('ps_time',ps_time);
+			formdata.append('gys',gys);
+			formdata.append('lxr',lxr);
+			formdata.append('lxfs',lxfs);
+			formdata.append('wangzhi',wangzhi);
+			formdata.append('youxiang',youxiang);
+			formdata.append('weixinhao',weixinhao);
+			formdata.append('beizhu',beizhu);
+			formdata.append('preview',preview);
+
+		if(cl_name == ''){
+			alert('材料名称不能为空');
+		}else if(cl_pinp == ''){
+			alert('材料品牌不能为空');
+		}else if(kg_id == ''){
+			alert('规格型号不能为空');
+		}else if(danwei == ''){
+			alert('单位不能为空');
+		}else if(danjia == ''){
+			alert('单价不能为空');
+		}else if(hsuijia == ''){
+			alert('含税价不能为空');
+		}else if(ps_time == ''){
+			alert('配送时间不能为空');
+		}else if(gys == ''){
+			alert('供应商不能为空');
+		}else if(lxr == ''){
+			alert('联系人不能为空');
+		}else if(lxfs == ''){
+			alert('联系方式不能为空');
+		}else if(wangzhi == ''){
+			alert('网址不能为空');
+		}else if(youxiang == ''){
+			alert('邮箱不能为空');
+		}else if(weixinhao == ''){
+			alert('微信号不能为空');
+		}else if(beizhu == ''){
+			alert('备注不能为空');
+		}else if(preview == ''){
+			alert('图片不能为空');
+		}
+		alert(JSON.stringify(formdata));  
+		$.ajax({
+			url: 'http://wgcapp.wgc2013.com/jingyi.php/Home/Dinge/zhucai_add',
+			async : false,
+            cache : false,
+            contentType : false,
+            processData : false,
+            type: 'POST',
+            data: formdata,
+		    success:function (ret) {           
+		        
+		    }
+		});
+		
+	});
+</script>
+</body>
+</html>

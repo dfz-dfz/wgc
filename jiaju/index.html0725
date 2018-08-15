@@ -1,0 +1,835 @@
+{include file="header.html"}
+<div id="main">
+   <div class="main-top w clearfix pb10">
+      <div class="left" area="left" widget_type="area">
+         <!--{widgets page=index area=left}-->
+      </div>
+      <div class="center" area="center" widget_type="area">
+
+        <!--{widgets page=index area=center} -->
+        
+
+      </div>
+    
+	  <div  class="inbtn">
+<a href="http://www.59jiaju.com/index.php?app=member&act=login&ret_url=" class="inbtn1"></a>
+<a href="http://www.59jiaju.com/zb/" title="免费采购招标" target="_blank" class="inbtn2"></a>
+<a href="http://www.59jiaju.com/zb/gc/" title="免费工程招标" target="_blank" class="inbtn3"></a>
+<a href="http://www.59jiaju.com/zp/index.php?m=content&c=index&a=lists&catid=9" title="免费专业招聘" target="_blank" class="inbtn4"></a>
+<a href="http://www.59jiaju.com/index.php?app=member&act=register&ret_url=" title="商家免费入驻" target="_blank" class="inbtn5"></a>
+<a href="http://www.59jiaju.com/index.php?app=member&act=register&ret_url=" title="会员免费注册" target="_blank" class="inbtn6"></a></div>
+  <div class="right" area="right" widget_type="area">
+         <!--{widgets page=index area=right}-->     
+     </div>
+   </div>
+<div class="w" style="padding-bottom:5px;"><a href="http://www.jyboo.com" title="经艺装饰" target="_blank"><img src="/data/files/mall/template/201306170301243727.jpg" border="0" alt="经艺装饰"/></a></div>
+
+<div class="w" style="padding-bottom:10px;"><a href="http://www.59jiaju.com/gx/sale/office.html" target="_blank"><img  width="990px"  height="100px" src="data/files/mall/template/201306190853268835.gif" /></a>
+
+</div>
+<div class="index_main">
+   <div class="main_t title1">1F 瓷砖</div>
+   <div class="main_l left mt5">
+       <div class="main_l_l left"><a href="http://www.59jiaju.com/index.php?app=goods&amp;id=7278" title="金沙瓷" target="_blank"><img src="/gx/images/indexnews/index_03.jpg" alt="金沙瓷" width="200" height="406" border="0" /></a></div>
+       <div class="main_l_c left ml5">
+	       <div class="main_l_c_p"><a href="http://www.59jiaju.com/index.php?app=goods&amp;id=7485"  title="爱美居陶瓷艺术瓷砖背景墙砖" target="_blank"><img src="/gx/images/indexnews/index_06.jpg" alt="爱美居陶瓷艺术瓷砖背景墙砖" width="549" height="205" border="0" /></a></div>
+		   <div class="main_l_c_l">
+		       <ul>
+<li><a href="http://www.59jiaju.com/index.php?app=goods&amp;id=7166"  title="新豪门一族 渗花玉石系列抛光砖" target="_blank"><img src="/gx/images/indexnews/index_17.jpg" alt="新豪门一族 渗花玉石系列抛光砖" width="182" height="149" border="0" /></a>
+  <p>新豪门一族 渗花玉石系列 <br />
+<em>￥13.30</em></p>
+</li>
+<li><a href="http://www.59jiaju.com/index.php?app=goods&amp;id=7162"  title="诺品陶瓷聚晶抛光砖" target="_blank"><img src="/gx/images/indexnews/index_19.jpg" alt="诺品陶瓷聚晶抛光砖" width="182" height="149" border="0" /></a>
+  <p>兴运成 聚晶抛光砖<br />
+<em>￥13.20</em></p>
+</li>
+<li><a href="http://www.59jiaju.com/index.php?app=goods&amp;id=7192"  title="布拉提系列抛光砖" target="_blank"><img src="/gx/images/indexnews/index_21.jpg" alt="布拉提系列抛光砖" width="182" height="149" border="0" /></a>
+  <p>布拉提系列抛光砖<br />
+<em>￥15.00</em></p>
+</li>
+			   </ul>
+			   <div class="clear"></div>
+		   </div>
+	   </div>
+	   <div class="main_l_r left ml5">
+	       <div class="main_l_r_t"><!--<span class="riqi"><span class="blue">1</span>/2 <a href="#"><img src="/gx/images/indexnews/jt_l.jpg" border="0" /></a><a href="#"><img src="/gx/images/indexnews/jt_r.jpg" /></a></span>--><span class="fb14">畅销区</span></div>
+		   <div class="main_l_r_l">
+		       <dl>
+			   <dd><p class="jiage">￥2.40</p>
+			     <a href="http://www.59jiaju.com/index.php?app=goods&id=7253" title="佳迪陶瓷艺术仿">佳迪陶瓷艺术仿<br />
+			     古砖</a><br />
+			     已售0件</dd>
+			   <dt><a href="http://www.59jiaju.com/index.php?app=goods&amp;id=7253" title="佳迪陶瓷 艺术仿古砖" target="_blank"><img src="/gx/images/indexnews/index_09.jpg" alt="佳迪陶瓷 艺术仿古砖" width="85" height="85" border="0" /></a></dt>
+			   </dl>
+			   <dl>
+			   <dd>
+			     <p class="jiage">￥2.60</p>
+			     <a href="http://www.59jiaju.com/index.php?app=goods&amp;id=7373" title="精雕墙砖 金沙瓷" target="_blank">精雕墙砖 金沙瓷</a><br />
+			     已售0件</dd>
+			   <dt><a href="http://www.59jiaju.com/index.php?app=goods&amp;id=7373" title="精雕墙砖 金沙瓷"><img src="/gx/images/indexnews/index_13.jpg" alt="精雕墙砖 金沙瓷" width="87" height="85" border="0" /></a></dt>
+			   </dl>
+			   <dl>
+			   <dd>
+			     <p class="jiage">￥24.80</p>
+			     <a href="http://www.59jiaju.com/index.php?app=goods&amp;id=7446" title="佳迪陶瓷艺术仿" target="_blank">佳迪陶瓷艺术仿<br />
+			     古砖</a><br />
+			     已售0件</dd>
+			   <dt><a href="http://www.59jiaju.com/index.php?app=goods&amp;id=7446" title="佳迪陶瓷艺术仿" target="_blank"><img src="/gx/images/indexnews/index_23.jpg" alt="佳迪陶瓷艺术仿" width="87" height="87" border="0" /></a></dt>
+			   </dl>
+		   
+	     </div>
+	   </div>
+   </div>
+  
+</div>
+
+
+<div class="index_main">
+   <div class="main_t title2">2F 洁具</div>
+   <div class="main_l left mt5">
+       <div class="main_l_l left"><a href="http://www.59jiaju.com/index.php?app=goods&amp;id=7533" title="鹰力 座便器 A081 马桶"><img src="/gx/images/indexnews/index_31.jpg" alt="鹰力 座便器 A081 马桶" width="200" height="405" border="0" /></a></div>
+       <div class="main_l_c left ml5">
+	       <div class="main_l_c_p"><a href="http://www.59jiaju.com/index.php?app=goods&amp;id=6876"  title="新科德角挂盆" target="_blank"><img src="/gx/images/indexnews/index_29.jpg" alt="新科德角挂盆" width="550" height="206" border="0" /></a></div>
+		   <div class="main_l_c_l">
+		       <ul>
+<li><a href="http://www.59jiaju.com/index.php?app=goods&amp;id=6945"  title="纯白圆形碗盆/面盆/洗手盆 " target="_blank"><img src="/gx/images/indexnews/index_41.jpg" alt="" width="182" height="149" border="0" /></a>
+  <p> 纯白圆形碗盆/面盆/洗手盆 <br />
+<em>￥791.00</em></p>
+</li>
+<li><a href="http://www.59jiaju.com/index.php?app=goods&amp;id=7423"  title="伊嘉利淋浴房多芬系列" target="_blank"><img src="/gx/images/indexnews/index_43.jpg" alt="伊嘉利淋浴房多芬系列" width="181" height="149" border="0" /></a>
+  <p>伊嘉利淋浴房多芬系列<br />
+<em>￥886.00</em></p>
+</li>
+<li><a href="http://www.59jiaju.com/index.php?app=goods&amp;id=6947"  title="新摩登陶瓷碗盆/台盆/洗脸盆" target="_blank"><img src="/gx/images/indexnews/index_45.jpg" alt="新摩登陶瓷碗盆/台盆/洗脸盆" width="182" height="149" border="0" /></a>
+  <p>新摩登陶瓷碗盆/台盆/洗脸盆<br />
+<em>￥506.00</em></p>
+</li>
+			   </ul>
+			   <div class="clear"></div>
+	     </div>
+	   </div>
+	   <div class="main_l_r left ml5">
+	       <div class="main_l_r_t"><!--<span class="riqi"><span class="blue">1</span>/2 <img src="/gx/images/indexnews/jt.jpg" /></span>--><span class="fb14">畅销区</span></div>
+		   <div class="main_l_r_l">
+		       <dl>
+			   <dd>
+			     <p class="jiage">￥311.00</p>
+			     <a href="http://www.59jiaju.com/index.php?app=goods&amp;id=6884" title="美标卫浴洁具陶瓷台下椭圆盆" target="_blank">美标卫浴洁具陶瓷台下椭圆盆</a><br />
+			     已售0件</dd>
+			   <dt><a href="http://www.59jiaju.com/index.php?app=goods&amp;id=6884" title="美标卫浴洁具陶瓷台下椭圆盆" target="_blank"><img src="/gx/images/indexnews/index_33.jpg" alt="美标卫浴洁具陶瓷台下椭圆盆" width="89" height="89" border="0" /></a></dt>
+			   </dl>
+			   <dl>
+			   <dd>
+			     <p class="jiage">￥342.00</p>
+			     <a href="http://www.59jiaju.com/index.php?app=goods&id=6888" title="美标卫浴洁具陶瓷台下方盆">美标卫浴洁具陶瓷台下方盆</a><br />
+			     已售0件</dd>
+			   <dt><a href="http://www.59jiaju.com/index.php?app=goods&id=6888" title="美标卫浴洁具陶瓷台下方盆"><img src="/gx/images/indexnews/index_37.jpg" width="115" height="65" alt="美标卫浴洁具陶瓷台下方盆" /></a></dt>
+			   </dl>
+			   <dl>
+			   <dd>
+			     <p class="jiage">￥380.00</p>
+			     <a href="http://www.59jiaju.com/index.php?app=goods&id=7534" title="鹰力座便器 A002马桶">鹰力座便器 A002
+马桶</a><br />
+			     已售0件</dd>
+			   <dt><a href="http://www.59jiaju.com/index.php?app=goods&id=7534" title="鹰力座便器 A002马桶"><img src="/gx/images/indexnews/index_49.jpg" width="88" height="103" alt="鹰力座便器 A002马桶" /></a></dt>
+			   </dl>
+		   
+	     </div>
+	   </div>
+   </div>
+  
+</div>
+
+<div class="index_main">
+   <div class="main_t title3">3F 龙头</div>
+   <div class="main_l left mt5">
+       <div class="main_l_l left"><a href="http://www.59jiaju.com/index.php?app=goods&amp;id=6802" title="热带雨林淋浴龙头逸魅尚系列" target="_blank"><img src="/gx/images/indexnews/index_56.jpg" alt="热带雨林淋浴龙头逸魅尚系列" width="200" height="405" border="0" /></a></div>
+       <div class="main_l_c left ml5">
+	       <div class="main_l_c_p"><a href="http://www.59jiaju.com/index.php?app=goods&amp;id=6772"  title="概念方单孔面盆龙头" target="_blank"><img src="/gx/images/indexnews/index_57.jpg" alt="概念方单孔面盆龙头" width="550" height="205" border="0" /></a></div>
+		   <div class="main_l_c_l">
+		       <ul>
+<li><a href="http://www.59jiaju.com/index.php?app=goods&amp;id=6776"  title="新摩登挂墙式淋浴龙头 " target="_blank"><img src="/gx/images/indexnews/index_60-65.jpg" alt="新摩登挂墙式淋浴龙头" width="182" height="149" border="0" /></a>
+  <p> 新摩登挂墙式淋浴龙头 <br />
+<em>￥376.00</em></p>
+</li>
+<li><a href="http://www.59jiaju.com/index.php?app=goods&amp;id=7549"  title="洗脸盆 纯铜 冷热龙头" target="_blank"><img src="/gx/images/indexnews/index_66.jpg" alt="洗脸盆 纯铜 冷热龙头" width="181" height="149" border="0" /></a>
+  <p> 洗脸盆 纯铜 冷热龙头<br />
+<em>￥139.00 </em></p>
+</li>
+<li><a href="http://www.59jiaju.com/index.php?app=goods&amp;id=5382"  title="全铜水龙头 单孔水龙头" target="_blank"><img src="/gx/images/indexnews/index_64.jpg" alt="全铜水龙头 单孔水龙头" width="182" height="149" border="0" /></a>
+  <p>全铜水龙头 单孔水龙头 <br />
+<em>￥223.00 </em></p>
+</li>
+			   </ul>
+			   <div class="clear"></div>
+	     </div>
+	   </div>
+	   <div class="main_l_r left ml5">
+	       <div class="main_l_r_t"><!--<span class="riqi"><span class="blue">1</span>/2 <img src="/gx/images/indexnews/jt.jpg" /></span>--><span class="fb14">畅销区</span></div>
+		   <div class="main_l_r_l">
+		       <dl>
+			   <dd>
+			     <p class="jiage">￥119.00</p>
+			     <a href="http://www.59jiaju.com/index.php?app=goods&amp;id=5386" title="上下开瀑布水龙头面盆水龙头" target="_blank">上下开瀑布水龙头面盆水龙头</a><br />
+			     已售0件</dd>
+			   <dt><a href="http://www.59jiaju.com/index.php?app=goods&amp;id=5386" title="上下开瀑布水龙头面盆水龙头" target="_blank"><img src="/gx/images/indexnews/index_59.jpg" alt="上下开瀑布水龙头面盆水龙头" width="101" height="103" border="0" /></a></dt>
+			   </dl>
+			   <dl>
+			   <dd>
+			     <p class="jiage">￥1037.00</p>
+			     <a href="http://www.59jiaju.com/index.php?app=goods&amp;id=6767" title="高出水嘴八寸分离式脸盆龙头" target="_blank">高出水嘴八寸分离式脸盆龙头</a><br />
+			     已售0件</dd>
+			   <dt><a href="http://www.59jiaju.com/index.php?app=goods&amp;id=6767" title="高出水嘴八寸分离式脸盆龙头" target="_blank"><img src="/gx/images/indexnews/index_61.jpg" alt="高出水嘴八寸分离式脸盆龙头" width="108" height="106" border="0" /></a></dt>
+			   </dl>
+			   <dl>
+			   <dd>
+			     <p class="jiage">￥352.00</p>
+			     <a href="http://www.59jiaju.com/index.php?app=goods&amp;id=6812" title="希乐单孔台式厨房龙头" target="_blank">希乐单孔台式厨房龙头</a><br />
+			     已售0件</dd>
+			   <dt><a href="http://www.59jiaju.com/index.php?app=goods&amp;id=6812" title="希乐单孔台式厨房龙头" target="_blank"><img src="/gx/images/indexnews/index_71.jpg" alt="希乐单孔台式厨房龙头" width="108" height="81" border="0" /></a></dt>
+			   </dl>
+		   
+	     </div>
+	   </div>
+   </div>
+  
+</div>
+
+
+<div class="index_main">
+   <div class="main_t title4">4F 天花材料</div>
+   <div class="main_l left mt5">
+       <div class="main_l_l left"><a href="http://www.59jiaju.com/index.php?app=goods&amp;id=2905" title="软膜天花/柔性天花/透光膜/吊顶/喷绘膜/灯箱膜/发光膜" target="_blank"><img src="/gx/images/indexnews/index_77.jpg" alt="软膜天花/柔性天花/透光膜/吊顶/喷绘膜/灯箱膜/发光膜" width="199" height="404" border="0" /></a></div>
+       <div class="main_l_c left ml5">
+	       <div class="main_l_c_p"><a href="#"  title=""><img src="/gx/images/indexnews/index_78-80.jpg" width="550" height="204" alt="" /></a></div>
+		   <div class="main_l_c_l">
+		       <ul>
+<li><a href="http://www.59jiaju.com/index.php?app=goods&amp;id=2628"  title="吊顶覆膜铝高档烤漆龙骨天花" target="_blank"><img src="/gx/images/indexnews/index_83-89.jpg" alt="吊顶覆膜铝高档烤漆龙骨天花" width="182" height="148" border="0" /></a>
+  <p> 吊顶覆膜铝高档烤漆龙骨天花<br />
+<em>￥46.00</em></p>
+</li>
+<li><a href="http://www.59jiaju.com/index.php?app=goods&amp;id=644"  title="复合天花平面毛毛虫方块石膏板" target="_blank"><img src="/gx/images/indexnews/index_90.jpg" alt="" width="181" height="148" border="0" /></a>
+  <p> 复合天花平面毛毛虫方块石膏板<br />
+<em>￥14.70</em></p>
+</li>
+<li><a href="http://www.59jiaju.com/index.php?app=goods&amp;id=2280"  title="矿棉板天花" target="_blank"><img src="/gx/images/indexnews/index_92.jpg" alt="矿棉板天花" width="182" height="148" border="0" /></a>
+  <p>矿棉板天花<br />
+<em>￥27.60</em></p>
+</li>
+			   </ul>
+			   <div class="clear"></div>
+	     </div>
+	   </div>
+	   <div class="main_l_r left ml5">
+	       <div class="main_l_r_t"><!--<span class="riqi"><span class="blue">1</span>/2 <img src="/gx/images/indexnews/jt.jpg" /></span>--><span class="fb14">畅销区</span></div>
+		   <div class="main_l_r_l">
+		       <dl>
+			   <dd>
+			     <p class="jiage">￥41.80</p>
+			     <a href="http://www.59jiaju.com/index.php?app=goods&amp;id=428" title="雅丽系列矿棉板天花吸音天花" target="_blank">雅丽系列矿棉板天花吸音天花</a><br />
+			     已售0件</dd>
+			   <dt><a href="http://www.59jiaju.com/index.php?app=goods&amp;id=428" title="雅丽系列矿棉板天花吸音天花"><img src="/gx/images/indexnews/index_81.jpg" alt="雅丽系列矿棉板天花吸音天花" width="89" height="72" border="0" /></a></dt>
+			   </dl>
+			   <dl>
+			   <dd>
+			     <p class="jiage">￥23.30</p>
+			     <a href="http://www.59jiaju.com/index.php?app=goods&amp;id=900" title="飞腾永兴吸音天花" target="_blank">飞腾永兴吸音天花</a><br />
+			     已售0件</dd>
+			   <dt><a href="http://www.59jiaju.com/index.php?app=goods&amp;id=900" title="飞腾永兴吸音天花" target="_blank"><img src="/gx/images/indexnews/index_85.jpg" alt="飞腾永兴吸音天花" width="87" height="87" border="0" /></a></dt>
+			   </dl>
+			   <dl>
+			   <dd>
+			     <p class="jiage">￥36.50</p>
+			     <a href="http://www.59jiaju.com/index.php?app=goods&amp;id=6818" title="对角冲孔铝天花铝扣板方板" target="_blank">对角冲孔铝天花铝扣板方板</a><br />
+			     已售0件</dd>
+			   <dt><a href="http://www.59jiaju.com/index.php?app=goods&amp;id=6818" title="对角冲孔铝天花铝扣板方板" target="_blank"><img src="/gx/images/indexnews/index_96.jpg" alt="对角冲孔铝天花铝扣板方板" width="78" height="53" border="0" /></a></dt>
+			   </dl>
+		   
+	     </div>
+	   </div>
+   </div>
+  
+</div>
+
+
+<div class="index_main">
+   <div class="main_t title5">5F 门窗高隔间</div>
+   <div class="main_l left mt5">
+       <div class="main_l_l left"><a href="http://www.59jiaju.com/index.php?app=goods&amp;id=1795" title="模压复合门PVC膜吹塑免漆门" target="_blank"><img src="/gx/images/indexnews/index_103.jpg" alt="模压复合门PVC膜吹塑免漆门" width="200" height="405" border="0" /></a></div>
+       <div class="main_l_c left ml5">
+	       <div class="main_l_c_p"><a href="#"  title=""><img src="/gx/images/indexnews/index_106.jpg" width="550" height="205" alt="" /></a></div>
+		   <div class="main_l_c_l">
+		       <ul>
+<li><a href="http://www.59jiaju.com/index.php?app=goods&amp;id=1943"  title="复合实木门烤漆门实木工艺门" target="_blank"><img src="/gx/images/indexnews/index_108-116.jpg" alt="复合实木门烤漆门实木工艺门" width="182" height="148" border="0" /></a>
+  <p> 复合实木门烤漆门实木工艺门<br />
+<em>￥520.00</em></p>
+</li>
+<li><a href="http://www.59jiaju.com/index.php?app=goods&amp;id=1981"  title="复合实木门烤漆门实木工艺门" target="_blank"><img src="/gx/images/indexnews/index_117.jpg" alt="复合实木门烤漆门实木工艺门" width="181" height="148" border="0" /></a>
+  <p> 复合实木门烤漆门实木工艺门<br />
+<em>￥900.00</em></p>
+</li>
+<li><a href="http://www.59jiaju.com/index.php?app=goods&id=2026"  title="卧室木门套装门室内实木门" target="_blank"><img src="/gx/images/indexnews/index_119.jpg" alt="卧室木门套装门室内实木门" width="182" height="148" border="0" /></a>
+  <p>卧室木门套装门室内实木门<br />
+<em>￥900.00</em></p>
+</li>
+			   </ul>
+			   <div class="clear"></div>
+	     </div>
+	   </div>
+	   <div class="main_l_r left ml5">
+	       <div class="main_l_r_t"><!--<span class="riqi"><span class="blue">1</span>/2 <img src="/gx/images/indexnews/jt.jpg" /></span>--><span class="fb14">畅销区</span></div>
+		   <div class="main_l_r_l">
+		       <dl>
+			   <dd>
+			     <p class="jiage">￥533.00</p>
+			     <a href="http://www.59jiaju.com/index.php?app=goods&amp;id=7008" title="不锈钢单门系列四类花" target="_blank">不锈钢单门系列 <br />
+			     四类花</a><br />
+			     已售0件</dd>
+			   <dt><a href="http://www.59jiaju.com/index.php?app=goods&amp;id=7008" title="不锈钢单门系列四类花" target="_blank"><img src="/gx/images/indexnews/index_107.jpg" alt="不锈钢单门系列四类花" width="48" height="92" border="0" /></a></dt>
+			   </dl>
+			   <dl>
+			   <dd>
+			     <p class="jiage">￥533.00</p>
+			     <a href="http://www.59jiaju.com/index.php?app=goods&amp;id=7109" title="不锈钢子母门系列四类花" target="_blank">不锈钢子母门系列四类花</a><br />
+			     已售0件</dd>
+			   <dt><a href="http://www.59jiaju.com/index.php?app=goods&amp;id=7109" title="不锈钢子母门系列四类花" target="_blank"><img src="/gx/images/indexnews/index_111.jpg" alt="不锈钢子母门系列四类花" width="59" height="92" border="0" /></a></dt>
+			   </dl>
+			   <dl>
+			   <dd>
+			     <p class="jiage">￥811.00</p>
+			     <a href="http://www.59jiaju.com/index.php?app=goods&id=7094" title="不锈钢趟门系列三类花" target="_blank">不锈钢趟门系列三类花</a><br />
+			     已售0件</dd>
+			   <dt><a href="http://www.59jiaju.com/index.php?app=goods&id=7094" title="不锈钢趟门系列三类花" target="_blank"><img src="/gx/images/indexnews/index_122.jpg" alt="不锈钢趟门系列三类花" width="64" height="92" border="0" /></a></dt>
+			   </dl>
+		   
+	     </div>
+	   </div>
+   </div>
+  
+</div>
+
+
+
+<div class="index_main">
+   <div class="main_t title6">6F 电工电器</div>
+   <div class="main_l left mt5">
+       <div class="main_l_l left"><a href="http://www.59jiaju.com/index.php?app=goods&amp;id=1117" title="" target="_blank"><img src="/gx/images/indexnews/index_129.jpg" alt="" width="200" height="405" border="0" /></a></div>
+       <div class="main_l_c left ml5">
+	       <div class="main_l_c_p"><a href="http://www.59jiaju.com/index.php?app=goods&amp;id=2972"  title="" target="_blank"><img src="/gx/images/indexnews/index_129-131.jpg" alt="鑫苹电子 银色桌面插座P208-C" width="550" height="205" border="0" /></a></div>
+		   <div class="main_l_c_l">
+		       <ul>
+<li><a href="http://www.59jiaju.com/index.php?app=goods&amp;id=743"  title="嵌入腹膜电感镇镇流器栅灯盘" target="_blank"><img src="/gx/images/indexnews/index_140.jpg" alt="嵌入腹膜电感镇镇流器栅灯盘" width="182" height="148" border="0" /></a>
+  <p> 嵌入腹膜电感镇镇流器栅灯盘<br />
+<em>￥41.20</em></p>
+</li>
+<li><a href="http://www.59jiaju.com/index.php?app=goods&amp;id=6791"  title="迴龙灯饰筒灯" target="_blank"><img src="/gx/images/indexnews/index_136-143.jpg" alt="迴龙灯饰筒灯" width="181" height="148" border="0" /></a>
+  <p> 迴龙灯饰筒灯<br />
+<em>￥6.80</em></p>
+</li>
+<li><a href="http://www.59jiaju.com/index.php?app=goods&amp;id=6808"  title="回龙灯饰天花灯牛眼灯" target="_blank"><img src="/gx/images/indexnews/index_136-145.jpg" alt="回龙灯饰天花灯牛眼灯" width="182" height="148" border="0" /></a>
+  <p>回龙灯饰天花灯牛眼灯<br />
+<em>￥7.00</em></p>
+</li>
+			   </ul>
+			   <div class="clear"></div>
+	     </div>
+	   </div>
+	   <div class="main_l_r left ml5">
+	       <div class="main_l_r_t"><!--<span class="riqi"><span class="blue">1</span>/2 <img src="/gx/images/indexnews/jt.jpg" /></span>--><span class="fb14">畅销区</span></div>
+		   <div class="main_l_r_l">
+		       <dl>
+			   <dd>
+			     <p class="jiage">￥4.00</p>
+			     <a href="http://www.59jiaju.com/index.php?app=goods&amp;id=1058" title="迷品V1系列五孔插座" target="_blank">迷品V1系列五孔插座</a><br />
+			     已售0件</dd>
+			   <dt><a href="http://www.59jiaju.com/index.php?app=goods&amp;id=1058" title="迷品V1系列五孔插座"><img src="/gx/images/indexnews/index_132.jpg" alt="迷品V1系列五孔插座" width="67" height="71" border="0" /></a></dt>
+			   </dl>
+			   <dl>
+			   <dd>
+			     <p class="jiage">￥7.30</p>
+			     <a href="http://www.59jiaju.com/index.php?app=goods&amp;id=362" title="迷品A1不锈钢拉丝一开单双多控" target="_blank">迷品A1不锈钢拉丝一开单双多控</a><br />
+			     已售0件</dd>
+			   <dt><a href="http://www.59jiaju.com/index.php?app=goods&amp;id=362" title="迷品A1不锈钢拉丝一开单双多控" target="_blank"><img src="/gx/images/indexnews/index_136.jpg" alt="迷品A1不锈钢拉丝一开单双多控" width="66" height="65" border="0" /></a></dt>
+			   </dl>
+			   <dl>
+			   <dd>
+			     <p class="jiage">￥11.50</p>
+			     <a href="http://www.59jiaju.com/index.php?app=goods&amp;id=6974" title="今隆牌T5一体化支架（三线）" target="_blank">今隆牌T5一体化支架（三线）</a><br />
+			     已售0件</dd>
+			   <dt><a href="http://www.59jiaju.com/index.php?app=goods&amp;id=6974" title="今隆牌T5一体化支架（三线）" target="_blank"><img src="/gx/images/indexnews/index_148.jpg" alt="今隆牌T5一体化支架（三线）" width="85" height="75" border="0" /></a></dt>
+			   </dl>
+		   
+	     </div>
+	   </div>
+   </div>
+  
+</div>
+
+<div class="index_main">
+   <div class="main_t title7">7F 地板地毯脚线</div>
+   <div class="main_l left mt5">
+       <div class="main_l_l left"><a href="http://www.59jiaju.com/index.php?app=goods&amp;id=3899" title="" target="_blank"><img src="/gx/images/indexnews/index_155.jpg" alt="" width="200" height="405" border="0" /></a></div>
+       <div class="main_l_c left ml5">
+	       <div class="main_l_c_p"><a href="#"  title=""><img src="/gx/images/indexnews/index_159.jpg" width="550" height="204" alt="" /></a></div>
+		   <div class="main_l_c_l">
+		       <ul>
+<li><a href="http://www.59jiaju.com/index.php?app=goods&amp;id=3608"  title="强化复合地板8mm厚" target="_blank"><img src="/gx/images/indexnews/index_162-165.jpg" alt="强化复合地板8mm厚" width="182" height="148" border="0" /></a>
+  <p> 强化复合地板8mm厚<br />
+<em>￥44.00</em></p>
+</li>
+<li><a href="http://www.59jiaju.com/index.php?app=goods&amp;id=1577"  title="强化复合木地板12mm厚" target="_blank"><img src="/gx/images/indexnews/index_164-167.jpg" alt="强化复合木地板12mm厚" width="181" height="148" border="0" /></a>
+  <p> 强化复合木地板12mm厚<br />
+<em>￥55.00</em></p>
+</li>
+<li><a href="www.59jiaju.com/index.php?app=goods&amp;id=6259"  title="东方星月地毯 WASIN-202" target="_blank"><img src="/gx/images/indexnews/index_166.jpg" alt="" width="182" height="148" border="0" /></a>
+  <p>东方星月地毯 WASIN-202<br />
+<em>￥124.00</em></p>
+</li>
+			   </ul>
+			   <div class="clear"></div>
+	     </div>
+	   </div>
+	   <div class="main_l_r left ml5">
+	       <div class="main_l_r_t"><!--<span class="riqi"><span class="blue">1</span>/2 <img src="/gx/images/indexnews/jt.jpg" /></span>--><span class="fb14">畅销区</span></div>
+		   <div class="main_l_r_l">
+		       <dl>
+			   <dd>
+			     <p class="jiage">￥34.00</p>
+			     <a href="www.59jiaju.com/index.php?app=goods&amp;id=2679" title="华德BC21系列条纹地毯" target="_blank">华德BC21系列条纹地毯</a><br />
+			     已售0件</dd>
+			   <dt><a href="www.59jiaju.com/index.php?app=goods&amp;id=2679" title="华德BC21系列条纹地毯" target="_blank"><img src="/gx/images/indexnews/index_158.jpg" alt="华德BC21系列条纹地毯" width="87" height="83" border="0" /></a></dt>
+			   </dl>
+			   <dl>
+			   <dd>
+			     <p class="jiage">￥28.00</p>
+			     <a href="http://www.59jiaju.com/index.php?app=goods&amp;id=3223" title="" target="_blank">天雅地毯TQ8611<br />
+			     满铺地毯</a><br />
+			     已售0件</dd>
+			   <dt><a href="http://www.59jiaju.com/index.php?app=goods&amp;id=3223" title="" target="_blank"><img src="/gx/images/indexnews/index_164.jpg" alt="" width="87" height="83" border="0" /></a></dt>
+			   </dl>
+			   <dl>
+			   <dd>
+			     <p class="jiage">￥69.00</p>
+			     <a href="http://www.59jiaju.com/index.php?app=goods&amp;id=5482" title="赛维纳地板小浮雕面" target="_blank">赛维纳地板小浮雕面</a><br />
+			     已售0件</dd>
+			   <dt><a href="http://www.59jiaju.com/index.php?app=goods&amp;id=5482" title="赛维纳地板小浮雕面" target="_blank"><img src="/gx/images/indexnews/index_171.jpg" alt="赛维纳地板小浮雕面" width="87" height="83" border="0" /></a></dt>
+			   </dl>
+		   
+	     </div>
+	   </div>
+   </div>
+  
+</div>
+
+<div class="index_main">
+   <div class="main_t title8">8F 门控五金</div>
+   <div class="main_l left mt5">
+       <div class="main_l_l left"><a href="http://www.59jiaju.com/index.php?app=goods&amp;id=662" title="玻璃门不锈钢拉手" target="_blank"><img src="/gx/images/indexnews/index_179.jpg" alt="玻璃门不锈钢拉手" width="200" height="405" border="0" /></a></div>
+       <div class="main_l_c left ml5">
+	       <div class="main_l_c_p"><a href="http://www.59jiaju.com/index.php?app=goods&amp;id=3582"  title="浩顺671指纹门禁套装 门禁系统 考勤门禁一体机 网络门禁机套餐" target="_blank"><img src="/gx/images/indexnews/index_181.jpg" alt="浩顺671指纹门禁套装 门禁系统 考勤门禁一体机 网络门禁机套餐" width="550" height="205" border="0" /></a></div>
+		   <div class="main_l_c_l">
+		       <ul>
+<li><a href="http://www.59jiaju.com/index.php?app=goods&amp;id=1650"  title="科导牌玻璃门地弹簧" target="_blank"><img src="/gx/images/indexnews/index_184.jpg" alt="科导牌玻璃门地弹簧" width="181" height="148" border="0" /></a>
+  <p> 科导牌玻璃门地弹簧<br />
+<em>￥139.00</em></p>
+</li>
+<li><a href="http://www.59jiaju.com/index.php?app=goods&amp;id=3700"  title="科导牌地弹簧门夹" target="_blank"><img src="/gx/images/indexnews/index_187.jpg" alt="科导牌地弹簧门夹" width="181" height="148" border="0" /></a>
+  <p>科导牌地弹簧门夹<br />
+<em>￥181.00</em></p>
+</li>
+<li><a href="http://www.59jiaju.com/index.php?app=goods&amp;id=1479"  title="玻璃门地弹簧门夹" target="_blank"><img src="/gx/images/indexnews/index_188.jpg" alt="玻璃门地弹簧门夹" width="182" height="148" border="0" /></a>
+  <p>玻璃门地弹簧门夹<br />
+<em>￥35.00</em></p>
+</li>
+			   </ul>
+			   <div class="clear"></div>
+	     </div>
+	   </div>
+	   <div class="main_l_r left ml5">
+	       <div class="main_l_r_t"><!--<span class="riqi"><span class="blue">1</span>/2 <img src="/gx/images/indexnews/jt.jpg" /></span>--><span class="fb14">畅销区</span></div>
+		   <div class="main_l_r_l">
+		       <dl>
+			   <dd>
+			     <p class="jiage">￥47.50</p>
+			     <a href="http://www.59jiaju.com/index.php?app=goods&amp;id=3095" title="科导浴室夹系列锌合金" target="_blank">科导浴室夹系列锌合金</a><br />
+			     已售0件</dd>
+			   <dt><a href="http://www.59jiaju.com/index.php?app=goods&amp;id=3095" title="科导浴室夹系列锌合金" target="_blank"><img src="/gx/images/indexnews/index_179-180.jpg" alt="科导浴室夹系列锌合金" width="87" height="63" border="0" /></a></dt>
+			   </dl>
+			   <dl>
+			   <dd>
+			     <p class="jiage">￥100.00</p>
+			     <a href="http://www.59jiaju.com/index.php?app=goods&amp;id=2405" title="不锈钢锁具门锁" target="_blank">不锈钢锁具门锁</a><br />
+			     已售0件</dd>
+			   <dt><a href="http://www.59jiaju.com/index.php?app=goods&amp;id=2405" title="不锈钢锁具门锁" target="_blank"><img src="/gx/images/indexnews/index_181-182.jpg" alt="不锈钢锁具门锁" width="87" height="97" border="0" /></a></dt>
+			   </dl>
+			   <dl>
+			   <dd>
+			     <p class="jiage">￥66.00</p>
+			     <a href="http://www.59jiaju.com/index.php?app=goods&amp;id=1834" title="地弹簧玻璃门下夹配件" target="_blank">地弹簧玻璃门下夹配件</a><br />
+			     已售0件</dd>
+			   <dt><a href="http://www.59jiaju.com/index.php?app=goods&amp;id=1834" title="地弹簧玻璃门下夹配件"><img src="/gx/images/indexnews/index_191.jpg" alt="地弹簧玻璃门下夹配件" width="87" height="54" border="0" /></a></dt>
+			   </dl>
+		   
+	     </div>
+	   </div>
+   </div>
+  
+</div>
+
+
+<div class="index_main">
+   <div class="main_t title9">9F 装修辅材</div>
+   <div class="main_l left mt5">
+       <div class="main_l_l left"><a href="http://www.59jiaju.com/index.php?app=goods&amp;id=6764" title="澳恒防水涂料25kg+9L" target="_blank"><img src="/gx/images/indexnews/index_201.jpg" alt="澳恒防水涂料25kg+9L" width="200" height="405" border="0" /></a></div>
+       <div class="main_l_c left ml5">
+	       <div class="main_l_c_p"><a href="澳恒防水涂料25kg+9L"  title=""><img src="/gx/images/indexnews/index_202.jpg" width="550" height="205" alt="" /></a></div>
+		   <div class="main_l_c_l">
+		       <ul>
+<li><a href="http://www.59jiaju.com/index.php?app=goods&amp;id=3713"  title="羊毛刷/油漆刷" target="_blank"><img src="/gx/images/indexnews/index_205.jpg" alt="羊毛刷/油漆刷" width="181" height="148" border="0" /></a>
+  <p> 羊毛刷/油漆刷<br />
+<em>￥1.00</em></p>
+</li>
+<li><a href="http://www.59jiaju.com/index.php?app=goods&amp;id=3429"  title="白乳胶" target="_blank"><img src="/gx/images/indexnews/index_207.jpg" alt="白乳胶" width="181" height="148" border="0" /></a>
+  <p>白乳胶<br />
+<em>￥5.00</em></p>
+</li>
+<li><a href="http://www.59jiaju.com/index.php?app=goods&amp;id=5648"  title="尼龙扎带枪" target="_blank"><img src="/gx/images/indexnews/index_209.jpg" alt="尼龙扎带枪" width="182" height="148" border="0" /></a>
+  <p>尼龙扎带枪<br />
+<em>￥23.00</em></p>
+</li>
+			   </ul>
+			   <div class="clear"></div>
+	     </div>
+	   </div>
+	   <div class="main_l_r left ml5">
+	       <div class="main_l_r_t"><!--<span class="riqi"><span class="blue">1</span>/2 <img src="/gx/images/indexnews/jt.jpg" /></span>--><span class="fb14">畅销区</span></div>
+		   <div class="main_l_r_l">
+		       <dl>
+			   <dd>
+			     <p class="jiage">￥1.80</p>
+			     <a href="http://www.59jiaju.com/index.php?app=goods&amp;id=5646" title="线手套" target="_blank">线手套</a><br />
+			     已售0件</dd>
+			   <dt><a href="http://www.59jiaju.com/index.php?app=goods&amp;id=5646" title="线手套"><img src="/gx/images/indexnews/index_199.jpg" alt="线手套" width="87" height="84" border="0" /></a></dt>
+			   </dl>
+			   <dl>
+			   <dd>
+			     <p class="jiage">￥0.84</p>
+			     <a href="http://www.59jiaju.com/index.php?app=goods&amp;id=5634" title="枫叶牌美纹纸" target="_blank">枫叶牌美纹纸 </a><br />
+			     已售0件</dd>
+			   <dt><a href="http://www.59jiaju.com/index.php?app=goods&amp;id=5634" title="枫叶牌美纹纸" target="_blank"><img src="/gx/images/indexnews/index_201-202.jpg" alt="枫叶牌美纹纸" width="86" height="73" border="0" /></a></dt>
+			   </dl>
+			   <dl>
+			   <dd>
+			     <p class="jiage">￥12.00</p>
+			     <a href="http://www.59jiaju.com/index.php?app=goods&amp;id=3682" title="毛油漆滚筒" target="_blank">毛油漆滚筒 </a><br />
+			     已售0件</dd>
+			   <dt><a href="http://www.59jiaju.com/index.php?app=goods&amp;id=3682" title="毛油漆滚筒" target="_blank"><img src="/gx/images/indexnews/index_212.jpg" alt="" width="86" height="66" border="0" /></a></dt>
+			   </dl>
+		   
+	     </div>
+	   </div>
+   </div>
+  
+</div>
+<div class="w" style="padding:5px 0;"><a href="http://www.59jiaju.com/gs/index.php?m=content&c=index&a=show&catid=13&id=2" title="喜多装饰" target="_blank"><img  width="990px"  height="100px" src="/gx/images/xdban.jpg" alt="喜多装饰"/></a>
+</div>
+<div class="w" style="padding-bottom:10px;"><a href="http://www.59jiaju.com/gx/sale/index.html" target="_blank"><img  width="990px"  height="100px" src="data/files/mall/template/201306190716164578.gif" /></a>
+</div>
+
+<div class="index_main">
+   <div class="main_t title10">1F 床  床垫  衣柜</div>
+   <div class="main_l left mt5">
+       <div class="main_l_l left"><a href="#" title=""><img src="/gx/images/indexnews/index_218.jpg" width="200" height="405" alt="" /></a></div>
+       <div class="main_l_c left ml5">
+	       <div class="main_l_c_p"><a href="http://www.59jiaju.com/index.php?app=goods&amp;id=4894"  title="" target="_blank"><img src="/gx/images/indexnews/index_225.jpg" alt="新古典家具 金/银箔 卧室家具 特价双人1.8米 皇帝床" width="550" height="205" border="0" /></a></div>
+		   <div class="main_l_c_l">
+		       <ul>
+<li><a href="#"  title=""><img src="/gx/images/indexnews/index_225-227.jpg" width="182" height="148" alt="" /></a>
+  <p> 椰棕弹簧床垫<br />
+<em>￥961.00</em></p>
+</li>
+<li><a href="#"  title=""><img src="/gx/images/indexnews/index_228.jpg" width="181" height="148" alt="" /></a>
+  <p>双人床垫 席梦思床垫<br />
+<em>￥3190.00</em></p>
+</li>
+<li><a href="#"  title=""><img src="/gx/images/indexnews/index_229-231.jpg" width="182" height="148" alt="" /></a>
+  <p>YL富贵鸟席梦思弹簧床垫<br />
+<em>￥2000.00</em></p>
+</li>
+			   </ul>
+			   <div class="clear"></div>
+	     </div>
+	   </div>
+	   <div class="main_l_r left ml5">
+	       <div class="main_l_r_t"><!--<span class="riqi"><span class="blue">1</span>/2 <img src="/gx/images/indexnews/jt.jpg" /></span>--><span class="fb14">畅销区</span></div>
+		   <div class="main_l_r_l">
+		       <dl>
+			   <dd>
+			     <p class="jiage">￥3880.00</p>
+			     <a href="#" title="">欧式卧室雕花家具实木大床</a><br />
+			     已售0件</dd>
+			   <dt><a href="#" title=""><img src="/gx/images/indexnews/index_220.jpg" width="102" height="66" alt="" /></a></dt>
+			   </dl>
+			   <dl>
+			   <dd>
+			     <p class="jiage">￥6280.00</p>
+			     <a href="#" title="">新古典双人床<br />
+			     实木雕花家具</a><br />
+			     已售0件</dd>
+			   <dt><a href="#" title=""><img src="/gx/images/indexnews/index_223.jpg" width="102" height="72" alt="" /></a></dt>
+			   </dl>
+			   <dl>
+			   <dd>
+			     <p class="jiage">￥3980.00</p>
+			     <a href="#" title="">欧式 米兰风尚<br />
+			     布艺1.8米大床</a><br />
+			     已售0件</dd>
+			   <dt><a href="#" title=""><img src="/gx/images/indexnews/index_233.jpg" width="109" height="78" alt="" /></a></dt>
+			   </dl>
+		   
+	     </div>
+	   </div>
+   </div>
+  
+</div>
+
+<div class="index_main">
+   <div class="main_t title11">2F 办公屏风  办公桌椅</div>
+   <div class="main_l left mt5">
+       <div class="main_l_l left"><a href="http://www.59jiaju.com/index.php?app=goods&amp;id=3780" title=""><img src="/gx/images/indexnews/index_242.jpg" alt="广州办公家具 电脑桌 屏风工作位 4人位 职员办公桌 隔断" width="200" height="405" border="0" /></a></div>
+       <div class="main_l_c left ml5">
+	       <div class="main_l_c_p"><a href="http://www.59jiaju.com/index.php?app=goods&amp;id=4338"  title="时尚简约办公桌" target="_blank"><img src="/gx/images/indexnews/index_242-243.jpg" alt="时尚简约办公桌" width="550" height="205" border="0" /></a></div>
+		   <div class="main_l_c_l">
+		       <ul>
+<li><a href="http://www.59jiaju.com/index.php?app=goods&amp;id=4632"  title="简约电脑桌办公屏风" target="_blank"><img src="/gx/images/indexnews/index_251.jpg" alt="简约电脑桌办公屏风" width="181" height="147" border="0" /></a>
+  <p> 简约电脑桌办公屏风<br />
+<em>￥2380.00</em></p>
+</li>
+<li><a href="http://www.59jiaju.com/index.php?app=goods&amp;id=425"  title="" target="_blank"><img src="/gx/images/indexnews/index_253.jpg" alt="办公桌屏风组合两人位L台转角台式简约电脑桌" width="181" height="148" border="0" /></a>
+  <p>L台转角台式简约电脑桌 <br />
+<em>￥128.00</em></p>
+</li>
+<li><a href="http://www.59jiaju.com/index.php?app=goods&amp;id=400"  title="屏风桌四人位时尚简约设计" target="_blank"><img src="/gx/images/indexnews/index_255.jpg" alt="屏风桌四人位时尚简约设计" width="182" height="147" border="0" /></a>
+  <p>屏风桌四人位时尚简约设计<br />
+<em>￥105.00</em></p>
+</li>
+			   </ul>
+			   <div class="clear"></div>
+	     </div>
+	   </div>
+	   <div class="main_l_r left ml5">
+	       <div class="main_l_r_t"><!--<span class="riqi"><span class="blue">1</span>/2 <img src="/gx/images/indexnews/jt.jpg" /></span>--><span class="fb14">畅销区</span></div>
+		   <div class="main_l_r_l">
+		       <dl>
+			   <dd>
+			     <p class="jiage">￥750.00</p>
+			     <a href="http://www.59jiaju.com/index.php?app=goods&amp;id=785" title="屏风隔断位办公桌两人组合卡位时尚2人创业卡座位广州办公家具" target="_blank">屏风隔断位办公桌</a><br />
+			     已售0件</dd>
+			   <dt><a href="http://www.59jiaju.com/index.php?app=goods&amp;id=785" title="屏风隔断位办公桌两人组合卡位时尚2人创业卡座位广州办公家具" target="_blank"><img src="/gx/images/indexnews/index_244.jpg" alt="屏风隔断位办公桌两人组合卡位时尚2人创业卡座位广州办公家具" width="100" height="71" border="0" /></a></dt>
+			   </dl>
+			   <dl>
+			   <dd>
+			     <p class="jiage">￥273.00</p>
+			     <a href="http://www.59jiaju.com/index.php?app=goods&amp;id=4954" title="人体工学椅高背椅办公椅" target="_blank">人体工学椅高背椅办公椅</a><br />
+			     已售0件</dd>
+			   <dt><a href="http://www.59jiaju.com/index.php?app=goods&amp;id=4954" title="人体工学椅高背椅办公椅" target="_blank"><img src="/gx/images/indexnews/index_248.jpg" alt="人体工学椅高背椅办公椅" width="69" height="100" border="0" /></a></dt>
+			   </dl>
+			   <dl>
+			   <dd>
+			     <p class="jiage">￥115.00</p>
+			     <a href="http://www.59jiaju.com/index.php?app=goods&amp;id=3232" title="电脑椅办公椅网布转椅椅子" target="_blank">电脑椅办公椅网布转椅椅子</a><br />
+			     已售0件</dd>
+			   <dt><a href="http://www.59jiaju.com/index.php?app=goods&amp;id=3232" title="电脑椅办公椅网布转椅椅子" target="_blank"><img src="/gx/images/indexnews/index_259.jpg" alt="电脑椅办公椅网布转椅椅子" width="72" height="104" border="0" /></a></dt>
+			   </dl>
+		   
+	     </div>
+	   </div>
+   </div>
+  
+</div>
+
+<div class="index_main">
+   <div class="main_t title12">3F 办公实木柜 桌椅</div>
+   <div class="main_l left mt5">
+       <div class="main_l_l left"><a href="http://www.59jiaju.com/index.php?app=goods&amp;id=5105" title="四层 更衣 器械柜 员工柜 铁皮柜 档案柜 储物柜 收纳柜 带门书柜" target="_blank"><img src="/gx/images/indexnews/index_266.jpg" alt="四层 更衣 器械柜 员工柜 铁皮柜 档案柜 储物柜 收纳柜 带门书柜" width="200" height="405" border="0" /></a></div>
+       <div class="main_l_c left ml5">
+	       <div class="main_l_c_p"><a href="http://www.59jiaju.com/index.php?app=goods&amp;id=1832"  title="赢寸间转椅 人体工学 电脑椅 高档职员椅 皮转椅新款" target="_blank"><img src="/gx/images/indexnews/index_268.jpg" alt="赢寸间转椅 人体工学 电脑椅 高档职员椅 皮转椅新款" width="549" height="205" border="0" /></a></div>
+		   <div class="main_l_c_l">
+		       <ul>
+<li><a href="http://www.59jiaju.com/index.php?app=goods&amp;id=3002"  title="好环境办公柜 趟门地柜矮柜 木柜 移门资料柜 财务档案柜" target="_blank"><img src="/gx/images/indexnews/index_276.jpg" alt="好环境办公柜 趟门地柜矮柜 木柜 移门资料柜 财务档案柜" width="182" height="148" border="0" /></a>
+  <p> 趟门地柜矮柜<br />
+<em>￥318.00</em></p>
+</li>
+<li><a href="http://www.59jiaju.com/index.php?app=goods&amp;id=2974"  title="组合柜古典茶水柜" target="_blank"><img src="/gx/images/indexnews/index_278.jpg" alt="组合柜古典茶水柜" width="181" height="148" border="0" /></a>
+  <p>组合柜古典茶水柜 <br />
+<em>￥630.00</em></p>
+</li>
+<li><a href="http://www.59jiaju.com/index.php?app=goods&amp;id=2944"  title="贴实木皮文件柜" target="_blank"><img src="/gx/images/indexnews/index_279.jpg" alt="贴实木皮文件柜" width="182" height="148" border="0" /></a>
+  <p>贴实木皮文件柜<br />
+<em>￥910.00</em></p>
+</li>
+			   </ul>
+			   <div class="clear"></div>
+	     </div>
+	   </div>
+	   <div class="main_l_r left ml5">
+	       <div class="main_l_r_t"><!--<span class="riqi"><span class="blue">1</span>/2 <img src="/gx/images/indexnews/jt.jpg" /></span>--><span class="fb14">畅销区</span></div>
+		   <div class="main_l_r_l">
+		       <dl>
+			   <dd>
+			     <p class="jiage">￥520.00</p>
+			     <a href="http://www.59jiaju.com/index.php?app=goods&amp;id=5103" title="更衣柜器械柜钢制玻璃门书柜" target="_blank">更衣柜器械柜钢制玻璃门书柜</a><br />
+			     已售0件</dd>
+			   <dt><a href="http://www.59jiaju.com/index.php?app=goods&amp;id=5103" title="更衣柜器械柜钢制玻璃门书柜" target="_blank"><img src="/gx/images/indexnews/index_270.jpg" alt="更衣柜器械柜钢制玻璃门书柜" width="60" height="97" border="0" /></a></dt>
+			   </dl>
+			   <dl>
+			   <dd>
+			     <p class="jiage">￥1750.00</p>
+			     <a href="http://www.59jiaju.com/index.php?app=goods&amp;id=2884" title="实木文件柜储存柜文件柜资料柜" target="_blank">实木文件柜储存柜文件柜资料柜</a><br />
+			     已售0件</dd>
+			   <dt><a href="http://www.59jiaju.com/index.php?app=goods&amp;id=2884" title="实木文件柜储存柜文件柜资料柜" target="_blank"><img src="/gx/images/indexnews/index_273.jpg" alt="实木文件柜储存柜文件柜资料柜" width="60" height="91" border="0" /></a></dt>
+			   </dl>
+			   <dl>
+			   <dd>
+			     <p class="jiage">￥790.00</p>
+			     <a href="http://www.59jiaju.com/index.php?app=goods&amp;id=6410" title="财致家具Q12F111茶水柜" target="_blank">财致家具Q12F111茶水柜</a><br />
+			     已售0件</dd>
+			   <dt><a href="http://www.59jiaju.com/index.php?app=goods&amp;id=6410" title="财致家具Q12F111茶水柜" target="_blank"><img src="/gx/images/indexnews/index_283.jpg" alt="财致家具Q12F111茶水柜" width="93" height="68" border="0" /></a></dt>
+			   </dl>
+		   
+	     </div>
+	   </div>
+   </div>
+  
+</div>
+
+
+<div class="index_main">
+   <div class="main_t title13">4F 沙发茶几书桌</div>
+   <div class="main_l left mt5">
+       <div class="main_l_l left"><a href="http://www.59jiaju.com/index.php?app=goods&amp;id=1923" title="可升降旋转餐椅 时尚简约电脑椅 创意田园风格" target="_blank"><img src="/gx/images/indexnews/index_290.jpg" alt="可升降旋转餐椅 时尚简约电脑椅 创意田园风格" width="200" height="405" border="0" /></a></div>
+       <div class="main_l_c left ml5">
+	        <div class="main_l_c_p"><a href="http://www.59jiaju.com/index.php?app=goods&amp;id=1812"  title="简约时尚现代板式沙发"><img src="/gx/images/indexnews/index_292.jpg" alt="简约时尚现代板式沙发" width="550" height="205" border="0" /></a></div>
+		   <div class="main_l_c_l">
+		       <ul>
+<li><a href="http://www.59jiaju.com/index.php?app=goods&amp;id=2818"  title="时尚茶几茶桌" target="_blank"><img src="/gx/images/indexnews/index_301.jpg" alt="时尚茶几茶桌" width="182" height="148" border="0" /></a>
+  <p> 时尚茶几茶桌<br />
+<em>￥1560.00</em></p>
+</li>
+<li><a href="http://www.59jiaju.com/index.php?app=goods&amp;id=4522"  title="现代钢化玻璃大理石办公会客会议茶几边角几" target="_blank"><img src="/gx/images/indexnews/index_303.jpg" alt="现代钢化玻璃大理石办公会客会议茶几边角几" width="181" height="148" border="0" /></a>
+  <p>办公会客会议茶几边角几 <br />
+<em>￥2019.00</em></p>
+</li>
+<li><a href="http://www.59jiaju.com/index.php?app=goods&amp;id=2118"  title="不锈钢玻璃茶几时尚" target="_blank"><img src="/gx/images/indexnews/index_299-306.jpg" alt="不锈钢玻璃茶几时尚" width="182" height="148" border="0" /></a>
+  <p>不锈钢玻璃茶几时尚<br />
+<em>￥1350.00</em></p>
+</li>
+			   </ul>
+			   <div class="clear"></div>
+	     </div>
+	   </div>
+	   <div class="main_l_r left ml5">
+	       <div class="main_l_r_t"><!--<span class="riqi"><span class="blue">1</span>/2 <img src="/gx/images/indexnews/jt.jpg" /></span>--><span class="fb14">畅销区</span></div>
+		   <div class="main_l_r_l">
+		       <dl>
+			   <dd>
+			     <p class="jiage">￥1908.00</p>
+			     <a href="http://www.59jiaju.com/index.php?app=goods&amp;id=2097" title="创意休闲沙发 绒布会客布艺沙发" target="_blank">创意休闲沙发 绒布会客布艺沙发</a><br />
+			     已售0件</dd>
+			   <dt><a href="http://www.59jiaju.com/index.php?app=goods&amp;id=2097" title="创意休闲沙发 绒布会客布艺沙发" target="_blank"><img src="/gx/images/indexnews/index_294.jpg" alt="创意休闲沙发 绒布会客布艺沙发" width="82" height="94" border="0" /></a></dt>
+			   </dl>
+			   <dl>
+			   <dd>
+			     <p class="jiage">￥1500.00</p>
+			     <a href="http://www.59jiaju.com/index.php?app=goods&amp;id=1915" title="个性沙发椅子懒人沙发" target="_blank">个性沙发椅子懒人沙发</a><br />
+			     已售0件</dd>
+			   <dt><a href="http://www.59jiaju.com/index.php?app=goods&amp;id=1915" title="个性沙发椅子懒人沙发" target="_blank"><img src="/gx/images/indexnews/index_298.jpg" alt="个性沙发椅子懒人沙发" width="86" height="87" border="0" /></a></dt>
+			   </dl>
+			   <dl>
+			   <dd>
+			     <p class="jiage">￥1680.00</p>
+			     <a href="http://www.59jiaju.com/index.php?app=goods&amp;id=5138" title="时尚布艺沙发双人沙发" target="_blank">时尚布艺沙发双人沙发</a><br />
+			     已售0件</dd>
+			   <dt><a href="http://www.59jiaju.com/index.php?app=goods&amp;id=5138" title="时尚布艺沙发双人沙发"><img src="/gx/images/indexnews/index_308.jpg" alt="时尚布艺沙发双人沙发" width="93" height="66" border="0" /></a></dt>
+			   </dl>
+		   
+	     </div>
+	   </div>
+   </div>
+  
+</div>
+<div class="index_main">
+   <div class="main_t title14">5F 工艺装饰 </div>
+   <div class="main_l left mt5">
+       <div class="main_l_l left"><a href="http://www.59jiaju.com/index.php?app=goods&amp;id=4411" title="后现代艺术摆件 居家创意摆件 " target="_blank"><img src="/gx/images/indexnews/index_316.jpg" alt="后现代艺术摆件 居家创意摆件 " width="200" height="405" border="0" /></a></div>
+       <div class="main_l_c left ml5">
+	       <div class="main_l_c_p"><a href="http://www.59jiaju.com/index.php?app=goods&amp;id=958"  title="客厅装饰画沙发背景画 装饰画" target="_blank"><img src="/gx/images/indexnews/index_318.jpg" alt="客厅装饰画沙发背景画 装饰画" width="550" height="205" border="0" /></a></div>
+		   <div class="main_l_c_l">
+		       <ul>
+<li><a href="http://www.59jiaju.com/index.php?app=goods&amp;id=2601"  title="玉如意摆件" target="_blank"><img src="/gx/images/indexnews/index_321.jpg" alt="玉如意摆件" width="182" height="148" border="0" /></a>
+  <p> 玉如意摆件 <br />
+<em>￥368.00</em></p>
+</li>
+<li><a href="http://www.59jiaju.com/index.php?app=goods&id=2162"  title="招财貔貅摆件"><img src="/gx/images/indexnews/index_323.jpg" width="181" height="148" alt="招财貔貅摆件" /></a>
+  <p>招财貔貅摆件 <br />
+<em>￥125.00</em></p>
+</li>
+<li><a href="http://www.59jiaju.com/index.php?app=goods&amp;id=2247"  title="招财纳福貔貅" target="_blank"><img src="/gx/images/indexnews/index_325.jpg" alt="招财纳福貔貅" width="182" height="148" border="0" /></a>
+  <p>招财纳福貔貅<br />
+<em>￥268.00</em></p>
+</li>
+			   </ul>
+			   <div class="clear"></div>
+	     </div>
+	   </div>
+	   <div class="main_l_r left ml5">
+	       <div class="main_l_r_t"><!--<span class="riqi"><span class="blue">1</span>/2 <img src="/gx/images/indexnews/jt.jpg" /></span>--><span class="fb14">畅销区</span></div>
+		   <div class="main_l_r_l">
+		       <dl>
+			   <dd>
+			     <p class="jiage">￥98.00</p>
+			     <a href="http://www.59jiaju.com/index.php?app=goods&amp;id=878" title="消防车模型复古车模" target="_blank"> 消防车模型复古车模 </a><br />
+			     已售0件</dd>
+			   <dt><a href="http://www.59jiaju.com/index.php?app=goods&amp;id=878" title="消防车模型复古车模" target="_blank"><img src="/gx/images/indexnews/index_320.jpg" alt="消防车模型复古车模" width="99" height="90" border="0" /></a></dt>
+			   </dl>
+			   <dl>
+			   <dd>
+			     <p class="jiage">￥108.00</p>
+			     <a href="http://www.59jiaju.com/index.php?app=goods&amp;id=2705" title="牡丹花婚庆礼品" target="_blank">牡丹花婚庆礼品</a><br />
+			     已售0件</dd>
+			   <dt><a href="http://www.59jiaju.com/index.php?app=goods&amp;id=2705" title="牡丹花婚庆礼品" target="_blank"><img src="/gx/images/indexnews/index_324.jpg" alt="" width="71" height="98" border="0" /></a></dt>
+			   </dl>
+			   <dl>
+			   <dd>
+			     <p class="jiage">￥89.00</p>
+			     <a href="http://www.59jiaju.com/index.php?app=goods&amp;id=4245" title="创意花瓶结婚装饰花艺" target="_blank">创意花瓶结婚装饰花艺</a><br />
+			     已售0件</dd>
+			   <dt><a href="http://www.59jiaju.com/index.php?app=goods&amp;id=4245" title="创意花瓶结婚装饰花艺" target="_blank"><img src="/gx/images/indexnews/index_336.jpg" alt="创意花瓶结婚装饰花艺" width="84" height="92" border="0" /></a></dt>
+			   </dl>
+		   
+	     </div>
+	   </div>
+   </div>
+  
+</div>
+	  
+	  
+	<div class="brand w">
+<h1>品牌推荐</h1>
+<ul>
+<li><a href="http://www.59jiaju.com/gx/company/jingyi/index.html" title="经艺装饰" target="_blank"><img src="http://www.59jiaju.com/gx/company/jingyi/images/logo.jpg" border="0" alt="经艺装饰" width="122" height="42"  /></a></li>
+<li><a href="http://www.59jiaju.com/gs/index.php?m=content&amp;c=index&amp;a=show&amp;catid=13&amp;id=2" title="喜多装饰" target="_blank"><img src="http://www.59jiaju.com/gs/uploadfile/2013/0704/20130704021025581.gif"  border="0" alt="喜多装饰"  height="42"  /></a></li>
+<li><a href="http://www.59jiaju.com/gx/company/chaofan/index.html" title="超凡装饰" target="_blank"><img src="http://www.59jiaju.com/gx/company/chaofan/images/logo.gif"  border="0"  height="42" alt="超凡装饰"/></a></li>
+<li><a href="http://www.gzmeishu.com.cn" title="广州市美术有限公司" target="_blank"><img src="/gx/images/meishu.jpg"  border="0" alt="广州市美术有限公司"  height="42"/></a></li>
+<li><a href="http://www.59jiaju.com/gs/index.php?m=content&c=index&a=show&catid=13&id=14" title="广州珠江建筑装饰有限公司
+" target="_blank"><img src="/gx/images/zjjz.jpg"  border="0" alt="广州珠江建筑装饰有限公司
+"  height="42"/></a></li>
+</ul>
+
+</div>  
+	  
+</div>
+<div class="clear"></div>
+</div>
+{include file="footer.html"}
+

@@ -1,0 +1,270 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Access-Control-Allow-Origin" content="*">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=8"/>
+<title>推荐工人详情 - 微工程</title>
+<meta name="description" content="微工程，微工程APP，装修、材料、家具、饰品一站式服务，让装修更简单，价格更透明！！" />
+<meta name="keywords" content="微工程，微工程，家居商城，微工程家居商城，微工程家居装修商城，办公室装修，写字楼装修，材料，装修材料，家居，办公家具，家居，家具，装修，装饰" />
+	
+
+<link rel="stylesheet" type="text/css" href="/themes/mall/jiaju/css/api.css"/>
+<link rel="stylesheet" type="text/css" href="/themes/mall/jiaju/css/aui.css" />
+<link rel="stylesheet" type="text/css" href="/themes/mall/jiaju/css/aui.1.0.css"/>
+<style type="text/css">
+.jodsearch{margin:0px;padding:0px;vertical-align: middle;}
+.jodsearch .dosearch{margin-left:auto;margin-right:auto;margin-top:10px;padding:0px;width:1100px;height:52px;background-color:#F5F5F5;}
+.jodsearch .dosearch input{margin-top:10px;}
+.jodsearch .dosearch *{vertical-align:middle;}
+.tiaojian a{color:#0066CB;}
+.jobtable{width:100%;text-align:left;margin-left:3px;font-size:13px;}
+.jobtable tr{line-height:30px;}
+.jobtable tr td{border-bottom:1px solid #F0F0F0;}
+.main{margin:0px;padding:0px;}
+.main_body{
+margin:auto;padding:0px;margin-top: 10px;margin-bottom: 10px; width:1200px;overflow:hidden;
+}
+.main_body .main_left{width:79%;float:left;margin-right:10px;}
+.main_body .main_right{width:19%;float:left;margin-left:10px;}
+/**劳务资源*/
+.text-left a{width:23%;background:#ff552e;border-radius:10px;float:left;margin:1%;height:50px;line-height:50px;overflow:hidden;display:block;color:#fff;font-size:16px;font-weight:bold;}
+.aui-list-item-middle{width:16.222222222%;margin:10px 0.11111111111rem;float:left;overflow: hidden;}
+</style>
+<script type="text/javascript">
+	$(document).ready(function(){
+	$(".tiaojian > .qy > a").click(function(){
+	　　　　$(".tiaojian > .qy > a").css("background-color","F5F5F5");
+			$(this).css("background-color","#62AF00");
+			//这里使用ajax取数据
+			/*var url=$(this).attr("href");
+			$.get(url,function(data,status){
+				alert("Data: " + data + "\nStatus: " + status);
+			  });*/
+	　　});
+	$(".tiaojian > .xz > a").click(function(){
+	　　　　$(".tiaojian > .xz > a").css("background-color","F5F5F5");
+			$(this).css("background-color","#62AF00");
+			//这里使用ajax取数据
+			//var url=$(this).attr("href");
+			/*$.get(url,function(data,status){
+				alert("Data: " + data + "\nStatus: " + status);
+			  });*/
+	　　});
+	}); 
+	
+</script>
+</head>
+<body>
+{include file=header.html}
+<!-- 搜索 -->
+<div class="jodsearch" style="background:#ccc;padding-bottom: 8px;">
+		<div class="dosearch" style="background:#ccc;overflow:hidden;">
+			<form id="dosearchform" action="/index.php?app=search&act=joblist2" method="get">
+				<input type="hidden" name="app" value="search" />
+				<input type="hidden" name="act" value="joblist2" />
+				<input type="text" placeholder="输入关键词" name="title" style="margin-left:150px;font-size:14px;float:left;padding:0 10px;border:1px solid #ccc;width:55%;height:35px;" />
+				<input type="submit"  value="搜索" style="float:left;width:12%;height:34px;background:#ff552e;color:#FFFFFF;border:1px solid #ff552e" /><span style="margin-left:15px;color:#636363;font-family:黑体;font-size:16px;float:left;margin-top:15px;"></span>
+			</form>
+		</div>
+</div>
+<div class="main">
+	<!-- 主体 -->
+	<div class="main_body">
+		<!-- 左边 -->
+		<div class="main_left"style="width:100%">
+			<div style="background-color:#F5F5F5;width:100%;border-bottom:1px solid #999;">
+				<div style="width:100%;height:30px;border-bottom:1px solid #999;overflow:hidden;"><span style="width:15%;height:30px;color:#333;font-size:20px;float:left;text-align:left">{$name}</span></div>
+				
+				
+			</div>
+			<div style="width:100%;background-color:#FFFFFF;">
+				<div class="text-left">
+					<div class="aui-list aui-media-list" id="lists" style="height:auto;overflow:hidden">
+						<div class="aui-content aui-margin-b-15">
+							<ul class="aui-list aui-media-list" id="lists">
+								<li class="aui-list-item aui-list-item-middle" style="width:100%;">
+									<div class="aui-media-list-item-inner">
+										<div class="aui-list-item-media" style="width: 3rem;">
+											<img id="userphotos" style="width:50px;height: 50px;" onerror="javascript:this.src='/themes/mall/jiaju/images/logo.jpg';" src="/themes/mall/jiaju/images/logo.jpg" class="aui-img-round aui-list-img-sm">
+										</div>
+										<div class="aui-list-item-inner">
+											<div class="aui-list-item-text">
+											   <div class="aui-list-item-title aui-font-size-14 aui-ellipsis-1" id="name">加载中</div>
+											</div>
+											<div class="aui-list-item-text aui-ellipsis-1"><div>关注：<span id="guanzhu"><?php echo rand(1,9999);?></span><span style="margin-left:20px;">好评：<strong style="color:red;">5.7&uarr;</strong></span></div></div>
+										
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<!--描述-->
+					<div class="aui-content aui-margin-b-15">
+						<ul class="aui-list aui-list-in">
+							<li class="aui-list-item">
+								<div class="aui-list-item-inner">
+									<div class="aui-list-item-title">职位：</div>
+									<div class="aui-list-item-right" id="zhiwei"></div>
+								</div>
+							</li>
+							
+							<li class="aui-list-item">
+								<div class="aui-list-item-inner">
+									<div class="aui-list-item-title">口碑：</div>
+									<div class="aui-list-item-right">5.0分</div>
+								</div>
+							</li>
+							
+							<li class="aui-list-item">
+								<div class="aui-list-item-inner">
+									<div class="aui-list-item-title">星级：</div>
+									<div class="aui-list-item-right"><img src="/themes/mall/jiaju/images/xingxing.jpg" style="height:25px;width:100px;"/></div>
+								</div>
+							</li>
+							
+							<li class="aui-list-item">
+								<div class="aui-list-item-inner">
+									<div class="aui-list-item-title">实名认证信息：</div>
+									<div class="aui-list-item-right">已认证</div>
+								</div>
+							</li>
+							
+							<li class="aui-list-item">
+								<div class="aui-list-item-inner">
+									<div class="aui-list-item-title">专业认证信息：</div>
+									<div class="aui-list-item-right">已认证</div>
+								</div>
+							</li>
+							
+							<li class="aui-list-item">
+								<div class="aui-list-item-inner">
+									<div class="aui-list-item-title">从业工龄：</div>
+									<div class="aui-list-item-right" id="bumen">1年</div>
+								</div>
+							</li>
+							
+							<li class="aui-list-item">
+								<div class="aui-list-item-inner">
+									<div class="aui-list-item-title">联系地址：</div>
+									<div class="aui-list-item-right" id="huji">广东省</div>
+								</div>
+							</li>
+							
+							<li class="aui-list-item">
+								<div class="aui-list-item-inner">
+									<div class="aui-list-item-title">专业介绍：</div>
+									<div class="aui-list-item-right" id="gz_jingyan"></div>
+								</div>
+							</li>
+						</ul>
+					</div>
+
+					<!--描述-->
+					<div class="aui-content-padded aui-margin-b-15 aui-margin-t-15" onclick="yingying()">
+						<div class="aui-btn aui-btn-danger aui-btn-block">点击联系</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 左边结束 -->
+		<!-- 右边 -->
+		<div class="main_right" style="display:none;">
+			<div style="width:100%;">
+				<img src="/themes/store/default/images/adwei.png" width="100%">
+			</div>
+		</div>
+		<!-- 右边结束 -->
+	</div>
+{include file=footer.html}
+<!-- 底部include file=footer2.html-->
+<script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+
+<script type="text/javascript">
+
+$(function(){
+	jQuery.support.cors = true;
+	selectUser();
+});
+
+ // PHP时间戳转时间
+function _trans_php_time_to_str(timestamp, n) {
+
+	update = new Date(timestamp * 1000);
+	//时间戳要乘1000
+	year = update.getFullYear();
+	month = (update.getMonth() + 1 < 10) ? ('0' + (update.getMonth() + 1)) : (update.getMonth() + 1);
+	day = (update.getDate() < 10) ? ('0' + update.getDate()) : (update.getDate());
+	hour = (update.getHours() < 10) ? ('0' + update.getHours()) : (update.getHours());
+	minute = (update.getMinutes() < 10) ? ('0' + update.getMinutes()) : (update.getMinutes());
+	second = (update.getSeconds() < 10) ? ('0' + update.getSeconds()) : (update.getSeconds());
+	if (n == 1) {
+		return (year + '-' + month + '-' + day + ' ' + hour + ':' + minute + ':' + second);
+	} else if (n == 2) {
+		return (year + '-' + month + '-' + day);
+	} else if (n == 3) {
+		return (month + '-' + day);
+	} else if (n == 4) {
+		return (hour + ':' + minute + ':' + second);
+	} else if (n == 5) {
+		return (year + '-' + month + '-' + day + ' ' + hour + ':' + minute );
+	} else {
+		return 0;
+	}
+}
+function yingying(){
+	if(window.confirm('请使用微工程APP进行操作，是否前往去下载？')){
+		 window.open('http://wgcapp.59jiaju.com/apk/index.html');
+		 return true;
+	  }else{
+		 //alert("取消");
+		 return false;
+	 }
+}
+
+function selectUser(){
+	
+
+	var url = "http://wgcapp.59jiaju.com/index.php/Home/Systemmsg/Jobdetails";
+	$.post(url,{userid : <?php echo $_GET['id'];?>,infotype : 'weixin'},function(ret){
+	
+		var data = ret.message;
+		
+		if(ret.code == 200){
+				var	name        = (data.name =='' || data.name == null)?'匿名':data.name;
+	            var zhiwei 	    = (data.zhiwei =='' || data.zhiwei == null)?'未填写':data.zhiwei;
+	            var	guanzhu     = data.guanzhu;
+	            var	bumen       = (data.bumen =='' || data.bumen == null)?'未填写':data.bumen;
+	            var	huji        = (data.huji =='' || data.huji == null)?'未填写':data.huji;
+	            var	gz_jingyan  = (data.gz_jingyan =='' || data.gz_jingyan == null)?'未填写':data.gz_jingyan;
+	           
+	            var	userphoto   = 'http://wgcapp.59jiaju.com/' + data.userphoto;
+	            var targetId        = data.user_id;
+	            var targetName      = name;
+	            
+			   
+		       $("#userphotos").attr('src',userphoto);
+	           $("#name").html(name);
+	           $("#zhiwei").html(zhiwei);
+	           $("#guanzhu").html(guanzhu);
+	           $("#bumen").html(bumen+'年');
+	           $("#huji").html(huji);
+	           $("#gz_jingyan").html(gz_jingyan);
+			
+		
+		}else{
+			return false;
+		
+		}
+		
+	
+	},"json");
+
+}
+	
+
+</script>
+
+</body>
+</html>

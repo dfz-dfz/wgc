@@ -1,0 +1,57 @@
+{include file=top.html}
+<div id="header" class="w-full">
+   <!--{if $index}-->
+   <div class="w bgw" area="bgw" widget_type="area" style="padding:10px 0 0 0;">
+      <!--{widgets page=index area=bgw}-->
+   </div>
+   <!--{/if}-->
+   <div class="shop-t w clearfix">
+      <div class="logo">
+         <a href="" title=""><img alt="" src="http://www.59jiaju.com/themes/mall/jiaju/styles/default/images/field/ouyada_logo.jpg" /></a>
+      </div>
+	 <!-- <div style="padding:15px 0 0 30px; _padding:0 0 0 15px; z-index:0;  width:200px; float:left;"><span style=" font-family:'微软雅黑'; font-size:20px; color:#f00; margin:0 5px;">广州站</span><span style="padding:3px; border:1px solid #f3f3f3; background:#f3f3f3;"><a href="/">【切换城市】</a></span>
+     <span style="line-height:20px; padding:5px 0 0 0; color:#666; float:left;  font-weight:bold;">全国统一热线：400-1012-668</span><br/>
+    &nbsp;&nbsp; 广州热线：020-86295019
+     </div> -->
+
+
+      <div class="top-search">
+         <ul class="clearfix">
+            <li {if $smarty.get.act neq 'store' && $smarty.get.act neq 'groupbuy'}class="current"{/if} id="index">{$lang.goods}</li>
+            <li {if $smarty.get.act eq 'store'}class="current"{/if} id="store">{$lang.store}</li>
+            <!-- <li {if $smarty.get.act eq 'groupbuy'}class="current"{/if} id="groupbuy">{$lang.sgroupbuy}</li> -->
+         </ul>
+         <div class="top-search-box">
+           <form method="GET" action="{url app=search}">
+               <input type="hidden" name="app" value="search" />
+               <input type="hidden" name="act" value="{if $smarty.get.act eq 'store'}store<!--{elseif $smarty.get.act eq 'groupbuy'}<!--groupbuy-->-->{else}index{/if}" />
+               <input type="text"   name="keyword" value="{$smarty.get.keyword}" class="keyword {if !$smarty.get.keyword}kw_bj {if $smarty.get.act eq 'store'}store{elseif $smarty.get.act eq 'groupbuy'}groupbuy{else}index{/if}_bj {/if}" />
+               <input type="submit" value="" class="submit" hidefocus="true" />
+            </form>
+         </div>
+         <div class="all-cate">
+            <a href="{url app=category}">{$lang.gcategory}</a><br />
+            <a href="{url app=category&act=store}">{$lang.scategory}</a>
+         </div>
+      </div>
+   </div>
+   <div class="mainnav w-full pb10">
+   
+     <div class="menu">
+<ul>
+<li class="line"><a href="http://www.59jiaju.com">首页</a></li>
+<!--<li class="line"><a href="http://www.59jiaju.com/gx/zhaopinjiameng.html">招聘加盟</a></li>-->
+
+<!--<li class="line"><a href="http://www.59jiaju.com/gs/">装修公司</a></li>-->
+<li class="line"><a href="http://www.59jiaju.com/sj">设计师</a></li>
+<!--<li class="line"><a href="http://www.59jiaju.com/zp">专业招聘</a></li>-->
+<li class="line"><a href="http://www.59jiaju.com/zb">询价清单</a></li>
+<li class="line"><a href="http://www.59jiaju.com/zb/index.php?m=wct">工人与施工队</a></li>
+<li><a href="http://www.59jiaju.com/gx/zxshouye.html">招商加盟</a></li>
+</ul>
+</div>
+
+	  
+	  
+   </div>
+</div>

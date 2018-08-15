@@ -1,0 +1,1256 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>商城首页 - 59家居商城</title>
+	<meta name="description" content="59�?9家居�?9家居商城，装修、材料、家具、饰品一站式服务，让装修更简单，价格更透明！！" />
+	<meta name="keywords" content="59�?9家居，家居商城，59家居商城�?9家居装修商城，办公室装修，写字楼装修，材料，装修材料，家居，办公家具，家居，家具，装修，装饰" />
+<link type="text/css" href="/themes/mall/jiaju/styles/style/style/style.css" rel="stylesheet"  />
+<script type="text/javascript" src="http://www.59jiaju.com/themes/mall/jiaju/styles/default/js/jquery-1.3.2.min.js"></script>
+<script type="text/javascript">
+	$(function (){
+		$('#open-change-city-window').click(function (){
+			$('.change-city-window').slideDown();
+			
+		})
+		$('#close-change-city-window').click(function (){
+			$('.change-city-window').slideUp();
+		})
+	})
+</script>
+</head>
+
+<body>
+	<div id="site-nav" class="w-full">
+
+  
+  <div class="shoptop w clearfix">
+
+    	<div class="login_info">
+		{$lang.hello},
+
+         <!--{if !$visitor.user_id}-->
+
+         {$visitor.user_name|escape}
+
+         <a href="{url app=member&act=login&ret_url=$ret_url}">{$lang.login}</a>
+
+        <!-- <a href="{url app=member&act=register&ret_url=$ret_url}">{$lang.register}</a>-->
+		<a href="/gx/reg.html">{$lang.register}</a>
+
+         <!--{else}-->
+
+         <a href="{url app=member}"><span>{$visitor.user_name|escape}</span></a>
+
+         <a href="{url app=member&act=logout}">{$lang.logout}</a>
+
+         <a href="{url app=message&act=newpm}">{$lang.pm}<!--{if $new_message}-->(<span>{$new_message}</span>)<!--{/if}--></a>
+
+         <!--{/if}-->
+		
+      </div>
+
+	
+
+      <ul class="quick-menu"><li class="item">
+
+         <div class="menu iwantbuy">
+
+            <a class="menu-hd" href="index.php?app=category">我要�?b></b></a>
+
+            <div class="menu-bd">
+
+               <div class="menu-bd-panel">
+
+                  <div>
+
+                     <p><a href="index.php?app=category">商品分类</a></p>
+
+                     <p><a href="www.59jiaju.com">大家正在�?/a></p>
+                  </div>
+               </div>
+            </div>
+         </div>
+
+
+
+         </li>
+
+         <li class="item">
+
+            <div class="menu mytb">
+
+               <a class="menu-hd" href="index.php?app=member">我是买家<b></b></a>
+
+               <div class="menu-bd">
+
+                  <div class="menu-bd-panel">
+
+                     <div>
+
+                        <p><a href="index.php?app=buyer_order">已买到的宝贝</a></p>
+
+                        <p><a href="index.php?app=friend">我的好友</a></p>
+
+                        <p><a href="index.php?app=my_question">我的咨询</a></p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </li>
+
+         <li class="item">
+
+            <div class="menu seller-center">
+
+               <a class="menu-hd" href="index.php?app=member">卖家中心<b></b></a>
+
+               <div class="menu-bd">
+
+                  <div class="menu-bd-panel">
+
+                     <div>
+
+                        <p><a href="index.php?app=seller_order">已卖出的宝贝</a></p>
+
+                        <p><a href="index.php?app=my_goods">出售中的宝贝</a></p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </li>
+
+         <li class="service">
+
+            <a href="index.php?app=article&amp;code=help">帮助中心</a>         </li>
+
+         <li class="item">
+
+            <div class="menu mini-cart">
+
+               <a class="ac" href="index.php?app=cart">
+
+                  <s></s>购物�?strong>0</strong>�?b></b>               </a>
+
+               <div class="mini-cart-content menu-bd">
+
+                  <dl class="mini-cart-bd">
+
+                     
+                     <dt class="mt10 fleft mini-cart-empty">您购物车里还没有任何宝贝
+
+</dt>
+
+                     
+                     <dd class="mini-cart-bt">
+
+                        <a href="index.php?app=cart">查看我的购物�?/a>                 
+
+    </dd>                          
+                  </dl>
+               </div>
+            </div>
+         </li>
+
+         <li class="service">
+
+            <a hidefocus="true"  target="_blank" href="http://wpa.qq.com/msgrd?
+
+v=3&uin=461666210&site=qq&menu=yes">在线客服</a>         </li>
+
+         <li class="item">
+
+            <div class="menu favorite">
+
+               <a class="menu-hd" href="index.php?app=my_favorite">收藏�?b></b></a>
+
+               <div class="menu-bd">
+
+                  <div class="menu-bd-panel">
+
+                     <div>
+
+                       <p><a href="index.php?app=my_favorite">收藏的宝�?/a></p>
+
+                       <p><a href="index.php?app=my_favorite&amp;type=store">收藏的店�?
+
+</a></p>
+                    </div>
+                 </div>
+               </div>
+           </div>
+         </li>
+
+         <li class="item" style="background:none">
+
+            <div class="menu sites">
+
+               <a class="menu-hd" href="javascript:;">网站导航<b></b></a>
+
+               <div class="menu-bd padding10">
+
+              </div>
+            </div>
+        </li>
+     </ul>
+
+   </div>
+
+<style type="text/css">
+
+.fixed-top /* 头部固定 */{position:fixed;bottom:auto;top:200px;}
+
+.fixed-bottom /* 底部固定 */{position:fixed;bottom:0px;top:auto;}
+
+.fixed-left /* 左侧固定 */{position:fixed;right:auto;left:0px; z-index:1000;}
+
+.fixed-right /* 右侧固定 */{position:fixed;right:0px;left:auto;}
+
+/* 上面的是除了IE6的主流浏览器通用的方�?*/
+
+* html,* html body /* 修正IE6振动bug */{background-image:url(about:blank);background-
+
+attachment:fixed;}
+
+* html .fixed-top /* IE6 头部固定 */{position:absolute;bottom:auto;top:expression(eval
+
+(document.documentElement.scrollTop)+200);}
+
+* html .fixed-right /* IE6 右侧固定 */ {position:absolute;right:auto;left:expression
+
+(eval(document.documentElement.scrollLeft+document.documentElement.clientWidth-
+
+this.offsetWidth)-(parseInt(this.currentStyle.marginLeft,10)||0)-(parseInt
+
+(this.currentStyle.marginRight,10)||0));}
+
+* html .fixed-bottom /* IE6 底部固定  */{position:absolute;bottom:auto;top:expression
+
+(eval(document.documentElement.scrollTop+document.documentElement.clientHeight-
+
+this.offsetHeight-(parseInt(this.currentStyle.marginTop,10)||0)-(parseInt
+
+(this.currentStyle.marginBottom,10)||0)));}
+
+* html .fixed-left /* IE6 左侧固定 */{position:absolute;right:auto;left:expression
+
+(eval(document.documentElement.scrollLeft));}
+
+</style>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+<div id="header" class="w-full">
+    <div class="shop-t w clearfix" style="padding:10px 0;position: relative;height: 90px;">
+      	<div class="logo">
+        	<a style="display:block; overflow:hidden; margin-top:10px;" href="/"  title="59家居商城">
+			<img alt="59家居商城" src='http://www.59jiaju.com/data/files/mall/settings/site_logo.png' width="217" height="49" />
+			</a>
+      	</div>
+      	
+		<div class="top-search">
+	        <div class="top-search-box">
+	           	<form method="GET" action="index.php?app=search">
+					<input type="hidden" name="app" value="search">
+	               <input type="hidden" name="act" value="index">
+				   
+	              <input type="text" name="keyword" value="search" class="top-search-text" />
+	               <input type="submit" value="搜索" class="submit" hidefocus="true" />
+	           	</form>
+				
+				
+	              <div class="alist">
+	                 <a href="index.php?app=search&cate_id=6431">螺丝刀</a>
+	                 <a href="index.php?app=search&cate_id=6489">扳手</a>
+	                 <a href="index.php?app=search&cate_id=6490">钢丝�?/a>
+	              </div>
+	        </div>
+      	</div>
+        <div class='erweima'>
+          <ul>
+            <li><img src="http://www.59jiaju.com/themes/mall/jiaju/styles/default/images/ewm_03.jpg">
+               <p>扫描关注59家居�?/p>
+            </li>
+            <li><img src="http://www.59jiaju.com/themes/mall/jiaju/styles/default/images/ewm_03.jpg">
+               <p>扫描关注59家居�?/p>
+            </li>
+            <li><img src="http://www.59jiaju.com/themes/mall/jiaju/styles/default/images/ewm_03.jpg">
+                <p>扫描关注59家居�?/p>
+            </li>
+          </ul>
+        </div>
+   	</div>
+	<div class="mainnav w-full">
+		<div class="menu">
+			<ul>
+        <li class="total">所有分�?i><img src="/themes/mall/jiaju/styles/style/images/updown.png"></i></li>
+				<li class="line"><a href="http://www.59jiaju.com/">首页</a></li>
+        <li class="line"><a href="http://www.59jiaju.com/">材料�?/a></li>
+        <li class="line"><a href="http://www.59jiaju.com/index.php?app=search&act=zhaopin">行业招聘</a></li>
+        <li class="line"><a href="http://www.59jiaju.com/">热门公司</a></li>
+        <li class="line"><a href="http://www.59jiaju.com/">项目发布</a></li>
+        <li class="line"><a href="http://www.59jiaju.com/">关于我们</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<!-- main start -->
+<div id="main">
+    <div class="main-top w clearfix">
+        <div class="left" area="left" widget_type="area" style="background:#de3635;color: #fff;">
+           <div class="left_con">
+             <h2><a href="index.php?app=search&amp;cate_id=6417">水暖�?/a></h2>
+
+                        
+             <ul>
+               <li>
+                 <a href="index.php?app=search&amp;cate_id=6421">三角阀</a>
+               </li>
+               <li>
+                 <a href="index.php?app=search&amp;cate_id=6432">花洒</a>
+               </li>
+               <li>
+                  <a href="index.php?app=search&amp;cate_id=3436">淋浴�?/a>
+               </li>
+               <li>
+                 <a href="index.php?app=search&amp;cate_id=6434">地漏</a>
+               </li>
+               <li>
+                 <a href="index.php?app=search&amp;cate_id=6435">花洒软管</a>
+               </li>
+               <li>
+                 <a href="index.php?app=search&amp;cate_id=3701">分水�?/a>
+               </li>
+                <li>
+                 <a href="index.php?app=search&amp;cate_id=3704">接头 </a>
+               </li>
+               <div class="clear"></div>
+             </ul>
+           </div>
+
+
+           <div class="left_con">
+             <h2><a href="index.php?app=search&amp;cate_id=6420">灯饰�?/a></h2>
+             <ul>
+               <li>
+                  <a href="index.php?app=search&amp;cate_id=3705">吸顶�?                                   </a>
+               </li>
+               <li>
+                 <a href="index.php?app=search&amp;cate_id=6439">水晶�?                                       </a>
+               </li>
+               <li>
+                 <a href="index.php?app=search&amp;cate_id=6440">吊灯                                        </a>
+               </li>
+               <li>
+                 <a href="index.php?app=search&amp;cate_id=6441">壁灯                                       </a>
+               </li>
+               <li>
+                 <a href="index.php?app=search&amp;cate_id=6442">装饰台灯                                        </a>
+               </li>
+               <li>
+                 <a href="index.php?app=search&amp;cate_id=6443">落地�?                                      </a>
+               </li>
+                <li>
+                 <a href="index.php?app=search&amp;cate_id=6444">LED灯带                                        </a>
+               </li>
+               <li>
+                 <a href="index.php?app=search&amp;cate_id=6652">筒灯                                        </a> 
+               </li>
+               <li>
+                 <a href="index.php?app=search&amp;cate_id=6444">射灯                                       </a>
+               </li>
+               <li>
+                 <a href="index.php?app=search&amp;cate_id=6652">面板�?                                 </a>
+               </li>
+               
+               <div class="clear"></div>
+             </ul>
+           </div>
+
+
+           <div class="left_con">
+
+             <h2><a href="index.php?app=search&amp;cate_id=6422"> 开关插�?/a></h2>
+             <ul>
+               <li>
+                 <a href="index.php?app=search&amp;cate_id=5508">瓷砖</a>
+               </li>
+               <li>
+                  <a href="index.php?app=search&amp;cate_id=5508">瓷砖</a>
+               </li>
+               <li>
+                 <a href="index.php?app=search&amp;cate_id=6423">接线插座</a>
+               </li>
+               <li>
+                 <a href="index.php?app=search&amp;cate_id=6440">转换插座</a>
+               </li>
+               <li>
+                 <a href="index.php?app=search&amp;cate_id=6450">智能插座</a>
+               </li>
+               <li>
+                 <a href="index.php?app=search&amp;cate_id=6451">按钮开�?/a>
+               </li>
+                <li>
+                 <a href="index.php?app=search&amp;cate_id=6452">墙壁开�?/a>
+               </li>
+               <li>
+                 <a href="index.php?app=search&amp;cate_id=6453">船型开�?/a>
+               </li>
+               <li>
+                 <a href="index.php?app=search&amp;cate_id=6652">感应开�?/a>
+               </li>
+               <li>
+                <a href="index.php?app=search&amp;cate_id=6652">轻触开�?/a>
+               </li>
+               
+               <div class="clear"></div>
+             </ul>
+           </div>
+
+
+
+           <div class="left_con">
+             <h2><a href="index.php?app=search&amp;cate_id=6424">胶类</a></h2>
+             <ul>
+               <li>
+                <a href="index.php?app=search&amp;cate_id=6425">复合型胶粒剂</a>
+               </li>
+               <li>
+                 <a href="index.php?app=search&amp;cate_id=6454">万能�?/a>
+               </li>
+               <li>
+                  <a href="index.php?app=search&amp;cate_id=6455">密封�?/a>
+               </li>
+               <li>
+                 <a href="index.php?app=search&amp;cate_id=6456">玻璃�?/a>
+               </li>
+               <li>
+                <a href="index.php?app=search&amp;cate_id=6457">结构�?/a>
+               </li>
+               <li>
+                 <a href="index.php?app=search&amp;cate_id=6458">502胶水</a>
+               </li>
+                
+               <div class="clear"></div>
+             </ul>
+           </div>
+
+           <div class="left_con">
+             <h2><a href="index.php?app=search&amp;cate_id=6426">�?门控五金</a></h2>
+             <ul>
+				<li>
+					<a href="index.php?app=search&amp;cate_id=6470">家具五金</a>
+				</li>
+               <li>
+                <a href="index.php?app=search&amp;cate_id=6427">挂锁</a>
+               </li>
+               <li>
+                <a href="index.php?app=search&amp;cate_id=6463">密码�?/a>
+               </li>
+               <li>
+                  <a href="index.php?app=search&amp;cate_id=6464">自行车锁</a>
+               </li>
+               <li>
+                 <a href="index.php?app=search&amp;cate_id=6465">摩托车锁</a>
+               </li>
+               <li>
+                <a href="index.php?app=search&amp;cate_id=6466">汽车�?/a>
+               </li>
+               <li>
+                 <a href="index.php?app=search&amp;cate_id=6467">指纹�?/a>
+               </li>
+			   
+			   <li>
+                 <a href="index.php?app=search&amp;cate_id=6468">智能�?/a>
+               </li>
+			   <li>
+                 <a href="index.php?app=search&amp;cate_id=6470">门锁</a>
+               </li>
+                
+               <div class="clear"></div>
+             </ul>
+           </div>
+
+
+
+
+
+
+        </div>
+		<div style="float: right;  width: 944px;">
+    <div class="fullSlide">
+      <div class="bd">
+      <ul>
+      <li _src="url(http://www.59jiaju.com/themes/mall/jiaju/images/th.jpg)" style="background-size:100%;background:#E2025E center 0 no-repeat;"><a target="_blank" href="http://www.59jiaju.com/index.php?app=goods&id=10146/"></a></li>
+      <li _src="url(http://www.59jiaju.com/themes/mall/jiaju/images/dm.jpg)" style="background-size:100%;background:#DED5A1 center 0 no-repeat;"><a target="_blank" href="http://www.59jiaju.com/index.php?app=goods&id=10169/"></a></li>
+      <li _src="url(http://www.59jiaju.com/themes/mall/jiaju/images/qm.jpg)" style="background-size:100%;background:#B8CED1 center 0 no-repeat;"><a target="_blank" href="http://www.59jiaju.com/index.php?app=goods&id=10219"></a></li>
+      <li _src="url(http://www.59jiaju.com/themes/mall/jiaju/images/bg1.jpg)" style="background-size:100%;background:#98918E center 0 no-repeat;"><a target="_blank" href="http://www.59jiaju.com/index.php?app=goods&id=10220"></a></li>
+    </ul>
+    </div>
+  <div class="hd">
+    <ul>
+    </ul>
+  </div>
+  <span class="prev"></span> <span class="next"></span> </div>
+ </div>
+</div>
+<div class="new-cat-top" >
+   <h2>优惠套餐<span>Discount package</span></h2> 
+</div>
+<div class="new-cat">
+   <ul class="new-cat2">
+     <li><a><img src="http://www.59jiaju.com/themes/mall/jiaju/images/index_03.jpg"></a><span>套餐一</span></li>
+     <li class="mt81"><a><img src="http://www.59jiaju.com/themes/mall/jiaju/images/index_03.jpg"></a><span>套餐一</span></li>
+     <li><a><img src="http://www.59jiaju.com/themes/mall/jiaju/images/index_03.jpg"></a><span>套餐一</span></li>
+   </ul>
+</div>
+<div class="new-cat-top" >
+   <h2>行业招聘<span>sdaskjd</span>  &  热门公司<span>sdaskjd</span></h2> 
+</div>
+<div class="new-cat">
+  <dl>
+    <dt>
+      <h3><strong>行业招聘</strong><span>news</span><a href="index.php?app=search&act=zhaopin">MORE</a></h3>
+      <div class="zplist">
+        <i><img src="/themes/mall/jiaju/styles/style/images/index_07.jpg"></i>
+		<a href="index.php?app=search&act=zhaopin&cate_id=施工招标">施工招标</a>
+		<a href="index.php?app=search&act=zhaopin&cate_id=材料招标">材料招标</a>
+		<a href="index.php?app=search&act=zhaopin&cate_id=招牌公司">招牌公司</a>
+		<a href="index.php?app=search&act=zhaopin&cate_id=装饰工程">装饰工程</a>
+		<a href="index.php?app=search&act=zhaopin&cate_id=机电安装">机电安装</a>
+		<a href="index.php?app=search&act=zhaopin&cate_id=除虫">除虫</a>
+      </div>
+      <div class="zplist">
+        <i><img src="/themes/mall/jiaju/styles/style/images/index_07.jpg"></i>
+		<a href="index.php?app=search&act=zhaopin&cate_id=建筑加固">建筑加固</a>
+		<a href="index.php?app=search&act=zhaopin&cate_id=办公家具">办公家具</a>
+		<a href="index.php?app=search&act=zhaopin&cate_id=酒店家具">酒店家具</a>
+		<a href="index.php?app=search&act=zhaopin&cate_id=民用家具">民用家具</a>
+		<a href="index.php?app=search&act=zhaopin&cate_id=餐厅家具">餐厅家具</a>
+		<a href="index.php?app=search&act=zhaopin&cate_id=园林">园林</a>
+      </div>
+      <div class="zplist">
+        <i><img src="/themes/mall/jiaju/styles/style/images/index_07.jpg"></i>
+		<a href="index.php?app=search&act=zhaopin&cate_id=维修">维修</a>
+		<a href="index.php?app=search&act=zhaopin&cate_id=广告">广告</a>
+		<a href="index.php?app=search&act=zhaopin&cate_id=设计">设计</a>
+		<a href="index.php?app=search&act=zhaopin&cate_id=幕墙">幕墙</a>
+		<a href="index.php?app=search&act=zhaopin&cate_id=路政">路政</a>
+		<a href="index.php?app=search&act=zhaopin&cate_id=物流">物流</a>
+		<a href="index.php?app=search&act=zhaopin&cate_id=坼除">坼除</a>
+		<a href="index.php?app=search&act=zhaopin&cate_id=材料">材料</a>
+		<a href="index.php?app=search&act=zhaopin&cate_id=智能�?>智能�?/a>
+      </div>
+      <div class="zplist">
+        <i><img src="/themes/mall/jiaju/styles/style/images/index_07.jpg"></i>
+		<a href="index.php?app=search&act=zhaopin&cate_id=保险">保险</a>
+		<a href="index.php?app=search&act=zhaopin&cate_id=消防">消防</a>
+		<a href="index.php?app=search&act=zhaopin&cate_id=环保">环保</a>
+		<a href="index.php?app=search&act=zhaopin&cate_id=软装">软装</a>
+		<a href="index.php?app=search&act=zhaopin&cate_id=厨具">厨具</a>
+		<a href="index.php?app=search&act=zhaopin&cate_id=保洁">保洁</a>
+		<a href="index.php?app=search&act=zhaopin&cate_id=设计�?>设计�?/a>
+      </div>
+	 
+    </dt>
+    <dd>
+      <h3><strong>热门公司</strong><span>news</span><a href="javascript:;">MORE</a></h3>
+      <ul>
+        <li><a href="javascript:;"><img src="/themes/mall/jiaju/styles/style/images/index_11.jpg"></a></li>
+         <li><a href="javascript:;"><img src="/themes/mall/jiaju/styles/style/images/index_11.jpg"></a></li>
+         <li><a href="javascript:;"><img src="/themes/mall/jiaju/styles/style/images/index_11.jpg"></a></li>
+         <li><a href="javascript:;"><img src="/themes/mall/jiaju/styles/style/images/index_11.jpg"></a></li>
+         <li><a href="javascript:;"><img src="/themes/mall/jiaju/styles/style/images/index_11.jpg"></a></li>
+         <li><a href="javascript:;"><img src="/themes/mall/jiaju/styles/style/images/index_11.jpg"></a></li>
+         <li><a href="javascript:;"><img src="/themes/mall/jiaju/styles/style/images/index_11.jpg"></a></li>
+         <li><a href="javascript:;"><img src="/themes/mall/jiaju/styles/style/images/index_11.jpg"></a></li>
+         <li><a href="javascript:;"><img src="/themes/mall/jiaju/styles/style/images/index_11.jpg"></a></li>
+         <div class="clear"></div>
+      </ul>
+    </dd>
+  </dl>
+</div>
+<!-- new-cat end  -->
+<div class="ad">
+	<ul>
+		<li><a href="#"><img src="/themes/mall/jiaju/styles/style/images/index_11.jpg"></a></li>
+    <li><a href="#"><img src="/themes/mall/jiaju/styles/style/images/index_11.jpg"></a></li>
+    <li><a href="#"><img src="/themes/mall/jiaju/styles/style/images/index_11.jpg"></a></li>
+    <li><a href="#"><img src="/themes/mall/jiaju/styles/style/images/index_11.jpg"></a></li>
+    <li><a href="#"><img src="/themes/mall/jiaju/styles/style/images/index_11.jpg"></a></li>
+    <li><a href="#"><img src="/themes/mall/jiaju/styles/style/images/index_11.jpg"></a></li>    
+    <div class="clear"></div>
+	</ul>
+</div>
+<!-- new-cat start  
+<div class="new-cat-top" >
+    <h2>行业招聘<span>sdaskjd</span>
+       <em><a href="#" class="updown">weqww</a><a href="#">weqww</a><a href="#">weqww</a><a href="#">更多>></a></em>
+    </h2> 
+  </div>-->
+<div class="webwidget_scroller_tab" id="webwidget_scroller_tab" style="margin:0 auto;">
+            <div class="tabContainer new-cat-top">
+             <h2>热销推荐<span>sdaskjd</span></h2>
+                <ul class="tabHead">
+                    <li class="currentBtn"><a href="javascript:;">石膏�?/a></li>
+                    <li><a href="javascript:;">瓷砖</a></li>
+                    <li><a href="javascript:;">门窗</a></li>
+                    <a href="javascript:;">更多>></a>
+                </ul>
+            </div>
+            <div class="tabBody">
+                <ul>
+                    <li class="tabCot">
+                          <div class="new-cat1">
+                                 <div class="dl_left">
+									<a href="http://www.59jiaju.com/index.php?app=goods&id=9918"><img style="width:280px;height:548px;"src="http://www.59jiaju.com/data/files/store_608/goods_67/small_201412010647478684.jpg">
+									
+									</a>
+								 </div> 
+                                 <div class="dl_right">
+                                    <ul>
+                                      <li><a href="http://www.59jiaju.com/index.php?app=goods&id=10393"><img style="width:300px;height:210px;"src="http://www.59jiaju.com/data/files/store_939/goods_88/small_201607010754484133.jpg"></a><p>材料价：&yen; 16.00</p></li>
+                                      <li><a href="http://www.59jiaju.com/index.php?app=goods&id=10392"><img style="width:300px;height:210px;"src="http://www.59jiaju.com/data/files/store_939/goods_93/small_201607010744534702.jpg"></a><p>材料价：&yen;80.00</p></li>
+                                      <li><a href="http://www.59jiaju.com/index.php?app=goods&id=1001"><img style="width:300px;height:210px;"src="http://www.59jiaju.com/data/files/store_69/goods_157/small_201304200745574691.jpg"></a><p>材料价：&yen;30.00</p></li>
+                                      <li><a href="http://www.59jiaju.com/index.php?app=goods&id=992"><img style="width:300px;height:210px;"src="http://www.59jiaju.com/data/files/store_69/goods_192/small_201304200646323342.jpg"></a><p>材料价：&yen;35.00</p></li>
+                                      <li><a href="http://www.59jiaju.com/index.php?app=goods&id=8395"><img style="width:300px;height:210px;"src="http://www.59jiaju.com/data/files/store_533/goods_173/small_201309170612535318.jpg"></a><p>材料价：&yen;100000.00</p></li>
+                                      <li><a href="http://www.59jiaju.com/index.php?app=goods&id=3010"><img style="width:300px;height:210px;"src="http://www.59jiaju.com/data/files/store_69/goods_70/small_201304270334303172.jpg"></a><p>材料价：&yen;25.00</p></li>
+                                    </ul>
+                                 </div> 
+                                 <div class="clear"></div>
+                          </div>                        
+                    </li>
+                    <li class="tabCot">
+                          <div class="new-cat1">
+                                 <div class="dl_left">
+									<a href="http://www.59jiaju.com/index.php?app=goods&id=10327"><img style="width:280px;height:548px;"src="http://www.59jiaju.com/data/files/store_608/goods_170/small_201505080202508484.jpg">
+									
+									</a>
+								 </div> 
+                                 <div class="dl_right">
+                                    <ul>
+                                      <li><a href="http://www.59jiaju.com/index.php?app=goods&id=10329"><img style="width:300px;height:210px;"src="http://www.59jiaju.com/data/files/store_608/goods_58/small_201505080207385203.jpg"></a><p>材料价：&yen; 16.00</p></li>
+                                      <li><a href="http://www.59jiaju.com/index.php?app=goods&id=10392"><img style="width:300px;height:210px;"src="http://www.59jiaju.com/data/files/store_939/goods_88/small_201607010754484133.jpg"></a><p>材料价：&yen;80.00</p></li>
+                                      <li><a href="http://www.59jiaju.com/index.php?app=goods&id=10339"><img style="width:300px;height:210px;"src="http://www.59jiaju.com/data/files/store_608/goods_19/small_201505080240194887.jpg"></a><p>材料价：&yen;0.65</p></li>
+                                      <li><a href="http://www.59jiaju.com/index.php?app=goods&id=10337"><img style="width:300px;height:210px;"src="http://www.59jiaju.com/data/files/store_608/goods_88/small_201505080234482612.jpg"></a><p>材料价：&yen;0.65</p></li>
+                                      <li><a href="http://www.59jiaju.com/index.php?app=goods&id=10333"><img style="width:300px;height:210px;"src="http://www.59jiaju.com/data/files/store_608/goods_182/small_201505080219426433.jpg"></a><p>材料价：&yen;0.65</p></li>
+                                      <li><a href="http://www.59jiaju.com/index.php?app=goods&id=10326"><img style="width:300px;height:210px;"src="http://www.59jiaju.com/data/files/store_608/goods_107/small_201505080201476153.jpg"></a><p>材料价：&yen;0.65</p></li>
+                                    </ul>
+                                 </div> 
+                                 <div class="clear"></div>
+                          </div>                        
+                    </li>
+                    <li class="tabCot">
+                          <div class="new-cat1">
+                                 <div class="dl_left">
+									<a href="http://www.59jiaju.com/index.php?app=goods&id=10378"><img style="width:280px;height:548px;"src="http://www.59jiaju.com/data/files/store_608/goods_104/small_201505190828241129.jpg">
+									
+									</a>
+								 </div> 
+                                 <div class="dl_right">
+                                    <ul>
+                                      <li><a href="http://www.59jiaju.com/index.php?app=goods&id=10377"><img style="width:300px;height:210px;"src="http://www.59jiaju.com/data/files/store_608/goods_111/small_201505190821515571.jpg"></a><p>材料价：&yen; 450.00</p></li>
+                                      <li><a href="http://www.59jiaju.com/index.php?app=goods&id=10227"><img style="width:300px;height:210px;"src="http://www.59jiaju.com/data/files/store_608/goods_146/small_201504210959065781.jpg"></a><p>材料价：&yen;450.00</p></li>
+                                      <li><a href="http://www.59jiaju.com/index.php?app=goods&id=10226"><img style="width:300px;height:210px;"src="http://www.59jiaju.com/data/files/store_608/goods_185/small_201504210953059641.jpg"></a><p>材料价：&yen;450.00</p></li>
+                                      <li><a href="http://www.59jiaju.com/index.php?app=goods&id=10225"><img style="width:300px;height:210px;"src="http://www.59jiaju.com/data/files/store_608/goods_21/small_201504210950219088.jpg"></a><p>材料价：&yen;450.00</p></li>
+                                      <li><a href="http://www.59jiaju.com/index.php?app=goods&id=10224"><img style="width:300px;height:210px;"src="http://www.59jiaju.com/data/files/store_608/goods_111/small_201504210948317040.jpg"></a><p>材料价：&yen;450.00</p></li>
+                                      <li><a href="http://www.59jiaju.com/index.php?app=goods&id=10223"><img style="width:300px;height:210px;"src="http://www.59jiaju.com/data/files/store_608/goods_168/small_201504210946081368.jpg"></a><p>材料价：&yen;450.00</p></li>
+                                    </ul>
+                                 </div> 
+                                 <div class="clear"></div>
+                          </div>                        
+                    </li>
+                </ul>
+                <div style="clear:both"></div>
+            </div>
+            <div class="modBottom">
+                <span class="modABL">&nbsp;</span><span class="modABR">&nbsp;</span>
+            </div>
+</div>
+
+
+<!-- new-cat end  -->
+<div class="webwidget_scroller_tab1" id="webwidget_scroller_tab" style="margin:0 auto;">
+            <div class="tabContainer new-cat-top">
+             <h2>天花吊顶<span>Ceramic tile floor</span></h2>
+                <ul class="tabHead">
+                    <li class="currentBtn"><a href="javascript:;">石膏�?/a></li>
+                    <li><a href="javascript:;">龙骨</a></li>
+                    <li><a href="javascript:;">吸音天花</a></li>
+                    <a href="javascript:;">更多>></a>
+                </ul>
+            </div>
+            <div class="tabBody">
+                <ul>
+                    <li class="tabCot">
+                          <div class="new-cat1">
+                                 <div class="dl_left">
+									<a href="http://www.59jiaju.com/index.php?app=goods&id=9873"><img style="width:280px;height:548px;"src="http://www.59jiaju.com/data/files/store_608/goods_138/small_201409060335384114.jpg">
+									
+									</a>
+								 </div> 
+                                 <div class="dl_right">
+                                    <ul>
+                                      <li><a href="http://www.59jiaju.com/index.php?app=goods&id=9870"><img style="width:300px;height:210px;"src="http://www.59jiaju.com/data/files/store_608/goods_123/small_201409060322035199.jpg"></a><p>材料价：&yen; 39.00</p></li>
+                                      <li><a href="http://www.59jiaju.com/index.php?app=goods&id=8395"><img style="width:300px;height:210px;"src="http://www.59jiaju.com/data/files/store_533/goods_173/small_201309170612535318.jpg"></a><p>材料价：&yen;100000.00</p></li>
+                                      <li><a href="http://www.59jiaju.com/index.php?app=goods&id=6794"><img style="width:300px;height:210px;"src="http://www.59jiaju.com/data/files/store_69/goods_4/small_201306180723245665.jpg"></a><p>材料价：&yen;32.50</p></li>
+                                      <li><a href="http://www.59jiaju.com/index.php?app=goods&id=3010"><img style="width:300px;height:210px;"src="http://www.59jiaju.com/data/files/store_69/goods_70/small_201304270334303172.jpg"></a><p>材料价：&yen;25.00</p></li>
+                                      <li><a href="http://www.59jiaju.com/index.php?app=goods&id=1001"><img style="width:300px;height:210px;"src="http://www.59jiaju.com/data/files/store_69/goods_157/small_201304200745574691.jpg"></a><p>材料价：&yen;30.00</p></li>
+                                      <li><a href="http://www.59jiaju.com/index.php?app=goods&id=992"><img style="width:300px;height:210px;"src="http://www.59jiaju.com/data/files/store_69/goods_192/small_201304200646323342.jpg"></a><p>材料价：&yen;35.00</p></li>
+                                    </ul>
+                                 </div> 
+                                 <div class="clear"></div>
+                          </div>                        
+                    </li>
+                    <li class="tabCot">
+                          <div class="new-cat1">
+                                 <div class="dl_left">
+									<a href="http://www.59jiaju.com/index.php?app=goods&id=7575"><img style="width:280px;height:548px;"src="http://www.59jiaju.com/data/files/store_69/goods_169/small_201304280102496965.jpg">
+									
+									</a>
+								 </div> 
+                                 <div class="dl_right">
+                                    <ul>
+                                      <li><a href="http://www.59jiaju.com/index.php?app=goods&id=10380"><img style="width:300px;height:210px;"src="http://www.59jiaju.com/data/files/store_608/goods_159/small_201505190849192423.jpg"></a><p>材料价：&yen; 4.65</p></li>
+                                      <li><a href="http://www.59jiaju.com/index.php?app=goods&id=9931"><img style="width:300px;height:210px;"src="http://www.59jiaju.com/data/files/store_608/goods_114/small_201412040248348990.jpg"></a><p>材料价：&yen;2.61</p></li>
+                                      <li><a href="http://www.59jiaju.com/index.php?app=goods&id=9930"><img style="width:300px;height:210px;"src="http://www.59jiaju.com/data/files/store_608/goods_190/small_201412040246305317.jpg"></a><p>材料价：&yen;4.82</p></li>
+                                      <li><a href="http://www.59jiaju.com/index.php?app=goods&id=9929"><img style="width:300px;height:210px;"src="http://www.59jiaju.com/data/files/store_608/goods_115/small_201412040241551128.jpg"></a><p>材料价：&yen;3.69</p></li>
+                                      <li><a href="http://www.59jiaju.com/index.php?app=goods&id=8984"><img style="width:300px;height:210px;"src="http://www.59jiaju.com/data/files/store_798/goods_46/small_201312250604069404.png"></a><p>材料价：&yen;0.00</p></li>
+                                      <li><a href="http://www.59jiaju.com/index.php?app=goods&id=8983"><img style="width:300px;height:210px;"src="http://www.59jiaju.com/data/files/store_798/goods_29/small_201312250553492356.png"></a><p>材料价：&yen;0.00</p></li>
+                                    </ul>
+                                 </div> 
+                                 <div class="clear"></div>
+                          </div>                        
+                        
+                    </li>
+                    <li class="tabCot">
+                          <div class="new-cat1">
+                                 <div class="dl_left">
+									<a href="http://www.59jiaju.com/index.php?app=goods&id=639"><img style="width:280px;height:548px;"src="http://www.59jiaju.com/data/files/store_69/goods_155/small_201304190312353482.jpg">
+									
+									</a>
+								 </div> 
+                                 <div class="dl_right">
+                                    <ul>
+                                      <li><a href="http://www.59jiaju.com/index.php?app=goods&id=9232"><img style="width:300px;height:210px;"src="http://www.59jiaju.com/data/files/store_823/goods_172/small_201401030246127801.jpg"></a><p>材料价：&yen; 22.00</p></li>
+                                      <li><a href="http://www.59jiaju.com/index.php?app=goods&id=9077"><img style="width:300px;height:210px;"src="http://www.59jiaju.com/data/files/store_823/goods_10/small_201312280910105988.jpg"></a><p>材料价：&yen;15.60</p></li>
+									  
+                                      <li><a href="http://www.59jiaju.com/index.php?app=goods&id=903"><img style="width:300px;height:210px;"src="http://www.59jiaju.com/data/files/store_69/goods_196/small_201304200209565346.jpg"></a><p>材料价：&yen;23.30</p></li>
+                                      <li><a href="http://www.59jiaju.com/index.php?app=goods&id=897"><img style="width:300px;height:210px;"src="http://www.59jiaju.com/data/files/store_69/goods_105/small_201304200201458317.jpg"></a><p>材料价：&yen;23.30</p></li>
+                                      <li><a href="http://www.59jiaju.com/index.php?app=goods&id=872"><img style="width:300px;height:210px;"src="http://www.59jiaju.com/data/files/store_69/goods_126/small_201304200125268742.jpg"></a><p>材料价：&yen;14.70</p></li>
+                                      <li><a href="http://www.59jiaju.com/index.php?app=goods&id=868"><img style="width:300px;height:210px;"src="http://www.59jiaju.com/data/files/store_69/goods_68/small_201304200117481816.jpg"></a><p>材料价：&yen;14.70</p></li>
+                                    </ul>
+                                 </div> 
+                                 <div class="clear"></div>
+                          </div>                        
+
+                    </li>
+                </ul>
+                <div style="clear:both"></div>
+            </div>
+            <div class="modBottom">
+                <span class="modABL">&nbsp;</span><span class="modABR">&nbsp;</span>
+            </div>
+</div>
+
+<div class="ad">
+  <ul>
+    <li><a href="javascript:;"><img src="/themes/mall/jiaju/styles/style/images/index_11.jpg"></a></li>
+    <li><a href="javascript:;"><img src="/themes/mall/jiaju/styles/style/images/index_11.jpg"></a></li>
+    <li><a href="javascript:;"><img src="/themes/mall/jiaju/styles/style/images/index_11.jpg"></a></li>
+    <li><a href="javascript:;"><img src="/themes/mall/jiaju/styles/style/images/index_11.jpg"></a></li>
+    <li><a href="javascript:;"><img src="/themes/mall/jiaju/styles/style/images/index_11.jpg"></a></li>
+    <li><a href="javascript:;"><img src="/themes/mall/jiaju/styles/style/images/index_11.jpg"></a></li>    
+    <div class="clear"></div>
+  </ul>
+</div>
+
+<div class="webwidget_scroller_tab2" id="webwidget_scroller_tab" style="margin:0 auto;">
+            <div class="tabContainer new-cat-top">
+             <h2>瓷砖地板<span>Smallpox condole top</span></h2>
+                <ul class="tabHead">
+                    <li class="currentBtn"><a href="javascript:;">墙纸</a></li>
+                    <li><a href="javascript:;">PVC地板</a></li>
+                    <a href="javascript:;">更多>></a>
+                </ul>
+            </div>
+            <div class="tabBody">
+                <ul>
+                    <li class="tabCot cat_ul1">
+                          <div class="new-cat_ul1">
+                                 <div class="cat_ul1_left">
+                                   <a href="http://www.59jiaju.com/index.php?app=goods&id=9954">
+								   <img style="width:280px;height:310px;"src="http://www.59jiaju.com/data/files/store_608/goods_102/small_201412230805026878.png"><p>安装价：<br>¥246.00</p>
+								   </a>
+                                   
+                                 </div>
+								 
+                                 <div class="cat_ul1_center">
+                                   <a href="http://www.59jiaju.com/index.php?app=goods&id=9947">
+								   <img style="width:700px;height:350px;"src="http://www.59jiaju.com/data/files/store_608/goods_154/small_201412190725546827.jpg">
+								   <h3><img src="/themes/mall/jiaju/styles/style/images/title.png"></h3>
+								   </a>
+                                 </div>
+								 
+                                 <div class="cat_ul1_right">
+                                   <a href="http://www.59jiaju.com/index.php?app=goods&id=9928"><img style="width:220px;height:175px;"src="http://www.59jiaju.com/data/files/store_608/goods_19/small_201412040236591513.jpg"><p>安装价：<br>¥71.50</p></a>
+                                   <a href="http://www.59jiaju.com/index.php?app=goods&id=9927"><img style="width:220px;height:175px;"src="http://www.59jiaju.com/data/files/store_608/goods_192/small_201412031003128074.jpg"><p>安装价：<br>¥165.00</p></a>
+                                 </div>
+                                 <div class="clear"></div>
+                          </div> 
+                          <div class="new-cat_ul12">
+                            <ul>
+                              <li><a href="http://www.59jiaju.com/index.php?app=goods&id=9925">
+							  <img style="width:390px;height:170px;"src="http://www.59jiaju.com/data/files/store_608/goods_122/small_201412030955224957.jpg"><p>安装价：<br>¥162.80</p>
+							  </a>
+							  </li>
+                              <li class="mr20"><a href="http://www.59jiaju.com/index.php?app=goods&id=9911" >
+							  <img  style="width:390px;height:170px;"src="http://www.59jiaju.com/data/files/store_608/goods_165/small_201409060906056099.jpg"><p>安装价：<br>¥213.60</p></a>
+							  </li>
+                              <li><a href="http://www.59jiaju.com/index.php?app=goods&id=9902">
+							  <img  style="width:390px;height:170px;"src="http://www.59jiaju.com/data/files/store_608/goods_84/small_201409060838049148.jpg"><p>安装价：<br>¥132.00</p></a></li>
+                            </ul>
+                          </div>                       
+                    </li>
+                    <li class="tabCot cat_ul1">
+                          <div class="new-cat_ul1">
+                                 <div class="cat_ul1_left">
+                                   <a href="http://www.59jiaju.com/index.php?app=goods&id=9957">
+								   <img style="width:280px;height:310px;"src="http://www.59jiaju.com/data/files/store_608/goods_181/small_201412230816211007.png"><p>安装价：<br>¥112.00</p></a>
+                                   
+                                 </div>
+                                 <div class="cat_ul1_center">
+                                   <a href="http://www.59jiaju.com/index.php?app=goods&id=9560">
+								   <img  style="width:700px;height:350px;"src="http://www.59jiaju.com/data/files/store_874/goods_183/small_201401150236239618.jpg"><h3>
+								   <img src="/themes/mall/jiaju/styles/style/images/title.png"></h3></a>
+                                 </div>
+                                 <div class="cat_ul1_right">
+                                   <a href="http://www.59jiaju.com/index.php?app=goods&id=9283">
+								   <img style="width:220px;height:175px;"src="http://www.59jiaju.com/data/files/store_847/goods_143/small_201401040225434133.png"><p>安装价：<br>¥45.00</p></a>
+                                   <a href="http://www.59jiaju.com/index.php?app=goods&id=9282">
+								   <img style="width:220px;height:175px;"src="http://www.59jiaju.com/data/files/store_847/goods_131/small_201401040215316559.png"><p>安装价：<br>¥72.00</p></a>
+                                 </div>
+                                 <div class="clear"></div>
+                          </div> 
+                          <div class="new-cat_ul12">
+                            <ul>
+                              <li><a href="http://www.59jiaju.com/index.php?app=goods&id=9281">
+							  <img style="width:390px;height:170px;"src="http://www.59jiaju.com/data/files/store_847/goods_58/small_201401040157383230.png"><p>安装价：<br>¥145.00</p></a></li>
+                              <li class="mr20"><a href="http://www.59jiaju.com/index.php?app=goods&id=9280" >
+							  <img style="width:390px;height:170px;"src="http://www.59jiaju.com/data/files/store_847/goods_17/small_201401040150174747.png"><p>安装价：<br>¥38.00</p></a></li>
+                              <li><a href="http://www.59jiaju.com/index.php?app=goods&id=9279">
+							  <img style="width:390px;height:170px;"src="http://www.59jiaju.com/data/files/store_847/goods_131/small_201401040142119199.png"><p>安装价：<br>¥29.92</p></a></li>
+                            </ul>
+                          </div>                       
+                    </li>
+                    
+                </ul>
+                <div style="clear:both"></div>
+            </div>
+            <div class="modBottom">
+                <span class="modABL">&nbsp;</span><span class="modABR">&nbsp;</span>
+            </div>
+</div>
+<!-- new-cat end  -->
+<div class="webwidget_scroller_tab3" id="webwidget_scroller_tab" style="margin:0 auto;">
+            <div class="tabContainer new-cat-top">
+             <h2>门窗卫浴五金<span>Smallpox condole top</span></h2>
+                <ul class="tabHead">
+                    <li class="currentBtn"><a href="javascript:;">卫浴洁具</a></li>
+                    <li><a href="javascript:;">五金配件</a></li>
+                    <a href="javascript:;">更多>></a>
+                </ul>
+            </div>
+            <div class="tabBody">
+                <ul>
+                    <li class="tabCot cat_ul1">
+                          <div class="new-cat_ul1">
+                                 <div class="cat_ul1_left">
+                                   <a href="http://www.59jiaju.com/index.php?app=goods&id=10145">
+										<img style="width:280px;height:310px;"src="http://www.59jiaju.com/data/files/store_608/goods_42/small_201502040940423416.JPG"><p>安装价：<br>¥15.00</p>
+								   </a>
+                                   
+                                 </div>
+								 
+                                 <div class="cat_ul1_center">
+                                   <a href="http://www.59jiaju.com/index.php?app=goods&id=9938">
+								   <img style="width:700px;height:350px;"src="http://www.59jiaju.com/data/files/store_608/goods_171/small_201412080239317782.jpg">
+								   <h3><img src="/themes/mall/jiaju/styles/style/images/title.png"></h3>
+								   </a>
+                                 </div>
+								 
+                                 <div class="cat_ul1_right">
+                                   <a href="http://www.59jiaju.com/index.php?app=goods&id=8876"><img style="width:220px;height:175px;"src="http://www.59jiaju.com/data/files/store_749/goods_118/small_201312070758382470.jpg"><p>安装价：<br>¥0.20</p></a>
+                                   <a href="http://www.59jiaju.com/index.php?app=goods&id=10168"><img style="width:220px;height:175px;"src="http://www.59jiaju.com/data/files/store_608/goods_29/small_201504070923496056.jpg"><p>安装价：<br>¥41.30</p></a>
+                                 </div>
+                                 <div class="clear"></div>
+                          </div> 
+                          <div class="new-cat_ul12">
+                            <ul>
+                              <li><a href="http://www.59jiaju.com/index.php?app=goods&id=10166">
+							  <img style="width:390px;height:170px;"src="http://www.59jiaju.com/data/files/store_608/goods_185/small_201504070916253827.jpg"><p>安装价：<br>¥26.30</p>
+							  </a>
+							  </li>
+                              <li class="mr20"><a href="http://www.59jiaju.com/index.php?app=goods&id=10165" >
+							  <img  style="width:390px;height:170px;"src="http://www.59jiaju.com/data/files/store_608/goods_133/small_201504070902134127.jpg"><p>安装价：<br>¥26.30</p></a>
+							  </li>
+                              <li><a href="http://www.59jiaju.com/index.php?app=goods&id=10164">
+							  <img  style="width:390px;height:170px;"src="http://www.59jiaju.com/data/files/store_608/goods_47/small_201504070854071727.jpg"><p>安装价：<br>¥26.30</p></a></li>
+                            </ul>
+                          </div>                       
+                    </li>
+					
+					
+                    <li class="tabCot cat_ul1">
+                          <div class="new-cat_ul1">
+                                 <div class="cat_ul1_left">
+                                   <a href="http://www.59jiaju.com/index.php?app=goods&id=10163">
+								   <img style="width:280px;height:310px;"src="http://www.59jiaju.com/data/files/store_608/goods_64/small_201504070851047455.jpg"><p>安装价：<br>¥156.30</p></a>
+                                   
+                                 </div>
+                                 <div class="cat_ul1_center">
+                                   <a href="http://www.59jiaju.com/index.php?app=goods&id=10162">
+								   <img  style="width:700px;height:350px;"src="http://www.59jiaju.com/data/files/store_608/goods_107/small_201504070848271020.jpg"><h3>
+								   <img src="/themes/mall/jiaju/styles/style/images/title.png"></h3></a>
+                                 </div>
+                                 <div class="cat_ul1_right">
+                                   <a href="http://www.59jiaju.com/index.php?app=goods&id=10161">
+								   <img style="width:220px;height:175px;"src="http://www.59jiaju.com/data/files/store_608/goods_67/small_201504070837475865.jpg"><p>安装价：<br>¥106.30</p></a>
+                                   <a href="http://www.59jiaju.com/index.php?app=goods&id=10159">
+								   <img style="width:220px;height:175px;"src="http://www.59jiaju.com/data/files/store_608/goods_29/small_201504070820299946.jpg"><p>安装价：<br>¥143.80</p></a>
+                                 </div>
+                                 <div class="clear"></div>
+                          </div> 
+                          <div class="new-cat_ul12">
+                            <ul>
+                              <li><a href="http://www.59jiaju.com/index.php?app=goods&id=10156">
+							  <img style="width:390px;height:170px;"src="http://www.59jiaju.com/data/files/store_608/goods_143/small_201504070759032943.jpg"><p>安装价：<br>¥72.50</p></a></li>
+                              <li class="mr20"><a href="http://www.59jiaju.com/index.php?app=goods&id=10155" >
+							  <img style="width:390px;height:170px;"src="http://www.59jiaju.com/data/files/store_608/goods_182/small_201504070743023837.jpg"><p>安装价：<br>¥68.80</p></a></li>
+                              <li><a href="http://www.59jiaju.com/index.php?app=goods&id=10154">
+							  <img style="width:390px;height:170px;"src="http://www.59jiaju.com/data/files/store_608/goods_164/small_201504070736044690.jpg"><p>安装价：<br>¥47.50</p></a></li>
+                            </ul>
+                          </div>                       
+                    </li>
+                    
+                </ul>
+                <div style="clear:both"></div>
+            </div>
+            <div class="modBottom">
+                <span class="modABL">&nbsp;</span><span class="modABR">&nbsp;</span>
+            </div>
+</div>
+<div class="ad">
+  <ul>
+    <li><a href="javascript:;"><img src="/themes/mall/jiaju/styles/style/images/index_11.jpg"></a></li>
+    <li><a href="javascript:;"><img src="/themes/mall/jiaju/styles/style/images/index_11.jpg"></a></li>
+    <li><a href="javascript:;"><img src="/themes/mall/jiaju/styles/style/images/index_11.jpg"></a></li>
+    <li><a href="javascript:;"><img src="/themes/mall/jiaju/styles/style/images/index_11.jpg"></a></li>
+    <li><a href="javascript:;"><img src="/themes/mall/jiaju/styles/style/images/index_11.jpg"></a></li>
+    <li><a href="javascript:;"><img src="/themes/mall/jiaju/styles/style/images/index_11.jpg"></a></li>    
+    <div class="clear"></div>
+  </ul>
+</div>
+
+<!-- new-cat end  -->
+<div class="webwidget_scroller_tab4" id="webwidget_scroller_tab" style="margin:0 auto;">
+            <div class="tabContainer new-cat-top">
+             <h2>灯饰插座<span>Smallpox condole top</span></h2>
+                <ul class="tabHead">
+                    <li class="currentBtn"><a href="javascript:;">筒灯</a></li>
+                    <a href="javascript:;">更多>></a>
+                </ul>
+            </div>
+            <div class="tabBody">
+                <ul>
+				
+                    <li class="tabCot cat_ul1">
+                          <div class="new-cat_ul1">
+                                 <div class="cat_ul1_left">
+                                   <a href="http://www.59jiaju.com/index.php?app=goods&id=9967">
+								   <img style="width:280px;height:310px;"src="http://www.59jiaju.com/data/files/store_608/goods_98/small_201412240324582162.png"><p>安装价：<br>¥39.00</p></a>
+                                   
+                                 </div>
+                                 <div class="cat_ul1_center">
+                                   <a href="http://www.59jiaju.com/index.php?app=goods&id=9892">
+								   <img  style="width:700px;height:350px;"src="http://www.59jiaju.com/data/files/store_608/goods_174/small_201409060642542036.jpg"><h3>
+								   <img src="/themes/mall/jiaju/styles/style/images/title.png"></h3></a>
+                                 </div>
+                                 <div class="cat_ul1_right">
+                                   <a href="http://www.59jiaju.com/index.php?app=goods&id=9893">
+								   <img style="width:220px;height:175px;"src="http://www.59jiaju.com/data/files/store_608/goods_48/small_201409060647282408.jpg"><p>安装价：<br>¥81.60</p></a>
+                                   <a href="http://www.59jiaju.com/index.php?app=goods&id=9890">
+								   <img style="width:220px;height:175px;"src="http://www.59jiaju.com/data/files/store_608/goods_151/small_201409060639119944.jpg"><p>安装价：<br>¥69.60</p></a>
+                                 </div>
+                                 <div class="clear"></div>
+                          </div> 
+                          <div class="new-cat_ul12">
+                            <ul>
+                              <li><a href="http://www.59jiaju.com/index.php?app=goods&id=9886">
+							  <img style="width:390px;height:170px;"src="http://www.59jiaju.com/data/files/store_608/goods_157/small_201409060629174974.jpg"><p>安装价：<br>¥82.50</p></a></li>
+                              <li class="mr20"><a href="http://www.59jiaju.com/index.php?app=goods&id=9884" >
+							  <img style="width:390px;height:170px;"src="http://www.59jiaju.com/data/files/store_608/goods_168/small_201409060626082762.jpg"><p>安装价：<br>¥114.00</p></a></li>
+                              <li><a href="http://www.59jiaju.com/index.php?app=goods&id=9578">
+							  <img style="width:390px;height:170px;"src="http://www.59jiaju.com/data/files/store_825/goods_78/small_201401200701183901.png"><p>安装价：<br>¥10.64</p></a></li>
+                            </ul>
+                          </div>                       
+                    </li>
+                    
+                </ul>
+                <div style="clear:both"></div>
+            </div>
+            <div class="modBottom">
+                <span class="modABL">&nbsp;</span><span class="modABR">&nbsp;</span>
+            </div>
+</div>
+<div class="webwidget_scroller_tab5" id="webwidget_scroller_tab" style="margin:0 auto;">
+            <div class="tabContainer new-cat-top">
+             <h2>办公家具<span>Smallpox condole top</span></h2>
+                <ul class="tabHead">
+                    <li class="currentBtn"><a href="javascript:;">班台�?/a></li>
+                    <a href="javascript:;">更多>></a>
+                </ul>
+            </div>
+            <div class="tabBody">
+                <ul>
+                    <li class="tabCot cat_ul1">
+                          <div class="new-cat_ul1">
+                                 <div class="cat_ul1_left">
+                                   <a href="http://www.59jiaju.com/index.php?app=goods&id=9780">
+								   <img style="width:280px;height:310px;"src="http://www.59jiaju.com/data/files/store_608/goods_84/small_201405190141241955.jpg"><p>安装价：<br>¥1880.00</p></a>
+                                   
+                                 </div>
+								 
+                                 <div class="cat_ul1_center">
+                                   <a href="http://www.59jiaju.com/index.php?app=goods&id=9766">
+								   <img  style="width:700px;height:350px;"src="http://www.59jiaju.com/data/files/store_608/goods_188/small_201405120916286535.jpg"><h3>
+								   <img src="/themes/mall/jiaju/styles/style/images/title.png"></h3></a>
+                                 </div>
+								 
+                                 <div class="cat_ul1_right">
+                                   <a href="http://www.59jiaju.com/index.php?app=goods&id=9765">
+								   <img style="width:220px;height:175px;"src="http://www.59jiaju.com/data/files/store_608/goods_11/small_201405120956518987.jpg"><p>安装价：<br>¥6800.00</p></a>
+                                   <a href="http://www.59jiaju.com/index.php?app=goods&id=9762">
+								   <img style="width:220px;height:175px;"src="http://www.59jiaju.com/data/files/store_608/goods_189/small_201405120656292952.jpg"><p>安装价：<br>¥1250.00</p></a>
+                                 </div>
+                                 <div class="clear"></div>
+                          </div> 
+                          <div class="new-cat_ul12">
+                            <ul>
+                              <li><a href="http://www.59jiaju.com/index.php?app=goods&id=8885">
+							  <img style="width:390px;height:170px;"src="http://www.59jiaju.com/data/files/store_755/goods_194/small_201312070849549588.jpg"><p>安装价：<br>¥2000.00</p></a></li>
+                              <li class="mr20"><a href="http://www.59jiaju.com/index.php?app=goods&id=8884" >
+							  <img style="width:390px;height:170px;"src="http://www.59jiaju.com/data/files/store_755/goods_51/small_201312070847315856.jpg"><p>安装价：<br>¥1350.00</p></a></li>
+                              <li><a href="http://www.59jiaju.com/index.php?app=goods&id=8883">
+							  <img style="width:390px;height:170px;"src="http://www.59jiaju.com/data/files/store_755/goods_140/small_201312070842209509.jpg"><p>安装价：<br>¥1500.00</p></a></li>
+                            </ul>
+                          </div>                       
+                    </li>
+                </ul>
+                <div style="clear:both"></div>
+            </div>
+            <div class="modBottom">
+                <span class="modABL">&nbsp;</span><span class="modABR">&nbsp;</span>
+            </div>
+</div>
+
+
+<div id="footer" class="center auto mt10 w-full">
+
+   <div class="foot-service w auto clearfix">
+
+      <dl>
+
+         <dt class="fts-1"></dt>
+
+         <dd><a href="http://www.59jiaju.com/index.php?
+
+app=article&amp;act=view&amp;article_id=28">七天无理由退�?/a></dd>
+
+         <dd><a href="http://www.59jiaju.com/index.php?
+
+app=article&amp;act=view&amp;article_id=13">体贴的售后服�?/a></dd>
+      </dl>
+
+<dl>
+
+         <dt class="fts-2"></dt>
+
+         <dd><a href="http://www.59jiaju.com/index.php?
+
+app=article&amp;act=view&amp;article_id=15">购物流程</a></dd>
+
+      <dd><a href="http://www.59jiaju.com/index.php?
+
+app=article&amp;act=view&amp;article_id=12">商品退货保�?/a></dd>
+     </dl>
+
+   <dl>
+
+         <dt class="fts-3"></dt>
+
+         <dd>客服专线�?00-1012-668</dd>
+
+         <dd>厂家入驻�?20-86295019</dd>
+
+     </dl>
+
+
+      <dl>
+
+         <dt class="fts-4"></dt>
+
+         <dd><a href="http://www.59jiaju.com/index.php?
+
+app=article&amp;act=view&amp;article_id=11">顾客必读</a></dd>
+
+         <dd><a href="http://www.59jiaju.com/index.php?
+
+app=article&amp;act=view&amp;article_id=14">免责条款</a>
+        
+         </dd>
+      </dl>
+
+  </div>
+
+<div class="foot-nav w-full auto">
+  <p><a href="http://www.59jiaju.com/index.php?app=article&amp;act=view&amp;article_id=28" target="_blank">关于本站</a>
+	    
+	      
+	    
+	   
+	    
+	   
+	   
+</p></div>
+<div class="foot-group">
+
+	<a href="#" target="_blank">亚马逊商�?/a> | <a href="www.jd.com" target="_blank">京东商城</a> | <a href="www.yihaodian.com" target="_blank">一号店</a> |
+
+	<a href="http://www.hao123.com/" target="_blank">�?23导航</a> |
+
+	<a href="http://www.jyboo.com/" target="_blank">经艺装饰</a> |
+
+	<a href="http://www.taobao.com/" target="_blank">淘宝商城</a> |
+
+	<a href="http://www.tmall.com/" target="_blank">天猫商城</a> |
+
+    <a href="http://china.alibaba.com/" target="_blank">阿里巴巴</a> |
+
+	<a href="http://www.59jiaju.com/xiduo/" target="_blank">喜多装饰</a> |
+    
+    <a href="http://www.59jiaju.com/gs/index.php?
+
+m=content&amp;c=index&amp;a=show&amp;catid=13&amp;id=9" target="_blank">超凡装饰</a> |
+
+	<a href="http://www.dangdang.com/" target="_blank">当当�?/a>   
+</div>
+
+  <div class="copyright"><a href="http://netadreg.gzaic.gov.cn/ntmm/WebSear/WebLogoPub.aspx?
+
+logo=440115115022013051700026"><img alt="" src="http://netadreg.gzaic.gov.cn/ntmm/default/images/logo_down.jpg" style="width:19px;height: 20px"></a> &nbsp;Copyright © 2010-2014 我购家居商城 �?
+
+权所�?<a href="http://www.miitbeian.gov.cn">粤ICP�?9031901�?1</a> 广州市我购家居用�?
+
+有限公司</div>
+
+</div>
+
+
+
+
+<script type="text/javascript" src="/themes/mall/jiaju/styles/style/js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="/themes/mall/jiaju/styles/style/js/superslide.2.1.js"></script>
+<script type="text/javascript">
+  jQuery(".fullSlide").hover(function() {
+      jQuery(this).find(".prev,.next").stop(true, true).fadeTo("show", 0.5)
+  },
+  function() {
+      jQuery(this).find(".prev,.next").fadeOut()
+  });
+  jQuery(".fullSlide").slide({
+      titCell: ".hd ul",
+      mainCell: ".bd ul",
+      effect: "fold",
+      autoPlay: true,
+      autoPage: true,
+      trigger: "click",
+      startFun: function(i) {
+          var curLi = jQuery(".fullSlide .bd li").eq(i);
+          if ( !! curLi.attr("_src")) {
+              curLi.css("background-image", curLi.attr("_src")).removeAttr("_src")
+          }
+      }
+  });
+</script>
+
+<script type='text/javascript' src='/themes/mall/jiaju/styles/style/js/lanrenzhijia.js'></script>
+        <script language="javascript" type="text/javascript">
+
+            $(function() {
+                $(".webwidget_scroller_tab").webwidget_scroller_tab({
+                    scroller_time_interval: '500000000000',
+                    scroller_window_padding: '10',
+                    scroller_window_width: '1212',
+                    scroller_window_height: '520',
+                    scroller_head_text_color: '#0099FF',
+                    scroller_head_current_text_color: '#fff',
+                    directory: 'images'
+                });
+                $(".webwidget_scroller_tab1").webwidget_scroller_tab({
+                    scroller_time_interval: '500000000000',
+                    scroller_window_padding: '10',
+                    scroller_window_width: '1212',
+                    scroller_window_height: '520',
+                    scroller_head_text_color: '#0099FF',
+                    scroller_head_current_text_color: '#fff',
+                    directory: 'images'
+                });
+                $(".webwidget_scroller_tab2").webwidget_scroller_tab({
+                    scroller_time_interval: '500000000000',
+                    scroller_window_padding: '10',
+                    scroller_window_width: '1212',
+                    scroller_window_height: '600',
+                    scroller_head_text_color: '#0099FF',
+                    scroller_head_current_text_color: '#fff',
+                    directory: 'images'
+                });
+                $(".webwidget_scroller_tab3").webwidget_scroller_tab({
+                    scroller_time_interval: '500000000000',
+                    scroller_window_padding: '10',
+                    scroller_window_width: '1212',
+                    scroller_window_height: '600',
+                    scroller_head_text_color: '#0099FF',
+                    scroller_head_current_text_color: '#fff',
+                    directory: 'images'
+                });
+                $(".webwidget_scroller_tab4").webwidget_scroller_tab({
+                    scroller_time_interval: '500000000000',
+                    scroller_window_padding: '10',
+                    scroller_window_width: '1212',
+                    scroller_window_height: '520',
+                    scroller_head_text_color: '#0099FF',
+                    scroller_head_current_text_color: '#fff',
+                    directory: 'images'
+                });
+                $(".webwidget_scroller_tab5").webwidget_scroller_tab({
+                    scroller_time_interval: '500000000000',
+                    scroller_window_padding: '10',
+                    scroller_window_width: '1212',
+                    scroller_window_height: '520',
+                    scroller_head_text_color: '#0099FF',
+                    scroller_head_current_text_color: '#fff',
+                    directory: 'images'
+                });
+            });
+        </script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+{include file=header.html}
+<div class="all-category scategory w auto">
+    <div class="mt10">
+       <div class="title box">
+          <a href="{url app=category}"><span>{$lang.gcategory}</span></a>
+          <a class="active" href="javascript:;"><span>{$lang.scategory}</span></a>
+       </div>
+       <!--{foreach from=$scategorys item=scategory}-->
+       <dl class="mb10">
+          <dt class="fs14 strong"><a href="{url app=search&act=store&cate_id=$scategory.id}">{$scategory.value|escape}</a></dt>
+          <dd>
+             <!--{foreach from=$scategory.children item=child}-->
+             <a href="{url app=search&act=store&cate_id=$child.id}">{$child.value|escape}</a>
+             <!--{/foreach}-->
+          </dd>
+       </dl>
+       <!--{/foreach}-->
+    </div>
+</div>
+{include file=footer.html}

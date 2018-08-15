@@ -1,0 +1,336 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Access-Control-Allow-Origin" content="*">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=8"/>
+<title>用户中心-工人定额</title>
+<meta name="description" content="微工程，微工程APP，装修、材料、家具、饰品一站式服务，让装修更简单，价格更透明！！" />
+<meta name="keywords" content="微工程，微工程，家居商城，微工程家居商城，微工程家居装修商城，办公室装修，写字楼装修，材料，装修材料，家居，办公家具，家居，家具，装修，装饰" />
+<link rel="stylesheet" type="text/css" href="themes/mall/jiaju/css/api.css"/>
+
+<link type="text/css" href="themes/mall/jiaju/styles/default/css/main.css" rel="stylesheet"  />
+<link type="text/css" href="themes/mall/jiaju/styles/css/global.css" rel="stylesheet"  />
+<link type="text/css" href="themes/mall/jiaju/styles/css/worker_quota_price.css" rel="stylesheet"  />
+<link type="text/css" href="http://www.wgc2013.com/themes/mall/jiaju/styles/default/css/catalog.css" rel="stylesheet"  />
+<link type="text/css" href="http://www.wgc2013.com/themes/mall/jiaju/styles/default/css/footer.css" rel="stylesheet" />
+<link type="text/css" href="themes/mall/jiaju/styles/css/style.css" rel="stylesheet"  />
+<script type="text/javascript" src="index.php?act=jslang"></script>
+<script type="text/javascript" src="http://www.wgc2013.com/includes/libraries/javascript/ecmall.js" charset="utf-8"></script>
+<script type="text/javascript" src="http://www.wgc2013.com/includes/libraries/javascript/cart.js" charset="utf-8"></script>
+<script type="text/javascript" src="http://www.wgc2013.com/includes/libraries/javascript/jquery.js" charset="utf-8"></script>
+<script type="text/javascript" src="http://www.wgc2013.com/themes/mall/jiaju/styles/default/js/main.js" charset="utf-8"></script>
+<!--[if IE]>
+		<style>
+		.confirm_{background-color:#f7f7f7;}
+		</style>
+	<![endif]-->
+<!--[if lte IE 6]>
+<script type="text/javascript" language="Javascript" src="http://www.wgc2013.com/themes/mall/jiaju/styles/default/js/hoverForIE6.js"></script>
+<![endif]-->
+<!--[if IE 8]>
+<link type="text/css" href="themes/mall/jiaju/css/ie8.css" rel="stylesheet"  />
+<![endif]-->
+<script type="text/javascript">
+var SITE_URL = "http://www.wgc2013.com";
+var PRICE_FORMAT = '&yen;%s';
+</script>
+<script charset="utf-8" type="text/javascript" src="http://www.wgc2013.com/includes/libraries/javascript/jquery.plugins/jquery.validate.js" ></script>
+<style type="text/css">
+	.mainnav{width:990px; overflow:hidden; margin:0 auto}
+</style>
+<script type="text/javascript" src="http://www.wgc2013.com/themes/mall/jiaju/styles/default/js/hover.js"></script>
+</head>
+<body style="background:#fff;">
+
+{include file=header.html}
+<!-- 中部主要内容 -->
+ <div class="container" style="overflow: hidden;width: 1200px;margin: 10px auto;position: relative;">
+ <!-- 左上的导航栏 -->
+ 	{include file=usercenter.html}
+<!-- 	<include file="usercenter.html"/> -->
+
+ 	<!-- 右边的内容 -->
+ 	<div class="container_right" style="width: 78.5%;border: 1px solid #cacaca;float: right;background-color: #f7f7f7;padding: 0 10px 10px 10px;">
+
+		<!-- 公司信息 -->
+		<div class="budget base_ui_public" style="position: relative;">
+ 			<div class="head_mun" style="margin-top:10px;height: 30px;">
+				<b class="mun_btn custom" style="height: 30px;line-height: 30px;">自定工价</b>
+				<b class="mun_btn list current" style="height: 30px;line-height: 30px;">工价列表</b>
+			</div>
+ 			<div class="company_info base_info_public" style="min-height: 400px;border: 1px solid #cfcfcf;margin-top: 1px;">
+ 			<!-- 预算报价 -->
+ 			<div class="company_detail" style="position: relative;">
+			<div style="margin-top: 2px;">
+			<!-- 基本信息 -->
+			<div class="section" style="border: none;">
+			<div class="sect current wages_custom">
+				<ul style="padding: 20px 0;text-align: center;letter-spacing: 2px;">
+					<li>
+						<span>项目名称</span><span class="colon">:</span><input id="name" type="text">
+					</li>
+					<li>
+						<span>施工工艺</span><span class="colon">:</span><input id="shigonggongyi" type="text">
+					</li>
+					<li>
+						<span>计价单位</span><span class="colon">:</span><input id="danwei" type="text">
+					</li>
+					<li>
+						<span style="letter-spacing: 0;">数量/范围</span><span class="colon">:</span><input id="shuliang" type="text">
+					</li>
+					<li>
+						<span>纯人工费</span><span class="colon">:</span><input id="rengongfei" type="text">
+					</li>
+					<li>
+						<span>发布价格</span><span class="colon">:</span><input id="fabujiage" type="text">
+					</li>
+					<li>
+						<span>联系方式</span><span class="colon">:</span><input id="lianxifangshi" type="text">
+					</li>
+					<li>
+						<span>工作地点</span><span class="colon">:</span><input id="gongzuodidian" type="text">
+					</li>
+					<li>
+						<span style="white-space: pre-wrap;">备     注</span><span class="colon">:</span><input id="content" type="text">
+					</li>
+				</ul>
+				<div class="btn_list">
+					<div class="btn confirm_btn" onclick="add_data()">确认发布</div>
+					<div class="btn share_btn">分享发布</div>
+				</div>
+
+				<!-- 分享确认 -->
+				<div class="confirm" style="display: none">
+					<form class="confirm_" action="post" method="">
+						<div class="share_text">
+							<span>分享内容</span><span class="colon">:</span>
+							<textarea name="" id="power" cols="30" rows="10" placeholder="内容获取"></textarea>
+						</div>
+						<div class="share_sendee">
+							<span style="letter-spacing: 5px;">接收人</span><span class="colon">:</span>
+							<input type="text" placeholder="选择接收人">
+						</div>
+						<input class="share_btn" type="button" value="分享确认">
+					</form>
+				</div>
+				<!-- 分享确认 end -->
+			</div>
+			<!-- 自定工价 end -->
+			<!-- 工价列表 -->
+			<div class="sect wages_list" style="display: none;">
+				<input type="text" class="search_input" />
+				<input type="button" value="搜索" class="search_btn" />
+				<input type="button" value="分享" class="share_btn" />
+					<!-- 分享弹窗 -->
+					<div class="confirm" style="display: none;height: 400px;">
+						<form class="confirm_" action="post" method="">
+							<div class="share_text">
+								<span>分享内容</span><span class="colon">:</span>
+								<textarea name="" id="" cols="30" rows="10" placeholder="内容获取"></textarea>
+							</div>
+							<div class="share_sendee">
+								<span style="letter-spacing: 5px;">接收人</span><span class="colon">:</span>
+								<input type="text" placeholder="选择接收人">
+							</div>
+							<input class="share_btn" type="button" value="分享确认">
+						</form>
+					</div>
+					<!-- 分享弹窗 end -->
+
+				<ul class="list_ul">
+				</ul>
+				
+				<ul class="page" style="float: none;">
+					<li class="page_btn">首页</li>
+					<li class="page_btn">上一页</li>
+					<li class="page_num current">1</li>
+					<li class="page_num">2</li>
+					<li class="page_num">3</li>
+					<li class="page_num">4</li>
+					<li class="page_num">5</li>
+					<li class="page_num">6</li>
+					<li class="page_num">7</li>
+					<li class="page_num">···</li>
+					<li class="page_btn">下一页</li>
+					<li class="page_btn">尾页</li>
+				</ul>
+			</div>
+			<!-- 工价列表 end -->
+			</div>
+
+
+			</div>
+			</div>
+	
+ 			</div>
+ 			
+			
+		</div>
+		
+		
+ 		</div>
+
+ 		
+ 	</div>
+
+{include file=footer.html}
+<script type="text/javascript">
+	// 页面切换
+	$('.list').click(function() {
+		$('.wages_custom').css({
+			display: 'none'
+		});
+		$('.wages_list').css({
+			display: 'block'
+		});
+		$('.list').removeClass('current');
+		$('.custom').addClass('current');
+	});
+
+	$('.custom').click(function() {
+		$('.wages_list').css({
+			display: 'none'
+		});
+		$('.wages_custom').css({
+			display: 'block'
+		});
+		$('.custom').removeClass('current');
+		$('.list').addClass('current');
+	});
+	// 页面切换 end
+
+	// 弹窗控制
+    $('.share_btn').click(function() {
+		$('.confirm').css({
+			display: 'block'
+		});
+	});
+	$('.confirm').click(function() {
+		$('.confirm').css({
+			display: 'none'
+		});
+	});
+	$('.confirm_').click(function() {
+		return false;
+	});
+	// 弹窗控制 end
+
+	// 数据提交
+	function add_data(){
+		// 获取输入内容
+		var name = $('#name').val();//项目名称
+		var shigonggongyi = $('#shigonggongyi').val();//施工工艺
+		var danwei = $('#danwei').val();//计价单位
+		var shuliang = $('#shuliang').val();//数量/范围
+		var rengongfei = $('#rengongfei').val();//纯人工费
+		var fabujiage = $('#fabujiage').val();//发布价格
+		var lianxifangshi = $('#lianxifangshi').val();//联系方式
+		var gongzuodidian = $('#gongzuodidian').val();//工作地点
+		var content = $('#content').val();//备注
+
+		//判定输入内容
+		if(name == ''){
+			alert('请输入项目名称');
+			return false;
+		}else if(danwei == ''){
+			alert('请输入计价单位');
+			return false;
+		}else if(shuliang == ''){
+			alert('请输入数量/范围');
+			return false;
+		}else if(rengongfei == ''){
+			alert('请输入纯人工费');
+			return false;
+		}else if(fabujiage == ''){
+			alert('请输入发布价格');
+			return false;
+		}else if(lianxifangshi == ''){
+			alert('请输入联系方式');
+			return false;
+		}else if(gongzuodidian == ''){
+			alert('请输入工作地点');
+			return false;
+		}else if(shigonggongyi == ''){
+			alert('请输入施工工艺');
+			return false;
+		}else if(content == ''){
+			alert('请输入备注');
+			return false;
+		}
+
+		$.post('http://wgcapp.wgc2013.com/jingyi.php/Home/Dinge/rengong_add', {
+					userid         : '<?php echo $_SESSION["user_info"]["user_id"];?>',//用户id
+			        name           : name,           //项目名称
+			        danwei         : danwei,         //计价单位
+			        shuliang       : shuliang,       //数量/范围
+			        rengongfei     : rengongfei,     //纯人工费
+			        fabujiage      : fabujiage,      //发布价格
+			        lianxifangshi  : lianxifangshi,  //联系方式
+			        gongzuodidian  : gongzuodidian,  //工作地点
+				    shigonggongyi  : shigonggongyi,  //施工工艺
+				    content        : content         //备　　注
+		    }, function(ret) {
+				alert('发布成功！');
+		},'json');
+
+	}
+
+	$(document).ready(function() {
+		quto_list(page);
+	});
+
+	// 分页设置
+	$('.page_num').click(function(event) {
+		$('.page_num').removeClass('current');
+		$(this).toggleClass('current');
+	});
+
+	var page = 0;
+	var numb = 0;
+    var countN = 0;
+	//工价列表
+	function quto_list(page){
+		 if(numb > countN){
+			numb = countN;
+			page = numb;
+			return;
+        }
+
+		$.post('http://wgcapp.wgc2013.com/jingyi.php/Home/Dinge/rengong_list', {
+				values:{
+			    	user_id  : '<?php echo $_SESSION["user_info"]["user_id"];?>',
+			    	page     : page,
+				}
+			}, function(ret) {
+				var html = '';
+				countN = ret.page;
+				if(ret.status == 200){
+					var data = ret.retData;
+
+					for(var i in data){
+						var defaults = (data[i].defaults<1)?'':'checked="checked"';
+
+						html += '<li>';
+							html += '<span class="list_name" style="width:200px;display:inline-block;">'+data[i].name+'</span>';
+							html += '<span>'+data[i].shuliang+'/'+data[i].danwei+'</span>';
+							html += '<input type="checkbox" class="checkbox" '+defaults+' />';
+						html += '</li>';
+					}
+
+					$('.list_ul').append(html);
+				}else if(ret.status == 202){
+					if(page == 1){
+						$('.list_ul').html(Empty);
+					}else{
+						alert('暂无更多了');
+					}
+				}else {
+					alert('失败，请检查网络连接');
+					return false;
+				}
+		},'json');
+	}
+</script>
+</body>
+</html>

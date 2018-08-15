@@ -1,0 +1,15 @@
+#footer{ background:url(../images/bj1.gif) repeat-x left -44px;}
+#footer a {color: #3566CF; text-decoration:none;}
+#footer a:hover{color:#FF6600; text-decoration:underline;}
+#footer .foot-service dl{float:left;width:217px;padding-left:30px;padding-bottom:20px;margin-top:30px; text-align:left;color:#666;}
+#footer .foot-service dt{background:url(../images/foot-service.gif) no-repeat;width:198px; height:27px; overflow:hidden}
+#footer .foot-service dt.fts-2{ background-position:0 -28px;}
+#footer .foot-service dt.fts-3{ background-position:0 -55px;}
+#footer .foot-service dt.fts-4{ background-position:0 -84px;}
+#footer .foot-service dd{padding-left:30px; line-height:30px;}
+#footer .foot-service dd a{color:#666;}
+#footer .foot-service dd a:hover{color:#ff6600; text-decoration:none}
+#footer .foot-nav {border-top:1px #ddd solid; height: 20px;padding-top:15px;}
+#footer .foot-nav a { margin: 0 7px;}
+#footer .foot-group{margin: 5px auto 10px auto;}
+#footer .copyright {margin: 5px auto 10px auto; font-family:Arial;}

@@ -1,0 +1,90 @@
+{include file=header.html}
+<script type="text/javascript">
+$(function(){
+    $('#login_form').validate({
+        errorPlacement: function(error, element){
+            $(element).parent('td').append(error); 
+        },
+        success       : function(label){
+            label.addClass('validate_right').text('OK!');
+        },
+        onkeyup : false,
+        rules : {
+            user_name : {
+                required : true
+            },
+            password : {
+                required : true
+            },
+            captcha : {
+                required : true,
+                remote   : {
+                    url : 'index.php?app=captcha&act=check_captcha',
+                    type: 'get',
+                    data:{
+                        captcha : function(){
+                            return $('#captcha1').val();
+                        }
+                    }
+                }
+            }
+        },
+        messages : {
+            user_name : {
+                required : '{$lang.user_name_required}'
+            },
+            password  : {
+                required : '{$lang.password_required}'
+            },
+            captcha : {
+                required : '{$lang.captcha_required}',
+                remote   : '{$lang.captcha_error}'
+            }
+        }
+    });
+});
+</script>
+
+</head>
+
+<body>
+<div id="login" class="w auto clearfix">
+   
+   <div class="left"><img width="500" height="332" src="/data/files/mall/template/login.png" /></div>
+   <div class="right">
+      <div class="form">
+         <form method="post" id="login_form">
+            <table border="0" width="378" align="center">
+               <tr><td class="title" colspan="2">{$lang.user_login}</td></tr>
+               <tr>
+                  <td width="70" align="right">{$lang.user_name}{$lang.colon}</td><td><input class="input" type="text" name="user_name" /></td>
+               </tr>
+               <tr>
+                  <td align="right">{$lang.password}{$lang.colon}</td><td><input class="input" type="password" name="password"/></td>
+               </tr>
+               <!--{if $captcha}-->
+               <tr>
+                  <td align="right">{$lang.captcha}{$lang.colon}</td>
+                  <td class="captcha clearfix">
+                     <input type="text" class="input fleft" name="captcha" id="captcha1" />
+                     <a href="javascript:change_captcha($('#captcha'));" class="fleft"><img id="captcha" src="index.php?app=captcha&amp;{$random_number}" /></a>
+                  </td>
+               </tr>
+               <!--{/if}-->
+               <tr>
+                  <td></td>
+                  <td>
+                     <input type="submit" class="login-submit" name="Submit" value="" />
+                     <a href="{url app=find_password}" class="find-password">{$lang.forget_password}</a>
+                  </td>
+               </tr>
+                <tr>
+                  <td></td><td class="register_now"><a href="/gx/reg.html" title="{$lang.register_now}">{$lang.not_member}</a></td>
+               </tr>
+            </table>
+             <input type="hidden" name="ret_url" value="{$ret_url}" />
+         </form>
+      </div>
+   </div>
+</div>
+{include file=footer.html}

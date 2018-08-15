@@ -1,0 +1,325 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Access-Control-Allow-Origin" content="*">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=8"/>
+<title>用户中心-预算报价</title>
+<meta name="description" content="微工程，微工程APP，装修、材料、家具、饰品一站式服务，让装修更简单，价格更透明！！" />
+<meta name="keywords" content="微工程，微工程，家居商城，微工程家居商城，微工程家居装修商城，办公室装修，写字楼装修，材料，装修材料，家居，办公家具，家居，家具，装修，装饰" />
+
+<link type="text/css" href="themes/mall/jiaju/styles/default/css/main.css" rel="stylesheet"  />
+<link type="text/css" href="themes/mall/jiaju/styles/css/global.css" rel="stylesheet"  />
+<link type="text/css" href="http://www.wgc2013.com/themes/mall/jiaju/styles/default/css/catalog.css" rel="stylesheet"  />
+<link type="text/css" href="http://www.wgc2013.com/themes/mall/jiaju/styles/default/css/footer.css" rel="stylesheet" />
+<link type="text/css" href="/themes/mall/jiaju/styles/default/css/center.css" rel="stylesheet"  />
+<link type="text/css" href="themes/mall/jiaju/styles/css/style.css" rel="stylesheet"  />
+<script type="text/javascript" src="index.php?act=jslang"></script>
+<script type="text/javascript" src="http://www.wgc2013.com/includes/libraries/javascript/ecmall.js" charset="utf-8"></script>
+<script type="text/javascript" src="http://www.wgc2013.com/includes/libraries/javascript/jquery.js" charset="utf-8"></script>
+<script type="text/javascript" src="http://www.wgc2013.com/includes/libraries/javascript/cart.js" charset="utf-8"></script>
+<script type="text/javascript" src="http://www.wgc2013.com/themes/mall/jiaju/styles/default/js/main.js" charset="utf-8"></script>
+
+<!--[if lte IE 6]>
+<script type="text/javascript" language="Javascript" src="http://www.wgc2013.com/themes/mall/jiaju/styles/default/js/hoverForIE6.js"></script>
+<![endif]-->
+<!--[if IE 8]>
+<link type="text/css" href="themes/mall/jiaju/css/ie8.css" rel="stylesheet"  />
+<![endif]-->
+<script type="text/javascript">
+var SITE_URL = "http://www.wgc2013.com";
+var PRICE_FORMAT = '&yen;%s';
+</script>
+<script charset="utf-8" type="text/javascript" src="http://www.wgc2013.com/includes/libraries/javascript/jquery.plugins/jquery.validate.js" ></script><style type="text/css">
+body{background:url('') no-repeat center top }
+.mainnav{width:990px; overflow:hidden; margin:0 auto}
+.STYLE1 {color: red}
+</style>
+<script type="text/javascript" src="http://www.wgc2013.com/themes/mall/jiaju/styles/default/js/hover.js"></script>
+
+</script>
+<script charset="utf-8" type="text/javascript" src="http://www.wgc2013.com/includes/libraries/javascript/jquery.plugins/jquery.validate.js" ></script>
+</head>
+<body>
+{include file=header.html}
+
+<!-- 中部主要内容 -->
+ <div class="container" style="overflow: hidden;width: 1200px;margin: 10px auto;">
+ <!-- 左上的导航栏 -->
+{include file=usercenter.html}
+<!-- 	<include file="usercenter.html"/> -->
+
+ 	<!-- 右边的内容 -->
+ 	<div class="container_right" style="width: 78%;border: 1px solid #cacaca;float: right;background-color: #f7f7f7;padding: 0 10px 10px 10px;">
+
+		<!-- 预算报价 -->
+		<div class="budget base_ui_public" style="position: relative;">
+			<ul class="budget_ul user_public_ul">
+ 				<li class="change_bg_li" style="margin-right: 10px;">预算报价</li>
+ 				<li style="margin-right: 10px;">预算列表</li>
+ 			</ul>
+ 			<div class="budget_info base_info_public" style="overflow: hidden;min-height: 250px;">
+ 			<!-- 预算报价 -->
+ 			<div class="budget_detail" style="position: relative;width: 100%;">
+			<div style="overflow: hidden;margin-top: 10px;">
+				<h3>建设单位：<input type="text" style="display: inline-block;width: 200px;height: 20px;margin-bottom: 5px;padding: 0;padding-left: 5px;letter-spacing: 2px;" /></h3>
+				<h3>施工单位：<input type="text" style="display: inline-block;width: 200px;height: 20px;margin-bottom: 5px;padding: 0;padding-left: 5px;letter-spacing: 2px;" /><span style="margin-left: 50%;">日期:</span><input type="text" style="display: inline-block;width: 120px;height: 20px;margin-bottom: 5px;padding: 0;padding-left: 5px;" /></h3>
+				<!-- 预算表格 -->
+				<div class="budget_table">
+				<table style="width: 100%;" border="0" cellspacing="0" cellpadding="0">
+					<tbody>
+						<tr class="thead" style="background-color: #eee;">
+							<th style="width: 5%"><span style="border-left:  2px solid #bcbcbc">序号</span></th>
+							<th style="width: 7%"><span>项目名称</span></th>
+							<th style="width: 33%"><span>施工工艺</span></th>
+							<th style="width: 5%"><span>数量</span></th>
+							<th style="width: 5%"><span>单位</span></th>
+							<th style="width: 5%"><span id="worker" style="background-color: #3d3d3d;color: #fff;cursor: pointer;">人工</span></th>
+							<th style="width: 5%"><span id="zhucai" style="background-color: #3d3d3d;color: #fff;cursor: pointer;">主材</span></th>
+							<th style="width: 5%"><span id="fucai" style="background-color: #3d3d3d;color: #fff;cursor: pointer;">辅材</span></th>
+							<th style="width: 7%"><span>综合单价</span></th>
+							<th style="width: 5%"><span>合计</span></th>
+							<th style="width: 16%"><span style="border-right:  2px solid #bcbcbc">备注</span></th>
+						</tr>
+						<tr class="tcontent">
+							<td style="width: 5%"><span>1</span></td>
+							<td style="width: 7%"><span>例</span></td>
+							<td style="width: 33%"><span>例</span></td>
+							<td style="width: 5%"><span>现场实施施工数量或图纸计算施工数量</span></td>
+							<td style="width: 5%"><span>单位</span></td>
+							<td style="width: 5%"><span>人工单价结算方式应与客户结算方式相同。备注结算。含工具</span></td>
+							<td style="width: 5%"><span>含材料损耗、运输、税票、到场地价格</span></td>
+							<td style="width: 5%"><span>含损耗、运输、税票、到场地价格</span></td>
+							<td style="width: 7%"><span>人工+主材+辅材</span></td>
+							<td style="width: 5%"><span>数量*总和单价</span></td>
+							<td style="width: 16%;border-right: 2px solid #979898;"><span>此项备注施工界面划分，（如吊顶施工，开灯孔是木工还是水电工，检修孔、风口加固是否包含，或者另外计费？）及工程量结算方式。（如吊顶有投影面积计算方法，展开面积计算法。墙体有扣除门洞等）</span></td>
+						</tr>
+					</tbody>
+				</table>
+				<div class="gongchen_total" style="width: 100%;height: 30px;border:  2px solid #979898;border-top: none;">
+						<span class="add_table" style="width: 5%;border-left: none;border-right:  2px solid #979898;font-size: 20px;cursor: pointer;">+</span>
+						<span style="margin-left: 66.4%;">工程总价：</span>
+						<span id="all_total" style="width: 16%;">0</span>
+					</div>
+				<div class="total">
+						<span>税金:<input id="suijin" type="text" style="display: inline-block;width: 120px;height: 20px;margin-bottom: 5px;padding: 0;padding-left: 10px;" onkeyup="this.value=this.value.replace(/[^0-9-]+/,'');"/></span>
+						<span></span>
+						<span>管理费/规费:<input id="guanli" type="text" style="display: inline-block;width: 120px;height: 20px;margin-bottom: 5px;padding: 0;padding-left: 10px;" onkeyup="this.value=this.value.replace(/[^0-9-]+/,'');"/></span>
+						<span></span>
+				</div>
+				<div style="margin-bottom: 20px;">
+					<h3 style="font-size: 18px;font-weight: bold;">工程总造价:</h3>
+				</div>
+				<div class="share_dow" style="display: inline-block; position: relative;left: 90%;">
+					<a class="share_yusuan" href="javascript:;">分享</a>
+					<a href="javascript:;">下载</a>
+				</div>
+				</div>
+			</div>
+			</div>
+			<!-- 预算列表 -->
+			<div class="budget_list_table" style="display: none;position: relative;width: 100%;">
+				<div style="overflow: hidden;margin-top: 10px;min-height: 300px;">
+					<h3 style="font-size: 18px;font-weight: bold;letter-spacing: 2px;position: absolute;top: 80%;left: 40%">预算列表为空</h3>
+				</div>
+			</div>
+			<!-- 分享框 -->
+					<div class="share_form" style="width: 365px;background-color: #fff; height: 230px;padding: 15px 0;position: absolute;top: 30%;left: 30%;display: none;z-index: 5;">
+ 					<div style="overflow: hidden;margin-left: 20px;">
+ 						<div style="float: left;width: 80px;font-size: 14px;font-weight: bold;text-align: right;margin-right: 5px;letter-spacing: 2px;">内容获取:</div>
+ 						<div  style="float: left;">
+ 							
+ 						<textarea name="share_content" id="con_share" placeholder="内容获取" style="width: 200px;height: 80px;padding-left: 10px;"></textarea>
+ 						</div>
+ 					</div>
+ 					<div style="overflow: hidden;margin-top: 15px;margin-left: 20px;">
+ 						<div style="float: left;width: 80px;font-size: 14px;font-weight: bold;text-align: right;margin-right: 5px;letter-spacing: 2px;">接收人:</div>
+						
+						<div style="float: left;">
+							
+						<input type="text" placeholder="选择接收人" style="width: 200px;height: 25px;" />
+						</div>	
+						
+ 					</div>
+
+ 					<div style="position: relative;top: 45px;">
+ 						<a class="share_sure" href="javascript:;" style="display: inline-block;width: 90px;height: 26px;background-color: #facd89;color: #fff;font-size: 15px;line-height: 26px;text-decoration: none;">分享确认</a>
+ 					</div>
+ 				</div>
+
+ 				<!-- 点击人工弹框 -->
+ 				<div class="worker_form" style="width: 365px;height: 100px;line-height: 100px; position: absolute;top: 25%;left: 30%;z-index: 6;background-color: #fff;border: 1px solid #eee;display: none;">
+ 					<div style="text-align: left;">
+ 						<a href="index.php?app=search&act=regong" style="background-color: #eb6100;display: inline-block;width: 110px;height: 35px;line-height: 35px;font-size: 15px;border-radius: 5px;color: #2ec6ff;text-decoration: none;font-weight: bold;letter-spacing: 2px;text-align: center;margin-right: 100px;margin-left: 20px;">工人定额</a>
+ 						<a href="index.php?app=search&act=regong_datalist" style="background-color: #eb6100;display: inline-block;width: 110px;height: 35px;line-height: 35px;font-size: 15px;border-radius: 5px;color: #2ec6ff;text-decoration: none;font-weight: bold;letter-spacing: 2px;text-align: center;">数据定额</a>
+ 					</div>
+ 				</div>
+ 				<!-- 点击主材弹框 -->
+ 				<div class="zhucai_form" style="width: 365px;height: 100px;line-height: 100px; position: absolute;top: 25%;left: 30%;z-index: 6;background-color: #fff;border: 1px solid #eee;display: none;">
+ 					<div style="text-align: left;">
+ 						<a href="index.php?app=search&act=zhucaidinge" style="background-color: #eb6100;display: inline-block;width: 110px;height: 35px;line-height: 35px;font-size: 15px;border-radius: 5px;color: #2ec6ff;text-decoration: none;font-weight: bold;letter-spacing: 2px;text-align: center;margin-right: 100px;margin-left: 20px;">主材定额</a>
+ 						<a href="index.php?app=search&act=zhucai_datalist" style="background-color: #eb6100;display: inline-block;width: 110px;height: 35px;line-height: 35px;font-size: 15px;border-radius: 5px;color: #2ec6ff;text-decoration: none;font-weight: bold;letter-spacing: 2px;text-align: center;">数据定额</a>
+ 					</div>
+ 				</div>
+ 				<!-- 辅材定额 -->
+ 				<div class="fucai_form" style="width: 365px;height: 100px;line-height: 100px; position: absolute;top: 25%;left: 30%;z-index: 6;background-color: #fff;border: 1px solid #eee;display: none;">
+ 					<div style="text-align: left;">
+ 						<a href="index.php?app=search&act=fucaitable" style="background-color: #eb6100;display: inline-block;width: 110px;height: 35px;line-height: 35px;font-size: 15px;border-radius: 5px;color: #2ec6ff;text-decoration: none;font-weight: bold;letter-spacing: 2px;text-align: center;margin-right: 100px;margin-left: 20px;">辅材定额</a>
+ 						<a href="index.php?app=search&act=fucai_datalist" style="background-color: #eb6100;display: inline-block;width: 110px;height: 35px;line-height: 35px;font-size: 15px;border-radius: 5px;color: #2ec6ff;text-decoration: none;font-weight: bold;letter-spacing: 2px;text-align: center;">数据定额</a>
+ 					</div>
+ 				</div>
+ 			</div>
+ 			
+			
+		</div>
+		
+		
+ 		</div>
+ 		
+ 	</div>
+
+
+
+
+
+{include file=footer.html}
+<script type="text/javascript">
+
+	var index = 1;
+	var totalArray = [];
+	$(".share_yusuan").click(function(e){
+		e.stopPropagation(); 
+		$(".share_form").show();
+		$(".budget_info").css("background-color","#eee");
+	})
+
+	//点击弹出人工
+	$("#worker").click(function(e){
+		e.stopPropagation(); 
+		$(".worker_form").show()
+		$(".fucai_form").hide()
+		$(".zhucai_form").hide()
+		$(".budget_info").css("background-color","#eee");
+	})
+	//点击弹出主材
+	$("#zhucai").click(function(e){
+		e.stopPropagation(); 
+		$(".zhucai_form").show()
+		$(".fucai_form").hide()
+		$(".worker_form").hide()
+		$(".budget_info").css("background-color","#eee");
+	})
+	//点击弹出辅材
+	$("#fucai").click(function(e){
+		e.stopPropagation(); 
+		$(".fucai_form").show();
+		$(".zhucai_form").hide()
+		$(".worker_form").hide()
+		$(".budget_info").css("background-color","#eee");
+	})
+	$(".budget_info").click(function(){
+			$(".zhucai_form").hide()
+			$(".fucai_form").hide()
+			$(".worker_form").hide()
+			$(".share_form").hide();
+			$(".budget_info").css("background-color","#fff");
+		})
+
+	//点击预算列表切换
+	  $(".budget_ul li:first").click(function(){
+    	
+    	$(this).addClass("change_bg_li")
+    	$(".budget_ul li:last").removeClass("change_bg_li")
+    	$(".budget_detail").show();
+    	$(".budget_list_table").hide();
+    })
+
+    $(".budget_ul li:last").click(function(){
+    	
+    	$(this).addClass("change_bg_li")
+    	$(".budget_ul li:first").removeClass("change_bg_li")
+ 		$(".budget_detail").hide();
+    	$(".budget_list_table").show();
+    })
+
+
+   
+
+    //点击添加表格
+    $(".add_table").click(function(){
+    	index++;
+    	var $html = '';
+    	$html += '<tr class="tcontent" id="a'+index+'_">';
+		$html += 	'<td style="width: 5%"><textarea class="budget_xh" id="a_xh'+index+'" style="width: 100%;height: 100%;display: inline-block;"></textarea></td>';
+		$html += 	'<td style="width: 7%"><textarea class="budget_xm" style="width: 100%;height: 100%;display: inline-block;"></textarea></td>';
+		$html += 	'<td style="width: 33%" height="180px;"><textarea class="budget_sggy" style="width: 100%;height: 100%;display: inline-block;"></textarea></td>';
+		$html += 	'<td style="width: 5%"><textarea class="budget_sl" id="a_sl'+index+'" style="width: 100%;height: 100%;display: inline-block;"></textarea></td>';
+		$html += 	'<td style="width: 5%"><textarea class="budget_dw" style="width: 100%;height: 100%;display: inline-block;"></textarea></td>';
+		$html += 	'<td style="width: 5%"><textarea class="budget_rg" id="a_rg'+index+'" style="width: 100%;height: 100%;display: inline-block;"></textarea></td>';
+		$html += 	'<td style="width: 5%"><textarea class="budget_zc" id="a_zc'+index+'" style="width: 100%;height: 100%;display: inline-block;"></textarea></td>';
+		$html += 	'<td style="width: 5%"><textarea class="budget_fc" id="a_fc'+index+'" style="width: 100%;height: 100%;display: inline-block;"></textarea></td>';
+		$html += 	'<td style="width: 7%"><textarea class="budget_zh" id="a_zh'+index+'" style="width: 100%;height: 100%;display: inline-block;"></textarea></td>';
+		$html += 	'<td style="width: 5%"><textarea class="budget_hj" id="a_hj'+index+'" style="width: 100%;height: 100%;display: inline-block;"></textarea></td>';
+		$html += 	'<td style="width: 16%;border-right: 2px solid #979898;"><textarea class="budget_bz" style="width: 100%;height: 100%;display: inline-block;"></textarea></td>';
+		$html += '</tr>';
+    	$("tbody").append($html);
+    	 $("#a_xh"+index).text(index);
+
+
+
+
+    //预算表的统计金额
+    $("#a_zh"+index).click(function(){
+    	console.log("heloo")
+    	// console.log($(this).parent().prev().children().val())
+    	var regong = parseInt($("#a_rg"+index).val());
+    	var zhucai = parseInt($("#a_zc"+index).val());
+    	var fucai = parseInt($("#a_fc"+index).val());
+    	var zhdj = regong+zhucai+fucai;
+  
+    	if(!zhdj){
+    		alert("请输入正确的人工或者主材或者辅材的价格！！！")
+    		return;
+    	}else{
+    		$(this).val(zhdj)
+    	}
+    	
+    })
+    //统计工程总价
+    $("#a_hj"+index).blur(function(){
+    	var total = parseInt($(this).val())
+    	if(total){
+    		totalArray.push(total)
+    	}
+    	
+    	console.log(totalArray)
+    	var totalAll = 0;
+    	for(var i=0;i<totalArray.length;i++){
+
+  			totalAll = totalAll + totalArray[i];
+    		
+    	}
+    	console.log(totalAll);
+    	console.log($("#all_total").text())
+
+    	$("#all_total").text(totalAll)
+    })
+
+    //统计
+
+    //计算合计
+    $("#a_hj"+index).click(function(){
+    	var zhdj = parseInt($("#a_zh"+index).val())
+    	var shuliang = parseInt($("#a_sl"+index).val());
+    	var heji = zhdj*shuliang;
+    	if(!heji){
+    		alert("数量不能为空或者综合单价不能为空")
+    		return;
+    	}else{
+    		$(this).val(heji)
+    	}
+    })
+    })
+</script>
+</body>
+</html>
