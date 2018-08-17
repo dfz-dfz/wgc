@@ -7,38 +7,16 @@
 <title>用户中心-预算报价</title>
 <meta name="description" content="微工程，微工程APP，装修、材料、家具、饰品一站式服务，让装修更简单，价格更透明！！" />
 <meta name="keywords" content="微工程，微工程，家居商城，微工程家居商城，微工程家居装修商城，办公室装修，写字楼装修，材料，装修材料，家居，办公家具，家居，家具，装修，装饰" />
-<link rel="stylesheet" type="text/css" href="themes/mall/jiaju/css/api.css"/>
-<!-- <link rel="stylesheet" type="text/css" href="themes/mall/jiaju/css/aui.css" /> -->
-<!-- <link rel="stylesheet" type="text/css" href="themes/mall/jiaju/css/aui.1.0.css"/> -->
-
-<!-- 引入个人中心 -->
-<link type="text/css" href="/themes/mall/jiaju/styles/default/css/center.css" rel="stylesheet"  />
-<link rel="stylesheet" href="/themes/mall/jiaju/styles/css//repair_manage.css" />
-<script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
-<!-- <script type="text/javascript" src="www.wgc2013.com/themes/mall/jiaju/js/jquery-1.8.3.min.js"></script> -->
-<script type="text/javascript">
-	jQuery.support.cors = true;
-
-</script>
-
-</head>
-
-<body style="background:#fff;">
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<!-- <base href="http://www.wgc2013.com/" /> -->
-<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7 charset=utf-8" />
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-
+<link rel="stylesheet" href="themes/mall/jiaju/styles/css/repair_manage.css" />
 <link type="text/css" href="themes/mall/jiaju/styles/default/css/main.css" rel="stylesheet"  />
-<link type="text/css" href="themes/mall/jiaju/styles/css/global.css" rel="stylesheet"  />
 <link type="text/css" href="http://www.wgc2013.com/themes/mall/jiaju/styles/default/css/catalog.css" rel="stylesheet"  />
 <link type="text/css" href="http://www.wgc2013.com/themes/mall/jiaju/styles/default/css/footer.css" rel="stylesheet" />
-<link type="text/css" href="themes/mall/jiaju/styles/css/style.css" rel="stylesheet"  />
+<link rel="stylesheet" href="themes/mall/jiaju/styles/css/tel_list.css">
+
 <script type="text/javascript" src="index.php?act=jslang"></script>
 <script type="text/javascript" src="http://www.wgc2013.com/includes/libraries/javascript/ecmall.js" charset="utf-8"></script>
 <script type="text/javascript" src="http://www.wgc2013.com/includes/libraries/javascript/cart.js" charset="utf-8"></script>
+<script type="text/javascript" src="http://www.wgc2013.com/includes/libraries/javascript/jquery.js" charset="utf-8"></script>
 <script type="text/javascript" src="http://www.wgc2013.com/themes/mall/jiaju/styles/default/js/main.js" charset="utf-8"></script>
 <!-- 引入的是个人中心的 -->
 
@@ -59,51 +37,7 @@ body{background:url('') no-repeat center top }
 .STYLE1 {color: red}
 </style>
 <script type="text/javascript" src="http://www.wgc2013.com/themes/mall/jiaju/styles/default/js/hover.js"></script>
-<script>
-  function lxfEndtime(){
-          $(".lxftime").each(function(){
-                var lxfday=$(this).attr("lxfday");//用来判断是否显示天数的变量
-                var endtime = new Date($(this).attr("endtime")).getTime();//取结束日期(毫秒值)
-                var nowtime = new Date().getTime();        //今天的日期(毫秒值)
-                var youtime = endtime-nowtime;//还有多久(毫秒值)
-                var seconds = youtime/1000;
-                var minutes = Math.floor(seconds/60);
-                var hours = Math.floor(minutes/60);
-                var days = Math.floor(hours/24);
-                var CDay= days ;
-                var CHour= hours % 24;
-                var CMinute= minutes % 60;
-                var CSecond= Math.floor(seconds%60);//"%"是取余运算，可以理解为60进一后取余数，然后只要余数。
-                if(endtime<=nowtime){
-                        $(this).html("已过期")//如果结束日期小于当前日期就提示过期啦
-                        }else{
-                                if($(this).attr("lxfday")=="no"){
-                                        $(this).html("<i>剩余时间：</i><span>"+CHour+"</span>时<span>"+CMinute+"</span>分<span >"+CSecond+"</span>秒");          //输出没有天数的数据
-                                        }else{
-                        $(this).html("<span class='f24'>"+days+"</span><span>天</span><span  class='f24'>"+CHour+"</span><span>时</span><span  class='f24'>"+CMinute+"</span><span>分</span><span  class='f24'>"+CSecond+"</span><span>秒</span>");          //输出有天数的数据
-                                }
-                        }
-          });
-   setTimeout("lxfEndtime()",1000);
-  };
-$(function(){
-      lxfEndtime();
-   });
-</script>
 <script charset="utf-8" type="text/javascript" src="http://www.wgc2013.com/includes/libraries/javascript/jquery.plugins/jquery.validate.js" ></script>
-<script type="text/javascript">
-  $(function (){
-    $('#open-change-city-window').click(function (){
-      $('.change-city-window').slideDown();
-      
-    })
-    $('#close-change-city-window').click(function (){
-      $('.change-city-window').slideUp();
-    })
-
-  
-  })
-</script>
 </head>
 <body>
 {include file=header.html}
@@ -131,22 +65,119 @@ $(function(){
 			<div class="section" style="border: none;">
 							<!-- 项目管理 -->
 			<div class="sect current wages_custom">
-				<ul style="padding: 20px 0;width: 380px;margin-left: auto;margin-right: auto;letter-spacing: 4px;margin-top: 100px;">
-					<li style="text-align: center;color: #000;font-size: 16px;font-weight: bold;vertical-align: middle;">
-						暂无数据
-					</li>
+				<ul style="padding: 20px 0;width: 400px;height:auto;margin-left: auto;margin-right: auto;letter-spacing: 0;" id="xm_show_box">
+
 				</ul>
 			</div>
+
+					<!-- 项目详情 -->
+					<div class="xm_details" style="display: none;">
+						<div onclick="close_xmdata_btn()" style="font-size: 30px;border-radius: 100%;height: 30px;width: 30px;line-height:30px;position: absolute;top: -16px;right: -16px;background-color: red;cursor: pointer;">×</div>
+						<div style="text-align: center;height: 30px;line-height: 30px;font-size:20px;letter-spacing: 2px;font-weight: bold;color: #000;">维修详情</div>
+						<ul class="base_message">
+							<li style="color: #000;font-size: 15px;font-weight: bold;">
+								<span>维修名称</span><span class="colon">:</span><span class="prj_name"></span>
+							</li>
+							<li style="color: #000;font-size: 15px;font-weight: bold;">
+								<span style="white-space: pre-wrap;">地址</span><span class="colon">:</span><span class="address"></span>
+							</li>
+							<li style="color: #000;font-size: 15px;font-weight: bold;">
+								<span>开工时间</span><span class="colon">:</span><span class="start_time"></span>
+							</li>
+							<li style="color: #000;font-size: 15px;font-weight: bold;">
+								<span>完工时间</span><span class="colon">:</span><span class="finish_time"></span>
+							</li>
+							<li style="color: #000;font-size: 15px;font-weight: bold;">
+								<span>工期</span><span class="colon">:</span><span class="expire_time"></span>
+							</li>
+							<li style="color: #000;font-size: 15px;font-weight: bold;">
+								<span>工程造价</span><span class="colon">:</span><span class="pre_price"></span><span style="letter-spacing: 2px;margin-left: 4px;">万元</span>
+							</li>
+							<li style="color: #000;font-size: 15px;font-weight: bold;">
+								<span style="white-space: pre-wrap;">备注</span><span class="colon">:</span><span class="prj_desc"></span>
+							</li>
+						</ul>
+
+						<ul class="manage_list">
+							<li style="overflow: -webkit-paged-x;height: auto;border:1px solid #e1e1e1;">
+								<div style="width: 60px;height:60px;margin-left: 10px;padding-top: 15px;" id="preview">
+							        
+								</div>
+							</li>
+							<li style="overflow: -webkit-paged-x;height: auto;border:1px solid #e1e1e1;">
+								<div class="list_box">
+									<div class="list_head"><b>维修管理员</b></div>
+									<div class="list_main" id="lists_mg">
+
+									</div>
+								</div>
+							</li>
+							<li style="overflow: -webkit-paged-x;height: auto;border:1px solid #e1e1e1;">
+								<div class="list_box">
+									<div class="list_head"><b>维修负责人</b></div>
+									<div class="list_main" id="lists_cm">
+										
+									</div>
+								</div>
+							</li>
+							<li style="overflow: -webkit-paged-x;height: auto;border:1px solid #e1e1e1;">
+								<div class="list_box">
+									<div class="list_head"><b>甲方管理员</b></div>
+									<div class="list_main" id="lists_jl">
+										
+									</div>
+								</div>
+							</li>
+							<li style="overflow: -webkit-paged-x;height: auto;border:1px solid #e1e1e1;">
+								<div class="list_box">
+									<div class="list_head"><b>材料商管理员</b></div>
+									<div class="list_main" id="lists_cl">
+										
+									</div>
+								</div>
+							</li>
+							<li style="overflow: -webkit-paged-x;height: auto;border:1px solid #e1e1e1;">
+								<div class="list_box">
+									<div class="list_head"><b>岗位异动负责人</b></div>
+									<div class="list_main" id="lists_mane">
+										
+									</div>
+								</div>
+							</li>
+							<li style="overflow: -webkit-paged-x;height: auto;border:1px solid #e1e1e1;">
+								<div class="list_box">
+									<div class="list_head"><b>成员</b></div>
+									<div class="list_main" id="lists_xm">
+										
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<!-- 项目详情 end -->
+
 			<!-- 项目管理 end -->
 			<!-- 添加项目 -->
 			<div class="sect wages_list" style="display: none;">
 				<ul class="base_message">
-					<li style="color: #000;font-size: 15px;font-weight: bold;"><span>项目名称</span><span class="colon">:</span><input type="text"></li>
-					<li style="color: #000;font-size: 15px;font-weight: bold;"><span style="white-space: pre-wrap;">地&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;址</span><span class="colon">:</span><input type="text"></li>
-					<li style="color: #000;font-size: 15px;font-weight: bold;"><span>开工时间</span><span class="colon">:</span><input type="text"></li>
-					<li style="color: #000;font-size: 15px;font-weight: bold;"><span>完工时间</span><span class="colon">:</span><input type="text"></li>
-					<li style="color: #000;font-size: 15px;font-weight: bold;"><span>工程造价</span><span class="colon">:</span><input type="text" style="width: 97px;"><span style="letter-spacing: 2px;margin-left: 4px;">万元</span></li>
-					<li style="color: #000;font-size: 15px;font-weight: bold;"><span style="white-space: pre-wrap;">备&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;注</span><span class="colon">:</span><input type="text"></li>
+					<li style="color: #000;font-size: 15px;font-weight: bold;">
+						<span>项目名称</span><span class="colon">:</span><input id="prj_name" type="text">
+					</li>
+					<li style="color: #000;font-size: 15px;font-weight: bold;">
+						<span style="white-space: pre-wrap;">地&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;址</span><span class="colon">:</span><input id="addre" type="text">
+					</li>
+					<li style="color: #000;font-size: 15px;font-weight: bold;">
+						<span>开工时间</span><span class="colon">:</span><input id="start_time" type="text">
+					</li>
+					<li style="color: #000;font-size: 15px;font-weight: bold;">
+						<span>完工时间</span><span class="colon">:</span><input id="expire_time" type="text">
+					</li>
+					<li style="color: #000;font-size: 15px;font-weight: bold;">
+						<span>工程造价</span><span class="colon">:</span><input id="pre_price" type="text" style="width: 97px;"><span style="letter-spacing: 2px;margin-left: 4px;">万元</span>
+					</li>
+					<li style="color: #000;font-size: 15px;font-weight: bold;">
+						<span style="white-space: pre-wrap;">备&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;注</span><span class="colon">:</span><input id="prj_desc" type="text">
+					</li>
 				</ul>
 
 				<ul class="manage_list">
@@ -168,13 +199,12 @@ $(function(){
 					<li style="overflow: visible;">
 						<div class="list_box">
 							<div class="list_head"><b>公司管理员</b></div>
-							<div class="list_main">
-								<div></div>
-								<div class="add_box">
+							<div class="list_main" id="lists_mg">
+								<div class="add_box" onclick="openUserList('1','add')">
 									<div class="add_y"></div>
 									<div class="add_x"></div>
 								</div>
-								<div class="add_box">
+								<div class="add_box" onclick="openUserList('1','del')">
 									<div class="add_x"></div>
 								</div>
 							</div>
@@ -183,13 +213,12 @@ $(function(){
 					<li style="overflow: visible;">
 						<div class="list_box">
 							<div class="list_head"><b>项目经理</b></div>
-							<div class="list_main">
-								<div></div>
-								<div class="add_box">
+							<div class="list_main" id="lists_cm">
+								<div class="add_box" onclick="openUserList('2','add')">
 									<div class="add_y"></div>
 									<div class="add_x"></div>
 								</div>
-								<div class="add_box">
+								<div class="add_box" onclick="openUserList('2','del')">
 									<div class="add_x"></div>
 								</div>
 							</div>
@@ -198,13 +227,12 @@ $(function(){
 					<li style="overflow: visible;">
 						<div class="list_box">
 							<div class="list_head"><b>甲方管理员</b></div>
-							<div class="list_main">
-								<div></div>
-								<div class="add_box">
+							<div class="list_main" id="lists_jl">
+								<div class="add_box" onclick="openUserList('3','add')">
 									<div class="add_y"></div>
 									<div class="add_x"></div>
 								</div>
-								<div class="add_box">
+								<div class="add_box" onclick="openUserList('3','del')">
 									<div class="add_x"></div>
 								</div>
 							</div>
@@ -213,13 +241,12 @@ $(function(){
 					<li style="overflow: visible;">
 						<div class="list_box">
 							<div class="list_head"><b>材料商管理员</b></div>
-							<div class="list_main">
-								<div></div>
-								<div class="add_box">
+							<div class="list_main" id="lists_cl">
+								<div class="add_box" onclick="openUserList('4','add')">
 									<div class="add_y"></div>
 									<div class="add_x"></div>
 								</div>
-								<div class="add_box">
+								<div class="add_box" onclick="openUserList('4','del')">
 									<div class="add_x"></div>
 								</div>
 							</div>
@@ -228,13 +255,12 @@ $(function(){
 					<li style="overflow: visible;">
 						<div class="list_box">
 							<div class="list_head"><b>岗位异动负责人</b></div>
-							<div class="list_main">
-								<div></div>
-								<div class="add_box">
+							<div class="list_main" id="lists_mane">
+								<div class="add_box" onclick="openUserList('6','add')">
 									<div class="add_y"></div>
 									<div class="add_x"></div>
 								</div>
-								<div class="add_box">
+								<div class="add_box" onclick="openUserList('6','del')">
 									<div class="add_x"></div>
 								</div>
 							</div>
@@ -243,13 +269,12 @@ $(function(){
 					<li style="overflow: visible;">
 						<div class="list_box">
 							<div class="list_head"><b>项目成员</b></div>
-							<div class="list_main">
-								<div></div>
-								<div class="add_box">
+							<div class="list_main" id="lists_xm">
+								<div class="add_box" onclick="openUserList('5','add')">
 									<div class="add_y"></div>
 									<div class="add_x"></div>
 								</div>
-								<div class="add_box">
+								<div class="add_box" onclick="openUserList('5','del')">
 									<div class="add_x"></div>
 								</div>
 							</div>
@@ -257,8 +282,23 @@ $(function(){
 					</li>
 				</ul>
 
-				<input type="button" class="sub_btn" value="确认建立" />
+				<input type="button" class="sub_btn" value="确认建立" onclick="add()" />
 						
+				<!--  -->
+				<div class="tel_confirm" style=>
+					<div class="confirm_head">
+						<input type="text" id="search_text" placeholder="请输入搜索的联系人" />
+						<input class="confirm_btn" type="button" onclick="UserSearch()" value="搜索" />
+					</div>
+					<div class="getUserList">
+						
+					</div>
+					<div>
+						<input class="confirm_btn" type="button" onclick="enableCheck()" value="确认" />
+						<input class="confirm_btn close_btn" onclick="canlleconfir()" type="button" value="×" />
+					</div>
+				</div>
+				<!--  -->
 			</div>
 			<!-- 添加项目 end -->
 			</div>
@@ -338,6 +378,523 @@ $("input[name='pic']").live('change',function(){
 	        document.selection.empty();
 	    }
 	   return true;
+	}
+
+
+	$(document).ready(function() {
+		xm_show_list();
+		showUserList();
+		timestamp = new Date().getTime();
+	});
+	var is_sending = false;
+	var address = null;
+	var finish_time = null;
+	var timestamp = null;
+	var type = null;
+	var action = null;
+	var lat = null;
+	var lon = null;
+	var page = 1;
+	var storeid = '';
+	//发布维修管理项目
+	function add(){
+		var prj_name      = $("#prj_name").val();    //项目名称
+		var start_time    = $("#start_time").val();  //开工时间
+    	var pre_price     = $("#pre_price").val();   //工程造价
+    	var expire_time   = $("#expire_time").val(); //完工时间
+    	var prj_desc      = $("#prj_desc").val();    //备注
+		var address       = $("#addre").val();       //地址
+
+		if(prj_name == ''){
+			alert('项目名称必填');
+			return false;
+		}else if(start_time == ''){
+			alert('开工时间必填');
+			return false;
+		}else if(pre_price == ''){
+			alert('工程造价必填');
+			return false;
+		}else if(expire_time == ''){
+			alert('完工时间必填');
+			return false;
+		}else if(address == ''){
+			alert('地址必填');
+			return false;
+		}
+
+		$.post(url+'jingyi.php/Home/Jymember/projectadd', {
+			user_id :'<?php echo $_SESSION["user_info"]["user_id"];?>',
+		 	prj_name : prj_name,
+		    address : address,
+		    jingdu : lon,
+		    weidu : lat,
+		    pre_price :pre_price,
+		    prj_quanty : '0',
+		    prj_price : '0',
+		    prj_desc : prj_desc,
+		    timsType : timestamp,
+		    status : '2',
+		    finish_time : finish_time,
+		    start_time : start_time,
+		    expire_time : expire_time,
+		    ptype : 1,
+		}, function(ret,err) {
+			if(ret.status == 200){
+				alert('创建项目成功');
+			}else if(ret.status == 202){
+				alert('添加失败，请检查是否已经有同名的项目')
+				return false;
+			}else if(ret.status == 203){
+				alert('您的积分不足，请充值');
+				return false;
+			}else{
+				alert('网络连接失败，请检查网络');
+				return false;
+			}
+		},'json');
+	}
+
+	var valus = {};
+	var value = {};
+	//添加项目成员/删除项目成员
+	function openUserList(type,action){
+		$('.tel_confirm').css('display', 'block');
+		valus = {type,action};
+		return valus;
+	}
+
+	//关闭弹窗
+	function canlleconfir(){
+		$('.tel_confirm').css('display', 'none');
+	}
+
+	//确认选择添加成员
+	function enableCheck(){
+		value = valus;
+		text = $("input[name='checkbox']:checked").map(function(index,elem) {
+            return $(elem).val()+'|'+value.type;
+        }).get().join(',');
+
+        if(text == ''){
+        	alert('请选择成员');
+        	return false;
+        }
+		if ( is_sending == true ){ //判断是否提交中
+			return false;
+		}else{
+	        $.post(url+'jingyi.php/Home/Jymember/usertoproj/rand ='+Math.random(), {
+	        	user_id_utype : text,
+			 	addtime : timestamp,
+			    action : value.action,
+	        }, function(ret,err) {
+	        	if(ret.status == 200){
+	        		getUserList();
+	        		canlleconfir();
+	        	}else if(ret.status == 202){
+	        		alert('操作失败!');
+	        	}else{
+	        		alert('网络连接失败，请检查网络!');
+	        		return false;
+	        	}
+	        },'json');
+	    }
+	}
+
+	//项目成员列表显示
+	function getUserList(){
+		value = valus;
+		$.post(url+'jingyi.php/Home/Jymember/userpdetail',{
+			addtime : timestamp
+		}, function(ret,err) {
+			var code = ret.status;
+			if(code == 200){
+
+				var mg = ret.retData.mg;
+			    var cm = ret.retData.cm;
+			    var jl = ret.retData.jl;
+			    var cl = ret.retData.cl;
+			    var xm = ret.retData.xm;
+			    var yd = ret.retData.yd;
+
+			    //管理员
+			    var lists_mg = '';
+			    for(var i in mg){
+			    	var touid = mg[i].user_id,utype = mg[i].utype,name = mg[i].name, imgUrl = mg[i].userphoto;
+			    	lists_mg += '<div class="userList_box">';
+			    		lists_mg += '<img src="'+url+imgUrl+'" />';
+			    		lists_mg += '<div>'+name+'</div>';
+			    	lists_mg += '</div>';
+			    }
+
+			    //普通工人
+			    var lists_cm = '';
+			    for(var i in cm){
+			    	var touid = cm[i].user_id,utype = cm[i].utype,name = cm[i].name, imgUrl = cm[i].userphoto;
+			    	lists_cm += '<div class="userList_box">';
+			    		lists_cm += '<img src="'+url+imgUrl+'" />';
+			    		lists_cm += '<div>'+name+'</div>';
+			    	lists_cm += '</div>';
+			    }
+
+			    //经理
+			    var lists_jl = '';
+			    for(var i in jl){
+			    	var touid = jl[i].user_id,utype = jl[i].utype,name = jl[i].name, imgUrl = jl[i].userphoto;
+			    	lists_jl += '<div class="userList_box">';
+			    		lists_jl += '<img src="'+url+imgUrl+'" />';
+			    		lists_jl += '<div>'+name+'</div>';
+			    	lists_jl += '</div>';
+			    }
+
+			    //材料
+			   	var lists_cl = '';
+				for(var i in cl){
+			    	var touid = cl[i].user_id,utype = cl[i].utype,name = cl[i].name, imgUrl = cl[i].userphoto;
+			    	lists_cl += '<div class="userList_box">';
+			    		lists_cl += '<img src="'+url+imgUrl+'" />';
+			    		lists_cl += '<div>'+name+'</div>';
+			    	lists_cl += '</div>';
+			    }
+
+			    //项目
+			    var lists_xm = '';
+				for(var i in xm){
+			    	var touid = xm[i].user_id,utype = xm[i].utype,name = xm[i].name, imgUrl = xm[i].userphoto;
+			    	lists_xm += '<div class="userList_box">';
+			    		lists_xm += '<img src="'+url+imgUrl+'" />';
+			    		lists_xm += '<div>'+name+'</div>';
+			    	lists_xm += '</div>';
+			    }			    	   	
+
+			    //岗位异动
+			    var lists_mane = '';
+				for(var i in yd){
+			    	var touid = yd[i].user_id,utype = yd[i].utype,name = yd[i].name, imgUrl = yd[i].userphoto;
+			    	lists_mane += '<div class="userList_box">';
+			    		lists_mane += '<img src="'+url+imgUrl+'" />';
+			    		lists_mane += '<div>'+name+'</div>';
+			    	lists_mane += '</div>';
+			    }			    
+
+			    $("#lists_mg").append(lists_mg);
+				$("#lists_cm").append(lists_cm);
+				$("#lists_jl").append(lists_jl);
+				$("#lists_cl").append(lists_cl);
+				$("#lists_xm").append(lists_xm);
+			    $("#lists_mane").append(lists_mane);
+			}
+		},'json');
+	}
+
+	//选择项目成员显示列表
+	function  showUserList(){
+		$.post(url+'jingyi.php/Home/index/getAllMyRelative', {
+			uid:'<?php echo $_SESSION["user_info"]["user_id"];?>',
+        	page : page,
+        	type:'PRIVATE',
+        	types:'user_list'
+		}, function(ret,err) {
+			var html = '';
+			var datas = ret.data;
+			if(ret.code == 200){
+				page ++;
+				for(var j in datas){
+					var data = datas[j];
+					var message = datas[j].message;
+					html += '<div class="tel_list">'+data.zhiwei+'</div>';
+					for(var i in message){
+						var zhiwei = message[i].zhiwei,
+							touid = message[i].touid,
+							name = message[i].name,
+							names = message[i].user_name, 
+							imgUrl = message[i].userphoto;
+						html += '<ul>';
+							html += '<li class="tel_li">';
+								html += '<div class="check">';
+									html += '<input type="checkbox" value="'+touid+'" name="checkbox" />';
+								html += '</div>';
+								html += '<div class="head_img">';
+									html += '<img src="'+url+imgUrl+'" alt=""/>';
+								html += '</div>';
+								html += '<div class="tel_data">';
+									html += '<span>'+name+'</span>';
+									html += '<span>'+names+'</span>';
+								html += '</div>';
+							html += '</li>';
+						html += '</ul>';
+					}
+				}
+
+				$('.getUserList').append(html);
+			}else {
+				alert('数据加载失败，请检查网络!');
+			}
+			
+		},'json');
+	}
+
+	//通讯录搜索
+	function UserSearch(){
+		var key_word = $('#search_text').val();
+
+		if(key_word == ''){
+			showUserList();
+		}else{
+			$.post(url+'jingyi.php/Home/index/searchMyRelatives', {
+				uid : '<?php echo $_SESSION["user_info"]["user_id"];?>',
+				type:'PRIVATE',
+				types:'user_list',
+	        	keyword : key_word,
+			}, function(ret,err) {
+				var datas = ret.data;
+				var html = '';
+
+				if(ret.code == 200){
+					$('.getUserList').html('');
+						page ++;
+						for(var j in datas){
+							var data = datas[j];
+							var message = datas[j].message;
+							html += '<div class="tel_list">'+data.zhiwei+'</div>';
+							for(var i in message){
+								var zhiwei = message[i].zhiwei,
+									touid = message[i].touid,
+									name = message[i].name,
+									names = message[i].user_name, 
+									imgUrl = message[i].userphoto;
+								html += '<ul>';
+									html += '<li class="tel_li">';
+										html += '<div class="check">';
+											html += '<input type="checkbox" value="'+touid+'" name="checkbox" />';
+										html += '</div>';
+										html += '<div class="head_img">';
+											html += '<img src="'+url+imgUrl+'" alt=""/>';
+										html += '</div>';
+										html += '<div class="tel_data">';
+											html += '<span>'+name+'</span>';
+											html += '<span>'+names+'</span>';
+										html += '</div>';
+									html += '</li>';
+								html += '</ul>';
+							}
+						}
+
+					$('.getUserList').append(html);
+				}else if(ret.code == 201){
+					$('.getUserList').html('暂无数据');
+				}else{
+					alert('请检查网络连接');
+					return false;
+				}
+			},'json');
+		}
+	}
+
+	// 项目列表
+	function xm_show_list(){
+		$.post(url+'jingyi.php/Home/Jymember/lonAndlat', {
+			user_id  :  '<?php echo $_SESSION["user_info"]["user_id"];?>',
+			status   : 2,
+			page     : page,
+			storeid  : 'b65e2727ec76202a16d7fd77dfa8a2de',
+			ptype    : 1,
+		}, function(ret,err) {
+			if(ret.status == 200){
+				page++;
+				var retData = ret.retData;
+				var html = '';
+
+				for(var i in retData){
+					var userphoto = retData[i].userphoto,
+						id = retData[i].prj_id,
+						prj_name = retData[i].prj_name,
+						pre_price = retData[i].pre_price,
+						address = retData[i].address,
+						group_id = retData[i].group_id,
+						renshu = retData[i].renshu,
+						xmfzr = retData[i].xmfzr,
+						start_time = (retData[i].start_time == null || retData[i].start_time == '') ? '未设定':retData[i].start_time,
+						expire_time = (retData[i].expire_time == null || retData[i].expire_time == '') ? '未设定':retData[i].expire_time,
+					    protype = retData[i].ptype;
+		           		
+		           		
+		           		pre_prices = (pre_price != '')?+pre_price+'万元':'';
+		           		address    = (address != 'null' || typeof(address) != null) ? address: '';
+
+		           	html += '<li style="cursor: pointer;" class="show_li" id="'+prj_name+'" onclick="open_map_content(this,'+id+','+group_id+','+protype+')">';
+						html += '<div class="xmbox">';
+							html += '<div class="head_box">';
+								html += '<div class="img_box">';
+					            	for(var j=0;j<4;j++){
+					            		html += '<img src="'+url+userphoto[j]+'" alt="" style="float:left;" />';
+					            	}
+					            html += '</div>';
+					            html += '<div class="txt_box">';
+					                html += '<div class="">(<span>'+renshu+'</span>)'+prj_name+'</div>';
+					                html += '<div class="">'+pre_prices+'</div>';
+					                html += '<div class="">'+address+'</div>';
+					                html += '<div class="">项目负责人:'+xmfzr+'</div>';
+					            html += '</div>';
+							html += '</div>';
+					        html += '<div class="foot_box">';
+					        	html += '<div class="foot_left">开工时间:'+start_time+'</div>';
+					        	html += '<div class="foot_right">完工时间:'+expire_time+'</div>';
+					        html += '</div>';
+						html += '</div>';
+					html += '</li>';
+				}
+				$('#xm_show_box').append(html);
+			}else if(ret.status == 202){	
+				if(page == 1){
+					$("#weixiu_lists").html('暂无数据');
+					return false;
+				}else{
+					alert('暂无更多数据了');
+				}
+			}else{
+				alert('网络连接失败，请检查网络');
+				return false;
+			}
+		},'json');
+	}
+
+
+	var prjid = '';
+	// 打开项目详情
+	function open_map_content(obj,id,group_id,ptype){
+		prjid = id;
+		$('.xm_details').css('display', 'block');
+
+		// 项目详情
+		$.post(url+'jingyi.php/Home/Jymember/xiangmu_Content', {
+			prj_id : id ,
+		}, function(ret,err) {
+			if(ret.status == 200){
+				var retData = ret.retData;
+
+				$(".prj_name").html(retData.prj_name);
+				$(".address").html(retData.address);
+				$(".start_time").html(retData.start_time);
+				$(".expire_time").html(retData.finish_time);
+				$(".pre_price").html(retData.pre_price);
+				$(".finish_time").html(retData.expire_time);
+				$(".prj_desc").html(retData.prj_desc);
+			}
+		},'json');
+
+		user_data_list();
+		selete_img();
+	}
+
+	function user_data_list(){
+		// 成员列表
+		
+		$.post(url+'jingyi.php/Home/Jymember/userpdetail', {
+			p_id : prjid ,
+		}, function(ret,err) {
+			var code = ret.status;
+
+			if(code == 200){
+				var mg = ret.retData.mg;
+		        var cm = ret.retData.cm;
+		        var jl = ret.retData.jl;
+		        var cl = ret.retData.cl;
+		        var xm = ret.retData.xm;
+		        var yd = ret.retData.yd;
+
+		        //管理员
+			    var lists_mg = '';
+			    for(var i in mg){
+			    	var touid = mg[i].user_id,utype = mg[i].utype,name = mg[i].name, imgUrl = mg[i].userphoto;
+			    	lists_mg += '<div class="userList_box">';
+			    		lists_mg += '<img src="'+url+imgUrl+'" />';
+			    		lists_mg += '<div>'+name+'</div>';
+			    	lists_mg += '</div>';
+			    }
+
+			    //普通工人
+			    var lists_cm = '';
+			    for(var i in cm){
+			    	var touid = cm[i].user_id,utype = cm[i].utype,name = cm[i].name, imgUrl = cm[i].userphoto;
+			    	lists_cm += '<div class="userList_box">';
+			    		lists_cm += '<img src="'+url+imgUrl+'" />';
+			    		lists_cm += '<div>'+name+'</div>';
+			    	lists_cm += '</div>';
+			    }
+
+			    //经理
+			    var lists_jl = '';
+			    for(var i in jl){
+			    	var touid = jl[i].user_id,utype = jl[i].utype,name = jl[i].name, imgUrl = jl[i].userphoto;
+			    	lists_jl += '<div class="userList_box">';
+			    		lists_jl += '<img src="'+url+imgUrl+'" />';
+			    		lists_jl += '<div>'+name+'</div>';
+			    	lists_jl += '</div>';
+			    }
+
+			    //材料
+			   	var lists_cl = '';
+				for(var i in cl){
+			    	var touid = cl[i].user_id,utype = cl[i].utype,name = cl[i].name, imgUrl = cl[i].userphoto;
+			    	lists_cl += '<div class="userList_box">';
+			    		lists_cl += '<img src="'+url+imgUrl+'" />';
+			    		lists_cl += '<div>'+name+'</div>';
+			    	lists_cl += '</div>';
+			    }
+
+			    //项目
+			    var lists_xm = '';
+				for(var i in xm){
+			    	var touid = xm[i].user_id,utype = xm[i].utype,name = xm[i].name, imgUrl = xm[i].userphoto;
+			    	lists_xm += '<div class="userList_box">';
+			    		lists_xm += '<img src="'+url+imgUrl+'" />';
+			    		lists_xm += '<div>'+name+'</div>';
+			    	lists_xm += '</div>';
+			    }			    	   	
+
+			    //岗位异动
+			    var lists_mane = '';
+				for(var i in yd){
+			    	var touid = yd[i].user_id,utype = yd[i].utype,name = yd[i].name, imgUrl = yd[i].userphoto;
+			    	lists_mane += '<div class="userList_box">';
+			    		lists_mane += '<img src="'+url+imgUrl+'" />';
+			    		lists_mane += '<div>'+name+'</div>';
+			    	lists_mane += '</div>';
+			    }			    
+
+			    $("#lists_mg").html(lists_mg);
+				$("#lists_cm").html(lists_cm);
+				$("#lists_jl").html(lists_jl);
+				$("#lists_cl").html(lists_cl);
+				$("#lists_xm").html(lists_xm);
+			    $("#lists_mane").html(lists_mane);
+				
+			}
+		},'json');
+	}
+
+	// 获取图片
+	function selete_img(){
+		$.post(url+'jingyi.php/Home/Jymember/getImgByti', {
+			p_id:prjid ,
+		}, function(ret,err) {
+			if(ret.status == 200){
+				var imgs = ret.retData;
+				var img = '';
+				for(var i in imgs){
+					img += '<img src="'+url + imgs[i].pimg+'" id="preview" alt="">';
+				}
+				$('#preview').html(img);
+			}else{
+				alert('网络连接失败，请检查网络');
+				return false;
+			}
+		},'json');
+	}
+
+	// 关闭项目详情页
+	function close_xmdata_btn(){
+		$('.xm_details').css('display', 'none');
 	}
 </script>
 </body>

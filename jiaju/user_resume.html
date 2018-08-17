@@ -112,7 +112,7 @@ body{background:url('') no-repeat center top }
  									姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名：
  								</div>
  								<div class="user_resume_input user_info_input">
- 									<input type="text" style="height: 20px;line-height: 20px;font-size: 14px;" />
+ 									<input type="text" style="height: 20px;line-height: 20px;font-size: 14px;" id="name" />
  								</div>
  							</li>
 
@@ -121,7 +121,7 @@ body{background:url('') no-repeat center top }
  									出生日期：
  								</div>
  								<div class="user_resume_input user_info_input">
- 									<input type="text" style="height: 20px;line-height: 20px;font-size: 14px;" />
+ 									<input type="text" style="height: 20px;line-height: 20px;font-size: 14px;" id="birthtime" />
  								</div>
  							</li>
 
@@ -130,7 +130,7 @@ body{background:url('') no-repeat center top }
  									手&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;机：
  								</div>
  								<div class="user_resume_input user_info_input">
- 									<input type="text" style="height: 20px;line-height: 20px;font-size: 14px;" />
+ 									<input type="text" style="height: 20px;line-height: 20px;font-size: 14px;" id="tel" />
  								</div>
  							</li>
 
@@ -139,7 +139,7 @@ body{background:url('') no-repeat center top }
  									籍&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;贯：
  								</div>
  								<div class="user_resume_input user_info_input">
- 									<input type="text" style="height: 20px;line-height: 20px;font-size: 14px;" />
+ 									<input type="text" style="height: 20px;line-height: 20px;font-size: 14px;" id="huji" />
  								</div>
  							</li>
 							<li>
@@ -151,7 +151,7 @@ body{background:url('') no-repeat center top }
  									起止时间：
  								</div>
  								<div class="user_resume_input user_info_input">
- 									<input type="text" style="height: 20px;line-height: 20px;font-size: 14px;" />
+ 									<input type="text" style="height: 20px;line-height: 20px;font-size: 14px;" id="starttime"/>
  								</div>
  							</li>
 
@@ -160,7 +160,7 @@ body{background:url('') no-repeat center top }
  									学院名称：
  								</div>
  								<div class="user_resume_input user_info_input">
- 									<input type="text" style="height: 20px;line-height: 20px;font-size: 14px;" />
+ 									<input type="text" style="height: 20px;line-height: 20px;font-size: 14px;" id="school"/>
  								</div>
  							</li>
 
@@ -172,9 +172,9 @@ body{background:url('') no-repeat center top }
  									性&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;别：
  								</div>
  								<div class="user_resume_input user_info_input">
- 									<input type="radio" id="male" checked="checked" name="Sex" value="male" style="width: 20px; height: 30px;line-height: 30px;font-size: 14px;" />
+ 									<input type="radio" id="male" checked="checked" name="Sex" value="0" style="width: 20px; height: 30px;line-height: 30px;font-size: 14px;" />
  									<label for="male" class="male"><img class="resume_boy" src="/themes/mall/jiaju/images/center/bg_radio_full.jpg" alt="" width="15" height="15" />&nbsp;&nbsp;男&nbsp;&nbsp;</label>
- 									<input type="radio" id="female" name="Sex" value="female" style="width: 20px;height: 30px;line-height: 30px;font-size: 14px;" />
+ 									<input type="radio" id="female" name="Sex" value="1" style="width: 20px;height: 30px;line-height: 30px;font-size: 14px;" />
  									<label for="female"><img class="resume_girl" src="/themes/mall/jiaju/images/center/bg_radio_empty.jpg" alt="" width="15" height="15" />&nbsp;&nbsp;女</label>
  								</div>
  							</li>
@@ -194,7 +194,7 @@ body{background:url('') no-repeat center top }
  									邮&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;箱：
  								</div>
  								<div class="user_resume_input user_info_input">
- 									<input type="text" style="height: 20px;line-height: 20px;font-size: 14px;" />
+ 									<input type="text" style="height: 20px;line-height: 20px;font-size: 14px;" id="email" />
  								</div>
  							</li>
  							<li>
@@ -202,7 +202,7 @@ body{background:url('') no-repeat center top }
  									居&nbsp;&nbsp;住&nbsp;&nbsp;地：
  								</div>
  								<div class="user_resume_input user_info_input">
- 									<input type="text" style="height: 20px;line-height: 20px;font-size: 14px;" />
+ 									<input type="text" style="height: 20px;line-height: 20px;font-size: 14px;" id="palce" />
  								</div>
  							</li>
  							<li>
@@ -213,7 +213,7 @@ body{background:url('') no-repeat center top }
  									学历/学位：
  								</div>
  								<div class="user_resume_input user_info_input">
- 									<input type="text" style="height: 20px;line-height: 20px;font-size: 14px;" />
+ 									<input type="text" style="height: 20px;line-height: 20px;font-size: 14px;" id="xuewei" />
  								</div>
  							</li>
  							<li>
@@ -221,7 +221,7 @@ body{background:url('') no-repeat center top }
  									专&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;业：
  								</div>
  								<div class="user_resume_input user_info_input">
- 									<input type="text" style="height: 20px;line-height: 20px;font-size: 14px;" />
+ 									<input type="text" style="height: 20px;line-height: 20px;font-size: 14px;" id="zhuanye" />
  								</div>
  							</li>
 
@@ -234,7 +234,7 @@ body{background:url('') no-repeat center top }
  					<div>
  					<div class="user_resume_work">
  						<h3 style="font-size: 16px;color: #ff552e;text-align: left;font-weight: bold;margin: 10px 0;">个人工作经验</h3>
- 						<textarea style="height: 85px;width: 585px; line-height: 20px;font-size: 14px;padding-left: 15px;" placeholder="请详细填写你之前的工作经历及在公司的工作范围、工作任务、取得的成绩"></textarea>
+ 						<textarea style="height: 85px;width: 585px; line-height: 20px;font-size: 14px;padding-left: 15px;" placeholder="请详细填写你之前的工作经历及在公司的工作范围、工作任务、取得的成绩" id="workjingyan"></textarea>
  					</div>
  					<ul>
  						<h3 style="font-size: 16px;color: #ff552e;text-align: left;font-weight: bold;margin: 20px 0 10px 0;">求职意向<span style="font-size: 12px;color: #b4b4b4;">(请填写一份你所期待的工作)</span></h3>
@@ -245,7 +245,7 @@ body{background:url('') no-repeat center top }
  									期望薪资：
  								</div>
  								<div class="user_resume_input user_info_input">
- 									<input type="text" style="height: 20px;line-height: 20px;font-size: 14px;" />
+ 									<input type="text" style="height: 20px;line-height: 20px;font-size: 14px;" id="salary" />
  								</div>
  							</li>
  							<li>
@@ -253,7 +253,7 @@ body{background:url('') no-repeat center top }
  									工作地点：
  								</div>
  								<div class="user_resume_input user_info_input">
- 									<input type="text" style="height: 20px;line-height: 20px;font-size: 14px;" />
+ 									<input type="text" style="height: 20px;line-height: 20px;font-size: 14px;" id="workpalce" />
  								</div>
  							</li>
  							<li>
@@ -261,7 +261,7 @@ body{background:url('') no-repeat center top }
  									职&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;能：
  								</div>
  								<div class="user_resume_input user_info_input">
- 									<input type="text" style="height: 20px;line-height: 20px;font-size: 14px;" />
+ 									<input type="text" style="height: 20px;line-height: 20px;font-size: 14px;" id="zhineng" />
  								</div>
  							</li>
  							<li>
@@ -269,7 +269,7 @@ body{background:url('') no-repeat center top }
  									职&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;位：
  								</div>
  								<div class="user_resume_input user_info_input">
- 									<input type="text" style="height: 20px;line-height: 20px;font-size: 14px;" />
+ 									<input type="text" style="height: 20px;line-height: 20px;font-size: 14px;" id="zhiwei" />
  								</div>
  							</li>
  							<li>
@@ -277,7 +277,7 @@ body{background:url('') no-repeat center top }
  									行&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;业：
  								</div>
  								<div class="user_resume_input user_info_input">
- 									<input type="text" style="height: 20px;line-height: 20px;font-size: 14px;" />
+ 									<input type="text" style="height: 20px;line-height: 20px;font-size: 14px;" id="hangye" />
  								</div>
  							</li>
  							<li>
@@ -285,7 +285,7 @@ body{background:url('') no-repeat center top }
  									个人标签：
  								</div>
  								<div class="user_resume_input user_info_input">
- 									<input type="text" style="height: 20px;line-height: 20px;font-size: 14px;" />
+ 									<input type="text" style="height: 20px;line-height: 20px;font-size: 14px;" id="self" />
  								</div>
  							</li>
  							<li style="height: 90px;width: 590px;">
@@ -293,7 +293,7 @@ body{background:url('') no-repeat center top }
  									自我评价：
  								</div>
  								<div class="user_resume_input user_info_input">
- 									<textarea style="height: 90px;width: 510px; line-height: 20px;font-size: 14px;padding-left: 15px;" placeholder="请简单的介绍一下自己，说出自己最大的优势，让企业看到你的闪光点"></textarea>
+ 									<textarea style="height: 90px;width: 510px; line-height: 20px;font-size: 14px;padding-left: 15px;" placeholder="请简单的介绍一下自己，说出自己最大的优势，让企业看到你的闪光点" id="selfpingjia"></textarea>
  									
  								</div>
  							</li>
@@ -305,7 +305,7 @@ body{background:url('') no-repeat center top }
  					</div>
  					<div class="user_resume_button" style="margin: 20px 0;">
  						<button class="user_resume_button_keep" style="width: 100px;height: 30px;line-height: 15px;background-color: #ff552e;color: #fff;position: relative;left: -100px;">保存</button>
- 					<button class="user_resume_button_show" style="width: 100px;height: 30px;line-height: 15px;background-color: #ff552e;color: #fff;position: relative;left: 50px;">提交发布</button>
+ 					<button class="user_resume_button_show" style="width: 100px;height: 30px;line-height: 15px;background-color: #ff552e;color: #fff;position: relative;left: 50px;" onclick="addsume()">提交发布</button>
  					</div>
  					
  					</div>
@@ -329,7 +329,7 @@ body{background:url('') no-repeat center top }
 		$(".container_nav ul li").removeClass("bg_li")
 		$(this).addClass("bg_li")
 	})
-
+//性别与婚配
 	 $(".girl").click(function(){
     	// console.log()
     	$(this)[0].src = "/themes/mall/jiaju/images/center/bg_radio_full.jpg";
@@ -361,6 +361,105 @@ body{background:url('') no-repeat center top }
     	$(".resume_marry")[0].src = "/themes/mall/jiaju/images/center/bg_radio_empty.jpg";
     })
 
+//检测手机号
+
+	$("#tel").blur(function(){
+	var tel = parseInt($("#tel").val()); 
+	console.log(tel)
+	if(!(/^1[3|4|5|7|8][0-9]\d{4,8}$/.test(tel))){
+			alert('请输入正确的手机号码');
+			return false;
+		}
+	})
+//获取数据
+function addsume(){
+	var name = $("#name").val();   //姓名
+	var birthtime = $("#birthtime").val();  //出生日期
+	var tel = parseInt($("#tel").val());    //手机
+	var huji = $("#huji").val();  //贯籍
+	var starttime = $("#starttime").val();   //起止时间
+	var school = $("#school").val(); //学院名称
+	var sex = $("input[name='Sex']:checked").val();  //性别
+	var marry = $("input[name='marry']:checked").val();  //婚嫁
+	var email = $("#email").val();   //邮箱
+	var palce = $("#palce").val();   //居住地
+	var xuewei = $("#xuewei").val();  //学位
+	var zhuanye = $("#zhuanye").val();  //专业
+	var workjingyan = $("#workjingyan").val();  //工作经验
+	var salary = $("#salary").val();    //薪资
+	var workpalce = $("#workpalce").val();  //工作地点
+	var zhineng = $("#zhineng").val();   //职能
+	var zhiwei = $("#zhiwei").val();   //职位
+	var hangye = $("#hangye").val();   //行业
+	var self = $("#self").val();    //个人标签
+	var selfpingjia = $("#selfpingjia").val();  //自我评价
+	var checked = $("input[type='checkbox']").is(':checked');  //同意协议
+
+
+
+
+	if(name == ""){
+		alert("姓名不能为空");
+		return false;
+	}else if(birthtime == ""){
+		alert("出生日期不能为空");
+		return false;
+	}else if(tel == ""){
+		alert("电话不能为空");
+		return false;
+	}else if(huji == ""){
+		alert("贯籍不能为空");
+		return false;
+	}else if(sex == ""){
+		alert("性别不能为空");
+		return false;
+	}else if(marry == ""){
+		alert("婚配情况不能为空");
+		return false;
+	}else if(palce == ""){
+		alert("居住地不能为空");
+		return false;
+	}else if(salary == ""){
+		alert("薪资不能为空");
+		return false;
+	}else if(zhiwei == ""){
+		alert("职位不能为空");
+		return false;
+	}else if(!checked){
+		alert("未同意协议");
+		return false;
+	}else if(!(/^1[3|5|7|8][0-9]\d{4,8}$/.test(tel))){
+		alert('请输入正确的手机号码');
+			return false;
+	}else{
+		$.post('http://wgcapp.wgc2013.com/jingyi.php/Home/Index/addfriendfrees',{
+			name 		:name,
+			birthtime	:birthtime,
+			tel 		:tel,
+			huji		:huji,
+			starttime	:starttime,
+			school		:school,
+			sex     	:sex,
+			marry   	:marry,
+			email   	:email,
+			palce   	:palce,
+			xuewei  	:xuewei,
+			zhuanye  	:zhuanye,
+			workjingyan :workjingyan,
+			salary      :salary,
+			workpalce   :workpalce,
+			zhineng     :zhineng,
+			zhiwei      :zhiwei,
+			hangye      :hangye,
+			self        :self,
+			selfpingjia :selfpingjia,
+			checked     :checked,
+
+		},function(ret){
+			console.log(ret)
+		},'json')
+	}
+}
 </script>
 </body>
 </html>

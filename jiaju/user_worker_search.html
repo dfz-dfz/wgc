@@ -100,9 +100,11 @@ body{background:url('') no-repeat center top }
 			<div class="section" style="border: none;">
 			<div class="search">
 				<span style="font-size: 15px;color: #000;font-weight: bold;">手机号</span><span style="margin: 0 2px;">:</span>
-				<input type="text" class="phone_input" />
-				<input type="button" value="查询" class="search_btn" />
-				<ul>
+				<input type="text" class="phone_input" id="search" />
+				<input type="button" value="查询" class="search_btn" onclick="doSearch()" />
+				<ul class="tel_ul">
+				</ul>
+				<ul style="display: none;">
 					<li style="text-align: center;font-size: 15px;color: #000;font-weight: bold;">暂无工人</li>
 				</ul>
 			</div>
@@ -129,7 +131,45 @@ body{background:url('') no-repeat center top }
 {include file=footer.html}
 
 <script type="text/javascript">
+servermsg = 'http://wgcapp.wgc2013.com/index.php/Home/';
+imgUrl = 'http://wgcapp.wgc2013.com/';
+page = 1;
+//搜索
+function doSearch(){
+		var content = $("#search").val();
+		if(content){
+			searchKey(content);
+		}
+}
 
+function searchKey(content){
+	$.post(servermsg+'Systemmsg/JobdetailsSearch',{
+					keywods : content,
+					type    : '施工队长',
+					page    : page,
+					s_city  : '广州',
+	},function(ret){
+		console.log(ret)
+		if(ret.code == 200){
+			$(".tel_ul").html(" ");
+			var data = ret.message;
+			var name = data[0].name;
+			var imgurl = imgUrl+data[0].userphoto;
+			console.log(imgurl)
+			var zhiwei = data[0].zhiwei;
+			var gz_jingyan = data[0].gz_jingyan;
+			var listHtml =  '';
+			listHtml   +=	'<li style="margin: 0 0 10px 0;border: 1px solid #eee;">';
+			listHtml   +=	'<img src="'+ imgurl +'" alt="" width="50" height="50" style="float: left;margin-left:10px;" />';
+			listHtml   +=	'<div class="tel_div" style="float:left;">';
+			listHtml   +=	'<span style="display:block;margin:5px 0;">'+name+'</span>';
+			listHtml   +=	'<span style="display:block;margin:5px 0;">'+zhiwei+'</span>';
+			listHtml   +=	'</div>';
+			listHtml   +=	'</li>';
+			$(".tel_ul").append(listHtml);
+		}
+	},'json')
+}
 </script>
 </body>
 </html>

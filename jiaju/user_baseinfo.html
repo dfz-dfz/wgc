@@ -15,6 +15,30 @@
 <script type="text/javascript">
 	jQuery.support.cors = true;
 </script>
+<style>
+	.upload_input{
+	  display: block;
+	  width: 85px;
+	  height: 25px;
+	  line-height: 12px;
+	  position: relative;
+	  left: 40px;
+	  z-index: 999;
+	  -webkit-opacity: 0.0;  
+	  /* Netscape and Older than Firefox 0.9 */  
+	  -moz-opacity: 0.0;  
+	  /* Safari 1.x (pre WebKit!) 老式khtml内核的Safari浏览器*/  
+	  -khtml-opacity: 0.0;  
+	  /* IE9 + etc...modern browsers */  
+	  opacity: .0;  
+	  /* IE 4-9 */  
+	  filter:alpha(opacity=0);  
+	  /*This works in IE 8 & 9 too*/  
+	  -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";  
+	  /*IE4-IE9*/  
+	  filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=0); 
+}
+	</style>
 
 </head>
 
@@ -77,8 +101,9 @@ body{background:url('') no-repeat center top }
  			<div class="base_info" style="overflow: hidden;">
  				<!-- 信息里边的内容 -->
  				<div class="user_photo" style="width: 20%;height: 100%;float: left;margin-top: 30px;">
- 					<img class="userphoto_img" src="/themes/mall/jiaju/images/center/user-head.png" alt="用户头像" width="75" height="75" style="position: relative;top: 15px;left: 20px;" />
- 					<div><button class="user_photo_button" style="background-image: url('/themes/mall/jiaju/images/center/user_button.jpg');background-size: 80px 25px;">更改头像</button></div>
+ 					<img class="preview" id="preview" src="/themes/mall/jiaju/images/center/user-head.png" alt="用户头像" width="75" height="75" style="margin-left: auto;margin-right: auto;" />
+ 					<input type="file" id="doc" name="pic" class="upload_input" onchange="change(this)" />
+ 					<button style="display:block; padding: 0;width: 85px;height: 25px;line-height: 12px;border-radius: 5px;background-color: #ff552e;color: #fff;margin-left: auto;margin-right: auto;margin-top: 10px;" onclick="clickImg(this)">更换头像</button>
  				</div>
  				<div class="user_input" style="width: 80%;height: 100%;float: right;margin-top: 30px;">
  					<div style="overflow: hidden;">
@@ -485,6 +510,58 @@ $(".container_nav ul li").click(function(){
 				},'json')
 				
 	}
+
+	// 更换logo
+	var clickImg = function(obj){
+	    $(obj).parent().find('.upload_input').click();
+	  }
+	function change(file) {
+	      //预览
+	      var pic = $(file).parent().find(".preview");
+
+
+	      var ext=file.value.substring(file.value.lastIndexOf(".")+1).toLowerCase();
+
+	       // gif在IE浏览器暂时无法显示
+	       if(ext!='png'&&ext!='jpg'&&ext!='jpeg'){
+	          if (ext != '') {
+	            alert("图片的格式必须为png或者jpg或者jpeg格式！"); 
+	          } 
+	           return;
+	       }
+	       //判断IE版本
+	       var isIE = navigator.userAgent.match(/MSIE/)!= null,
+	           isIE6 = navigator.userAgent.match(/MSIE 6.0/)!= null;
+	           isIE10 = navigator.userAgent.match(/MSIE 10.0/)!= null;
+	       if(isIE && !isIE10) {
+	          file.select();
+	          var reallocalpath = document.selection.createRange().text;
+	           // IE6浏览器设置img的src为本地路径可以直接显示图片
+	           if (isIE6) {
+	              pic.attr("src",reallocalpath);
+	           }else{
+	              // 非IE6版本的IE由于安全问题直接设置img的src无法显示本地图片，但是可以通过滤镜来实现             
+	              pic.css("filter","progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod='scale',src=\"" + reallocalpath + "\")");
+	              // 设置img的src为base64编码的透明图片 取消显示浏览器默认图片
+	              pic.attr('src','data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==');             
+	           }
+
+	           
+	       }else {
+	          html5Reader(file,pic);
+	       }
+	  }
+	function html5Reader(file,pic){
+	     var file = file.files[0];
+	     var reader = new FileReader();
+	     reader.readAsDataURL(file);
+	     reader.onload = function(e){
+	         pic.attr("src",this.result);
+	     }
+
+	 
+	  }
+
 </script>
 </body>
 </html>
