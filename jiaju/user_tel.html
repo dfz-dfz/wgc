@@ -1,9 +1,10 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+<meta charset="utf-8">
 <meta http-equiv="Access-Control-Allow-Origin" content="*">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta http-equiv="X-UA-Compatible" content="IE=8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
 <title>用户中心-微工程</title>
 <meta name="description" content="微工程，微工程APP，装修、材料、家具、饰品一站式服务，让装修更简单，价格更透明！！" />
 <meta name="keywords" content="微工程，微工程，家居商城，微工程家居商城，微工程家居装修商城，办公室装修，写字楼装修，材料，装修材料，家居，办公家具，家居，家具，装修，装饰" />
@@ -13,20 +14,6 @@
 
 <link rel="stylesheet" href="/themes/mall/jiaju/styles/css/address_list.css">
 <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
-<!-- <script type="text/javascript" src="www.wgc2013.com/themes/mall/jiaju/js/jquery-1.8.3.min.js"></script> -->
-<script type="text/javascript">
-	jQuery.support.cors = true;
-</script>
-
-</head>
-
-<body style="background:#fff;">
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<!-- <base href="http://www.wgc2013.com/" /> -->
-<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7 charset=utf-8" />
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 <link type="text/css" href="/themes/mall/jiaju/styles/default/css/main.css" rel="stylesheet"  />
 <link type="text/css" href="/themes/mall/jiaju/styles/css/global.css" rel="stylesheet"  />
@@ -144,10 +131,10 @@ body{background:url('') no-repeat center top }
 {include file=footer.html}
 
 <script type="text/javascript">
-$(".container_nav ul li").click(function(){
-	$(".container_nav ul li").removeClass("bg_li")
-	$(this).addClass("bg_li")
-})
+	$(".container_nav ul li").click(function(){
+		$(".container_nav ul li").removeClass("bg_li")
+		$(this).addClass("bg_li")
+	})
 	// 弹窗控制
 	$('.add_btn').click(function() {
 		$('.confirm').css({
@@ -170,8 +157,6 @@ $(".container_nav ul li").click(function(){
 		            	types:'user_list',
 		            	page : pages,
 			},function(ret){
-			//alert(JSON.stringify(ret))
-			console.log(ret.data)
 				if(ret.code == 200){
 					pages++;
 					var listHtml = '';
@@ -254,7 +239,10 @@ $(".container_nav ul li").click(function(){
 			}
 		},'json');
 	}
-		$.ready(getUserList())
+	
+	$(document).ready(function() {
+		getUserList();
+	});
 
 </script>
 </body>

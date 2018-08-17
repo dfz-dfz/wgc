@@ -9,12 +9,16 @@
 <meta name="keywords" content="微工程，微工程，家居商城，微工程家居商城，微工程家居装修商城，办公室装修，写字楼装修，材料，装修材料，家居，办公家具，家居，家具，装修，装饰" />
 <link rel="stylesheet" type="text/css" href="/themes/mall/jiaju/css/api.css"/>
 <link rel="stylesheet" type="text/css" href="/themes/mall/jiaju/css/aui.css" />
-<link rel="stylesheet" type="text/css" href="/themes/mall/jiaju/css/aui.1.0.css"/>
+<!-- <link rel="stylesheet" type="text/css" href="/themes/mall/jiaju/css/aui.1.0.css"/> -->
 <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
-<script type="text/javascript" src="/themes/mall/jiaju/js/jquery-1.8.3.min.js"></script>
+<!-- <script type="text/javascript" src="/themes/mall/jiaju/js/jquery-1.8.3.min.js"></script> -->
 <script type="text/javascript">
 	jQuery.support.cors = true;
 //登录
+	$(".aui-btn").click(function(){
+		console.log("hello")
+		login();
+	})
 	function login(){
 
 		var mobile = $("#mobile");
@@ -33,6 +37,25 @@
 			alert("请先同意微工程服务条款，谢谢！");
 	        return false; 	
         }else{
+   //      		$.ajax({
+			// 	type:"POST",
+			// 	url:'http://wgcapp.59jiaju.com/jingyi.php/Home/index/login',
+			// 	data:{
+			// 		user_name : mobile.val(),
+			// 		password : password.val(),
+			// 		typeinfo : 'pc'
+			// 	},
+			// 	cache:false,
+			// 	crossDomain: true == !(document.all),
+			// 	dataType: "json",
+			// 	success:function(ret){
+			// 		console.log(ret)
+			// 	},
+			// 	error:function(err){
+			// 		console.log(err)
+			// 	}
+			// });
+
 			$.post("http://wgcapp.59jiaju.com/jingyi.php/Home/index/login",{user_name : mobile.val(),password : password.val(),typeinfo : 'pc'},function(ret){
         	
         		if(ret.code == 200){

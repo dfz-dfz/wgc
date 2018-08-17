@@ -14,10 +14,11 @@
 <link rel="stylesheet" href="themes/mall/jiaju/styles/css/tel_list.css">
 
 <script type="text/javascript" src="index.php?act=jslang"></script>
-<script type="text/javascript" src="http://www.wgc2013.com/includes/libraries/javascript/ecmall.js" charset="utf-8"></script>
+<!-- <script type="text/javascript" src="http://www.wgc2013.com/includes/libraries/javascript/ecmall.js" charset="utf-8"></script> -->
 <script type="text/javascript" src="http://www.wgc2013.com/includes/libraries/javascript/cart.js" charset="utf-8"></script>
 <script type="text/javascript" src="http://www.wgc2013.com/includes/libraries/javascript/jquery.js" charset="utf-8"></script>
 <script type="text/javascript" src="http://www.wgc2013.com/themes/mall/jiaju/styles/default/js/main.js" charset="utf-8"></script>
+
 <!-- 引入的是个人中心的 -->
 
 
@@ -26,6 +27,8 @@
 <![endif]-->
 <!--[if IE 8]>
 <link type="text/css" href="themes/mall/jiaju/css/ie8.css" rel="stylesheet"  />
+<script src="//cdn.bootcss.com/respond.js/1.4.2/respond.js"></script>
+<script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
 <![endif]-->
 <script type="text/javascript">
 var SITE_URL = "http://www.wgc2013.com";
@@ -459,7 +462,7 @@ $("input[name='pic']").live('change',function(){
 	//添加项目成员/删除项目成员
 	function openUserList(type,action){
 		$('.tel_confirm').css('display', 'block');
-		valus = {type,action};
+		valus = {type:action};
 		return valus;
 	}
 
@@ -587,15 +590,38 @@ $("input[name='pic']").live('change',function(){
 	}
 
 	//选择项目成员显示列表
+
 	function  showUserList(){
+		uid= '<?php echo $_SESSION["user_info"]["user_id"];?>';
+		$.ajax({
+				type:"POST",
+				url:'http://wgcapp.wgc2013.com/jingyi.php/Home/index/getAllMyRelative',
+				data:{
+						uid:'<?php echo $_SESSION["user_info"]["user_id"];?>',
+		            	type:'PRIVATE',
+		            	types:'user_list',
+		            	page : page,
+				},
+				cache:false,
+				crossDomain: true == !(document.all),
+				dataType: "JSON",
+				success:function(ret){
+					console.log("成功")
+				},
+				error:function(err){
+					console.log("错误是");
+					console.log(err);
+				}
+			});
 		$.post(url+'jingyi.php/Home/index/getAllMyRelative', {
 			uid:'<?php echo $_SESSION["user_info"]["user_id"];?>',
         	page : page,
         	type:'PRIVATE',
         	types:'user_list'
-		}, function(ret,err) {
+		}, function(ret) {
 			var html = '';
 			var datas = ret.data;
+			
 			if(ret.code == 200){
 				page ++;
 				for(var j in datas){

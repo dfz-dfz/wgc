@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Access-Control-Allow-Origin" content="*">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta http-equiv="X-UA-Compatible" content="IE=8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=8" /> 
 <title>用户中心-微工程</title>
 <meta name="description" content="微工程，微工程APP，装修、材料、家具、饰品一站式服务，让装修更简单，价格更透明！！" />
 <meta name="keywords" content="微工程，微工程，家居商城，微工程家居商城，微工程家居装修商城，办公室装修，写字楼装修，材料，装修材料，家居，办公家具，家居，家具，装修，装饰" />
@@ -15,30 +15,6 @@
 <script type="text/javascript">
 	jQuery.support.cors = true;
 </script>
-<style>
-	.upload_input{
-	  display: block;
-	  width: 85px;
-	  height: 25px;
-	  line-height: 12px;
-	  position: relative;
-	  left: 40px;
-	  z-index: 999;
-	  -webkit-opacity: 0.0;  
-	  /* Netscape and Older than Firefox 0.9 */  
-	  -moz-opacity: 0.0;  
-	  /* Safari 1.x (pre WebKit!) 老式khtml内核的Safari浏览器*/  
-	  -khtml-opacity: 0.0;  
-	  /* IE9 + etc...modern browsers */  
-	  opacity: .0;  
-	  /* IE 4-9 */  
-	  filter:alpha(opacity=0);  
-	  /*This works in IE 8 & 9 too*/  
-	  -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";  
-	  /*IE4-IE9*/  
-	  filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=0); 
-}
-	</style>
 
 </head>
 
@@ -101,9 +77,11 @@ body{background:url('') no-repeat center top }
  			<div class="base_info" style="overflow: hidden;">
  				<!-- 信息里边的内容 -->
  				<div class="user_photo" style="width: 20%;height: 100%;float: left;margin-top: 30px;">
- 					<img class="preview" id="preview" src="/themes/mall/jiaju/images/center/user-head.png" alt="用户头像" width="75" height="75" style="margin-left: auto;margin-right: auto;" />
- 					<input type="file" id="doc" name="pic" class="upload_input" onchange="change(this)" />
- 					<button style="display:block; padding: 0;width: 85px;height: 25px;line-height: 12px;border-radius: 5px;background-color: #ff552e;color: #fff;margin-left: auto;margin-right: auto;margin-top: 10px;" onclick="clickImg(this)">更换头像</button>
+ 					<img class="userphoto_img" id="preview" src="/themes/mall/jiaju/images/center/user-head.png" alt="用户头像" width="75" height="75" style="margin-left: auto;margin-right: auto;" />
+ 					<input type="file" id="doc" name="pic" style="display: none;">
+ 					<label for="doc" style="width: 80px;height: 20px;display: block;border: 1px solid #cfcfcf;text-align: center;line-height: 20px;letter-spacing: 2px;background-color: #5bcdff;border-radius: 5px;margin-left: auto;margin-right: auto;margin-top: 20px;cursor: pointer;">
+							更换头像
+					</label>
  				</div>
  				<div class="user_input" style="width: 80%;height: 100%;float: right;margin-top: 30px;">
  					<div style="overflow: hidden;">
@@ -435,6 +413,22 @@ $(".container_nav ul li").click(function(){
 	$().ready(function(){
 			
 			var url = 'http://wgcapp.wgc2013.com/jingyi.php/Home/Jifen/user';
+			$.ajax({
+				type:"POST",
+				url:url,
+				data:{
+					uid : '<?php echo $_SESSION["user_info"]["user_id"];?>'
+				},
+				cache:false,
+				crossDomain: true == !(document.all),
+				dataType: "json",
+				success:function(ret){
+					console.log(ret)
+				},
+				error:function(err){
+					console.log(err)
+				}
+			});
 			$.post(url,{
 				uid : '<?php echo $_SESSION["user_info"]["user_id"];?>'
 			},function(ret){
@@ -507,61 +501,52 @@ $(".container_nav ul li").click(function(){
 						
 				},function(ret){
 						console.log(ret)
+						if(ret.code == 200){
+						alert("修改成功");
+						window.location.reload();
+						}else if(ret.code){
+							alert("修改失败,数据无更新")
+						}
 				},'json')
 				
 	}
 
 	// 更换logo
-	var clickImg = function(obj){
-	    $(obj).parent().find('.upload_input').click();
-	  }
-	function change(file) {
-	      //预览
-	      var pic = $(file).parent().find(".preview");
+	$("input[name='pic']").live('change',function(){
+        var file = $(this).val();
+        setImagePreview(file);
+    });
 
-
-	      var ext=file.value.substring(file.value.lastIndexOf(".")+1).toLowerCase();
-
-	       // gif在IE浏览器暂时无法显示
-	       if(ext!='png'&&ext!='jpg'&&ext!='jpeg'){
-	          if (ext != '') {
-	            alert("图片的格式必须为png或者jpg或者jpeg格式！"); 
-	          } 
-	           return;
-	       }
-	       //判断IE版本
-	       var isIE = navigator.userAgent.match(/MSIE/)!= null,
-	           isIE6 = navigator.userAgent.match(/MSIE 6.0/)!= null;
-	           isIE10 = navigator.userAgent.match(/MSIE 10.0/)!= null;
-	       if(isIE && !isIE10) {
-	          file.select();
-	          var reallocalpath = document.selection.createRange().text;
-	           // IE6浏览器设置img的src为本地路径可以直接显示图片
-	           if (isIE6) {
-	              pic.attr("src",reallocalpath);
-	           }else{
-	              // 非IE6版本的IE由于安全问题直接设置img的src无法显示本地图片，但是可以通过滤镜来实现             
-	              pic.css("filter","progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod='scale',src=\"" + reallocalpath + "\")");
-	              // 设置img的src为base64编码的透明图片 取消显示浏览器默认图片
-	              pic.attr('src','data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==');             
-	           }
-
-	           
-	       }else {
-	          html5Reader(file,pic);
-	       }
-	  }
-	function html5Reader(file,pic){
-	     var file = file.files[0];
-	     var reader = new FileReader();
-	     reader.readAsDataURL(file);
-	     reader.onload = function(e){
-	         pic.attr("src",this.result);
-	     }
-
-	 
-	  }
-
+    function setImagePreview(avalue) {
+	    var docObj = document.getElementById("doc");//img
+	    var imgObjPreview = document.getElementById("preview"); //div
+	    var divs = document.getElementById("localImag");
+	    if (docObj.files && docObj.files[0]) {
+	       //火狐下，直接设img属性
+	       imgObjPreview.style.display = 'block';
+	       imgObjPreview.style.width = '75px';
+	       imgObjPreview.style.height = '75px';
+	       imgObjPreview.src = window.URL.createObjectURL(docObj.files[0]);
+	    } else {
+	       //IE下，使用滤镜
+	       docObj.select();
+	       var imgSrc = document.selection.createRange().text;
+	       var localImagId = document.getElementById("localImag");
+	       localImagId.style.width = "75px";
+	       localImagId.style.height = "75px";
+	       //图片异常的捕捉，防止用户修改后缀来伪造图片
+	       try {
+	           localImagId.style.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale)"
+	           localImagId.filters.item("DXImageTransform.Microsoft.AlphaImageLoader").src = imgSrc;
+	        } catch(e) {
+	            alert("您上传的图片格式不正确，请重新选择!");
+	            return false;
+	        }
+	        imgObjPreview.style.display = 'none';
+	        document.selection.empty();
+	    }
+	   return true;
+	}
 </script>
 </body>
 </html>

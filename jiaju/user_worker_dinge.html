@@ -304,8 +304,10 @@ body{background:url('') no-repeat center top }
 			alert('请输入备注');
 			return false;
 		}
-
-		$.post('http://wgcapp.wgc2013.com/jingyi.php/Home/Dinge/rengong_add',{
+		$.ajax({
+				type:"POST",
+				url:'http://wgcapp.wgc2013.com/jingyi.php/Home/Dinge/rengong_add',
+				data:{
 					userid         : '<?php echo $_SESSION["user_info"]["user_id"];?>',
 					name           : name.val(),           //项目名称
 			        danwei         : danwei.val(),         //计价单位
@@ -316,11 +318,37 @@ body{background:url('') no-repeat center top }
 			        gongzuodidian  : gongzuodidian.val(),  //工作地点
 				    shigonggongyi  : shigonggongyi.val(),  //施工工艺
 				    content        : content.val(),        //备　　注
-		},function(ret){
+				},
+				cache:false,
+				crossDomain: true == !(document.all),
+				dataType: "json",
+				success:function(ret){
+					console.log(ret)
+					if(ret.code == 200){
+						alert("填写成功!");
+						window.location.reload();
+					}
+				},
+				error:function(err){
+					console.log(err)
+				}
+			});
+		// $.post('http://wgcapp.wgc2013.com/jingyi.php/Home/Dinge/rengong_add',{
+		// 			userid         : '<?php echo $_SESSION["user_info"]["user_id"];?>',
+		// 			name           : name.val(),           //项目名称
+		// 	        danwei         : danwei.val(),         //计价单位
+		// 	        shuliang       : shuliang.val(),       //数量/范围
+		// 	        rengongfei     : rengongfei.val(),     //纯人工费
+		// 	        fabujiage      : fabujiage.val(),      //发布价格
+		// 	        lianxifangshi  : lianxifangshi.val(),  //联系方式
+		// 	        gongzuodidian  : gongzuodidian.val(),  //工作地点
+		// 		    shigonggongyi  : shigonggongyi.val(),  //施工工艺
+		// 		    content        : content.val(),        //备　　注
+		// },function(ret){
 		
-		alert(ret.status);
+		// alert(ret.status);
 		
-		},'json');
+		// },'json');
 
 	}
 	//列表
@@ -328,14 +356,20 @@ body{background:url('') no-repeat center top }
 	var page = 1,key = '';
 	function list(){
 	var url = 'http://wgcapp.wgc2013.com/jingyi.php/Home/Dinge/rengong_list';
-	$.post(url,{
+
+	$.ajax({
+				type:"POST",
+				url:url,
+				data:{
 					key      : key,
 			    	user_id  : userid,
 			    	page     : page
-	
-	},function(ret){
-	
-					
+				},
+				cache:false,
+				crossDomain: true == !(document.all),
+				dataType: "json",
+				success:function(ret){
+					console.log(ret)
 					if(ret.status == 200){
 						var data = ret.retData;
 						var listHtml = '';
@@ -353,16 +387,55 @@ body{background:url('') no-repeat center top }
 						}
 						$(".list_ul").append(listHtml);
 					}
-	},'json')
+				},
+				error:function(err){
+					console.log(err)
+				}
+			});
+	// $.post(url,{
+	// 				key      : key,
+	// 		    	user_id  : userid,
+	// 		    	page     : page
+	
+	// },function(ret){
+	
+					
+	// 				if(ret.status == 200){
+	// 					var data = ret.retData;
+	// 					var listHtml = '';
+	// 					for(i in data){
+							
+	// 						var id       = data[i],
+	// 							name     = data[i].name,
+	// 							danwei   = data[i].danwei,
+	// 							fabujiage= data[i].fabujiage;
+	// 							listHtml 	+= 	'<li style="overflow:hidden;">';
+	// 							listHtml 	+=	'<span class="list_name">'+name+'</span>';
+	// 							listHtml 	+=	'<span>'+fabujiage+danwei+'</span>';
+	// 							listHtml 	+=	'<input type="checkbox" class="checkbox" />';
+	// 							listHtml 	+=	'</li>';
+	// 					}
+	// 					$(".list_ul").append(listHtml);
+	// 				}
+	// },'json')
 	}
 	function search(){
 					
 					var url = 'http://wgcapp.wgc2013.com/jingyi.php/Home/Dinge/rengong_list';
 					var value = $(".search_input").val();
 					if(value){
-					$.post(url,{
-					user_id:   userid
-					},function(ret){
+
+					$.ajax({
+						type:"POST",
+						url:url,
+						data:{
+							user_id:   userid
+						},
+						cache:false,
+						crossDomain: true == !(document.all),
+						dataType: "json",
+						success:function(ret){
+							console.log(ret)
 							if(ret.status == 200){
 								var data = ret.retData;
 								var listHtml = '';
@@ -385,7 +458,37 @@ body{background:url('') no-repeat center top }
 								}
 								}
 							}
-					},'json')
+						},
+						error:function(err){
+							console.log(err)
+						}
+					});
+					// $.post(url,{
+					// user_id:   userid
+					// },function(ret){
+					// 		if(ret.status == 200){
+					// 			var data = ret.retData;
+					// 			var listHtml = '';
+					// 			for(i in data){
+								
+					// 			if(data[i].name === value){
+								
+					// 			var id       = data[i],
+					// 			name     = data[i].name,
+					// 			danwei   = data[i].danwei,
+					// 			fabujiage= data[i].fabujiage;
+					// 			listHtml 	+= 	'<li style="overflow:hidden;>';
+					// 			listHtml 	+=	'<span class="list_name">'+name+'</span>';
+					// 			listHtml 	+=	'<span>'+fabujiage+danwei+'</span>';
+					// 			listHtml 	+=	'<input type="checkbox" class="checkbox" />';
+					// 			listHtml 	+=	'</li>';
+					// 			$(".list_ul li").remove();
+					// 			$(".list_ul").append(listHtml);
+								
+					// 			}
+					// 			}
+					// 		}
+					// },'json')
 					}else{
 					alert("请输入搜索内容")
 					}
@@ -411,14 +514,19 @@ function prepage(){
 		console.log(index)
 	var url = 'http://wgcapp.wgc2013.com/jingyi.php/Home/Dinge/rengong_list';
 	$(".list_ul").html("");
-	$.post(url,{
+		$.ajax({
+				type:"POST",
+				url:url,
+				data:{
 					key      : key,
 			    	user_id  : userid,
 			    	page     : index
-	
-	},function(ret){
-	
-					
+				},
+				cache:false,
+				crossDomain: true == !(document.all),
+				dataType: "json",
+				success:function(ret){
+					console.log(ret)
 					if(ret.status == 200){
 						var data = ret.retData;
 						var listHtml = '';
@@ -428,7 +536,7 @@ function prepage(){
 								name     = data[i].name,
 								danwei   = data[i].danwei,
 								fabujiage= data[i].fabujiage;
-								listHtml 	+= 	'<li style="overflow:hidden;>';
+								listHtml 	+= 	'<li style="overflow:hidden;">';
 								listHtml 	+=	'<span class="list_name">'+name+'</span>';
 								listHtml 	+=	'<span>'+fabujiage+danwei+'</span>';
 								listHtml 	+=	'<input type="checkbox" class="checkbox" />';
@@ -438,7 +546,39 @@ function prepage(){
 					}else if(ret.status == 202){
 						alert("暂无更多数据")
 					}
-	},'json')
+				},
+				error:function(err){
+					console.log(err)
+				}
+			});
+	// $.post(url,{
+	// 				key      : key,
+	// 		    	user_id  : userid,
+	// 		    	page     : index
+	
+	// },function(ret){
+	
+					
+	// 				if(ret.status == 200){
+	// 					var data = ret.retData;
+	// 					var listHtml = '';
+	// 					for(i in data){
+							
+	// 						var id       = data[i],
+	// 							name     = data[i].name,
+	// 							danwei   = data[i].danwei,
+	// 							fabujiage= data[i].fabujiage;
+	// 							listHtml 	+= 	'<li style="overflow:hidden;>';
+	// 							listHtml 	+=	'<span class="list_name">'+name+'</span>';
+	// 							listHtml 	+=	'<span>'+fabujiage+danwei+'</span>';
+	// 							listHtml 	+=	'<input type="checkbox" class="checkbox" />';
+	// 							listHtml 	+=	'</li>';
+	// 					}
+	// 					$(".list_ul").append(listHtml);
+	// 				}else if(ret.status == 202){
+	// 					alert("暂无更多数据")
+	// 				}
+	// },'json')
 
 	}
 </script>

@@ -136,51 +136,122 @@ $(".container_nav ul li").click(function(){
 	function lists(){
 		var status = 0;
 		var url = serverUrl + 'jingyi.php/Home/Recruit/recruitList';
-		$.post(url,{
-			page     : page,
-	    	s_city   : tcity,
-			s_area   : '白云区',
-		},function(ret){
-			console.log(ret)
-			if(ret.code == 200){
-				var listHtml = '',emptyHtml='';
-				listHtml   += '<h3 style="background:#eee;font-size:18px;">招聘</h3>'
-				listHtml   += '<ul class="list-group">';
-				var data = ret.message;
-				for(var i in data){
-					
-					var id = data[i].user_id,company_name = data[i].company_name,zhiwei = data[i].zhiwei,addtime = timestampToTime(data[i].addtime);
-					if(id == user_id){
-						status++;
-					listHtml   += 	'<li class="list-group-item">';
-					listHtml   +=	'<dl>';
-					listHtml   +=	'<dt style="color: red;">'+company_name+'</dt>';
-					listHtml   +=	'<dd>招聘：<span style="color: red;">'+zhiwei+'</span></dd>';
-					listHtml   +=	'<dd>发布时间:&nbsp;&nbsp;&nbsp;<span>'+addtime+'</span></dd>';
-					listHtml   += 	'</dl>';
-					listHtml   += 	'</li>';
-					
-					}else{
+		$.ajax({
+				type:"POST",
+				url:url,
+				data:{
+								page     : page,
+						    	s_city   : tcity,
+								s_area   : '白云区',
+				},
+				cache:false,
+				crossDomain: true == !(document.all),
+				dataType: "json",
+				success:function(ret){
+					// console.log(ret)
+					if(ret.code == 200){
+					var listHtml = '',emptyHtml='';
+					listHtml   += '<h3 style="background:#eee;font-size:18px;">招聘</h3>'
+					listHtml   += '<ul class="list-group">';
+					var data = ret.message;
+					for(var i in data){
+						
+						var id = data[i].user_id,company_name = data[i].company_name,zhiwei = data[i].zhiwei,addtime = timestampToTime(data[i].addtime);
+						if(id == user_id){
+							status++;
+						listHtml   += 	'<li class="list-group-item">';
+						listHtml   +=	'<dl>';
+						listHtml   +=	'<dt style="color: red;">'+company_name+'</dt>';
+						listHtml   +=	'<dd>招聘：<span style="color: red;">'+zhiwei+'</span></dd>';
+						listHtml   +=	'<dd>发布时间:&nbsp;&nbsp;&nbsp;<span>'+addtime+'</span></dd>';
+						listHtml   += 	'</dl>';
+						listHtml   += 	'</li>';
+						
+						}else{
 
+						}
+					}
+					listHtml   += '</ul>';
+					if(status == 0){
+					
+						listHtml = '';
+						
+						listHtml = '<h1 style="margin-top:50px;font-size:20px;">列表为空</h1>';
+						$(".user_list_full").append(listHtml);
+					}else{
+						$(".user_list_full").append(listHtml);
 					}
 				}
-				listHtml   += '</ul>';
-				if(status == 0){
-				
-					listHtml = '';
-					
-					listHtml = '<h1 style="margin-top:50px;font-size:20px;">列表为空</h1>';
-					$(".user_list_full").append(listHtml);
-				}else{
-					$(".user_list_full").append(listHtml);
+				},
+				error:function(err){
+					console.log(err)
 				}
-			}
-		},'json')
+			});
+		// $.post(url,{
+		// 	page     : page,
+	 //    	s_city   : tcity,
+		// 	s_area   : '白云区',
+		// },function(ret){
+		// 	console.log(ret)
+		// 	if(ret.code == 200){
+		// 		var listHtml = '',emptyHtml='';
+		// 		listHtml   += '<h3 style="background:#eee;font-size:18px;">招聘</h3>'
+		// 		listHtml   += '<ul class="list-group">';
+		// 		var data = ret.message;
+		// 		for(var i in data){
+					
+		// 			var id = data[i].user_id,company_name = data[i].company_name,zhiwei = data[i].zhiwei,addtime = timestampToTime(data[i].addtime);
+		// 			if(id == user_id){
+		// 				status++;
+		// 			listHtml   += 	'<li class="list-group-item">';
+		// 			listHtml   +=	'<dl>';
+		// 			listHtml   +=	'<dt style="color: red;">'+company_name+'</dt>';
+		// 			listHtml   +=	'<dd>招聘：<span style="color: red;">'+zhiwei+'</span></dd>';
+		// 			listHtml   +=	'<dd>发布时间:&nbsp;&nbsp;&nbsp;<span>'+addtime+'</span></dd>';
+		// 			listHtml   += 	'</dl>';
+		// 			listHtml   += 	'</li>';
+					
+		// 			}else{
+
+		// 			}
+		// 		}
+		// 		listHtml   += '</ul>';
+		// 		if(status == 0){
+				
+		// 			listHtml = '';
+					
+		// 			listHtml = '<h1 style="margin-top:50px;font-size:20px;">列表为空</h1>';
+		// 			$(".user_list_full").append(listHtml);
+		// 		}else{
+		// 			$(".user_list_full").append(listHtml);
+		// 		}
+		// 	}
+		// },'json')
 	}
 	//集采列表
 	function cai_list(){
 		var url = serverUrl + 'jingyi.php/Home/Material/materialListe';
 		var status = 0;
+		$.ajax({
+				type:"POST",
+				url:url,
+				data:{
+					page : page,
+			    	user_id : user_id,
+			    	cai_type : 2,
+			    	s_city   : tcity,
+			    	s_area   : '白云区',
+				},
+				cache:false,
+				crossDomain: true == !(document.all),
+				dataType: "json",
+				success:function(ret){
+					console.log(ret)
+				},
+				error:function(err){
+					console.log(err)
+				}
+			});
 		$.post(url,{
 					page : page,
 			    	user_id : user_id,

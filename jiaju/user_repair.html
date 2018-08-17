@@ -580,11 +580,11 @@ input{
 
 	//选择项目成员显示列表
 	function  showUserList(){
-		$.post(url+'jingyi.php/Home/index/getAllMyRelative', {
-			uid:'<?php echo $_SESSION["user_info"]["user_id"];?>',
-        	page : page,
-        	type:'PRIVATE',
-        	types:'user_list'
+		$.post('http://wgcapp.wgc2013.com/jingyi.php/Home/index/getAllMyRelative', {
+						uid:'<?php echo $_SESSION["user_info"]["user_id"];?>',
+		            	type:'PRIVATE',
+		            	types:'user_list',
+		            	page : page,
 		}, function(ret,err) {
 			var html = '';
 			var datas = ret.data;
