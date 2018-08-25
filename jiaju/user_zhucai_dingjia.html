@@ -195,21 +195,7 @@ body{background:url('') no-repeat center top }
 				<input type="text" class="search_input" />
 				<input type="button" value="搜索" class="search_btn" onclick="search()"/>
 				<input type="button" value="分享" class="share_btn" />
-					<!-- 分享弹窗 -->
-					<div class="confirm" style="display: none;">
-						<form class="confirm_" action="post" method="">
-							<div class="share_text">
-								<span>分享内容</span><span class="colon">:</span>
-								<textarea name="" id="" cols="30" rows="10" placeholder="内容获取"></textarea>
-							</div>
-							<div class="share_sendee">
-								<span style="letter-spacing: 5px;">接收人</span><span class="colon">:</span>
-								<input type="text" placeholder="选择接收人">
-							</div>
-							<input class="share_btn" type="button" value="分享确认">
-						</form>
-					</div>
-					<!-- 分享弹窗 end -->
+					
 
 				<ul class="list_ul">
 						<li>
@@ -250,6 +236,21 @@ body{background:url('') no-repeat center top }
 				</ul>
 			</div>
 			<!-- 工价列表 end -->
+			<!-- 分享弹窗 -->
+					<div class="confirm" style="display: none;height: 0px;">
+						<form class="confirm_" action="post" method="">
+							<div class="share_text">
+								<span>分享内容</span><span class="colon">:</span>
+								<textarea name="" id="" cols="30" rows="10" placeholder="内容获取"></textarea>
+							</div>
+							<div class="share_sendee">
+								<span style="letter-spacing: 5px;">接收人</span><span class="colon">:</span>
+								<input type="text" placeholder="选择接收人">
+							</div>
+							<input class="share_btn" type="button" value="分享确认">
+						</form>
+					</div>
+					<!-- 分享弹窗 end -->
 			</div>
 
 
@@ -295,14 +296,15 @@ body{background:url('') no-repeat center top }
     })
 	$(".share_btn").click(function(e){
 		e.stopPropagation(); 
-		// $(".confirm").show();
+		$(".confirm").show();
+		$(".wages_list").css("background-color","#eee")
 
 
 
 	})
-	$(".company_info").click(function(){
-		
+	$(".wages_list").click(function(){
 			$(".confirm").hide();
+			$(".wages_list").css("background-color","#fff")
 
 			
 		})

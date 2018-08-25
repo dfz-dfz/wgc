@@ -105,35 +105,36 @@ border:1px solid #808080;width:100%;height:66px;margin-bottom:3px;
 
 {include file=header.html}
 <!-- 弹出二维码 -->
-<div style="width: 400px;background-color: #7ecdf4;overflow: hidden;position: fixed;height: 120px;">
-	<div style="width: 20px;height: 110px;font-size: 18px;float: left;margin-top: 5px;">联系我们<</div>
-	<div style="width: 380px;height: 110px;float: left;background-color: #fff;margin-top: 5px;">
-	<ul style="width: 40%;float: left;">
-		<li style="height: 30px;">
+
+<!-- <div class="Ecode" style="width: 400px;background-color: #7ecdf4;overflow: hidden;position: fixed;height: 120px;left:75%;border-radius: 5px;display: none;">
+	<div style="width: 20px;height: 110px;font-size: 18px;float: left;margin-top: 5px;font-weight: 600;">联系我们<span style="display: block;font-size: 12px;"><<</span></div>
+	<div style="width: 375px;height: 110px;float: left;background-color: #fff;margin-top: 5px;border-radius: 5px;">
+	<ul style="width: 39%;float: left;margin-left: 3px;">
+		<li style="height: 30px;text-decoration:underline;">
 			客服①：3215598389
 		</li>
-		<li style="height: 30px;">
+		<li style="height: 30px;text-decoration:underline;">
 			客服②：3014848718
 		</li>
-		<li style="height: 30px;">
+		<li style="height: 30px;text-decoration:underline;">
 			客服③：1934873342
 		</li>
-		<li style="height: 30px;">
+		<li style="height: 30px;text-decoration:underline;">
 			客服热线：202-61973261
 		</li>
 	</ul>
 	<div style="width: 60%;float: left;">
 		<div style="float: left;">
 		<img src="/themes/mall/jiaju/styles/style/images/wgc123.jpg" alt="" width="60" height="60"/>
-		<span style="display: block;font-size: 12px;">扫描关注微信公众号</span>
+		<span style="display: block;font-size: 12px;-webkit-transform : scale(0.84,0.84) ">扫描关注微信公众号</span>
 		</div>
 		<div style="float: left;">
 		<img src="/themes/mall/jiaju/styles/style/images/wgc234.jpg" alt="" width="60" height="60"/>
-		扫描下载微工程APP
+		<span style="display: block;font-size: 12px;-webkit-transform : scale(0.84,0.84)">扫描下载微工程APP</span>
 		</div>
 	</div>
 	</div>
-</div>
+</div> -->
 <!-- main start -->
 <div id="main">
     <div class="main-top w clearfix"style="width:1200px;">
@@ -650,6 +651,7 @@ $(function(){
 
 	gongjia_select();*/
 	project();
+	setTimeout('erwima()',3000);
 	
 });
  // PHP时间戳转时间
@@ -821,6 +823,11 @@ function project(){
 					console.log(err)
 				}
 			});
+}
+
+//计时器
+function erwima(){
+	$(".Ecode").fadeIn(3000);
 }
 
 </script>
