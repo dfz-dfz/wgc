@@ -122,7 +122,7 @@ body{background:url('') no-repeat center top }
 							<td style="width: 5%"><span>含材料损耗、运输、税票、到场地价格</span></td>
 							<td style="width: 5%"><span>含损耗、运输、税票、到场地价格</span></td>
 							<td style="width: 7%"><span>人工+主材+辅材</span></td>
-							<td style="width: 5%"><span>数量*总和单价</span></td>
+							<td style="width: 5%"><span>数量*综和单价</span></td>
 							<td style="width: 16%;border-right: 2px solid #979898;"><span>此项备注施工界面划分，（如吊顶施工，开灯孔是木工还是水电工，检修孔、风口加固是否包含，或者另外计费？）及工程量结算方式。（如吊顶有投影面积计算方法，展开面积计算法。墙体有扣除门洞等）</span></td>
 						</tr>
 					</tbody>
@@ -139,7 +139,7 @@ body{background:url('') no-repeat center top }
 						<span></span>
 				</div>
 				<div style="margin-bottom: 20px;">
-					<h3 style="font-size: 18px;font-weight: bold;">工程总造价:</h3>
+					<h3 style="font-size: 18px;font-weight: bold;">工程总造价:<b id="total_gczj">0</b></h3>
 				</div>
 				<div class="share_dow" style="display: inline-block; position: relative;left: 90%;">
 					<a class="share_yusuan" href="javascript:;">分享</a>
@@ -289,8 +289,8 @@ body{background:url('') no-repeat center top }
 		$html += 	'<td style="width: 5%"><textarea class="budget_rg" id="a_rg'+index+'" style="width: 100%;height: 100%;display: inline-block;padding-left: 5px;padding-top: 50px;"></textarea></td>';
 		$html += 	'<td style="width: 5%"><textarea class="budget_zc" id="a_zc'+index+'" style="width: 100%;height: 100%;display: inline-block;padding-left: 5px;padding-top: 50px;"></textarea></td>';
 		$html += 	'<td style="width: 5%"><textarea class="budget_fc" id="a_fc'+index+'" style="width: 100%;height: 100%;display: inline-block;padding-left: 5px;padding-top: 50px;"></textarea></td>';
-		$html += 	'<td style="width: 7%"><textarea class="budget_zh" id="a_zh'+index+'" style="width: 100%;height: 100%;display: inline-block;padding-left: 5px;padding-top: 50px;"></textarea></td>';
-		$html += 	'<td style="width: 5%"><textarea class="budget_hj" id="a_hj'+index+'" style="width: 100%;height: 100%;display: inline-block;padding-left: 5px;padding-top: 50px;"></textarea></td>';
+		$html += 	'<td style="width: 7%"><textarea class="budget_zh" id="a_zh'+index+'" readonly style="width: 100%;height: 100%;display: inline-block;padding-left: 5px;padding-top: 50px;"></textarea></td>';
+		$html += 	'<td style="width: 5%"><textarea class="budget_hj" id="a_hj'+index+'" readonly style="width: 100%;height: 100%;display: inline-block;padding-left: 5px;padding-top: 50px;"></textarea></td>';
 		$html += 	'<td style="width: 16%;border-right: 2px solid #979898;"><textarea class="budget_bz" style="width: 100%;height: 100%;display: inline-block;padding-left: 5px;"></textarea></td>';
 		$html += '</tr>';
     	$("tbody").append($html);
@@ -316,9 +316,13 @@ body{background:url('') no-repeat center top }
     	}
     	
     })
+
     //统计工程总价
     $("#a_hj"+index).blur(function(){
     	var total = parseInt($(this).val())
+    	var zhdj  = parseInt($(this).prev().val());
+    	var sj    = parseInt($(this).prev().prev().prev().prev().prev().prev().val());
+    	var status = total/sj;
     	if(total){
     		totalArray.push(total)
     	}
@@ -332,11 +336,28 @@ body{background:url('') no-repeat center top }
     	}
     	console.log(totalAll);
     	console.log($("#all_total").text())
-
+    	if(zhdj = status){
+    		$(this).attr('disabled','disabled');
+    	}else{
+    		$(this).attr('disabled',true);
+    	}
     	$("#all_total").text(totalAll)
+    	
     })
 
     //统计
+    $("#all_total").click(function(){
+    	alert("开始了")
+    	// for(var i = 2;i<index;i++){
+    	// 	console.log("统计的是:"+i);
+    	// }
+    	for(var i=0;i<=5;i++){
+    		console.log(i)
+    	}
+    	// console.log("统计的是:"+$("#a_hj"+index).val())
+
+
+    })
 
     //计算合计
     $("#a_hj"+index).click(function(){
@@ -350,6 +371,16 @@ body{background:url('') no-repeat center top }
     		$(this).val(heji)
     	}
     })
+    })
+
+    //统计工程总造价
+    $("#guanli").blur(function(){
+    	var heji = parseInt($("#all_total").text());
+    	var suijin = parseInt($("#suijin").val());
+    	var guanli = parseInt($("#guanli").val());
+
+    	console.log(suijin)
+    	$("#total_gczj").text(heji+suijin+guanli);
     })
 </script>
 </body>
