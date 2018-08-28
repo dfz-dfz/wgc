@@ -8,6 +8,7 @@
 <meta name="description" content="微工程，微工程APP，装修、材料、家具、饰品一站式服务，让装修更简单，价格更透明！！" />
 <meta name="keywords" content="微工程，微工程，家居商城，微工程家居商城，微工程家居装修商城，办公室装修，写字楼装修，材料，装修材料，家居，办公家具，家居，家具，装修，装饰" />
 <link rel="stylesheet" type="text/css" href="themes/mall/jiaju/css/api.css"/>
+<link rel="stylesheet" href="themes/mall/jiaju/styles/css/tel_list.css">
 <!-- <link rel="stylesheet" type="text/css" href="themes/mall/jiaju/css/aui.css" /> -->
 <!-- <link rel="stylesheet" type="text/css" href="themes/mall/jiaju/css/aui.1.0.css"/> -->
 
@@ -87,6 +88,7 @@ body{background:url('') no-repeat center top }
 			<ul class="budget_ul user_public_ul">
  				<li class="change_bg_li" style="margin-right: 10px;">自定工价</li>
  				<li style="margin-right: 10px;">工价列表</li>
+				<li style="margin-right: 10px;">分享授权</li>
  			</ul>
  			<div class="company_info base_info_public" style="overflow: hidden;/*padding-left: 15%;*/min-height: 400px;">
  			<!-- 预算报价 -->
@@ -129,45 +131,16 @@ body{background:url('') no-repeat center top }
 					<div class="btn share_btn">分享发布</div>
 				</div>
 
-				<!-- 分享确认 -->
-				<div class="confirm" style="display: none">
-					<form class="confirm_" action="post" method="">
-						<div class="share_text">
-							<span>分享内容</span><span class="colon">:</span>
-							<textarea name="" id="" cols="30" rows="10" placeholder="内容获取"></textarea>
-						</div>
-						<div class="share_sendee">
-							<span style="letter-spacing: 5px;">接收人</span><span class="colon">:</span>
-							<input type="text" placeholder="选择接收人">
-						</div>
-						<input class="share_btn" type="button" value="分享确认">
-					</form>
-				</div>
-				<!-- 分享确认 end -->
 			</div>
 			<!-- 自定工价 end -->
 			<!-- 工价列表 -->
 			<div class="sect wages_list" style="display: none;">
 				<input type="text" class="search_input" />
 				<input type="button" value="搜索" class="search_btn" onclick="search()"/>
-				<input type="button" value="分享" class="share_btn" />
-					<!-- 分享弹窗 -->
-					<div class="confirm" style="display: none;height: 400px;">
-						<form class="confirm_" action="post" method="">
-							<div class="share_text">
-								<span>分享内容</span><span class="colon">:</span>
-								<textarea name="" id="" cols="30" rows="10" placeholder="内容获取"></textarea>
-							</div>
-							<div class="share_sendee">
-								<span style="letter-spacing: 5px;">接收人</span><span class="colon">:</span>
-								<input type="text" placeholder="选择接收人">
-							</div>
-							<input class="share_btn" type="button" value="分享确认">
-						</form>
-					</div>
-					<!-- 分享弹窗 end -->
+				<input type="button" value="分享" class="share_btn" onclick="showUserList()"/>
 
-				<ul class="list_ul">
+
+				<ul class="list_ul" id="mess_list">
 					
 				</ul>
 				
@@ -187,6 +160,63 @@ body{background:url('') no-repeat center top }
 				</ul>
 			</div>
 			<!-- 工价列表 end -->
+			
+			<!-- 分享授权-->
+				<div class="message_list base_info_public" style="display: none;width: 90%;border: none;margin: 0px auto;">
+
+				<!-- 工价分享列表 -->
+				<input type="text" class="search_input" />
+				<input type="button" value="搜索" class="search_btn" onclick="search()" style="width: 80px;height: 24px;background-color: #f7c67a;color: #f2552a;border: 1px solid #cfcfcf;cursor: pointer;" />
+				
+					
+				<ul class="list_ul" id="messlist_ul">
+
+				</ul>
+				
+				<ul class="page" style="float: none;">
+					<li class="page_btn">首页</li>
+					<li class="page_btn" onclick="prepage()">上一页</li>
+					<li class="page_num current" onclick="pageindex(1)">1</li>
+					<li class="page_num" onclick="pageindex(2)">2</li>
+					<li class="page_num" onclick="pageindex(3)">3</li>
+					<li class="page_num" onclick="pageindex(4)">4</li>
+					<li class="page_num" onclick="pageindex(5)">5</li>
+					<li class="page_num" onclick="pageindex(6)">6</li>
+					<li class="page_num" onclick="pageindex(7)">7</li>
+					<li class="page_num">···</li>
+					<li class="page_btn" onclick="nextpage()">下一页</li>
+					<li class="page_btn">尾页</li>
+				</ul>
+			</div>
+			<!-- 分享授权 end -->
+			<!-- 分享弹窗 -->
+					<div class="confirm" style="display: none;height: 0px;">
+<!-- 						<form class="confirm_" action="post" method="">
+							<div class="share_text">
+								<span>分享内容</span><span class="colon">:</span>
+								<textarea name="" id="" cols="30" rows="10" placeholder="内容获取"></textarea>
+							</div>
+							<div class="share_sendee">
+								<span style="letter-spacing: 5px;">接收人</span><span class="colon">:</span>
+								<input type="text" placeholder="选择接收人">
+							</div>
+							<input class="share_btn" type="button" value="分享确认">
+						</form> -->
+							<div class="tel_con" style="display: block;    overflow-y: scroll;display: block;width: 50%;margin: 0px auto;background-color: #fff;padding-top: 10px;padding-bottom: 10px;height: 400px;">
+							<div class="confirm_head" style="margin-bottom: 10px;">
+								<input type="text" id="search_text" placeholder="请输入搜索的联系人" />
+								<input class="confirm_btn" type="button" onclick="UserSearch()" value="搜索" />
+							</div>
+							<div class="getUserList">
+								
+							</div>
+							<div>
+								<input class="confirm_btn" type="button"  value="确认分享" style="display: inline-block;width: 100px;height: 30px;line-height: 25px;font-size: 18px;border-radius: 5px;background-color: #f8c67b;color: #fff;" onclick="sharebox()"/>
+							</div>
+						</div>
+						
+					</div>
+					<!-- 分享弹窗 end -->
 			</div>
 
 
@@ -211,36 +241,57 @@ body{background:url('') no-repeat center top }
 {include file=footer.html}
 <script type="text/javascript" src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
 <script type="text/javascript">
+	$().ready(function(){
+		list();
+		messagelist();
+	})
   //列表切换
      $(".budget_ul li:first").click(function(){
     	
     	$(this).addClass("change_bg_li")
     	$(".budget_ul li:last").removeClass("change_bg_li")
+    	$(".budget_ul li:eq(1)").removeClass("change_bg_li")
     	$(".wages_custom").show();
     	$(".wages_list").hide();
+    	$(".message_list").hide();
     })
+	
+	    $(".budget_ul li:eq(1)").click(function(){
+    	$(this).addClass("change_bg_li")
+    	$(".budget_ul li:last").removeClass("change_bg_li")
+    	$(".budget_ul li:first").removeClass("change_bg_li")
+    	$(".wages_list").show();
+    	$(".wages_custom").hide();
+    	$(".message_list").hide();
+    	
 
+    })
+	
     $(".budget_ul li:last").click(function(){
     	
     	$(this).addClass("change_bg_li")
     	$(".budget_ul li:first").removeClass("change_bg_li")
+    	$(".budget_ul li:eq(1)").removeClass("change_bg_li")
  		$(".wages_custom").hide();
-    	$(".wages_list").show();
-		list();
+    	$(".message_list").show();
+    	$(".wages_list").hide();
+    	
+		
     })
- //    $('.share_btn').click(function() {
-	// $('.confirm').css({
-	// 	display: 'block'
-	// });
-	// });
-	// $('.confirm').click(function() {
-	// $('.confirm').css({
-	// 	display: 'none'
-	// });
-	// });
-	// $('.confirm_').click(function() {
-	// return false;
-	// });
+	$(".share_btn").click(function(e){
+		e.stopPropagation(); 
+		$(".confirm").show();
+		$(".wages_list").css("background-color","#eee")
+
+
+
+	})
+	$(".wages_list").click(function(){
+			$(".confirm").hide();
+			$(".wages_list").css("background-color","#fff")
+
+			
+		})
 	// 弹窗控制 end
 
 	// 分页设置
@@ -369,55 +420,74 @@ body{background:url('') no-repeat center top }
 				crossDomain: true == !(document.all),
 				dataType: "json",
 				success:function(ret){
-					console.log(ret)
+					
 					if(ret.status == 200){
 						var data = ret.retData;
 						var listHtml = '';
 						for(i in data){
 							
-							var id       = data[i],
+							var id       = data[i].id,
 								name     = data[i].name,
 								danwei   = data[i].danwei,
 								fabujiage= data[i].fabujiage;
+								
 								listHtml 	+= 	'<li style="overflow:hidden;">';
 								listHtml 	+=	'<span class="list_name">'+name+'</span>';
 								listHtml 	+=	'<span>'+fabujiage+danwei+'</span>';
-								listHtml 	+=	'<input type="checkbox" class="checkbox" />';
+								listHtml 	+=	'<input name="id" type="checkbox" class="checkbox" value="'+id+'"/>';
 								listHtml 	+=	'</li>';
 						}
-						$(".list_ul").append(listHtml);
+						$("#mess_list").append(listHtml);
 					}
 				},
 				error:function(err){
 					console.log(err)
 				}
 			});
-	// $.post(url,{
-	// 				key      : key,
-	// 		    	user_id  : userid,
-	// 		    	page     : page
+
+	}
 	
-	// },function(ret){
-	
+	//分享授权
+	function messagelist(){
+	var url = 'http://wgcapp.wgc2013.com/jingyi.php/Home/Dinge/rengong_list_share';
+
+	$.ajax({
+				type:"POST",
+				url:url,
+				data:{
+					key      : key,
+			    	user_id  : userid,
+			    	page     : page
+				},
+				cache:false,
+				crossDomain: true == !(document.all),
+				dataType: "json",
+				success:function(ret){
 					
-	// 				if(ret.status == 200){
-	// 					var data = ret.retData;
-	// 					var listHtml = '';
-	// 					for(i in data){
+					if(ret.status == 200){
+						var data = ret.retData;
+						var listHtml = '';
+						for(i in data){
 							
-	// 						var id       = data[i],
-	// 							name     = data[i].name,
-	// 							danwei   = data[i].danwei,
-	// 							fabujiage= data[i].fabujiage;
-	// 							listHtml 	+= 	'<li style="overflow:hidden;">';
-	// 							listHtml 	+=	'<span class="list_name">'+name+'</span>';
-	// 							listHtml 	+=	'<span>'+fabujiage+danwei+'</span>';
-	// 							listHtml 	+=	'<input type="checkbox" class="checkbox" />';
-	// 							listHtml 	+=	'</li>';
-	// 					}
-	// 					$(".list_ul").append(listHtml);
-	// 				}
-	// },'json')
+							var id       = data[i].id,
+								name     = data[i].name,
+								danwei   = data[i].danwei,
+								fabujiage= data[i].fabujiage;
+								
+								listHtml 	+= 	'<li style="overflow:hidden;">';
+								listHtml 	+=	'<span class="list_name">'+name+'</span>';
+								listHtml 	+=	'<span>'+fabujiage+danwei+'</span>';
+								//listHtml 	+=	'<input name="id" type="checkbox" class="checkbox" value="'+id+'"/>';
+								listHtml 	+=	'</li>';
+						}
+						$("#messlist_ul").append(listHtml);
+					}
+				},
+				error:function(err){
+					console.log(err)
+				}
+			});
+
 	}
 	function search(){
 					
@@ -580,6 +650,164 @@ function prepage(){
 	// 				}
 	// },'json')
 
+	}
+	
+		function  showUserList(){
+		var page = 1;
+		uid= '<?php echo $_SESSION["user_info"]["user_id"];?>';
+		$.ajax({
+				type:"POST",
+				url:'http://wgcapp.wgc2013.com/jingyi.php/Home/index/getAllMyRelative',
+				data:{
+						uid:'<?php echo $_SESSION["user_info"]["user_id"];?>',
+		            	type:'PRIVATE',
+		            	types:'user_list',
+		            	page : page,
+				},
+				cache:false,
+				crossDomain: true == !(document.all),
+				dataType: "JSON",
+				success:function(ret){
+					console.log("成功");
+					console.log(ret)
+					var html = '';
+					var datas = ret.data;
+			
+					if(ret.code == 200){
+						page ++;
+						for(var j in datas){
+							var data = datas[j];
+							var message = datas[j].message;
+							html += '<div class="tel_list">'+data.zhiwei+'</div>';
+							for(var i in message){
+								var zhiwei = message[i].zhiwei,
+									id     = message[i].id,
+									touid = message[i].touid,
+									name = message[i].name,
+									names = message[i].user_name, 
+									imgUrl = message[i].userphoto;
+								html += '<ul>';
+									html += '<li class="tel_li">';
+										html += '<div class="check">';
+											html += '<input name="tid" type="checkbox" value="'+touid+'" name="checkbox" />';
+										html += '</div>';
+										html += '<div class="head_img">';
+											html += '<img src="'+url+imgUrl+'" alt=""/>';
+										html += '</div>';
+										html += '<div class="tel_data">';
+											html += '<span>'+name+'</span>';
+											html += '<span>'+names+'</span>';
+										html += '</div>';
+									html += '</li>';
+								html += '</ul>';
+							}
+						}
+
+						$('.getUserList').append(html);
+						//获取数据id
+								var arr = new Array();
+				                $('input[name="id"]:checked').each(function(i){
+				                    arr[i] = $(this).val();
+				                });
+				                var vals = arr.join(",");
+				                console.log(vals);
+					}else {
+						alert('数据加载失败，请检查网络!');
+					}
+				},
+				error:function(err){
+					console.log("错误是");
+					console.log(err);
+				}
+			});
+	}
+
+	//通讯录搜索
+	function UserSearch(){
+		var key_word = $('#search_text').val();
+
+		if(key_word == ''){
+			showUserList();
+		}else{
+			$.post(url+'jingyi.php/Home/index/searchMyRelatives', {
+				uid : '<?php echo $_SESSION["user_info"]["user_id"];?>',
+				type:'PRIVATE',
+				types:'user_list',
+	        	keyword : key_word,
+			}, function(ret,err) {
+				var datas = ret.data;
+				var html = '';
+
+				if(ret.code == 200){
+					$('.getUserList').html('');
+						page ++;
+						for(var j in datas){
+							var data = datas[j];
+							var message = datas[j].message;
+							html += '<div class="tel_list">'+data.zhiwei+'</div>';
+							for(var i in message){
+								var zhiwei = message[i].zhiwei,
+									touid = message[i].touid,
+									name = message[i].name,
+									names = message[i].user_name, 
+									imgUrl = message[i].userphoto;
+								html += '<ul>';
+									html += '<li class="tel_li">';
+										html += '<div class="check">';
+											html += '<input type="checkbox" value="'+touid+'" name="checkbox" />';
+										html += '</div>';
+										html += '<div class="head_img">';
+											html += '<img src="'+url+imgUrl+'" alt=""/>';
+										html += '</div>';
+										html += '<div class="tel_data">';
+											html += '<span>'+name+'</span>';
+											html += '<span>'+names+'</span>';
+										html += '</div>';
+									html += '</li>';
+								html += '</ul>';
+							}
+						}
+
+					$('.getUserList').append(html);
+				}else if(ret.code == 201){
+					$('.getUserList').html('暂无数据');
+				}else{
+					alert('请检查网络连接');
+					return false;
+				}
+			},'json');
+		}
+	}
+
+	//确认分享
+	function sharebox(){
+								//获取数据id
+								var arr = new Array();
+								var tarry = new Array();
+				                $('input[name="id"]:checked').each(function(i){
+				                    arr[i] = $(this).val();
+				                });
+				                var vals = arr.join(",");
+				                console.log(vals);
+
+				                //获取通讯录id
+				          		$('input[name="tid"]:checked').each(function(j){
+				                    tarry[j] = $(this).val();
+				                });
+				                var tvals = tarry.join(",");
+				                console.log(tvals)
+
+				                $.post('http://wgcapp.wgc2013.com/jingyi.php/Home/index/share',{
+				                	"type":3,
+				                	"arr":arr,
+				                	"tarry":tarry
+				                },function(ret){
+				                	console.log(ret)
+									if(ret.code == 200){
+
+				                		window.location.reload();
+				                	}
+				                },'json')
 	}
 </script>
 </body>

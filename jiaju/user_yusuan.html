@@ -136,7 +136,8 @@ body{background:url('') no-repeat center top }
 						<span>税金:<input id="suijin" type="text" style="display: inline-block;width: 120px;height: 20px;margin-bottom: 5px;padding: 0;padding-left: 10px;" onkeyup="this.value=this.value.replace(/[^0-9-]+/,'');"/></span>
 						<span></span>
 						<span>管理费/规费:<input id="guanli" type="text" style="display: inline-block;width: 120px;height: 20px;margin-bottom: 5px;padding: 0;padding-left: 10px;" onkeyup="this.value=this.value.replace(/[^0-9-]+/,'');"/></span>
-						<span></span>
+						<span id="click_zj" style="margin: 0px;background-color: #F42;width: 100px;text-align: center;border-radius: 5px;color: #fff;">生成总价</span>
+
 				</div>
 				<div style="margin-bottom: 20px;">
 					<h3 style="font-size: 18px;font-weight: bold;">工程总造价:<b id="total_gczj">0</b></h3>
@@ -181,7 +182,7 @@ body{background:url('') no-repeat center top }
  				<!-- 点击人工弹框 -->
  				<div class="worker_form" style="width: 365px;height: 100px;line-height: 100px; position: absolute;top: 25%;left: 30%;z-index: 6;background-color: #fff;border: 1px solid #eee;display: none;">
  					<div style="text-align: left;">
- 						<a href="index.php?app=search&act=regong" style="background-color: #eb6100;display: inline-block;width: 110px;height: 35px;line-height: 35px;font-size: 15px;border-radius: 5px;color: #2ec6ff;text-decoration: none;font-weight: bold;letter-spacing: 2px;text-align: center;margin-right: 100px;margin-left: 20px;">工人定额</a>
+ 						<a href="index.php?app=search&act=user_worker" style="background-color: #eb6100;display: inline-block;width: 110px;height: 35px;line-height: 35px;font-size: 15px;border-radius: 5px;color: #2ec6ff;text-decoration: none;font-weight: bold;letter-spacing: 2px;text-align: center;margin-right: 100px;margin-left: 20px;">工人定额</a>
  						<a href="index.php?app=search&act=regong_datalist" style="background-color: #eb6100;display: inline-block;width: 110px;height: 35px;line-height: 35px;font-size: 15px;border-radius: 5px;color: #2ec6ff;text-decoration: none;font-weight: bold;letter-spacing: 2px;text-align: center;">数据定额</a>
  					</div>
  				</div>
@@ -218,6 +219,7 @@ body{background:url('') no-repeat center top }
 
 	var index = 1;
 	var totalArray = [];
+	var newArray = [];
 	$(".share_yusuan").click(function(e){
 		e.stopPropagation(); 
 		$(".share_form").show();
@@ -301,7 +303,7 @@ body{background:url('') no-repeat center top }
 
     //预算表的统计金额
     $("#a_zh"+index).click(function(){
-    	console.log("heloo")
+    	// console.log("heloo")
     	// console.log($(this).parent().prev().children().val())
     	var regong = parseInt($("#a_rg"+index).val());
     	var zhucai = parseInt($("#a_zc"+index).val());
@@ -318,43 +320,57 @@ body{background:url('') no-repeat center top }
     })
 
     //统计工程总价
-    $("#a_hj"+index).blur(function(){
-    	var total = parseInt($(this).val())
-    	var zhdj  = parseInt($(this).prev().val());
-    	var sj    = parseInt($(this).prev().prev().prev().prev().prev().prev().val());
-    	var status = total/sj;
-    	if(total){
-    		totalArray.push(total)
-    	}
+    // $("#a_hj"+index).blur(function(){
+    // 	var total = parseInt($(this).val())
+    // 	var zhdj  = parseInt($(this).prev().val());
+    // 	var sj    = parseInt($(this).prev().prev().prev().prev().prev().prev().val());
+    // 	var status = total/sj;
+    // 	if(total){
+    // 		totalArray.push(total)
+    // 	}
     	
-    	console.log(totalArray)
-    	var totalAll = 0;
-    	for(var i=0;i<totalArray.length;i++){
+    // 	console.log(totalArray)
+    // 	var totalAll = 0;
+    // 	for(var i=0;i<totalArray.length;i++){
 
-  			totalAll = totalAll + totalArray[i];
+  		// 	totalAll = totalAll + totalArray[i];
     		
-    	}
-    	console.log(totalAll);
-    	console.log($("#all_total").text())
-    	if(zhdj = status){
-    		$(this).attr('disabled','disabled');
-    	}else{
-    		$(this).attr('disabled',true);
-    	}
-    	$("#all_total").text(totalAll)
+    // 	}
+    // 	console.log(totalAll);
+    // 	console.log($("#all_total").text())
+    // 	if(zhdj = status){
+    // 		$(this).attr('disabled','disabled');
+    // 	}else{
+    // 		$(this).attr('disabled',true);
+    // 	}
+    // 	$("#all_total").text(totalAll)
     	
-    })
+    // })
 
     //统计
-    $("#all_total").click(function(){
-    	alert("开始了")
-    	// for(var i = 2;i<index;i++){
-    	// 	console.log("统计的是:"+i);
-    	// }
-    	for(var i=0;i<=5;i++){
-    		console.log(i)
+    $("#click_zj").unbind('click').click(function(){
+    	var r = confirm("请填写完全部数据并确定数据无误后生成总价");
+    	if(r){
+    		for(var i = 2;i<=index;i++){
+    		// console.log("统计的是:"+$("#a_hj"+i).val());
+    		var total = parseInt($("#a_hj"+i).val());
+    		if(total){
+    			newArray.push(total)
+    		}
+    		
+    		
     	}
-    	// console.log("统计的是:"+$("#a_hj"+index).val())
+    	console.log(newArray)
+    	var totalAll = 0;
+    	console.log(newArray.length);
+    	for(var j=0;j<newArray.length;j++){
+    		console.log(j);
+  			totalAll = totalAll + newArray[j];
+    		
+    	}
+    	console.log(totalAll)
+    	$("#all_total").text(totalAll)
+    	}	
 
 
     })
