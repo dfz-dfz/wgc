@@ -38,6 +38,18 @@ body{background:url('') no-repeat center top }
 input{
 	font-size: 14px;
 }
+.user_employ_list{
+	font-size:14px;
+	color:#000;
+}
+
+.user_employ_list ul li{
+	margin-bottom:10px;
+}
+.user_employ_list h1{
+	margin:10px 0;
+	padding-left:5%;
+}
 </style>
 <script type="text/javascript" src="http://www.wgc2013.com/themes/mall/jiaju/styles/default/js/hover.js"></script>
 <script>
@@ -101,10 +113,11 @@ $(function(){
 		<!-- 积分 -->
 
 		<!-- 发布招聘 -->
-				<!-- 发布招聘 -->
+				
 		<div class="user_employ base_ui_public" style="/*display: none;*/">
 			<ul class="user_employ_ul user_public_ul">
- 				<li style="margin-right: 10px;background-color: #f8c67b;color: #f34c26;">发布招聘</li>
+ 				<li class="change_bg_li" style="margin-right: 10px;">发布招聘</li>
+				<li style="margin-right: 10px;">招聘列表</li>
  			</ul>
  			<div class="user_employ_info base_info_public" style="overflow: hidden;padding-left: 5%;">
  				<h3 style="font-size: 16px;color: #ff552e;text-align: left;font-weight: bold;margin-bottom: 20px;">个人信息</h3>
@@ -115,7 +128,7 @@ $(function(){
 					</li>
 					<li>
 						<div class="user_employ_name" style="color: #5e5a59;">*招聘岗位</div>
-						<div class="user_employ_input"><select id="jobtype">
+						<div class="user_employ_input"><select id="jobtype" style="height:30px;">
                     		<option value="">--请选择--</option>
                     		
                     		
@@ -146,19 +159,19 @@ $(function(){
 					<h3 style="font-size: 16px;color: #ff552e;text-align: left;font-weight: bold;margin-bottom: 20px;">岗位要求</h3>
 					<li>
 						<div class="user_employ_name" style="color: #5e5a59;">*工作年限</div>
-						<div class="user_employ_input"><input type="text" /></div>
+						<div class="user_employ_input"><input type="text" id="work_age"/></div>
 					</li>
 					<li>
 						<div class="user_employ_name" style="color: #5e5a59;">*最低学历</div>
-						<div class="user_employ_input"><input type="text" /></div>
+						<div class="user_employ_input"><input type="text" id="zuidixueli"/></div>
 					</li>
 					<li>
 						<div class="user_employ_name" style="color: #5e5a59;">*年&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;龄</div>
-						<div class="user_employ_input"><input type="text" /></div>
+						<div class="user_employ_input"><input type="text" id="age"/></div>
 					</li>
 					<li>
 						<div class="user_employ_name" style="color: #5e5a59;"> 其&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;他</div>
-						<div class="user_employ_input"><input type="text" /></div>
+						<div class="user_employ_input"><input type="text" id="other"/></div>
 					</li>
  				</ul>
  				<div class="user_empoly_send">
@@ -168,7 +181,47 @@ $(function(){
 				<a href="javascript:;" onclick="fabu()">立即发布</a>
  				</div>
  			</div>
+		<!--招聘列表 -->
+		
+ 			<div class="user_employ_list base_info_public" id="zhaopin_list" style="overflow: hidden;display:none;">
+				<div class="list_box">
+					<h1 style="color: #ec6941;font-size:18px;text-align:left;">个人信息</h1>
+					<div class="ul_left" style="float: left;width: 50%;">
+						<ul style="margin-left:10%;">
+							<li>公司名称：广州市经艺装饰设计工程有限公司</li>
+							<li>发布城市：广州市</li>
+							<li>公司网址：http://yxj.jyboo.com</li>
+						</ul>
+					</div>
+
+					<div class="ul_right" style="float: right;width: 50%;">
+						<ul>
+							<li>招聘岗位：平面设计师</li>
+							<li>招聘人数：3人</li>
+							<li>薪资：4000-6000元</li>
+						</ul>
+					</div>
+					<p class="clearfix" style="color:#000;padding-left:4%;">岗位描述：负责公司平面设计相关的各类创意策划。提出是你卡死你法拉盛你法拉盛疯狂拉升放假啊可是浪费奥斯卡了富马酸克里夫马卡龙洒。</p>
+					<h1 style="color: #ec6941;font-size:18px;text-align:left;">岗位要求</h1>
+					<div class="ul_left" style="float: left;width: 50%;">
+						<ul style="margin-left:10%;">
+							<li>工作年龄：3-5年</li>
+							<li>年龄：22-38</li>
+						</ul>
+					</div>
+					<div class="ul_right" style="float: right;width: 50%;">
+						<ul>
+							<li>最低学历：大专</li>
+							<li>其他：有相关经验优先</li>
+						</ul>
+					</div>
+					<div style="width:100%;height:40px;float:left;margin-top:30px;"><img src="/themes/mall/jiaju/images/list_bg.jpg" style="width:100%;height:100%;"/></div>
+				</div>
+ 			</div>		
+		<!--招聘列表end -->
 		</div>
+		
+
 
 		<!-- 发布集采 -->
 
@@ -184,22 +237,46 @@ $(function(){
 
 {include file=footer.html}
 <script type="text/javascript">
+	var page = 1;
+
+	//点击预算列表切换
+	  $(".user_employ_ul li:first").click(function(){
+    	
+    	$(this).addClass("change_bg_li")
+    	$(".user_employ_ul li:last").removeClass("change_bg_li")
+    	$(".user_employ_info").show();
+    	$(".user_employ_list").hide();
+    })
+
+    $(".user_employ_ul li:last").click(function(){
+    	
+    	$(this).addClass("change_bg_li")
+    	$(".user_employ_ul li:first").removeClass("change_bg_li")
+    	$(".user_employ_info").hide();
+    	$(".user_employ_list").show();
+    })
+
+
 	$(".container_nav ul li").click(function(){
 		$(".container_nav ul li").removeClass("bg_li")
 		$(this).addClass("bg_li")
 	})
-
+	
+	//发布招聘
 	function fabu(){
-		  var jobtype         = $('#jobtype').val();
-		  var xinzhi          = $('#xinzhi').val();
-		  var num             = $('#num').val();
-		  var ask             = $('#work_des').val();
-		  var officename      = $('#officename').val();
-		   var office_url     = $('#office_url').val();
-		  var xiangxi         = $('#xiangxi').val();
-		  var officetro       = '然而并没有';
-		  var region          = '广州市白云区';
-
+		var jobtype         = $('#jobtype').val();
+		var xinzhi          = $('#xinzhi').val();
+		var num             = $('#num').val();
+		var ask             = $('#work_des').val();
+		var officename      = $('#officename').val();
+		var office_url      = $('#office_url').val();
+		var xiangxi         = $('#xiangxi').val();
+		var officetro       = '';
+		var region          = '广州市白云区';
+		var work_age        = $('#work_age').val();
+		var zuidixueli      = $('#zuidixueli').val();
+		var age             = $('#age').val();
+		var other           = $('#age').val();
 
 		  $.post('http://wgcapp.wgc2013.com/jingyi.php/Home/Recruit/addRecruit',{
 		  						user_id 	      : '<?php echo $_SESSION["user_info"]["user_id"];?>',
@@ -217,38 +294,113 @@ $(function(){
 						        expire_time       : 30,
 						        xinzi             : xinzhi,
 						        hasmoney          : 1,
-
+								work_age          : work_age,
+								zuidixueli        : zuidixueli,
+								age               : age,
+								other             : other
 		  },function(ret){
-		  	console.log(ret)
+				alert('发布成功！');
+				location.reload();
 		  },'json')
 	}
 
-	//获取分类\
+	//获取发布列表
 	window.servermsg = 'http://wgcapp.wgc2013.com/index.php/Home/';
 	var list = [];
-	function jobtypes(){
-		var url = window.servermsg+"Systemmsg/jobtype";
+	function zhaopinlist(){
+		var url = window.servermsg+"Recruit/recruitList";
 		$.post(url,{
-			show : 'show',
-	        type : 2,
+			page : page,
+	        s_city : '广州市',
+			s_area : '白云区',
 		},function(ret){
-			console.log(ret)
-			var listHtml  = '';
+			var html  = '';
 			if(ret.code == 200){
+				page++;
 				var data = ret.message;
-				$.each(data,function(k,v){
-					list.push(v);
-					listHtml += '<option value="'+k+'">'+v+'</option>';
-				})
-				$("#jobtype").append(listHtml);
+				for(var i in data){
+					var id = data[i].id,
+						company_name = data[i].company_name,
+						zhiwei = data[i].zhiwei,
+						renshu = data[i].renshu,
+						counts = data[i].count,
+						xinzi = data[i].xinzi,
+						ask = data[i].ask,
+						company_web = data[i].company_web,
+						s_city = data[i].s_city,
+						work_age = data[i].work_age,
+						age = data[i].age,
+						zuidixueli = data[i].zuidixueli,
+						other = data[i].other;
+					 
+					html += '<div class="list_box" style="height:auto;overflow:hidden;border-bottom:10px solid #cacaca;">';
+						html += '<h1 style="color: #ec6941;font-size:18px;text-align:left;">个人信息</h1>';
+						html += '<div class="ul_left" style="float: left;width: 50%;">';
+							html += '<ul style="margin-left:10%;">';
+								html += '<li>公司名称：'+company_name+'</li>';
+								html += '<li>发布城市：'+s_city+'</li>';
+								html += '<li>公司网址：'+company_web+'</li>';
+							html += '</ul>';
+						html += '</div>';
 
+						html += '<div class="ul_right" style="float: right;width: 50%;">';
+							html += '<ul>';
+								html += '<li>招聘岗位：'+zhiwei+'</li>';
+								html += '<li>招聘人数：'+renshu+'人</li>';
+								html += '<li>薪资：'+xinzi+'/元</li>';
+							html += '</ul>';
+						html += '</div>';
+						html += '<p class="clearfix" style="color:#000;padding-left:4%;display:block;margin-left:10px;">岗位描述：'+ask+'</p>';
+						html += '<h1 style="color: #ec6941;font-size:18px;text-align:left;">岗位要求</h1>';
+						html += '<div class="ul_left" style="float: left;width: 50%;">';
+							html += '<ul style="margin-left:10%;">';
+								html += '<li>工作年龄：'+work_age+'年</li>';
+								html += '<li>年龄：'+age+'</li>';
+							html += '</ul>';
+						html += '</div>';
+						html += '<div class="ul_right" style="float: right;width: 50%;">';
+							html += '<ul>';
+								html += '<li>最低学历：'+zuidixueli+'</li>';
+								html += '<li>其他：'+other+'</li>';
+							html += '</ul>';
+						html += '</div>';
+						html += '<div style="width:100%;height:40px;float:left;margin-top:30px;"><img src="/themes/mall/jiaju/images/list_bg.jpg" style="width:100%;height:100%;"/></div>';
+					html += '</div>';
+				}
+				$('#zhaopin_list').html(html);
 			}
 		},'json')
 	}
+	
+	//获取分类
+    function jobtypes(){
+        var url = window.servermsg+"Systemmsg/jobtype";
+        $.post(url,{
+	        show : 'show',
+	        type : 2,
+		},function(ret, err){    
+            var listHtml  = '';
+            if(ret.code == 200){
+            	
+                var data = ret.message;
+                
+                $.each( data, function(k, v){
+                	list.push(v);
+					listHtml += '<option value="'+k+'">'+v+'</option>';
+				});
+                
+            	
+                $("#jobtype").append(listHtml);
+                
+            }
+            
+        },'json');
+   }
+   
 	//全局加载
 	$().ready(function(){
-		console.log("全局加载");
 		jobtypes();
+		zhaopinlist();
 	})
 </script>
 </body>

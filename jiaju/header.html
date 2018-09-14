@@ -154,15 +154,15 @@ $(function(){
 			?>
 			
 			<!--注册-登陆-->
-			<div style="overflow:hidden;float:right;width:240px;height:100px;">
+			<div style="overflow:hidden;float:right;width:100px;height:100px;">
 				
 					 <?php
 							if(empty($_SESSION['user_info']))
 							{
-								echo '<a href="index.php?app=member&amp;act=login&amp;ret_url="  title="微工程"><img alt="微工程" src="/data/files/mall/settings/user.png" style="width:100%;height:100%" /></a>';
+								echo '<ahref="index.php?app=member&amp;act=login&amp;ret_url="  title="微工程"><img alt="微工程" src="/data/files/mall/settings/user.png" style="width:100%;height:100%;border-radius: 100%;" /></a>';
 								
 							}else{
-								echo '<a href="javascript:;"  title="微工程"><img alt="微工程" src="http://wgcapp.59jiaju.com'.$_SESSION['user_info']['userphoto'].'" style="width:100%;height:100%" /></a>';
+								echo '<a href="javascript:;"  title="微工程"><img alt="微工程" src="http://wgcapp.59jiaju.com'.$_SESSION['user_info']['userphoto'].'" style="width:100%;height:100%;border-radius: 100%;" /></a>';
 							}
 						?>  
 					

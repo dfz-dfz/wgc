@@ -118,14 +118,14 @@ body { background:#fff; }
 		<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=461666210&amp;site=qq&amp;menu=yes" class="r">小程序</a> -->
 		<!--<a hidefocus="true" class="buttons" target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=461666210&amp;site=qq&amp;menu=yes">立即咨询</a>-->
 		<p class="p-title2" style="border-bottom: 1px solid #000;">行业工人查询</p>
-		<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=461666210&amp;site=qq&amp;menu=yes" class="l" style="background-color: #ffe4d1;margin-top: 12px;">APP开发</a>
-		<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=461666210&amp;site=qq&amp;menu=yes" class="r" style="background-color: #ffe4d1;margin-top: 12px;">网站建设</a>
-		<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=461666210&amp;site=qq&amp;menu=yes" class="l" style="background-color: #ffe4d1;margin-top: 12px;">ERP管理</a>
-		<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=461666210&amp;site=qq&amp;menu=yes" class="r" style="background-color: #ffe4d1;margin-top: 12px;">劳务分包</a>
-		<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=461666210&amp;site=qq&amp;menu=yes" class="l" style="background-color: #ffe4d1;margin-top: 12px;">劳务派遣</a>
-		<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=461666210&amp;site=qq&amp;menu=yes" class="r" style="background-color: #ffe4d1;margin-top: 12px;">软件培训</a>
-		<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=461666210&amp;site=qq&amp;menu=yes" class="l" style="background-color: #ffe4d1;margin-top: 12px;">公众号</a>
-		<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=461666210&amp;site=qq&amp;menu=yes" class="r" style="background-color: #ffe4d1;margin-top: 12px;">小程序</a>
+		<a target="_blank" href="index.php?app=search&act=joblist3&type=建筑装饰" class="l" style="background-color: #ffe4d1;margin-top: 12px;">建筑装饰</a>
+		<a target="_blank" href="index.php?app=search&act=joblist2&type=机电" class="r" style="background-color: #ffe4d1;margin-top: 12px;">机电</a>
+		<a target="_blank" href="index.php?app=search&act=joblist2&type=智能化" class="l" style="background-color: #ffe4d1;margin-top: 12px;">智能化</a>
+		<a target="_blank" href="index.php?app=search&act=joblist2&type=消防" class="r" style="background-color: #ffe4d1;margin-top: 12px;">消防</a>
+		<a target="_blank" href="index.php?app=search&act=joblist2&type=环保" class="l" style="background-color: #ffe4d1;margin-top: 12px;">环保</a>
+		<a target="_blank" href="index.php?app=search&act=joblist2&type=路政" class="r" style="background-color: #ffe4d1;margin-top: 12px;">路政</a>
+		<a target="_blank" href="index.php?app=search&act=joblist2&type=园林" class="l" style="background-color: #ffe4d1;margin-top: 12px;">园林</a>
+		<a target="_blank" href="index.php?app=search&act=joblist2&type=保洁" class="r" style="background-color: #ffe4d1;margin-top: 12px;">保洁</a>
 	</div>
 	
 	
@@ -133,8 +133,18 @@ body { background:#fff; }
 <div class="jobtype">
 		<a target="_blank" href="/index.php?app=search&act=news"><img src="/city/images/jobtype1.png" style="float:left;margin-top:0px;"/></a>
 		<a target="_blank" href="/index.php?app=search&act=jicaibaoming"><img src="/city/images/jobtype2.png" style="margin-top:0px;"/></a>
-		<a target="_blank" href="/index.php?app=search&act=xiazai"><img src="/city/images/index_new2.jpg" style="float:right;margin-top:0px;"/></a>
+		<a target="_blank" href="javascript:;"onclick="alerts()"><img src="/city/images/index_new2.jpg" style="float:right;margin-top:0px;"/></a>
 	</div>
 </body>
-
+<script>
+function alerts(){
+	var userid = "<?php echo $_SESSION["user_info"]["user_id"];?>";
+	if(userid == ''){
+		alert('请先登录')
+		return false;
+	}
+	
+	window.location.href= "/index.php?app=search&act=baojia";
+}
+</script>
 </html>

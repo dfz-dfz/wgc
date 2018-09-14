@@ -100,7 +100,9 @@
  			<ul>
  				<li class="user_employ_li" style="text-align: center;height: 30px;line-height: 30px;margin: 10px 0;"><span style="display: inline-block;margin: 0 10px;float: left;"><img src="/themes/mall/jiaju/images/center/zhaoping.png" alt="认证" width="30px" height="30px" /></span><span style="float: left;">发布招聘</span></li>
  				<li class="user_collection_li" style="text-align: center;height: 30px;line-height: 30px;margin: 10px 0;"><span style="display: inline-block;margin: 0 10px;float: left;"><img src="/themes/mall/jiaju/images/center/jicai.png" alt="认证" width="30px" height="30px" /></span><span style="float: left;">发布集采</span></li>
- 				<li class="user_list_li" style="text-align: center;height: 30px;line-height: 30px;margin-bottom: 10px;"><span style="display: inline-block;margin: 0 10px;float: left;"><img src="/themes/mall/jiaju/images/center/liebiao.png" alt="认证" width="30px" height="30px" /></span><span style="float: left;">发布列表</span></li>
+				<li class="user_projectFB_li" style="text-align: center;height: 30px;line-height: 30px;margin: 10px 0;"><span style="display: inline-block;margin: 0 10px;float: left;"><img src="/themes/mall/jiaju/images/center/xmfb.jpg" alt="认证" width="30px" height="30px" /></span><span style="float: left;">项目分包</span></li>
+				<li class="user_design_li" style="text-align: center;height: 30px;line-height: 30px;margin: 10px 0;"><span style="display: inline-block;margin: 0 10px;float: left;"><img src="/themes/mall/jiaju/images/center/sjfb.jpg" alt="认证" width="30px" height="30px" /></span><span style="float: left;">设计分包</span></li>
+ 				<li class="user_list_li" style="text-align: center;height: 30px;line-height: 30px;margin-bottom: 10px;display:none;"><span style="display: inline-block;margin: 0 10px;float: left;"><img src="/themes/mall/jiaju/images/center/liebiao.png" alt="认证" width="30px" height="30px" /></span><span style="float: left;">发布列表</span></li>
  			</ul>
  		</div>
  		<!-- 简历中心 -->
@@ -179,5 +181,11 @@ $(".user_cailiaoCG_li").click(function(){
 })
 $(".user_yewuXX_li").click(function(){
 	window.parent.location.href = "/index.php?app=search&act=user_customer_message"	//业务信息
+})
+$(".user_projectFB_li").click(function(){
+	window.parent.location.href = "/index.php?app=search&act=user_projectFB"	//业务信息
+})
+$(".user_design_li").click(function(){
+	window.parent.location.href = "/index.php?app=search&act=user_design"	//业务信息
 })
 </script>

@@ -53,10 +53,76 @@
 var SITE_URL = "http://www.wgc2013.com";
 var PRICE_FORMAT = '&yen;%s';
 </script>
-<script charset="utf-8" type="text/javascript" src="http://www.wgc2013.com/includes/libraries/javascript/jquery.plugins/jquery.validate.js" ></script><style type="text/css">
+<script charset="utf-8" type="text/javascript" src="http://www.wgc2013.com/includes/libraries/javascript/jquery.plugins/jquery.validate.js" ></script>
+<style type="text/css">
 body{background:url('') no-repeat center top }
 .mainnav{width:990px; overflow:hidden; margin:0 auto}
 .STYLE1 {color: red}
+	.ser_main{
+		overflow: hidden;
+		width: 30%;
+		float: left;
+		margin: 10px 0;
+	}
+	.ser_left{
+		float: left;
+		width: 80px;
+		text-align: right;
+		height: 40px;
+		line-height: 35px;
+		font-size:16px;
+		font-weight:600;
+	}
+	.ser_right{
+		float: left;
+		margin-left: 10px;
+		width: 180px;
+		height: 40px;
+	}
+	.ser_right input{
+		width: 100%;
+		height: 25px;
+		font-size: 16px;
+
+	}
+	.ser_right select{
+		width: 100%;
+		height: 30px;
+		font-size: 16px;
+	}
+	.ser_ser{
+		background-color: #ec6941;
+		width: 100px;
+		height: 30px;
+		color: #fff;
+		font-size: 20px;
+		line-height: 30px;
+		border-radius: 5px;
+		text-align: center;
+		margin: 20px auto;
+		cursor:pointer;
+	}
+	.ser_table{
+		width: 100%;
+	}
+	.ser_table thead tr th{
+		width: 16%;
+		background-color: #ec6941;
+		color: #fff;
+		height: 30px;
+	}
+	.ser_table tbody tr td{
+		height: 25px;
+		text-align: center;
+	}
+	.ser_table tbody tr:nth-child(even){
+		background-color: #dcdcdc;
+	}
+	.ser_table tbody a{
+		text-decoration: none;
+		display: inline-block;
+		margin-left:20px;
+	}
 </style>
 <script type="text/javascript" src="http://www.wgc2013.com/themes/mall/jiaju/styles/default/js/hover.js"></script>
 
@@ -92,30 +158,75 @@ body{background:url('') no-repeat center top }
 			<ul class="budget_ul user_public_ul">
  				<li class="change_bg_li" style="margin-right: 10px;">查询工人</li>
  			</ul>
- 			<div class="company_info base_info_public" style="overflow: hidden;/*padding-left: 15%;*/min-height: 250px;">
+ 			<div class="company_info base_info_public" style="overflow: hidden;min-height: 600px;">
  			<!-- 预算报价 -->
  			<div class="company_detail" style="position: relative;/*left: -16%;*//*width: 115%;*/">
 			<div style="overflow: hidden;margin-top: 10px;">
 			<!-- 基本信息 -->
 			<div class="section" style="border: none;">
-			<div class="search">
-				<span style="font-size: 15px;color: #000;font-weight: bold;">手机号</span><span style="margin: 0 2px;">:</span>
-				<input type="text" class="phone_input" id="search" />
-				<input type="button" value="查询" class="search_btn" onclick="doSearch()" />
-				<ul class="tel_ul">
-				</ul>
-				<ul style="display: none;">
-					<li style="text-align: center;font-size: 15px;color: #000;font-weight: bold;">暂无工人</li>
-				</ul>
-			</div>
+			<!-- 搜索工人 -->
+				<div style="overflow: hidden;">
+				<div class="ser_main">
+					<div class="ser_left"><span style="color:red;">*</span>行业:</div>
+					<div class="ser_right">
+						<select class="ser_right_sec">
+						  <option value ="0"></option>
+						  <option value ="volvo">装饰建筑</option>
+						</select>
+					</div>
+				</div>
+				<div class="ser_main">
+					<div class="ser_left"><span style="color:red;">*</span>工种:</div>
+					<div class="ser_right"><input type="text" id="gongzhong"></div>
+				</div>
+				<div class="ser_main">
+					<div class="ser_left">工龄:</div>
+					<div class="ser_right"><input type="text"></div>
+				</div>
+				<div class="ser_main">
+					<div class="ser_left">技能:</div>
+					<div class="ser_right"><input type="text"></div>
+				</div>
+				<div class="ser_main" style="width:65%;">
+					<div class="ser_left">项目经验:</div>
+					<div class="ser_right" style="width:76%;"><input type="text"></div>
+				</div>
+				</div>
+				<div class="ser_ser" onclick="search()">查询</div>
+				<!-- 搜索工人end -->
 			</div>
 
 
 			</div>
+			<img id="searchtp" src="themes/mall/jiaju/images/zwjg.jpg" height="120px"/>
+				<div id="details_list" style="display:none;">
+			<!--详细列表 -->
+			<ul class="budget_ul user_public_ul">
+ 				<li class="change_bg_li" style="margin-right: 10px;">查询结果</li>
+ 			</ul>
+		    <div class="result_list" style="width: 100%;">
+				  <table class="ser_table">
+					<thead>
+						<tr>
+							<th>序号</th>
+							<th>姓名</th>
+							<th>工龄</th>
+							<th>行业</th>
+							<th>工种</th>
+							<th>操作</th>
+						</tr>
+					</thead>
+					<tbody id="show_list">
+											
+					  </tbody>
+				  </table>
+			   </div> 	
+				
+				</div>
 			</div>
 	
  			</div>
- 			
+			
 			
 		</div>
 		
@@ -134,42 +245,142 @@ body{background:url('') no-repeat center top }
 servermsg = 'http://wgcapp.wgc2013.com/index.php/Home/';
 imgUrl = 'http://wgcapp.wgc2013.com/';
 page = 1;
-//搜索
-function doSearch(){
-		var content = $("#search").val();
-		if(content){
-			searchKey(content);
+
+//查询
+function search(){
+	var position = '';
+	var positionName = $('#gongzhong').val();
+	var vals = $(".ser_right_sec").val();
+	var gz   = $("#gongzhong").val();
+	if(vals == 0){
+		alert('行业必填！');
+		return false;
+	}
+	if(!gz){
+		alert("工种必填");
+		return false;
+	}
+	if(positionName == '施工队长'){
+		position = 1;
+	}else if(positionName == '水电工长'){
+		position = 2;
+	}else if(positionName == '空调安装工长'){
+		position = 3;
+	}else if(positionName == '空调安装工'){
+		position = 4;
+	}else if(positionName == '泥水工'){
+		position = 5;
+	}else if(positionName == '水电工'){
+		position = 6;
+	}else if(positionName == '电焊工'){
+		position = 7;
+	}else if(positionName == '家具安装工'){
+		position = 8;
+	}else if(positionName == '木工'){
+		position = 9;
+	}else if(positionName == '扇灰工'){
+		position = 10;
+	}else if(positionName == '保洁工'){
+		position = 11;
+	}else if(positionName == '杂工'){
+		position = 12;
+	}else if(positionName == '设计师'){
+		position = 13;
+	}else if(positionName == '其他'){
+		position = 15;
+	}else if(positionName == '网络维修'){
+		position = 17;
+	}else if(positionName == '工程经理'){
+		position = 20;
+	}else if(positionName == '平面设计'){
+		position = 25;
+	}else if(positionName == '客服专员'){
+		position = 27;
+	}else if(positionName == '项目经理'){
+		position = 32;
+	}else if(positionName == '水电维修'){
+		position = 33;
+	}else if(positionName == '空调维修'){
+		position = 34;
+	}else if(positionName == '装饰维修'){
+		position = 35;
+	}else if(positionName == '设备维修'){
+		position = 36;
+	}else{
+		alert('搜索出来的人未分工种！！！')
+	}
+	
+	$.post(servermsg+'Systemmsg/Jobdetails',{
+		list   :  'ok',
+		page   :  'page',
+		type   :  position,
+		s_city :  '广州'
+	},function(ret){
+		var data = ret.message;
+		var html = '';
+		
+		if(ret.code == 200){
+			$('#searchtp').css('display','none');
+			$('#details_list').css('display','block');
+			page++;
+			for(var i in data){
+				var id          = data[i].user_id;
+				var worktype    = data[i].postion;
+				var type        = (data[i].type =='' || data[i].type == null)?'未分类':data[i].type;
+				var	name        = (data[i].name =='' || data[i].name == null)?'匿名':data[i].name;
+				var	zhiwei 	    = (data[i].zhiwei =='' || data[i].zhiwei == null)?'未填写':data[i].zhiwei;
+				var nianling    = data[i].nianling;
+				
+				html += '<tr>';
+					html += '<td>'+i+'</td>';
+					html += '<td>'+name+'</td>';
+					html += '<td>'+nianling+'年</td>';
+					html += '<td>装饰建筑</td>';
+					html += '<td>'+worktype+'</td>';
+					html += '<td><a href="javascript:;">屏蔽</a><a href="javascript:;">详情</a></td>';
+				html += '</tr>';
+			}
+			$('#show_list').html(html);
 		}
+	},'json');
 }
 
-function searchKey(content){
-	$.post(servermsg+'Systemmsg/JobdetailsSearch',{
-					keywods : content,
-					type    : '施工队长',
-					page    : page,
-					s_city  : '广州',
-	},function(ret){
-		console.log(ret)
-		if(ret.code == 200){
-			$(".tel_ul").html(" ");
-			var data = ret.message;
-			var name = data[0].name;
-			var imgurl = imgUrl+data[0].userphoto;
-			console.log(imgurl)
-			var zhiwei = data[0].zhiwei;
-			var gz_jingyan = data[0].gz_jingyan;
-			var listHtml =  '';
-			listHtml   +=	'<li style="margin: 0 0 10px 0;border: 1px solid #eee;">';
-			listHtml   +=	'<img src="'+ imgurl +'" alt="" width="50" height="50" style="float: left;margin-left:10px;" />';
-			listHtml   +=	'<div class="tel_div" style="float:left;">';
-			listHtml   +=	'<span style="display:block;margin:5px 0;">'+name+'</span>';
-			listHtml   +=	'<span style="display:block;margin:5px 0;">'+zhiwei+'</span>';
-			listHtml   +=	'</div>';
-			listHtml   +=	'</li>';
-			$(".tel_ul").append(listHtml);
-		}
-	},'json')
-}
+//搜索
+//function doSearch(){
+//		var content = $("#search").val();
+//		if(content){
+//			searchKey(content);
+//		}
+//}
+
+//function searchKey(content){
+//	$.post(servermsg+'Systemmsg/JobdetailsSearch',{
+//					keywods : content,
+//					type    : '施工队长',
+//					page    : page,
+//					s_city  : '广州',
+//	},function(ret){
+//		console.log(ret)
+//		if(ret.code == 200){
+//		$(".tel_ul").html(" ");
+//			var data = ret.message;
+//			var name = data[0].name;
+//			var imgurl = imgUrl+data[0].userphoto;
+//			console.log(imgurl)
+//			var zhiwei = data[0].zhiwei;
+//			var gz_jingyan = data[0].gz_jingyan;
+//			var listHtml =  '';
+//			listHtml   +=	'<li style="margin: 0 0 10px 0;border: 1px solid #eee;">';
+//			listHtml   +=	'<img src="'+ imgurl +'" alt="" width="50" height="50" style="float: left;margin-left:10px;" />';
+//			listHtml   +=	'<div class="tel_div" style="float:left;">';
+//			listHtml   +=	'<span style="display:block;margin:5px 0;">'+name+'</span>';
+//			listHtml   +=	'<span style="display:block;margin:5px 0;">'+zhiwei+'</span>';
+//			listHtml   +=	'</div>';
+//			listHtml   +=	'</li>';
+//			$(".tel_ul").append(listHtml);
+//		}
+//	},'json')
+//}
 </script>
 </body>
 </html>

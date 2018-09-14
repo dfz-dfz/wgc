@@ -4,7 +4,7 @@
 <meta http-equiv="Access-Control-Allow-Origin" content="*">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=8"/>
-<title>用户中心-预算报价</title>
+<title>用户中心-工价询价</title>
 <meta name="description" content="微工程，微工程APP，装修、材料、家具、饰品一站式服务，让装修更简单，价格更透明！！" />
 <meta name="keywords" content="微工程，微工程，家居商城，微工程家居商城，微工程家居装修商城，办公室装修，写字楼装修，材料，装修材料，家居，办公家具，家居，家具，装修，装饰" />
 <link rel="stylesheet" type="text/css" href="/themes/mall/jiaju/css/api.css"/>
@@ -22,7 +22,84 @@
 </script>
 
 </head>
+<style>
+.content {
+	width: auto;
+	height: auto;
+	overflow: hidden;
+	padding: 20px;
+}
 
+.content .content_ul {
+	width: 100%;
+}
+
+.content_ul li {
+	width: 100%;
+	height: auto;
+	overflow: hidden;
+}
+
+.tab_head ul {
+	height: 50px;
+	line-height: 50px;
+	border-bottom: 1px solid #e1e1e1;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.tab_head ul,
+.tab_content ul {
+	width: 100%;
+}
+
+.tab_head ul li,
+.tab_content ul li {
+	width: 12.5%;
+	float: left;
+}
+
+.tab_content ul {
+	padding: 10px 0;
+	
+}
+
+/*分页导航*/
+.page_list {
+	height: 20px;
+	width: 600px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.page_list ul {
+	width: 100%;
+}
+
+.page_list ul li {
+	float: left;
+	border: 1px solid #e1e1e1;
+	margin-right: 4px;
+	text-align:center;
+}
+
+.page_list .ft {
+	width: 8%;
+}
+
+.page_list .un {
+	width: 9%;
+}
+
+.page_list .num {
+	width: 4%;
+}
+
+.page_list .current {
+	background-color: #fe552e;
+}
+
+</style>
 <body style="background:#fff;">
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -91,6 +168,7 @@ body{background:url('') no-repeat center top }
 		<div class="budget base_ui_public" style="/*display: none;*/position: relative;">
 			<ul class="budget_ul user_public_ul">
  				<li class="change_bg_li" style="margin-right: 10px;">工价询价</li>
+				<li style="margin-right: 10px;">询价列表</li>
  			</ul>
  			<div class="company_info base_info_public" style="overflow: hidden;/*padding-left: 15%;*/min-height: 250px;">
  			<!-- 预算报价 -->
@@ -98,7 +176,8 @@ body{background:url('') no-repeat center top }
 			<div style="overflow: hidden;margin-top: 10px;">
 			<!-- 基本信息 -->
 			<div class="section" style="border: none;">
-						<!-- 自定工价 -->
+			
+			<!-- 自定工价 -->
 			<div class="sect current wages_custom">
 				<ul style="padding: 20px 0;text-align: center;letter-spacing: 2px;">
 					<li>
@@ -114,7 +193,7 @@ body{background:url('') no-repeat center top }
 						<span>联系方式</span><span class="colon">:</span><input type="text" id="tel">
 					</li>
 					<li>
-						<span>工作地点</span><span class="colon">:</span><input type="text" id="xiangxi">
+						<span>工作地点</span><span class="colon">:</span><input type="text" id="address">
 					</li>
 					<li>
 						<span style="white-space: pre-wrap;">备     注</span><span class="colon">:</span><input type="text" id="ps">
@@ -125,6 +204,57 @@ body{background:url('') no-repeat center top }
 				</div>
 			</div>
 			<!-- 自定工价 end -->
+			
+			<!-- 工价列表 -->
+			<div class="sect current wages_list" style="display:none;">
+				<div class="search">
+					<div class="search_box">
+						<input class="search_input" type="text" placeholder="输入关键字">
+						<input class="search_btn" type="button" value="搜索">
+					</div>
+				</div>
+				<!-- 显示列表 -->
+				<div class="content" style="text-align:center">
+					<ul class="content_ul">
+						<li class="tab_head">
+							<ul>
+								<li>序号</li>
+								<li>项目名称</li>
+								<li>计价单位</li>
+								<li>数量/范围</li>
+								<li>联系方式</li>
+								<li>工作地点</li>
+								<!-- <li>备注</li> -->
+								<li style="width:22.5%">发布时间</li>
+							</ul>
+						</li>
+					
+					</ul>
+					<ul class="content_ul" id="show_list">
+						
+					</ul>
+				</div>
+				<!-- 分页导航 -->
+				<div class="page_list">
+					<ul>
+						<li class="ft">首页</li>
+						<li class="un">上一页</li>
+						<li class="num current">1</li>
+						<li class="num">2</li>
+						<li class="num">3</li>
+						<li class="num">4</li>
+						<li class="num">5</li>
+						<li class="num">6</li>
+						<li class="num">7</li>
+						<li class="num">···</li>
+						<li class="un">下一页</li>
+						<li class="ft">尾页</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+			
+			<!-- 工价列表 end -->
 			</div>
 
 
@@ -148,14 +278,34 @@ body{background:url('') no-repeat center top }
 
 
 <script type="text/javascript">
+$(document).ready(function() {
+	showList();
+});
+//列表切换
+$(".budget_ul li:first").click(function(){
+	$(".wages_custom").show();
+	$(".wages_list").hide();
+	$(".budget_ul li:last").removeClass("change_bg_li")
+	$(this).addClass("change_bg_li")
+
+})
+
+$(".budget_ul li:last").click(function(){
+	$(".wages_custom").hide();
+	$(".wages_list").show();
+	$(".budget_ul li:first").removeClass("change_bg_li")
+	$(this).addClass("change_bg_li")
+
+})
 		//提交发布
 function fabu(){
 		
 	    var title 		= $("#title");
 	    var unit 		= $("#unit");
 	    var num 		= $("#num"); 
-	   	var xiangxi 	= $("#xiangxi");
-	    var ps          = $("#ps")
+	   	var address 	= $("#address");
+	    var ps          = $("#ps");
+		var tel         = $("#tel");
 	    
 		if(title.val() == ''){
 			alert('必填项');
@@ -169,9 +319,9 @@ function fabu(){
 			alert('必填项');
 			num.focus();
 			return false;
-		}else if(xiangxi.val() == ''){
+		}else if(address.val() == ''){
 			alert('必填项');
-			xiangxi.focus();
+			address.focus();
 			return false;
 		}else if(ps.val() == ''){
 			alert('必填项');
@@ -179,34 +329,65 @@ function fabu(){
 			return false;
 		}else{
 		
-			var url = 'http://wgcapp.wgc2013.com/'+"jingyi.php/Home/Jysearch/searchadd";
+			var url = 'http://wgcapp.wgc2013.com/'+"jingyi.php/Home/User/xunjia";
 			$.post(url,{
 							userid      : '<?php echo $_SESSION["user_info"]["user_id"];?>',
 						    title       : $("#title").val(),
 						    unit        : $("#unit").val(),
 						    num         : $("#num").val(),
-						    xinzi       : '50',
-						   	pt_price    : '0',
-						    total_price : '20',
-						    jobtype     : '0',     
-						    livetime    : '2018.8.9',
 						    ps          : $("#ps").val(),
-						    hasmoney    : 1,
-						    s_province  : '广东省',
-							s_city      : '广州市',
-							s_county    : '白云区',
-							region      : '嘉禾街鹤边路29号五社工业区',
-						    xiangxi     : $("#xiangxi").val(),
+						    address     : $("#address").val(),
+							tel         : $("#tel").val(),
 			
 			},function(ret){
-				console.log(ret)
-				if(ret.status == 200){
+				if(ret.code == 200){
 						alert('发布成功')
+						window.location.reload();
+				}else{
+					alert('发布失败')
 				}
 			},'json')
 		}
 					
 		
+	}
+	
+	//询价列表
+	function showList(){
+		$.post('http://wgcapp.wgc2013.com/jingyi.php/Home/User/xunjia_list',{
+			userid      : '<?php echo $_SESSION["user_info"]["user_id"];?>',
+		},function(ret){
+			if(ret.code == 200){
+				var html ='';
+				var data = ret.message;
+				for(var i in data){
+					var codenum = i+1,
+						title = data[i].title,
+						unit = data[i].unit,
+						num = data[i].num,
+						ps = data[i].ps,
+						address = data[i].address,
+						tel = data[i].tel,
+						addtime = data[i].addtime;
+						
+					html += '<li class="tab_content">';
+						html += '<ul>';
+							html += '<li>'+codenum+'</li>';
+							html += '<li>'+title+'</li>';
+							html += '<li>'+unit+'</li>';
+							html += '<li>'+num+'</li>';
+							html += '<li>'+tel+'</li>';
+							html += '<li>'+address+'</li>';
+							//html += '<li><img src="" alt=""></li>';
+							html += '<li style="width:22.5%;">'+addtime+'</li>';
+						html += '</ul>';
+					html += '</li>';
+				}
+				$('#show_list').html(html);
+			}else{
+				alert('列表获取失败');
+			}
+		},'json');
 	}
 </script>
 </body>

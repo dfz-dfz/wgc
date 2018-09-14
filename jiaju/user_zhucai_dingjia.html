@@ -550,6 +550,7 @@ function html5Reader(file,pic){
 				    web          : web,  
 				    email        : email,  
 				    content      : content,  
+					type         : 1,
 				    img          : img
 		}, function(ret) {
 			if(ret.code == 200){
@@ -572,13 +573,14 @@ function html5Reader(file,pic){
 				data:{
 					key      : key,
 					user_id : userid,
-					page     : page
+					page     : page,
+					type    : 1
 				},
 				cache:false,
 				crossDomain: true == !(document.all),
 				dataType: "json",
 				success:function(ret){
-					console.log(ret)
+					//console.log(ret)
 										if(ret.status == 200){
 						page++;
 						var data = ret.retData;
@@ -601,6 +603,7 @@ function html5Reader(file,pic){
 								web   = data[i].web,
 								email   = data[i].email,
 								content   = data[i].content,
+								type      = 1,
 								defaults     = (data[i].defaults<1)?'':'checked="checked"';
 								
 								
@@ -651,7 +654,8 @@ function html5Reader(file,pic){
 				data:{
 					key      : key,
 					user_id : userid,
-					page     : pageindex
+					page     : pageindex,
+					type     : 1
 				},
 				cache:false,
 				crossDomain: true == !(document.all),
@@ -729,7 +733,8 @@ function html5Reader(file,pic){
 					var value = $(".search_input").val();
 					if(value){
 					$.post(url,{
-						user_id:   '<?php echo $_SESSION["user_info"]["user_id"];?>'
+						user_id:   '<?php echo $_SESSION["user_info"]["user_id"];?>',
+						type   : 1
 					},function(ret){
 							if(ret.status == 200){
 								var data = ret.retData;
@@ -794,7 +799,8 @@ function pageindex(index){
 	$.post(url,{
 					key      : key,
 			    	user_id  : userid,
-			    	page     : index
+			    	page     : index,
+					type     : 1
 	
 	},function(ret){
 	

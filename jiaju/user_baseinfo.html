@@ -17,7 +17,28 @@
 </script>
 
 </head>
-
+<style>
+	.upload_input{
+	  display: block;
+	  width: 60px;
+	  height: 60px;
+	  position: relative;
+	  z-index: 999;
+	  -webkit-opacity: 0.0;  
+	  /* Netscape and Older than Firefox 0.9 */  
+	  -moz-opacity: 0.0;  
+	  /* Safari 1.x (pre WebKit!) 老式khtml内核的Safari浏览器*/  
+	  -khtml-opacity: 0.0;  
+	  /* IE9 + etc...modern browsers */  
+	  opacity: .0;  
+	  /* IE 4-9 */  
+	  filter:alpha(opacity=0);  
+	  /*This works in IE 8 & 9 too*/  
+	  -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";  
+	  /*IE4-IE9*/  
+	  filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=0); 
+}
+	</style>
 <body style="background:#fff;">
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -78,8 +99,8 @@ body{background:url('') no-repeat center top }
  				<!-- 信息里边的内容 -->
  				<div class="user_photo" style="width: 20%;height: 100%;float: left;margin-top: 30px;">
  					<img class="userphoto_img" id="preview" src="/themes/mall/jiaju/images/center/user-head.png" alt="用户头像" width="75" height="75" style="margin-left: auto;margin-right: auto;" />
- 					<input type="file" id="doc" name="pic" style="display: none;">
- 					<label for="doc" style="width: 80px;height: 20px;display: block;border: 1px solid #cfcfcf;text-align: center;line-height: 20px;letter-spacing: 2px;background-color: #5bcdff;border-radius: 5px;margin-left: auto;margin-right: auto;margin-top: 20px;cursor: pointer;">
+ 					<input class="upload_input" type="file" id="doc" name="pic" style="">
+ 					<label for="doc" style="width: 80px;height: 20px;display: block;border: 1px solid #cfcfcf;text-align: center;line-height: 20px;letter-spacing: 2px;background-color: #5bcdff;border-radius: 5px;margin-left: auto;margin-right: auto;margin-top: -50px;cursor: pointer;">
 							更换头像
 					</label>
  				</div>
@@ -130,7 +151,7 @@ body{background:url('') no-repeat center top }
  									工种：
  								</div>
  								<div class="user_info_input">
- 									<select id="zhiwei" style="padding-left: 15px;">
+ 									<select id="zhiwei" style="padding-left: 15px;height:30px;">
 										<option value="">--请选择--</option>
 										<option value="1">施工队长</option>
 										<option value="2">水电工长</option>
@@ -423,16 +444,16 @@ $(".container_nav ul li").click(function(){
 				crossDomain: true == !(document.all),
 				dataType: "json",
 				success:function(ret){
-					console.log(ret)
+					//console.log(ret)
 				},
 				error:function(err){
-					console.log(err)
+					//console.log(err)
 				}
 			});
 			$.post(url,{
 				uid : '<?php echo $_SESSION["user_info"]["user_id"];?>'
 			},function(ret){
-				console.log(ret)
+				//console.log(ret)
 				if(ret.code == 200){
 				var user = ret.user;
 				var mobile = user.mobile;
@@ -514,7 +535,27 @@ $(".container_nav ul li").click(function(){
 	// 更换logo
 	$("input[name='pic']").live('change',function(){
         var file = $(this).val();
+		var formData = new FormData();
+		formData.append('pic', $('#doc')[0].files[0]);
+		var a1 = formData.get('pic');
+		console.log(a1);
         setImagePreview(file);
+		$.ajax({
+		url: 'http://wgcapp.wgc2013.com/jingyi.php/Home/uploads/index',
+		type: 'POST',
+		cache: false,
+		data: formData,
+		processData: false,
+		contentType: false,
+		success:function(ret){
+			console.log(ret)
+		},
+		err:function(err){
+			console.log(err)
+		}
+		
+		})
+
     });
 
     function setImagePreview(avalue) {

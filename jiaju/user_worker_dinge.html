@@ -533,32 +533,7 @@ body{background:url('') no-repeat center top }
 							console.log(err)
 						}
 					});
-					// $.post(url,{
-					// user_id:   userid
-					// },function(ret){
-					// 		if(ret.status == 200){
-					// 			var data = ret.retData;
-					// 			var listHtml = '';
-					// 			for(i in data){
-								
-					// 			if(data[i].name === value){
-								
-					// 			var id       = data[i],
-					// 			name     = data[i].name,
-					// 			danwei   = data[i].danwei,
-					// 			fabujiage= data[i].fabujiage;
-					// 			listHtml 	+= 	'<li style="overflow:hidden;>';
-					// 			listHtml 	+=	'<span class="list_name">'+name+'</span>';
-					// 			listHtml 	+=	'<span>'+fabujiage+danwei+'</span>';
-					// 			listHtml 	+=	'<input type="checkbox" class="checkbox" />';
-					// 			listHtml 	+=	'</li>';
-					// 			$(".list_ul li").remove();
-					// 			$(".list_ul").append(listHtml);
-								
-					// 			}
-					// 			}
-					// 		}
-					// },'json')
+
 					}else{
 					alert("请输入搜索内容")
 					}
@@ -596,7 +571,7 @@ function prepage(){
 				crossDomain: true == !(document.all),
 				dataType: "json",
 				success:function(ret){
-					console.log(ret)
+					//console.log(ret)
 					if(ret.status == 200){
 						var data = ret.retData;
 						var listHtml = '';
@@ -621,34 +596,7 @@ function prepage(){
 					console.log(err)
 				}
 			});
-	// $.post(url,{
-	// 				key      : key,
-	// 		    	user_id  : userid,
-	// 		    	page     : index
-	
-	// },function(ret){
-	
-					
-	// 				if(ret.status == 200){
-	// 					var data = ret.retData;
-	// 					var listHtml = '';
-	// 					for(i in data){
-							
-	// 						var id       = data[i],
-	// 							name     = data[i].name,
-	// 							danwei   = data[i].danwei,
-	// 							fabujiage= data[i].fabujiage;
-	// 							listHtml 	+= 	'<li style="overflow:hidden;>';
-	// 							listHtml 	+=	'<span class="list_name">'+name+'</span>';
-	// 							listHtml 	+=	'<span>'+fabujiage+danwei+'</span>';
-	// 							listHtml 	+=	'<input type="checkbox" class="checkbox" />';
-	// 							listHtml 	+=	'</li>';
-	// 					}
-	// 					$(".list_ul").append(listHtml);
-	// 				}else if(ret.status == 202){
-	// 					alert("暂无更多数据")
-	// 				}
-	// },'json')
+
 
 	}
 	

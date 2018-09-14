@@ -724,7 +724,7 @@ $("input[name='pic']").live('change',function(){
 			page     : page,
 			storeid  : 'b65e2727ec76202a16d7fd77dfa8a2de',
 			ptype    : 1,
-		}, function(ret,err) {
+		}, function(ret) {
 			if(ret.status == 200){
 				page++;
 				var retData = ret.retData;
