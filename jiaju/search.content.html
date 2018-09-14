@@ -59,83 +59,75 @@ ul,li{list-style:none;}
 <!-- main start -->
 <div id="main">
     
-
-<div class="zhaopin_area w">
-	 	
-		<div class="zhaopin_con"style="width:100%;">
-			<div class="zhaopin_con1">
-			    <ul><a href="javascript:;"> 
-					<li style="height:50px;line-height:50px;padding:0;text-align:center;width: 135px;">职位</li>
-					<li style="height:50px;line-height:50px;padding:0;text-align:center;width: 330px;">公司</li>
-					<li style="height:50px;line-height:50px;padding:0;text-align:center;width: 400px;">公司地址</li>
-					<li style="height:50px;line-height:50px;padding:0;text-align:center;width: 200px;">发布时间</li>
-					<div class="clear"></div>
-				</a></ul>
-				
-			</div>
-			<div class="zhaopin_con3" >
-				<ul>
-					
-					<li style="height:50px;line-height:50px;padding:0;text-align:center;width: 135px;"><?php echo $rows1['zhiwei'];?></li>
-					<li style="height:50px;line-height:50px;padding:0;text-align:center;width: 330px;"><?php echo $rows1['company_name'];?></li>
-					<li style="height:50px;line-height:50px;padding:0;text-align:center;width: 400px;"><?php echo $rows1['company_addr'];?></li>
-					<li style="height:50px;line-height:50px;padding:0;text-align:center;width: 200px;"><?php echo date('Y-m-d H:i:s',$rows1['addtime']);?></li>
-					<div class='clear'></div>
-					
-				</ul>
-			</div>
-			<div style="width:100%;overflow:hidden;">
-				<!--左边-->
-				<div style="width:80%;float:left;">
-					<div class="zhaopin_con2">
-					
-						<div style="margin:20px auto;">
-						
-						<p style="margin:10px auto;">浏&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;览：<span><?php echo $rows1['click'];?></span>次</p>
-						<p style="margin:10px auto;">薪&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;资：<span style="font-size: 1.2rem;color:orange"><?php echo $rows1['xinzi'];?></span>元</p>
-						<p style="margin:10px auto;">招聘人数：<span><?php echo $rows1['renshu'];?></span>人</p>
-						<p style="margin:10px auto;">岗位要求：<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="padding-left:5%;display:block;width:95%"><?php echo $rows1['ask'];?></span></p>
-						
-						
-						</div>
-						<div style="width:100%;min-height:300px;overflow:hidden;margin:40px auto 20px auto;">
-						
-						<?php echo $rows1['content'];?>
-
-						</div>
+	<div style="background-color:#e5e5e5;width: 100%;height: 100px;margin-top:10px;text-align:left;">
+			<!-- 招聘基本信息 -->
+			<div style="width: 1100px;margin: auto;padding: 10px 0;">
+				<div style="height: 40px;line-height: 40px;">
+					<div style="width: 50%;float: left;font-size: 26px;font-weight: 600;letter-spacing: 2px;" id="zhiwei"></div>
+					<div style="width: 50%;float: left;color: #f24c24;font-size: 16px;">
+						<div style="float: left;font-size: 20px;" id="xinzi"></div>
+						<div style="float: right;color: #fff;background-color: #f24c24;width: 150px;border-radius: 5px;text-align: center;">投放简历</div>
 					</div>
-					
-					
 				</div>
-				<!--右边广告-->
-				<div style="width:20%;float:left;">
-				<img src="/themes/store/default/images/adzz.png" />
+				<div id="company_name"></div>
+				<div style="font-size: 14px;">
+					<span id="s_city"></span>
+					<span>|</span>
+					<span id="work_age"></span>
+					<span>|</span>
+					<span id="xueli"></span>
+					<span>|</span>
+					<span id="renshu"></span>
+					<span>|</span>
+					<span id="addtime"></span>
+					<span>|</span>
 				</div>
 			</div>
-			<div style="width:100%;overflow: hidden;height: auto">
-				<div style="width:98%;margin:10px; auto;border-top:1px solid #ccc;overflow: hidden;height: auto">
-						<div class="ylcon" style="overflow: hidden;height: auto;">
-							<p class="tit" style="border-bottom:1px solid #ccc;margin-bottom:10px;">
-							<span>所有留言</span>
-							</p>
-							<div  id="message" style="overflow: hidden;height: auto;"></div>
-						</div>
-					
-						<!--<div style="width:98%;margin:10px auto;margin-top:0px;">
-							<form action="index.php?app=search&act=content"method="post"id="actions">
-							<p>如有意向请在下面留言：</p><br />
-							<input type="hidden" name="pid" value="<?php echo $_GET['id']?>"/>
-							<textarea name="content" id="content" style="width:500px;height:100px;border:1px solid #999999;resize:none;border-radius:5px"></textarea><br />				
-							<input type="button" value="提交" onclick="actions()" style="width:100px;height:30px;border:1px solid #999999;text-align:center;margin-top:30px;"/>
-							</form>
-						</div>-->
+			<!-- 招聘基本信息 end -->
+		</div>
+	<div class="main_body" style="margin-top:0;">
+		<div style="min-width: 1100px;">
+
+		<div style="width: 1100px;height: auto;overflow: hidden;margin: auto;">
+			<!-- 招聘详细信息 -->
+			<div style="width: 886px;height: auto;overflow: hidden;float: left;margin-top: 30px;">
+				<div style="border-bottom: 2px dashed #e5e5e5;height: auto;overflow: hidden;text-align:left;">
+					<div style="height: 30px;line-height: 30px;">
+						<img src="http://www.wgc2013.com/themes/mall/jiaju/images/zhiweixinxi.png" alt="" style="width: 25px;float: left;margin-right: 10px;">
+						<div style="display: block;float: left;font-weight: 600;">职位信息</div>
 					</div>
+					<div style="margin-left: 35px;height: auto;overflow: hidden;margin-bottom: 30px;">
+						<div>岗位描述：</div>
+						<div style="height: auto;overflow: hidden;" id="describ"></div>
+					</div>
+					<div style="margin-left: 35px;height: auto;overflow: hidden;margin-bottom: 20px;">
+						<div>岗位要求：</div>
+						<div style="height: auto;overflow: hidden;" id="ask"></div>
+					</div>
+				</div>
+				<div style="border-bottom: 2px dashed #e5e5e5;height: 60px;padding: 15px 0;">
+					<div style="height: 30px;line-height: 30px;">
+						<img src="http://www.wgc2013.com/themes/mall/jiaju/images/dizhi.png" alt="" style="width: 25px;float: left;margin-right: 10px;">
+						<div style="display: block;float: left;margin-right: 50px;font-weight: 600;">公司地址</div>
+						<div style="display: block;float: left;" id="company_addr"></div>
+					</div>
+					<div style="height: 30px;line-height: 30px;">
+						<img src="http://www.wgc2013.com/themes/mall/jiaju/images/wangzhi.png" alt="" style="width: 25px;float: left;margin-right: 10px;">
+						<div style="display: block;float: left;margin-right: 50px;font-weight: 600;">公司网址</div>
+						<div style="display: block;float: left;" id="company_web"></div>
+					</div>
+				</div>
 			</div>
+			<!-- 招聘详细信息 end -->
+
+			<!-- 广告位 -->
+			<div style="width: 200px;float: right;height: 587px;padding: 4px;border-left: 10px solid #e5e5e5;padding-right: 0;">
+				<img src="http://www.wgc2013.com/themes/mall/jiaju/images/guanggao.png" alt="" width="100%">
+			</div>
+			<!-- 广告位 end -->
+		</div>
 	</div>
-
-
-
-
+	</div>
 
 </div>
 
@@ -206,20 +198,23 @@ function selectUser(){
 		if(ret.code == 200){
 				var Data  = ret.message;
 				var addtime = _trans_php_time_to_str(Data.addtime,1);
-				$("#zhiwei").html(Data.zhiwei);	
-				$("#xinzi").html(Data.xinzi);	
-				$("#renshu").html(Data.renshu);
-				$("#addtime").html(addtime);
-				$("#click").html(Data.click);
+				$("#zhiwei").html(Data.zhiwei);	//职位
+				$("#xinzi").html(Data.xinzi+'/元');	//薪资
+				$("#renshu").html('招'+Data.renshu+'人');//招聘人数
+				$("#addtime").html(addtime+'  发布');//添加时间
+				$("#click").html(Data.click);//浏览次数
 				$("#describ").html(Data.describ);
-				$("#ask").html(Data.ask);
+				$("#ask").html(Data.ask);//岗位要求
 				$("#welfare").html(Data.welfare);
 				$("#company_name").html(Data.company_name);
 				$("#company_web").html(Data.company_web);
 				$("#company_addr").html(Data.company_addr);
 				$("#company_introduce").html(Data.company_introduce);
-			
-		
+				$("#xueli").html(Data.zuidixueli);//学历
+				$("#work_age").html(Data.work_age+'年经验');//工作年龄
+				$("#s_city").html(Data.s_city);//招聘地址
+				$("#describ").html(Data.describ);//职位描述
+				$("#ask").html(Data.ask);//职位要求
 		}else{
 			return false;
 		

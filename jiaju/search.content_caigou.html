@@ -70,6 +70,9 @@ margin:auto;padding:0px;margin-top: 10px;margin-bottom: 10px; width:1100px;overf
  -o-animation: first 1s;
  animation: first 1s;
 }
+section .aui-list .aui-list-item {
+	border-bottom: 1px solid #ccc;
+}
 @keyframes first{
  from{transform: scale(0.1);}
  to{transform: scale(1);}
@@ -110,17 +113,7 @@ margin:auto;padding:0px;margin-top: 10px;margin-bottom: 10px; width:1100px;overf
 	//var_dump($rows1);
 	
 ?>
-<!-- 搜索 -->
-<div class="jodsearch" style="background:#ccc;padding-bottom: 8px;">
-		<div class="dosearch" style="background:#ccc;overflow:hidden;">
-			<form id="dosearchform" action="http://59jiaju.com/index.php?app=search&act=joblist2" method="get">
-				<input type="hidden" name="app" value="search" />
-				<input type="hidden" name="act" value="joblist2" />
-				<input type="text" placeholder="输入关键词" name="title" style="margin-left:150px;font-size:14px;float:left;padding:0 10px;border:1px solid #ccc;width:55%;height:35px;" />
-				<input type="submit"  value="搜索" style="float:left;width:12%;height:34px;background:#ff552e;color:#FFFFFF;border:1px solid #ff552e" /><span style="margin-left:15px;color:#636363;font-family:黑体;font-size:16px;float:left;margin-top:15px;"></span>
-			</form>
-		</div>
-</div>
+
 <div class="main">
 	<!-- 主体 -->
 	<div class="main_body">
@@ -131,14 +124,14 @@ margin:auto;padding:0px;margin-top: 10px;margin-bottom: 10px; width:1100px;overf
 				
 				
 			</div>
-			<div style="width:100%;background-color:#FFFFFF;">
+			<div style="width:100%;background-color:#FFFFFF;height: auto;overflow: hidden;">
 				<div class="text-left">
-					<section class="aui-content">
+					<section class="aui-content" style="width: 886px;float: left;">
 						<ul class="aui-list">
 							
 							<li class="aui-list-item">
 								<div class="aui-list-item-inner">
-									<div class="aui-list-item-title" style="font-size:22px;color:#333;padding:20px 0" id='title'><?php echo $rows1['m_name'];?></div>
+									<div class="aui-list-item-title" style="font-size:22px;color:#333;padding:20px 0;font-weight: 600;" id='title'><?php echo $rows1['m_name'];?></div>
 								</div>
 							</li>
 							<li class="aui-list-item">
@@ -196,7 +189,7 @@ margin:auto;padding:0px;margin-top: 10px;margin-bottom: 10px; width:1100px;overf
 											//echo "<pre>";
 											//var_dump($rows1);
 											 foreach($imgarr as $k=>$m_photo){
-													echo '<a style="background:#fff" href="http://wgcapp.59jiaju.com/'.$m_photo.'" target="_blank"><img style="float:left;width:250px;height:250px;margin-left: 20px;margin-top:20rem" id="real" src="http://wgcapp.59jiaju.com/'.$m_photo.'"/></a>'; 
+													echo '<a style="background:#fff;display: none;" href="http://wgcapp.59jiaju.com/'.$m_photo.'" target="_blank"><img style="display:none;float:left;width:250px;height:250px;margin-left: 20px;margin-top:20rem" id="real" src="http://wgcapp.59jiaju.com/'.$m_photo.'"/></a>'; 
 												}
 											
 										 }
@@ -215,83 +208,33 @@ margin:auto;padding:0px;margin-top: 10px;margin-bottom: 10px; width:1100px;overf
 							
 							 <li class="aui-list-item">
 								<div class="aui-list-item-inner">
-									<p id="ltime" style="text-align: center;width:100%;font-size: 1.0rem;line-height:1.5rem;padding-top:0.25rem;padding-bottom:0.25rem;color:#000" id="lefttime">
-										 发布时间<br>
-										<span id="LeftTimee"><?php echo date('Y-m-d H:i:s',$rows1['addtime']);?></span>
-									</p>
+									<div id="ltime" style="width:100%;font-size: 0.7rem;line-height:1.5rem;padding-top:0.25rem;padding-bottom:0.25rem;color:#333" id="lefttime">
+										 发布时间:<?php echo date('Y-m-d H:i:s',$rows1['addtime']);?>
+									</div>
 								</div>
 							</li>
-							 <li class="aui-list-item">
+							 <!-- <li class="aui-list-item">
 								<div class="aui-list-item-inner">
 									<p style="text-align: right;width:100%;padding-right: 1.0rem">已有<span id="num">0<?php echo $rows1['count'];?></span>人联系</p>
 								</div>
-							</li>
+							</li> -->
 						</ul>
-					   <div class="aui-content aui-margin-b-15 ">
-							
-							<ul class="aui-list aui-list-in usermessage">
-								<li class="aui-list-header">材料商信息</li>
-								<li class="aui-list-item" style="margin:10px 0">
-									<div class="aui-list-item-inner aui-list-item-arrowr">
-										<div class="aui-list-item-media" style="width: 3rem;">
-											<img src="http://wgcapp.59jiaju.com/<?php echo $rows1['userphoto'];?>" id="userimg" style="width:50px;height:50px;" class="aui-img-round aui-list-img-sm">
-										</div>
-										<div class="aui-list-item-inner">
-											<div class="aui-list-item-text">
-												<div class="aui-list-item-title aui-font-size-14" id="name" style="font-size:16px;height:30px;" ><?php echo $rows1['name'];?></div>
-												<div class="aui-list-item-right" id="sex" style="font-size:16px;" ><?php echo $rows1['sex'];?></div>
-											</div>
-											<div class="aui-list-item-text">
-												<font id="addtime"><?php echo date('Y-m-d H:i:s',$rows1['addtime']);?></font>
-											</div>
-										</div>
-									</div>
-								</li>
-								
-							
-							 
-									
-								 
-								<li class="aui-list-item">
-									<div class="aui-list-item-inner aui-list-item-arrow">
-										<div class="aui-list-item-title" style="font-size:16px;height:30px;" >户籍：<span id="huji" style="font-size:0.65rem;" ></span><?php echo $rows1['huji'];?></div>
-									</div>
-								</li>
-								 
-								<li class="aui-list-item">
-									<div class="aui-list-item-inner aui-list-item-arrow">
-										<div class="aui-list-item-title" style="font-size:16px;height:30px;" >职位：<span id="zhiwei" style="font-size:0.65rem;" ><?php echo $rows1['zhiwei'];?></span></div>
-									</div>
-								</li>
-							   
-								<li class="aui-list-item">
-									<div class="aui-list-item-inner aui-list-item-arrow">
-										<div class="aui-list-item-title" style="font-size:16px;min-height:150px;line-height:30px;" >工作经验：<span id="m_introduce" style="font-size:0.65rem;" ><?php echo $rows1['m_introduce'];?></span></div>
-									</div>
-								</li>
-								<!--<li class="aui-list-item">
-									<div class="aui-list-item-inner aui-list-item-arrow">
-										<div class="aui-list-item-title">emali：<span id="emali"></span></div>
-									</div>
-								</li>
-								<li class="aui-list-item">
-									<div class="aui-list-item-inner aui-list-item-arrow">
-										<div class="aui-list-item-title">电话：<span id="tel"></span></div>
-									</div>
-								</li>-->
-								 
-							</ul>
-						   </div>
 						</div>
  
 					</section>
-
-					<!--描述-->
-					<div class="aui-content-padded aui-margin-b-15 aui-margin-t-15" onclick="yingying()">
-						<div class="aui-btn aui-btn-danger aui-btn-block">点击联系</div>
+					
+					<div style="width: 200px;float: right;height: 587px;padding: 4px;border-left: 10px solid #e5e5e5;padding-right: 0;">
+						<img src="http://www.wgc2013.com/themes/mall/jiaju/images/guanggao.png" alt="" width="100%">
 					</div>
+					<!--描述-->
+					
 				</div>
 			</div>
+			
+		</div>
+
+		<div class="aui-content-padded aui-margin-b-15 aui-margin-t-15" style="width: 50%;margin: 0 auto;" onclick="yingying()">
+			<div class="aui-btn aui-btn-danger aui-btn-block">点击联系</div>
 		</div>
 	</div>
 	

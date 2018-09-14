@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>项目分包列表</title>
+	<link rel="stylesheet" href="">
+	<script type="text/javascript" src="/themes/mall/jiaju/styles/default/js/jquery-1.3.2.min.js"></script>
+</head>
+<style>
+	.weixiulist ul {
+		border-bottom: 1px solid #d4d4d4;
+		height: 40px;
+		line-height: 40px;
+		text-align: center;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	.weixiulist li {
+		float: left;
+	    overflow: hidden;
+	    text-overflow: ellipsis;
+	    white-space: nowrap;
+	    text-align: center;
+	    font-size: 14px;
+	}
+
+	#headerlist li {
+		font-size: 20px;
+		font-weight: bold;
+	}
+</style>
+<body>{include file=header.html}
+
+
+	<div style="width: 1100px;margin: 10px auto;text-align: left;">
+		<!-- 搜索 -->
+		<div style="height: 54px;">
+			<input id="key" type="text" style="height: 10px;width: 970px;padding: 20px;float: left;" placeholder="请输入关键词：例如：肯德基设计">
+			<img onclick="searchList()" src="themes/mall/jiaju/images/search.png" alt="" style="float: left;width: 84px;height: 54px;">
+		</div>
+
+		<div class="weixiulist" style="margin: 20px auto;position: relative;">
+			<img src="themes/mall/jiaju/images/weixiuxm.jpg" alt="" width="200px">
+			<span id="back_btn" style="width: 100px;color: #fff;background-color: #efa913;padding: 9px;font-size: 16px;position: absolute;text-align: center;display: none;top: 0;left: 210px;cursor: pointer;" onclick="backList()">返回列表</span>
+			<!-- 设计分包列表 -->
+			<div id="sjfbList" style="margin-top: 5px;"> 
+				<ul id="headerlist" style="width: 1100px;background-color: #efa913;">
+					<li style="width: 28.16%;">项目名称</li>
+					<li style="width: 28.36%;">项目地址</li>
+					<li style="width: 15.16%;">截止时间</li>
+					<li style="width: 15.16%;">发布时间</li>
+					<li style="width: 13.16%;">详情</li>
+				</ul>
+
+				<div id="weixiuMain" style="border:1px solid #6d6d6d;border-top: 0;min-height: 415px;">
+					<!-- <ul>
+						<li style="width:28.16%;">江夏肯德基店面设计</li>
+						<li style="width:15.16%">58万</li>
+						<li style="width:28.36%">广州市白云区江夏东一路新天地广场</li>
+						<li style="width:15.16%">2018-10-01</li>
+						<li style="width:13.16%"><a href="">查看</a></li>
+					</ul> -->
+				</div>
+			</div>
+
+			<div class="unpages" id="unpage" style="margin:50px auto;width: 200px;text-align: center;">
+				<a style="background:red;color:#fff;width: 70px;height: 30px;line-height: 30px;padding:4px 5px;cursor:pointer;margin-right: 20px;" onclick="uppage()">上一页</a>
+				<a style="background:red;color:#fff;width: 70px;height: 30px;line-height: 30px;padding:4px 5px;cursor:pointer;" onclick="nextpage()">下一页</a>
+			</div>
+		</div>
+	</div>
+
+{include file=footer.html}
+</body>
+<script>
+	var url = "http://wgcapp.wgc2013.com/";
+	var page = 1;
+
+	$(document).ready(function() {
+		repair_list();
+	});
+
+	function uppage(){
+		if(page<1){
+			page=1;
+		}
+		page--;
+		repair_list(page);
+	}
+
+	function nextpage(){
+		page++;
+		repair_list(page);
+	}
+
+	//维修列表
+	function repair_list(page){
+	
+		$.post(url+'jingyi.php/Home/Jymember/lonAndlats', {
+			status   : 2,
+			page     : page,
+			ptype    : 2,
+		}, function(ret) {
+			
+			if(ret.code == 200){
+				var retData = ret.message;
+				var html = '';
+				for(var i in retData){
+					var restaurant = (retData[i].restaurant == null || retData[i].restaurant == '') ? '未设定':retData[i].restaurant,
+						id = retData[i].id, 
+						weixiu_price = retData[i].weixiu_price,
+						restaurant_address = retData[i].restaurant_address,
+						addtime = retData[i].addtime,
+						come_time = (retData[i].come_time == null || retData[i].come_time == '') ? '未设定':retData[i].come_time;
+
+						html += '<ul>';
+							html += '<li style="width:28.16%;color:red;font-weight:600;">'+restaurant+'</li>';
+							html += '<li style="width:28.36%">'+restaurant_address+'</li>';
+							html += '<li style="width:15.16%">'+come_time+'</li>';
+							html += '<li style="width:15.16%;">'+addtime+'</li>';
+							html += '<li style="width:13.16%;cursor: pointer;"><a style="color:blue;" href="/index.php?app=search&act=weixiu_details&id='+id+'">查看</a></li>';
+						html += '</ul>';
+					
+				}
+				$('#weixiuMain').html(html);
+			}else if(ret.code == 202){	
+				if(page == 1){
+					$("#weixiuMain").html('暂无数据');
+					return false;
+				}else{
+					alert('暂无更多数据了');
+				}
+			}else{
+				alert('网络连接失败，请检查网络');
+				return false;
+			}
+		},'json');
+	}
+
+	//维修项目搜索
+	function searchList(){
+		var key = $('#key').val();
+		$('.unpages').hide();
+		$.post(url+'jingyi.php/Home/Jymember/lonAndlats_key', {
+			status   : 2,
+			ptype    : 2,
+			key      : key
+		}, function(ret) {
+			if(ret.code == 200){
+				var retData = ret.message;
+				var html = '';
+				for(var i in retData){
+					var restaurant = (retData[i].restaurant == null || retData[i].restaurant == '') ? '未设定':retData[i].restaurant,
+						id = retData[i].id, 
+						weixiu_price = retData[i].weixiu_price,
+						restaurant_address = retData[i].restaurant_address,
+						addtime = retData[i].addtime,
+						come_time = (retData[i].come_time == null || retData[i].come_time == '') ? '未设定':retData[i].come_time;
+
+						html += '<ul>';
+							html += '<li style="width:28.16%;color:red;font-weight:600;">'+restaurant+'</li>';
+							html += '<li style="width:28.36%">'+restaurant_address+'</li>';
+							html += '<li style="width:15.16%">'+come_time+'</li>';
+							html += '<li style="width:15.16%;">'+addtime+'</li>';
+							html += '<li style="width:13.16%;cursor: pointer;"><a style="color:blue;" href="/index.php?app=search&act=weixiu_details&id='+id+'">查看</a></li>';
+						html += '</ul>';
+					
+				}
+				$('#weixiuMain').html(html);
+			}else if(ret.code == 202){	
+				if(page == 1){
+					$("#weixiuMain").html('暂无数据');
+					return false;
+				}else{
+					alert('暂无更多数据了');
+				}
+			}else{
+				alert('网络连接失败，请检查网络');
+				return false;
+			}
+		},'json');
+
+		$('#sjfbList').css({
+			height: 'auto',
+			overflow: 'hidden'
+		});
+
+		$('#back_btn').css({
+			display: 'block'
+		});
+	}
+
+	//返回列表
+	function backList(){
+		repair_list(page);
+		$('#back_btn').css({
+			display: 'none'
+		});
+		$('.unpages').show();
+	}
+</script>
+</html>
