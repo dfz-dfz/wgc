@@ -267,7 +267,7 @@ border:1px solid #808080;width:100%;height:66px;margin-bottom:3px;
 		<div class="divcss3p">
 			<div class="divcss3">
 			<div class="divcss2" id="repair_list" style="width: 99%;">
-				<div class="divcsschld"><div class="divcsschld1"><span style="background-color: #e8e8e8;font-size: 14px;display: inline-block;width: 60px;height: 100%;line-height: 25px;">维修项目</span></div><a  target='_blank' href="index.php?app=search&act=weixiulist"><span class="span011">更多</span></a></div>
+				<div class="divcsschld"><div class="divcsschld1"><span style="background-color: #e8e8e8;font-size: 14px;display: inline-block;width: 60px;height: 100%;line-height: 25px;">维修报价</span></div><a  target='_blank' href="index.php?app=search&act=weixiulist"><span class="span011">更多</span></a></div>
 
 				<!-- 维修分包 -->
 						<!--<div style="overflow: hidden;border-bottom: 1px solid #ccc;height:82px;">
@@ -597,7 +597,7 @@ border:1px solid #808080;width:100%;height:66px;margin-bottom:3px;
 			<div class="divcss2" id="prj_list" style="height:99%;overflow:hidden;width:99%;">
 				<p style="width:100%;height:40px;background:#ccc;line-height:40px;">
 					<span style="float:left;font-size:18px;color:#333">项目分包</span>
-					<a target="_blank" href="/index.php?app=search&act=joblist3_content&type=1&name=施工工长"><span style="float:right;font-size:18px;color:#333">更多>></span></a>
+					<a target="_blank" href="/index.php?app=search&act=xiangmu"><span style="float:right;font-size:18px;color:#333">更多>></span></a>
 				</p>
 				<!-- 列表开始 -->
 
@@ -707,7 +707,7 @@ border:1px solid #808080;width:100%;height:66px;margin-bottom:3px;
 			<div class="divcss2" id="design_list" style="height:99%;overflow:hidden;width:99%;">
 				<p style="width:100%;height:40px;background:#ccc;line-height:40px;">
 					<span style="float:left;font-size:18px;color:#333">设计分包</span>
-					<a target="_blank" href="/index.php?app=search&act=joblist3_content&type=1&name=施工工长"><span style="float:right;font-size:18px;color:#333">更多>></span></a>
+					<a target="_blank" href="/index.php?app=search&act=shejifenbao"><span style="float:right;font-size:18px;color:#333">更多>></span></a>
 				</p>
 				<!-- 列表开始 -->
 				<!-- 设计分包 -->
@@ -1047,99 +1047,84 @@ function designList(){
 			user_id:'<?php echo $_SESSION["user_info"]["user_id"];?>',
 			page   :page
 		},function(ret){
-			//console.log(ret);
 			var listHtml = '';
 			if(ret.code == 200){
 				var data = ret.message;
 				for(var i in data){
-				            var price = data[i].price, //单价
-			            	name = data[i].name,
-			            	address = data[i].address,
-			            	bj_name = data[i].ps,
-			            	send_uid = data[i].user_id,
-			            	unit = data[i].unit,
-			            	tell = data[i].tell,
-			            	type = data[i].type,
-							addtime = timestampToTime(data[i].addtime),
-							content = data[i].content,
-			            	autoaddress = data[i].autoaddress;
-					
-					
-						//console.log('hello')
+		            var price = data[i].price,
+		            	name = data[i].name,
+		            	address = data[i].address,
+		            	bj_name = data[i].ps,
+		            	send_uid = data[i].user_id,
+		            	unit = data[i].unit,
+		            	tell = data[i].tell,
+		            	type = data[i].type,
+						addtime = timestampToTime(data[i].addtime),
+						content = data[i].content,
+		            	autoaddress = data[i].autoaddress,
+		            	id = data[i].id;
+				
+					listHtml +=		'<div style="overflow: hidden;border-bottom: 1px solid #ccc;height:82px;">';
+					listHtml +=			'<p style="float: left;font-size: 18px;color: red;font-weight: 600;letter-spacing: 2px;margin: 10px 0 10px 5px;">'+bj_name+'</p>';
+					listHtml +=			'<p style="float: right;font-size: 18px;color: red;font-weight: 600;letter-spacing: 2px;margin: 10px 30px 10px 0;">'+price+'</p>';
+					listHtml +=			'<ul id="" style="width:100%;height:auto;overflow:hidden">';
+					listHtml +=				'<a href="/index.php?app=search&act=shejifenbao_details&id='+id+'" style="text-decoration: none;">';
+					listHtml +=					'<li style="width: 100%;height: auto;">';
+					listHtml +=					'<div style="margin-left: 5px;height: auto;border: none;">';
+					listHtml +=					'<span style="letter-spacing: 2px;">地址:</span>';
+					listHtml +=					'<span style="color: #000;display: inline-block;margin-left: 10px;letter-spacing: 2px;">'+address+'</span>';
+					listHtml +=					'</div>';
+					listHtml +=					'<div style="overflow: hidden;margin-left: 5px;height: auto;border: none;">';
+					listHtml +=					'<span style="letter-spacing: 2px;">发布时间:</span>';
+					listHtml +=					'<span style="color: #000;display: inline-block;margin-left: 10px;letter-spacing: 2px;">'+addtime+'</span>';
+					listHtml +=					'<span style="float: right;letter-spacing: 2px;margin-right: 5px;">2018-8-20</span>';
+					listHtml +=					'</div>';
+					listHtml +=					'</li>';
+					listHtml +=				'</a>';
+					listHtml +=			'</ul>';
+					listHtml +=		'</div>	';
 						
-							listHtml +=		'<div style="overflow: hidden;border-bottom: 1px solid #ccc;height:82px;">';
-							listHtml +=			'<p style="float: left;font-size: 18px;color: red;font-weight: 600;letter-spacing: 2px;margin: 10px 0 10px 5px;">'+bj_name+'</p>';
-							listHtml +=			'<p style="float: right;font-size: 18px;color: red;font-weight: 600;letter-spacing: 2px;margin: 10px 30px 10px 0;">'+price+'</p>';
-							listHtml +=			'<ul id="" style="width:100%;height:auto;overflow:hidden">';
-							listHtml +=				'<a href="javascript:;" style="text-decoration: none;">';
-							listHtml +=					'<li style="width: 100%;height: auto;">';
-							listHtml +=					'<div style="margin-left: 5px;height: auto;border: none;">';
-							listHtml +=					'<span style="letter-spacing: 2px;">地址:</span>';
-							listHtml +=					'<span style="color: #000;display: inline-block;margin-left: 10px;letter-spacing: 2px;">'+address+'</span>';
-							listHtml +=					'</div>';
-							listHtml +=					'<div style="overflow: hidden;margin-left: 5px;height: auto;border: none;">';
-							listHtml +=					'<span style="letter-spacing: 2px;">发布时间:</span>';
-							listHtml +=					'<span style="color: #000;display: inline-block;margin-left: 10px;letter-spacing: 2px;">'+addtime+'</span>';
-							listHtml +=					'<span style="float: right;letter-spacing: 2px;margin-right: 5px;">2018-8-20</span>';
-							listHtml +=					'</div>';
-							listHtml +=					'</li>';
-							listHtml +=				'</a>';
-							listHtml +=			'</ul>';
-							listHtml +=		'</div>	';
-						
-					
-						
-					
 				}
-					$("#design_list").append(listHtml);
+				$("#design_list").append(listHtml);
+			}else{
+				$("#design_list").append('加载失败');
 			}
 		},'json')		
 }
-//维修分包列表
+//维修报价列表
 	function repair_list(){
 
-		$.post(url+'jingyi.php/Home/Jymember/lonAndlat', {
-			user_id  :  '1473405469',
+		$.post(url+'jingyi.php/Home/Jymember/lonAndlats', {
 			status   : 2,
 			page     : page,
-			storeid  : 'b65e2727ec76202a16d7fd77dfa8a2de',
-			ptype    : 2,
+			ptype    : 2
 		}, function(ret) {
-			if(ret.status == 200){
-				//console.log(ret)
-				var retData = ret.retData;
+			if(ret.code == 200){
+				var retData = ret.message;
 				var html = '';
 
 				for(var i in retData){
-					var userphoto = retData[i].userphoto,
-						id = retData[i].prj_id,
-						prj_name = retData[i].prj_name,
-						pre_price = retData[i].pre_price,
-						address = retData[i].address,
-						group_id = retData[i].group_id,
-						renshu = retData[i].renshu,
-						xmfzr = retData[i].xmfzr,
-						start_time = (retData[i].start_time == null || retData[i].start_time == '') ? '未设定':retData[i].start_time,
-						expire_time = (retData[i].expire_time == null || retData[i].expire_time == '') ? '未设定':retData[i].expire_time,
-					    protype = retData[i].ptype;
+					var restaurant = (retData[i].restaurant == null || retData[i].restaurant == '') ? '未设定':retData[i].restaurant,
+						id = retData[i].id, 
+						weixiu_price = retData[i].weixiu_price,
+						restaurant_address = retData[i].restaurant_address,
+						addtime = retData[i].addtime,
+						come_time = (retData[i].come_time == null || retData[i].come_time == '') ? '未设定':retData[i].come_time;
 		           		
-		           		
-		           		pre_prices = (pre_price != '')?+pre_price+'万元':'';
-		           		address    = (address != 'null' || typeof(address) != null) ? address: '';
 						html += '<div style="overflow: hidden;border-bottom: 1px solid #ccc;height:82px;">';
-						html +=	'<p style="float: left;font-size: 18px;color: red;font-weight: 600;letter-spacing: 2px;margin: 10px 0 10px 5px;">'+prj_name+'</p>';
-						html +=	'<p style="float: right;font-size: 18px;color: red;font-weight: 600;letter-spacing: 2px;margin: 10px 30px 10px 0;">'+pre_prices+'</p>';
+						html +=	'<p style="float: left;font-size: 18px;color: red;font-weight: 600;letter-spacing: 2px;margin: 10px 0 10px 5px;">'+restaurant+'</p>';
+						html +=	'<p style="float: right;font-size: 18px;color: red;font-weight: 600;letter-spacing: 2px;margin: 10px 30px 10px 0;">'+weixiu_price+'</p>';
 						html +=	'<ul id="" style="width:100%;height:auto;overflow:hidden">';
-						html +=		'<a href="javascript:;" style="text-decoration: none;">';
+						html +=		'<a href="/index.php?app=search&act=weixiu_details&id='+id+'" style="text-decoration: none;">';
 						html +=			'<li style="width: 100%;height: auto;">';
 						html +=			'<div style="margin-left: 5px;height: auto;border: none;">';
 						html +=			'<span style="letter-spacing: 2px;">地址:</span>';
-						html +=			'<span style="color: #000;display: inline-block;margin-left: 10px;letter-spacing: 2px;">'+address+'</span>';
+						html +=			'<span style="color: #000;display: inline-block;margin-left: 10px;letter-spacing: 2px;">'+restaurant_address+'</span>';
 						html +=			'</div>';
 						html +=			'<div style="overflow: hidden;margin-left: 5px;height: auto;border: none;">';
 						html +=			'<span style="letter-spacing: 2px;">截止时间:</span>';
-						html +=			'<span style="color: #000;display: inline-block;margin-left: 10px;letter-spacing: 2px;">'+expire_time+'</span>';
-						html +=			'<span style="float: right;letter-spacing: 2px;margin-right: 5px;">'+start_time+'</span>';
+						html +=			'<span style="color: #000;display: inline-block;margin-left: 10px;letter-spacing: 2px;">'+come_time+'</span>';
+						html +=			'<span style="float: right;letter-spacing: 2px;margin-right: 5px;">'+addtime+'</span>';
 						html +=			'</div>';
 						html +=			'</li>';
 						html +=		'</a>';
