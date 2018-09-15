@@ -435,7 +435,7 @@ border:1px solid #808080;width:100%;height:66px;margin-bottom:3px;
 			<div class="divcss2" style="width:99%;height:310px;overflow:hidden;">
 				<p style="width:100%;height:40px;background:#ccc;line-height:40px;">
 					<span style="float:left;font-size:18px;color:#333">工价询价</span>
-					<a target="_blank" href="index.php?app=search&act=joblist3&type=建筑装饰"><span style="float:right;font-size:18px;color:#333">更多>></span></a>
+					<a target="_blank" href="index.php?app=search&act=gongjiaxunjia"><span style="float:right;font-size:18px;color:#333">更多>></span></a>
 				</p>
 <!-- 				<div class="text-left">
 					<a style="margin:8px 10px;width:168px;" target='_blank' href="index.php?app=search&act=joblist3&type=建筑装饰">建筑装饰</a>
@@ -985,59 +985,63 @@ function openGongjiaConten(id,user_id){
 page = 1;
 function project(){
 
-	var url= 'http://wgcapp.wgc2013.com/jingyi.php/Home/Jymember/lonAndlat';
+	var url= 'http://wgcapp.wgc2013.com/jingyi.php/Home/Jianli/projectSubcontract_listss';
 	$.ajax({
-				type:"POST",
-				url:url,
-				data:{
-					user_id  :  '1473405469',
-					status   : 2,
-					page     : page,
-					storeid  : 'b65e2727ec76202a16d7fd77dfa8a2de',
-					ptype    : 1,
-				},
-				cache:false,
-				crossDomain: true == !(document.all),
-				dataType: "json",
-				success:function(ret){
-					//console.log(ret)
-					if(ret.status == 200){
-						var retData = ret.retData;
-						var html = '';
-						for(var i in retData){
-							var prj_name = retData[i].prj_name;
-							var address = retData[i].address;
-							var pre_price = retData[i].pre_price;
-							var expire_time = retData[i].expire_time;
-							var start_time = retData[i].start_time;
+		type:"POST",
+		url:url,
+		data:{
+			page   :page
+		},
+		cache:false,
+		crossDomain: true == !(document.all),
+		dataType: "json",
+		success:function(ret){
+			if(ret.status == 200){
+				var data = ret.retData;
+				var html = '';
+				for(var i in data){
+					var expect_price = (data[i].expect_price == null || data[i].expect_price == '') ? '未设定':data[i].expect_price,
+		            	name = data[i].name,
+		            	worker_address = (data[i].worker_address == null || data[i].worker_address == '') ? '未设定':data[i].worker_address,
+		            	prj_name = (data[i].prj_name == null || data[i].prj_name == '') ? '未设定':data[i].prj_name,//项目名称
+		            	ps = (data[i].ps == null || data[i].ps == '') ? '未设定':data[i].ps,//备注
+		            	send_uid = data[i].user_id,
+		            	unit = data[i].unit,
+		            	tell = data[i].tell,
+		            	type = data[i].type,
+		            	dd_time = (data[i].dd_time == null || data[i].dd_time == '') ? '未设定':data[i].dd_time,//截止时间
+						addtime = _trans_php_time_to_str(data[i].addtime,5),//添加时间
+						content = data[i].content,
+		            	autoaddress = data[i].autoaddress,
+		            	id = data[i].id;
 
-								html +=			'<div style="overflow: hidden;border-bottom: 1px solid #ccc;height:82px;">';
-								html +=			'<p style="float: left;font-size: 18px;color: red;font-weight: 600;letter-spacing: 2px;margin: 10px 0 10px 5px;">'+prj_name+'</p>';
-								html +=				'<p style="float: right;font-size: 18px;color: red;font-weight: 600;letter-spacing: 2px;margin: 10px 30px 10px 0;">'+pre_price+'万</p>';
-								html +=				'<ul id="" style="width:100%;height:auto;overflow:hidden">';
-								html +=					'<a href="javascript:;" style="text-decoration: none;">';
-								html +=						'<li style="width: 100%;height: auto;">';
-								html +=							'<div style="margin-left: 5px;">';
-								html +=								'<span style="letter-spacing: 2px;">地址:</span>';
-								html +=								'<span style="color: #000;display: inline-block;margin-left: 10px;letter-spacing: 2px;">'+address+'</span>';
-								html +=							'</div>';
-								html +=							'<div style="overflow: hidden;margin-left: 5px;">';
-								html +=								'<span style="letter-spacing: 2px;">截止时间:</span>';
-								html +=								'<span style="color: #000;display: inline-block;margin-left: 10px;letter-spacing: 2px;">'+expire_time+'</span>';
-								html +=							'<span style="float: right;letter-spacing: 2px;">'+start_time+'</span>';
-								html +=							'</div>';
-								html +=						'</li>';
-								html +=					'</a>';
-								html +=				'</ul>';
-								html +=				'</div>';
-						}
-						$("#prj_list").append(html);
-					}
-				},
-				error:function(err){
-					console.log(err)
+						html +=			'<div style="overflow: hidden;border-bottom: 1px solid #ccc;height:82px;">';
+						html +=			'<p style="float: left;font-size: 18px;color: red;font-weight: 600;letter-spacing: 2px;margin: 10px 0 10px 5px;">'+prj_name+'</p>';
+						html +=				'<p style="float: right;font-size: 18px;color: red;font-weight: 600;letter-spacing: 2px;margin: 10px 30px 10px 0;">'+expect_price+'万</p>';
+						html +=				'<ul id="" style="width:100%;height:auto;overflow:hidden">';
+						html +=					'<a href="/index.php?app=search&act=xiangmu_details&id='+id+'" style="text-decoration: none;">';
+						html +=						'<li style="width: 100%;height: auto;">';
+						html +=							'<div style="margin-left: 5px;">';
+						html +=								'<span style="letter-spacing: 2px;">地址:</span>';
+						html +=								'<span style="color: #000;display: inline-block;margin-left: 10px;letter-spacing: 2px;">'+worker_address+'</span>';
+						html +=							'</div>';
+						html +=							'<div style="overflow: hidden;margin-left: 5px;">';
+						html +=								'<span style="letter-spacing: 2px;">截止时间:</span>';
+						html +=								'<span style="color: #000;display: inline-block;margin-left: 10px;letter-spacing: 2px;">'+dd_time+'</span>';
+						html +=							'<span style="float: right;letter-spacing: 2px;">'+addtime+'</span>';
+						html +=							'</div>';
+						html +=						'</li>';
+						html +=					'</a>';
+						html +=				'</ul>';
+						html +=				'</div>';
 				}
-			});
+				$("#prj_list").append(html);
+			}
+		},
+		error:function(err){
+			console.log(err)
+		}
+	});
 }
 //设计分包列表
 function designList(){
