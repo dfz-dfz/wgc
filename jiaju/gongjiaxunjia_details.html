@@ -36,63 +36,22 @@
 		</div>
 		
 		<!-- 回复内容 -->
-		<div style="margin-top: 30px;border-bottom: 16px solid #eee;">
-			<div style="border: 16px solid #eee;border-bottom: none;height: 130px;width: 93%;padding: 2%;">
-				<div style="height: 120px;width: 100%;">
-					<div style="width: 10%;float: left;text-align: center;">
-						<div>
-							<img src="http://wgcapp.59jiaju.com/Public/Uploads/zhengshu/2018-07-28/0b984224-f7f2-f11d-a24b-a44bf0ff6b01.jpg" alt="" width="60" height="60">
-						</div>
-						<div style="padding: 20px 0;font-size: 14px;color: blue;">安师傅</div>
-						<span style="padding: 1px 12px;border: 1px solid #000;font-size: 12px;">泥水工</span>
-					</div>
-					<div style="width: 85%;float: left;">
-						您好，铺抛光砖预估工价为**元。
-					</div>		
-				</div>
-				<div style="width:100%;height:30px;line-height:30px;text-align: right;"><span style="margin-right: 30px;">1楼</span><span style="margin-right: 50px;">2018-9-4&nbsp;16:23</span></div>
-			</div>
-
-			<div style="border: 16px solid #eee;border-bottom: none;height: 130px;width: 93%;padding: 2%;">
-				<div style="height: 120px;width: 100%;">
-					<div style="width: 10%;float: left;text-align: center;">
-						<div>
-							<img src="http://wgcapp.59jiaju.com/Public/Uploads/zhengshu/2018-07-28/0b984224-f7f2-f11d-a24b-a44bf0ff6b01.jpg" alt="" width="60" height="60">
-						</div>
-						<div style="padding: 20px 0;font-size: 14px;color: blue;">安师傅</div>
-						<span style="padding: 1px 12px;border: 1px solid #000;font-size: 12px;">泥水工</span>
-					</div>
-					<div style="width: 85%;float: left;">
-						您好，铺抛光砖预估工价为**元。
-					</div>		
-				</div>
-				<div style="width:100%;height:30px;line-height:30px;text-align: right;"><span style="margin-right: 30px;">1楼</span><span style="margin-right: 50px;">2018-9-4&nbsp;16:23</span></div>
-			</div>
-
-			<div style="border: 16px solid #eee;border-bottom: none;height: 130px;width: 93%;padding: 2%;">
-				<div style="height: 120px;width: 100%;">
-					<div style="width: 10%;float: left;text-align: center;">
-						<div>
-							<img src="http://wgcapp.59jiaju.com/Public/Uploads/zhengshu/2018-07-28/0b984224-f7f2-f11d-a24b-a44bf0ff6b01.jpg" alt="" width="60" height="60">
-						</div>
-						<div style="padding: 20px 0;font-size: 14px;color: blue;">安师傅</div>
-						<span style="padding: 1px 12px;border: 1px solid #000;font-size: 12px;">泥水工</span>
-					</div>
-					<div style="width: 85%;float: left;">
-						您好，铺抛光砖预估工价为**元。
-					</div>		
-				</div>
-				<div style="width:100%;height:30px;line-height:30px;text-align: right;"><span style="margin-right: 30px;">1楼</span><span style="margin-right: 50px;">2018-9-4&nbsp;16:23</span></div>
-			</div>
+		<div style="margin-top: 30px;border-bottom: 16px solid #eee;" id="huifu">
+			
 		</div>
 		<!-- 回复内容 end -->
 
 		<!-- 发表回复 -->
-		<div style="height: 300px;width: 100%;margin-top: 30px;background-color: #eee;">
-			<div style="font-weight: bold;padding: 20px;">发表回复</div>
-			<textarea name="" id="" cols="30" rows="10" style="    width: 96%;margin: 0 2%;height: 170px;resize: none;"></textarea>
-			<input type="text" value="发表" style="text-align: center;height: 40px;line-height: 40px;letter-spacing: 5px;background-color:#f24c24;color: #fff;width: 96%;margin: 20px 2%;border:none;">
-		</div>
+		<form action="http://wgcapp.wgc2013.com/jingyi.php/Home/User/xunjia_huifu" method="post">
+			<div style="height: 300px;width: 100%;margin-top: 30px;background-color: #eee;position: relative;">
+				<span><img style="width: 20px;padding: 10px 10px 10px 22px;" src="themes/mall/jiaju/images/bianji.png" alt=""></span>
+				<span style="font-weight: bold;color: #000;font-size: 16px;position: absolute;margin-top: 10px;">发表回复</span>
+				<input type="hidden" id="user_id" name="user_id" value="<?php echo ($_SESSION['user_info']['user_id'] == '' || $_SESSION['user_info']['user_id'] == null) ? '':$_SESSION['user_info']['user_id'];?>">
+				<input type="hidden" name="xid" value="" id="xq">
+				<textarea name="content" id="" cols="30" rows="10" style="width: 96%;margin: 0 2%;height: 170px;resize: none;border: 2px solid #7db7ca;"></textarea>
+				<input type="submit" onclick="sub()" value="发表" style="text-align: center;height: 40px;line-height: 40px;letter-spacing: 5px;background-color:#f24c24;color: #fff;width: 96%;margin: 20px 2%;border:none;">
+			</div>
+		</form>
 		<!-- 发表回复 end -->
 
 	</div>
@@ -109,6 +68,7 @@
 
 	$(function(){
 		shejifenbao_detalis();
+		$('#xq').val(id);
 	})
 
 	//获取工价询价id
@@ -127,6 +87,8 @@
     		id : id
 		}, function(ret) {
 			var data = ret.message;
+			var datas = ret.huifu;
+			var html = '';
 			if(ret.code == 200){
 				var address = data.address,//地址
 					addtime = data.addtime,//添加时间
@@ -143,10 +105,52 @@
 				$('#lxfs').html(data.tel.replace(/(\d{3})\d{5}(\d{3})/, '$1*****$2'));
 				$('#gzdd').html(data.address);
 				$('#bz').html(data.ps);
+
+				// 获取回复列表
+				if(datas != ''){
+					for(var i in datas){
+						var addtime = datas[i].addtime,
+							content = datas[i].content,
+							gongzhong = datas[i].gongzhong,
+							id = datas[i].id,
+							userimg = datas[i].userimg,
+							username = datas[i].username,
+							time = _trans_php_time_to_str(addtime,5);
+
+						html += '<div style="border: 16px solid #eee;border-bottom: none;height: 130px;width: 93%;padding: 2%;">';
+							html += '<div style="height: 120px;width: 100%;">';
+								html += '<div style="width: 10%;float: left;text-align: center;">';
+									html += '<div>';
+										html += '<img src="http://wgcapp.59jiaju.com'+userimg+'" alt="" width="60" height="60">';
+									html += '</div>';
+									html += '<div style="padding: 20px 0;font-size: 14px;color: blue;">'+username+'</div>';
+									html += '<span style="padding: 1px 12px;border: 1px solid #000;font-size: 12px;">'+gongzhong+'</span>';
+								html += '</div>';
+								html += '<div style="width: 85%;float: left;">'+content+'</div>';
+							html += '</div>';
+							html += '<div style="width:100%;height:30px;line-height:30px;text-align: right;"><span style="margin-right: 30px;">'+id+'楼</span><span style="margin-right: 50px;">'+time+'</span></div>';
+						html += '</div>';
+					}
+				}else{
+					html += '<div style="border: 16px solid #eee;border-bottom: none;height: 50px;width: 93%;padding: 2%;">';
+						html += '<div style="height: 50px;width: 100%;">';
+							html += '<div style="text-align:center;font-size:20px;color:#999;line-height:50px;">暂无回复内容</div>';
+						html += '</div>';
+					html += '</div>';
+				}
+
+				$('#huifu').html(html);
 			}else{
 
 			}
 		},'json');
+	}
+
+	function sub(){
+		if($('#user_id').val() == ''){
+			alert('请登录之后在回复');
+			return false;
+		}
 	}
 
 </script>

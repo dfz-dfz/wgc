@@ -8,17 +8,12 @@
 <meta name="description" content="微工程，微工程APP，装修、材料、家具、饰品一站式服务，让装修更简单，价格更透明！！" />
 <meta name="keywords" content="微工程，微工程，家居商城，微工程家居商城，微工程家居装修商城，办公室装修，写字楼装修，材料，装修材料，家居，办公家具，家居，家具，装修，装饰" />
 <link rel="stylesheet" type="text/css" href="/themes/mall/jiaju/css/api.css"/>
-<!-- <link rel="stylesheet" type="text/css" href="themes/mall/jiaju/css/aui.css" /> -->
-<!-- <link rel="stylesheet" type="text/css" href="themes/mall/jiaju/css/aui.1.0.css"/> -->
-
-<!-- 引入个人中心 -->
 <link type="text/css" href="/themes/mall/jiaju/styles/default/css/center.css" rel="stylesheet"  />
 <link type="text/css" href="/themes/mall/jiaju/styles/css/worker_quota_price.css" rel="stylesheet" />
+<link rel="stylesheet" href="themes/mall/jiaju/styles/css/tel_list.css">
 <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
-<!-- <script type="text/javascript" src="www.wgc2013.com/themes/mall/jiaju/js/jquery-1.8.3.min.js"></script> -->
 <script type="text/javascript">
 	jQuery.support.cors = true;
-
 </script>
 
 </head>
@@ -47,6 +42,10 @@
     font-size: 18px;
     font-weight: 600;
 }
+.tab_head ul li{
+	text-align: center;
+}
+
 
 .tab_head ul,
 .tab_content ul {
@@ -63,7 +62,10 @@
 	padding: 10px 0;
 	
 }
-
+.tab_content ul li{
+	text-align: center;
+	
+}
 /*分页导航*/
 .page_list {
 	height: 20px;
@@ -104,7 +106,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<!-- <base href="http://www.wgc2013.com/" /> -->
 <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7 charset=utf-8" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
@@ -142,13 +143,10 @@ body{background:url('') no-repeat center top }
   $(function (){
     $('#open-change-city-window').click(function (){
       $('.change-city-window').slideDown();
-      
     })
     $('#close-change-city-window').click(function (){
       $('.change-city-window').slideUp();
     })
-
-  
   })
 </script>
 </head>
@@ -159,20 +157,19 @@ body{background:url('') no-repeat center top }
  <div class="container" style="overflow: hidden;width: 1200px;margin: 10px auto;position: relative;">
  <!-- 左上的导航栏 -->
  	 {include file=companycenter.html}
-<!-- 	<include file="usercenter.html"/> -->
 
  	<!-- 右边的内容 -->
  	<div class="container_right" style="width: 78.5%;border: 1px solid #cacaca;float: right;background-color: #f7f7f7;padding: 0 10px 10px 10px;">
 
 		<!-- 公司信息 -->
-		<div class="budget base_ui_public" style="/*display: none;*/position: relative;">
+		<div class="budget base_ui_public" style="position: relative;">
 			<ul class="budget_ul user_public_ul">
  				<li class="change_bg_li" style="margin-right: 10px;">工价询价</li>
 				<li style="margin-right: 10px;">询价列表</li>
  			</ul>
- 			<div class="company_info base_info_public" style="overflow: hidden;/*padding-left: 15%;*/min-height: 250px;">
+ 			<div class="company_info base_info_public" style="overflow: hidden;min-height: 250px;">
  			<!-- 预算报价 -->
- 			<div class="company_detail" style="position: relative;/*left: -16%;*//*width: 115%;*/">
+ 			<div class="company_detail" style="position: relative;">
 			<div style="overflow: hidden;margin-top: 10px;">
 			<!-- 基本信息 -->
 			<div class="section" style="border: none;">
@@ -206,26 +203,27 @@ body{background:url('') no-repeat center top }
 			<!-- 自定工价 end -->
 			
 			<!-- 工价列表 -->
-			<div class="sect current wages_list" style="display:none;">
+			<div class="sect current wages_list" style="display:none;min-height: 420px;height: auto;overflow: hidden;">
 				<div class="search">
 					<div class="search_box">
 						<input class="search_input" type="text" placeholder="输入关键字">
 						<input class="search_btn" type="button" value="搜索">
+						<input type="button" value="分享" class="share_btn" onclick="showUserList()" />
 					</div>
 				</div>
 				<!-- 显示列表 -->
-				<div class="content" style="text-align:center">
+				<div class="content" style="text-align:center;min-height:300px;">
 					<ul class="content_ul">
 						<li class="tab_head">
 							<ul>
-								<li>序号</li>
-								<li>项目名称</li>
-								<li>计价单位</li>
-								<li>数量/范围</li>
-								<li>联系方式</li>
-								<li>工作地点</li>
+								<li style="width:7.5%;">序号</li>
+								<li style="width:14.5%;">项目名称</li>
+								<li style="width:10.5%;">计价单位</li>
+								<li style="width:10.5%;">数量/范围</li>
+								<!-- <li>联系方式</li> -->
+								<li style="width:31.5%;">工作地点</li>
 								<!-- <li>备注</li> -->
-								<li style="width:22.5%">发布时间</li>
+								<li style="width:15.5%">发布时间</li>
 							</ul>
 						</li>
 					
@@ -235,26 +233,43 @@ body{background:url('') no-repeat center top }
 					</ul>
 				</div>
 				<!-- 分页导航 -->
-				<div class="page_list">
-					<ul>
-						<li class="ft">首页</li>
-						<li class="un">上一页</li>
-						<li class="num current">1</li>
-						<li class="num">2</li>
-						<li class="num">3</li>
-						<li class="num">4</li>
-						<li class="num">5</li>
-						<li class="num">6</li>
-						<li class="num">7</li>
-						<li class="num">···</li>
-						<li class="un">下一页</li>
-						<li class="ft">尾页</li>
-					</ul>
+				<div class="page_list" style="text-align:center;">
+					
+					<a href="javascript:;" style="display: inline-block;width: 50px;background-color: #9c9393;color: #ffffff;height: 20px;line-height: 20px;margin-right:20px;" onclick="prepage()">上一页</a>
+					<a href="javascript:;" style="display: inline-block;width: 50px;background-color: #9c9393;color: #ffffff;height: 20px;line-height: 20px;" onclick="nextpage()">下一页</a>
 				</div>
 			</div>
 		</div>
 			
 			<!-- 工价列表 end -->
+			
+			<!-- 分享弹窗 -->
+					<div class="confirm" style="display: none;">
+							<div class="tel_con" style="display: block;display: block;width: 50%;margin: 10px auto;background-color: #fff;padding-top: 10px;padding-bottom: 10px;height: 400px;box-shadow: 5px 5px 5px;">
+							<div class="quxiao" style="position: absolute;font-size: 20px;top: 0px;left: 690px;background-color: #9e9e9e;border-radius: 10px;width: 20px;height: 20px;line-height: 20px;cursor: pointer;">×</div>							
+							<div class="confirm_head" style="margin-bottom: 10px;">
+								<input type="text" id="search_text" placeholder="请输入搜索的联系人" />
+								<input class="confirm_btn" type="button" onclick="UserSearch()" value="搜索" />
+								<input id="back_btn" type="button" onclick="back()" value="返回" style="width: 40px;height: 21px;display: none;"/>
+							</div>
+							<div style="overflow-y: scroll;height:300px;">
+							<div class="getUserList" style="min-height:270px;">
+								
+							</div>
+							<!--分页 -->
+							<div>
+								<a href="javascript:;" style="display: inline-block;width: 50px;background-color: #9c9393;color: #ffffff;height: 20px;line-height: 20px;margin-right:20px;" onclick="prepageUser()">上一页</a>
+								<a href="javascript:;" style="display: inline-block;width: 50px;background-color: #9c9393;color: #ffffff;height: 20px;line-height: 20px;" onclick="nextpageUser()">下一页</a>							
+							</div>
+							</div>
+							<div style="margin-top:30px;">
+								<input class="confirm_btn" type="button"  value="确认分享" style="display: inline-block;width: 100px;height: 30px;line-height: 25px;font-size: 18px;border-radius: 5px;background-color: #f8c67b;color: #fff;" onclick="sharebox()"/>
+							</div>
+						</div>
+						
+					</div>
+					</div>
+					<!-- 分享弹窗 end -->
 			</div>
 
 
@@ -297,6 +312,21 @@ $(".budget_ul li:last").click(function(){
 	$(this).addClass("change_bg_li")
 
 })
+
+	$(".share_btn").click(function(e){
+		e.stopPropagation(); 
+		$(".confirm").show();
+
+
+
+
+	})
+	$(".wages_list").click(function(){
+			$(".confirm").hide();
+			$(".wages_list").css("background-color","#fff")
+
+			
+		})
 		//提交发布
 function fabu(){
 		
@@ -353,9 +383,56 @@ function fabu(){
 	}
 	
 	//询价列表
+var page =1,upage =1;;
 	function showList(){
 		$.post('http://wgcapp.wgc2013.com/jingyi.php/Home/User/xunjia_list',{
 			userid      : '<?php echo $_SESSION["user_info"]["user_id"];?>',
+			page        : 1
+		},function(ret){
+			if(ret.code == 200){
+				var html ='';
+				var data = ret.message;
+				for(var i in data){
+					var codenum = parseInt(i)+1;
+						title = data[i].title,
+						unit = data[i].unit,
+						num = data[i].num,
+						ps = data[i].ps,
+						address = data[i].address,
+						tel = data[i].tel,
+						addtime = data[i].addtime;
+						
+					html += '<li class="tab_content">';
+						html += '<ul>';
+							html += '<li style="width:7.5%;"><input name="id" type="checkbox" />'+codenum+'</li>';
+							html += '<li style="width:14.5%;">'+title+'</li>';
+							html += '<li style="width:10.5%;">'+unit+'</li>';
+							html += '<li style="width:10.5%;">'+num+'</li>';
+							// html += '<li>'+tel+'</li>';
+							html += '<li style="width:31.5%;">'+address+'</li>';
+							//html += '<li><img src="" alt=""></li>';
+							html += '<li style="width:15.5%;">'+addtime+'</li>';
+						html += '</ul>';
+					html += '</li>';
+				}
+				$('#show_list').html(html);
+			}else{
+				//alert('列表获取失败');
+			}
+		},'json');
+	}
+//分页控制
+
+function pageindex(pindex){
+		//console.log(index)
+		if(pindex < 1){
+			pindex = 1;
+			page=1;
+		}
+	$('#show_list').html("");
+		$.post('http://wgcapp.wgc2013.com/jingyi.php/Home/User/xunjia_list',{
+			userid      : '<?php echo $_SESSION["user_info"]["user_id"];?>',
+			page        : pindex
 		},function(ret){
 			if(ret.code == 200){
 				var html ='';
@@ -376,7 +453,7 @@ function fabu(){
 							html += '<li>'+title+'</li>';
 							html += '<li>'+unit+'</li>';
 							html += '<li>'+num+'</li>';
-							html += '<li>'+tel+'</li>';
+							// html += '<li>'+tel+'</li>';
 							html += '<li>'+address+'</li>';
 							//html += '<li><img src="" alt=""></li>';
 							html += '<li style="width:22.5%;">'+addtime+'</li>';
@@ -385,10 +462,288 @@ function fabu(){
 				}
 				$('#show_list').html(html);
 			}else{
-				alert('列表获取失败');
+				//alert('列表获取失败');
 			}
 		},'json');
+
 	}
+//下一页
+function nextpage(){
+	
+	pageindex(++page);
+
+	}
+//上一页
+function prepage(){
+		pageindex(--page);
+	}
+	
+	//分享
+	function share(){
+		//获取选择的内容的id值
+		var $list = $("input[type='checkbox']");
+		console.log($list)
+	}
+	
+	//分享选择接收人
+	function  showUserList(){
+		var page = 1;
+		uid= '<?php echo $_SESSION["user_info"]["user_id"];?>';
+		$.ajax({
+				type:"POST",
+				url:'http://wgcapp.wgc2013.com/jingyi.php/Home/index/getAllMyRelative',
+				data:{
+						uid:'<?php echo $_SESSION["user_info"]["user_id"];?>',
+		            	type:'PRIVATE',
+		            	types:'user_list',
+		            	page : page,
+				},
+				cache:false,
+				crossDomain: true == !(document.all),
+				dataType: "JSON",
+				success:function(ret){
+					console.log("成功");
+					console.log(ret)
+					var html = '';
+					var datas = ret.data;
+					$('.getUserList').html("")
+					if(ret.code == 200){
+						page ++;
+						for(var j in datas){
+							var data = datas[j];
+							var message = datas[j].message;
+							html += '<div class="tel_list">'+data.zhiwei+'</div>';
+							for(var i in message){
+								var zhiwei = message[i].zhiwei,
+									id     = message[i].id,
+									touid = message[i].touid,
+									name = message[i].name,
+									names = message[i].user_name, 
+									imgUrl = message[i].userphoto;
+								html += '<ul>';
+									html += '<li class="tel_li">';
+										html += '<div class="check">';
+											html += '<input name="tid" type="checkbox" value="'+touid+'" name="checkbox" />';
+										html += '</div>';
+										html += '<div class="head_img">';
+											html += '<img src="'+url+imgUrl+'" alt=""/>';
+										html += '</div>';
+										html += '<div class="tel_data">';
+											html += '<span>'+name+'</span>';
+											html += '<span>'+names+'</span>';
+										html += '</div>';
+									html += '</li>';
+								html += '</ul>';
+							}
+						}
+
+						$('.getUserList').append(html);
+						//获取数据id
+								var arr = new Array();
+				                $('input[name="id"]:checked').each(function(i){
+				                    arr[i] = $(this).val();
+				                });
+				                var vals = arr.join(",");
+				                console.log(vals);
+					}else {
+						alert('数据加载失败，请检查网络!');
+					}
+				},
+				error:function(err){
+					console.log("错误是");
+					console.log(err);
+				}
+			});
+	}
+
+	//通讯录搜索
+	function UserSearch(){
+		var key_word = $('#search_text').val();
+
+		if(key_word == ''){
+			showUserList();
+		}else{
+			$.post(url+'jingyi.php/Home/index/searchMyRelatives', {
+				uid : '<?php echo $_SESSION["user_info"]["user_id"];?>',
+				type:'PRIVATE',
+				types:'user_list',
+	        	keyword : key_word,
+			}, function(ret,err) {
+				var datas = ret.data;
+				var html = '';
+
+				if(ret.code == 200){
+					$('.getUserList').html('');
+						page ++;
+						for(var j in datas){
+							var data = datas[j];
+							var message = datas[j].message;
+							html += '<div class="tel_list">'+data.zhiwei+'</div>';
+							for(var i in message){
+								var zhiwei = message[i].zhiwei,
+									touid = message[i].touid,
+									name = message[i].name,
+									names = message[i].user_name, 
+									imgUrl = message[i].userphoto;
+								html += '<ul>';
+									html += '<li class="tel_li">';
+										html += '<div class="check">';
+											html += '<input type="checkbox" value="'+touid+'" name="checkbox" />';
+										html += '</div>';
+										html += '<div class="head_img">';
+											html += '<img src="'+url+imgUrl+'" alt=""/>';
+										html += '</div>';
+										html += '<div class="tel_data">';
+											html += '<span>'+name+'</span>';
+											html += '<span>'+names+'</span>';
+										html += '</div>';
+									html += '</li>';
+								html += '</ul>';
+							}
+						}
+
+					$('.getUserList').append(html);
+				}else if(ret.code == 201){
+					$('.getUserList').html('暂无数据');
+				}else{
+					alert('请检查网络连接');
+					return false;
+				}
+			},'json');
+		}
+		$('#back_btn').show();
+	}
+
+	//返回检索列表
+	function back(){
+		$('#back_btn').hide();
+		$('#search_text').val('');
+		showUserList();
+	}
+
+
+	//确认分享
+	function sharebox(){
+								//获取数据id
+								var arr = new Array();
+								var tarry = new Array();
+				                $('input[name="id"]:checked').each(function(i){
+				                    arr[i] = $(this).val();
+				                });
+				                var vals = arr.join(",");
+
+				                console.log(vals);
+
+				                //获取通讯录id
+				          		$('input[name="tid"]:checked').each(function(j){
+				                    tarry[j] = $(this).val();
+				                });
+				                var tvals = tarry.join(",");
+				                console.log(tvals)
+
+				                $.post('http://wgcapp.wgc2013.com/jingyi.php/Home/index/share',{
+				                	"type":1,
+				                	"arr":arr,
+				                	"tarry":tarry
+				                },function(ret){
+				                	console.log(ret)
+				                	if(ret.code == 200){
+
+				                		window.location.reload();
+				                	}
+				                },'json')
+	}
+	
+//通讯录分页控制
+
+function pageindexUser(pindex){
+		//console.log(index)
+		if(pindex < 1){
+			pindex = 1;
+			upage=1;
+		}
+	$('.getUserList').html("");
+		uid= '<?php echo $_SESSION["user_info"]["user_id"];?>';
+		$.ajax({
+				type:"POST",
+				url:'http://wgcapp.wgc2013.com/jingyi.php/Home/index/getAllMyRelative',
+				data:{
+						uid:'<?php echo $_SESSION["user_info"]["user_id"];?>',
+		            	type:'PRIVATE',
+		            	types:'user_list',
+		            	page : pindex,
+				},
+				cache:false,
+				crossDomain: true == !(document.all),
+				dataType: "JSON",
+				success:function(ret){
+					console.log("成功");
+					console.log(ret)
+					var html = '';
+					var datas = ret.data;
+					$('.getUserList').html("")
+					if(ret.code == 200){
+						page ++;
+						for(var j in datas){
+							var data = datas[j];
+							var message = datas[j].message;
+							html += '<div class="tel_list">'+data.zhiwei+'</div>';
+							for(var i in message){
+								var zhiwei = message[i].zhiwei,
+									id     = message[i].id,
+									touid = message[i].touid,
+									name = message[i].name,
+									names = message[i].user_name, 
+									imgUrl = message[i].userphoto;
+								html += '<ul>';
+									html += '<li class="tel_li">';
+										html += '<div class="check">';
+											html += '<input name="tid" type="checkbox" value="'+touid+'" name="checkbox" />';
+										html += '</div>';
+										html += '<div class="head_img">';
+											html += '<img src="'+url+imgUrl+'" alt=""/>';
+										html += '</div>';
+										html += '<div class="tel_data">';
+											html += '<span>'+name+'</span>';
+											html += '<span>'+names+'</span>';
+										html += '</div>';
+									html += '</li>';
+								html += '</ul>';
+							}
+						}
+
+						$('.getUserList').append(html);
+						//获取数据id
+								var arr = new Array();
+				                $('input[name="id"]:checked').each(function(i){
+				                    arr[i] = $(this).val();
+				                });
+				                var vals = arr.join(",");
+				                console.log(vals);
+					}else {
+						alert('数据加载失败，请检查网络!');
+					}
+				},
+				error:function(err){
+					console.log("错误是");
+					console.log(err);
+				}
+			});
+
+	}
+//下一页
+function nextpageUser(){
+	
+	pageindexUser(++upage);
+
+	}
+//上一页
+function prepageUser(){
+		pageindexUser(--upage);
+	}
+$(".quxiao").click(function(){
+	$(this).parent().parent().hide();
+})
 </script>
 </body>
 </html>

@@ -119,37 +119,7 @@ border:1px solid #808080;width:100%;height:66px;margin-bottom:3px;
 <body>
 
 {include file=header.html}
-<!-- 弹出二维码 -->
 
-<!-- <div class="Ecode" style="width: 400px;background-color: #7ecdf4;overflow: hidden;position: fixed;height: 120px;left:75%;border-radius: 5px;display: none;">
-	<div style="width: 20px;height: 110px;font-size: 18px;float: left;margin-top: 5px;font-weight: 600;">联系我们<span style="display: block;font-size: 12px;"><<</span></div>
-	<div style="width: 375px;height: 110px;float: left;background-color: #fff;margin-top: 5px;border-radius: 5px;">
-	<ul style="width: 39%;float: left;margin-left: 3px;">
-		<li style="height: 30px;text-decoration:underline;">
-			客服①：3215598389
-		</li>
-		<li style="height: 30px;text-decoration:underline;">
-			客服②：3014848718
-		</li>
-		<li style="height: 30px;text-decoration:underline;">
-			客服③：1934873342
-		</li>
-		<li style="height: 30px;text-decoration:underline;">
-			客服热线：202-61973261
-		</li>
-	</ul>
-	<div style="width: 60%;float: left;">
-		<div style="float: left;">
-		<img src="/themes/mall/jiaju/styles/style/images/wgc123.jpg" alt="" width="60" height="60"/>
-		<span style="display: block;font-size: 12px;-webkit-transform : scale(0.84,0.84) ">扫描关注微信公众号</span>
-		</div>
-		<div style="float: left;">
-		<img src="/themes/mall/jiaju/styles/style/images/wgc234.jpg" alt="" width="60" height="60"/>
-		<span style="display: block;font-size: 12px;-webkit-transform : scale(0.84,0.84)">扫描下载微工程APP</span>
-		</div>
-	</div>
-	</div>
-</div> -->
 <!-- main start -->
 <div id="main">
     <div class="main-top w clearfix"style="width:1200px;">
@@ -268,28 +238,6 @@ border:1px solid #808080;width:100%;height:66px;margin-bottom:3px;
 			<div class="divcss3">
 			<div class="divcss2" id="repair_list" style="width: 99%;">
 				<div class="divcsschld"><div class="divcsschld1"><span style="background-color: #e8e8e8;font-size: 14px;display: inline-block;width: 60px;height: 100%;line-height: 25px;">维修报价</span></div><a  target='_blank' href="index.php?app=search&act=weixiulist"><span class="span011">更多</span></a></div>
-
-				<!-- 维修分包 -->
-						<!--<div style="overflow: hidden;border-bottom: 1px solid #ccc;height:82px;">
-							<p style="float: left;font-size: 18px;color: red;font-weight: 600;letter-spacing: 2px;margin: 10px 0 10px 5px;">项目名称</p>
-							<p style="float: right;font-size: 18px;color: red;font-weight: 600;letter-spacing: 2px;margin: 10px 30px 10px 0;">价格</p>
-							<ul id="" style="width:100%;height:auto;overflow:hidden">
-								<a href="javascript:;" style="text-decoration: none;">
-									<li style="width: 100%;height: auto;">
-									<div style="margin-left: 5px;height: auto;border: none;">
-									<span style="letter-spacing: 2px;">地址:</span>
-									<span style="color: #000;display: inline-block;margin-left: 10px;letter-spacing: 2px;">广州市白云区黄边南路一街</span>
-									</div>
-									<div style="overflow: hidden;margin-left: 5px;height: auto;border: none;">
-									<span style="letter-spacing: 2px;">截止时间:</span>
-									<span style="color: #000;display: inline-block;margin-left: 10px;letter-spacing: 2px;">2018-8-18</span>
-									<span style="float: right;letter-spacing: 2px;margin-right: 5px;">2018-8-20</span>
-									</div>
-									</li>
-								</a>
-							</ul>
-						</div>-->
-				<!-- 维修分包end -->
 				</div>
 
 			</div> 
@@ -337,18 +285,7 @@ border:1px solid #808080;width:100%;height:66px;margin-bottom:3px;
 			
 			</div>
 			<ul>
-				
-			<!--	$thisTime = date('Y-m-d H:i:s',time());
-				$query="select * from ecm_caigou where status=0 and andtime >='$thisTime' order by id desc limit 0,10"; //定义sql
-				$result=mysql_query($query);
-				while($rows1=@mysql_fetch_array($result)){
-				//var_dump($rows1);
-					
-					$id = $rows1['id'];
-					echo "<li>"."<a href='index.php?app=search&act=content_caigou&id=$id'>"."<span style='float:right;margin-right:5px;'>".date('Y-m-d',strtotime($rows1['addtime']))."</span>"."&nbsp;".$rows1['title']."</a>"."</li>";
-					
-				}
-			?>-->
+
 			</ul>
 			
 		</div> 
@@ -961,8 +898,8 @@ function project(){
 		}
 	});
 }
-//设计分包列表
-function designList(){
+	//设计分包列表
+	function designList(){
 		var url = 'http://wgcapp.wgc2013.com/index.php/Home/Designoffer/getList';
 		var myid = '<?php echo $_SESSION["user_info"]["user_id"];?>';
 		$.post(url,{
@@ -1012,8 +949,8 @@ function designList(){
 				$("#design_list").append('加载失败');
 			}
 		},'json')		
-}
-//维修报价列表
+	}
+	// 维修报价列表
 	function repair_list(){
 
 		$.post(url+'jingyi.php/Home/Jymember/lonAndlats', {
@@ -1069,6 +1006,7 @@ function designList(){
 		},'json');
 	}
 
+	//工价询价列表
 	function gongjiaxunjia(){
 		$.post('http://wgcapp.wgc2013.com/jingyi.php/Home/User/xunjia_lists', {
 			page   :page
@@ -1087,24 +1025,13 @@ function designList(){
 						title = data[i].title,//项目名称
 						unit = data[i].unit;//计价单位
 
-						html += '<div style="overflow: hidden;border-bottom: 1px solid #ccc;height:86px;">';
-						html +=	'<p style="float: left;font-size: 18px;color: red;font-weight: 600;letter-spacing: 2px;margin: 10px 0 10px 5px;">'+title+'</p>';
-						html +=	'<p style="float: right;font-size: 16px;letter-spacing: 2px;margin: 10px 30px 10px 0;">计价单位：'+unit+'</p>';
-						html +=	'<ul id="" style="width:100%;height:auto;overflow:hidden">';
-						html +=		'<a href="/index.php?app=search&act=gongjiaxunjia_content&id='+id+'" style="text-decoration: none;">';
-						html +=			'<li style="width: 100%;height: auto;">';
-						html +=			'<div style="margin-left: 5px;height: auto;border: none;">';
-						html +=			'<span style="letter-spacing: 2px;">地址:</span>';
-						html +=			'<span style="color: #000;display: inline-block;margin-left: 10px;letter-spacing: 2px;">'+address+'</span>';
-						html +=			'</div>';
-						html +=			'<div style="overflow: hidden;margin-left: 5px;height: auto;border: none;">';
-						html +=			'<span style="letter-spacing: 2px;">数量/范围：'+num+'</span>';
-						html +=			'<span style="float: right;letter-spacing: 2px;margin-right: 5px;">发布时间：'+addtime+'</span>';
-						html +=			'</div>';
-						html +=			'</li>';
-						html +=		'</a>';
-						html +=	'</ul>';
-						html += '</div>';
+						html += '<a style="height:38px;" href="/index.php?app=search&act=gongjiaxunjia_content&id='+id+'" title="'+title+'">';
+							html += '<ul style="cursor:pointer;width:100%;height:38px;line-height:38px;margin-top:0;">';
+								html += '<li style="font-size:16px;color:#333;height:38px;width:42.33%;float:left;list-style:inside;margin-left:10px;">'+title+'</li>';
+								html += '<li style="font-size:16px;color:#333;height:38px;width:27.33%;float:left;">'+num+'&nbsp;&nbsp;'+unit+'</li>';
+								html += '<li style="font-size:12px;color:#999;height:38px;width:25.33%;float:left;">'+addtime+'</li>';
+							html += '</ul>';
+						html += '</a>';
 					
 				}
 				$('#gjxj').append(html);

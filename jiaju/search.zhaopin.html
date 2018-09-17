@@ -369,49 +369,48 @@
       <!--end topblock -->
      <div style="width:980px;height:auto;overflow:hidden;float:right">
 	 
-		<div class="category-items"style="width:99%;margin:0 auto;">
+		<div class="category-items" style="width:99%;margin:0 auto;">
 				<div class="tile-head">
 					<p class="type-left">热门职位</p>
 				</div>
 				
-				<div class="types"style="height: auto;min-height: 165px;overflow: hidden;">			
+				<div id="hot_job" class="types" style="height: auto;min-height: 165px;overflow: hidden;">			
 					
-					
-					{$con}
+					<!-- {$con} -->
 														
 				</div>
 		</div>	
 		
-		<div class="category-items"style="width:99%;margin:0 auto;">
+		<div class="category-items" style="width:99%;margin:0 auto;">
 				<div class="tile-head">
 					<p class="type-left">名企热招</p>
 				</div>
 				
-				<div class="types"style="height:85px;">			
+				<div class="types" style="height:85px;">			
 					
 					
-					<a href="javascript:;"style="border:1px solid #ccc;width: 300px;height:80px;"><img src="/themes/mall/jiaju/images/87251979993369431.jpg"style="width:100%;height:100%;"/></a>						
-					
-		
-					<a href="javascript:;"style="border:1px solid #ccc;width: 300px;height:80px;margin: 0 25px;"><img src="/themes/mall/jiaju/images/252266537258850497.jpg"style="width:100%;height:100%;"/></a>					
+					<a href="javascript:;" style="border:1px solid #ccc;width: 300px;height:80px;"><img src="/themes/mall/jiaju/images/87251979993369431.jpg" style="width:100%;height:100%;"/></a>						
 					
 		
-					<a href="javascript:;"style="border:1px solid #ccc;width: 300px;height:80px;"><img src="/themes/mall/jiaju/images/584215526869907029.jpg"style="width:100%;height:100%;"/></a>
+					<a href="javascript:;" style="border:1px solid #ccc;width: 300px;height:80px;margin: 0 25px;"><img src="/themes/mall/jiaju/images/252266537258850497.jpg" style="width:100%;height:100%;"/></a>					
+					
+		
+					<a href="javascript:;" style="border:1px solid #ccc;width: 300px;height:80px;"><img src="/themes/mall/jiaju/images/584215526869907029.jpg" style="width:100%;height:100%;"/></a>
 		
 														
 				</div>
 		</div>	
 		
-		<div class="category-items"style="width:99%;margin:0 auto;">
+		<div class="category-items" style="width:99%;margin:0 auto;">
 				<div class="tile-head">
 					<p class="type-left">最新招聘</p>
 					
 					
 				</div>
 				
-				<div class="types"style="height: auto;overflow: hidden;">			
+				<div class="types" style="height: auto;overflow: hidden;">			
 					
-					{$con1}
+					<!-- {$con1} -->
 														
 				</div>
 		</div>
@@ -426,22 +425,61 @@
 	
 {include file=footer.html}
 </body>
+<script type="text/javascript" src="/themes/mall/jiaju/styles/default/js/jquery-1.3.2.min.js"></script>
 <script language="javascript" type="text/javascript" src="/themes/mall/jiaju/js/topMenu.js"></script>
 <script>
-function so(){
-	var a = $("#key").val();
-	
-	
-	if(window.confirm('本功能为按单次搜索计费，您确定继续操作吗？')){
-		 kaitong()
-	  }else{
-		
-		 return false;
-	 }
-}
-function kaitong(){
-	alert("非常抱歉,功能正在开发当中...");
-}
+	var url = 'http://wgcapp.wgc2013.com/',
+		page = 1;
+
+	//获取招聘分类id
+
+	function getRequest() {
+		var url = window.location.search; //获取url中"?"符后的字串
+		var theRequest = new Object();
+		if (url.indexOf("?") != -1) {
+			var str = url.substr(1);
+			strs = str.split("&");
+			for(var i = 0; i < strs.length; i ++) {
+			  theRequest[strs[i].split("=")[0]]=decodeURI(strs[i].split("=")[1]);
+			}
+		}
+		return theRequest;
+	}
+	var URL = getRequest();
+	var id= URL.cate_id;
+
+	$(function(){
+		getHotJob();
+	});
+
+	function so(){
+		var a = $("#key").val();
+		if(window.confirm('本功能为按单次搜索计费，您确定继续操作吗？')){
+			 kaitong()
+		  }else{
+			 return false;
+		 }
+	}
+
+	function kaitong(){
+		alert("非常抱歉,功能正在开发当中...");
+	}
+
+	//获取热门职位
+	function getHotJob(){
+		$.post(url+'jingyi.php/Home/Recruit/recruitLists', {
+			page     : page,
+			cate_id  : id
+		}, function(ret) {
+			if(ret.code == 200){
+				$('#hot_job').html('获取成功');
+			}else{
+				$('#hot_job').html('<div style="text-align:center;color:#999;font-size;20px;line-height:50px;">职位分类获取失败</div>');
+			}
+		},'json');
+	}
+
+
 </script>
 
 </html>
