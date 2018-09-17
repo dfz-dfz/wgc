@@ -455,6 +455,7 @@ $(".container_nav ul li").click(function(){
 			},function(ret){
 				//console.log(ret)
 				if(ret.code == 200){
+					console.log(ret)
 				var user = ret.user;
 				var mobile = user.mobile;
 				var userphoto = user.userphoto;

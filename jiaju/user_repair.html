@@ -6,7 +6,157 @@
 <meta http-equiv="X-UA-Compatible" content="IE=8"/>
 <title>用户中心-材料采购</title>
 <meta name="description" content="微工程，微工程APP，装修、材料、家具、饰品一站式服务，让装修更简单，价格更透明！！" />
-<meta name="keywords" content="微工程，微工程，家居商城，微工程家居商城，微工程家居装修商城，办公室装修，写字楼装修，材料，装修材料，家居，办公家具，家居，家具，装修，装饰" /></html>
+<meta name="keywords" content="微工程，微工程，家居商城，微工程家居商城，微工程家居装修商城，办公室装修，写字楼装修，材料，装修材料，家居，办公家具，家居，家具，装修，装饰" />
+<link rel="stylesheet" href="themes/mall/jiaju/styles/css/repair_manage.css" />
+<link type="text/css" href="themes/mall/jiaju/styles/default/css/main.css" rel="stylesheet"  />
+<link type="text/css" href="http://www.wgc2013.com/themes/mall/jiaju/styles/default/css/catalog.css" rel="stylesheet"  />
+<link type="text/css" href="http://www.wgc2013.com/themes/mall/jiaju/styles/default/css/footer.css" rel="stylesheet" />
+<link rel="stylesheet" href="themes/mall/jiaju/styles/css/tel_list.css">
+
+<script type="text/javascript" src="index.php?act=jslang"></script>
+<!-- <script type="text/javascript" src="http://www.wgc2013.com/includes/libraries/javascript/ecmall.js" charset="utf-8"></script> -->
+<script type="text/javascript" src="http://www.wgc2013.com/includes/libraries/javascript/cart.js" charset="utf-8"></script>
+<script type="text/javascript" src="http://www.wgc2013.com/includes/libraries/javascript/jquery.js" charset="utf-8"></script>
+<script type="text/javascript" src="http://www.wgc2013.com/themes/mall/jiaju/styles/default/js/main.js" charset="utf-8"></script>
+
+<!-- 引入的是个人中心的 -->
+
+
+<!--[if lte IE 6]>
+<script type="text/javascript" language="Javascript" src="http://www.wgc2013.com/themes/mall/jiaju/styles/default/js/hoverForIE6.js"></script>
+<![endif]-->
+<!--[if IE 8]>
+<link type="text/css" href="themes/mall/jiaju/css/ie8.css" rel="stylesheet"  />
+<script src="//cdn.bootcss.com/respond.js/1.4.2/respond.js"></script>
+<script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<![endif]-->
+<script type="text/javascript">
+var SITE_URL = "http://www.wgc2013.com";
+var PRICE_FORMAT = '&yen;%s';
+</script>
+<script charset="utf-8" type="text/javascript" src="http://www.wgc2013.com/includes/libraries/javascript/jquery.plugins/jquery.validate.js" ></script><style type="text/css">
+body{background:url('') no-repeat center top }
+.mainnav{width:990px; overflow:hidden; margin:0 auto}
+.STYLE1 {color: red}
+</style>
+<script type="text/javascript" src="http://www.wgc2013.com/themes/mall/jiaju/styles/default/js/hover.js"></script>
+<script charset="utf-8" type="text/javascript" src="http://www.wgc2013.com/includes/libraries/javascript/jquery.plugins/jquery.validate.js" ></script>
+</head>
+<body>
+{include file=header.html}
+<!-- 中部主要内容 -->
+ <div class="container" style="overflow: hidden;width: 1200px;margin: 10px auto;position: relative;">
+ <!-- 左上的导航栏 -->
+  {include file=companycenter.html}
+ 	<!-- 右边的内容 -->
+ 	<div class="container_right" style="width: 78.5%;border: 1px solid #cacaca;float: right;background-color: #f7f7f7;padding: 0 10px 10px 10px;">
+
+		<!-- 公司信息 -->
+		<div class="budget base_ui_public" style="/*display: none;*/position: relative;">
+			<ul class="budget_ul user_public_ul">
+ 				<li class="change_bg_li" style="margin-right: 10px;">维修项目</li>
+ 				<li style="margin-right: 10px;">添加项目</li>
+ 			</ul>
+ 			<div class="company_info base_info_public" style="overflow: hidden;/*padding-left: 15%;*/min-height: 250px;">
+ 			<!-- 预算报价 -->
+ 			<div class="company_detail" style="position: relative;/*left: -16%;*//*width: 115%;*/">
+			<div style="overflow: hidden;margin-top: 10px;">
+			<!-- 基本信息 -->
+			<div class="section" style="border: none;">
+							<!-- 项目管理 -->
+			<div class="sect current wages_custom">
+				<ul style="padding: 20px 0;width: 400px;height:auto;margin-left: auto;margin-right: auto;letter-spacing: 0;" id="xm_show_box">
+
+				</ul>
+			</div>
+
+					<!-- 项目详情 -->
+					<div class="xm_details" style="display: none;">
+						<div onclick="close_xmdata_btn()" style="font-size: 30px;border-radius: 100%;height: 30px;width: 30px;line-height:30px;position: absolute;top: -16px;right: -16px;background-color: red;cursor: pointer;">×</div>
+						<div style="text-align: center;height: 30px;line-height: 30px;font-size:20px;letter-spacing: 2px;font-weight: bold;color: #000;">维修详情</div>
+						<ul class="base_message">
+							<li style="color: #000;font-size: 15px;font-weight: bold;">
+								<span>维修名称</span><span class="colon">:</span><span class="prj_name"></span>
+							</li>
+							<li style="color: #000;font-size: 15px;font-weight: bold;">
+								<span style="white-space: pre-wrap;">地址</span><span class="colon">:</span><span class="address"></span>
+							</li>
+							<li style="color: #000;font-size: 15px;font-weight: bold;">
+								<span>开工时间</span><span class="colon">:</span><span class="start_time"></span>
+							</li>
+							<li style="color: #000;font-size: 15px;font-weight: bold;">
+								<span>完工时间</span><span class="colon">:</span><span class="finish_time"></span>
+							</li>
+							<li style="color: #000;font-size: 15px;font-weight: bold;">
+								<span>工期</span><span class="colon">:</span><span class="expire_time"></span>
+							</li>
+							<li style="color: #000;font-size: 15px;font-weight: bold;">
+								<span>工程造价</span><span class="colon">:</span><span class="pre_price"></span><span style="letter-spacing: 2px;margin-left: 4px;">万元</span>
+							</li>
+							<li style="color: #000;font-size: 15px;font-weight: bold;">
+								<span style="white-space: pre-wrap;">备注</span><span class="colon">:</span><span class="prj_desc"></span>
+							</li>
+						</ul>
+
+						<ul class="manage_list">
+							<li style="overflow: -webkit-paged-x;height: auto;border:1px solid #e1e1e1;">
+								<div style="width: 60px;height:60px;margin-left: 10px;padding-top: 15px;" id="preview">
+							        
+								</div>
+							</li>
+							<li style="overflow: -webkit-paged-x;height: auto;border:1px solid #e1e1e1;">
+								<div class="list_box">
+									<div class="list_head"><b>维修管理员</b></div>
+									<div class="list_main" id="lists_mg">
+
+									</div>
+								</div>
+							</li>
+							<li style="overflow: -webkit-paged-x;height: auto;border:1px solid #e1e1e1;">
+								<div class="list_box">
+									<div class="list_head"><b>维修负责人</b></div>
+									<div class="list_main" id="lists_cm">
+										
+									</div>
+								</div>
+							</li>
+							<li style="overflow: -webkit-paged-x;height: auto;border:1px solid #e1e1e1;">
+								<div class="list_box">
+									<div class="list_head"><b>甲方管理员</b></div>
+									<div class="list_main" id="lists_jl">
+										
+									</div>
+								</div>
+							</li>
+							<li style="overflow: -webkit-paged-x;height: auto;border:1px solid #e1e1e1;">
+								<div class="list_box">
+									<div class="list_head"><b>材料商管理员</b></div>
+									<div class="list_main" id="lists_cl">
+										
+									</div>
+								</div>
+							</li>
+							<li style="overflow: -webkit-paged-x;height: auto;border:1px solid #e1e1e1;">
+								<div class="list_box">
+									<div class="list_head"><b>岗位异动负责人</b></div>
+									<div class="list_main" id="lists_mane">
+										
+									</div>
+								</div>
+							</li>
+							<li style="overflow: -webkit-paged-x;height: auto;border:1px solid #e1e1e1;">
+								<div class="list_box">
+									<div class="list_head"><b>成员</b></div>
+									<div class="list_main" id="lists_xm">
+										
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<!-- 项目详情 end -->
+
+			<!-- 项目管理 end -->
 			<!-- 项目管理 end -->
 			<!-- 添加项目 -->
 			<div class="sect wages_list" style="display: none;">

@@ -62,6 +62,14 @@ body{background:url('') no-repeat center top }
 <script>
 
 </script>
+<style>
+.yewu_body table tr span{
+	border:none;
+}
+.yewu_body table tr td{
+	border-bottom: 1px solid #000;
+}
+</style>
 </head>
 <body>
 {include file=header.html}
@@ -276,8 +284,8 @@ body{background:url('') no-repeat center top }
 			
 			<!-- 分享列表end-->
 			
-			<!-- 分享框 -->
-					<div class="confirm" style="display:none;height: 0px;">
+			<!-- 分享弹窗 -->
+					<div class="confirm" style="display: none;height: 0px;">
 <!-- 						<form class="confirm_" action="post" method="">
 							<div class="share_text">
 								<span>分享内容</span><span class="colon">:</span>
@@ -289,21 +297,29 @@ body{background:url('') no-repeat center top }
 							</div>
 							<input class="share_btn" type="button" value="分享确认">
 						</form> -->
-							<div class="tel_con" style="display: block;overflow-y: scroll;display: block;width: 50%;margin: 0px auto;background-color: #fff;padding-top: 10px;padding-bottom: 10px;height: 400px;position:relative;">
+							<div class="tel_con" style="display: block;display: block;width: 50%;margin: 10px auto;background-color: #fff;padding-top: 10px;padding-bottom: 10px;height: 435px;box-shadow: 5px 5px 5px;position:relative;">
+							<div class="quxiao" style="position: absolute;font-size: 20px;top: -8px;left: 460px;background-color: #9e9e9e;border-radius: 10px;width: 20px;height: 20px;line-height: 20px;">×</div>
 							<div class="confirm_head" style="margin-bottom: 10px;">
-								<div class="quxiao" style="text-align:right"><span style="font-size:30px;position:absolute;left:95%;top:-10px;">×</span></div>
-								<input type="text" id="search_text" placeholder="请输入搜索的联系人" style="width:90%;"/>
-								<input class="confirm_btn" type="button" onclick="UserSearch()" value="搜索" style="width: 50px;height: 20px;"/>
+								<input type="text" id="search_text" placeholder="请输入搜索的联系人" style="width:40%;height:30px;"/>
+								<input class="confirm_btn" type="button" onclick="UserSearch()" value="搜索" style="width: 40px;margin-top: -15px;height: 20px;"/>
 							</div>
-							<div class="getUserList">
+							<div style="overflow-y: scroll;height:300px;">
+							<div class="getUserList" style="min-height:270px;">
 								
 							</div>
+							<!--分页 -->
 							<div>
+								<a href="javascript:;" style="display: inline-block;width: 50px;background-color: #9c9393;color: #ffffff;height: 20px;line-height: 20px;margin-right:20px;" onclick="prepageUser()">上一页</a>
+								<a href="javascript:;" style="display: inline-block;width: 50px;background-color: #9c9393;color: #ffffff;height: 20px;line-height: 20px;" onclick="nextpageUser()">下一页</a>							
+							</div>
+							</div>
+							<div style="margin-top:30px;">
 								<input class="confirm_btn" type="button"  value="确认分享" style="display: inline-block;width: 100px;height: 30px;line-height: 25px;font-size: 18px;border-radius: 5px;background-color: #f8c67b;color: #fff;" onclick="sharebox()"/>
 							</div>
 						</div>
 						
 					</div>
+					<!-- 分享弹窗 end -->
 					</div>
 
  			</div>
@@ -436,7 +452,7 @@ function list(){
 					zhiwei  = data[i].zhiwei;
 					
 					listHtml +=		'<tr class="thead" style="background-color: #fff;">';
-					listHtml +=		'<td style="width: 5%"><span><input type="checkbox"/>'+id+'</span></td>';
+					listHtml +=		'<td style="width: 5%"><span><input name="id" type="checkbox"/>'+id+'</span></td>';
 					listHtml +=		'<td style="width: 10%"><span>'+company+'</span></td>';
 					listHtml +=		'<td style="width: 5%"><span>'+type+'</span></td>';
 					listHtml +=		'<td style="width: 8%"><span>'+zhiwei+'</span></td>';
@@ -483,13 +499,13 @@ function list(){
 				crossDomain: true == !(document.all),
 				dataType: "JSON",
 				success:function(ret){
-					console.log("成功");
-					console.log(ret)
+					//console.log("成功");
+					//console.log(ret)
 					var html = '';
 					var datas = ret.data;
 			
 					if(ret.code == 200){
-						page ++;
+						//page ++;
 						for(var j in datas){
 							var data = datas[j];
 							var message = datas[j].message;
@@ -525,7 +541,7 @@ function list(){
 				                    arr[i] = $(this).val();
 				                });
 				                var vals = arr.join(",");
-				                console.log(vals);
+				                //console.log(vals);
 					}else {
 						alert('数据加载失败，请检查网络!');
 					}
@@ -628,8 +644,95 @@ function list(){
 	
 	//取消
 $(".quxiao").click(function(){
-	$(this).parent().parent().parent().hide();
+	$(this).parent().parent().hide();
 })
+//通讯录分页控制
+var upage = 1;
+function pageindexUser(pindex){
+		//console.log(index)
+		if(pindex < 1){
+			pindex = 1;
+			upage=1;
+		}
+	$('.getUserList').html("");
+		uid= '<?php echo $_SESSION["user_info"]["user_id"];?>';
+		$.ajax({
+				type:"POST",
+				url:'http://wgcapp.wgc2013.com/jingyi.php/Home/index/getAllMyRelative',
+				data:{
+						uid:'<?php echo $_SESSION["user_info"]["user_id"];?>',
+		            	type:'PRIVATE',
+		            	types:'user_list',
+		            	page : pindex,
+				},
+				cache:false,
+				crossDomain: true == !(document.all),
+				dataType: "JSON",
+				success:function(ret){
+					console.log("成功");
+					console.log(ret)
+					var html = '';
+					var datas = ret.data;
+					$('.getUserList').html("")
+					if(ret.code == 200){
+						page ++;
+						for(var j in datas){
+							var data = datas[j];
+							var message = datas[j].message;
+							html += '<div class="tel_list">'+data.zhiwei+'</div>';
+							for(var i in message){
+								var zhiwei = message[i].zhiwei,
+									id     = message[i].id,
+									touid = message[i].touid,
+									name = message[i].name,
+									names = message[i].user_name, 
+									imgUrl = message[i].userphoto;
+								html += '<ul>';
+									html += '<li class="tel_li">';
+										html += '<div class="check">';
+											html += '<input name="tid" type="checkbox" value="'+touid+'" name="checkbox" />';
+										html += '</div>';
+										html += '<div class="head_img">';
+											html += '<img src="'+url+imgUrl+'" alt=""/>';
+										html += '</div>';
+										html += '<div class="tel_data">';
+											html += '<span>'+name+'</span>';
+											html += '<span>'+names+'</span>';
+										html += '</div>';
+									html += '</li>';
+								html += '</ul>';
+							}
+						}
+
+						$('.getUserList').append(html);
+						//获取数据id
+								var arr = new Array();
+				                $('input[name="id"]:checked').each(function(i){
+				                    arr[i] = $(this).val();
+				                });
+				                var vals = arr.join(",");
+				                console.log(vals);
+					}else {
+						alert('数据加载失败，请检查网络!');
+					}
+				},
+				error:function(err){
+					console.log("错误是");
+					console.log(err);
+				}
+			});
+
+	}
+//下一页
+function nextpageUser(){
+	
+	pageindexUser(++upage);
+
+	}
+//上一页
+function prepageUser(){
+		pageindexUser(--upage);
+	}
 </script>
 </body>
 </html>

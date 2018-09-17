@@ -8,6 +8,8 @@
 <meta name="description" content="微工程，微工程APP，装修、材料、家具、饰品一站式服务，让装修更简单，价格更透明！！" />
 <meta name="keywords" content="微工程，微工程，家居商城，微工程家居商城，微工程家居装修商城，办公室装修，写字楼装修，材料，装修材料，家居，办公家具，家居，家具，装修，装饰" />
 <link rel="stylesheet" type="text/css" href="themes/mall/jiaju/css/api.css"/>
+<!-- <link rel="stylesheet" type="text/css" href="themes/mall/jiaju/css/aui.css" /> -->
+<!-- <link rel="stylesheet" type="text/css" href="themes/mall/jiaju/css/aui.1.0.css"/> -->
 
 <!-- 引入个人中心 -->
 <link type="text/css" href="/themes/mall/jiaju/styles/css/worker_quota_price.css" rel="stylesheet" />
@@ -15,6 +17,7 @@
 <link type="text/css" href="/themes/mall/jiaju/styles/default/css/center.css" rel="stylesheet"  />
 <link rel="stylesheet" href="themes/mall/jiaju/styles/css/tel_list.css">
 <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+<!-- <script type="text/javascript" src="www.wgc2013.com/themes/mall/jiaju/js/jquery-1.8.3.min.js"></script> -->
 <script type="text/javascript">
 	jQuery.support.cors = true;
 
@@ -193,8 +196,9 @@ body{background:url('') no-repeat center top }
 						</div>
 					</li>
 				</ul>
-				<div class="btn_list" style="width: 130px;">
+				<div class="btn_list">
 					<div class="btn confirm_btn" onclick="add()">确认发布</div>
+					<div class="btn share_btn">分享发布</div>
 				</div>
 
 
@@ -206,8 +210,9 @@ body{background:url('') no-repeat center top }
 				<input type="button" value="搜索" class="search_btn" onclick="search()"/>
 				<input type="button" value="分享" class="share_btn" onclick="showUserList()" />
 					
+
 				<ul class="list_ul">
-					<li>
+						<li>
 						<ul class="head">
 							<li style="width: 5%;">序号</li>
 							<li style="width: 7.7%;">材料名称</li>
@@ -256,6 +261,7 @@ body{background:url('') no-repeat center top }
 				<!-- 工价分享列表 -->
 				<input type="text" class="search_input" />
 				<input type="button" value="搜索" class="search_btn" onclick="search()" style="width: 80px;height: 24px;background-color: #f7c67a;color: #f2552a;border: 1px solid #cfcfcf;cursor: pointer;" />
+				<!-- <input type="button" value="分享" class="share_btn" onclick="showUserList()" style="width: 80px;height: 22px;border: none;background-color: #f7c67a;text-align: center;font-weight: 600;position: absolute;right: 80px;border-radius: 5px;cursor: pointer;" /> -->
 					
 
 				<ul>
@@ -304,12 +310,22 @@ body{background:url('') no-repeat center top }
 			<!-- 消息列表end -->
 			<!-- 分享弹窗 -->
 					<div class="confirm" style="display: none;">
+<!-- 						<form class="confirm_" action="post" method="">
+							<div class="share_text">
+								<span>分享内容</span><span class="colon">:</span>
+								<textarea name="" id="" cols="30" rows="10" placeholder="内容获取"></textarea>
+							</div>
+							<div class="share_sendee">
+								<span style="letter-spacing: 5px;">接收人</span><span class="colon">:</span>
+								<input type="text" placeholder="选择接收人">
+							</div>
+							<input class="share_btn" type="button" value="分享确认">
+						</form> -->
 							<div class="tel_con" style="display: block;display: block;width: 50%;margin: 10px auto;background-color: #fff;padding-top: 10px;padding-bottom: 10px;height: 400px;box-shadow: 5px 5px 5px;">
 							<div class="quxiao" style="position: absolute;font-size: 20px;top: 0px;left: 695px;background-color: #9e9e9e;border-radius: 10px;width: 20px;height: 20px;line-height: 20px;cursor:default;">×</div>							
 							<div class="confirm_head" style="margin-bottom: 10px;">
 								<input type="text" id="search_text" placeholder="请输入搜索的联系人" />
 								<input class="confirm_btn" type="button" onclick="UserSearch()" value="搜索" />
-								<input id="back_btn" type="button" onclick="back()" value="返回" style="width: 40px;height: 21px;display: none;"/>
 							</div>
 							<div style="overflow-y: scroll;height:300px;">
 							<div class="getUserList" style="min-height:270px;">
@@ -327,7 +343,7 @@ body{background:url('') no-repeat center top }
 						</div>
 						
 					</div>
-				</div>
+					</div>
 					<!-- 分享弹窗 end -->
 			</div>
 
@@ -572,7 +588,8 @@ function html5Reader(file,pic){
 				crossDomain: true == !(document.all),
 				dataType: "json",
 				success:function(ret){
-					if(ret.status == 200){
+					//console.log(ret)
+										if(ret.status == 200){
 						page++;
 						var data = ret.retData;
 						var listHtml = '';
@@ -624,7 +641,7 @@ function html5Reader(file,pic){
 
 				},
 				error:function(err){
-					
+					console.log(err)
 				}
 			});
 
@@ -632,6 +649,13 @@ function html5Reader(file,pic){
 	//消息
 	function messagelist(){
 	var url = 'http://wgcapp.wgc2013.com/jingyi.php/Home/Dinge/zhucai_list_share';
+	// $.post('http://wgcapp.wgc2013.com/jingyi.php/Home/Dinge/zhucai_list_share',{
+	// 	key      : key,
+	// 	user_id : userid,
+	// 	page     : pageindex
+	// },function(ret){
+	// 	console.log(ret)
+	// },'json')
 		$.ajax({
 				type:"POST",
 				url:url,
@@ -645,7 +669,8 @@ function html5Reader(file,pic){
 				crossDomain: true == !(document.all),
 				dataType: "json",
 				success:function(ret){
-					if(ret.status == 200){
+					console.log(ret)
+								if(ret.status == 200){
 						page++;
 						var data = ret.retData;
 						var listHtml = '';
@@ -696,7 +721,7 @@ function html5Reader(file,pic){
 
 				},
 				error:function(err){
-					
+					console.log(err)
 				}
 			});
 
@@ -704,70 +729,74 @@ function html5Reader(file,pic){
 
 	idArrary=[];
 	function opencotent(id){
+		// alert(id);
+		//window.location.href = '';
+		
 		console.log(id)
 	}
 	//搜索
 	function search(){
-		var url = 'http://wgcapp.wgc2013.com/jingyi.php/Home/Dinge/zhucai_list';
-		var value = $(".search_input").val();
-		if(value){
-		$.post(url,{
-			user_id:   '<?php echo $_SESSION["user_info"]["user_id"];?>',
-			type   : 1
-		},function(ret){
-				if(ret.status == 200){
-					var data = ret.retData;
-					var listHtml = '';
-					for(i in data){
 					
-					if(data[i].name === value){
-					
-					var	pingpai  = data[i].pingpai,
-					name     = data[i].name,
-					danwei   = data[i].danwei,
-					danjia   = data[i].danjia,
-					xinghao  = data[i].xinghao,
-					hanshuijiage   = data[i].hanshuijiage,
-					peisongtime   = data[i].peisongtime,
-					gongyingshang   = data[i].gongyingshang,
-					lianxiren   = data[i].lianxiren,
-					dianhua   = data[i].dianhua,
-					weixin   = data[i].weixin,
-					web   = data[i].web,
-					email   = data[i].email,
-					content   = data[i].content,
-					defaults     = (data[i].defaults<1)?'':'checked="checked"';
-					
-					listHtml += '<li onclick="opencotent('+i+')">';
-					listHtml +=		'<ul class="main_list">';
-					listHtml +=		'<li><input type="checkbox" />'+i+'</li>';
-					listHtml +=		'<li class="material_name">'+name+'</li>';
-					listHtml +=		'<li>'+pingpai+'</li>';
-					listHtml +=		'<li>'+xinghao+'</li>';
-					listHtml +=		'<li>'+danwei+'</li>';
-					listHtml +=		'<li>'+danjia+'</li>';
-					listHtml +=		'<li>'+hanshuijiage+'</li>';
-					listHtml +=		'<li>'+peisongtime+'</li>';
-					listHtml +=		'<li>'+gongyingshang+'</li>';
-					listHtml +=		'<li>'+lianxiren+'</li>';
-					listHtml +=		'<li>'+dianhua+'</li>';
-					listHtml +=		'<li>'+web+'</li>';
-					listHtml +=		'<li>'+email+'</li>';
-					listHtml +=		'<li>'+weixin+'</li>';
-					listHtml +=		'<li>'+content+'</li>';
-					listHtml +=		'<li></li>';
-					listHtml +=		'</ul>';
-					listHtml +=	'</li>';
-					$("#list_ul li").remove();
-					$("#list_ul").append(listHtml);
-					
+					var url = 'http://wgcapp.wgc2013.com/jingyi.php/Home/Dinge/zhucai_list';
+					var value = $(".search_input").val();
+					if(value){
+					$.post(url,{
+						user_id:   '<?php echo $_SESSION["user_info"]["user_id"];?>',
+						type   : 1
+					},function(ret){
+							if(ret.status == 200){
+								var data = ret.retData;
+								var listHtml = '';
+								for(i in data){
+								
+								if(data[i].name === value){
+								
+								var	pingpai  = data[i].pingpai,
+								name     = data[i].name,
+								danwei   = data[i].danwei,
+								danjia   = data[i].danjia,
+								xinghao  = data[i].xinghao,
+								hanshuijiage   = data[i].hanshuijiage,
+								peisongtime   = data[i].peisongtime,
+								gongyingshang   = data[i].gongyingshang,
+								lianxiren   = data[i].lianxiren,
+								dianhua   = data[i].dianhua,
+								weixin   = data[i].weixin,
+								web   = data[i].web,
+								email   = data[i].email,
+								content   = data[i].content,
+								defaults     = (data[i].defaults<1)?'':'checked="checked"';
+								
+								listHtml += '<li onclick="opencotent('+i+')">';
+								listHtml +=		'<ul class="main_list">';
+								listHtml +=		'<li><input type="checkbox" />'+i+'</li>';
+								listHtml +=		'<li class="material_name">'+name+'</li>';
+								listHtml +=		'<li>'+pingpai+'</li>';
+								listHtml +=		'<li>'+xinghao+'</li>';
+								listHtml +=		'<li>'+danwei+'</li>';
+								listHtml +=		'<li>'+danjia+'</li>';
+								listHtml +=		'<li>'+hanshuijiage+'</li>';
+								listHtml +=		'<li>'+peisongtime+'</li>';
+								listHtml +=		'<li>'+gongyingshang+'</li>';
+								listHtml +=		'<li>'+lianxiren+'</li>';
+								listHtml +=		'<li>'+dianhua+'</li>';
+								listHtml +=		'<li>'+web+'</li>';
+								listHtml +=		'<li>'+email+'</li>';
+								listHtml +=		'<li>'+weixin+'</li>';
+								listHtml +=		'<li>'+content+'</li>';
+								listHtml +=		'<li></li>';
+								listHtml +=		'</ul>';
+								listHtml +=	'</li>';
+								$("#list_ul li").remove();
+								$("#list_ul").append(listHtml);
+								
+								}
+								}
+							}
+					},'json')
+					}else{
+					alert("请输入搜索内容")
 					}
-					}
-				}
-		},'json')
-		}else{
-		alert("请输入搜索内容")
-		}
 					
 	}
 //分页控制
@@ -776,60 +805,62 @@ function pageindex(index){
 	var url = 'http://wgcapp.wgc2013.com/jingyi.php/Home/Dinge/zhucai_list';
 	$("#list_ul").html("");
 	$.post(url,{
-		key      : key,
-    	user_id  : userid,
-    	page     : index,
-		type     : 1
-
+					key      : key,
+			    	user_id  : userid,
+			    	page     : index,
+					type     : 1
+	
 	},function(ret){
-			if(ret.status == 200){
-				var data = ret.retData;
-				var listHtml = '';
-				for(i in data){
+	
 					
-					var id       = data[i].id;
-					
-					var	pingpai  = data[i].pingpai,
-						name     = data[i].name,
-						danwei   = data[i].danwei,
-						danjia   = data[i].danjia,
-						xinghao  = data[i].xinghao,
-						hanshuijiage   = data[i].hanshuijiage,
-						peisongtime   = data[i].peisongtime,
-						gongyingshang   = data[i].gongyingshang,
-						lianxiren   = data[i].lianxiren,
-						dianhua   = data[i].dianhua,
-						weixin   = data[i].weixin,
-						web   = data[i].web,
-						email   = data[i].email,
-						content   = data[i].content,
-						defaults     = (data[i].defaults<1)?'':'checked="checked"';
-						
-						listHtml += '<li onclick="opencotent('+id+')">';
-						listHtml +=		'<ul class="main_list">';
-						listHtml +=		'<li><input type="checkbox" />'+i+'</li>';
-						listHtml +=		'<li class="material_name">'+name+'</li>';
-						listHtml +=		'<li>'+pingpai+'</li>';
-						listHtml +=		'<li>'+xinghao+'</li>';
-						listHtml +=		'<li>'+danwei+'</li>';
-						listHtml +=		'<li>'+danjia+'</li>';
-						listHtml +=		'<li>'+hanshuijiage+'</li>';
-						listHtml +=		'<li>'+peisongtime+'</li>';
-						listHtml +=		'<li>'+gongyingshang+'</li>';
-						listHtml +=		'<li>'+lianxiren+'</li>';
-						listHtml +=		'<li>'+dianhua+'</li>';
-						listHtml +=		'<li>'+web+'</li>';
-						listHtml +=		'<li>'+email+'</li>';
-						listHtml +=		'<li>'+weixin+'</li>';
-						listHtml +=		'<li>'+content+'</li>';
-						listHtml +=		'<li></li>';
-						listHtml +=		'</ul>';
-						listHtml +=	'</li>';
-				}
-				$("#list_ul").append(listHtml);
-			}else if(ret.status == 202){
-				alert("暂无更多数据")
-			}
+					if(ret.status == 200){
+						var data = ret.retData;
+						var listHtml = '';
+						for(i in data){
+							
+							var id       = data[i].id;
+							
+							var	pingpai  = data[i].pingpai,
+								name     = data[i].name,
+								danwei   = data[i].danwei,
+								danjia   = data[i].danjia,
+								xinghao  = data[i].xinghao,
+								hanshuijiage   = data[i].hanshuijiage,
+								peisongtime   = data[i].peisongtime,
+								gongyingshang   = data[i].gongyingshang,
+								lianxiren   = data[i].lianxiren,
+								dianhua   = data[i].dianhua,
+								weixin   = data[i].weixin,
+								web   = data[i].web,
+								email   = data[i].email,
+								content   = data[i].content,
+								defaults     = (data[i].defaults<1)?'':'checked="checked"';
+								
+								listHtml += '<li onclick="opencotent('+id+')">';
+								listHtml +=		'<ul class="main_list">';
+								listHtml +=		'<li><input type="checkbox" />'+i+'</li>';
+								listHtml +=		'<li class="material_name">'+name+'</li>';
+								listHtml +=		'<li>'+pingpai+'</li>';
+								listHtml +=		'<li>'+xinghao+'</li>';
+								listHtml +=		'<li>'+danwei+'</li>';
+								listHtml +=		'<li>'+danjia+'</li>';
+								listHtml +=		'<li>'+hanshuijiage+'</li>';
+								listHtml +=		'<li>'+peisongtime+'</li>';
+								listHtml +=		'<li>'+gongyingshang+'</li>';
+								listHtml +=		'<li>'+lianxiren+'</li>';
+								listHtml +=		'<li>'+dianhua+'</li>';
+								listHtml +=		'<li>'+web+'</li>';
+								listHtml +=		'<li>'+email+'</li>';
+								listHtml +=		'<li>'+weixin+'</li>';
+								listHtml +=		'<li>'+content+'</li>';
+								listHtml +=		'<li></li>';
+								listHtml +=		'</ul>';
+								listHtml +=	'</li>';
+						}
+						$("#list_ul").append(listHtml);
+					}else if(ret.status == 202){
+						alert("暂无更多数据")
+					}
 	},'json')
 
 	}
@@ -848,6 +879,7 @@ function pageindex(index){
 	function share(){
 		//获取选择的内容的id值
 		var $list = $("input[type='checkbox']");
+		console.log($list)
 	}
 	
 	//分享选择接收人
@@ -867,6 +899,8 @@ function pageindex(index){
 				crossDomain: true == !(document.all),
 				dataType: "JSON",
 				success:function(ret){
+					console.log("成功");
+					console.log(ret)
 					var html = '';
 					var datas = ret.data;
 			
@@ -907,12 +941,14 @@ function pageindex(index){
 				                    arr[i] = $(this).val();
 				                });
 				                var vals = arr.join(",");
+				                console.log(vals);
 					}else {
 						alert('数据加载失败，请检查网络!');
 					}
 				},
 				error:function(err){
-					
+					console.log("错误是");
+					console.log(err);
 				}
 			});
 	}
@@ -972,46 +1008,44 @@ function pageindex(index){
 				}
 			},'json');
 		}
-		$('#back_btn').show();
 	}
-
-	//返回检索列表
-	function back(){
-		$('#back_btn').hide();
-		$('#search_text').val('');
-		showUserList();
-	}
-
 
 	//确认分享
 	function sharebox(){
-		//获取数据id
-		var arr = new Array();
-		var tarry = new Array();
-        $('input[name="id"]:checked').each(function(i){
-            arr[i] = $(this).val();
-        });
-        var vals = arr.join(",");
-        //获取通讯录id
-  		$('input[name="tid"]:checked').each(function(j){
-            tarry[j] = $(this).val();
-        });
-        var tvals = tarry.join(",");
+								//获取数据id
+								var arr = new Array();
+								var tarry = new Array();
+				                $('input[name="id"]:checked').each(function(i){
+				                    arr[i] = $(this).val();
+				                });
+				                var vals = arr.join(",");
 
-        $.post('http://wgcapp.wgc2013.com/jingyi.php/Home/index/share',{
-        	"type":1,
-        	"arr":arr,
-        	"tarry":tarry
-        },function(ret){
-        	if(ret.code == 200){
-        		window.location.reload();
-        	}
-        },'json')
+				                console.log(vals);
+
+				                //获取通讯录id
+				          		$('input[name="tid"]:checked').each(function(j){
+				                    tarry[j] = $(this).val();
+				                });
+				                var tvals = tarry.join(",");
+				                console.log(tvals)
+
+				                $.post('http://wgcapp.wgc2013.com/jingyi.php/Home/index/share',{
+				                	"type":1,
+				                	"arr":arr,
+				                	"tarry":tarry
+				                },function(ret){
+				                	console.log(ret)
+				                	if(ret.code == 200){
+
+				                		window.location.reload();
+				                	}
+				                },'json')
 	}
 	
 //通讯录分页控制
 
 function pageindexUser(pindex){
+		//console.log(index)
 		if(pindex < 1){
 			pindex = 1;
 			upage=1;
@@ -1031,6 +1065,8 @@ function pageindexUser(pindex){
 				crossDomain: true == !(document.all),
 				dataType: "JSON",
 				success:function(ret){
+					console.log("成功");
+					console.log(ret)
 					var html = '';
 					var datas = ret.data;
 					$('.getUserList').html("")
@@ -1071,18 +1107,21 @@ function pageindexUser(pindex){
 				                    arr[i] = $(this).val();
 				                });
 				                var vals = arr.join(",");
+				                console.log(vals);
 					}else {
 						alert('数据加载失败，请检查网络!');
 					}
 				},
 				error:function(err){
-					
+					console.log("错误是");
+					console.log(err);
 				}
 			});
 
 	}
 //下一页
 function nextpageUser(){
+	
 	pageindexUser(++upage);
 
 	}
@@ -1094,6 +1133,77 @@ function prepageUser(){
 $(".quxiao").click(function(){
 	$(this).parent().parent().hide();
 })
+	// function messagelist(){
+	// var url = 'http://wgcapp.wgc2013.com/jingyi.php/Home/Dinge/zhucai_list';
+	// 	$.ajax({
+	// 			type:"POST",
+	// 			url:url,
+	// 			data:{
+	// 				key      : key,
+	// 				user_id : userid,
+	// 				page     : page
+	// 			},
+	// 			cache:false,
+	// 			crossDomain: true == !(document.all),
+	// 			dataType: "json",
+	// 			success:function(ret){
+	// 				console.log(ret)
+	// 									if(ret.status == 200){
+	// 					page++;
+	// 					var data = ret.retData;
+	// 					var listHtml = '';
+	// 					for(i in data){
+							
+	// 						var id       = data[i].id;
+							
+	// 						var	pingpai  = data[i].pingpai,
+	// 							name     = data[i].name,
+	// 							danwei   = data[i].danwei,
+	// 							danjia   = data[i].danjia,
+	// 							xinghao  = data[i].xinghao,
+	// 							hanshuijiage   = data[i].hanshuijiage,
+	// 							peisongtime   = data[i].peisongtime,
+	// 							gongyingshang   = data[i].gongyingshang,
+	// 							lianxiren   = data[i].lianxiren,
+	// 							dianhua   = data[i].dianhua,
+	// 							weixin   = data[i].weixin,
+	// 							web   = data[i].web,
+	// 							email   = data[i].email,
+	// 							content   = data[i].content,
+	// 							defaults     = (data[i].defaults<1)?'':'checked="checked"';
+								
+								
+	// 							listHtml += '<li>';
+	// 							listHtml +=		'<ul class="main_list">';
+	// 							listHtml +=		'<li><input name="id" type="checkbox"  value="'+id+'" onclick="opencotent('+id+')"/>'+i+'</li>';
+	// 							listHtml +=		'<li class="material_name">'+name+'</li>';
+	// 							listHtml +=		'<li>'+pingpai+'</li>';
+	// 							listHtml +=		'<li>'+xinghao+'</li>';
+	// 							listHtml +=		'<li>'+danwei+'</li>';
+	// 							listHtml +=		'<li>'+danjia+'</li>';
+	// 							listHtml +=		'<li>'+hanshuijiage+'</li>';
+	// 							listHtml +=		'<li>'+peisongtime+'</li>';
+	// 							listHtml +=		'<li>'+gongyingshang+'</li>';
+	// 							listHtml +=		'<li>'+lianxiren+'</li>';
+	// 							listHtml +=		'<li>'+dianhua+'</li>';
+	// 							listHtml +=		'<li>'+web+'</li>';
+	// 							listHtml +=		'<li>'+email+'</li>';
+	// 							listHtml +=		'<li>'+weixin+'</li>';
+	// 							listHtml +=		'<li>'+content+'</li>';
+	// 							listHtml +=		'<li></li>';
+	// 							listHtml +=		'</ul>';
+	// 							listHtml +=	'</li>';
+	// 					}
+	// 					$("#messlist_ul").append(listHtml);
+	// 				}
+
+	// 			},
+	// 			error:function(err){
+	// 				console.log(err)
+	// 			}
+	// 		});
+
+	// }
 
 </script>
 </body>

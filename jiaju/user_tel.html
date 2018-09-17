@@ -75,17 +75,23 @@ body{background:url('') no-repeat center top }
 			<ul class="budget_ul user_public_ul">
  				<li class="change_bg_li" style="margin-right: 10px;">通讯录</li>
  			</ul>
+			<img class="add_btn" src="/themes/mall/jiaju/images/center/add_friend.jpg" style="position:absolute;width:100px;top:17px;left:838px;"/>
  			<div class="company_info base_info_public" style="overflow: hidden;/*padding-left: 15%;*/min-height: 250px;">
  			<!-- 预算报价 -->
  			<div class="company_detail" style="position: relative;/*left: -16%;*//*width: 115%;*/">
 			<div style="overflow: hidden;margin-top: 10px;">
 			<!-- 基本信息 -->
-			<div class="section" style="border: none;">
-			<img class="add_btn" src="/themes/mall/jiaju/images/center/add_friend.jpg" />
-
+			<div class="section" style="border: none;min-height:300px;">
 			<div class="adress_list" style="font-size: 15px;color: #000;font-weight: bold;display:none;">通讯录列表为空</div>
-		</div>
+			
 
+			</div>
+        <!--分页 -->
+			<div>
+					<a href="javascript:;" style="display: inline-block;width: 50px;background-color: #9c9393;color: #ffffff;height: 20px;line-height: 20px;margin-right:20px;" onclick="prepage()">上一页</a>
+					<a href="javascript:;" style="display: inline-block;width: 50px;background-color: #9c9393;color: #ffffff;height: 20px;line-height: 20px;" onclick="nextpage()">下一页</a>
+			</div>
+		<!--分页结束-->
 
 			</div>
 			</div>
@@ -158,7 +164,6 @@ body{background:url('') no-repeat center top }
 		            	page : pages,
 			},function(ret){
 				if(ret.code == 200){
-					pages++;
 					var listHtml = '';
 					var datas = ret.data
 					for(var j in datas){
@@ -188,9 +193,9 @@ body{background:url('') no-repeat center top }
 		
 					}
 					$('.section').append(listHtml);	
-				}else if(code == 201 ){
+				}else if(ret.code == 201 ){
 			        
-					if(page == 1){
+					if(pages == 1){
 						$("#lists").html(Emptyss);
 					}else{
 						alert('暂无更多了');
@@ -243,7 +248,79 @@ body{background:url('') no-repeat center top }
 	$(document).ready(function() {
 		getUserList();
 	});
+//分页控制
+function pageindex(pindex){
+		//console.log(index)
+		if(pindex < 1){
+			pindex = 1;
+			pages=1;
+		}
+	var url = 'http://wgcapp.wgc2013.com/jingyi.php/Home/index/getAllMyRelative';
+	$('.section').html("");
+			$.post(url,{
+						uid:'<?php echo $_SESSION["user_info"]["user_id"];?>',
+		            	type:'PRIVATE',
+		            	types:'user_list',
+		            	page : pindex,
+			},function(ret){
+				if(ret.code == 200){
+					var listHtml = '';
+					var datas = ret.data
+					for(var j in datas){
+						var data = datas[j];
+						var message = datas[j].message;
+						var zhiwei = datas[j].zhiwei
+						
+						listHtml  += '<div class="zhiwei" style="text-align:left;background-color:#eee;">'+zhiwei+'</div>';
+						listHtml   += 	'<ul class="tel_ul">';
+						for(var i in message){
+							var touid 		= message[i].touid,
+				            	user_name 	= message[i].user_name, 
+				            	names 		= message[i].name, 
+				            	zhiwei 		= message[i].zhiwei,
+				            	imgUrl 		= 'http://wgcapp.wgc2013.com/'+message[i].userphoto;
+								
+								listHtml   +=				'<li style="margin: 0 0 10px 0;border: 1px solid #eee;">';
+								listHtml   +=				'<img src="'+ imgUrl +'" alt="" width="50" height="50" style="float: left;margin:10px;    border-radius: 100%;" />';
+								listHtml   +=				'<div class="tel_div" style="float:left;">';
+								listHtml   +=				'<span style="display:block;margin:10px 0;">'+names+'</span>';
+								listHtml   +=				'<span style="display:block;margin:5px 0;">'+user_name+'</span>';
+								listHtml   +=				'</div>';
+								listHtml   +=			'</li>';
+			
+						}
+								listHtml   +=				'</ul>';
+		
+					}
+					$('.section').append(listHtml);	
+				}else if(ret.code == 201 ){
+			        
+					if(pages == 1){
+						$("#lists").html(Emptyss);
+					}else{
+						//alert('暂无更多了');
+						return false;
+					}
+			    }else{
+			    	alert('请检查网络连接');
+					return false;
+			    
+			    }
 
+				  
+			},'json');
+
+	}
+//下一页
+function nextpage(){
+	
+	pageindex(++pages);
+
+	}
+//上一页
+function prepage(){
+		pageindex(--pages);
+	}
 </script>
 </body>
 </html>

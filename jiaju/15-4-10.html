@@ -1,0 +1,3075 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head><meta name="baidu-tc-verification" content="915ff1a4ad37aa8d87271f3024e73a6c" />
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    
+	<title>商城首页 - 59家居商城</title>
+	<meta name="description" content="59，59家居，59家居商城，装修、材料、家具、饰
+
+品一站式服务，让装修更简单，价格更透明！！" />
+	<meta name="keywords" content="59，59家居，家居商城，59家居商城，59家居装修商城
+
+，办公室装修，写字楼装修，材料，装修材料，家居，办公家具，家居，家具，装修，装饰" />
+	<link type="text/css" 
+
+href="http://www.59jiaju.com/themes/mall/jiaju/styles/default/css/main.css" 
+
+rel="stylesheet"  />
+	<link type="text/css" 
+
+href="http://www.59jiaju.com/themes/mall/jiaju/styles/default/css/footer.css" 
+
+rel="stylesheet">
+	<script type="text/javascript" 
+
+src="http://www.59jiaju.com/includes/libraries/javascript/jquery.js" charset="utf-
+
+8"></script>
+	<script type="text/javascript" 
+
+src="http://www.59jiaju.com/themes/mall/jiaju/styles/default/js/main.js" charset="utf-
+
+8"></script>
+	<script type="text/javascript" 
+
+src="http://www.59jiaju.com/themes/mall/jiaju/styles/default/js/jquery-
+
+1.3.2.min.js"></script>
+	<script type="text/javascript" 
+
+src="http://www.59jiaju.com/themes/mall/jiaju/styles/default/js/lrtk.js"></script>  
+	<script type="text/javascript" 
+
+src="http://www.59jiaju.com/themes/mall/jiaju/styles/default/js/NewIndex.js"></script>
+	
+	<script type="text/javascript">
+function b(){
+	h = $(window).height();
+	t = $(document).scrollTop();
+	if(t > h){
+		$('#gotop').show();
+	}else{
+		$('#gotop').hide();
+	}
+}
+
+$(document).ready(function(e) {
+	
+	b();
+	
+	$('#gotop').click(function(){
+		$(document).scrollTop(0);	
+	});
+	
+	$('#backi_OK').hover(function(){
+		$(this).attr('id','backi_OK_hover');
+		$('#backi_OK').show();
+	},function(){
+		$(this).attr('id','backi_OK');
+		
+	})
+
+});
+
+$(window).scroll(function(e){
+	b();		
+});
+</script>
+<script type="text/javascript">
+
+$(document).ready(function(f) {
+	
+	b();
+	
+	$('#gotop1').click(function(){
+		$(document).scrollTop(0);	
+	});
+	
+	$('#backi_OK1').hover(function(){
+		$(this).attr('id','backi_OK1_hover');
+		$('#backi_OK1').show();
+	},function(){
+		$(this).attr('id','backi_OK1');
+		
+	})
+
+});
+
+$(window).scroll(function(e){
+	b();		
+});
+</script>
+<script type="text/javascript">
+	$(function (){
+		$('#open-change-city-window').click(function (){
+			$('.change-city-window').slideDown();
+			
+		})
+		$('#close-change-city-window').click(function (){
+			$('.change-city-window').slideUp();
+		})
+	})
+</script>
+</head>
+<body>
+	<div id="site-nav" class="w-full">
+
+   <div class="shoptop w clearfix">
+
+    	<div class="login_info">
+		<?php
+			if(!$_COOKIE["lai_username"])
+			{
+				echo '您好 游客&nbsp;&nbsp;&nbsp;';
+				echo '<a href="index.php?
+
+app=member&amp;act=login&amp;ret_url=">登录</a>
+						<a href=" 
+
+http://www.59jiaju.com/gx/reg.html">注册</a>';
+			}
+			else
+			{
+				echo '您好，<a href="index.php?app=member" 
+
+style="color:#0000ff;">'.$_COOKIE["lai_username"].'</a>&nbsp;&nbsp;&nbsp;';
+				echo '<a href="index.php?app=member&amp;act=logout">退
+
+出</a>&nbsp;&nbsp;&nbsp;';
+				echo '<a href="index.php?app=message&amp;act=newpm">站
+
+内消息</a>';
+			}
+		?>
+      </div>
+
+	
+
+      <ul class="quick-menu"><li class="item">
+
+         <div class="menu iwantbuy">
+
+            <a class="menu-hd" href="index.php?app=category">我要买<b></b></a>
+
+            <div class="menu-bd">
+
+               <div class="menu-bd-panel">
+
+                  <div>
+
+                     <p><a href="index.php?app=category">商品分类</a></p>
+
+                     <p><a href="www.59jiaju.com">大家正在买</a></p>
+                  </div>
+               </div>
+            </div>
+         </div>
+
+
+
+         </li>
+
+         <li class="item">
+
+            <div class="menu mytb">
+
+               <a class="menu-hd" href="index.php?app=member">我是买家<b></b></a>
+
+               <div class="menu-bd">
+
+                  <div class="menu-bd-panel">
+
+                     <div>
+
+                        <p><a href="index.php?app=buyer_order">已买到的宝贝</a></p>
+
+                        <p><a href="index.php?app=friend">我的好友</a></p>
+
+                        <p><a href="index.php?app=my_question">我的咨询</a></p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </li>
+
+         <li class="item">
+
+            <div class="menu seller-center">
+
+               <a class="menu-hd" href="index.php?app=member">卖家中心<b></b></a>
+
+               <div class="menu-bd">
+
+                  <div class="menu-bd-panel">
+
+                     <div>
+
+                        <p><a href="index.php?app=seller_order">已卖出的宝贝</a></p>
+
+                        <p><a href="index.php?app=my_goods">出售中的宝贝</a></p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </li>
+
+         <li class="service">
+
+            <a href="index.php?app=article&amp;code=help">帮助中心</a>         </li>
+
+         <li class="item">
+
+            <div class="menu mini-cart">
+
+               <a class="ac" href="index.php?app=cart">
+
+                  <s></s>购物车<strong>0</strong>件<b></b>               </a>
+
+               <div class="mini-cart-content menu-bd">
+
+                  <dl class="mini-cart-bd">
+
+                     
+                     <dt class="mt10 fleft mini-cart-empty">您购物车里还没有任何宝贝
+
+</dt>
+
+                     
+                     <dd class="mini-cart-bt">
+
+                        <a href="index.php?app=cart">查看我的购物车</a>                 
+
+    </dd>                          
+                  </dl>
+               </div>
+            </div>
+         </li>
+
+         <li class="service">
+
+            <a hidefocus="true"  target="_blank" href="http://wpa.qq.com/msgrd?
+
+v=3&uin=461666210&site=qq&menu=yes">在线客服</a>         </li>
+
+         <li class="item">
+
+            <div class="menu favorite">
+
+               <a class="menu-hd" href="index.php?app=my_favorite">收藏夹<b></b></a>
+
+               <div class="menu-bd">
+
+                  <div class="menu-bd-panel">
+
+                     <div>
+
+                       <p><a href="index.php?app=my_favorite">收藏的宝贝</a></p>
+
+                       <p><a href="index.php?app=my_favorite&amp;type=store">收藏的店铺
+
+</a></p>
+                    </div>
+                 </div>
+               </div>
+           </div>
+         </li>
+
+         <li class="item" style="background:none">
+
+            <div class="menu sites">
+
+               <a class="menu-hd" href="javascript:;">网站导航<b></b></a>
+
+               <div class="menu-bd padding10">
+
+              </div>
+            </div>
+        </li>
+     </ul>
+
+   </div>
+
+<style type="text/css">
+
+.fixed-top /* 头部固定 */{position:fixed;bottom:auto;top:200px;}
+
+.fixed-bottom /* 底部固定 */{position:fixed;bottom:0px;top:auto;}
+
+.fixed-left /* 左侧固定 */{position:fixed;right:auto;left:0px; z-index:1000;}
+
+.fixed-right /* 右侧固定 */{position:fixed;right:0px;left:auto;}
+
+/* 上面的是除了IE6的主流浏览器通用的方法 */
+
+* html,* html body /* 修正IE6振动bug */{background-image:url(about:blank);background-
+
+attachment:fixed;}
+
+* html .fixed-top /* IE6 头部固定 */{position:absolute;bottom:auto;top:expression(eval
+
+(document.documentElement.scrollTop)+200);}
+
+* html .fixed-right /* IE6 右侧固定 */ {position:absolute;right:auto;left:expression
+
+(eval(document.documentElement.scrollLeft+document.documentElement.clientWidth-
+
+this.offsetWidth)-(parseInt(this.currentStyle.marginLeft,10)||0)-(parseInt
+
+(this.currentStyle.marginRight,10)||0));}
+
+* html .fixed-bottom /* IE6 底部固定  */{position:absolute;bottom:auto;top:expression
+
+(eval(document.documentElement.scrollTop+document.documentElement.clientHeight-
+
+this.offsetHeight-(parseInt(this.currentStyle.marginTop,10)||0)-(parseInt
+
+(this.currentStyle.marginBottom,10)||0)));}
+
+* html .fixed-left /* IE6 左侧固定 */{position:absolute;right:auto;left:expression
+
+(eval(document.documentElement.scrollLeft));}
+
+</style>
+<div id="backi_OK1" class="fixed-left fixed-top" style="z-index:9999;">
+<a><img border="0" 
+
+SRC='http://www.59jiaju.com/themes/mall/jiaju/styles/default/images/commodity/ewm.png'  
+
+alt=""></a>
+</div>
+	<div id="backi_OK" class="fixed-right fixed-top" style="z-index:9999;">
+	<div style="float:left;;margin-top: 32px;"><a><img border="0" 
+
+SRC='http://www.59jiaju.com/themes/mall/jiaju/styles/default/images/commodity/niu.png'  
+
+alt="装修设计咨询"></a></div>
+	<table border="0" cellpadding="0" cellspacing="0" width="120" 
+
+style="float:left;">
+
+	<tr><td style="padding:0"><a hidefocus="true" id="hidden" 
+
+href="javascript:void(0);" title="close"><IMG 
+
+src="http://www.59jiaju.com/themes/mall/jiaju/styles/default/images/1.gif" 
+
+border=0></a></td></tr> 
+
+	<tr><td style="padding:0"><a hidefocus="true"  target="_blank" 
+
+href="http://wpa.qq.com/msgrd?v=3&uin=474337026&site=qq&menu=yes"><img border="0" 
+
+SRC='http://www.59jiaju.com/themes/mall/jiaju/styles/default/images/q1.jpg'  alt="装修
+
+工程咨询"></a></td></tr>
+    
+    <tr><td style="padding:0"><a hidefocus="true"  target="_blank" 
+
+href="http://wpa.qq.com/msgrd?v=3&uin=474337026&site=qq&menu=yes"><img border="0" 
+
+SRC='http://www.59jiaju.com/themes/mall/jiaju/styles/default/images/q2.jpg'  alt="厂家
+
+入驻咨询"></a></td></tr>
+
+	<tr><td style="padding:0"><a hidefocus="true"  target="_blank" 
+
+href="http://wpa.qq.com/msgrd?v=3&uin=609509946&site=qq&menu=yes"><img border="0" 
+
+SRC='http://www.59jiaju.com/themes/mall/jiaju/styles/default/images/q3.jpg'  alt="售后
+
+服务咨询"></a></td></tr>
+	
+	<tr><td style="padding:0"><a hidefocus="true"  target="_blank" 
+
+href="http://wpa.qq.com/msgrd?v=3&uin=247727626&site=qq&menu=yes"><a hidefocus="true"  
+
+target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=247727626&site=qq&menu=yes"><a 
+
+hidefocus="true"  target="_blank" href="http://wpa.qq.com/msgrd?
+
+v=3&uin=247727626&site=qq&menu=yes"></a><a hidefocus="true"  target="_blank" 
+
+href="http://wpa.qq.com/msgrd?v=3&uin=247727626&site=qq&menu=yes"><img border="0" 
+
+src='http://www.59jiaju.com/themes/mall/jiaju/styles/default/images/q4.jpg'  alt="招标
+
+咨询" /></a></a></a></td>
+	</tr>
+	
+	<tr><td style="padding:0"><a hidefocus="true"  target="_blank" 
+
+href="http://www.59jiaju.com/gx/process.html"><img border="0" 
+
+SRC='http://www.59jiaju.com/themes/mall/jiaju/styles/default/images/btn.jpg'  alt="入驻
+
+流程"></a></td></tr>
+	
+	<tr><td style="padding:0"><a hidefocus="true"  target="_blank" 
+
+href="http://wpa.qq.com/msgrd?v=3&uin=2355428680&site=qq&menu=yes"><img border="0" 
+
+SRC='http://www.59jiaju.com/themes/mall/jiaju/styles/default/images/8.jpg'  alt="广告业
+
+务联系"></a></td></tr>
+
+	<tr><td style="padding:0"><A hidefocus="true"  href="index.php?app=cart"><IMG 
+
+src="http://www.59jiaju.com/themes/mall/jiaju/styles/default/images/6.gif" border=0 
+
+alt="我的购物车"></A></td></tr>
+
+    <tr><td style="padding:0"><A hidefocus="true" id="gotop" href="javascript:void
+
+(0);"><IMG src="http://www.59jiaju.com/themes/mall/jiaju/styles/default/images/7.gif" 
+
+border=0></A></td></tr>
+	</table>
+	</div>
+</div> 
+
+<div id="header" class="w-full">
+    <div class="shop-t w clearfix" style="padding:10px 0;">
+      	<div class="logo">
+        	<a style="display:block; overflow:hidden; margin-top:10px;" 
+
+href="http://www.59jiaju.com/" title="59家居商城"><img alt="59家居商城" 
+
+src="http://www.59jiaju.com/data/files/mall/settings/site_logo.png" width="217" 
+
+height="49" /></a>
+      	</div>
+      	<div style="padding:15px 0 0 50px; _padding:0 0 0 15px; width:200px; 
+
+float:left;" class="change-city">
+      		<span style=" font-family:'微软雅黑'; font-size:20px; color:#f00; 
+
+margin:0 5px;">广州站</span><span style="padding:3px; border:1px solid #f3f3f3; 
+
+background:#f3f3f3;">
+      			<a id="open-change-city-window">【切换城市】</a>
+      		</span>
+	  		<span style="line-height:20px; padding:5px 0 0 0; color:#666; 
+
+float:left;  font-weight:bold;">		全国统一热线：400-1012-668
+	  		</span>
+	  		<div class="change-city-window">
+	  			<div class="">
+	  				<span id="close-change-city-window">关闭</span>
+	  			</div>
+	  			<div>
+	  			<a href="http://www.59jiaju.com/shenzhen/">深圳</a>
+	  			<a href="http://www.59jiaju.com/wuhan/">武汉</a>
+                <a href="http://www.59jiaju.com/shanghai/">上海</a>
+                        <a href="http://www.59jiaju.com/beijing/">北京</a>
+	  			</div>
+	  		</div>
+	  	</div>
+		<div class="top-search">
+	        <ul class="clearfix">
+	            <li class="current" id="index">商品</li>
+	            <li  id="store">店铺</li>
+	            <!--<li  id="groupbuy">团购</li>-->
+	        </ul>
+	        <div class="top-search-box">
+	           	<form method="GET" action="index.php?app=search">
+	               <input type="hidden" name="app" value="search" />
+	               <input type="hidden" name="act" value="index" />
+	               <input type="text"   name="keyword" value="" class="keyword 
+
+kw_bj index_bj " />
+	               <input type="submit" value="" class="submit" hidefocus="true" />
+	           	</form>
+	        </div>
+	        <div class="all-cate">
+	            <a href="index.php?app=category">商品分类</a><br />
+	            <a href="index.php?app=category&amp;act=store">店铺分类</a>
+	        </div>
+      	</div>
+   	</div>
+	<div class="mainnav w-full pb10">
+		<div class="menu">
+			<ul>
+				<li class="line"><a href="http://www.59jiaju.com/">首页
+
+</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<!-- main start -->
+<div id="main">
+    <div class="main-top w clearfix">
+        <div class="left" area="left" widget_type="area" style="background:#DDDDDD;">
+            <div id="_widget_471" name="jiaju_catalog" widget_type="widget" 
+
+class="widget">
+                <div class="catalog box">
+                    <div class="catebody">
+                        <div class="title">
+                            <a href="index.php?app=category" target="_blank">
+                                <h2>所有商品分类</h2>
+                            </a>
+                        </div>
+                        <ul class="content clearfix">
+                            <li class="item">
+                                <div class="border-nr">
+                                    <h3>
+                                        <a href="index.php?app=search&cate_id=6417">装
+
+修材料</a>
+                                    </h3>
+                                    <p>
+                                        <a href="index.php?
+
+app=search&amp;cate_id=6421">石膏板</a>
+                                        <a href="index.php?
+
+app=search&amp;cate_id=6432">龙骨</a>
+                                        <a href="index.php?app=search&cate_id=3436">软
+
+膜天花</a>
+                                        <a href="index.php?
+
+app=search&amp;cate_id=6434">
+                                            硅钙板
+                                        </a>
+                                        <a href="index.php?
+
+app=search&amp;cate_id=6435">
+                                            石膏线
+                                        </a>
+                                        <a href="index.php?app=search&cate_id=3701">
+                                            吸音天花
+                                        </a>
+                                        <a href="index.php?app=search&cate_id=3704">
+                                            复合天花
+                                        </a>
+                                        <a href="index.php?app=search&cate_id=3705">
+                                            天花辅材
+                                        </a>
+                                        <a href="index.php?
+
+app=search&amp;cate_id=6439">
+                                            天板等板材
+                                        </a>
+                                        <a href="index.php?
+
+app=search&amp;cate_id=6440">
+                                            隔断
+                                        </a>
+                                        <a href="index.php?
+
+app=search&amp;cate_id=6441">
+                                            不锈钢
+                                        </a>
+                                        <a href="index.php?
+
+app=search&amp;cate_id=6442">
+                                            铝型材
+                                        </a>
+                                        <a href="index.php?
+
+app=search&amp;cate_id=6443">
+                                            钢板等型材
+                                        </a>
+                                        <a href="index.php?
+
+app=search&amp;cate_id=6444">
+                                            钢木楼梯
+                                        </a>
+                                        <a href="index.php?
+
+app=search&amp;cate_id=6423">
+                                            地板
+                                        </a>
+                                        <a href="index.php?
+
+app=search&amp;cate_id=6445">
+                                            瓷片
+                                        </a>
+                                        <a href="index.php?
+
+app=search&amp;cate_id=6446">
+                                            马赛克
+                                        </a>
+                                        <a href="index.php?
+
+app=search&amp;cate_id=6447">
+                                            瓦
+                                        </a>
+                                        <a href="index.php?
+
+app=search&amp;cate_id=6448">
+                                            石材
+                                        </a>
+                                        <a href="index.php?
+
+app=search&amp;cate_id=6449">
+                                            玻璃石膏
+                                        </a>
+                                        <a href="index.php?
+
+app=search&amp;cate_id=6450">
+                                            地毯
+                                        </a>
+                                        <a href="index.php?
+
+app=search&amp;cate_id=6451">
+                                            地毯辅材
+                                        </a>
+                                        <a href="index.php?
+
+app=search&amp;cate_id=6452">
+                                            墙纸辅材
+                                        </a>
+                                        <a href="index.php?
+
+app=search&amp;cate_id=6453">
+                                            PVC地板
+                                        </a>
+                                        <a href="index.php?
+
+app=search&amp;cate_id=6493">
+                                            墙纸
+                                        </a>
+                                    </p>
+                                    <div class="cline">
+                                    </div>
+                                </div>
+                                <div class="cateover">
+                                    <div style=" height:160px;">
+                                        <dl class="clearfix">
+                                            <dt class="fleft">
+                                                <a href="index.php?
+
+app=search&amp;cate_id=6420">
+                                                    隔断/吊顶/基建/板材/型材/玻璃
+                                                </a>
+                                            </dt>
+                                            <dd class="fleft">
+                                                <a href="index.php?
+
+app=search&amp;cate_id=6421">
+                                                    石膏板
+                                                </a>
+                                                <a href="index.php?
+
+app=search&amp;cate_id=6432">
+                                                    龙骨
+                                                </a>
+                                                <a href="index.php?
+
+app=search&cate_id=3436">
+                                                    软膜天花
+                                                </a>
+
+                                                <a href="index.php?
+
+app=search&amp;cate_id=6434">
+                                                    硅钙板
+                                                </a>
+                                                <a href="index.php?
+
+app=search&amp;cate_id=6435">
+                                                    石膏线
+                                                </a>
+                                                <a href="index.php?
+
+app=search&cate_id=3701">
+                                                    吸音天花
+                                                </a>
+                                                <a href="index.php?
+
+app=search&cate_id=3704">
+                                                    复合天花
+                                                </a>
+                                                <a href="index.php?
+
+app=search&cate_id=3705">
+                                                    天花辅材
+                                                </a>
+                                                <a href="index.php?
+
+app=search&amp;cate_id=6439">
+                                                    天板等板材
+                                                </a>
+                                                <a href="index.php?
+
+app=search&amp;cate_id=6440">
+                                                    隔断
+                                                </a>
+                                                <a href="index.php?
+
+app=search&amp;cate_id=6441">
+                                                    不锈钢
+                                                </a>
+                                                <a href="index.php?
+
+app=search&amp;cate_id=6442">
+                                                    铝型材
+                                                </a>
+                                                <a href="index.php?
+
+app=search&amp;cate_id=6443">
+                                                    钢板等型材
+                                                </a>
+                                                <a href="index.php?
+
+app=search&amp;cate_id=6444">
+                                                    钢木楼梯
+                                                </a>
+                                                <a href="index.php?
+
+app=search&amp;cate_id=6652">
+                                                    玻璃
+                                                </a>
+                                                <a href="index.php?
+
+app=search&amp;cate_id=6706">
+                                                    饰面板
+                                                </a>
+                                                <a href="index.php?
+
+app=search&amp;cate_id=6926">
+                                                    卫生间隔断
+                                                </a>
+                                            </dd>
+                                        </dl>
+                                        <dl class="clearfix">
+                                            <dt class="fleft">
+                                                <a href="index.php?
+
+app=search&amp;cate_id=6422">
+                                                    瓷砖/地板/地毯/大理石/墙纸
+                                                </a>
+                                            </dt>
+                                            <dd class="fleft">
+                                                <a href="index.php?
+
+app=search&amp;cate_id=5508">
+                                                    瓷砖
+                                                </a>
+                                                <a href="index.php?
+
+app=search&amp;cate_id=6423">
+                                                    地板
+                                                </a>
+                                                <a href="index.php?
+
+app=search&amp;cate_id=6445">
+                                                    瓷片
+                                                </a>
+                                                <a href="index.php?
+
+app=search&amp;cate_id=6446">
+                                                    马赛克
+                                                </a>
+                                                <a href="index.php?
+
+app=search&amp;cate_id=6447">
+                                                    瓦
+                                                </a>
+                                                <a href="index.php?
+
+app=search&amp;cate_id=6448">
+                                                    石材
+                                                </a>
+                                                <a href="index.php?
+
+app=search&amp;cate_id=6449">
+                                                    玻璃石膏
+                                                </a>
+                                                <a href="index.php?
+
+app=search&amp;cate_id=6450">
+                                                    地毯
+                                                </a>
+                                                <a href="index.php?
+
+app=search&amp;cate_id=6451">
+                                                    地毯辅材
+                                                </a>
+                                                <a href="index.php?
+
+app=search&amp;cate_id=6452">
+                                                    墙纸辅材
+                                                </a>
+                                                <a href="index.php?
+
+app=search&amp;cate_id=6453">
+                                                    PVC地板
+                                                </a>
+                                                <a href="index.php?
+
+app=search&amp;cate_id=6652">
+                                                    墙纸
+                                                </a>
+                                                <div class="h30">
+                                                </div>
+                                            </dd>
+                                        </dl>
+                                        <dl class="clearfix">
+                                            <dt class="fleft">
+                                                <a href="index.php?
+
+app=search&amp;cate_id=6424">
+                                                    门窗/五金/窗帘
+                                                </a>
+                                            </dt>
+                                            <dd class="fleft">
+                                                <a href="index.php?
+
+app=search&amp;cate_id=6425">
+                                                    门窗
+                                                </a>
+                                                <a href="index.php?
+
+app=search&amp;cate_id=6454">
+                                                    锁
+                                                </a>
+                                                <a href="index.php?
+
+app=search&amp;cate_id=6455">
+                                                    拉手
+                                                </a>
+                                                <a href="index.php?
+
+app=search&amp;cate_id=6456">
+                                                    磁吸
+                                                </a>
+                                                <a href="index.php?
+
+app=search&amp;cate_id=6457">
+                                                    铝合金门窗
+                                                </a>
+                                                <a href="index.php?
+
+app=search&amp;cate_id=6458">
+                                                    门控五金
+                                                </a>
+                                                <a href="index.php?
+
+app=search&amp;cate_id=6459">
+                                                    五金配件
+                                                </a>
+                                                <a href="index.php?
+
+app=search&amp;cate_id=6460">
+                                                    五金工具
+                                                </a>
+                                                <a href="index.php?
+
+app=search&amp;cate_id=6461">
+                                                    厨饰五金
+                                                </a>
+                                                <a href="index.php?
+
+app=search&amp;cate_id=6462">
+                                                    家居布艺
+                                                </a>
+                                                <div class="h30">
+                                                </div>
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                    <div style="height:auto;">
+                                        <dl class="clearfix">
+                                            <dt class="fleft">
+                                                <a href="index.php?
+
+app=search&amp;cate_id=6426">
+                                                    机电/灯饰/开关/插座
+                                                </a>
+                                            </dt>
+                                            <dd class="fleft">
+                                                <a href="index.php?
+
+app=search&amp;cate_id=6427">
+                                                    灯盘
+                                                </a>
+                                                <a href="index.php?
+
+app=search&amp;cate_id=6463">
+                                                    筒灯
+                                                </a>
+                                                <a href="index.php?
+
+app=search&amp;cate_id=6464">
+                                                    射灯
+                                                </a>
+                                                <a href="index.php?
+
+app=search&amp;cate_id=6465">
+                                                    T5支架
+                                                </a>
+                                                <a href="index.php?
+
+app=search&amp;cate_id=6466">
+                                                    格珊灯盘
+                                                </a>
+                                                <a href="index.php?
+
+app=search&amp;cate_id=6467">
+                                                    吊灯罩
+                                                </a>
+                                                <a href="index.php?
+
+app=search&amp;cate_id=6468">
+                                                    台灯
+                                                </a>
+                                                <a href="index.php?
+
+app=search&amp;cate_id=6469">
+                                                    床头灯
+                                                </a>
+                                                <a href="index.php?
+
+app=search&amp;cate_id=6470">
+                                                    工艺灯
+                                                </a>
+                                                <a href="index.php?
+
+app=search&amp;cate_id=6471">
+                                                    LED灯
+                                                </a>
+                                                <a href="index.php?
+
+app=search&amp;cate_id=6472">
+                                                    监控设备
+                                                </a>
+                                                <a href="index.php?
+
+app=search&amp;cate_id=6473">
+                                                    防盗报警
+                                                </a>
+                                                <a href="index.php?
+
+app=search&amp;cate_id=6474">
+                                                    消防设备
+                                                </a>
+                                                <a href="index.php?
+
+app=search&amp;cate_id=6475">
+                                                    门禁考勤
+                                                </a>
+                                                <a href="index.php?
+
+app=search&amp;cate_id=6476">
+                                                    家居智能
+                                                </a>
+                                                <a href="index.php?
+
+app=search&amp;cate_id=6477">
+                                                    防雷电设备
+                                                </a>
+                                                <a href="index.php?
+
+app=search&amp;cate_id=6478">
+                                                    T8管
+                                                </a>
+                                                <a href="index.php?
+
+app=search&amp;cate_id=6519">
+                                                    抽风机
+                                                </a>
+                                                <a href="index.php?
+
+app=search&amp;cate_id=6521">
+                                                    空调
+                                                </a>
+                                            </dd>
+                                        </dl>
+                                        <dl class="clearfix">
+                                            <dt class="fleft">
+                                                <a href="index.php?
+
+app=search&amp;cate_id=6428">
+                                                    地材/涂料/防水/粘合剂/辅材
+                                                </a>
+                                            </dt>
+                                            <dd class="fleft">
+                                                <a href="index.php?app=search&amp;cate_id=6429">
+                                                    腻子
+                                                </a>
+                                                <a href="index.php?app=search&amp;cate_id=6479">
+                                                    乳胶漆
+                                                </a>
+                                                <a href="index.php?app=search&amp;cate_id=6480">
+                                                    木器漆
+                                                </a>
+                                                <a href="index.php?app=search&amp;cate_id=6481">
+                                                    内外墙漆
+                                                </a>
+                                                <a href="index.php?app=search&amp;cate_id=6482">
+                                                    艺术涂料
+                                                </a>
+                                                <a href="index.php?app=search&amp;cate_id=6483">
+                                                    胶粘剂
+                                                </a>
+                                                <a href="index.php?app=search&amp;cate_id=6484">
+                                                    粘合剂
+                                                </a>
+                                                <a href="index.php?app=search&amp;cate_id=6485">
+                                                    水泥
+                                                </a>
+                                                <a href="index.php?app=search&amp;cate_id=6486">
+                                                    水石
+                                                </a>
+                                                <a href="index.php?app=search&amp;cate_id=6487">
+                                                    填缝剂
+                                                </a>
+                                                <a href="index.php?app=search&amp;cate_id=6535">
+                                                    沙</a>
+                                            </dd>
+                                        </dl>
+                                        <dl class="clearfix">
+                                            <dt class="fleft">
+                                                <a href="index.php?
+
+app=search&amp;cate_id=6430">
+                                                    卫浴/卫浴五金/水料水配/电灯
+                                                </a>
+                                            </dt>
+                                            <dd class="fleft">
+                                                <a href="index.php?
+
+app=search&amp;cate_id=6431">
+                                                    洁具
+                                                </a>
+                                                <a href="index.php?
+
+app=search&amp;cate_id=6488">
+                                                    卫浴五金
+                                                </a>
+                                                <a href="index.php?
+
+app=search&amp;cate_id=6489">
+                                                    PVC线管/配件
+                                                </a>
+                                                <a href="index.php?
+
+app=search&amp;cate_id=6490">
+                                                    PVC给水管
+                                                </a>
+                                                <a href="index.php?
+
+app=search&amp;cate_id=6491">
+                                                    PVC排水管
+                                                </a>
+                                                <a href="index.php?
+
+app=search&amp;cate_id=6492">
+                                                    PPR冷热给水管/配件
+                                                </a>
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="item">
+                                <div class="border-nr">
+                                    <h3>
+                                        <a href="index.php?
+
+app=search&amp;cate_id=6420">
+                                            天花吊顶
+                                        </a>
+                                    </h3>
+                                    <p>
+                                        <a href="index.php?app=search&cate_id=3705">
+                                            天花辅材
+                                        </a>
+                                        <a href="index.php?
+
+app=search&amp;cate_id=6439">
+                                            天板等板材
+                                        </a>
+                                        <a href="index.php?
+
+app=search&amp;cate_id=6440">
+                                            隔断
+                                        </a>
+                                        <a href="index.php?
+
+app=search&amp;cate_id=6441">
+                                            不锈钢
+                                        </a>
+                                        <a href="index.php?
+
+app=search&amp;cate_id=6442">
+                                            铝型材
+                                        </a>
+                                        <a href="index.php?
+
+app=search&amp;cate_id=6443">
+                                            钢板等型材
+                                        </a>
+                                        <a href="index.php?
+
+app=search&amp;cate_id=6444">
+                                            钢木楼梯
+                                        </a>
+                                        <a href="index.php?
+
+app=search&amp;cate_id=6652">
+                                            玻璃
+                                        </a>
+                                    </p>
+                                    <div class="cline">
+                                    </div>
+                                </div>
+                                <div class="cateover">
+                                    <dl class="clearfix">
+                                        <dt class="fleft">
+                                            <a href="index.php?
+
+app=search&amp;cate_id=6420">
+                                                隔断/吊顶/基建/板材/型材/玻璃
+                                            </a>
+                                        </dt>
+                                        <dd class="fleft">
+                                            <a href="index.php?
+
+app=search&amp;cate_id=6421">
+                                                石膏板
+                                            </a>
+                                            <a href="index.php?
+
+app=search&amp;cate_id=6432">
+                                                龙骨
+                                            </a>
+                                            <a href="index.php?
+
+app=search&cate_id=3436">
+                                                软膜天花
+                                            </a>
+                                            <a href="index.php?
+
+app=search&amp;cate_id=6434">
+                                                硅钙板
+                                            </a>
+                                            <a href="index.php?
+
+app=search&amp;cate_id=6435">
+                                                石膏线
+                                            </a>
+                                            <a href="index.php?
+
+app=search&cate_id=3701">
+                                                吸音天花
+                                            </a>
+                                            <a href="index.php?
+
+app=search&cate_id=3704">
+                                                复合天花
+                                            </a>
+                                            <a href="index.php?
+
+app=search&cate_id=3705">
+                                                天花辅材
+                                            </a>
+                                            <a href="index.php?
+
+app=search&amp;cate_id=6439">
+                                                天板等板材
+                                            </a>
+                                            <a href="index.php?
+
+app=search&amp;cate_id=6440">
+                                                隔断
+                                            </a>
+                                            <a href="index.php?
+
+app=search&amp;cate_id=6441">
+                                                不锈钢
+                                            </a>
+                                            <a href="index.php?
+
+app=search&amp;cate_id=6442">
+                                                铝型材
+                                            </a>
+                                            <a href="index.php?
+
+app=search&amp;cate_id=6443">
+                                                钢板等型材
+                                            </a>
+                                            <a href="index.php?
+
+app=search&amp;cate_id=6444">
+                                                钢木楼梯
+                                            </a>
+                                            <a href="index.php?
+
+app=search&amp;cate_id=6652">
+                                                玻璃
+                                            </a>
+                                            <a href="index.php?
+
+app=search&amp;cate_id=6706">
+                                                饰面板
+                                            </a>
+                                            <a href="index.php?
+
+app=search&amp;cate_id=6926">
+                                                卫生间隔断
+                                            </a>
+                                        </dd>
+                                    </dl>
+                                </div>
+                            </li>
+                            <li class="item">
+                                <div class="border-nr">
+                                    <h3>
+                                        <a href="index.php?
+
+app=search&amp;cate_id=6422">
+                                            瓷砖/地板/墙纸
+                                        </a>
+                                    </h3>
+                                    <p>
+                                        <a href="index.php?
+
+app=search&amp;cate_id=5508">
+                                            瓷砖
+                                        </a>
+                                        <a href="index.php?
+
+app=search&amp;cate_id=6423">
+                                            地板
+                                        </a>
+                                        <a href="index.php?
+
+app=search&amp;cate_id=6440">
+                                            隔断
+                                        </a>
+                                        <a href="index.php?
+
+app=search&amp;cate_id=6450">
+                                            地毯
+                                        </a>
+                                        <a href="index.php?
+
+app=search&amp;cate_id=6451">
+                                            地毯辅材
+                                        </a>
+                                        <a href="index.php?
+
+app=search&amp;cate_id=6452">
+                                            墙纸辅材
+                                        </a>
+                                        <a href="index.php?
+
+app=search&amp;cate_id=6453">
+                                            PVC地板
+                                        </a>
+                                        <a href="index.php?
+
+app=search&amp;cate_id=6652">
+                                            墙纸
+                                        </a>
+                                    </p>
+                                    <div class="cline">
+                                    </div>
+                                </div>
+                                <div class="cateover">
+                                    <dl class="clearfix">
+                                        <dt class="fleft">
+                                            <a href="index.php?
+
+app=search&amp;cate_id=6422">
+                                                瓷砖/地板/地毯/大理石/墙纸
+                                            </a>
+                                        </dt>
+                                        <dd class="fleft">
+                                            <a href="index.php?
+
+app=search&amp;cate_id=5508">
+                                                瓷砖
+                                            </a>
+                                            <a href="index.php?
+
+app=search&amp;cate_id=6423">
+                                                地板
+                                            </a>
+                                            <a href="index.php?
+
+app=search&amp;cate_id=6445">
+                                                瓷片
+                                            </a>
+                                            <a href="index.php?
+
+app=search&amp;cate_id=6446">
+                                                马赛克
+                                            </a>
+                                            <a href="index.php?
+
+app=search&amp;cate_id=6447">
+                                                瓦
+                                            </a>
+                                            <a href="index.php?
+
+app=search&amp;cate_id=6448">
+                                                石材
+                                            </a>
+                                            <a href="index.php?
+
+app=search&amp;cate_id=6449">
+                                                玻璃石膏
+                                            </a>
+                                            <a href="index.php?
+
+app=search&amp;cate_id=6450">
+                                                地毯
+                                            </a>
+                                            <a href="index.php?
+
+app=search&amp;cate_id=6451">
+                                                地毯辅材
+                                            </a>
+                                            <a href="index.php?
+
+app=search&amp;cate_id=6452">
+                                                墙纸辅材
+                                            </a>
+                                            <a href="index.php?
+
+app=search&amp;cate_id=6453">
+                                                PVC地板
+                                            </a>
+                                            <a href="index.php?
+
+app=search&amp;cate_id=6652">
+                                                墙纸
+                                            </a>
+                                        </dd>
+                                    </dl>
+                                </div>
+                            </li>
+                            <li class="item">
+                                <div class="border-nr">
+                                    <h3>
+                                        <a href="index.php?
+
+app=search&amp;cate_id=6424">
+                                            门窗/五金
+                                        </a>
+                                    </h3>
+                                    <p>
+                                        <a href="index.php?
+
+app=search&amp;cate_id=6425">
+                                            门窗
+                                        </a>
+                                        <a href="index.php?
+
+app=search&amp;cate_id=6454">
+                                            锁
+                                        </a>
+                                        <a href="index.php?
+
+app=search&amp;cate_id=6455">
+                                            拉手
+                                        </a>
+                                        <a href="index.php?
+
+app=search&amp;cate_id=6456">
+                                            磁吸
+                                        </a>
+                                        <a href="index.php?
+
+app=search&amp;cate_id=6457">
+                                            铝合金门窗
+                                        </a>
+                                        <a href="index.php?
+
+app=search&amp;cate_id=6458">
+                                            门控五金
+                                        </a>
+                                        <a href="index.php?
+
+app=search&amp;cate_id=6459">
+                                            五金配件
+                                        </a>
+                                        <a href="index.php?
+
+app=search&amp;cate_id=6460">
+                                            五金工具
+                                        </a>
+                                    </p>
+                                    <div class="cline">
+                                    </div>
+                                </div>
+                                <div class="cateover">
+                                    <dl class="clearfix">
+                                        <dt class="fleft">
+                                            <a href="index.php?
+
+app=search&amp;cate_id=6424">
+                                                门窗/五金/窗帘
+                                            </a>
+                                        </dt>
+                                        <dd class="fleft">
+                                            <a href="index.php?
+
+app=search&amp;cate_id=6425">
+                                                门窗
+                                            </a>
+                                            <a href="index.php?
+
+app=search&amp;cate_id=6454">
+                                                锁
+                                            </a>
+                                            <a href="index.php?
+
+app=search&amp;cate_id=6455">
+                                                拉手
+                                            </a>
+                                            <a href="index.php?
+
+app=search&amp;cate_id=6456">
+                                                磁吸
+                                            </a>
+                                            <a href="index.php?
+
+app=search&amp;cate_id=6457">
+                                                铝合金门窗
+                                            </a>
+                                            <a href="index.php?
+
+app=search&amp;cate_id=6458">
+                                                门控五金
+                                            </a>
+                                            <a href="index.php?
+
+app=search&amp;cate_id=6459">
+                                                五金配件
+                                            </a>
+                                            <a href="index.php?
+
+app=search&amp;cate_id=6460">
+                                                五金工具
+                                            </a>
+                                            <a href="index.php?
+
+app=search&amp;cate_id=6461">
+                                                厨饰五金
+                                            </a>
+                                            <a href="index.php?
+
+app=search&amp;cate_id=6462">
+                                                家居布艺
+                                            </a>
+                                        </dd>
+                                    </dl>
+                                </div>
+                            </li>
+                            <li class="item">
+                                <div class="border-nr">
+                                    <h3>
+                                        <a href="index.php?
+
+app=search&amp;cate_id=6426">
+                                            机电/灯饰/开关/插座
+                                        </a>
+                                    </h3>
+                                    <p>
+                                        <a href="index.php?
+
+app=search&amp;cate_id=6427">
+                                            灯盘
+                                        </a>
+                                        <a href="index.php?
+
+app=search&amp;cate_id=6463">
+                                            筒灯
+                                        </a>
+                                        <a href="index.php?
+
+app=search&amp;cate_id=6464">
+                                            射灯
+                                        </a>
+                                        <a href="index.php?
+
+app=search&amp;cate_id=6465">
+                                            T5支架
+                                        </a>
+                                        <a href="index.php?
+
+app=search&amp;cate_id=6466">
+                                            格珊灯盘
+                                        </a>
+                                        <a href="index.php?
+
+app=search&amp;cate_id=6467">
+                                            吊灯罩
+                                        </a>
+                                        <a href="index.php?
+
+app=search&amp;cate_id=6468">
+                                            台灯
+                                        </a>
+                                        <a href="index.php?
+
+app=search&amp;cate_id=6469">
+                                            床头灯
+                                        </a>
+                                        <a href="index.php?
+
+app=search&amp;cate_id=6470">
+                                            工艺灯
+                                        </a>
+                                    </p>
+                                    <div class="cline">
+                                    </div>
+                                </div>
+                                <div class="cateover">
+                                    <dl class="clearfix">
+                                        <dt class="fleft">
+                                            <a href="index.php?
+
+app=search&amp;cate_id=6426">
+                                                机电/灯饰/开关/插座
+                                            </a>
+                                        </dt>
+                                        <dd class="fleft">
+                                            <a href="index.php?
+
+app=search&amp;cate_id=6427">
+                                                灯盘
+                                            </a>
+                                            <a href="index.php?
+
+app=search&amp;cate_id=6463">
+                                                筒灯
+                                            </a>
+                                            <a href="index.php?
+
+app=search&amp;cate_id=6464">
+                                                射灯
+                                            </a>
+                                            <a href="index.php?
+
+app=search&amp;cate_id=6465">
+                                                T5支架
+                                            </a>
+                                            <a href="index.php?
+
+app=search&amp;cate_id=6466">
+                                                格珊灯盘
+                                            </a>
+                                            <a href="index.php?
+
+app=search&amp;cate_id=6467">
+                                                吊灯罩
+                                            </a>
+                                            <a href="index.php?
+
+app=search&amp;cate_id=6468">
+                                                台灯
+                                            </a>
+                                            <a href="index.php?
+
+app=search&amp;cate_id=6469">
+                                                床头灯
+                                            </a>
+                                            <a href="index.php?
+
+app=search&amp;cate_id=6470">
+                                                工艺灯
+                                            </a>
+                                            <a href="index.php?
+
+app=search&amp;cate_id=6471">
+                                                LED灯
+                                            </a>
+                                            <a href="index.php?
+
+app=search&amp;cate_id=6472">
+                                                监控设备
+                                            </a>
+                                            <a href="index.php?
+
+app=search&amp;cate_id=6473">
+                                                防盗报警
+                                            </a>
+                                            <a href="index.php?
+
+app=search&amp;cate_id=6474">
+                                                消防设备
+                                            </a>
+                                            <a href="index.php?
+
+app=search&amp;cate_id=6475">
+                                                门禁考勤
+                                            </a>
+                                            <a href="index.php?
+
+app=search&amp;cate_id=6476">
+                                                家居智能
+                                            </a>
+                                            <a href="index.php?
+
+app=search&amp;cate_id=6477">
+                                                防雷电设备
+                                            </a>
+                                            <a href="index.php?
+
+app=search&amp;cate_id=6478">
+                                                T8管
+                                            </a>
+                                            <a href="index.php?
+
+app=search&amp;cate_id=6519">
+                                                抽风机
+                                            </a>
+                                            <a href="index.php?
+
+app=search&amp;cate_id=6521">
+                                                空调
+                                            </a>
+                                        </dd>
+                                    </dl>
+                                </div>
+                            </li>
+                         
+                         
+                            <li class="item">
+                                <div class="border-nr">
+                                    <h3>
+                                        <a href="index.php?
+
+app=search&amp;cate_id=6430">
+                                            卫浴五金
+                                        </a>
+                                    </h3>
+                                    <p>
+                                        <a href="index.php?
+
+app=search&amp;cate_id=6431">
+                                            洁具
+                                        </a>
+                                        <a href="index.php?
+
+app=search&amp;cate_id=6488">
+                                            卫浴五金
+                                        </a>
+                                        <a href="index.php?
+
+app=search&amp;cate_id=6489">
+                                            PVC线管/配件
+                                        </a>
+                                        <a href="index.php?
+
+app=search&amp;cate_id=6490">
+                                            PVC给水管
+                                        </a>
+                                        <a href="index.php?
+
+app=search&amp;cate_id=6491">
+                                            PVC排水管
+                                        </a>
+                                        <a href="index.php?
+
+app=search&amp;cate_id=6492">
+                                            PPR冷热给水管/配件
+                                        </a>
+                                    </p>
+                                    <div class="cline">
+                                    </div>
+                                </div>
+                                <div class="cateover">
+                                    <dl class="clearfix">
+                                        <dt class="fleft">
+                                            <a href="index.php?
+
+app=search&amp;cate_id=6430">
+                                                卫浴/卫浴五金/水料水配/电灯
+                                            </a>
+                                        </dt>
+                                        <dd class="fleft">
+                                            <a href="index.php?
+
+app=search&amp;cate_id=6431">
+                                                洁具
+                                            </a>
+                                            <a href="index.php?
+
+app=search&amp;cate_id=6488">
+                                                卫浴五金
+                                            </a>
+                                            <a href="index.php?
+
+app=search&amp;cate_id=6489">
+                                                PVC线管/配件
+                                            </a>
+                                            <a href="index.php?
+
+app=search&amp;cate_id=6490">
+                                                PVC给水管
+                                            </a>
+                                            <a href="index.php?
+
+app=search&amp;cate_id=6491">
+                                                PVC排水管
+                                            </a>
+                                            <a href="index.php?
+
+app=search&amp;cate_id=6492">
+                                                PPR冷热给水管/配件
+                                            </a>
+                                        </dd>
+                                    </dl>
+                                </div>
+                            </li>
+                            
+                               <li class="item">
+                                <div class="border-nr">
+                                    <h3>
+                                        <a href="http://www.59jiaju.com/index.php?
+
+app=search&cate_id=1385">
+                                            办公家具
+                                        </a>
+                                    </h3>
+                                    <p>
+                                       	<a href="http://www.59jiaju.com/index.php?
+
+app=search&cate_id=3206" >班台类</a>
+		<a href="http://www.59jiaju.com/index.php?app=search&cate_id=3206" >班
+
+台类</a>
+	<a href="http://www.59jiaju.com/index.php?app=search&cate_id=3207" >会议台类
+
+</a>
+	<a href="http://www.59jiaju.com/index.php?app=search&cate_id=3212" >高间隔类
+
+</a>
+	<a href="http://www.59jiaju.com/index.php?app=search&cate_id=3208" >椅类</a>
+	<a href="http://www.59jiaju.com/index.php?app=search&cate_id=3582" >屏风卡位
+
+</a>
+	<a href="http://www.59jiaju.com/index.php?app=search&cate_id=3209" >沙发类</a>
+	<a href="http://www.59jiaju.com/index.php?app=search&cate_id=3210" >茶几类</a>
+	<a href="http://www.59jiaju.com/index.php?app=search&cate_id=3211" >柜类</a>
+	<a href="http://www.59jiaju.com/index.php?app=search&cate_id=3213" >前台类</a>
+	<a href="http://www.59jiaju.com/index.php?app=search&cate_id=6937" >桌子类</a>
+	<a href="http://www.59jiaju.com/index.php?app=search&cate_id=3585" >办公配件
+
+</a>
+    <a href="http://www.59jiaju.com/index.php?app=search&cate_id=3214" >其他类</a>
+                                    </p>
+                                    <div class="cline">
+                                    </div>
+                                </div>
+                                <div class="cateover">
+                                    <dl class="clearfix">
+                                        <dt class="fleft">
+                                            <a href="http://www.59jiaju.com/index.php?
+
+app=search&cate_id=1385">
+                                               办公家具类
+                                            </a>
+                                        </dt>
+                                        <dd class="fleft">
+                                           <a href="http://www.59jiaju.com/index.php?
+
+app=search&cate_id=3206" >班台类</a>
+		<a href="http://www.59jiaju.com/index.php?app=search&cate_id=3206" >班
+
+台类</a>
+	<a href="http://www.59jiaju.com/index.php?app=search&cate_id=3207" >会议台类
+
+</a>
+	<a href="http://www.59jiaju.com/index.php?app=search&cate_id=3212" >高间隔类
+
+</a>
+	<a href="http://www.59jiaju.com/index.php?app=search&cate_id=3208" >椅类</a>
+	<a href="http://www.59jiaju.com/index.php?app=search&cate_id=3582" >屏风卡位
+
+</a>
+	<a href="http://www.59jiaju.com/index.php?app=search&cate_id=3209" >沙发类</a>
+	<a href="http://www.59jiaju.com/index.php?app=search&cate_id=3210" >茶几类</a>
+	<a href="http://www.59jiaju.com/index.php?app=search&cate_id=3211" >柜类</a>
+	<a href="http://www.59jiaju.com/index.php?app=search&cate_id=3213" >前台类</a>
+	<a href="http://www.59jiaju.com/index.php?app=search&cate_id=6937" >桌子类</a>
+	<a href="http://www.59jiaju.com/index.php?app=search&cate_id=3585" >办公配件
+
+</a>
+    <a href="http://www.59jiaju.com/index.php?app=search&cate_id=3214" >其他类</a>
+                                        </dd>
+                                    </dl>
+                                </div>
+                            </li>
+                            
+                    </div>
+                </div>
+                <div class="clear">
+                </div>
+            </div>
+        </div>
+		<div style="float: right;  width: 770px;">
+			<div class="hot_pro">
+				<div class="hot_photo">
+					<div class="indexCon fl">
+					</div>
+				</div>
+			</div>
+			<div class="flashBanner"> <!--<a 
+
+href="http://www.59jiaju.com/"> </a><a href="http://www.59jiaju.com/"> </a><a 
+
+href="http://www.59jiaju.com/"> </a>--> <a href="http://www.59jiaju.com/"> <img 
+
+class="bigImg" width="770" height="380" /> </a>
+                <div class="mask"> <!--<img 
+
+src="http://www.59jiaju.com/themes/mall/jiaju/images/ta.jpg" 
+
+uri="http://www.59jiaju.com/themes/mall/jiaju/images/ta.jpg" 
+
+link="http://www.59jiaju.com/" width="60" height="22" />-->
+                <img src="http://www.59jiaju.com/themes/mall/jiaju/images/th.jpg" 
+
+uri="http://www.59jiaju.com/themes/mall/jiaju/images/th.jpg" 
+
+link="http://www.59jiaju.com/index.php?app=goods&id=10146/" width="60" height="22" />
+                     <img src="http://www.59jiaju.com/themes/mall/jiaju/images/dm.jpg" 
+
+uri="http://www.59jiaju.com/themes/mall/jiaju/images/dm.jpg"
+					link="http://www.59jiaju.com/index.php?
+
+app=goods&id=9948" width="60"
+					height="22" /> <img 
+
+src="http://www.59jiaju.com/themes/mall/jiaju/images/qm.jpg" 
+
+uri="http://www.59jiaju.com/themes/mall/jiaju/images/qm.jpg"
+					link="http://www.59jiaju.com/index.php?
+
+app=goods&id=9918" width="60" height="22"
+					/> <img 
+
+src="http://www.59jiaju.com/themes/mall/jiaju/images/bg.jpg" 
+
+uri="http://www.59jiaju.com/themes/mall/jiaju/images/bg.jpg"
+					link="http://www.59jiaju.com/" width="60" 
+
+height="22" /> </div>
+		  </div>
+	  <div class="new-recommend-co1" style="margin-top:0;">
+				<h1 style="height:33px;"></h1>
+				<table cellpadding="0" cellspacing="0" border="0" 
+
+height="90" width="770"
+				align="right">
+					<tr>
+					  <td align="right"><a 
+
+href="http://www.jyboo.com/" target="_blank"><img 
+
+src="http://www.59jiaju.com/themes/mall/jiaju/images/pt_01.jpg"
+								alt="" /></a></td>
+			    <td align="right">
+				  <img 
+
+src="http://www.59jiaju.com/themes/mall/jiaju/images/pt_02.jpg"
+								alt="" />		
+
+			</td>
+						<td align="right"><a 
+
+href="http://www.59jiaju.com/gx/kongtiao.html"><img 
+
+src="http://www.59jiaju.com/themes/mall/jiaju/images/pt_03.jpg"
+								alt="" /></a> </td>
+		  <td align="right">
+				<a href="http://www.59jiaju.com/gx/zhaopai.html"><img 
+
+src="http://www.59jiaju.com/themes/mall/jiaju/images/pt_04.jpg"
+								alt="" /></a> </td>
+					</tr>
+				</table>
+		  </div>
+		</div>
+    </div>
+</div>
+<!-- main end  -->
+
+<!-- new-cat start  -->
+<div class="new-cat-top" style="background: url(http://www.59jiaju.com/themes/mall/jiaju/styles/default/images/commodity/column.png) 0 0 no-repeat;">
+	<div class="new-zxcl">
+		<a target="_blank" href="http://www.59jiaju.com/index.php?app=search&cate_id=6421">石膏板</a>
+		<a target="_blank" href="http://www.59jiaju.com/index.php?app=search&cate_id=5508">瓷砖</a>
+		<a target="_blank" href="http://www.59jiaju.com/index.php?app=search&cate_id=6425">门窗</a>
+		<a target="_blank" href="http://www.59jiaju.com/index.php?app=search&cate_id=6466">格珊灯盘</a>
+		<a target="_blank" href="http://www.59jiaju.com/index.php?app=search&cate_id=6484">粘合剂</a>
+		<a target="_blank" href="http://www.59jiaju.com/index.php?app=search&cate_id=6488">卫浴五金</a>
+		<a target="_blank" href="http://www.59jiaju.com/index.php?app=search&cate_id=3704">复合天花</a>
+		<a target="_blank" href="http://www.59jiaju.com/index.php?app=search&cate_id=6432">龙骨</a>
+		<a target="_blank" href="http://www.59jiaju.com/index.php?app=search&cate_id=6442">铝型材</a>
+		<a class="new_more" target="_blank" href="http://www.59jiaju.com/index.php?app=search&cate_id=6417">>>更多</a>
+	</div>
+</div>
+<div class="new-cat">
+	<div class="new-cat-up">
+		<ul>
+			<li class="new-cat-li-left"><a 
+
+href="http://www.59jiaju.com/index.php?app=goods&id=9960"><a 
+
+href="http://www.59jiaju.com/index.php?app=goods&id=9960"><img 
+
+src="http://www.59jiaju.com/themes/mall/jiaju/images//zxcl_left01.jpg" alt="" 
+
+/></a></a></li>
+<li class="new-cat-li-mi">
+				<div class="new-cat-play">
+					<ul id="new-cat_play1">
+						<li>
+							<a 
+
+href="http://www.59jiaju.com/index.php?app=goods&id=10149">
+								<img src="http://www.59jiaju.com/themes/mall/jiaju/images/KE-818.jpg" alt="" />			
+
+				</a>						</li>
+
+						<li>
+							<a 
+
+href="http://www.59jiaju.com/index.php?app=goods&id=10154">
+								<img 
+
+src="http://www.59jiaju.com/themes/mall/jiaju/images/KE-071171.jpg" alt="" />		
+
+					</a>						
+
+</li>
+						<li>
+							<a 
+
+href="http://www.59jiaju.com/index.php?app=goods&id=10163">
+								<img 
+
+src="http://www.59jiaju.com/themes/mall/jiaju/images/KE-040.jpg" alt="" />		
+
+					</a>						
+
+</li>
+					</ul>
+					<div id="new_cat_but1">
+						<b></b>
+						<span>1</span>
+						<span>2</span>
+						<span>3</span>				
+
+	</div>
+				</div>
+		  </li>
+			<li class="new-cat-li-right">
+				<table cellpadding="0" cellspacing="0" border="0" 
+
+width="100%">
+					<tr>
+						<td>
+							<a 
+
+href="http://www.59jiaju.com/index.php?app=goods&id=10145">
+								<img 
+
+src="http://www.59jiaju.com/themes/mall/jiaju/images/zxcl_right01.jpg" alt="" />	
+
+						</a>					
+
+	</td>
+				  </tr>
+					<tr>
+						<td>
+							<a 
+
+href="http://www.59jiaju.com/index.php?app=goods&id=10144">
+								<img 
+
+src="http://www.59jiaju.com/themes/mall/jiaju/images/zxcl_right02.jpg" alt="" />	
+
+						</a>					
+
+	</td>
+				  </tr>
+				</table>
+			</li>
+		</ul>
+  </div>
+<div class="new-cat-down">
+		<ul>
+			<li>
+				<div class="new-cat-down-left"><a 
+
+href="http://www.59jiaju.com/index.php?app=goods&id=9940"><a 
+
+href="http://www.59jiaju.com/index.php?app=goods&id=9940"><img 
+
+src="http://www.59jiaju.com/themes/mall/jiaju/images/zxcl_left02.jpg" alt="" 
+
+/></a></a></div>
+<div class="new-cat-down-right">
+					<h1><a href="http://www.59jiaju.com/index.php?
+
+app=goods&id=9940">佛山港胜牌地毯</a></h1>
+					<div>
+                    
+                     <strong class="new-cat-down-right-unit">包铺价：</strong></br>
+                     <strong class="new-cat-down-right-price">yen  84 .00</strong>
+						<strong class="new-cat-down-right-
+
+unit">/㎡</strong>					</div>
+<span>市场价:100.80</span>
+			  </div>
+			</li>
+			<li>
+				<div class="new-cat-down-left"><a 
+
+href="http://www.59jiaju.com/index.php?app=goods&id=9958"><a 
+
+href="http://www.59jiaju.com/index.php?app=goods&id=9958"><img 
+
+src="http://www.59jiaju.com/themes/mall/jiaju/images/zxcl_up01.jpg" alt="" 
+
+/></a></a></div>
+				<div class="new-cat-down-right">
+					<h1><a href="http://www.59jiaju.com/index.php?
+
+app=goods&id=9958">凤凰牌5分厚地毯</a></h1>
+					<div>
+						 <strong class="new-cat-down-right-
+
+unit">包铺价：</strong></br>
+                        <strong class="new-cat-down-right-price">yen  65.00</strong>
+						<strong class="new-cat-down-right-
+
+unit">/㎡</strong>					</div>
+				  <span>市场价:78.00</span>
+				</div>
+			</li>
+			<li>
+				<div class="new-cat-down-left"><a 
+
+href="http://www.59jiaju.com/index.php?app=goods&id=9982"><a 
+
+href="http://www.59jiaju.com/index.php?app=goods&id=9982"><img 
+
+src="http://www.59jiaju.com/themes/mall/jiaju/images/zxcl_up02.jpg" alt="" 
+
+/></a></a></div>
+<div class="new-cat-down-right">
+					<h1><a href="http://www.59jiaju.com/index.php?
+
+app=goods&id=9982">二三极插座</a></h1>
+ <div>
+ <strong class="new-cat-down-right-unit">材料价：</strong></br>
+ <strong class="new-cat-down-right-price">yen 4.50</strong>
+						<strong class="new-cat-down-right-
+
+unit">/个</strong>					</div>
+		  <span>市场价:5.40</span>
+			  </div>
+		  </li>
+		</ul>
+  </div>
+</div>
+<!-- new-cat end  -->
+
+<!-- new-cat start  -->
+<div class="new-cat-top" style="background: url(http://www.59jiaju.com/themes/mall/jiaju/styles/default/images/commodity/column.png) 0 -26px no-repeat;">
+<div class="new-zxcl">
+                                        <a target="_blank" href="index.php?app=search&amp;cate_id=6421" >石膏板</a>
+		                              	<a target="_blank" href="index.php?app=search&amp;cate_id=6432" >龙骨</a>
+		                              	<a target="_blank" href="index.php?app=search&cate_id=3436" >软膜天花</a>
+		                              	<a target="_blank" href="index.php?app=search&amp;cate_id=6434" >硅钙板</a>
+		                              	<a target="_blank" href="index.php?app=search&amp;cate_id=6435" >石膏线</a>
+		                              	<a target="_blank" href="index.php?app=search&cate_id=3701" >吸音天花</a>
+		                                <a target="_blank" href="index.php?app=search&amp;cate_id=6439" >天板等板材</a>
+		                              	<a target="_blank" href="index.php?app=search&amp;cate_id=6440" >隔断</a>
+		                              	<a href="index.php?app=search&amp;cate_id=6441" >不锈钢</a>
+		                              	<a href="index.php?app=search&amp;cate_id=6442" >铝型材</a>
+		                              	<a href="index.php?app=search&amp;cate_id=6443" >钢板等型材</a>
+		<a class="new_more" target="_blank" href="http://www.59jiaju.com/index.php?app=search&cate_id=6420">>>更多</a>
+  </div>
+</div>
+
+<div class="new-cat">
+	<div class="new-cat-up">
+		<ul>
+			<li class="new-cat-li-left"><a 
+
+href="http://www.59jiaju.com/index.php?app=goods&id=9976"><a 
+
+href="http://www.59jiaju.com/index.php?app=goods&id=9976"><img 
+
+src="http://www.59jiaju.com/themes/mall/jiaju/images/gfds.jpg" alt="" /></a></a></li>
+<li class="new-cat-li-mi">
+				<div class="new-cat-play">
+					<ul id="new-cat_play2">
+						<li>
+							<a 
+
+href="http://www.59jiaju.com/index.php?app=goods&id=9954">
+								<img 
+
+src="http://www.59jiaju.com/themes/mall/jiaju/images/U7072P1187DT20130918172334.jpg" 
+
+alt="" />							</a>			
+
+			</li>
+						<li>
+							<a 
+
+href="http://www.59jiaju.com/index.php?app=goods&id=10000">
+								<img 
+
+src="http://www.59jiaju.com/themes/mall/jiaju/images/23171.jpg" alt="" />		
+
+					</a>						
+
+</li>
+						<li>
+							<a 
+
+href="http://www.59jiaju.com/index.php?app=goods&id=9999">
+								<img 
+
+src="http://www.59jiaju.com/themes/mall/jiaju/images/U7072P1187DT201310121728511.jpg" 
+
+alt="" />							</a>			
+
+			</li>
+					</ul>
+					<div id="new_cat_but2">
+						<b></b>
+						<span>1</span>
+						<span>2</span>
+						<span>3</span>				
+
+	</div>
+				</div>
+		  </li>
+			<li class="new-cat-li-right">
+				<table cellpadding="0" cellspacing="0" border="0" 
+
+width="100%">
+					<tr>
+						<td>
+							<a 
+
+href="http://www.59jiaju.com/index.php?app=goods&id=9919">
+							<img 
+
+src="http://www.59jiaju.com/themes/mall/jiaju/images/kjh1.jpg" alt="" />		
+
+					</a>						
+
+</td>
+				  </tr>
+					<tr>
+						<td>
+							<a 
+
+href="http://www.59jiaju.com/index.php?app=goods&id=9917">
+							<img 
+
+src="http://www.59jiaju.com/themes/mall/jiaju/images/fh1.jpg" alt="" />			
+
+				</a>						</td>
+				  </tr>
+				</table>
+			</li>
+		</ul>
+  </div>
+<div class="new-cat-down">
+		<ul>
+			<li>
+				<div class="new-cat-down-left">
+					<a href="http://www.59jiaju.com/index.php?
+
+app=goods&id=9998">
+						<img 
+
+src="http://www.59jiaju.com/themes/mall/jiaju/images/cv.jpg" alt="" />			
+
+		</a>				</div>
+		  <div class="new-cat-down-right">
+					<h1><a href="http://www.59jiaju.com/index.php?
+
+app=goods&id=9998">宽C型铝条扣板吊顶</a></h1>
+	  <div>
+                    <strong class="new-cat-down-right-unit">安装价：</strong></br>
+                    <strong class="new-cat-down-right-price">￥99.00</strong>
+						<strong class="new-cat-down-right-
+
+unit">/㎡</strong>					</div>
+      <span>市场价:118.80</span>
+			  </div>
+		  </li>
+			<li>
+				<div class="new-cat-down-left"><a 
+
+href="http://www.59jiaju.com/index.php?app=goods&id=10112"><a 
+
+href="http://www.59jiaju.com/index.php?app=goods&id=10112"><img 
+
+src="http://www.59jiaju.com/themes/mall/jiaju/images/fsd.jpg" alt="" /></a></a></div>
+<div class="new-cat-down-right">
+					<h1><a href="http://www.59jiaju.com/index.php?
+
+app=goods&id=10112">龙牌轻钢龙骨</a></h1>
+					<div>
+                    <strong class="new-cat-down-right-unit">安装价：
+
+</strong></br><strong class="new-cat-down-right-price">￥3.00</strong>
+						<strong class="new-cat-down-right-
+
+unit">/米</strong>					</div>
+<span>市场价:3.60</span>
+			  </div>
+			</li>
+			<li>
+				<div class="new-cat-down-left"><a 
+
+href="http://www.59jiaju.com/index.php?app=goods&id=9832"><a 
+
+href="http://www.59jiaju.com/index.php?app=goods&id=9978"><img 
+
+src="http://www.59jiaju.com/themes/mall/jiaju/images/gdh.jpg" alt="" /></a></a></div>
+<div class="new-cat-down-right">
+					<h1><a href="http://www.59jiaju.com/index.php?
+
+app=goods&id=9832">纸面石膏板平面吊顶</a></h1>
+					<div>
+						<strong class="new-cat-down-right-
+
+unit">安装价：</strong></br>
+                        <strong class="new-cat-down-right-price">
+
+￥101.00/</strong><strong class="new-cat-down-right-unit">/㎡</strong>			
+
+		</div>
+<span>市场价:121.20</span>
+			  </div>
+			</li>
+		</ul>
+  </div>
+</div>
+<!-- new-cat end  -->
+
+<!-- new-cat start  -->
+<div class="new-cat-top" style="background: url(http://www.59jiaju.com/themes/mall/jiaju/styles/default/images/commodity/column.png) 0 -52px no-repeat;">
+<div class="new-zxcl">
+        
+                                <a target="_blank" href="index.php?app=search&amp;cate_id=5508" >瓷砖</a>
+                              	<a target="_blank" href="index.php?app=search&amp;cate_id=6423" >地板</a>
+                              	<a target="_blank" href="index.php?app=search&amp;cate_id=6445" >瓷片</a>
+                              	<a target="_blank" href="index.php?app=search&amp;cate_id=6446" >马赛克</a>
+                              	<a target="_blank" href="index.php?app=search&amp;cate_id=6447" >瓦</a>
+                              	<a target="_blank" href="index.php?app=search&amp;cate_id=6448" >石材</a>
+                              	<a target="_blank" href="index.php?app=search&amp;cate_id=6449" >玻璃石膏</a>
+                              	<a target="_blank" href="index.php?app=search&amp;cate_id=6450" >地毯</a>
+                              	<a target="_blank" href="index.php?app=search&amp;cate_id=6451" >地毯辅材</a>
+                              	<a target="_blank" href="index.php?app=search&amp;cate_id=6452" >墙纸辅材</a>
+                              	<a target="_blank" href="index.php?app=search&amp;cate_id=6453" >PVC地板</a>
+                              	<a target="_blank" href="index.php?app=search&amp;cate_id=6652" >墙纸</a>
+        
+		<a class="new_more" target="_blank" href="http://www.59jiaju.com/index.php?app=search&cate_id=6422">>>更多</a>
+  </div>
+</div>
+<div class="new-cat">
+	<div class="new-cat-up">
+		<ul>
+			<li class="new-cat-li-left"><a href="http://www.59jiaju.com/index.php?app=goods&id=9956"><img 
+
+src="http://www.59jiaju.com/themes/mall/jiaju/images/tui04.jpg" alt="" /></a></a></li>
+<li class="new-cat-li-mi">
+				<div class="new-cat-play">
+					<ul id="new-cat_play3">
+						<li>
+							<a 
+
+href="http://www.59jiaju.com/index.php?app=goods&id=9980">
+								<img 
+
+src="http://www.59jiaju.com/themes/mall/jiaju/images/hftop01.jpg" alt="" />		
+
+					</a>						
+
+</li>
+				  <li>
+							<a 
+
+href="http://www.59jiaju.com/index.php?app=goods&id=9955">
+								<img 
+
+src="http://www.59jiaju.com/themes/mall/jiaju/images/hftop022.jpg" alt="" />		
+
+					</a>						
+
+</li>
+						<li>
+							<a 
+
+href="http://www.59jiaju.com/index.php?app=goods&id=9957">
+								<img 
+
+src="http://www.59jiaju.com/themes/mall/jiaju/images/hftop033.jpg" alt="" />		
+
+					</a>						
+
+</li>
+					</ul>
+					<div id="new_cat_but3">
+						<b></b>
+						<span>1</span>
+						<span>2</span>
+						<span>3</span>				
+
+	</div>
+				</div>
+		  </li>
+<li class="new-cat-li-right">
+				<table cellpadding="0" cellspacing="0" border="0" 
+
+width="100%">
+					<tr>
+						<td>
+							<a 
+
+href="http://www.59jiaju.com/index.php?app=goods&id=9979">
+								<img 
+
+src="http://www.59jiaju.com/themes/mall/jiaju/images/hfright01.jpg" alt="" />		
+
+					</a>						
+
+</td>
+				  </tr>
+					<tr>
+						<td>
+							<a 
+
+href="http://www.59jiaju.com/index.php?app=goods&id=9949">
+								<img 
+
+src="http://www.59jiaju.com/themes/mall/jiaju/images/hfright02.jpg" alt="" />		
+
+					</a>						
+
+</td>
+				  </tr>
+				</table>
+		  </li>
+		</ul>
+  </div>
+<div class="new-cat-down">
+		<ul>
+			<li>
+				<div class="new-cat-down-left"><a 
+
+href="http://www.59jiaju.com/index.php?app=goods&id=9950"><a 
+
+href="http://www.59jiaju.com/index.php?app=goods&id=9950"><img 
+
+src="http://www.59jiaju.com/themes/mall/jiaju/images/hfleft02.jpg" alt="" 
+
+/></a></a></div>
+<div class="new-cat-down-right">
+					<h1><a href="http://www.59jiaju.com/index.php?
+
+app=goods&id=9950">瓷砖地脚线</a></h1>
+					<div>
+                      <strong class="new-cat-down-right-unit">安装价：</strong></br>
+					  <strong class="new-cat-down-right-price">
+
+￥19.00</strong>
+                      
+<strong class="new-cat-down-right-unit">/米</strong>					
+
+</div>
+<span>市场价:22.80</span>
+			  </div>
+			</li>
+			<li>
+				<div class="new-cat-down-left">
+					<a href="http://www.59jiaju.com/index.php?
+
+app=goods&id=9951">
+						<img 
+
+src="http://www.59jiaju.com/themes/mall/jiaju/images/hfup01.jpg" alt="" />		
+
+			</a>				</div>
+		  <div class="new-cat-down-right">
+					<h1><a href="http://www.59jiaju.com/index.php?
+
+app=goods&id=9951">拉丝不锈钢地脚线</a></h1>
+					<div>
+                  <strong class="new-cat-down-right-unit">安装价：</strong></br>
+                        <strong class="new-cat-down-right-price">￥39.00</strong>
+						<strong class="new-cat-down-right-
+
+unit">/米</strong>					</div>
+<span>市场价:46.80</span>
+			  </div>
+			</li>
+			<li>
+				<div class="new-cat-down-left">
+					<a href="http://www.59jiaju.com/index.php?
+
+app=goods&id=9952">
+						<img 
+
+src="http://www.59jiaju.com/themes/mall/jiaju/images/hfup02.jpg" alt="" />		
+
+			</a>				</div>
+		  <div class="new-cat-down-right">
+					<h1><a href="http://www.59jiaju.com/index.php?
+
+app=goods&id=9952">复合木地脚线</a></h1>
+					<div>
+					<strong class="new-cat-down-right-unit">安装价
+
+：</strong></br>
+                        <strong class="new-cat-down-right-price">￥17.00</strong>
+						<strong class="new-cat-down-right-
+
+unit">/米</strong>					</div>
+	<span>市场价:20.40</span>
+			  </div>
+			</li>
+		</ul>
+  </div>
+</div>
+<!-- new-cat end  -->
+
+<!-- new-cat start  -->
+<div class="new-cat-top" style="background: url(http://www.59jiaju.com/themes/mall/jiaju/styles/default/images/commodity/column.png) 0 -78px no-repeat;">
+<div class="new-zxcl">
+                                                 
+                              	<a target="_blank" href="index.php?app=search&amp;cate_id=6425" >门窗</a>
+                              	<a target="_blank" href="index.php?app=search&amp;cate_id=6454" >锁</a>
+                              	<a target="_blank" href="index.php?app=search&amp;cate_id=6455" >拉手</a>
+                              	<a target="_blank" href="index.php?app=search&amp;cate_id=6456" >磁吸</a>
+                              	<a target="_blank" href="index.php?app=search&amp;cate_id=6457" >铝合金门窗</a>
+                              	<a target="_blank" href="index.php?app=search&amp;cate_id=6458" >门控五金</a>
+                              	<a target="_blank" href="index.php?app=search&amp;cate_id=6459" >五金配件</a>
+                              	<a target="_blank" href="index.php?app=search&amp;cate_id=6460" >五金工具</a>
+                              	<a target="_blank" href="index.php?app=search&amp;cate_id=6461" >厨饰五金</a>
+                              	<a target="_blank" href="index.php?app=search&amp;cate_id=6462" >家居布艺</a>
+                                <a target="_blank" href="http://www.59jiaju.com/index.php?app=search&cate_id=6431" >卫浴洁具</a>
+		
+		<a class="new_more" target="_blank" href="http://www.59jiaju.com/index.php?app=search&cate_id=6424">>>更多</a>
+  </div>
+
+</div>
+<div class="new-cat">
+	<div class="new-cat-up">
+		<ul>
+			<li class="new-cat-li-left">
+				<a href="http://www.59jiaju.com/index.php?app=goods&id=9972">
+					<img src="http://www.59jiaju.com/themes/mall/jiaju/images/sfqj-left01.jpg" alt="" />		
+
+		</a>			</li>
+	  <li class="new-cat-li-mi">
+				<div class="new-cat-play">
+					<ul id="new-cat_play4">
+						<li>
+							<a 
+
+href="http://www.59jiaju.com/index.php?app=goods&id=9970">
+								<img 
+
+src="http://www.59jiaju.com/themes/mall/jiaju/images/ssrs_top011.jpg" alt="" />
+							</a>
+						</li>
+						<li>
+							<a 
+
+href="http://www.59jiaju.com/index.php?app=goods&id=9981">
+								<img 
+
+src="http://www.59jiaju.com/themes/mall/jiaju/images/ssrs_top02.jpg" alt="" />
+							</a>
+						</li>
+						<li>
+							<a 
+
+href="http://www.59jiaju.com/index.php?app=goods&id=9975">
+								<img 
+
+src="http://www.59jiaju.com/themes/mall/jiaju/images/ssrs_top03.jpg" alt="" />
+							</a>
+						</li>
+					</ul>
+					<div id="new_cat_but4">
+						<b></b>
+						<span>1</span>
+						<span>2</span>
+						<span>3</span>
+					</div>
+				</div>
+		  </li>
+			<li class="new-cat-li-right">
+				<table cellpadding="0" cellspacing="0" border="0" 
+
+width="100%">
+					<tr>
+						<td>
+							<a 
+
+href="http://www.59jiaju.com/index.php?app=goods&id=9973">
+								<img 
+
+src="http://www.59jiaju.com/themes/mall/jiaju/images/zxcl_right011.jpg" alt="" />	
+
+						</a>					
+
+	</td>
+				  </tr>
+					<tr>
+						<td>
+							<a 
+
+href="http://www.59jiaju.com/index.php?app=goods&id=9961">
+								<img 
+
+src="http://www.59jiaju.com/themes/mall/jiaju/images/ssrs-right022.jpg" alt="" />	
+
+						</a>					
+
+	</td>
+				  </tr>
+				</table>
+			</li>
+		</ul>
+	</div>
+	<div class="new-cat-down">
+		<ul>
+			<li>
+				<div class="new-cat-down-left"><a 
+
+href="http://www.59jiaju.com/index.php?app=goods&id=5930"><a 
+
+href="http://www.59jiaju.com/index.php?app=goods&id=5930"><img 
+
+src="http://www.59jiaju.com/themes/mall/jiaju/images/ssrs_left02.jpg" alt="" 
+
+/></a></a></div>
+<div class="new-cat-down-right">
+					<h1><a href="http://www.59jiaju.com/index.php?
+
+app=goods&id=5930">小便斗+感应器</a></h1>
+					<div>
+                    <strong class="new-cat-down-right-unit">安装价：
+
+</strong></br><strong class="new-cat-down-right-price">yen 834.00</strong>
+						<strong class="new-cat-down-right-
+
+unit">/套</strong>					</div>
+<span>市场价:1000.80</span>
+			  </div>
+			</li>
+			<li>
+				<div class="new-cat-down-left"><a 
+
+href="http://www.59jiaju.com/index.php?app=goods&id=7608"><a 
+
+href="http://www.59jiaju.com/index.php?app=goods&id=7608"><a 
+
+href="http://www.59jiaju.com/index.php?app=goods&id=7608"></a><a 
+
+href="http://www.59jiaju.com/index.php?app=goods&id=9974"><img 
+
+src="http://www.59jiaju.com/themes/mall/jiaju/images/ssrs_up01.jpg" alt="" 
+
+/></a></a></a></div>
+<div class="new-cat-down-right">
+					<h1><a href="http://www.59jiaju.com/index.php?
+
+app=goods&id=7608">热镀锌线管</br>
+（25*1.2mm）</a></h1>
+<div>
+                    <strong class="new-cat-down-right-unit">材料价：
+
+</strong></br><strong class="new-cat-down-right-price">yen 3.00</strong>
+						<strong class="new-cat-down-right-
+
+unit">/米</strong>					</div>
+                    <span>市场价:3.60</span>
+			  </div>
+		  </li>
+			<li>
+				<div class="new-cat-down-left"><a 
+
+href="http://www.59jiaju.com/index.php?app=goods&id=4342"><a 
+
+href="http://www.59jiaju.com/index.php?app=goods&id=9959"><img 
+
+src="http://www.59jiaju.com/themes/mall/jiaju/images/ssrs_up02.jpg" alt="" 
+
+/></a></a></div>
+<div class="new-cat-down-right">
+					<h1><a href="http://www.59jiaju.com/index.php?
+
+app=goods&id=4342">12mm钢化玻璃地弹门</a></h1>
+					<div>
+					<strong class="new-cat-down-right-unit">安装价
+
+：</strong></br>
+                        <strong class="new-cat-down-right-price">yen944.00</strong>
+						<strong class="new-cat-down-right-
+
+unit">/扇</strong>					</div>
+<span>市场价:1132.80</span>
+			  </div>
+			</li>
+		</ul>
+	</div>
+</div>
+<!-- new-cat end  -->
+
+<!-- new-cat start  -->
+<div class="new-cat-top" style="background: url(http://www.59jiaju.com/themes/mall/jiaju/styles/default/images/commodity/column.png) 0 -104px no-repeat;">
+<div class="new-zxcl">
+        
+        	                      
+                                <a target="_blank" href="index.php?app=search&amp;cate_id=6427" >灯盘</a>
+                              	<a target="_blank" href="index.php?app=search&amp;cate_id=6463" >筒灯</a>
+                              	<a target="_blank" href="index.php?app=search&amp;cate_id=6464" >射灯</a>
+                              	<a target="_blank" href="index.php?app=search&amp;cate_id=6465" >T5支架</a>
+                              	<a target="_blank" href="index.php?app=search&amp;cate_id=6466" >格珊灯盘</a>
+                              	<a target="_blank" href="index.php?app=search&amp;cate_id=6467" >吊灯罩</a>
+                              	<a target="_blank" href="index.php?app=search&amp;cate_id=6468" >台灯</a>
+                              	<a target="_blank" href="index.php?app=search&amp;cate_id=6469" >床头灯</a>
+                              	<a target="_blank" href="index.php?app=search&amp;cate_id=6470" >工艺灯</a>
+                              	<a target="_blank" href="index.php?app=search&amp;cate_id=6471" >LED灯</a>
+                              	<a target="_blank" href="index.php?app=search&amp;cate_id=6472" >监控设备</a>
+		<a class="new_more" target="_blank" href="http://www.59jiaju.com/index.php?app=search&cate_id=6426">>>更多</a>
+  </div>
+</div>
+<div class="new-cat">
+  <div class="new-cat-up">
+    <ul>
+      <li class="new-cat-li-left"><a href="http://www.59jiaju.com/index.php?
+
+app=goods&id=9987"></a><a href="http://www.59jiaju.com/index.php?
+
+app=goods&id=9987"><img src="http://www.59jiaju.com/themes/mall/jiaju/images/sfqj-
+
+left0111.jpg" alt="" /></a></li>
+      <li class="new-cat-li-mi">
+        <div class="new-cat-play">
+          <ul id="new-cat_play5">
+            <li> <a href="http://www.59jiaju.com/index.php?app=goods&id=9969"> <img 
+
+src="http://www.59jiaju.com/themes/mall/jiaju/images/sfqj_top01.jpg" alt="" /> </a> 
+
+</li>
+            <li> <a href="http://www.59jiaju.com/index.php?app=goods&id=9968"> <img 
+
+src="http://www.59jiaju.com/themes/mall/jiaju/images/sfqj_top0222.jpg" alt="" /> </a> 
+
+</li>
+            <li> <a href="http://www.59jiaju.com/index.php?app=goods&id=9967"> <img 
+
+src="http://www.59jiaju.com/themes/mall/jiaju/images/sfqj_top033.jpg" alt="" /> </a> 
+
+</li>
+          </ul>
+          <div id="new_cat_but5"> <b></b> <span>1</span> <span>2</span> <span>3</span> 
+
+</div>
+        </div>
+      </li>
+      <li class="new-cat-li-right">
+        <table cellpadding="0" cellspacing="0" border="0" width="100%">
+          <tr>
+            <td><a href="http://www.59jiaju.com/index.php?app=goods&id=9989"> <img 
+
+src="http://www.59jiaju.com/themes/mall/jiaju/images/sfqj-right01.jpg" alt="" /> </a> 
+
+</td>
+          </tr>
+          <tr>
+            <td><a href="http://www.59jiaju.com/index.php?app=goods&id=9966"> <img 
+
+src="http://www.59jiaju.com/themes/mall/jiaju/images/ssrs-right011.jpg" alt="" /> </a> 
+
+</td>
+          </tr>
+        </table>
+      </li>
+    </ul>
+  </div>
+  <div class="new-cat-down">
+    <ul>
+      <li>
+        <div class="new-cat-down-left"><a href="http://www.59jiaju.com/index.php?
+
+app=goods&id=10060"><a href="http://www.59jiaju.com/index.php?app=goods&id=10060"><img 
+
+src="http://www.59jiaju.com/themes/mall/jiaju/images/sfqj_left0222.jpg" alt="" 
+
+/></a></a></div>
+        <div class="new-cat-down-right">
+          <h1><a href="http://www.59jiaju.com/index.php?app=goods&id=10060">TCL系列插座
+
+</a></h1>
+          <div>
+          <strong class="new-cat-down-right-unit">材料价：</strong></br>
+           <strong class="new-cat-down-right-price">yen 16</strong> <strong class="new-
+
+cat-down-right-unit">/个</strong> </div>
+          <span>市场价:19.20</span> </div>
+      </li>
+      <li>
+        <div class="new-cat-down-left"> <a href="http://www.59jiaju.com/index.php?
+
+app=goods&id=9965"> <img 
+
+src="http://www.59jiaju.com/themes/mall/jiaju/images/sfqj_up01.jpg" alt="" /> </a> 
+
+</div>
+        <div class="new-cat-down-right">
+          <h1><a href="http://www.59jiaju.com/index.php?app=goods&id=9965">环市珠江牌照
+
+明电线</br>
+          电缆全线正品
+</a></h1>
+          <div> 
+          <strong class="new-cat-down-right-unit">材料价：</strong></br>
+          <strong class="new-cat-down-right-price">yen 2.00</strong>.<strong class="new-
+
+cat-down-right-unit">/米</strong> </div>
+        <span>市场价:2.40</span> </div>
+      </li>
+      <li>
+        <div class="new-cat-down-left"><a href="http://www.59jiaju.com/index.php?
+
+app=goods&id=10023"><a href="http://www.59jiaju.com/index.php?app=goods&id=10023"><img 
+
+src="http://www.59jiaju.com/themes/mall/jiaju/images/zxcl_up02.jpg" alt="" 
+
+/></a></a></div>
+        <div class="new-cat-down-right">
+          <h1><a href="http://www.59jiaju.com/index.php?app=goods&id=10023">C-3系列插座
+
+</a><a href=""></a></h1>
+          <div> 
+          <strong class="new-cat-down-right-unit">材料价：</strong></br>
+          <strong class="new-cat-down-right-price"> yen 5.70</strong> <strong 
+
+class="new-cat-down-right-unit">/个</strong> </div>
+          <span>市场价:6.80</span> </div>
+      </li>
+    </ul>
+  </div>
+</div>
+<!-- new-cat end  -->
+
+<!-- new-cat start  -->
+<div class="new-cat-top" style="background: url(http://www.59jiaju.com/themes/mall/jiaju/styles/default/images/commodity/column.png) 0 -130px no-repeat;">
+<div class="new-zxcl">
+	<a target="_blank" href="http://www.59jiaju.com/index.php?app=search&cate_id=3206" >班台类</a>
+	<a target="_blank" href="http://www.59jiaju.com/index.php?app=search&cate_id=3207" >会议台类</a>
+	<a target="_blank" href="http://www.59jiaju.com/index.php?app=search&cate_id=3212" >高间隔类</a>
+	<a target="_blank" href="http://www.59jiaju.com/index.php?app=search&cate_id=3208" >椅类</a>
+	<a target="_blank" href="http://www.59jiaju.com/index.php?app=search&cate_id=3582" >屏风卡位</a>
+	<a target="_blank" href="http://www.59jiaju.com/index.php?app=search&cate_id=3209" >沙发类</a>
+	<a target="_blank" href="http://www.59jiaju.com/index.php?app=search&cate_id=3210" >茶几类</a>
+	<a target="_blank" href="http://www.59jiaju.com/index.php?app=search&cate_id=3211" >柜类</a>
+	<a target="_blank" href="http://www.59jiaju.com/index.php?app=search&cate_id=3213" >前台类</a>
+	<a target="_blank" href="http://www.59jiaju.com/index.php?app=search&cate_id=6937" >桌子类</a>
+	<a target="_blank" href="http://www.59jiaju.com/index.php?app=search&cate_id=3585" >办公配件</a>
+    <a target="_blank" href="http://www.59jiaju.com/index.php?app=search&cate_id=3214" >其他类</a>
+	<a class="new_more" target="_blank" href="http://www.59jiaju.com/index.php?app=search&cate_id=1385">>>更多</a>
+  </div>
+</div>
+<div class="new-cat">
+	<div class="new-cat-up">
+		<ul>
+			<li class="new-cat-li-left">
+				<a href="http://www.59jiaju.com/index.php?
+
+app=goods&id=9995">
+					<img 
+
+src="http://www.59jiaju.com/themes/mall/jiaju/images/hfleft0122.jpg" alt="" />
+				</a>		
+			</li>
+			<li class="new-cat-li-mi">
+				<div class="new-cat-play">
+					<ul id="new-cat_play6">
+						<li>
+							<a 
+
+href="http://www.59jiaju.com/index.php?app=goods&id=9992">
+								<img 
+
+src="http://www.59jiaju.com/themes/mall/jiaju/images/jjyp_top01.jpg" alt="" />		
+
+					</a>						
+
+</li>
+				  <li>
+							<a 
+
+href="http://www.59jiaju.com/index.php?app=goods&id=10007">
+								<img 
+
+src="http://www.59jiaju.com/themes/mall/jiaju/images/jjyp_top02.jpg" alt="" />
+							</a>
+					  </li>
+						<li>
+							<a 
+
+href="http://www.59jiaju.com/index.php?app=goods&id=9997">
+								<img 
+
+src="http://www.59jiaju.com/themes/mall/jiaju/images/jjyp_top03.jpg" alt="" />
+							</a>
+						</li>
+					</ul>
+					<div id="new_cat_but6">
+						<b></b>
+						<span>1</span>
+						<span>2</span>
+						<span>3</span>
+					</div>
+				</div>
+
+			</li>
+			<li class="new-cat-li-right">
+				<table cellpadding="0" cellspacing="0" border="0" 
+
+width="100%">
+					<tr>
+						<td>
+							<a 
+
+href="http://www.59jiaju.com/index.php?app=goods&id=9993">
+								<img 
+
+src="http://www.59jiaju.com/themes/mall/jiaju/images/jjyp_right01.jpg" alt="" />
+							</a>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<a 
+
+href="http://www.59jiaju.com/index.php?app=goods&id=9994">
+								<img 
+
+src="http://www.59jiaju.com/themes/mall/jiaju/images/jjyp_right02.jpg" alt="" />
+							</a>
+						</td>
+					</tr>
+				</table>
+			</li>
+		</ul>
+	</div>
+	<div class="new-cat-down">
+		<ul>
+			<li>
+				<div class="new-cat-down-left">
+					<a href="http://www.59jiaju.com/index.php?
+
+app=goods&id=9963">
+						<img 
+
+src="http://www.59jiaju.com/themes/mall/jiaju/images/tui011.jpg" alt="" />
+					</a>
+				</div>
+				<div class="new-cat-down-right">
+					<h1><a href="http://www.59jiaju.com/index.php?
+
+app=goods&id=9963">办公椅</a></h1>
+					<div></br>
+						<strong class="new-cat-down-right-
+
+price">yen72.00</strong>
+						<strong class="new-cat-down-right-
+
+unit">/张</strong>					</div>
+				  <span>市场价:86.40</span>
+				</div>
+			</li>
+			<li>
+				<div class="new-cat-down-left">
+					<a href="http://www.59jiaju.com/index.php?
+
+app=goods&id=9964">
+						<img 
+
+src="http://www.59jiaju.com/themes/mall/jiaju/images/tui022.jpg" alt="" />
+					</a>
+				</div>
+				<div class="new-cat-down-right">
+					<h1><a href="http://www.59jiaju.com/index.php?
+
+app=goods&id=9964">培训椅</a></h1>
+					<div><strong class="new-cat-down-right-price">yen
+
+90.00</strong>
+						<strong class="new-cat-down-right-
+
+unit">/张</strong>					</div>
+				  <span>市场价:108.00</span>
+				</div>
+			</li>
+			<li>
+				<div class="new-cat-down-left"><a 
+
+href="http://www.59jiaju.com/index.php?app=goods&id=9962"><a 
+
+href="http://www.59jiaju.com/index.php?app=goods&id=9962"><img 
+
+src="http://www.59jiaju.com/themes/mall/jiaju/images/tui033.jpg" alt="" 
+
+/></a></a></div>
+  <div class="new-cat-down-right">
+					<h1><a href="http://www.59jiaju.com/index.php?
+
+app=goods&id=9962">课桌</a></h1>
+					<div><strong class="new-cat-down-right-price">yen 
+
+211.00</strong>
+						<strong class="new-cat-down-right-
+
+unit">/张</strong>					</div>
+				  <span>市场价:253.20</span>
+			  </div>
+			</li>
+		</ul>
+	</div>
+</div>
+<!-- new-cat end  -->
+
+
+<!-- footer start  -->
+<div id="footer" class="center auto mt10 w-full">
+
+   <div class="foot-service w auto clearfix">
+
+      <dl>
+
+         <dt class="fts-1"></dt>
+
+         <dd><a href="http://www.59jiaju.com/index.php?
+
+app=article&act=view&article_id=28">七天无理由退货</a></dd>
+
+         <dd><a href="http://www.59jiaju.com/index.php?
+
+app=article&act=view&article_id=13">体贴的售后服务</a></dd>
+      </dl>
+
+<dl>
+
+         <dt class="fts-2"></dt>
+
+         <dd><a href="http://www.59jiaju.com/index.php?
+
+app=article&act=view&article_id=15">购物流程</a></dd>
+
+      <dd><a href="http://www.59jiaju.com/index.php?
+
+app=article&act=view&article_id=12">商品退货保障</a></dd>
+     </dl>
+
+   <dl>
+
+         <dt class="fts-3"></dt>
+
+         <dd>客服专线：400-1012-668</dd>
+
+         <dd>厂家入驻：020-86295019</dd>
+
+     </dl>
+
+
+      <dl>
+
+         <dt class="fts-4"></dt>
+
+         <dd><a href="http://www.59jiaju.com/index.php?
+
+app=article&act=view&article_id=11">顾客必读</a></dd>
+
+         <dd><a href="http://www.59jiaju.com/index.php?
+
+app=article&act=view&article_id=14">免责条款</a>
+        
+         </dd>
+      </dl>
+
+  </div>
+
+<div class="foot-nav w-full auto">
+  <p><a href="http://www.59jiaju.com/index.php?app=article&act=view&article_id=28" 
+
+target="_blank">关于本站</a>
+	    
+	      
+	    
+	   
+	    
+	   
+	   
+</div>
+<div class="foot-group">
+
+	<a href="#" target="_blank">亚马逊商城</a> | <a href="www.jd.com" 
+
+target="_blank">京东商城</a> | <a href="www.yihaodian.com" target="_blank">一号店</a> |
+
+	<a href="http://www.hao123.com/" target="_blank">好123导航</a> |
+
+	<a href="http://www.jyboo.com/" target="_blank">经艺装饰</a> |
+
+	<a href="http://www.taobao.com/" target="_blank">淘宝商城</a> |
+
+	<a href="http://www.tmall.com/" target="_blank">天猫商城</a> |
+
+    <a href="http://china.alibaba.com/" target="_blank">阿里巴巴</a> |
+
+	<a href="http://www.59jiaju.com/xiduo/" target="_blank">喜多装饰</a> |
+    
+    <a href="http://www.59jiaju.com/gs/index.php?
+
+m=content&c=index&a=show&catid=13&id=9" target="_blank">超凡装饰</a> |
+
+	<a href="http://www.dangdang.com/" target="_blank">当当网</a>   
+</div>
+
+  <div class="copyright"><a 
+
+href='http://netadreg.gzaic.gov.cn/ntmm/WebSear/WebLogoPub.aspx?
+
+logo=440115115022013051700026'><img alt='' 
+
+src='http://netadreg.gzaic.gov.cn/ntmm/default/images/logo_down.jpg' 
+
+style='width:19px;height: 20px' /></a> &nbsp;Copyright &copy; 2010-2014 我购家居商城 版
+
+权所有 <a href="http://www.miitbeian.gov.cn">粤ICP备09031901号-1</a> 广州市我购家居用品
+
+有限公司</div>
+
+</div>
+<!-- footer end  -->
+
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_5473730'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s23.cnzz.com/stat.php%3Fid%3D5473730%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+</body>
+</html>

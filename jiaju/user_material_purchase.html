@@ -10,6 +10,7 @@
 <link rel="stylesheet" type="text/css" href="/themes/mall/jiaju/css/api.css"/>
 <link type="text/css" href="/themes/mall/jiaju/styles/default/css/center.css" rel="stylesheet"  />
 <link rel="stylesheet" type="text/css" href="/themes/mall/jiaju/css/aui.1.0.css"/>
+<link rel="stylesheet" href="themes/mall/jiaju/styles/css/tel_list.css">
 <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
 <!-- <script type="text/javascript" src="www.wgc2013.com/themes/mall/jiaju/js/jquery-1.8.3.min.js"></script> -->
 <script type="text/javascript">
@@ -56,6 +57,21 @@ body{background:url('') no-repeat center top }
 <script>
 
 </script>
+<style>
+.meterial_buy_detail table tbody td{
+	border-bottom: 1px solid #000;
+	padding: 15px 0;
+}
+.meterial_buy_detail table thead tr{
+	border-bottom: 1px solid #000;
+}
+.meterial_buy_detail table thead th{
+	padding: 10px 0px;
+}
+.meterial_buy_detail table thead th span{
+	border: none;
+}
+</style>
 </head>
 <body>
 {include file=header.html}
@@ -80,16 +96,17 @@ body{background:url('') no-repeat center top }
  			<div class="budget_detail" style="position: relative;left: -16%;width: 115%;">
 			<div style="overflow: hidden;margin-top: 10px;">
 			<!-- 搜索框 -->
-			<div style="overflow: hidden;margin-top: 10px;">
+<!-- 			<div style="overflow: hidden;margin-top: 10px;">
 			<input type="text" style="width: 265px;height: 30px;float: left;border: 1px solid #808080;border-radius: 0;" />
 
 			<div style="float: left;">
 				<a href="#" style="display: inline-block;width: 75px;height: 30px;line-height: 30px;font-size: 16px;color: #f3552d;border: 1px solid #808080; background-color: #facd89;">搜索</a>
-				<!-- <a class="share_dinge" href="javascript:;" style="display: inline-block;width: 60px;height: 30px;line-height: 30px;font-size: 16px;color: #2d2a2a;font-weight: bold;letter-spacing: 4px; background-color: #facd89;border-radius: 5px;position: relative;left: 385px;text-decoration: none;">分享</a> -->
+				<a class="share_dinge" href="javascript:;" style="display: inline-block;width: 60px;height: 30px;line-height: 30px;font-size: 16px;color: #2d2a2a;font-weight: bold;letter-spacing: 4px; background-color: #facd89;border-radius: 5px;position: relative;left: 385px;text-decoration: none;">分享</a>
 			</div>
-			</div>
+			</div> -->
 				<!-- 预算表格 -->
-				<div class="budget_table">
+				<div class="budget_table" style="min-height: 480px;">
+				<form action="http://wgcapp.wgc2013.com/jingyi.php/Home/Material/addmaterials" method="post" id="myform">	
 				<table style="width: 100%;" border="0" cellspacing="0" cellpadding="0" id="budget_table">
 					<tbody>
 						<tr class="thead" style="background-color: #eee;">
@@ -104,7 +121,7 @@ body{background:url('') no-repeat center top }
 							<th style="width: 6%"><span>合计</span></th>
 							<th style="width: 18%"><span style="border-right:  2px solid #bcbcbc">备注</span></th>
 						</tr>
-						<tr class="tmain">
+						<!-- <tr class="tmain">
 							<td style="width: 5%"><span>1</span></td>
 							<td style="width: 16%"><span>水泥</span></td>
 							<td style="width: 8%"><span>石井</span></td>
@@ -115,14 +132,14 @@ body{background:url('') no-repeat center top }
 							<td style="width: 6%"><span>5000</span></td>
 							<td style="width: 6%"><span>500000</span></td>
 							<td style="width: 18%;border-right:2px solid #bcbcbc;"><span>1捆=10根，1根=3米</span></td>
-						</tr>
+						</tr> -->
 					</tbody>
 				</table>
 				<div class="gongchen_total" style="width: 100%;height: 30px;border:  2px solid #979898;border-top: none;">
 						<span class="add_table" style="width: 5.4%;border-left: none;border-right:  2px solid #979898;font-size: 20px;cursor: pointer;">+</span>
 						<span style="width: 6.6%;margin-left: 61.6%;">总计：</span>
-						<span style="width: 6.6%;"><textarea style="height: 100%;border: none;text-align: center;"></textarea></span>
-						<span id="all_total" style="width: 16%;">优惠价:</span>
+						<span style="width: 6.6%;"><textarea id="totals" style="height: 100%;border: none;text-align: center;" name="total" readonly="readonly"></textarea></span>
+						<span id="all_total" style="width: 18%;">优惠价:<textarea style="width: 110px; height: 20px;border: none;text-align: center;" name="discount"></textarea></span>
 					</div>
 					<!-- 材料申购单位 -->
 					<div class="meterial_buy">
@@ -138,6 +155,15 @@ body{background:url('') no-repeat center top }
 									<th style="width: 18%"><span style="border-right:  2px solid #bcbcbc">备注</span></th>
 								</tr>
 								<tr class="tmain">
+									<td style="width: 29%"><textarea name="office_name"></textarea></td>
+									<td style="width: 20%"><textarea name="worker_address" style="overflow: visible;height: 100%;line-height: 20px;"></textarea></td>
+									<td style="width: 12%"><textarea name="dateofpurchase"></textarea><input type="hidden" id="userid" name="uid" value="<?php echo $_SESSION["user_info"]["user_id"];?>"/></td>
+									
+									<td style="width: 6%"><textarea name="tel" style="overflow: visible;height: 100%;line-height: 20px;"></textarea></td>
+									<td style="width: 6%"><textarea name="sgperson"></textarea></td>
+									<td style="width: 18%;border-right:  2px solid #bcbcbc"><textarea name="ps" style="overflow: visible;height: 100%;line-height: 20px;"></textarea></td>
+								</tr>
+<!-- 								<tr class="tmain">
 									<td style="width: 29%"><textarea></textarea></td>
 									<td style="width: 20%"><textarea style="overflow: visible;height: 100%;line-height: 20px;"></textarea></td>
 									<td style="width: 12%"><textarea></textarea></td>
@@ -145,30 +171,61 @@ body{background:url('') no-repeat center top }
 									<td style="width: 6%"><textarea style="overflow: visible;height: 100%;line-height: 20px;"></textarea></td>
 									<td style="width: 6%"><textarea></textarea></td>
 									<td style="width: 18%;border-right:  2px solid #bcbcbc"><textarea style="overflow: visible;height: 100%;line-height: 20px;"></textarea></td>
-								</tr>
-								<tr class="tmain">
-									<td style="width: 29%"><textarea></textarea></td>
-									<td style="width: 20%"><textarea style="overflow: visible;height: 100%;line-height: 20px;"></textarea></td>
-									<td style="width: 12%"><textarea></textarea></td>
-									
-									<td style="width: 6%"><textarea style="overflow: visible;height: 100%;line-height: 20px;"></textarea></td>
-									<td style="width: 6%"><textarea></textarea></td>
-									<td style="width: 18%;border-right:  2px solid #bcbcbc"><textarea style="overflow: visible;height: 100%;line-height: 20px;"></textarea></td>
-								</tr>
+								</tr> -->
 							</tbody>
 						</table>
 					</div>
 					<div class="send_people" style="text-align: center;margin-top: 50px;">
 						<!-- <a class="sender" href="javascript:;" style="width: 100px;height: 40px;font-size: 15px;font-weight: bold;background-color: #eb6100;border-radius: 5px;color: #fff;display: inline-block;line-height: 40px;text-align: center;margin: 0 30px;">接收人</a> -->
-						<a class="share_sure" href="javascript:;" style="width: 100px;height: 40px;font-size: 15px;font-weight: bold;background-color: #eb6100;border-radius: 5px;color: #fff;display: inline-block;line-height: 40px;text-align: center;margin: 0 30px;">确认分享</a>
+						<a class="share_btn" href="javascript:;" style="width: 100px;height: 40px;font-size: 15px;font-weight: bold;background-color: #eb6100;border-radius: 5px;color: #fff;display: inline-block;line-height: 40px;text-align: center;margin: 0 30px;" onclick="showUserList()">选择分享人</a>
 					</div>
+			<!-- 隐藏域 -->
+					<input type="hidden" id="checker" name="power"/>
+
+					</form>
 				</div>
+			<!-- 分享弹窗 -->
+					<div class="confirm" style="display: none;">
+<!-- 						<form class="confirm_" action="post" method="">
+							<div class="share_text">
+								<span>分享内容</span><span class="colon">:</span>
+								<textarea name="" id="" cols="30" rows="10" placeholder="内容获取"></textarea>
+							</div>
+							<div class="share_sendee">
+								<span style="letter-spacing: 5px;">接收人</span><span class="colon">:</span>
+								<input type="text" placeholder="选择接收人">
+							</div>
+							<input class="share_btn" type="button" value="分享确认">
+						</form> -->
+							<div class="tel_con" style="display: block;display: block;width: 50%;margin: 10px auto;background-color: #fff;padding-top: 10px;padding-bottom: 10px;height: 435px;box-shadow: 5px 5px 5px;position:relative;">
+							<div class="quxiao" style="position: absolute;font-size: 20px;top: -8px;left: 460px;background-color: #9e9e9e;border-radius: 10px;width: 20px;height: 20px;line-height: 20px;">×</div>
+							<div class="confirm_head" style="margin-bottom: 10px;text-align: center;">
+								<input type="text" id="search_text" placeholder="请输入搜索的联系人" style="width:40%;height:30px;"/>
+								<input class="confirm_btn" type="button" onclick="UserSearch()" value="搜索" style="width: 40px;margin-top: -15px;height: 20px;"/>
+							</div>
+							<div style="overflow-y: scroll;height:300px;">
+							<div class="getUserList" style="min-height:270px;">
+								
+							</div>
+							<!--分页 -->
+							<div style="text-align: center;">
+								<a href="javascript:;" style="display: inline-block;width: 50px;background-color: #9c9393;color: #ffffff;height: 20px;line-height: 20px;margin-right:20px;" onclick="prepageUser()">上一页</a>
+								<a href="javascript:;" style="display: inline-block;width: 50px;background-color: #9c9393;color: #ffffff;height: 20px;line-height: 20px;" onclick="nextpageUser()">下一页</a>							
+							</div>
+							</div>
+							<div style="margin-top:30px;text-align: center;">
+								<input class="confirm_btn" type="button"  value="确认分享" style="display: inline-block;width: 100px;height: 30px;line-height: 25px;font-size: 18px;border-radius: 5px;background-color: #f8c67b;color: #fff;" onclick="sharebox()"/>
+							</div>
+
+						</div>
+						
+					</div>
 			</div>
 			</div>
 			
 			<!--采购列表 -->
  			<div class="budget_detail_list" style="position: relative;left: -16%;width: 115%;display:none;">
-			<div style="overflow: hidden;margin-top: 10px;">
+			<div style="overflow: hidden;margin-top: 10px;position: relative;">
 			<!-- 搜索框 -->
 			<div style="overflow: hidden;margin-top: 10px;">
 			<input type="text" style="width: 265px;height: 30px;float: left;border: 1px solid #808080;border-radius: 0;" />
@@ -179,10 +236,10 @@ body{background:url('') no-repeat center top }
 			</div>
 			</div>
 				<!-- 预算表格 -->
-				<div class="budget_table_list">
-				<form action="http://wgcapp.wgc2013.com/jingyi.php/Home/yewu/add" method="post" id="myform">				
-				<table style="width: 100%;" border="0" cellspacing="0" cellpadding="0" id="budget_table">
-					<tbody>
+				<div class="budget_table_list" style="min-height: 300px;">
+							
+				<table style="width: 100%;" border="0" cellspacing="0" cellpadding="0" id="budget_list">
+					<thead>
 						<tr class="thead" style="background-color: #eee;">
 							<th style="width: 5%"><span style="border-left:  2px solid #bcbcbc">序号</span></th>
 							<th style="width: 16%"><span>材料名称</span></th>
@@ -193,9 +250,13 @@ body{background:url('') no-repeat center top }
 							<th style="width: 6%"><span>单位</span></th>
 							<th style="width: 6%"><span>单价</span></th>
 							<th style="width: 6%"><span>合计</span></th>
-							<th style="width: 18%"><span style="border-right:  2px solid #bcbcbc">备注</span></th>
+							<th style="width: 15%"><span style="border-right:  2px solid #bcbcbc">备注</span></th>
+							<th style="width: 3%"><span style="border-right:  2px solid #bcbcbc">操作</span></th>
 						</tr>
-						<tr class="tmain">
+						</thead>
+						<tbody>
+
+						<!-- <tr class="tmain">
 							<td style="width: 5%"><span>1</span></td>
 							<td style="width: 16%"><span>水泥</span></td>
 							<td style="width: 8%"><span>石井</span></td>
@@ -206,37 +267,48 @@ body{background:url('') no-repeat center top }
 							<td style="width: 6%"><span>5000</span></td>
 							<td style="width: 6%"><span>500000</span></td>
 							<td style="width: 18%;border-right:2px solid #bcbcbc;"><span>1捆=10根，1根=3米</span></td>
-						</tr>
+						</tr> -->
 					</tbody>
 				</table>
-				</form>
+				
 				</div>
+					<div class="meterial_buy_detail" style="position: absolute;top:100px;left: 50px;background-color: #9e9e9e;display: none;opacity: 0.95;width: 845px;">
+					<div class="quxiao" style="position: absolute;font-size: 20px;top: -15px;left: 99%;background-color: #9e9e9e;border-radius: 10px;width: 20px;height: 20px;line-height: 20px;cursor:default;">×</div>
+						<table style="width: 100%;" border="1" cellspacing="0" cellpadding="0">
+							<thead>
+								<tr class="thead" style="">
+									<th style="width: 29%"><span style="">材料申购单位</span></th>
+									<th style="width: 20%"><span>收货地址</span></th>
+									<th style="width: 12%"><span>申购日期</span></th>
+									
+									<th style="width: 6%"><span>联系电话</span></th>
+									<th style="width: 6%"><span>申购人</span></th>
+									<th style="width: 18%"><span style="">备注</span></th>
+								</tr>
+								</thead>
+								<tbody>
+								<tr class="tbody" style="background-color: #eee;">
+									<th style="width: 29%"><span style="border-left:  2px solid #bcbcbc">材料申购单位</span></th>
+									<th style="width: 20%"><span>收货地址</span></th>
+									<th style="width: 12%"><span>申购日期</span></th>
+									
+									<th style="width: 6%"><span>联系电话</span></th>
+									<th style="width: 6%"><span>申购人</span></th>
+									<th style="width: 18%"><span style="border-right:  2px solid #bcbcbc">备注</span></th>
+								</tr>
+								</tbody>
+						</table>
+					</div>
+				<!-- 分页 -->
+				<div style="margin: 10px auto;">
+						<a href="javascript:;" style="display: inline-block;width: 50px;height: 25px;line-height: 23px;border: 1px solid #eee;" onclick="prepage()">上一页</a>
+						<a id="next" href="javascript:;" style="display: inline-block;width: 50px;height: 25px;line-height: 23px;border: 1px solid #eee;" onclick="nextpage()">下一页</a>
+				</div>					
 			</div>
 			</div>			
 			<!--采购列表end -->
 			<!-- 分享框 -->
-					<div class="share_form" style="width: 365px;background-color: #fff; height: 230px;padding: 15px 0;position: absolute;top: 30%;left: 30%;display: none;z-index: 5;">
- 					<div style="overflow: hidden;margin-left: 20px;">
- 						<div style="float: left;width: 80px;font-size: 14px;font-weight: bold;text-align: right;margin-right: 5px;letter-spacing: 2px;">内容获取:</div>
- 						<div  style="float: left;">
- 							
- 						<textarea name="share_content" id="con_share" placeholder="内容获取" style="width: 200px;height: 80px;padding-left: 10px;"></textarea>
- 						</div>
- 					</div>
- 					<div style="overflow: hidden;margin-top: 15px;margin-left: 20px;">
- 						<div style="float: left;width: 80px;font-size: 14px;font-weight: bold;text-align: right;margin-right: 5px;letter-spacing: 2px;">接收人:</div>
-						
-						<div style="float: left;">
-							
-						<input type="text" placeholder="选择接收人" style="width: 200px;height: 25px;" />
-						</div>	
-						
- 					</div>
 
- 					<div style="position: relative;top: 45px;">
- 						<a class="share_sure" href="javascript:;" style="display: inline-block;width: 90px;height: 26px;background-color: #facd89;color: #fff;font-size: 15px;line-height: 26px;text-decoration: none;" onclick="tijiao()">分享确认</a>
- 					</div>
- 				</div>
 
  				<!-- 点击人工弹框 -->
 
@@ -260,9 +332,13 @@ body{background:url('') no-repeat center top }
 
 {include file=footer.html}
 <script type="text/javascript">
+(function (){
+	caigou_list();
+}())
 
-	var index = 1;
+	var index = 0;
 	var totalArray = [];
+	var page = 1;
 	$(".share_sure").click(function(e){
 		e.stopPropagation(); 
 		$(".share_form").show();
@@ -293,18 +369,19 @@ body{background:url('') no-repeat center top }
     //点击添加表格
     $(".add_table").click(function(){
     	index++;
+    	var userid = '<?php echo $_SESSION["user_info"]["user_id"];?>';
     	var $html = '';
     	$html += '<tr class="tmain" id="t'+index+'_">';
 		$html += '<td style="width: 5%"><textarea id="t_xh'+index+'"></textarea></td>';
 		$html += '<td style="width: 16%"><textarea name="m_name[]"></textarea></td>';
-		$html += '<td style="width: 8%"><textarea name="p_name[]"></textarea></td>';
-		$html += '<td style="width: 10%"><textarea name="xh[]"></textarea></td>';
-		$html += '<td style="width: 10%"><textarea name="dh_time[]"></textarea></td>';
-		$html += '<td style="width: 6%"><textarea name="num[]"></textarea></td>';
+		$html += '<td style="width: 8%"><textarea name="brand[]"></textarea></td>';
+		$html += '<td style="width: 10%"><textarea name="size[]"></textarea></td>';
+		$html += '<td style="width: 10%"><textarea name="expire_time[]"></textarea></td>';
+		$html += '<td style="width: 6%"><textarea id="t_sl'+index+'" name="number[]"></textarea></td>';
 		$html += '<td style="width: 6%"><textarea name="danwei[]"></textarea></td>';
 		$html += '<td style="width: 6%"><textarea id="t_dj'+index+'" name="danjia[]"></textarea></td>';
-		$html += '<td style="width: 6%"><textarea id="t_hj'+index+'" name="heji[]"></textarea></td>';
-		$html += '<td style="width: 18%;border-right:2px solid #bcbcbc;" name="ps[]"><textarea></textarea></td>';
+		$html += '<td style="width: 6%"><textarea id="t_hj'+index+'" name="heji[]" onclick="totalClick('+index+')" readonly="readonly"></textarea></td>';
+		$html += '<td style="width: 18%;border-right:2px solid #bcbcbc;"><textarea name="introduce[]"></textarea><input type="hidden" id="userid" name="userid[]" value="'+userid+'"/></td>';
 		$html += '</tr>';
     	$("#budget_table tbody").append($html);
     	 $("#t_xh"+index).text(index);
@@ -313,6 +390,511 @@ body{background:url('') no-repeat center top }
 	function tijiao(){
 		$("#myform").submit();
 	}
+
+	//材料采购列表
+	function caigou_list(){
+		var page = 1;
+		var url = "http://wgcapp.wgc2013.com/jingyi.php/Home/Material/addmaterials_list";
+					$.ajax({
+				type:"POST",
+				url:url,
+				data:{
+					user_id : '<?php echo $_SESSION["user_info"]["user_id"];?>',
+					page    : page
+
+				},
+				cache:false,
+				crossDomain: true == !(document.all),
+				dataType: "json",
+				success:function(ret){
+					console.log(ret)
+					if(ret.status == 200){
+						var listHtml = "";
+						var data = ret.retData;
+						for(var i in data){
+							var j = parseInt(i)+1;
+							var m_name = data[i].m_name;
+							var brand  = data[i].brand;
+							var size   = data[i].size;
+							var expire_time = data[i].expire_time;
+							var number = data[i].number;
+							var danwei = data[i].danwei;
+							var danjia = data[i].danjia;
+							var heji   = data[i].heji;
+							var introduce = data[i].introduce;
+							var pid    = data[i].pid;
+
+							var office_name = data[i].office_name;
+							var worker_address = data[i].worker_address;
+							var dateofpurchase = data[i].dateofpurchase;
+							var tel = data[i].tel;
+							var sgperson = data[i].sgperson;
+							var ps = data[i].ps;
+
+							listHtml += '<tr class="tmain">';
+							listHtml += '<td style="width: 5%"><span>'+j+'</span></td>';
+							listHtml += '<td style="width: 16%"><span>'+m_name+'</span></td>';
+							listHtml += '<td style="width: 8%"><span>'+brand+'</span></td>';
+							listHtml += '<td style="width: 10%"><span>'+size+'</span></td>';
+							listHtml += '<td style="width: 10%"><span>'+expire_time+'</span></td>';
+							listHtml += '<td style="width: 6%"><span>'+number+'</span></td>';
+							listHtml += '<td style="width: 6%"><span>'+danwei+'</span></td>';
+							listHtml += '<td style="width: 6%"><span>'+danjia+'</span></td>';
+							listHtml += '<td style="width: 6%"><span>'+heji+'</span></td>';
+							listHtml += '<td style="width: 15%;"><span>'+introduce+'</span></td>';
+							listHtml += '<td style="width: 3%;border-right:2px solid #bcbcbc;"><a href="javascript:;" onclick="details('+pid+')">详情</a></td>';
+							listHtml += '</tr>';
+
+
+						}
+						$("#budget_list tbody").append(listHtml);
+					}
+				},
+				error:function(err){
+					//console.log(err)
+				}
+			});
+	}
+function details(pid){
+	var url = "http://wgcapp.wgc2013.com/jingyi.php/Home/Material/addmaterials_list_content"
+				$.ajax({
+				type:"POST",
+				url:url,
+				data:{
+					pid : pid,
+					user_id: '<?php echo $_SESSION["user_info"]["user_id"];?>',
+				},
+				cache:false,
+				crossDomain: true == !(document.all),
+				dataType: "json",
+				success:function(ret){
+					//console.log(ret)
+					if(ret.status ==200){
+						$(".meterial_buy_detail tbody").html("");
+						var data = ret.retData;
+						var listHtml = "";
+						for(var i in data){
+							var office_name = data[i].office_name;
+							var worker_address = data[i].worker_address;
+							var dateofpurchase = data[i].dateofpurchase;
+							var tel = data[i].tel;
+							var sgperson = data[i].sgperson;
+							var ps = data[i].ps;
+
+							listHtml +=	'<tr class="tbody" style="background-color: #eee;">';
+							listHtml +=		'<td style="width: 29%"><span style="">'+office_name+'</span></td>';
+							listHtml +=		'<td style="width: 20%"><span>'+worker_address+'</span></td>';
+							listHtml +=		'<td style="width: 12%"><span>'+dateofpurchase+'</span></td>';	
+							listHtml +=		'<td style="width: 6%"><span>'+tel+'</span></td>';
+							listHtml +=		'<td style="width: 6%"><span>'+sgperson+'</span></td>';
+							listHtml +=		'<td style="width: 18%"><span style="">'+ps+'</span></td>';
+							listHtml +=	'</tr>';
+						}
+						$(".meterial_buy_detail tbody").append(listHtml)
+						$(".meterial_buy_detail").show();
+					}
+				},
+				error:function(err){
+					//console.log(err)
+				}
+			});
+}
+//下一页
+function nextpage(){
+	
+	pageindex(++page);
+
+	}
+//上一页
+function prepage(){
+		pageindex(--page);
+	}
+//分页
+function pageindex(pindex){
+		
+		if(pindex < 1){
+			pindex = 1;
+			page=1;
+		}
+		//console.log(pindex)
+	var url = 'http://wgcapp.wgc2013.com/jingyi.php/Home/Material/addmaterials_list';
+		$.ajax({
+				type:"POST",
+				url:url,
+				data:{
+			    	user_id  : '<?php echo $_SESSION["user_info"]["user_id"];?>',
+			    	page     : pindex,
+				},
+				cache:false,
+				crossDomain: true == !(document.all),
+				dataType: "json",
+				success:function(ret){
+					//console.log(ret)
+					if(ret.status == 200){
+						$("#next").show();
+						$("#budget_list tbody").html("");
+						var data = ret.retData;
+						var listHtml = '';
+						for(var i in data){
+							
+							var id       = data[i].id;							
+							var j = parseInt(i)+1;
+							var m_name = data[i].m_name;
+							var brand  = data[i].brand;
+							var size   = data[i].size;
+							var expire_time = data[i].expire_time;
+							var number = data[i].number;
+							var danwei = data[i].danwei;
+							var danjia = data[i].danjia;
+							var heji   = data[i].heji;
+							var introduce = data[i].introduce;
+							var pid    = data[i].pid;
+
+							var office_name = data[i].office_name;
+							var worker_address = data[i].worker_address;
+							var dateofpurchase = data[i].dateofpurchase;
+							var tel = data[i].tel;
+							var sgperson = data[i].sgperson;
+							var ps = data[i].ps;
+
+							listHtml += '<tr class="tmain">';
+							listHtml += '<td style="width: 5%"><span>'+j+'</span></td>';
+							listHtml += '<td style="width: 16%"><span>'+m_name+'</span></td>';
+							listHtml += '<td style="width: 8%"><span>'+brand+'</span></td>';
+							listHtml += '<td style="width: 10%"><span>'+size+'</span></td>';
+							listHtml += '<td style="width: 10%"><span>'+expire_time+'</span></td>';
+							listHtml += '<td style="width: 6%"><span>'+number+'</span></td>';
+							listHtml += '<td style="width: 6%"><span>'+danwei+'</span></td>';
+							listHtml += '<td style="width: 6%"><span>'+danjia+'</span></td>';
+							listHtml += '<td style="width: 6%"><span>'+heji+'</span></td>';
+							listHtml += '<td style="width: 15%;"><span>'+introduce+'</span></td>';
+							listHtml += '<td style="width: 3%;border-right:2px solid #bcbcbc;"><a href="javascript:;" onclick="details('+pid+')">详情</a></td>';
+							listHtml += '</tr>';
+								
+								
+						}
+						$("#budget_list tbody").append(listHtml);
+					}else if(ret.status == 202){
+						$("#next").hide();
+					}
+				},
+				error:function(err){
+					console.log(err)
+				}
+			});
+
+
+	}
+	
+	//分享
+	$(".share_btn").click(function(e){
+		e.stopPropagation;
+		$(".confirm").show();
+	})
+
+	function share(){
+		//获取选择的内容的id值
+		var $list = $("input[type='checkbox']");
+		console.log($list)
+	}
+	
+	//分享选择接收人
+	function  showUserList(){
+		var page = 1;
+		uid= '<?php echo $_SESSION["user_info"]["user_id"];?>';
+		$('.getUserList').html("")
+		$.ajax({
+				type:"POST",
+				url:'http://wgcapp.wgc2013.com/jingyi.php/Home/index/getAllMyRelative',
+				data:{
+						uid:'<?php echo $_SESSION["user_info"]["user_id"];?>',
+		            	type:'PRIVATE',
+		            	types:'user_list',
+		            	page : page,
+				},
+				cache:false,
+				crossDomain: true == !(document.all),
+				dataType: "JSON",
+				success:function(ret){
+					//console.log("成功");
+					//console.log(ret)
+					var html = '';
+					var datas = ret.data;
+			
+					if(ret.code == 200){
+						//page ++;
+						for(var j in datas){
+							var data = datas[j];
+							var message = datas[j].message;
+							html += '<div class="tel_list">'+data.zhiwei+'</div>';
+							for(var i in message){
+								var zhiwei = message[i].zhiwei,
+									id     = message[i].id,
+									touid = message[i].touid,
+									name = message[i].name,
+									names = message[i].user_name, 
+									imgUrl = message[i].userphoto;
+								html += '<ul>';
+									html += '<li class="tel_li">';
+										html += '<div class="check">';
+											html += '<input name="tid" type="checkbox" value="'+touid+'" name="checkbox" />';
+										html += '</div>';
+										html += '<div class="head_img">';
+											html += '<img src="'+url+imgUrl+'" alt=""/>';
+										html += '</div>';
+										html += '<div class="tel_data">';
+											html += '<span>'+name+'</span>';
+											html += '<span>'+names+'</span>';
+										html += '</div>';
+									html += '</li>';
+								html += '</ul>';
+							}
+						}
+
+						$('.getUserList').append(html);
+						//获取数据id
+								var arr = new Array();
+				                $('input[name="id"]:checked').each(function(i){
+				                    arr[i] = $(this).val();
+				                });
+				                var vals = arr.join(",");
+				                //console.log(vals);
+					}else {
+						alert('数据加载失败，请检查网络!');
+					}
+				},
+				error:function(err){
+					console.log("错误是");
+					console.log(err);
+				}
+			});
+	}
+
+	//通讯录搜索
+	function UserSearch(){
+		var key_word = $('#search_text').val();
+
+		if(key_word == ''){
+			showUserList();
+		}else{
+			$.post(url+'jingyi.php/Home/index/searchMyRelatives', {
+				uid : '<?php echo $_SESSION["user_info"]["user_id"];?>',
+				type:'PRIVATE',
+				types:'user_list',
+	        	keyword : key_word,
+			}, function(ret,err) {
+				var datas = ret.data;
+				var html = '';
+
+				if(ret.code == 200){
+					$('.getUserList').html('');
+						page ++;
+						for(var j in datas){
+							var data = datas[j];
+							var message = datas[j].message;
+							html += '<div class="tel_list">'+data.zhiwei+'</div>';
+							for(var i in message){
+								var zhiwei = message[i].zhiwei,
+									touid = message[i].touid,
+									name = message[i].name,
+									names = message[i].user_name, 
+									imgUrl = message[i].userphoto;
+								html += '<ul>';
+									html += '<li class="tel_li">';
+										html += '<div class="check">';
+											html += '<input type="checkbox" value="'+touid+'" name="checkbox" />';
+										html += '</div>';
+										html += '<div class="head_img">';
+											html += '<img src="'+url+imgUrl+'" alt=""/>';
+										html += '</div>';
+										html += '<div class="tel_data">';
+											html += '<span>'+name+'</span>';
+											html += '<span>'+names+'</span>';
+										html += '</div>';
+									html += '</li>';
+								html += '</ul>';
+							}
+						}
+
+					$('.getUserList').append(html);
+				}else if(ret.code == 201){
+					$('.getUserList').html('暂无数据');
+				}else{
+					alert('请检查网络连接');
+					return false;
+				}
+			},'json');
+		}
+	}
+
+	//确认分享
+	function sharebox(){
+								//获取数据id
+								var arr = new Array();
+								var tarry = new Array();
+				                $('input[name="id"]:checked').each(function(i){
+				                    arr[i] = $(this).val();
+				                });
+				                var vals = arr.join(",");
+
+				                console.log(vals);
+
+				                //获取通讯录id
+				          		$('input[name="tid"]:checked').each(function(j){
+				                    tarry[j] = $(this).val();
+				                });
+				                var tvals = tarry.join(",");
+				                console.log(tvals)
+				                $("#checker").val(tvals);
+				                // $.post('http://wgcapp.wgc2013.com/jingyi.php/Home/index/share',{
+				                // 	"type":1,
+				                // 	"arr":arr,
+				                // 	"tarry":tarry
+				                // },function(ret){
+				                // 	console.log(ret)
+				                // 	if(ret.code == 200){
+
+				                		
+				                // 	}
+				                // },'json')
+
+				                $("#myform").submit();
+	}
+	
+	//取消
+$(".quxiao").click(function(){
+	$(this).parent().parent().hide();
+})
+//通讯录分页控制
+var upage = 1;
+function pageindexUser(pindex){
+		//console.log(index)
+		if(pindex < 1){
+			pindex = 1;
+			upage=1;
+		}
+	$('.getUserList').html("");
+		uid= '<?php echo $_SESSION["user_info"]["user_id"];?>';
+		$.ajax({
+				type:"POST",
+				url:'http://wgcapp.wgc2013.com/jingyi.php/Home/index/getAllMyRelative',
+				data:{
+						uid:'<?php echo $_SESSION["user_info"]["user_id"];?>',
+		            	type:'PRIVATE',
+		            	types:'user_list',
+		            	page : pindex,
+				},
+				cache:false,
+				crossDomain: true == !(document.all),
+				dataType: "JSON",
+				success:function(ret){
+					console.log("成功");
+					console.log(ret)
+					var html = '';
+					var datas = ret.data;
+					$('.getUserList').html("")
+					if(ret.code == 200){
+						page ++;
+						for(var j in datas){
+							var data = datas[j];
+							var message = datas[j].message;
+							html += '<div class="tel_list">'+data.zhiwei+'</div>';
+							for(var i in message){
+								var zhiwei = message[i].zhiwei,
+									id     = message[i].id,
+									touid = message[i].touid,
+									name = message[i].name,
+									names = message[i].user_name, 
+									imgUrl = message[i].userphoto;
+								html += '<ul>';
+									html += '<li class="tel_li">';
+										html += '<div class="check">';
+											html += '<input name="tid" type="checkbox" value="'+touid+'" name="checkbox" />';
+										html += '</div>';
+										html += '<div class="head_img">';
+											html += '<img src="'+url+imgUrl+'" alt=""/>';
+										html += '</div>';
+										html += '<div class="tel_data">';
+											html += '<span>'+name+'</span>';
+											html += '<span>'+names+'</span>';
+										html += '</div>';
+									html += '</li>';
+								html += '</ul>';
+							}
+						}
+
+						$('.getUserList').append(html);
+						//获取数据id
+								var arr = new Array();
+				                $('input[name="id"]:checked').each(function(i){
+				                    arr[i] = $(this).val();
+				                });
+				                var vals = arr.join(",");
+				                console.log(vals);
+					}else {
+						alert('数据加载失败，请检查网络!');
+					}
+				},
+				error:function(err){
+					console.log("错误是");
+					console.log(err);
+				}
+			});
+
+	}
+//下一页
+function nextpageUser(){
+	
+	pageindexUser(++upage);
+
+	}
+//上一页
+function prepageUser(){
+		pageindexUser(--upage);
+	}
+	
+		//时间转换
+	function timestampToTime(timestamp) {
+        var date = new Date(timestamp * 1000);//时间戳为10位需*1000，时间戳为13位的话不需乘1000
+        Y = date.getFullYear() + '-';
+        M = (date.getMonth()+1 < 10 ? '0'+(date.getMonth()+1) : date.getMonth()+1) + '-';
+        D = date.getDate() + ' ';
+        h = date.getHours() + ':';
+        m = date.getMinutes() + ':';
+        s = date.getSeconds();
+        return Y+M+D;
+    }
+
+  //统计合计并计算
+  	function totalClick(i){
+  		var num = parseInt($("#t_sl"+i).val());
+  		var danjia = parseInt($("#t_dj"+i).val());
+
+  		var heji = num * danjia;
+  		//alert(num)
+  		$("#t_hj"+i).val(heji);
+
+  	}
+
+  	$("#totals").unbind('click').click(function(){
+  		newArray = [];
+  		for(var i=1;i<=index;i++){
+  			var heji = parseInt($("#t_hj"+i).val());
+    		if(heji){
+    			newArray.push(heji)
+    		}
+ 		var totalAll = 0;
+    	for(var j=0;j<newArray.length;j++){
+    		//console.log(j);
+  			totalAll = totalAll + newArray[j];
+    		
+    	}   
+    	$("#totals").val(totalAll)		
+  		}
+  	})
+  $(".quxiao").unbind('click').click(function(){
+  	$(".meterial_buy_detail").hide();
+  })
 </script>
 </body>
 </html>

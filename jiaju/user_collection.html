@@ -10,6 +10,7 @@
 <link rel="stylesheet" type="text/css" href="/themes/mall/jiaju/css/api.css"/>
 <link type="text/css" href="/themes/mall/jiaju/styles/default/css/center.css" rel="stylesheet"  />
 <link rel="stylesheet" type="text/css" href="/themes/mall/jiaju/css/aui.1.0.css"/>
+<link rel="stylesheet" href="themes/mall/jiaju/styles/css/tel_list.css">
 <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
 <!-- <script type="text/javascript" src="www.wgc2013.com/themes/mall/jiaju/js/jquery-1.8.3.min.js"></script> -->
 <script type="text/javascript">
@@ -57,10 +58,12 @@
 <link type="text/css" href="http://www.wgc2013.com/themes/mall/jiaju/styles/default/css/catalog.css" rel="stylesheet"  />
 <link type="text/css" href="http://www.wgc2013.com/themes/mall/jiaju/styles/default/css/footer.css" rel="stylesheet" />
 <link type="text/css" href="themes/mall/jiaju/styles/css/style.css" rel="stylesheet"  />
+<link rel="stylesheet" href="themes/mall/jiaju/styles/css/tel_list.css">
 <script type="text/javascript" src="index.php?act=jslang"></script>
 <script type="text/javascript" src="http://www.wgc2013.com/includes/libraries/javascript/ecmall.js" charset="utf-8"></script>
 <script type="text/javascript" src="http://www.wgc2013.com/includes/libraries/javascript/cart.js" charset="utf-8"></script>
 <script type="text/javascript" src="http://www.wgc2013.com/themes/mall/jiaju/styles/default/js/main.js" charset="utf-8"></script>
+
 
 <!--[if lte IE 6]>
 <script type="text/javascript" language="Javascript" src="http://www.wgc2013.com/themes/mall/jiaju/styles/default/js/hoverForIE6.js"></script>
@@ -116,6 +119,7 @@ body{background:url('') no-repeat center top }
 			<ul class="user_collection_ul user_public_ul">
  				<li class="change_bg_li" style="margin-right: 10px;">发布集采</li>
 				<li style="margin-right: 10px;">集采列表</li>
+				<li style="margin-right: 10px;">分享列表</li>
  			</ul>
  			<div class="user_collection_info base_info_public" style="overflow: hidden;padding-left: 15%;">
  				<ul style="margin-top: 30px;">
@@ -166,13 +170,14 @@ body{background:url('') no-repeat center top }
 			
 			<!--集采列表 -->
 			
-			<div class="user_collection_list base_info_public" style="overflow: hidden;display:none;">
+			<div class="user_collection_list base_info_public" style="overflow: hidden;display:none;position:relative;min-height:480px;">
 			<!--搜索框 -->
 						<div class="search_ys">
 							<input type="text" style="width: 400px;height: 30px;" id="search_zc" placeholder="请输入关键词例：地砖">
 							<label class="search_zc" for="search_zc" style="width: 50px;height: 30px;display:inline-block;position: relative;top: -8px;"><img src="/themes/mall/jiaju/images/search_button.jpg" alt="" style="width: 100%;height: 100%;" onclick="searchZC()"></label>
 							<button class="quxiao_zc" style="padding:0;width: 50px;height: 30px;position: relative;top: -8px;cursor:pointer;line-height:30px;background-color: #ec6941;display:none;">取消</button>
-						</div>				
+							<a class="share_btn" href="javascript:;" style="display: inline-block;width: 60px;height: 30px;line-height: 30px;font-size: 16px;color: #2d2a2a;font-weight: bold;letter-spacing: 4px; background-color: #facd89;border-radius: 5px;position: relative;left: 110px;top:-5px;text-decoration: none;" onclick="showUserList()">分享</a>							
+						</div>					
 				<div class="list_show" style="overflow: hidden;min-height:300px;">
 				<!--<div>
 				 <div style="text-align:right;padding-right: 20px;"><input type="checkbox"></div>
@@ -196,12 +201,88 @@ body{background:url('') no-repeat center top }
 				</div>	-->			
  			</div>
 			<!--集采列表end -->
+			<!-- 分享弹窗 -->
+					<div class="confirm" style="display: none;">
+<!-- 						<form class="confirm_" action="post" method="">
+							<div class="share_text">
+								<span>分享内容</span><span class="colon">:</span>
+								<textarea name="" id="" cols="30" rows="10" placeholder="内容获取"></textarea>
+							</div>
+							<div class="share_sendee">
+								<span style="letter-spacing: 5px;">接收人</span><span class="colon">:</span>
+								<input type="text" placeholder="选择接收人">
+							</div>
+							<input class="share_btn" type="button" value="分享确认">
+						</form> -->
+							<div class="tel_con" style="display: block;display: block;width: 50%;margin: 10px auto;background-color: #fff;padding-top: 10px;padding-bottom: 10px;height: 435px;box-shadow: 5px 5px 5px;position:relative;">
+							<div class="quxiao" style="position: absolute;font-size: 20px;top: -8px;left: 460px;background-color: #9e9e9e;border-radius: 10px;width: 20px;height: 20px;line-height: 20px;">×</div>
+							<div class="confirm_head" style="margin-bottom: 10px;">
+								<input type="text" id="search_text" placeholder="请输入搜索的联系人" style="width:40%;height:30px;"/>
+								<input class="confirm_btn" type="button" onclick="UserSearch()" value="搜索" style="width: 40px;margin-top: -15px;height: 20px;"/>
+							</div>
+							<div style="overflow-y: scroll;height:300px;">
+							<div class="getUserList" style="min-height:270px;">
+								
+							</div>
+							<!--分页 -->
+							<div>
+								<a href="javascript:;" style="display: inline-block;width: 50px;background-color: #9c9393;color: #ffffff;height: 20px;line-height: 20px;margin-right:20px;" onclick="prepageUser()">上一页</a>
+								<a href="javascript:;" style="display: inline-block;width: 50px;background-color: #9c9393;color: #ffffff;height: 20px;line-height: 20px;" onclick="nextpageUser()">下一页</a>							
+							</div>
+							</div>
+							<div style="margin-top:30px;">
+								<input class="confirm_btn" type="button"  value="确认分享" style="display: inline-block;width: 100px;height: 30px;line-height: 25px;font-size: 18px;border-radius: 5px;background-color: #f8c67b;color: #fff;" onclick="sharebox()"/>
+							</div>
+						</div>
+						
+					</div>
+					<!-- 分享弹窗 end -->
 		</div>
-		<!-- 发布列表 -->
+			
+			<!-- 分享列表-->
+ 			<div class="message_list base_info_public" style="position: relative;display:none;">
+			<div style="overflow: hidden;margin-top: 10px;">
+			<!-- 搜索框 -->
+						<div class="search_ys">
+							<input type="text" style="width: 400px;height: 30px;" id="search_zc" placeholder="请输入关键词">
+							<label class="search_zc" for="search_zc" style="width: 50px;height: 30px;display:inline-block;position: relative;top: -8px;"><img src="/themes/mall/jiaju/images/search_button.jpg" alt="" style="width: 100%;height: 100%;" onclick="searchZC()"></label>
+							<button class="quxiao_zc" style="padding:0;width: 50px;height: 30px;position: relative;top: -8px;cursor:pointer;line-height:30px;background-color: #ec6941;display:none;">取消</button>							
+						</div>	
+				<div class="budget_table">
+				<div>
 
- 		<!-- 创建简历 -->
-
- 		<!-- 实名认证 -->
+			</div>
+			<div class="yewu_body_share" style="min-height:300px;">
+				<table style="width: 100%;" border="0" cellspacing="0" cellpadding="0">
+					<tbody>
+						<tr style="background-color:#eee;">
+						<td>公司名称</td>
+						<td>材料名称</td>
+						<td>材料品牌</td>
+						<td>材料描述</td>
+						<td>分享人</td>
+						<tr>
+					</tbody>
+				</table>				
+			</div>
+					<!-- 分页 -->
+					<div class="price_page" style="text-align: center;">
+					<a href="#">首页</a>
+					<a href="#">上一页</a>
+					<a href="#" style="width: 15px;">1</a>
+					<a href="#" style="width: 15px;">2</a>
+					<a href="#" style="width: 15px;">3</a>
+					<a href="#" style="width: 15px;">4</a>
+					<a href="#" style="width: 15px;">5</a>
+					<a href="#" style="width: 15px;">6</a>
+					<a href="#" style="width: 15px;">7</a>
+					<a href="#">...</a>
+					<a href="#">下一页</a>
+					<a href="#">尾页</a>
+					</div>
+				</div>
+			</div>
+			</div>
 
  		</div>
  		
@@ -222,16 +303,29 @@ $().ready(function(){
     	
     	$(this).addClass("change_bg_li")
     	$(".user_collection_ul li:last").removeClass("change_bg_li")
+		$(".user_collection_ul li:eq(1)").removeClass("change_bg_li")
     	$(".user_collection_info").show();
     	$(".user_collection_list").hide();
+		$(".message_list").hide();
     })
+	  $(".user_collection_ul li:eq(1)").click(function(){
+    	$(this).addClass("change_bg_li")
+    	$(".user_collection_ul li:last").removeClass("change_bg_li")
+    	$(".user_collection_ul li:first").removeClass("change_bg_li")
+    	$(".user_collection_list").show();
+    	$(".user_collection_info").hide();
+    	$(".message_list").hide();
+    	
 
+    })
     $(".user_collection_ul li:last").click(function(){
     	
     	$(this).addClass("change_bg_li")
     	$(".user_collection_ul li:first").removeClass("change_bg_li")
+		$(".user_collection_ul li:eq(1)").removeClass("change_bg_li")
     	$(".user_collection_info").hide();
-    	$(".user_collection_list").show();
+    	$(".user_collection_list").hide();
+		$(".message_list").show();
     })
 
 
@@ -390,7 +484,7 @@ $().ready(function(){
 			    	s_city   : tcity,
 			    	s_area   : '白云区',
 		},function(ret){
-			console.log(ret)
+			//console.log(ret)
 			if(ret.code == 200){
 				var listHtml = '';
 				var data = ret.message;
@@ -405,7 +499,7 @@ $().ready(function(){
 						if(id == user_id){
 						//status++;
 				listHtml   +='<div style="overflow: hidden;">';
-				listHtml   += '<div style="text-align:right;padding-right: 20px;"><input type="checkbox"></div>';
+				listHtml   += '<div style="text-align:right;padding-right: 20px;"><input name="id" type="checkbox"></div>';
 				listHtml   +=	'<div class="list_right" style="float: left;width: 50%;">';
 				listHtml   +=		'<ul style="margin-left:15%;">';
 				listHtml   +=			'<li>公司名称：'+office_name+'</li>';
@@ -430,6 +524,270 @@ $().ready(function(){
 			}
 		},'json')
 	}	
+	//分享
+	$(".share_btn").click(function(e){
+		e.stopPropagation;
+		$(".confirm").show();
+	})
+
+	function share(){
+		//获取选择的内容的id值
+		var $list = $("input[type='checkbox']");
+		console.log($list)
+	}
+	
+	//分享选择接收人
+	function  showUserList(){
+		var page = 1;
+		uid= '<?php echo $_SESSION["user_info"]["user_id"];?>';
+		$('.getUserList').html("")
+		$.ajax({
+				type:"POST",
+				url:'http://wgcapp.wgc2013.com/jingyi.php/Home/index/getAllMyRelative',
+				data:{
+						uid:'<?php echo $_SESSION["user_info"]["user_id"];?>',
+		            	type:'PRIVATE',
+		            	types:'user_list',
+		            	page : page,
+				},
+				cache:false,
+				crossDomain: true == !(document.all),
+				dataType: "JSON",
+				success:function(ret){
+					//console.log("成功");
+					//console.log(ret)
+					var html = '';
+					var datas = ret.data;
+			
+					if(ret.code == 200){
+						//page ++;
+						for(var j in datas){
+							var data = datas[j];
+							var message = datas[j].message;
+							html += '<div class="tel_list">'+data.zhiwei+'</div>';
+							for(var i in message){
+								var zhiwei = message[i].zhiwei,
+									id     = message[i].id,
+									touid = message[i].touid,
+									name = message[i].name,
+									names = message[i].user_name, 
+									imgUrl = message[i].userphoto;
+								html += '<ul>';
+									html += '<li class="tel_li">';
+										html += '<div class="check">';
+											html += '<input name="tid" type="checkbox" value="'+touid+'" name="checkbox" />';
+										html += '</div>';
+										html += '<div class="head_img">';
+											html += '<img src="'+url+imgUrl+'" alt=""/>';
+										html += '</div>';
+										html += '<div class="tel_data">';
+											html += '<span>'+name+'</span>';
+											html += '<span>'+names+'</span>';
+										html += '</div>';
+									html += '</li>';
+								html += '</ul>';
+							}
+						}
+
+						$('.getUserList').append(html);
+						//获取数据id
+								var arr = new Array();
+				                $('input[name="id"]:checked').each(function(i){
+				                    arr[i] = $(this).val();
+				                });
+				                var vals = arr.join(",");
+				                //console.log(vals);
+					}else {
+						alert('数据加载失败，请检查网络!');
+					}
+				},
+				error:function(err){
+					console.log("错误是");
+					console.log(err);
+				}
+			});
+	}
+
+	//通讯录搜索
+	function UserSearch(){
+		var key_word = $('#search_text').val();
+
+		if(key_word == ''){
+			showUserList();
+		}else{
+			$.post(url+'jingyi.php/Home/index/searchMyRelatives', {
+				uid : '<?php echo $_SESSION["user_info"]["user_id"];?>',
+				type:'PRIVATE',
+				types:'user_list',
+	        	keyword : key_word,
+			}, function(ret,err) {
+				var datas = ret.data;
+				var html = '';
+
+				if(ret.code == 200){
+					$('.getUserList').html('');
+						page ++;
+						for(var j in datas){
+							var data = datas[j];
+							var message = datas[j].message;
+							html += '<div class="tel_list">'+data.zhiwei+'</div>';
+							for(var i in message){
+								var zhiwei = message[i].zhiwei,
+									touid = message[i].touid,
+									name = message[i].name,
+									names = message[i].user_name, 
+									imgUrl = message[i].userphoto;
+								html += '<ul>';
+									html += '<li class="tel_li">';
+										html += '<div class="check">';
+											html += '<input type="checkbox" value="'+touid+'" name="checkbox" />';
+										html += '</div>';
+										html += '<div class="head_img">';
+											html += '<img src="'+url+imgUrl+'" alt=""/>';
+										html += '</div>';
+										html += '<div class="tel_data">';
+											html += '<span>'+name+'</span>';
+											html += '<span>'+names+'</span>';
+										html += '</div>';
+									html += '</li>';
+								html += '</ul>';
+							}
+						}
+
+					$('.getUserList').append(html);
+				}else if(ret.code == 201){
+					$('.getUserList').html('暂无数据');
+				}else{
+					alert('请检查网络连接');
+					return false;
+				}
+			},'json');
+		}
+	}
+
+	//确认分享
+	function sharebox(){
+								//获取数据id
+								var arr = new Array();
+								var tarry = new Array();
+				                $('input[name="id"]:checked').each(function(i){
+				                    arr[i] = $(this).val();
+				                });
+				                var vals = arr.join(",");
+
+				                console.log(vals);
+
+				                //获取通讯录id
+				          		$('input[name="tid"]:checked').each(function(j){
+				                    tarry[j] = $(this).val();
+				                });
+				                var tvals = tarry.join(",");
+				                console.log(tvals)
+
+				                $.post('http://wgcapp.wgc2013.com/jingyi.php/Home/index/share',{
+				                	"type":1,
+				                	"arr":arr,
+				                	"tarry":tarry
+				                },function(ret){
+				                	console.log(ret)
+				                	if(ret.code == 200){
+
+				                		window.location.reload();
+				                	}
+				                },'json')
+	}
+	
+	//取消
+$(".quxiao").click(function(){
+	$(this).parent().parent().hide();
+})
+//通讯录分页控制
+var upage = 1;
+function pageindexUser(pindex){
+		//console.log(index)
+		if(pindex < 1){
+			pindex = 1;
+			upage=1;
+		}
+	$('.getUserList').html("");
+		uid= '<?php echo $_SESSION["user_info"]["user_id"];?>';
+		$.ajax({
+				type:"POST",
+				url:'http://wgcapp.wgc2013.com/jingyi.php/Home/index/getAllMyRelative',
+				data:{
+						uid:'<?php echo $_SESSION["user_info"]["user_id"];?>',
+		            	type:'PRIVATE',
+		            	types:'user_list',
+		            	page : pindex,
+				},
+				cache:false,
+				crossDomain: true == !(document.all),
+				dataType: "JSON",
+				success:function(ret){
+					console.log("成功");
+					console.log(ret)
+					var html = '';
+					var datas = ret.data;
+					$('.getUserList').html("")
+					if(ret.code == 200){
+						page ++;
+						for(var j in datas){
+							var data = datas[j];
+							var message = datas[j].message;
+							html += '<div class="tel_list">'+data.zhiwei+'</div>';
+							for(var i in message){
+								var zhiwei = message[i].zhiwei,
+									id     = message[i].id,
+									touid = message[i].touid,
+									name = message[i].name,
+									names = message[i].user_name, 
+									imgUrl = message[i].userphoto;
+								html += '<ul>';
+									html += '<li class="tel_li">';
+										html += '<div class="check">';
+											html += '<input name="tid" type="checkbox" value="'+touid+'" name="checkbox" />';
+										html += '</div>';
+										html += '<div class="head_img">';
+											html += '<img src="'+url+imgUrl+'" alt=""/>';
+										html += '</div>';
+										html += '<div class="tel_data">';
+											html += '<span>'+name+'</span>';
+											html += '<span>'+names+'</span>';
+										html += '</div>';
+									html += '</li>';
+								html += '</ul>';
+							}
+						}
+
+						$('.getUserList').append(html);
+						//获取数据id
+								var arr = new Array();
+				                $('input[name="id"]:checked').each(function(i){
+				                    arr[i] = $(this).val();
+				                });
+				                var vals = arr.join(",");
+				                console.log(vals);
+					}else {
+						alert('数据加载失败，请检查网络!');
+					}
+				},
+				error:function(err){
+					console.log("错误是");
+					console.log(err);
+				}
+			});
+
+	}
+//下一页
+function nextpageUser(){
+	
+	pageindexUser(++upage);
+
+	}
+//上一页
+function prepageUser(){
+		pageindexUser(--upage);
+	}
 	
 		//时间转换
 	function timestampToTime(timestamp) {

@@ -35,6 +35,7 @@
 <script type="text/javascript" src="http://www.wgc2013.com/includes/libraries/javascript/ecmall.js" charset="utf-8"></script>
 <script type="text/javascript" src="http://www.wgc2013.com/includes/libraries/javascript/cart.js" charset="utf-8"></script>
 <script type="text/javascript" src="http://www.wgc2013.com/themes/mall/jiaju/styles/default/js/main.js" charset="utf-8"></script>
+<script type="text/javascript" src="http://www.wgc2013.com/themes/mall/jiaju/js/jquery.cookie.js" charset="utf-8"></script>
 
 <!--[if lte IE 6]>
 <script type="text/javascript" language="Javascript" src="http://www.wgc2013.com/themes/mall/jiaju/styles/default/js/hoverForIE6.js"></script>
@@ -78,7 +79,6 @@ body{background:url('') no-repeat center top }
  <!-- 左上的导航栏 -->
  {include file=companycenter.html}
 
-
  	<!-- 右边的内容 -->
  	<div class="container_right" style="width: 80%;border: 1px solid #cacaca;float: right;background-color: #f7f7f7;padding: 0 10px 10px 10px;">
  		<!-- 消息中心 -->
@@ -94,7 +94,7 @@ body{background:url('') no-repeat center top }
  		<!-- 创建简历 -->
  		<div class="user_resume base_ui_public" style="/*display: none;*/">
  			<ul class="user_resume_ul user_public_ul">
- 				<li style="margin-right: 10px;background-color: #f8c67b;color: #f34c26;">创建简历</li>
+ 				<li style="margin-right: 10px;background-color: #f8c67b;color: #f34c26;">简历修改</li>
  			</ul>
  			<!-- 简历信息 -->
  			<div class="user_resume_info base_info_public" style="overflow: hidden;">
@@ -299,15 +299,17 @@ body{background:url('') no-repeat center top }
  							</li>
 
  					</ul>
- 					<div class="user_resume_agree">
+ <!-- 					<div class="user_resume_agree">
  						<input type="checkbox" style="display: inline-block;margin-top: -3px;" />
  						<span style="color: #3e3c3c;font-weight: bold;letter-spacing: 2px;">是否愿意发布后公开自己的简历信息在微工程网站上找工作</span>
- 					</div>
+ 					</div> -->
  					<div class="user_resume_button" style="margin: 20px 0;">
  						<!-- <button class="user_resume_button_keep" style="width: 100px;height: 30px;line-height: 15px;background-color: #ff552e;color: #fff;position: relative;left: -100px;">保存</button> -->
- 					<button class="user_resume_button_show" style="width: 100px;height: 30px;line-height: 15px;background-color: #ff552e;color: #fff;position: relative;left: -100px;" onclick="addsume()">提交发布</button>
+ 					<button class="user_resume_button_show" style="width: 100px;height: 30px;line-height: 15px;background-color: #ff552e;color: #fff;position: relative;left: -100px;" onclick="addsume()">确认修改</button>
  					</div>
- 					
+ 					<!-- 隐藏域 -->
+                    <input type="hidden" id="id" />
+                    <input type="hidden" id="userid" />
  					</div>
  				</div>
  			</div>
@@ -393,8 +395,9 @@ function addsume(){
 	var hangye = $("#hangye").val();   //行业
 	var self = $("#self").val();    //个人标签
 	var selfpingjia = $("#selfpingjia").val();  //自我评价
-	var checked = $("input[type='checkbox']").is(':checked');  //同意协议
-
+    var id = $("#id").val();
+    var userid = $("#userid").val();
+    //console.log(userid)
 
 
 
@@ -425,54 +428,148 @@ function addsume(){
 	}else if(zhiwei == ""){
 		alert("职位不能为空");
 		return false;
-	}else if(!checked){
-		alert("未同意协议");
-		return false;
 	}else if(!(/^1[3|5|7|8][0-9]\d{4,8}$/.test(tel))){
 		alert('请输入正确的手机号码');
 			return false;
-	}else if(!'<?php echo $_SESSION["user_info"]["user_id"];?>'){
-        alert("请登录！")
+	}else{
+        $.post('http://wgcapp.wgc2013.com/jingyi.php/Home/Jianli/save_form',{
+            userid     :'<?php echo $_SESSION["user_info"]["user_id"];?>',
+            name        :name,
+            birthtime   :birthtime,
+            tel         :tel,
+            huji        :huji,
+            starttime   :starttime,
+            school      :school,
+            sex         :sex,
+            marry       :marry,
+            email       :email,
+            palce       :palce,
+            xuewei      :xuewei,
+            zhuanye     :zhuanye,
+            workjingyan :workjingyan,
+            salary      :salary,
+            workpalce   :workpalce,
+            zhineng     :zhineng,
+            zhiwei      :zhiwei,
+            hangye      :hangye,
+            self        :self,
+            selfpingjia :selfpingjia,
+            id          :id
 
-    }else{
-		$.post('http://wgcapp.wgc2013.com/jingyi.php/Home/Jianli/add',{
-            user_id     :'<?php echo $_SESSION["user_info"]["user_id"];?>',
-			name 		:name,
-			birthtime	:birthtime,
-			tel 		:tel,
-			huji		:huji,
-			starttime	:starttime,
-			school		:school,
-			sex     	:sex,
-			marry   	:marry,
-			email   	:email,
-			palce   	:palce,
-			xuewei  	:xuewei,
-			zhuanye  	:zhuanye,
-			workjingyan :workjingyan,
-			salary      :salary,
-			workpalce   :workpalce,
-			zhineng     :zhineng,
-			zhiwei      :zhiwei,
-			hangye      :hangye,
-			self        :self,
-			selfpingjia :selfpingjia,
-			checked     :checked,
-
-		},function(ret){
-			console.log(ret)
-			     if(ret.status == 200){
+        },function(ret){
+            console.log(ret)
+                 if(ret.status == 200){
+                     //window.location.reload();
+                    window.location.href = window.location.href = '/index.php?app=search&act=user_myresume';
+                 }
                 //alert("简历上传成功！")
-                window.location.reload();                   
-            }else if(ret.status == 202){
-
-                alert("简历上传失败!");
-            }
-
-			
-		},'json')
+               
+             
+            
+        },'json')        
 	}
 }
+
+function edit(){
+    var id = $.cookie('id');
+    var userid = $.cookie('userid');
+            $.ajax({
+                type:"POST",
+                url:'http://wgcapp.wgc2013.com/jingyi.php/Home/Jianli/save',
+                data:{
+                    id : id,
+                    userid:userid
+                },
+                cache:false,
+                crossDomain: true == !(document.all),
+                dataType: "json",
+                success:function(ret){
+                    //console.log(ret)
+                    if(ret.status == 200){
+                        var data = ret.retData;
+
+                    
+                            var addtime     = data.addtime;      //添加时间
+                            var birthtime   = data.birthtime;    //出生日期
+                            var email       = data.email;        //个人邮件
+                            var hangye      = data.hangye;       //行业
+                            var id          = data.id;           //id
+                            var marry       = data.marry;        //婚配情况
+                            var name        = data.name;         //姓名
+                            var palce       = data.palce;        //居住地
+                            var salary      = data.salary;       //期望薪资
+                            var school      = data.school;       //学校学院
+                            var self        = data.self;         //个人标签
+                            var selfpingjia = data.selfpingjia;  //个人评价
+                            var sex         = data.sex;          //性别
+                            var starttime   = data.starttime;    //教育开始时间
+                            var tel         = data.tel;          //联系电话
+                            var userid      = data.user_id;      //用户id
+                            var workpalce   = data.workpalce;    //工作地点
+                            var workjingyan = data.workjingyan;  //工作经验
+                            var xuewei      = data.xuewei;       //学历
+                            var zhineng     = data.zhineng;      //职能
+                            var zhiwei      = data.zhiwei;       //职位
+                            var zhuanye     = data.zhuanye;      //专业
+                            var huji        = data.huji;         //户籍                           
+
+                            //console.log(name)
+                            $("#name").val(name);   //姓名
+                            $("#birthtime").val(birthtime);  //出生日期
+                            $("#tel").val(tel);    //手机
+                            $("#huji").val(huji);  //贯籍
+                            $("#starttime").val(starttime);   //起止时间
+                            $("#school").val(school); //学院名称
+                            $("#email").val(email);   //邮箱
+                            $("#palce").val(palce);   //居住地
+                            $("#xuewei").val(xuewei);  //学位
+                            $("#zhuanye").val(zhuanye);  //专业
+                            $("#workjingyan").val(workjingyan);  //工作经验
+                            $("#salary").val(salary);    //薪资
+                            $("#workpalce").val(workpalce);  //工作地点
+                            $("#zhineng").val(zhineng);   //职能
+                            $("#zhiwei").val(zhiwei);   //职位
+                            $("#hangye").val(hangye);   //行业
+                            $("#self").val(self);    //个人标签
+                            $("#selfpingjia").val(selfpingjia);  //自我评价  
+                            $("#id").val(id)
+                            $("#userid").val(userid)
+                            if(sex == "0"){
+                                //alert(sex)
+                                $("#male").prop("checked",true)
+                                    $(".resume_boy")[0].src = "/themes/mall/jiaju/images/center/bg_radio_full.jpg";
+                                    $(".resume_girl")[0].src = "/themes/mall/jiaju/images/center/bg_radio_empty.jpg";
+                                
+                            }else{
+                                $("#female").prop("checked",true);
+                                    $(".resume_girl")[0].src = "/themes/mall/jiaju/images/center/bg_radio_full.jpg";
+                                    $(".resume_boy")[0].src = "/themes/mall/jiaju/images/center/bg_radio_empty.jpg";
+                            }
+                            if(marry == "marry"){
+                                $("#marry").prop("checked",true)
+                                $(".resume_demarry")[0].src = "/themes/mall/jiaju/images/center/bg_radio_empty.jpg";
+                                $(".resume_marry")[0].src = "/themes/mall/jiaju/images/center/bg_radio_full.jpg";
+                            }
+                            if(marry == "femarry"){
+                                $(".resume_marry")[0].src = "/themes/mall/jiaju/images/center/bg_radio_empty.jpg";
+                                $(".resume_demarry")[0].src = "/themes/mall/jiaju/images/center/bg_radio_full.jpg";
+                                $("#femarry").prop("checked",true)
+                            }
+                     
+                       
+                    }
+                },
+                error:function(err){
+                    //console.log(err)
+                }
+            });     
+}
+(function(){
+    //alert($.cookie('id'));
+    edit();
+}())
+
+
 </script>
 </body>
 </html>
