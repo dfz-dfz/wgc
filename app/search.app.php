@@ -965,9 +965,9 @@ class SearchApp extends MallbaseApp
 	}
 
 	//项目分包详情
-	/*function xiangmu_details(){
-		$this->display('xiangmu_list.html');
-	}*/
+	function xiangmu_details(){
+		$this->display('xiangmu_details.html');
+	}
 
 	function te(){
 		$this->display('te.html');
@@ -987,6 +987,16 @@ class SearchApp extends MallbaseApp
 	function content_gongyingshang(){
 		$this->assign('id', $_GET["id"]);
 		$this->display('content_gongyingshang.html');
+	}
+
+	//工价询价
+	function gongjiaxunjia(){
+		$this->display('gongjiaxunjia_list.html');
+	}
+
+	//工价询价详情
+	function gongjiaxunjia_content(){
+		$this->display('gongjiaxunjia_details.html');
 	}
 	
 	//工价

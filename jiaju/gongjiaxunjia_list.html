@@ -55,7 +55,7 @@
 					<li style="width: 13.16%;">详情</li>
 				</ul>
 
-				<div id="gongjiaMain" style="border:1px solid #6d6d6d;border-top: 0;min-height: 415px;">
+				<div id="gongjiaMain" style="border:1px solid #6d6d6d;border-top: 0;min-height: 415px;height: auto;overflow: hidden;">
 					
 				</div>
 			</div>
@@ -93,39 +93,35 @@
 	//工价询价列表
 	function repair_list(page){
 	
-		$.post('http://wgcapp.wgc2013.com/jingyi.php/Home/Jianli/projectSubcontract_listss', {
+		$.post('http://wgcapp.wgc2013.com/jingyi.php/Home/User/xunjia_lists', {
 			page   :page
 		}, function(ret) {
 			
-			if(ret.status == 200){
-				var data = ret.retData;
+			if(ret.code == 200){
+				var data = ret.message;
 				var html = '';
 				for(var i in data){
-					var expect_price = (data[i].expect_price == null || data[i].expect_price == '') ? '未设定':data[i].expect_price,
-		            	name = data[i].name,
-		            	worker_address = (data[i].worker_address == null || data[i].worker_address == '') ? '未设定':data[i].worker_address,
-		            	prj_name = (data[i].prj_name == null || data[i].prj_name == '') ? '未设定':data[i].prj_name,//项目名称
-		            	ps = (data[i].ps == null || data[i].ps == '') ? '未设定':data[i].ps,//备注
-		            	send_uid = data[i].user_id,
-		            	unit = data[i].unit,
-		            	tell = data[i].tell,
-		            	type = data[i].type,
-						content = data[i].content,
-		            	autoaddress = data[i].autoaddress,
-		            	id = data[i].id;
+					var address = data[i].address,//地址
+						addtime = data[i].addtime,//添加时间
+						id = data[i].id,//列表id
+						num = data[i].num,//数量/范围
+						ps = data[i].ps,//备注
+						tel = data[i].tel,//号码
+						title = data[i].title,//项目名称
+						unit = data[i].unit;//计价单位
 
 						html += '<ul>';
-							html += '<li style="width:25.66%;color:red;font-weight:600;">'+prj_name+'</li>';
-							html += '<li style="width:12.66%">'+expect_price+'</li>';
-							html += '<li style="width:25.66%">'+worker_address+'</li>';
-							html += '<li style="width:12.66%">'+dd_time+'</li>';
-							html += '<li style="width:10.66%;cursor: pointer;"><a style="color:blue;" href="/index.php?app=search&act=xiangmu_details&id='+id+'">查看</a></li>';
+							html += '<li style="width:28.16%;color:red;font-weight:600;">'+id+'</li>';
+							html += '<li style="width:15.16%">'+title+'</li>';
+							html += '<li style="width:28.16%">'+unit+'</li>';
+							html += '<li style="width:15.16%">'+num+'</li>';
+							html += '<li style="width:13.16%;cursor: pointer;"><a style="color:blue;" href="/index.php?app=search&act=gongjiaxunjia_content&id='+id+'">查看</a></li>';
 						html += '</ul>';
 					
 				}
 				$('#gongjiaMain').html(html);
 				$('#nextpage').show();
-			}else if(ret.status == 202){
+			}else if(ret.code == 201){
 				$('#nextpage').hide();
 				$("#gongjiaMain").html('<div style="text-align:center;color:#999;font-size:20px;line-height:150px;">暂无数据</div>');
 			}else{
@@ -139,38 +135,34 @@
 	function searchList(){
 		var key = $('#key').val();
 		$('.unpages').hide();
-		$.post('http://wgcapp.wgc2013.com/jingyi.php/Home/Jianli/projectSubcontract_listss_key', {
+		$.post('http://wgcapp.wgc2013.com/jingyi.php/Home/User/xunjia_lists_key', {
 			key      : key
 		}, function(ret) {
-			if(ret.status == 200){
-				var data = ret.retData;
+			if(ret.code == 200){
+				var data = ret.message;
 				var html = '';
 				for(var i in data){
-					var expect_price = (data[i].expect_price == null || data[i].expect_price == '') ? '未设定':data[i].expect_price,
-		            	name = data[i].name,
-		            	worker_address = (data[i].worker_address == null || data[i].worker_address == '') ? '未设定':data[i].worker_address,
-		            	prj_name = (data[i].prj_name == null || data[i].prj_name == '') ? '未设定':data[i].prj_name,//项目名称
-		            	ps = (data[i].ps == null || data[i].ps == '') ? '未设定':data[i].ps,//备注
-		            	send_uid = data[i].user_id,
-		            	unit = data[i].unit,
-		            	tell = data[i].tell,
-		            	type = data[i].type,
-						content = data[i].content,
-		            	autoaddress = data[i].autoaddress,
-		            	id = data[i].id;
+					var address = data[i].address,//地址
+						addtime = data[i].addtime,//添加时间
+						id = data[i].id,//列表id
+						num = data[i].num,//数量/范围
+						ps = data[i].ps,//备注
+						tel = data[i].tel,//号码
+						title = data[i].title,//项目名称
+						unit = data[i].unit;//计价单位
 
 						html += '<ul>';
-							html += '<li style="width:25.66%;color:red;font-weight:600;">'+prj_name+'</li>';
-							html += '<li style="width:12.66%">'+expect_price+'</li>';
-							html += '<li style="width:25.66%">'+worker_address+'</li>';
-							html += '<li style="width:12.66%">'+dd_time+'</li>';
-							html += '<li style="width:10.66%;cursor: pointer;"><a style="color:blue;" href="/index.php?app=search&act=xiangmu_details&id='+id+'">查看</a></li>';
+							html += '<li style="width:28.16%;color:red;font-weight:600;">'+id+'</li>';
+							html += '<li style="width:15.16%">'+title+'</li>';
+							html += '<li style="width:28.16%">'+unit+'</li>';
+							html += '<li style="width:15.16%">'+num+'</li>';
+							html += '<li style="width:13.16%;cursor: pointer;"><a style="color:blue;" href="/index.php?app=search&act=gongjiaxunjia_content&id='+id+'">查看</a></li>';
 						html += '</ul>';
 					
 				}
 				$('#gongjiaMain').html(html);
 				$('#nextpage').show();
-			}else if(ret.status == 202){
+			}else if(ret.code == 202){
 				$('#nextpage').hide();
 				$("#gongjiaMain").html('<div style="text-align:center;color:#999;font-size:20px;line-height:150px;">暂无数据</div>');
 			}else{

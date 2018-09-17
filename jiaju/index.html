@@ -432,56 +432,13 @@ border:1px solid #808080;width:100%;height:66px;margin-bottom:3px;
 		</div>
 		
 		<div class="divcss2p" style="width:40%;height:450px;overflow:hidden;">
-			<div class="divcss2" style="width:99%;height:310px;overflow:hidden;">
+			<div class="divcss2" id="gjxj" style="width:99%;height:310px;overflow:hidden;">
 				<p style="width:100%;height:40px;background:#ccc;line-height:40px;">
 					<span style="float:left;font-size:18px;color:#333">工价询价</span>
 					<a target="_blank" href="index.php?app=search&act=gongjiaxunjia"><span style="float:right;font-size:18px;color:#333">更多>></span></a>
 				</p>
-<!-- 				<div class="text-left">
-					<a style="margin:8px 10px;width:168px;" target='_blank' href="index.php?app=search&act=joblist3&type=建筑装饰">建筑装饰</a>
-					<a style="margin:8px 10px;width:168px;" target='_blank' href="index.php?app=search&act=joblist2&type=机电">机电</a>
-					<a style="margin:8px 10px;width:168px;" target='_blank' href="index.php?app=search&act=joblist2&type=智能化">智能化</a>
-					<a style="margin:8px 10px;width:168px;" target='_blank' href="index.php?app=search&act=joblist2&type=消防">消防</a>
-					<a style="margin:8px 10px;width:168px;" target='_blank' href="index.php?app=search&act=joblist2&type=环保">环保</a>
-					<a style="margin:8px 10px;width:168px;" target='_blank' href="index.php?app=search&act=joblist2&type=路政">路政</a>
-					<a style="margin:8px 10px;width:168px;" target='_blank' href="index.php?app=search&act=joblist2&type=园林">园林</a>
-					<a style="margin:8px 10px;width:168px;" target='_blank' href="index.php?app=search&act=joblist2&type=保洁">保洁</a>
-					<a target='_blank' href="index.php?app=search&act=joblist3&type=建筑装饰">建筑装饰</a>
-					<a target='_blank' href="index.php?app=search&act=joblist2&type=智能化">智能化</a>
-					<a target='_blank' href="index.php?app=search&act=joblist2&type=消防">消防</a>
-					<a target='_blank' href="index.php?app=search&act=joblist2&type=机电">机电</a>
-					<a target='_blank' href="index.php?app=search&act=joblist2&type=环保">环保</a>
-					<a target='_blank' href="index.php?app=search&act=joblist2&type=路政">路政</a>
-					<a target='_blank' href="index.php?app=search&act=joblist2&type=园林">园林</a>
-					<a target='_blank' href="index.php?app=search&act=joblist2&type=保洁">保洁</a>
-					<a target='_blank' href="index.php?app=search&act=joblist2&type=家具">家具</a>
-					<a target='_blank' href="index.php?app=search&act=joblist2&type=厨具">厨具</a>
-					<a target='_blank' href="index.php?app=search&act=joblist2&type=钢结构">钢结构</a>
-				</div> -->
 
-				<div style="height:270px;overflow:hidden">
-					<table border="1" style="border-collapse:collapse;border:1px solid #e3e3e3;margin:0px auto;width:100%;background:#fff;">
-						<?php
-							$query="select * from ecm_xunjia as A,ecm_member as B where A.userid=B.user_id order by A.id desc limit 0,10"; //定义sql
-							
-							$result=mysql_query($query);
-							while($rows1=@mysql_fetch_array($result)){
-								 // var_dump($rows1);
-								echo '<tr style="cursor:pointer" title="'.$rows1['title'].'" onclick="openGongjiaConten('.$rows1['id'].','.$rows1['user_id'].')">';
-								echo '	<td style="font-size:16px;color:#333;text-align:left;height:38px;"><i style="margin:0 15px;">&bull;</i>'.$rows1['title'].'</td>';
-								echo '	<td style="font-size:16px;color:#333;height:38px;">'.$rows1['unit'].'</td>';
-								echo '	<td style="font-size:16px;color:#333;height:38px;">'.$rows1['num'].'</td>';
-								echo '	<td style="font-size:12px;color:#999;height:38px;">'.date('Y-m-d H:i:s',$rows1['addtime']).'</td>';
-								echo '</tr>';
-							}
-							
-						?>
-						<!--列表开始-->
-						
-						
-					</table>
-					
-				</div>
+				
 			</div> 
 		</div>
 		
@@ -709,30 +666,7 @@ border:1px solid #808080;width:100%;height:66px;margin-bottom:3px;
 					<span style="float:left;font-size:18px;color:#333">设计分包</span>
 					<a target="_blank" href="/index.php?app=search&act=shejifenbao"><span style="float:right;font-size:18px;color:#333">更多>></span></a>
 				</p>
-				<!-- 列表开始 -->
-				<!-- 设计分包 -->
-						<!--<div style="overflow: hidden;border-bottom: 1px solid #ccc;height:82px;">
-							<p style="float: left;font-size: 18px;color: red;font-weight: 600;letter-spacing: 2px;margin: 10px 0 10px 5px;">项目名称</p>
-							<p style="float: right;font-size: 18px;color: red;font-weight: 600;letter-spacing: 2px;margin: 10px 30px 10px 0;">价格</p>
-							<ul id="" style="width:100%;height:auto;overflow:hidden">
-								<a href="javascript:;" style="text-decoration: none;">
-									<li style="width: 100%;height: auto;">
-									<div style="margin-left: 5px;height: auto;border: none;">
-									<span style="letter-spacing: 2px;">地址:</span>
-									<span style="color: #000;display: inline-block;margin-left: 10px;letter-spacing: 2px;">广州市白云区黄边南路一街</span>
-									</div>
-									<div style="overflow: hidden;margin-left: 5px;height: auto;border: none;">
-									<span style="letter-spacing: 2px;">截止时间:</span>
-									<span style="color: #000;display: inline-block;margin-left: 10px;letter-spacing: 2px;">2018-8-18</span>
-									<span style="float: right;letter-spacing: 2px;margin-right: 5px;">2018-8-20</span>
-									</div>
-									</li>
-								</a>
-							</ul>
-						</div>-->
-				<!-- 设计分包end -->
-
-				<!-- 列表结束 -->
+				
 			</div> 
 		</div>
 		
@@ -757,33 +691,17 @@ border:1px solid #808080;width:100%;height:66px;margin-bottom:3px;
     <div class="clear"></div>
 </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
 {include file=footer.html}
 <script type="text/javascript" src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
 
 <script type="text/javascript">
 var serverUrl = "http://wgcapp.59jiaju.com/",page = 1,pages = 1,uploadUrl = "http://wgcapp.59jiaju.com/";;
 $(function(){
-	//
-	/*zp_select();
-
-	
-
-	gongjia_select();*/
 	project();
 	designList();
 	repair_list();
+	gongjiaxunjia();
+
 	setTimeout('erwima()',3000);
 	//右边的二维码
 	$(".icon_qq").on({
@@ -1144,6 +1062,54 @@ function designList(){
 				}else{
 					alert('暂无更多数据了');
 				}
+			}else{
+				alert('网络连接失败，请检查网络');
+				return false;
+			}
+		},'json');
+	}
+
+	function gongjiaxunjia(){
+		$.post('http://wgcapp.wgc2013.com/jingyi.php/Home/User/xunjia_lists', {
+			page   :page
+		}, function(ret) {
+			
+			if(ret.code == 200){
+				var data = ret.message;
+				var html = '';
+				for(var i in data){
+					var address = data[i].address,//地址
+						addtime = data[i].addtime,//添加时间
+						id = data[i].id,//列表id
+						num = data[i].num,//数量/范围
+						ps = data[i].ps,//备注
+						tel = data[i].tel,//号码
+						title = data[i].title,//项目名称
+						unit = data[i].unit;//计价单位
+
+						html += '<div style="overflow: hidden;border-bottom: 1px solid #ccc;height:86px;">';
+						html +=	'<p style="float: left;font-size: 18px;color: red;font-weight: 600;letter-spacing: 2px;margin: 10px 0 10px 5px;">'+title+'</p>';
+						html +=	'<p style="float: right;font-size: 16px;letter-spacing: 2px;margin: 10px 30px 10px 0;">计价单位：'+unit+'</p>';
+						html +=	'<ul id="" style="width:100%;height:auto;overflow:hidden">';
+						html +=		'<a href="/index.php?app=search&act=gongjiaxunjia_content&id='+id+'" style="text-decoration: none;">';
+						html +=			'<li style="width: 100%;height: auto;">';
+						html +=			'<div style="margin-left: 5px;height: auto;border: none;">';
+						html +=			'<span style="letter-spacing: 2px;">地址:</span>';
+						html +=			'<span style="color: #000;display: inline-block;margin-left: 10px;letter-spacing: 2px;">'+address+'</span>';
+						html +=			'</div>';
+						html +=			'<div style="overflow: hidden;margin-left: 5px;height: auto;border: none;">';
+						html +=			'<span style="letter-spacing: 2px;">数量/范围：'+num+'</span>';
+						html +=			'<span style="float: right;letter-spacing: 2px;margin-right: 5px;">发布时间：'+addtime+'</span>';
+						html +=			'</div>';
+						html +=			'</li>';
+						html +=		'</a>';
+						html +=	'</ul>';
+						html += '</div>';
+					
+				}
+				$('#gjxj').append(html);
+			}else if(ret.code == 201){
+				$("#gjxj").append('<div style="text-align:center;color:#999;font-size:20px;line-height:150px;">暂无数据</div>');
 			}else{
 				alert('网络连接失败，请检查网络');
 				return false;

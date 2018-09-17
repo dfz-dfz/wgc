@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>设计分包详情</title>
+	<title>工价询价详情</title>
 	<link rel="stylesheet" href="">
 	<style>
 		.shejifenbao_list {
@@ -19,25 +19,82 @@
 	{include file=header.html}
 
 	<div style="width: 1100px;margin: 10px auto;height: auto;overflow: hidden;text-align: left;">
-		<div style="background-color: #eee;width: 100%;height: 40px;border-bottom: 2px solid #999;padding-left: 6px;font-size: 22px;line-height: 40px;">设计分包详情</div>
-		<div style="height: 600px;">
+		<div style="background-color: #eee;width: 100%;height: 40px;border-bottom: 2px solid #999;padding-left: 6px;font-size: 22px;line-height: 40px;">工价询价详情</div>
+		<div style="height: auto;overflow: hidden;">
 			<div style="height: auto;overflow: hidden;margin-top: 10px;">
 				<div style="width:1100px;">
 					<div id="prj_name_price" style="border-bottom: 2px solid #dfdfdf; height: 80px;line-height: 80px;font-size: 22px;font-weight: 600;padding-left: 6px;">
 						
 					</div>
-					<div class="shejifenbao_list"><span>发布人：</span><span id="faburen"></span></div>
-					<div class="shejifenbao_list"><span>发布时间：</span><span id="fabushijian"></span></div>
-					<div class="shejifenbao_list"><span>发布地址：</span><span id="fabudizhi"></span></div>
-					<div class="shejifenbao_list"><span>装修地址：</span><span id="zhuangxiudizhi"></span></div>
-					<div class="shejifenbao_list"><span>类别：</span><span id="leibie"></span></div>
-					<div class="shejifenbao_list"><span>单位：</span><span id="danwei"></span></div>
-					<div class="shejifenbao_list"><span>备注说明：</span><span id="benzhu"></span></div>
-					<div class="shejifenbao_list"><span>包含设计：</span><span id="baohansheji"></span></div>
+					<div class="shejifenbao_list"><span>计价单位：</span><span id="jjdw"></span></div>
+					<div class="shejifenbao_list"><span>数量/范围：</span><span id="slfw"></span></div>
+					<div class="shejifenbao_list"><span>联系方式：</span><span id="lxfs"></span></div>
+					<div class="shejifenbao_list"><span>工作地点：</span><span id="gzdd"></span></div>
+					<div class="shejifenbao_list"><span>备注：</span><span id="bz"></span></div>
 				</div>
 			</div>
 		</div>
-		<div style="height:50px;background-color: #f24c24;color: #fff;font-size: 26px;letter-spacing: 4px;font-weight: 600;text-align: center;line-height: 50px;">点击联系</div>
+		
+		<!-- 回复内容 -->
+		<div style="margin-top: 30px;border-bottom: 16px solid #eee;">
+			<div style="border: 16px solid #eee;border-bottom: none;height: 130px;width: 93%;padding: 2%;">
+				<div style="height: 120px;width: 100%;">
+					<div style="width: 10%;float: left;text-align: center;">
+						<div>
+							<img src="http://wgcapp.59jiaju.com/Public/Uploads/zhengshu/2018-07-28/0b984224-f7f2-f11d-a24b-a44bf0ff6b01.jpg" alt="" width="60" height="60">
+						</div>
+						<div style="padding: 20px 0;font-size: 14px;color: blue;">安师傅</div>
+						<span style="padding: 1px 12px;border: 1px solid #000;font-size: 12px;">泥水工</span>
+					</div>
+					<div style="width: 85%;float: left;">
+						您好，铺抛光砖预估工价为**元。
+					</div>		
+				</div>
+				<div style="width:100%;height:30px;line-height:30px;text-align: right;"><span style="margin-right: 30px;">1楼</span><span style="margin-right: 50px;">2018-9-4&nbsp;16:23</span></div>
+			</div>
+
+			<div style="border: 16px solid #eee;border-bottom: none;height: 130px;width: 93%;padding: 2%;">
+				<div style="height: 120px;width: 100%;">
+					<div style="width: 10%;float: left;text-align: center;">
+						<div>
+							<img src="http://wgcapp.59jiaju.com/Public/Uploads/zhengshu/2018-07-28/0b984224-f7f2-f11d-a24b-a44bf0ff6b01.jpg" alt="" width="60" height="60">
+						</div>
+						<div style="padding: 20px 0;font-size: 14px;color: blue;">安师傅</div>
+						<span style="padding: 1px 12px;border: 1px solid #000;font-size: 12px;">泥水工</span>
+					</div>
+					<div style="width: 85%;float: left;">
+						您好，铺抛光砖预估工价为**元。
+					</div>		
+				</div>
+				<div style="width:100%;height:30px;line-height:30px;text-align: right;"><span style="margin-right: 30px;">1楼</span><span style="margin-right: 50px;">2018-9-4&nbsp;16:23</span></div>
+			</div>
+
+			<div style="border: 16px solid #eee;border-bottom: none;height: 130px;width: 93%;padding: 2%;">
+				<div style="height: 120px;width: 100%;">
+					<div style="width: 10%;float: left;text-align: center;">
+						<div>
+							<img src="http://wgcapp.59jiaju.com/Public/Uploads/zhengshu/2018-07-28/0b984224-f7f2-f11d-a24b-a44bf0ff6b01.jpg" alt="" width="60" height="60">
+						</div>
+						<div style="padding: 20px 0;font-size: 14px;color: blue;">安师傅</div>
+						<span style="padding: 1px 12px;border: 1px solid #000;font-size: 12px;">泥水工</span>
+					</div>
+					<div style="width: 85%;float: left;">
+						您好，铺抛光砖预估工价为**元。
+					</div>		
+				</div>
+				<div style="width:100%;height:30px;line-height:30px;text-align: right;"><span style="margin-right: 30px;">1楼</span><span style="margin-right: 50px;">2018-9-4&nbsp;16:23</span></div>
+			</div>
+		</div>
+		<!-- 回复内容 end -->
+
+		<!-- 发表回复 -->
+		<div style="height: 300px;width: 100%;margin-top: 30px;background-color: #eee;">
+			<div style="font-weight: bold;padding: 20px;">发表回复</div>
+			<textarea name="" id="" cols="30" rows="10" style="    width: 96%;margin: 0 2%;height: 170px;resize: none;"></textarea>
+			<input type="text" value="发表" style="text-align: center;height: 40px;line-height: 40px;letter-spacing: 5px;background-color:#f24c24;color: #fff;width: 96%;margin: 20px 2%;border:none;">
+		</div>
+		<!-- 发表回复 end -->
+
 	</div>
 
 	{include file=footer.html}
@@ -54,7 +111,7 @@
 		shejifenbao_detalis();
 	})
 
-	//获取设计分包id
+	//获取工价询价id
 	function GetUrlPara(){
 　　　　var url = document.location.toString();
 　　　　var arrUrl = url.split("?");
@@ -64,184 +121,33 @@
 	var URL = GetUrlPara();
 	var arr = URL.split('=');
 	var id = arr.pop();
-	
+
 	function shejifenbao_detalis(){
-		$.post(servermsg+'Designoffer/dataDetails', {
+		$.post('http://wgcapp.wgc2013.com/jingyi.php/Home/User/xunjia_lists_content', {
     		id : id
 		}, function(ret) {
 			var data = ret.message;
 			if(ret.code == 200){
-				$('#prj_name_price').html(data.project_name+'<span style="float: right;margin-right: 20px;">'+data.price+'</span>');
-				$('#faburen').html(data.name);
-				$('#fabushijian').html(_trans_php_time_to_str(data.addtime,2));
-				$('#fabudizhi').html(data.autoaddress);
-				$('#zhuangxiudizhi').html(data.address);
-				$('#leibie').html(data.type);
-				$('#danwei').html(data.price+'/m<sup>2</sup>');
-				$('#benzhu').html(data.ps);
-				$('#baohansheji').html(data.inner_content);
+				var address = data.address,//地址
+					addtime = data.addtime,//添加时间
+					id = data.id,//列表id
+					num = data.num,//数量/范围
+					ps = data.ps,//备注
+					tel = data.tel,//号码
+					title = data.title,//项目名称
+					unit = data.unit;//计价单位
+
+				$('#prj_name_price').html(data.title);
+				$('#jjdw').html(data.unit);
+				$('#slfw').html(data.num);
+				$('#lxfs').html(data.tel.replace(/(\d{3})\d{5}(\d{3})/, '$1*****$2'));
+				$('#gzdd').html(data.address);
+				$('#bz').html(data.ps);
 			}else{
 
 			}
 		},'json');
 	}
 
-	//项目详情
-	/*function detail(){
-			_showProgress();
-			var url = window.servermsg+"Designoffer/dataDetail";
-			
-			api.ajax({
-			    url: window.servermsg+"Designoffer/dataDetail",
-			    method: 'post',
-			    data: {
-			        values: {
-			            user_id : user_id,
-			    		id      : id,
-			        }
-			    }
-			}, function(ret, err) {
-			
-				api.refreshHeaderLoadDone();
-				// 隐藏加载
-				api.hideProgress();
-				
-				if(ret.code == 200){
-				var data        = ret.message,
-				    tel         = data.mobile,
-				    unit        = data.unit,
-				    price       = data.price,
-				    rev_name    = data.rev_name,
-				    mans        = data.mans,
-				    rev_uid     = data.rev_uid,
-				    tlom        = (rev_name == '' || rev_name == 0)?price:unit;
-				   
-				    
-					$('#name').html('发布人：'+data.name);
-					$('#tel').html('发布人：'+data.tell);
-					$('#time').html('发布时间：'+_trans_php_time_to_str(data.addtime,2));
-					$('#autoaddress').html('发布地址:  '+data.autoaddress);
-					$('#address').html('设计地址：'+data.address);
-				    $('#content_inner').html('设计地址：'+data.content);
-					$('#budget_money').html('类别：'+data.type);
-					$('#budget_time').html('单价：'+tlom+'元/m<sup>2</sup>');
-					$('#content_inner').html('包含设计：'+data.inner_content);
-					$('#expect_time').html('备注说明：'+data.ps);
-					
-			    var list='';
-			    list +='<div class="aui-content-padded" id="lianxikefu" style="overflow: hidden;height: 50px">';	 
-				list +='<div class="aui-content-padded" style="border:none;margin-bottom: 3.0rem">';
-				list +='	<div style="float: left;font-size: 0.85rem" onclick="kefu()">';
-				list +='		<a style="font-style: italic;font-size: 0.85rem;text-decoration: underline">联系客服</a>';
-				list +='	</div>';
-				list +='	<div style="font-size: 0.85rem;margin-left:7.0rem;color:#8C8C8C"onclick="yingying()"> '; 
-				list +='		<i class="aui-iconfont aui-icon-share" style="font-size: 0.85rem"></i>分享获积分';
-				list +='	</div>';
-				list +='</div>';
-			    list +='</div>';
-			    
-			    if(data.user_id != user_id){
-			    list +='	<div class="aui-content-padded" style="width:100%;overflow: hidden;height: 50px">	';
-				list +='			<div class="aui-btn aui-btn-danger aui-btn-block aui-btn-sm" id="showButtons2" _onclick="cell()" onclick="openliao()" style="color:#fff;background:#1B8DFD;">联系</div>';
-				list +='	</div> ';
-				}
-			    
-			    
-			    $("#lists2").html(list);
-				var listHtml = '';
-				listHtml += '<ul class="aui-list aui-media-list">';
-				listHtml += '  	<li  class="aui-list-header">回复：<a class="aui-pull-right"  onclick="addhuifu4('+id+');" ><i id="aa" class="aui-iconfont aui-icon-comment"></i></a></li>';
-	
-			    if(mans != null){
-			    
-	             	for(var b in mans){
-	
-					var name = mans[b].name,
-					money = mans[b].money,
-					uid = mans[b].user_id,
-					deal = mans[b].deal,
-					userphoto = mans[b].userphoto,
-					mobile = mans[b].mobile,
-					zhiwei = mans[b].zhiwei,
-					addtime=_trans_php_time_to_str(mans[b].times,1),
-					ps = mans[b].ps,
-					work_number = mans[b].work_number,
-					phone = mans[b].phone,
-					address = mans[b].address,
-					type = mans[b].types,
-					money = mans[b].money,	
-					huifunumber = mans[b].huifunumber,	
-					evidence = mans[b].evidence;	
-				   	   listHtml += '<ul class="aui-list aui-media-list">';
-					   listHtml += '		<li class="aui-list-item aui-list-item-middle"style="width:100%;overflow:hidden">';
-				       listHtml += '         <div class="aui-media-list-item-inner">';
-				       listHtml += '             <div class="aui-list-item-media" style="float:left;overflow:hidden">';
-				       listHtml += '                 <img src="'+imgUrl+userphoto+'" style="width:40px;height:40px" class="aui-img-round aui-list-img-sm">';
-				       listHtml += '             </div>';
-				       listHtml += '             <div class="aui-list-item-inner aui-list-item-arrow">';
-				       listHtml += '                 <div class="aui-list-item-text">';
-				       listHtml += '                     <div class="aui-list-item-title aui-font-size-14">'+name+'</div>';
-				       listHtml += '                     <div class="aui-list-item-right">'+zhiwei+'</div>';
-				       listHtml += '                 </div>';
-				       listHtml += '             </div>';
-				       listHtml += '         </div>';
-				       listHtml += '     </li>';
-					   listHtml += '</ul>';
-					   //留言列表开始
-					   listHtml += '<ul class="aui-list aui-form-list">';
-					   listHtml += '		<li class="aui-list-item">';
-					   listHtml += '         <div class="aui-list-item-inner">';
-					   listHtml += '             <div class="aui-list-item-label">回复时间:</div>';
-					   listHtml += '             <div class="aui-list-item-input">'+addtime+'</div>';
-					   listHtml += '         </div>';
-					   listHtml += '     </li>';
-					   listHtml += '     <li class="aui-list-item">';
-					   listHtml += '         <div class="aui-list-item-inner">';
-					   listHtml += '             <div class="aui-list-item-label">地点:</div>';
-					   listHtml += '            <div class="aui-list-item-input">'+address+'</div>';
-					   listHtml += '         </div>';
-					   listHtml += '     </li>';
-					   listHtml += '     <li class="aui-list-item">';
-					   listHtml += '         <div class="aui-list-item-inner">';
-					   listHtml += '             <div class="aui-list-item-label" style="font-size:0.65rem">金额:</div>';
-					   listHtml += '             <div class="aui-list-item-input">'+money+'<span style="margin-left:0.75rem">元</span></div>';
-					   listHtml += '        </div>';
-					   listHtml += '     </li>';
-					   if(ps !=''){
-					   listHtml += '     <li class="aui-list-item">';
-					   listHtml += '         <div class="aui-list-item-inner">';
-					   listHtml += '             <div class="aui-list-item-label">备注:</div>';
-					   listHtml += '            <div class="aui-list-item-input">'+ps+'</div>';
-					   listHtml += '         </div>';
-					   listHtml += '     </li>';
-					   
-					   }
-					   if(evidence.length > 0){
-					   listHtml += '     <li class="aui-list-item">';
-				       listHtml +=' <p id="message-content" style="width:100%;height:auto;overflow: hidden;margin:5px auto;padding-left: 0.35rem">';
-			           for(var c in evidence){	        	
-					   listHtml += '	  <img class="imagemsg" style="width:3.8rem;float:left;margin:0.15rem;height:3.8rem;" onclick="showpic(this)"id="'+window.imgUrl+evidence[c]+'" src="'+window.imgUrl+evidence[c]+'"> ';     
-					   }  
-			  		   listHtml += '  </p>';
-			  		   listHtml += '     </li>';
-			  		   
-	      			   }
-					   listHtml += '</ul>';
-					}	
-				  }
-				  listHtml += '</ul>';	
-				 $("#lists").append(listHtml);
-				 
-				}else{
-				
-					_toast('加载失败，请检查网络连接');
-					return false;
-				
-				}
-			
-		
-			});
-	
-	}*/
 </script>
 </html>
