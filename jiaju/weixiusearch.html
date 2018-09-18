@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>项目分包列表</title>
+	<title>维修设计列表</title>
 	<link rel="stylesheet" href="">
 	<script type="text/javascript" src="/themes/mall/jiaju/styles/default/js/jquery-1.3.2.min.js"></script>
 </head>
@@ -45,7 +45,7 @@
 		<div class="weixiulist" style="margin: 20px auto;position: relative;">
 			<img src="themes/mall/jiaju/images/weixiuxm.jpg" alt="" width="200px">
 			<span id="back_btn" style="width: 100px;color: #fff;background-color: #efa913;padding: 9px;font-size: 16px;position: absolute;text-align: center;display: none;top: 0;left: 210px;cursor: pointer;" onclick="backList()">返回列表</span>
-			<!-- 设计分包列表 -->
+			<!-- 维修设计列表 -->
 			<div id="sjfbList" style="margin-top: 5px;"> 
 				<ul id="headerlist" style="width: 1100px;background-color: #efa913;">
 					<li style="width: 28.16%;">项目名称</li>
@@ -103,17 +103,17 @@
 				var retData = ret.message;
 				var html = '';
 				for(var i in retData){
-					var restaurant = (retData[i].restaurant == null || retData[i].restaurant == '') ? '未设定':retData[i].restaurant,
+					var office_name = (retData[i].office_name == null || retData[i].office_name == '') ? '未设定':retData[i].office_name,
 						id = retData[i].id, 
 						weixiu_price = retData[i].weixiu_price,
-						restaurant_address = retData[i].restaurant_address,
+						restaurant_address = (retData[i].restaurant_address == null || retData[i].restaurant_address == '') ? '未设定':retData[i].restaurant_address,
 						addtime = retData[i].addtime,
-						come_time = (retData[i].come_time == null || retData[i].come_time == '') ? '未设定':retData[i].come_time;
+						endtime = (retData[i].endtime == null || retData[i].endtime == '') ? '未设定':retData[i].endtime;
 
 						html += '<ul>';
-							html += '<li style="width:28.16%;color:red;font-weight:600;">'+restaurant+'</li>';
+							html += '<li style="width:28.16%;color:red;font-weight:600;">'+office_name+'</li>';
 							html += '<li style="width:28.36%">'+restaurant_address+'</li>';
-							html += '<li style="width:15.16%">'+come_time+'</li>';
+							html += '<li style="width:15.16%">'+endtime+'</li>';
 							html += '<li style="width:15.16%;">'+addtime+'</li>';
 							html += '<li style="width:13.16%;cursor: pointer;"><a style="color:blue;" href="/index.php?app=search&act=weixiu_details&id='+id+'">查看</a></li>';
 						html += '</ul>';
@@ -142,17 +142,17 @@
 				var retData = ret.message;
 				var html = '';
 				for(var i in retData){
-					var restaurant = (retData[i].restaurant == null || retData[i].restaurant == '') ? '未设定':retData[i].restaurant,
+					var office_name = (retData[i].office_name == null || retData[i].office_name == '') ? '未设定':retData[i].office_name,
 						id = retData[i].id, 
 						weixiu_price = retData[i].weixiu_price,
-						restaurant_address = retData[i].restaurant_address,
+						restaurant_address = (retData[i].restaurant_address == null || retData[i].restaurant_address == '') ? '未设定':retData[i].restaurant_address,
 						addtime = retData[i].addtime,
-						come_time = (retData[i].come_time == null || retData[i].come_time == '') ? '未设定':retData[i].come_time;
+						endtime = (retData[i].endtime == null || retData[i].endtime == '') ? '未设定':retData[i].endtime;
 
 						html += '<ul>';
-							html += '<li style="width:28.16%;color:red;font-weight:600;">'+restaurant+'</li>';
+							html += '<li style="width:28.16%;color:red;font-weight:600;">'+office_name+'</li>';
 							html += '<li style="width:28.36%">'+restaurant_address+'</li>';
-							html += '<li style="width:15.16%">'+come_time+'</li>';
+							html += '<li style="width:15.16%">'+endtime+'</li>';
 							html += '<li style="width:15.16%;">'+addtime+'</li>';
 							html += '<li style="width:13.16%;cursor: pointer;"><a style="color:blue;" href="/index.php?app=search&act=weixiu_details&id='+id+'">查看</a></li>';
 						html += '</ul>';

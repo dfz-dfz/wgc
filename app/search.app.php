@@ -117,6 +117,9 @@ class SearchApp extends MallbaseApp
 	}//个人中心个人发布招聘
 	function user_employ(){
 		$this->display('user_employ.html');
+	}//个人中心维修报价
+	function user_baojia(){
+		$this->display('user_baojia.html');
 	}//个人中心个人发布集采
 	function user_collection(){
 		$this->display('user_collection.html');
@@ -126,6 +129,9 @@ class SearchApp extends MallbaseApp
 	}//个人中心个人创建简历
 	function user_resume(){
 		$this->display('user_resume.html');
+	}//个人中心个人编辑简历
+	function user_editresume(){
+		$this->display('user_editresume.html');
 	}//个人中心个人我的简历
 	function user_myresume(){
 		$this->display('user_myresume.html');
@@ -244,6 +250,10 @@ class SearchApp extends MallbaseApp
 	//维修报价详情
 	function weixiu_details(){
 		$this->display('weixiu_details.html');
+	}
+	// APP下载
+	function downapp(){
+		$this->display('downapp.html');
 	}
 	//登陆
 	function sessions()

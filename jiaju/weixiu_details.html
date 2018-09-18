@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>维修项目详情</title>
+	<title>维修设计详情</title>
 	<link rel="stylesheet" href="">
 	
 	<style>
@@ -18,12 +18,13 @@
 </head>
 <body>
 {include file=header.html}
-
-	<div style="width: 1100px;margin: 10px auto;height: auto;overflow: hidden;text-align: left;">
-		<div style="background-color: #eee;width: 100%;height: 40px;border-bottom: 2px solid #999;padding-left: 6px;font-size: 22px;line-height: 40px;">维修项目详情</div>
+<div style="width: 1100px;margin: 10px auto;">
+	<div style="width: 850px;height: auto;overflow: hidden;text-align: left;float: left;">
+		<div style="background-color: #eee;width: 100%;height: 40px;border-bottom: 2px solid #999;padding-left: 6px;font-size: 22px;line-height: 40px;">维修设计详情</div>
 		<div style="height: 600px;">
 			<div style="height: auto;overflow: hidden;margin-top: 10px;">
 				<div style="width:1100px;">
+					<div class="shejifenbao_list" id="xiangmmc"></div>
 					<div class="shejifenbao_list" id="content"></div>
 					<div class="shejifenbao_list" id="shop_address"></div>
 					<div class="shejifenbao_list" id="call"></div>
@@ -34,8 +35,13 @@
 				</div>
 			</div>
 		</div>
-		<div style="height:50px;background-color: #e41d22;color: #fff;font-size: 26px;letter-spacing: 4px;font-weight: 600;text-align: center;line-height: 50px;">点击联系</div>
+		<div style="height:50px;background-color: #e41d22;color: #fff;font-size: 26px;letter-spacing: 4px;font-weight: 600;text-align: center;line-height: 50px;width: 60%;margin: 0 auto;">点击联系</div>
 	</div>
+
+	<div style="width: 200px;float: right;height: 587px;border-left: 10px solid #e5e5e5;padding-right: 0;">
+		<img src="http://www.wgc2013.com/themes/mall/jiaju/images/guanggao.png" alt="" width="100%">
+	</div>
+</div>
 
 	{include file=footer.html}
 </body>
@@ -74,7 +80,9 @@
 			 	var id = date.id;
 			 	var mobile = date.mobile;
 			 	var mobphone = mobile.replace(/(\d{3})\d{5}(\d{3})/, '$1*****$2');
+			 	var office_name = date.office_name;
 
+			 	$('#xiangmmc').html('<span>项目名称：</span>'+office_name);
 			   	$('#person').html(date.allname);//
 			   	$('#brand').html(date.brand);//
 			   	$('#restrant').html(date.restaurant);//
@@ -93,7 +101,9 @@
 			   	if(UserPhoto.length > 0){
 		        	listHtml1 +=' <p id="message-content" style="width:100%;height:auto;overflow: hidden;margin:5px auto;padding-left: 0.35rem">';
 		           	for(var c in UserPhoto){
-				 	listHtml1 += '	  <img class="imagemsg" style="width:3.8rem;float:left;margin:0.15rem;height:3.8rem;" onclick="showpic(this)"id="'+window.imgUrl+UserPhoto[c]+'" src="'+window.imgUrl+UserPhoto[c]+'"> ';
+		           		listHtml1 += '<a href="'+window.imgUrl+UserPhoto[c]+'">'
+						 	listHtml1 += '	  <img class="imagemsg" style="width:3.8rem;float:left;margin:0.15rem;height:3.8rem;" onclick="showpic(this)"id="'+window.imgUrl+UserPhoto[c]+'" src="'+window.imgUrl+UserPhoto[c]+'"> ';
+					 	listHtml1 += '</a>';
 			   		}
 	  		   		listHtml1 += '</p>';
 	      		}
