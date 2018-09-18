@@ -1036,6 +1036,16 @@ class SearchApp extends MallbaseApp
 		
 		$this->display('news.html');
 	}
+
+	//项目合作
+	function xiangmuhezuo(){
+		$this->display('xiangmuhezuo.html');
+	}
+
+	//区域合作
+	function quyuhezuo(){
+		$this->display('quyuhezuo.html');
+	}
 	
 	//行业资讯详情
 	function news_content(){

@@ -122,17 +122,14 @@ border:1px solid #808080;width:100%;height:66px;margin-bottom:3px;
 
 <!-- main start -->
 <div id="main">
-    <div class="main-top w clearfix">
 	
 	{include file=index_nva.html}
-	
-	</div>
 
 
 <!--新增开始-->
 <div style="padding:0px; margin-left:auto;margin-right:auto; width:1200px;overflow:hidden;">
 		<!-- 最右边的二维码 -->	
-		<div class="icon_right" style="width: 60px;height: 210px;position: absolute;right: 0;top: 350px;border: 1px solid #9e9e9e;">
+		<div class="icon_right" style="width: 60px;height: 210px;position: fixed;right: 0;top: 300px;border: 1px solid #9e9e9e;background-color: #fff;">
 		  <div class="icon_qq">
 			<div>
 				<img src="/themes/mall/jiaju/images/icon_QQ.jpg" alt="客服QQ" style="width: 30px;height: 30px;">
@@ -162,7 +159,7 @@ border:1px solid #808080;width:100%;height:66px;margin-bottom:3px;
 		<!-- 最右边的二维码 end -->
 				<!-- 最右边的二维码显示的内容 -->
 		
-			<div class="icon_right_show_qq" style="width: 200px;height: 105px;position: absolute;right: 60px;top: 350px;background-image: url('/themes/mall/jiaju/images/jia.jpg');background-repeat: no-repeat;background-size: 200px;opacity: 0.8;display: none;">
+			<div class="icon_right_show_qq" style="width: 200px;height: 105px;position: fixed;right: 60px;top: 300px;background-image: url('/themes/mall/jiaju/images/jia.jpg');background-repeat: no-repeat;background-size: 200px;opacity: 0.8;display: none;">
 				<ul style="margin:10px 0 0 0px;">
 							<li style="height: 30px;text-decoration:underline;color: #fff;font-size: 18px;">
 								客服①：3215598389
@@ -176,12 +173,12 @@ border:1px solid #808080;width:100%;height:66px;margin-bottom:3px;
 				</ul>
 			</div>
 
-			<div class="icon_right_show_kf" style="width: 200px;height: 105px;position: absolute;right: 60px;top: 390px;background-image: url('/themes/mall/jiaju/images/jia.jpg');background-repeat: no-repeat;background-size: 200px;opacity: 0.8;display: none;">
+			<div class="icon_right_show_kf" style="width: 200px;height: 105px;position: fixed;right: 60px;top: 340px;background-image: url('/themes/mall/jiaju/images/jia.jpg');background-repeat: no-repeat;background-size: 200px;opacity: 0.8;display: none;">
 							<p style="text-align: center;height: 30px;text-decoration:underline;color: #fff;margin-top: 25px;font-size: 18px;">客服热线</p>
 							<p style="text-align: center;height: 30px;text-decoration:underline;color: #fff;font-size: 18px;">020-61973261</p>
 			</div>
 
-			<div class="icon_right_show_gzh" style="width: 130px;position: absolute;right: 60px;top: 350px;background-image: url('/themes/mall/jiaju/images/jia1.jpg');background-repeat: no-repeat;background-size: 120px;height: 215px;opacity: 0.8;display: none;">
+			<div class="icon_right_show_gzh" style="width: 130px;position: fixed;right: 60px;top: 300px;background-image: url('/themes/mall/jiaju/images/jia1.jpg');background-repeat: no-repeat;background-size: 120px;height: 215px;opacity: 0.8;display: none;">
 							<div>
 								<img src="/themes/mall/jiaju/images/wgcdyh.jpg" alt=""  style="width: 80px;height: 80px;margin: 10px 0 0 -14px;">
 								<p style="font-size: 10px;margin: 0px 0 0px 17px;color:#fff;">微工程订阅号</p>
@@ -192,7 +189,7 @@ border:1px solid #808080;width:100%;height:66px;margin-bottom:3px;
 							</div>
 			</div>
 
-			<div class="icon_right_show_wgz" style="width: 130px;height: 115px;position: absolute;right: 60px;top: 447px;background-image: url('/themes/mall/jiaju/images/jia2.jpg');background-repeat: no-repeat;background-size: 120px;opacity: 0.8;display: none;">
+			<div class="icon_right_show_wgz" style="width: 130px;height: 115px;position: fixed;right: 60px;top: 397px;background-image: url('/themes/mall/jiaju/images/jia2.jpg');background-repeat: no-repeat;background-size: 120px;opacity: 0.8;display: none;">
 							<div>
 								<img src="/themes/mall/jiaju/images/wgcxz.jpg" alt=""  style="width: 80px;height: 80px;margin: 10px 0 0 -14px;">
 							</div>
@@ -397,7 +394,7 @@ border:1px solid #808080;width:100%;height:66px;margin-bottom:3px;
 					<a target="_blank" href="/index.php?app=search&act=joblist3_content&type=2&name=水电工长"><span style="float:right;font-size:18px;color:#333">更多>></span></a>
 				</p>
 				<p style="width:140px;float:left;height:200px;">
-					<a href="index.php?app=search&act=joblist2"><img class="allimg" src="/themes/mall/jiaju/styles/style/images/zhuangshilei.jpg"></a>
+					<a href="index.php?app=search&act=joblist2"><img style="height: auto;" class="allimg" src="/themes/mall/jiaju/styles/style/images/zhuangshilei.jpg"></a>
 				</p>
 				<ul id="" style="height:auto;overflow:hidden">
 					<?php
@@ -416,11 +413,7 @@ border:1px solid #808080;width:100%;height:66px;margin-bottom:3px;
 								echo				'<div style="text-align:center;font-size:14px;color:#333">'.$rows1['name'].'</div>  ';          
 								echo			'</div>  ';
 								echo		'</div>      ';  
-								echo		'<div class="aui-list-item-inner"> ';        
-								echo			'<div class="aui-list-item-text aui-ellipsis-1">';
-								echo				'<img src="/themes/mall/jiaju/images/xingxing.jpg" style="width:60px;">';
-								echo			'</div>        	';
-								echo			'<div style="text-align:left;font-size:14px;color:#666">口碑：'.rand(0,9).'.0分</div>   ';
+								echo		'<div class="aui-list-item-inner"> ';
 								echo			'<div style="text-align:left;font-size:14px;color:#666">分类：'.$rows1['type'].'</div>     ';   	
 								echo			'<div style="text-align:left;font-size:14px;color:#666">工种：'.$cate[$rows1['postion']].'</div>    ';    	
 								echo			'<div style="text-align:left;font-size:14px;color:#666">从业：'.$rows1['bumen'].'年</div>  ';     
@@ -463,11 +456,7 @@ border:1px solid #808080;width:100%;height:66px;margin-bottom:3px;
 								echo				'<div style="text-align:center;font-size:14px;color:#333">'.$rows1['name'].'</div>  ';          
 								echo			'</div>  ';
 								echo		'</div>      ';  
-								echo		'<div class="aui-list-item-inner"> ';        
-								echo			'<div class="aui-list-item-text aui-ellipsis-1">';
-								echo				'<img src="/themes/mall/jiaju/images/xingxing.jpg" style="width:60px;">';
-								echo			'</div>        	';
-								echo			'<div style="text-align:left;font-size:14px;color:#666">口碑：'.rand(0,9).'.0分</div>   ';
+								echo		'<div class="aui-list-item-inner"> ';
 								echo			'<div style="text-align:left;font-size:14px;color:#666">分类：'.$rows1['type'].'</div>     ';   	
 								echo			'<div style="text-align:left;font-size:14px;color:#666">工种：'.$cate[$rows1['postion']].'</div>    ';    	
 								echo			'<div style="text-align:left;font-size:14px;color:#666">从业：'.$rows1['bumen'].'年</div>  ';     
@@ -503,16 +492,17 @@ border:1px solid #808080;width:100%;height:66px;margin-bottom:3px;
 	</div>
 
 </div>
-<!--新增推荐工人-->
+
+<!--设计师-->
 <div style="padding:0px; margin-left:auto;margin-right:auto;margin-bottom:10px;width:1200px;">
 	<div class="divcss0"style="border-bottom: 1px solid #999;">
 		
 		<span class="span010"><a href="javascript:;">设计师</a></span>
 	</div>
-	<div style="margin:0px;padding:0px;width:100%;min-height:220px;height: 385px;overflow: hidden;">
-		<div class="divcss1p"style="width:64%;height:auto;overflow:hidden;float:left;">
+	<div style="margin:0px;padding:0px;width:100%;min-height:220px;height: 220px;overflow: hidden;">
+		<div class="divcss1p" style="width:64%;height:auto;overflow:hidden;float:left;">
 			
-			<div class="divcss1" style="width:99%;height:200px;overflow:hidden">
+			<div class="divcss1" style="width:99%;height:214px;overflow:hidden">
 				<p style="width:100%;height:40px;background:#ccc;line-height:40px;">
 					<span style="float:left;font-size:18px;color:#333">推荐设计师</span>
 					<a target="_blank" href="/index.php?app=search&act=joblist3_content&type=2&name=水电工长"><span style="float:right;font-size:18px;color:#333">更多>></span></a>
@@ -534,11 +524,7 @@ border:1px solid #808080;width:100%;height:66px;margin-bottom:3px;
 								echo '				<div style="text-align:center;font-size:14px;color:#333">'.$rows1['name'].'</div>  ';          
 								echo '			</div>  ';
 								echo '		</div>      ';  
-								echo '		<div class="aui-list-item-inner"> ';        
-								echo '			<div class="aui-list-item-text aui-ellipsis-1">';
-								echo '				<img src="/themes/mall/jiaju/images/xingxing.jpg" style="width:60px;">';
-								echo '			</div>        	';
-								echo '			<div style="text-align:left;font-size:14px;color:#666">口碑：'.rand(0,9).'.0分</div>   ';
+								echo '		<div class="aui-list-item-inner"> ';
 								echo '			<div style="text-align:left;font-size:14px;color:#666">分类：'.$rows1['type'].'</div>     ';   	
 								echo '			<div style="text-align:left;font-size:14px;color:#666">工种：'.$cate[$rows1['postion']].'</div>    ';    	
 								echo '			<div style="text-align:left;font-size:14px;color:#666">从业：'.$rows1['bumen'].'年</div>  ';     
@@ -597,7 +583,7 @@ border:1px solid #808080;width:100%;height:66px;margin-bottom:3px;
 			</div> 
 		</div>
 
-		<div class="divcss2p" style="width:35%;height:386px;overflow:hidden;float:right;position: relative;top: -222px;">
+		<div class="divcss2p" style="width:35%;height:215px;overflow:hidden;float:right;position: relative;top: -235px;">
 			<div class="divcss2" id="design_list" style="height:99%;overflow:hidden;width:99%;">
 				<p style="width:100%;height:40px;background:#ccc;line-height:40px;">
 					<span style="float:left;font-size:18px;color:#333">设计分包</span>
@@ -610,6 +596,107 @@ border:1px solid #808080;width:100%;height:66px;margin-bottom:3px;
 	</div>
 
 </div>
+
+<!-- 工匠 -->
+<div style="padding:0px; margin-left:auto;margin-right:auto;margin-bottom:10px;width:1200px;">
+	<div class="divcss0"style="border-bottom: 1px solid #999;">
+		
+		<span class="span010"><a href="javascript:;">工匠</a></span>
+	</div>
+	<div style="margin:0px;padding:0px;width:100%;min-height:220px;height: 385px;overflow: hidden;">
+		<div class="divcss1p"style="width:64%;height:auto;overflow:hidden;float:left;">
+			
+			<div class="divcss1" style="width:99%;height:200px;overflow:hidden">
+				<p style="width:100%;height:40px;background:#ccc;line-height:40px;">
+					<span style="float:left;font-size:18px;color:#333">推荐工匠</span>
+					<a target="_blank" href="/index.php?app=search&act=joblist3_content&type=2&name=水电工长"><span style="float:right;font-size:18px;color:#333">更多>></span></a>
+				</p>
+				<ul id="" style="width:100%;height:auto;overflow:hidden;float:left;">
+					<?php
+					
+						$query="select * from ecm_member as A,ecm_gongyingshang as B where A.user_id=B.user_id and A.pai=1 and A.postion='13' and A.user_id<>'1473404764' order by A.user_id desc limit 0,16";
+						$result=mysql_query($query);
+						while($rows1=@mysql_fetch_array($result)){
+							  
+							  if($rows1['name'] != '匿名'){
+					
+								echo '<a target="_blank" href="index.php?app=search&act=joblist3_content_user&id='.$rows1['user_id'].'&name=详细介绍"><li style="float:left;cursor:pointer;height: 110px;overflow: hidden;width: 30%;margin:10px 8px 10px 0;background-color: #fff;padding-top: 20px;" title="'.$rows1['name'].'">';    
+								echo '	<div class="aui-media-list-item-inner"> ';       
+								echo '		<div class="aui-list-item-media" style="padding: 0 10px;height:100px;width: 80px;float:left;"> ';           
+								echo '			<img onerror="javascript:this.src=\'/themes/mall/jiaju/images/logo.jpg\';" src="http://wgcapp.59jiaju.com/'.$rows1['userphoto'].'" style="height:80px;width:80px;border-radius: 5px;margin:0 auto;">  ';      
+								echo '			<div class="aui-list-item-text">  ';              
+								echo '				<div style="text-align:center;font-size:14px;color:#333">'.$rows1['name'].'</div>  ';          
+								echo '			</div>  ';
+								echo '		</div>      ';  
+								echo '		<div class="aui-list-item-inner"> ';
+								echo '			<div style="text-align:left;font-size:14px;color:#666">分类：'.$rows1['type'].'</div>     ';   	
+								echo '			<div style="text-align:left;font-size:14px;color:#666">工种：'.$cate[$rows1['postion']].'</div>    ';    	
+								echo '			<div style="text-align:left;font-size:14px;color:#666">从业：'.$rows1['bumen'].'年</div>  ';     
+								echo '		</div>    ';
+								echo '	</div>';
+								echo '</li></a>';
+							}
+						}
+						
+					?>
+				
+				</ul>
+
+			</div> 
+		</div>
+
+		<!-- 材料推广 -->
+		<div class="divcss1p"style="width:64%;height:auto;overflow:hidden;float:left;">
+			
+			<div class="divcss1" style="width:99%;height:160px;overflow:hidden">
+				<ul id="" style="width:100%;height:auto;overflow:hidden;float:left;">
+					<?php
+					
+						$query="select * from ecm_member as A,ecm_gongyingshang as B where A.user_id=B.user_id and A.pai=1 and A.postion='13' and A.user_id<>'1473404764' order by A.user_id desc limit 4,16";
+						$result=mysql_query($query);
+						while($rows1=@mysql_fetch_array($result)){
+							  
+							  if($rows1['name'] != '匿名'){
+					
+								echo '<a target="_blank" href="index.php?app=search&act=joblist3_content_user&id='.$rows1['user_id'].'&name=详细介绍"><li style="float:left;cursor:pointer;height: 110px;overflow: hidden;width: 30%;margin:10px 8px 10px 0;background-color: #fff;padding-top: 20px;" title="'.$rows1['name'].'">';    
+								echo '	<div class="aui-media-list-item-inner"> ';       
+								echo '		<div class="aui-list-item-media" style="padding: 0 10px;height:100px;width: 80px;float:left;"> ';           
+								echo '			<img onerror="javascript:this.src=\'/themes/mall/jiaju/images/logo.jpg\';" src="http://wgcapp.59jiaju.com/'.$rows1['userphoto'].'" style="height:80px;width:80px;border-radius: 5px;margin:0 auto;">  ';      
+								echo '			<div class="aui-list-item-text">  ';              
+								echo '				<div style="text-align:center;font-size:14px;color:#333">'.$rows1['name'].'</div>  ';          
+								echo '			</div>  ';
+								echo '		</div>      ';  
+								echo '		<div class="aui-list-item-inner"> ';
+								echo '			<div style="text-align:left;font-size:14px;color:#666">分类：'.$rows1['type'].'</div>     ';   	
+								echo '			<div style="text-align:left;font-size:14px;color:#666">工种：'.$cate[$rows1['postion']].'</div>    ';    	
+								echo '			<div style="text-align:left;font-size:14px;color:#666">从业：'.$rows1['bumen'].'年</div>  ';     
+								echo '		</div>    ';
+								echo '	</div>';
+								echo '</li></a>';
+							}
+						}
+						
+					?>
+				
+				</ul>
+				
+			</div> 
+		</div>
+
+		<div class="divcss2p" style="width:35%;height:386px;overflow:hidden;float:right;position: relative;top: -222px;">
+			<div class="divcss2" id="cailiao_list" style="height:99%;overflow:hidden;width:99%;">
+				<p style="width:100%;height:40px;background:#ccc;line-height:40px;">
+					<span style="float:left;font-size:18px;color:#333">材料推广</span>
+					<a target="_blank" href="/index.php?app=search&act=shejifenbao"><span style="float:right;font-size:18px;color:#333">更多>></span></a>
+				</p>
+				
+			</div> 
+		</div>
+		
+	</div>
+
+</div>
+<!-- 工匠 end -->
 
 
 <!--新增and-->
@@ -942,6 +1029,7 @@ function project(){
 						
 				}
 				$("#design_list").append(listHtml);
+				$('#cailiao_list').append(listHtml);
 			}else{
 				$("#design_list").append('加载失败');
 			}

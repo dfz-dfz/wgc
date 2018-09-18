@@ -101,7 +101,7 @@
 			   	if(UserPhoto.length > 0){
 		        	listHtml1 +=' <p id="message-content" style="width:100%;height:auto;overflow: hidden;margin:5px auto;padding-left: 0.35rem">';
 		           	for(var c in UserPhoto){
-		           		listHtml1 += '<a href="'+window.imgUrl+UserPhoto[c]+'">'
+		           		listHtml1 += '<a href="'+window.imgUrl+UserPhoto[c]+'" target="_blank">'
 						 	listHtml1 += '	  <img class="imagemsg" style="width:3.8rem;float:left;margin:0.15rem;height:3.8rem;" onclick="showpic(this)"id="'+window.imgUrl+UserPhoto[c]+'" src="'+window.imgUrl+UserPhoto[c]+'"> ';
 					 	listHtml1 += '</a>';
 			   		}
