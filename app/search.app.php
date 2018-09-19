@@ -999,6 +999,16 @@ class SearchApp extends MallbaseApp
 		$this->display('content_gongyingshang.html');
 	}
 
+	// 材料推广
+	function cailiaotuiguang(){
+		$this->display('cailiaotuiguang_list.html');
+	}
+
+	// 材料推广详情
+	function cailiaotuiguang_content(){
+		$this->display('cailiaotuiguang_details.html');
+	}
+
 	//工价询价
 	function gongjiaxunjia(){
 		$this->display('gongjiaxunjia_list.html');

@@ -599,12 +599,12 @@ border:1px solid #808080;width:100%;height:66px;margin-bottom:3px;
 
 <!-- 工匠 -->
 <div style="padding:0px; margin-left:auto;margin-right:auto;margin-bottom:10px;width:1200px;">
-	<div class="divcss0"style="border-bottom: 1px solid #999;">
+	<div class="divcss0" style="border-bottom: 1px solid #999;">
 		
 		<span class="span010"><a href="javascript:;">工匠</a></span>
 	</div>
 	<div style="margin:0px;padding:0px;width:100%;min-height:220px;height: 385px;overflow: hidden;">
-		<div class="divcss1p"style="width:64%;height:auto;overflow:hidden;float:left;">
+		<div class="divcss1p" style="width:64%;height:auto;overflow:hidden;float:left;">
 			
 			<div class="divcss1" style="width:99%;height:200px;overflow:hidden">
 				<p style="width:100%;height:40px;background:#ccc;line-height:40px;">
@@ -646,7 +646,7 @@ border:1px solid #808080;width:100%;height:66px;margin-bottom:3px;
 		</div>
 
 		<!-- 材料推广 -->
-		<div class="divcss1p"style="width:64%;height:auto;overflow:hidden;float:left;">
+		<div class="divcss1p" style="width:64%;height:auto;overflow:hidden;float:left;">
 			
 			<div class="divcss1" style="width:99%;height:160px;overflow:hidden">
 				<ul id="" style="width:100%;height:auto;overflow:hidden;float:left;">
@@ -687,7 +687,7 @@ border:1px solid #808080;width:100%;height:66px;margin-bottom:3px;
 			<div class="divcss2" id="cailiao_list" style="height:99%;overflow:hidden;width:99%;">
 				<p style="width:100%;height:40px;background:#ccc;line-height:40px;">
 					<span style="float:left;font-size:18px;color:#333">材料推广</span>
-					<a target="_blank" href="/index.php?app=search&act=shejifenbao"><span style="float:right;font-size:18px;color:#333">更多>></span></a>
+					<a target="_blank" href="/index.php?app=search&act=cailiaotuiguang"><span style="float:right;font-size:18px;color:#333">更多>></span></a>
 				</p>
 				
 			</div> 
@@ -714,274 +714,264 @@ border:1px solid #808080;width:100%;height:66px;margin-bottom:3px;
 
 {include file=footer.html}
 <script type="text/javascript" src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
-
 <script type="text/javascript">
-var serverUrl = "http://wgcapp.59jiaju.com/",page = 1,pages = 1,uploadUrl = "http://wgcapp.59jiaju.com/";;
-$(function(){
-	project();
-	designList();
-	repair_list();
-	gongjiaxunjia();
+	var serverUrl = "http://wgcapp.59jiaju.com/",
+		page = 1,
+		pages = 1,
+		uploadUrl = "http://wgcapp.59jiaju.com/",
+		key = '';
+	$(function(){
+		project();
+		designList();
+		repair_list();
+		gongjiaxunjia();
+		cailiaotuiguang();
 
-	setTimeout('erwima()',3000);
-	//右边的二维码
-	$(".icon_qq").on({
-		mouseenter:function(){
-			$(".icon_right_show_qq").fadeIn();
-			$(".icon_right_show_kf").hide();
-			$(".icon_right_show_gzh").hide();
-			$(".icon_right_show_wgz").hide();
-		},
-		mouseleave:function(){
-			$(".icon_right_show_qq").hide();
-		}
+		setTimeout('erwima()',3000);
+		//右边的二维码
+		$(".icon_qq").on({
+			mouseenter:function(){
+				$(".icon_right_show_qq").fadeIn();
+				$(".icon_right_show_kf").hide();
+				$(".icon_right_show_gzh").hide();
+				$(".icon_right_show_wgz").hide();
+			},
+			mouseleave:function(){
+				$(".icon_right_show_qq").hide();
+			}
 
+		});
+		$(".icon_kf").on({
+			mouseenter:function(){
+				$(".icon_right_show_kf").fadeIn();
+				$(".icon_right_show_qq").hide();
+				$(".icon_right_show_gzh").hide();
+				$(".icon_right_show_wgz").hide();
+			},
+			mouseleave:function(){
+				$(".icon_right_show_kf").hide();
+			}
+
+		});
+		$(".icon_gzh").on({
+			mouseenter:function(){
+				$(".icon_right_show_gzh").fadeIn();
+				$(".icon_right_show_kf").hide();
+				$(".icon_right_show_qq").hide();
+				$(".icon_right_show_wgz").hide();
+			},
+			mouseleave:function(){
+				$(".icon_right_show_gzh").hide();
+			}
+
+		});
+		$(".icon_wei").on({
+			mouseenter:function(){
+				$(".icon_right_show_wgz").fadeIn();
+				$(".icon_right_show_kf").hide();
+				$(".icon_right_show_gzh").hide();
+				$(".icon_right_show_qq").hide();
+			},
+			mouseleave:function(){
+				$(".icon_right_show_wgz").hide();
+			}
+
+		})
+		$(".icon_right_show_qq").on({
+			mouseenter:function(){
+				$(this).show();
+			},
+			mouseleave:function(){
+				$(this).hide();
+			}
+		})
+		$(".icon_right_show_kf").on({
+			mouseenter:function(){
+				$(this).show();
+			},
+			mouseleave:function(){
+				$(this).hide();
+			}
+		})
+		$(".icon_right_show_gzh").on({
+			mouseenter:function(){
+				$(this).show();
+			},
+			mouseleave:function(){
+				$(this).hide();
+			}
+		})
+		$(".icon_right_show_wgz").on({
+			mouseenter:function(){
+				$(this).show();
+			},
+			mouseleave:function(){
+				$(this).hide();
+			}
+		})
+		
 	});
-	$(".icon_kf").on({
-		mouseenter:function(){
-			$(".icon_right_show_kf").fadeIn();
-			$(".icon_right_show_qq").hide();
-			$(".icon_right_show_gzh").hide();
-			$(".icon_right_show_wgz").hide();
-		},
-		mouseleave:function(){
-			$(".icon_right_show_kf").hide();
-		}
+	 // PHP时间戳转时间
+	function _trans_php_time_to_str(timestamp, n) {
 
-	});
-	$(".icon_gzh").on({
-		mouseenter:function(){
-			$(".icon_right_show_gzh").fadeIn();
-			$(".icon_right_show_kf").hide();
-			$(".icon_right_show_qq").hide();
-			$(".icon_right_show_wgz").hide();
-		},
-		mouseleave:function(){
-			$(".icon_right_show_gzh").hide();
+		update = new Date(timestamp * 1000);
+		//时间戳要乘1000
+		year = update.getFullYear();
+		month = (update.getMonth() + 1 < 10) ? ('0' + (update.getMonth() + 1)) : (update.getMonth() + 1);
+		day = (update.getDate() < 10) ? ('0' + update.getDate()) : (update.getDate());
+		hour = (update.getHours() < 10) ? ('0' + update.getHours()) : (update.getHours());
+		minute = (update.getMinutes() < 10) ? ('0' + update.getMinutes()) : (update.getMinutes());
+		second = (update.getSeconds() < 10) ? ('0' + update.getSeconds()) : (update.getSeconds());
+		if (n == 1) {
+			return (year + '-' + month + '-' + day + ' ' + hour + ':' + minute + ':' + second);
+		} else if (n == 2) {
+			return (year + '-' + month + '-' + day);
+		} else if (n == 3) {
+			return (month + '-' + day);
+		} else if (n == 4) {
+			return (hour + ':' + minute + ':' + second);
+		} else if (n == 5) {
+			return (year + '-' + month + '-' + day + ' ' + hour + ':' + minute );
+		} else {
+			return 0;
 		}
-
-	});
-	$(".icon_wei").on({
-		mouseenter:function(){
-			$(".icon_right_show_wgz").fadeIn();
-			$(".icon_right_show_kf").hide();
-			$(".icon_right_show_gzh").hide();
-			$(".icon_right_show_qq").hide();
-		},
-		mouseleave:function(){
-			$(".icon_right_show_wgz").hide();
-		}
-
-	})
-	$(".icon_right_show_qq").on({
-		mouseenter:function(){
-			$(this).show();
-		},
-		mouseleave:function(){
-			$(this).hide();
-		}
-	})
-	$(".icon_right_show_kf").on({
-		mouseenter:function(){
-			$(this).show();
-		},
-		mouseleave:function(){
-			$(this).hide();
-		}
-	})
-	$(".icon_right_show_gzh").on({
-		mouseenter:function(){
-			$(this).show();
-		},
-		mouseleave:function(){
-			$(this).hide();
-		}
-	})
-	$(".icon_right_show_wgz").on({
-		mouseenter:function(){
-			$(this).show();
-		},
-		mouseleave:function(){
-			$(this).hide();
-		}
-	})
-	
-});
- // PHP时间戳转时间
-function _trans_php_time_to_str(timestamp, n) {
-
-	update = new Date(timestamp * 1000);
-	//时间戳要乘1000
-	year = update.getFullYear();
-	month = (update.getMonth() + 1 < 10) ? ('0' + (update.getMonth() + 1)) : (update.getMonth() + 1);
-	day = (update.getDate() < 10) ? ('0' + update.getDate()) : (update.getDate());
-	hour = (update.getHours() < 10) ? ('0' + update.getHours()) : (update.getHours());
-	minute = (update.getMinutes() < 10) ? ('0' + update.getMinutes()) : (update.getMinutes());
-	second = (update.getSeconds() < 10) ? ('0' + update.getSeconds()) : (update.getSeconds());
-	if (n == 1) {
-		return (year + '-' + month + '-' + day + ' ' + hour + ':' + minute + ':' + second);
-	} else if (n == 2) {
-		return (year + '-' + month + '-' + day);
-	} else if (n == 3) {
-		return (month + '-' + day);
-	} else if (n == 4) {
-		return (hour + ':' + minute + ':' + second);
-	} else if (n == 5) {
-		return (year + '-' + month + '-' + day + ' ' + hour + ':' + minute );
-	} else {
-		return 0;
 	}
-}
-  jQuery(".fullSlide").hover(function() {
-      jQuery(this).find(".prev,.next").stop(true, true).fadeTo("show", 0.5)
-  },
-  function() {
-      jQuery(this).find(".prev,.next").fadeOut();
+	jQuery(".fullSlide").hover(function() {
+	  jQuery(this).find(".prev,.next").stop(true, true).fadeTo("show", 0.5)
+	},
+	function() {
+	  jQuery(this).find(".prev,.next").fadeOut();
 	  
-  });
-  jQuery(".fullSlide").slide({
-      titCell: ".hd ul",
-      mainCell: ".bd ul",
-      effect: "fold",
-      autoPlay: true,
-      autoPage: true,
-      trigger: "click",
-      startFun: function(i) {
-          var curLi = jQuery(".fullSlide .bd li").eq(i);
-          if ( !! curLi.attr("_src")) {
-              curLi.css("background-image", curLi.attr("_src")).removeAttr("_src")
-          }
-      }
-  });
- 
-
-
-//列表
-function gongjia_select(){
-	
-	
-	var url = serverUrl+"jingyi.php/Home/Jysearch/searchlist";
-	$.post(url,{user_id:'',page : 1,infotype:'pc_index'},function(ret){
-	
-		
-		
-		if(ret.status == 200){
-				page++;
-				var list=['施工队长','水电工长','空调安装工长','空调安装工','泥水工','水电工','电焊工','家具安装工','木工','扇灰工','保洁工','杂工','设计师','预算员','其它','维修工','网络维修'];
-				var data = ret.retData;
-				var listHtml = '';
-				for (var i in data) {
-							
-					var id          = data[i].id,
-						name        = data[i].title,
-						xiangxi     = data[i].xiangxi,
-						unit        = data[i].unit,
-						user_id     = data[i].userid,
-						postions    = data[i].postion,
-						postion 	= (parseInt(data[i].postion) > 1)?list[parseInt(data[i].postion)]:'无工种',
-						xinzi       = (data[i].total_price == 0)?'面议':data[i].total_price+'元',
-						addtime     = data[i].addtime;
-				
-					listHtml += '<tr style="cursor:pointer" title="'+name+'" onclick="openGongjiaConten('+id+','+user_id+')">';
-					listHtml += '	<td style="font-size:16px;color:#333;text-align:left;height:38px;"><i style="margin:0 15px;">&bull;</i>'+name+'</td>';
-					listHtml += '	<td style="font-size:16px;color:#333;height:38px;">'+unit+'</td>';
-					listHtml += '	<td style="font-size:16px;color:#333;height:38px;">'+xinzi+'</td>';
-					listHtml += '	<td style="font-size:16px;color:#333;height:38px;">'+addtime+'</td>';
-					listHtml += '</tr>';
-				
-			}
-		   
-			$("table").show();
-			$("table").append(listHtml);
-			
-		}else if(ret.status == 202)	{
-			if(page == 1){
-				$("table").html('<div style="border: none;width:100px;margin:50px auto;" class="empty"><img src="/themes/mall/jiaju/images/empty.png"/></div>');
-				$("table").html('<div style="border: none;width:100px;margin:50px auto;" class="empty"><img src="/themes/mall/jiaju/images/empty.png"/></div>');
-			}else{
-				//alert('暂无更多了');
-			}
-		}else{
-			return false;
-		
-		}
-		
-	
-	},"json");
-
-}
-//打开工价详情
-function openGongjiaConten(id,user_id){
-	
-	var url = '/index.php?app=search&act=gongjia_content&id='+id+'&name=详细介绍';
-	window.open(url);
-	//_openWin('gongzuo_content_win','../gongzuo/gongzuo_content_win.html',{id : id,type : 1,touid : user_id,f_type : '招工'});
-	
-	
-}
-
-//项目列表
-page = 1;
-function project(){
-
-	var url= 'http://wgcapp.wgc2013.com/jingyi.php/Home/Jianli/projectSubcontract_listss';
-	$.ajax({
-		type:"POST",
-		url:url,
-		data:{
-			page   :page
-		},
-		cache:false,
-		crossDomain: true == !(document.all),
-		dataType: "json",
-		success:function(ret){
-			if(ret.status == 200){
-				var data = ret.retData;
-				var html = '';
-				for(var i in data){
-					var expect_price = (data[i].expect_price == null || data[i].expect_price == '') ? '未设定':data[i].expect_price,
-		            	name = data[i].name,
-		            	worker_address = (data[i].worker_address == null || data[i].worker_address == '') ? '未设定':data[i].worker_address,
-		            	prj_name = (data[i].prj_name == null || data[i].prj_name == '') ? '未设定':data[i].prj_name,//项目名称
-		            	ps = (data[i].ps == null || data[i].ps == '') ? '未设定':data[i].ps,//备注
-		            	send_uid = data[i].user_id,
-		            	unit = data[i].unit,
-		            	tell = data[i].tell,
-		            	type = data[i].type,
-		            	dd_time = (data[i].dd_time == null || data[i].dd_time == '') ? '未设定':data[i].dd_time,//截止时间
-						addtime = _trans_php_time_to_str(data[i].addtime,5),//添加时间
-						content = data[i].content,
-		            	autoaddress = data[i].autoaddress,
-		            	id = data[i].id;
-
-						html +=			'<div style="overflow: hidden;border-bottom: 1px solid #ccc;height:82px;">';
-						html +=			'<p style="float: left;font-size: 18px;color: red;font-weight: 600;letter-spacing: 2px;margin: 10px 0 10px 5px;">'+prj_name+'</p>';
-						html +=				'<p style="float: right;font-size: 18px;color: red;font-weight: 600;letter-spacing: 2px;margin: 10px 30px 10px 0;">'+expect_price+'万</p>';
-						html +=				'<ul id="" style="width:100%;height:auto;overflow:hidden">';
-						html +=					'<a href="/index.php?app=search&act=xiangmu_details&id='+id+'" style="text-decoration: none;">';
-						html +=						'<li style="width: 100%;height: auto;">';
-						html +=							'<div style="margin-left: 5px;">';
-						html +=								'<span style="letter-spacing: 2px;">地址:</span>';
-						html +=								'<span style="color: #000;display: inline-block;margin-left: 10px;letter-spacing: 2px;">'+worker_address+'</span>';
-						html +=							'</div>';
-						html +=							'<div style="overflow: hidden;margin-left: 5px;">';
-						html +=								'<span style="letter-spacing: 2px;">截止时间:</span>';
-						html +=								'<span style="color: #000;display: inline-block;margin-left: 10px;letter-spacing: 2px;">'+dd_time+'</span>';
-						html +=							'<span style="float: right;letter-spacing: 2px;">'+addtime+'</span>';
-						html +=							'</div>';
-						html +=						'</li>';
-						html +=					'</a>';
-						html +=				'</ul>';
-						html +=				'</div>';
-				}
-				$("#prj_list").append(html);
-			}
-		},
-		error:function(err){
-			console.log(err)
-		}
 	});
-}
+	jQuery(".fullSlide").slide({
+	  titCell: ".hd ul",
+	  mainCell: ".bd ul",
+	  effect: "fold",
+	  autoPlay: true,
+	  autoPage: true,
+	  trigger: "click",
+	  startFun: function(i) {
+	      var curLi = jQuery(".fullSlide .bd li").eq(i);
+	      if ( !! curLi.attr("_src")) {
+	          curLi.css("background-image", curLi.attr("_src")).removeAttr("_src")
+	      }
+	  }
+	});
+
+
+
+	//列表
+	function gongjia_select(){
+		var url = serverUrl+"jingyi.php/Home/Jysearch/searchlist";
+		$.post(url,{user_id:'',page : 1,infotype:'pc_index'},function(ret){
+			if(ret.status == 200){
+					page++;
+					var list=['施工队长','水电工长','空调安装工长','空调安装工','泥水工','水电工','电焊工','家具安装工','木工','扇灰工','保洁工','杂工','设计师','预算员','其它','维修工','网络维修'];
+					var data = ret.retData;
+					var listHtml = '';
+					for (var i in data) {
+								
+						var id          = data[i].id,
+							name        = data[i].title,
+							xiangxi     = data[i].xiangxi,
+							unit        = data[i].unit,
+							user_id     = data[i].userid,
+							postions    = data[i].postion,
+							postion 	= (parseInt(data[i].postion) > 1)?list[parseInt(data[i].postion)]:'无工种',
+							xinzi       = (data[i].total_price == 0)?'面议':data[i].total_price+'元',
+							addtime     = data[i].addtime;
+					
+						listHtml += '<tr style="cursor:pointer" title="'+name+'" onclick="openGongjiaConten('+id+','+user_id+')">';
+						listHtml += '	<td style="font-size:16px;color:#333;text-align:left;height:38px;"><i style="margin:0 15px;">&bull;</i>'+name+'</td>';
+						listHtml += '	<td style="font-size:16px;color:#333;height:38px;">'+unit+'</td>';
+						listHtml += '	<td style="font-size:16px;color:#333;height:38px;">'+xinzi+'</td>';
+						listHtml += '	<td style="font-size:16px;color:#333;height:38px;">'+addtime+'</td>';
+						listHtml += '</tr>';
+				}
+				$("table").show();
+				$("table").append(listHtml);
+			}else if(ret.status == 202)	{
+				if(page == 1){
+					$("table").html('<div style="border: none;width:100px;margin:50px auto;" class="empty"><img src="/themes/mall/jiaju/images/empty.png"/></div>');
+					$("table").html('<div style="border: none;width:100px;margin:50px auto;" class="empty"><img src="/themes/mall/jiaju/images/empty.png"/></div>');
+				}else{
+					//alert('暂无更多了');
+				}
+			}else{
+				return false;
+			}
+		},"json");
+
+	}
+	//打开工价详情
+	function openGongjiaConten(id,user_id){
+		var url = '/index.php?app=search&act=gongjia_content&id='+id+'&name=详细介绍';
+		window.open(url);
+		//_openWin('gongzuo_content_win','../gongzuo/gongzuo_content_win.html',{id : id,type : 1,touid : user_id,f_type : '招工'});
+	}
+
+	//项目分包列表
+	page = 1;
+	function project(){
+
+		var url= 'http://wgcapp.wgc2013.com/jingyi.php/Home/Jianli/projectSubcontract_listss';
+		$.ajax({
+			type:"POST",
+			url:url,
+			data:{
+				page   :page
+			},
+			cache:false,
+			crossDomain: true == !(document.all),
+			dataType: "json",
+			success:function(ret){
+				if(ret.status == 200){
+					var data = ret.retData;
+					var html = '';
+					for(var i in data){
+						var expect_price = (data[i].expect_price == null || data[i].expect_price == '') ? '未设定':data[i].expect_price,
+			            	name = data[i].name,
+			            	worker_address = (data[i].worker_address == null || data[i].worker_address == '') ? '未设定':data[i].worker_address,
+			            	prj_name = (data[i].prj_name == null || data[i].prj_name == '') ? '未设定':data[i].prj_name,//项目名称
+			            	ps = (data[i].ps == null || data[i].ps == '') ? '未设定':data[i].ps,//备注
+			            	send_uid = data[i].user_id,
+			            	unit = data[i].unit,
+			            	tell = data[i].tell,
+			            	type = data[i].type,
+			            	dd_time = (data[i].dd_time == null || data[i].dd_time == '') ? '未设定':data[i].dd_time,//截止时间
+							addtime = _trans_php_time_to_str(data[i].addtime,5),//添加时间
+							content = data[i].content,
+			            	autoaddress = data[i].autoaddress,
+			            	id = data[i].id;
+
+							html +=			'<div style="overflow: hidden;border-bottom: 1px solid #ccc;height:82px;">';
+							html +=			'<p style="float: left;font-size: 18px;color: red;font-weight: 600;letter-spacing: 2px;margin: 10px 0 10px 5px;">'+prj_name+'</p>';
+							html +=				'<p style="float: right;font-size: 18px;color: red;font-weight: 600;letter-spacing: 2px;margin: 10px 30px 10px 0;">'+expect_price+'万</p>';
+							html +=				'<ul id="" style="width:100%;height:auto;overflow:hidden">';
+							html +=					'<a href="/index.php?app=search&act=xiangmu_details&id='+id+'" style="text-decoration: none;" target="_blank">';
+							html +=						'<li style="width: 100%;height: auto;">';
+							html +=							'<div style="margin-left: 5px;">';
+							html +=								'<span style="letter-spacing: 2px;">地址:</span>';
+							html +=								'<span style="color: #000;display: inline-block;margin-left: 10px;letter-spacing: 2px;">'+worker_address+'</span>';
+							html +=							'</div>';
+							html +=							'<div style="overflow: hidden;margin-left: 5px;">';
+							html +=								'<span style="letter-spacing: 2px;">截止时间:</span>';
+							html +=								'<span style="color: #000;display: inline-block;margin-left: 10px;letter-spacing: 2px;">'+dd_time+'</span>';
+							html +=							'<span style="float: right;letter-spacing: 2px;">'+addtime+'</span>';
+							html +=							'</div>';
+							html +=						'</li>';
+							html +=					'</a>';
+							html +=				'</ul>';
+							html +=				'</div>';
+					}
+					$("#prj_list").append(html);
+				}
+			},
+			error:function(err){
+				console.log(err)
+			}
+		});
+	}
 	//设计分包列表
 	function designList(){
 		var url = 'http://wgcapp.wgc2013.com/index.php/Home/Designoffer/getList';
@@ -1011,7 +1001,7 @@ function project(){
 					listHtml +=			'<p style="float: left;font-size: 18px;color: red;font-weight: 600;letter-spacing: 2px;margin: 10px 0 10px 5px;">'+bj_name+'</p>';
 					listHtml +=			'<p style="float: right;font-size: 18px;color: red;font-weight: 600;letter-spacing: 2px;margin: 10px 30px 10px 0;">'+price+'</p>';
 					listHtml +=			'<ul id="" style="width:100%;height:auto;overflow:hidden">';
-					listHtml +=				'<a href="/index.php?app=search&act=shejifenbao_details&id='+id+'" style="text-decoration: none;">';
+					listHtml +=				'<a href="/index.php?app=search&act=shejifenbao_details&id='+id+'" style="text-decoration: none;" target="_blank">';
 					listHtml +=					'<li style="width: 100%;height: auto;">';
 					listHtml +=					'<div style="margin-left: 5px;height: auto;border: none;">';
 					listHtml +=					'<span style="letter-spacing: 2px;">地址:</span>';
@@ -1029,7 +1019,7 @@ function project(){
 						
 				}
 				$("#design_list").append(listHtml);
-				$('#cailiao_list').append(listHtml);
+				
 			}else{
 				$("#design_list").append('加载失败');
 			}
@@ -1059,8 +1049,8 @@ function project(){
 						html +=	'<p style="float: left;font-size: 18px;color: red;font-weight: 600;letter-spacing: 2px;margin: 10px 0 10px 5px;">'+restaurant+'</p>';
 						html +=	'<p style="float: right;font-size: 18px;color: red;font-weight: 600;letter-spacing: 2px;margin: 10px 30px 10px 0;">'+weixiu_price+'</p>';
 						html +=	'<ul id="" style="width:100%;height:auto;overflow:hidden">';
-						html +=		'<a href="/index.php?app=search&act=weixiu_details&id='+id+'" style="text-decoration: none;">';
-						html +=			'<li style="width: 100%;height: auto;">';
+						html +=		'<a href="/index.php?app=search&act=weixiu_details&id='+id+'" style="text-decoration: none;" target="_blank">';
+						html +=			'<li style="width: 100%;height: auto;" target="_blank">';
 						html +=			'<div style="margin-left: 5px;height: auto;border: none;">';
 						html +=			'<span style="letter-spacing: 2px;">地址:</span>';
 						html +=			'<span style="color: #000;display: inline-block;margin-left: 10px;letter-spacing: 2px;">'+restaurant_address+'</span>';
@@ -1110,7 +1100,7 @@ function project(){
 						title = data[i].title,//项目名称
 						unit = data[i].unit;//计价单位
 
-						html += '<a style="height:38px;" href="/index.php?app=search&act=gongjiaxunjia_content&id='+id+'" title="'+title+'">';
+						html += '<a style="height:38px;" href="/index.php?app=search&act=gongjiaxunjia_content&id='+id+'" title="'+title+'" target="_blank">';
 							html += '<ul style="cursor:pointer;width:100%;height:38px;line-height:38px;margin-top:0;">';
 								html += '<li style="font-family: none;font-size:16px;color:#333;height:38px;width:42.33%;float:left;list-style:inside;margin-left:10px;">'+title+'</li>';
 								html += '<li style="font-family: none;font-size:16px;color:#333;height:38px;width:27.33%;float:left;">'+num+'&nbsp;&nbsp;'+unit+'</li>';
@@ -1125,6 +1115,54 @@ function project(){
 			}else{
 				alert('网络连接失败，请检查网络');
 				return false;
+			}
+		},'json');
+	}
+
+	// 材料推广列表
+	function cailiaotuiguang(){
+		$.post(url+'jingyi.php/Home/Material/materialListes', {
+			page : page,
+			cai_type : 2,
+			key : key,
+			limit : 4
+		}, function(ret) {
+			if(ret.code == 200){
+				var data = ret.message;
+				var html = '';
+				for(var i in data){
+					var id = data[i].id,
+						m_name = data[i].m_name,
+						m_introduce = data[i].m_introduce,
+						office_name = data[i].office_name,
+						brand       = data[i].brand,
+						address     = data[i].address,
+						addtime = timestampToTime(data[i].addtime),
+						expire_time = data[i].expire_time,
+						m_introduce = data[i].m_introduce;
+
+					html +=			'<div style="overflow: hidden;border-bottom: 1px solid #ccc;height:82px;">';
+					html +=			'<p style="float: left;font-size: 18px;color: red;font-weight: 600;letter-spacing: 2px;margin: 10px 0 10px 5px;">'+m_name+'</p>';
+					html +=				'<ul id="" style="width:100%;height:auto;overflow:hidden">';
+					html +=					'<a href="/index.php?app=search&act=cailiaotuiguang_content&id='+id+'" style="text-decoration: none;" target="_blank">';
+					html +=						'<li style="width: 100%;height: auto;">';
+					html +=							'<div style="margin-left: 5px;float:left;">';
+					html +=								'<span style="letter-spacing: 2px;float:left;">材料简介:</span>';
+					html +=								'<span style="color: #000;margin-left: 10px;letter-spacing:2px;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;width:330px;float:left;" title="'+m_introduce+'">'+m_introduce+'</span>';
+					html +=							'</div>';
+					html +=							'<div style="overflow: hidden;margin-left: 5px;float:left;">';
+					html +=								'<span style="letter-spacing: 2px;">截止时间:</span>';
+					html +=								'<span style="display: inline-block;margin-left: 10px;letter-spacing: 1px;">'+expire_time+'</span>';
+					html +=							'<span style="float: right;letter-spacing: 1px;">'+addtime+'</span>';
+					html +=							'</div>';
+					html +=						'</li>';
+					html +=					'</a>';
+					html +=				'</ul>';
+					html +=				'</div>';
+				}
+				$('#cailiao_list').append(html);	
+			}else{
+
 			}
 		},'json');
 	}
