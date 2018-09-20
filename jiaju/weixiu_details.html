@@ -18,7 +18,7 @@
 </head>
 <body>
 {include file=header.html}
-<div style="width: 1100px;margin: 10px auto;">
+<div style="width: 1100px;margin: 10px auto;height: auto;overflow: hidden;">
 	<div style="width: 850px;height: auto;overflow: hidden;text-align: left;float: left;">
 		<div style="background-color: #eee;width: 100%;height: 40px;border-bottom: 2px solid #999;padding-left: 6px;font-size: 22px;line-height: 40px;">维修设计详情</div>
 		<div style="height: 600px;">
@@ -35,13 +35,35 @@
 				</div>
 			</div>
 		</div>
-		<div style="height:50px;background-color: #e41d22;color: #fff;font-size: 26px;letter-spacing: 4px;font-weight: 600;text-align: center;line-height: 50px;width: 60%;margin: 0 auto;">点击联系</div>
+		<!-- <div style="height:50px;background-color: #e41d22;color: #fff;font-size: 26px;letter-spacing: 4px;font-weight: 600;text-align: center;line-height: 50px;width: 60%;margin: 0 auto;">点击联系</div> -->
 	</div>
 
 	<div style="width: 200px;float: right;height: 587px;border-left: 10px solid #e5e5e5;padding-right: 0;">
 		<img src="http://www.wgc2013.com/themes/mall/jiaju/images/guanggao.png" alt="" width="100%">
 	</div>
 </div>
+
+	<div style="width: 1100px;margin: 0 auto;text-align: left;">
+		<!-- 回复内容 -->
+		<div style="margin-top: 30px;border-bottom: 16px solid #eee;" id="huifu">
+			
+		</div>
+		<!-- 回复内容 end -->
+
+		<!-- 发表回复 -->
+		<form action="http://wgcapp.wgc2013.com/jingyi.php/Home/User/xunjia_huifu" method="post">
+			<div style="height: 300px;width: 100%;margin-top: 30px;background-color: #eee;position: relative;">
+				<span><img style="width: 20px;padding: 10px 10px 10px 22px;" src="themes/mall/jiaju/images/bianji.png" alt=""></span>
+				<span style="font-weight: bold;color: #000;font-size: 16px;position: absolute;margin-top: 10px;">发表回复</span>
+				<input type="hidden" id="user_id" name="user_id" value="<?php echo ($_SESSION['user_info']['user_id'] == '' || $_SESSION['user_info']['user_id'] == null) ? '':$_SESSION['user_info']['user_id'];?>">
+				<input type="hidden" name="xid" value="<?php echo $_GET['id'];?>" id="xq">
+				<input type="hidden" name="type" value="2">
+				<textarea name="content" id="" cols="30" rows="10" style="width: 96%;margin: 0 2%;height: 170px;resize: none;border: 2px solid #7db7ca;"></textarea>
+				<input type="submit" onclick="sub()" value="发表" style="text-align: center;height: 40px;line-height: 40px;letter-spacing: 5px;background-color:#f24c24;color: #fff;width: 96%;margin: 20px 2%;border:none;">
+			</div>
+		</form>
+		<!-- 发表回复 end -->
+	</div>
 
 	{include file=footer.html}
 </body>
@@ -50,11 +72,6 @@
 	var url = "http://wgcapp.wgc2013.com/";
 	var uploadUrl = 'http://wgcapp.wgc2013.com/';
 	var imgUrl = 'http://wgcapp.wgc2013.com/';
-
-	$(function(){
-		detail();
-	})
-
 	//获取维修项目id
 	function GetUrlPara(){
 　　　　var url = document.location.toString();
@@ -66,12 +83,17 @@
 	var arr = URL.split('=');
 	var prj_id = arr.pop();
 
+	$(function(){
+		detail();
+		huifu_list();
+	})
+
 	function detail(){
 
-		$.post(url+'jingyi.php/Home/Weixiumsg/dataDetail',{
+		$.post(url+'jingyi.php/Home/User/dataDetail',{
 			id : prj_id
 		}, function(ret) {
-			
+			var html = '';
 			if(ret.code == 200){
 				var date    = ret.message;
 			 	var mans    = date.mans;
@@ -114,322 +136,41 @@
 			 	 	listHtml += '<li class="aui-list-header linone">接单留言：<a class="aui-pull-right"  onclick="addhuifu('+id+','+send_uid+');"><i class="aui-iconfont aui-icon-comment"></i></a></li>';
 			  	}else{
 			  	 	listHtml += '<li class="aui-list-header linone">接单留言：<a class="aui-pull-right" ></a></li>';
-			  	}		
-							
-		        if(mans != null){
-			 		for(var b in mans){
-						var name = mans[b].name,
-						money = mans[b].money,
-						uid = mans[b].user_id,
-						deal = mans[b].deal,
-						userphoto = mans[b].userphoto,
-						mobile = mans[b].mobile,
-						zhiwei = mans[b].zhiwei,
-						addtime=_trans_php_time_to_str(mans[b].addtime,1),
-						ps = mans[b].ps,
-						work_number = mans[b].work_number,
-						phone = mans[b].phone,
-						address = mans[b].address,
-						type = mans[b].type,
-						money = mans[b].money,	
-						look_time = mans[b].look_time,	
-						areaphoto = mans[b].areaphoto;	
-						times = mans[b].times,
-						tel = mans[b].tel,
-						play_time = mans[b].play_time,
-						need_cai = mans[b].need_cai,	
-						pay_money = mans[b].pay_money,	
-						personal_ps = mans[b].personal_ps;
-						rev_name = mans[b].rev_name;
-						rev_uid = mans[b].rev_uid;
-						allname = mans[b].allname;	
-						//回复列表开始
-						
-					    //二次回复结束*/
-						if(type == 1){
-						 	if(senduid == user_id || user_id == uid){
-							 	
-							   //用户头像开始
-							   listHtml += '<ul class="aui-list aui-media-list">';
-							   listHtml += '		<li class="aui-list-item aui-list-item-middle"style="width:100%;overflow:hidden">';
-						       listHtml += '         <div class="aui-media-list-item-inner">';
-						       listHtml += '             <div class="aui-list-item-media" style="float:left;overflow:hidden">';
-						       listHtml += '                 <img src="'+imgUrl+userphoto+'" style="width:40px;height:40px" class="aui-img-round aui-list-img-sm">';
-						       listHtml += '             </div>';
-						       listHtml += '             <div class="aui-list-item-inner aui-list-item-arrow">';
-						       listHtml += '                 <div class="aui-list-item-text">';
-						       listHtml += '                     <div class="aui-list-item-title aui-font-size-14">'+name+'</div>';
-						       listHtml += '                     <div class="aui-list-item-right">'+zhiwei+'</div>';
-						       listHtml += '                 </div>';
-						       listHtml += '             </div>';
-						       listHtml += '         </div>';
-						       listHtml += '     </li>';
-							   listHtml += '</ul>';
-							   //用户头像结束
-							   //留言列表开始
-							   listHtml += '<ul class="aui-list aui-form-list">';
-							   listHtml += '		<li class="aui-list-item">';
-							   listHtml += '         <div class="aui-list-item-inner">';
-							   listHtml += '             <div class="aui-list-item-label" style="font-size:0.7rem">报价金额：</div>';
-							   listHtml += '             <div class="aui-list-item-input" style="color:#f10214">'+money+'元</div>';
-							   listHtml += '         </div>';
-							   listHtml += '     </li>';
-							   listHtml += '     <li class="aui-list-item">';
-							   listHtml += '         <div class="aui-list-item-inner">';
-							   listHtml += '             <div class="aui-list-item-label" style="font-size:0.7rem">电话:</div>';
-							   listHtml += '            <div class="aui-list-item-input">'+tel+'</div>';
-							   listHtml += '         </div>';
-							   listHtml += '     </li>';
-							   listHtml += '     <li class="aui-list-item">';
-							   listHtml += '         <div class="aui-list-item-inner">';
-							   listHtml += '             <div class="aui-list-item-label" style="font-size:0.7rem">接单时间:</div>';
-							   listHtml += '             <div class="aui-list-item-input">'+times+'</div>';
-							   listHtml += '        </div>';
-							   listHtml += '     </li>';
-							   listHtml += '     <li class="aui-list-item">';
-							   listHtml += '         <div class="aui-list-item-inner">';
-							   listHtml += '             <div class="aui-list-item-label" style="font-size:0.7rem">接单地点:</div>';
-							   listHtml += '             <div class="aui-list-item-input">'+address+'</div>';
-							   listHtml += '         </div>';
-							   listHtml += '     </li>';
-							   listHtml += '     <li class="aui-list-item">';
-							   listHtml += '        <div class="aui-list-item-inner">';
-							   listHtml += '             <div class="aui-list-item-label" style="font-size:0.7rem">是否同意看场:</div>';
-							   if(deal==1){
-							   		  listHtml += '             <div class="aui-list-item-input">同意</div>';
-							   }else if(deal==0){
-							   		  listHtml += '             <div class="aui-list-item-input">不同意</div>';
-							   }
-							 
-							   listHtml += '         </div>';
-							   listHtml += '     </li>';
-							   	   listHtml += '     <li class="aui-list-item">';
-							   listHtml += '         <div class="aui-list-item-inner">';
-							   listHtml += '             <div class="aui-list-item-label" style="font-size:0.70rem">确认看场时间:</div>';
-							   listHtml += '             <div class="aui-list-item-input">'+look_time+'</div>';
-							   listHtml += '         </div>';
-							   listHtml += '     </li>';
-							 
-								
-							   listHtml += '</ul>';
-							   
-							   if(uid != user_id){
-									listHtml += '  	<div style="height:30px;padding:0 10px;line-height:30px;" onclick="addhuifu1('+id+','+uid+');" class="aui-content aui-margin-b-15"><a style="color:#000;font-size:0.65rem"class="aui-pull-left" >发布方回复：</a><a class="aui-pull-right"><i class="aui-iconfont aui-icon-comment"></i></a></div>';
-							   }else{
-									listHtml += '  	<li class="aui-list-header">发布方回复：<a class="aui-pull-right" ></a></li>';
-							   }
-								
-								
-							   
-							   }
-								
-							}
-							
-							
-							 //留言列表结束
-							if(type == 2){  
-								if(senduid == user_id || rev_uid == user_id){
-								   //用户头像开始
-								   listHtml += '<ul class="aui-list aui-media-list">';
-								   listHtml += '	<li class="aui-list-item aui-list-item-middle"style="width:100%;overflow:hidden">';
-							       listHtml += '         <div class="aui-media-list-item-inner">';
-							       listHtml += '             <div class="aui-list-item-media"style="float:left;overflow:hidden">';
-							       listHtml += '                 <img src="'+imgUrl+userphoto+'" style="width:40px;height:40px" class="aui-img-round aui-list-img-sm">';
-							       listHtml += '             </div>';
-							       listHtml += '             <div class="aui-list-item-inner aui-list-item-arrow">';
-							       listHtml += '                 <div class="aui-list-item-text">';
-							       listHtml += '                     <div class="aui-list-item-title aui-font-size-14">'+name+'</div>';
-							       listHtml += '                     <div class="aui-list-item-right">'+zhiwei+'</div>';
-							       listHtml += '                 </div>';
-							       listHtml += '             </div>';
-							       listHtml += '         </div>';
-							       listHtml += '     </li>';
-								   listHtml += '</ul>';
-								   //用户头像结束
-								   //留言列表开始
-								   listHtml += '<ul class="aui-list aui-form-list">';
-								   listHtml += '     <li class="aui-list-item">';
-								   listHtml += '         <div class="aui-list-item-inner">';
-								   listHtml += '             <div class="aui-list-item-label" style="font-size:0.7rem">接收人:</div>';
-								   listHtml += '             <div class="aui-list-item-input">'+rev_name.substring(0,rev_name.length-1); +'</div>';
-								   listHtml += '         </div>';
-								   listHtml += '     </li>';
-								   listHtml += '     <li class="aui-list-item">';
-								   listHtml += '         <div class="aui-list-item-inner">';
-								   listHtml += '             <div class="aui-list-item-label" style="font-size:0.7rem">备注说明:</div>';
-								   listHtml += '             <div class="aui-list-item-input">'+ps+'</div>';
-								   listHtml += '         </div>';
-								   listHtml += '     </li>';
-								   listHtml += '     <li class="aui-list-item">';
-								   listHtml += '        <div class="aui-list-item-inner">';
-								   listHtml += '             <div class="aui-list-item-label" style="font-size:0.7rem">是否同意交单：</div>';
-								    if(deal==1){
-								   		  listHtml += '             <div class="aui-list-item-input">同意</div>';
-								   }else{
-								   		  listHtml += '             <div class="aui-list-item-input">不同意</div>';
-								   }
-								   listHtml += '         </div>';
-								   listHtml += '     </li>';
-								   
-								   
-								   
-								   listHtml += '</ul>';    
-								   
-								   if(uid == user_id){
-								  		 listHtml += '  	<div class="aui-content-padded aui-margin-b-15">看场回复：<a class="aui-pull-right" ></a></div>';
-										
-								   }else{
-								        listHtml += '  	<div style="height:30px;padding:0 10px;line-height:30px;" onclick="addhuifu2('+id+','+send_uid+')" class="aui-content-padded aui-margin-b-15"><a style="color:#000;font-size:0.65rem" class="aui-pull-left">看场回复：</a><a class="aui-pull-right"><i class="aui-iconfont aui-icon-comment"></i></a></div>';
-								   }
-							   }
-							}
-							
-							
-							
-							
-							
-							 //留言列表结束
-							if(type == 3){  
-								if(senduid == user_id || uid == user_id){
-								    //用户头像开始
-								    listHtml += '<ul class="aui-list aui-media-list" style="margin-top:0.25rem">';
-								    listHtml += '	<li class="aui-list-item aui-list-item-middle"style="width:100%;overflow:hidden">';
-							        listHtml += '         <div class="aui-media-list-item-inner">';
-							        listHtml += '             <div class="aui-list-item-media" style="float:left;overflow:hidden">';
-							        listHtml += '                 <img src="'+imgUrl+userphoto+'" style="width:40px;height:40px" class="aui-img-round aui-list-img-sm">';
-							        listHtml += '             </div>';
-							        listHtml += '             <div class="aui-list-item-inner aui-list-item-arrow">';
-							        listHtml += '                 <div class="aui-list-item-text">';
-							        listHtml += '                     <div class="aui-list-item-title aui-font-size-14">'+name+'</div>';
-							        listHtml += '                     <div class="aui-list-item-right">'+zhiwei+'</div>';
-							        listHtml += '                 </div>';
-							        listHtml += '             </div>';
-							        listHtml += '         </div>';
-							        listHtml += '     </li>';
-								    listHtml += '</ul>';
-								    //用户头像结束
-								    //留言列表开始
-								    listHtml += '<ul class="aui-list aui-form-list">';
-								    listHtml += '     <li class="aui-list-item">';
-								    listHtml += '         <div class="aui-list-item-inner">';
-								    listHtml += '             <div class="aui-list-item-label" style="font-size:0.7rem">看场时间:</div>';
-								    listHtml += '             <div class="aui-list-item-input">'+play_time+'</div>';
-								    listHtml += '        </div>';
-								    listHtml += '     </li>';
-								    listHtml += '     <li class="aui-list-item">';
-								    listHtml += '         <div class="aui-list-item-inner">';
-								    listHtml += '             <div class="aui-list-item-label" style="font-size:0.7rem">目前地点:</div>';
-								    listHtml += '             <div class="aui-list-item-input">'+address+'</div>';
-								    listHtml += '         </div>';
-								    listHtml += '     </li>';
-								    listHtml += '     <li class="aui-list-item">';
-								    listHtml += '         <div class="aui-list-item-inner">';
-								    listHtml += '             <div class="aui-list-item-label" style="font-size:0.7rem">计划完工时间:</div>';
-								    listHtml += '             <div class="aui-list-item-input">'+play_time+'</div>';
-								    listHtml += '         </div>';
-								    listHtml += '     </li>';
-								    listHtml += '     <li class="aui-list-item">';
-								    listHtml += '         <div class="aui-list-item-inner">';
-								    listHtml += '             <div class="aui-list-item-label" style="font-size:0.7rem">人工说明:</div>';
-								    listHtml += '             <div class="aui-list-item-input">'+personal_ps+'</div>';
-								    listHtml += '         </div>';
-								    listHtml += '     </li>';
-								    listHtml += '     <li class="aui-list-item">';
-								    listHtml += '         <div class="aui-list-item-inner">';
-								    listHtml += '             <div class="aui-list-item-label" style="font-size:0.7rem">措施费:</div>';
-								    listHtml += '             <div class="aui-list-item-input"style="color:red">'+pay_money+'元</div>';
-								    listHtml += '         </div>';
-								    listHtml += '     </li>';
-								    listHtml += '     <li class="aui-list-item">';
-								    listHtml += '         <div class="aui-list-item-inner">';
-								    listHtml += '             <div class="aui-list-item-label" style="font-size:0.7rem">材料</div>';
-								    listHtml += '             <div class="aui-list-item-input">'+need_cai+'</div>';
-								    listHtml += '         </div>';
-								    listHtml += '     </li>';
-								    listHtml += '     <li class="aui-list-item">';
-								    if(areaphoto.length > 0){
-								 		listHtml +=' <p>看场图片</p>';
-								        listHtml +=' <p id="message-content" style="width:100%;height:auto;overflow: hidden;margin:5px auto;padding-left: 0.35rem">';
-								        for(var j in areaphoto){
-													        	
-										  	listHtml += '	  <img class="imagemsg" style="width:3.8rem;float:left;margin:0.15rem;height:3.8rem;" onclick="showpic(this)" id="'+window.imgUrl+areaphoto[j]+'" src="'+window.imgUrl+areaphoto[j]+'"> ';
-										}  
-									
-							  		    listHtml += '  </p>';
-							  		    
-								    }
-								      
-								    if(ps != ''){
-								        listHtml += '	   <p class="contents" style="text-indent:2em;padding-bottom;font-size:0.75rem">图片描述：'+ps+'</p>';
-								    }
-                                   
-								    listHtml += '     </li>';
-								   
-								   
-								   
-								    listHtml += '</ul>';
-								   
-								    if(uid != user_id){
-										listHtml += '  	<div style="display:block;height:30px;padding:0 10px;line-height:30px;" onclick="addhuifu3('+id+','+uid+');" class="aui-content-padded aui-margin-b-15"><a style="color:#000;font-size:0.65rem" class="aui-pull-left">发布方金额回复：</a><a class="aui-pull-right"><i class="aui-iconfont aui-icon-comment"></i></a></div>';
-								    }else{
-								   		listHtml += '  	<div class="aui-list-header">发布方金额回复：<a class="aui-pull-right" ></a></div>';
-								    }
-							  	}
-							}
-							
-							
-							if(type == 4){  
-								if(senduid == user_id || rev_uid == user_id){
-								    //用户头像开始
-								    listHtml += '<ul class="aui-list aui-media-list">';
-								    listHtml += '	<li class="aui-list-item aui-list-item-middle"style="width:100%;overflow:hidden">';
-							        listHtml += '         <div class="aui-media-list-item-inner">';
-							        listHtml += '             <div class="aui-list-item-media"style="float:left;overflow:hidden">';
-							        listHtml += '                 <img src="'+imgUrl+userphoto+'" style="width:40px;height:40px" class="aui-img-round aui-list-img-sm">';
-							        listHtml += '             </div>';
-							        listHtml += '             <div class="aui-list-item-inner aui-list-item-arrow">';
-							        listHtml += '                 <div class="aui-list-item-text">';
-							        listHtml += '                     <div class="aui-list-item-title aui-font-size-14">'+name+'</div>';
-							        listHtml += '                     <div class="aui-list-item-right">'+zhiwei+'</div>';
-							        listHtml += '                 </div>';
-					
-							        listHtml += '             </div>';
-							        listHtml += '         </div>';
-							        listHtml += '     </li>';
-								    listHtml += '</ul>';
-								    //用户头像结束
-								    //留言列表开始
-								    listHtml += '<ul class="aui-list aui-form-list">';
-								    listHtml += '     <li class="aui-list-item">';
-								    listHtml += '         <div class="aui-list-item-inner">';
-								    listHtml += '             <div class="aui-list-item-label" style="font-size:0.7rem">接收人:</div>';
-								    listHtml += '             <div class="aui-list-item-input">'+rev_name.substring(0,rev_name.length-1);+'</div>';
-								    listHtml += '         </div>';
-								    listHtml += '     </li>';
-								    listHtml += '     <li class="aui-list-item">';
-								    listHtml += '         <div class="aui-list-item-inner">';
-								    listHtml += '             <div class="aui-list-item-label">同意金额 :</div>';
-								    listHtml += '             <div class="aui-list-item-input" style="color:red">'+money+'元</div>';;
-								    listHtml += '         </div>';
-								    listHtml += '     </li>';
-								    listHtml += '     <li class="aui-list-item">';
-								    listHtml += '         <div class="aui-list-item-inner">';
-								    listHtml += '             <div class="aui-list-item-label">备注说明 :</div>';
-								    listHtml += '             <div class="aui-list-item-input">'+ps+'</div>';
-								    listHtml += '         </div>';
-								    listHtml += '     </li>';
-								    listHtml += '</ul>';
-								    listHtml += '  	<div class="aui-list-header"><a class="aui-pull-right" ></a></div>';
-								}
-							}
+			  	}
 
-					    }
-
+			  	if(mans != ''){
+					for(var i in mans){
+						var addtime = mans[i].addtime,
+							content = mans[i].content,
+							gongzhong = mans[i].gongzhong,
+							id = mans[i].id,
+							userimg = mans[i].userimg,
+							username = mans[i].username,
+							time = _trans_php_time_to_str(addtime,5);
+						  	html += '<div style="border: 16px solid #eee;border-bottom: none;height: 130px;width: 93%;padding: 2%;">';
+								html += '<div style="height: 120px;width: 100%;">';
+									html += '<div style="width: 10%;float: left;text-align: center;">';
+										html += '<div>';
+											html += '<img src="http://wgcapp.59jiaju.com'+userimg+'" alt="" width="60" height="60">';
+										html += '</div>';
+										html += '<div style="padding: 20px 0;font-size: 14px;color: blue;">'+username+'</div>';
+										html += '<span style="padding: 1px 12px;border: 1px solid #000;font-size: 12px;">'+gongzhong+'</span>';
+									html += '</div>';
+									html += '<div style="width: 85%;float: left;">'+content+'</div>';
+								html += '</div>';
+								html += '<div style="width:100%;height:30px;line-height:30px;text-align: right;"><span style="margin-right: 30px;">'+id+'楼</span><span style="margin-right: 50px;">'+time+'</span></div>';
+							html += '</div>';
 					}
+				}else{
+					html += '<div style="border: 16px solid #eee;border-bottom: none;height: 50px;width: 93%;padding: 2%;">';
+						html += '<div style="height: 50px;width: 100%;">';
+							html += '<div style="text-align:center;font-size:20px;color:#999;line-height:50px;">暂无回复内容</div>';
+						html += '</div>';
+					html += '</div>';
+				}
 
-			 	listHtml += '</ul>';	
 			 	$("#lists1").append(listHtml1);
-			 	$("#lists").append(listHtml);
+			 	$('#huifu').html(html);
 			}else if(ret.code == 202){
 				return false;
 			}else{
@@ -439,105 +180,12 @@
 		},'json');
 	}
 
-	//维修项目详情
-	// function weixiuDateils(){
-	// 	$.post(url+'jingyi.php/Home/Jymember/xiangmu_Content', {
-	// 		prj_id : prj_id
-	// 	}, function(ret) {
-	// 		var html = '';
-	// 		if(ret.status == 200){
-	// 			var data = ret.retData;
-
-	// 			$('#xmmc').html(data.prj_name);//项目名称
-	// 			$('#xmjg').html(data.pre_price+'/万元');//项目金额
-	// 			$('#address').html(data.address);//地址
-	// 			$('#beizhu').html(data.prj_desc);//备注
-	// 			$('#starttime').html(data.start_time);//开工时间
-	// 			$('#endtime').html(data.expire_time);//完工时间
-				
-	// 		}else{
-	// 			// alert('加载失败');
-	// 		}
-	// 	},'json');
-	// }
-	// //维修项目成员
-	// function xmmain(){
-	// 	$.post(url+'jingyi.php/Home/Jymember/userpdetail', {
-	// 		p_id : prj_id
-	// 	}, function(ret) {
-	// 		if(ret.status == 200){
-	// 			var mg = ret.retData.mg;//公司管理员
-	// 	        var cm = ret.retData.cm;//甲方管理员
-	// 	        var jl = ret.retData.jl;//项目经理
-	// 	        var cl = ret.retData.cl;//材料商管理员
-	// 	        var xm = ret.retData.xm;//项目成员
-	// 	        var yd = ret.retData.yd;//岗位异动负责人
-
-	// 	        var htmlmg = '';
-	// 	        for(var i in mg){
-	// 	        	var touid = mg[i].user_id,
-	// 	        		utype = mg[i].utype,
-	// 	        		name = mg[i].name, 
-	// 	        		imgUrl = uploadUrl+mg[i].userphoto;
-
-	// 	        	htmlmg += '<li>'+name+'</li>';
-	// 	        }
-	// 	        var htmlcm = '';
-	// 	        for(var i in cm){
-	// 	        	var touid_cm = xm[i].user_id,
-	// 	        		utype = xm[i].utype,
-	// 	        		name_cm = xm[i].name, 
-	// 	        		imgUrl_cm = uploadUrl+xm[i].userphoto;
-
-	// 	        	htmlcm += '<li>'+name_cm+'</li>';
-	// 	        }
-	// 	        var htmljl = '';
-	// 	        for(var i in jl){
-	// 	        	var touid_cm = jl[i].user_id,
-	// 	        		utype = jl[i].utype,
-	// 	        		name_cm = jl[i].name, 
-	// 	        		imgUrl_cm = uploadUrl+jl[i].userphoto;
-
-	// 	        	htmljl += '<li>'+name_cm+'</li>';
-	// 	        }
-	// 	        var htmlcl = '';
-	// 	        for(var i in cl){
-	// 	        	var touid_cm = cl[i].user_id,
-	// 	        		utype = cl[i].utype,
-	// 	        		name_cm = cl[i].name, 
-	// 	        		imgUrl_cm = uploadUrl+cl[i].userphoto;
-
-	// 	        	htmlcl += '<li>'+name_cm+'</li>';
-	// 	        }
-	// 	        var htmlxm = '';
-	// 	        for(var i in xm){
-	// 	        	var touid_cm = xm[i].user_id,
-	// 	        		utype = xm[i].utype,
-	// 	        		name_cm = xm[i].name, 
-	// 	        		imgUrl_cm = uploadUrl+xm[i].userphoto;
-
-	// 	        	htmlxm += '<li>'+name_cm+'</li>';
-	// 	        }
-	// 	        var htmlyd = '';
-	// 	        for(var i in yd){
-	// 	        	var touid_fr = yd[i].user_id,
-	// 	        		name_fr = yd[i].name, 
-	// 	        		imgUrl_fr = uploadUrl+yd[i].userphoto;
-
-	// 	        	htmlyd += '<li>'+name_fr+'</li>';
-	// 	        }
-
-	// 			$('#gsgly').html(htmlmg);//公司管理员
-	// 			$('#xmjl').html(htmlcm);//项目经理
-	// 			$('#jfgly').html(htmljl);//甲方管理员
-	// 			$('#clsgly').html(htmlcl);//材料商管理员
-	// 			$('#xmcy').html(htmlxm);//项目成员
-	// 			$('#gwydfzr').html(htmlyd);//岗位异动负责人
-	// 		}else{
-	// 			// alert('加载失败');
-	// 		}
-			
-	// 	},'json');
-	// }
+	// 发布内容
+	function sub(){
+		if($('#user_id').val() == ''){
+			alert('请登录之后在回复');
+			return false;
+		}
+	}
 </script>
 </html>

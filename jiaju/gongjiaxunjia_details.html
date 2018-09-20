@@ -56,6 +56,7 @@
 				<span style="font-weight: bold;color: #000;font-size: 16px;position: absolute;margin-top: 10px;">发表回复</span>
 				<input type="hidden" id="user_id" name="user_id" value="<?php echo ($_SESSION['user_info']['user_id'] == '' || $_SESSION['user_info']['user_id'] == null) ? '':$_SESSION['user_info']['user_id'];?>">
 				<input type="hidden" name="xid" value="" id="xq">
+				<input type="hidden" name="type" value="1">
 				<textarea name="content" id="" cols="30" rows="10" style="width: 96%;margin: 0 2%;height: 170px;resize: none;border: 2px solid #7db7ca;"></textarea>
 				<input type="submit" onclick="sub()" value="发表" style="text-align: center;height: 40px;line-height: 40px;letter-spacing: 5px;background-color:#f24c24;color: #fff;width: 96%;margin: 20px 2%;border:none;">
 			</div>
@@ -92,7 +93,8 @@
 
 	function shejifenbao_detalis(){
 		$.post('http://wgcapp.wgc2013.com/jingyi.php/Home/User/xunjia_lists_content', {
-    		id : id
+    		id : id,
+    		type : 1
 		}, function(ret) {
 			var data = ret.message;
 			var datas = ret.huifu;
@@ -154,6 +156,7 @@
 		},'json');
 	}
 
+	//发布回复内容
 	function sub(){
 		if($('#user_id').val() == ''){
 			alert('请登录之后在回复');
