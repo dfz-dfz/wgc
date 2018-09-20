@@ -106,13 +106,13 @@
 					var office_name = (retData[i].office_name == null || retData[i].office_name == '') ? '未设定':retData[i].office_name,
 						id = retData[i].id, 
 						weixiu_price = retData[i].weixiu_price,
-						restaurant_address = (retData[i].restaurant_address == null || retData[i].restaurant_address == '') ? '未设定':retData[i].restaurant_address,
+						worker_address = (retData[i].worker_address == null || retData[i].worker_address == '') ? '未设定':retData[i].worker_address,
 						addtime = retData[i].addtime,
 						endtime = (retData[i].endtime == null || retData[i].endtime == '') ? '未设定':retData[i].endtime;
 
 						html += '<ul>';
 							html += '<li style="width:28.16%;color:red;font-weight:600;">'+office_name+'</li>';
-							html += '<li style="width:28.36%">'+restaurant_address+'</li>';
+							html += '<li style="width:28.36%">'+worker_address+'</li>';
 							html += '<li style="width:15.16%">'+endtime+'</li>';
 							html += '<li style="width:15.16%;">'+addtime+'</li>';
 							html += '<li style="width:13.16%;cursor: pointer;"><a style="color:blue;" href="/index.php?app=search&act=weixiu_details&id='+id+'">查看</a></li>';
@@ -145,13 +145,13 @@
 					var office_name = (retData[i].office_name == null || retData[i].office_name == '') ? '未设定':retData[i].office_name,
 						id = retData[i].id, 
 						weixiu_price = retData[i].weixiu_price,
-						restaurant_address = (retData[i].restaurant_address == null || retData[i].restaurant_address == '') ? '未设定':retData[i].restaurant_address,
+						worker_address = (retData[i].worker_address == null || retData[i].worker_address == '') ? '未设定':retData[i].worker_address,
 						addtime = retData[i].addtime,
 						endtime = (retData[i].endtime == null || retData[i].endtime == '') ? '未设定':retData[i].endtime;
 
 						html += '<ul>';
 							html += '<li style="width:28.16%;color:red;font-weight:600;">'+office_name+'</li>';
-							html += '<li style="width:28.36%">'+restaurant_address+'</li>';
+							html += '<li style="width:28.36%">'+worker_address+'</li>';
 							html += '<li style="width:15.16%">'+endtime+'</li>';
 							html += '<li style="width:15.16%;">'+addtime+'</li>';
 							html += '<li style="width:13.16%;cursor: pointer;"><a style="color:blue;" href="/index.php?app=search&act=weixiu_details&id='+id+'">查看</a></li>';

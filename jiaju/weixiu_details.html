@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>维修设计详情</title>
+	<title>维修报价详情</title>
 	<link rel="stylesheet" href="">
 	
 	<style>
@@ -20,7 +20,7 @@
 {include file=header.html}
 <div style="width: 1100px;margin: 10px auto;height: auto;overflow: hidden;">
 	<div style="width: 850px;height: auto;overflow: hidden;text-align: left;float: left;">
-		<div style="background-color: #eee;width: 100%;height: 40px;border-bottom: 2px solid #999;padding-left: 6px;font-size: 22px;line-height: 40px;">维修设计详情</div>
+		<div style="background-color: #eee;width: 100%;height: 40px;border-bottom: 2px solid #999;padding-left: 6px;font-size: 22px;line-height: 40px;">维修报价详情</div>
 		<div style="height: 600px;">
 			<div style="height: auto;overflow: hidden;margin-top: 10px;">
 				<div style="width:1100px;">
@@ -111,7 +111,7 @@
 			   	$('#number').html(date.numbers);//
 			   	$('#worker_number').html(date.work_number);//
 			   	$('#content').html('<span>维修内容：</span>'+date.content);//
-			   	$('#shop_address').html('<span>维修地址：</span>'+date.restaurant_address);//
+			   	$('#shop_address').html('<span>维修地址：</span>'+date.worker_address);//
 			   	$('#shop_call').html(date.restaurant_phone);//
 			   	$('#shop_time').html(date.come_time);//
 			   	$('#call').html('<span>联系方式：</span>'+mobphone);//

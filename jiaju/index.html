@@ -1043,20 +1043,20 @@ border:1px solid #808080;width:100%;height:66px;margin-bottom:3px;
 					var restaurant = (retData[i].office_name == null || retData[i].office_name == '') ? '未设定':retData[i].office_name,
 						id = retData[i].id, 
 						weixiu_price = retData[i].weixiu_price,
-						restaurant_address = retData[i].restaurant_address,
+						worker_address = retData[i].worker_address,
 						addtime = retData[i].addtime,
 						endtime = (retData[i].endtime == null || retData[i].endtime == '') ? '未设定':retData[i].endtime,
 						name = retData[i].name;
 		           		
 						html += '<div style="overflow: hidden;border-bottom: 1px solid #ccc;height:82px;">';
+						html +=		'<a href="/index.php?app=search&act=weixiu_details&id='+id+'" style="text-decoration: none;" target="_blank">';
 						html +=	'<p style="float: left;font-size: 18px;color: red;font-weight: 600;letter-spacing: 2px;margin: 10px 0 10px 5px;">'+restaurant+'</p>';
 						html +=	'<p style="float: right;font-size: 18px;color: red;font-weight: 600;letter-spacing: 2px;margin: 10px 10px 10px 0;">'+name+'</p>';
 						html +=	'<ul id="" style="width:100%;height:auto;overflow:hidden">';
-						html +=		'<a href="/index.php?app=search&act=weixiu_details&id='+id+'" style="text-decoration: none;" target="_blank">';
 						html +=			'<li style="width: 100%;height: auto;" target="_blank">';
 						html +=			'<div style="margin-left: 5px;height: auto;border: none;">';
 						html +=			'<span style="letter-spacing: 2px;">地址:</span>';
-						html +=			'<span style="color: #000;display: inline-block;margin-left: 10px;letter-spacing: 2px;">'+restaurant_address+'</span>';
+						html +=			'<span style="color: #000;display: inline-block;margin-left: 10px;letter-spacing: 2px;">'+worker_address+'</span>';
 						html +=			'</div>';
 						html +=			'<div style="overflow: hidden;margin-left: 5px;height: auto;border: none;">';
 						html +=			'<span style="letter-spacing: 2px;">截止时间:</span>';
@@ -1064,8 +1064,8 @@ border:1px solid #808080;width:100%;height:66px;margin-bottom:3px;
 						html +=			'<span style="float: right;letter-spacing: 1px;margin-right: 5px;">'+addtime+'</span>';
 						html +=			'</div>';
 						html +=			'</li>';
-						html +=		'</a>';
 						html +=	'</ul>';
+						html +=		'</a>';
 						html += '</div>';
 					
 				}
