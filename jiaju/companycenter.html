@@ -1,7 +1,7 @@
 
 
  <!-- 左上的导航栏 -->
- 	<div class="container_nav" style="border: 2px solid #cacaca;width: 19%;height: 1100px;float: left;">
+ 	<div class="container_nav" style="border: 2px solid #cacaca;width: 19%;height: auto;float: left;overflow: hidden;">
  		<div class="user_center" style="text-align: left;">
  			<h3 style="font-size: 16px;font-weight: bold; color: #3a3c3d;height: 35px;line-height: 35px;background-image: url('/themes/mall/jiaju/images/center/form-bg.png');background-repeat: repeat;background-size: 100% 35px;letter-spacing: 2px;padding-left: 5px;">个人用户中心</h3>
  			<ul class="user_center_ul" style="margin-top: 10px;">
@@ -104,6 +104,7 @@
 				<li class="user_projectFB_li" style="text-align: center;height: 30px;line-height: 30px;margin: 10px 0;"><span style="display: inline-block;margin: 0 10px;float: left;"><img src="/themes/mall/jiaju/images/center/xmfb.jpg" alt="认证" width="30px" height="30px" /></span><span style="float: left;">项目分包</span></li>
 				<li class="user_design_li" style="text-align: center;height: 30px;line-height: 30px;margin: 10px 0;"><span style="display: inline-block;margin: 0 10px;float: left;"><img src="/themes/mall/jiaju/images/center/sjfb.jpg" alt="认证" width="30px" height="30px" /></span><span style="float: left;">设计分包</span></li>
  				<li class="user_list_li" style="text-align: center;height: 30px;line-height: 30px;margin-bottom: 10px;display:none;"><span style="display: inline-block;margin: 0 10px;float: left;"><img src="/themes/mall/jiaju/images/center/liebiao.png" alt="认证" width="30px" height="30px" /></span><span style="float: left;">发布列表</span></li>
+ 				<li class="user_cailiao_li" style="text-align: center;height: 30px;line-height: 30px;margin-bottom: 10px;"><span style="display: inline-block;margin: 0 10px;float: left;"><img src="/themes/mall/jiaju/images/center/cltg.jpg" alt="认证" width="30px" height="30px" /></span><span style="float: left;">材料推广</span></li>
  			</ul>
  		</div>
  		<!-- 简历中心 -->
@@ -192,4 +193,8 @@ $(".user_design_li").click(function(){
 $(".user_baojia_li").click(function(){
 	window.parent.location.href = "/index.php?app=search&act=user_baojia"	//维修报价
 })
+$(".user_cailiao_li").click(function(){
+	window.parent.location.href = "/index.php?app=search&act=user_cailiao"	// 材料推广
+})
+
 </script>

@@ -997,13 +997,14 @@ border:1px solid #808080;width:100%;height:66px;margin-bottom:3px;
 						addtime = timestampToTime(data[i].addtime),
 						content = data[i].content,
 		            	autoaddress = data[i].autoaddress,
-		            	id = data[i].id;
+		            	id = data[i].id,
+		            	project_name = data[i].project_name;
 				
 					listHtml +=		'<div style="overflow: hidden;border-bottom: 1px solid #ccc;height:82px;">';
-					listHtml +=			'<p style="float: left;font-size: 18px;color: red;font-weight: 600;letter-spacing: 2px;margin: 10px 0 10px 5px;">'+bj_name+'</p>';
+					listHtml +=				'<a href="/index.php?app=search&act=shejifenbao_details&id='+id+'" style="text-decoration: none;" target="_blank">';
+					listHtml +=			'<p style="float: left;font-size: 18px;color: red;font-weight: 600;letter-spacing: 2px;margin: 10px 0 10px 5px;">'+project_name+'</p>';
 					listHtml +=			'<p style="float: right;font-size: 18px;color: red;font-weight: 600;letter-spacing: 2px;margin: 10px 30px 10px 0;">'+price+'</p>';
 					listHtml +=			'<ul id="" style="width:100%;height:auto;overflow:hidden">';
-					listHtml +=				'<a href="/index.php?app=search&act=shejifenbao_details&id='+id+'" style="text-decoration: none;" target="_blank">';
 					listHtml +=					'<li style="width: 100%;height: auto;">';
 					listHtml +=					'<div style="margin-left: 5px;height: auto;border: none;">';
 					listHtml +=					'<span style="letter-spacing: 2px;">地址:</span>';
@@ -1015,8 +1016,8 @@ border:1px solid #808080;width:100%;height:66px;margin-bottom:3px;
 					listHtml +=					'<span style="float: right;margin-right: 5px;">2018-8-20</span>';
 					listHtml +=					'</div>';
 					listHtml +=					'</li>';
-					listHtml +=				'</a>';
 					listHtml +=			'</ul>';
+					listHtml +=				'</a>';
 					listHtml +=		'</div>	';
 						
 				}
