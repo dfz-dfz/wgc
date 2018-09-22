@@ -80,7 +80,7 @@ margin:auto;padding:0px;margin-top: 10px;margin-bottom: 10px; width:1100px;overf
 				
 					
 				</div>
-				<ul class="quick-menu"style="min-width:190px;overflow:hidden;">
+				<ul class="quick-menu" style="min-width:190px;overflow:hidden;">
 				  
 					<li class="service" style="margin-right:10px;height:50px;line-height:50px;background:none;">
 						<!--<a href="/index.php?app=member&amp;act=login&amp;ret_url=" style="color:#fff;font-size:18px;">企业服务</a>      -->  
@@ -162,29 +162,41 @@ margin:auto;padding:0px;margin-top: 10px;margin-bottom: 10px; width:1100px;overf
 		<div class="main_left"style="width:100%">
 			<div style="background-color:#fff;width:100%;">
 				
-					
+					<div style="border-bottom: 1px solid #000;height: 40px;">
+						<img src="themes/mall/jiaju/images/hyzx.jpg" alt="" width="150" style="float: left;"/>
+						<span style="float: right;font-weight: bold;line-height: 50px;">您当前位置:>首页>行业资讯</span>
+					</div>
 					
 					<!--列表开始-->
-					<div style="overflow:hidden;float:left;margin:20px 0;width:69%;border:1px solid #e3e3e3;">
-						<ul class="aui-list aui-media-list" id="news" style="min-height:50px;"></ul>
+					<div style="overflow:hidden;float:left;margin:20px 0;width:80%;">
+						
+						<ul class="aui-list aui-media-list" id="news" style="min-height:50px;border:none;"></ul>
+						<!-- 显示分页 -->
+		               	<div class="unpages" id="unpage" style="margin:20px auto;width: 200px;text-align: center;">
+							<a style="background:red;color:#fff;width: 70px;height: 30px;line-height: 30px;padding:4px 5px;cursor:pointer;margin-right: 20px;" onclick="uppage()">上一页</a>
+							<a style="background:red;color:#fff;width: 70px;height: 30px;line-height: 30px;padding:4px 5px;cursor:pointer;" onclick="nextpage()" id="nextpage">下一页</a>
+						</div>
 					</div>
-					<div style="overflow:hidden;float:right;margin:20px 0;width:30%;">
+					<div style="overflow:hidden;float:right;margin:20px 0;width:20%;">
 						<!---今日--要闻---->
-						<div style="overflow:hidden;height:auto;width:99%;border:1px solid #e3e3e3;">
+						<!-- <div style="overflow:hidden;height:auto;width:99%;border:1px solid #e3e3e3;">
 							<h3 style="font-size:18px;color:#333;line-height:40px;background:#e2e2e2;overflow:hidden;height:40px;width:100%;border-bottom:1px solid #e3e3e3;">今日要闻</h3>
 							<ul class="aui-list aui-media-list" id="newsHost"></ul>
-						</div>
+						</div> -->
 						<!--今日工价--->
-						<div style="overflow:hidden;height:auto;width:99%;border:1px solid #e3e3e3;">
+						<!-- <div style="overflow:hidden;height:auto;width:99%;border:1px solid #e3e3e3;">
 							<h3 style="font-size:18px;color:#333;line-height:40px;background:#e2e2e2;overflow:hidden;height:40px;width:100%;border-bottom:1px solid #e3e3e3;">今日工价</h3>
 							<table style="border-collapse:collapse;border:1px solid #e3e3e3;margin:20px auto;width:100%;background:#fff;" id="gongjia"></table>
-						</div>
+						</div> -->
 						<!--加盟商-->
-						<div style="overflow:hidden;height:auto;width:99%;border:1px solid #e3e3e3;">
+						<!-- <div style="overflow:hidden;height:auto;width:99%;border:1px solid #e3e3e3;">
 							<a href="index.php?app=search&amp;act=caigou"><img style="width:100%;" src="/themes/mall/jiaju/images/Image_004.png"></a>
 							<a href="index.php?app=search&amp;act=caigou"><img style="width:100%;" src="/themes/mall/jiaju/images/Image_015.png"></a>
 							<a href="index.php?app=search&amp;act=caigou"><img style="width:100%;" src="/themes/mall/jiaju/images/Image_017.png"></a>
 							<a href="index.php?app=search&amp;act=caigou"><img style="width:100%;" src="/themes/mall/jiaju/images/Image_020.png"></a>
+						</div> -->
+						<div style="width: 200px;float: right;height: 587px;padding-right: 0;">
+							<img src="http://www.wgc2013.com/themes/mall/jiaju/images/guanggao.png" alt="" width="100%">
 						</div>
 					</div>
 					
@@ -211,7 +223,7 @@ $(function(){
 	news_select();
 });
 //下一页
-var scroll = new auiScroll({
+/*var scroll = new auiScroll({
     listen:false, //是否监听滚动高度，开启后将实时返回滚动高度
     distance:0 //判断到达底部的距离，isToBottom为true
 },function(ret){
@@ -219,7 +231,7 @@ var scroll = new auiScroll({
    if(ret.isToBottom){
 		news_select();
    }
-});
+});*/
  // PHP时间戳转时间
 function _trans_php_time_to_str(timestamp, n) {
 
@@ -248,10 +260,16 @@ function _trans_php_time_to_str(timestamp, n) {
 
 
 //行业要闻列表
-function news_select(){
+var page = 1;
+function news_select(page){
 	
 	var url = serverUrl+"Systemmsg/AdvertisementPage";
-	$.post(url,{limit : 15,type : 0,page : page,infotype : 'news_pc'},function(ret){
+	$.post(url,{
+		limit : 5,
+		type : 0,
+		page : page,
+		infotype : 'news_pc'
+	},function(ret){
 		if(ret.code == 200){
 				page++;
 				var data = ret.message;
@@ -259,29 +277,25 @@ function news_select(){
 				var listHtmlS  = '';
 				for (var i in data) {
 							
-					var id=data[i].id, title=data[i].title,content=data[i].content,pic=data[i].pic,describe=data[i].describe,times = _trans_php_time_to_str(data[i].times,1);
-					   
+					var id=data[i].id, title=data[i].title,pic=data[i].pic,describe=data[i].describe,times = _trans_php_time_to_str(data[i].times,1),content=data[i].content;
 				
-					listHtml += '<li style="cursor:pointer" class="aui-list-item" style="margin:10px auto;height:auto;width:1000px;overflow: hidden;" title="'+title+'" onclick="openNewsContents(this,'+id+')">';
-				   listHtml += '    <div class="aui-media-list-item-inner">';
-				   listHtml += '        <div class="aui-list-item-media" style="float:left;height:100px;overflow: hidden;width:60px;">';
-				   listHtml += '            <img src="http://wgcmanage.wgc2013.com/'+pic+'" style="height:60px;width:60px" onerror="javascript:this.src=\'../image/Advertisement.jpg\';">';
+					listHtml += '<li style="cursor:pointer;margin:10px auto;height:140px;width:880px;" title="'+title+'" onclick="openNewsContents(this,'+id+')">';
+				   listHtml += '        <div style="float:left;height:120px;overflow: hidden;width:150px;padding: 2px;border: 1px solid #999;margin-top:7.5px;margin-right:20px;">';
+				   listHtml += '            <img src="http://wgcmanage.wgc2013.com/'+pic+'" style="height:120px;width:150px;" onerror="javascript:this.src=\'../image/Advertisement.jpg\';">';
 				   listHtml += '        </div>';
-				   listHtml += '        <div class="aui-list-item-inner" style="height:100px;float:left;width:800px;">';
-				   listHtml += '            <div class="aui-list-item-text">';
-				   listHtml += '                <div class="aui-list-item-title aui-ellipsis-1" style="width:100%;">'+title+'</div>';
+				   listHtml += '        <div class="aui-list-item-inner" style="height:140px;float:left;width:710px;">';
+				   listHtml += '            <div class="aui-list-item-text" style="border-bottom:1px solid #999;">';
+				   listHtml += '                <span style="color:#000;">'+title+'</span>';
+				   listHtml += '            <span style="float:right;font-size:14px;">'+times+'</span>';
 				   listHtml += '            </div>';
-				   listHtml += '            <div class="aui-list-item-text">'+times+'</div>';
+				   listHtml += '            <div style="height:88px;overflow:hidden;font-size:14px;" id="contentMain">'+describe+'</div>';
 				   listHtml += '        </div>';
-				   listHtml += '    </div>';
 				   listHtml += '</li>';
-				   
 				   listHtmlS += '<p class="aui-ellipsis-1" id="'+title+'"><span class="bottonTitle">推荐</span>'+title+'</p>';
-				
 			}
 		   
 			$("#news").show();
-			$("#news").append(listHtml);
+			$("#news").html(listHtml);
 			
 		}else if(ret.code == 202)	{
 			if(page == 1){
@@ -298,6 +312,19 @@ function news_select(){
 	},"json");
 
 }
+
+	function uppage(){
+		if(page<1){
+			page=1;
+		}
+		page--;
+		news_select(page);
+	}
+
+	function nextpage(){
+		page++;
+		news_select(page);
+	}
 //今日要闻列表
 function newsHost_select(){
 	

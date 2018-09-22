@@ -1721,7 +1721,8 @@ $(function(){
 			if(ret.code == 200){
 				var data = ret.message;
 				for(var i in data){
-		            var m_name=data[i].m_name,
+		            var id = data[i].id,
+		            	m_name=data[i].m_name,
 		            	user_id = data[i].user_id,
 		            	cai_type=data[i].cai_type,
 		            	expire_time=data[i].expire_time,
@@ -1732,12 +1733,13 @@ $(function(){
 		            	address = data[i].address
 		            	worker_address = data[i].worker_address,
 		            	office_name = data[i].office_name,
-		            	m_photo = data[i].m_photo;
+		            	m_photo = data[i].m_photo,
+		            	name = data[i].name;
 		            var photoArr = new Array();
 		            	photoArr = m_photo.split(',');
 
-						listHtml += '<div>';
-						listHtml += '<div style="text-align:right;padding-right: 20px;margin-top: 10px;"><input name="id" type="checkbox" style="margin-top:6px;width:20px;height:20px;"></div>';
+						listHtml += '<div style="height:auto;overflow:hidden;border-top:1px solid #cacaca;">';
+						listHtml += '<div style="text-align:right;padding-right: 6px;height:20px;"></div>';
 						listHtml += '<div style="height:auto;overflow:hidden;">'
 						listHtml +=	'<div class="list_right" style="float: left;width: 50%;">';
 						listHtml +=		'<ul style="margin-left:15%;">';
@@ -1759,22 +1761,23 @@ $(function(){
 							if(m_photo != ''){
 								for(var i in photoArr){
 									listHtml += '<a href="http://wgcapp.wgc2013.com'+photoArr[i]+'" target="_blank">'
-									listHtml += '<img src="http://wgcapp.wgc2013.com'+photoArr[i]+'" width="120" height="80" style="margin-right:10px;">';	
+									listHtml += '<img src="http://wgcapp.wgc2013.com'+photoArr[i]+'" width="120" height="80" style="margin-right:10px;margin-bottom:10px;">';	
 									listHtml += '</a>';
 								}
 							}else{
 								listHtml += '<span>暂无缩略图</span>';
 							}
 						listHtml += '</div>';
-						listHtml +=	'<div style="width:100%;height:40px;float:left;margin-top:30px;"><img src="/themes/mall/jiaju/images/list_bg.jpg" style="width:100%;height:100%;"/></div>';
+						listHtml += '<div style="text-align:right;padding-right:10px;">分享人：'+name+'</div>';
+						listHtml +=	'<div style="width:100%;height:40px;float:left;margin-top:10px;"><img src="/themes/mall/jiaju/images/list_bg.jpg" style="width:100%;height:100%;"/></div>';
 						listHtml +='</div>';
 						
 				}
-				$(".list_show").html(listHtml);
+				$(".design_body_share").html(listHtml);
 				$('#nextpages').show();
 			}else if(ret.code == 202){
 				$('#nextpages').hide();
-				$(".list_show").html('<div style="text-align:center;color:#999;font-size:20px;line-height:150px;">暂无数据</div>');
+				$(".design_body_share").html('<div style="text-align:center;color:#999;font-size:20px;line-height:150px;">暂无数据</div>');
 			}
 		},'json');
 	}

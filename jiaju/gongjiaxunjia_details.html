@@ -24,7 +24,7 @@
 				<div style="background-color: #eee;width: 100%;height: 40px;border-bottom: 2px solid #999;padding-left: 6px;font-size: 22px;line-height: 40px;">工价询价详情</div>
 				<div style="height: auto;overflow: hidden;">
 					<div style="height: auto;overflow: hidden;margin-top: 10px;">
-						<div style="width:1100px;">
+						<div style="width:888px;">
 							<div id="prj_name_price" style="border-bottom: 2px solid #dfdfdf; height: 80px;line-height: 80px;font-size: 22px;font-weight: 600;padding-left: 6px;">
 								
 							</div>
@@ -33,6 +33,7 @@
 							<div class="shejifenbao_list"><span>联系方式：</span><span id="lxfs"></span></div>
 							<div class="shejifenbao_list"><span>工作地点：</span><span id="gzdd"></span></div>
 							<div class="shejifenbao_list"><span>备注：</span><span id="bz"></span></div>
+							<div id="gjxj_img"></div>
 						</div>
 					</div>
 				</div>
@@ -98,6 +99,7 @@
 		}, function(ret) {
 			var data = ret.message;
 			var datas = ret.huifu;
+			var pto = '';
 			var html = '';
 			if(ret.code == 200){
 				var address = data.address,//地址
@@ -107,7 +109,9 @@
 					ps = data.ps,//备注
 					tel = data.tel,//号码
 					title = data.title,//项目名称
-					unit = data.unit;//计价单位
+					unit = data.unit,//计价单位
+					img = data.img;
+					var imgs = img.split(',');
 
 				$('#prj_name_price').html(data.title);
 				$('#jjdw').html(data.unit);
@@ -115,6 +119,14 @@
 				$('#lxfs').html(data.tel.replace(/(\d{3})\d{5}(\d{3})/, '$1*****$2'));
 				$('#gzdd').html(data.address);
 				$('#bz').html(data.ps);
+
+				pto += '<p id="message-content" style="width:100%;height:auto;overflow: hidden;margin:5px auto;padding-left: 0.35rem">';
+			   		for(var i in imgs){
+			   			pto += '<a href="http://wgcapp.wgc2013.com/'+imgs[i]+'" target="_blank">';	  
+						   	pto += '<img class="imagemsg" style="width:3.8rem;float:left;margin:0.15rem;height:3.8rem;" src="http://wgcapp.wgc2013.com/'+imgs[i]+'">'; 
+					   	pto += '</a>';
+			   		}
+			   	pto += '</p>';
 
 				// 获取回复列表
 				if(datas != ''){
@@ -148,7 +160,7 @@
 						html += '</div>';
 					html += '</div>';
 				}
-
+				$('#gjxj_img').html(pto);
 				$('#huifu').html(html);
 			}else{
 
