@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Access-Control-Allow-Origin" content="*">
@@ -28,12 +28,14 @@
 <script>DD_belatedPNG.fix('*');</script>
 <![endif]-->
 <!--/meta 作为公共模版分离出去-->
+
 <link href="/Public/lib/webuploader/0.1.5/webuploader.css" rel="stylesheet" type="text/css" />
 
 <link type="text/css" href="/themes/mall/jiaju/styles/css/worker_quota_price.css" rel="stylesheet" />
 <link type="text/css" href="/themes/mall/jiaju/styles/css/material_pricing.css" rel="stylesheet" />
 <link type="text/css" href="/themes/mall/jiaju/styles/default/css/center.css" rel="stylesheet"  />
 <link rel="stylesheet" href="themes/mall/jiaju/styles/css/tel_list.css">
+
 <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
 <!-- <script type="text/javascript" src="www.wgc2013.com/themes/mall/jiaju/js/jquery-1.8.3.min.js"></script> -->
 <script type="text/javascript">
@@ -51,6 +53,7 @@
 	.line{
 		border: none;
 	}
+
 	.mess_list_ul li{
 		    float: left;
 		    font-size: 14px;
@@ -63,6 +66,12 @@
 	    border: none;
 	    margin-top: 6px;
 	}
+	.wages_list table thead th{
+		width: 6.25%;
+	}
+	.wages_list table tbody td{
+		width: 6.25%;
+	}
 	.main_list li{
 		line-height: 15px;
 		word-wrap:break-word;
@@ -70,10 +79,11 @@
 	}
 	.list_ul li{
 		height: 50px;
-	}	
+	}
 	.wages_custom input{
 		width: 290px;
 	}
+
 	</style>
 </head>
 
@@ -81,10 +91,12 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+
 <!-- <base href="http://www.wgc2013.com/" /> -->
 <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7 charset=utf-8" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
+<!-- <link type="text/css" href="Public/static/css/default.css" rel="stylesheet"  /> -->
 <link type="text/css" href="themes/mall/jiaju/styles/default/css/main.css" rel="stylesheet"  />
 <link type="text/css" href="themes/mall/jiaju/styles/css/global.css" rel="stylesheet"  />
 <link type="text/css" href="http://www.wgc2013.com/themes/mall/jiaju/styles/default/css/catalog.css" rel="stylesheet"  />
@@ -113,6 +125,9 @@ body{background:url('') no-repeat center top }
 .mainnav{width:990px; overflow:hidden; margin:0 auto}
 .STYLE1 {color: red}
 </style>
+<!--引入CSS-->
+
+
 <script type="text/javascript" src="http://www.wgc2013.com/themes/mall/jiaju/styles/default/js/hover.js"></script>
 <script charset="utf-8" type="text/javascript" src="http://www.wgc2013.com/includes/libraries/javascript/jquery.plugins/jquery.validate.js" ></script>
 <script type="text/javascript">
@@ -130,21 +145,16 @@ body{background:url('') no-repeat center top }
 </script>
 </head>
 <body>
-{include file=header.html}
 <!-- 中部主要内容 -->
- <div class="container" style="overflow: hidden;width: 1200px;margin: 10px auto;position: relative;">
- <!-- 左上的导航栏 -->
- 	 {include file=companycenter.html}
-<!-- 	<include file="usercenter.html"/> -->
-
+ <div class="container" style="overflow: hidden;width: 750px;margin: 10px auto;position: relative;">
  	<!-- 右边的内容 -->
- 	<div class="container_right" style="width: 78.5%;border: 1px solid #cacaca;float: right;background-color: #f7f7f7;padding: 0 10px 10px 10px;">
+ 	<div class="container_right" style="width: 100%;border: 1px solid #cacaca;float: right;background-color: #f7f7f7;padding: 0 10px 10px 10px;">
 
 		<!-- 公司信息 -->
 		<div class="budget base_ui_public" style="/*display: none;*/position: relative;">
 			<ul class="budget_ul user_public_ul">
- 				<li class="change_bg_li" style="margin-right: 10px;">辅材定价</li>
- 				<li style="margin-right: 10px;" >辅材列表</li>
+ 				<li class="change_bg_li" style="margin-right: 10px;">主材定价</li>
+ 				<li style="margin-right: 10px;" >主材列表</li>
  				<li style="margin-right: 10px;" >分享列表</li>
  			</ul>
  			<div class="company_info base_info_public" style="overflow: hidden;/*padding-left: 15%;*/min-height: 600px;">
@@ -198,6 +208,7 @@ body{background:url('') no-repeat center top }
 					<li>
 						<span style="">备&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;注</span><span class="colon">:</span><input type="text" id="content">
 					</li>
+					
 				</ul>
 				<div style="width:100%;overflow: hidden;margin:0px auto;">
 					<div class="cl">
@@ -232,12 +243,54 @@ body{background:url('') no-repeat center top }
 			</div>
 			<!-- 自定工价 end -->
 			<!-- 工价列表 -->
-			<div class="sect wages_list" style="display: none;min-height:480px;">
+			<div class="sect wages_list" style="display: none;">
 				<input type="text" class="search_input" />
 				<input type="button" value="搜索" class="search_btn" onclick="search()"/>
 				<input type="button" value="分享" class="share_btn" onclick="showUserList()" />
 					
-
+<!-- 				<div class="list_table"></div>
+				<table>
+					<thead>
+						<tr>
+							<th>序号</th>
+							<th>材料名称</th>
+							<th>品牌</th>
+							<th>规格/型号</th>
+							<th>单位</th>
+							<th>单价</th>
+							<th>含税价</th>
+							<th>配送时间</th>
+							<th>供应商</th>
+							<th>联系人</th>
+							<th>联系方式</th>
+							<th>网址</th>
+							<th>邮箱</th>
+							<th>微信号</th>
+							<th>备注</th>
+							<th>图片</th>
+						</tr>
+					</thead>
+					<tbody id="list_detail">
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+					</tbody>
+				</table> -->
 				<ul class="list_ul">
 						<li>
 						<ul class="head">
@@ -265,8 +318,18 @@ body{background:url('') no-repeat center top }
 				</ul>
 				
 				<ul class="page" style="float: none;">
-					<li class="page_btn" style="margin-left: 75px;" onclick="prepage()">上一页</li>
+					<li class="page_btn">首页</li>
+					<li class="page_btn" onclick="prepage()">上一页</li>
+					<li class="page_num current" onclick="pageindex(1)">1</li>
+					<li class="page_num" onclick="pageindex(2)">2</li>
+					<li class="page_num" onclick="pageindex(3)">3</li>
+					<li class="page_num" onclick="pageindex(4)">4</li>
+					<li class="page_num" onclick="pageindex(5)">5</li>
+					<li class="page_num" onclick="pageindex(6)">6</li>
+					<li class="page_num" onclick="pageindex(7)">7</li>
+					<li class="page_num">···</li>
 					<li class="page_btn" onclick="nextpage()">下一页</li>
+					<li class="page_btn">尾页</li>
 				</ul>
 			</div>
 			<!-- 工价列表 end -->
@@ -308,9 +371,18 @@ body{background:url('') no-repeat center top }
 				</ul>
 				
 				<ul class="page" style="float: none;">
-					<li class="page_btn" style="margin-left: 75px;" onclick="prepage()">上一页</li>
+					<li class="page_btn">首页</li>
+					<li class="page_btn" onclick="prepage()">上一页</li>
+					<li class="page_num current" onclick="pageindex(1)">1</li>
+					<li class="page_num" onclick="pageindex(2)">2</li>
+					<li class="page_num" onclick="pageindex(3)">3</li>
+					<li class="page_num" onclick="pageindex(4)">4</li>
+					<li class="page_num" onclick="pageindex(5)">5</li>
+					<li class="page_num" onclick="pageindex(6)">6</li>
+					<li class="page_num" onclick="pageindex(7)">7</li>
+					<li class="page_num">···</li>
 					<li class="page_btn" onclick="nextpage()">下一页</li>
-					
+					<li class="page_btn">尾页</li>
 				</ul>
 			</div>
 			<!-- 工价列表 end -->
@@ -330,7 +402,7 @@ body{background:url('') no-repeat center top }
 							<input class="share_btn" type="button" value="分享确认">
 						</form> -->
 							<div class="tel_con" style="display: block;display: block;width: 50%;margin: 10px auto;background-color: #fff;padding-top: 10px;padding-bottom: 10px;height: 400px;box-shadow: 5px 5px 5px;">
-							<div class="quxiao" style="position: absolute;font-size: 20px;top: 0px;left: 695px;background-color: #9e9e9e;border-radius: 10px;width: 20px;height: 20px;line-height: 20px;cursor:default;">×</div>
+							<div class="quxiao" style="position: absolute;font-size: 20px;top: 0px;left: 695px;background-color: #9e9e9e;border-radius: 10px;width: 20px;height: 20px;line-height: 20px;cursor:default;">×</div>							
 							<div class="confirm_head" style="margin-bottom: 10px;">
 								<input type="text" id="search_text" placeholder="请输入搜索的联系人" />
 								<input class="confirm_btn" type="button" onclick="UserSearch()" value="搜索" />
@@ -371,11 +443,6 @@ body{background:url('') no-repeat center top }
  		
  	</div>
 
-
-
-
-
-{include file=footer.html}
 <!--_footer 作为公共模版分离出去-->
 <script type="text/javascript" src="/Public/lib/jquery/1.9.1/jquery.min.js"></script> 
 <script type="text/javascript" src="/Public/lib/layer/2.4/layer.js"></script>
@@ -396,7 +463,6 @@ body{background:url('') no-repeat center top }
 <script type="text/javascript" src="/Public/lib/jquery.validation/1.14.0/jquery.validate.js"></script> 
 <script type="text/javascript" src="/Public/lib/jquery.validation/1.14.0/validate-methods.js"></script> 
 <script type="text/javascript" src="/Public/lib/jquery.validation/1.14.0/messages_zh.js"></script>
-<!-- 多图片上传 -->
 <script type="text/javascript">
 $(function(){
 	$('.skin-minimal input').iCheck({
@@ -1204,7 +1270,6 @@ $(function(){
 
 
 </script>
-
 <script type="text/javascript">
 
 	$().ready(function(){
@@ -1245,17 +1310,6 @@ $(function(){
     })
 	$(".share_btn").click(function(e){
 		e.stopPropagation(); 
-		var checkArray = $('input[name="id"]:checked');
-		var count = 0;
-		for(var i=0;i<checkArray.length;i++){
-			if(checkArray[i].checked == true){
-			count++;
-			}
-				}
-			if(count < 1){
-				alert("请选择你要添加的内容！！！！！")
-				return false;
-						}
 		$(".confirm").show();
 
 
@@ -1268,6 +1322,7 @@ $(function(){
 
 			
 		})
+
 		// 分页设置
 	$('.page_num').on('click',function() {
 	$('.page_num').removeClass('current');
@@ -1280,7 +1335,7 @@ $(function(){
 	});
 // 分页设置 end
 	
-		//连接数据
+//连接数据
 	function add(){
 		var name          = $('#name').val();
 		var pingpai        = $('#pingpai').val(); 
@@ -1300,7 +1355,7 @@ $(function(){
 
 		if(name == ''){
 			
-			alert('请输入辅材名称');
+			alert('请输入主材名称');
 			return false;
 		}else if(xinghao == ''){
 			
@@ -1356,7 +1411,7 @@ $(function(){
 				    web          : web,  
 				    email        : email,  
 				    content      : content,  
-					type         : 2,
+					type         : 1,
 				    img          : img
 		}, function(ret) {
 			if(ret.code == 200){
@@ -1369,7 +1424,7 @@ $(function(){
 
 	}
 	//列表
-	var page = 1,pageindex=1,key = '';userid = '<?php echo $_SESSION["user_info"]["user_id"];?>';
+	var page = 1,pageindex=1,upage=1,key = '';userid = '<?php echo $_SESSION["user_info"]["user_id"];?>';
 	function list(){
 	var url = 'http://wgcapp.wgc2013.com/jingyi.php/Home/Dinge/zhucai_list';
 
@@ -1380,7 +1435,7 @@ $(function(){
 					key      : key,
 					user_id : userid,
 					page     : page,
-					type    : 2
+					type    : 1
 				},
 				cache:false,
 				crossDomain: true == !(document.all),
@@ -1409,14 +1464,14 @@ $(function(){
 								web   = data[i].web,
 								email   = data[i].email,
 								content   = data[i].content,
-								type      = 2,
+								type      = 1,
 								defaults     = (data[i].defaults<1)?'':'checked="checked"';
 								
 								
 								listHtml += '<li>';
 								listHtml +=		'<ul class="main_list">';
-								listHtml +=		'<li><input name="id" type="checkbox"  value="'+id+'" onclick="opencotent('+id+')"/>'+i+'</li>';
-								listHtml +=		'<li class="">'+name+'</li>';
+								listHtml +=		'<li style="width: 5%;"><input name="id" type="checkbox"  value="'+id+'" onclick="opencotent('+id+')"/>'+i+'</li>';
+								listHtml +=		'<li style="width: 7.7%;" class="">'+name+'</li>';
 								listHtml +=		'<li>'+pingpai+'</li>';
 								listHtml +=		'<li>'+xinghao+'</li>';
 								listHtml +=		'<li>'+danwei+'</li>';
@@ -1433,6 +1488,24 @@ $(function(){
 								listHtml +=		'<li></li>';
 								listHtml +=		'</ul>';
 								listHtml +=	'</li>';
+
+							// listHtml +=						'<tr>';
+							// listHtml +='<td><input name="id" type="checkbox"  value="'+id+'" onclick="opencotent('+id+')"/>'+i+'</td>';
+							// listHtml +='<td>'+name+'</td>';
+							// listHtml +='<td>'+pingpai+'</td>';
+							// listHtml +='<td>'+xinghao+'</td>';
+							// listHtml +='<td>'+danwei+'</td>';
+							// listHtml +='<td>'+danjia+'</td>';
+							// listHtml +='<td>'+hanshuijiage+'</td>';
+							// listHtml +='<td>'+peisongtime+'</td>';
+							// listHtml +='<td>'+gongyingshang+'</td>';
+							// listHtml +='<td>'+lianxiren+'</td>';
+							// listHtml +='<td>'+dianhua+'</td>';
+							// listHtml +='<td>'+web+'</td>';
+							// listHtml +='<td>'+email+'</td>';
+							// listHtml +='<td>'+weixin+'</td>';
+							// listHtml +='<td>'+content+'</td>';
+							// listHtml +='</tr>';
 						}
 						$("#list_ul").html(listHtml);
 					}
@@ -1461,7 +1534,7 @@ $(function(){
 					key      : key,
 					user_id : userid,
 					page     : pageindex,
-					type     : 2
+					type     : 1
 				},
 				cache:false,
 				crossDomain: true == !(document.all),
@@ -1540,7 +1613,7 @@ $(function(){
 					if(value){
 					$.post(url,{
 						user_id:   '<?php echo $_SESSION["user_info"]["user_id"];?>',
-						type   : 2
+						type   : 1
 					},function(ret){
 							if(ret.status == 200){
 								var data = ret.retData;
@@ -1593,7 +1666,7 @@ $(function(){
 							}
 					},'json')
 					}else{
-					//alert("请输入搜索内容")
+					alert("请输入搜索内容")
 					}
 					
 	}
@@ -1814,17 +1887,6 @@ function pageindex(index){
 								//获取数据id
 								var arr = new Array();
 								var tarry = new Array();
-								var telcount = 0;
-								var telArray = $('input[name="tid"]:checked');
-								for(var i=0;i<telArray.length;i++){
-									if(telArray[i].checked == true){
-										telcount++;
-									}
-								}
-								if(telcount < 1){
-									alert("请选择你要分享的好友！！！！！")
-									return false;
-								}
 				                $('input[name="id"]:checked').each(function(i){
 				                    arr[i] = $(this).val();
 				                });
@@ -1851,8 +1913,9 @@ function pageindex(index){
 				                	}
 				                },'json')
 	}
+	
 //通讯录分页控制
-var upage = 1;
+
 function pageindexUser(pindex){
 		//console.log(index)
 		if(pindex < 1){

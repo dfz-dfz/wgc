@@ -151,7 +151,8 @@ body{background:url('') no-repeat center top }
  									工种：
  								</div>
  								<div class="user_info_input">
- 									<select id="zhiwei" style="padding-left: 15px;height:30px;">
+ 								<input type="text" style="height: 30px;font-size: 14px;" id="zhiwei"/>
+<!--  									<select id="zhiwei" style="padding-left: 15px;height:30px;">
 										<option value="">--请选择--</option>
 										<option value="1">施工队长</option>
 										<option value="2">水电工长</option>
@@ -183,7 +184,7 @@ body{background:url('') no-repeat center top }
 										<option value="29">软件销售经理</option>
 										<option value="30">业务员</option>
 										<option value="15">其它</option>
-									</select>
+									</select> -->
  								</div>
  							</li>
 
@@ -459,6 +460,7 @@ $(".container_nav ul li").click(function(){
 				var user = ret.user;
 				var mobile = user.mobile;
 				var userphoto = user.userphoto;
+				var zhiwei    = user.zhiwei;
 				var photourl = 'http://wgcapp.wgc2013.com' + userphoto;
 				//头像
 				
@@ -469,7 +471,7 @@ $(".container_nav ul li").click(function(){
 				$("#nianling").val(user.nianling);
 				$("#huji").val(user.huji);
 				$("#bumen").val(user.bumen);
-				$("#zhiwei").val(2);
+				$("#zhiwei").val(zhiwei);
 				$("#gz_jingyan").val(user.gz_jingyan);
 				$("#xinzi").val(user.xinzi);
 	         	$("#skill").val(user.skill);

@@ -302,6 +302,7 @@ body{background:url('') no-repeat center top }
 							<div class="confirm_head" style="margin-bottom: 10px;">
 								<input type="text" id="search_text" placeholder="请输入搜索的联系人" style="width:40%;height:30px;"/>
 								<input class="confirm_btn" type="button" onclick="UserSearch()" value="搜索" style="width: 40px;margin-top: -15px;height: 20px;"/>
+								<input id="back_btn" type="button" onclick="back()" value="返回" style="width: 40px;margin-top: -15px;height: 20px;display: none;"/>
 							</div>
 							<div style="overflow-y: scroll;height:300px;">
 							<div class="getUserList" style="min-height:270px;">
@@ -534,7 +535,7 @@ function list(){
 							}
 						}
 
-						$('.getUserList').append(html);
+						$('.getUserList').html(html);
 						//获取数据id
 								var arr = new Array();
 				                $('input[name="id"]:checked').each(function(i){
@@ -585,7 +586,7 @@ function list(){
 								html += '<ul>';
 									html += '<li class="tel_li">';
 										html += '<div class="check">';
-											html += '<input type="checkbox" value="'+touid+'" name="checkbox" />';
+											html += '<input type="checkbox" value="'+touid+'" name="tid" />';
 										html += '</div>';
 										html += '<div class="head_img">';
 											html += '<img src="'+url+imgUrl+'" alt=""/>';
@@ -599,7 +600,8 @@ function list(){
 							}
 						}
 
-					$('.getUserList').append(html);
+					$('.getUserList').html(html);
+					$('#back_btn').show();
 				}else if(ret.code == 201){
 					$('.getUserList').html('暂无数据');
 				}else{
@@ -732,6 +734,12 @@ function nextpageUser(){
 //上一页
 function prepageUser(){
 		pageindexUser(--upage);
+	}
+//返回检索列表
+	function back(){
+		$('#back_btn').hide();
+		$('#search_text').val('');
+		showUserList();
 	}
 </script>
 </body>

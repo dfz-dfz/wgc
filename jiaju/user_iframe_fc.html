@@ -130,15 +130,14 @@ body{background:url('') no-repeat center top }
 </script>
 </head>
 <body>
-{include file=header.html}
+
 <!-- 中部主要内容 -->
- <div class="container" style="overflow: hidden;width: 1200px;margin: 10px auto;position: relative;">
- <!-- 左上的导航栏 -->
- 	 {include file=companycenter.html}
+ <div class="container" style="overflow: hidden;width: 790px;margin: 10px auto;position: relative;">
+ 
 <!-- 	<include file="usercenter.html"/> -->
 
  	<!-- 右边的内容 -->
- 	<div class="container_right" style="width: 78.5%;border: 1px solid #cacaca;float: right;background-color: #f7f7f7;padding: 0 10px 10px 10px;">
+ 	<div class="container_right" style="width: 100%;border: 1px solid #cacaca;float: right;background-color: #f7f7f7;padding: 0 10px 10px 10px;">
 
 		<!-- 公司信息 -->
 		<div class="budget base_ui_public" style="/*display: none;*/position: relative;">
@@ -265,8 +264,18 @@ body{background:url('') no-repeat center top }
 				</ul>
 				
 				<ul class="page" style="float: none;">
-					<li class="page_btn" style="margin-left: 75px;" onclick="prepage()">上一页</li>
+					<li class="page_btn">首页</li>
+					<li class="page_btn" onclick="prepage()">上一页</li>
+					<li class="page_num current" onclick="pageindex(1)">1</li>
+					<li class="page_num" onclick="pageindex(2)">2</li>
+					<li class="page_num" onclick="pageindex(3)">3</li>
+					<li class="page_num" onclick="pageindex(4)">4</li>
+					<li class="page_num" onclick="pageindex(5)">5</li>
+					<li class="page_num" onclick="pageindex(6)">6</li>
+					<li class="page_num" onclick="pageindex(7)">7</li>
+					<li class="page_num">···</li>
 					<li class="page_btn" onclick="nextpage()">下一页</li>
+					<li class="page_btn">尾页</li>
 				</ul>
 			</div>
 			<!-- 工价列表 end -->
@@ -308,9 +317,18 @@ body{background:url('') no-repeat center top }
 				</ul>
 				
 				<ul class="page" style="float: none;">
-					<li class="page_btn" style="margin-left: 75px;" onclick="prepage()">上一页</li>
+					<li class="page_btn">首页</li>
+					<li class="page_btn" onclick="prepage()">上一页</li>
+					<li class="page_num current" onclick="pageindex(1)">1</li>
+					<li class="page_num" onclick="pageindex(2)">2</li>
+					<li class="page_num" onclick="pageindex(3)">3</li>
+					<li class="page_num" onclick="pageindex(4)">4</li>
+					<li class="page_num" onclick="pageindex(5)">5</li>
+					<li class="page_num" onclick="pageindex(6)">6</li>
+					<li class="page_num" onclick="pageindex(7)">7</li>
+					<li class="page_num">···</li>
 					<li class="page_btn" onclick="nextpage()">下一页</li>
-					
+					<li class="page_btn">尾页</li>
 				</ul>
 			</div>
 			<!-- 工价列表 end -->
@@ -375,7 +393,7 @@ body{background:url('') no-repeat center top }
 
 
 
-{include file=footer.html}
+
 <!--_footer 作为公共模版分离出去-->
 <script type="text/javascript" src="/Public/lib/jquery/1.9.1/jquery.min.js"></script> 
 <script type="text/javascript" src="/Public/lib/layer/2.4/layer.js"></script>
@@ -1245,17 +1263,6 @@ $(function(){
     })
 	$(".share_btn").click(function(e){
 		e.stopPropagation(); 
-		var checkArray = $('input[name="id"]:checked');
-		var count = 0;
-		for(var i=0;i<checkArray.length;i++){
-			if(checkArray[i].checked == true){
-			count++;
-			}
-				}
-			if(count < 1){
-				alert("请选择你要添加的内容！！！！！")
-				return false;
-						}
 		$(".confirm").show();
 
 
@@ -1814,17 +1821,6 @@ function pageindex(index){
 								//获取数据id
 								var arr = new Array();
 								var tarry = new Array();
-								var telcount = 0;
-								var telArray = $('input[name="tid"]:checked');
-								for(var i=0;i<telArray.length;i++){
-									if(telArray[i].checked == true){
-										telcount++;
-									}
-								}
-								if(telcount < 1){
-									alert("请选择你要分享的好友！！！！！")
-									return false;
-								}
 				                $('input[name="id"]:checked').each(function(i){
 				                    arr[i] = $(this).val();
 				                });

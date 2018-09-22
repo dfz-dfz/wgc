@@ -125,7 +125,7 @@ $(function(){
 				
  			</ul>
  			<div class="user_employ_info base_info_public" style="overflow: hidden;padding-left: 5%;">
- 				<h3 style="font-size: 16px;color: #ff552e;text-align: left;font-weight: bold;margin-bottom: 20px;">个人信息</h3>
+ 				<h3 style="font-size: 16px;color: #ff552e;text-align: left;font-weight: bold;margin-bottom: 20px;">招聘信息</h3>
  				<ul>
  					<li>
 						<div class="user_employ_name" style="color: #5e5a59;">*公司名称</div>
@@ -182,9 +182,9 @@ $(function(){
  				</ul>
  				<div class="user_empoly_send">
 
- 				<a href="javascript:;">保存</a>
+ 				<!-- <a href="javascript:;">保存</a> -->
 
-				<a href="javascript:;" onclick="fabu()">立即发布</a>
+				<a href="javascript:;" style="margin-left: -80px;" onclick="fabu()">立即发布</a>
  				</div>
  			</div>
 		<!--招聘列表 -->
@@ -251,6 +251,7 @@ $(function(){
 							<div class="confirm_head" style="margin-bottom: 10px;">
 								<input type="text" id="search_text" placeholder="请输入搜索的联系人" style="width:40%;height:30px;"/>
 								<input class="confirm_btn" type="button" onclick="UserSearch()" value="搜索" style="width: 40px;margin-top: -15px;height: 20px;"/>
+								<input id="back_btn" type="button" onclick="back()" value="返回" style="width: 40px;margin-top: -15px;height: 20px;display: none;"/>
 							</div>
 							<div style="overflow-y: scroll;height:300px;">
 							<div class="getUserList" style="min-height:270px;">
@@ -300,18 +301,10 @@ $(function(){
 			</div>
 					<!-- 分页 -->
 					<div class="price_page" style="text-align: center;">
-					<a href="#">首页</a>
+					
 					<a href="#">上一页</a>
-					<a href="#" style="width: 15px;">1</a>
-					<a href="#" style="width: 15px;">2</a>
-					<a href="#" style="width: 15px;">3</a>
-					<a href="#" style="width: 15px;">4</a>
-					<a href="#" style="width: 15px;">5</a>
-					<a href="#" style="width: 15px;">6</a>
-					<a href="#" style="width: 15px;">7</a>
-					<a href="#">...</a>
 					<a href="#">下一页</a>
-					<a href="#">尾页</a>
+				
 					</div>
 				</div>
 			</div>
@@ -403,7 +396,7 @@ $(function(){
 								age               : age,
 								other             : other
 		  },function(ret){
-				alert('发布成功！');
+				//alert('发布成功！');
 				location.reload();
 		  },'json')
 	}
@@ -572,7 +565,7 @@ $(function(){
 				}
 				$('.list_detail').html(html);
 			}else if(ret.code == 202){
-				alert("暂无数据");
+				//alert("暂无数据");
 			}					
 				},
 				error:function(err){
@@ -724,7 +717,7 @@ $(function(){
 								html += '<ul>';
 									html += '<li class="tel_li">';
 										html += '<div class="check">';
-											html += '<input type="checkbox" value="'+touid+'" name="checkbox" />';
+											html += '<input type="checkbox" value="'+touid+'" name="tid" />';
 										html += '</div>';
 										html += '<div class="head_img">';
 											html += '<img src="'+url+imgUrl+'" alt=""/>';
@@ -739,6 +732,7 @@ $(function(){
 						}
 
 					$('.getUserList').append(html);
+					$('#back_btn').show();
 				}else if(ret.code == 201){
 					$('.getUserList').html('暂无数据');
 				}else{
@@ -894,6 +888,12 @@ function del(id,userid){
 	})
 }
 
+//返回检索列表
+	function back(){
+		$('#back_btn').hide();
+		$('#search_text').val('');
+		showUserList();
+	}
    
 //全局加载
 $().ready(function(){

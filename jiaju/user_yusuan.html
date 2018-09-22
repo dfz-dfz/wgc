@@ -7,6 +7,8 @@
 <title>用户中心-预算报价</title>
 <meta name="description" content="微工程，微工程APP，装修、材料、家具、饰品一站式服务，让装修更简单，价格更透明！！" />
 <meta name="keywords" content="微工程，微工程，家居商城，微工程家居商城，微工程家居装修商城，办公室装修，写字楼装修，材料，装修材料，家居，办公家具，家居，家具，装修，装饰" />
+
+
 <link rel="stylesheet" type="text/css" href="themes/mall/jiaju/css/api.css"/>
 <link rel="stylesheet" href="themes/mall/jiaju/styles/css/tel_list.css">
 <link rel="stylesheet" type="text/css" href="themes/mall/jiaju/css/aui.1.0.css"/>
@@ -51,6 +53,27 @@
 	padding: 5px 0;
 }
 .table_list_body table tbody tr:nth-child(odd){
+	background-color: #eee;
+}
+.worker_detail_list ul li{
+	float: left;
+}
+.worker_detail_list table tbody tr td{
+	padding:5px 0;
+}
+.worker_detail_list table tbody tr:nth-child(even){
+	background-color: #eee;
+}
+.worker_detail_list_zc table tbody tr td{
+	padding:5px 0;
+}
+.worker_detail_list_zc table tbody tr:nth-child(even){
+	background-color: #eee;
+}
+.worker_detail_list_fc table tbody tr td{
+	padding:5px 0;
+}
+.worker_detail_list_fc table tbody tr:nth-child(even){
 	background-color: #eee;
 }
 </style>
@@ -138,7 +161,7 @@
 				</div>
 				<div class="share_dow" style="display: inline-block; position: relative;left: 90%;">
 					<!-- <a class="share_yusuan" href="javascript:;">分享</a> -->
-					<input type="submit" onclick="yusuanbaojia()" value="下载" style="text-decoration: none;display: block;font-size: 16px;color: #fff;width: 105px;height: 30px;line-height: 30px;text-align: center;margin-bottom: 10px;background-color: #f8b551;">
+					<input type="submit" onclick="yusuanbaojia()" value="发布" style="text-decoration: none;display: block;font-size: 16px;color: #fff;width: 105px;height: 30px;line-height: 30px;text-align: center;margin-bottom: 10px;background-color: #f8b551;">
 				</div>
 				</div>
 			</div>
@@ -185,7 +208,7 @@
 				
 			<!--列表详情页面 -->
 			<div class="t_detail_all"style="overflow: hidden;margin-top: 10px;min-height: 300px;display:none;position:absolute;top:60px;background-color:#fff;width:100%;">
-				<div id="canel_detail" style="position:absolute;top:-15px;left:95%;font-size:40px;">×</div>
+				<div id="canel_detail" style="position:absolute;top:-15px;left:95%;font-size:40px;cursor: pointer;">×</div>
 <!-- 						<div class="search_ys_detail">
 							<input type="text" style="width: 400px;height: 30px;" id="search_detail" placeholder="请输入关键词">
 							<label class="search_detail" for="search_detail" style="width: 50px;height: 30px;display:inline-block;position: relative;top: -8px;"><img src="/themes/mall/jiaju/images/search_button.jpg" alt="" style="width: 100%;height: 100%;" onclick="searchRG()"></label>
@@ -268,10 +291,10 @@
 				<div style="overflow: hidden;margin-top: 10px;">
 				<!-- 搜索框 -->	
 				<div class="table_lists_share" style="overflow: hidden;margin-top: 10px;min-height: 300px;">
-						<div class="search_ys_list">
-							<input type="text" style="width: 400px;height: 30px;" id="search_list" placeholder="请输入关键词">
-							<label class="search_list" for="search_list" style="width: 50px;height: 30px;display:inline-block;position: relative;top: -8px;"><img src="/themes/mall/jiaju/images/search_button.jpg" alt="" style="width: 100%;height: 100%;" onclick="searchList()"></label>
-							<input type="button" value="取消" class="quxiao_btn" style="display: inline-block;padding:0;width: 50px;height: 30px;position: relative;top: -8px;cursor:pointer;line-height:30px;background-color: #ec6941;display:none;" />
+						<div class="search_ys_list_share">
+							<input type="text" style="width: 400px;height: 30px;" id="search_list_share" placeholder="请输入关键词">
+							<label class="search_list" for="search_list_share" style="width: 50px;height: 30px;display:inline-block;position: relative;top: -8px;"><img src="/themes/mall/jiaju/images/search_button.jpg" alt="" style="width: 100%;height: 100%;" onclick="searchList()"></label>
+							<input type="button" value="取消" class="quxiao_btn_share" style="display: inline-block;padding:0;width: 50px;height: 30px;position: relative;top: -8px;cursor:pointer;line-height:30px;background-color: #ec6941;display:none;" />
 						</div>
 					<div class="table_list_head">
 					<table border="1" cellspacing="0" style="width: 95%;margin:0 auto;">
@@ -281,7 +304,8 @@
 								<th style="width:184px;">施工单位</th>
 								<th style="width:171px;">工程总造价</th>
 								<th style="width:171px;">日期</th>
-								<th style="width:171px;">操作</th>
+								<th style="width:80px;">操作</th>
+								<th style="width:91px;">分享人</th>
 							</tr>
 						<thead>
 					</table>
@@ -301,7 +325,46 @@
 								<a id="listpage" href="javascript:;" style="display: inline-block;width: 50px;height: 25px;line-height: 23px;border: 1px solid #eee;" onclick="nextpageList()">下一页</a>
 							</div>					
 					</div>
-					
+						<!--列表详情页面 -->
+						<div class="t_detail_all_share"style="overflow: hidden;margin-top: 10px;min-height: 300px;display:none;position:absolute;top:60px;background-color:#fff;width:100%;">
+							<div id="canel_detail_share" style="position:absolute;top:-15px;left:95%;font-size:40px;cursor: pointer;">×</div>
+			<!-- 						<div class="search_ys_detail">
+										<input type="text" style="width: 400px;height: 30px;" id="search_detail" placeholder="请输入关键词">
+										<label class="search_detail" for="search_detail" style="width: 50px;height: 30px;display:inline-block;position: relative;top: -8px;"><img src="/themes/mall/jiaju/images/search_button.jpg" alt="" style="width: 100%;height: 100%;" onclick="searchRG()"></label>
+										<button class="quxiao_detail" style="padding:0;width: 50px;height: 30px;position: relative;top: -8px;cursor:pointer;line-height:30px;background-color: #ec6941;display:none;">取消</button>
+									</div> -->			
+							<div class="table_head">
+							<table style="width:100%;" border="0" cellspacing="0" cellpadding="0">
+									<thead>
+									<tr class="thead" style="background-color: #eee;">
+										<th style="width: 5%"><span style="border-left:  2px solid #bcbcbc">序号</span></th>
+										<th style="width: 7%"><span>项目名称</span></th>
+										<th style="width: 33%"><span>施工工艺</span></th>
+										<th style="width: 5%"><span>数量</span></th>
+										<th style="width: 5%"><span>单位</span></th>
+										<th style="width: 5%"><span id="worker" style="background-color: #3d3d3d;color: #fff;cursor: pointer;">人工</span></th>
+										<th style="width: 5%"><span id="zhucai" style="background-color: #3d3d3d;color: #fff;cursor: pointer;">主材</span></th>
+										<th style="width: 5%"><span id="fucai" style="background-color: #3d3d3d;color: #fff;cursor: pointer;">辅材</span></th>
+										<th style="width: 7%"><span>综合单价</span></th>
+										<th style="width: 5%"><span>合计</span></th>
+										<th style="width: 16%"><span style="border-right:  2px solid #bcbcbc">备注</span></th>
+									</tr>
+									</thead>
+							</table>
+							</div>
+							<!--表格内容开始 -->
+							<div class="table_body" style="">
+							<div class="yusuanbj_list_share">
+							
+							</div>
+							<div id="ysbaojia_share">
+							
+							</div>
+							
+						</div>
+						
+						<!--列表详情页面end -->
+						</div>					
 				</div>
 				</div>
 
@@ -334,22 +397,22 @@
  				<!-- 点击人工弹框 -->
  				<div class="worker_form" style="width: 365px;height: 100px;line-height: 100px; position: absolute;top: 25%;left: 30%;z-index: 6;background-color: #fff;border: 1px solid #eee;display: none;">
  					<div style="text-align: left;">
- 						<a id="worker_click" href="javascript:;" style="background-color: #eb6100;display: inline-block;width: 110px;height: 35px;line-height: 35px;font-size: 15px;border-radius: 5px;color: #2ec6ff;text-decoration: none;font-weight: bold;letter-spacing: 2px;text-align: center;margin-right: 100px;margin-left: 20px;">工人查询</a>
- 						<a id="worker_de_click" href="javascript:;" style="background-color: #eb6100;display: inline-block;width: 110px;height: 35px;line-height: 35px;font-size: 15px;border-radius: 5px;color: #2ec6ff;text-decoration: none;font-weight: bold;letter-spacing: 2px;text-align: center;">工人定额</a>
+ 						<a id="worker_click" href="javascript:;" style="background-color: #eb6100;display: inline-block;width: 110px;height: 35px;line-height: 35px;font-size: 15px;border-radius: 5px;color: #2ec6ff;text-decoration: none;font-weight: bold;letter-spacing: 2px;text-align: center;margin-right: 100px;margin-left: 20px;">工人定额</a>
+ 						<a id="worker_de_click" href="javascript:;" style="background-color: #eb6100;display: inline-block;width: 110px;height: 35px;line-height: 35px;font-size: 15px;border-radius: 5px;color: #2ec6ff;text-decoration: none;font-weight: bold;letter-spacing: 2px;text-align: center;">工人查询</a>
  					</div>
  				</div>
  				<!-- 点击主材弹框 -->
  				<div class="zhucai_form" style="width: 365px;height: 100px;line-height: 100px; position: absolute;top: 25%;left: 30%;z-index: 6;background-color: #fff;border: 1px solid #eee;display: none;">
  					<div style="text-align: left;">
- 						<a id="zhucai_click" href="javascript:;" style="background-color: #eb6100;display: inline-block;width: 110px;height: 35px;line-height: 35px;font-size: 15px;border-radius: 5px;color: #2ec6ff;text-decoration: none;font-weight: bold;letter-spacing: 2px;text-align: center;margin-right: 100px;margin-left: 20px;">主材查询</a>
- 						<a id="zhucai_de_click" href="javascript:;" style="background-color: #eb6100;display: inline-block;width: 110px;height: 35px;line-height: 35px;font-size: 15px;border-radius: 5px;color: #2ec6ff;text-decoration: none;font-weight: bold;letter-spacing: 2px;text-align: center;">主材定额</a>
+ 						<a id="zhucai_click" href="javascript:;" style="background-color: #eb6100;display: inline-block;width: 110px;height: 35px;line-height: 35px;font-size: 15px;border-radius: 5px;color: #2ec6ff;text-decoration: none;font-weight: bold;letter-spacing: 2px;text-align: center;margin-right: 100px;margin-left: 20px;">主材定额</a>
+ 						<a id="zhucai_de_click" href="javascript:;" style="background-color: #eb6100;display: inline-block;width: 110px;height: 35px;line-height: 35px;font-size: 15px;border-radius: 5px;color: #2ec6ff;text-decoration: none;font-weight: bold;letter-spacing: 2px;text-align: center;">主材查询</a>
  					</div>
  				</div>
  				<!-- 辅材定额 -->
  				<div class="fucai_form" style="width: 365px;height: 100px;line-height: 100px; position: absolute;top: 25%;left: 30%;z-index: 6;background-color: #fff;border: 1px solid #eee;display: none;">
  					<div style="text-align: left;">
- 						<a id="fucai_click" href="javascript:;" style="background-color: #eb6100;display: inline-block;width: 110px;height: 35px;line-height: 35px;font-size: 15px;border-radius: 5px;color: #2ec6ff;text-decoration: none;font-weight: bold;letter-spacing: 2px;text-align: center;margin-right: 100px;margin-left: 20px;">辅材查询</a>
- 						<a id="fucai_de_click" href="javascript:;" style="background-color: #eb6100;display: inline-block;width: 110px;height: 35px;line-height: 35px;font-size: 15px;border-radius: 5px;color: #2ec6ff;text-decoration: none;font-weight: bold;letter-spacing: 2px;text-align: center;">辅材定额</a>
+ 						<a id="fucai_click" href="javascript:;" style="background-color: #eb6100;display: inline-block;width: 110px;height: 35px;line-height: 35px;font-size: 15px;border-radius: 5px;color: #2ec6ff;text-decoration: none;font-weight: bold;letter-spacing: 2px;text-align: center;margin-right: 100px;margin-left: 20px;">辅材定额</a>
+ 						<a id="fucai_de_click" href="javascript:;" style="background-color: #eb6100;display: inline-block;width: 110px;height: 35px;line-height: 35px;font-size: 15px;border-radius: 5px;color: #2ec6ff;text-decoration: none;font-weight: bold;letter-spacing: 2px;text-align: center;">辅材查询</a>
  					</div>
  				</div>
 				<!-- 人工列表 -->
@@ -536,80 +599,12 @@
 				<!-- 人工定额end -->
 				
 				<!-- 主材定额 -->
- 				<div class="zhucai_d_e" style="width: 800px;height: 300px;position: absolute;top: 25%;left: 10%;z-index: 6;background-color: #fff;border: 1px solid #eee;overflow-y:scroll;display:none;">				
+ 				<div class="zhucai_d_e" style="width: 800px;height: 300px;position: absolute;top: 25%;left: 10%;z-index: 6;background-color: #fff;border: 1px solid #eee;display:none;">				
 					<div style="width: 100%;">
 					<div id="canel_zc_de" style="position:absolute;top:-15px;left:95%;font-size:40px;z-index:10;">×</div>
-					<ul>
-						<li class="change_bg_li" style="padding: 2px 10px;text-align:center;font-size:18px;">主材定额</li>
-					</ul>
-			<!-- 自定工价 -->
-			<div class="sect current wages_custom">
-				<ul style="padding: 20px 0;width: 380px;margin-left: auto;margin-right: auto;">
-					<li>
-						<span>项&nbsp;目&nbsp;名&nbsp;称</span><span class="colon">:</span><input type="text" id="name">
-					</li>
-					<li>
-						<span>材&nbsp;料&nbsp;品&nbsp;牌</span><span class="colon">:</span><input type="text" id="pingpai">
-					</li>
-					<li>
-						<span style="">规&nbsp;格&nbsp;型&nbsp;号</span><span class="colon">:</span><input type="text" id="xinghao">
-					</li>
-					<li>
-						<span style="">单&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;位</span><span class="colon">:</span><input type="text" id="danwei">
-					</li>
-					<li>
-						<span style="">单&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;价</span><span class="colon">:</span><input type="text" id="danjia">
-					</li>
-					<li>
-						<span style="">含&nbsp;&nbsp;&nbsp;税&nbsp;&nbsp;&nbsp;价</span><span class="colon">:</span><input type="text" id="hanshuijiage">
-					</li>
-					<li>
-						<span>配&nbsp;送&nbsp;时&nbsp;间</span><span class="colon">:</span><input type="text" id="peisongtime">
-					</li>
-					<li>
-						<span style="">供应商名称</span><span class="colon">:</span><input type="text" id="gongyingshang">
-					</li>
-					<li>
-						<span style="">联&nbsp;&nbsp;&nbsp;系&nbsp;&nbsp;&nbsp;人</span><span class="colon">:</span><input type="text" id="lianxiren">
-					</li>
-					<li>
-						<span>联&nbsp;系&nbsp;方&nbsp;式</span><span class="colon">:</span><input type="text" id="dianhua">
-					</li>
-					<li>
-						<span style="">网&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;址</span><span class="colon">:</span><input type="text" id="web">
-					</li>
-					<li>
-						<span style="">邮&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;箱</span><span class="colon">:</span><input type="text" id="email">
-					</li>
-					<li>
-						<span style="">微&nbsp;&nbsp;&nbsp;信&nbsp;&nbsp;&nbsp;号</span><span class="colon">:</span><input type="text" id="weixin">
-					</li>
-					<li>
-						<span style="">备&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;注</span><span class="colon">:</span><input type="text" id="content">
-					</li>
-					<li style="height: 100px">
-						<span style="float: left;">图&nbsp;片&nbsp;参&nbsp;考</span>
-						<span class="colon" style="float: left;">:</span>
-						<div style="display: inline-block;width: 260px;height:90px;border:1px solid #c1c1be;position: relative;">
-							<input type="file" class="upload_input" id="doc" name="pic" onchange="change(this)" style="height:60px;">
-							<label for="doc" style="width: 60px;height: 60px;display: block;border: 1px solid #cfcfcf;position: relative;top:-60px;">
-									<div style="position: absolute;border-bottom: 1px solid #cfcfcf;width:50px;top: 50%;left: 50%;margin-left: -25px;"></div>
-									<div style="position: absolute;border-right: 1px solid #cfcfcf;height: 50px;left: 50%;top: 50%;margin-top: -25px;"></div>
-								
-									<div style="width:60px;height:60px;position: absolute;top: 0;" id="localImag" onclick="clickImg(this)">
-								        <img src="" id="preview" class="preview" alt="" width="60" height="60">
-									</div>
-								</label>
-						</div>
-					</li>
-				</ul>
-				<div class="btn_list">
-					<div class="btn confirm_btn" style="margin: 10px 0px;" onclick="add()">确认发布</div>
-					<div class="btn share_btn" style="margin: 10px 15px;">分享发布</div>
-				</div>
-
-
-			</div>
+						<iframe src="/index.php?app=search&act=user_iframe_zc" frameborder="0"  style="width: 100%;height: 300px;">
+						
+ 						</iframe>
 					</div>						
  				</div>				
 			
@@ -617,80 +612,12 @@
 				
 				<!-- 辅材定额 -->
 				
- 				<div class="fucai_d_e" style="width: 800px;height: 300px;position: absolute;top: 25%;left: 10%;z-index: 6;background-color: #fff;border: 1px solid #eee;overflow-y:scroll;display:none;">				
+ 				<div class="fucai_d_e" style="width: 840px;height: 300px;position: absolute;top: 25%;left: 8%;z-index: 6;background-color: #fff;border: 1px solid #eee;display:none;">				
 					<div style="width: 100%;">
 					<div id="canel_fc_de" style="position:absolute;top:-15px;left:95%;font-size:40px;z-index:10;">×</div>
-					<ul>
-						<li class="change_bg_li" style="padding: 2px 10px;text-align:center;font-size:18px;">辅材定额</li>
-					</ul>
-			<!-- 自定工价 -->
-			<div class="sect current wages_custom">
-				<ul style="padding: 20px 0;width: 380px;margin-left: auto;margin-right: auto;">
-					<li>
-						<span>项&nbsp;目&nbsp;名&nbsp;称</span><span class="colon">:</span><input type="text" id="fname">
-					</li>
-					<li>
-						<span>材&nbsp;料&nbsp;品&nbsp;牌</span><span class="colon">:</span><input type="text" id="fpingpai">
-					</li>
-					<li>
-						<span style="">规&nbsp;格&nbsp;型&nbsp;号</span><span class="colon">:</span><input type="text" id="fxinghao">
-					</li>
-					<li>
-						<span style="">单&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;位</span><span class="colon">:</span><input type="text" id="fdanwei">
-					</li>
-					<li>
-						<span style="">单&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;价</span><span class="colon">:</span><input type="text" id="fdanjia">
-					</li>
-					<li>
-						<span style="">含&nbsp;&nbsp;&nbsp;税&nbsp;&nbsp;&nbsp;价</span><span class="colon">:</span><input type="text" id="fhanshuijiage">
-					</li>
-					<li>
-						<span>配&nbsp;送&nbsp;时&nbsp;间</span><span class="colon">:</span><input type="text" id="fpeisongtime">
-					</li>
-					<li>
-						<span style="">供应商名称</span><span class="colon">:</span><input type="text" id="fgongyingshang">
-					</li>
-					<li>
-						<span style="">联&nbsp;&nbsp;&nbsp;系&nbsp;&nbsp;&nbsp;人</span><span class="colon">:</span><input type="text" id="flianxiren">
-					</li>
-					<li>
-						<span>联&nbsp;系&nbsp;方&nbsp;式</span><span class="colon">:</span><input type="text" id="fdianhua">
-					</li>
-					<li>
-						<span style="">网&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;址</span><span class="colon">:</span><input type="text" id="fweb">
-					</li>
-					<li>
-						<span style="">邮&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;箱</span><span class="colon">:</span><input type="text" id="femail">
-					</li>
-					<li>
-						<span style="">微&nbsp;&nbsp;&nbsp;信&nbsp;&nbsp;&nbsp;号</span><span class="colon">:</span><input type="text" id="fweixin">
-					</li>
-					<li>
-						<span style="">备&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;注</span><span class="colon">:</span><input type="text" id="fcontent">
-					</li>
-					<li style="height: 100px">
-						<span style="float: left;">图&nbsp;片&nbsp;参&nbsp;考</span>
-						<span class="colon" style="float: left;">:</span>
-						<div style="display: inline-block;width: 260px;height:90px;border:1px solid #c1c1be;position: relative;">
-							<input type="file" class="upload_input" id="doc" name="pic" onchange="change(this)" style="height:60px;">
-							<label for="doc" style="width: 60px;height: 60px;display: block;border: 1px solid #cfcfcf;position: relative;top:-60px;">
-									<div style="position: absolute;border-bottom: 1px solid #cfcfcf;width:50px;top: 50%;left: 50%;margin-left: -25px;"></div>
-									<div style="position: absolute;border-right: 1px solid #cfcfcf;height: 50px;left: 50%;top: 50%;margin-top: -25px;"></div>
-								
-									<div style="width:60px;height:60px;position: absolute;top: 0;" id="localImag" onclick="clickImg(this)">
-								        <img src="" id="preview" class="preview" alt="" width="60" height="60">
-									</div>
-								</label>
-						</div>
-					</li>
-				</ul>
-				<div class="btn_list">
-					<div class="btn confirm_btn" style="margin: 10px 0px;" onclick="addFc()">确认发布</div>
-					<div class="btn share_btn" style="margin: 10px 15px;">分享发布</div>
-				</div>
-
-
-			</div>
+						<iframe src="/index.php?app=search&act=user_iframe_fc" frameborder="0"  style="width: 100%;height: 300px;">
+						
+ 						</iframe>
 					</div>						
  				</div>				
 				<!-- 辅材定额end -->
@@ -743,6 +670,7 @@ $().ready(function(){
 	//zhucailist();
 	showList();
 	messagelist();
+	//alert(<?php echo $_SESSION["user_info"]["user_id"];?>);
 })
 
 	var index = 1;
@@ -831,8 +759,8 @@ $().ready(function(){
 		$html += 	'<td style="width: 5%"><textarea name="gongjia[]" class="budget_rg" id="a_rg'+index+'" style="width: 100%;height: 100%;display: inline-block;padding-left: 5px;padding-top: 50px;"></textarea></td>';
 		$html += 	'<td style="width: 5%"><textarea name="zhucai[]" class="budget_zc" id="a_zc'+index+'" style="width: 100%;height: 100%;display: inline-block;padding-left: 5px;padding-top: 50px;"></textarea></td>';
 		$html += 	'<td style="width: 5%"><textarea name="fucai[]" class="budget_fc" id="a_fc'+index+'" style="width: 100%;height: 100%;display: inline-block;padding-left: 5px;padding-top: 50px;"></textarea></td>';
-		$html += 	'<td style="width: 7%"><textarea name="zonggedanjia[]" class="budget_zh" id="a_zh'+index+'" style="width: 100%;height: 100%;display: inline-block;padding-left: 5px;padding-top: 50px;" onclick="totalZh('+index+')"></textarea></td>';
-		$html += 	'<td style="width: 5%"><textarea name="heji[]" class="budget_hj" id="a_hj'+index+'" style="width: 100%;height: 100%;display: inline-block;padding-left: 5px;padding-top: 50px;" onclick="totalHj('+index+')"></textarea></td>';
+		$html += 	'<td style="width: 7%"><textarea name="zonggedanjia[]" class="budget_zh" id="a_zh'+index+'" style="width: 100%;height: 100%;display: inline-block;padding-left: 5px;padding-top: 50px;" onclick="totalZh('+index+')" readonly="readonly"></textarea></td>';
+		$html += 	'<td style="width: 5%"><textarea name="heji[]" class="budget_hj" id="a_hj'+index+'" style="width: 100%;height: 100%;display: inline-block;padding-left: 5px;padding-top: 50px;" onclick="totalHj('+index+')" readonly="readonly"></textarea></td>';
 		$html += 	'<td style="width: 16%;border-right: 2px solid #979898;"><textarea name="ps[]" class="budget_bz" style="width: 100%;height: 100%;display: inline-block;padding-left: 5px;"></textarea></td>';
 		$html += '</tr>';
     	$(".table_body table tbody").append($html);
@@ -1438,29 +1366,21 @@ function fabu(){
 			return false;
 		}else{
 		
-			var url = 'http://wgcapp.wgc2013.com/'+"jingyi.php/Home/Jysearch/searchadd";
+			var url = 'http://wgcapp.wgc2013.com/'+"jingyi.php/Home/User/xunjia";
 			$.post(url,{
 							userid      : '<?php echo $_SESSION["user_info"]["user_id"];?>',
 						    title       : $("#title").val(),
 						    unit        : $("#unit").val(),
 						    num         : $("#num").val(),
-						    xinzi       : '50',
-						   	pt_price    : '0',
-						    total_price : '20',
-						    jobtype     : '0',     
-						    livetime    : '2018.8.9',
 						    ps          : $("#ps").val(),
-						    hasmoney    : 1,
-						    s_province  : '广东省',
-							s_city      : '广州市',
-							s_county    : '白云区',
-							region      : '嘉禾街鹤边路29号五社工业区',
-						    xiangxi     : $("#xiangxi").val(),
+						    address     : $("#address").val(),
+							tel         : $("#tel").val(),
 			
 			},function(ret){
 				console.log(ret)
-				if(ret.status == 200){
-						alert('发布成功,请继续填写！')
+				if(ret.code == 200){
+						//alert('发布成功,请继续填写！')
+						$(".worker_d_e").hide();
 						
 				}
 			},'json')
@@ -2015,41 +1935,41 @@ function details(i,id,name,danwei,fabujiage,lianxifangshi,rengongfei,shuliang,go
 	$(".worker_list_detail").show();
 	$(".adds_detail").html("");
 	var html="";
-	html +=							'<div style="margin: 10px 0;">';
-	html +=								'<div style="width: 50%;float: left;">';
-	html +=									'<span style="">工种：</span><input type="text" value="'+name+'">';
+	html +=							'<div style="margin: 10px 0;overflow:hidden;">';
+	html +=								'<div style="width: 50%;float: left;text-align:left;padding-left:41px;">';
+	html +=									'<span style="">工种：</span><span style="">'+name+'</span>';
 	html +=								'</div>';
-	html +=								'<div>';
-	html +=									'<span>计价单位：</span><input type="text" value="'+danwei+'">';
-	html +=								'</div>';
-	html +=							'</div>';
-	html +=							'<div style="margin: 10px 0;">';
-	html +=								'<div style="width: 50%;float: left;">';
-	html +=									'<span style="">数量/范围：</span><input type="text" value="'+shuliang+'">';
-	html +=								'</div>';
-	html +=								'<div>';
-	html +=									'<span>纯人工费：</span><input type="text" value="'+rengongfei+'">';
+	html +=								'<div style="width: 50%;float: left;text-align:left;">';
+	html +=									'<span>计价单位：</span><span style="">'+danwei+'</span>';
 	html +=								'</div>';
 	html +=							'</div>';
-	html +=							'<div style="margin: 10px 0;">';
-	html +=								'<div style="width: 50%;float: left;">';
-	html +=									'<span style="">联系方式：</span><input type="text" value="'+lianxifangshi+'">';
+	html +=							'<div style="margin: 10px 0;overflow:hidden;">';
+	html +=								'<div style="width: 50%;float: left;text-align:left;padding-left:41px;">';
+	html +=									'<span style="">数量/范围：</span><span style="">'+shuliang+'</span>';
 	html +=								'</div>';
-	html +=								'<div>';
-	html +=									'<span>发布价格：</span><input type="text" value="'+fabujiage+'">';
+	html +=								'<div style="width: 50%;float: left;text-align:left;">';
+	html +=									'<span>纯人工费：</span><span style="">'+rengongfei+'</span>';
 	html +=								'</div>';
 	html +=							'</div>';
-	html +=							'<div style="margin: 10px 0;">';
-	html +=								'<div style="width: 50%;float: left;">';
-	html +=									'<span style="">时间：</span><input type="text" value="'+time+'">';
+	html +=							'<div style="margin: 10px 0;overflow:hidden;">';
+	html +=								'<div style="width: 50%;float: left;text-align:left;padding-left:41px;">';
+	html +=									'<span style="">联系方式：</span><span style="">'+lianxifangshi+'</span>';
 	html +=								'</div>';
-	html +=								'<div>';
-	html +=									'<span>工作地点：</span><input type="text" value="'+gongzuodidian+'">';
+	html +=								'<div style="width: 50%;float: left;text-align:left;">';
+	html +=									'<span>发布价格：</span><span style="">'+fabujiage+'</span>';
+	html +=								'</div>';
+	html +=							'</div>';
+	html +=							'<div style="margin: 10px 0;overflow:hidden;">';
+	html +=								'<div style="width: 50%;float: left;text-align:left;padding-left:41px;">';
+	html +=									'<span style="">时间：</span><span style="">'+time+'</span>';
+	html +=								'</div>';
+	html +=								'<div style="width: 50%;float: left;text-align:left;">';
+	html +=									'<span>工作地点：</span><span style="">'+gongzuodidian+'</span>';
 	html +=								'</div>';
 	html +=								'</div>';
 	html +=								'<div>';
 	html +=									'<span style="float: left;margin-left: 41px;">详细描述：</span>';
-	html +=									'<textarea name="" id="" cols="30" rows="10" style="width: 470px;resize: none;margin-left: -182px;" value="'+content+'"></textarea>';
+	html +=									'<textarea name="" id="" cols="30" rows="10" style="width: 470px;resize: none;margin-left: -182px;" value="'+content+'" readonly="readonly"></textarea>';
 	html +=								'</div>';
 	html +=							'</div>';
 	
@@ -2093,6 +2013,10 @@ $("#canel_fc_de").click(function(){
 	$(this).parent().parent().hide();
 })
 $("#canel_detail").click(function(){
+	$(this).parent().hide();
+	$(".table_lists").css("background-color","#fff");
+})
+$("#canel_detail_share").click(function(){
 	$(this).parent().hide();
 	$(".table_lists").css("background-color","#fff");
 })
@@ -2165,7 +2089,7 @@ function tDetail(id,zj){
 			$('#ysbaojia').html(htmls);
 			
 		}else{
-			alert('获取列表失败');
+			//alert('获取列表失败');
 		}
 	},'json');
 	
@@ -2221,7 +2145,7 @@ function showList(){
 			}
 			$('#ysbj_list').html(html);
 		}else if(ret.status == 202){
-			alert('暂无数据');
+			//alert('暂无数据');
 		}
 	},'json');
 }
@@ -2510,6 +2434,17 @@ $(".quxiao_btn").click(function(){
 								//获取数据id
 								var arr = new Array();
 								var tarry = new Array();
+								var telcount = 0;
+								var telArray = $('input[name="tid"]:checked');
+								for(var i=0;i<telArray.length;i++){
+									if(telArray[i].checked == true){
+										telcount++;
+									}
+								}
+								if(telcount < 1){
+									alert("请选择你要分享的好友！！！！！")
+									return false;
+								}
 				                // $('input[name="id"]:checked').each(function(i){
 				                //     arr[i] = $(this).val();
 				                // });
@@ -2534,8 +2469,8 @@ $(".quxiao_btn").click(function(){
 				                },function(ret){
 				                	console.log(ret)
 				                	if(ret.code == 200){
-				                		alert("成功")
-				                		//window.location.reload();
+				                		//alert("成功")
+				                		window.location.reload();
 				                	}
 				                },'json')
 
@@ -2656,24 +2591,33 @@ var sharepage = 1;
 				dataType: "json",
 				success:function(ret){
 					console.log(ret)
-					if(ret.status == 200){
-						var data = ret.retData;
-						var listHtml = '';
-						for(i in data){
+					var html = '';
+				if(ret.status == 200){
+					$("#listpage").show();
+					var data = ret.retData;
+					for(var i in data){
+						var jsdanwei = data[i].jsdanwei,
+							sgdanwei = data[i].sgdanwei,
+							riqi = data[i].riqi,
+							shuijin = data[i].shuijin,
+							guanlifei = data[i].guanlifei,
+							gczongzaojia = data[i].gczongzaojia,
+							addtime = data[i].addtime,
+							time = timestampToTime(addtime);
+							id = data[i].tid;
+							name = data[i].name;
 							
-							var id       = data[i].id,
-								name     = data[i].name,
-								danwei   = data[i].danwei,
-								fabujiage= data[i].fabujiage;
-								
-								listHtml 	+= 	'<li style="overflow:hidden;">';
-								listHtml 	+=	'<span class="list_name">'+name+'</span>';
-								listHtml 	+=	'<span>'+fabujiage+'/'+danwei+'</span>';
-								//listHtml 	+=	'<input name="id" type="checkbox" class="checkbox" value="'+id+'"/>';
-								listHtml 	+=	'</li>';
-						}
-						$("#messlist_ul").append(listHtml);
+						html += '<tr>';
+							html += '<td style="width:184px;">'+jsdanwei+'</td>';
+							html += '<td style="width:184px;">'+sgdanwei+'</td>';
+							html += '<td style="width:171px;">'+gczongzaojia+'</td>';
+							html += '<td style="width:171px;">'+time+'</td>';
+							html += '<td class="t_detail"><a href="javascript:;" style="color:blue;width:80px;" onclick="tDetails('+id+','+gczongzaojia+')">详情</a></td>';
+							html += '<td style="width:91px;">'+name+'</td>';
+						html += '</tr>';
 					}
+					$('#ysbj_share_list').html(html);
+				}
 				},
 				error:function(err){
 					console.log(err)
@@ -2681,6 +2625,81 @@ var sharepage = 1;
 			});
 
 	}
+//分享列表详情
+function tDetails(id,zj){
+	$(".t_detail_all_share").show();
+	$(".table_lists").css("background-color","#eee");
+	
+	$.post('http://wgcapp.wgc2013.com/jingyi.php/Home/yewu/yusuan_content',{
+		id    : id
+	},function(ret){
+		var html = '';
+		var htmls = '';
+		if(ret.status == 200){
+			console.log(ret)
+			var data = ret.retData;
+			
+			var ysbaojia = ret.ysbaojia;
+			
+			
+			var heji = 0;
+			for(var i in data){
+				var xiangmumingcheng = data[i].xiangmumingcheng,
+					shigonggongyi = data[i].shigonggongyi,
+					shuliang = data[i].shuliang,
+					danwei = data[i].danwei,
+					gongjia = data[i].gongjia,
+					zhucai = data[i].zhucai,
+					fucai = data[i].fucai,
+					zonggedanjia = data[i].zonggedanjia,
+					heji = parseInt(data[i].heji),
+					ps = data[i].ps,
+					id = data[i].id,
+					j = parseInt(i)+1;
+
+					//heji = heji+heji;
+				html += '<table style="width: 100%;" border="0" cellspacing="0" cellpadding="0">';
+						html += '<tbody>';
+						html += '<tr class="tcontent">';
+							html += '<td style="width: 5%"><span>'+j+'</span></td>';
+							html += '<td style="width: 7%"><span>'+xiangmumingcheng+'</span></td>';
+							html += '<td style="width: 33%"><span>'+shigonggongyi+'</span></td>';
+							html += '<td style="width: 5%"><span>'+shuliang+'</span></td>';
+							html += '<td style="width: 5%"><span>'+danwei+'</span></td>';
+							html += '<td style="width: 5%"><span>'+gongjia+'</span></td>';
+							html += '<td style="width: 5%"><span>'+zhucai+'</span></td>';
+							html += '<td style="width: 5%"><span>'+fucai+'</span></td>';
+							html += '<td style="width: 7%"><span>'+zonggedanjia+'</span></td>';
+							html += '<td style="width: 5%"><span>'+heji+'</span></td>';
+							html += '<td style="width: 16%;border-right: 2px solid #979898;"><span>'+ps+'</span></td>';
+						html += '</tr>';
+					html += '</tbody>';
+				html += '</table>';
+			}
+			$('.yusuanbj_list_share').html(html);
+			
+			htmls += '<div class="gongchen_total" style="width: 100%;height: 30px;border:  2px solid #979898;border-top: none;">';
+					htmls += '<span  style="width: 12.5%;border-left:none;">税金</span>';
+					htmls += '<span  style="width: 12.5%;">'+ysbaojia.shuijin+'</span>';
+					htmls += '<span  style="width: 12.5%;">管理费</span>';
+					htmls += '<span  style="width: 12.5%;">'+ysbaojia.guanlifei+'元</span>';
+					htmls += '<span  style="width: 12.5%;border-right:none;">工程总造价:</span>';
+					htmls += '<span  style="width: 12.5%;border-left:none;text-align:left;">'+zj+'元</span>';
+					htmls += '<span style="width: 12.5%;border-right:none;">工程总价：</span>';
+					htmls += '<span  style="width: 12.5%;border-left:none;text-align:left;">'+ysbaojia.zongzaojia+'元</span>';
+				htmls += '</div>';
+			htmls += '</div>';
+			
+			$('#ysbaojia_share').html(htmls);
+			
+		}else{
+			//alert('获取列表失败');
+		}
+	},'json');
+	
+}
+
+
 
 	//返回检索列表
 	function back(){
@@ -2688,6 +2707,18 @@ var sharepage = 1;
 		$('#search_text').val('');
 		showUserList();
 	}
+
+	//时间转换
+	function timestampToTime(timestamp) {
+        var date = new Date(timestamp * 1000);//时间戳为10位需*1000，时间戳为13位的话不需乘1000
+        Y = date.getFullYear() + '-';
+        M = (date.getMonth()+1 < 10 ? '0'+(date.getMonth()+1) : date.getMonth()+1) + '-';
+        D = date.getDate() + ' ';
+        h = date.getHours() + ':';
+        m = date.getMinutes() + ':';
+        s = date.getSeconds();
+        return Y+M+D;
+    }
 
 </script>
 </body>
