@@ -124,6 +124,9 @@ class SearchApp extends MallbaseApp
 	function user_collection(){
 		$this->display('user_collection.html');
 	}//个人中心个人发布列表
+	function user_cailiao(){
+		$this->display('user_cailiao.html');
+	}
 	function user_show_list(){
 		$this->display('user_show_list.html');
 	}//个人中心个人创建简历
@@ -135,6 +138,12 @@ class SearchApp extends MallbaseApp
 	}//个人中心个人我的简历
 	function user_myresume(){
 		$this->display('user_myresume.html');
+	}//个人中心主材iframe
+	function user_iframe_zc(){
+		$this->display('user_iframe_zc.html');
+	}//个人中心主材iframe
+	function user_iframe_fc(){
+		$this->display('user_iframe_fc.html');
 	}
 	function companycenter(){
 		$this->display('companycenter.html');

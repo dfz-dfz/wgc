@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Access-Control-Allow-Origin" content="*">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=8"/>
+	<title>会员注册中心-微工程</title>
+	<meta name="description" content="微工程，微工程APP，装修、材料、家具、饰品一站式服务，让装修更简单，价格更透明！！" />
+	<meta name="keywords" content="微工程，微工程，家居商城，微工程家居商城，微工程家居装修商城，办公室装修，写字楼装修，材料，装修材料，家居，办公家具，家居，家具，装修，装饰" />
+	<link rel="stylesheet" href="">
+	<style>
+		
+	</style>
+</head>
+<body>
+{include file=header.html}
+
+	<div style="width: 100%;height: 550px;background:url('/themes/mall/jiaju/images/register_bg.jpg') no-repeat;background-size: 100% 100%;position: relative;">
+			<div style="position: absolute;width: 350px;height: 300px;background-color: #fff;top: 8%;left: 50%;border-radius: 10px;padding: 20px;">
+				<!-- 注册类别 -->
+				<div id="register_type">
+					<div style="height: 120px;line-height: 120px;text-align: center;color: #2c99d9;font-size: 28px;">会员注册中心</div>
+					<div style="border-bottom: 1px solid #999;margin-bottom: 40px;"></div>
+					<div>
+						<ul style="margin:0;padding: 0;list-style: none;">
+							<li style="float: left;width: 33.33%;">
+								<img src="/themes/mall/jiaju/images/register_zhuangshigongsi.jpg" alt="" style="width: 60px;margin-left: 28px;cursor: pointer;" onclick="register(1)">
+							</li>
+							<li style="float: left;width: 33.33%;">
+								<img src="/themes/mall/jiaju/images/register_cailiaoshang.jpg" alt="" style="width: 60px;margin-left: 28px;cursor: pointer;" onclick="register(2)">
+							</li>
+							<li style="float: left;width: 33.33%;">
+								<img src="/themes/mall/jiaju/images/register_worker.jpg" alt="" style="width: 60px;margin-left: 28px;cursor: pointer;" onclick="register(3)">
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<!-- 注册信息 -->
+				<div style="display: none;" id="register_message">
+					<div style="height: 30px;line-height: 10px;text-align: center;font-size: 20px;">注册中心</div>
+					<div style="border-bottom: 1px solid #999;"></div>
+					<div>
+						<div style="width: 280px;margin:8px auto;">
+							<span>姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名</span>
+							<span>：</span>
+							<input type="text" style="height: 20px;">
+						</div>
+						<div style="width: 280px;margin:0 auto;margin-bottom: 8px;">
+							<span>职&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;位</span>
+							<span>：</span>
+							<input type="text" style="height: 20px;">
+						</div>
+						<div style="width: 280px;margin:0 auto;margin-bottom: 8px;">
+							<span>公&nbsp;司&nbsp;名&nbsp;称</span>
+							<span>：</span>
+							<input type="text" style="height: 20px;">
+						</div>
+						<div style="width: 280px;margin:0 auto;margin-bottom: 8px;">
+							<span>手&nbsp;机&nbsp;号&nbsp;码</span>
+							<span>：</span>
+							<input type="text" style="height: 20px;">
+						</div>
+						<div style="width: 280px;margin:0 auto;margin-bottom: 8px;">
+							<span>邮&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;箱</span>
+							<span>：</span>
+							<input type="text" style="height: 20px;">
+						</div>
+						<div style="width: 280px;margin:0 auto;margin-bottom: 8px;">
+							<span>登&nbsp;录&nbsp;密&nbsp;码</span>
+							<span>：</span>
+							<input type="text" style="height: 20px;">
+						</div>
+						<div style="width: 280px;margin:0 auto;margin-bottom: 8px;">
+							<span>手机验证码</span>
+							<span>：</span>
+							<input type="text" style="height: 20px;">
+						</div>
+					</div>
+					<div style="width: 110px;height: 30px;border-radius: 4px;background-color: #2c99d9;text-align: center;color: #fff;line-height: 30px;margin: 0 auto;">注册并登录</div>
+				</div>
+			</div>
+	</div>
+
+{include file=footer.html}
+</body>
+<script type="text/javascript" src="/themes/mall/jiaju/styles/default/js/jquery-1.3.2.min.js"></script>
+<script>
+	function register(type){
+		$('#register_type').hide();
+		$('#register_message').show();
+	}
+</script>
+</html>

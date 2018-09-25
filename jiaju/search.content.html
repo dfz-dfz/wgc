@@ -227,7 +227,13 @@ function selectUser(){
 //留言列表
 function liuyan_select(){
 		
-	$.post(serverUrl+"jingyi.php/Home/Systemmsg/AdvertisementMessagelist",{userid : '',page : page,newsid : {$id},type : 2,infotype : 'pc_zhaopin'},function(ret){//alert(44);
+	$.post(serverUrl+"jingyi.php/Home/Systemmsg/AdvertisementMessagelist",{
+		userid : '',
+		page : page,
+		newsid : {$id},
+		type : 2,
+		infotype : 'pc_zhaopin'
+	},function(ret){
 	
 		var listHtml = '';
 		if(ret.code == 200){
@@ -238,13 +244,13 @@ function liuyan_select(){
 						var id=data[i].id, name=data[i].name,content=data[i].content,pic=data[i].pic,times = _trans_php_time_to_str(data[i].addtime,1);
 							
 							 
-							listHtml += '	<div class="story">';
-							listHtml += '		<div class="opbtn"></div>';
-							listHtml += '		<p class="story_t">'+name+'</p>';
-							listHtml += '		<p class="story_time">'+times+'</p>';
-							listHtml += '		<p class="story_m">'+content+'</p>';
-							listHtml += '		<p class="story_hf"></p>';
-							listHtml += '	</div>';
+							listHtml += '<div class="story">';
+							listHtml += '	<div class="opbtn"></div>';
+							listHtml += '	<p class="story_t">'+name+'</p>';
+							listHtml += '	<p class="story_time">'+times+'</p>';
+							listHtml += '	<p class="story_m">'+content+'</p>';
+							listHtml += '	<p class="story_hf"></p>';
+							listHtml += '</div>';
 			   
 					  
 					 }
