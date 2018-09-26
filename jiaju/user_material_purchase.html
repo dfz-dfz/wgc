@@ -158,7 +158,7 @@ body{background:url('') no-repeat center top }
 								<tr class="tmain">
 									<td style="width: 29%"><textarea name="office_name"></textarea></td>
 									<td style="width: 20%"><textarea name="worker_address" style="overflow: visible;height: 100%;line-height: 20px;"></textarea></td>
-									<td style="width: 12%"><textarea name="dateofpurchase"></textarea><input type="hidden" id="userid" name="uid" value="<?php echo $_SESSION["user_info"]["user_id"];?>"/></td>
+									<td style="width: 12%"><textarea name="dateofpurchase" onclick="JTC.setday({minDate:getNowFormatDate(), maxDate:'2021-01-01', ranged: true})"></textarea><input type="hidden" id="userid" name="uid" value="<?php echo $_SESSION["user_info"]["user_id"];?>"/></td>
 									
 									<td style="width: 6%"><textarea name="tel" style="overflow: visible;height: 100%;line-height: 20px;"></textarea></td>
 									<td style="width: 6%"><textarea name="sgperson"></textarea></td>
@@ -302,8 +302,8 @@ body{background:url('') no-repeat center top }
 					</div>
 				<!-- 分页 -->
 				<div style="margin: 10px auto;">
-						<a href="javascript:;" style="display: inline-block;width: 50px;height: 25px;line-height: 23px;border: 1px solid #eee;" onclick="prepage()">上一页</a>
-						<a id="next" href="javascript:;" style="display: inline-block;width: 50px;height: 25px;line-height: 23px;border: 1px solid #eee;" onclick="nextpage()">下一页</a>
+						<a href="javascript:;" style="display: inline-block;width: 50px;height: 25px;line-height: 23px;border: 1px solid #eee;background-color: red;color:#fff;" onclick="prepage()">上一页</a>
+						<a id="next" href="javascript:;" style="display: inline-block;width: 50px;height: 25px;line-height: 23px;border: 1px solid #eee;background-color: red;color:#fff;" onclick="nextpage()">下一页</a>
 				</div>					
 			</div>
 			</div>			
@@ -416,10 +416,11 @@ body{background:url('') no-repeat center top }
 
 
 {include file=footer.html}
+<script type="text/javascript" src="/themes/mall/jiaju/js/JTimer_1.3.js"></script>
 <script type="text/javascript">
-(function (){
-	caigou_list();
-}())
+	(function (){
+		caigou_list();
+	}())
 
 	var index = 0;
 	var totalArray = [];
@@ -433,23 +434,6 @@ body{background:url('') no-repeat center top }
 		$(".share_form").hide();
 		$(".budget_info").css("background-color","#fff");
 	})
-	
-	 // $(".budget_ul li:first").click(function(){
-    	
-  //   	$(this).addClass("change_bg_li")
-  //   	$(".budget_ul li:last").removeClass("change_bg_li")
-  //   	$(".budget_detail").show();
-  //   	$(".budget_detail_list").hide();
-  //   })
-
-  //   $(".budget_ul li:last").click(function(){
-    	
-  //   	$(this).addClass("change_bg_li")
-  //   	$(".budget_ul li:first").removeClass("change_bg_li")
- 	// 	$(".budget_detail").hide();
-  //   	$(".budget_detail_list").show();
-  //   })
-
     	//点击预算列表切换
 	$(".budget_ul li:first").click(function(){
     	$(this).addClass("change_bg_li")
@@ -477,8 +461,25 @@ body{background:url('') no-repeat center top }
     	$(".budget_detail_list").hide();
 		$(".message_list").show();
     })
-
-
+    //获取当前日期
+    function getNowFormatDate() {
+        var date = new Date();
+        var seperator1 = "-";
+        var year = date.getFullYear();
+        var month = date.getMonth() + 1;
+        var strDate = date.getDate();
+        if (month >= 1 && month <= 9) {
+            month = "0" + month;
+        }
+        if (strDate >= 0 && strDate <= 9) {
+            strDate = "0" + strDate;
+        }
+        var currentdate = year + seperator1 + month + seperator1 + strDate;
+        return currentdate;
+    }
+    JTC.setDateRange(getNowFormatDate(), '2021-01-01', true);  //设置可选日期范围 
+    var timeclick = getNowFormatDate();
+    var addTimeDateForm = "JTC.setday({minDate:'"+timeclick+"',maxDate:'2021-01-01',ranged: true})";
     //点击添加表格
     $(".add_table").click(function(){
     	index++;
@@ -489,7 +490,7 @@ body{background:url('') no-repeat center top }
 		$html += '<td style="width: 16%"><textarea name="m_name[]"></textarea></td>';
 		$html += '<td style="width: 8%"><textarea name="brand[]"></textarea></td>';
 		$html += '<td style="width: 10%"><textarea name="size[]"></textarea></td>';
-		$html += '<td style="width: 10%"><textarea name="expire_time[]"></textarea></td>';
+		$html += '<td style="width: 10%"><textarea name="expire_time[]" onclick="'+addTimeDateForm+'"></textarea></td>';
 		$html += '<td style="width: 6%"><textarea id="t_sl'+index+'" name="number[]"></textarea></td>';
 		$html += '<td style="width: 6%"><textarea name="danwei[]"></textarea></td>';
 		$html += '<td style="width: 6%"><textarea id="t_dj'+index+'" name="danjia[]"></textarea></td>';
