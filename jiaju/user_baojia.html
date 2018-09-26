@@ -212,7 +212,7 @@ $(function(){
 					</li>
 					<li>
 						<div class="user_employ_name" style="color: #5e5a59;text-align: left;width: 80px;">*截止时间:</div>
-						<div class="user_employ_input"><input type="text" id='endtime'/></div>
+						<div class="user_employ_input"><input type="text" id='endtime' onclick="JTC.setday()"/></div>
 					</li>					
  				</ul>
 				<div style="width:100%;overflow: hidden;margin:0px auto;">
@@ -391,6 +391,8 @@ $(function(){
 <script type="text/javascript" src="/Public/lib/jquery.validation/1.14.0/validate-methods.js"></script> 
 <script type="text/javascript" src="/Public/lib/jquery.validation/1.14.0/messages_zh.js"></script>
 <!-- 多图片上传 -->
+<!-- 时间选择器 -->
+<script type="text/javascript" src="/themes/mall/jiaju/js/JTimer_1.3.js"></script>
 <script type="text/javascript">
 $(function(){
 	$('.skin-minimal input').iCheck({
@@ -1780,6 +1782,7 @@ function repair_list(page){
 				for(var i in retData){
 					var office_name = (retData[i].office_name == null || retData[i].office_name == '') ? '未设定':retData[i].office_name,
 						id = retData[i].id, 
+						userid = '<?php echo $_SESSION["user_info"]["user_id"];?>',
 						weixiu_price = retData[i].weixiu_price,
 						restaurant_address = (retData[i].restaurant_address == null || retData[i].restaurant_address == '') ? '未设定':retData[i].restaurant_address,
 						addtime = retData[i].addtime,
@@ -1790,7 +1793,7 @@ function repair_list(page){
 							html += '<li style="width:28.36%">'+restaurant_address+'</li>';
 							html += '<li style="width:15.16%">'+end_time+'</li>';
 							html += '<li style="width:15.16%;">'+addtime+'</li>';
-							html += '<li style="width:13.16%;cursor: pointer;"><a style="color:blue;" href="/index.php?app=search&act=weixiu_details&id='+id+'" target="_blank" >查看</a></li>';
+							html += '<li style="width:13.16%;cursor: pointer;"><a href="javascript:;" style="color:red;display:inline-block;width:40px;" onclick="del('+id+','+userid+')">删除</a><a style="color:blue;" href="/index.php?app=search&act=weixiu_details&id='+id+'" target="_blank" >查看</a></li>';
 						html += '</ul>';
 					
 				}
@@ -1874,13 +1877,26 @@ function repair_list(page){
 		page++;
 		repair_list(page);
 	}
+	//删除列表
+	function del(id,userid){
+
+		var status = confirm("是否确认删除此维修报价信息！")
+		if(status){
+
+		window.location.href = 'http://wgcapp.wgc2013.com/jingyi.php/Home/Jymember/lonAndlatss_del/id/'+id+'/user_id/'+userid;
+		}else{
+			return false;
+		}
+	
+}
 
    
 //全局加载
-$().ready(function(){
+$(function(){
 	jobtypes();
 	zhaopinlist();
-})
+});
 </script>
+
 </body>
 </html>

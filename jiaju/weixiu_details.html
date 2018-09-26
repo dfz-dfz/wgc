@@ -27,6 +27,7 @@
 					<div class="shejifenbao_list" id="xiangmmc"></div>
 					<div class="shejifenbao_list" id="content"></div>
 					<div class="shejifenbao_list" id="shop_address"></div>
+					<div class="shejifenbao_list" id="weixiu_price"></div>
 					<div class="shejifenbao_list" id="call"></div>
 					<div class="shejifenbao_list" id="name"></div>
 					<div class="shejifenbao_list" id="time"></div>
@@ -112,6 +113,7 @@
 			   	$('#worker_number').html(date.work_number);//
 			   	$('#content').html('<span>维修内容：</span>'+date.content);//
 			   	$('#shop_address').html('<span>维修地址：</span>'+date.worker_address);//
+			   	$('#weixiu_price').html('<span>维修报价：</span>'+date.weixiu_price);//
 			   	$('#shop_call').html(date.restaurant_phone);//
 			   	$('#shop_time').html(date.come_time);//
 			   	$('#call').html('<span>联系方式：</span>'+mobphone);//
@@ -146,7 +148,8 @@
 							id = mans[i].id,
 							userimg = mans[i].userimg,
 							username = mans[i].username,
-							time = _trans_php_time_to_str(addtime,5);
+							time = _trans_php_time_to_str(addtime,5),
+							num = parseInt(i)+1;
 						  	html += '<div style="border: 16px solid #eee;border-bottom: none;height: 130px;width: 93%;padding: 2%;">';
 								html += '<div style="height: 120px;width: 100%;">';
 									html += '<div style="width: 10%;float: left;text-align: center;">';
@@ -158,7 +161,7 @@
 									html += '</div>';
 									html += '<div style="width: 85%;float: left;">'+content+'</div>';
 								html += '</div>';
-								html += '<div style="width:100%;height:30px;line-height:30px;text-align: right;"><span style="margin-right: 30px;">'+id+'楼</span><span style="margin-right: 50px;">'+time+'</span></div>';
+								html += '<div style="width:100%;height:30px;line-height:30px;text-align: right;"><span style="margin-right: 30px;">'+num+'楼</span><span style="margin-right: 50px;">'+time+'</span></div>';
 							html += '</div>';
 					}
 				}else{
