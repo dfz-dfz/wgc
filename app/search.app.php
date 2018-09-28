@@ -153,6 +153,9 @@ class SearchApp extends MallbaseApp
 	}//个人中心项目分包
 	function user_design(){
 		$this->display('user_design.html');
+	}//个人中心项目分包
+	function xiadan(){
+		$this->display('xiadan.html');
 	}//个人中心设计分包
 	
        //企业中心
@@ -263,6 +266,14 @@ class SearchApp extends MallbaseApp
 	// APP下载
 	function downapp(){
 		$this->display('downapp.html');
+	}
+	// 升级vip
+	function vip(){
+		$this->display('vip.html');
+	}
+	// 购买VIP页面
+	function payVip(){
+		$this->display('payVip.html');
 	}
 	//登陆
 	function sessions()
@@ -1013,6 +1024,16 @@ class SearchApp extends MallbaseApp
 		$this->display('cailiaotuiguang_list.html');
 	}
 
+	// 材料询价列表
+	function cailiaoxunjia(){
+		$this->display('cailiaoxunjia_list.html');
+	}
+
+	// 材料询价详情
+	function cailiaoxunjia_content(){
+		$this->display('cailiaoxunjia_details.html');
+	}
+
 	// 材料推广详情
 	function cailiaotuiguang_content(){
 		$this->display('cailiaotuiguang_details.html');
@@ -1078,7 +1099,23 @@ class SearchApp extends MallbaseApp
 		$this->assign('type', $_GET['type']);
 		$this->display('zhaopinsearch3.html');
 	}
-	//招工、找工列表-用户
+	//设计师列表
+	function joblist4_content(){
+		$type = $_GET['type'];
+		$name = $_GET['name'];
+		$this->assign('name', $name);
+		$this->assign('type', $type);
+		$this->display('joblist4_content.html');
+	}
+	//设计师列表-详情
+	function joblist4_content_user(){
+		$id   = $_GET['id'];
+		$name = $_GET['name'];
+		$this->assign('id', $id);
+		$this->assign('name', $name);
+		$this->display('joblist4_content_user.html');
+	}
+	//工匠列表
 	function joblist3_content(){
 		$type = $_GET['type'];
 		$name = $_GET['name'];
@@ -1086,7 +1123,7 @@ class SearchApp extends MallbaseApp
 		$this->assign('type', $type);
 		$this->display('joblist3_content.html');
 	}
-	//招工、找工列表-用户
+	//工匠列表-详情
 	function joblist3_content_user(){
 		$id   = $_GET['id'];
 		$name = $_GET['name'];
