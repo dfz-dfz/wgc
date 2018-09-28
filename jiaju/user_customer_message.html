@@ -130,21 +130,7 @@ body{background:url('') no-repeat center top }
 					<div class="send_people" style="text-align: center;margin-top: 50px;">
 						<a class="sender" href="javascript:;" style="width: 100px;height: 40px;font-size: 15px;font-weight: bold;background-color: #eb6100;border-radius: 5px;color: #fff;display: inline-block;line-height: 40px;text-align: center;" onclick="tijiao()">保存</a>
 					</div>
-					<!-- 分页 -->
-					<div class="price_page" style="text-align: center;">
-					<a href="#">首页</a>
-					<a href="#">上一页</a>
-					<a href="#" style="width: 15px;">1</a>
-					<a href="#" style="width: 15px;">2</a>
-					<a href="#" style="width: 15px;">3</a>
-					<a href="#" style="width: 15px;">4</a>
-					<a href="#" style="width: 15px;">5</a>
-					<a href="#" style="width: 15px;">6</a>
-					<a href="#" style="width: 15px;">7</a>
-					<a href="#">...</a>
-					<a href="#">下一页</a>
-					<a href="#">尾页</a>
-					</div>
+					
 				</div>
 			</div>
 			</div>
@@ -203,18 +189,10 @@ body{background:url('') no-repeat center top }
 			</div>
 					<!-- 分页 -->
 					<div class="price_page" style="text-align: center;">
-					<a href="#">首页</a>
-					<a href="#">上一页</a>
-					<a href="#" style="width: 15px;">1</a>
-					<a href="#" style="width: 15px;">2</a>
-					<a href="#" style="width: 15px;">3</a>
-					<a href="#" style="width: 15px;">4</a>
-					<a href="#" style="width: 15px;">5</a>
-					<a href="#" style="width: 15px;">6</a>
-					<a href="#" style="width: 15px;">7</a>
-					<a href="#">...</a>
-					<a href="#">下一页</a>
-					<a href="#">尾页</a>
+				
+					<a href="javascript:;" style="background-color: red;color: #fff;">上一页</a>
+					<a href="javascript:;" style="background-color: red;color: #fff;">下一页</a>
+			
 					</div>
 				</div>
 			</div>
@@ -264,18 +242,10 @@ body{background:url('') no-repeat center top }
 			</div>
 					<!-- 分页 -->
 					<div class="price_page" style="text-align: center;">
-					<a href="#">首页</a>
-					<a href="#">上一页</a>
-					<a href="#" style="width: 15px;">1</a>
-					<a href="#" style="width: 15px;">2</a>
-					<a href="#" style="width: 15px;">3</a>
-					<a href="#" style="width: 15px;">4</a>
-					<a href="#" style="width: 15px;">5</a>
-					<a href="#" style="width: 15px;">6</a>
-					<a href="#" style="width: 15px;">7</a>
-					<a href="#">...</a>
-					<a href="#">下一页</a>
-					<a href="#">尾页</a>
+					
+					<a href="javascript:;" style="background-color: red;color: #fff;">上一页</a>
+					<a href="javascript:;" style="background-color: red;color: #fff;">下一页</a>
+				
 					</div>
 				</div>
 			</div>
@@ -451,9 +421,10 @@ function list(){
 					type    = data[i].type,
 					userid  = data[i].userid,
 					zhiwei  = data[i].zhiwei;
+					j       = parseInt(i)+1;
 					
 					listHtml +=		'<tr class="thead" style="background-color: #fff;">';
-					listHtml +=		'<td style="width: 5%"><span><input name="id" type="checkbox"/>'+id+'</span></td>';
+					listHtml +=		'<td style="width: 5%"><span><input name="id" type="checkbox"/>'+j+'</span></td>';
 					listHtml +=		'<td style="width: 10%"><span>'+company+'</span></td>';
 					listHtml +=		'<td style="width: 5%"><span>'+type+'</span></td>';
 					listHtml +=		'<td style="width: 8%"><span>'+zhiwei+'</span></td>';

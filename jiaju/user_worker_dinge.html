@@ -33,10 +33,42 @@
 var SITE_URL = "http://www.wgc2013.com";
 var PRICE_FORMAT = '&yen;%s';
 </script>
-<script charset="utf-8" type="text/javascript" src="http://www.wgc2013.com/includes/libraries/javascript/jquery.plugins/jquery.validate.js" ></script><style type="text/css">
+<script charset="utf-8" type="text/javascript" src="http://www.wgc2013.com/includes/libraries/javascript/jquery.plugins/jquery.validate.js" ></script>
+<style type="text/css">
 body{background:url('') no-repeat center top }
 .mainnav{width:990px; overflow:hidden; margin:0 auto}
 .STYLE1 {color: red}
+.list_ul_head{
+	margin: 10px 0px;
+	overflow: hidden;
+	border: 1px solid #eee;
+    background-color: #9e9e9e;
+    color: #fff;
+}
+.list_ul_head li{
+	float: left;
+	width: 10%;
+	margin-right: 20px;
+	text-align: center;
+}
+.detail_list p{
+	font-size: 16px;
+	color: #000;
+	margin: 20px 0;
+	padding: 0 20px;
+}
+.detail_list_share p{
+	font-size: 16px;
+	color: #000;
+	margin: 20px 0;
+	padding: 0 20px;
+}
+#mess_list li:hover{
+	background-color: #eee;
+}
+#messlist_ul li:hover{
+	background-color: #eee;
+}
 </style>
 <script type="text/javascript" src="http://www.wgc2013.com/themes/mall/jiaju/styles/default/js/hover.js"></script>
 <script charset="utf-8" type="text/javascript" src="http://www.wgc2013.com/includes/libraries/javascript/jquery.plugins/jquery.validate.js" ></script>
@@ -112,15 +144,24 @@ body{background:url('') no-repeat center top }
 			</div>
 			<!-- 自定工价 end -->
 			<!-- 工价列表 -->
-			<div class="sect wages_list" style="display: none;min-height: 480px;">
+			<div class="sect wages_list" style="display: none;min-height: 480px;position: relative;">
 				<input type="text" class="search_input" />
 				<input type="button" value="搜索" class="search_btn" onclick="search()"/>
 				<input type="button" style="height: 24px;width: 70px;" value="分享" class="share_btn" onclick="showUserList()"/>
 
-				<ul list_ul_head>
+				<ul class="list_ul_head">
 
+						<li>项目名称</li>
+						<li>发布价格</li>
+						<li>数量</li>
+						<li>人工费</li>
+						<li>联系人</li>
+						<li>工作单位</li>
+						<li>施工工艺</li>
+						<li>备注</li>
+								
 				</ul>
-				<ul class="list_ul" id="mess_list">
+				<ul class="list_ul" id="mess_list" style="min-height: 400px;">
 					
 				</ul>
 				
@@ -130,25 +171,55 @@ body{background:url('') no-repeat center top }
 					<li class="page_btn" style="background-color: red;color:#fff;line-height: 24px;" onclick="nextpage()">下一页</li>
 					
 				</ul>
+				<div class="detail" style="position: absolute;top: 200px;left:100px;width: 730px;height: 300px;background-color: #eee;display: none;border-radius: 25px;box-shadow: 5px 5px 5px;opacity: 0.9;">
+					<div class="cancel" style="font-size: 41px;position: absolute;top: -5px;left: 700px;cursor: pointer;">×</div>
+					<div class="detail_list">
+
+					<p>联系方式：</p>
+					<p>施工工艺：</p>
+					<p>工作地点：</p>
+					<p>备注：</p>
+					</div>
+				</div>
 			</div>
 			<!-- 工价列表 end -->
 			
 			<!-- 分享授权-->
-				<div class="message_list base_info_public" style="display: none;width: 90%;border: none;margin: 0px auto;">
+				<div class="message_list base_info_public" style="display: none;width: 90%;border: none;margin: 0px auto;min-height: 480px;">
 
 				<!-- 工价分享列表 -->
 				<input type="text" class="search_input" />
 				<input type="button" value="搜索" class="search_btn" onclick="search()" style="width: 80px;height: 24px;background-color: #f7c67a;color: #f2552a;border: 1px solid #cfcfcf;cursor: pointer;" />
+				<ul class="list_ul_head">
 				
+						<li>项目名称</li>
+						<li>发布价格</li>
+						<li>数量</li>
+						<li>人工费</li>
+						<li>联系人</li>
+						<li>工作单位</li>
+						<li>施工工艺</li>
+						<li>备注</li>
+								
+				</ul>				
 					
-				<ul class="list_ul" id="messlist_ul">
+				<ul class="list_ul" id="messlist_ul" style="min-height: 400px;">
 
 				</ul>
-				
+				<div class="detail_share" style="position: absolute;top: 200px;left:100px;width: 730px;height: 300px;background-color: #eee;display: none;border-radius: 25px;box-shadow: 5px 5px 5px;opacity: 0.9;">
+					<div class="cancel" style="font-size: 41px;position: absolute;top: -5px;left: 700px;cursor: pointer;">×</div>
+					<div class="detail_list_share">
+
+					<p>联系方式：</p>
+					<p>施工工艺：</p>
+					<p>工作地点：</p>
+					<p>备注：</p>
+					</div>
+				</div>				
 				<ul class="page" style="float: none;">
 					
-					<li class="page_btn" style="margin-left: 75px;background-color: red;color:#fff;line-height: 24px;" onclick="prepage()">上一页</li>
-					<li class="page_btn" style="background-color: red;color:#fff;line-height: 24px;" onclick="nextpage()">下一页</li>
+					<li class="page_btn" style="margin-left: 75px;background-color: red;color:#fff;line-height: 24px;" onclick="prepages()">上一页</li>
+					<li class="page_btn" id="s_next" style="background-color: red;color:#fff;line-height: 24px;" onclick="nextpages()">下一页</li>
 					
 				</ul>
 			</div>
@@ -302,7 +373,7 @@ body{background:url('') no-repeat center top }
 
 	//工价列表
 	userid = <?php echo $_SESSION["user_info"]["user_id"];?>;
-	var page = 1,key = '';
+	var page = 1,spage=1,key = '';
 	function list(){
 		var url = 'http://wgcapp.wgc2013.com/jingyi.php/Home/Dinge/rengong_list';
 		$.ajax({
@@ -332,7 +403,8 @@ body{background:url('') no-repeat center top }
 							shigonggongyi = data[i].shigonggongyi,
 							content = data[i].content;
 							
-						listHtml 	+= 	'<li style="overflow:hidden;list-style:none;">';
+						listHtml 	+= 	'<li style="overflow:hidden;list-style:none;cursor:pointer;">';
+						listHtml 	+=  '<div onclick="detail(\''+gongzuodidian+'\',\''+shigonggongyi+'\',\''+content+'\',\''+lianxifangshi+'\')">';
 						listHtml 	+=	'<div class="list_name" style="float:left;width:10%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center;">'+name+'</div>';
 						listHtml 	+=	'<div class="list_name" style="float:left;width:10%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center;">'+fabujiage+'/'+danwei+'</div>';
 						listHtml 	+=	'<div class="list_name" style="float:left;width:10%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center;">'+shuliang+'</div>';
@@ -341,6 +413,7 @@ body{background:url('') no-repeat center top }
 						listHtml 	+=	'<div class="list_name" style="float:left;width:10%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center;">'+gongzuodidian+'</div>';
 						listHtml 	+=	'<div class="list_name" style="float:left;width:10%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center;">'+shigonggongyi+'</div>';
 						listHtml 	+=	'<div class="list_name" style="float:left;width:10%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center;">'+content+'</div>';
+						listHtml 	+=  '</div>';
 						listHtml 	+=	'<input name="id" type="checkbox" class="checkbox" value="'+id+'"/>';
 						listHtml 	+=	'</li>';
 					}
@@ -375,15 +448,28 @@ body{background:url('') no-repeat center top }
 						var id       = data[i].id,
 							name     = data[i].name,
 							danwei   = data[i].danwei,
-							fabujiage= data[i].fabujiage;
+							fabujiage= data[i].fabujiage,
+							shuliang = data[i].shuliang,
+							rengongfei = data[i].rengongfei,
+							lianxifangshi = data[i].lianxifangshi,
+							gongzuodidian = data[i].gongzuodidian,
+							shigonggongyi = data[i].shigonggongyi,
+							content = data[i].content;
 							
-						listHtml 	+= 	'<li style="overflow:hidden;">';
-						listHtml 	+=	'<span class="list_name">'+name+'</span>';
-						listHtml 	+=	'<span>'+fabujiage+'/'+danwei+'</span>';
-						//listHtml 	+=	'<input name="id" type="checkbox" class="checkbox" value="'+id+'"/>';
+						listHtml 	+= 	'<li style="overflow:hidden;list-style:none;cursor:pointer;">';
+						listHtml 	+=  '<div onclick="details(\''+gongzuodidian+'\',\''+shigonggongyi+'\',\''+content+'\',\''+lianxifangshi+'\')">';
+						listHtml 	+=	'<div class="list_name" style="float:left;width:10%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center;">'+name+'</div>';
+						listHtml 	+=	'<div class="list_name" style="float:left;width:10%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center;">'+fabujiage+'/'+danwei+'</div>';
+						listHtml 	+=	'<div class="list_name" style="float:left;width:10%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center;">'+shuliang+'</div>';
+						listHtml 	+=	'<div class="list_name" style="float:left;width:10%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center;">'+rengongfei+'</div>';
+						listHtml 	+=	'<div class="list_name" style="float:left;width:10%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center;">'+lianxifangshi+'</div>';
+						listHtml 	+=	'<div class="list_name" style="float:left;width:10%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center;">'+gongzuodidian+'</div>';
+						listHtml 	+=	'<div class="list_name" style="float:left;width:10%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center;">'+shigonggongyi+'</div>';
+						listHtml 	+=	'<div class="list_name" style="float:left;width:10%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center;">'+content+'</div>';
+						listHtml 	+=  '</div>';
 						listHtml 	+=	'</li>';
 					}
-					$("#messlist_ul").append(listHtml);
+					$("#messlist_ul").html(listHtml);
 				}
 			},
 			error:function(err){
@@ -469,24 +555,110 @@ body{background:url('') no-repeat center top }
 				crossDomain: true == !(document.all),
 				dataType: "json",
 				success:function(ret){
-					if(ret.status == 200){
-						var data = ret.retData;
-						var listHtml = '';
-						for(i in data){
+					$("#mess_list").html("");
+				if(ret.status == 200){
+					var data = ret.retData;
+					var listHtml = '';
+					for(i in data){
+						var id       = data[i].id,
+							name     = data[i].name,
+							danwei   = data[i].danwei,
+							fabujiage= data[i].fabujiage,
+							shuliang = data[i].shuliang,
+							rengongfei = data[i].rengongfei,
+							lianxifangshi = data[i].lianxifangshi,
+							gongzuodidian = data[i].gongzuodidian,
+							shigonggongyi = data[i].shigonggongyi,
+							content = data[i].content;
 							
-							var id       = data[i],
-								name     = data[i].name,
-								danwei   = data[i].danwei,
-								fabujiage= data[i].fabujiage;
-								listHtml 	+= 	'<li style="overflow:hidden;">';
-								listHtml 	+=	'<span class="list_name">'+name+'</span>';
-								listHtml 	+=	'<span>'+fabujiage+'/'+danwei+'</span>';
-								listHtml 	+=	'<input type="checkbox" class="checkbox" />';
-								listHtml 	+=	'</li>';
-						}
-						$(".list_ul").append(listHtml);
-					}else if(ret.status == 202){
-						alert("暂无更多数据")
+						listHtml 	+= 	'<li style="overflow:hidden;list-style:none;cursor:pointer;">';
+						listHtml 	+=  '<div onclick="detail(\''+gongzuodidian+'\',\''+shigonggongyi+'\',\''+content+'\',\''+lianxifangshi+'\')">';
+						listHtml 	+=	'<div class="list_name" style="float:left;width:10%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center;">'+name+'</div>';
+						listHtml 	+=	'<div class="list_name" style="float:left;width:10%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center;">'+fabujiage+'/'+danwei+'</div>';
+						listHtml 	+=	'<div class="list_name" style="float:left;width:10%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center;">'+shuliang+'</div>';
+						listHtml 	+=	'<div class="list_name" style="float:left;width:10%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center;">'+rengongfei+'</div>';
+						listHtml 	+=	'<div class="list_name" style="float:left;width:10%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center;">'+lianxifangshi+'</div>';
+						listHtml 	+=	'<div class="list_name" style="float:left;width:10%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center;">'+gongzuodidian+'</div>';
+						listHtml 	+=	'<div class="list_name" style="float:left;width:10%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center;">'+shigonggongyi+'</div>';
+						listHtml 	+=	'<div class="list_name" style="float:left;width:10%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center;">'+content+'</div>';
+						listHtml 	+=  '</div>';
+						listHtml 	+=	'<input name="id" type="checkbox" class="checkbox" value="'+id+'"/>';
+						listHtml 	+=	'</li>';
+					}
+					$("#mess_list").html(listHtml);
+				}else if(ret.status == 202){
+						//alert("暂无更多数据")
+					}
+				},
+				error:function(err){
+					console.log(err)
+				}
+			});
+	}
+
+	//下一页
+	function nextpages(){
+		pageindexs(++spage);
+	}
+	//上一页
+	function prepages(){
+		if(spage = 1){
+			spage = 2;
+		}
+		pageindexs(--spage);
+	}
+//第二页
+
+//分享分页
+	function pageindexs(index){
+		var url = 'http://wgcapp.wgc2013.com/jingyi.php/Home/Dinge/rengong_list_share';
+		$(".list_ul").html("");
+		$.ajax({
+				type:"POST",
+				url:url,
+				data:{
+					key      : key,
+			    	user_id  : userid,
+			    	page     : index
+				},
+				cache:false,
+				crossDomain: true == !(document.all),
+				dataType: "json",
+				success:function(ret){
+					$("#messlist_ul").html("");
+				if(ret.status == 200){
+					$("#s_next").show();
+					var data = ret.retData;
+					var listHtml = '';
+					for(i in data){
+						var id       = data[i].id,
+							name     = data[i].name,
+							danwei   = data[i].danwei,
+							fabujiage= data[i].fabujiage,
+							shuliang = data[i].shuliang,
+							rengongfei = data[i].rengongfei,
+							lianxifangshi = data[i].lianxifangshi,
+							gongzuodidian = data[i].gongzuodidian,
+							shigonggongyi = data[i].shigonggongyi,
+							content = data[i].content;
+							
+						listHtml 	+= 	'<li style="overflow:hidden;list-style:none;cursor:pointer;">';
+						listHtml 	+=  '<div onclick="details(\''+gongzuodidian+'\',\''+shigonggongyi+'\',\''+content+'\',\''+lianxifangshi+'\')">';
+						listHtml 	+=	'<div class="list_name" style="float:left;width:10%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center;">'+name+'</div>';
+						listHtml 	+=	'<div class="list_name" style="float:left;width:10%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center;">'+fabujiage+'/'+danwei+'</div>';
+						listHtml 	+=	'<div class="list_name" style="float:left;width:10%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center;">'+shuliang+'</div>';
+						listHtml 	+=	'<div class="list_name" style="float:left;width:10%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center;">'+rengongfei+'</div>';
+						listHtml 	+=	'<div class="list_name" style="float:left;width:10%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center;">'+lianxifangshi+'</div>';
+						listHtml 	+=	'<div class="list_name" style="float:left;width:10%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center;">'+gongzuodidian+'</div>';
+						listHtml 	+=	'<div class="list_name" style="float:left;width:10%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center;">'+shigonggongyi+'</div>';
+						listHtml 	+=	'<div class="list_name" style="float:left;width:10%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center;">'+content+'</div>';
+						listHtml 	+=  '</div>';
+						listHtml 	+=	'</li>';
+					}
+					$("#messlist_ul").html(listHtml);
+				}else if(ret.status == 202){
+						//alert("暂无更多数据")
+						$("#s_next").hide();
 					}
 				},
 				error:function(err){
@@ -749,7 +921,27 @@ function nextpageUser(){
 function prepageUser(){
 		pageindexUser(--upage);
 	}
-		//取消
+
+	function detail(work,gy,ps,tel){
+		$(".detail").show();
+		var listHtml = "";
+		listHtml +=			'<p>联系方式：'+tel+'</p>';
+		listHtml +=				'<p>施工工艺：'+gy+'</p>';
+		listHtml +=			'<p>工作地点：'+work+'</p>';
+		listHtml +=			'<p>备注：'+ps+'</p>';
+		$(".detail_list").html(listHtml);
+	}
+
+	function details(work,gy,ps,tel){
+		$(".detail_share").show();
+		var listHtml = "";
+		listHtml +=			'<p>联系方式：'+tel+'</p>';
+		listHtml +=				'<p>施工工艺：'+gy+'</p>';
+		listHtml +=			'<p>工作地点：'+work+'</p>';
+		listHtml +=			'<p>备注：'+ps+'</p>';
+		$(".detail_list_share").html(listHtml);
+	}
+
 $(".quxiao").click(function(){
 	$(this).parent().parent().hide();
 })
@@ -759,6 +951,15 @@ $(".quxiao").click(function(){
 		$('#search_text').val('');
 		showUserList();
 	}
+	$(".cancel").click(function(){
+		$(this).parent().hide();
+	})
+
+	// $("#mess_list").on("click","input",function(e){
+	// 	e.stopPropagation();
+	// 	console.log(e)
+		
+	// })
 </script>
 </body>
 </html>

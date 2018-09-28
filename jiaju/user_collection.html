@@ -126,8 +126,8 @@ body{background:url('') no-repeat center top }
 		<!-- 发布集采 -->
 				<div class="user_collection base_ui_public" style="/*display: none;*/">
 			<ul class="user_collection_ul user_public_ul">
- 				<li class="change_bg_li" style="margin-right: 10px;">发布集采</li>
-				<li style="margin-right: 10px;">集采列表</li>
+ 				<li class="change_bg_li" style="margin-right: 10px;">材料询价</li>
+				<li style="margin-right: 10px;">询价列表</li>
 				<li style="margin-right: 10px;">分享列表</li>
  			</ul>
  			<div class="user_collection_info base_info_public" style="overflow: hidden;padding-left: 15%;">
@@ -151,7 +151,19 @@ body{background:url('') no-repeat center top }
 					<li>
 						<div class="user_collection_name user_public_name" style="color: #5e5a59;">发布地址：</div>
 						<div class="user_collection_input user_public_input"><input id="xiangxi" type="text" /></div>
-					</li>					
+					</li>
+					<li>
+						<div class="user_collection_name user_public_name" style="color: #5e5a59;">材料价格：</div>
+						<div class="user_collection_input user_public_input"><input id="price" type="text" /></div>
+					</li>
+					<li>
+						<div class="user_collection_name user_public_name" style="color: #5e5a59;">运费包含：</div>
+						<div class="user_collection_input user_public_input"><input id="xiangxi" type="text" placeholder="如包含运费请说明价格，否则无！" /></div>
+					</li>
+					<li>
+						<div class="user_collection_name user_public_name" style="color: #5e5a59;">含税价格：</div>
+						<div class="user_collection_input user_public_input"><input id="xiangxi" type="text" placeholder="若有含税价请说明金额，否则无！" /></div>
+					</li>								
  				</ul>
 				<div style="width:100%;overflow: hidden;margin:0px auto;">
 					<div class="cl">
@@ -1173,65 +1185,6 @@ $().ready(function(){
 		$(this).addClass("bg_li")
 	})
 
-	// 图片上传
-	var clickImg = function(obj){
-	    $(obj).parent().find('.upload_input').click();
-	    hidden();
-	  }
-	function change(file) {
-	      //预览
-	      var pic = $(file).parent().find(".preview");
-
-
-	      var ext=file.value.substring(file.value.lastIndexOf(".")+1).toLowerCase();
-
-	       // gif在IE浏览器暂时无法显示
-	       if(ext!='png'&&ext!='jpg'&&ext!='jpeg'){
-	          if (ext != '') {
-	            alert("图片的格式必须为png或者jpg或者jpeg格式！"); 
-	          } 
-	           return;
-	       }
-	       //判断IE版本
-	       var isIE = navigator.userAgent.match(/MSIE/)!= null,
-	           isIE6 = navigator.userAgent.match(/MSIE 6.0/)!= null;
-	           isIE10 = navigator.userAgent.match(/MSIE 10.0/)!= null;
-	       if(isIE && !isIE10) {
-	          file.select();
-	          var reallocalpath = document.selection.createRange().text;
-	           // IE6浏览器设置img的src为本地路径可以直接显示图片
-	           if (isIE6) {
-	              pic.attr("src",reallocalpath);
-	           }else{
-	              // 非IE6版本的IE由于安全问题直接设置img的src无法显示本地图片，但是可以通过滤镜来实现             
-	              pic.css("filter","progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod='scale',src=\"" + reallocalpath + "\")");
-	              // 设置img的src为base64编码的透明图片 取消显示浏览器默认图片
-	              pic.attr('src','data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==');             
-	           }
-
-	           hidden();
-	       }else {
-	          html5Reader(file,pic);
-	          hidden();
-	       }
-	  }
-	function html5Reader(file,pic){
-	     var file = file.files[0];
-	     var reader = new FileReader();
-	     reader.readAsDataURL(file);
-	     reader.onload = function(e){
-	         pic.attr("src",this.result);
-	     }
-	}
-
-	//隐藏添加图片的按钮
-	function hidden(){
-		if($('#preview').attr('src')){
-       		$('.hs').css({
-       			display: 'none'
-       		});
-        }
-	}
 
 	$(document).ready(function() {
 
@@ -1272,7 +1225,7 @@ $().ready(function(){
 		    worker_address : worker_address,
 		    office_name    : office_name,
 		    brand          : brand,
-		    cai_type       : 2,
+		    cai_type       : 3,
 		    hasmoney       : 10,
 		    publishingarea : $("#Publishingarea").val(),
 		    m_photo           : img
@@ -1294,7 +1247,7 @@ $().ready(function(){
 	
 	//集采列表
 	function cai_list(){
-		var url = serverUrl + 'jingyi.php/Home/Material/materialListe';
+		var url = serverUrl + 'jingyi.php/Home/Material/materialListe_pc';
 		var status = 0;
 		//$.ajax({
 				//type:"POST",
@@ -1319,9 +1272,8 @@ $().ready(function(){
 		$.post(url,{
 					page : page,
 			    	user_id : user_id,
-			    	cai_type : 2,
-			    	s_city   : tcity,
-			    	s_area   : '白云区',
+			    	cai_type : 3,
+			    	infotype : "infotype",
 		},function(ret){
 			//console.log(ret)
 			if(ret.code == 200){
@@ -1332,6 +1284,7 @@ $().ready(function(){
 						listHtml = "";
 						imgHtml = "";
 					var id = data[i].user_id,
+						pid = data[i].id,
 						m_name = data[i].m_name,
 						m_introduce = data[i].m_introduce,
 						office_name = data[i].office_name,
@@ -1348,8 +1301,9 @@ $().ready(function(){
 						if(id == user_id){
 
 						//status++;
-				listHtml   +='<div style="overflow: hidden;">';
-				listHtml   += '<div style="text-align:right;padding-right: 20px;margin-top: 10px;"><input name="id" type="checkbox"></div>';
+				listHtml   +='<div style="overflow: hidden;position:relative;">';
+				listHtml +=	'<div style="text-align: left;"><span style="display: inline-block;width: 60px;height: 25px;line-height: 25px;background-color: red;font-size: 14px;text-align: center;letter-spacing: 2px;position:absolute;top:0px;color:#fff;margin:5px 5px;" onclick="del('+pid+','+id+')">删除</span></div>';
+				listHtml   += '<div style="text-align:right;padding-right: 20px;margin-top: 10px;height:40px;"><input name="id" type="checkbox"></div>';
 				listHtml   +=	'<div class="list_right" style="float: left;width: 50%;">';
 				listHtml   +=		'<ul style="margin-left:15%;">';
 				listHtml   +=			'<li>公司名称：'+office_name+'</li>';
@@ -1662,6 +1616,18 @@ function prepageUser(){
 		$('#search_text').val('');
 		showUserList();
 	}
+	//删除列表
+	function del(id,userid){
+
+		var status = confirm("是否确认删除此项目分包信息！")
+		if(status){
+
+		window.location.href = 'http://wgcapp.wgc2013.com/jingyi.php/Home/Material/materialListe_del/id/'+id+'/user_id/'+userid;
+		}else{
+			return false;
+		}
+	
+}
 </script>
 </body>
 </html>

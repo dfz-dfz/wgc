@@ -123,6 +123,10 @@ body{background:url('') no-repeat center top }
 		display: inline-block;
 		/*margin-left:20px;*/
 	}
+	.jobtype div:hover{
+		background-color: blue;
+		color: #fff;
+	}
 </style>
 <script type="text/javascript" src="http://www.wgc2013.com/themes/mall/jiaju/styles/default/js/hover.js"></script>
 
@@ -176,9 +180,15 @@ body{background:url('') no-repeat center top }
 						</select>
 					</div>
 				</div>
-				<div class="ser_main">
+				<div class="ser_main" style="position: relative;overflow: visible;">
 					<div class="ser_left"><span style="color:red;">*</span>工种:</div>
 					<div class="ser_right"><input type="text" id="gongzhong"></div>
+					<div style="position: absolute;top: 10px;left: 277px;" onclick="jobtypes()"><img src="themes/mall/jiaju/images/center/xiala.png" alt="" style="width: 10px;height: 10px;" /></div>
+					<div class="jobtype" style="position: absolute;width: 182px;left: 90px;background-color: #eee;top: 29px;border: 1px solid #40e5ec;height: 80px;overflow-y: scroll;display: none;">
+						<div style="width: 100%;height: 20px;">1</div>
+						<div style="width: 100%;height: 20px;">2</div>
+						<div style="width: 100%;height: 20px;">3</div>
+					</div>
 				</div>
 				<div class="ser_main">
 					<div class="ser_left">工龄:</div>
@@ -338,6 +348,7 @@ body{background:url('') no-repeat center top }
 servermsg = 'http://wgcapp.wgc2013.com/index.php/Home/';
 imgUrl = 'http://wgcapp.wgc2013.com/';
 page = 1;
+
 
 //查询
 function search(){
@@ -676,6 +687,40 @@ function nextpage(){
 function prepage(){
 		pageindex(--page);
 	}
+	//获取分类
+    function jobtypes(){
+    	$(".jobtype").show();
+        var url = window.servermsg+"Systemmsg/jobtype";
+        $.post(url,{
+	        show : 'show',
+	        type : 2,
+		},function(ret){    
+            var listHtml  = '';
+            if(ret.code == 200){
+            	
+                var data = ret.message;
+                
+                $.each( data, function(k, v){
+                	// list.push(v);
+                	listHtml +='<div style="width: 100%;height: 20px;cursor:pointer;" onclick="sel(\''+v+'\')">'+v+'</div>';
+					// listHtml += '<option value="'+v+'" onclick="">'+v+'</option>';
+				});
+                
+            	
+                $(".jobtype").html(listHtml);
+                
+            }
+            
+        },'json');
+   }
+   function sel(v){
+   	$("#gongzhong").val(v)
+   	$(".jobtype").hide();
+   }
+
+   $("#gongzhong").focus(function(){
+   	$(".jobtype").hide();
+   })
 
 //搜索
 //function doSearch(){

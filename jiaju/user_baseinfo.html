@@ -107,6 +107,14 @@ body{background:url('') no-repeat center top }
  				<div class="user_input" style="width: 80%;height: 100%;float: right;margin-top: 30px;">
  					<div style="overflow: hidden;">
  						<ul  style="float: left;">
+							<li>
+ 								<div class="user_info_name">
+ 									级别：
+ 								</div>
+ 								<div class="user_info_input" id="leven" >
+ 									
+ 								</div>
+ 							</li>
  							<li>
  								<div class="user_info_name">
  									姓名：
@@ -432,9 +440,11 @@ $(".container_nav ul li").click(function(){
     }
 //文档加载
 
-	$().ready(function(){
-			
-			var url = 'http://wgcapp.wgc2013.com/jingyi.php/Home/Jifen/user';
+	(function(){
+		//alert('<?php echo $_SESSION["user_info"]["user_id"];?>');
+			jQuery.support.cors = true;
+			//alert("heloo")
+			var url = 'http://wgcapp.wgc2013.com/jingyi.php/Home/Jifen/user/a/'+new Date().getTime();
 			$.ajax({
 				type:"POST",
 				url:url,
@@ -446,21 +456,24 @@ $(".container_nav ul li").click(function(){
 				dataType: "json",
 				success:function(ret){
 					//console.log(ret)
+					//alert("ie"+ret.user.user_id);
 				},
 				error:function(err){
 					//console.log(err)
 				}
 			});
 			$.post(url,{
-				uid : '<?php echo $_SESSION["user_info"]["user_id"];?>'
+				uid : '<?php echo $_SESSION["user_info"]["user_id"];?>',
+				"r":Math.random()
 			},function(ret){
 				//console.log(ret)
 				if(ret.code == 200){
-					console.log(ret)
+					//alert(ret)
 				var user = ret.user;
 				var mobile = user.mobile;
 				var userphoto = user.userphoto;
 				var zhiwei    = user.zhiwei;
+				var level     = user.level;
 				var photourl = 'http://wgcapp.wgc2013.com' + userphoto;
 				//头像
 				
@@ -480,11 +493,16 @@ $(".container_nav ul li").click(function(){
 				if(mobile){
 				$("#mobile").attr("readOnly",true);
 				}
+				if(level == "0"){
+					$("#leven").html('<span style="display: inline-block;margin: 5px 0px;color:#9e9e9e;">普通用户</span>');
+				}else if(level == "1"){
+					$("#leven").html('<span style="display: inline-block;margin: 5px 0px;color:red;">VIP会员</span>');
+				}
 			}else{
 				alert("请检查网络连接")
 			}
 			},'json')
-	})
+	}())
 	//修改
 	function edit(){
 				var name  =  $("#name").val();

@@ -17,26 +17,7 @@
 
 <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
 <style>
-	.upload_input{
-	  display: block;
-	  width: 60px;
-	  height: 60px;
-	  position: relative;
-	  z-index: 999;
-	  -webkit-opacity: 0.0;  
-	  /* Netscape and Older than Firefox 0.9 */  
-	  -moz-opacity: 0.0;  
-	  /* Safari 1.x (pre WebKit!) 老式khtml内核的Safari浏览器*/  
-	  -khtml-opacity: 0.0;  
-	  /* IE9 + etc...modern browsers */  
-	  opacity: .0;  
-	  /* IE 4-9 */  
-	  filter:alpha(opacity=0);  
-	  /*This works in IE 8 & 9 too*/  
-	  -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";  
-	  /*IE4-IE9*/  
-	  filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=0); 
-}
+
 .worker_d_e input{
 	width: 40%;
 	margin-bottom: 5px;
@@ -149,9 +130,9 @@
 				</div>
 				<!--表格内容end -->
 				<div class="total">
-						<span>税金:<input name="shuijin" id="suijin" type="text" style="display: inline-block;width: 120px;height: 20px;margin-bottom: 5px;padding: 0;padding-left: 10px;" onkeyup="this.value=this.value.replace(/[^0-9-]+/,'');"/>%</span>
+						<span>税金:<input name="shuijin" id="suijin" type="text" style="display: inline-block;width: 120px;height: 20px;margin-bottom: 5px;padding: 0;padding-left: 10px;" onkeyup="this.value=this.value.replace(/[^\d.]/g,'');" />%</span>
 						<span></span>
-						<span>管理费/规费:<input name="guanlifei" id="guanli" type="text" style="display: inline-block;width: 120px;height: 20px;margin-bottom: 5px;padding: 0;padding-left: 10px;" onkeyup="this.value=this.value.replace(/[^0-9-]+/,'');"/>元</span>
+						<span>管理费/规费:<input name="guanlifei" id="guanli" type="text" style="display: inline-block;width: 120px;height: 20px;margin-bottom: 5px;padding: 0;padding-left: 10px;" onkeyup="this.value=this.value.replace(/[^\d.]/g,'');"/>元</span>
 						<span id="click_zj" style="margin: 0px;background-color: #F42;width: 100px;text-align: center;border-radius: 5px;color: #fff;">生成工程总价</span>
 						<span id="click_zzj" style="margin: 0px;background-color: #F42;width: 100px;text-align: center;border-radius: 5px;color: #fff;    position: relative;left: 803px;margin-top:10px;">生成工程总造价</span>
 
@@ -192,7 +173,7 @@
 					<div class="table_list_body" style="">
 					<div style="min-height: 480px;">
 					<table border="1" cellspacing="0" style="width: 95%;margin:0 auto;">
-						<tbody id="ysbj_list">
+						<tbody id="ysbj_list" style="overflow-y:scroll;">
 							
 						</tbody>
 					</table>
@@ -207,7 +188,7 @@
 				</div>
 				
 			<!--列表详情页面 -->
-			<div class="t_detail_all"style="overflow: hidden;margin-top: 10px;min-height: 300px;display:none;position:absolute;top:60px;background-color:#fff;width:100%;">
+			<div class="t_detail_all"style="overflow-y: scroll;margin-top: 10px;min-height: 300px;display:none;position:absolute;top:60px;background-color:#fff;width:100%;height:500px;">
 				<div id="canel_detail" style="position:absolute;top:-15px;left:95%;font-size:40px;cursor: pointer;">×</div>
 <!-- 						<div class="search_ys_detail">
 							<input type="text" style="width: 400px;height: 30px;" id="search_detail" placeholder="请输入关键词">
@@ -326,7 +307,7 @@
 							</div>					
 					</div>
 						<!--列表详情页面 -->
-						<div class="t_detail_all_share"style="overflow: hidden;margin-top: 10px;min-height: 300px;display:none;position:absolute;top:60px;background-color:#fff;width:100%;">
+						<div class="t_detail_all_share"style="overflow-y: scroll;margin-top: 10px;min-height: 300px;display:none;position:absolute;top:60px;background-color:#fff;width:100%;height:500px;">
 							<div id="canel_detail_share" style="position:absolute;top:-15px;left:95%;font-size:40px;cursor: pointer;">×</div>
 			<!-- 						<div class="search_ys_detail">
 										<input type="text" style="width: 400px;height: 30px;" id="search_detail" placeholder="请输入关键词">
@@ -778,29 +759,30 @@ $().ready(function(){
 
     //预算表的统计金额
 	function totalZh(j){
-    	var regong = parseInt($("#a_rg"+j).val());
-    	var zhucai = parseInt($("#a_zc"+j).val());
-    	var fucai = parseInt($("#a_fc"+j).val());
+    	var regong = parseFloat($("#a_rg"+j).val());
+    	var zhucai = parseFloat($("#a_zc"+j).val());
+    	var fucai = parseFloat($("#a_fc"+j).val());
     	var zhdj = regong+zhucai+fucai;
   
     	if(!zhdj){
     		alert("请输入正确的人工或者主材或者辅材的价格！！！")
     		return;
     	}else{
-    		$("#a_zh"+j).val(zhdj)
+    		$("#a_zh"+j).val(zhdj.toFixed(2))
     	}	
 	}
 	
 	//预算表中的合计
 	function totalHj(i){
-		var zhdj = parseInt($("#a_zh"+i).val())
-    	var shuliang = parseInt($("#a_sl"+i).val());
+		var zhdj = parseFloat($("#a_zh"+i).val())
+    	var shuliang = parseFloat($("#a_sl"+i).val());
     	var heji = zhdj*shuliang;
     	if(!heji){
     		alert("数量不能为空或者综合单价不能为空")
     		return;
     	}else{
-    		$("#a_hj"+i).val(heji)
+    		$("#a_hj"+i).val(heji.toFixed(2))
+
     	}
 	}
     //$("#a_zh"+index).click(function(){
@@ -842,7 +824,8 @@ $().ready(function(){
     $("#click_zj").unbind('click').click(function(){
 			newArray = [];
     		for(var i = 2;i<=index;i++){
-    		var total = parseInt($("#a_hj"+i).val());
+    		var total = parseFloat($("#a_hj"+i).val());
+    		//alert(total)
     		if(total){
     			newArray.push(total)
     		}
@@ -860,15 +843,24 @@ $().ready(function(){
 
     //统计工程总造价
     $("#click_zzj").click(function(){
-    	var heji = parseInt($("#all_total").val());
-    	var suijin = parseInt($("#suijin").val());
-    	var guanli = parseInt($("#guanli").val());
-		var totalNum = heji+heji*suijin*0.01+guanli;
-		if(heji&&suijin&&guanli){
-			$("#total_gczj").val(totalNum);
-		}else{
-			
-		}
+    	var totalNum = 0;
+    	var heji = parseFloat($("#all_total").val());
+    	var suijin = parseFloat($("#suijin").val());
+    	if(!suijin){
+    		suijin = 0;
+    	}
+    	var guanli = parseFloat($("#guanli").val());
+    	if(!guanli){
+    		guanli = 0;
+    	}
+
+    	if(!heji){
+    		alert("请生成工程总价!")
+    	}
+			totalNum = heji+heji*suijin*0.01+guanli;
+			//alert(totalNum);
+			$("#total_gczj").val(totalNum.toFixed(2));
+		
     	
     	
     })
@@ -1377,7 +1369,7 @@ function fabu(){
 							tel         : $("#tel").val(),
 			
 			},function(ret){
-				console.log(ret)
+				//console.log(ret)
 				if(ret.code == 200){
 						//alert('发布成功,请继续填写！')
 						$(".worker_d_e").hide();
@@ -1481,7 +1473,7 @@ function fucailist(){
 	var url = 'http://wgcapp.wgc2013.com/jingyi.php/Home/Dinge/zhucai_list';
 	$(".worker_list_zc table tbody").html("");
 		window.page = 1;
-		console.log("当前"+page)
+		//console.log("当前"+page)
 		$.ajax({
 				type:"POST",
 				url:url,
@@ -1579,7 +1571,7 @@ function pageindexFc(pindex){
 			pindex = 1;
 			page=1;
 		}
-		console.log(pindex)
+		//console.log(pindex)
 	var url = 'http://wgcapp.wgc2013.com/jingyi.php/Home/Dinge/zhucai_list';
 	$(".worker_list_zc table tbody").html("");
 		$.ajax({
@@ -2032,7 +2024,7 @@ function tDetail(id,zj){
 		var html = '';
 		var htmls = '';
 		if(ret.status == 200){
-			console.log(ret)
+			//console.log(ret)
 			var data = ret.retData;
 			
 			var ysbaojia = ret.ysbaojia;
@@ -2059,7 +2051,7 @@ function tDetail(id,zj){
 						html += '<tr class="tcontent">';
 							html += '<td style="width: 5%"><span>'+j+'</span></td>';
 							html += '<td style="width: 7%"><span>'+xiangmumingcheng+'</span></td>';
-							html += '<td style="width: 33%"><span>'+shigonggongyi+'</span></td>';
+							html += '<td style="width: 33%"><span style="width:100%;height:100px;display:inline-block;overflow-y:scroll;padding:5px 5px;">'+shigonggongyi+'</span></td>';
 							html += '<td style="width: 5%"><span>'+shuliang+'</span></td>';
 							html += '<td style="width: 5%"><span>'+danwei+'</span></td>';
 							html += '<td style="width: 5%"><span>'+gongjia+'</span></td>';
@@ -2067,7 +2059,7 @@ function tDetail(id,zj){
 							html += '<td style="width: 5%"><span>'+fucai+'</span></td>';
 							html += '<td style="width: 7%"><span>'+zonggedanjia+'</span></td>';
 							html += '<td style="width: 5%"><span>'+heji+'</span></td>';
-							html += '<td style="width: 16%;border-right: 2px solid #979898;"><span>'+ps+'</span></td>';
+							html += '<td style="width: 16%;border-right: 2px solid #979898;"><span style="width:100%;height:100px;display:inline-block;overflow-y:scroll;padding:5px 5px;">'+ps+'</span></td>';
 						html += '</tr>';
 					html += '</tbody>';
 				html += '</table>';
@@ -2111,7 +2103,7 @@ function timestampToTime(timestamp) {
 
 //下载预算报价
 function yusuanbaojia(){
-	alert('发布成功')
+	//alert('发布成功')
 }
 
 //预算列表显示
@@ -2296,7 +2288,7 @@ $(".quxiao_btn").click(function(){
 	function share(){
 		//获取选择的内容的id值
 		var $list = $("input[type='checkbox']");
-		console.log($list)
+		//console.log($list)
 	}
 	
 	//分享选择接收人
@@ -2460,14 +2452,14 @@ $(".quxiao_btn").click(function(){
 				                    tarry[j] = $(this).val();
 				                });
 				                var tvals = tarry.join(",");
-				                console.log(tvals)
+				               // console.log(tvals)
 				                $("#checker").val(tvals);
 				                $.post('http://wgcapp.wgc2013.com/jingyi.php/Home/index/share',{
 				                	"type":4,
 				                	"arr":arr,
 				                	"tarry":tarry
 				                },function(ret){
-				                	console.log(ret)
+				                	//console.log(ret)
 				                	if(ret.code == 200){
 				                		//alert("成功")
 				                		window.location.reload();
@@ -2507,8 +2499,8 @@ function pageindexUser(pindex){
 				crossDomain: true == !(document.all),
 				dataType: "JSON",
 				success:function(ret){
-					console.log("成功");
-					console.log(ret)
+					//console.log("成功");
+					//console.log(ret)
 					var html = '';
 					var datas = ret.data;
 					$('.getUserList').html("")
@@ -2549,7 +2541,7 @@ function pageindexUser(pindex){
 				                    arr[i] = $(this).val();
 				                });
 				                var vals = arr.join(",");
-				                console.log(vals);
+				               // console.log(vals);
 					}else {
 						alert('数据加载失败，请检查网络!');
 					}
@@ -2590,7 +2582,7 @@ var sharepage = 1;
 				crossDomain: true == !(document.all),
 				dataType: "json",
 				success:function(ret){
-					console.log(ret)
+					//console.log(ret)
 					var html = '';
 				if(ret.status == 200){
 					$("#listpage").show();
@@ -2636,7 +2628,7 @@ function tDetails(id,zj){
 		var html = '';
 		var htmls = '';
 		if(ret.status == 200){
-			console.log(ret)
+			//console.log(ret)
 			var data = ret.retData;
 			
 			var ysbaojia = ret.ysbaojia;
@@ -2663,7 +2655,7 @@ function tDetails(id,zj){
 						html += '<tr class="tcontent">';
 							html += '<td style="width: 5%"><span>'+j+'</span></td>';
 							html += '<td style="width: 7%"><span>'+xiangmumingcheng+'</span></td>';
-							html += '<td style="width: 33%"><span>'+shigonggongyi+'</span></td>';
+							html += '<td style="width: 33%"><span style="width:100%;height:100px;display:inline-block;overflow-y:scroll;padding:5px 5px;">'+shigonggongyi+'</span></td>';
 							html += '<td style="width: 5%"><span>'+shuliang+'</span></td>';
 							html += '<td style="width: 5%"><span>'+danwei+'</span></td>';
 							html += '<td style="width: 5%"><span>'+gongjia+'</span></td>';
@@ -2671,7 +2663,7 @@ function tDetails(id,zj){
 							html += '<td style="width: 5%"><span>'+fucai+'</span></td>';
 							html += '<td style="width: 7%"><span>'+zonggedanjia+'</span></td>';
 							html += '<td style="width: 5%"><span>'+heji+'</span></td>';
-							html += '<td style="width: 16%;border-right: 2px solid #979898;"><span>'+ps+'</span></td>';
+							html += '<td style="width: 16%;border-right: 2px solid #979898;"><span style="width:100%;height:100px;display:inline-block;overflow-y:scroll;padding:5px 5px;">'+ps+'</span></td>';
 						html += '</tr>';
 					html += '</tbody>';
 				html += '</table>';

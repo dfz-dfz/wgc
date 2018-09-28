@@ -44,6 +44,8 @@
 <script type="text/javascript" src="http://www.wgc2013.com/includes/libraries/javascript/ecmall.js" charset="utf-8"></script>
 <script type="text/javascript" src="http://www.wgc2013.com/includes/libraries/javascript/cart.js" charset="utf-8"></script>
 <script type="text/javascript" src="http://www.wgc2013.com/themes/mall/jiaju/styles/default/js/main.js" charset="utf-8"></script>
+
+
 <script type="text/javascript">
 	jQuery.support.cors = true;
 </script>
@@ -1195,6 +1197,7 @@ $(function(){
 				var data = ret.message;
 				for(var i in data){
 		            var id = data[i].id,
+		            	userid = data[i].user_id,
 		            	m_name=data[i].m_name,
 		            	user_id = data[i].user_id,
 		            	cai_type=data[i].cai_type,
@@ -1210,7 +1213,8 @@ $(function(){
 		            var photoArr = new Array();
 		            	photoArr = m_photo.split(',');
 
-						listHtml += '<div style="height:auto;overflow:hidden;border-top:1px solid #cacaca;">';
+						listHtml += '<div style="height:auto;overflow:hidden;border-top:1px solid #cacaca;position:relative;">';
+						listHtml +=	'<div style="text-align: left;"><span style="display: inline-block;width: 80px;height: 25px;line-height: 25px;background-color: #eee;font-size: 20px;text-align: center;letter-spacing: 2px;position:absolute;top:0px;" onclick="del('+id+','+userid+')">删除</span></div>';
 						listHtml += '<div style="text-align:right;padding-right: 6px;"><input name="id" type="checkbox" style="margin-top:6px;width:20px;height:20px;" value="'+id+'"></div>';
 						listHtml += '<div style="height:auto;overflow:hidden;">'
 						listHtml +=	'<div class="list_right" style="float: left;width: 50%;">';
@@ -1296,7 +1300,8 @@ $(function(){
 		            var photoArr = new Array();
 		            	photoArr = m_photo.split(',');
 
-						listHtml += '<div>';
+						listHtml += '<div style="position:relative;">';
+						listHtml +=	'<div style="text-align: left;"><span style="display: inline-block;width: 80px;height: 25px;line-height: 25px;background-color: #eee;font-size: 20px;text-align: center;letter-spacing: 2px;position:absolute;top:0px;" onclick="del('+id+','+userid+')">删除</span></div>';
 						listHtml += '<div style="text-align:right;padding-right: 20px;margin-top: 10px;"><input name="id" type="checkbox" style="margin-top:6px;width:20px;height:20px;"></div>';
 						listHtml += '<div style="height:auto;overflow:hidden;">'
 						listHtml +=	'<div class="list_right" style="float: left;width: 50%;">';
@@ -1787,6 +1792,17 @@ $(function(){
 		$('#backShareList').hide();
 		messagelist();
 	}
+function del(id,userid){
+
+		var status = confirm("是否确认删除此材料推广信息！")
+		if(status){
+
+		window.location.href = 'http://wgcapp.wgc2013.com/jingyi.php/Home/Material/materialListe_user_del/id/'+id+'/user_id/'+userid;
+		}else{
+			return false;
+		}
+	
+}
 </script>
 </body>
 </html>

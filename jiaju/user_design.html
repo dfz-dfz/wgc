@@ -1312,6 +1312,7 @@ $().ready(function(){
 							imgHtml = "";
 				            var price = data[i].price, //单价
 			            	name = data[i].name,
+			            	userid = data[i].user_id,
 			            	address = data[i].address,
 			            	bj_name = data[i].ps,
 			            	send_uid = data[i].user_id,
@@ -1336,7 +1337,8 @@ $().ready(function(){
 					if(send_uid == myid ){
 						// console.log('hello')
 					
-							listHtml += '<div style="overflow:hidden;">';
+							listHtml += '<div style="overflow:hidden;position:relative;">';
+							listHtml +=	'<div style="text-align: left;"><span style="display: inline-block;width: 60px;height: 25px;line-height: 25px;background-color: red;font-size: 14px;text-align: center;letter-spacing: 2px;position:absolute;top:0px;color:#fff;margin:5px 5px;" onclick="del('+id+','+userid+')">删除</span></div>';
 							listHtml += '<div  style="text-align:right;padding-right: 20px;margin-top: 10px;height:20px;"><input name="id" type="checkbox" value="'+id+'"></div>';
 							listHtml +=	'<div class="list_right" style="float: left;width: 50%;">';
 							listHtml +=		'<ul style="margin-left:15%;">';
@@ -1566,7 +1568,7 @@ $().ready(function(){
 				                	console.log(ret)
 				                	if(ret.code == 200){
 
-				                		//window.location.reload();
+				                		window.location.reload();
 				                	}
 				                },'json')
 	}
@@ -1756,6 +1758,18 @@ var sharepage = 1;
 			});
 
 	}
+	//删除列表
+	function del(id,userid){
+
+		var status = confirm("是否确认删除此设计分包信息！")
+		if(status){
+
+		window.location.href = 'http://wgcapp.wgc2013.com/index.php/Home/Designoffer/getList_del/id/'+id+'/user_id/'+userid;
+		}else{
+			return false;
+		}
+	
+}
 
 //时间戳转换
 function timestampToTime(timestamp) {

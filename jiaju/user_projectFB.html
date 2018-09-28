@@ -144,7 +144,7 @@ body{background:url('') no-repeat center top }
 						</li>
 	 					<li>
 							<div class="user_collection_name user_public_name" style="color: #5e5a59;">联系人：</div>
-							<div class="user_collection_input user_public_input"><input name="name" id="name" type="text" readonly="readonly"/></div>
+							<div class="user_collection_input user_public_input"><input name="name" id="name" type="text" /></div>
 						</li>
 						<li>
 							<div class="user_collection_name user_public_name" style="color: #5e5a59;">发布地址：</div>
@@ -1223,6 +1223,7 @@ $(function(){
 					var 	name = data[i].name;//联系人
 							content = data[i].content,//内容描述
 							id = data[i].id,
+							userid = data[i].user_id,
 							send_uid = data[i].user_id,
 							worker_address = data[i].worker_address,//装修地址
 							tel = data[i].tel,//联系人电话
@@ -1242,7 +1243,8 @@ $(function(){
 							}
 					
 					if(send_uid == myid ){
-						listHtml +=	'<div class="list_index" style="height:auto;overflow:hidden;">';
+						listHtml +=	'<div class="list_index" style="height:auto;overflow:hidden;position:relative;">';
+						listHtml +=	'<div style="text-align: left;"><span style="display: inline-block;width: 60px;height: 25px;line-height: 25px;background-color: red;font-size: 14px;text-align: center;letter-spacing: 2px;position:absolute;top:0px;color:#fff;margin:5px 5px;" onclick="del('+id+','+userid+')">删除</span></div>';
 							listHtml +=	'<div style="text-align:right;padding-right: 20px;margin-top: 10px;"><input name="'+id+'" type="checkbox"></div>';
 							listHtml +=	'<p style="padding-left:70px;line-height:50px;">项目名称：<span style="font-size:18px;color:#f34c26 ;">'+prj_name+'</span></p>';
 							listHtml +=	'<div class="list_right" style="float: left;width: 50%;">';
@@ -1537,7 +1539,7 @@ function pageindex(index){
         var tvals = tarry.join(",");
 
         $.post('http://wgcapp.wgc2013.com/jingyi.php/Home/index/share',{
-        	"type":1,
+        	"type":7,
         	"arr":arr,
         	"tarry":tarry
         },function(ret){
@@ -1634,6 +1636,19 @@ function pageindex(index){
 	function prepageUser(){
 		pageindexUser(--upage);
 	}
+
+	//删除列表
+	function del(id,userid){
+
+		var status = confirm("是否确认删除此项目分包信息！")
+		if(status){
+
+		window.location.href = 'http://wgcapp.wgc2013.com/jingyi.php/Home/Jianli/projectSubcontract_lists_del/id/'+id+'/user_id/'+userid;
+		}else{
+			return false;
+		}
+	
+}
 	
 	//时间转换
 	function timestampToTime(timestamp) {
