@@ -71,21 +71,21 @@
 				<div id="toVipPage">
 					<div class="box" style="line-height: 30px;padding:0 10px;">
 						<span style="margin-right: 10px;">您当前的会员级别:</span>
-						<span></span>
+						<span>普通用户</span>
 					</div>
 					<div class="box" style="height: 200px;padding:10px;">
 						<div style="margin-bottom: 10px;">选择购买VIP的天数:</div>
-						<div>
+						<div id="radio_list">
 							<input type="radio" name="vip" id="vip1" value="30"/><label for="vip1">一个月</label>
 							<input type="radio" name="vip" id="vip2" value="180"/><label for="vip2">半年</label>
 							<input type="radio" name="vip" id="vip3" value="360" checked="checked" /><label for="vip3">一年</label>
 						</div>
 						<div style="text-align: center;margin-top: 80px;">
 							<span>
-								您当前选择的是：<label>-</label>
+								您当前选择的是：<label id="dateline">一年</label>
 							</span>
 							<span>
-								直接购买需支付<label>-</label>元
+								直接购买需支付<label id="price">360</label>元
 							</span>
 						</div>
 						<div style="text-align: center;margin-top: 10px;">
@@ -150,11 +150,27 @@
 			cycle : obj
 		}, function(ret) {
 			if(ret.code == 200){
-				window.location.href='index.php?app=search&act=payVip';
+				window.location.href = 'index.php?app=search&act=payVip';
+			}else if(ret.code == 202){
+				window.location.href = 'index.php?app=member&act=login&ret_url=';
 			}else{
 				alert('申请失败!')
 			}
 		},'json');
+	});
+
+	$('#radio_list').click(function() {
+		var type = $('input:radio[name="vip"]:checked').val();
+		var dateline = '';
+		if(type == 30){
+			dateline = '一个月';
+		}else if(type == 180){
+			dateline = '半年';
+		}else if(type == 360){
+			dateline = '一年';
+		}
+		$('#dateline').html(dateline);
+		$('#price').html(type);
 	});
 </script>
 </body>
