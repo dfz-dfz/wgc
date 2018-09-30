@@ -37,6 +37,7 @@ margin:auto;padding:0px;margin-top: 10px;margin-bottom: 10px; width:1100px;overf
 	text-align: center;
 	/*width: 110px;*/
 	margin: 10px 0;
+	cursor: pointer;
 }
 </style>
 
@@ -75,37 +76,47 @@ margin:auto;padding:0px;margin-top: 10px;margin-bottom: 10px; width:1100px;overf
 <body>
 {include file=header.html}
 
-<div class="container">
+<div class="container" style="min-width: 1200px;">
 
 	<div class="header" style="width: 78%;margin: 0px auto;">
 		<img src="/themes/mall/jiaju/images/newbg.jpg" alt="" style="width: 100%;height: 100%;" />
 	</div>
 
-	<div class="content" style="width: 78%;margin: 20px auto;overflow: hidden;">
+	<div class="content" style="width: 78%;margin: 20px auto;overflow: hidden;min-width: 1260px;">
 		<div class="nav_new" style="width: 80%;height: 50px;border-bottom: 1px solid #ec6941;text-align: left;">
 			<span style="display: inline-block;padding: 5px 10px;background-color: #ec6941;color: #fff;font-size: 14px;margin-top: 18px;width: 12.5%;text-align: center;">行业资讯</span>
 		</div>
 		<!-- 左边的导航栏 -->
 		<div class="new_left" style="float: left;width: 10%;">
 			<ul>
-				<li>热门招聘</li>
-				<li>维修报价</li>
-				<li>材料采购</li>
-				<li>集采价格</li>
-				<li>今日工价</li>
-				<li>工价询价</li>
-				<li>推荐项目经理</li>
-				<li>项目分包</li>
-				<li>推荐设计师</li>
-				<li>设计分包</li>
-				<li>推荐工匠</li>
-				<li>材料推广</li>
+				<li onclick="oppen(1)">热门资讯</li>
+				<li onclick="oppen(2)">热门招聘</li>
+				<li onclick="oppen(3)">维修报价</li>
+				<li onclick="oppen(4)">材料采购</li>
+				<li onclick="oppen(5)">集采价格</li>
+				<li onclick="oppen(6)">今日工价</li>
+				<li onclick="oppen(7)">工价询价</li>
+				<li onclick="oppen(8)">推荐项目经理</li>
+				<li onclick="oppen(9)">项目分包</li>
+				<li onclick="oppen(10)">推荐设计师</li>
+				<li onclick="oppen(11)">设计分包</li>
+				<li onclick="oppen(12)">推荐工匠</li>
+				<li onclick="oppen(13)">材料推广</li>
 			</ul>
 		</div>
-		<div class="new_right" style="float:right;width: 20%;">
+		<div class="new_right" style="float:right;width: 20%;" style="min-width: 265px;">
 			<img src="/themes/mall/jiaju/images/new_pic.jpg" alt="" style="width: 100%;height: 100%;" />
 		</div>
-		<div class="new_middle" style="width: 70%;"></div>
+		<div class="new_middle" style="width: 70%;float: left;padding: 0 20px;">
+
+			<ul>
+				
+			</ul>
+		</div>
+		<div class="unpages" id="unpage" style="margin:20px auto;width: 200px;text-align: center;">
+							<a style="background:red;color:#fff;width: 70px;height: 30px;line-height: 30px;padding:4px 5px;cursor:pointer;margin-right: 20px;" onclick="uppage()">上一页</a>
+							<a style="background:red;color:#fff;width: 70px;height: 30px;line-height: 30px;padding:4px 5px;cursor:pointer;" onclick="nextpage()" id="nextpage">下一页</a>
+						</div>
 	</div>
 </div>
 <!-- <div id="header" class="w-full">
@@ -323,11 +334,11 @@ function news_select(page){
 							
 					var id=data[i].id, title=data[i].title,pic=data[i].pic,describe=data[i].describe,times = _trans_php_time_to_str(data[i].times,1),content=data[i].content;
 				
-					listHtml += '<li style="cursor:pointer;margin:10px auto;height:140px;width:880px;" title="'+title+'" onclick="openNewsContents(this,'+id+')">';
+					listHtml += '<li style="cursor:pointer;margin:10px auto;height:140px;width:100%;min-width:850px;" title="'+title+'" onclick="openNewsContents(this,'+id+')">';
 				   listHtml += '        <div style="float:left;height:120px;overflow: hidden;width:150px;padding: 2px;border: 1px solid #999;margin-top:7.5px;margin-right:20px;">';
 				   listHtml += '            <img src="http://wgcmanage.wgc2013.com/'+pic+'" style="height:120px;width:150px;" onerror="javascript:this.src=\'../image/Advertisement.jpg\';">';
 				   listHtml += '        </div>';
-				   listHtml += '        <div class="aui-list-item-inner" style="height:140px;float:left;width:710px;">';
+				   listHtml += '        <div class="aui-list-item-inner" style="height:140px;float:left;width:80%;">';
 				   listHtml += '            <div class="aui-list-item-text" style="border-bottom:1px solid #999;">';
 				   listHtml += '                <span style="color:#000;">'+title+'</span>';
 				   listHtml += '            <span style="float:right;font-size:14px;">'+times+'</span>';
@@ -339,7 +350,7 @@ function news_select(page){
 			}
 		   
 			$("#news").show();
-			$("#news").html(listHtml);
+			$(".new_middle ul").html(listHtml);
 			
 		}else if(ret.code == 202)	{
 			if(page == 1){
@@ -483,6 +494,85 @@ function openNewsContents(obj,id){
 	//_openWin('gongzuo_content_win','../gongzuo/gongzuo_content_win.html',{id : id,type : 1,touid : user_id,f_type : '招工'});
 	
 	
+}
+function oppen(id){
+	if(id == 2){
+
+	var listHtml = "";
+	listHtml += '<li style="margin-top:20px;width:100%;text-align:center;font-size:16px;">暂无数据!!!</li>';
+	$(".new_middle ul").html(listHtml);
+	}
+		if(id == 1){
+
+		news_select(page);
+	}
+	if(id == 3){
+
+	var listHtml = "";
+	listHtml += '<li style="margin-top:20px;width:100%;text-align:center;font-size:16px;">暂无数据!!!</li>';
+	$(".new_middle ul").html(listHtml);
+	}
+	if(id == 4){
+
+	var listHtml = "";
+	listHtml += '<li style="margin-top:20px;width:100%;text-align:center;font-size:16px;">暂无数据!!!</li>';
+	$(".new_middle ul").html(listHtml);
+	}
+	if(id == 5){
+
+	var listHtml = "";
+	listHtml += '<li style="margin-top:20px;width:100%;text-align:center;font-size:16px;">暂无数据!!!</li>';
+	$(".new_middle ul").html(listHtml);
+	}
+	if(id == 6){
+
+	var listHtml = "";
+	listHtml += '<li style="margin-top:20px;width:100%;text-align:center;font-size:16px;">暂无数据!!!</li>';
+	$(".new_middle ul").html(listHtml);
+	}
+	if(id == 7){
+
+	var listHtml = "";
+	listHtml += '<li style="margin-top:20px;width:100%;text-align:center;font-size:16px;">暂无数据!!!</li>';
+	$(".new_middle ul").html(listHtml);
+	}
+	if(id == 8){
+
+	var listHtml = "";
+	listHtml += '<li style="margin-top:20px;width:100%;text-align:center;font-size:16px;">暂无数据!!!</li>';
+	$(".new_middle ul").html(listHtml);
+	}
+	if(id == 9){
+
+	var listHtml = "";
+	listHtml += '<li style="margin-top:20px;width:100%;text-align:center;font-size:16px;">暂无数据!!!</li>';
+	$(".new_middle ul").html(listHtml);
+	}
+	if(id == 10){
+
+	var listHtml = "";
+	listHtml += '<li style="margin-top:20px;width:100%;text-align:center;font-size:16px;">暂无数据!!!</li>';
+	$(".new_middle ul").html(listHtml);
+	}
+	if(id == 11){
+
+	var listHtml = "";
+	listHtml += '<li style="margin-top:20px;width:100%;text-align:center;font-size:16px;">暂无数据!!!</li>';
+	$(".new_middle ul").html(listHtml);
+	}
+	if(id == 12){
+
+	var listHtml = "";
+	listHtml += '<li style="margin-top:20px;width:100%;text-align:center;font-size:16px;">暂无数据!!!</li>';
+	$(".new_middle ul").html(listHtml);
+	}
+	if(id == 13){
+
+	var listHtml = "";
+	listHtml += '<li style="margin-top:20px;width:100%;text-align:center;font-size:16px;">暂无数据!!!</li>';
+	$(".new_middle ul").html(listHtml);
+	}
+
 }
 </script>
 </body>

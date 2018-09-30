@@ -48,10 +48,10 @@
 			<!-- 工价询价列表 -->
 			<div id="gjxjlist" style="margin-top: 5px;"> 
 				<ul id="headerlist" style="width: 1100px;background-color: #efa913;">
-					<li style="width: 28.16%;">序号</li>
-					<li style="width: 15.16%;">项目名称</li>
-					<li style="width: 28.16%;">计价单位</li>
-					<li style="width: 15.16%;">数量/范围</li>
+					<li style="width: 10.16%;">序号</li>
+					<li style="width: 36.16%;">项目名称</li>
+					<li style="width: 20.16%;">计价单位</li>
+					<li style="width: 20.16%;">数量/范围</li>
 					<li style="width: 13.16%;">详情</li>
 				</ul>
 
@@ -111,13 +111,12 @@
 						unit = data[i].unit;//计价单位
 
 						html += '<ul>';
-							html += '<li style="width:28.16%;color:red;font-weight:600;">'+id+'</li>';
-							html += '<li style="width:15.16%">'+title+'</li>';
-							html += '<li style="width:28.16%">'+unit+'</li>';
-							html += '<li style="width:15.16%">'+num+'</li>';
+							html += '<li style="width:10.16%;;color:red;font-weight:600;">'+id+'</li>';
+							html += '<li style="width:36.16%;">'+title+'</li>';
+							html += '<li style="width:20.16%;">'+unit+'</li>';
+							html += '<li style="width:20.16%;">'+num+'</li>';
 							html += '<li style="width:13.16%;cursor: pointer;"><a style="color:blue;" href="/index.php?app=search&act=gongjiaxunjia_content&id='+id+'">查看</a></li>';
 						html += '</ul>';
-					
 				}
 				$('#gongjiaMain').html(html);
 				$('#nextpage').show();
@@ -152,10 +151,10 @@
 						unit = data[i].unit;//计价单位
 
 						html += '<ul>';
-							html += '<li style="width:28.16%;color:red;font-weight:600;">'+id+'</li>';
-							html += '<li style="width:15.16%">'+title+'</li>';
-							html += '<li style="width:28.16%">'+unit+'</li>';
-							html += '<li style="width:15.16%">'+num+'</li>';
+							html += '<li style="width:10.16%;;color:red;font-weight:600;">'+id+'</li>';
+							html += '<li style="width:36.16%;">'+title+'</li>';
+							html += '<li style="width:20.16%;">'+unit+'</li>';
+							html += '<li style="width:20.16%;">'+num+'</li>';
 							html += '<li style="width:13.16%;cursor: pointer;"><a style="color:blue;" href="/index.php?app=search&act=gongjiaxunjia_content&id='+id+'">查看</a></li>';
 						html += '</ul>';
 					

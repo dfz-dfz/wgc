@@ -1101,7 +1101,7 @@ $(function(){
 <script type="text/javascript">
 	$().ready(function(){
 		$('#backList').hide();
-		list();
+		list(page);
 		$('#backShareList').hide();
 		messagelist();
 	})
@@ -1181,7 +1181,7 @@ $(function(){
 	
 	//材料推广列表
 	var page = 1;
-	function list(page){
+	function list(page,type){
 		var url = 'http://wgcapp.wgc2013.com/jingyi.php/Home/Material/materialListe_user';
 		var myid = '<?php echo $_SESSION["user_info"]["user_id"];?>';
 		$.post(url,{
@@ -1251,8 +1251,13 @@ $(function(){
 				$(".list_show").html(listHtml);
 				$('#nextpage').show();
 			}else if(ret.code == 202){
-				$('#nextpage').hide();
-				$(".list_show").html('<div style="text-align:center;color:#999;font-size:20px;line-height:150px;">暂无数据</div>');
+				if(type == 1){
+					$('#nextpage').hide();
+				}else if(type == 0){
+					$(".list_show").html('<div style="text-align:center;color:#999;font-size:20px;line-height:150px;">暂无数据</div>');
+				}
+				
+				
 			}
 		},'json')
 		
@@ -1263,12 +1268,12 @@ $(function(){
 			page=1;
 		}
 		page--;
-		list(page);
+		list(page,1);
 	}
 
 	function nextpage(){
 		page++;
-		list(page);
+		list(page,1);
 	}
 
 	// 材料推广显示列表搜索
@@ -1347,7 +1352,7 @@ $(function(){
 	function backList(){
 		$('#backList').hide();
 		$('#nextpage').show();
-		list();
+		list(page,0);
 	}
 
 	//分享

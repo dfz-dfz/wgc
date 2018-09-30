@@ -176,7 +176,7 @@ body{background:url('') no-repeat center top }
 	// 弹窗控制 end
 	pages=1;spage = 1;
 	//获取用户列表
-			function getUserList(pages) {
+			function getUserList(pages,type) {
 			var url = 'http://wgcapp.wgc2013.com/jingyi.php/Home/User/getJicaiList';
 
 			$.post(url,{
@@ -226,9 +226,14 @@ body{background:url('') no-repeat center top }
 
 					$(".info_list").html(listHtml);			
 				}else if(ret.code == 202){
-						$(".adress_list").show();
-						$(".info_list").html('');
-						$("#next").hide();
+						if(type == 1){
+							$("#next").hide();	
+						}else if(type == 0){
+							$(".adress_list").show();
+							$(".info_list").html('');
+						}
+						
+						
 
 				}
 
@@ -303,25 +308,25 @@ body{background:url('') no-repeat center top }
 			}
 		};	
 	(function() {
-		getUserList(pages);
+		getUserList(pages,0);
 	}());
 
 //下一页
 function nextpage(){
 	
-	getUserList(++pages);
+	getUserList(++pages,1);
 	//alert(pages);
 
 	}
 //上一页
 function prepage(){
 
-		getUserList(--pages);
+		getUserList(--pages,1);
 		//alert(pages)
 	}
 
 $("#backList").click(function(){
-	getUserList(pages);
+	getUserList(pages,0);
 	$(this).hide();
 })
 
