@@ -1209,6 +1209,9 @@ $().ready(function(){
 		var img             = $('#ImgPath').val();
 		var yunfei          = $("#yunfei").val();
 		var hanshui         = $("#hanshui").val();
+		var price           = $("#price").val();
+
+		//alert(price)
 
 		if(title == ''){
 			alert('必填项!');
@@ -1231,6 +1234,7 @@ $().ready(function(){
 		    hasmoney       : 10,
 		    yunfei         : yunfei,
 		    hanshui        : hanshui,
+		    price          : price,
 		    publishingarea : $("#Publishingarea").val(),
 		    m_photo           : img
 		}, function(ret) {

@@ -20,7 +20,7 @@
 
 	<div style="width: 1100px;margin: 10px auto;height: auto;overflow: hidden;text-align: left;">
 		<div style="width: 1100px;margin: auto;height: auto;overflow: hidden;">
-			<div style="width: 850px;float: left;height: auto;overflow: hidden;">
+			<div style="width: 880px;float: left;height: auto;overflow: hidden;">
 				<div style="background-color: #eee;width: 100%;height: 40px;border-bottom: 2px solid #999;padding-left: 6px;font-size: 22px;line-height: 40px;">工价询价详情</div>
 				<div style="height: auto;overflow: hidden;">
 					<div style="height: auto;overflow: hidden;margin-top: 10px;">
@@ -36,6 +36,10 @@
 							<div id="gjxj_img"></div>
 						</div>
 					</div>
+				</div>
+
+				<div class="link" style="margin:0 auto;text-align: center;line-height: 40px;">
+					<div style="height:40px;background-color: #f24c24;color: #fff;font-size: 16px;letter-spacing: 2px;font-weight: 600;text-align: center;line-height: 40px;cursor: pointer;width: 100px;margin: 0 auto;" onclick="tolink()">点击联系</div>
 				</div>
 			</div>
 
@@ -74,7 +78,7 @@
 	var uploadUrl = 'http://wgcapp.wgc2013.com/';
 	var imgUrl = 'http://wgcapp.wgc2013.com/';
 	var servermsg= "http://wgcapp.wgc2013.com/index.php/Home/";
-
+	var userid = '<?php echo $_SESSION["user_info"]["user_id"];?>';
 
 	$(function(){
 		shejifenbao_detalis();
@@ -93,7 +97,7 @@
 	var id = arr.pop();
 
 	function shejifenbao_detalis(){
-		$.post('http://wgcapp.wgc2013.com/jingyi.php/Home/User/xunjia_lists_content', {
+		$.post(url+'jingyi.php/Home/User/xunjia_lists_content', {
     		id : id,
     		type : 1
 		}, function(ret) {
@@ -174,6 +178,32 @@
 			alert('请登录之后在回复');
 			return false;
 		}
+	}
+
+	// 获取联系人
+	function tolink(){
+
+		$.post(url+'index.php/Home/index/userCheck', {
+			user_id : userid
+		}, function(ret) {
+			if(ret.code == 200){
+				$.post(url+'jingyi.php/Home/User/xunjia_lists_content', {id : id,type : 1}, function(ret) {
+					var mobiles = (ret.message.tel == '' || ret.message.tel == null)?'该信息没有填写联系方式!':'联系方式：'+ret.message.tel;
+					$('.link').html('<div id="mobile">'+mobiles+'</div>');
+				},"json");
+			}else if(ret.code == 202){
+				var logoHtml = '<div>请<a href="index.php?app=member&act=login&ret_url=" target="_blank" style="cursor:pointer;color:blue;">登录</a>之后在联系</div>';
+				$('.link').html(logoHtml);
+			}else if(ret.code == 203){
+				var toVip = '';
+				toVip += '<div>';
+					toVip += '请<a style="cursor:pointer;color:blue;">购买单次服务</a>';
+					toVip += '或者<a href="index.php?app=search&act=vip" target="blank" style="cursor:pointer;color:blue;">升级VIP会员</a>之后在查看';
+				toVip += '</div>';
+
+				$('.link').html(toVip);
+			}
+		},'json');
 	}
 
 </script>

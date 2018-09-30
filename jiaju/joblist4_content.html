@@ -220,6 +220,8 @@
 					var	huji        = (data[i].huji =='' || data[i].huji == null)?'未填写':data[i].huji;
 					var	gz_jingyan  = (data[i].gz_jingyan =='' || data[i].gz_jingyan == null)?'未填写':data[i].gz_jingyan;
 					var	userphoto   = uploadUrl + data[i].userphoto;
+
+					$(".gongjiang_title").html(data[1].zhiwei+"列表");
 						
 					if(name != '匿名'){
 						listHtml += '<li>';

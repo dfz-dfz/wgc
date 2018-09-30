@@ -2126,13 +2126,14 @@ function showList(){
 					gczongzaojia = data[i].gczongzaojia,
 					addtime = data[i].addtime,
 					id = data[i].id;
+					userid   = '<?php echo $_SESSION["user_info"]["user_id"];?>';
 					
 				html += '<tr>';
 					html += '<td style="width:184px;">'+jsdanwei+'</td>';
 					html += '<td style="width:184px;">'+sgdanwei+'</td>';
 					html += '<td style="width:171px;">'+gczongzaojia+'</td>';
 					html += '<td style="width:171px;">'+addtime+'</td>';
-					html += '<td class="t_detail"><a href="javascript:;" style="color:blue;width:80px;" onclick="tDetail('+id+','+gczongzaojia+')">详情</a><a href="javascript:;" style="color:#e8435a;width:50px;display:inline-block;" onclick="shareBtn('+id+')">分享</a></td>';
+					html += '<td class="t_detail"><a href="javascript:;" style="color:blue;width:80px;" onclick="tDetail('+id+','+gczongzaojia+')">详情</a><a href="javascript:;" style="color:#e8435a;width:50px;display:inline-block;" onclick="shareBtn('+id+')">分享</a><a href="javascript:;" style="color:#4D580D;display:inline-block;" onclick="delList('+id+','+userid+')">删除</a></td>';
 				html += '</tr>';
 			}
 			$('#ysbj_list').html(html);
@@ -2698,6 +2699,14 @@ function tDetails(id,zj){
 		$('#back_btn').hide();
 		$('#search_text').val('');
 		showUserList();
+	}
+
+	//删除列表
+	function delList(id,userid){
+		var f = confirm("是否确认删除此预算信息！！！");
+		if(f){
+			window.location.href = "http://wgcapp.wgc2013.com/jingyi.php/Home/yewu/yusuan_list_del/id/"+id+"/user_id/"+userid;
+		}
 	}
 
 	//时间转换

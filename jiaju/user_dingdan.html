@@ -89,7 +89,6 @@ body{background:url('') no-repeat center top }
 			<div style="overflow: hidden;margin-top: 10px;">
 			<!-- 基本信息 -->
 			<div class="section" style="border: none;min-height:300px;">
-			<div class="adress_list" style="font-size: 15px;color: #000;font-weight: bold;display:none;">通讯录列表为空</div>
 				<div class="list_details">
 				<div class="search_ys" style="margin-top: 10px;">
 					<input type="text" style="width: 400px;height: 30px;" id="search_fc" placeholder="请输入订单号查询">
@@ -97,6 +96,7 @@ body{background:url('') no-repeat center top }
 					<button id="backList" style="display: inline-block;width: 60px;height: 30px;line-height: 30px;font-size: 16px;color: #2d2a2a;font-weight: bold;letter-spacing: 4px; background-color: #ff0000;color:#fff;border-radius: 4px;position: relative;top:-8px;text-decoration: none;display: none;padding: 0;">返回</button>
 					<!-- <a class="share_btn" href="javascript:;" style="display: inline-block;width: 60px;height: 30px;line-height: 30px;font-size: 16px;color: #2d2a2a;font-weight: bold;letter-spacing: 4px; background-color: #facd89;border-radius: 4px;position: relative;left: 110px;top:-6px;text-decoration: none;" onclick="showUserList()">分享</a> -->
 				</div>
+				<div class="adress_list" style="font-size: 15px;color: #000;font-weight: bold;display:none;margin-top: 30px;">暂无订单列表</div>
 				<div class="info_list">
 	
 				</div>
@@ -226,6 +226,7 @@ body{background:url('') no-repeat center top }
 
 					$(".info_list").html(listHtml);			
 				}else if(ret.code == 202){
+						$(".adress_list").show();
 						$(".info_list").html('');
 						$("#next").hide();
 

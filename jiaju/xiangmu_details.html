@@ -39,9 +39,11 @@
 					</div>
 				</div>
 			</div>
-			<div style="height:50px;background-color: #f24c24;color: #fff;font-size: 26px;letter-spacing: 4px;font-weight: 600;text-align: center;line-height: 50px;">点击联系</div>
+			<div class="link" style="margin:0 auto;text-align: center;line-height: 40px;">
+				<div style="height:50px;background-color: #f24c24;color: #fff;font-size: 26px;letter-spacing: 4px;font-weight: 600;text-align: center;line-height: 50px;cursor: pointer;" onclick="tolink()">点击联系</div>
+			</div>
 		</div>
-
+		
 		<div style="width: 200px;float: right;height: 587px;border-left: 10px solid #e5e5e5;padding-right: 0;height: auto;overflow: hidden;">
 			<img src="http://www.wgc2013.com/themes/mall/jiaju/images/guanggao.png" alt="" width="100%">
 		</div>
@@ -55,7 +57,7 @@
 	var uploadUrl = 'http://wgcapp.wgc2013.com/';
 	var imgUrl = 'http://wgcapp.wgc2013.com/';
 	var servermsg= "http://wgcapp.wgc2013.com/index.php/Home/";
-
+	var userid = '<?php echo $_SESSION["user_info"]["user_id"];?>';
 
 	$(function(){
 		shejifenbao_detalis();
@@ -90,6 +92,32 @@
 				$('#neirongmiaosu').html(data.content);
 			}else{
 
+			}
+		},'json');
+	}
+
+	// 获取联系人
+	function tolink(){
+
+		$.post(url+'index.php/Home/index/userCheck', {
+			user_id : userid
+		}, function(ret) {
+			if(ret.code == 200){
+				$.post(url+'jingyi.php/Home/Jianli/projectSubcontract_listss_content', {id : id}, function(ret) {
+					var mobiles = (ret.message.mobile == '' || ret.message.mobile == null)?'该信息没有填写联系方式!':'联系方式：'+ret.message.mobile;
+					$('.link').html('<div id="mobile">'+mobiles+'</div>');
+				},"json");
+			}else if(ret.code == 202){
+				var logoHtml = '<div>请<a href="index.php?app=member&act=login&ret_url=" target="_blank" style="cursor:pointer;color:blue;">登录</a>之后在联系</div>';
+				$('.link').html(logoHtml);
+			}else if(ret.code == 203){
+				var toVip = '';
+				toVip += '<div>';
+					toVip += '请<a style="cursor:pointer;color:blue;">购买单次服务</a>';
+					toVip += '或者<a href="index.php?app=search&act=vip" target="blank" style="cursor:pointer;color:blue;">升级VIP会员</a>之后在查看';
+				toVip += '</div>';
+
+				$('.link').html(toVip);
 			}
 		},'json');
 	}

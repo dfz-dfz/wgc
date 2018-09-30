@@ -105,14 +105,13 @@
 				var html = '';
 				for(var i in data){
 					var id = data[i].id,
-						m_name = data[i].m_name,
-						m_introduce = data[i].m_introduce,
+						m_name = (data[i].m_name == '' || data[i].m_name == null)? '暂无设置':data[i].m_name,
+						m_introduce = (data[i].m_introduce == '' || data[i].m_introduce == null) ? '暂无设置':data[i].m_introduce,
 						office_name = data[i].office_name,
 						brand       = data[i].brand,
 						address     = data[i].address,
 						addtime = _trans_php_time_to_str(data[i].addtime,5),
-						expire_time = data[i].expire_time,
-						m_introduce = data[i].m_introduce;
+						expire_time = data[i].expire_time;
 
 						html += '<ul>';
 							html += '<li style="width:30%;color:red;font-weight:600;">'+m_name+'</li>';
@@ -146,14 +145,13 @@
 				var html = '';
 				for(var i in data){
 					var id = data[i].id,
-						m_name = data[i].m_name,
-						m_introduce = data[i].m_introduce,
+						m_name = (data[i].m_name == '' || data[i].m_name == null)? '暂无设置':data[i].m_name,
+						m_introduce = (data[i].m_introduce == '' || data[i].m_introduce == null) ? '暂无设置':data[i].m_introduce,
 						office_name = data[i].office_name,
 						brand       = data[i].brand,
 						address     = data[i].address,
 						addtime = _trans_php_time_to_str(data[i].addtime,5),
-						expire_time = data[i].expire_time,
-						m_introduce = data[i].m_introduce;
+						expire_time = data[i].expire_time;
 
 						html += '<ul>';
 							html += '<li style="width:30%;color:red;font-weight:600;">'+m_name+'</li>';

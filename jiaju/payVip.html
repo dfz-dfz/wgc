@@ -101,17 +101,20 @@
 						<div id="weixin_box" style="min-height: 300px;height: auto;overflow: hidden;">
 							<div style="margin-left: 20px;line-height: 50px;">直接通过手机微信扫描，即可自动完成支付。</div>
 							<div id="erweima" style="text-align: center;margin-top: 80px;margin-bottom: 20px;">
-								<div style="display: inline-block;background-color: red;color: #fff;padding: 6px 16px;border-radius: 4px;cursor: pointer;" onclick="toWeixinPay()">生成二维码</div>
+								<div id="scewm_btn" style="display: inline-block;background-color: red;color: #fff;padding: 6px 16px;border-radius: 4px;cursor: pointer;" onclick="toWeixinPay()">生成二维码</div>
+
+								<div id="qrcode" style="width:100px; height:100px; margin:20px auto;display: none;"></div>
+
 							</div>
 							<div style="margin-left: 20px;line-height: 25px;font-weight: bold;">温馨提示：</div>
-							<div style="margin-left: 20px;line-height: 25px;">1.点击“确定支付”生成二维码</div>
+							<div style="margin-left: 20px;line-height: 25px;">1.点击“生成二维码”生成二维码</div>
 							<div style="margin-left: 20px;line-height: 25px;">2.用手机微信扫描，完成支付后自动升级到VIP会员</div>
 						</div>
 						<!-- 支付宝支付 -->
 						<div id="zhifubao_box" style="display: none;height: 300px;">
 							<div style="margin-left: 20px;line-height: 50px;">如果您有支付宝账号，可以通过支付宝在线支付。</div>
 							<div style="text-align: center;margin-top: 80px;margin-bottom: 20px;">
-								<div style="display: inline-block;background-color: red;color: #fff;padding: 6px 16px;border-radius: 4px;cursor: pointer;">前往支付宝支付</div>
+								<div style="display: inline-block;background-color: red;color: #fff;padding: 6px 16px;border-radius: 4px;cursor: pointer;" onclick="tozhifubao()">前往支付宝支付</div>
 							</div>
 							<div style="margin-left: 20px;line-height: 25px;font-weight: bold;">温馨提示：</div>
 							<div style="margin-left: 20px;line-height: 25px;">1.支付宝购买完支付后自动升级到VIP会员</div>
@@ -144,8 +147,12 @@
 {include file=footer.html}
 
 <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="http://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+<script type="text/javascript" src="http://static.runoob.com/assets/qrcode/qrcode.min.js"></script>
 <script type="text/javascript">
 	var url = 'http://wgcapp.59jiaju.com/';
+	$('#erweima').append('<input id="text" type="hidden" value="改功能尚未完善" style="width:10%;margin:0 auto;" />')
+	$('#text').val('获取支付订单数据超时');
 	$(function(){
 		getMessage();
 	});
@@ -206,13 +213,44 @@
 	// 生成微信支付二维码
 	function toWeixinPay(){
 		$('#erweima').css('margin-top','0');
-		var html = '';
-		html += '<div style="text-align:center;">';
-			html += '<img src="http://wgcapp.59jiaju.com/Public/Uploads/zhengshu/2018-09-28/b90380de-9a39-453f-77b6-17493ecd035c.jpg" alt="" style="width:150px;height:150px;">';
-			html += '<div style="margin-top:20px;font-size:14px;">请用微信扫描进入支付页面</div>';
-		html += '</div>';
-		$('#erweima').html(html);
+		$('#scewm_btn').hide();
+		$('#qrcode').show();
+		// var html = '';
+		// html += '<div style="text-align:center;">';
+		// 	html += '<input id="text" type="hidden" value="该功能尚未完善" style="width:80%" /><br />';
+		// 	// html += '<div id="qrcode" style="width:100px; height:100px; margin-top:15px;"></div>';
+		// 	html += '<div style="margin-top:20px;font-size:14px;">请用微信扫描进入支付页面</div>';
+		// html += '</div>';
+		// $('#erweima').append(html);
 	}
+
+	function tozhifubao(){
+		window.location.href = 'https://www.alipay.com/';
+	}
+
+	var qrcode = new QRCode(document.getElementById("qrcode"), {
+		width : 100,
+		height : 100
+	});
+
+	function makeCode () {		
+		var elText = document.getElementById("text");
+		if (!elText.value) {
+			elText.focus();
+			return;
+		}
+		qrcode.makeCode(elText.value);
+	}
+
+	makeCode();
+
+	$("#text").on("blur", function () {
+		makeCode();
+	}).on("keydown", function (e) {
+		if (e.keyCode == 13) {
+			makeCode();
+		}
+	});
 </script>
 </body>
 </html>

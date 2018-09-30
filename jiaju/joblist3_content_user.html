@@ -141,7 +141,7 @@
 	});
 
 	// 获取工人详情
-	function selectUser(){
+	function selectUser(mobiles){
 		$.post(url+'index.php/Home/Systemmsg/Jobdetails',{userid : <?php echo $_GET['id'];?>,infotype : 'weixin'},function(ret){
 		
 			var data = ret.message;
@@ -167,8 +167,6 @@
 		           $('#type').html('类别：'+zhiwei);
 		           $("#intension").html(intension);
 		           $("#gz_jingyan").html(gz_jingyan);
-		           $('.link').append('<div id="mobile">'+mobile+'</div>');
-		           $('#mobile').hide();
 			}else{
 				return false;
 			}
@@ -182,7 +180,10 @@
 			user_id : userid
 		}, function(ret) {
 			if(ret.code == 200){
-				$('#mobile').show();
+				$.post(url+'index.php/Home/Systemmsg/Jobdetails', {userid : <?php echo $_GET['id'];?>,infotype : 'weixin'}, function(ret) {
+					var mobiles = ret.message.mobile;
+					$('.link').append('<div id="mobile">'+mobiles+'</div>');
+				},"json");
 			}else if(ret.code == 202){
 				var logoHtml = '<div>请<a href="index.php?app=member&act=login&ret_url=" target="_blank" style="cursor:pointer;color:blue;">登录</a>之后在联系</div>';
 				$('.link').html(logoHtml);
