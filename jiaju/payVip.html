@@ -26,6 +26,8 @@
 		margin: 20px;
 		padding: 10px;
 		min-height: 300px;
+		height: auto;
+		overflow: hidden;
 	}
 	.box {
 		border:1px solid #afafaf;
@@ -57,6 +59,8 @@
 	.main_box {
 		text-align: left;
 		font-size: 16px;
+		height: auto;
+		overflow: hidden;
 	}
 </style>
 </head>
@@ -72,7 +76,7 @@
 			</div>
 			<div class="main_box">
 				<!-- 升级vip -->
-				<div id="toVipPage">
+				<div id="toVipPage" style="height: auto;overflow: hidden;">
 					<div class="box" style="line-height: 30px;padding:0 10px;">
 						<span style="margin-right: 10px;">您当前的会员级别:</span>
 						<span>普通用户</span>
@@ -87,14 +91,14 @@
 					</div>
 					<!-- 支付方式 -->
 					<div style="line-height: 30px;position: relative;font-weight: bold;">
-						<div id="weixin_btn" style="padding:0 10px;border:1px solid red;display: inline-block;width: 100px;text-align: center;border-bottom: none;border-top-left-radius: 6px;border-top-right-radius: 6px;cursor: pointer;background-color: red;color: #fff;">微信支付</div>
+						<div id="weixin_btn" style="padding:0 10px;border:1px solid red;display: inline-block;width: 100px;text-align: center;border-bottom: none;border-top-left-radius: 6px;border-top-right-radius: 6px;cursor: pointer;">微信支付</div>
 						<div style="display: inline-block;width: 4px;border-bottom: 1px solid red;position: absolute;top: 30px;left: 122px;"></div>
-						<div id="zhifubao_btn" style="padding:0 10px;border:1px solid red;display: inline-block;width: 100px;text-align: center;border-bottom: none;border-top-left-radius: 6px;border-top-right-radius: 6px;cursor: pointer;">支付宝</div>
+						<div id="zhifubao_btn" style="padding:0 10px;border:1px solid red;display: inline-block;width: 100px;text-align: center;border-bottom: none;border-top-left-radius: 6px;border-top-right-radius: 6px;cursor: pointer;background-color: red;color: #fff;">支付宝</div>
 						<div style="display: inline-block;width: 792px;border-bottom: 1px solid red;position: absolute;top: 30px;left: 248px;"></div>
 					</div>
-					<div style="height: 300px;border:1px solid red;border-top: none;">
+					<div style="min-height: 300px;border:1px solid red;border-top: none;height: auto;overflow: hidden;">
 						<!-- 微信支付 -->
-						<div id="weixin_box" style="height: 300px;">
+						<div id="weixin_box" style="min-height: 300px;height: auto;overflow: hidden;">
 							<div style="margin-left: 20px;line-height: 50px;">直接通过手机微信扫描，即可自动完成支付。</div>
 							<div id="erweima" style="text-align: center;margin-top: 80px;margin-bottom: 20px;">
 								<div style="display: inline-block;background-color: red;color: #fff;padding: 6px 16px;border-radius: 4px;cursor: pointer;" onclick="toWeixinPay()">生成二维码</div>
@@ -110,7 +114,7 @@
 								<div style="display: inline-block;background-color: red;color: #fff;padding: 6px 16px;border-radius: 4px;cursor: pointer;">前往支付宝支付</div>
 							</div>
 							<div style="margin-left: 20px;line-height: 25px;font-weight: bold;">温馨提示：</div>
-							<div style="margin-left: 20px;line-height: 25px;">1.支付宝购买完成后，完成支付后自动升级到VIP会员</div>
+							<div style="margin-left: 20px;line-height: 25px;">1.支付宝购买完支付后自动升级到VIP会员</div>
 						</div>
 					</div>
 				</div>
@@ -163,19 +167,19 @@
 	});
 
 	$('#weixin_btn').click(function() {
-		$('#weixin_btn').css('background-color', 'red');
-		$('#weixin_btn').css('color', '#fff');
-		$('#zhifubao_btn').css('background-color', '#fff');
-		$('#zhifubao_btn').css('color', '#000');
+		$('#zhifubao_btn').css('background-color', 'red');
+		$('#zhifubao_btn').css('color', '#fff');
+		$('#weixin_btn').css('background-color', '#fff');
+		$('#weixin_btn').css('color', '#000');
 		$('#weixin_box').css('display', 'block');
 		$('#zhifubao_box').css('display', 'none');
 	});
 
 	$('#zhifubao_btn').click(function() {
-		$('#zhifubao_btn').css('background-color', 'red');
-		$('#zhifubao_btn').css('color', '#fff');
-		$('#weixin_btn').css('background-color', '#fff');
-		$('#weixin_btn').css('color', '#000');
+		$('#weixin_btn').css('background-color', 'red');
+		$('#weixin_btn').css('color', '#fff');
+		$('#zhifubao_btn').css('background-color', '#fff');
+		$('#zhifubao_btn').css('color', '#000');
 		$('#zhifubao_box').css('display', 'block');
 		$('#weixin_box').css('display', 'none');
 	});
@@ -204,8 +208,8 @@
 		$('#erweima').css('margin-top','0');
 		var html = '';
 		html += '<div style="text-align:center;">';
-			html += '<img src="http://wgcapp.59jiaju.com/Public/Uploads/zhengshu/2018-09-28/b90380de-9a39-453f-77b6-17493ecd035c.jpg" alt="" width="100">';
-			html += '<div>请用微信扫描进入支付页面</div>';
+			html += '<img src="http://wgcapp.59jiaju.com/Public/Uploads/zhengshu/2018-09-28/b90380de-9a39-453f-77b6-17493ecd035c.jpg" alt="" style="width:150px;height:150px;">';
+			html += '<div style="margin-top:20px;font-size:14px;">请用微信扫描进入支付页面</div>';
 		html += '</div>';
 		$('#erweima').html(html);
 	}

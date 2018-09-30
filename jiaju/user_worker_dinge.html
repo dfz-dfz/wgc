@@ -69,6 +69,9 @@ body{background:url('') no-repeat center top }
 #messlist_ul li:hover{
 	background-color: #eee;
 }
+.list_name{
+	height: 50px;
+}
 </style>
 <script type="text/javascript" src="http://www.wgc2013.com/themes/mall/jiaju/styles/default/js/hover.js"></script>
 <script charset="utf-8" type="text/javascript" src="http://www.wgc2013.com/includes/libraries/javascript/jquery.plugins/jquery.validate.js" ></script>
@@ -401,10 +404,12 @@ body{background:url('') no-repeat center top }
 							lianxifangshi = data[i].lianxifangshi,
 							gongzuodidian = data[i].gongzuodidian,
 							shigonggongyi = data[i].shigonggongyi,
+							user_id       = data[i].user_id,
 							content = data[i].content;
 							
-						listHtml 	+= 	'<li style="overflow:hidden;list-style:none;cursor:pointer;">';
-						listHtml 	+=  '<div onclick="detail(\''+gongzuodidian+'\',\''+shigonggongyi+'\',\''+content+'\',\''+lianxifangshi+'\')">';
+						listHtml 	+= 	'<li style="overflow:hidden;list-style:none;cursor:pointer;position:relative;">';
+						listHtml 	+=	'<input name="id" type="checkbox" class="checkbox" value="'+id+'"style="position:absolute;left:0;top:20px;"/>';
+						listHtml 	+=  '<div style="overflow:hidden;" onclick="detail(\''+gongzuodidian+'\',\''+shigonggongyi+'\',\''+content+'\',\''+lianxifangshi+'\')">';
 						listHtml 	+=	'<div class="list_name" style="float:left;width:10%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center;">'+name+'</div>';
 						listHtml 	+=	'<div class="list_name" style="float:left;width:10%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center;">'+fabujiage+'/'+danwei+'</div>';
 						listHtml 	+=	'<div class="list_name" style="float:left;width:10%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center;">'+shuliang+'</div>';
@@ -414,7 +419,7 @@ body{background:url('') no-repeat center top }
 						listHtml 	+=	'<div class="list_name" style="float:left;width:10%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center;">'+shigonggongyi+'</div>';
 						listHtml 	+=	'<div class="list_name" style="float:left;width:10%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center;">'+content+'</div>';
 						listHtml 	+=  '</div>';
-						listHtml 	+=	'<input name="id" type="checkbox" class="checkbox" value="'+id+'"/>';
+						listHtml 	+=  '<a href="http://wgcapp.wgc2013.com/jingyi.php/Home/Dinge/DelRengong_list/id/'+id+'/user_id/'+user_id+'" style="background:red;color:#fff;padding:2px 5px;font-size:12px;position:absolute;top:10px;right:0;height:25px;line-height:25px;border-radius:5px;">删除</a></div>';
 						listHtml 	+=	'</li>';
 					}
 					$("#mess_list").append(listHtml);
@@ -499,17 +504,34 @@ body{background:url('') no-repeat center top }
 					
 						if(data[i].name === value){
 						
-							var id       = data[i],
+						var id       = data[i].id,
 							name     = data[i].name,
 							danwei   = data[i].danwei,
-							fabujiage= data[i].fabujiage;
-							listHtml 	+= 	'<li style="overflow:hidden;>';
-							listHtml 	+=	'<span class="list_name">'+name+'</span>';
-							listHtml 	+=	'<span>'+fabujiage+'/'+danwei+'</span>';
-							listHtml 	+=	'<input type="checkbox" class="checkbox" />';
-							listHtml 	+=	'</li>';
-							$(".list_ul li").remove();
-							$(".list_ul").append(listHtml);
+							fabujiage= data[i].fabujiage,
+							shuliang = data[i].shuliang,
+							rengongfei = data[i].rengongfei,
+							lianxifangshi = data[i].lianxifangshi,
+							gongzuodidian = data[i].gongzuodidian,
+							shigonggongyi = data[i].shigonggongyi,
+							user_id       = data[i].user_id,
+							content = data[i].content;
+							
+						listHtml 	+= 	'<li style="overflow:hidden;list-style:none;cursor:pointer;position:relative;">';
+						listHtml 	+=	'<input name="id" type="checkbox" class="checkbox" value="'+id+'"style="position:absolute;left:0;top:20px;"/>';
+						listHtml 	+=  '<div style="overflow:hidden;" onclick="detail(\''+gongzuodidian+'\',\''+shigonggongyi+'\',\''+content+'\',\''+lianxifangshi+'\')">';
+						listHtml 	+=	'<div class="list_name" style="float:left;width:10%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center;">'+name+'</div>';
+						listHtml 	+=	'<div class="list_name" style="float:left;width:10%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center;">'+fabujiage+'/'+danwei+'</div>';
+						listHtml 	+=	'<div class="list_name" style="float:left;width:10%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center;">'+shuliang+'</div>';
+						listHtml 	+=	'<div class="list_name" style="float:left;width:10%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center;">'+rengongfei+'</div>';
+						listHtml 	+=	'<div class="list_name" style="float:left;width:10%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center;">'+lianxifangshi+'</div>';
+						listHtml 	+=	'<div class="list_name" style="float:left;width:10%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center;">'+gongzuodidian+'</div>';
+						listHtml 	+=	'<div class="list_name" style="float:left;width:10%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center;">'+shigonggongyi+'</div>';
+						listHtml 	+=	'<div class="list_name" style="float:left;width:10%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center;">'+content+'</div>';
+						listHtml 	+=  '</div>';
+						listHtml 	+=  '<a href="http://wgcapp.wgc2013.com/jingyi.php/Home/Dinge/DelRengong_list/id/'+id+'/user_id/'+user_id+'" style="background:red;color:#fff;padding:2px 5px;font-size:12px;position:absolute;top:10px;right:0;height:25px;line-height:25px;border-radius:5px;">删除</a></div>';
+						listHtml 	+=	'</li>';
+							$("#mess_list").html("");
+							$("#mess_list").append(listHtml);
 						
 						}
 					}
@@ -569,10 +591,12 @@ body{background:url('') no-repeat center top }
 							lianxifangshi = data[i].lianxifangshi,
 							gongzuodidian = data[i].gongzuodidian,
 							shigonggongyi = data[i].shigonggongyi,
+							user_id       = data[i].user_id,
 							content = data[i].content;
 							
-						listHtml 	+= 	'<li style="overflow:hidden;list-style:none;cursor:pointer;">';
-						listHtml 	+=  '<div onclick="detail(\''+gongzuodidian+'\',\''+shigonggongyi+'\',\''+content+'\',\''+lianxifangshi+'\')">';
+						listHtml 	+= 	'<li style="overflow:hidden;list-style:none;cursor:pointer;position:relative;">';
+						listHtml 	+=	'<input name="id" type="checkbox" class="checkbox" value="'+id+'"style="position:absolute;left:0;top:20px;"/>';
+						listHtml 	+=  '<div style="overflow:hidden;" onclick="detail(\''+gongzuodidian+'\',\''+shigonggongyi+'\',\''+content+'\',\''+lianxifangshi+'\')">';
 						listHtml 	+=	'<div class="list_name" style="float:left;width:10%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center;">'+name+'</div>';
 						listHtml 	+=	'<div class="list_name" style="float:left;width:10%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center;">'+fabujiage+'/'+danwei+'</div>';
 						listHtml 	+=	'<div class="list_name" style="float:left;width:10%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center;">'+shuliang+'</div>';
@@ -582,7 +606,7 @@ body{background:url('') no-repeat center top }
 						listHtml 	+=	'<div class="list_name" style="float:left;width:10%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center;">'+shigonggongyi+'</div>';
 						listHtml 	+=	'<div class="list_name" style="float:left;width:10%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center;">'+content+'</div>';
 						listHtml 	+=  '</div>';
-						listHtml 	+=	'<input name="id" type="checkbox" class="checkbox" value="'+id+'"/>';
+						listHtml 	+=  '<a href="http://wgcapp.wgc2013.com/jingyi.php/Home/Dinge/DelRengong_list/id/'+id+'/user_id/'+user_id+'" style="background:red;color:#fff;padding:2px 5px;font-size:12px;position:absolute;top:10px;right:0;height:25px;line-height:25px;border-radius:5px;">删除</a></div>';
 						listHtml 	+=	'</li>';
 					}
 					$("#mess_list").html(listHtml);

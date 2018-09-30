@@ -1,0 +1,208 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Access-Control-Allow-Origin" content="*">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=8"/>
+<title>推荐工人详情 - 微工程</title>
+<meta name="description" content="微工程，微工程APP，装修、材料、家具、饰品一站式服务，让装修更简单，价格更透明！！" />
+<meta name="keywords" content="微工程，微工程，家居商城，微工程家居商城，微工程家居装修商城，办公室装修，写字楼装修，材料，装修材料，家居，办公家具，家居，家具，装修，装饰" />
+<style type="text/css">
+	.body {
+		background-color: #edefee;
+	}
+
+	.main {
+		width: 1100px;
+		height: auto;
+		overflow: hidden;
+		margin: 0 auto;
+	}
+	.info {
+		background-color: #fff;
+		height: 250px;
+		margin: 50px 0;
+		padding: 10px;
+	}
+	.info_pic {
+		width: 200px;
+		margin-top: 25px;
+	}
+	.info_pic img {
+		border-radius: 50%;
+		width: 200px;
+		height: 200px;
+	}
+	.min_box {
+		float: left;
+	}
+	.min_box .name {
+		font-size: 20px;
+		font-weight: bold;
+		letter-spacing: 2px;
+		margin-bottom: 10px;
+	}
+	.min_box .position {
+		padding: 3px 40px;
+	    background-color: #fe0000;
+	    color: #fff;
+	    border-radius: 16px;
+	}
+	.min_box .age_type {
+		margin: 15px 0;
+		color: #999;
+	}
+	.min_box .abstract,
+	.score {
+		color: #ff0000;
+		letter-spacing: 2px;
+		font-weight: bold;
+	}
+	.info_message {
+		width: 680px;
+		text-align: left;
+		margin-left: 20px;
+	}
+	.score_box {
+		height: 150px;
+		line-height: 75px;
+	}
+	.info_link {
+		width: 180px;
+		height: 100%;
+		background-color: #edefee;
+		text-align: center;
+	}
+	.tolink {
+		width: 100px;
+		background-color: #ff0000;
+		color: #fff;
+		padding: 2px 20px;
+		cursor: pointer;
+	}
+	.project {
+		font-size: 24px;
+		font-weight: bold;
+	}
+</style>
+</head>
+<body>
+{include file=header.html}
+<div class="body">
+	<div class="main">
+		<!-- 个人详细信息 -->
+		<div class="info">
+			<div class="info_pic min_box">
+				<img id="userphotos" src="http://wgcapp.59jiaju.com//Public/logo.png" alt="" />
+			</div>
+			<div class="info_message min_box">
+				<div class="name" id="name"></div>
+				<div>
+					<span class="position" id="zhiwei"></span>
+				</div>
+				<div class="age_type">
+					<span id="bumen" style="margin-right: 20px;"></span>
+					<span id="type"></span>
+				</div>
+				<div>
+					<span class="abstract">个人简介：</span>
+					<span id="intension"></span>
+				</div>
+			</div>
+			<div class="info_link min_box">
+				<div class="score_box">
+					<span class="score">工匠评分</span>
+					<img src="/themes/mall/jiaju/images/xingxing.jpg" alt="" />
+				</div>
+				<div class="link">
+					<span class="tolink" onclick="tolink()">点击联系</span>
+				</div>
+			</div>
+
+		</div>
+
+		<!-- 项目经验展示 -->
+		<div class="project">
+			<div>项目经验展示</div>
+			<div>CASE WORK PRESENTATION</div>
+			<div class="project_detail" style="min-height: 200px;">
+				
+			</div>
+		</div>
+	</div>
+</div>
+
+{include file=footer.html}
+
+<script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+<script type="text/javascript">
+	var url = 'http://wgcapp.59jiaju.com/',
+		userid = '<?php echo $_SESSION["user_info"]["user_id"];?>';
+	$(function(){
+		jQuery.support.cors = true;
+		selectUser();
+	});
+
+	// 获取工人详情
+	function selectUser(){
+		$.post(url+'index.php/Home/Systemmsg/Jobdetails',{userid : <?php echo $_GET['id'];?>,infotype : 'weixin'},function(ret){
+		
+			var data = ret.message;
+			var listHtml = '';
+			if(ret.code == 200){
+					var	name        = (data.name =='' || data.name == null)?'匿名':data.name;
+		            var zhiwei 	    = (data.zhiwei =='' || data.zhiwei == null)?'未填写':data.zhiwei;
+		            var	guanzhu     = data.guanzhu;
+		            var	bumen       = (data.bumen =='' || data.bumen == null)?'未填写':data.bumen+'年';
+		            var	huji        = (data.huji =='' || data.huji == null)?'未填写':data.huji;
+		            var	gz_jingyan  = (data.gz_jingyan =='' || data.gz_jingyan == null)?'未填写':data.gz_jingyan;
+		           	var intension = (data.intension == '' || data.intension == null)?'暂无简介':data.intension;
+		           	var mobile = data.mobile;
+		            var	userphoto   = 'http://wgcapp.59jiaju.com/' + data.userphoto;
+		            var targetId        = data.user_id;
+		            var targetName      = name;
+		            var anli           = data.case;
+		            
+		           // alert(anli)
+		            if(anli == null){
+		            	$(".project_detail").html('<span style="display: block;margin-top: 50px;color: #963019;">暂无案例</span>');
+		            }else{
+		            	
+		            }
+
+			       $("#userphotos").attr('src',userphoto);
+		           $("#name").html(name);
+		           $("#zhiwei").html(zhiwei);
+		           $("#guanzhu").html(guanzhu);
+		           $("#bumen").html('年龄：'+bumen);
+		           $('#type').html('类别：'+zhiwei);
+		           $("#intension").html(intension);
+		           $("#gz_jingyan").html(gz_jingyan);
+		           $('.link').append('<div id="mobile">'+mobile+'</div>');
+		           $('#mobile').hide();
+			}else{
+				return false;
+			}
+		},"json");
+	}
+
+	// 获取联系人
+	function tolink(){
+
+		$.post(url+'index.php/Home/index/userCheck', {
+			user_id : userid
+		}, function(ret) {
+			if(ret.code == 200){
+				$('#mobile').show();
+			}else if(ret.code == 202){
+				var logoHtml = '<div>请<a href="http://wgc2013.com/index.php?app=member&act=login&ret_url=" target="_blank" style="cursor:pointer;color:blue;">登录</a>之后在联系</div>';
+				$('.link').html(logoHtml);
+			}else if(ret.code == 203){
+				var toVip = '<div>请<a style="cursor:pointer;color:blue;">购买一次查看</a>或者<a style="cursor:pointer;color:blue;">成为会员</a>之后在查看</div>';
+				$('.link').html(toVip);
+			}
+		},'json');
+	}
+</script>
+</body>
+</html>

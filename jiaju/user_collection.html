@@ -158,11 +158,11 @@ body{background:url('') no-repeat center top }
 					</li>
 					<li>
 						<div class="user_collection_name user_public_name" style="color: #5e5a59;">运费包含：</div>
-						<div class="user_collection_input user_public_input"><input id="xiangxi" type="text" placeholder="如包含运费请说明价格，否则无！" /></div>
+						<div class="user_collection_input user_public_input"><input id="yunfei" type="text" placeholder="如包含运费请说明价格，否则无！" /></div>
 					</li>
 					<li>
 						<div class="user_collection_name user_public_name" style="color: #5e5a59;">含税价格：</div>
-						<div class="user_collection_input user_public_input"><input id="xiangxi" type="text" placeholder="若有含税价请说明金额，否则无！" /></div>
+						<div class="user_collection_input user_public_input"><input id="hanshui" type="text" placeholder="若有含税价请说明金额，否则无！" /></div>
 					</li>								
  				</ul>
 				<div style="width:100%;overflow: hidden;margin:0px auto;">
@@ -1207,6 +1207,8 @@ $().ready(function(){
 		var office_name     = $('#office_name').val();//商店名称
 		var region          = region;//显示区域
 		var img             = $('#ImgPath').val();
+		var yunfei          = $("#yunfei").val();
+		var hanshui         = $("#hanshui").val();
 
 		if(title == ''){
 			alert('必填项!');
@@ -1227,6 +1229,8 @@ $().ready(function(){
 		    brand          : brand,
 		    cai_type       : 3,
 		    hasmoney       : 10,
+		    yunfei         : yunfei,
+		    hanshui        : hanshui,
 		    publishingarea : $("#Publishingarea").val(),
 		    m_photo           : img
 		}, function(ret) {

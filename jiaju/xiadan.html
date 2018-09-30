@@ -1,0 +1,159 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>集采价格-下单确认</title>
+
+<link rel="stylesheet" type="text/css" href="/themes/mall/jiaju/css/api.css"/>
+<link rel="stylesheet" type="text/css" href="/themes/mall/jiaju/css/aui.css" />
+<link rel="stylesheet" type="text/css" href="/themes/mall/jiaju/css/aui.1.0.css"/>
+<style type="text/css">
+.container{
+	width: 69%;
+	margin: 20px auto;
+}
+.container h3{
+	font-size: 18px;
+	color: red;
+	text-align: left;
+	margin: 10px 0;
+}
+.cai_info{
+	border-bottom: 1px solid #000;
+	padding-bottom: 20px;
+	overflow: hidden;
+}
+.person_info{
+	border-bottom: 1px solid #000;
+	padding-bottom: 20px;
+	overflow: hidden;	
+}
+.cai_photo{
+	width: 150px;
+	height: 150px;
+	border: 1px solid #000;
+	margin-right: 20px;
+}
+.cai_right ul li{
+	margin: 10px 0;
+	font-size: 14px;
+	font-weight: 600;
+	color: #000;
+}
+.cai_right ul li:nth-child(1){
+	margin-top: 0;
+}
+.cai_right ul li span{
+	color: #615757;
+	font-size: 12px;
+}
+#num{
+	color: #615757;
+	font-size: 12px;	
+}
+#pay{
+	display: block;
+	background-color: red;
+	width: 80px;
+	height: 30px;
+	line-height: 30px;
+	color: #fff;
+	font-size: 16px;
+	border-radius: 5px;
+	text-align: center;
+	margin: 20px auto;
+}
+</style>
+<script type="text/javascript">	
+</script>
+</head>
+<body>
+{include file=header.html}
+
+<div class="container">
+	<div class="cai_info" style="min-width: 1100px;">
+		<h3>材料信息</h3>
+		<div class="cai_left" style="float: left;">
+			<div class="cai_photo">
+				<img src="/themes/mall/jiaju/images/" alt="" onerror="src='/themes/mall/jiaju/images/center/nopic.png'" style="width: 100%;height: 100%;" />
+			</div>
+		</div>
+		<form action="http://wgcapp.wgc2013.com/jingyi.php/Home/User/setJicai" method="post">
+		<div class="cai_right" style="float: left;">
+			<ul>
+				<li>材料名称：<span id="name">水泥</span></li>
+				<li>材料描述：<span id="intro">￥88.88</span></li>
+				<li>商店名称：<span id="shop">广州市我购小店</span></li>
+				<li>材料品牌：<span id="brand">蒙娜丽莎</span></li>
+				<li>下单数量：<input type="text" id="num" name="num" style="display: inline-block;width: 50px;height: 20px;padding: 0;margin: 0px;padding-left: 5px;" />&nbsp;<span>件</span></li>
+			</ul>
+		</div>
+	</div>
+	<div class="person_info" style="min-width: 1100px;">
+		<h3>收货人信息</h3>
+		<div class="cai_right" style="float: left;">
+
+			<ul>
+				<li>&nbsp;收&nbsp;件&nbsp;人：<input type="text" id="num" name="sendname" style="display: inline-block;width: 300px;height: 20px;padding: 0;margin: 0px;padding-left: 5px;" /></li>
+				<li>收件电话：<input type="text" id="num" name="tel" style="display: inline-block;width: 300px;height: 20px;padding: 0;margin: 0px;padding-left: 5px;" /></li>
+				<li>收件地址：<input type="text" id="num" name="address" style="display: inline-block;width: 300px;height: 20px;padding: 0;margin: 0px;padding-left: 5px;" /></li>
+				<li>邮政编码：<input type="text" id="num" name="ycode" style="display: inline-block;width: 300px;height: 20px;padding: 0;margin: 0px;padding-left: 5px;" /></li>
+			</ul>
+		</div>		
+	</div>
+
+	<!-- 下单按钮 -->
+	<div class="pay">
+		<input type="submit" value="确认下单" id="pay">
+		<input type="hidden" name="jid" id="vid" />
+		<input type="hidden" name="userid" id="user_id" />
+		<span class="tip">*请使用银行卡支付，暂不支持支付宝、微信支付</span>
+	</div>
+	</form>
+</div>
+
+	
+{include file=footer.html}
+
+<!-- 底部include file=footer2.html-->
+<script src="/themes/mall/jiaju/js/jquery-2.2.3.min.js"></script>
+
+<script type="text/javascript">
+
+function list(){
+	var id = {$id};
+	var url = 'http://wgcapp.wgc2013.com/jingyi.php/Home/User/getJicai';
+	$.post(url,{
+		id : id
+	},function(ret){
+		//console.log(ret);
+		if(ret.code == 200){
+			$("#vid").val(id);
+			userid = '<?php echo $_SESSION["user_info"]["user_id"];?>';
+			$("#user_id").val(userid);
+			var data = ret.message;
+			var listHtml = "";
+			console.log(data);
+				var name = data.m_name,
+					introduce = data.m_introduce,
+					office_name = data.office_name,
+					brand     = data.brand,
+					pic       = data.m_photo.split(",");
+					$("#name").html(name);
+					$("#intro").html(introduce);
+					$("#shop").html(office_name);
+					$("#brand").html(brand);
+
+					var imgurl = "http://wgcapp.wgc2013.com"+pic[0];
+					$(".cai_photo img").attr("src",imgurl);
+
+		}
+	},'json')
+}
+
+(function (){
+	list();
+}())
+</script>
+</body>
+</html>

@@ -154,7 +154,12 @@ class SearchApp extends MallbaseApp
 	function user_design(){
 		$this->display('user_design.html');
 	}//个人中心项目分包
+	function user_dingdan(){
+		$this->display('user_dingdan.html');
+	}//个人中心项目分包
 	function xiadan(){
+		$id = $_GET['id'];
+		$this->assign('id',$id);
 		$this->display('xiadan.html');
 	}//个人中心设计分包
 	

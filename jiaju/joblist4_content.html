@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>推荐工人列表-微工程</title>
+	<link rel="stylesheet" href="">
+	<script type="text/javascript" src="/themes/mall/jiaju/styles/default/js/jquery-1.3.2.min.js"></script>
+</head>
+<style>
+	.weixiulist ul {
+		height: 40px;
+		line-height: 40px;
+		text-align: center;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	.weixiulist li {
+		float: left;
+	    overflow: hidden;
+	    text-overflow: ellipsis;
+	    white-space: nowrap;
+	    text-align: center;
+	    font-size: 14px;
+	}
+
+	#headerlist li {
+		font-size: 20px;
+		font-weight: bold;
+	}
+	
+	.weixiulist .title_box {
+		border-bottom: 2px solid #f3b115;
+	}
+
+	.weixiulist .gongjiang_title {
+		color: #fff;
+		font-size: 18px;
+		background-color: #f3b115;
+		font-weight: bold;
+		letter-spacing: 2px;
+		width: 120px;
+		line-height: 40px;
+		text-align: center;
+	}
+
+	.main {
+		margin-top: 20px;
+		width: 1100px;
+		height: auto;
+		overflow: hidden;
+	}
+
+	.weixiulist .gongjiang_left {
+		float: left;
+		width: 180px;
+		height: auto;
+		overflow: hidden;
+		padding-left: 20px;
+		padding-bottom: 50px;
+		border: 1px solid #f3b115;
+		border-left: none;
+		border-bottom: none;
+		border-radius: 0 5px 5px 0;
+		background: linear-gradient(to right, #fff 0%,#f7dea4 100%);
+			background: -webkit-linear-gradient(to right, #fff 0%,#f7dea4 100%);
+			background: -moz-linear-gradient(to right, #fff 0%,#f7dea4 100%);
+			background: -ms-linear-gradient(to right, #fff 0%,#f7dea4 100%);
+	}
+
+	.gongjiang_left li {
+		width: 180px;
+		text-align: left;
+		padding-left: 20px;
+		border-bottom: 1px solid #f3b115;
+		cursor: pointer;
+	}
+
+	.gongjiang_left li:hover {
+		color:#f3b115;
+	}
+
+	.weixiulist .gongjiang_right {
+		float: right;
+		width: 1115px;
+	}
+
+	.gongjiang_right li {
+		float: left;
+		width: 180px;
+		height: 280px;
+		margin-left: 42px;
+		border-bottom: 22px;
+	}
+
+	.gongjiang_right img {
+		width: 156px;
+		height: 160px;
+	}
+	.gongjiang_box {
+		line-height: 30px;
+	}
+	.gongjiang_box .name {
+		font-size: 16px;
+		font-weight: bold;
+		padding-right: 10px;
+	}
+
+	.gongjiang_box .gonglin {
+		padding-right: 8px;
+	}
+
+	.gongjiang_box .check_details {
+		font-size: 20px;
+		color: #fff;
+		letter-spacing: 2px;
+		font-weight: bold;
+		text-align: center;
+		background-color: #f3b115;
+		cursor: pointer;
+	}
+</style>
+<body>{include file=header.html}
+
+
+	<div style="width: 1100px;margin: 10px auto;text-align: left;">
+		<!-- 搜索 -->
+		<div style="height: 54px;" id="search_box">
+			<input id="key" type="text" style="height: 10px;width: 970px;padding: 20px;float: left;" placeholder="请输入关键词">
+			<img onclick="searchList()" src="themes/mall/jiaju/images/search.png" alt="" style="float: left;width: 84px;height: 54px;">
+		</div>
+
+		<div class="weixiulist" style="margin: 20px auto;position: relative;">
+			<div class="title_box">
+				<div class="gongjiang_title">设计师列表</div>	
+			</div>
+			
+			<div class="main">
+				<!-- 工匠分类 -->
+<!-- 				<div class="gongjiang_left">
+					<ul>
+						<li onclick="position(1,'施工队长',1)">施工工长</li>
+						<li onclick="position(2,'水电工长',1)">水电工长</li>
+						<li onclick="position(3,'空调安装工长',1)">空调安装工长</li>
+						<li onclick="position(4,'空调安装工',1)">空调安装工</li>
+						<li onclick="position(5,'泥水工',1)">泥水工</li>
+						<li onclick="position(6,'水电工',1)">水电工</li>
+						<li onclick="position(7,'电焊工',1)">电焊工</li>
+						<li onclick="position(8,'家具安装工',1)">家具安装工</li>       
+						<li onclick="position(9,'木工',1)">木工</li>
+						<li onclick="position(10,'扇灰工',1)">扇灰工</li>
+						<li onclick="position(11,'保洁工',1)">保洁工</li>
+						<li onclick="position(12,'杂工',1)">杂工</li>
+						<li onclick="position(35,'拆除工',1)">拆除工</li>
+						<li onclick="position(36,'油漆工',1)">油漆工</li>
+						<li onclick="position(32,'水电维修',1)">水电维修</li>
+						<li onclick="position(33,'空调维修',1)">空调维修</li>
+						<li onclick="position(34,'装饰维修',1)">装饰维修</li>
+						<li onclick="position(35,'设备维修',1)">设备维修</li>
+						<li onclick="position(17,'网络维修',1)">网络维修</li>
+					</ul>
+				</div> -->
+				<!-- 分类列表 -->
+				<div class="gongjiang_right">
+					<ul id="lists" style="height: auto;overflow: hidden;">
+						
+					</ul>
+					<!-- 分页 -->
+					<div id="pagelist" style="height: auto;width: 100%;margin: 20px auto;text-align: center;overflow: hidden;padding: 10px 0;">
+						
+					</div>
+				</div>
+
+			</div>
+			
+		</div>
+	</div>
+
+{include file=footer.html}
+</body>
+<script>
+	var serverUrl = "http://wgcapp.59jiaju.com/index.php/Home/",
+		page = 1,
+		uploadUrl = "http://wgcapp.59jiaju.com/",
+		id = '',
+		type = '';
+	$(function(){
+		jQuery.support.cors = true;
+		var UrlArray = window.location.href.split("&")[2];
+		var typess = UrlArray.slice(5,UrlArray.length)
+		cai_select(typess);
+		//alert(typess)
+	});
+
+	//设计师列表
+	function cai_select(typess){
+		var url = serverUrl+"Systemmsg/Jobdetails";
+		$.post(url,{
+			list    : 'ok',
+			page    : page,
+			type    : typess,
+			infotype : 'weixin'
+		},function(ret){
+			var data = ret.message;
+			var listHtml = '';
+			var html = '';
+			if(ret.code == 200){
+					var data = ret.message;
+					for (var i in data) {
+								
+					var id          = data[i].user_id;
+					var postion     = data[i].postion;
+					var type        = (data[i].type =='' || data[i].type == null)?'未分类':data[i].type;
+					var	name        = (data[i].name =='' || data[i].name == null)?'匿名':data[i].name;
+					var	zhiwei 	    = (data[i].zhiwei =='' || data[i].zhiwei == null)?'未填写':data[i].zhiwei;
+					var	guanzhu     = data[i].guanzhu;
+					var	bumen       = (data[i].bumen =='' || data[i].bumen == null)?'1':data[i].bumen;
+					var	huji        = (data[i].huji =='' || data[i].huji == null)?'未填写':data[i].huji;
+					var	gz_jingyan  = (data[i].gz_jingyan =='' || data[i].gz_jingyan == null)?'未填写':data[i].gz_jingyan;
+					var	userphoto   = uploadUrl + data[i].userphoto;
+						
+					if(name != '匿名'){
+						listHtml += '<li>';
+							listHtml += '<div class="gongjiang_box">';
+								listHtml += '<img src="'+userphoto+'" alt="">';
+								listHtml += '<div><span class="name">'+name+'</span></div>';
+								listHtml += '<div><span class="gonglin">工龄:<span style="color:red;">'+bumen+'年</span></span><span>分类:'+zhiwei+'</span></div>';
+								listHtml += '<div class="check_details" title="'+name+'" onclick="openConten('+id+')">查看详情</div>';
+							listHtml += '</div>';
+						listHtml += '</li>';
+					}
+					
+				}
+
+				html += '<a style="padding:3px 10px;background:red;color:#fff;width: 50px;border:1px solid red;cursor: pointer;" onclick="nextpage('+typess+')">下一页</a>';
+			   
+				$("#lists").show();
+				$("#lists").append(listHtml);
+				$('#pagelist').html(html);
+				$('#search_box').html('<input id="key" type="text" style="height: 10px;width: 970px;padding: 20px;float: left;" placeholder="请输入关键词"><img onclick="searchList('+typess+')" src="themes/mall/jiaju/images/search.png" alt="" style="float: left;width: 84px;height: 54px;">');
+				
+			}else if(ret.code == 202)	{
+				$("#lists").html('<div style="border: none;width:148px;margin:50px auto;" class="empty"><img src="/themes/mall/jiaju/images/empty.png"/></div>');
+				$('#pagelist').html('<a style="padding:3px 10px;background:red;color:#fff;width: 50px;border:1px solid red;cursor: pointer;" onclick="uppage('+typess+')">上一页</a>');
+			}else{
+				return false;
+			}
+		
+		},"json");
+	}
+		
+	//打开详情
+	function openConten(id){
+		var url = 'index.php?app=search&act=joblist4_content_user&id='+id+'&name=详细介绍';
+		window.open(url);
+	}
+
+	//分类选择
+	function position(id,type,page){
+		var ids = id;
+		var url = serverUrl+"Systemmsg/Jobdetails";
+		$.post(url,{
+			list    : 'ok',
+			page    : page,
+			type    : ids,
+			infotype : type
+		},function(ret){
+			var data = ret.message;
+			var listHtml = '';
+			var html = '';
+			if(ret.code == 200){
+					var data = ret.message;
+					for (var i in data) {
+								
+					var id          = data[i].user_id;
+					var postion     = data[i].postion;
+					var type        = (data[i].type =='' || data[i].type == null)?'未分类':data[i].type;
+					var	name        = (data[i].name =='' || data[i].name == null)?'匿名':data[i].name;
+					var	zhiwei 	    = (data[i].zhiwei =='' || data[i].zhiwei == null)?'未填写':data[i].zhiwei;
+					var	guanzhu     = data[i].guanzhu;
+					var	bumen       = (data[i].bumen =='' || data[i].bumen == null)?'1':data[i].bumen;
+					var	huji        = (data[i].huji =='' || data[i].huji == null)?'未填写':data[i].huji;
+					var	gz_jingyan  = (data[i].gz_jingyan =='' || data[i].gz_jingyan == null)?'未填写':data[i].gz_jingyan;
+					var	userphoto   = uploadUrl + data[i].userphoto;
+						
+					if(name != '匿名'){
+						listHtml += '<li>';
+							listHtml += '<div class="gongjiang_box">';
+								listHtml += '<img src="'+userphoto+'" alt="">';
+								listHtml += '<div><span class="name">'+name+'</span></div>';
+								listHtml += '<div><span class="gonglin">工龄:<span style="color:red;">'+bumen+'年</span></span><span>分类:'+zhiwei+'</span></div>';
+								listHtml += '<div class="check_details" title="'+name+'" onclick="openConten('+id+')">查看详情</div>';
+							listHtml += '</div>';
+						listHtml += '</li>';
+					}
+				}
+				if(page != 1){
+					html += '<a style="padding:3px 10px;background:red;color:#fff;width: 50px;border:1px solid red;margin-right: 50px;cursor: pointer;" onclick="uppage('+ids+')">上一页</a>';
+				}
+				html += '<a style="padding:3px 10px;background:red;color:#fff;width: 50px;border:1px solid red;cursor: pointer;" onclick="nextpage('+ids+')">下一页</a>';
+			   
+				$("#lists").show();
+				$("#lists").html(listHtml);
+				$('#pagelist').html(html);
+				$('#search_box').html('<input id="key" type="text" style="height: 10px;width: 970px;padding: 20px;float: left;" placeholder="请输入关键词"><img onclick="searchList('+ids+')" src="themes/mall/jiaju/images/search.png" alt="" style="float: left;width: 84px;height: 54px;">');
+				
+			}else if(ret.code == 202){
+				$("#lists").html('<div style="border: none;width:148px;margin:50px auto;" class="empty"><img src="/themes/mall/jiaju/images/empty.png"/></div>');
+				$('#pagelist').html('<a style="padding:3px 10px;background:red;color:#fff;width: 50px;border:1px solid red;cursor: pointer;" onclick="uppage('+ids+')">上一页</a>');
+			}else{
+				return false;
+			}
+		
+		},"json");
+	}
+
+	//分页
+	function uppage(id){
+		page --;
+		position(id,type,page);
+	}
+
+	function nextpage(id){
+		page ++;
+		position(id,type,page);
+	}
+
+	// 搜索工人
+	function searchList(id){
+		var key = $('#key').val();
+		var ids = id;
+		$.post(serverUrl+'Systemmsg/JobdetailsSearchs', {
+			keywods : key,
+			type : ids
+		}, function(ret) {
+			var data = ret.message;
+			var listHtml = '';
+			if(ret.code == 200){
+					var data = ret.message;
+					for (var i in data) {
+								
+						var id          = data[i].user_id;
+						var postion     = data[i].postion;
+						var type        = (data[i].type =='' || data[i].type == null)?'未分类':data[i].type;
+						var	name        = (data[i].name =='' || data[i].name == null)?'匿名':data[i].name;
+						var	zhiwei 	    = (data[i].zhiwei =='' || data[i].zhiwei == null)?'未填写':data[i].zhiwei;
+						var	guanzhu     = data[i].guanzhu;
+						var	bumen       = (data[i].bumen =='' || data[i].bumen == null)?'1':data[i].bumen;
+						var	huji        = (data[i].huji =='' || data[i].huji == null)?'未填写':data[i].huji;
+						var	gz_jingyan  = (data[i].gz_jingyan =='' || data[i].gz_jingyan == null)?'未填写':data[i].gz_jingyan;
+						var	userphoto   = uploadUrl + data[i].userphoto;
+							
+						if(name != '匿名'){
+							listHtml += '<li>';
+								listHtml += '<div class="gongjiang_box">';
+									listHtml += '<img src="'+userphoto+'" alt="">';
+									listHtml += '<div><span class="name">'+name+'</span></div>';
+									listHtml += '<div><span class="gonglin">工龄:<span style="color:red;">'+bumen+'年</span></span><span>分类:'+zhiwei+'</span></div>';
+									listHtml += '<div class="check_details" title="'+name+'" onclick="openConten('+id+')">查看详情</div>';
+								listHtml += '</div>';
+							listHtml += '</li>';
+						}
+					}
+				   
+					$("#lists").show();
+					$("#lists").html(listHtml);
+					$('#pagelist').html('');
+					$('#search_box').html('<input id="key" type="text" style="height: 10px;width: 970px;padding: 20px;float: left;" placeholder="请输入关键词"><img onclick="searchList('+ids+')" src="themes/mall/jiaju/images/search.png" alt="" style="float: left;width: 84px;height: 54px;">');
+					
+			}else if(ret.code == 202){
+				$("#lists").html('<div style="border: none;width:148px;margin:50px auto;" class="empty"><img src="/themes/mall/jiaju/images/empty.png"/></div>');
+			}else{
+				return false;
+			}
+		},'json');
+	}
+</script>
+</html>

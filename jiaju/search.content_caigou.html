@@ -234,7 +234,11 @@ section .aui-list .aui-list-item {
 		</div>
 
 		<div class="aui-content-padded aui-margin-b-15 aui-margin-t-15" style="width: 50%;margin: 0 auto;" onclick="yingying()">
-			<div class="aui-btn aui-btn-danger aui-btn-block">点击联系</div>
+			<div class="aui-btn aui-btn-danger aui-btn-block" style="width: 16%;left: 205px;height: 40px;line-height: 10px;">点击下单</div>
+			<input type="hidden" id="vid" />
+			<div class="vipbox" style="text-align: center;position: relative;right: 140px;margin-top: 20px;display: none;">
+				<span>你目前是普通用户无法继续下单，马上升级&nbsp;&nbsp;<a href="/index.php?app=search&act=vip" style="color: red;" target="_blank">VIP会员</a></span>
+			</div>
 		</div>
 	</div>
 	
@@ -301,13 +305,32 @@ function _trans_php_time_to_str(timestamp, n) {
 	}
 }
 function yingying(){
-	if(window.confirm('请使用微工程APP进行操作，是否前往去下载？')){
-		 window.open('http://wgcapp.59jiaju.com/apk/index.html');
-		 return true;
-	  }else{
-		 //alert("取消");
-		 return false;
-	 }
+	// if(window.confirm('请使用微工程APP进行操作，是否前往去下载？')){
+	// 	 window.open('http://wgcapp.59jiaju.com/apk/index.html');
+	// 	 return true;
+	//   }else{
+	// 	 //alert("取消");
+	// 	 return false;
+	//  }
+
+	$.post('http://wgcapp.wgc2013.com/index.php/Home/index/userCheck', {
+			user_id : '<?php echo $_SESSION["user_info"]["user_id"];?>',
+		}, function(ret) {
+			if(ret.code == 200){
+				$(".vipbox").hide();
+				var id = $("#vid").val();
+				window.open('/index.php?app=search&act=xiadan&id='+id);
+			}else if(ret.code == 202){
+				window.location.href = "/index.php?app=member&act=login&ret_url="
+				// var id = $("#vid").val();
+				// alert(id)
+				// window.open('/index.php?app=search&act=xiadan&id='+id);
+			}else if(ret.code == 203){
+				$(".vipbox").show();
+				return false;
+			}
+		},'json');
+	
 }
 
 function selectUser(){
@@ -320,6 +343,8 @@ function selectUser(){
 		if(ret.code == 200){
 			var data=ret.message;
 				    tel = data.mobile;
+				    var id = data.id;
+				    $("#vid").val(id)
 					$('#title').html(data.m_name);
 					$('#content').html('材料描述:  '+data.m_introduce);
 					//$('#time').html(_trans_php_time_to_str(data.addtime,2));

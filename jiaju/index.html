@@ -271,7 +271,7 @@ border:1px solid #808080;width:100%;height:66px;margin-bottom:3px;
 					$result=mysql_query($query);
 					while($rows1=@mysql_fetch_array($result)){
 						 
-						  echo  "<li style='height:24px;line-height:24px;margin-bottom:1px;'>";
+						  echo  "<li style='height:24px;line-height:24px;margin-bottom:1px;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;'>";
 						  echo  "<a target='_blank' href='index.php?app=search&act=content_caigou&id=".$rows1['id']."&cai_type=3'>";
 						  echo  "  <span style='float:right;margin-right:5px;'>".date('Y-m-d H:i:s',$rows1['addtime'])."</span>";
 						  echo  "&nbsp;".$rows1['m_name']."</a>";
@@ -304,7 +304,7 @@ border:1px solid #808080;width:100%;height:66px;margin-bottom:3px;
 					$result=mysql_query($query);
 					while($rows1=@mysql_fetch_array($result)){
 						 
-						  echo  "<li style='height:24px;line-height:24px;margin-bottom:1px;'>";
+						  echo  "<li style='height:24px;line-height:24px;margin-bottom:1px;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;'>";
 						  echo  "<a target='_blank' href='index.php?app=search&act=content_caigou&id=".$rows1['id']."&cai_type=2'>";
 						  echo  "  <span style='float:right;margin-right:5px;'>".date('Y-m-d H:i:s',$rows1['addtime'])."</span>";
 						  echo  "&nbsp;".$rows1['m_name']."</a>";
@@ -394,7 +394,7 @@ border:1px solid #808080;width:100%;height:66px;margin-bottom:3px;
 				<div class="divcss1" style="width:99%;height:200px;overflow:hidden">
 					<p style="width:100%;height:40px;background:#ccc;line-height:40px;">
 						<span style="float:left;font-size:18px;color:#333">推荐项目经理</span>
-						<a target="_blank" href="/index.php?app=search&act=joblist3_content&type=2&name=水电工长"><span style="float:right;font-size:18px;color:#333">更多>></span></a>
+						<a target="_blank" href="/index.php?app=search&act=joblist4_content&type=31&name=项目经理"><span style="float:right;font-size:18px;color:#333">更多>></span></a>
 					</p>
 					<p style="width:140px;float:left;height:200px;">
 						<a href="index.php?app=search&act=joblist2"><img style="height: auto;" class="allimg" src="/themes/mall/jiaju/styles/style/images/zhuangshilei.jpg"></a>
@@ -524,7 +524,7 @@ border:1px solid #808080;width:100%;height:66px;margin-bottom:3px;
 								  $bumen = ($rows1['bumen'] == "")?1:$rows1['bumen'];
 								  if($rows1['name'] != '匿名'){
 						
-									echo '<a target="_blank" href="index.php?app=search&act=joblist3_content_user&id='.$rows1['user_id'].'&name=详细介绍"><li style="float:left;cursor:pointer;height: 110px;overflow: hidden;width: 30%;margin:10px 8px 10px 0;background-color: #fff;padding-top: 20px;" title="'.$rows1['name'].'">';    
+									echo '<a target="_blank" href="index.php?app=search&act=joblist4_content_user&id='.$rows1['user_id'].'&name=详细介绍"><li style="float:left;cursor:pointer;height: 110px;overflow: hidden;width: 30%;margin:10px 8px 10px 0;background-color: #fff;padding-top: 20px;" title="'.$rows1['name'].'">';    
 									echo '	<div class="aui-media-list-item-inner"> ';       
 									echo '		<div class="aui-list-item-media" style="padding: 0 10px;height:100px;width: 80px;float:left;"> ';           
 									echo '			<img onerror="javascript:this.src=\'/themes/mall/jiaju/images/logo.jpg\';" src="http://wgcapp.59jiaju.com/'.$rows1['userphoto'].'" style="height:100px;width:80px;border-radius: 5px;margin:0 auto;">  ';
@@ -1117,7 +1117,7 @@ border:1px solid #808080;width:100%;height:66px;margin-bottom:3px;
 						html += '<a style="height:38px;" href="/index.php?app=search&act=gongjiaxunjia_content&id='+id+'" title="'+title+'" target="_blank">';
 							html += '<ul style="cursor:pointer;width:100%;height:38px;line-height:38px;margin-top:0;">';
 								html += '<li style="font-family: none;font-size:16px;color:#333;height:38px;width:44.33%;float:left;list-style:inside;margin-left:10px;">'+title+'</li>';
-								html += '<li style="font-family: none;font-size:16px;color:#333;height:38px;width:27.33%;float:left;">'+num+'&nbsp;'+unit+'</li>';
+								html += '<li title="'+num+'&nbsp;'+unit+'" style="font-family: none;font-size:16px;color:#333;height:38px;width:27.33%;float:left;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;">'+num+'&nbsp;'+unit+'</li>';
 								html += '<li style="font-family: none;font-size:12px;color:#999;height:38px;width:25.33%;float:left;">'+addtime+'</li>';
 							html += '</ul>';
 						html += '</a>';
