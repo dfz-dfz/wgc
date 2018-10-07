@@ -521,7 +521,7 @@ border:1px solid #808080;width:100%;height:66px;margin-bottom:3px;
 							$result=mysql_query($query);
 							while($rows1=@mysql_fetch_array($result)){
 								  
-								  $bumen = ($rows1['bumen'] == "")?1:$rows1['bumen'];
+								  $bumen = ($rows1['bumen'] == "")?'未填写':$rows1['bumen'].'年';
 								  if($rows1['name'] != '匿名'){
 						
 									echo '<a target="_blank" href="index.php?app=search&act=joblist4_content_user&id='.$rows1['user_id'].'&name=详细介绍"><li style="float:left;cursor:pointer;height: 110px;overflow: hidden;width: 30%;margin:10px 8px 10px 0;background-color: #fff;padding-top: 20px;" title="'.$rows1['name'].'">';    
@@ -534,7 +534,7 @@ border:1px solid #808080;width:100%;height:66px;margin-bottom:3px;
 									echo '				<div style="font-size:16px;color:#d71e14;font-weight: bold;">'.$rows1['name'].'</div>  ';          
 									echo '			</div>  ';
 									echo '			<div style="text-align:left;font-size:14px;color:#666"><span style="color:#fa1921; ">职位：</span>'.$cate[$rows1['postion']].'</div>    ';
-									echo '			<div style="text-align:left;font-size:14px;color:#666"><span style="color:#fa1921; ">从业经验：</span>'.$bumen.'年</div>  ';
+									echo '			<div style="text-align:left;font-size:14px;color:#666"><span style="color:#fa1921; ">从业经验：</span>'.$bumen.'</div>  ';
 									echo '			<div style="text-align:left;font-size:14px;color:#666"><span style="color:#fa1921; ">分类：</span>'.$rows1['type'].'</div>     ';
 									echo '			<div style="text-align:left;font-size:14px;color:#666"><span style="color:#fa1921; ">设计报价：</span></div>     ';
 									echo '		</div>    ';
@@ -550,47 +550,6 @@ border:1px solid #808080;width:100%;height:66px;margin-bottom:3px;
 				</div> 
 			</div>
 
-			<!-- 机电类 -->
-			<div class="divcss1p" style="width:100%;height:auto;overflow:hidden;float:left;">
-				
-				<div class="divcss1" style="width:99%;height:160px;overflow:hidden">
-					<ul id="" style="width:100%;height:auto;overflow:hidden;float:left;">
-						<?php
-						
-							$query="select * from ecm_member as A,ecm_gongyingshang as B where A.user_id=B.user_id and A.pai=1 and A.postion='13' and A.user_id<>'1473404764' order by A.user_id desc limit 4,16";
-							$result=mysql_query($query);
-							while($rows1=@mysql_fetch_array($result)){
-								  $bumen = ($rows1['bumen'] == "")?1:$rows1['bumen'];
-								  if($rows1['name'] != '匿名'){
-						
-									echo '<a target="_blank" href="index.php?app=search&act=joblist3_content_user&id='.$rows1['user_id'].'&name=详细介绍"><li style="float:left;cursor:pointer;height: 110px;overflow: hidden;width: 30%;margin:10px 8px 10px 0;background-color: #fff;padding-top: 20px;" title="'.$rows1['name'].'">';    
-									echo '	<div class="aui-media-list-item-inner"> ';       
-									echo '		<div class="aui-list-item-media" style="padding: 0 10px;height:100px;width: 80px;float:left;"> ';           
-									echo '			<img onerror="javascript:this.src=\'/themes/mall/jiaju/images/logo.jpg\';" src="http://wgcapp.59jiaju.com/'.$rows1['userphoto'].'" style="height:80px;width:80px;border-radius: 5px;margin:0 auto;">  ';      
-									echo '			<div class="aui-list-item-text">  ';              
-									echo '				<div style="text-align:center;font-size:14px;color:#333">'.$rows1['name'].'</div>  ';          
-									echo '			</div>  ';
-									echo '		</div>      ';  
-									echo '		<div class="aui-list-item-inner"> ';        
-									echo '			<div class="aui-list-item-text aui-ellipsis-1">';
-									echo '				<img src="/themes/mall/jiaju/images/xingxing.jpg" style="width:60px;">';
-									echo '			</div>        	';
-									echo '			<div style="text-align:left;font-size:14px;color:#666">口碑：'.rand(0,9).'.0分</div>   ';
-									echo '			<div style="text-align:left;font-size:14px;color:#666">分类：'.$rows1['type'].'</div>     ';   	
-									echo '			<div style="text-align:left;font-size:14px;color:#666">工种：'.$cate[$rows1['postion']].'</div>    ';    	
-									echo '			<div style="text-align:left;font-size:14px;color:#666">从业：'.$bumen.'年</div>  ';     
-									echo '		</div>    ';
-									echo '	</div>';
-									echo '</li></a>';
-								}
-							}
-							
-						?>
-					
-					</ul>
-					
-				</div> 
-			</div>
 		</div>
 
 		<div class="divcss2p" style="width:35%;height:215px;overflow:hidden;float:left;">

@@ -111,13 +111,10 @@
 				var logoHtml = '<div>请<a href="index.php?app=member&act=login&ret_url=" target="_blank" style="cursor:pointer;color:blue;">登录</a>之后在联系</div>';
 				$('.link').html(logoHtml);
 			}else if(ret.code == 203){
-				var toVip = '';
-				toVip += '<div>';
-					toVip += '请<a style="cursor:pointer;color:blue;">购买单次服务</a>';
-					toVip += '或者<a href="index.php?app=search&act=vip" target="blank" style="cursor:pointer;color:blue;">升级VIP会员</a>之后在查看';
-				toVip += '</div>';
-
-				$('.link').html(toVip);
+				$.post(url+'jingyi.php/Home/Jianli/projectSubcontract_listss_content', {id : id}, function(ret) {
+					var mobiles = (ret.message.mobile == '' || ret.message.mobile == null)?'该信息没有填写联系方式!':'联系方式：'+ret.message.mobile;
+					$('.link').html('<div id="mobile">'+mobiles+'</div>');
+				},"json");
 			}
 		},'json');
 	}
