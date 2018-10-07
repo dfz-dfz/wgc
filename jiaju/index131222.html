@@ -1,0 +1,1595 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<base href="http://www.59jiaju.com/" />
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7 charset=UTF-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>商城首页 - 59家居商城</title>
+<meta name="description" content="59，59家居，59家居商城，装修、材料、家具、饰品一站式服务，让装修更简单，价格更透明！！" />
+<meta name="keywords" content="59，59家居，家居商城，59家居商城，59家居装修商城，办公室装修，写字楼装修，材料，装修材料，家居，办公家具，家居，家具，装修，装饰" />
+<link type="text/css" href="http://www.59jiaju.com/themes/mall/jiaju/styles/default/css/catalog.css" rel="stylesheet"  />
+<link type="text/css" href="http://www.59jiaju.com/themes/mall/jiaju/styles/default/css/main.css" rel="stylesheet"  />
+<link type="text/css" href="http://www.59jiaju.com/themes/mall/jiaju/styles/default/css/footer.css" rel="stylesheet" />
+<script type="text/javascript" src="index.php?act=jslang"></script>
+<script type="text/javascript" src="http://www.59jiaju.com/includes/libraries/javascript/jquery.js" charset="utf-8"></script>
+<script type="text/javascript" src="http://www.59jiaju.com/includes/libraries/javascript/ecmall.js" charset="utf-8"></script>
+<script type="text/javascript" src="http://www.59jiaju.com/includes/libraries/javascript/cart.js" charset="utf-8"></script>
+<script type="text/javascript" src="http://www.59jiaju.com/themes/mall/jiaju/styles/default/js/main.js" charset="utf-8"></script>
+<script type="text/javascript" src="http://www.59jiaju.com/includes/libraries/javascript/kissy/build/switchable/switchable-pkg.js"></script>
+<script type="text/javascript">
+
+//<!CDATA[
+
+var SITE_URL = "http://www.59jiaju.com";
+
+var PRICE_FORMAT = '￥%s';
+
+//]]>
+
+</script>
+
+<script type="text/javascript" src="http://www.59jiaju.com/themes/mall/jiaju/styles/default/js/jquery-1.3.2.min.js"></script>
+<script type="text/javascript" src="http://www.59jiaju.com/themes/mall/jiaju/styles/default/js/lrtk.js"></script>
+<script type="text/javascript" src="http://www.59jiaju.com/themes/mall/jiaju/styles/default/js/hover.js"></script>
+<script>
+  function lxfEndtime(){
+          $(".lxftime").each(function(){
+                var lxfday=$(this).attr("lxfday");//用来判断是否显示天数的变量
+                var endtime = new Date($(this).attr("endtime")).getTime();//取结束日期(毫秒值)
+                var nowtime = new Date().getTime();        //今天的日期(毫秒值)
+                var youtime = endtime-nowtime;//还有多久(毫秒值)
+                var seconds = youtime/1000;
+                var minutes = Math.floor(seconds/60);
+                var hours = Math.floor(minutes/60);
+                var days = Math.floor(hours/24);
+                var CDay= days ;
+                var CHour= hours % 24;
+                var CMinute= minutes % 60;
+                var CSecond= Math.floor(seconds%60);//"%"是取余运算，可以理解为60进一后取余数，然后只要余数。
+                if(endtime<=nowtime){
+                        $(this).html("已过期")//如果结束日期小于当前日期就提示过期啦
+                        }else{
+                                if($(this).attr("lxfday")=="no"){
+                                        $(this).html("<i>剩余时间：</i><span>"+CHour+"</span>时<span>"+CMinute+"</span>分<span >"+CSecond+"</span>秒");          //输出没有天数的数据
+                                        }else{
+                        $(this).html("<span class='f24'>"+days+"</span><span>天</span><span  class='f24'>"+CHour+"</span><span>时</span><span  class='f24'>"+CMinute+"</span><span>分</span><span  class='f24'>"+CSecond+"</span><span>秒</span>");          //输出有天数的数据
+                                }
+                        }
+          });
+   setTimeout("lxfEndtime()",1000);
+  };
+$(function(){
+      lxfEndtime();
+   });
+</script>
+
+ <style type="text/css">
+<!--
+.STYLE1 {
+	font-size: 18px;
+	color: #006600;
+	font-weight: bold;
+}
+-->
+ </style>
+ <base target="_blank" />
+</head>
+
+<body>
+
+<div id="site-nav" class="w-full">
+
+   <div class="shoptop w clearfix">
+
+      <div class="login_info">
+		<?php
+			if(!$_COOKIE["lai_username"])
+			{
+				echo '您好 游客&nbsp;&nbsp;&nbsp;';
+				echo '<a href="index.php?app=member&amp;act=login&amp;ret_url=">登录</a>
+						<a href=" http://www.59jiaju.com/gx/reg.html">注册</a>';
+			}
+			else
+			{
+				echo '您好，<a href="index.php?app=member" style="color:#0000ff;">'.$_COOKIE["lai_username"].'</a>&nbsp;&nbsp;&nbsp;';
+				echo '<a href="index.php?app=member&amp;act=logout">退出</a>&nbsp;&nbsp;&nbsp;';
+				echo '<a href="index.php?app=message&amp;act=newpm">站内消息</a>';
+			}
+		?>
+      </div>
+
+	
+
+      <ul class="quick-menu"><li class="item">
+
+         <div class="menu iwantbuy">
+
+            <a class="menu-hd" href="index.php?app=category">我要买<b></b></a>
+
+            <div class="menu-bd">
+
+               <div class="menu-bd-panel">
+
+                  <div>
+
+                     <p><a href="index.php?app=category">商品分类</a></p>
+
+                     <p><a href="www.59jiaju.com">大家正在买</a></p>
+                  </div>
+               </div>
+            </div>
+         </div>
+
+
+
+         </li>
+
+         <li class="item">
+
+            <div class="menu mytb">
+
+               <a class="menu-hd" href="index.php?app=member">我是买家<b></b></a>
+
+               <div class="menu-bd">
+
+                  <div class="menu-bd-panel">
+
+                     <div>
+
+                        <p><a href="index.php?app=buyer_order">已买到的宝贝</a></p>
+
+                        <p><a href="index.php?app=friend">我的好友</a></p>
+
+                        <p><a href="index.php?app=my_question">我的咨询</a></p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </li>
+
+         <li class="item">
+
+            <div class="menu seller-center">
+
+               <a class="menu-hd" href="index.php?app=member">卖家中心<b></b></a>
+
+               <div class="menu-bd">
+
+                  <div class="menu-bd-panel">
+
+                     <div>
+
+                        <p><a href="index.php?app=seller_order">已卖出的宝贝</a></p>
+
+                        <p><a href="index.php?app=my_goods">出售中的宝贝</a></p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </li>
+
+         <li class="service">
+
+            <a href="index.php?app=article&amp;code=help">帮助中心</a>         </li>
+
+         <li class="item">
+
+            <div class="menu mini-cart">
+
+               <a class="ac" href="index.php?app=cart">
+
+                  <s></s>购物车<strong>0</strong>件<b></b>               </a>
+
+               <div class="mini-cart-content menu-bd">
+
+                  <dl class="mini-cart-bd">
+
+                     
+                     <dt class="mt10 fleft mini-cart-empty">您购物车里还没有任何宝贝</dt>
+
+                     
+                     <dd class="mini-cart-bt">
+
+                        <a href="index.php?app=cart">查看我的购物车</a>                     </dd>                          
+                  </dl>
+               </div>
+            </div>
+         </li>
+
+         <li class="service">
+
+            <a hidefocus="true"  target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=461666210&site=qq&menu=yes">在线客服</a>         </li>
+
+         <li class="item">
+
+            <div class="menu favorite">
+
+               <a class="menu-hd" href="index.php?app=my_favorite">收藏夹<b></b></a>
+
+               <div class="menu-bd">
+
+                  <div class="menu-bd-panel">
+
+                     <div>
+
+                       <p><a href="index.php?app=my_favorite">收藏的宝贝</a></p>
+
+                       <p><a href="index.php?app=my_favorite&amp;type=store">收藏的店铺</a></p>
+                    </div>
+                 </div>
+               </div>
+           </div>
+         </li>
+
+         <li class="item" style="background:none">
+
+            <div class="menu sites">
+
+               <a class="menu-hd" href="javascript:;">网站导航<b></b></a>
+
+               <div class="menu-bd padding10">
+
+                                 </div>
+            </div>
+        </li>
+     </ul>
+
+   </div>
+
+  <div class="fixed">
+
+    <!--  <a id="gotop" href="javascript:window.scroll(0,0)" class="gotop"></a>
+
+       <a href="javascript:;" class="feedbacklink"></a>
+
+     <a href="javascript:;" class="zhaoping"></a>-->
+
+   </div>
+
+   
+
+   
+
+   <style>
+
+.fixed-top /* 头部固定 */{position:fixed;bottom:auto;top:200px;}
+
+.fixed-bottom /* 底部固定 */{position:fixed;bottom:0px;top:auto;}
+
+.fixed-left /* 左侧固定 */{position:fixed;right:auto;left:0px;}
+
+.fixed-right /* 右侧固定 */{position:fixed;right:0px;left:auto;}
+
+/* 上面的是除了IE6的主流浏览器通用的方法 */
+
+* html,* html body /* 修正IE6振动bug */{background-image:url(about:blank);background-attachment:fixed;}
+
+* html .fixed-top /* IE6 头部固定 */{position:absolute;bottom:auto;top:expression(eval(document.documentElement.scrollTop)+200);}
+
+* html .fixed-right /* IE6 右侧固定 */ {position:absolute;right:auto;left:expression(eval(document.documentElement.scrollLeft+document.documentElement.clientWidth-this.offsetWidth)-(parseInt(this.currentStyle.marginLeft,10)||0)-(parseInt(this.currentStyle.marginRight,10)||0));}
+
+* html .fixed-bottom /* IE6 底部固定  */{position:absolute;bottom:auto;top:expression(eval(document.documentElement.scrollTop+document.documentElement.clientHeight-this.offsetHeight-(parseInt(this.currentStyle.marginTop,10)||0)-(parseInt(this.currentStyle.marginBottom,10)||0)));}
+
+* html .fixed-left /* IE6 左侧固定 */{position:absolute;right:auto;left:expression(eval(document.documentElement.scrollLeft));}
+
+</style>
+
+ 
+
+
+
+<DIV id="backi_OK" class="fixed-right fixed-top" style="z-index:9999;">
+
+	<table border="0" cellpadding="0" cellspacing="0" width="120">
+
+	<tr><td style="padding:0"><a hidefocus="true" id="hidden" href="javascript:void(0);" title="close"><IMG src="http://www.59jiaju.com/themes/mall/jiaju/styles/default/images/1.gif" border=0></a></td></tr>
+
+	
+
+    
+
+	<tr><td style="padding:0"><a hidefocus="true"  target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=2355428700&site=qq&menu=yes"><img border="0" SRC='http://www.59jiaju.com/themes/mall/jiaju/styles/default/images/q1.jpg'  alt="装修设计咨询"></a></td></tr>
+    
+    <tr><td style="padding:0"><a hidefocus="true"  target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=2355428680&site=qq&menu=yes"><img border="0" SRC='http://www.59jiaju.com/themes/mall/jiaju/styles/default/images/q2.jpg'  alt="商家入驻咨询"></a></td></tr>
+
+
+	
+
+	<tr><td style="padding:0"><a hidefocus="true"  target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=2355428700&site=qq&menu=yes"><img border="0" SRC='http://www.59jiaju.com/themes/mall/jiaju/styles/default/images/q3.jpg'  alt="技术支持咨询"></a></td></tr>
+	<tr><td style="padding:0"><a hidefocus="true"  target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=2355428680&site=qq&menu=yes"><img border="0" SRC='http://www.59jiaju.com/themes/mall/jiaju/styles/default/images/q4.jpg'  alt="招标咨询"></a></td></tr>
+	<tr><td style="padding:0"><a hidefocus="true"  target="_blank" href="http://www.59jiaju.com/gx/process.html"><img border="0" SRC='http://www.59jiaju.com/themes/mall/jiaju/styles/default/images/btn.jpg'  alt="入驻流程"></a></td></tr>
+	<tr><td style="padding:0"><a hidefocus="true"  target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=2355428680&site=qq&menu=yes"><img border="0" SRC='http://www.59jiaju.com/themes/mall/jiaju/styles/default/images/8.jpg'  alt="广告业务联系"></a></td></tr>
+
+    
+	
+
+ 
+
+	
+
+	<tr><td style="padding:0"><A hidefocus="true"  href="index.php?app=cart"><IMG src="http://www.59jiaju.com/themes/mall/jiaju/styles/default/images/6.gif" border=0 alt="我的购物车"></A></td></tr>
+
+    <tr><td style="padding:0"><A hidefocus="true" id="gotop" href="javascript:void(0);"><IMG src="http://www.59jiaju.com/themes/mall/jiaju/styles/default/images/7.gif" border=0></A></td></tr>
+
+	</table>
+
+	</DIV>
+   
+
+   
+
+</div><div id="header" class="w-full">
+      <div class="shop-t w clearfix" style="padding:10px">
+      <div class="logo">
+         <a href="http://www.59jiaju.com" title="59家居商城" style="display:block; overflow:hidden; padding-top:20px; padding-bottom:20px;">
+		<img alt="59家居商城" src="data/files/mall/settings/site_logo.png" width="217" height="49" />
+	</a>
+      </div>
+
+
+
+      <div class="top-search">
+         <ul class="clearfix">
+            <li class="current" id="index">商品</li>
+            <li  id="store">店铺</li>
+            <!--<li  id="groupbuy">团购</li>-->
+         </ul>
+         <div class="top-search-box">
+           <form method="GET" action="index.php?app=search">
+               <input type="hidden" name="app" value="search" />
+               <input type="hidden" name="act" value="index" />
+               <input type="text"   name="keyword" value="" class="keyword kw_bj index_bj " />
+               <input type="submit" value="" class="submit" hidefocus="true" />
+           </form>
+         </div>
+         <div class="all-cate">
+            <a href="index.php?app=category">商品分类</a><br />
+            <a href="index.php?app=category&amp;act=store">店铺分类</a>
+         </div>
+      </div>
+   </div>
+   <div class="mainnav w-full pb10">
+         <div class="menu">
+<ul>
+<li class="line"><a href="http://www.59jiaju.com">首页</a></li>
+<li class="line"><a href="http://www.59jiaju.com/gs/index.php?m=content&c=index&a=lists&catid=33">装修公司</a></li>
+<li class="line"><a href="http://www.59jiaju.com/sj/">设计师</a></li>
+<li class="line"><a href="http://www.59jiaju.com/zp/">专业招聘</a></li>
+<li class="line"><a href="http://www.59jiaju.com/zb/">询价清单</a></li>
+<li class="line"><a href="http://www.59jiaju.com/zb/index.php?m=wct">工人与施工队</a></li>
+
+</ul>
+</div>
+   </div>
+</div>
+<div class="index_main">
+    <div class="xxd">
+	     <div class="xxdt"><a href="http://www.59jiaju.com/index.php?app=search&act=store"><img src="/gx/images/xxdt.jpg" /></a></div>
+		 <div class="xxdl">
+		    <ul>
+			 <li  onClick="return click_a('divOne_11')" ><a href="index.php?app=search&act=store&region_name=白云区">白云区</a></li>
+			 <li  onClick="return click_a('divOne_12')" ><a href="index.php?app=search&act=store&region_name=天河区">天河区</a></li>
+			 <li  onClick="return click_a('divOne_13')" ><a href="index.php?app=search&act=store&region_name=海珠区">海珠区</a></li>
+			 <li  onClick="return click_a('divOne_14')" ><a href="index.php?app=search&act=store&region_name=荔湾区">荔湾区</a></li>
+			 <li  onClick="return click_a('divOne_15')" ><a href="index.php?app=search&act=store&region_name=番禺区">番禺区</a></li>
+			 <li  onClick="return click_a('divOne_16')" ><a href="index.php?app=search&act=store&region_name=越秀区">越秀区</a></li>
+			 <li  onClick="return click_a('divOne_7')" ><a href="index.php?app=search&act=store&region_name=黄埔区">黄埔区</a></li>
+			 <li  onClick="return click_a('divOne_8')" ><a href="index.php?app=search&act=store&region_name=花都区">花都区</a></li>
+			 <li  onClick="return click_a('divOne_9')" ><a href="index.php?app=search&act=store&region_name=南沙区">南沙区</a></li>
+			 <li  onClick="return click_a('divOne_10')" ><a href="index.php?app=search&act=store&region_name=萝岗区">萝岗区</a></li>
+		    </ul>
+		  </div>				
+	</div>
+	<div class="clear"></div>
+</div>
+<div id="main">
+   <div class="main-top w clearfix">
+      <div class="left" area="left" widget_type="area">
+         
+<div id="_widget_471" name="jiaju_catalog" widget_type="widget" class="widget">
+<div class="catalog box">
+   <div class="catebody">
+      <div class="title"><a href="index.php?app=category" target="_blank"><h2>所有商品分类</h2></a></div>
+      <ul class="content clearfix">
+                  <li class="item">
+            <div class="border-nr">
+               <h3><a href="index.php?app=search&cate_id=6417">装修材料</a></h3>
+               <p>            
+                   <a href="index.php?app=search&amp;cate_id=6421" >石膏板</a>
+                              	<a href="index.php?app=search&amp;cate_id=6432" >龙骨</a>
+                              	<a href="index.php?app=search&cate_id=3436" >软膜天花</a>
+                              	<a href="index.php?app=search&amp;cate_id=6434" >硅钙板</a>
+                              	<a href="index.php?app=search&amp;cate_id=6435" >石膏线</a>
+                              	<a href="index.php?app=search&cate_id=3701" >吸音天花</a>
+                              	<a href="index.php?app=search&cate_id=3704" >复合天花</a>
+                              	<a href="index.php?app=search&cate_id=3705" >天花辅材</a>
+                              	<a href="index.php?app=search&amp;cate_id=6439" >天板等板材</a>
+                              	<a href="index.php?app=search&amp;cate_id=6440" >隔断</a>
+                              	<a href="index.php?app=search&amp;cate_id=6441" >不锈钢</a>
+                              	<a href="index.php?app=search&amp;cate_id=6442" >铝型材</a>
+                              	<a href="index.php?app=search&amp;cate_id=6443" >钢板等型材</a>
+                              	<a href="index.php?app=search&amp;cate_id=6444" >钢木楼梯</a>
+								<a href="index.php?app=search&amp;cate_id=6423" >地板</a>
+                              	<a href="index.php?app=search&amp;cate_id=6445" >瓷片</a>
+                              	<a href="index.php?app=search&amp;cate_id=6446" >马赛克</a>
+                              	<a href="index.php?app=search&amp;cate_id=6447" >瓦</a>
+                              	<a href="index.php?app=search&amp;cate_id=6448" >石材</a>
+                              	<a href="index.php?app=search&amp;cate_id=6449" >玻璃石膏</a>
+                              	<a href="index.php?app=search&amp;cate_id=6450" >地毯</a>
+                              	<a href="index.php?app=search&amp;cate_id=6451" >地毯辅材</a>
+                              	<a href="index.php?app=search&amp;cate_id=6452" >墙纸辅材</a>
+                              	<a href="index.php?app=search&amp;cate_id=6453" >PVC地板</a>
+                              	<a href="index.php?app=search&amp;cate_id=6493" >墙纸</a>
+			
+                                   </p>
+                <div class="cline"></div>
+             </div>
+             <div class="cateover" >
+			 	<div style=" height:160px;">
+                                <dl class="clearfix" >
+                   <dt class="fleft"><a href="index.php?app=search&amp;cate_id=6420" >隔断/吊顶/基建/板材/型材/玻璃</a></dt>
+                   <dd class="fleft">   
+                              	<a href="index.php?app=search&amp;cate_id=6421" >石膏板</a>
+                              	<a href="index.php?app=search&amp;cate_id=6432" >龙骨</a>
+                              	<a href="index.php?app=search&cate_id=3436" >软膜天花</a>
+                              	<a href="index.php?app=search&amp;cate_id=6434" >硅钙板</a>
+                              	<a href="index.php?app=search&amp;cate_id=6435" >石膏线</a>
+                              	<a href="index.php?app=search&cate_id=3701" >吸音天花</a>
+                              	<a href="index.php?app=search&cate_id=3704" >复合天花</a>
+                              	<a href="index.php?app=search&cate_id=3705" >天花辅材</a>
+                              	<a href="index.php?app=search&amp;cate_id=6439" >天板等板材</a>
+                              	<a href="index.php?app=search&amp;cate_id=6440" >隔断</a>
+                              	<a href="index.php?app=search&amp;cate_id=6441" >不锈钢</a>
+                              	<a href="index.php?app=search&amp;cate_id=6442" >铝型材</a>
+                              	<a href="index.php?app=search&amp;cate_id=6443" >钢板等型材</a>
+                              	<a href="index.php?app=search&amp;cate_id=6444" >钢木楼梯</a>
+								<a href="index.php?app=search&amp;cate_id=6444" >玻璃</a>		  
+										  
+                                         </dd>
+                </dl>
+                                <dl class="clearfix" >
+                   <dt class="fleft"><a href="index.php?app=search&amp;cate_id=6422" >瓷砖/地板/地毯/大理石/墙纸</a></dt>
+                   <dd class="fleft">
+				   				<a href="index.php?app=search&amp;cate_id=5508" >瓷砖</a>
+                              	<a href="index.php?app=search&amp;cate_id=6423" >地板</a>
+                              	<a href="index.php?app=search&amp;cate_id=6445" >瓷片</a>
+                              	<a href="index.php?app=search&amp;cate_id=6446" >马赛克</a>
+                              	<a href="index.php?app=search&amp;cate_id=6447" >瓦</a>
+                              	<a href="index.php?app=search&amp;cate_id=6448" >石材</a>
+                              	<a href="index.php?app=search&amp;cate_id=6449" >玻璃石膏</a>
+                              	<a href="index.php?app=search&amp;cate_id=6450" >地毯</a>
+                              	<a href="index.php?app=search&amp;cate_id=6451" >地毯辅材</a>
+                              	<a href="index.php?app=search&amp;cate_id=6452" >墙纸辅材</a>
+                              	<a href="index.php?app=search&amp;cate_id=6453" >PVC地板</a>
+                              	<a href="index.php?app=search&amp;cate_id=6652" >墙纸</a>
+								
+								<div class="h30"></div>
+                                         </dd>
+                </dl>
+                                <dl class="clearfix" >
+                   <dt class="fleft"><a href="index.php?app=search&amp;cate_id=6424" >门窗/五金/窗帘</a></dt>
+                   <dd class="fleft">
+                                   
+                              	<a href="index.php?app=search&amp;cate_id=6425" >门窗</a>
+                              	<a href="index.php?app=search&amp;cate_id=6454" >锁</a>
+                              	<a href="index.php?app=search&amp;cate_id=6455" >拉手</a>
+                              	<a href="index.php?app=search&amp;cate_id=6456" >磁吸</a>
+                              	<a href="index.php?app=search&amp;cate_id=6457" >铝合金门窗</a>
+                              	<a href="index.php?app=search&amp;cate_id=6458" >门控五金</a>
+                              	<a href="index.php?app=search&amp;cate_id=6459" >五金配件</a>
+                              	<a href="index.php?app=search&amp;cate_id=6460" >五金工具</a>
+                              	<a href="index.php?app=search&amp;cate_id=6461" >厨饰五金</a>
+                              	<a href="index.php?app=search&amp;cate_id=6462" >家居布艺</a>
+								<div class="h30"></div>
+                                         </dd>
+                </dl>
+				</div>
+				<div style="height:auto;">
+                                <dl class="clearfix" >
+                   <dt class="fleft"><a href="index.php?app=search&amp;cate_id=6426" >机电/灯饰/开关/插座</a></dt>
+                   <dd class="fleft">
+                                        
+                              	<a href="index.php?app=search&amp;cate_id=6427" >灯盘</a>
+                              	<a href="index.php?app=search&amp;cate_id=6463" >筒灯</a>
+                              	<a href="index.php?app=search&amp;cate_id=6464" >射灯</a>
+                              	<a href="index.php?app=search&amp;cate_id=6465" >T5支架</a>
+                              	<a href="index.php?app=search&amp;cate_id=6466" >格珊灯盘</a>
+                              	<a href="index.php?app=search&amp;cate_id=6467" >吊灯罩</a>
+                              	<a href="index.php?app=search&amp;cate_id=6468" >台灯</a>
+                              	<a href="index.php?app=search&amp;cate_id=6469" >床头灯</a>
+                              	<a href="index.php?app=search&amp;cate_id=6470" >工艺灯</a>
+                              	<a href="index.php?app=search&amp;cate_id=6471" >LED灯</a>
+                              	<a href="index.php?app=search&amp;cate_id=6472" >监控设备</a>
+                              	<a href="index.php?app=search&amp;cate_id=6473" >防盗报警</a>
+                              	<a href="index.php?app=search&amp;cate_id=6474" >消防设备</a>
+                              	<a href="index.php?app=search&amp;cate_id=6475" >门禁考勤</a>
+                              	<a href="index.php?app=search&amp;cate_id=6476" >家居智能</a>
+                              	<a href="index.php?app=search&amp;cate_id=6477" >防雷电设备</a>
+                              	<a href="index.php?app=search&amp;cate_id=6478" >T8管</a>
+								<a href="index.php?app=search&amp;cate_id=6519" >抽风机</a>
+                              	<a href="index.php?app=search&amp;cate_id=6521" > 空调</a>
+                                         </dd>
+                </dl>
+                                <dl class="clearfix" >
+                   <dt class="fleft"><a href="index.php?app=search&amp;cate_id=6428" >地材/涂料/防水/粘合剂/辅材</a></dt>
+                   <dd class="fleft">
+                                       
+                              	<a href="index.php?app=search&amp;cate_id=6429" >腻子</a>
+                              	<a href="index.php?app=search&amp;cate_id=6479" >乳胶漆</a>
+                              	<a href="index.php?app=search&amp;cate_id=6480" >木器漆</a>
+                              	<a href="index.php?app=search&amp;cate_id=6481" >内外墙漆</a>
+                              	<a href="index.php?app=search&amp;cate_id=6482" >艺术涂料</a>
+                              	<a href="index.php?app=search&amp;cate_id=6483" >胶粘剂</a>
+                              	<a href="index.php?app=search&amp;cate_id=6484" >粘合剂</a>
+                              	<a href="index.php?app=search&amp;cate_id=6485" >水泥</a>
+                              	<a href="index.php?app=search&amp;cate_id=6486" >水石</a>
+                              	<a href="index.php?app=search&amp;cate_id=6487" >填缝剂</a>
+								<a href="index.php?app=search&amp;cate_id=6535" >沙</a>
+                                         </dd>
+                </dl>
+                                <dl class="clearfix" >
+                   <dt class="fleft"><a href="index.php?app=search&amp;cate_id=6430" >卫浴/卫浴五金/水料水配/电灯</a></dt>
+                   <dd class="fleft">
+                                       
+                              	<a href="index.php?app=search&amp;cate_id=6431" >洁具</a>
+                              	<a href="index.php?app=search&amp;cate_id=6488" >卫浴五金</a>
+                              	<a href="index.php?app=search&amp;cate_id=6489" >PVC线管/配件</a>
+                              	<a href="index.php?app=search&amp;cate_id=6490" >PVC给水管</a>
+                              	<a href="index.php?app=search&amp;cate_id=6491" >PVC排水管</a>
+                              	<a href="index.php?app=search&amp;cate_id=6492" >PPR冷热给水管/配件</a>
+                                         </dd>
+                </dl>
+				</div>
+                               
+                             </div>
+          </li>
+                   <li class="item">
+            <div class="border-nr">
+               <h3><a href="index.php?app=search&amp;cate_id=1385" >办公家具</a></h3>
+               <p>
+                   			
+			                   
+                   <a href="index.php?app=search&amp;cate_id=3215" >大班台</a>
+                              	<a href="index.php?app=search&amp;cate_id=3216" >主管台</a>
+                              	<a href="index.php?app=search&amp;cate_id=3217" >职员台</a>
+								<a href="index.php?app=search&amp;cate_id=3221" >会议台</a>
+                              	<a href="index.php?app=search&amp;cate_id=3222" >洽谈台</a>
+                              	<a href="index.php?app=search&amp;cate_id=3223" >培训台</a>
+                              	<a href="index.php?app=search&amp;cate_id=3224" >主席台</a>
+                              	<a href="index.php?app=search&amp;cate_id=3225" >演讲台</a>
+								<a href="index.php?app=search&amp;cate_id=3250" >铝型材</a>
+                              	<a href="index.php?app=search&amp;cate_id=3251" >钢材</a>
+                              	<a href="index.php?app=search&amp;cate_id=3252" >实木板</a>
+                              	<a href="index.php?app=search&amp;cate_id=3253" >三氨板/刨花板</a>
+                              	<a href="index.php?app=search&amp;cate_id=3254" >玻璃</a>
+							
+			
+                                   </p>
+                <div class="cline"></div>
+             </div>
+             <div class="cateover" >
+                                <dl class="clearfix" >
+                   <dt class="fleft"><a href="index.php?app=search&amp;cate_id=3206" >班台类</a></dt>
+                   <dd class="fleft">
+                                         
+                              	<a href="index.php?app=search&amp;cate_id=3215" >大班台</a>
+                              	<a href="index.php?app=search&amp;cate_id=3216" >主管台</a>
+                              	<a href="index.php?app=search&amp;cate_id=3217" >职员台</a>
+                                         </dd>
+                </dl>
+                                <dl class="clearfix"  style="border-bottom:0">
+                   <dt class="fleft"><a href="index.php?app=search&amp;cate_id=3207" >会议台类</a></dt>
+                   <dd class="fleft">
+                                      
+                              	<a href="index.php?app=search&amp;cate_id=3221" >会议台</a>
+                              	<a href="index.php?app=search&amp;cate_id=3222" >洽谈台</a>
+                              	<a href="index.php?app=search&amp;cate_id=3223" >培训台</a>
+                              	<a href="index.php?app=search&amp;cate_id=3224" >主席台</a>
+                              	<a href="index.php?app=search&amp;cate_id=3225" >演讲台</a>
+                                         </dd>
+                </dl>
+				
+				 <dl class="clearfix"  style="border-bottom:0">
+                   <dt class="fleft"><a href="index.php?app=search&amp;cate_id=3212" >高间隔类</a><b></dt>
+                   <dd class="fleft">
+                              
+                              	<a href="index.php?app=search&amp;cate_id=3250" >铝型材</a>
+                              	<a href="index.php?app=search&amp;cate_id=3251" >钢材</a>
+                              	<a href="index.php?app=search&amp;cate_id=3252" >实木板</a>
+                              	<a href="index.php?app=search&amp;cate_id=3253" >三氨板/刨花板</a>
+                              	<a href="index.php?app=search&amp;cate_id=3254" >玻璃</a>
+                                         </dd>
+                </dl>
+				
+				 <dl class="clearfix"  style="border-bottom:0">
+                   <dt class="fleft"> <a href="index.php?app=search&amp;cate_id=3208" >椅类</a></dt>
+                   <dd class="fleft">
+                             
+                              	<a href="index.php?app=search&amp;cate_id=3226" >老板椅</a>
+                              	<a href="index.php?app=search&amp;cate_id=3227" >主管椅</a>
+                              	<a href="index.php?app=search&amp;cate_id=3228" >职员椅</a>
+                              	<a href="index.php?app=search&amp;cate_id=3229" >会议椅</a>
+                              	<a href="index.php?app=search&amp;cate_id=3230" >礼堂椅</a>
+                              	<a href="index.php?app=search&amp;cate_id=3231" >吧椅</a>
+                              	<a href="index.php?app=search&amp;cate_id=3232" >公共排椅</a>
+                                         </dd>
+                </dl>
+				
+				 <dl class="clearfix"  style="border-bottom:0">
+                   <dt class="fleft"><a href="index.php?app=search&amp;cate_id=3209" >沙发类</a></dt>
+                   <dd class="fleft">
+                            
+                              	<a href="index.php?app=search&amp;cate_id=3233" >真皮沙发</a>
+                              	<a href="index.php?app=search&amp;cate_id=3234" >仿皮沙发</a>
+                              	<a href="index.php?app=search&amp;cate_id=3235" >布绒沙发</a>
+                              	<a href="index.php?app=search&amp;cate_id=3236" >沙发床</a>
+                                         </dd>
+                </dl>
+				
+				 <dl class="clearfix"  style="border-bottom:0">
+                   <dt class="fleft"><a href="index.php?app=search&amp;cate_id=3210" >茶几类</a></dt>
+                   <dd class="fleft">
+                               
+                              	<a href="index.php?app=search&amp;cate_id=3237" >实木茶几</a>
+                              	<a href="index.php?app=search&amp;cate_id=3238" >板式茶几</a>
+                              	<a href="index.php?app=search&amp;cate_id=3239" >钢木组合茶几</a>
+                              	<a href="index.php?app=search&amp;cate_id=3240" >玻璃茶几</a>
+                              	<a href="index.php?app=search&amp;cate_id=3241" >大理石台面茶几</a>
+                                         </dd>
+                </dl>
+				
+				 <dl class="clearfix"  style="border-bottom:0">
+                   <dt class="fleft"> <a href="index.php?app=search&amp;cate_id=3211" >柜类</a></dt>
+                   <dd class="fleft">
+                            
+                              	<a href="index.php?app=search&amp;cate_id=3242" >文件柜/架</a>
+                              	<a href="index.php?app=search&amp;cate_id=3243" >书柜/架</a>
+                              	<a href="index.php?app=search&amp;cate_id=3244" >茶水柜</a>
+                              	<a href="index.php?app=search&amp;cate_id=3245" >抽柜</a>
+                              	<a href="index.php?app=search&amp;cate_id=3246" >密集柜</a>
+                              	<a href="index.php?app=search&amp;cate_id=3247" >货架</a>
+                              	<a href="index.php?app=search&amp;cate_id=3248" >钢柜</a>
+                              	<a href="index.php?app=search&amp;cate_id=3249" >更衣柜</a>
+                                         </dd>
+                </dl>
+				
+				 <dl class="clearfix"  style="border-bottom:0">
+                   <dt class="fleft"><a href="index.php?app=search&amp;cate_id=3213" >前台类</a></dt>
+                   <dd class="fleft">
+                               
+                              	<a href="index.php?app=search&amp;cate_id=3255" >接待前台</a>
+                              	<a href="index.php?app=search&amp;cate_id=3256" >收银台</a>
+								<div class="h30"></div>
+                                         </dd>
+                </dl>
+				
+				 <dl class="clearfix"  style="border-bottom:0">
+                   <dt class="fleft"><a href="index.php?app=search&amp;cate_id=3214" >其他类</a></dt>
+                   <dd class="fleft">
+                              
+                              	<a href="index.php?app=search&amp;cate_id=3257" >课桌椅</a>
+                              	<a href="index.php?app=search&amp;cate_id=3258" >电脑桌</a>
+								<div class="h30"></div>
+                                         </dd>
+                </dl>
+				
+				 <dl class="clearfix"  style="border-bottom:0">
+                   <dt class="fleft"><a href="index.php?app=search&amp;cate_id=3582" >屏风卡位</a></dt>
+                   <dd class="fleft">
+                              
+                              	<a href="index.php?app=search&amp;cate_id=3583" >落地屏风</a>
+                              	<a href="index.php?app=search&amp;cate_id=3584" >桌上屏风</a>
+                                         </dd>
+                </dl>
+				
+				 <dl class="clearfix"  style="border-bottom:0">
+                   <dt class="fleft"><a href="index.php?app=search&amp;cate_id=3585" >办公配件</a></dt>
+                   <dd class="fleft">
+                              
+                              	<a href="index.php?app=search&amp;cate_id=3586" >主机架</a>
+                              	<a href="index.php?app=search&amp;cate_id=3587" >键盘架</a>
+                              	<a href="index.php?app=search&amp;cate_id=3588" >书架</a>
+                              	<a href="index.php?app=search&amp;cate_id=3589" >笔筒</a>
+                              	<a href="index.php?app=search&amp;cate_id=3590" >走线软管</a>
+                              	<a href="index.php?app=search&amp;cate_id=3591" >角码</a>
+                              	<a href="index.php?app=search&amp;cate_id=5217" >椅脚</a>
+                              	<a href="index.php?app=search&amp;cate_id=5218" >气杆</a>
+                                         </dd>
+                </dl>
+				<dl class="clearfix"  style="border-bottom:0">
+                   <dt class="fleft"><a href="index.php?app=search&amp;cate_id=6681" >工程家具直销厂</a></dt>
+                   <dd class="fleft">
+                              
+                              	<a href="index.php?app=search&amp;cate_id=6691" > 工程家具</a>
+                          
+                                         </dd>
+                </dl>
+				
+				
+				
+				
+				
+				
+				
+                             </div>
+          </li>
+                   <li class="item">
+            <div class="border-nr">
+               <h3><a href="index.php?app=search&amp;cate_id=1389" >民用家具</a></h3>
+               <p>
+                   		<a href="index.php?app=search&amp;cate_id=5645" >橱柜</a>	
+			       <a href="index.php?app=search&amp;cate_id=3145" >弹簧床垫</a>
+                              	<a href="index.php?app=search&amp;cate_id=3146" >乳胶床垫</a>
+                              	<a href="index.php?app=search&amp;cate_id=3147" >海绵床垫</a>
+                              	<a href="index.php?app=search&amp;cate_id=3148" >棕榈床垫</a>
+                              	<a href="index.php?app=search&amp;cate_id=3149" >复合床垫</a>
+								<a href="index.php?app=search&amp;cate_id=3151" >实木床</a>
+                              	<a href="index.php?app=search&amp;cate_id=3152" >板木床</a>
+                              	<a href="index.php?app=search&amp;cate_id=3153" >金属床</a>
+                              	<a href="index.php?app=search&amp;cate_id=3154" >软体床</a>
+			
+                                   </p>
+                <div class="cline"></div>
+             </div>
+             <div class="cateover" >
+                                <dl class="clearfix" >
+                   <dt class="fleft"><a href="index.php?app=search&amp;cate_id=3477" >橱柜</a></dt>
+                   <dd class="fleft">
+                                    
+                              	<a href="index.php?app=search&amp;cate_id=5645" >橱柜</a>
+                                         </dd>
+                </dl>
+                                <dl class="clearfix" >
+                   <dt class="fleft"><a href="index.php?app=search&amp;cate_id=3136" >床垫</a></dt>
+                   <dd class="fleft">
+                              	<a href="index.php?app=search&amp;cate_id=3145" >弹簧床垫</a>
+                              	<a href="index.php?app=search&amp;cate_id=3146" >乳胶床垫</a>
+                              	<a href="index.php?app=search&amp;cate_id=3147" >海绵床垫</a>
+                              	<a href="index.php?app=search&amp;cate_id=3148" >棕榈床垫</a>
+                              	<a href="index.php?app=search&amp;cate_id=3149" >复合床垫</a>
+                              	<a href="index.php?app=search&amp;cate_id=3150" >其他床垫</a>
+                                         </dd>
+                </dl>
+                                <dl class="clearfix"  style="border-bottom:0">
+                   <dt class="fleft"><a href="index.php?app=search&amp;cate_id=3137" >床</a></dt>
+                   <dd class="fleft">
+                                     
+                              	<a href="index.php?app=search&amp;cate_id=3151" >实木床</a>
+                              	<a href="index.php?app=search&amp;cate_id=3152" >板木床</a>
+                              	<a href="index.php?app=search&amp;cate_id=3153" >金属床</a>
+                              	<a href="index.php?app=search&amp;cate_id=3154" >软体床</a>
+                              	<a href="index.php?app=search&amp;cate_id=3155" >其他床</a>
+                                         </dd>
+                </dl>
+				
+				 <dl class="clearfix"  style="border-bottom:0">
+                   <dt class="fleft"><a href="index.php?app=search&amp;cate_id=3138" >沙发</a></dt>
+                   <dd class="fleft">
+                             
+                              	<a href="index.php?app=search&amp;cate_id=3156" >真皮沙发</a>
+                              	<a href="index.php?app=search&amp;cate_id=3157" >仿皮沙发</a>
+                              	<a href="index.php?app=search&amp;cate_id=3158" >布艺沙发</a>
+                              	<a href="index.php?app=search&amp;cate_id=3159" >沙发床</a>
+                              	<a href="index.php?app=search&amp;cate_id=3160" >其他沙发</a>
+                                         </dd>
+                </dl>
+				
+				 <dl class="clearfix"  style="border-bottom:0">
+                   <dt class="fleft"><a href="index.php?app=search&amp;cate_id=3139" >柜</a></dt>
+                   <dd class="fleft">
+                             
+                              	<a href="index.php?app=search&amp;cate_id=3161" >衣柜</a>
+                              	<a href="index.php?app=search&amp;cate_id=3162" >床头柜</a>
+                              	<a href="index.php?app=search&amp;cate_id=3163" >电视柜</a>
+                              	<a href="index.php?app=search&amp;cate_id=3164" >客厅柜</a>
+                              	<a href="index.php?app=search&amp;cate_id=3165" >餐边柜</a>
+                              	<a href="index.php?app=search&amp;cate_id=3166" >酒柜</a>
+                              	<a href="index.php?app=search&amp;cate_id=3167" >斗柜</a>
+                              	<a href="index.php?app=search&amp;cate_id=3168" >鞋柜</a>
+                              	<a href="index.php?app=search&amp;cate_id=3169" >书柜</a>
+                              	<a href="index.php?app=search&amp;cate_id=3170" >其他柜类</a>
+                              	<a href="index.php?app=search&amp;cate_id=3171" >定制移门衣柜</a>
+                              	<a href="index.php?app=search&amp;cate_id=4838" >墙式衣柜</a>
+                              	<a href="index.php?app=search&amp;cate_id=4839" >厨柜</a>
+                                         </dd>
+                </dl>
+				
+				 <dl class="clearfix"  style="border-bottom:0">
+                   <dt class="fleft"><a href="index.php?app=search&amp;cate_id=3140" >茶几</a></dt>
+                   <dd class="fleft">
+                               
+                              	<a href="index.php?app=search&amp;cate_id=3172" >实木茶几</a>
+                              	<a href="index.php?app=search&amp;cate_id=3173" >板木茶几</a>
+                              	<a href="index.php?app=search&amp;cate_id=3174" >金属茶几</a>
+                              	<a href="index.php?app=search&amp;cate_id=3175" >玻璃茶几</a>
+                              	<a href="index.php?app=search&amp;cate_id=3176" >复合材质茶几</a>
+                              	<a href="index.php?app=search&amp;cate_id=3177" >其他茶几</a>
+								<div class="h60"></div>
+                                         </dd>
+                </dl>
+				
+				 <dl class="clearfix"  style="border-bottom:0">
+                   <dt class="fleft"><a href="index.php?app=search&amp;cate_id=3141" >桌/台类</a></dt>
+                   <dd class="fleft">
+                            
+                              	<a href="index.php?app=search&amp;cate_id=3178" >实木餐桌</a>
+                              	<a href="index.php?app=search&amp;cate_id=3179" >板木餐桌</a>
+                              	<a href="index.php?app=search&amp;cate_id=3180" >金属/玻璃餐桌</a>
+                              	<a href="index.php?app=search&amp;cate_id=3181" >复合材质餐桌</a>
+                              	<a href="index.php?app=search&amp;cate_id=3182" >书桌</a>
+                              	<a href="index.php?app=search&amp;cate_id=3183" >电脑桌</a>
+                              	<a href="index.php?app=search&amp;cate_id=3184" >折叠桌</a>
+                              	<a href="index.php?app=search&amp;cate_id=3185" >其他桌/台</a>
+                              	<a href="index.php?app=search&amp;cate_id=3186" >梳妆台</a>
+                                         </dd>
+                </dl>
+				
+				 <dl class="clearfix"  style="border-bottom:0">
+                   <dt class="fleft"><a href="index.php?app=search&amp;cate_id=3142" >椅子/凳</a></dt>
+                   <dd class="fleft">
+                              
+                              	<a href="index.php?app=search&amp;cate_id=3187" >实木餐椅</a>
+                              	<a href="index.php?app=search&amp;cate_id=3188" >板木餐椅</a>
+                              	<a href="index.php?app=search&amp;cate_id=3189" >金属餐椅</a>
+                              	<a href="index.php?app=search&amp;cate_id=3190" >复合材质餐椅</a>
+                              	<a href="index.php?app=search&amp;cate_id=3191" >电脑椅</a>
+                              	<a href="index.php?app=search&amp;cate_id=3192" >凳子</a>
+                              	<a href="index.php?app=search&amp;cate_id=3193" >休闲椅</a>
+                              	<a href="index.php?app=search&amp;cate_id=3194" >其他椅</a>
+                                         </dd>
+                </dl>
+				
+				 <dl class="clearfix"  style="border-bottom:0">
+                   <dt class="fleft"><a href="index.php?app=search&amp;cate_id=3143" >收纳架/箱</a></dt>
+                   <dd class="fleft">
+                                
+                              	<a href="index.php?app=search&amp;cate_id=3195" >花架</a>
+                              	<a href="index.php?app=search&amp;cate_id=3196" >杂志/报纸架</a>
+                              	<a href="index.php?app=search&amp;cate_id=3197" >衣帽架</a>
+                              	<a href="index.php?app=search&amp;cate_id=3198" >鞋架</a>
+                              	<a href="index.php?app=search&amp;cate_id=3199" >储物架</a>
+                              	<a href="index.php?app=search&amp;cate_id=3200" >CD架</a>
+                              	<a href="index.php?app=search&amp;cate_id=3201" >其他收纳家具</a>
+								<div class="h30"></div>
+                                         </dd>
+                </dl>
+				
+				 <dl class="clearfix"  style="border-bottom:0">
+                   <dt class="fleft"><a href="index.php?app=search&amp;cate_id=3144" >青少年家具</a></dt>
+                   <dd class="fleft">
+                                 
+                              	<a href="index.php?app=search&amp;cate_id=3202" >少儿床</a>
+                              	<a href="index.php?app=search&amp;cate_id=3203" >儿童书桌椅</a>
+                              	<a href="index.php?app=search&amp;cate_id=3204" >儿童衣柜</a>
+                              	<a href="index.php?app=search&amp;cate_id=3205" >儿童小家具</a>
+                                         </dd>
+                </dl>
+				<dl class="clearfix"  style="border-bottom:0">
+                   <dt class="fleft"><a href="index.php?app=search&amp;cate_id=6520" > 鱼缸</a></dt>
+                   <dd class="fleft">
+                                 
+                           
+                                         </dd>
+                </dl>
+				
+				
+				
+				
+                             </div>
+          </li>
+                   <li class="item">
+            <div class="border-nr">
+               <h3><a href="index.php?app=search&amp;cate_id=5514" >时尚软饰</a></h3>
+               <p>
+                   <a href="index.php?app=search&amp;cate_id=1871" >摆件</a>
+                              	<a href="index.php?app=search&amp;cate_id=1872" >装饰画</a>
+                              	<a href="index.php?app=search&amp;cate_id=1873" >贴纸贴饰</a>
+                              	<a href="index.php?app=search&amp;cate_id=1874" >钟表装饰</a>
+                              	<a href="index.php?app=search&amp;cate_id=1875" >相框相簿</a>
+                              	<a href="index.php?app=search&amp;cate_id=1876" >花艺花饰</a>
+                              	<a href="index.php?app=search&amp;cate_id=1877" >创意饰品</a>
+                              	<a href="index.php?app=search&amp;cate_id=3298" >花瓶和花</a>
+                              	<a href="index.php?app=search&amp;cate_id=3299" >植物和花盆</a>
+                              	<a href="index.php?app=search&amp;cate_id=3300" >蜡烛和蜡台</a>
+                              	<a href="index.php?app=search&amp;cate_id=4547" >装饰花架</a>
+                              	<a href="index.php?app=search&amp;cate_id=5356" >装饰壁挂</a>
+								
+			
+                                   </p>
+                <div class="cline"></div>
+             </div>
+             <div class="cateover" >
+                                <dl class="clearfix" >
+                   <dt class="fleft"><a href="index.php?app=search&amp;cate_id=1868" >装饰品</a></dt>
+                   <dd class="fleft">
+                                       
+                              	<a href="index.php?app=search&amp;cate_id=1871" >摆件</a>
+                              	<a href="index.php?app=search&amp;cate_id=1872" >装饰画</a>
+                              	<a href="index.php?app=search&amp;cate_id=1873" >贴纸贴饰</a>
+                              	<a href="index.php?app=search&amp;cate_id=1874" >钟表装饰</a>
+                              	<a href="index.php?app=search&amp;cate_id=1875" >相框相簿</a>
+                              	<a href="index.php?app=search&amp;cate_id=1876" >花艺花饰</a>
+                              	<a href="index.php?app=search&amp;cate_id=1877" >创意饰品</a>
+                              	<a href="index.php?app=search&amp;cate_id=3298" >花瓶和花</a>
+                              	<a href="index.php?app=search&amp;cate_id=3299" >植物和花盆</a>
+                              	<a href="index.php?app=search&amp;cate_id=3300" >蜡烛和蜡台</a>
+                              	<a href="index.php?app=search&amp;cate_id=4547" >装饰花架</a>
+                              	<a href="index.php?app=search&amp;cate_id=5356" >装饰壁挂</a>
+                                         </dd>
+                </dl>
+                                <dl class="clearfix"  style="border-bottom:0">
+                   <dt class="fleft"><a href="index.php?app=search&amp;cate_id=3320" >镜子</a></dt>
+                   <dd class="fleft">
+                                          
+                              	<a href="index.php?app=search&amp;cate_id=3322" >镜子</a>
+                              	<a href="index.php?app=search&amp;cate_id=3323" >浴室镜</a>
+                                         </dd>
+                </dl>
+                             </div>
+          </li>
+                   <li class="item">
+            <div class="border-nr">
+               <h3><a href="index.php?app=search&amp;cate_id=5515" >厨房与清洁</a></h3>
+               <p>
+                   	<a href="index.php?app=search&amp;cate_id=1841" >烹饪锅具</a>
+                              	<a href="index.php?app=search&amp;cate_id=1842" >烹饪用具</a>
+                              	<a href="index.php?app=search&amp;cate_id=1844" >烘焙用具</a>
+                              	<a href="index.php?app=search&amp;cate_id=1845" >餐具/瓷器</a>
+                              	<a href="index.php?app=search&amp;cate_id=1846" >酒杯/酒具</a>
+                              	<a href="index.php?app=search&amp;cate_id=1847" >茶具/茶杯</a>
+                              	<a href="index.php?app=search&amp;cate_id=1848" >咖啡杯具</a>
+                              	<a href="index.php?app=search&amp;cate_id=1849" >厨房储物/置物架</a>
+                              	<a href="index.php?app=search&amp;cate_id=1850" >保鲜用品</a>
+                              	<a href="index.php?app=search&amp;cate_id=1851" >保温杯/水具</a>
+                              	<a href="index.php?app=search&amp;cate_id=1852" >烧烤器/烧烤用品</a>
+                              	<a href="index.php?app=search&amp;cate_id=1853" >厨房DIY/小工具</a>
+                              	<a href="index.php?app=search&amp;cate_id=1854" >一次性餐饮用品</a>
+                              	<a href="index.php?app=search&amp;cate_id=1855" >厨房清洁洗涤用品</a>
+                              	<a href="index.php?app=search&amp;cate_id=3286" >厨房刀具与砧板</a>
+                              	<a href="index.php?app=search&amp;cate_id=3287" >烤箱器皿</a>
+                              	<a href="index.php?app=search&amp;cate_id=3288" >餐具</a>
+                              	<a href="index.php?app=search&amp;cate_id=3289" >刀叉餐具</a>
+                              	<a href="index.php?app=search&amp;cate_id=3290" >玻璃器皿与水壶</a>
+                              	<a href="index.php?app=search&amp;cate_id=3291" >咖啡与茶用具</a>
+                              	<a href="index.php?app=search&amp;cate_id=3292" >上菜用具</a>
+                              	<a href="index.php?app=search&amp;cate_id=3293" >搅拌和测量工具</a>
+                              	<a href="index.php?app=search&amp;cate_id=3294" >食品储存与整理</a>
+                              	<a href="index.php?app=search&amp;cate_id=3295" >洗碗配件</a>
+                              	<a href="index.php?app=search&amp;cate_id=3296" >餐垫和用餐纺织品</a>
+                              	<a href="index.php?app=search&amp;cate_id=3297" >厨房纺织品</a>
+			
+                                   </p>
+                <div class="cline"></div>
+             </div>
+             <div class="cateover" >
+                                <dl class="clearfix" >
+                   <dt class="fleft"><a href="index.php?app=search&amp;cate_id=1830" >厨房餐饮</a></dt>
+                   <dd class="fleft">
+                              	<a href="index.php?app=search&amp;cate_id=1841" >烹饪锅具</a>
+                              	<a href="index.php?app=search&amp;cate_id=1842" >烹饪用具</a>
+                              	<a href="index.php?app=search&amp;cate_id=1844" >烘焙用具</a>
+                              	<a href="index.php?app=search&amp;cate_id=1845" >餐具/瓷器</a>
+                              	<a href="index.php?app=search&amp;cate_id=1846" >酒杯/酒具</a>
+                              	<a href="index.php?app=search&amp;cate_id=1847" >茶具/茶杯</a>
+                              	<a href="index.php?app=search&amp;cate_id=1848" >咖啡杯具</a>
+                              	<a href="index.php?app=search&amp;cate_id=1849" >厨房储物/置物架</a>
+                              	<a href="index.php?app=search&amp;cate_id=1850" >保鲜用品</a>
+                              	<a href="index.php?app=search&amp;cate_id=1851" >保温杯/水具</a>
+                              	<a href="index.php?app=search&amp;cate_id=1852" >烧烤器/烧烤用品</a>
+                              	<a href="index.php?app=search&amp;cate_id=1853" >厨房DIY/小工具</a>
+                              	<a href="index.php?app=search&amp;cate_id=1854" >一次性餐饮用品</a>
+                              	<a href="index.php?app=search&amp;cate_id=1855" >厨房清洁洗涤用品</a>
+                              	<a href="index.php?app=search&amp;cate_id=3286" >厨房刀具与砧板</a>
+                              	<a href="index.php?app=search&amp;cate_id=3287" >烤箱器皿</a>
+                              	<a href="index.php?app=search&amp;cate_id=3288" >餐具</a>
+                              	<a href="index.php?app=search&amp;cate_id=3289" >刀叉餐具</a>
+                              	<a href="index.php?app=search&amp;cate_id=3290" >玻璃器皿与水壶</a>
+                              	<a href="index.php?app=search&amp;cate_id=3291" >咖啡与茶用具</a>
+                              	<a href="index.php?app=search&amp;cate_id=3292" >上菜用具</a>
+                              	<a href="index.php?app=search&amp;cate_id=3293" >搅拌和测量工具</a>
+                              	<a href="index.php?app=search&amp;cate_id=3294" >食品储存与整理</a>
+                              	<a href="index.php?app=search&amp;cate_id=3295" >洗碗配件</a>
+                              	<a href="index.php?app=search&amp;cate_id=3296" >餐垫和用餐纺织品</a>
+                              	<a href="index.php?app=search&amp;cate_id=3297" >厨房纺织品</a>
+                                         </dd>
+                </dl>
+                                <dl class="clearfix" >
+                   <dt class="fleft"><a href="index.php?app=search&amp;cate_id=3263" >清洁护理</a></dt>
+                   <dd class="fleft">
+                                    
+                              	<a href="index.php?app=search&amp;cate_id=3275" >清洁用品</a>
+                              	<a href="index.php?app=search&amp;cate_id=3276" >洗晒用品</a>
+                              	<a href="index.php?app=search&amp;cate_id=3277" >个人护理</a>
+                              	<a href="index.php?app=search&amp;cate_id=3278" >居家护理</a>
+                              	<a href="index.php?app=search&amp;cate_id=3279" >浴室用品</a>
+                              	<a href="index.php?app=search&amp;cate_id=3317" >浴帘</a>
+                              	<a href="index.php?app=search&amp;cate_id=3318" >浴室防滑垫</a>
+                              	<a href="index.php?app=search&amp;cate_id=3319" >毛巾</a>
+                              	<a href="index.php?app=search&amp;cate_id=5578" >烫衣板</a>
+                                         </dd>
+                </dl>
+                              
+                             </div>
+          </li>
+                   <li class="item">
+            <div class="border-nr">
+               <h3><a href="index.php?app=search&amp;cate_id=5516" >居家用品</a></h3>
+               <p>
+                   <a href="index.php?app=search&amp;cate_id=3265" >窗帘布艺</a>
+                              	<a href="index.php?app=search&amp;cate_id=3266" >成套床品</a>
+                              	<a href="index.php?app=search&amp;cate_id=3267" >被毯枕褥</a>
+                              	<a href="index.php?app=search&amp;cate_id=3268" >纺织品类</a>
+                              	<a href="index.php?app=search&amp;cate_id=3301" >单件床上用品</a>
+                              	<a href="index.php?app=search&amp;cate_id=3302" >床罩</a>
+                              	<a href="index.php?app=search&amp;cate_id=3303" >毯子和休闲毯</a>
+                              	<a href="index.php?app=search&amp;cate_id=3304" >被子</a>
+                              	<a href="index.php?app=search&amp;cate_id=3305" >枕头</a>
+                              	<a href="index.php?app=search&amp;cate_id=3306" >靠垫和靠垫套</a>
+                              	<a href="index.php?app=search&amp;cate_id=3307" >布料和缝纫用品</a>
+                              	<a href="index.php?app=search&amp;cate_id=3308" >地毯</a>
+                              	<a href="index.php?app=search&amp;cate_id=4551" >床单</a>
+                              	<a href="index.php?app=search&amp;cate_id=4552" >床笠</a>
+                              	<a href="index.php?app=search&amp;cate_id=4553" >枕套和枕芯</a>
+                              	<a href="index.php?app=search&amp;cate_id=4554" >被套和被芯</a>
+                              	<a href="index.php?app=search&amp;cate_id=4555" >防尘罩</a>
+                              	<a href="index.php?app=search&amp;cate_id=4556" >婚庆家纺</a>
+                              	<a href="index.php?app=search&amp;cate_id=5579" >坐垫</a>
+                              	<a href="index.php?app=search&amp;cate_id=5580" >装饰纺织品</a>
+			
+                                   </p>
+                <div class="cline"></div>
+             </div>
+             <div class="cateover" >
+                                <dl class="clearfix" >
+                   <dt class="fleft"><a href="index.php?app=search&amp;cate_id=3259" >家纺布艺</a></dt>
+                   <dd class="fleft">
+                                       
+                              	<a href="index.php?app=search&amp;cate_id=3265" >窗帘布艺</a>
+                              	<a href="index.php?app=search&amp;cate_id=3266" >成套床品</a>
+                              	<a href="index.php?app=search&amp;cate_id=3267" >被毯枕褥</a>
+                              	<a href="index.php?app=search&amp;cate_id=3268" >纺织品类</a>
+                              	<a href="index.php?app=search&amp;cate_id=3301" >单件床上用品</a>
+                              	<a href="index.php?app=search&amp;cate_id=3302" >床罩</a>
+                              	<a href="index.php?app=search&amp;cate_id=3303" >毯子和休闲毯</a>
+                              	<a href="index.php?app=search&amp;cate_id=3304" >被子</a>
+                              	<a href="index.php?app=search&amp;cate_id=3305" >枕头</a>
+                              	<a href="index.php?app=search&amp;cate_id=3306" >靠垫和靠垫套</a>
+                              	<a href="index.php?app=search&amp;cate_id=3307" >布料和缝纫用品</a>
+                              	<a href="index.php?app=search&amp;cate_id=3308" >地毯</a>
+                              	<a href="index.php?app=search&amp;cate_id=4551" >床单</a>
+                              	<a href="index.php?app=search&amp;cate_id=4552" >床笠</a>
+                              	<a href="index.php?app=search&amp;cate_id=4553" >枕套和枕芯</a>
+                              	<a href="index.php?app=search&amp;cate_id=4554" >被套和被芯</a>
+                              	<a href="index.php?app=search&amp;cate_id=4555" >防尘罩</a>
+                              	<a href="index.php?app=search&amp;cate_id=4556" >婚庆家纺</a>
+                              	<a href="index.php?app=search&amp;cate_id=5579" >坐垫</a>
+                              	<a href="index.php?app=search&amp;cate_id=5580" >装饰纺织品</a>
+                                         </dd>
+                </dl>
+                                <dl class="clearfix" >
+                   <dt class="fleft"><a href="index.php?app=search&amp;cate_id=3261" >收纳杂物礼品箱包</a></dt>
+                   <dd class="fleft">
+                                         
+                              	<a href="index.php?app=search&amp;cate_id=3273" >礼品箱包</a>
+                              	<a href="index.php?app=search&amp;cate_id=3274" >居家杂物</a>
+                              	<a href="index.php?app=search&amp;cate_id=3309" >纸巾盒/纸巾袋</a>
+                              	<a href="index.php?app=search&amp;cate_id=3310" >电线整理</a>
+                              	<a href="index.php?app=search&amp;cate_id=3311" >挂钩和衣架</a>
+                              	<a href="index.php?app=search&amp;cate_id=3312" >衣物储藏件</a>
+                              	<a href="index.php?app=search&amp;cate_id=3313" >鞋架和衣帽架</a>
+                              	<a href="index.php?app=search&amp;cate_id=3314" >文件储藏件</a>
+                              	<a href="index.php?app=search&amp;cate_id=3315" >储物盒和储物篮</a>
+                              	<a href="index.php?app=search&amp;cate_id=4541" >置物架</a>
+                              	<a href="index.php?app=search&amp;cate_id=4543" >首饰盒</a>
+                              	<a href="index.php?app=search&amp;cate_id=4544" >其它</a>
+                                         </dd>
+                </dl>
+                                <dl class="clearfix"  style="border-bottom:0">
+                   <dt class="fleft"><a href="index.php?app=search&amp;cate_id=3264" >居家生活</a></dt>
+                   <dd class="fleft">
+                                     
+                              	<a href="index.php?app=search&amp;cate_id=3280" >康体户外</a>
+                              	<a href="index.php?app=search&amp;cate_id=3281" >母婴玩具</a>
+                              	<a href="index.php?app=search&amp;cate_id=3282" >婚庆用品</a>
+                                         </dd>
+                </dl>
+				<dl class="clearfix"  style="border-bottom:0">
+                   <dt class="fleft"><a href="index.php?app=search&amp;cate_id=3321" >儿童用品</a></dt>
+                   <dd class="fleft">
+                                     
+                           
+                              	<a href="index.php?app=search&amp;cate_id=3324" >安全</a>
+                              	<a href="index.php?app=search&amp;cate_id=3325" >婴儿床垫</a>
+                              	<a href="index.php?app=search&amp;cate_id=3326" >婴儿纺织品</a>
+                              	<a href="index.php?app=search&amp;cate_id=3327" >换衣桌和婴儿护理</a>
+                              	<a href="index.php?app=search&amp;cate_id=3328" >儿童餐具</a>
+                              	<a href="index.php?app=search&amp;cate_id=3329" >高脚椅</a>
+                              	<a href="index.php?app=search&amp;cate_id=3330" >婴儿玩具</a>
+                              	<a href="index.php?app=search&amp;cate_id=3331" >儿童床垫</a>
+                              	<a href="index.php?app=search&amp;cate_id=3332" >儿童纺织品</a>
+                              	<a href="index.php?app=search&amp;cate_id=3333" >玩具和玩耍</a>
+                              	<a href="index.php?app=search&amp;cate_id=3334" >儿童镜子</a>
+                              	<a href="index.php?app=search&amp;cate_id=3335" >小型储物装置</a>
+                                         </dd>
+                </dl>
+                             </div>
+          </li>
+                   
+                 
+                 </ul>
+    </div>
+</div>
+</div>
+<a href="http://www.59jiaju.com/shenzhen/gs/index.php?m=content&amp;c=index&amp;a=lists&amp;catid=13" target="_blank"><img src="/gx/images/indexnews/br_03.gif" border="0" /></a>
+      </div>
+   
+   
+  <div class="hot_pro">
+	   <div class="hot_photo">
+	   <div class="indexCon fl">
+    <div class="flashBanner">
+        <a href="http://www.59jiaju.com/"><img class="bigImg" width="770" height="380" /></a>
+        <div class="mask">
+		 <img src="/gx/images/indexnews/b3.jpg" uri="/gx/images/indexnews/b3.jpg" link="http://www.59jiaju.com/gs/index.php?m=member&c=index&a=register&siteid=1"  width="60" height="22"/>
+		<img src="/gx/images/indexnews/b4.jpg" uri="/gx/images/indexnews/b4.jpg" link="http://www.59jiaju.com/index.php?app=member&act=register&ret_url="  width="60" height="22"/>
+     
+		<img src="/gx/images/indexnews/b2.jpg" uri="/gx/images/indexnews/b2.jpg" link="http://www.59jiaju.com/zb/gc"  width="60" height="22"/>
+         <img src="/gx/images/indexnews/b1.jpg" uri="/gx/images/indexnews/b1.jpg" link="http://www.59jiaju.com/zp"  width="60" height="22"/>
+       
+        
+        </div>
+    </div>
+</div>
+
+	   </div>
+	   </div>
+	     <div class="hot_pro">
+		 <div class="com_list" id="con_one_1" style="margin:15px 0 0 0;">
+		  <table width="770" border="0" cellspacing="0" cellpadding="0" style="margin:5px 0;" align="center">
+  <tr>
+   
+    <td><a href="http://www.jyboo.com/" target="_blank"><img src="/gx/images/indexnews/br_05.gif" width="250" height="100" border="0" /></a></td>
+    <td width="15">&nbsp;</td>
+    <td><a href="http://www.59jiaju.com/gs/index.php?m=content&c=index&a=show&catid=13&id=2" target="_blank"><img src="/gx/images/indexnews/br_07.gif" width="237" height="100" border="0" /></a></td>
+    <td width="15">&nbsp;</td>
+    <td><a href="http://www.59jiaju.com/gs/index.php?m=content&amp;c=index&amp;a=show&amp;catid=33&amp;id=48" target="_blank"><img src="/gx/images/indexnews/br_09.gif" width="255" height="100" border="0" /></a></td>
+  </tr>
+  <tr>
+    <td height="15"></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+
+  </tr>
+  <tr>
+
+    <td><a href="http://www.gzmeishu.com.cn/" target="_blank"><img src="/gx/images/indexnews/br_14.gif" width="250" height="100" border="0" /></a></td>
+    <td>&nbsp;</td>
+    <td><a href="http://www.gzzjzs.com/" target="_blank"><img src="/gx/images/indexnews/br_15.gif" width="237" height="100" border="0" /></a></td>
+    <td>&nbsp;</td>
+    <td><a href="http://www.59jiaju.com/gs/index.php?m=content&c=index&a=lists&catid=33" target="_blank"><img src="/gx/images/indexnews/br_16.gif" width="255" height="100" border="0" /></a></td>
+  </tr>
+   <tr>
+    <td height="20"></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+ 
+  </tr>
+  <tr>
+    <td colspan="5"> <a href="http://www.jyboo.com" target="_blank"><img src="/gx/images/indexnews/jyad.jpg" border="0" /></a></td>
+    </tr>
+</table>
+</div>
+ 
+	</div>  
+   </div>
+    <script language="javascript" type="text/javascript">
+        /***
+        *功能：隐藏和显示div
+        *参数divDisplay：html标签id
+        ***/
+        var last_div;
+        function click_a(divDisplay)
+        {
+            var obj = document.getElementById(divDisplay);
+            if(obj.style.display != "block")
+            {
+                if (last_div) last_div.style.display = "none";
+                obj.style.display = "block";
+                last_div = obj;
+            }
+            else
+            {
+                obj.style.display = "none";
+                last_div = null;
+            }
+        }
+    </script>
+<div class="clear"></div>
+</div>
+	  </div>
+   </div>
+</div>
+  <div class="clear"></div>
+
+<!-- img nav start -->
+<style type="text/css">
+.l-imgnav{width: 990px; overflow: hidden; margin:  10px auto;}
+.l-imgnav ul{overflow: hidden; padding-left: 5px;}
+.l-imgnav ul li{overflow: hidden; float: left; position: relative;}
+.l-imgnav ul li div{overflow: hidden; position: relative;}
+.l-imgnav ul li div b{display: block; width: 160px; height: 44px; position: absolute; left: 80px; top:100px; overflow: hidden; cursor: pointer;}
+.l-imgnav-a{display: block; width: 160px; height: 44px; position: absolute; left: 85px; top: 180px;}
+.l-imgnav-info-top{display: block; text-align: center; position: absolute; top: 240px; left: 0; width: 338px; height: 40px; font-weight: bold; line-height: 40px; font-size: 30px; color: #000; font-family: '黑体';}
+.l-imgnav-info-bottom{display: block; text-align: center; position: absolute; top: 285px; left: 0; width: 338px; height: 40px; font-weight: bold; line-height: 40px; font-size: 30px; color: #000; font-family: '黑体';}
+</style>
+<div class="l-imgnav" style="">
+    <ul>
+      <li>
+        <div>
+            <img src="http://www.59jiaju.com/zb/statics/images/lai/zb_qd.jpg" alt="" />
+        </div>
+        <a href="http://www.59jiaju.com/zb/index.php?m=inventory" class="l-imgnav-a">
+          <img src="http://www.59jiaju.com/zb/statics/images/lai/chakan.png" alt="" />
+        </a>
+        <span class="l-imgnav-info-top">已有&nbsp;<font color="red">{$tenderee_count}</font>&nbsp;家公司发布</span>
+        <span class="l-imgnav-info-bottom">共&nbsp;<font color="red">{$bi_count}</font>&nbsp;个清单</span>
+      </li>
+      <li>
+        <div>
+          <img src="http://www.59jiaju.com/zb/statics/images/lai/gr.jpg" alt="" />
+        </div>
+        <a href="http://www.59jiaju.com/zb/index.php?m=wct" class="l-imgnav-a">
+          <img src="http://www.59jiaju.com/zb/statics/images/lai/fabu.png" alt="" />
+        </a>
+        <span class="l-imgnav-info-top">已有&nbsp;<font color="red">{$ct_count}</font>&nbsp;个施工团队</span>
+        <span class="l-imgnav-info-bottom">共&nbsp;<font color="red">{$worker_count}</font>&nbsp;个施工工人</span>
+      </li>
+      <li>
+        <div>
+          <a href="http://www.59jiaju.com/gr/index.php?m=content&c=index&a=lists&catid=84">
+            <img src="http://www.59jiaju.com/zb/statics/images/lai/new_grgj.jpg" alt="" />
+          </a>
+          <b>
+            <a href="http://www.59jiaju.com/gr/index.php?m=content&c=index&a=lists&catid=84">
+            <img src="http://www.59jiaju.com/zb/statics/images/lai/fabu.png" alt="" width="160" height="44" />
+            </a>
+          </b>
+        </div>
+        <div>
+          <a href="http://www.59jiaju.com/zp/"><img src="http://www.59jiaju.com/zb/statics/images/lai/new_zp.jpg" alt="" /></a>
+          <b>
+            <a href="http://www.59jiaju.com/zp/">
+            <img src="http://www.59jiaju.com/zb/statics/images/lai/fabu.png" alt="" width="160" height="44" />
+            </a>
+          </b>
+        </div>
+      </li>
+    </ul>
+</div>
+
+
+<!-- img nav end -->
+
+
+<div class="index_main">  
+  <div class="tctab">
+	     <ul>
+		 <li><a href="http://www.59jiaju.com/gx/tc/498.html" class="fs" target="_blank">套餐A
+	      498装修套餐</a></li>
+		<li id="two21"  ><a href="http://www.59jiaju.com/gx/tc/668.html" class="fs1" target="_blank">套餐B
+		  668装修套餐</a></li>
+		<!--<!-- <li id="two31"  class="fs2">套餐C<br />988装修套餐</li>
+		 <li id="two41" class="fs3">套餐D<br />1998装修套餐</li>-->
+		 </ul>
+	</div>
+</div>
+
+<div class="index_main">
+  <!-- <div class="main_t title1">建材</div>-->
+   <div class="main_l left mt5">
+       <div class="main_l_l left"><a href="http://www.59jiaju.com/index.php?app=goods&id=8369" title="高清喷墨瓷片 MMBL84027AE" target="_blank"><img src="/gx/images/indexnews/indexs_03.jpg" alt="高清喷墨瓷片 MMBL84027AE" width="200" height="406" border="0" /></a></div>
+       <div class="main_l_c left ml5">
+	       <div class="main_l_c_p"><a href="http://www.59jiaju.com/index.php?app=store&id=619"  title="名典磁砖" target="_blank"><img src="/gx/images/indexnews/indexs_06.jpg" alt="名典磁砖" width="549" height="205" border="0" /></a></div>
+		   <div class="main_l_c_l">
+		       <ul>
+<li><a href="http://www.59jiaju.com/index.php?app=goods&id=8482"  title="微晶石GJI8031" target="_blank"><img src="/gx/images/indexnews/indexs_17.jpg" alt="微晶石GJI8031" width="182" height="149" border="0" /></a>
+  <p>微晶石GJI8031<br />
+<em>清仓价：198元/片</em></p>
+</li>
+<li><a href="http://www.59jiaju.com/index.php?app=goods&id=8483"  title="微晶石GJI8027" target="_blank"><img src="/gx/images/indexnews/indexs_19.jpg" alt="微晶石GJI8027" width="182" height="149" border="0" /></a>
+  <p>微晶石GJI8027<br />
+<em>清仓价：198元/片</em></p>
+</li>
+<li><a href="http://www.59jiaju.com/index.php?app=goods&id=8475"  title="抛光砖GW88804" target="_blank"><img src="/gx/images/indexnews/indexs_21.jpg" alt="抛光砖GW88804" width="182" height="149" border="0" /></a>
+  <p>抛光砖GW88804<br />
+<em>清仓价：73.8元/片</em></p>
+</li>
+			   </ul>
+			   <div class="clear"></div>
+		   </div>
+	   </div>
+	   <div class="main_l_r left ml5">
+	       <div class="main_l_r_t"><span class="fb14">畅销区</span></div>
+		   <div class="main_l_r_l">
+		       <dl>
+			   <dd><p><span class="jiage">清仓价：33元/片</span></p>
+			     <a href="http://www.59jiaju.com/index.php?app=goods&id=8480" title="抛光砖GW89603">抛光砖GW89603</a><br />
+			     </dd>
+			   <dt><a href="http://www.59jiaju.com/index.php?app=goods&id=8480" title="抛光砖GW89603" target="_blank"><img src="/gx/images/indexnews/indexs_09.jpg" alt="抛光砖GW89603" width="85" height="85" border="0" /></a></dt>
+			   </dl>
+			   <dl>
+			   <dd>
+			     <p><span class="jiage">清仓价：6.1元/片</span></p>
+			     <a href="http://www.59jiaju.com/index.php?app=goods&id=8484" title="瓷片GQR43195" target="_blank">瓷片GQR43195</a><br />
+			     </dd>
+			   <dt><a href="http://www.59jiaju.com/index.php?app=goods&id=8484" title="瓷片GQR43195"><img src="/gx/images/indexnews/indexs_13.jpg" alt="瓷片GQR43195" width="87" height="85" border="0" /></a></dt>
+			   </dl>
+			   <dl>
+			   <dd>
+			     <p><span class="jiage">清仓价：3.88元/片</span></p>
+			     <a href="http://www.59jiaju.com/index.php?app=goods&id=8474" title="瓷片GDMYAF32175" target="_blank">瓷片GDMYAF32175</a><br />
+			     </dd>
+			   <dt><a href="http://www.59jiaju.com/index.php?app=goods&id=8474" title="瓷片GDMYAF32175" target="_blank"><img src="/gx/images/indexnews/indexs_23.jpg" alt="瓷片GDMYAF32175" width="87" height="87" border="0" /></a></dt>
+			   </dl>
+		   
+	     </div>
+	   </div>
+   </div>
+  <div class="clear"></div>
+</div>
+
+<div class="index_main">
+   <div class="sj_tit"><span class="wyxq"><a href="http://www.59jiaju.com/sj/index.php?m=content&c=index&a=lists&catid=11" style="padding:5px 0 0 0 ;"><img src="/gx/images/more.jpg"/></a></span>广州精英设计师</div>
+   <div class="sj_list">
+       <dl>
+	   <dt><a href="http://www.59jiaju.com/sj/index.php?m=content&c=index&a=lists&catid=10&userid=1" target="_blank"><img src="http://www.59jiaju.com/zb/phpsso_server/uploadfile/avatar/1/1/242/180x180.jpg" border="0"/></a></dt>
+	   <dd><span>设计师</span><a href="http://www.59jiaju.com/sj/index.php?m=content&c=index&a=lists&catid=10&userid=197" target="_blank">温学扬</a></dd>
+	   </dl>
+	    <dl>
+	   <dt><a href="#" target="_blank"><img src="/gx/images/sjs2.jpg" border="0"/></a></dt>
+	   <dd><span>设计师</span><a href="http://www.59jiaju.com/sj/index.php?m=content&c=index&a=lists&catid=10&userid=5" target="_blank">陈滨</a></dd>
+	   </dl>
+	   <dl>
+	   <dt><a href="http://www.59jiaju.com/sj/index.php?m=content&amp;c=index&amp;a=lists&amp;catid=10&amp;userid=24"><img src="/gx/images/sjs1.jpg" border="0"/></a></dt>
+	   <dd><span>设计师</span>吴俊杰</dd>
+	   </dl>
+	   <dl>
+	   <dt><a href="#" target="_blank"><img src="/gx/images/sjs3.jpg" border="0"/></a></dt>
+	   <dd><span>设计师</span>杨锦</dd>
+	   </dl>
+	   <dl>
+	   <dt><a href="http://www.59jiaju.com/sj/index.php?m=content&c=index&a=lists&catid=10&userid=5" target="_blank"><img src="/gx/images/sjs_cpp.jpg" border="0"/></a></dt>
+	   <dd><span>设计师</span>陈品平</dd>
+	   </dl>
+	   <dl>
+	   <dt><a href="#" target="_blank"><img src="/gx/images/sjs5.jpg" border="0"/></a></dt>
+	   <dd><span>设计师</span>简志华</dd>
+	   </dl>
+	   
+	   
+	   
+	   <div class="clear"></div>
+   </div>
+</div>
+
+<div class="clear"></div>
+
+<div class="bbs_news">
+    <div class="bbs_left">
+	    <div class="bbs_tit"><span class="wyxq"><a href="http://www.59jiaju.com/bbs/forum.php" target="_blank"><img src="/gx/images/more1.gif"/></a></span>设计论坛</div>
+		<div class="bbs_list">
+		   <dl>
+		   <dt><img src="/gx/images/l3.gif" width="227" height="194" /></dt>
+		   <dd>
+		   	
+		   	<p>·
+				<a href="http://www.59jiaju.com/bbs/forum.php?mod=viewthread&tid=23985" target="_blank">
+					装修完应该怎样去除房间异味？
+				</a>
+				<span class="riqi">
+					2013-12-09
+				</span>
+			</p>
+			<p>·
+				<a href="http://www.59jiaju.com/bbs/forum.php?mod=viewthread&tid=23984" target="_blank">
+					复合木地板装完后踩上去有点忽悠，是因为什么？
+				</a>
+				<span class="riqi">
+					2013-12-09
+				</span>
+			</p>
+			<p>·
+				<a href="http://www.59jiaju.com/bbs/forum.php?mod=viewthread&tid=23974" target="_blank">
+					为什么自己刷的混油白色的门过了半年以后会变黄呢？
+				</a>
+				<span class="riqi">
+					2013-12-09
+				</span>
+			</p>
+			<p>·
+				<a href="http://www.59jiaju.com/bbs/forum.php?mod=viewthread&tid=23956" target="_blank">
+					供暖后发现有木材上刷的墙漆有起鼓的现象。
+				</a>
+				<span class="riqi">
+					2013-12-07
+				</span>
+			</p>
+			<p>·
+				<a href="http://www.59jiaju.com/bbs/forum.php?mod=viewthread&tid=23953" target="_blank">
+					墙纸撕走后，墙面怎么处理？
+				</a>
+				<span class="riqi">
+					2013-12-07
+				</span>
+			</p>
+			<p>·
+				<a href="http://www.59jiaju.com/bbs/forum.php?mod=viewthread&tid=23952" target="_blank">
+					被油漆沾到的门锁要怎么清理？
+				</a>
+				<span class="riqi">
+					2013-12-07
+				</span>
+			</p>
+			<p>·
+				<a href="http://www.59jiaju.com/bbs/forum.php?mod=viewthread&tid=623951" target="_blank">
+					 卫生间里的排气扇应该装在天花的什么位置？ 
+				</a>
+				<span class="riqi">
+					2013-12-07
+				</span>
+			</p>
+			</dd>
+		   </dl>
+		   <div class="clear"></div>
+		   <ul>
+				<li>
+					<a href="http://www.59jiaju.com/bbs/forum.php?mod=viewthread&tid=23983" target="_blank">
+					·&nbsp;[装修资讯]&nbsp;现暖气附近窗套开裂怎么处理？<span class="riqi">2013-12-09</span></a>
+				</li>
+				<li>
+					<a href="http://www.59jiaju.com/bbs/forum.php?mod=viewthread&tid=23958" target="_blank">
+					·&nbsp;[装修知识]&nbsp;如何选购木龙骨？？<span class="riqi">2013-12-7</span></a>
+				</li>
+				<li>
+					<a href="http://www.59jiaju.com/bbs/forum.php?mod=viewthread&tid=23957" target="_blank">
+					·&nbsp;[装修资讯]&nbsp;像马桶、面盆、灶台、抽烟机之类的东西应该什么时候进场？ <span class="riqi">2013-12-07</span></a>
+				</li>
+				<li>
+					<a href="http://www.59jiaju.com/bbs/forum.php?mod=viewthread&tid=23948" target="_blank">
+					·&nbsp;[装修资讯]&nbsp;重新装修，怎么处理阳台下的墙壁？<span class="riqi">2013-12-07</span></a>
+				</li>
+				<li>
+					<a href="http://www.59jiaju.com/bbs/forum.php?mod=viewthread&tid=22641" target="_blank">
+					·&nbsp;[装修资讯]&nbsp;厨房用什么地砖好？<span class="riqi">2013-12-06</span></a>
+				</li>
+		   </ul>
+		</div>
+	</div>
+	<div class="bbs_right">
+	    <div class="bbs_tit"><span class="wyxq"><a href="http://www.59jiaju.com/zp/index.php?m=content&c=index&a=lists&catid=22" target="_blank"><img src="/gx/images/more1.gif"/></a></span>行业新闻</div>
+		<iframe src="http://www.59jiaju.com/zp/index.php?m=content&c=index&a=lists&catid=21" id="iframepage" name="iframepage" frameBorder=0 scrolling=no width="347" height="380"></iframe>
+		
+	</div>
+	<div class="clear"></div>
+</div>
+	  
+</div>
+<div class="clear"></div>
+</div>
+<div id="footer" class="center auto mt10 w-full">
+
+   <div class="foot-service w auto clearfix">
+
+      <dl>
+
+         <dt class="fts-1"></dt>
+
+         <dd><a href="http://www.59jiaju.com/index.php?app=article&act=view&article_id=28">七天无理由退货</a></dd>
+
+         <dd><a href="http://www.59jiaju.com/index.php?app=article&act=view&article_id=13">体贴的售后服务</a></dd>
+      </dl>
+
+<dl>
+
+         <dt class="fts-2"></dt>
+
+         <dd><a href="http://www.59jiaju.com/index.php?app=article&act=view&article_id=15">购物流程</a></dd>
+
+      <dd><a href="http://www.59jiaju.com/index.php?app=article&act=view&article_id=12">商品退货保障</a></dd>
+     </dl>
+
+   <dl>
+
+         <dt class="fts-3"></dt>
+
+         <dd>客服专线：400-1012-668</dd>
+
+         <dd>商家入驻：020-86295019</dd>
+
+     </dl>
+
+      <dl>
+
+         <dt class="fts-4"></dt>
+
+         <dd><a href="http://www.59jiaju.com/index.php?app=article&act=view&article_id=11">顾客必读</a></dd>
+
+         <dd><a href="http://www.59jiaju.com/index.php?app=article&act=view&article_id=14">免责条款</a>
+        
+         </dd>
+      </dl>
+
+  </div>
+     <table width="990" border="0" align="center">
+             <tr>
+               <td width="160"><strong>装修公司</strong></td>
+               <td colspan="5">&nbsp;</td>
+             </tr>
+             <tr>
+               <td width="160"><a href="http://www.jyboo.com/">经艺装饰</a></td>
+               <td width="160"><a href="http://www.59jiaju.com/gs/index.php?m=content&c=index&a=show&catid=13&id=2">喜多装饰</a></td>
+               <td width="162"><a href="http://www.59jiaju.com/gs/index.php?m=content&c=index&a=show&catid=13&id=9">超凡装饰</a></td>
+               <td width="158">&nbsp;</td>
+               <td width="160">&nbsp;</td>
+               <td width="164">&nbsp;</td>
+             </tr>
+           </table>
+
+<div class="foot-nav w-full auto">
+  <p><a href="http://www.59jiaju.com/index.php?app=article&act=view&article_id=28" target="_blank">关于本站</a>
+	    
+	      <a href="#">营销中心</a>
+	    
+	      <a href="#" target="_blank">合作伙伴</a>
+	    
+	      <a href="#" target="_blank">帮助中心</a>
+	    
+	      <a href="http://www.jyboo.com/index.php?m=content&c=index&a=lists&catid=49" target="_blank">专业招聘</a>
+	    
+	      <a href="http://www.59jiaju.com/index.php?app=article&act=view&article_id=28">联系我们</a>
+	    
+	      <a href="#">网站地图</a>
+	    
+	      <a href="#">版权说明</a>
+	    
+	      <a href="#">加入商城</a>
+	    
+	      <a href="#">开放平台</a>
+	    
+	      <a href="#">网站联盟</a>
+	    
+	      <a href="#">手机版</a>
+	    
+	      <a href="#">网站大学</a> </p>
+</div>
+<div class="foot-group">
+
+	<a href="#" target="_blank">亚马逊商城</a> | <a href="www.jd.com" target="_blank">京东商城</a> | <a href="www.yihaodian.com" target="_blank">一号店</a> |
+
+	<a href="http://www.hao123.com/" target="_blank">好123导航</a> |
+
+	<a href="http://www.jyboo.com/" target="_blank">经艺装饰</a> |
+
+	<a href="http://www.taobao.com/" target="_blank">淘宝商城</a> |
+
+	<a href="http://www.tmall.com/" target="_blank">天猫商城</a> |
+
+    <a href="http://china.alibaba.com/" target="_blank">阿里巴巴</a> |
+
+	<a href="http://www.59jiaju.com/xiduo/" target="_blank">喜多装饰</a> |
+    
+    <a href="http://www.59jiaju.com/gs/index.php?m=content&c=index&a=show&catid=13&id=9" target="_blank">超凡装饰</a> |
+
+	<a href="http://www.dangdang.com/" target="_blank">当当网</a>   </div>
+
+  <div class="copyright">Copyright &copy; 2010-2014 我购家居商城 版权所有 <a href="http://www.miitbeian.gov.cn">粤ICP备09031901号-1</a> 广州市我购家居用品有限公司</div>
+
+   </div>
+
+
+</body>
+</html>

@@ -1,0 +1,519 @@
+{include file=header_tancan.html}
+<style type="text/css">
+
+#faqbg{background-color:#666666;position:absolute;z-index:99;left:0;top:0;display:none;width:100%;height:1000px;opacity:0.5;filter:alpha(opacity=50);-moz-opacity:0.5;}
+#faqdiv{position:absolute;width:700px;left:38%;top:50%;margin-left:-200px;height:auto;z-index:100;background-color:#fff;border:1px #8FA4F5 solid;padding:1px;}
+#faqdiv h2{height:25px;font-size:14px;background-color:#8FA4F5;position:relative;padding-left:10px;line-height:25px;}
+#faqdiv h2 a{position:absolute;right:5px;font-size:12px;color:#FF0000;}
+#faqdiv .form{padding:10px;}
+
+
+
+.maiconten{
+
+	width: 100%;
+    min-width: 1100px;
+    margin: 0 auto;
+    height: auto;
+    overflow: hidden;
+}
+.maiconten .title{
+	overflow: hidden;
+	width:100%;
+	height:110px;
+	line-height:110px;
+	font-weight:blod;
+	color:#333;
+	text-align:left;
+}
+.maiconten .title img{
+	width:100%;
+	height:70%;
+
+}
+.maiconten .mai{
+	height: auto;
+    overflow: hidden;
+	width:100%;
+	margin-bottom:50px;
+}
+.maiconten .mai li{padding:3px 5px;float:left;margin:5px;font-size:14px;color:#666666;}
+.openqian{width:100%;height:80px;line-height:30px;overflow:hidden;text-align:center;font-size:22px;color:#333;font-weight:bold;margin-bottom:30px;}
+</style>
+
+<?php
+	$city = $_SESSION['city'];
+	$id = $_GET['id'];
+	$query="select hzpp,kzgs from ecm_taocan where id='$id' and city='$city' order by id desc"; //定义sql
+	$result=mysql_query($query); //发送sql查询
+	$gongsi=@mysql_fetch_array($result);
+?>
+
+
+<div style="margin-bottom:80px;overflow:hidden;">
+
+<div class="tc_area2">
+	
+	
+</div>
+
+
+<div class="tc_area3 tc_w">
+
+<?php 
+
+if($_GET['id']==7 || $_GET['id']==8){
+
+?>
+
+	<!--套餐价格--->
+	<!-- {if $types eq 3} -->
+		<div class="openqian">500元可以做套餐</div>
+	<!-- {/if} -->
+	
+	<div class="maiconten">
+		<p class="title"><img src="/themes/mall/jiaju/images/a0e9779b23bad46ab7f3cbd1fb94890.png"style="width:100%"/></p>
+		<ul class="mai">
+			<li class="but"><a href="javascript:;">经艺装饰</a></li>
+			
+			<?php
+			$arr = explode(",",$gongsi['kzgs']);
+			foreach($arr as $u){
+				echo "<li>".$u."</li>";
+			}
+			?>
+		
+		
+		</ul>
+	
+	</div>
+	
+	
+	<!--合作品牌-->
+	<!-- {if $types eq 3} -->
+	<div class="maiconten">
+		<p class="title"><img src="/themes/mall/jiaju/images/20160822223635.png"/></p>
+		<ul class="mai">
+		
+			
+			<?php
+			$arr = explode(",",$gongsi['hzpp']);
+			foreach($arr as $u){
+				echo "<li><a href='index.php?app=store&id=4454&act=search'>".$u."</a></li>";
+			}
+			?>
+		
+		
+		</ul>
+	
+	</div>
+	<!--{else}-->
+	<div class="maiconten">
+		<p class="title"><img src="/themes/mall/jiaju/images/20160822223635.png"/></p>
+		<ul class="mai">
+			<?php
+			$arr = explode(",",$gongsi['hzpp']);
+			foreach($arr as $u){
+				echo "<li>".$u."</li>";
+			}
+			?>
+			
+		</ul>
+	
+	</div>
+	
+	<!--{/if}-->
+	
+	<?php }?>
+	
+	
+	
+	
+	
+	
+	
+	<div class="tc_area3_title">
+		<p class="title">
+		<img src="/themes/mall/jiaju/images/20160827014042.png"style="width:100%;"/>
+		
+		</p>
+		<div class="tc_area3_con tc_area3_con1">
+			<p style="height:400px;width:100%;overflow: hidden;">
+			<?php 
+
+			if($_GET['id']==7){
+				echo '<img src="/themes/mall/jiaju/images/20160827012506.png"style="width: 100%;height:100%"/>';
+			}
+			if($_GET['id']==8){
+				echo '<img src="/themes/mall/jiaju/images/918.jpg"style="width: 100%;height:100%;"/>';
+			}
+			?>
+			</p>
+				
+			{include file=taocan_content1.html}
+				
+		</div>
+	</div>
+</div>
+
+
+<div class="tc_area6"style="padding-top:0;">
+	<div class="tc_area2_title"><h2 class="colorred">立即预约<i> To make an appointment immediately</i></h2></div>
+	<div class="tc_area6_con">
+		<div class="tc_area6_cona">
+		<form action="index.php?app=search&act=taocan_mes" method="post">
+			<ul>
+				<li><span>姓名：</span><input name="name" type="text"></li>
+				<li><span>手机：</span><input name="tel" type="text"></li>
+				<li><span>地址：</span><input name="dis" type="text"></li>
+				<li><span>其他要求：</span><textarea name="txt"style="width:310px;height:60px;resize:none;float: right;"></textarea></li>
+			</ul>
+			
+			<input type="hidden" name="id" value="{$tid}">
+			<input value="提交" type="submit" class="tc_ptn">
+		</form>
+		</div>
+	</div>
+</div>
+</div>
+
+<!--弹出层-->
+<div id="faqbg"></div>
+<div id="faqdiv" style="display:none">
+	<h2>经艺装饰联系方式<a href="javascript:;" class="close">关闭</a></h2>
+	<div class="form">
+	
+	<table align="center" border="0" cellpadding="0" cellspacing="0" style="width: 100%">
+<tbody>
+	<tr>
+	<td style="width: 225px; height: 30px;"><strong><span style="font-size: 16px;"><span style="background-color: rgb(173, 216, 230);">华南区</span></span></strong></td>
+	<td style="width: 10px;">&nbsp;</td>
+	<td style="width: 225px;">&nbsp;</td>
+	<td style="width: 10px;">&nbsp;</td>
+	<td style="width: 225px;">&nbsp;</td>
+	<td style="width: 10px;">&nbsp;</td>
+	<td style="width: 225px;">&nbsp;</td>
+	</tr>
+	<tr>
+	<td style="text-align: left; vertical-align: top;"><a href="http://www.jyboo.com/"><span style="color: rgb(0, 0, 0);"><span style="font-size: 14px;"><strong>广州总公司</strong></span></span></a><br>
+	<div style="color: rgb(34, 34, 34); font-family: Arial, Verdana, sans-serif;"><span style="color: rgb(0, 0, 0);">地址: 广州市白云区嘉禾街道办鹤边村大彭岭七横路29号F9座3楼</span></div>
+	<div style="color: rgb(34, 34, 34); font-family: Arial, Verdana, sans-serif;">
+	<div><span style="color: rgb(0, 0, 0);">总经理: 符阳其</span></div>
+	<div><span style="color: rgb(0, 0, 0);">手机: </span><span style="white-space: normal; line-height: 16.5px;">18613073198</span><br>
+	<span style="color: rgb(0, 0, 0);">电话: 400-643-9788</span></div>
+	<div><span style="color: rgb(0, 0, 0);">邮箱: jingyi_jyboo@163.com</span></div>
+	</div>
+	</td>
+	<td style="text-align: left; vertical-align: top;">&nbsp;</td>
+	<td style="text-align: left; vertical-align: top;">
+	<div style="color: rgb(34, 34, 34); font-family: Arial, Verdana, sans-serif;"><a data-cke-saved-href="http://sz.jyboo.com/" href="http://sz.jyboo.com/" target="_blank"><span style="color: rgb(0, 0, 0);"><strong style="font-size: 14px;">深圳分公司</strong></span></a><br>
+	<span style="color: rgb(0, 0, 0);">地址: 深圳市福田区深南大6017</span></div>
+	<div style="color: rgb(34, 34, 34); font-family: Arial, Verdana, sans-serif;"><span style="color: rgb(0, 0, 0);">号都市阳光名苑3栋22C房</span></div>
+	<div style="color: rgb(34, 34, 34); font-family: Arial, Verdana, sans-serif;"><span style="color: rgb(0, 0, 0);">总经理: 李水华 &nbsp;</span></div>
+	<div style="color: rgb(34, 34, 34); font-family: Arial, Verdana, sans-serif;"><span style="color: rgb(0, 0, 0);">手机: </span>18620266296<br>
+	<span style="color: rgb(0, 0, 0);">电话: 0755-83476996</span><br>
+	邮箱: jingyi_jyboo@163.com</div>
+	</td>
+	<td style="text-align: left; vertical-align: top;">&nbsp;</td>
+	<td style="text-align: left; vertical-align: top;">
+	<div style="color: rgb(34, 34, 34); font-family: Arial, Verdana, sans-serif;"><span style="color: rgb(0, 0, 0);"><strong style="font-size: 14px;">南宁分公司</strong><br>
+	地址: 南宁市青秀区仙萌开发区剪刀江口农民安置小区151号</span></div>
+	<div style="color: rgb(34, 34, 34); font-family: Arial, Verdana, sans-serif;"><span style="color: rgb(0, 0, 0);">电话: 400-643-9788</span></div>
+	<div style="color: rgb(34, 34, 34); font-family: Arial, Verdana, sans-serif;"><span style="color: rgb(0, 0, 0);">邮箱: jingyi_jyboo@163.com</span></div>
+	</td>
+	<td style="text-align: left; vertical-align: top;">&nbsp;</td>
+	<td>&nbsp;</td>
+	</tr>
+	<tr>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	</tr>
+	<tr>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	</tr>
+	<tr>
+	<td style="height: 30px;"><strong><span style="font-size: 16px;"><span style="background-color: rgb(102, 204, 255);">华中区</span></span></strong></td>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	</tr>
+	<tr>
+	<td><a href="http://wh.jyboo.com/"><span style="color: rgb(0, 0, 0);"><strong><span style="font-size: 14px;">武汉分公司</span></strong></span></a><br>
+	<div style="color: rgb(34, 34, 34); font-family: Arial, Verdana, sans-serif;"><span style="color: rgb(0, 0, 0);">地址: 武汉市江汉区解放大道549号创世纪广场B座10层03室</span></div>
+	<div style="color: rgb(34, 34, 34); font-family: Arial, Verdana, sans-serif;"><span style="color: rgb(0, 0, 0);">总经理: 朱成超&nbsp;</span></div>
+	<div style="color: rgb(34, 34, 34); font-family: Arial, Verdana, sans-serif;"><span style="color: rgb(0, 0, 0);">手机:&nbsp;17771607602&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+	<div style="color: rgb(34, 34, 34); font-family: Arial, Verdana, sans-serif;"><span style="color: rgb(0, 0, 0);">电话: 027-85777511 &nbsp;</span></div>
+	<div style="color: rgb(34, 34, 34); font-family: Arial, Verdana, sans-serif;"><span style="color: rgb(0, 0, 0);">邮箱: jingyi_jyboo@163.com</span></div>
+	</td>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	</tr>
+	<tr>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	</tr>
+	<tr>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	</tr>
+	<tr>
+	<td style="height: 30px;"><strong><span style="font-size: 16px;"><span style="background-color: rgb(102, 204, 0);">华东区</span></span></strong></td>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	</tr>
+	<tr>
+	<td><a href="http://sh.jyboo.com/"><span style="color: rgb(0, 0, 0);"><strong><span style="font-size: 14px;">上海分公司</span></strong></span></a><br>
+	<div style="color: rgb(34, 34, 34); font-family: Arial, Verdana, sans-serif;"><span style="color: rgb(0, 0, 0);">地址:&nbsp;上海市闵行区颛兴东路1559号山谷you帮大厦5B</span></div>
+	<div style="color: rgb(34, 34, 34); font-family: Arial, Verdana, sans-serif;"><span style="color: rgb(0, 0, 0);">总经理: 罗德夫&nbsp;</span></div>
+	<div style="color: rgb(34, 34, 34); font-family: Arial, Verdana, sans-serif;"><span style="color: rgb(0, 0, 0);">手机: </span><span style="white-space: normal; line-height: 18px;">13802505937</span></div>
+	<div style="color: rgb(34, 34, 34); font-family: Arial, Verdana, sans-serif;"><span style="color: rgb(0, 0, 0);">电话: 021-33881261</span></div>
+	<div style="color: rgb(34, 34, 34); font-family: Arial, Verdana, sans-serif;"><span style="color: rgb(0, 0, 0);">邮箱: jingyi_jyboo@163.com</span></div>
+	</td>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	</tr>
+	<tr>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	</tr>
+	<tr>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	</tr>
+	<tr>
+	<td style="height: 30px;"><span style="font-size: 16px;"><strong><span style="background-color: rgb(218, 165, 32);">华北区</span></strong></span></td>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	</tr>
+	<tr>
+	<td>
+	<div style="color: rgb(34, 34, 34); font-family: Arial, Verdana, sans-serif;">
+	<div><span style="color: rgb(0, 0, 0);"><strong style="font-size: 14px;">青岛分公司</strong><br>
+	地址: 山东省青岛市市南区东路9号深业中心大厦B座CE户</span></div>
+	<div><span style="color: rgb(0, 0, 0);">电话: 400-643-9788</span></div>
+	<div><span style="color: rgb(0, 0, 0);">邮箱: jingyi_jyboo@163.com</span></div>
+	</div>
+	</td>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	</tr>
+	<tr>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	</tr>
+	<tr>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	</tr>
+	<tr>
+	<td style="height: 30px;"><strong><span style="font-size: 16px;">东北区</span></strong></td>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	</tr>
+	<tr>
+	<td>正在筹备营建中</td>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	</tr>
+	<tr>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	</tr>
+	<tr>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	</tr>
+	<tr>
+	<td style="height: 30px;"><strong><span style="font-size: 16px;">西南区</span></strong></td>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	</tr>
+	<tr>
+	<td>正在筹备营建中</td>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	</tr>
+	<tr>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	</tr>
+	<tr>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	</tr>
+	<tr>
+	<td style="height: 30px;"><strong><span style="font-size: 16px;">西北区</span></strong></td>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	</tr>
+	<tr>
+	<td>正在筹备营建中</td>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	</tr>
+</tbody>
+</table>
+	
+	</div>
+</div>
+
+
+<script src="/themes/mall/jiaju/styles/taocan/js/jquery-1.10.2.min.js"></script>
+<script src="/themes/mall/jiaju/styles/taocan/js/slider.js"></script>
+
+<script type="text/javascript">
+$(function(){
+	$(".but").click(function(){
+		//var str = "这里是信息内容，这里是信息内容！";
+		$(".form").html();
+		$("#faqbg").css({display:"block",height:$(document).height()});
+		var yscroll =document.documentElement.scrollTop;
+		$("#faqdiv").css("top","30%");
+		$("#faqdiv").css("display","block");
+		document.documentElement.scrollTop=0;
+	});
+	$(".close").click(function(){
+		$("#faqbg").css("display","none");
+		$("#faqdiv").css("display","none");
+	});
+})
+</script>
+</body>
+
+</html>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		

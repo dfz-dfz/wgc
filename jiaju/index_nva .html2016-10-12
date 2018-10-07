@@ -1,0 +1,1527 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<link rel="stylesheet" href="/themes/mall/jiaju/styles/nva/css/nvas.css" /> 
+<style>
+
+body { background:#fff; }
+ #top_img_ts2{display:none;width:990px;height:450px;position: fixed;left: 50%;top: 50%;margin-left:-495px;margin-top: -225px;z-index:1100;}
+
+</style>
+
+<base  />
+
+</head>
+
+<body>
+
+<div id="top_img_ts2" style="display:none;">
+
+    <img src="images/b1a1884e622122bf74de82b44fc_p24_mk24.jpg" style="width:990px;height:450px;"/>
+
+</div>
+
+<div style="display:none;width:990px;height:90px;margin:0 auto;">
+
+    <img src="images/e1411e1e481c962b840dc2a2fb8_p24_mk24.jpg" id="top_img_ts" alt="" />
+
+</div>
+
+<script src="/themes/mall/jiaju/styles/nva/js/dojquery-s-min.js" charset="UTF-8"></script>
+
+<script>
+
+function touchSlideImgNew(handle){
+
+    dj.get("ui.focusimg",["ui.gun"],function(){
+
+       handle.parent().next().children("li").first().addClass("on");
+
+       handle.focusimg({
+
+           item : "a",
+
+           auto : true,
+
+           smallimg : handle.parent().next().children(),
+
+           interval : 10000,
+
+           lazyload : true
+
+       });
+
+    });
+
+}
+
+</script>
+
+<script>
+
+dj.get("ui.hoverfn",function(){
+
+	jQuery("#site_navigation").hoverfn({
+
+		targetshow : "dd"
+
+	})
+
+});
+
+dj.get("JJ.common.loginStatus",["ui.hoverfn"],function(){
+
+	JJ.common.loginStatus.init();
+
+});
+
+</script>
+
+<div class="clearfix w990 mt10"> 
+
+  <script type="text/javascript" src="/themes/mall/jiaju/styles/nva/js/4.js"></script> 
+
+</div>
+
+
+
+<!--logo、search 开始-->
+
+
+
+<!--logo、search 结束--> 
+
+
+
+<!--导航 开始-->
+
+
+
+<!--导航 结束--> 
+
+<script>
+
+dj.get("JJ.common.search",function(){
+
+	JJ.common.search.init();
+
+});
+
+dj.get("ui.hoverfn",function(){
+
+   jQuery(".nav_main>li,.nav_sub>li").filter(":not('.bg,.now,.nav_list')").hoverfn({
+
+       targetClass : "on"
+
+   });
+
+   jQuery(".nav_list").hoverfn({
+
+	targetClass : "on",
+
+	targetshow : "em"
+
+   });
+
+   jQuery(".nav_list em>i").hoverfn({
+
+	targetClass : "on"
+
+   });
+
+});
+
+</script>
+
+<!--子导航、幻灯、品牌活动推荐 开始-->
+
+<div id="box_row0" class="clearfix"style="width: 100%;">
+
+  <div id="category"style="min-width: 230px;width: 15%;"> 
+
+    <!--装修材料 开始--> 
+
+    <h2 class="category_hd"><span class="ico"></span><a href="http://www.jiaju.com/">装修材料馆</a></h2>
+
+<div class="category_bd">
+
+<ul class="items">
+
+  <li class="item no_br">
+
+    <h3 class="item_hd_tit">
+		<a href="index.php?app=search&cate_id=7021" >装饰五金</a><span class="ico"></span>	</h3>
+    <p class="item_col">
+		<a href="index.php?app=search&cate_id=7553">门锁</a>
+		<a href="index.php?app=search&cate_id=7558">门禁</a>
+		<a href="index.php?app=search&cate_id=7567">拉手</a>
+		<a href="index.php?app=search&cate_id=7557">挂锁</a>
+		<a href="index.php?app=search&cate_id=7559">插销</a>	</p>
+
+    <p class="item_col">
+		<a href="index.php?app=search&cate_id=7564">滑轨</a>
+		<a href="index.php?app=search&cate_id=7565">合页</a>
+		<a href="index.php?app=search&cate_id=7585">轴承</a>	</p>
+
+    <div class="category_con" style="display:none">
+    <textarea>
+            <div class="lst_subcategory">
+                <dl>
+
+                    <dt>
+						<a href="index.php?app=search&cate_id=7553">门锁</a>
+					</dt>
+
+                    <dd>
+						<a href="index.php?app=search&cate_id=7554">执手锁</a>
+						<a href="index.php?app=search&cate_id=7556">密码锁</a>
+						<a href="index.php?app=search&cate_id=7555">球形锁</a>
+						<a href="index.php?app=search&cate_id=7557">挂锁</a>
+						<a href="index.php?app=search&cate_id=7558">门禁</a>
+						<a href="index.php?app=search&cate_id=7559">插销</a>
+						<a href="index.php?app=search&cate_id=7560">其他锁具</a>
+					</dd>
+
+                </dl>
+
+                <dl>
+
+                    <dt>
+						<a href="index.php?app=search&cate_id=7561">配件</a>
+					</dt>
+
+                    <dd>
+						<a href="index.php?app=search&cate_id=7562">门吸</a>
+						<a href="index.php?app=search&cate_id=7563">铰链</a>
+						<a href="index.php?app=search&cate_id=7564">滑轨</a>
+						<a href="index.php?app=search&cate_id=7565">合页</a>
+						<a href="index.php?app=search&cate_id=7567">拉手</a>
+						<a href="index.php?app=search&cate_id=7585">轴承</a>
+					</dd>
+
+                </dl>
+
+              
+
+            </div>
+
+            <div class="lst_top">
+
+
+
+                <div class="lst_recmd">
+					<a href="javascript:;" class="link">
+						<span class="ico"></span>
+						<span class="tit">合作伙伴</span>
+						<span class="goto">点击进入</span>
+						<span class="ico2"></span>
+					</a>
+				</div>
+                <div class="lst_top_items">
+                    <p> 
+		<a href="index.php?app=store&id=1056&act=search">龙凯斯</a> 		
+		<a href="index.php?app=store&id=3226&act=search">东方雨虹</a> 
+        <a href="index.php?app=store&id=4435&act=search">灿美家</a>
+        <a href="index.php?app=store&id=4470&act=search">豪族漆</a> 
+        <a href="index.php?app=store&id=4440&act=search">天誉地板</a> 
+        <a href="index.php?app=store&id=4429&act=search">鲜橙照明</a> 
+        <a href="index.php?app=store&id=4454&act=search">拓沃卫浴</a> 
+        <a href="index.php?app=store&id=4453&act=search">嘉德福</a> 
+        <a href="index.php?app=store&id=4458&act=search">凯宝莱</a> 
+        <a href="index.php?app=store&id=4472&act=search">斯贝勒</a> 
+        <a href="index.php?app=store&id=4457&act=search">尚雅</a> 
+        <a href="index.php?app=store&id=4455&act=search">轩宇卫浴</a> 
+        <a href="index.php?app=store&id=4467&act=search">丰瑜陶瓷</a> 
+        <a href="index.php?app=store&id=4456&act=search">随宇树</a> 
+        <a href="index.php?app=store&id=4431&act=search">五一照明</a> 
+        <a href="index.php?app=store&id=4473&act=search">中露达</a> 
+        <a href="index.php?app=store&id=4452&act=search">澳蒙电器</a> 
+        <a href="index.php?app=store&id=4469&act=search">德仕格朗</a> 
+ <a href="index.php?app=store&id=4447&act=search">雅之杰</a>	
+		 <a href="index.php?app=store&id=1471856462&act=search">新合时</a> 
+        <a href="index.php?app=store&id=1471856457&act=search">神火</a> 
+        <a href="index.php?app=store&id=12235&act=search">宗田</a> 
+        <a href="index.php?app=store&id=4447&act=search">安耐稳</a>  
+		 <a href="index.php?app=store&id=1473401706&act=search">保为康</a> 
+        <a href="index.php?app=store&id=1471856459&act=search">冠桦</a> 
+        <a href="index.php?app=store&id=1473151754&act=search">广升卫浴</a> 
+        <a href="index.php?app=store&id=1473401133&act=search">三力锁业</a>  
+		<a href="index.php?app=store&id=1473144308&act=search">升腾塑胶</a> 
+        <a href="index.php?app=store&id=1473151753&act=search">顺德利</a> 
+        <a href="index.php?app=store&id=1473326807&act=search">兴光铝梯</a> 
+        <a href="index.php?app=store&id=1473389692&act=search">英豪</a>  
+		<a href="index.php?app=store&id=4451&act=search">樱花</a>
+        <a href="index.php?app=store&id=1471854097&act=search">曼帝卫浴</a>  		  
+        <a href="index.php?app=store&id=1471856461&act=search">澳特利</a>  
+		<a href="index.php?app=store&id=1471854102&act=search">利禾园林</a>
+        <a href="index.php?app=store&id=1473401709&act=search">万木奇</a> 				
+                    </p>
+                </div>
+
+            </div>
+
+        </textarea>
+  </li>
+
+  <li class="item">
+
+    <h3  class="item_hd_tit"><a href="index.php?app=search&cate_id=7543">卫浴五金</a><span class="ico"></span></h3>
+
+    <p class="item_col">
+	<a href="index.php?app=search&cate_id=7569">水槽</a>
+	
+	<a href="index.php?app=search&cate_id=7570">水龙头</a>
+	<a href="index.php?app=search&cate_id=7573">地漏</a>
+	
+	</p>
+
+    <p class="item_col"><a href="index.php?app=search&cate_id=7576">置物架</a>
+	
+	<a href="index.php?app=search&cate_id=7579">毛巾架</a>
+	<a href="index.php?app=search&cate_id=7577">厕刷架</a>
+	</p>
+
+    <div class="category_con" style="display:none">
+
+    <textarea>
+
+            <div class="lst_subcategory">
+
+				<dl>
+					<dt>
+						<a href="index.php?app=search&cate_id=7568" >水暖类</a>
+					</dt>
+					<dd>
+						<a href="index.php?app=search&cate_id=7569" >水槽</a>
+						<a href="index.php?app=search&cate_id=7570" >水龙头</a>
+						<a href="index.php?app=search&cate_id=7571" >花洒</a>
+						<a href="index.php?app=search&cate_id=7572" >水咀</a>
+                        <a href="index.php?app=search&cate_id=7573" >地漏</a>
+						<a href="index.php?app=search&cate_id=7574" >上下水配件</a>
+					
+					</dd>
+				</dl>
+
+
+
+				<dl>
+					<dt>
+						<a href="index.php?app=search&cate_id=7575" >挂件类</a>
+					</dt>
+					<dd>
+						<a href="index.php?app=search&cate_id=7576" >置物架</a>
+                        <a href="index.php?app=search&cate_id=7577" >厕刷架</a>
+                        <a href="index.php?app=search&cate_id=7578" >纸巾合</a>
+                        <a href="index.php?app=search&cate_id=7579" >毛巾架</a>
+                        <a href="index.php?app=search&cate_id=7580" >皂液合</a>
+
+                        
+					</dd>
+				</dl>
+
+            </div>
+
+            <div class="lst_top">
+
+				  <div class="lst_recmd"><a href="javascript:;"  class="link">
+				  <span class="ico"></span><span class="tit">合作伙伴</span>
+				  <span class="goto">点击进入</span><span class="ico2"></span></a>
+				  </div>
+
+                <div class="lst_top_items">
+                    <p> 
+<a href="index.php?app=store&id=1056&act=search">龙凯斯</a> 		
+		<a href="index.php?app=store&id=3226&act=search">东方雨虹</a> 
+        <a href="index.php?app=store&id=4435&act=search">灿美家</a>
+        <a href="index.php?app=store&id=4470&act=search">豪族漆</a> 
+        <a href="index.php?app=store&id=4440&act=search">天誉地板</a> 
+        <a href="index.php?app=store&id=4429&act=search">鲜橙照明</a> 
+        <a href="index.php?app=store&id=4454&act=search">拓沃卫浴</a> 
+        <a href="index.php?app=store&id=4453&act=search">嘉德福</a> 
+        <a href="index.php?app=store&id=4458&act=search">凯宝莱</a> 
+        <a href="index.php?app=store&id=4472&act=search">斯贝勒</a> 
+        <a href="index.php?app=store&id=4457&act=search">尚雅</a> 
+        <a href="index.php?app=store&id=4455&act=search">轩宇卫浴</a> 
+        <a href="index.php?app=store&id=4467&act=search">丰瑜陶瓷</a> 
+        <a href="index.php?app=store&id=4456&act=search">随宇树</a> 
+        <a href="index.php?app=store&id=4431&act=search">五一照明</a> 
+        <a href="index.php?app=store&id=4473&act=search">中露达</a> 
+        <a href="index.php?app=store&id=4452&act=search">澳蒙电器</a> 
+        <a href="index.php?app=store&id=4469&act=search">德仕格朗</a> 
+        <a href="index.php?app=store&id=4447&act=search">雅之杰</a>		
+		 <a href="index.php?app=store&id=1471856462&act=search">新合时</a> 
+        <a href="index.php?app=store&id=1471856457&act=search">神火</a> 
+        <a href="index.php?app=store&id=12235&act=search">宗田</a> 
+        <a href="index.php?app=store&id=4447&act=search">安耐稳</a>  
+		 <a href="index.php?app=store&id=1473401706&act=search">保为康</a> 
+        <a href="index.php?app=store&id=1471856459&act=search">冠桦</a> 
+        <a href="index.php?app=store&id=1473151754&act=search">广升卫浴</a> 
+        <a href="index.php?app=store&id=1473401133&act=search">三力锁业</a>  
+		<a href="index.php?app=store&id=1473144308&act=search">升腾塑胶</a> 
+        <a href="index.php?app=store&id=1473151753&act=search">顺德利</a> 
+        <a href="index.php?app=store&id=1473326807&act=search">兴光铝梯</a> 
+        <a href="index.php?app=store&id=1473389692&act=search">英豪</a>  
+		<a href="index.php?app=store&id=4451&act=search">樱花</a>
+        <a href="index.php?app=store&id=1471854097&act=search">曼帝卫浴</a>  		  
+        <a href="index.php?app=store&id=1471856461&act=search">澳特利</a>  
+		<a href="index.php?app=store&id=1471854102&act=search">利禾园林</a>
+        <a href="index.php?app=store&id=1473401709&act=search">万木奇</a>  			
+						<!--[if IE 6]><div></div><div></div><![endif]-->
+					</p>
+
+                </div>
+
+
+
+            </div>
+
+        </textarea>
+
+    </div>
+  </li>
+
+  <li class="item">
+
+    <h3  class="item_hd_tit"><a href="index.php?app=search&cate_id=7022" >电气五金</a><span class="ico"></span></h3>
+
+    <p class="item_col">
+    <a href="index.php?app=search&cate_id=7102">台灯</a>
+    <a href="index.php?app=search&cate_id=7103">壁灯</a>
+    <a href="index.php?app=search&cate_id=7104">节能灯</a>
+    <a href="index.php?app=search&cate_id=7105">吸顶灯</a>
+
+    </p>
+
+    <p class="item_col">
+    <a href="index.php?app=search&cate_id=7106">面板开关</a>
+    <a href="index.php?app=search&cate_id=7461">漏电开关</a>
+    &nbsp;<a href="index.php?app=search&cate_id=7107">面板插座</a>
+
+    </p>
+
+    <div class="category_con" style="display:none">
+
+    <textarea>
+
+            <div class="lst_subcategory">
+
+<dl>
+<dt><a href="index.php?app=search&cate_id=7033" >照明类</a></dt>
+<dd>
+
+<a href="index.php?app=search&cate_id=7102" >台灯</a>
+
+<a href="index.php?app=search&cate_id=7103" >壁灯</a>
+
+<a href="index.php?app=search&cate_id=7104" >节能灯</a>
+<a href="index.php?app=search&cate_id=7105" >吸顶灯</a>
+
+<a href="index.php?app=search&cate_id=7457" >支架</a>
+
+<a href="index.php?app=search&cate_id=7458" >光管</a>
+<a href="index.php?app=search&cate_id=7581" >镜前灯</a>
+
+<a href="index.php?app=search&cate_id=7582" >筒灯</a>
+<a href="index.php?app=search&cate_id=7583" >射灯</a>
+<a href="index.php?app=search&cate_id=7664" >手电筒</a>
+
+<a href="index.php?app=search&cate_id=7667" >面板灯</a>
+<a href="index.php?app=search&cate_id=7668" >灯管</a>
+
+<a href="index.php?app=search&cate_id=7669" >球泡灯</a>
+<a href="index.php?app=search&cate_id=7670" >投光灯</a>
+<a href="index.php?app=search&cate_id=7671" >轨道灯</a>
+<a href="index.php?app=search&cate_id=7666" >灯带</a>
+
+
+</dd></dl>
+
+
+
+<dl><dt><a href="index.php?app=search&cate_id=7034" >开关类</a></dt><dd>
+
+<a href="index.php?app=search&cate_id=7106" >面板开关</a>
+
+<a href="index.php?app=search&cate_id=7460" >按钮开关</a>
+<a href="index.php?app=search&cate_id=7461" >漏电开关</a>
+
+<a href="index.php?app=search&cate_id=7462" >空气开关</a>
+<a href="index.php?app=search&cate_id=7463" >闸刀开关</a>
+
+
+</dd></dl>
+
+
+
+<dl><dt><a href="index.php?app=search&cate_id=7035" >插座类</a></dt><dd>
+
+<a href="index.php?app=search&cate_id=7107" >面板插座</a>
+
+<a href="index.php?app=search&cate_id=7465" >排插</a>
+
+<a href="index.php?app=search&cate_id=7466" >信号插座</a>
+
+<a href="index.php?app=search&cate_id=7584" >地面插座</a>
+
+
+</dd></dl>
+
+            </div>
+
+            <div class="lst_top">
+
+
+
+            <div class="lst_recmd">
+				<a href="javascript:;"  class="link">
+					<span class="ico"></span>
+					<span class="tit">合作伙伴</span>
+					<span class="goto">点击进入</span>
+					<span class="ico2"></span>
+				</a>
+			</div>
+
+               <div class="lst_top_items">					
+               <p> 
+		<a href="index.php?app=store&id=1056&act=search">龙凯斯</a> 		
+		<a href="index.php?app=store&id=3226&act=search">东方雨虹</a> 
+        <a href="index.php?app=store&id=4435&act=search">灿美家</a>
+        <a href="index.php?app=store&id=4470&act=search">豪族漆</a> 
+        <a href="index.php?app=store&id=4440&act=search">天誉地板</a> 
+        <a href="index.php?app=store&id=4429&act=search">鲜橙照明</a> 
+        <a href="index.php?app=store&id=4454&act=search">拓沃卫浴</a> 
+        <a href="index.php?app=store&id=4453&act=search">嘉德福</a> 
+        <a href="index.php?app=store&id=4458&act=search">凯宝莱</a> 
+        <a href="index.php?app=store&id=4472&act=search">斯贝勒</a> 
+        <a href="index.php?app=store&id=4457&act=search">尚雅</a> 
+        <a href="index.php?app=store&id=4455&act=search">轩宇卫浴</a> 
+        <a href="index.php?app=store&id=4467&act=search">丰瑜陶瓷</a> 
+        <a href="index.php?app=store&id=4456&act=search">随宇树</a> 
+        <a href="index.php?app=store&id=4431&act=search">五一照明</a> 
+        <a href="index.php?app=store&id=4473&act=search">中露达</a> 
+        <a href="index.php?app=store&id=4452&act=search">澳蒙电器</a> 
+        <a href="index.php?app=store&id=4469&act=search">德仕格朗</a> 
+ <a href="index.php?app=store&id=4447&act=search">雅之杰</a>	
+		 <a href="index.php?app=store&id=1471856462&act=search">新合时</a> 
+        <a href="index.php?app=store&id=1471856457&act=search">神火</a> 
+        <a href="index.php?app=store&id=12235&act=search">宗田</a> 
+        <a href="index.php?app=store&id=4447&act=search">安耐稳</a>  
+		 <a href="index.php?app=store&id=1473401706&act=search">保为康</a> 
+        <a href="index.php?app=store&id=1471856459&act=search">冠桦</a> 
+        <a href="index.php?app=store&id=1473151754&act=search">广升卫浴</a> 
+        <a href="index.php?app=store&id=1473401133&act=search">三力锁业</a>  
+		<a href="index.php?app=store&id=1473144308&act=search">升腾塑胶</a> 
+        <a href="index.php?app=store&id=1473151753&act=search">顺德利</a> 
+        <a href="index.php?app=store&id=1473326807&act=search">兴光铝梯</a> 
+        <a href="index.php?app=store&id=1473389692&act=search">英豪</a>  
+		<a href="index.php?app=store&id=4451&act=search">樱花</a>
+        <a href="index.php?app=store&id=1471854097&act=search">曼帝卫浴</a>  		  
+        <a href="index.php?app=store&id=1471856461&act=search">澳特利</a>  
+		<a href="index.php?app=store&id=1471854102&act=search">利禾园林</a>
+        <a href="index.php?app=store&id=1473401709&act=search">万木奇</a> 			
+
+				</p>
+
+                </div>    
+
+            </div>
+
+        </textarea>
+
+    </div>
+  </li>
+
+  <li class="item item_fixbdr">
+
+    <h3  class="item_hd_tit">
+    <a href="index.php?app=search&cate_id=7023" >日用五金</a><span class="ico"></span>
+    </h3>
+
+    <p class="item_col">
+    <a href="index.php?app=search&cate_id=7586">玻璃胶</a>
+    <a href="index.php?app=search&cate_id=7116">夹持类</a>
+    <a href="index.php?app=search&cate_id=7590">电工胶布</a>
+    <a href="index.php?app=search&cate_id=7592">封箱胶</a>
+    <a href="index.php?app=search&cate_id=7591">双面胶</a></p>
+
+    <p class="item_col">
+	<a href="index.php?app=search&cate_id=7121">手套</a>
+	<a href="index.php?app=search&cate_id=7122">口罩</a>
+	<a href="index.php?app=search&cate_id=7123">面罩</a>
+	<a href="index.php?app=search&cate_id=7603">螺丝</a></p>
+
+    <div class="category_con" style="display:none">
+
+
+
+    <textarea>
+
+            <div class="lst_subcategory">
+
+<dl><dt><a href="index.php?app=search&cate_id=7038" >胶类</a></dt><dd>
+
+<a href="index.php?app=search&cate_id=7113" >木工胶</a>
+
+<a href="index.php?app=search&cate_id=7114" >瓷砖胶</a>
+
+<a href="index.php?app=search&cate_id=7115" >金属胶</a>
+
+<a href="index.php?app=search&cate_id=7586" >玻璃胶</a>
+
+<a href="index.php?app=search&cate_id=7587" >墙纸胶</a>
+
+<a href="index.php?app=search&cate_id=7588" >万能胶</a>
+
+<a href="index.php?app=search&cate_id=7589" >其它粘合剂</a>
+
+<a href="index.php?app=search&cate_id=7590" >电工胶布</a>
+
+<a href="index.php?app=search&cate_id=7591" >双面胶</a>
+
+<a href="index.php?app=search&cate_id=7592" >封箱胶</a>
+
+</dd></dl>
+
+
+
+<dl><dt><a href="index.php?app=search&cate_id=7039" >工具类</a></dt><dd>
+
+<a href="index.php?app=search&cate_id=7116" >夹持类</a>
+
+<a href="index.php?app=search&cate_id=7117" >敲击类</a>
+<a href="index.php?app=search&cate_id=7593" >电动类</a>
+
+<a href="index.php?app=search&cate_id=7594" >剪切类</a>
+
+<a href="index.php?app=search&cate_id=7595" >镐类</a>
+
+<a href="index.php?app=search&cate_id=7596" >枪类</a>
+
+<a href="index.php?app=search&cate_id=7598" >园林类</a>
+
+<a href="index.php?app=search&cate_id=7599" >电子类</a>
+<a href="index.php?app=search&cate_id=7606" >扎带</a>
+
+<a href="index.php?app=search&cate_id=7597" >修整类</a>
+<a href="index.php?app=search&cate_id=7600" >容器类</a>
+
+<a href="index.php?app=search&cate_id=7601" >脚架</a>
+
+<a href="index.php?app=search&cate_id=7602" >焊条</a>
+
+<a href="index.php?app=search&cate_id=7603" >螺丝</a>
+
+<a href="index.php?app=search&cate_id=7604" >铁钉</a>
+
+<a href="index.php?app=search&cate_id=7605" >钢钉</a>
+
+<a href="index.php?app=search&cate_id=7607" >胶绳</a>
+
+
+<a href="index.php?app=search&cate_id=7612" >紧固</a>
+
+<a href="index.php?app=search&cate_id=7662" >刷子</a>
+<a href="index.php?app=search&cate_id=7611" >扳手类</a>
+<a href="index.php?app=search&cate_id=7730" >液压类</a>
+<a href="index.php?app=search&cate_id=7731" >焊割类</a>
+<a href="index.php?app=search&cate_id=7732" >汽保类</a>
+<a href="index.php?app=search&cate_id=7733" >测量类</a>
+<a href="index.php?app=search&cate_id=7734" >组装类</a>
+
+</dd></dl>
+
+
+
+<dl><dt><a href="index.php?app=search&cate_id=7040" >劳保类</a></dt><dd>
+
+<a href="index.php?app=search&cate_id=7120" >鞋帽服装</a>
+<a href="index.php?app=search&cate_id=7121" >手套</a>
+
+<a href="index.php?app=search&cate_id=7122" >口罩</a>
+
+<a href="index.php?app=search&cate_id=7123" >面罩</a>
+
+</dd></dl>
+
+            </div>
+
+            <div class="lst_top">
+
+				<div class="lst_recmd">
+					<a href="javascript:;"  class="link">
+						<span class="ico"></span>
+						<span class="tit">合作伙伴</span>
+						<span class="goto">点击进入</span>
+						<span class="ico2"></span>
+					</a>
+				</div>
+
+                <div class="lst_top_items">
+				   <p> 
+		<a href="index.php?app=store&id=1056&act=search">龙凯斯</a> 		
+		<a href="index.php?app=store&id=3226&act=search">东方雨虹</a> 
+        <a href="index.php?app=store&id=4435&act=search">灿美家</a>
+        <a href="index.php?app=store&id=4470&act=search">豪族漆</a> 
+        <a href="index.php?app=store&id=4440&act=search">天誉地板</a> 
+        <a href="index.php?app=store&id=4429&act=search">鲜橙照明</a> 
+        <a href="index.php?app=store&id=4454&act=search">拓沃卫浴</a> 
+        <a href="index.php?app=store&id=4453&act=search">嘉德福</a> 
+        <a href="index.php?app=store&id=4458&act=search">凯宝莱</a> 
+        <a href="index.php?app=store&id=4472&act=search">斯贝勒</a> 
+        <a href="index.php?app=store&id=4457&act=search">尚雅</a> 
+        <a href="index.php?app=store&id=4455&act=search">轩宇卫浴</a> 
+        <a href="index.php?app=store&id=4467&act=search">丰瑜陶瓷</a> 
+        <a href="index.php?app=store&id=4456&act=search">随宇树</a> 
+        <a href="index.php?app=store&id=4431&act=search">五一照明</a> 
+        <a href="index.php?app=store&id=4473&act=search">中露达</a> 
+        <a href="index.php?app=store&id=4452&act=search">澳蒙电器</a> 
+        <a href="index.php?app=store&id=4469&act=search">德仕格朗</a> 
+ <a href="index.php?app=store&id=4447&act=search">雅之杰</a>	
+		 <a href="index.php?app=store&id=1471856462&act=search">新合时</a> 
+        <a href="index.php?app=store&id=1471856457&act=search">神火</a> 
+        <a href="index.php?app=store&id=12235&act=search">宗田</a> 
+        <a href="index.php?app=store&id=4447&act=search">安耐稳</a>  
+		 <a href="index.php?app=store&id=1473401706&act=search">保为康</a> 
+        <a href="index.php?app=store&id=1471856459&act=search">冠桦</a> 
+        <a href="index.php?app=store&id=1473151754&act=search">广升卫浴</a> 
+        <a href="index.php?app=store&id=1473401133&act=search">三力锁业</a>  
+		<a href="index.php?app=store&id=1473144308&act=search">升腾塑胶</a> 
+        <a href="index.php?app=store&id=1473151753&act=search">顺德利</a> 
+        <a href="index.php?app=store&id=1473326807&act=search">兴光铝梯</a> 
+        <a href="index.php?app=store&id=1473389692&act=search">英豪</a>  
+		<a href="index.php?app=store&id=4451&act=search">樱花</a>
+        <a href="index.php?app=store&id=1471854097&act=search">曼帝卫浴</a>  		  
+        <a href="index.php?app=store&id=1471856461&act=search">澳特利</a>  
+		<a href="index.php?app=store&id=1471854102&act=search">利禾园林</a>
+        <a href="index.php?app=store&id=1473401709&act=search">万木奇</a> 		
+					</p>
+                </div> 
+
+
+
+            </div>
+
+        </textarea>
+
+    </div>
+  </li>
+  <li class="item item_fixbdr">
+
+    <h3  class="item_hd_tit">
+    <a href="index.php?app=search&cate_id=7024" >装饰主材</a><span class="ico"></span>
+    </h3>
+
+    <p class="item_col">
+    <a href="index.php?app=search&cate_id=7148">抛光砖</a>
+    <a href="index.php?app=search&cate_id=7149">抛釉砖</a>
+    <a href="index.php?app=search&cate_id=7623">实木门</a>
+    <a href="index.php?app=search&cate_id=7631">集成吊顶</a>
+    <a href="index.php?app=search&cate_id=7497">座厕</a></p>
+
+    <p class="item_col">
+	<a href="index.php?app=search&cate_id=7636">防水涂料</a>
+	<a href="index.php?app=search&cate_id=7637">内墙漆</a>
+	<a href="index.php?app=search&cate_id=7644">壁纸</a>
+	<a href="index.php?app=search&cate_id=7646">窗帘</a></p>
+
+    <div class="category_con" style="display:none">
+
+
+
+    <textarea>
+
+            <div class="lst_subcategory">
+
+<dl><dt><a href="index.php?app=search&cate_id=7047" >墙地砖</a></dt><dd>
+
+<a href="index.php?app=search&cate_id=7148" >抛光砖</a>
+
+<a href="index.php?app=search&cate_id=7149" >抛釉砖</a>
+
+<a href="index.php?app=search&cate_id=7150" >微晶砖</a>
+
+<a href="index.php?app=search&cate_id=7151" >仿古砖</a>
+
+<a href="index.php?app=search&cate_id=7152" >瓷质砖</a>
+
+<a href="index.php?app=search&cate_id=7475" >马赛克</a>
+
+<a href="index.php?app=search&cate_id=7477" >木地板</a>
+
+<a href="index.php?app=search&cate_id=7478" >竹地板</a>
+
+</dd></dl>
+
+
+
+<dl><dt><a href="index.php?app=search&cate_id=7048" >门窗隔断</a></dt><dd>
+
+<a href="index.php?app=search&cate_id=7155" >免漆门</a>
+
+<a href="index.php?app=search&cate_id=7623" >实木门</a>
+<a href="index.php?app=search&cate_id=7622" >烤漆门</a>
+
+<a href="index.php?app=search&cate_id=7624" >铝合金平开门</a>
+
+<a href="index.php?app=search&cate_id=7625" >铝合金推拉门</a>
+
+<a href="index.php?app=search&cate_id=7626" >淋浴房</a>
+
+<a href="index.php?app=search&cate_id=7627" >淋浴隔断</a>
+
+<a href="index.php?app=search&cate_id=7628" >阳光房</a>
+
+<a href="index.php?app=search&cate_id=7629" >铝合金窗</a>
+
+<a href="index.php?app=search&cate_id=7630" >塑钢窗</a>
+
+<a href="index.php?app=search&cate_id=7631" >集成吊顶</a>
+
+<a href="index.php?app=search&cate_id=7632" >其他吊顶</a>
+
+<a href="index.php?app=search&cate_id=7633" >石膏板吊顶</a>
+
+
+</dd></dl>
+
+
+
+<dl><dt><a href="index.php?app=search&cate_id=7049" >洁具</a></dt><dd>
+
+<a href="index.php?app=search&cate_id=7157" >陶瓷洁具</a>
+<a href="index.php?app=search&cate_id=7158" >洗手盆</a>
+
+<a href="index.php?app=search&cate_id=7497" >座厕</a>
+
+<a href="index.php?app=search&cate_id=7498" >蹲厕</a>
+<a href="index.php?app=search&cate_id=7499" >浴缸</a>
+
+</dd></dl>
+
+<dl><dt><a href="index.php?app=search&cate_id=7634" >涂料</a></dt><dd>
+
+<a href="index.php?app=search&cate_id=7636" >防水涂料</a>
+<a href="index.php?app=search&cate_id=7637" >内墙漆</a>
+
+<a href="index.php?app=search&cate_id=7638" >外墙漆</a>
+
+<a href="index.php?app=search&cate_id=7639" >地坪漆</a>
+<a href="index.php?app=search&cate_id=7640" >木器漆</a>
+<a href="index.php?app=search&cate_id=7641" >稀释漆</a>
+
+<a href="index.php?app=search&cate_id=7642" >快干剂</a>
+<a href="index.php?app=search&cate_id=7643" >硅藻泥</a>
+
+
+</dd></dl>
+<dl><dt><a href="index.php?app=search&cate_id=7635" >软饰</a></dt><dd>
+
+<a href="index.php?app=search&cate_id=7644" >壁纸</a>
+<a href="index.php?app=search&cate_id=7645" >墙布</a>
+
+<a href="index.php?app=search&cate_id=7646" >窗帘</a>
+
+<a href="index.php?app=search&cate_id=7647" >扪布</a>
+
+
+</dd></dl>
+
+            </div>
+
+            <div class="lst_top">
+
+				<div class="lst_recmd">
+					<a href="javascript:;"  class="link">
+						<span class="ico"></span>
+						<span class="tit">合作伙伴</span>
+						<span class="goto">点击进入</span>
+						<span class="ico2"></span>
+					</a>
+				</div>
+
+                <div class="lst_top_items">
+				   <p> 
+		<a href="index.php?app=store&id=1056&act=search">龙凯斯</a> 		
+		<a href="index.php?app=store&id=3226&act=search">东方雨虹</a> 
+        <a href="index.php?app=store&id=4435&act=search">灿美家</a>
+        <a href="index.php?app=store&id=4470&act=search">豪族漆</a> 
+        <a href="index.php?app=store&id=4440&act=search">天誉地板</a> 
+        <a href="index.php?app=store&id=4429&act=search">鲜橙照明</a> 
+        <a href="index.php?app=store&id=4454&act=search">拓沃卫浴</a> 
+        <a href="index.php?app=store&id=4453&act=search">嘉德福</a> 
+        <a href="index.php?app=store&id=4458&act=search">凯宝莱</a> 
+        <a href="index.php?app=store&id=4472&act=search">斯贝勒</a> 
+        <a href="index.php?app=store&id=4457&act=search">尚雅</a> 
+        <a href="index.php?app=store&id=4455&act=search">轩宇卫浴</a> 
+        <a href="index.php?app=store&id=4467&act=search">丰瑜陶瓷</a> 
+        <a href="index.php?app=store&id=4456&act=search">随宇树</a> 
+        <a href="index.php?app=store&id=4431&act=search">五一照明</a> 
+        <a href="index.php?app=store&id=4473&act=search">中露达</a> 
+        <a href="index.php?app=store&id=4452&act=search">澳蒙电器</a> 
+ <a href="index.php?app=store&id=4447&act=search">雅之杰</a>	
+		 <a href="index.php?app=store&id=1471856462&act=search">新合时</a> 
+        <a href="index.php?app=store&id=1471856457&act=search">神火</a> 
+        <a href="index.php?app=store&id=12235&act=search">宗田</a> 
+        <a href="index.php?app=store&id=4447&act=search">安耐稳</a>  
+		 <a href="index.php?app=store&id=1473401706&act=search">保为康</a> 
+        <a href="index.php?app=store&id=1471856459&act=search">冠桦</a> 
+        <a href="index.php?app=store&id=1473151754&act=search">广升卫浴</a> 
+        <a href="index.php?app=store&id=1473401133&act=search">三力锁业</a>  
+		<a href="index.php?app=store&id=1473144308&act=search">升腾塑胶</a> 
+        <a href="index.php?app=store&id=1473151753&act=search">顺德利</a> 
+        <a href="index.php?app=store&id=1473326807&act=search">兴光铝梯</a> 
+        <a href="index.php?app=store&id=1473389692&act=search">英豪</a>  
+		<a href="index.php?app=store&id=4451&act=search">樱花</a>
+        <a href="index.php?app=store&id=1471854097&act=search">曼帝卫浴</a>  		  
+        <a href="index.php?app=store&id=1471856461&act=search">澳特利</a>  
+		<a href="index.php?app=store&id=1471854102&act=search">利禾园林</a>
+        <a href="index.php?app=store&id=1473401709&act=search">万木奇</a> 	
+					</p>
+                </div> 
+
+
+
+            </div>
+
+        </textarea>
+
+    </div>
+  </li>
+</ul>
+
+</div> 
+
+    
+
+    <!--精品家具馆 开始--> 
+
+    <h2 class="category_hd"><span class="ico"></span><a href="http://www.jiaju.com/">精品家具馆</a></h2>
+
+<div class="category_bd">
+
+<ul class="items">
+
+  <li class="item no_br item_fixbdr">
+
+    <h3  class="item_hd_tit"><a href="index.php?app=search&cate_id=7025" >精品家具</a><span class="ico"></span></h3>
+
+    <p class="item_col"><a href="index.php?app=search&cate_id=7162" >弹簧床垫</a><a href="index.php?app=search&cate_id=7168" >实木床</a><a href="index.php?app=search&cate_id=7173" >真皮沙发</a><a href="index.php?app=search&cate_id=7178" >衣柜</a><a href="index.php?app=search&cate_id=7189" >实木茶几</a></p>
+
+    <p class="item_col"><a href="index.php?app=search&cate_id=7195" >实木餐桌</a><a href="index.php?app=search&cate_id=7204" >实木餐椅</a><a href="index.php?app=search&cate_id=7219" >办公桌</a></p>
+
+    <div class="category_con" style="display:none">
+
+    <textarea>
+
+            <div class="lst_subcategory">
+
+<dl><dt><a href="index.php?app=search&cate_id=7053" >床垫</a></dt><dd>
+
+<a href="index.php?app=search&cate_id=7162">弹簧床垫</a>
+
+<a href="index.php?app=search&cate_id=7163" >乳胶床垫</a>
+
+<a href="index.php?app=search&cate_id=7164" >海绵床垫</a>
+
+<a href="index.php?app=search&cate_id=7165" >棕榈床垫</a>
+
+<a href="index.php?app=search&cate_id=7166" >复合床垫</a>
+
+<a href="index.php?app=search&cate_id=7167" >其他床垫</a>
+
+</dd></dl>
+
+
+
+<dl><dt><a href="index.php?app=search&cate_id=7054" >床</a></dt><dd>
+
+<a href="index.php?app=search&cate_id=7168" >实木床</a>
+
+<a href="index.php?app=search&cate_id=7169" >板木床</a>
+
+<a href="index.php?app=search&cate_id=7170" >金属床</a>
+
+<a href="index.php?app=search&cate_id=7171" >软体床</a>
+
+<a href="index.php?app=search&cate_id=7172" >其他床</a>
+
+</dd></dl>
+
+
+
+<dl><dt><a href="index.php?app=search&cate_id=7055" >沙发</a></dt><dd>
+
+<a href="index.php?app=search&cate_id=7173" >真皮沙发</a>
+
+<a href="index.php?app=search&cate_id=7174" >仿皮沙发</a>
+
+<a href="index.php?app=search&cate_id=7175" >布艺沙发</a>
+
+<a href="index.php?app=search&cate_id=7176" >沙发床</a>
+
+<a href="index.php?app=search&cate_id=7177" >其他沙发</a>
+
+</dd></dl>
+
+
+
+<dl><dt><a href="index.php?app=search&cate_id=7056" >柜</a></dt><dd>
+
+<a href="index.php?app=search&cate_id=7178" >衣柜</a>
+
+<a href="index.php?app=search&cate_id=7179" >床头柜</a>
+
+<a href="index.php?app=search&cate_id=7180" >电视柜</a>
+
+<a href="index.php?app=search&cate_id=7181" >客厅柜</a>
+
+<a href="index.php?app=search&cate_id=7182" >餐边柜</a>
+
+<a href="index.php?app=search&cate_id=7183" >酒柜</a>
+
+<a href="index.php?app=search&cate_id=7184" >斗柜</a>
+
+<a href="index.php?app=search&cate_id=7185" >鞋柜</a>
+
+<a href="index.php?app=search&cate_id=7186" >书柜</a>
+
+<a href="index.php?app=search&cate_id=7187" >其他柜类</a>
+
+<a href="index.php?app=search&cate_id=7188" >定制移门衣柜</a>
+
+</dd></dl>
+
+
+
+<dl><dt><a href="index.php?app=search&cate_id=7057" >茶几</a></dt><dd>
+
+<a href="index.php?app=search&cate_id=7189" >实木茶几</a>
+
+<a href="index.php?app=search&cate_id=7190" >板木茶几</a>
+
+<a href="index.php?app=search&cate_id=7191" >金属茶几</a>
+
+<a href="index.php?app=search&cate_id=7192" >玻璃茶几</a>
+
+<a href="index.php?app=search&cate_id=7193" >复合材质茶几</a>
+
+<a href="index.php?app=search&cate_id=7194" >其他茶几</a>
+
+</dd></dl>
+
+
+
+<dl><dt><a href="index.php?app=search&cate_id=7058" >桌/台类</a></dt><dd>
+
+<a href="index.php?app=search&cate_id=7195" >实木餐桌</a>
+
+<a href="index.php?app=search&cate_id=7196" >板木餐桌</a>
+
+<a href="index.php?app=search&cate_id=7197" >金属/玻璃餐桌</a>
+
+<a href="index.php?app=search&cate_id=7198" >复合材质餐桌</a>
+
+<a href="index.php?app=search&cate_id=7199" >书桌</a>
+
+<a href="index.php?app=search&cate_id=7200" >电脑桌</a>
+
+<a href="index.php?app=search&cate_id=7201" >折叠桌</a>
+
+<a href="index.php?app=search&cate_id=7202" >其他桌/台</a>
+
+<a href="index.php?app=search&cate_id=7203" >梳妆台</a>
+
+</dd></dl>
+
+
+
+<dl><dt><a href="index.php?app=search&cate_id=7059" >椅子/凳</a></dt><dd>
+
+<a href="index.php?app=search&cate_id=7204" >实木餐椅</a>
+
+<a href="index.php?app=search&cate_id=7205" >板木餐椅</a>
+
+<a href="index.php?app=search&cate_id=7206" >金属餐椅</a>
+
+<a href="index.php?app=search&cate_id=7207" >复合材质餐椅</a>
+
+<a href="index.php?app=search&cate_id=7208" >电脑椅</a>
+
+<a href="index.php?app=search&cate_id=7209" >凳子</a>
+
+<a href="index.php?app=search&cate_id=7210" >休闲椅</a>
+
+<a href="index.php?app=search&cate_id=7211" >其他椅</a>
+
+</dd></dl>
+
+
+
+<dl><dt><a href="index.php?app=search&cate_id=7060" >收纳架/箱</a></dt><dd>
+
+<a href="index.php?app=search&cate_id=7212" >花架</a>
+
+<a href="index.php?app=search&cate_id=7213" >杂志/报纸架</a>
+
+<a href="index.php?app=search&cate_id=7214" >衣帽架</a>
+
+<a href="index.php?app=search&cate_id=7215">鞋架</a>
+
+<a href="index.php?app=search&cate_id=7216">储物架</a>
+
+<a href="index.php?app=search&cate_id=7217" >CD架</a>
+
+<a href="index.php?app=search&cate_id=7218" >其他收纳家具</a>
+
+</dd></dl>
+
+
+
+<dl><dt><a href="index.php?app=search&cate_id=7061" >办公家具</a></dt><dd>
+
+<a href="index.php?app=search&cate_id=7219" >办公桌</a>
+
+<a href="index.php?app=search&cate_id=7220" >办公椅</a>
+
+<a href="index.php?app=search&cate_id=7221" >文件柜</a>
+
+</dd></dl>
+
+
+
+<dl><dt><a href="index.php?app=search&cate_id=7062" >青少年家具</a></dt><dd>
+
+<a href="index.php?app=search&cate_id=7222" >少儿床</a>
+
+<a href="index.php?app=search&cate_id=7223" >儿童书桌椅</a>
+
+<a href="index.php?app=search&cate_id=7224" >儿童衣柜</a>
+
+<a href="index.php?app=search&cate_id=7225" >儿童小家具</a>
+
+</dd></dl>  
+
+
+
+            </div>
+
+            <div class="lst_top">
+
+				 <div class="lst_recmd">
+					 <a href="javascript:;"  class="link">
+						 <span class="ico"></span>
+						 <span class="tit">合作伙伴</span>
+						 <span class="goto">点击进入</span>
+						 <span class="ico2"></span>
+					 </a>
+				 </div>
+
+                <div class="lst_top_items">
+                    <p>
+		<a href="index.php?app=store&id=1056&act=search">龙凯斯</a> 		
+		<a href="index.php?app=store&id=3226&act=search">东方雨虹</a> 
+        <a href="index.php?app=store&id=4435&act=search">灿美家</a>
+        <a href="index.php?app=store&id=4470&act=search">豪族漆</a> 
+        <a href="index.php?app=store&id=4440&act=search">天誉地板</a> 
+        <a href="index.php?app=store&id=4429&act=search">鲜橙照明</a> 
+        <a href="index.php?app=store&id=4454&act=search">拓沃卫浴</a> 
+        <a href="index.php?app=store&id=4453&act=search">嘉德福</a> 
+        <a href="index.php?app=store&id=4458&act=search">凯宝莱</a> 
+        <a href="index.php?app=store&id=4472&act=search">斯贝勒</a> 
+        <a href="index.php?app=store&id=4457&act=search">尚雅</a> 
+        <a href="index.php?app=store&id=4455&act=search">轩宇卫浴</a> 
+        <a href="index.php?app=store&id=4467&act=search">丰瑜陶瓷</a> 
+        <a href="index.php?app=store&id=4456&act=search">随宇树</a> 
+        <a href="index.php?app=store&id=4431&act=search">五一照明</a> 
+        <a href="index.php?app=store&id=4473&act=search">中露达</a> 
+        <a href="index.php?app=store&id=4452&act=search">澳蒙电器</a> 
+        <a href="index.php?app=store&id=4469&act=search">德仕格朗</a> 
+ <a href="index.php?app=store&id=4447&act=search">雅之杰</a>	
+		 <a href="index.php?app=store&id=1471856462&act=search">新合时</a> 
+        <a href="index.php?app=store&id=1471856457&act=search">神火</a> 
+        <a href="index.php?app=store&id=12235&act=search">宗田</a> 
+        <a href="index.php?app=store&id=4447&act=search">安耐稳</a>  
+		 <a href="index.php?app=store&id=1473401706&act=search">保为康</a> 
+        <a href="index.php?app=store&id=1471856459&act=search">冠桦</a> 
+        <a href="index.php?app=store&id=1473151754&act=search">广升卫浴</a> 
+        <a href="index.php?app=store&id=1473401133&act=search">三力锁业</a>  
+		<a href="index.php?app=store&id=1473144308&act=search">升腾塑胶</a> 
+        <a href="index.php?app=store&id=1473151753&act=search">顺德利</a> 
+        <a href="index.php?app=store&id=1473326807&act=search">兴光铝梯</a> 
+        <a href="index.php?app=store&id=1473389692&act=search">英豪</a>  
+		<a href="index.php?app=store&id=4451&act=search">樱花</a>
+        <a href="index.php?app=store&id=1471854097&act=search">曼帝卫浴</a>  		  
+        <a href="index.php?app=store&id=1471856461&act=search">澳特利</a>  
+		<a href="index.php?app=store&id=1471854102&act=search">利禾园林</a>
+        <a href="index.php?app=store&id=1473401709&act=search">万木奇</a> 			
+		
+					</p>
+
+                </div>  
+            </div>
+
+        </textarea>
+
+    </div>
+
+  </li>
+
+</ul>
+
+</div> 
+
+    <!--软饰居家馆 开始--> 
+
+
+<div class="category_bd">
+
+<ul class="items">
+
+  <li class="item no_br fixbdr">
+
+    <h3  class="item_hd_tit"><a href="index.php?app=search&cate_id=7026" >软饰居家</a><span class="ico"></span></h3>
+
+    <p class="item_col"><a href="index.php?app=search&cate_id=7063" >家纺布艺</a><a href="index.php?app=search&cate_id=7069" >时尚家饰</a><a href="index.php?app=search&cate_id=7064" >空气净化</a></p>
+
+    <p class="item_col"><a href="index.php?app=search&cate_id=7232" >收纳用品</a><a href="index.php?app=search&cate_id=7066">厨具餐具</a><a href="index.php?app=search&cate_id=7067" >清洁护理</a></p>
+
+    <div class="category_con" style="display:none">
+
+    <textarea>
+
+            <div class="lst_subcategory">
+
+
+
+             <dl><dt><a href="index.php?app=search&cate_id=7063" >家纺布艺</a></dt><dd>
+
+<a href="index.php?app=search&cate_id=7226" >窗帘布艺</a>
+
+<a href="index.php?app=search&cate_id=7227" >成套床品</a>
+
+<a href="index.php?app=search&cate_id=7228" >被毯枕褥</a>
+
+<a href="index.php?app=search&cate_id=7229" >纺织品类</a>
+
+</dd></dl>
+
+
+
+<dl><dt><a href="index.php?app=search&cate_id=7064" >空气净化</a></dt><dd>
+
+<a href="index.php?app=search&cate_id=7230" >室内空气治理</a>
+
+<a href="index.php?app=search&cate_id=7231" >空气清新</a>
+
+</dd></dl>
+
+
+
+<dl><dt><a href="index.php?app=search&cate_id=7065" >收纳杂物 <br>礼品箱包</a></dt><dd>
+
+<a href="index.php?app=search&cate_id=7232" >收纳用品</a>
+
+<a href="index.php?app=search&cate_id=7233" >居家杂物</a>
+
+</dd></dl>
+
+
+
+<dl><dt><a href="index.php?app=search&cate_id=7066" >厨具餐具</a></dt><dd>
+
+<a href="index.php?app=search&cate_id=7234" >锅具</a>
+
+<a href="index.php?app=search&cate_id=7235" >餐具</a>
+
+<a href="index.php?app=search&cate_id=7236" >茶具</a>
+
+<a href="index.php?app=search&cate_id=7237" >厨具</a>
+
+<a href="index.php?app=search&cate_id=7238" >酒具杯类</a>
+
+<a href="index.php?app=search&cate_id=7239" >保鲜用品</a>
+
+<a href="index.php?app=search&cate_id=7240" >咖啡器具</a>
+
+<a href="index.php?app=search&cate_id=7241" >烧烤用具</a>
+
+</dd></dl>
+
+
+
+<dl><dt><a href="index.php?app=search&cate_id=7067" >清洁护理</a></dt><dd>
+
+<a href="index.php?app=search&cate_id=7242" >清洁用品</a>
+
+<a href="index.php?app=search&cate_id=7243" >洗晒用品</a>
+
+<a href="index.php?app=search&cate_id=7244" >个人护理</a>
+
+<a href="index.php?app=search&cate_id=7245" >居家护理</a>
+
+<a href="index.php?app=search&cate_id=7246" >浴室用品</a>
+
+</dd></dl>
+
+
+
+<dl><dt><a href="index.php?app=search&cate_id=7068" >生活家电</a></dt><dd>
+
+<a href="index.php?app=search&cate_id=7247" >生活电器</a>
+
+<a href="index.php?app=search&cate_id=7248" >厨房小电器</a>
+
+</dd></dl>
+
+
+
+<dl><dt><a href="index.php?app=search&cate_id=7069" >时尚家饰</a></dt><dd>
+
+<a href="index.php?app=search&cate_id=7249" >家居饰品</a>
+
+</dd></dl>
+
+
+
+<dl><dt><a href="index.php?app=search&cate_id=7070" >居家生活</a></dt><dd>
+
+<a href="index.php?app=search&cate_id=7250" >康体户外</a>
+
+<a href="index.php?app=search&cate_id=7251" >婚庆用品</a>
+
+</dd></dl>  
+
+            </div>
+
+            <div class="lst_top">
+
+				<div class="lst_recmd">
+					<a href="javascript:;"  class="link">
+						<span class="ico"></span>
+						<span class="tit">合作伙伴</span>
+						<span class="goto">点击进入</span>
+						<span class="ico2"></span>
+					</a>
+				</div>
+
+                <div class="lst_top_items">
+                     <p> 
+		<a href="index.php?app=store&id=1056&act=search">龙凯斯</a> 		
+		<a href="index.php?app=store&id=3226&act=search">东方雨虹</a> 
+        <a href="index.php?app=store&id=4435&act=search">灿美家</a>
+        <a href="index.php?app=store&id=4470&act=search">豪族漆</a> 
+        <a href="index.php?app=store&id=4440&act=search">天誉地板</a> 
+        <a href="index.php?app=store&id=4429&act=search">鲜橙照明</a> 
+        <a href="index.php?app=store&id=4454&act=search">拓沃卫浴</a> 
+        <a href="index.php?app=store&id=4453&act=search">嘉德福</a> 
+        <a href="index.php?app=store&id=4458&act=search">凯宝莱</a> 
+        <a href="index.php?app=store&id=4472&act=search">斯贝勒</a> 
+        <a href="index.php?app=store&id=4457&act=search">尚雅</a> 
+        <a href="index.php?app=store&id=4455&act=search">轩宇卫浴</a> 
+        <a href="index.php?app=store&id=4467&act=search">丰瑜陶瓷</a> 
+        <a href="index.php?app=store&id=4456&act=search">随宇树</a> 
+        <a href="index.php?app=store&id=4431&act=search">五一照明</a> 
+        <a href="index.php?app=store&id=4473&act=search">中露达</a> 
+        <a href="index.php?app=store&id=4452&act=search">澳蒙电器</a> 
+        <a href="index.php?app=store&id=4469&act=search">德仕格朗</a> 
+ <a href="index.php?app=store&id=4447&act=search">雅之杰</a>	
+		 <a href="index.php?app=store&id=1471856462&act=search">新合时</a> 
+        <a href="index.php?app=store&id=1471856457&act=search">神火</a> 
+        <a href="index.php?app=store&id=12235&act=search">宗田</a> 
+        <a href="index.php?app=store&id=4447&act=search">安耐稳</a>  
+		 <a href="index.php?app=store&id=1473401706&act=search">保为康</a> 
+        <a href="index.php?app=store&id=1471856459&act=search">冠桦</a> 
+        <a href="index.php?app=store&id=1473151754&act=search">广升卫浴</a> 
+        <a href="index.php?app=store&id=1473401133&act=search">三力锁业</a>  
+		<a href="index.php?app=store&id=1473144308&act=search">升腾塑胶</a> 
+        <a href="index.php?app=store&id=1473151753&act=search">顺德利</a> 
+        <a href="index.php?app=store&id=1473326807&act=search">兴光铝梯</a> 
+        <a href="index.php?app=store&id=1473389692&act=search">英豪</a>  
+		<a href="index.php?app=store&id=4451&act=search">樱花</a>
+        <a href="index.php?app=store&id=1471854097&act=search">曼帝卫浴</a>  		  
+        <a href="index.php?app=store&id=1471856461&act=search">澳特利</a>  
+		<a href="index.php?app=store&id=1471854102&act=search">利禾园林</a>
+        <a href="index.php?app=store&id=1473401709&act=search">万木奇</a> 			
+			           			  
+					</p>
+					<!--[if IE 6]><div></div><div></div><![endif]-->
+                </div>
+
+
+
+            </div>
+
+        </textarea>
+
+    </div>
+
+  </li>
+
+</ul>
+
+</div>
+
+
+</div>
+
+<!--焦点图 开始-->
+	<div style="float: right; min-width: 865px;width: 78%;">
+			<div class="fullSlide">
+			  <div class="bd">
+				  <ul style="height:430px;overflow:hidden;">
+				  <?php
+					$city = $_SESSION['city'];
+					$query="select * from ecm_lunbo where city='$city' and types='lunbo'";
+					$result=mysql_query($query);
+					if(@mysql_num_rows($result)>0){
+						while($myrow=@mysql_fetch_array($result)){
+				  ?>
+				  
+					<li _src="url(<?php echo $myrow['path'];?>)" style="background-size:100%;background:#E2025E center 0 no-repeat;">
+						<a  href="javascript:;"><img src="<?php echo $myrow['path'];?>"/></a>
+					</li>
+				  
+				  <?php 
+						}
+				  }else{
+				  ?>
+				  
+					<li _src="url('/themes/mall/jiaju/images/th.jpg')" style="background-size:100%;background:#E2025E center 0 no-repeat;">
+						<a  href="javascript:;"><img src="/themes/mall/jiaju/images/th.jpg"/></a>
+					</li>
+				  
+				  <?php }?>
+				  
+				</ul>
+			</div>
+			  <div class="hd">
+				<ul>
+                
+				</ul>
+			  </div>
+			<span class="prev"></span> <span class="next"></span> 
+		  
+		  </div>
+		  
+		  <!--套餐开始-->
+		  <ul class="taocanBox">
+	<div class="new-cat-top-tc" >
+   <h2>家装套餐<span>Discount package</span></h2> 
+</div>
+
+<style>
+#margin1{margin-right:15px !important;}
+#margin2{margin-right:15px !important;}
+</style>
+<div class="new-cat-tc">
+   <ul class="new-cat2"id="new-cat2-taocan">   
+	 <?php
+		$city = $_SESSION['city'];
+		//执行语句
+		$qres=mysql_query("SELECT * FROM ecm_taocan where city='$city' and status='0' order by id desc limit 3");
+		
+		//提取多条记录
+		$i = 1;
+		while($row = @mysql_fetch_array($qres)){
+		
+			$logo = $row['logo'];
+			$id = $row['id'];
+			$title = $row['title'];
+			echo "<li style='' id='margin".$i."'><a href='index.php?app=search&act=taocan&id=$id'><img src='".$logo."'></a></li>";
+		 
+		$i++;
+		}
+		 
+		?>
+	 
+   </ul>
+</div>
+		  
+		  </ul>
+		  <!---套餐结束-->
+		  
+	</div>
+     
+    
+</div>
+
+<script>
+
+jQuery("#top_img_ts").click(function(){
+
+        jQuery("#top_img_ts2").show();
+
+        setTimeout(function(){
+
+            jQuery("#top_img_ts2").hide();
+
+        },5000);
+
+    });
+
+dj.get("ui.hoverfn",function(){
+
+	var items = jQuery("#category .category_bd li.item"),
+
+	      cons = jQuery(".category_con");
+
+	items.hoverfn({
+
+		activeClass : "selected",
+
+		lazyload : true,
+
+		targetshow : function(self){
+
+			return cons.eq(items.index(self));
+
+		}
+
+	});
+
+});
+
+dj.get("ui.focusimg",["ui.gun"],function(){
+
+	var slidebox = jQuery("#slidenew");
+
+	slidebox.focusimg({
+
+		auto : true,
+
+		vertical : false,
+
+		smallimg : jQuery(".slide_trigger li"),
+
+		smallSelectedClass : "on",
+
+		lazyload : true
+
+	},function(){
+
+		slidebox.find("li>div").bind("mouseleave",function(e){
+
+			jQuery(this).children("a").removeClass("on");
+
+		});
+
+		slidebox.find("li>div").delegate("a","mouseenter",function(){
+
+			var that = jQuery(this);
+
+			that.removeClass("on");
+
+			that.siblings().addClass("on");
+
+		});
+
+	});
+
+});
+
+</script> 
+</body>
+
+</html>

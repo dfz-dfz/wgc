@@ -1,0 +1,931 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>59家居装修商城</title>
+<link href="/gx/css/css.css" type=text/css rel=stylesheet>
+<link href="/gx/css/xixi.css" type=text/css rel=stylesheet>
+<SCRIPT src="/gx/js1/jquery-1.4.2.min.js" type=text/javascript></SCRIPT>
+<SCRIPT src="/gx/js1/niutuku.js" type=text/javascript></SCRIPT>
+<script src="/gx/js1/jquery-1.3.1.min.js"></script>
+<script src="/gx/js1/jquery.easing.1.3.js"></script>
+<script>
+$(document).ready(function() {
+
+	//Custom settings
+	var style_in = 'easeOutBounce';
+	var style_out = 'jswing';
+	var speed_in = 1000;
+	var speed_out = 300;	
+
+	//Calculation for corners
+	var neg = Math.round($('.qitem').width() / 2) * (-1);	
+	var pos = neg * (-1);	
+	var out = pos * 2;
+	
+	$('.qitem').each(function () {
+	
+		url = $(this).find('a').attr('href');
+		img = $(this).find('img').attr('src');
+		alt = $(this).find('img').attr('img');
+		
+		$('img', this).remove();
+		$(this).append('<div class="topLeft"></div><div class="topRight"></div><div class="bottomLeft"></div><div class="bottomRight"></div>');
+		$(this).children('div').css('background-image','url('+ img + ')');
+
+		$(this).find('div.topLeft').css({top:0, left:0, width:pos , height:pos});	
+		$(this).find('div.topRight').css({top:0, left:pos, width:pos , height:pos});	
+		$(this).find('div.bottomLeft').css({bottom:0, left:0, width:pos , height:pos});	
+		$(this).find('div.bottomRight').css({bottom:0, left:pos, width:pos , height:pos});	
+
+	}).hover(function () {
+	
+		$(this).find('div.topLeft').stop(false, true).animate({top:neg, left:neg}, {duration:speed_out, easing:style_out});	
+		$(this).find('div.topRight').stop(false, true).animate({top:neg, left:out}, {duration:speed_out, easing:style_out});	
+		$(this).find('div.bottomLeft').stop(false, true).animate({bottom:neg, left:neg}, {duration:speed_out, easing:style_out});	
+		$(this).find('div.bottomRight').stop(false, true).animate({bottom:neg, left:out}, {duration:speed_out, easing:style_out});	
+				
+	},
+	
+	function () {
+
+		$(this).find('div.topLeft').stop(false, true).animate({top:0, left:0}, {duration:speed_in, easing:style_in});	
+		$(this).find('div.topRight').stop(false, true).animate({top:0, left:pos}, {duration:speed_in, easing:style_in});	
+		$(this).find('div.bottomLeft').stop(false, true).animate({bottom:0, left:0}, {duration:speed_in, easing:style_in});	
+		$(this).find('div.bottomRight').stop(false, true).animate({bottom:0, left:pos}, {duration:speed_in, easing:style_in});	
+	
+	}).click (function () {
+		window.location = $(this).find('a').attr('href');	
+	});
+	
+	
+
+});
+
+</script>
+<script type="text/javascript" src="http://www.css88.com/demo/textSlider/jQuery.textSlider.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+        $("#scrollDiv").textSlider({line:2,speed:500,timer:2000});
+        $("#scrollDiv2").textSlider({line:2,speed:500,timer:2000});
+});
+</script>
+<base target="_blank">
+</head>
+
+<body>
+<div class="y_head">
+      <div class="phone"><span class="pf">59家居手机版</span><span class="anzhuo"><a href="#"></a></span><span class="apple"><a href="#" ></a></span></div>
+	  <div class="tel">全国统一热线：400-1012-668</div>
+</div>
+<div class="y_city">
+    <dl>
+	<dt>广东地区</dt>
+	<dd><a href="http://www.59jiaju.com/guangzhou" title="广州装修网" class="hong">广州</a>
+	<a href="http://www.59jiaju.com/shenzhen" title="深圳装修网"  class="hong">深圳</a>
+	<a href="http://www.59jiaju.com/dongguan" title="东莞装修网"  class="hong">东莞</a>
+	<a href="http://www.59jiaju.com/huizhou" title="惠州装修网" class="hong">惠州</a>
+	<a href="http://www.59jiaju.com/shantou" title="汕头装修网" class="lu">汕头</a>
+	<a href="http://www.59jiaju.com/jiangmen" title="江门装修网" class="lu">江门</a>
+	<a href="http://www.59jiaju.com/zhuhai" title="珠海装修网"  class="hong">珠海</a>
+	<a href="http://www.59jiaju.com/foshan" title="佛山装修网"  class="hong">佛山</a>
+	<a href="http://www.59jiaju.com/zhongshan" title="中山装修网"  class="hong">中山</a>
+	<a href="http://www.59jiaju.com/zhaoqing" title="肇庆装修网" class="lu">肇庆</a>
+	<a href="http://www.59jiaju.com/qingyuan" title="清远装修网" class="lu">清远</a>
+	<a href="http://www.59jiaju.com/shaoguan" title="韶关装修网" class="lu">韶关</a>
+	<a href="http://www.59jiaju.com/zhanjiang" title="湛江装修网" class="lu">湛江</a>
+	<a href="http://www.59jiaju.com/yangjiang" title="阳江装修网" class="lu">阳江</a>
+	<a href="http://www.59jiaju.com/meizhou" title="梅州装修网" class="lu">梅州</a>
+	<a href="http://www.59jiaju.com/chaozhou" title="潮州装修网" class="lu">潮州</a> 
+	<a href="http://www.59jiaju.com/heyuan" title="河源装修网" class="lu">河源</a>
+	<a href="http://www.59jiaju.com/maoming" title="茂名装修网" class="lu">茂名</a>
+	<a href="http://www.59jiaju.com/jieyang" title="揭阳装修网" class="lu">揭阳</a>
+	<a href="http://www.59jiaju.com/yunfu" title="云浮装修网" class="lu">云浮</a>
+</dd>
+	</dl>
+	<dl>
+	<dt>湖南地区</dt>
+	<dd><a href="http://www.59jiaju.com/hunan/changsha" title="长沙装修网" class="hong">长沙</a> 
+	<a href="http://www.59jiaju.com/hunan/changde" title="常德装修网" class="hong">常德</a> 
+	<a href="http://www.59jiaju.com/hunan/chenzhou" title="郴州装修网" class="lu">郴州</a> 
+	<a href="http://www.59jiaju.com/hunan/hengyang" title="衡阳装修网" class="hong">衡阳</a> 
+	<a href="http://www.59jiaju.com/hunan/huaihua" title="怀化装修网" class="lu">怀化</a> 
+	<a href="http://www.59jiaju.com/hunan/loudi" title="娄底装修网" class="lu">娄底</a> 
+	<a href="http://www.59jiaju.com/hunan/shaoyang" title="邵阳装修网" class="hong">邵阳</a> 
+	<a href="http://www.59jiaju.com/hunan/xiangtan" title="湘潭装修网" class="hong">湘潭</a> 
+	<a href="http://www.59jiaju.com/hunan/yiyang" title="益阳装修网" class="lu">益阳</a> 
+	<a href="http://www.59jiaju.com/hunan/yongzhou" title="永州装修网" class="lu">永州</a> 
+	<a href="http://www.59jiaju.com/hunan/yueyang" title="岳阳装修网" class="lu">岳阳</a> 
+	<a href="http://www.59jiaju.com/hunan/zhangjiajie" title="张家界装修网" class="lu">张家界</a> 
+	<a href="http://www.59jiaju.com/hunan/zhuzhou" title="株洲装修网" class="hong">株洲</a> 
+	<a href="http://www.59jiaju.com/hunan/xiangxi" title="湘西装修网" class="lu">湘西</a> 
+</dd>
+	</dl>
+	<dl>
+	<dt>广西地区</dt>
+	<dd><a href="http://www.59jiaju.com/guangxi/nanning" title="南宁装修网" class="hong">南宁</a>
+	<a href="http://www.59jiaju.com/guangxi/liuzhou" title="柳州装修网" class="lu">柳州</a>
+	<a href="http://www.59jiaju.com/guangxi/guilin" title="桂林装修网" class="lu">桂林</a>
+	<a href="http://www.59jiaju.com/guangxi/beihai" title="北海装修网" class="hong">北海</a>
+	<a href="http://www.59jiaju.com/guangxi/baise" title="百色装修网" class="lu">百色</a>
+	<a href="http://www.59jiaju.com/guangxi/yulin" title="玉林装修网" class="lu">玉林</a>
+
+</dd>
+	</dl>
+	<dl>
+	<dt>海南地区</dt>
+	<dd>
+	<a href="http://www.59jiaju.com/hainan/haikou" title="海口装修网" class="lu">海口</a>
+	<a href="http://www.59jiaju.com/hainan/sanya" title="三亚装修网" class="lu">三亚</a>
+</dd>
+	</dl>
+	<dl>
+	<dt>湖北地区</dt>
+	<dd>
+	<a href="http://www.59jiaju.com/hubei/wuhan" title="武汉装修网" class="hong">武汉</a>
+	<a href="http://www.59jiaju.com/hubei/huangshi" title="黄石装修网" class="lu">黄石</a>
+	<a href="http://www.59jiaju.com/hubei/xiangfan" title="襄樊装修网" class="lu">襄樊</a>
+	<a href="http://www.59jiaju.com/hubei/yichuang" title="宜昌装修网" class="hong">宜昌</a>
+	<a href="http://www.59jiaju.com/hubei/jingmen" title="荆门装修网" class="lu">荆门</a>
+	<a href="http://www.59jiaju.com/hubei/ezhou" title="鄂州装修网" class="lu">鄂州</a>
+	<a href="http://www.59jiaju.com/hubei/xiaogan" title="鄂州装修网" class="lu">孝感</a>
+
+</dd>
+	</dl>
+	<dl>
+	<dt>福建地区</dt>
+	<dd>
+	<a href="http://www.59jiaju.com/fujian/fuzhou" title="福州装修网"  class="hong">福州</a>
+	<a href="http://www.59jiaju.com/fujian/xiamen" title="厦门装修网"  class="hong">厦门</a>
+	<a href="http://www.59jiaju.com/fujian/putian" title="莆田装修网"  class="lu">莆田</a>
+	<a href="http://www.59jiaju.com/fujian/quanzhou" title="泉州装修网"  class="hong">泉州</a>
+	<a href="http://www.59jiaju.com/fujian/zhangzhou" title="漳州装修网"  class="lu">漳州</a>
+</dd>
+	</dl>
+	<div class="clear"></div>
+<div onClick=jueban.style.display=jueban.style.display==''?'none':'' style="border:1px solid #ccc; text-align:center;  width:70px; line-height:24px; margin: 0 auto; background:#f3f3f3; cursor:pointer;"><strong>更多城市</strong></div>
+	<div id="jueban" style="display:none">
+	<dl>
+	<dt>浙江地区</dt>
+	<dd>
+	<a href="#" title="杭州装修网">杭州</a>  
+	<a href="#" title="湖州装修网">湖州</a>  
+	<a href="#" title="嘉兴装修网">嘉兴</a>   
+	<a href="#" title="绍兴装修网">绍兴</a>   
+	<a href="#" title="舟山装修网">舟山</a>   
+	<a href="#" title="金华装修网">金华</a>   
+	<a href="#" title="衢州装修网">衢州</a>  
+	<a href="#" title="丽水装修网">丽水</a>   
+	<a href="#" title="温州装修网">温州</a>   
+	<a href="#" title="台州装修网">台州</a>  
+	<a href="#" title="宁波装修网">宁波</a>
+	
+</dd>
+	</dl>
+	<dl>
+	<dt>江苏地区</dt>
+	<dd>
+	<a href="#" title="南京装修网">南京</a> 
+	<a href="#" title="无锡装修网">无锡</a> 
+	<a href="#" title="苏州装修网">苏州</a> 
+	<a href="#" title="徐州装修网">徐州</a> 
+	<a href="#" title="连云港装修网">连云港</a> 
+	<a href="#" title="淮安装修网">淮安</a> 
+	<a href="#" title="宿迁装修网">宿迁</a> 
+	<a href="#" title="盐城装修网">盐城</a> 
+	<a href="#" title="扬州装修网">扬州</a> 
+	<a href="#" title="泰州装修网">泰州</a> 
+	<a href="#" title="南通装修网">南通</a> 
+	<a href="#" title="镇江装修网">镇江</a>  
+	<a href="#" title="常州装修网">常州</a>  
+</dd>
+	</dl>
+	<dl>
+	<dt>江西地区    </dt>
+	<dd>
+	<a href="#" title="南昌装修网">南昌</a>    
+	<a href="#" title="景德镇装修网">景德镇 </a>  
+	<a href="#" title="萍乡装修网"> 萍乡</a>    
+	<a href="#" title="九江装修网">九江</a>    
+	<a href="#" title="新余装修网">新余</a>    
+	<a href="#" title="鹰潭装修网">鹰潭</a>    
+	<a href="#" title="赣州装修网">赣州</a>    
+	<a href="#" title="吉安装修网">吉安</a>    
+	<a href="#" title="宜春装修网">宜春</a>    
+	<a href="#" title="抚州装修网">抚州</a>    
+	<a href="#" title="上饶装修网">上饶</a>  
+</dd>
+	</dl>
+	<dl>
+	<dt>安徽地区    </dt>
+	<dd>
+	<a href="#" title="合肥装修网">合肥 </a>  
+	<a href="#" title="芜湖装修网">芜湖 </a>  
+	<a href="#" title="蚌埠装修网">蚌埠 </a>  
+	<a href="#" title="淮南装修网">淮南</a>   
+	<a href="#" title="巢湖装修网">巢湖</a>   
+	<a href="#" title="马鞍山装修网">马鞍山</a>   
+	<a href="#" title="淮北装修网">淮北</a>   
+	<a href="#" title="铜陵装修网">铜陵</a>   
+	<a href="#" title="安庆装修网">安庆 </a>  
+	<a href="#" title="黄山装修网">黄山 </a>  
+	<a href="#" title="滁州装修网">滁州</a>   
+	<a href="#" title="阜阳装修网">阜阳</a>   
+	<a href="#" title="宿州装修网">宿州</a>   
+	<a href="#" title="六安装修网">六安</a>   
+	<a href="#" title="亳州装修网">亳州 </a>  
+	<a href="#" title="池州装修网">池州</a>    
+	
+</dd>
+	</dl>
+	<dl>
+	<dt>山东地区</dt>
+	<dd>
+	<a href="#" title="济南装修网">济南</a>
+	<a href="#" title="青岛装修网">青岛</a>   
+	<a href="#" title="淄博装修网">淄博</a>   
+	<a href="#" title="枣庄装修网">枣庄</a>   
+	<a href="#" title="东营装修网">东营</a>   
+	<a href="#" title="烟台装修网">烟台</a>   
+	<a href="#" title="潍坊装修网">潍坊</a>   
+	<a href="#" title="济宁装修网">济宁</a>
+	<a href="#" title="泰安装修网">泰安</a>   
+	<a href="#" title="威海装修网">威海</a>   
+	<a href="#" title="日照装修网">日照</a>   
+	<a href="#" title="莱芜装修网">莱芜</a>   
+	<a href="#" title="临沂装修网">临沂</a>   
+	<a href="#" title="德州装修网">德州</a>   
+	<a href="#" title="聊城装修网">聊城</a>   
+	<a href="#" title="滨州装修网">滨州</a>  
+	<a href="#" title="菏泽装修网">菏泽</a>  
+</dd>
+	</dl>
+	<dl>
+	<dt>河北地区</dt>
+	<dd>
+	<a href="#" title="石家庄装修网">石家庄</a>  
+	<a href="#" title="唐山装修网">唐山</a> 
+	<a href="#" title="秦皇岛装修网">秦皇岛</a>
+	<a href="#" title="邯郸装修网">邯郸</a>
+	<a href="#" title="邢台装修网">邢台</a>
+	<a href="#" title="保定装修网">保定</a>
+	<a href="#" title="张家口装修网">张家口</a> 
+	<a href="#" title="承德装修网">承德</a>
+	<a href="#" title="沧州装修网">沧州</a>
+	<a href="#" title="廊坊装修网">廊坊</a>
+	<a href="#" title="衡水装修网">衡水</a>
+</dd>
+	</dl>
+	<dl>
+	<dt>河南地区</dt>
+	<dd>
+	<a href="#" title="郑州装修网">郑州</a>   
+	<a href="#" title="开封装修网">开封</a>  
+	<a href="#" title="洛阳装修网">洛阳</a>  
+	<a href="#" title="平顶山装修网">平顶山</a> 
+	<a href="#" title="安阳装修网">安阳</a>  
+	<a href="#" title="鹤壁装修网">鹤壁</a>   
+	<a href="#" title="新乡装修网">新乡</a> 
+	<a href="#" title="焦作装修网">焦作</a>   
+	<a href="#" title="濮阳装修网">濮阳</a>  
+	<a href="#" title="许昌装修网">许昌 </a>  
+	<a href="#" title="漯河装修网">漯河</a> 
+	<a href="#" title="三门峡装修网">三门峡</a>   
+	<a href="#" title="南阳装修网">南阳</a>   
+	<a href="#" title="商丘装修网">商丘</a> 
+	<a href="#" title="信阳装修网">信阳</a>  
+	<a href="#" title="周口装修网">周口</a>   
+	<a href="#" title="驻马店装修网">驻马店</a>  
+</dd>
+	</dl>
+	<dl>
+	<dt>山西地区</dt>
+	<dd>
+	<a href="#" title="太原装修网">太原</a>    
+	<a href="#" title="大同装修网">大同</a>  
+	<a href="#" title="朔州装修网">朔州</a>    
+	<a href="#" title="忻州装修网">忻州</a>    
+	<a href="#" title="吕梁装修网">吕梁</a>    
+	<a href="#" title="阳泉装修网">阳泉</a>   
+	<a href="#" title="榆次装修网">榆次</a>   
+	<a href="#" title="长治装修网">长治</a>   
+	<a href="#" title="晋城装修网">晋城</a>  
+	<a href="#" title="临汾装修网">临汾</a>  
+	<a href="#" title="运城装修网">运城</a>  
+</dd>
+	</dl>
+	<dl>
+	<dt>内蒙古地区</dt>
+	<dd>
+	<a href="#" title="呼伦贝尔装修网">呼伦贝尔</a> 
+	<a href="#" title="兴安盟通辽装修网">兴安盟通辽</a>   
+	<a href="#" title="赤峰 装修网">赤峰 </a>  
+	<a href="#" title="锡林郭勒盟乌兰察布装修网">锡林郭勒盟乌兰察布 </a> 
+	<a href="#" title="呼和浩特装修网">呼和浩特 </a>  
+	<a href="#" title="包头装修网">包头  </a> 
+	<a href="#" title="鄂尔多斯装修网">鄂尔多斯</a>  
+	<a href="#" title="巴彦淖尔装修网">巴彦淖尔</a>  
+	<a href="#" title="阿拉善盟乌海装修网">阿拉善盟乌海 </a>  
+</dd>
+	</dl>
+	<dl>
+	<dt>辽宁地区</dt>
+	<dd>
+	<a href="#" title="葫芦岛装修网">葫芦岛</a> 
+	<a href="#" title="锦州装修网">锦州 </a>
+	<a href="#" title="盘锦装修网">盘锦</a> 
+	<a href="#" title="营口装修网">营口</a> 
+	<a href="#" title="大连装修网">大连</a> 
+	<a href="#" title="丹东装修网">丹东</a> 
+	<a href="#" title="鞍山装修网">鞍山</a> 
+	<a href="#" title="辽阳装修网">辽阳</a> 
+	<a href="#" title="本溪装修网">本溪</a> 
+	<a href="#" title="抚顺装修网">抚顺</a> 
+	<a href="#" title="铁岭装修网">铁岭</a> 
+	<a href="#" title="阜新装修网">阜新</a> 
+	<a href="#" title="朝阳装修网">朝阳</a> 
+	<a href="#" title="沈阳装修网">沈阳</a>  
+</dd>
+	</dl>
+	<dl>
+	<dt>吉林地区  </dt>
+	<dd>
+	<a href="#" title="长春装修网">长春</a>   
+	<a href="#" title="吉林装修网">吉林</a>   
+	<a href="#" title="通化装修网">通化</a>  
+	<a href="#" title="延吉装修网">延吉</a>   
+	<a href="#" title="白城装修网">白城</a>   
+	<a href="#" title="四平装修网">四平</a>   
+	<a href="#" title="白山装修网">白山</a>   
+	<a href="#" title="松原装修网">松原</a>   
+	<a href="#" title="辽源装修网">辽源</a>  
+</dd>
+	</dl>
+	<dl>
+	<dt>黑龙江地区</dt>
+	<dd>
+	<a href="#" title="哈尔滨装修网">哈尔滨</a> 
+	<a href="#" title="齐齐哈尔装修网">齐齐哈尔</a> 
+	<a href="#" title="鹤岗装修网">鹤岗</a> 
+	<a href="#" title="双鸭山装修网">双鸭山</a> 
+	<a href="#" title="鸡西装修网">鸡西</a> 
+	<a href="#" title="大庆装修网">大庆</a> 
+	<a href="#" title="伊春装修网">伊春</a> 
+	<a href="#" title="牡丹江装修网">牡丹江</a> 
+	<a href="#" title="佳木斯装修网">佳木斯</a> 
+	<a href="#" title="七台河装修网">七台河</a> 
+	<a href="#" title="黑河装修网">黑河</a> 
+	<a href="#" title="绥化装修网">绥化</a>  
+</dd>
+	</dl>
+	<dl>
+	<dt>四川地区</dt>
+	<dd>
+	<a href="#" title="成都装修网">成都</a>  
+	<a href="#" title="自贡装修网">自贡</a>  
+	<a href="#" title="攀枝花装修网">攀枝花</a>  
+	<a href="#" title="泸州装修网">泸州</a>  
+	<a href="#" title="德阳装修网">德阳</a>  
+	<a href="#" title="绵阳装修网">绵阳</a>  
+	<a href="#" title="广元装修网">广元</a>  
+	<a href="#" title="遂宁装修网">遂宁</a>  
+	<a href="#" title="内江装修网">内江</a>  
+	<a href="#" title="乐山装修网">乐山</a>  
+	<a href="#" title="南充装修网">南充</a>  
+	<a href="#" title="眉山装修网">眉山</a>  
+	<a href="#" title="宜宾装修网">宜宾</a>  
+	<a href="#" title="广安装修网">广安</a>  
+	<a href="#" title="达州装修网">达州</a>  
+	<a href="#" title="雅安装修网">雅安</a>  
+	<a href="#" title="巴中装修网">巴中</a>  
+	<a href="#" title="资阳装修网">资阳</a>  
+</dd>
+	</dl>
+	<dl>
+	<dt>贵州地区</dt>
+	<dd>
+	<a href="#" title="贵阳装修网">贵阳</a>  
+	<a href="#" title="遵义装修网">遵义</a>  
+	<a href="#" title="仁怀装修网">仁怀</a>  
+	<a href="#" title="铜仁装修网">铜仁</a>  
+	<a href="#" title="都匀装修网">都匀</a>  
+	<a href="#" title="凯里装修网">凯里</a>  
+	<a href="#" title="兴义装修网">兴义</a>  
+	<a href="#" title="六盘水装修网">六盘水</a>     
+	<a href="#" title="毕节装修网">毕节</a>  
+</dd>
+	</dl>
+	<dl>
+	<dt>云南地区    </dt>
+	<dd>
+	<a href="#" title="昆明装修网">昆明</a>  
+	<a href="#" title="昭通装修网">昭通</a>   
+	<a href="#" title="玉溪装修网">玉溪</a>  
+	<a href="#" title="曲靖装修网">曲靖</a>   
+	<a href="#" title="保山装修网">保山</a>   
+	<a href="#" title="普洱装修网">普洱</a>  
+	<a href="#" title="丽江装修网">丽江</a>  
+	<a href="#" title="临沧装修网">临沧</a>  
+</dd>
+	</dl>
+	<dl>
+	<dt>西藏地区</dt>
+	<dd>
+	<a href="#" title="拉萨装修网">拉萨</a>
+	<a href="#" title="日喀则装修网">日喀则</a>  
+</dd>
+	</dl>
+	
+	<dl>
+	<dt>陕西地区</dt>
+	<dd>
+	<a href="#" title="西安装修网">西安</a>  
+	<a href="#" title="铜川装修网">铜川</a>  
+	<a href="#" title="宝鸡装修网">宝鸡</a>  
+	<a href="#" title="咸阳装修网">咸阳</a>  
+	<a href="#" title="渭南装修网">渭南</a>  
+	<a href="#" title="延安装修网">延安</a>  
+	<a href="#" title="汉中装修网">汉中</a>  
+	<a href="#" title="榆林装修网">榆林</a>  
+	<a href="#" title="安康装修网">安康</a>  
+	<a href="#" title="商洛装修网">商洛</a>  
+</dd>
+	</dl>
+	<dl>
+	<dt>甘肃地区</dt>
+	<dd>
+	<a href="#" title="兰州装修网">兰州</a>  
+	<a href="#" title="嘉峪关装修网">嘉峪关</a>  
+	<a href="#" title="金昌装修网">金昌</a>  
+	<a href="#" title="白银装修网">白银</a>  
+	<a href="#" title="天水装修网">天水</a>  
+	<a href="#" title="武威装修网">武威</a>  
+	<a href="#" title="张掖装修网">张掖</a>  
+	<a href="#" title="酒泉装修网">酒泉</a>  
+	<a href="#" title="平凉装修网">平凉</a>  
+	<a href="#" title="庆阳装修网">庆阳</a>  
+	<a href="#" title="定西装修网">定西</a>  
+	<a href="#" title="陇南装修网">陇南</a>  
+	<a href="#" title="临夏回族自治州装修网">临夏回族自治州</a>  
+	<a href="#" title="甘南藏族自治州装修网">甘南藏族自治州</a>  
+</dd>
+	</dl>
+	<dl>
+	<dt>青海地区</dt>
+	<dd>
+	<a href="#" title="西宁装修网">西宁</a>  
+	<a href="#" title="格尔木装修网">格尔木</a>  
+	<a href="#" title="德林哈装修网">德林哈</a>  
+</dd>
+	</dl>
+	<dl>
+	<dt>新疆地区    </dt>
+	<dd>
+	<a href="#" title="乌鲁木齐装修网">乌鲁木齐</a> 
+	<a href="#" title="克拉玛依装修网">克拉玛依</a> 
+	<a href="#" title="吐鲁番装修网">吐鲁番</a> 
+	<a href="#" title="哈密装修网">哈密</a>  
+	<a href="#" title="和田装修网">和田</a>  
+	<a href="#" title="阿克苏装修网">阿克苏</a>  
+	<a href="#" title="喀什装修网">喀什 </a> 
+	<a href="#" title="阿图什装修网">阿图什</a>  
+	<a href="#" title="库尔勒装修网">库尔勒</a> 
+	<a href="#" title="昌吉装修网">昌吉</a> 
+	<a href="#" title="阜康装修网">阜康</a> 
+	<a href="#" title="博乐装修网">博乐 </a>
+	<a href="#" title="伊宁装修网">伊宁</a> 
+	<a href="#" title="奎屯装修网">奎屯</a> 
+	<a href="#" title="塔城装修网">塔城</a>  
+	<a href="#" title="乌苏装修网">乌苏</a> 
+	<a href="#" title="阿勒泰装修网">阿勒泰</a> 
+	<a href="#" title="石河子装修网">石河子</a>  
+	<a href="#" title="阿拉尔装修网">阿拉尔</a> 
+	<a href="#" title="图木舒克装修网">图木舒克</a> 
+	<a href="#" title="五家渠装修网">五家渠  </a>  
+</dd>
+	</dl>
+	<dl>
+	<dt>宁夏地区</dt>
+	<dd>
+	<a href="#" title="银川装修网">银川</a>
+	<a href="#" title="石嘴山装修网">石嘴山</a>
+	<a href="#" title="吴忠装修网">吴忠</a>
+	<a href="#" title="固原装修网">固原</a>
+	<a href="#" title="中卫青铜峡装修网">中卫青铜峡</a>
+	<a href="#" title="灵武装修网">灵武</a>  
+</dd>
+	</dl> <div class="clear"></div>
+	<div onClick=jueban.style.display=jueban.style.display==''?'none':'' style="border:1px solid #ccc; text-align:center;  width:70px; line-height:24px; margin: 0 auto; background:#f3f3f3; cursor:pointer;"><strong>收起</strong></div>
+	</div>
+	
+	
+	<div class="clear"></div>
+</div>
+<div class="clear"></div>
+<div class="gztit"><span class="more"><a href="http://www.59jiaju.com/sj/index.php?m=content&c=index&a=lists&catid=9">更多>></a></span><strong>装修设计案例</strong></div>
+<div class="gzcase">
+<ul class=artist_l>
+
+  <li class=a1><IMG src="/gx/images/1.jpg"  border="0" alt="" title="">
+  <A href="http://www.59jiaju.com/sj/index.php?m=content&c=index&a=show&catid=9&id=75" target=_blank><strong>设计者：温学扬</strong><BR><SPAN>现代主义风格房子</SPAN><BR>查看详情</A></li>
+  
+  <li class=a2><IMG src="/gx/images/2.jpg"> 
+  <A href="http://www.59jiaju.com/sj/index.php?m=content&c=index&a=show&catid=9&id=55"  target=_blank><strong>设计者：谢远荣</strong><SPAN><br />
+  工艺沙发的实景照片</SPAN><BR>
+  查看详情</A> </li>
+  
+  <li class=a3><IMG src="/gx/images/3.jpg"> 
+  <A href="http://www.59jiaju.com/sj/index.php?m=content&c=index&a=show&catid=9&id=62" target=_blank><STRONG>设计者：陈品平</STRONG><BR><SPAN>粤华办公室装修</SPAN><BR>查看详情</A> </li>
+  
+  <li class=a4><IMG src="/gx/images/4.jpg"> 
+  <A href="http://www.59jiaju.com/sj/index.php?m=content&c=index&a=show&catid=9&id=51#3" 
+  target=_blank><STRONG>设计者：翁继沛</STRONG><BR><SPAN>富力盈力北塔办公室装修</SPAN><BR>查看详情</A> </li>
+  
+  <li class=a5><IMG src="/gx/images/5.jpg" width="220"> 
+  <A href="http://www.59jiaju.com/sj/index.php?m=content&c=index&a=show&catid=9&id=46" target=_blank><STRONG>设计者：卢书远</STRONG><BR><SPAN>安利与中青旅</SPAN><BR>查看详情</A> </li>
+  
+<li class=a6><IMG src="/gx/images/6.jpg"> 
+  <A href="http://www.59jiaju.com/sj/index.php?m=content&c=index&a=show&catid=9&id=28" target=_blank><STRONG>设计者：谢远荣</STRONG><BR><SPAN>刘朝阳律师事务所办公室</SPAN><BR>查看详情</A> </li>
+  
+  <li class=a7><IMG src="/gx/images/7.jpg"> 
+  <A href="http://www.59jiaju.com/sj/index.php?m=content&c=index&a=show&catid=9&id=53" target=_blank><STRONG>设计者：吴秀华</STRONG><BR><SPAN>富力盈隆广场样板房</SPAN><BR>查看详情</A> </li>
+  
+  <li class=a8><IMG src="/gx/images/8.jpg"> 
+  <A href="http://www.59jiaju.com/sj/index.php?m=content&c=index&a=show&catid=9&id=54" target=_blank><STRONG>设计者：谢佩君</STRONG><BR><SPAN>经艺新公司布局效果图</SPAN><BR>查看详情</A> </li>
+  
+  <li class=a9><IMG src="/gx/images/9.jpg"> 
+  <A href="http://www.59jiaju.com/sj/index.php?m=content&c=index&a=show&catid=9&id=18#4" target=_blank><STRONG>设计者：林裕婉</STRONG><BR><SPAN>信成租赁办公室装修</SPAN><BR>查看详情</A> </li>
+  
+  <li class=a10><IMG src="/gx/images/10.jpg"> 
+  <A href="http://www.59jiaju.com/sj/index.php?m=content&c=index&a=show&catid=9&id=22"  target=_blank><STRONG>设计者：唐飘</STRONG><BR><SPAN>维多利酒店装修</SPAN><BR>查看详情</A> </li>
+  
+  <li class=a11><IMG src="/gx/images/11.jpg"> 
+  <A href="http://www.59jiaju.com/sj/index.php?m=content&c=index&a=show&catid=9&id=61"   target=_blank><STRONG>设计者：陈能佳</STRONG><BR><SPAN>银丰资本公司写字楼装修</SPAN><BR>查看详情</A> </li>
+  
+  <li class=a12><IMG src="/gx/images/12.jpg"> 
+  <A href="http://www.59jiaju.com/sj/index.php?m=content&c=index&a=show&catid=9&id=68" target=_blank><STRONG>设计者：富恒装饰</STRONG><BR><SPAN>东莞虎门店铺装修案例</SPAN><BR>查看详情</A> 
+</li>
+
+</ul>
+</div>
+<div class="yad"><img src="/gx/images/son.jpg" /></div>
+<div class="gztit"><span class="more"><a href="http://www.59jiaju.com/sj/index.php?m=content&c=index&a=lists&catid=11" target="_blank">更多>></a></span><strong>精英设计师</strong></div>
+<div class="gzcase">
+
+
+<div class="qitem">
+	<a href="http://www.59jiaju.com/sj/index.php?m=content&c=index&a=lists&catid=10&userid=1" target="_blank"><img src="http://www.59jiaju.com/gx/images/sjs0.jpg" alt="温学扬" title="温学扬" width="122" height="122"/></a>
+	<span class="caption">
+	<h4>温学扬</h4><p>设计总监</p></span>
+</div>
+
+<div class="qitem">
+	<a href="http://www.59jiaju.com/sj/index.php?m=content&c=index&a=lists&catid=10&userid=5" target="_blank"><img src="http://www.59jiaju.com/gx/images/sjs2.jpg" alt="陈品平" title="陈品平" width="122" height="122"/></a>
+	<span class="caption">
+	<h4>陈品平</h4><p>空间设计师</p></span>
+</div>
+
+<div class="qitem">
+	<a href="http://www.59jiaju.com/sj/index.php?m=content&c=index&a=lists&catid=10&userid=24" target="_blank"><img src="http://www.59jiaju.com/gx/images/sjs1.jpg" alt="吴俊杰" title="吴俊杰" width="122" height="122"/></a>
+	<span class="caption">
+	<h4>吴俊杰</h4><p>空间设计师</p></span>
+</div>
+
+
+
+<div class="qitem">
+	<a href="http://www.59jiaju.com/sj/index.php?m=content&c=index&a=lists&catid=10&userid=279" target="_blank"><img src="http://www.59jiaju.com/gx/images/sjs3.jpg" alt="姚伟建" title="姚伟建" width="122" height="122"/></a>
+	<span class="caption">
+	<h4>姚伟建</h4><p>空间设计师</p></span>
+</div>
+
+<div class="qitem">
+	<a href="http://www.59jiaju.com/sj/index.php?m=content&c=index&a=lists&catid=10&userid=278" target="_blank"><img src="http://www.59jiaju.com/gx/images/sjs4.jpg" alt="严智颖" title="严智颖" width="122" height="122"/></a>
+	<span class="caption">
+	<h4>严智颖</h4><p>空间设计师</p></span>
+</div>
+
+<div class="qitem">
+	<a href="http://www.59jiaju.com/sj/index.php?m=content&c=index&a=lists&catid=10&userid=2" target="_blank"><img src="http://www.59jiaju.com/gx/images/sjs5.jpg" alt="陈建拓" title="陈建拓" width="122" height="122"/></a>
+	<span class="caption">
+	<h4>陈建拓</h4><p>空间设计师</p></span>
+</div>
+
+<div class="qitem"><span class="qitem1"><a href="http://www.59jiaju.com/sj/index.php?m=content&c=index&a=lists&catid=10&userid=277" target="_blank"><img src="http://www.59jiaju.com/gx/images/sjs7.jpg" alt="黄金辉" title="黄金辉" width="122" height="122"/></a></span><span class="caption">
+  <h4>黄金辉</h4><p>空间设计师</p></span>
+</div>
+<div class="clear"></div>
+</div>
+
+<div class="gztit"><span class="more"><a href="http://www.59jiaju.com/gs" target="_blank">更多>></a></span><strong>装修公司</strong></div>
+<div class="gzcase">
+<div class="allbrand">
+	<div class="brand">
+		<a target="_blank" href="http://www.jyboo.com/"><img alt="经艺装饰" src="/gx/img/1.jpg" /></a>
+		<a target="_blank" href="http://www.59jiaju.com/gs/index.php?m=content&c=index&a=show&catid=33&id=48"><img alt="超凡装饰" src="/gx/img/2.jpg" /></a>
+		<a target="_blank" href="http://www.59jiaju.com/gs/index.php?m=content&c=index&a=show&catid=13&id=2"><img alt="喜多装饰" src="/gx/img/3.jpg" /></a>
+		<a target="_blank" href="http://www.gzzjzs.com/"><img alt="珠江建筑装饰" src="/gx/img/4.jpg" /></a>
+		<a target="_blank" href="http://www.gzmeishu.com.cn/"><img alt="美术有限公司" src="/gx/img/5.jpg" /></a>
+		<a target="_blank" href="http://www.xingyigz.com/"><img alt="星艺装饰" src="/gx/img/6.jpg" /></a>
+		<a target="_blank" href="http://www.gzylw.com/default.asp"><img alt="月亮湾装饰" src="/gx/img/7.jpg" /></a>
+		<a target="_blank" href="http://www.gddczs.com/index.php"><img alt="东宸装饰" src="/gx/img/8.jpg" /></a>
+		<a target="_blank" href="http://www.gzbx88.cn/"><img alt="百程装饰" src="/gx/img/9.jpg" /></a>
+		<a target="_blank" href="http://www.pfzschina.com/index.asp"><img alt="朴风装饰" src="/gx/img/10.jpg" /></a>
+		<a target="_blank" href="http://www.yz-yy.com/"><img alt="艺左艺右" src="/gx/img/11.jpg" /></a>
+		<a target="_blank" href="http://www.lingyugz.com/about.asp?id=32"><img alt="领域装饰" src="/gx/img/12.jpg" /></a>
+		<a target="_blank" href="http://www.wjjzs.com/anli.htm"><img alt="旺家居装饰" src="/gx/img/13.jpg" /></a>
+		<a target="_blank" href="http://www.gzmico.com/"><img alt="美科装饰" src="/gx/img/14.jpg" /></a>
+		
+	</div>
+	
+</div>
+	</div>
+
+<script type="text/javascript" src="/gx/js1/jquery-1.6.4.min.js"></script>
+<script type="text/javascript">
+//品牌翻转
+var allBrandAnimate = function(t,d){
+	if(t.find('.brand b').length != 0){
+		return false;
+	}
+	t.find('.brand a').each(function(){
+		$(this).append('<b>' + $(this).find('img').attr('alt') + '</b>')
+	});
+	t.find('.brand a').hover(function(){
+		$(this).find('img').stop().animate({'height':0,'top':'35px'},d,function(){
+			$(this).hide().next().show();
+			$(this).next().animate({
+				'height':'70px',
+				'top':'0'
+			},d);
+		});
+	},function(){
+		$(this).find('b').animate({'height':0,'top':'35px'},d,function(){
+			$(this).hide().prev().show();
+			$(this).prev().animate({
+				'height':'70px',
+				'top':'0'
+			},d);
+		});
+	});
+}
+allBrandAnimate($('.allbrand'),80);
+</script>
+<div class="y_zs">
+
+   <div class="zb_com">
+      <div class="zb_com_cg">
+	     <div class="cg_tit"><span class="wyxq"><a href="http://www.59jiaju.com/zb/">我要申请>></a></span><strong>最新采购招标信息</strong></div>
+		 <script type="text/javascript">
+	function AutoScroll(obj){
+		$(obj).find("ul:first").animate({
+			marginTop:"-34px"
+		},500,function(){
+			$(this).css({marginTop:"0px"}).find("li:first").appendTo(this);
+		});
+	}
+	$(document).ready(function(){
+		setInterval('AutoScroll("#s1")',3000);
+	});
+	</script>
+		 <div class="cg_list1" style="padding:5px 10px;">
+		     <ul>
+			 <li class="green"><span><strong>日期</strong></span>
+               <span><strong>招标项目</strong></span>
+               <span><strong>区域</strong></span>
+               <span><strong>数量</strong></span>
+               <span><strong>预算</strong></span>
+			   </li>
+			   </ul>
+			   </div>
+		   <div class="cg_list1" id="s1" style="height:185px; overflow:hidden;">
+		   <ul>
+		                              			   
+			   <li>
+                 <a href="http://www.59jiaju.com/zb/index.php?m=content&c=index&a=show&catid=15&id=127" target="_blank"><span>2013-09-22</span>
+                 <span>天花格栅无</span>
+                 <span>约一千方</span>
+                 <span>0</span>
+                 <span>广东省  广州市  白云区</span></a></li>
+				 			   
+			   <li>
+                 <a href="http://www.59jiaju.com/zb/index.php?m=content&c=index&a=show&catid=15&id=120" target="_blank"><span>2013-09-22</span>
+                 <span>铝合金平推窗</span>
+                 <span>100多平方</span>
+                 <span>0</span>
+                 <span>广东省  广州市  荔湾区</span></a></li>
+				 			   
+			   <li>
+                 <a href="http://www.59jiaju.com/zb/index.php?m=content&c=index&a=show&catid=15&id=121" target="_blank"><span>2013-09-14</span>
+                 <span>平面铁艺防盗...</span>
+                 <span>100委平方</span>
+                 <span>0</span>
+                 <span>广东省  广州市  荔湾区</span></a></li>
+				 			   
+			   <li>
+                 <a href="http://www.59jiaju.com/zb/index.php?m=content&c=index&a=show&catid=15&id=122" target="_blank"><span>2013-09-14</span>
+                 <span>平面铁艺防盗...</span>
+                 <span>100委平方</span>
+                 <span>0</span>
+                 <span>广东省  广州市  白云区</span></a></li>
+				 			   
+			   <li>
+                 <a href="http://www.59jiaju.com/zb/index.php?m=content&c=index&a=show&catid=17&id=123" target="_blank"><span>2013-07-16</span>
+                 <span>办公桌椅</span>
+                 <span>20</span>
+                 <span>4000</span>
+                 <span>广东省  广州市  天河区</span></a></li>
+				 			   
+			   <li>
+                 <a href="http://www.59jiaju.com/zb/index.php?m=content&c=index&a=show&catid=15&id=117" target="_blank"><span>2013-07-09</span>
+                 <span>5mm胶合板</span>
+                 <span>117</span>
+                 <span>6364.8</span>
+                 <span>广东省  广州市  番禺区</span></a></li>
+				 			   
+			   <li>
+                 <a href="http://www.59jiaju.com/zb/index.php?m=content&c=index&a=show&catid=15&id=116" target="_blank"><span>2013-07-09</span>
+                 <span>600*600浅灰...</span>
+                 <span>120片</span>
+                 <span>7344</span>
+                 <span>广东省  广州市  番禺区</span></a></li>
+				 			   
+			   <li>
+                 <a href="http://www.59jiaju.com/zb/index.php?m=content&c=index&a=show&catid=15&id=115" target="_blank"><span>2013-07-09</span>
+                 <span>300*600米黄...</span>
+                 <span>510片</span>
+                 <span>11658.6</span>
+                 <span>广东省  广州市  番禺区</span></a></li>
+				 			   
+			   <li>
+                 <a href="http://www.59jiaju.com/zb/index.php?m=content&c=index&a=show&catid=15&id=114" target="_blank"><span>2013-07-09</span>
+                 <span>300*600浅灰...</span>
+                 <span>1104片</span>
+                 <span>25237.4</span>
+                 <span>广东省  广州市  番禺区</span></a></li>
+				 			   
+			   <li>
+                 <a href="http://www.59jiaju.com/zb/index.php?m=content&c=index&a=show&catid=15&id=113" target="_blank"><span>2013-07-08</span>
+                 <span>12mm胶合板</span>
+                 <span>235张</span>
+                 <span>23500</span>
+                 <span>广东省  广州市  番禺区</span></a></li>
+				 			   
+			   <li>
+                 <a href="http://www.59jiaju.com/zb/index.php?m=content&c=index&a=show&catid=15&id=112" target="_blank"><span>2013-07-08</span>
+                 <span>胶合板9mm</span>
+                 <span>86</span>
+                 <span>6673.6</span>
+                 <span>广东省  广州市  番禺区</span></a></li>
+				 			   
+			   <li>
+                 <a href="http://www.59jiaju.com/zb/index.php?m=content&c=index&a=show&catid=18&id=111" target="_blank"><span>2013-07-08</span>
+                 <span>木饰面趟门（...</span>
+                 <span>6</span>
+                 <span>21504</span>
+                 <span>广东省  广州市  番禺区</span></a></li>
+				 			   
+			   <li>
+                 <a href="http://www.59jiaju.com/zb/index.php?m=content&c=index&a=show&catid=18&id=110" target="_blank"><span>2013-07-08</span>
+                 <span>房间门（含门...</span>
+                 <span>48</span>
+                 <span>90240</span>
+                 <span>广东省  广州市  番禺区</span></a></li>
+				 			   
+			   <li>
+                 <a href="http://www.59jiaju.com/zb/index.php?m=content&c=index&a=show&catid=18&id=109" target="_blank"><span>2013-07-08</span>
+                 <span>入户门（含门...</span>
+                 <span>12</span>
+                 <span>25440</span>
+                 <span>广东省  广州市  番禺区</span></a></li>
+				 			   
+			   <li>
+                 <a href="http://www.59jiaju.com/zb/index.php?m=content&c=index&a=show&catid=16&id=103" target="_blank"><span>2013-07-06</span>
+                 <span>内墙乳胶漆</span>
+                 <span>17桶</span>
+                 <span>5100</span>
+                 <span>广东省  广州市  番禺区</span></a></li>
+				 			   
+			   <li>
+                 <a href="http://www.59jiaju.com/zb/index.php?m=content&c=index&a=show&catid=16&id=104" target="_blank"><span>2013-07-06</span>
+                 <span>白色乳胶漆</span>
+                 <span>11桶</span>
+                 <span>3850</span>
+                 <span>广东省  广州市  番禺区</span></a></li>
+				 			   
+			   <li>
+                 <a href="http://www.59jiaju.com/zb/index.php?m=content&c=index&a=show&catid=15&id=93" target="_blank"><span>2013-07-06</span>
+                 <span>9mm埃特板</span>
+                 <span>44片</span>
+                 <span>4703.6</span>
+                 <span>广东省  广州市  番禺区</span></a></li>
+				 			   
+			   <li>
+                 <a href="http://www.59jiaju.com/zb/index.php?m=content&c=index&a=show&catid=16&id=99" target="_blank"><span>2013-07-06</span>
+                 <span>卧室硬包及挂...</span>
+                 <span>149.54</span>
+                 <span>5383.44</span>
+                 <span>Array</span></a></li>
+				 			   
+			   <li>
+                 <a href="http://www.59jiaju.com/zb/index.php?m=content&c=index&a=show&catid=15&id=96" target="_blank"><span>2013-07-06</span>
+                 <span>客厅硬包墙布</span>
+                 <span>140.18</span>
+                 <span>1382.18</span>
+                 <span>广东省  广州市  番禺区</span></a></li>
+				 			   
+			   <li>
+                 <a href="http://www.59jiaju.com/zb/index.php?m=content&c=index&a=show&catid=15&id=97" target="_blank"><span>2013-07-06</span>
+                 <span>卧室墙布</span>
+                 <span>149.52m&sup2;</span>
+                 <span>7117.15</span>
+                 <span>广东省  广州市  番禺区</span></a></li>
+				 
+
+				
+</ul>
+		     <div class="clear"></div>
+		 </div>
+	  </div>
+	  <div class="zb_com_cg">
+	     <div class="cg_tit"><span class="wyxq"><a href="http://www.59jiaju.com/zb/gc">我要申请>></a></span><strong>最新装修招标信息</strong></div>
+		 <div class="cg_list">
+		     <ul>
+			 <li class="green"><span><strong>日期</strong></span>
+               <span><strong>业主</strong></span>
+               <span><strong>区域</strong></span>
+               <span><strong>面积</strong></span>
+               <span><strong>预算</strong></span></li>
+			    <li>
+                 <a href="http://www.59jiaju.com/zb/gc/index.php?m=content&c=index&a=show&catid=10&id=63"  target="_blank"><span>2013-09-26</span>
+                 <span>某办公室装修</span>
+                 <span>146</span>
+                 <span>写字楼装修</span>
+                 <span>广东省  广州市  萝岗区</span></a></li>
+				 			   
+			   <li>
+                 <a href="http://www.59jiaju.com/zb/gc/index.php?m=content&c=index&a=show&catid=13&id=61"  target="_blank"><span>2013-09-26</span>
+                 <span>酒店装修</span>
+                 <span>350</span>
+                 <span>酒店装修</span>
+                 <span>广东省  广州市  海珠区</span></a></li>
+				 			   
+			   <li>
+                 <a href="http://www.59jiaju.com/zb/gc/index.php?m=content&c=index&a=show&catid=12&id=66"  target="_blank"><span>2013-09-26</span>
+                 <span>某住宅小...</span>
+                 <span>80</span>
+                 <span>居家装修</span>
+                 <span>广东省  广州市  越秀区</span></a></li>
+				 			   
+			   <li>
+                 <a href="http://www.59jiaju.com/zb/gc/index.php?m=content&c=index&a=show&catid=12&id=67"  target="_blank"><span>2013-09-26</span>
+                 <span>某住宅小...</span>
+                 <span>80</span>
+                 <span>居家装修</span>
+                 <span>广东省  广州市  荔湾区</span></a></li>
+				 			   
+			   <li>
+                 <a href="http://www.59jiaju.com/zb/gc/index.php?m=content&c=index&a=show&catid=14&id=56"  target="_blank"><span>2013-09-26</span>
+                 <span>餐饮连锁...</span>
+                 <span>1256左右</span>
+                 <span>餐饮连锁装修</span>
+                 <span>广东省  广州市  白云区</span></a></li>
+				 
+
+			 </ul>
+		   <div class="clear"></div>
+		 </div>
+	  </div>
+	  
+	   <div class="zb_com_qy">
+	     <div class="qy_tit"><span class="wyxq"><a href="#">更多>></a></span><strong>行业新闻</strong></div>
+		 <div class="qy_list">
+		      <ul>
+									<li><a href="http://www.59jiaju.com/zp/index.php?m=content&c=index&a=show&catid=22&id=17" target="_blank">· 装修小利与未来大弊，孰轻孰重？</a></li>
+									<li><a href="http://www.59jiaju.com/zp/index.php?m=content&c=index&a=show&catid=22&id=5" target="_blank">· 秋季装修好时机，切莫忽视房安全</a></li>
+									<li><a href="http://www.59jiaju.com/zp/index.php?m=content&c=index&a=show&catid=22&id=4" target="_blank">· 广州装修行业未来将流向何方？</a></li>
+									<li><a href="http://www.59jiaju.com/zp/index.php?m=content&c=index&a=show&catid=22&id=2" target="_blank">· 未识别专业装修公司，装修麻烦多多</a></li>
+									<li><a href="http://www.59jiaju.com/zp/index.php?m=content&c=index&a=show&catid=22&id=15" target="_blank">· 商家入驻，59家居装修商城引领装修新格局</a></li>
+									<li><a href="http://www.59jiaju.com/zp/index.php?m=content&c=index&a=show&catid=22&id=6" target="_blank">· 软装饰异军突起，走俏装修行业</a></li>
+									<li><a href="http://www.59jiaju.com/zp/index.php?m=content&c=index&a=show&catid=22&id=18" target="_blank">· 战略眼光：看行业谁主沉浮？</a></li>
+									<li><a href="http://www.59jiaju.com/zp/index.php?m=content&c=index&a=show&catid=22&id=3" target="_blank">· 房屋装修风水学问不可不看</a></li>
+									<li><a href="http://www.59jiaju.com/zp/index.php?m=content&c=index&a=show&catid=22&id=16" target="_blank">· 59家居装修商城PK淘宝网</a></li>
+									
+
+         
+          
+		  </ul>
+
+		    <div class="clear"></div>
+		 </div>
+		 
+	  </div>
+	  
+	  
+   </div>
+</div>
+<div class="clear"></div>
+
+<div class="footer">Copyright &copy;2010-2014 我购家居商城 版权所有 粤ICP备09031901号-1 广州市我购家居用品有限公司</div>
+</body>
+</html>

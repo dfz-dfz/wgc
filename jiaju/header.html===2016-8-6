@@ -1,0 +1,110 @@
+﻿{include file=top.html}
+<metahttp-equiv="X-UA-Compatible" content="IE=EmulateIE7"/>
+<div id="header" class="w-full">
+    <div class="shop-t w clearfix" style="padding:10px 0px;position: relative;height: 70px;">
+        <div class="logo">
+          <a style="overflow:hidden;float: left;" href="/"  title="59家居商城">
+      <img alt="59家居商城" src='http://www.59jiaju.com/data/files/mall/settings/site_logo.png' />
+      </a>
+            <div style=" width:137px; float:right;padding-top: 30px;" class="change-city">
+            <span style=" font-family:'微软雅黑'; font-size:14px; color:#f00; margin:0 4px;">广州站</span><span style="padding:3px; background:#f3f3f3;">
+              <a id="open-change-city-window">【切换城市】</a>
+            </span>
+          <div class="change-city-window">
+            <div class="">
+              <span id="close-change-city-window">关闭</span>
+            </div>
+            <div>
+              <a href="http://www.59jiaju.com/shenzhen/">深圳</a>
+              <a href="http://www.59jiaju.com/wuhan/">武汉</a>
+              <a href="http://www.59jiaju.com/shanghai/">上海</a>
+              <a href="http://www.59jiaju.com/beijing/">北京</a>
+            </div>
+          </div>
+        </div>
+        </div>
+        
+    <div class="top-search">
+          <div class="top-search-box">
+              <form method="GET" action="index.php?app=search">
+          <input type="hidden" name="app" value="search">
+                 <input type="hidden" name="act" value="index">
+           
+                <input type="text" name="keyword" value="search" onfocus="if(this.value == 'search') this.value = ''" onblur="if(this.value =='') this.value = 'search'" class="top-search-text" />
+                 <input type="submit" value="搜索" class="submit" hidefocus="true" />
+              </form>
+        
+        
+                <div class="alist">
+                   <a href="index.php?app=search&cate_id=6431">螺丝刀</a>
+                   <a href="index.php?app=search&cate_id=6489">扳手</a>
+                   <a href="index.php?app=search&cate_id=6490">钢丝钳</a>
+                </div>
+          </div>
+        </div>
+    <?php
+    
+    $row11=mysql_num_rows(mysql_query("SELECT user_id FROM ecm_member where types=2"));
+    $row12=mysql_num_rows(mysql_query("SELECT user_id FROM ecm_member where types=3"));
+    
+    ?>
+        <div class='erweima'>
+           <p>材料商会员：<span class="textred" style="color: red;">00000<?php echo user_num(2);?></span></p>
+           <p>装修公司会员：<span class="textred" style="color: red;">0000<?php echo user_num(3);?></span></p>
+        </div>
+    </div>
+  <div class="mainnav w-full">
+    <div class="menu">
+      <ul>
+        <li class="total"><a href="http://www.59jiaju.com/index.php?app=category">所有分类</a><i><img src="/themes/mall/jiaju/styles/style/images/updown.png"></i></li>
+        <li class="line"><a href="http://www.59jiaju.com/">首页</a></li>
+        <li class="line"><a href="http://www.59jiaju.com/">材料城</a></li>
+        <li class="line"><a href="http://www.59jiaju.com/index.php?app=search&act=zhaopin">行业招聘</a></li>
+        <li class="line"><a href="http://www.59jiaju.com/index.php?app=search&act=zx">热门公司</a></li>
+        <li class="line"><a href="http://www.59jiaju.com/index.php?app=article&act=view&article_id=28">关于我们</a></li>
+        <li class="line"><a href="http://www.59jiaju.com/gx/reg.html">会员注册</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<style type="text/css">
+
+.fixed-top /* 头部固定 */{position:fixed;bottom:auto;top:200px;}
+
+.fixed-bottom /* 底部固定 */{position:fixed;bottom:0px;top:auto;}
+
+.fixed-left /* 左侧固定 */{position:fixed;right:auto;left:0px; z-index:1000;}
+
+.fixed-right /* 右侧固定 */{position:fixed;right:0px;left:auto;}
+
+/* 上面的是除了IE6的主流浏览器通用的方法 */
+
+* html,* html body /* 修正IE6振动bug */{background-image:url(about:blank);background-
+
+attachment:fixed;}
+
+* html .fixed-top /* IE6 头部固定 */{position:absolute;bottom:auto;top:expression(eval
+
+(document.documentElement.scrollTop)+200);}
+
+* html .fixed-right /* IE6 右侧固定 */ {position:absolute;right:auto;left:expression
+
+(eval(document.documentElement.scrollLeft+document.documentElement.clientWidth-
+
+this.offsetWidth)-(parseInt(this.currentStyle.marginLeft,10)||0)-(parseInt
+
+(this.currentStyle.marginRight,10)||0));}
+
+* html .fixed-bottom /* IE6 底部固定  */{position:absolute;bottom:auto;top:expression
+
+(eval(document.documentElement.scrollTop+document.documentElement.clientHeight-
+
+this.offsetHeight-(parseInt(this.currentStyle.marginTop,10)||0)-(parseInt
+
+(this.currentStyle.marginBottom,10)||0)));}
+
+* html .fixed-left /* IE6 左侧固定 */{position:absolute;right:auto;left:expression
+
+(eval(document.documentElement.scrollLeft));}
+
+</style>

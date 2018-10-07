@@ -1,0 +1,452 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<title>最新材料推荐 - 59家居商城</title>
+<meta name="description" content="59家居商城，装修、材料、家具、饰品一站式服务，让装修更简单，价格更透明！！" />
+<meta name="keywords" content="59家居，家居商城，59家居商城，办公室装修，写字楼装修，材料，装修材料，家居，办公家具，家居，家具，装修，装饰" />
+<link rel="stylesheet" href="/themes/mall/jiaju/css/banner_style.css" type="text/css" />
+<link href="/gx/css/css.css" rel="stylesheet" type="text/css" />
+<link href="/themes/mall/jiaju/styles/style/style/style.css" rel="stylesheet" type="text/css" />
+
+<style>
+
+.Q_pic1,.Q_sign1{background:url(/themes/mall/jiaju/images/lanrenzhijia.png) no-repeat;}
+.sign,.signa,.signb,.signc,.signd,.signe,.signf,.signg,.signh,.signi,.signj,.signq{background:url(/themes/mall/jiaju/images/lanrenzhijia.png) no-repeat;display:block;}
+.signi{background-position:-203px -484px;width: 10px;height: 30px;float:right;margin: 3px 10px 0 3px;}
+.signj{background-position:-233px -478px;width: 10px;height: 30px;float:right;margin:0 5px 0 3px;}
+.QQ_S{width:90px;height: 172px;position:fixed;right: 10px;top: 40%; z-index:99999;}
+.Q_top{width:100%;background:#E6E6E6;height:30px;line-height:30px;text-align: right;cursor:pointer;}
+.Q_botm{width: 84px;border: 3px solid #E6E6E6;}
+.Q_pic,.Q_anser,.Q_sign{width:100%;height: 45px;border-bottom:2px solid #E6E6E6;background: url(/themes/mall/jiaju/images/lanrenzhijia.png) no-repeat;position:relative;overflow:hidden;color: white;text-align:center;cursor:pointer;background-color:white;}
+.Q_pic{background-position:20px -458px;}
+.Q_anser{background-position:-242px -384px;}
+.Q_sign{background-position:-241px -434px;}	
+.Q_anser_hide,.Q_pic_hide,.Q_sign_hide{width:100%;height:100%;position:absolute;background:#FE9B1D;left: -84px;-webkit-transition:left ease-in-out .3s;-moz-transition:left ease-in-out .3s;transition:left ease-in-out .3s;}	
+.hide_pic,.hide_pic1,.hide_pic2{width:100%;height: 26px;background: url(/themes/mall/jiaju/images/lanrenzhijia.png) no-repeat;display:block;}
+.hide_pic{background-position:-242px -348px;}
+.hide_pic1{background-position:-100px -467px;}
+.hide_pic2{background-position:-243px -479px;}
+.Q_pic:hover .Q_pic_hide,.Q_anser:hover .Q_anser_hide,.Q_sign:hover .Q_sign_hide,.Q_pic1:hover .Q_pic1_hide,.Q_sign1:hover .Q_sign1_hide{left:0px;}
+.Q_pic a, .Q_anser a,.Q_sign a,.Q_pic a:hover,.Q_anser a:hover,.Q_sign a:hover,.Q_pic1 a,.Q_pic1 a:hover,.Q_sign1 a,.Q_sign1 a:hover{color:white;}
+a.blank{width:100%;height:100%;display:block;}
+.QQ_S1{width:60px;height: 110px;position:fixed;right:10px;bottom:0;display:none;}
+.Q_top1{width:100%;height:30px;background:#E6E6E6;line-height:30px;text-align:right;cursor:pointer;}
+.Q_botm1{width:56px;border:2px solid #E6E6E6;height: 70px;}
+.Q_pic1{border-bottom:2px solid #E6E6E6;width:100%;height:33px;background-position:-55px -465px;position:relative;overflow:hidden;color: white;text-align:center;line-height:33px;cursor:pointer;background-color:white;}
+.Q_sign1{width:100%;height:33px;width:100%;line-height:33px; height: 35px;background-position:-255px -437px;position:relative;overflow:hidden;color: white;text-align:center;cursor:pointer;background-color:white;}
+.Q_pic1_hide,.Q_sign1_hide{width:100%;height:100%;position:absolute;background:#FE9B1D;left: -56px;-webkit-transition:left ease-in-out .3s;-moz-transition:left ease-in-out .3s;transition:left ease-in-out .3s;cursor:pointer;}
+.Q_sign1_hide a{font-size:12px;}
+
+/*回顶部结束*/
+.fl{float:left;}
+.fr{float:right;}
+.clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden;}
+.clearfix{display:inline-table;}
+*html .clearfix{height:1%;}
+.clearfix{display:block;}
+*+html .clearfix{min-height:1%;}
+.demo{width:100%;margin:0 auto;}
+
+/* item_list */
+.item_list{padding:0 0 50px;float:left}
+.item{
+	float:left;
+	width:226px;
+	display: inline;
+	background:#fff;
+	overflow:hidden;
+	margin: 21px 18px 0px 28px;
+	border-radius:4px 4px 4px 4px;
+	box-shadow:0 1px 3px rgba(34, 25, 25, 0.2);	
+}
+.item:hover{
+
+-webkit-box-shadow: #666 0px 0px 10px;
+-moz-box-shadow: #666 0px 0px 10px;
+box-shadow: #666 0px 0px 10px;
+
+}
+.item_t{padding:10px 8px 0;}
+.item_t .img{background-color:#FFFFFF;margin:0 auto;position:relative;width:210px;min-height:210px;}
+.item_t .img a{display:block;}
+.item_t .img a:hover{background:#000;}
+.item_t .img a:hover img{filter:alpha(opacity=80);-khtml-opacity:0.8;opacity:0.8;-webkit-transition:all 0.3s ease-out;-khtml-transition:all 0.3s ease-out;}
+.item_t .price{
+	position:absolute;bottom:10px;right:0px;background-color:rgba(0, 0, 0, 0.2);color:#FFF;
+	filter:progid:DXImageTransform.Microsoft.gradient(startcolorstr=#33000000, endcolorstr=#33000000);
+}
+.item .btns{display:none;}
+.img_album_btn{top:0px;right:0px;position:absolute;background:#ff6fa6;color:#ffffff;height:20px;line-height:20px;width:56px;border-radius:3px;}
+.img_album_btn:hover{color:#fff;}
+.item_t .title{padding:8px 0;line-height:18px;}
+.item_b{padding:10px 8px;}
+.item_b .items_likes .like_btn{background:url("/themes/mall/jiaju/images/fav_icon_word_new_1220.png") no-repeat;display:block;float:left;height:23px;width:59px;margin-right:5px;}
+.item_b .items_likes em{line-height:23px;display:block;float:left;padding:0px 6px;color:#FF6699;font-weight:800;border:1px solid #ff6fa6;border-radius:3px;}
+
+/* more */
+#more{display:block;margin:10px auto 20px;}
+
+/* infscr-loading */
+#infscr-loading{bottom:-10px;left:45%;position:absolute;text-align:center;height:20px;line-height:20px;z-index:100;width:120px;}
+
+
+
+/* to_top */
+.to_top a,.to_top a:hover{background:url("/themes/mall/jiaju/images/gotop.png") no-repeat}
+.to_top a{
+	background-position:0 0;float:left;height:50px;overflow:hidden;width:50px;position:fixed;bottom:35px;cursor:pointer;right:20px;
+	_position:absolute;
+	_right:auto;
+	_left:expression(eval(document.documentElement.scrollLeft+document.documentElement.clientWidth-this.offsetWidth)-(parseInt(this.currentStyle.marginLeft, 10)||0)-(parseInt(this.currentStyle.marginRight, 10)||20));
+	_top:expression(eval(document.documentElement.scrollTop+document.documentElement.clientHeight-this.offsetHeight-(parseInt(this.currentStyle.marginTop, 10)||20)-(parseInt(this.currentStyle.marginBottom, 10)||20)));
+}
+.to_top a:hover{background-position:-51px 0px;}
+.hot_index{ min-height:300px;min-width:1100px; width:77%;height:auto; margin:0 auto; overflow:hidden;}
+.regt{ font-size:14px;  line-height:30px; text-align:center; border-bottom:1px solid #999; padding:20px 0 0 0 ; }
+.regt p{text-align:left;}
+.regt p{text-align:left;}
+.regt p img{vertical-align: middle;}
+.hot_index ul{ float:left; margin:0 -50px 50px 0;}
+.hot_index li{ float:left; width:190px; border:5px solid #e1e1e1; padding:10px 0; margin:48px 48px 0 0; text-align:center; line-height:30px; font-size:14px;}
+.hot_index em{ color:#999; font-style:normal;}
+.slide img{margin:0 auto;}
+
+
+</style>
+</head>
+<body style='background:url("/themes/mall/jiaju/images/bodybg.jpg") repeat #f5f6f7;color:#666666;font-family:Arial;font-size:12px;'>
+{include file=../../mall/jiaju/header.html}
+<script type="text/javascript" src="/themes/mall/jiaju/js/jquery.masonry.js"></script>
+<script type="text/javascript" src="/themes/mall/jiaju/js/jquery.infinitescroll.js"></script>
+<!--[if lte IE 6]>
+<script type="text/javascript" src="/themes/mall/jiaju/js/belatedPNG.js"></script>
+<script type="text/javascript">
+    var __IE6=true;
+    DD_belatedPNG.fix('.logo img,.prev img,.next img,img');
+</script>
+<![endif]-->
+
+<!--广告位开始-->
+
+
+<div class="slide-main-new" id="touchMain">
+	<a class="prev" href="javascript:;" stat="prev1001"><img src="/themes/mall/jiaju/images/l-btn.png" /></a>
+	<div class="slide-box" id="slideContent">
+		<div class="slide" id="bgstylec" style="text-align:center;">
+			
+				<div style="text-align:center; margin:0 auto;"><img src="/themes/mall/jiaju/images/web-101-101-3_913.jpg" style="float:left"/></div>
+			
+		</div>
+	</div>
+	<a class="next" href="javascript:;" stat="next1002"><img src="/themes/mall/jiaju/images/r-btn.png" /></a>
+	<div class="items">
+		<a class="cur" stat="item1001" href="javascript:;"></a><a href="javascript:;" stat="item1002"></a><a href="javascript:;" stat="item1003"></a>
+	</div>
+</div>
+<script type="text/javascript" src="/themes/mall/jiaju/js/main.js"></script>
+<!--广告位结束-->
+
+<div class="hot_index">
+  <!---开始-->
+  
+  <div class="demo clearfix">
+	
+	<div class="item_list infinite_scroll">
+	
+	
+		<div class="item masonry_brick">
+				<div class="item_t">
+					<div class="img">
+						<a href="index.php?app=goods&id=10584"target="_blank"><img width="210" height="200" alt="{$goods.goods_name|escape|truncate:48}" src="/themes/mall/jiaju/images/jiahong1.jpg" /></a>
+						<span class="price">￥270.00<?php echo jia($goods['goods_id']);?></span>
+						
+					</div>
+					<div class="title"><span>{$goods.goods_name|escape|truncate:48}</span></div>
+				</div>
+				<div class="item_b clearfix">
+					<div class="items_likes fl">
+						<a href="index.php?app=goods&id=10584"target="_blank" class="like_btn"></a>
+						<em class="bold">￥270.00</em>
+					</div>
+				</div>
+			</div><!--item end-->
+			
+			
+			<div class="item masonry_brick">
+				<div class="item_t">
+					<div class="img">
+						<a href="index.php?app=goods&id=10586"target="_blank"><img width="210" height="200" alt="{$goods.goods_name|escape|truncate:48}" src="/themes/mall/jiaju/images/jiahong2.jpg" /></a>
+						<span class="price">￥225.00<?php echo jia($goods['goods_id']);?></span>
+						
+					</div>
+					<div class="title"><span>{$goods.goods_name|escape|truncate:48}</span></div>
+				</div>
+				<div class="item_b clearfix">
+					<div class="items_likes fl">
+						<a href="index.php?app=goods&id=10586"target="_blank" class="like_btn"></a>
+						<em class="bold">￥225.00</em>
+					</div>
+				</div>
+			</div><!--item end-->
+			
+			<div class="item masonry_brick">
+				<div class="item_t">
+					<div class="img">
+						<a href="index.php?app=goods&id=10581"target="_blank"><img width="210" height="200" alt="{$goods.goods_name|escape|truncate:48}" src="/themes/mall/jiaju/images/lks1.jpg" /></a>
+						<span class="price">￥750.00<?php echo jia($goods['goods_id']);?></span>
+						
+					</div>
+					<div class="title"><span>{$goods.goods_name|escape|truncate:48}</span></div>
+				</div>
+				<div class="item_b clearfix">
+					<div class="items_likes fl">
+						<a href="index.php?app=goods&id=10581"target="_blank" class="like_btn"></a>
+						<em class="bold">￥750.00</em>
+					</div>
+				</div>
+			</div><!--item end-->
+			
+			
+			<div class="item masonry_brick">
+				<div class="item_t">
+					<div class="img">
+						<a href="index.php?app=goods&id=10582"target="_blank"><img width="210" height="200" alt="{$goods.goods_name|escape|truncate:48}" src="/themes/mall/jiaju/images/lks2.jpg" /></a>
+						<span class="price">￥680.00<?php echo jia($goods['goods_id']);?></span>
+						
+					</div>
+					<div class="title"><span>{$goods.goods_name|escape|truncate:48}</span></div>
+				</div>
+				<div class="item_b clearfix">
+					<div class="items_likes fl">
+						<a href="index.php?app=goods&id=10582"target="_blank" class="like_btn"></a>
+						<em class="bold">￥680.00</em>
+					</div>
+				</div>
+			</div><!--item end-->
+			
+			
+			<div class="item masonry_brick">
+				<div class="item_t">
+					<div class="img">
+						<a href="index.php?app=goods&id=10583"target="_blank"><img width="210" height="200" alt="{$goods.goods_name|escape|truncate:48}" src="/themes/mall/jiaju/images/lks3.jpg" /></a>
+						<span class="price">￥1200.00<?php echo jia($goods['goods_id']);?></span>
+						
+					</div>
+					<div class="title"><span>{$goods.goods_name|escape|truncate:48}</span></div>
+				</div>
+				<div class="item_b clearfix">
+					<div class="items_likes fl">
+						<a href="index.php?app=goods&id=10583"target="_blank" class="like_btn"></a>
+						<em class="bold">￥1200.00</em>
+					</div>
+				</div>
+			</div><!--item end-->
+
+			<div class="item masonry_brick">
+				<div class="item_t">
+					<div class="img">
+						<a href="index.php?app=goods&id=10580"target="_blank"><img width="210" height="200" alt="{$goods.goods_name|escape|truncate:48}" src="/themes/mall/jiaju/images/lks4.jpg" /></a>
+						<span class="price">￥600.00<?php echo jia($goods['goods_id']);?></span>
+						
+					</div>
+					<div class="title"><span>{$goods.goods_name|escape|truncate:48}</span></div>
+				</div>
+				<div class="item_b clearfix">
+					<div class="items_likes fl">
+						<a href="index.php?app=goods&id=10580"target="_blank" class="like_btn"></a>
+						<em class="bold">￥600.00</em>
+					</div>
+				</div>
+			</div><!--item end-->
+			
+			<div class="item masonry_brick">
+				<div class="item_t">
+					<div class="img">
+						<a href="index.php?app=goods&id=10589"target="_blank"><img width="210" height="200" alt="{$goods.goods_name|escape|truncate:48}" src="/themes/mall/jiaju/images/yuhong1.jpg" /></a>
+						<span class="price">￥240.00<?php echo jia($goods['goods_id']);?></span>
+						
+					</div>
+					<div class="title"><span>{$goods.goods_name|escape|truncate:48}</span></div>
+				</div>
+				<div class="item_b clearfix">
+					<div class="items_likes fl">
+						<a href="index.php?app=goods&id=10589"target="_blank" class="like_btn"></a>
+						<em class="bold">￥240.00</em>
+					</div>
+				</div>
+			</div><!--item end-->
+			
+			<div class="item masonry_brick">
+				<div class="item_t">
+					<div class="img">
+						<a href="index.php?app=goods&id=10590"target="_blank"><img width="210" height="200" alt="{$goods.goods_name|escape|truncate:48}" src="/themes/mall/jiaju/images/yuhong2.jpg" /></a>
+						<span class="price">￥200.00<?php echo jia($goods['goods_id']);?></span>
+						
+					</div>
+					<div class="title"><span>{$goods.goods_name|escape|truncate:48}</span></div>
+				</div>
+				<div class="item_b clearfix">
+					<div class="items_likes fl">
+						<a href="index.php?app=goods&id=10590"target="_blank" class="like_btn"></a>
+						<em class="bold">￥200.00</em>
+					</div>
+				</div>
+			</div><!--item end-->
+			
+			
+			<div class="item masonry_brick">
+				<div class="item_t">
+					<div class="img">
+						<a href="index.php?app=goods&id=10591"target="_blank"><img width="210" height="200" alt="{$goods.goods_name|escape|truncate:48}" src="/themes/mall/jiaju/images/yuhong3.jpg" /></a>
+						<span class="price">￥480.00<?php echo jia($goods['goods_id']);?></span>
+						
+					</div>
+					<div class="title"><span>{$goods.goods_name|escape|truncate:48}</span></div>
+				</div>
+				<div class="item_b clearfix">
+					<div class="items_likes fl">
+						<a href="index.php?app=goods&id=10591"target="_blank" class="like_btn"></a>
+						<em class="bold">￥480.00</em>
+					</div>
+				</div>
+			</div><!--item end-->
+			
+			
+			
+			<div class="item masonry_brick">
+				<div class="item_t">
+					<div class="img">
+						<a href="index.php?app=goods&id=10592"target="_blank"><img width="210" height="200" alt="{$goods.goods_name|escape|truncate:48}" src="/themes/mall/jiaju/images/yuhong4.jpg" /></a>
+						<span class="price">￥480.00<?php echo jia($goods['goods_id']);?></span>
+						
+					</div>
+					<div class="title"><span>{$goods.goods_name|escape|truncate:48}</span></div>
+				</div>
+				<div class="item_b clearfix">
+					<div class="items_likes fl">
+						<a href="index.php?app=goods&id=10592"target="_blank" class="like_btn"></a>
+						<em class="bold">￥480.00</em>
+					</div>
+				</div>
+			</div><!--item end-->
+			
+			
+			<div class="item masonry_brick">
+				<div class="item_t">
+					<div class="img">
+						<a href="index.php?app=goods&id=10621"target="_blank"><img width="210" height="200" alt="{$goods.goods_name|escape|truncate:48}" src="/themes/mall/jiaju/images/xiancheng.jpg" /></a>
+						<span class="price">￥368.00<?php echo jia($goods['goods_id']);?></span>
+						
+					</div>
+					<div class="title"><span>{$goods.goods_name|escape|truncate:48}</span></div>
+				</div>
+				<div class="item_b clearfix">
+					<div class="items_likes fl">
+						<a href="index.php?app=goods&id=10621"target="_blank" class="like_btn"></a>
+						<em class="bold">￥368.00</em>
+					</div>
+				</div>
+			</div><!--item end-->
+			
+			<div class="item masonry_brick">
+				<div class="item_t">
+					<div class="img">
+						<a href="index.php?app=goods&id=10618"target="_blank"><img width="210" height="200" alt="{$goods.goods_name|escape|truncate:48}" src="/themes/mall/jiaju/images/canmeijia.jpg" /></a>
+						<span class="price">￥18.00<?php echo jia($goods['goods_id']);?></span>
+						
+					</div>
+					<div class="title"><span>{$goods.goods_name|escape|truncate:48}</span></div>
+				</div>
+				<div class="item_b clearfix">
+					<div class="items_likes fl">
+						<a href="index.php?app=goods&id=10618"target="_blank" class="like_btn"></a>
+						<em class="bold">￥18.00</em>
+					</div>
+				</div>
+			</div><!--item end-->
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+		<!--{foreach from=$recommend_goods item=goods name=fe_recommend_goods}-->
+			<!--<div class="item masonry_brick">
+				<div class="item_t">
+					<div class="img">
+						<a href="{url app=goods&id=$goods.goods_id}"target="_blank"><img width="210" height="285" alt="{$goods.goods_name|escape|truncate:48}" src="{$goods.default_image}" /></a>
+						<span class="price">￥{$goods.price}</span>
+						
+					</div>
+					<div class="title"><span>{$goods.goods_name|escape|truncate:48}</span></div>
+				</div>
+				<div class="item_b clearfix">
+					<div class="items_likes fl">
+						<a href="{url app=goods&id=$goods.goods_id}"target="_blank" class="like_btn"></a>
+						<em class="bold">￥{$goods.price}</em>
+					</div>
+					<div class="items_comment fr"><a href="{url app=goods&id=$goods.goods_id}"target="_blank">{$lang.zjcj}</a><em class="bold">({$goods.sales})</em>{$lang.bi}</div>
+				</div>
+			</div>--><!--item end-->
+		<!--{/foreach}-->
+		
+		
+		
+		
+	
+	</div>
+					
+</div>
+  
+  <!---结束-->
+  
+  
+  
+  
+</div>
+
+
+<div class="footer">Copyright &copy;2010-2016 我购家居商城 版权所有   
+      粤ICP备09031901号-1 广州市我购家居用品有限公司 </div>
+
+</body>
+
+
+					
+<!---回顶部-->
+<div class="QQ_S">
+  <div class="Q_top" onclick="HideFoot()"> <span class="signi"></span>收起</div>
+  <div class="Q_botm">
+    <div class="Q_pic">
+      <div class="Q_pic_hide"> <a href="http://wpa.qq.com/msgrd?v=3&uin=461666210&site=qq&menu=yes" target="_blank" title="在线咨询" rel="nofollow"><span class="hide_pic"></span>在线咨询 </a> </div>
+    </div>
+    <div class="Q_anser">
+      <div class="Q_anser_hide"> <a href="index.php?app=my_goods&act=add" title="我要发布"><span class="hide_pic1"></span>我要发布 </a> </div>
+    </div>
+    <div class="Q_sign">
+      <div class="Q_sign_hide"onclick="backToTop();"><a href="javascript:void(0)" title="返回顶部"><span class="hide_pic2"></span>返回顶部 </a></div>
+    </div>
+  </div>
+</div>
+<div class="QQ_S1">
+  <div class="Q_top1" onclick="ShowFoot()"> <span class="signj"></span>展开</div>
+  <div class="Q_botm1">
+    <div class="Q_pic1">
+      <div class="Q_pic1_hide"> <a href="http://wpa.qq.com/msgrd?v=3&uin=461666210&site=qq&menu=yes" rel="nofollow"><span class="hide_pic3"></span>在线咨询</a></div>
+    </div>
+    <div class="Q_sign1">
+      <div class="Q_sign1_hide" onclick="backToTop();"><a href="javascript:void(0)">返回顶部</a></div>
+    </div>
+  </div>
+</div>
+<script src="/themes/mall/jiaju/js/lanrenzhijia.js"></script>
+<!-- end -->					
+</html>

@@ -1,0 +1,188 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>商城首页 - 59家居商城</title>
+	<meta name="description" content="59，59家居，59家居商城，装修、材料、家具、饰品一站式服务，让装修更简单，价格更透明！！" />
+	<meta name="keywords" content="59，59家居，家居商城，59家居商城，59家居装修商城，办公室装修，写字楼装修，材料，装修材料，家居，办公家具，家居，家具，装修，装饰" />
+<link type="text/css" href="/themes/mall/jiaju/styles/style/style/style.css" rel="stylesheet"  />
+<script type="text/javascript" src="/themes/mall/jiaju/styles/default/js/jquery-1.3.2.min.js"></script>
+<script type="text/javascript">
+	$(function (){
+		$('#open-change-city-window').click(function (){
+			$('.change-city-window').slideDown();
+			
+		})
+		$('#close-change-city-window').click(function (){
+			$('.change-city-window').slideUp();
+		})
+	})
+	
+</script>
+</head>
+
+<body>
+
+{include file=header.html}
+  
+<!-- main start -->
+<div id="main">
+    <div class="main-top w clearfix"style="min-weight:1100px;width:77%;">
+	
+	{include file=index_nva.html}
+	
+</div>
+
+<div class="new-cat-top" >
+   <h2>行业招聘<i style="font-style: normal;">/</i>采购信息<i style="font-style: normal;">/</i>聚划算</h2> 
+</div>
+<div class="new-cat">         
+         <div class="classlist">		 
+		 <?php
+				$city = $_SESSION['city'];
+				$query="select * from ecm_lunbo where city='$city' and types='zhaopin' order by id desc limit 0,1";
+				$result=mysql_query($query);
+				$myrow=@mysql_fetch_array($result);
+				echo '<a href="index.php?app=search&act=zhaopin&cate_id=装饰工程"> <img src="/'.$myrow['path'].'"></a>';
+		?>		 	  			
+			 <?php
+				$city = $_SESSION['city'];
+				$query="select * from ecm_lunbo where city='$city' and types='caigou' order by id desc limit 0,1";
+				$result=mysql_query($query);
+				$myrow=@mysql_fetch_array($result);
+				echo '<a href="index.php?app=search&act=caigou"> <img src="/'.$myrow['path'].'"style="margin-left:10px;"></a>';
+			?>						
+			 <?php
+				$city = $_SESSION['city'];
+				$query="select * from ecm_lunbo where city='$city' and types='juhuasuan' order by id desc limit 0,1";
+				$result=mysql_query($query);
+				$myrow=@mysql_fetch_array($result);
+				echo '<a href="index.php?app=search&act=hot_index&cate_id=7038"> <img src="/'.$myrow['path'].'"style="margin-left:10px;"></a>';
+			?>
+	</div>		
+</div>
+<!-- new-cat end  -->
+<div class="new-cat-top" >
+   <h2>五金店 <i>/</i>材料市场 <i>/</i>装饰公司 <i>/</i>材料厂家</h2> 
+</div>
+<div class="new-cat">
+  
+	 <div class="index-center-list">
+	  <?php
+				$city = $_SESSION['city'];
+				$query="select * from ecm_lunbo where city='$city' and types='weixiu' order by id desc limit 0,1";
+				$result=mysql_query($query);
+				$myrow=@mysql_fetch_array($result);
+				echo '<a href="index.php?app=search&act=zx&types=2"> <img src="/'.$myrow['path'].'"></a>';
+		?>	  
+	  <?php
+				$city = $_SESSION['city'];
+				$query="select * from ecm_lunbo where city='$city' and types='pifa' order by id desc limit 0,1";
+				$result=mysql_query($query);
+				$myrow=@mysql_fetch_array($result);
+				echo '<a href="index.php?app=search&act=cailiaocheng"> <img src="/'.$myrow['path'].'"style="margin-left:10px;"></a>';
+		?>
+		 <?php
+				$city = $_SESSION['city'];
+				$query="select * from ecm_lunbo where city='$city' and types='changjia' order by id desc limit 0,1";
+				$result=mysql_query($query);
+				$myrow=@mysql_fetch_array($result);
+				echo '<a href="index.php?app=search&act=zx&types=7"> <img src="/'.$myrow['path'].'"style="margin-left:10px;"></a>';
+		?>
+		 <?php
+				$city = $_SESSION['city'];
+				$query="select * from ecm_lunbo where city='$city' and types='zhuangshi' order by id desc limit 0,1";
+				$result=mysql_query($query);
+				$myrow=@mysql_fetch_array($result);
+				echo '<a href="index.php?app=search&act=zx&types=3"> <img src="/'.$myrow['path'].'"></a>';
+		?>
+		
+	
+     </div>
+    </dd>
+  </dl>
+</div>
+
+<div class="ad">
+	<a href="index.php?app=store&act=reg"><img src="/themes/mall/jiaju/styles/style/images/index_12.jpg" width="126"></a>
+    <div class="clear"></div>
+</div>
+
+
+<div class="new-cat-top" >
+   <h2>合作品牌 <i style="font-style: normal;float: right;"> 更多>></i></h2> 
+</div>
+<div class="ad1"style="background: #DEDEDE;">
+		<a href="index.php?app=store&id=1056&act=search"><img src="/themes/mall/jiaju/styles/style/images/gg_lks.jpg"></a> 
+        <a href="index.php?app=store&id=3226&act=search"><img src="/themes/mall/jiaju/styles/style/images/gg_df.jpg"></a> 
+        <a href="index.php?app=store&id=4435&act=search"><img src="/themes/mall/jiaju/styles/style/images/canmj.jpg"></a>
+        <a href="index.php?app=store&id=4470&act=search"><img src="/themes/mall/jiaju/styles/style/images/HaoZQ.jpg" /></a> 
+        <a href="index.php?app=store&id=4440&act=search"><img src="/themes/mall/jiaju/styles/style/images/TianYDB.jpg"></a> 
+        <a href="index.php?app=store&id=4429&act=search"><img src="/themes/mall/jiaju/styles/style/images/CenZP.jpg"></a> 
+        <a href="index.php?app=store&id=4454&act=search"><img src="/themes/mall/jiaju/styles/style/images/TuoAo.jpg"></a> 
+        <a href="index.php?app=store&id=4453&act=search"><img src="/themes/mall/jiaju/styles/style/images/JDFTC.jpg"></a> 
+        <a href="index.php?app=store&id=4458&act=search"><img src="/themes/mall/jiaju/styles/style/images/kbl.jpg"></a> 
+        <a href="index.php?app=store&id=4472&act=search"><img src="/themes/mall/jiaju/styles/style/images/sble.jpg"></a> 
+        <a href="index.php?app=store&id=4457&act=search"><img src="/themes/mall/jiaju/styles/style/images/ahsy.jpg"></a> 
+        <a href="index.php?app=store&id=4455&act=search"><img src="/themes/mall/jiaju/styles/style/images/amy.jpg"></a> 
+        <a href="index.php?app=store&id=4467&act=search"><img src="/themes/mall/jiaju/styles/style/images/fzy.jpg"></a> 
+        <a href="index.php?app=store&id=4456&act=search"><img src="/themes/mall/jiaju/styles/style/images/suilinweiyu.jpg"></a> 
+        <a href="index.php?app=store&id=4431&act=search"><img src="/themes/mall/jiaju/styles/style/images/wuyi.jpg"></a> 
+        <a href="index.php?app=store&id=4473&act=search"><img src="/themes/mall/jiaju/styles/style/images/zhongyuan.jpg"></a> 
+        <a href="index.php?app=store&id=4452&act=search"><img src="/themes/mall/jiaju/styles/style/images/aomeng.jpg"></a> 
+        <a href="index.php?app=store&id=4469&act=search"><img src="/themes/mall/jiaju/styles/style/images/dowry.jpg"></a> 
+        <a href="index.php?app=store&id=4447&act=search"><img src="/themes/mall/jiaju/styles/style/images/yazhijie.jpg"></a> 
+		 <a href="index.php?app=store&id=1471856462&act=search"><img src="/themes/mall/jiaju/styles/style/images/hugsbi.jpg"></a> 
+        <a href="index.php?app=store&id=1471856457&act=search"><img src="/themes/mall/jiaju/styles/style/images/supfire.jpg"></a> 
+        <a href="index.php?app=store&id=1471854100&act=search"><img src="/themes/mall/jiaju/styles/style/images/ZONGTIAN.jpg"></a> 
+        <a href="index.php?app=store&id=4447&act=search"><img src="/themes/mall/jiaju/styles/style/images/annaiwen.jpg"></a>  
+		 <a href="index.php?app=store&id=1473401706&act=search"><img src="/themes/mall/jiaju/styles/style/images/baoweikang.jpg"></a> 
+        <a href="index.php?app=store&id=1471856459&act=search"><img src="/themes/mall/jiaju/styles/style/images/guanye.jpg"></a> 
+        <a href="index.php?app=store&id=1473151754&act=search"><img src="/themes/mall/jiaju/styles/style/images/guangsheng.jpg"></a> 
+        <a href="index.php?app=store&id=1473401133&act=search"><img src="/themes/mall/jiaju/styles/style/images/sanli.jpg"></a>  
+		<a href="index.php?app=store&id=1473144308&act=search"><img src="/themes/mall/jiaju/styles/style/images/shengteng.jpg"></a> 
+        <a href="index.php?app=store&id=1473151753&act=search"><img src="/themes/mall/jiaju/styles/style/images/shundeli.jpg"></a> 
+        <a href="index.php?app=store&id=1473326807&act=search"><img src="/themes/mall/jiaju/styles/style/images/guangguang.jpg"></a> 
+        <a href="index.php?app=store&id=1473389692&act=search"><img src="/themes/mall/jiaju/styles/style/images/yinghao.jpg"></a>  
+		<a href="index.php?app=store&id=4451&act=search"><img src="/themes/mall/jiaju/styles/style/images/yinghua.jpg"></a>
+        <a href="index.php?app=store&id=1471854097&act=search"><img src="/themes/mall/jiaju/styles/style/images/mandi.jpg"></a>  		  
+        <a href="index.php?app=store&id=1471856461&act=search"><img src="/themes/mall/jiaju/styles/style/images/aoteli.jpg"></a>  
+		<a href="index.php?app=store&id=1471854102&act=search"><img src="/themes/mall/jiaju/styles/style/images/lihe.jpg"></a>
+        <a href="index.php?app=store&id=1473401709&act=search"><img src="/themes/mall/jiaju/styles/style/images/wanmuqi.jpg"></a>  		
+  <div class="clear"></div>
+</div>
+
+
+
+{include file=footer.html}
+
+<script type="text/javascript" src="/themes/mall/jiaju/styles/style/js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="/themes/mall/jiaju/styles/style/js/superslide.2.1.js"></script>
+<script type="text/javascript">
+  jQuery(".fullSlide").hover(function() {
+      jQuery(this).find(".prev,.next").stop(true, true).fadeTo("show", 0.5)
+  },
+  function() {
+      jQuery(this).find(".prev,.next").fadeOut()
+  });
+  jQuery(".fullSlide").slide({
+      titCell: ".hd ul",
+      mainCell: ".bd ul",
+      effect: "fold",
+      autoPlay: true,
+      autoPage: true,
+      trigger: "click",
+      startFun: function(i) {
+          var curLi = jQuery(".fullSlide .bd li").eq(i);
+          if ( !! curLi.attr("_src")) {
+              curLi.css("background-image", curLi.attr("_src")).removeAttr("_src")
+          }
+      }
+  });
+</script>
+
+<script type='text/javascript' src='/themes/mall/jiaju/styles/style/js/lanrenzhijia.js'></script>
+
+       
+</body>
+</html>

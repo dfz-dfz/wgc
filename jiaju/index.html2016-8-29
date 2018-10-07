@@ -1,0 +1,1779 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>商城首页 - 59家居商城</title>
+	<meta name="description" content="59，59家居，59家居商城，装修、材料、家具、饰品一站式服务，让装修更简单，价格更透明！！" />
+	<meta name="keywords" content="59，59家居，家居商城，59家居商城，59家居装修商城，办公室装修，写字楼装修，材料，装修材料，家居，办公家具，家居，家具，装修，装饰" />
+<link type="text/css" href="/themes/mall/jiaju/styles/style/style/style.css" rel="stylesheet"  />
+<script type="text/javascript" src="http://www.59jiaju.com/themes/mall/jiaju/styles/default/js/jquery-1.3.2.min.js"></script>
+<script type="text/javascript">
+	$(function (){
+		$('#open-change-city-window').click(function (){
+			$('.change-city-window').slideDown();
+			
+		})
+		$('#close-change-city-window').click(function (){
+			$('.change-city-window').slideUp();
+		})
+	})
+</script>
+</head>
+
+<body>
+	<div id="site-nav" class="w-full">
+
+  
+  <div class="shoptop w clearfix">
+
+    	<div class="login_info">
+		<?php
+		
+			
+			if(empty($_SESSION['user_info']))
+			{
+				echo '您好 游客&nbsp;&nbsp;&nbsp;';
+				echo '<a href="index.php?
+
+app=member&amp;act=login&amp;ret_url=">登录</a>
+						<a href=" 
+
+http://www.59jiaju.com/gx/reg.html">注册</a>';
+			}
+			else
+			{
+				echo '您好，<a href="index.php?app=member" 
+
+style="color:#0000ff;">'.$_SESSION['user_info']["user_name"].'</a>&nbsp;&nbsp;&nbsp;';
+				echo '<a href="index.php?app=member&amp;act=logout">退
+
+出</a>&nbsp;&nbsp;&nbsp;';
+				echo '<a href="index.php?app=message&amp;act=newpm">站
+
+内消息</a>';
+			}
+		?>
+      </div>
+
+	
+
+      <ul class="quick-menu">
+
+         
+
+         
+
+         <li class="service">
+
+            <a href="index.php?app=article&amp;code=help">帮助中心</a>         
+		</li>
+
+        
+
+         <li class="service">
+
+            <a hidefocus="true"  target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=461666210&site=qq&menu=yes">在线客服</a>         
+		</li>
+
+         <li class="item">
+
+            <div class="menu favorite">
+
+               <a class="menu-hd" href="index.php?app=my_favorite">收藏夹<b></b></a>
+
+               <div class="menu-bd">
+
+                  <div class="menu-bd-panel">
+
+                     <div>
+
+                       <p><a href="index.php?app=my_favorite">收藏的宝贝</a></p>
+
+                       <p><a href="index.php?app=my_favorite&amp;type=store">收藏的店铺
+
+</a></p>
+                    </div>
+                 </div>
+               </div>
+           </div>
+         </li>
+
+         <li class="item" style="background:none">
+
+            <div class="menu sites">
+
+               <a class="menu-hd" href="javascript:;">网站导航<b></b></a>
+
+               <div class="menu-bd padding10">
+
+              </div>
+            </div>
+        </li>
+     </ul>
+
+   </div>
+
+<style type="text/css">
+
+.fixed-top /* 头部固定 */{position:fixed;bottom:auto;top:200px;}
+
+.fixed-bottom /* 底部固定 */{position:fixed;bottom:0px;top:auto;}
+
+.fixed-left /* 左侧固定 */{position:fixed;right:auto;left:0px; z-index:1000;}
+
+.fixed-right /* 右侧固定 */{position:fixed;right:0px;left:auto;}
+
+/* 上面的是除了IE6的主流浏览器通用的方法 */
+
+* html,* html body /* 修正IE6振动bug */{background-image:url(about:blank);background-
+
+attachment:fixed;}
+
+* html .fixed-top /* IE6 头部固定 */{position:absolute;bottom:auto;top:expression(eval
+
+(document.documentElement.scrollTop)+200);}
+
+* html .fixed-right /* IE6 右侧固定 */ {position:absolute;right:auto;left:expression
+
+(eval(document.documentElement.scrollLeft+document.documentElement.clientWidth-
+
+this.offsetWidth)-(parseInt(this.currentStyle.marginLeft,10)||0)-(parseInt
+
+(this.currentStyle.marginRight,10)||0));}
+
+* html .fixed-bottom /* IE6 底部固定  */{position:absolute;bottom:auto;top:expression
+
+(eval(document.documentElement.scrollTop+document.documentElement.clientHeight-
+
+this.offsetHeight-(parseInt(this.currentStyle.marginTop,10)||0)-(parseInt
+
+(this.currentStyle.marginBottom,10)||0)));}
+
+* html .fixed-left /* IE6 左侧固定 */{position:absolute;right:auto;left:expression
+
+(eval(document.documentElement.scrollLeft));}
+
+</style>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+<div id="header" class="w-full">
+    <div class="shop-t w clearfix" style="padding:10px 0;position: relative;height: 90px;">
+      	<div class="logo">
+        	<a style="display:block; overflow:hidden;" href="/"  title="59家居商城">
+			<img alt="59家居商城" src='http://www.59jiaju.com/data/files/mall/settings/site_logo.png' />
+			</a>
+      	</div>
+      	
+		<div class="top-search">
+	        <div class="top-search-box">
+	           	<form method="GET" action="index.php?app=search">
+					<input type="hidden" name="app" value="search">
+	               <input type="hidden" name="act" value="index">
+				   
+	              <input type="text" name="keyword" value="search" class="top-search-text" />
+	               <input type="submit" value="搜索" class="submit" hidefocus="true" />
+	           	</form>
+				
+				
+	              <div class="alist">
+	                 <a href="index.php?app=search&cate_id=6431">螺丝刀</a>
+	                 <a href="index.php?app=search&cate_id=6489">扳手</a>
+	                 <a href="index.php?app=search&cate_id=6490">钢丝钳</a>
+	              </div>
+	        </div>
+      	</div>
+        <div class='erweima'>
+          <ul>
+            <li><img src="http://www.59jiaju.com/themes/mall/jiaju/styles/default/images/ewm_03.jpg">
+               <p>扫描关注59家居网</p>
+            </li>
+            <li><img src="http://www.59jiaju.com/themes/mall/jiaju/styles/default/images/ewm_03.jpg">
+               <p>扫描关注59家居网</p>
+            </li>
+            <li><img src="http://www.59jiaju.com/themes/mall/jiaju/styles/default/images/ewm_03.jpg">
+                <p>扫描关注59家居网</p>
+            </li>
+          </ul>
+        </div>
+   	</div>
+	<div class="mainnav w-full">
+		<div class="menu">
+			<ul>
+        <li class="total">所有分类<i><img src="/themes/mall/jiaju/styles/style/images/updown.png"></i></li>
+				<li class="line"><a href="http://www.59jiaju.com/">首页</a></li>
+        <li class="line"><a href="http://www.59jiaju.com/">材料城</a></li>
+        <li class="line"><a href="http://www.59jiaju.com/index.php?app=search&act=zhaopin">行业招聘</a></li>
+        <li class="line"><a href="http://www.59jiaju.com/index.php?app=search&act=zx">热门公司</a></li>
+        <li class="line"><a href="http://www.59jiaju.com/">项目发布</a></li>
+        <li class="line"><a href="http://www.59jiaju.com/">关于我们</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<!-- main start -->
+<div id="main">
+    <div class="main-top w clearfix">
+        <div class="left" area="left" widget_type="area" style="background:#de3635;color: #fff;">
+           <div class="left_con">
+             <h2><a href="index.php?app=search&amp;cate_id=6417">水暖类</a></h2>
+
+                        
+             <ul>
+               <li>
+                 <a href="index.php?app=search&amp;cate_id=6421">三角阀</a>
+               </li>
+               <li>
+                 <a href="index.php?app=search&amp;cate_id=6432">花洒</a>
+               </li>
+               <li>
+                  <a href="index.php?app=search&amp;cate_id=3436">淋浴器</a>
+               </li>
+               <li>
+                 <a href="index.php?app=search&amp;cate_id=6434">地漏</a>
+               </li>
+               <li>
+                 <a href="index.php?app=search&amp;cate_id=6435">花洒软管</a>
+               </li>
+               <li>
+                 <a href="index.php?app=search&amp;cate_id=3701">分水器</a>
+               </li>
+                <li>
+                 <a href="index.php?app=search&amp;cate_id=3704">接头 </a>
+               </li>
+               <div class="clear"></div>
+             </ul>
+           </div>
+
+
+           <div class="left_con">
+             <h2><a href="index.php?app=search&amp;cate_id=6420">灯饰类</a></h2>
+             <ul>
+               <li>
+                  <a href="index.php?app=search&amp;cate_id=3705">吸顶灯                                    </a>
+               </li>
+               <li>
+                 <a href="index.php?app=search&amp;cate_id=6439">水晶灯                                        </a>
+               </li>
+               <li>
+                 <a href="index.php?app=search&amp;cate_id=6440">吊灯                                        </a>
+               </li>
+               <li>
+                 <a href="index.php?app=search&amp;cate_id=6441">壁灯                                       </a>
+               </li>
+               <li>
+                 <a href="index.php?app=search&amp;cate_id=6442">装饰台灯                                        </a>
+               </li>
+               <li>
+                 <a href="index.php?app=search&amp;cate_id=6443">落地灯                                       </a>
+               </li>
+                <li>
+                 <a href="index.php?app=search&amp;cate_id=6444">LED灯带                                        </a>
+               </li>
+               <li>
+                 <a href="index.php?app=search&amp;cate_id=6652">筒灯                                        </a> 
+               </li>
+               <li>
+                 <a href="index.php?app=search&amp;cate_id=6444">射灯                                       </a>
+               </li>
+               <li>
+                 <a href="index.php?app=search&amp;cate_id=6652">面板灯                                  </a>
+               </li>
+               
+               <div class="clear"></div>
+             </ul>
+           </div>
+
+
+           <div class="left_con">
+
+             <h2><a href="index.php?app=search&amp;cate_id=6422"> 开关插座</a></h2>
+             <ul>
+               <li>
+                 <a href="index.php?app=search&amp;cate_id=5508">瓷砖</a>
+               </li>
+               <li>
+                  <a href="index.php?app=search&amp;cate_id=5508">瓷砖</a>
+               </li>
+               <li>
+                 <a href="index.php?app=search&amp;cate_id=6423">接线插座</a>
+               </li>
+               <li>
+                 <a href="index.php?app=search&amp;cate_id=6440">转换插座</a>
+               </li>
+               <li>
+                 <a href="index.php?app=search&amp;cate_id=6450">智能插座</a>
+               </li>
+               <li>
+                 <a href="index.php?app=search&amp;cate_id=6451">按钮开关</a>
+               </li>
+                <li>
+                 <a href="index.php?app=search&amp;cate_id=6452">墙壁开关</a>
+               </li>
+               <li>
+                 <a href="index.php?app=search&amp;cate_id=6453">船型开关</a>
+               </li>
+               <li>
+                 <a href="index.php?app=search&amp;cate_id=6652">感应开关</a>
+               </li>
+               <li>
+                <a href="index.php?app=search&amp;cate_id=6652">轻触开关</a>
+               </li>
+               
+               <div class="clear"></div>
+             </ul>
+           </div>
+
+
+
+           <div class="left_con">
+             <h2><a href="index.php?app=search&amp;cate_id=6424">胶类</a></h2>
+             <ul>
+               <li>
+                <a href="index.php?app=search&amp;cate_id=6425">复合型胶粒剂</a>
+               </li>
+               <li>
+                 <a href="index.php?app=search&amp;cate_id=6454">万能胶</a>
+               </li>
+               <li>
+                  <a href="index.php?app=search&amp;cate_id=6455">密封胶</a>
+               </li>
+               <li>
+                 <a href="index.php?app=search&amp;cate_id=6456">玻璃胶</a>
+               </li>
+               <li>
+                <a href="index.php?app=search&amp;cate_id=6457">结构胶</a>
+               </li>
+               <li>
+                 <a href="index.php?app=search&amp;cate_id=6458">502胶水</a>
+               </li>
+                
+               <div class="clear"></div>
+             </ul>
+           </div>
+
+           <div class="left_con">
+             <h2><a href="index.php?app=search&amp;cate_id=6426">锁/门控五金</a></h2>
+             <ul>
+				<li>
+					<a href="index.php?app=search&amp;cate_id=6470">家具五金</a>
+				</li>
+               <li>
+                <a href="index.php?app=search&amp;cate_id=6427">挂锁</a>
+               </li>
+               <li>
+                <a href="index.php?app=search&amp;cate_id=6463">密码锁</a>
+               </li>
+               <li>
+                  <a href="index.php?app=search&amp;cate_id=6464">自行车锁</a>
+               </li>
+               <li>
+                 <a href="index.php?app=search&amp;cate_id=6465">摩托车锁</a>
+               </li>
+               <li>
+                <a href="index.php?app=search&amp;cate_id=6466">汽车锁</a>
+               </li>
+               <li>
+                 <a href="index.php?app=search&amp;cate_id=6467">指纹锁</a>
+               </li>
+			   
+			   <li>
+                 <a href="index.php?app=search&amp;cate_id=6468">智能锁</a>
+               </li>
+			   <li>
+                 <a href="index.php?app=search&amp;cate_id=6470">门锁</a>
+               </li>
+                
+               <div class="clear"></div>
+             </ul>
+           </div>
+
+
+
+
+
+
+        </div>
+		<div style="float: right;  width: 944px;">
+    <div class="fullSlide">
+      <div class="bd">
+      <ul>
+      <li _src="url(http://www.59jiaju.com/themes/mall/jiaju/images/th.jpg)" style="background-size:100%;background:#E2025E center 0 no-repeat;"><a target="_blank" href="http://www.59jiaju.com/index.php?app=goods&id=10146/"><img style="width:100%;height:100%" src="http://www.59jiaju.com/themes/mall/jiaju/images/th.jpg"/></a></li>
+      <li _src="url(http://www.59jiaju.com/themes/mall/jiaju/images/dm.jpg)" style="background-size:100%;background:#DED5A1 center 0 no-repeat;"><a target="_blank" href="http://www.59jiaju.com/index.php?app=goods&id=10169/"><img style="width:100%;height:100%" src="http://www.59jiaju.com/themes/mall/jiaju/images/dm.jpg"/></a></li>
+      <li _src="url(http://www.59jiaju.com/themes/mall/jiaju/images/qm.jpg)" style="background-size:100%;background:#B8CED1 center 0 no-repeat;"><a target="_blank" href="http://www.59jiaju.com/index.php?app=goods&id=10219"><img style="width:100%;height:100%" src="http://www.59jiaju.com/themes/mall/jiaju/images/qm.jpg"/></a></li>
+      <li _src="url(http://www.59jiaju.com/themes/mall/jiaju/images/bg1.jpg)" style="background-size:100%;background:#98918E center 0 no-repeat;"><a target="_blank" href="http://www.59jiaju.com/index.php?app=goods&id=10220"><img style="width:100%;height:100%" src="http://www.59jiaju.com/themes/mall/jiaju/images/bg1.jpg"/></a></li>
+    </ul>
+    </div>
+  <div class="hd">
+    <ul>
+    </ul>
+  </div>
+  <span class="prev"></span> <span class="next"></span> </div>
+ </div>
+</div>
+<div class="new-cat-top" >
+   <h2>优惠套餐<span>Discount package</span></h2> 
+</div>
+<div class="new-cat">
+   <ul class="new-cat2">
+   
+     
+     
+	 <?php
+		
+		$con=mysql_connect('localhost','root','jy0304103') or die("Unable to connect to the MySQL!");
+		mysql_query("SET NAMES UTF8");
+		mysql_query("set character_set_client=utf8"); 
+		mysql_query("set character_set_results=utf8");
+		$db = mysql_select_db('zt55o1_db',$con);
+		//执行语句
+		$qres=mysql_query("SELECT * FROM ecm_taocan order by id desc limit 3");
+		
+		//提取多条记录
+		
+		while($row = @mysql_fetch_array($qres)){
+		
+			$logo = $row['logo'];
+			$id = $row['id'];
+			$title = $row['title'];
+			echo "<li style='margin:0 20px;'><a href='index.php?app=search&act=taocan&id=$id'><span>$title</span></li>";
+		 
+		
+		}
+		 
+		mysql_close($con);
+
+		
+		
+		?>
+	 
+   </ul>
+</div>
+<div class="new-cat-top" >
+   <h2>行业招聘<span>sdaskjd</span>  &  热门公司<span>sdaskjd</span></h2> 
+</div>
+<div class="new-cat">
+  <dl>
+    <dt>
+      <h3><strong>行业招聘</strong><span>news</span><a href="index.php?app=search&act=zhaopin" class="right">MORE</a></h3>
+      <div class="zplist">
+        <i><img src="/themes/mall/jiaju/styles/style/images/index_07.jpg"></i>
+		<a href="index.php?app=search&act=zhaopin&cate_id=施工招标">施工招标</a>
+		<a href="index.php?app=search&act=zhaopin&cate_id=材料招标">材料招标</a>
+		<a href="index.php?app=search&act=zhaopin&cate_id=招牌公司">招牌公司</a>
+		<a href="index.php?app=search&act=zhaopin&cate_id=装饰工程">装饰工程</a>
+		<a href="index.php?app=search&act=zhaopin&cate_id=机电安装">机电安装</a>
+		<a href="index.php?app=search&act=zhaopin&cate_id=除虫">除虫</a>
+      </div>
+      <div class="zplist">
+        <i><img src="/themes/mall/jiaju/styles/style/images/index_07.jpg"></i>
+		<a href="index.php?app=search&act=zhaopin&cate_id=建筑加固">建筑加固</a>
+		<a href="index.php?app=search&act=zhaopin&cate_id=办公家具">办公家具</a>
+		<a href="index.php?app=search&act=zhaopin&cate_id=酒店家具">酒店家具</a>
+		<a href="index.php?app=search&act=zhaopin&cate_id=民用家具">民用家具</a>
+		<a href="index.php?app=search&act=zhaopin&cate_id=餐厅家具">餐厅家具</a>
+		<a href="index.php?app=search&act=zhaopin&cate_id=园林">园林</a>
+      </div>
+      <div class="zplist">
+        <i><img src="/themes/mall/jiaju/styles/style/images/index_07.jpg"></i>
+		<a href="index.php?app=search&act=zhaopin&cate_id=维修">维修</a>
+		<a href="index.php?app=search&act=zhaopin&cate_id=广告">广告</a>
+		<a href="index.php?app=search&act=zhaopin&cate_id=设计">设计</a>
+		<a href="index.php?app=search&act=zhaopin&cate_id=幕墙">幕墙</a>
+		<a href="index.php?app=search&act=zhaopin&cate_id=路政">路政</a>
+		<a href="index.php?app=search&act=zhaopin&cate_id=物流">物流</a>
+		<a href="index.php?app=search&act=zhaopin&cate_id=坼除">坼除</a>
+		<a href="index.php?app=search&act=zhaopin&cate_id=材料">材料</a>
+		<a href="index.php?app=search&act=zhaopin&cate_id=智能化">智能化</a>
+      </div>
+      <div class="zplist">
+        <i><img src="/themes/mall/jiaju/styles/style/images/index_07.jpg"></i>
+		<a href="index.php?app=search&act=zhaopin&cate_id=保险">保险</a>
+		<a href="index.php?app=search&act=zhaopin&cate_id=消防">消防</a>
+		<a href="index.php?app=search&act=zhaopin&cate_id=环保">环保</a>
+		<a href="index.php?app=search&act=zhaopin&cate_id=软装">软装</a>
+		<a href="index.php?app=search&act=zhaopin&cate_id=厨具">厨具</a>
+		<a href="index.php?app=search&act=zhaopin&cate_id=保洁">保洁</a>
+		<a href="index.php?app=search&act=zhaopin&cate_id=设计院">设计院</a>
+      </div>
+	 
+    </dt>
+    <dd>
+      <h3><strong>热门公司</strong><span>news</span><a href="index.php?app=search&act=zx" class="right">MORE</a></h3>
+      <ul>
+	  
+		<?php
+		
+		$con=mysql_connect('localhost','root','jy0304103') or die("Unable to connect to the MySQL!");
+		mysql_query("SET NAMES UTF8");
+		mysql_query("set character_set_client=utf8"); 
+		mysql_query("set character_set_results=utf8");
+		$db = mysql_select_db('zt55o1_db',$con);
+		//执行语句
+		$qres=mysql_query("SELECT cls_logo,user_id FROM ecm_member where types=3 and cls_logo<>'' limit 12");
+		
+		//提取多条记录
+		
+		while($row = @mysql_fetch_array($qres)){
+		var_dump($row);
+			$cls_logo = $row['cls_logo'];
+			$user_id = $row['user_id'];
+			echo "<li style='border: 1px solid #ccc;'><a href='index.php?app=search&act=zx&id=".$user_id."'><img width='170' height='45' src='".$cls_logo."'></a></li>";
+		 
+		
+		}
+		 
+	
+
+		
+		
+		?>
+	  
+        
+        
+         <div class="clear"></div>
+      </ul>
+    </dd>
+  </dl>
+</div>
+<!-- new-cat end  -->
+<div class="ad">
+	<a href="#"><img src="/themes/mall/jiaju/styles/style/images/index_12.jpg"></a>
+    <div class="clear"></div>
+</div>
+<!-- new-cat start  
+<div class="new-cat-top" >
+    <h2>行业招聘<span>sdaskjd</span>
+       <em><a href="#" class="updown">weqww</a><a href="#">weqww</a><a href="#">weqww</a><a href="#">更多>></a></em>
+    </h2> 
+  </div>-->
+<div class="webwidget_scroller_tab" id="webwidget_scroller_tab" style="margin:0 auto;">
+            <div class="tabContainer new-cat-top">
+             <h2>热销推荐<span>sdaskjd</span></h2>
+                <ul class="tabHead">
+                    <li class="currentBtn"><a href="javascript:;">套餐推荐</a></li>
+                    <li><a href="javascript:;">瓷砖</a></li>
+                    <li><a href="javascript:;">门窗</a></li>
+                    <a href="index.php?app=search&cate_id=6424">更多>></a>
+                </ul>
+            </div>
+            <div class="tabBody">
+                <ul>
+                    <li class="tabCot">
+                          <div class="new-cat1">
+                                 <div class="dl_left">
+									<a href="http://www.59jiaju.com/index.php?app=goods&id=10418"><img src="http://www.59jiaju.com/themes/mall/jiaju/images/cwq.jpg">
+									
+									</a>
+								 </div> 
+                                 <div class="dl_right">
+                                    <ul>
+									<?php
+									//执行语句
+									$qres1=mysql_query("SELECT * FROM ecm_goods where status='已审核' and cate_id_3='6484' order by goods_id desc  limit 6");
+									
+									//提取多条记录
+									
+									while($row1 = @mysql_fetch_array($qres1)){
+									
+										
+										echo '<li style="margin-bottom: 22px;margin-top: 0px; "><a href="http://www.59jiaju.com/index.php?app=goods&id='.$row1['goods_id'].'"><img style="width:300px;height:217px;"src="'.$row1['default_image'].'"></a><p>材料价：&yen; '.$row1['price'].'</p></li>';
+									 
+									
+									}
+									 
+								
+									
+									?>
+                                      
+									
+									</ul>
+                                 </div> 
+                                 <div class="clear"></div>
+
+								 </style>
+                          </div>                        
+                    </li>
+                    <li class="tabCot">
+                          <div class="new-cat1">
+                                 <div class="dl_left">
+									<a href="http://www.59jiaju.com/index.php?app=goods&id=10327"><img style="width:283px;height:461px;"src="http://www.59jiaju.com/data/files/store_608/goods_170/small_201505080202508484.jpg">
+									
+									</a>
+								 </div> 
+                                 <div class="dl_right">
+                                    <ul>
+									
+									
+									<?php
+									//执行语句
+									$qres1=mysql_query("SELECT * FROM ecm_goods where status='已审核' and cate_id_3='5508' order by goods_id desc  limit 6");
+									
+									//提取多条记录
+									
+									while($row1 = @mysql_fetch_array($qres1)){
+									
+										
+										echo '<li style="margin-bottom: 22px;margin-top: 0px; "><a href="http://www.59jiaju.com/index.php?app=goods&id='.$row1['goods_id'].'"><img style="width:300px;height:217px;"src="'.$row1['default_image'].'"></a><p>材料价：&yen; '.$row1['price'].'</p></li>';
+									 
+									
+									}
+									 
+								
+									
+									?>
+									
+									
+									
+                                    </ul>
+                                 </div> 
+                                 <div class="clear"></div>
+                          </div>                        
+                    </li>
+                    <li class="tabCot">
+                          <div class="new-cat1">
+                                 <div class="dl_left">
+									<a href="http://www.59jiaju.com/index.php?app=goods&id=10378"><img style="width:280px;height:461px;"src="http://www.59jiaju.com/data/files/store_608/goods_104/small_201505190828241129.jpg">
+									
+									</a>
+								 </div> 
+                                 <div class="dl_right">
+                                    <ul>
+									
+									
+										<?php
+									//执行语句
+									$qres1=mysql_query("SELECT * FROM ecm_goods where status='已审核' and cate_id_3='6425' order by goods_id desc limit 6");
+									
+									//提取多条记录
+									
+									while($row1 = @mysql_fetch_array($qres1)){
+									
+										
+										echo '<li style="margin-bottom: 22px;margin-top: 0px; "><a href="http://www.59jiaju.com/index.php?app=goods&id='.$row1['goods_id'].'"><img style="width:300px;height:217px;"src="'.$row1['default_image'].'"></a><p>材料价：&yen; '.$row1['price'].'</p></li>';
+									 
+									
+									}
+									 
+								
+									
+									?>
+									
+									
+									
+									
+									
+                                    </ul>
+                                 </div> 
+                                 <div class="clear"></div>
+                          </div>                        
+                    </li>
+                </ul>
+                <div style="clear:both"></div>
+            </div>
+            <div class="modBottom">
+                <span class="modABL">&nbsp;</span><span class="modABR">&nbsp;</span>
+            </div>
+</div>
+
+
+<!-- new-cat end  -->
+<div class="webwidget_scroller_tab1" id="webwidget_scroller_tab" style="margin:0 auto;">
+            <div class="tabContainer new-cat-top">
+             <h2>天花吊顶<span>Ceramic tile floor</span></h2>
+                <ul class="tabHead">
+                    <li class="currentBtn"><a href="javascript:;">石膏板</a></li>
+                    <li><a href="javascript:;">龙骨</a></li>
+                    <li><a href="javascript:;">吸音天花</a></li>
+                    <a href="index.php?app=search&cate_id=6420">更多>></a>
+                </ul>
+            </div>
+            <div class="tabBody">
+                <ul>
+                    <li class="tabCot">
+                          <div class="new-cat1">
+                                 <div class="dl_left">
+									<a href="http://www.59jiaju.com/index.php?app=goods&id=9873"><img style="margin-top: 7px;width: 280px;height: 454px;"src="http://www.59jiaju.com/data/files/store_608/goods_138/small_201409060335384114.jpg">
+									
+									</a>
+								 </div> 
+                                 <div class="dl_right">
+                                    <ul>
+									
+										<?php
+									//执行语句
+									$qres1=mysql_query("SELECT * FROM ecm_goods where status='已审核' and cate_id_3='6421' order by goods_id desc  limit 6");
+									
+									//提取多条记录
+									
+									while($row1 = @mysql_fetch_array($qres1)){
+									
+										
+										echo '<li style="margin-bottom: 22px;margin-top: 0px; "><a href="http://www.59jiaju.com/index.php?app=goods&id='.$row1['goods_id'].'"><img style="width:300px;height:217px;"src="'.$row1['default_image'].'"></a><p>材料价：&yen; '.$row1['price'].'</p></li>';
+									 
+									
+									}
+									 
+								
+									
+									?>
+									
+									
+									
+                                    </ul>
+                                 </div> 
+                                 <div class="clear"></div>
+                          </div>                        
+                    </li>
+                    <li class="tabCot">
+                          <div class="new-cat1">
+                                 <div class="dl_left">
+									<a href="http://www.59jiaju.com/index.php?app=goods&id=7575"><img style="width:280px;height:461px;"src="http://www.59jiaju.com/data/files/store_69/goods_169/small_201304280102496965.jpg">
+									
+									</a>
+								 </div> 
+                                 <div class="dl_right">
+                                    <ul>
+									
+										<?php
+									//执行语句
+									$qres1=mysql_query("SELECT * FROM ecm_goods where status='已审核' and cate_id_3='6432' order by goods_id desc  limit 6");
+									
+									//提取多条记录
+									
+									while($row1 = @mysql_fetch_array($qres1)){
+									
+										
+										echo '<li style="margin-bottom: 22px;margin-top: 0px; "><a href="http://www.59jiaju.com/index.php?app=goods&id='.$row1['goods_id'].'"><img style="width:300px;height:217px;"src="'.$row1['default_image'].'"></a><p>材料价：&yen; '.$row1['price'].'</p></li>';
+									 
+									
+									}
+									 
+								
+									
+									?>
+                                      
+									</ul>
+                                 </div> 
+                                 <div class="clear"></div>
+                          </div>                        
+                        
+                    </li>
+                    <li class="tabCot">
+                          <div class="new-cat1">
+                                 <div class="dl_left">
+									<a href="http://www.59jiaju.com/index.php?app=goods&id=639"><img style="width:280px;height:461px;"src="http://www.59jiaju.com/data/files/store_69/goods_155/small_201304190312353482.jpg">
+									
+									</a>
+								 </div> 
+                                 <div class="dl_right">
+                                    <ul>
+									
+									<?php
+									//执行语句
+									$qres1=mysql_query("SELECT * FROM ecm_goods where status='已审核' and cate_id_3='3701' order by goods_id desc  limit 6");
+									
+									//提取多条记录
+									
+									while($row1 = @mysql_fetch_array($qres1)){
+									
+										
+										echo '<li style="margin-bottom: 22px;margin-top: 0px; "><a href="http://www.59jiaju.com/index.php?app=goods&id='.$row1['goods_id'].'"><img style="width:300px;height:217px;"src="'.$row1['default_image'].'"></a><p>材料价：&yen; '.$row1['price'].'</p></li>';
+									 
+									
+									}
+									 
+								
+									
+									?>
+									
+									
+									
+                                    </ul>
+                                 </div> 
+                                 <div class="clear"></div>
+                          </div>                        
+
+                    </li>
+                </ul>
+                <div style="clear:both"></div>
+            </div>
+            <div class="modBottom">
+                <span class="modABL">&nbsp;</span><span class="modABR">&nbsp;</span>
+            </div>
+</div>
+
+<div class="ad">
+		<a href="#"><img src="/themes/mall/jiaju/styles/style/images/index_12.jpg"></a> 
+    <div class="clear"></div>
+</div>
+
+<div class="webwidget_scroller_tab2" id="webwidget_scroller_tab" style="margin:0 auto;">
+            <div class="tabContainer new-cat-top">
+             <h2>瓷砖地板<span>Smallpox condole top</span></h2>
+                <ul class="tabHead">
+                    <li class="currentBtn"><a href="javascript:;">墙纸</a></li>
+                    <li><a href="javascript:;">PVC地板</a></li>
+                    <a href="index.php?app=search&cate_id=6417">更多>></a>
+                </ul>
+            </div>
+            <div class="tabBody">
+                <ul>
+                    <li class="tabCot cat_ul1">
+                          <div class="new-cat_ul1">
+								<?php
+									//执行语句
+									$qres1=mysql_query("SELECT * FROM ecm_goods where status='已审核' and cate_id_3='6652' order by goods_id desc  limit 1,1");
+									
+									//提取多条记录
+									
+									while($row1 = @mysql_fetch_array($qres1)){
+									
+										
+										echo '<div class="cat_ul1_left">';
+										 echo '  <a href="http://www.59jiaju.com/index.php?app=goods&id='.$row1['goods_id'].'">';
+										 echo '  <img style="width:278px;height:350px;"src="'.$row1['default_image'].'"><p>安装价：<br>¥'.$row1['price'].'</p>';
+										 echo '  </a>';
+										 echo '</div>';
+									 
+									
+									}
+									 
+								
+									
+									?>
+						  
+                                 
+								<?php
+									//执行语句
+									$qres1=mysql_query("SELECT * FROM ecm_goods where status='已审核' and cate_id_3='6652' order by goods_id desc  limit 2,1");
+									
+									//提取多条记录
+									
+									while($row1 = @mysql_fetch_array($qres1)){
+									
+										
+										echo '<div class="cat_ul1_center">';
+										 echo '  <a href="http://www.59jiaju.com/index.php?app=goods&id='.$row1['goods_id'].'">';
+										 echo '  <img style="width:700px;height:350px;"src="'.$row1['default_image'].'">';
+										 echo '  <h3><img src="/themes/mall/jiaju/styles/style/images/title.png"></h3>';
+										 echo '  </a>';
+										 echo '</div>';
+									 
+									
+									}
+									 
+								
+									
+									?> 
+                                 
+								
+								 
+								 
+                                 <div class="cat_ul1_right">
+								 
+									<?php
+									//执行语句
+									$qres1=mysql_query("SELECT * FROM ecm_goods where status='已审核' and cate_id_3='6652' order by goods_id desc  limit 3,2");
+									
+									//提取多条记录
+									
+									while($row1 = @mysql_fetch_array($qres1)){
+									
+										
+										echo '<a href="http://www.59jiaju.com/index.php?app=goods&id='.$row1['goods_id'].'">';
+										echo '   <img style="width:220px;height:175px;"src="'.$row1['default_image'].'">';
+										echo '   <p>安装价：<br>¥'.$row1['price'].'</p>';
+									   echo '</a>';
+									 
+									
+									}
+									 
+								
+									
+									?>  
+                                   
+                                 </div>
+								 
+								 
+								 
+								 
+                                 <div class="clear"></div>
+                          </div> 
+                          <div class="new-cat_ul12">
+                            <ul>
+							
+								<?php
+									//执行语句
+									$qres1=mysql_query("SELECT * FROM ecm_goods where status='已审核' and cate_id_3='6652' order by goods_id desc limit 6,3");
+									
+									//提取多条记录
+									
+									while($row1 = @mysql_fetch_array($qres1)){
+									
+										
+										echo '<li>';
+										echo '  <a href="http://www.59jiaju.com/index.php?app=goods&id='.$row1['goods_id'].'">';
+										echo '	<img style="width:390px;height:170px;"src="'.$row1['default_image'].'"><p>安装价：<br>¥'.$row1['price'].'</p>';
+										echo '  </a>';
+										echo '</li>';
+										
+									
+									
+									}
+									 
+								
+									
+									?>
+							
+								
+							  
+                              
+                              
+							</ul>
+                          </div>                       
+                    </li>
+					
+                    <li class="tabCot cat_ul1">
+                          <div class="new-cat_ul1">
+								<?php
+									//执行语句
+									$qres1=mysql_query("SELECT * FROM ecm_goods where status='已审核' and cate_id_3='6453' order by goods_id desc  limit 1,1");
+									
+									//提取多条记录
+									
+									while($row1 = @mysql_fetch_array($qres1)){
+									
+										
+										echo '<div class="cat_ul1_left">';
+										 echo '  <a href="http://www.59jiaju.com/index.php?app=goods&id='.$row1['goods_id'].'">';
+										 echo '  <img style="width:278px;height:350px;"src="'.$row1['default_image'].'"><p>安装价：<br>¥'.$row1['price'].'</p>';
+										 echo '  </a>';
+										 echo '</div>';
+									 
+									
+									}
+									 
+								
+									
+									?>
+						  
+                                 
+								<?php
+									//执行语句
+									$qres1=mysql_query("SELECT * FROM ecm_goods where status='已审核' and cate_id_3='6453' order by goods_id desc  limit 2,1");
+									
+									//提取多条记录
+									
+									while($row1 = @mysql_fetch_array($qres1)){
+									
+										
+										echo '<div class="cat_ul1_center">';
+										 echo '  <a href="http://www.59jiaju.com/index.php?app=goods&id='.$row1['goods_id'].'">';
+										 echo '  <img style="width:700px;height:350px;"src="'.$row1['default_image'].'">';
+										 echo '  <h3><img src="/themes/mall/jiaju/styles/style/images/title.png"></h3>';
+										 echo '  </a>';
+										 echo '</div>';
+									 
+									
+									}
+									 
+								
+									
+									?> 
+                                 
+								
+								 
+								 
+                                 <div class="cat_ul1_right">
+								 
+									<?php
+									//执行语句
+									$qres1=mysql_query("SELECT * FROM ecm_goods where status='已审核' and cate_id_3='6453' order by goods_id desc  limit 3,2");
+									
+									//提取多条记录
+									
+									while($row1 = @mysql_fetch_array($qres1)){
+									
+										
+										echo '<a href="http://www.59jiaju.com/index.php?app=goods&id='.$row1['goods_id'].'">';
+										echo '   <img style="width:220px;height:175px;"src="'.$row1['default_image'].'">';
+										echo '   <p>安装价：<br>¥'.$row1['price'].'</p>';
+									   echo '</a>';
+									 
+									
+									}
+									 
+								
+									
+									?>  
+                                   
+                                 </div>
+								 
+								 
+								 
+								 
+                                 <div class="clear"></div>
+                          </div> 
+                          <div class="new-cat_ul12">
+                            <ul>
+							
+								<?php
+									//执行语句
+									$qres1=mysql_query("SELECT * FROM ecm_goods where status='已审核' and cate_id_3='6453' order by goods_id desc limit 6,3");
+									
+									//提取多条记录
+									
+									while($row1 = @mysql_fetch_array($qres1)){
+									
+										
+										echo '<li>';
+										echo '  <a href="http://www.59jiaju.com/index.php?app=goods&id='.$row1['goods_id'].'">';
+										echo '	<img style="width:390px;height:170px;"src="'.$row1['default_image'].'"><p>安装价：<br>¥'.$row1['price'].'</p>';
+										echo '  </a>';
+										echo '</li>';
+										
+									
+									
+									}
+									 
+								
+									
+									?>
+							
+								
+							  
+                              
+                              
+							</ul>
+                          </div>                       
+                    </li>
+                    
+                </ul>
+                <div style="clear:both"></div>
+            </div>
+            <div class="modBottom">
+                <span class="modABL">&nbsp;</span><span class="modABR">&nbsp;</span>
+            </div>
+</div>
+<!-- new-cat end  -->
+<div class="webwidget_scroller_tab3" id="webwidget_scroller_tab" style="margin:0 auto;">
+            <div class="tabContainer new-cat-top">
+             <h2>门窗卫浴五金<span>Smallpox condole top</span></h2>
+                <ul class="tabHead">
+                    <li class="currentBtn"><a href="javascript:;">卫浴洁具</a></li>
+                    <li><a href="javascript:;">五金配件</a></li>
+                    <a href="index.php?app=search&cate_id=6459">更多>></a>
+                </ul>
+            </div>
+            <div class="tabBody">
+                <ul>
+                    <li class="tabCot cat_ul1">
+                          <div class="new-cat_ul1">
+								<?php
+									//执行语句
+									$qres1=mysql_query("SELECT * FROM ecm_goods where status='已审核' and cate_id_3='6431' order by goods_id desc  limit 1,1");
+									
+									//提取多条记录
+									
+									while($row1 = @mysql_fetch_array($qres1)){
+									
+										
+										echo '<div class="cat_ul1_left">';
+										 echo '  <a href="http://www.59jiaju.com/index.php?app=goods&id='.$row1['goods_id'].'">';
+										 echo '  <img style="width:278px;height:350px;"src="'.$row1['default_image'].'"><p>安装价：<br>¥'.$row1['price'].'</p>';
+										 echo '  </a>';
+										 echo '</div>';
+									 
+									
+									}
+									 
+								
+									
+									?>
+						  
+                                 
+								<?php
+									//执行语句
+									$qres1=mysql_query("SELECT * FROM ecm_goods where status='已审核' and cate_id_3='6431' order by goods_id desc  limit 2,1");
+									
+									//提取多条记录
+									
+									while($row1 = @mysql_fetch_array($qres1)){
+									
+										
+										echo '<div class="cat_ul1_center">';
+										 echo '  <a href="http://www.59jiaju.com/index.php?app=goods&id='.$row1['goods_id'].'">';
+										 echo '  <img style="width:700px;height:350px;"src="'.$row1['default_image'].'">';
+										 echo '  <h3><img src="/themes/mall/jiaju/styles/style/images/title.png"></h3>';
+										 echo '  </a>';
+										 echo '</div>';
+									 
+									
+									}
+									 
+								
+									
+									?> 
+                                 
+								
+								 
+								 
+                                 <div class="cat_ul1_right">
+								 
+									<?php
+									//执行语句
+									$qres1=mysql_query("SELECT * FROM ecm_goods where status='已审核' and cate_id_3='6431' order by goods_id desc  limit 3,2");
+									
+									//提取多条记录
+									
+									while($row1 = @mysql_fetch_array($qres1)){
+									
+										
+										echo '<a href="http://www.59jiaju.com/index.php?app=goods&id='.$row1['goods_id'].'">';
+										echo '   <img style="width:220px;height:175px;"src="'.$row1['default_image'].'">';
+										echo '   <p>安装价：<br>¥'.$row1['price'].'</p>';
+									   echo '</a>';
+									 
+									
+									}
+									 
+								
+									
+									?>  
+                                   
+                                 </div>
+								 
+								 
+								 
+								 
+                                 <div class="clear"></div>
+                          </div> 
+                          <div class="new-cat_ul12">
+                            <ul>
+							
+								<?php
+									//执行语句
+									$qres1=mysql_query("SELECT * FROM ecm_goods where status='已审核' and cate_id_3='6431' order by goods_id desc limit 6,3");
+									
+									//提取多条记录
+									
+									while($row1 = @mysql_fetch_array($qres1)){
+									
+										
+										echo '<li>';
+										echo '  <a href="http://www.59jiaju.com/index.php?app=goods&id='.$row1['goods_id'].'">';
+										echo '	<img style="width:390px;height:170px;"src="'.$row1['default_image'].'"><p>安装价：<br>¥'.$row1['price'].'</p>';
+										echo '  </a>';
+										echo '</li>';
+										
+									
+									
+									}
+									 
+								
+									
+									?>
+							
+								
+							  
+                              
+                              
+							</ul>
+                          </div>                       
+                    </li>
+					
+					
+                    <li class="tabCot cat_ul1">
+                          <div class="new-cat_ul1">
+								<?php
+									//执行语句
+									$qres1=mysql_query("SELECT * FROM ecm_goods where status='已审核' and cate_id_3='6488' order by goods_id desc  limit 1,1");
+									
+									//提取多条记录
+									
+									while($row1 = @mysql_fetch_array($qres1)){
+									
+										
+										echo '<div class="cat_ul1_left">';
+										 echo '  <a href="http://www.59jiaju.com/index.php?app=goods&id='.$row1['goods_id'].'">';
+										 echo '  <img style="width:278px;height:350px;"src="'.$row1['default_image'].'"><p>安装价：<br>¥'.$row1['price'].'</p>';
+										 echo '  </a>';
+										 echo '</div>';
+									 
+									
+									}
+									 
+								
+									
+									?>
+						  
+                                 
+								<?php
+									//执行语句
+									$qres1=mysql_query("SELECT * FROM ecm_goods where status='已审核' and cate_id_3='6488' order by goods_id desc  limit 2,1");
+									
+									//提取多条记录
+									
+									while($row1 = @mysql_fetch_array($qres1)){
+									
+										
+										echo '<div class="cat_ul1_center">';
+										 echo '  <a href="http://www.59jiaju.com/index.php?app=goods&id='.$row1['goods_id'].'">';
+										 echo '  <img style="width:700px;height:350px;"src="'.$row1['default_image'].'">';
+										 echo '  <h3><img src="/themes/mall/jiaju/styles/style/images/title.png"></h3>';
+										 echo '  </a>';
+										 echo '</div>';
+									 
+									
+									}
+									 
+								
+									
+									?> 
+                                 
+								
+								 
+								 
+                                 <div class="cat_ul1_right">
+								 
+									<?php
+									//执行语句
+									$qres1=mysql_query("SELECT * FROM ecm_goods where status='已审核' and cate_id_3='6488' order by goods_id desc  limit 3,2");
+									
+									//提取多条记录
+									
+									while($row1 = @mysql_fetch_array($qres1)){
+									
+										
+										echo '<a href="http://www.59jiaju.com/index.php?app=goods&id='.$row1['goods_id'].'">';
+										echo '   <img style="width:220px;height:175px;"src="'.$row1['default_image'].'">';
+										echo '   <p>安装价：<br>¥'.$row1['price'].'</p>';
+									   echo '</a>';
+									 
+									
+									}
+									 
+								
+									
+									?>  
+                                   
+                                 </div>
+								 
+								 
+								 
+								 
+                                 <div class="clear"></div>
+                          </div> 
+                          <div class="new-cat_ul12">
+                            <ul>
+							
+								<?php
+									//执行语句
+									$qres1=mysql_query("SELECT * FROM ecm_goods where status='已审核' and cate_id_3='6488' order by goods_id desc limit 6,3");
+									
+									//提取多条记录
+									
+									while($row1 = @mysql_fetch_array($qres1)){
+									
+										
+										echo '<li>';
+										echo '  <a href="http://www.59jiaju.com/index.php?app=goods&id='.$row1['goods_id'].'">';
+										echo '	<img style="width:390px;height:170px;"src="'.$row1['default_image'].'"><p>安装价：<br>¥'.$row1['price'].'</p>';
+										echo '  </a>';
+										echo '</li>';
+										
+									
+									
+									}
+									 
+								
+									
+									?>
+							
+								
+							  
+                              
+                              
+							</ul>
+                          </div>                       
+                    </li>
+                    
+                </ul>
+                <div style="clear:both"></div>
+            </div>
+            <div class="modBottom">
+                <span class="modABL">&nbsp;</span><span class="modABR">&nbsp;</span>
+            </div>
+</div>
+<div class="ad">
+		<a href="#"><img src="/themes/mall/jiaju/styles/style/images/index_12.jpg"></a>
+    <div class="clear"></div>
+</div>
+
+<!-- new-cat end  -->
+<div class="webwidget_scroller_tab4" id="webwidget_scroller_tab" style="margin:0 auto;">
+            <div class="tabContainer new-cat-top">
+             <h2>灯饰插座<span>Smallpox condole top</span></h2>
+                <ul class="tabHead">
+                    <li class="currentBtn"><a href="javascript:;">筒灯</a></li>
+                    <a href="index.php?app=search&cate_id=6426">更多>></a>
+                </ul>
+            </div>
+            <div class="tabBody">
+                <ul>
+				
+                    <li class="tabCot cat_ul1">
+                          <div class="new-cat_ul1">
+								<?php
+									//执行语句
+									$qres1=mysql_query("SELECT * FROM ecm_goods where status='已审核' and cate_id_3='6471' order by goods_id desc  limit 1,1");
+									
+									//提取多条记录
+									
+									while($row1 = @mysql_fetch_array($qres1)){
+									
+										
+										echo '<div class="cat_ul1_left">';
+										 echo '  <a href="http://www.59jiaju.com/index.php?app=goods&id='.$row1['goods_id'].'">';
+										 echo '  <img style="width:278px;height:350px;"src="'.$row1['default_image'].'"><p>安装价：<br>¥'.$row1['price'].'</p>';
+										 echo '  </a>';
+										 echo '</div>';
+									 
+									
+									}
+									 
+								
+									
+									?>
+						  
+                                 
+								<?php
+									//执行语句
+									$qres1=mysql_query("SELECT * FROM ecm_goods where status='已审核' and cate_id_3='6471' order by goods_id desc  limit 2,1");
+									
+									//提取多条记录
+									
+									while($row1 = @mysql_fetch_array($qres1)){
+									
+										
+										echo '<div class="cat_ul1_center">';
+										 echo '  <a href="http://www.59jiaju.com/index.php?app=goods&id='.$row1['goods_id'].'">';
+										 echo '  <img style="width:700px;height:350px;"src="'.$row1['default_image'].'">';
+										 echo '  <h3><img src="/themes/mall/jiaju/styles/style/images/title.png"></h3>';
+										 echo '  </a>';
+										 echo '</div>';
+									 
+									
+									}
+									 
+								
+									
+									?> 
+                                 
+								
+								 
+								 
+                                 <div class="cat_ul1_right">
+								 
+									<?php
+									//执行语句
+									$qres1=mysql_query("SELECT * FROM ecm_goods where status='已审核' and cate_id_3='6471' order by goods_id desc  limit 3,2");
+									
+									//提取多条记录
+									
+									while($row1 = @mysql_fetch_array($qres1)){
+									
+										
+										echo '<a href="http://www.59jiaju.com/index.php?app=goods&id='.$row1['goods_id'].'">';
+										echo '   <img style="width:220px;height:175px;"src="'.$row1['default_image'].'">';
+										echo '   <p>安装价：<br>¥'.$row1['price'].'</p>';
+									   echo '</a>';
+									 
+									
+									}
+									 
+								
+									
+									?>  
+                                   
+                                 </div>
+								 
+								 
+								 
+								 
+                                 <div class="clear"></div>
+                          </div> 
+                          <div class="new-cat_ul12">
+                            <ul>
+							
+								<?php
+									//执行语句
+									$qres1=mysql_query("SELECT * FROM ecm_goods where status='已审核' and cate_id_3='6471' order by goods_id desc limit 6,3");
+									
+									//提取多条记录
+									
+									while($row1 = @mysql_fetch_array($qres1)){
+									
+										
+										echo '<li>';
+										echo '  <a href="http://www.59jiaju.com/index.php?app=goods&id='.$row1['goods_id'].'">';
+										echo '	<img style="width:390px;height:170px;"src="'.$row1['default_image'].'"><p>安装价：<br>¥'.$row1['price'].'</p>';
+										echo '  </a>';
+										echo '</li>';
+										
+									
+									
+									}
+									 
+								
+									
+									?>
+							
+								
+							  
+                              
+                              
+							</ul>
+                          </div>                       
+                    </li>
+                    
+                </ul>
+                <div style="clear:both"></div>
+            </div>
+            <div class="modBottom">
+                <span class="modABL">&nbsp;</span><span class="modABR">&nbsp;</span>
+            </div>
+</div>
+<div class="webwidget_scroller_tab5" id="webwidget_scroller_tab" style="margin:0 auto;">
+            <div class="tabContainer new-cat-top">
+             <h2>办公家具<span>Smallpox condole top</span></h2>
+                <ul class="tabHead">
+                    <li class="currentBtn"><a href="javascript:;">班台类</a></li>
+                    <a href="index.php?app=search&cate_id=1385">更多>></a>
+                </ul>
+            </div>
+            <div class="tabBody">
+                <ul>
+                    <li class="tabCot cat_ul1">
+                          <div class="new-cat_ul1">
+								<?php
+									//执行语句
+									$qres1=mysql_query("SELECT * FROM ecm_goods where status='已审核' and cate_id_3='3215' order by goods_id desc  limit 2,1");
+									
+									//提取多条记录
+									
+									while($row1 = @mysql_fetch_array($qres1)){
+									
+										
+										echo '<div class="cat_ul1_left">';
+										 echo '  <a href="http://www.59jiaju.com/index.php?app=goods&id='.$row1['goods_id'].'">';
+										 echo '  <img style="width:278px;height:350px;"src="'.$row1['default_image'].'"><p>安装价：<br>¥'.$row1['price'].'</p>';
+										 echo '  </a>';
+										 echo '</div>';
+									 
+									
+									}
+									 
+								
+									
+									?>
+						  
+                                 
+								<?php
+									//执行语句
+									$qres1=mysql_query("SELECT * FROM ecm_goods where status='已审核' and cate_id_3='3215' order by goods_id desc  limit 3,1");
+									
+									//提取多条记录
+									
+									while($row1 = @mysql_fetch_array($qres1)){
+									
+										
+										echo '<div class="cat_ul1_center">';
+										 echo '  <a href="http://www.59jiaju.com/index.php?app=goods&id='.$row1['goods_id'].'">';
+										 echo '  <img style="width:700px;height:350px;"src="'.$row1['default_image'].'">';
+										 echo '  <h3><img src="/themes/mall/jiaju/styles/style/images/title.png"></h3>';
+										 echo '  </a>';
+										 echo '</div>';
+									 
+									
+									}
+									 
+								
+									
+									?> 
+                                 
+								
+								 
+								 
+                                 <div class="cat_ul1_right">
+								 
+									<?php
+									//执行语句
+									$qres1=mysql_query("SELECT * FROM ecm_goods where status='已审核' and cate_id_3='3215' order by goods_id desc  limit 4,2");
+									
+									//提取多条记录
+									
+									while($row1 = @mysql_fetch_array($qres1)){
+									
+										
+										echo '<a href="http://www.59jiaju.com/index.php?app=goods&id='.$row1['goods_id'].'">';
+										echo '   <img style="width:220px;height:175px;"src="'.$row1['default_image'].'">';
+										echo '   <p>安装价：<br>¥'.$row1['price'].'</p>';
+									   echo '</a>';
+									 
+									
+									}
+									 
+								
+									
+									?>  
+                                   
+                                 </div>
+								 
+								 
+								 
+								 
+                                 <div class="clear"></div>
+                          </div> 
+                          <div class="new-cat_ul12">
+                            <ul>
+							
+								<?php
+									//执行语句
+									$qres1=mysql_query("SELECT * FROM ecm_goods where status='已审核' and cate_id_3='3215' order by goods_id desc limit 7,3");
+									
+									//提取多条记录
+									
+									while($row1 = @mysql_fetch_array($qres1)){
+									
+										
+										echo '<li>';
+										echo '  <a href="http://www.59jiaju.com/index.php?app=goods&id='.$row1['goods_id'].'">';
+										echo '	<img style="width:390px;height:170px;"src="'.$row1['default_image'].'"><p>安装价：<br>¥'.$row1['price'].'</p>';
+										echo '  </a>';
+										echo '</li>';
+										
+									
+									
+									}
+									 
+								
+									
+									?>
+							
+								
+							  
+                              
+                              
+							</ul>
+                          </div>                       
+                    </li>
+                </ul>
+                <div style="clear:both"></div>
+            </div>
+            <div class="modBottom">
+                <span class="modABL">&nbsp;</span><span class="modABR">&nbsp;</span>
+            </div>
+</div>
+
+
+<div id="footer" class="center auto mt10 w-full">
+
+   <div class="foot-service w auto clearfix">
+
+      <dl>
+
+         <dt class="fts-1"></dt>
+
+         <dd><a href="http://www.59jiaju.com/index.php?
+
+app=article&amp;act=view&amp;article_id=28">七天无理由退货</a></dd>
+
+         <dd><a href="http://www.59jiaju.com/index.php?
+
+app=article&amp;act=view&amp;article_id=13">体贴的售后服务</a></dd>
+      </dl>
+
+<dl>
+
+         <dt class="fts-2"></dt>
+
+         <dd><a href="http://www.59jiaju.com/index.php?
+
+app=article&amp;act=view&amp;article_id=15">购物流程</a></dd>
+
+      <dd><a href="http://www.59jiaju.com/index.php?
+
+app=article&amp;act=view&amp;article_id=12">商品退货保障</a></dd>
+     </dl>
+
+   <dl>
+
+         <dt class="fts-3"></dt>
+
+         <dd>客服专线：400-1012-668</dd>
+
+         <dd>厂家入驻：020-86295019</dd>
+
+     </dl>
+
+
+      <dl>
+
+         <dt class="fts-4"></dt>
+
+         <dd><a href="http://www.59jiaju.com/index.php?
+
+app=article&amp;act=view&amp;article_id=11">顾客必读</a></dd>
+
+         <dd><a href="http://www.59jiaju.com/index.php?
+
+app=article&amp;act=view&amp;article_id=14">免责条款</a>
+        
+         </dd>
+      </dl>
+
+  </div>
+
+<div class="foot-nav w-full auto">
+  <p><a href="http://www.59jiaju.com/index.php?app=article&amp;act=view&amp;article_id=28" target="_blank">关于本站</a>
+	    
+	      
+	    
+	   
+	    
+	   
+	   
+</p></div>
+<div class="foot-group">
+
+	<a href="#" target="_blank">亚马逊商城</a> | <a href="www.jd.com" target="_blank">京东商城</a> | <a href="www.yihaodian.com" target="_blank">一号店</a> |
+
+	<a href="http://www.hao123.com/" target="_blank">好123导航</a> |
+
+	<a href="http://www.jyboo.com/" target="_blank">经艺装饰</a> |
+
+	<a href="http://www.taobao.com/" target="_blank">淘宝商城</a> |
+
+	<a href="http://www.tmall.com/" target="_blank">天猫商城</a> |
+
+    <a href="http://china.alibaba.com/" target="_blank">阿里巴巴</a> |
+
+	<a href="http://www.59jiaju.com/xiduo/" target="_blank">喜多装饰</a> |
+    
+    <a href="http://www.59jiaju.com/gs/index.php?
+
+m=content&amp;c=index&amp;a=show&amp;catid=13&amp;id=9" target="_blank">超凡装饰</a> |
+
+	<a href="http://www.dangdang.com/" target="_blank">当当网</a>   
+</div>
+
+  <div class="copyright"><a href="http://netadreg.gzaic.gov.cn/ntmm/WebSear/WebLogoPub.aspx?
+
+logo=440115115022013051700026"><img alt="" src="http://netadreg.gzaic.gov.cn/ntmm/default/images/logo_down.jpg" style="width:19px;height: 20px"></a> &nbsp;Copyright © 2010-2014 我购家居商城 版
+
+权所有 <a href="http://www.miitbeian.gov.cn">粤ICP备09031901号-1</a> 广州市我购家居用品
+
+有限公司</div>
+
+</div>
+
+
+
+
+<script type="text/javascript" src="/themes/mall/jiaju/styles/style/js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="/themes/mall/jiaju/styles/style/js/superslide.2.1.js"></script>
+<script type="text/javascript">
+  jQuery(".fullSlide").hover(function() {
+      jQuery(this).find(".prev,.next").stop(true, true).fadeTo("show", 0.5)
+  },
+  function() {
+      jQuery(this).find(".prev,.next").fadeOut()
+  });
+  jQuery(".fullSlide").slide({
+      titCell: ".hd ul",
+      mainCell: ".bd ul",
+      effect: "fold",
+      autoPlay: true,
+      autoPage: true,
+      trigger: "click",
+      startFun: function(i) {
+          var curLi = jQuery(".fullSlide .bd li").eq(i);
+          if ( !! curLi.attr("_src")) {
+              curLi.css("background-image", curLi.attr("_src")).removeAttr("_src")
+          }
+      }
+  });
+</script>
+
+<script type='text/javascript' src='/themes/mall/jiaju/styles/style/js/lanrenzhijia.js'></script>
+        <script language="javascript" type="text/javascript">
+
+            $(function() {
+                $(".webwidget_scroller_tab").webwidget_scroller_tab({
+                    scroller_time_interval: '500000000000',
+                    scroller_window_padding: '10',
+                    scroller_window_width: '1212',
+                    scroller_window_height: '520',
+                    scroller_head_text_color: '#0099FF',
+                    scroller_head_current_text_color: '#fff',
+                    directory: 'images'
+                });
+                $(".webwidget_scroller_tab1").webwidget_scroller_tab({
+                    scroller_time_interval: '500000000000',
+                    scroller_window_padding: '10',
+                    scroller_window_width: '1212',
+                    scroller_window_height: '520',
+                    scroller_head_text_color: '#0099FF',
+                    scroller_head_current_text_color: '#fff',
+                    directory: 'images'
+                });
+                $(".webwidget_scroller_tab2").webwidget_scroller_tab({
+                    scroller_time_interval: '500000000000',
+                    scroller_window_padding: '10',
+                    scroller_window_width: '1212',
+                    scroller_window_height: '600',
+                    scroller_head_text_color: '#0099FF',
+                    scroller_head_current_text_color: '#fff',
+                    directory: 'images'
+                });
+                $(".webwidget_scroller_tab3").webwidget_scroller_tab({
+                    scroller_time_interval: '500000000000',
+                    scroller_window_padding: '10',
+                    scroller_window_width: '1212',
+                    scroller_window_height: '600',
+                    scroller_head_text_color: '#0099FF',
+                    scroller_head_current_text_color: '#fff',
+                    directory: 'images'
+                });
+                $(".webwidget_scroller_tab4").webwidget_scroller_tab({
+                    scroller_time_interval: '500000000000',
+                    scroller_window_padding: '10',
+                    scroller_window_width: '1212',
+                    scroller_window_height: '600',
+                    scroller_head_text_color: '#0099FF',
+                    scroller_head_current_text_color: '#fff',
+                    directory: 'images'
+                });
+                $(".webwidget_scroller_tab5").webwidget_scroller_tab({
+                    scroller_time_interval: '500000000000',
+                    scroller_window_padding: '10',
+                    scroller_window_width: '1212',
+                    scroller_window_height: '600',
+                    scroller_head_text_color: '#0099FF',
+                    scroller_head_current_text_color: '#fff',
+                    directory: 'images'
+                });
+            });
+        </script>
+</body>
+</html>
