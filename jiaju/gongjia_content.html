@@ -214,12 +214,10 @@ var userid = '<?php echo $_SESSION["user_info"]["user_id"];?>';
 $(function(){
 	jQuery.support.cors = true;
 	selectUser();
-	
 });
 
  // PHP时间戳转时间
 function _trans_php_time_to_str(timestamp, n) {
-
 	update = new Date(timestamp * 1000);
 	//时间戳要乘1000
 	year = update.getFullYear();
@@ -247,7 +245,6 @@ function yingying(){
 		 window.open('http://wgcapp.59jiaju.com/apk/index.html');
 		 return true;
 	  }else{
-		 //alert("取消");
 		 return false;
 	 }
 }
@@ -264,11 +261,7 @@ function selectUser(){
 				var	name        = (data.sender =='' || data.sender == null)?'匿名':data.sender;
 				var	gz_jingyan  = (data.ps =='' || data.ps == null)?'未填写':data.ps;
 	            var	guanzhu     = data.click;
-				
 	            var	bumen       = (data.bumen =='' || data.bumen == null)?'未填写':data.bumen;
-	            
-	            
-	           
 	            var	userphoto   = 'http://wgcapp.59jiaju.com/' + data.userphoto;
 	            var targetId        = data.user_id;
 	            var targetName      = name;
@@ -287,13 +280,10 @@ function selectUser(){
 	           $("#huji").html(huji);
 	           $("#gz_jingyan").html(gz_jingyan);
 			
-		
 		}else{
 			return false;
 		
 		}
-		
-	
 	},"json");
 
 }
@@ -316,6 +306,5 @@ function selectUser(){
 	}
 
 </script>
-
 </body>
 </html>
