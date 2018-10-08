@@ -264,14 +264,10 @@ section .aui-list .aui-list-item {
 {include file=footer.html}
 <!---图片放大-->
 <div class="motai" id="mo">
- <span class="close" id="close" onclick="closes()">×</span>
- <img class="motaiimg" id="moimg">
- 
+	<span class="close" id="close" onclick="closes()">×</span>
+	<img class="motaiimg" id="moimg">
 </div>
-
-<!-- 底部include file=footer2.html-->
 <script src="/themes/mall/jiaju/js/jquery-2.2.3.min.js"></script>
-
 <script type="text/javascript">
 
 $(function(){
@@ -337,14 +333,6 @@ function _trans_php_time_to_str(timestamp, n) {
 	}
 }
 function yingying(){
-	// if(window.confirm('请使用微工程APP进行操作，是否前往去下载？')){
-	// 	 window.open('http://wgcapp.59jiaju.com/apk/index.html');
-	// 	 return true;
-	//   }else{
-	// 	 //alert("取消");
-	// 	 return false;
-	//  }
-
 	$.post('http://wgcapp.wgc2013.com/index.php/Home/index/userCheck', {
 			user_id : '<?php echo $_SESSION["user_info"]["user_id"];?>',
 		}, function(ret) {
@@ -354,24 +342,16 @@ function yingying(){
 				window.open('/index.php?app=search&act=xiadan&id='+id);
 			}else if(ret.code == 202){
 				window.location.href = "/index.php?app=member&act=login&ret_url="
-				// var id = $("#vid").val();
-				// alert(id)
-				// window.open('/index.php?app=search&act=xiadan&id='+id);
 			}else if(ret.code == 203){
 				$(".vipbox").show();
 				return false;
 			}
-		},'json');
-	
+	},'json');
 }
 
 function selectUser(){
-	
-
 	var url = "http://wgcapp.59jiaju.com/index.php/Home/Material/materialDetail";
 	$.post(url,{id : {$id}},function(ret){
-	
-		
 		if(ret.code == 200){
 			var data=ret.message;
 				    tel = data.mobile;
@@ -383,15 +363,15 @@ function selectUser(){
 					$('#num').html(data.count);
 					//个人信息
 
-                    	$("#name").html(data.name);	
-						$("#userimg").attr('src','http://wgcapp.59jiaju.com/'+data.userphoto);
-						$("#LeftTimee").html(_trans_php_time_to_str(data.addtime,1));
-						$("#huji").html(data.huji);
-						$("#zhiwei").html(data.zhiwei);
-						$("#emali").html(data.email);	
-						$("#tel").html(data.mobile);	
-						$("#sex").html(data.sex);
-						$("#m_introduce").html(data.m_introduce);
+                	$("#name").html(data.name);	
+					$("#userimg").attr('src','http://wgcapp.59jiaju.com/'+data.userphoto);
+					$("#LeftTimee").html(_trans_php_time_to_str(data.addtime,1));
+					$("#huji").html(data.huji);
+					$("#zhiwei").html(data.zhiwei);
+					$("#emali").html(data.email);	
+					$("#tel").html(data.mobile);	
+					$("#sex").html(data.sex);
+					$("#m_introduce").html(data.m_introduce);
 					
 					if({$cai_type} == 2){
 					    $('#office_name').html('商店名称：'+data.office_name);
@@ -422,15 +402,10 @@ function selectUser(){
 					
 		}else{
 			return false;
-		
 		}
 		
-	
 	},"json");
-
 }
-	
-
 </script>
 </body>
 </html>

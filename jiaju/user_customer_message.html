@@ -366,10 +366,11 @@ $().ready(function(){
     //点击添加表格
     $(".add_table").click(function(){
     	index++;
+    	var nums = index-1;
     	var $html = '';
   		$html +='<tr class="tmain">';
 		$html +='<td style="width: 5%"><input type="hidden" name="userid[]" value="<?php echo $_SESSION["user_info"]["user_id"];?>"><textarea id="t_xh'+index+'"></textarea></td>';
-		$html +='<td style="width: 10%"><textarea style="overflow: visible;height: 100%;line-height: 20px;" name="company[]"></textarea></td>';
+		$html +='<td style="width: 10%"><textarea style="overflow: visible;height: 100%;line-height: 20px;" id="t_gs'+index+'" name="company[]"></textarea></td>';
 		$html +='<td style="width: 5%"><textarea name="type[]"></textarea></td>';
 		$html +='<td style="width: 8%"><textarea name="zhiwei[]"></textarea></td>';
 		$html +='<td style="width: 10%"><textarea name="tel[]"></textarea></td>';
@@ -380,11 +381,24 @@ $().ready(function(){
 		$html +='<td style="width: 5%"><textarea name="genjinren[]"></textarea></td>';
 		$html +='<td style="width: 10%;border-right:  2px solid #bcbcbc;"><textarea style="overflow: visible;height: 100%;line-height: 20px;" name="ps[]"></textarea></td>';
 		$html +='</tr>';
+
     	$("#budget_table tbody").append($html);
     	 $("#t_xh"+index).text(index);
+    	 	if(index>1){
+    	 		var gs = $("#t_gs"+nums).val();
+		 	
+		 	if(!gs){
+				
+				$("#budget_table tbody tr:last").remove();
+				index--;
+			} 
+    	 	}
+		 	
+			  	 
+	}
 
 
-    })
+    )
 	
 //连接数据
 function fabu(){
@@ -393,6 +407,11 @@ function fabu(){
 }
 
 function tijiao(){
+	
+	// $("#budget_table").on("click","#t_gs"+index,function(){
+
+	// })
+
 	$("#myform").submit();
 }
 //列表
