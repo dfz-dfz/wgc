@@ -29,16 +29,6 @@ margin:auto;padding:0px;margin-top: 10px;margin-bottom: 10px; width:1100px;overf
 /**劳务资源*/
 .text-left a{width:23%;background:#ff552e;border-radius:10px;float:left;margin:1%;height:50px;line-height:50px;overflow:hidden;display:block;color:#fff;font-size:16px;font-weight:bold;}
 .aui-list-item-middle{width:19.88888888888%;margin:10px 0.11111111111rem;float:left;overflow: hidden;}
-.new_left ul li{
-	padding: 5px 10px;
-	background-color: #ff9479;
-	color: #fff;
-	font-size: 14px;
-	text-align: center;
-	/*width: 110px;*/
-	margin: 10px 0;
-	cursor: pointer;
-}
 </style>
 
 </head>
@@ -74,56 +64,11 @@ margin:auto;padding:0px;margin-top: 10px;margin-bottom: 10px; width:1100px;overf
 
 </head>
 <body>
-{include file=header.html}
-
-<div class="container" style="min-width: 1200px;">
-
-	<div class="header" style="width: 78%;margin: 0px auto;">
-		<img src="/themes/mall/jiaju/images/newbg.jpg" alt="" style="width: 100%;height: 100%;" />
-	</div>
-
-	<div class="content" style="width: 78%;margin: 20px auto;overflow: hidden;min-width: 1260px;">
-		<div class="nav_new" style="width: 80%;height: 50px;border-bottom: 1px solid #ec6941;text-align: left;">
-			<span style="display: inline-block;padding: 5px 10px;background-color: #ec6941;color: #fff;font-size: 14px;margin-top: 18px;width: 12.5%;text-align: center;">行业资讯</span>
-		</div>
-		<!-- 左边的导航栏 -->
-		<div class="new_left" style="float: left;width: 10%;">
-			<ul>
-				<li onclick="oppen(1)">热门资讯</li>
-				<li onclick="oppen(2)">热门招聘</li>
-				<li onclick="oppen(3)">维修报价</li>
-				<li onclick="oppen(4)">材料采购</li>
-				<li onclick="oppen(5)">集采价格</li>
-				<li onclick="oppen(6)">今日工价</li>
-				<li onclick="oppen(7)">工价询价</li>
-				<li onclick="oppen(8)">推荐项目经理</li>
-				<li onclick="oppen(9)">项目分包</li>
-				<li onclick="oppen(10)">推荐设计师</li>
-				<li onclick="oppen(11)">设计分包</li>
-				<li onclick="oppen(12)">推荐工匠</li>
-				<li onclick="oppen(13)">材料推广</li>
-			</ul>
-		</div>
-		<div class="new_right" style="float:right;width: 20%;" style="min-width: 265px;">
-			<img src="/themes/mall/jiaju/images/new_pic.jpg" alt="" style="width: 100%;height: 100%;" />
-		</div>
-		<div class="new_middle" style="width: 70%;float: left;padding: 0 20px;min-height: 600px;">
-
-			<ul>
-				
-			</ul>
-		</div>
-		<div class="unpages" id="unpage" style="margin:20px auto;width: 200px;text-align: center;">
-							<a style="background:red;color:#fff;width: 70px;height: 30px;line-height: 30px;padding:4px 5px;cursor:pointer;margin-right: 20px;" onclick="uppage()">上一页</a>
-							<a style="background:red;color:#fff;width: 70px;height: 30px;line-height: 30px;padding:4px 5px;cursor:pointer;" onclick="nextpage()" id="nextpage">下一页</a>
-						</div>
-	</div>
-</div>
-<!-- <div id="header" class="w-full">
-	头部导航开始
+<div id="header" class="w-full">
+	<!--头部导航开始
 		<div id="site-nav" class="w-full" style="background:#333;border-bottom:1px solid #fff;text-align:left;">
 			<div style="overflow:hidden;color:#fff;text-align:left;width:77%;min-width:1100px;margin:0 auto;">http://www.wgc2013.com</div>
-		</div>
+		</div>-->
 		<div id="site-nav" class="w-full" style="background:#333;height:50px;">
 		  <div class="shoptop w clearfix" style="height:50px">
 				<div class="login_info" style="height:50px;line-height:50px">
@@ -138,7 +83,7 @@ margin:auto;padding:0px;margin-top: 10px;margin-bottom: 10px; width:1100px;overf
 				<ul class="quick-menu" style="min-width:190px;overflow:hidden;">
 				  
 					<li class="service" style="margin-right:10px;height:50px;line-height:50px;background:none;">
-						<a href="/index.php?app=member&amp;act=login&amp;ret_url=" style="color:#fff;font-size:18px;">企业服务</a>        
+						<!--<a href="/index.php?app=member&amp;act=login&amp;ret_url=" style="color:#fff;font-size:18px;">企业服务</a>      -->  
 					</li>
 					<li class="service" style="margin-right:10px;height:50px;line-height:50px;background:none;">
 						<a href="javascript:;" style="color:#fff;font-size:18px;">|</a>        
@@ -161,11 +106,11 @@ margin:auto;padding:0px;margin-top: 10px;margin-bottom: 10px; width:1100px;overf
 					</li>
 				</ul>
 		   </div>
-		 </div> -->	
+		 </div>	
 	<!---头部导航结束-->
-<!--     <div class="shop-t w clearfix" style="width: 100%;min-width: 1100px;"> -->
+    <div class="shop-t w clearfix" style="width: 100%;min-width: 1100px;">
 	
-		<!--logo部分开始
+		<!--logo部分开始--->
 		<div id="h_logos" style="overflow:hidden;" >
 		
 			<div class="logo" style="width:290px;float:left;">
@@ -182,7 +127,7 @@ margin:auto;padding:0px;margin-top: 10px;margin-bottom: 10px; width:1100px;overf
 			$row12=mysql_num_rows(mysql_query("SELECT user_id FROM ecm_member where types=3"));
 			?>
 			
-			注册-登陆
+			<!--注册-登陆-->
 			<div style="overflow:hidden;float:right;width:240px;height:100px;">
 				<a href="index.php?app=member&amp;act=login&amp;ret_url="  title="微工程">
 					<img alt="微工程" src='/data/files/mall/settings/user.png' style="width:100%;height:100%" />
@@ -191,48 +136,48 @@ margin:auto;padding:0px;margin-top: 10px;margin-bottom: 10px; width:1100px;overf
 			
 		</div>
 		
-   	</div> -->
+   	</div>
 	<!---logo部分结束-->
 	
 	
-	<!-- <div class="mainnav w-full">
+	<div class="mainnav w-full">
 		<div class="menu">
 			<ul style="overflow:hidden;float:left;">
 				<li class="line"style="width:18%"><a style="font-size:22px;" href="/index.php">首页</a></li>
 				<li class="line"style="width:18%"><a style="font-size:22px;" href="/index.php?app=search&act=zhaopin">热门招聘</a></li>
 				<li class="line"style="width:18%"><a style="font-size:22px;" href="/index.php?app=search&act=caigou">集采信息</a></li>
-				<li class="line"style="width:18%"><a style="font-size:22px;" href="/index.php?app=search&act=joblist2">劳动力资源</a></li> -->
+				<li class="line"style="width:18%"><a style="font-size:22px;" href="/index.php?app=search&act=joblist2">劳动力资源</a></li>
 				<!--<li class="line"style="width:18%"><a style="font-size:22px;" href="/index.php?app=member&act=login&ret_url=">会员登录</a></li>
 				<li class="line"style="width:20%"><a style="font-size:22px;" href="/index.php?app=store&act=reg">会员注册</a></li>-->
-<!-- 			</ul>
+			</ul>
 		</div>
 	</div>
-</div> -->
+</div>
 
 
-<!-- <div class="main"> -->
+<div class="main">
 	<!-- 主体 -->
-<!-- 	<div class="main_body"> -->
+	<div class="main_body">
 		<!-- 左边 -->
-		<!-- <div class="main_left"style="width:100%">
+		<div class="main_left"style="width:100%">
 			<div style="background-color:#fff;width:100%;">
 				
 					<div style="border-bottom: 1px solid #000;height: 40px;">
 						<img src="themes/mall/jiaju/images/hyzx.jpg" alt="" width="150" style="float: left;"/>
 						<span style="float: right;font-weight: bold;line-height: 50px;">您当前位置:>首页>行业资讯</span>
-					</div> -->
+					</div>
 					
 					<!--列表开始-->
-					<!-- <div style="overflow:hidden;float:left;margin:20px 0;width:80%;">
+					<div style="overflow:hidden;float:left;margin:20px 0;width:80%;">
 						
-						<ul class="aui-list aui-media-list" id="news" style="min-height:50px;border:none;"></ul> -->
+						<ul class="aui-list aui-media-list" id="news" style="min-height:50px;border:none;"></ul>
 						<!-- 显示分页 -->
-<!-- 		               	<div class="unpages" id="unpage" style="margin:20px auto;width: 200px;text-align: center;">
+		               	<div class="unpages" id="unpage" style="margin:20px auto;width: 200px;text-align: center;">
 							<a style="background:red;color:#fff;width: 70px;height: 30px;line-height: 30px;padding:4px 5px;cursor:pointer;margin-right: 20px;" onclick="uppage()">上一页</a>
 							<a style="background:red;color:#fff;width: 70px;height: 30px;line-height: 30px;padding:4px 5px;cursor:pointer;" onclick="nextpage()" id="nextpage">下一页</a>
 						</div>
-					</div> -->
-					<!-- <div style="overflow:hidden;float:right;margin:20px 0;width:20%;"> -->
+					</div>
+					<div style="overflow:hidden;float:right;margin:20px 0;width:20%;">
 						<!---今日--要闻---->
 						<!-- <div style="overflow:hidden;height:auto;width:99%;border:1px solid #e3e3e3;">
 							<h3 style="font-size:18px;color:#333;line-height:40px;background:#e2e2e2;overflow:hidden;height:40px;width:100%;border-bottom:1px solid #e3e3e3;">今日要闻</h3>
@@ -250,20 +195,20 @@ margin:auto;padding:0px;margin-top: 10px;margin-bottom: 10px; width:1100px;overf
 							<a href="index.php?app=search&amp;act=caigou"><img style="width:100%;" src="/themes/mall/jiaju/images/Image_017.png"></a>
 							<a href="index.php?app=search&amp;act=caigou"><img style="width:100%;" src="/themes/mall/jiaju/images/Image_020.png"></a>
 						</div> -->
-<!-- 						<div style="width: 200px;float: right;height: 587px;padding-right: 0;">
+						<div style="width: 200px;float: right;height: 587px;padding-right: 0;">
 							<img src="http://www.wgc2013.com/themes/mall/jiaju/images/guanggao.png" alt="" width="100%">
 						</div>
-					</div> -->
+					</div>
 					
 				
 				
-<!-- 			</div>
+			</div>
 			
-		</div> -->
+		</div>
 		<!-- 左边结束 -->
 		
 		<!-- 右边结束 -->
-<!-- 	</div> -->
+	</div>
 {include file=footer.html}
 <!-- 底部include file=footer2.html-->
 <script src="/themes/mall/jiaju/js/jquery-1.5.2.min.js"></script>
@@ -289,7 +234,6 @@ $(function(){
 });*/
  // PHP时间戳转时间
 function _trans_php_time_to_str(timestamp, n) {
-
 	update = new Date(timestamp * 1000);
 	//时间戳要乘1000
 	year = update.getFullYear();
@@ -312,8 +256,6 @@ function _trans_php_time_to_str(timestamp, n) {
 		return 0;
 	}
 }
-
-
 //行业要闻列表
 var page = 1;
 function news_select(page){
@@ -332,25 +274,31 @@ function news_select(page){
 				var listHtmlS  = '';
 				for (var i in data) {
 							
-					var id=data[i].id, title=data[i].title,pic=data[i].pic,describe=data[i].describe,times = _trans_php_time_to_str(data[i].times,1),content=data[i].content;
+					var id=data[i].id,
+						title=data[i].title,
+						pic=data[i].pic,
+						describe=data[i].describe,
+						times = _trans_php_time_to_str(data[i].times,1),
+						content=data[i].content;
+						var cont = content.replace(/<[^>]+>/g,'');
 				
-					listHtml += '<li style="cursor:pointer;margin:10px auto;height:140px;width:100%;min-width:850px;" title="'+title+'" onclick="openNewsContents(this,'+id+')">';
-				   listHtml += '        <div style="float:left;height:120px;overflow: hidden;width:150px;padding: 2px;border: 1px solid #999;margin-top:7.5px;margin-right:20px;">';
-				   listHtml += '            <img src="http://wgcmanage.wgc2013.com/'+pic+'" style="height:120px;width:150px;" onerror="javascript:this.src=\'../image/Advertisement.jpg\';">';
-				   listHtml += '        </div>';
-				   listHtml += '        <div class="aui-list-item-inner" style="height:140px;float:left;width:80%;">';
-				   listHtml += '            <div class="aui-list-item-text" style="border-bottom:1px solid #999;">';
-				   listHtml += '                <span style="color:#000;">'+title+'</span>';
-				   listHtml += '            <span style="float:right;font-size:14px;">'+times+'</span>';
-				   listHtml += '            </div>';
-				   listHtml += '            <div style="height:88px;overflow:hidden;font-size:14px;" id="contentMain">'+describe+'</div>';
-				   listHtml += '        </div>';
-				   listHtml += '</li>';
-				   listHtmlS += '<p class="aui-ellipsis-1" id="'+title+'"><span class="bottonTitle">推荐</span>'+title+'</p>';
+				    listHtml += '<li style="cursor:pointer;margin:10px auto;height:140px;width:880px;" title="'+title+'" onclick="openNewsContents(this,'+id+')">';
+				    listHtml += '        <div style="float:left;height:120px;overflow: hidden;width:150px;padding: 2px;border: 1px solid #999;margin-top:7.5px;margin-right:20px;">';
+				    listHtml += '            <img src="http://wgcmanage.wgc2013.com/'+pic+'" style="height:120px;width:150px;" onerror="javascript:this.src=\'../image/Advertisement.jpg\';">';
+				    listHtml += '        </div>';
+				    listHtml += '        <div class="aui-list-item-inner" style="height:140px;float:left;width:710px;">';
+				    listHtml += '            <div class="aui-list-item-text" style="border-bottom:1px solid #999;">';
+				    listHtml += '                <span style="color:#000;">'+title+'</span>';
+				    listHtml += '            <span style="float:right;font-size:14px;">'+times+'</span>';
+				    listHtml += '            </div>';
+				    listHtml += '            <div style="height:88px;overflow:hidden;font-size:14px;" id="contentMain">'+cont+'</div>';
+				    listHtml += '        </div>';
+				    listHtml += '</li>';
+				    listHtmlS += '<p class="aui-ellipsis-1" id="'+title+'"><span class="bottonTitle">推荐</span>'+title+'</p>';
 			}
 		   
 			$("#news").show();
-			$(".new_middle ul").html(listHtml);
+			$("#news").html(listHtml);
 			
 		}else if(ret.code == 202)	{
 			if(page == 1){
@@ -365,9 +313,7 @@ function news_select(page){
 		
 	
 	},"json");
-
 }
-
 	function uppage(){
 		if(page<1){
 			page=1;
@@ -375,7 +321,6 @@ function news_select(page){
 		page--;
 		news_select(page);
 	}
-
 	function nextpage(){
 		page++;
 		news_select(page);
@@ -428,7 +373,6 @@ function newsHost_select(){
 		
 	
 	},"json");
-
 }
 //工价列表
 function gongjia_select(){
@@ -475,7 +419,6 @@ function gongjia_select(){
 		
 	
 	},"json");
-
 }
 //打开工价详情
 function openConten(id,user_id){
@@ -494,85 +437,6 @@ function openNewsContents(obj,id){
 	//_openWin('gongzuo_content_win','../gongzuo/gongzuo_content_win.html',{id : id,type : 1,touid : user_id,f_type : '招工'});
 	
 	
-}
-function oppen(id){
-	if(id == 2){
-
-	var listHtml = "";
-	listHtml += '<li style="margin-top:20px;width:100%;text-align:center;font-size:16px;">暂无数据!!!</li>';
-	$(".new_middle ul").html(listHtml);
-	}
-		if(id == 1){
-
-		news_select(page);
-	}
-	if(id == 3){
-
-	var listHtml = "";
-	listHtml += '<li style="margin-top:20px;width:100%;text-align:center;font-size:16px;">暂无数据!!!</li>';
-	$(".new_middle ul").html(listHtml);
-	}
-	if(id == 4){
-
-	var listHtml = "";
-	listHtml += '<li style="margin-top:20px;width:100%;text-align:center;font-size:16px;">暂无数据!!!</li>';
-	$(".new_middle ul").html(listHtml);
-	}
-	if(id == 5){
-
-	var listHtml = "";
-	listHtml += '<li style="margin-top:20px;width:100%;text-align:center;font-size:16px;">暂无数据!!!</li>';
-	$(".new_middle ul").html(listHtml);
-	}
-	if(id == 6){
-
-	var listHtml = "";
-	listHtml += '<li style="margin-top:20px;width:100%;text-align:center;font-size:16px;">暂无数据!!!</li>';
-	$(".new_middle ul").html(listHtml);
-	}
-	if(id == 7){
-
-	var listHtml = "";
-	listHtml += '<li style="margin-top:20px;width:100%;text-align:center;font-size:16px;">暂无数据!!!</li>';
-	$(".new_middle ul").html(listHtml);
-	}
-	if(id == 8){
-
-	var listHtml = "";
-	listHtml += '<li style="margin-top:20px;width:100%;text-align:center;font-size:16px;">暂无数据!!!</li>';
-	$(".new_middle ul").html(listHtml);
-	}
-	if(id == 9){
-
-	var listHtml = "";
-	listHtml += '<li style="margin-top:20px;width:100%;text-align:center;font-size:16px;">暂无数据!!!</li>';
-	$(".new_middle ul").html(listHtml);
-	}
-	if(id == 10){
-
-	var listHtml = "";
-	listHtml += '<li style="margin-top:20px;width:100%;text-align:center;font-size:16px;">暂无数据!!!</li>';
-	$(".new_middle ul").html(listHtml);
-	}
-	if(id == 11){
-
-	var listHtml = "";
-	listHtml += '<li style="margin-top:20px;width:100%;text-align:center;font-size:16px;">暂无数据!!!</li>';
-	$(".new_middle ul").html(listHtml);
-	}
-	if(id == 12){
-
-	var listHtml = "";
-	listHtml += '<li style="margin-top:20px;width:100%;text-align:center;font-size:16px;">暂无数据!!!</li>';
-	$(".new_middle ul").html(listHtml);
-	}
-	if(id == 13){
-
-	var listHtml = "";
-	listHtml += '<li style="margin-top:20px;width:100%;text-align:center;font-size:16px;">暂无数据!!!</li>';
-	$(".new_middle ul").html(listHtml);
-	}
-
 }
 </script>
 </body>
