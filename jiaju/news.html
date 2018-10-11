@@ -64,104 +64,19 @@ margin:auto;padding:0px;margin-top: 10px;margin-bottom: 10px; width:1100px;overf
 
 </head>
 <body>
-<div id="header" class="w-full">
-	<!--头部导航开始
-		<div id="site-nav" class="w-full" style="background:#333;border-bottom:1px solid #fff;text-align:left;">
-			<div style="overflow:hidden;color:#fff;text-align:left;width:77%;min-width:1100px;margin:0 auto;">http://www.wgc2013.com</div>
-		</div>-->
-		<div id="site-nav" class="w-full" style="background:#333;height:50px;">
-		  <div class="shoptop w clearfix" style="height:50px">
-				<div class="login_info" style="height:50px;line-height:50px">
-				
-					<a href="http://wgcapp.59jiaju.com/apk/index.html" target="_blank" style="color:#fff;font-size:18px;">
-						APP下载
-						<font style="margin-left:5px;">&or;</font>
-					</a>					
-				
-					
-				</div>
-				<ul class="quick-menu" style="min-width:190px;overflow:hidden;">
-				  
-					<li class="service" style="margin-right:10px;height:50px;line-height:50px;background:none;">
-						<!--<a href="/index.php?app=member&amp;act=login&amp;ret_url=" style="color:#fff;font-size:18px;">企业服务</a>      -->  
-					</li>
-					<li class="service" style="margin-right:10px;height:50px;line-height:50px;background:none;">
-						<a href="javascript:;" style="color:#fff;font-size:18px;">|</a>        
-					</li>
-					<li style="background:red;margin-right:0px;padding:0 30px;height:50px;line-height:50px;">
-						 <?php
-							if(empty($_SESSION['user_info']))
-							{
-								echo '&nbsp;&nbsp;&nbsp;';
-								echo '<a  style="color:#fff;margin:0;font-size:18px;" href="/index.php?app=member&amp;act=login&amp;ret_url=">登录</a>';
-								echo '<span style="color:#fff;margin:0 5px;">/</span>';
-								echo '	<a  style="color:#fff;margin:0;font-size:18px;" href="/index.php?app=store&act=reg">注册</a>';
-								echo '&nbsp;&nbsp;&nbsp;';
-							}else{
-								echo '您好，<a href="index.php?app=member" style="color:#0000ff;">'.$_SESSION['user_info']["user_name"].'</a>&nbsp;&nbsp;&nbsp;';
-								echo '<a href="/index.php?app=member&amp;act=logout" style="font-size:18px;color:#fff;margin:0;">退出</a>&nbsp;&nbsp;&nbsp;';
-								echo '<a href="/index.php?app=message&amp;act=newpm" style="font-size:18px;color:#fff;margin:0;">站内消息</a>';
-							}
-						?>  
-					</li>
-				</ul>
-		   </div>
-		 </div>	
-	<!---头部导航结束-->
-    <div class="shop-t w clearfix" style="width: 100%;min-width: 1100px;">
-	
-		<!--logo部分开始--->
-		<div id="h_logos" style="overflow:hidden;" >
-		
-			<div class="logo" style="width:290px;float:left;">
-				 <a href="/"  title="微工程">
-					<img alt="微工程" src='/data/files/mall/settings/logo.png' />
-				  </a>			  
-			</div>
-			<div id="searchbar" style="margin-top:0;width:630px;float:left;overflow:hidden">
-				<img style="height:80px;width:100%;" alt="微工程" src='/themes/mall/jiaju/images/ppbypic.jpg' />				
-            </div>
-			
-			<?php
-			$row11=mysql_num_rows(mysql_query("SELECT user_id FROM ecm_member where types=2"));
-			$row12=mysql_num_rows(mysql_query("SELECT user_id FROM ecm_member where types=3"));
-			?>
-			
-			<!--注册-登陆-->
-			<div style="overflow:hidden;float:right;width:240px;height:100px;">
-				<a href="index.php?app=member&amp;act=login&amp;ret_url="  title="微工程">
-					<img alt="微工程" src='/data/files/mall/settings/user.png' style="width:100%;height:100%" />
-				  </a>	
-			</div>
-			
-		</div>
-		
-   	</div>
-	<!---logo部分结束-->
-	
-	
-	<div class="mainnav w-full">
-		<div class="menu">
-			<ul style="overflow:hidden;float:left;">
-				<li class="line"style="width:18%"><a style="font-size:22px;" href="/index.php">首页</a></li>
-				<li class="line"style="width:18%"><a style="font-size:22px;" href="/index.php?app=search&act=zhaopin">热门招聘</a></li>
-				<li class="line"style="width:18%"><a style="font-size:22px;" href="/index.php?app=search&act=caigou">集采信息</a></li>
-				<li class="line"style="width:18%"><a style="font-size:22px;" href="/index.php?app=search&act=joblist2">劳动力资源</a></li>
-				<!--<li class="line"style="width:18%"><a style="font-size:22px;" href="/index.php?app=member&act=login&ret_url=">会员登录</a></li>
-				<li class="line"style="width:20%"><a style="font-size:22px;" href="/index.php?app=store&act=reg">会员注册</a></li>-->
-			</ul>
-		</div>
-	</div>
-</div>
-
+{include file=header.html}
 
 <div class="main">
 	<!-- 主体 -->
 	<div class="main_body">
 		<!-- 左边 -->
-		<div class="main_left"style="width:100%">
+		<div class="main_left" style="width:100%">
 			<div style="background-color:#fff;width:100%;">
-				
+					<div style="height: 54px;">
+						<input id="key" type="text" style="height: 10px;width: 1016px;padding: 20px;float: left;" placeholder="请输入关键词搜索">
+						<img onclick="searchList()" src="themes/mall/jiaju/images/search.png" alt="" style="float: left;width: 84px;height: 42px;cursor: pointer;">
+					</div>
+
 					<div style="border-bottom: 1px solid #000;height: 40px;">
 						<img src="themes/mall/jiaju/images/hyzx.jpg" alt="" width="150" style="float: left;"/>
 						<span style="float: right;font-weight: bold;line-height: 50px;">您当前位置:>首页>行业资讯</span>
@@ -291,7 +206,7 @@ function news_select(page){
 				    listHtml += '                <span style="color:#000;">'+title+'</span>';
 				    listHtml += '            <span style="float:right;font-size:14px;">'+times+'</span>';
 				    listHtml += '            </div>';
-				    listHtml += '            <div style="height:88px;overflow:hidden;font-size:14px;" id="contentMain">'+cont+'</div>';
+				    listHtml += '            <div style="height:88px;overflow:hidden;font-size:14px;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:4;" id="contentMain">'+cont+'</div>';
 				    listHtml += '        </div>';
 				    listHtml += '</li>';
 				    listHtmlS += '<p class="aui-ellipsis-1" id="'+title+'"><span class="bottonTitle">推荐</span>'+title+'</p>';
