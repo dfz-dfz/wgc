@@ -161,7 +161,6 @@ $(function(){
 
 // PHP时间戳转时间
 function _trans_php_time_to_str(timestamp, n) {
-
 	update = new Date(timestamp * 1000);
 	//时间戳要乘1000
 	year = update.getFullYear();
@@ -184,7 +183,31 @@ function _trans_php_time_to_str(timestamp, n) {
 		return 0;
 	}
 }
+function getdate(){
+	var myDate = new Date();
+	var year   = myDate.getFullYear();
+	var month  = myDate.getMonth()+1;
+	var date  = myDate.getDate()
+	var curDateTime= year;
+	if(month>9){
 
+	curDateTime = curDateTime +"-"+month;
+	}
+	else{
+
+	curDateTime = curDateTime +"-0"+month;
+	}
+	if(date>9){
+
+	curDateTime = curDateTime +"-"+date;
+	}
+	else{
+
+	curDateTime = curDateTime +"-0"+date;
+	}
+	return curDateTime;
+
+}
 //列表
 function cai_select(page){
 	var url = serverUrl+"Jysearch/searchlist";
@@ -200,12 +223,15 @@ function cai_select(page){
 	},function(ret){
 		if(ret.status == 200){
 				page++;
+				var mydates     = getdate();                    
+				//alert(mydates);
+
 				var list=['施工队长','水电工长','空调安装工长','空调安装工','泥水工','水电工','电焊工','家具安装工','木工','扇灰工','保洁工','杂工','设计师','预算员','其它','维修工','网络维修'];
 				var data = ret.retData;
 				var listHtml = '';
 				for (var i in data) {
 							
-					var id          = data[i].id,
+					var id          = data[i].id,		
 						name        = data[i].title,
 						xiangxi     = data[i].xiangxi,
 						unit        = data[i].unit,
@@ -214,13 +240,26 @@ function cai_select(page){
 						postion 	= (parseInt(data[i].postion) > 1)?list[parseInt(data[i].postion)]:'无工种',
 						xinzi       = (data[i].total_price == 0)?'面议':data[i].total_price+'元',
 						addtime     = data[i].addtime;
+						today       = addtime.slice(0,10);
+						console.log(today)
+						if(mydates == today){
+							listHtml += '<tr style="cursor:pointer;" title="'+name+'" onclick="openConten('+id+','+user_id+')">';
+							listHtml += '	<td style="font-size:16px;color:#e20c0c;text-align:left;height:40px;width:25%;"><i style="margin:0 15px;">&bull;</i>'+name+'</td>';
+							listHtml += '	<td style="font-size:16px;color:#e20c0c;height:40px;width:25%;">'+unit+'</td>';
+							listHtml += '	<td style="font-size:16px;color:#e20c0c;height:40px;width:25%;">'+xinzi+'</td>';
+							listHtml += '	<td style="font-size:16px;color:#e20c0c;height:40px;width:25%;">'+addtime+'</td>';
+							listHtml += '</tr>';
+						}else{
+							listHtml += '<tr style="cursor:pointer;" title="'+name+'" onclick="openConten('+id+','+user_id+')">';
+							listHtml += '	<td style="font-size:16px;color:#333;text-align:left;height:40px;width:25%;"><i style="margin:0 15px;">&bull;</i>'+name+'</td>';
+							listHtml += '	<td style="font-size:16px;color:#333;height:40px;width:25%;">'+unit+'</td>';
+							listHtml += '	<td style="font-size:16px;color:#333;height:40px;width:25%;">'+xinzi+'</td>';
+							listHtml += '	<td style="font-size:16px;color:#333;height:40px;width:25%;">'+addtime+'</td>';
+							listHtml += '</tr>';
+						}
 				
-					listHtml += '<tr style="cursor:pointer" title="'+name+'" onclick="openConten('+id+','+user_id+')">';
-					listHtml += '	<td style="font-size:16px;color:#333;text-align:left;height:40px;width:25%;"><i style="margin:0 15px;">&bull;</i>'+name+'</td>';
-					listHtml += '	<td style="font-size:16px;color:#333;height:40px;width:25%;">'+unit+'</td>';
-					listHtml += '	<td style="font-size:16px;color:#333;height:40px;width:25%;">'+xinzi+'</td>';
-					listHtml += '	<td style="font-size:16px;color:#333;height:40px;width:25%;">'+addtime+'</td>';
-					listHtml += '</tr>';
+					
+					
 				
 			}
 		   

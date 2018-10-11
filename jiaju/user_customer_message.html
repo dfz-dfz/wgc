@@ -134,6 +134,9 @@ body{background:url('') no-repeat center top }
 				</div>
 			</div>
 			</div>
+
+			<!-- 业务列表为空 -->
+
 			<!-- 业务列表-->
 			
  			<div class="budget_detail_list" style="position: relative;left: -16%;width: 115%;display:none;">
@@ -190,8 +193,8 @@ body{background:url('') no-repeat center top }
 					<!-- 分页 -->
 					<div class="price_page" style="text-align: center;">
 				
-					<a href="javascript:;" style="background-color: red;color: #fff;">上一页</a>
-					<a href="javascript:;" style="background-color: red;color: #fff;">下一页</a>
+					<a href="javascript:;" id="listpre" style="background-color: red;color: #fff;" onclick="prepages()">上一页</a>
+					<a href="javascript:;" id="listnext" style="background-color: red;color: #fff;" onclick="nextpages()">下一页</a>
 			
 					</div>
 				</div>
@@ -416,7 +419,7 @@ function tijiao(){
 }
 //列表
 page = 1;
-function list(){
+function list(page,types){
 	$.post('http://wgcapp.wgc2013.com/jingyi.php/Home/yewu/yewu_list',{
 		user_id : '<?php echo $_SESSION["user_info"]["user_id"];?>',
 		page    : page
@@ -424,6 +427,7 @@ function list(){
 		//console.log(ret)
 		var listHtml = "";
 		if(ret.status == 200){
+			$("#listnext").show();
 			var data = ret.retData;
 			for(var i in data){
 			
@@ -458,8 +462,26 @@ function list(){
 			}
 				$(".yewu_body table tbody").html(listHtml);
 			
+		}else if(ret.status == 202){
+			// alert(types);
+			if(types == 1){
+				// alert("111")
+				$("#listnext").hide();
+				$(".yewu_body table tbody").html("")
+			}else if(types == 0){
+				// $(".yewu_body table tbody").html("")
+			}
 		}
 	},'json')
+}
+function nextpages(){
+	list(++page,1)
+}
+function prepages(){
+	if(page == 1){
+		page=2
+	}
+	list(--page,1)
 }
 	//分享
 	$(".share_btn").click(function(e){
