@@ -117,8 +117,9 @@ class StoreApp extends StorebaseApp
     {
         $this->display('reg.html');
     }
-    function register(){
-        $this->display('register.html');
+    // 公司注册
+    function reg_company(){
+        $this->display('reg_company.html');
     }
 	
 	//注册-登录成功储存用户信息
