@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>材料采购详情</title>
+	<link rel="stylesheet" href="">
+	
+	<style>
+		.shejifenbao_list {
+			border-bottom: 1px solid #ccc;
+			height: 40px;
+			line-height: 40px;
+			padding-left: 6px;
+			font-size: 16px;
+		}
+	</style>
+</head>
+<body>
+{include file=header.html}
+<div style="width: 1100px;margin: 10px auto;">
+	<div style="width: 850px;height: auto;overflow: hidden;text-align: left;float: left;">
+		<div style="background-color: #eee;width: 100%;height: 40px;border-bottom: 2px solid #999;padding-left: 6px;font-size: 22px;line-height: 40px;text-align: center;color: #000;" id="title">材料采购详情</div>
+		<div style="height: 600px;">
+			<div style="height: auto;overflow: hidden;margin-top: 10px;">
+				<div style="width:1100px;">
+					<div class="shejifenbao_list" id="xiangmmc"></div>
+					<div class="shejifenbao_list" id="content"></div>
+					<div class="shejifenbao_list" id="cailiao" style="height: auto;overflow: hidden;"></div>
+					<div class="shejifenbao_list" id="shop_address"></div>
+					<div class="shejifenbao_list" id="fb_address"></div>
+					<div class="shejifenbao_list" id="time"></div>
+					<div id="lists"></div>
+				</div>
+			</div>
+		</div>
+		<div style="height:40px;background-color: #e41d22;color: #fff;font-size: 20px;letter-spacing: 4px;font-weight: 600;text-align: center;line-height: 40px;width: 20%;margin: 0 auto;">点击联系</div>
+	</div>
+
+	<div style="width: 200px;float: right;height: 587px;border-left: 10px solid #e5e5e5;padding-right: 0;">
+		<img src="http://www.wgc2013.com/themes/mall/jiaju/images/guanggao.png" alt="" width="100%">
+	</div>
+</div>
+
+	{include file=footer.html}
+</body>
+<script type="text/javascript" src="/themes/mall/jiaju/styles/default/js/jquery-1.3.2.min.js"></script>
+<script>
+	var url = "http://wgcapp.wgc2013.com/";
+	var uploadUrl = 'http://wgcapp.wgc2013.com/';
+	var imgUrl = 'http://wgcapp.wgc2013.com/';
+
+	$(function(){
+		detail();
+	})
+
+	//获取材料id
+	function GetUrlPara(){
+　　　　var url = document.location.toString();
+　　　　var arrUrl = url.split("?");
+　　　　var para = arrUrl[1];
+　　　　return para;
+　　}
+	var URL = GetUrlPara();
+	var arr = URL.split('=');
+	var prj_id = arr.pop();
+
+	function detail(){
+
+		$.post("http://wgcapp.wgc2013.com/jingyi.php/Home/Material/addmaterials_list_content_index",{
+			id : prj_id
+		}, function(ret) {
+			var html = '';
+			if(ret.status == 200){
+				var date = ret.retData;
+					
+
+			 	
+			 	$('#xiangmmc').html('<span>材料申购单位：</span>'+date.office_name);
+			   	$('#content').html('<span>收货地址：</span>'+date.worker_address);//
+			   	$('#cailiao').html('<span style="float:left;">备注：</span><span style="width:765px;float:left;">'+date.ps+'</span>');
+			   	$('#fb_address').html('<span>申购日期：</span>'+date.dateofpurchase);
+			   	$('#shop_address').html('<span>申购人：</span>'+date.sgperson);
+			   	$('#time').html('<span>发布时间：</span>'+_trans_php_time_to_str(date.addtime,5));
+
+
+			   		
+			   
+
+			   	$('#lists').html(html);
+			}else if(ret.code == 202){
+				return false;
+			}else{
+				return false;
+			}
+		},'json');
+
+	}
+</script>
+</html>

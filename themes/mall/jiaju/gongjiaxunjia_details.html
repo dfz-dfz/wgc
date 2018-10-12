@@ -24,15 +24,16 @@
 				<div style="background-color: #eee;width: 100%;height: 40px;border-bottom: 2px solid #999;padding-left: 6px;font-size: 22px;line-height: 40px;">工价询价详情</div>
 				<div style="height: auto;overflow: hidden;">
 					<div style="height: auto;overflow: hidden;margin-top: 10px;">
-						<div style="width:888px;">
+						<div style="width:880px;">
 							<div id="prj_name_price" style="border-bottom: 2px solid #dfdfdf; height: 80px;line-height: 80px;font-size: 22px;font-weight: 600;padding-left: 6px;">
 								
 							</div>
 							<div class="shejifenbao_list"><span>计价单位：</span><span id="jjdw"></span></div>
 							<div class="shejifenbao_list"><span>数量/范围：</span><span id="slfw"></span></div>
-							<div class="shejifenbao_list"><span>联系方式：</span><span id="lxfs"></span></div>
+							<!-- <div class="shejifenbao_list"><span>联系方式：</span><span id="lxfs"></span></div> -->
 							<div class="shejifenbao_list"><span>工作地点：</span><span id="gzdd"></span></div>
-							<div class="shejifenbao_list"><span>备注：</span><span id="bz"></span></div>
+							<div class="shejifenbao_list"><span>发布时间：</span><span id="fbsj"></span></div>
+							<div class="shejifenbao_list" style="height: auto;overflow:hidden;"><span>备注：</span><span id="bz"></span></div>
 							<div id="gjxj_img"></div>
 						</div>
 					</div>
@@ -122,6 +123,7 @@
 				$('#slfw').html(data.num);
 				$('#lxfs').html(data.tel.replace(/(\d{3})\d{5}(\d{3})/, '$1*****$2'));
 				$('#gzdd').html(data.address);
+				$('#fbsj').html(data.addtime);
 				$('#bz').html(data.ps);
 
 				pto += '<p id="message-content" style="width:100%;height:auto;overflow: hidden;margin:5px auto;padding-left: 0.35rem">';

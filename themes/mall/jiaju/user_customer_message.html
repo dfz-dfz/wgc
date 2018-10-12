@@ -483,6 +483,87 @@ function prepages(){
 	}
 	list(--page,1)
 }
+
+//分享列表
+	function messagelist(){
+	var url = 'http://wgcapp.wgc2013.com/jingyi.php/Home/Dinge/zhucai_list_share';
+	// $.post('http://wgcapp.wgc2013.com/jingyi.php/Home/Dinge/zhucai_list_share',{
+	// 	key      : key,
+	// 	user_id : userid,
+	// 	page     : pageindex
+	// },function(ret){
+	// 	console.log(ret)
+	// },'json')
+		$.ajax({
+				type:"POST",
+				url:url,
+				data:{
+					key      : key,
+					user_id : '<?php echo $_SESSION["user_info"]["user_id"];?>',
+					page     : spage,
+					type     : 1
+				},
+				cache:false,
+				crossDomain: true == !(document.all),
+				dataType: "json",
+				success:function(ret){
+					//console.log(ret)
+						if(ret.status == 200){
+							$("#share_next").show();
+						//page++;
+						var data = ret.retData;
+						var listHtml = '';
+						var imgHtml = '';
+						var detailHtml = '';
+						for(i in data){
+							var imgArray = [];
+							var id       = data[i].id;
+							
+							var	pingpai  = data[i].pingpai,
+								name     = data[i].name,
+								danwei   = data[i].danwei,
+								danjia   = data[i].danjia,
+								xinghao  = data[i].xinghao,
+								hanshuijiage   = data[i].hanshuijiage,
+								peisongtime   = data[i].peisongtime,
+								gongyingshang   = data[i].gongyingshang,
+								lianxiren   = data[i].lianxiren,
+								dianhua   = data[i].dianhua,
+								weixin   = data[i].weixin,
+								web   = data[i].web,
+								email   = data[i].email,
+								content   = data[i].content,
+								type      = 1,
+								img       = data[i].img,
+								defaults     = (data[i].defaults<1)?'':'checked="checked"';
+
+
+								listHtml += '<tr class="tmain">';
+								listHtml +=		'<td style="width: 5%"><span>'+i+'</span></td>';
+								listHtml +=		'<td style="width: 16%"><span>'+name+'</span></td>';
+								listHtml +=		'<td style="width: 8%"><span>'+pingpai+'</span></td>';
+								listHtml +=		'<td style="width: 10%"><span>'+xinghao+'</span></td>';
+								listHtml +=		'<td style="width: 10%"><span>'+peisongtime+'</span></td>';
+								listHtml +=		'<td style="width: 6%"><span>'+danwei+'</span></td>';
+								listHtml +=		'<td style="width: 6%"><span>'+danjia+'</span></td>';
+								listHtml +=		'<td style="width: 6%"><span>'+hanshuijiage+'</span></td>';
+								listHtml +=		'<td style="width: 6%"><span>'+gongyingshang+'</span></td>';
+								listHtml +=		'<td style="width: 10%;"><span>'+content+'</span></td>';
+								listHtml +=		'<td style="width: 8%;border-right:2px solid #bcbcbc;"><span><a href="javascript:;" style="color: blue;" onclick="detailsShare(\''+lianxiren+'\',\''+dianhua+'\',\''+weixin+'\',\''+email+'\',\''+web+'\',\''+content+'\',\''+img+'\')">详情</a></span></td>';
+								listHtml +=		'</tr>';
+
+					
+						}
+						$("#budget_list_share tbody").html(listHtml);
+					}
+
+				},
+				error:function(err){
+					console.log(err)
+				}
+			});
+
+	}
 	//分享
 	$(".share_btn").click(function(e){
 		e.stopPropagation;
@@ -644,7 +725,7 @@ function prepages(){
 				                console.log(tvals)
 
 				                $.post('http://wgcapp.wgc2013.com/jingyi.php/Home/index/share',{
-				                	"type":1,
+				                	"type":7,
 				                	"arr":arr,
 				                	"tarry":tarry
 				                },function(ret){

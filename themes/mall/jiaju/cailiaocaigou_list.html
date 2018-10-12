@@ -1,0 +1,159 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Access-Control-Allow-Origin" content="*">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=8"/>
+	<title>材料采购列表</title>
+	<meta name="description" content="微工程，微工程APP，装修、材料、家具、饰品一站式服务，让装修更简单，价格更透明！！" />
+	<meta name="keywords" content="微工程，微工程，家居商城，微工程家居商城，微工程家居装修商城，办公室装修，写字楼装修，材料，装修材料，家居，办公家具，家居，家具，装修，装饰" />
+	<script type="text/javascript" src="/themes/mall/jiaju/styles/default/js/jquery-1.3.2.min.js"></script>
+</head>
+<style>
+	.weixiulist ul {
+		border-bottom: 1px solid #d4d4d4;
+		height: 40px;
+		line-height: 40px;
+		text-align: center;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	.weixiulist li {
+		float: left;
+	    overflow: hidden;
+	    text-overflow: ellipsis;
+	    white-space: nowrap;
+	    text-align: center;
+	    font-size: 14px;
+	}
+
+	#headerlist li {
+		font-size: 20px;
+		font-weight: bold;
+	}
+</style>
+<body>
+{include file=header.html}
+
+	<div style="width: 1100px;margin: 10px auto;text-align: left;">
+		<!-- 搜索 -->
+		<div style="height: 54px;">
+			<input id="key" type="text" style="height: 10px;width: 970px;padding: 20px;float: left;" placeholder="请输入关键词搜索">
+			<img onclick="searchList()" src="themes/mall/jiaju/images/search.png" alt="" style="float: left;width: 84px;height: 54px;">
+		</div>
+
+		<div class="weixiulist" style="margin: 20px auto;position: relative;">
+			<img src="themes/mall/jiaju/images/cailiaocaigou.jpg" alt="" width="200px">
+			<span id="back_btn" style="width: 100px;color: #fff;background-color: #efa913;padding: 9px;font-size: 16px;position: absolute;text-align: center;display: none;top: 0;left: 210px;cursor: pointer;" onclick="backList()">返回列表</span>
+			<!-- 维修设计列表 -->
+			<div id="sjfbList" style="margin-top: 5px;"> 
+				<ul id="headerlist" style="width: 1100px;background-color: #efa913;">
+					<li style="width: 14.28%;">材料名称</li>					
+					<li style="width: 16.28%;">材料品牌</li>
+					<li style="width: 16.28%;">型号</li>
+					<li style="width: 14.28%;">单价</li>
+					<li style="width: 12.28%;">单位</li>
+					<li style="width: 14.28%;">合计</li>
+					<li style="width: 12.28%;">查看详情</li>
+				</ul>
+
+				<div id="weixiuMain" style="border:1px solid #6d6d6d;border-top: 0;min-height: 415px;">
+					
+				</div>
+			</div>
+
+			<div class="unpages" id="unpage" style="margin:50px auto;width: 200px;text-align: center;">
+				<a id="uppage" style="background:red;color:#fff;width: 70px;height: 30px;line-height: 30px;padding:4px 5px;cursor:pointer;margin-right: 20px;" onclick="uppage()">上一页</a>
+				<a id="nextpage" style="background:red;color:#fff;width: 70px;height: 30px;line-height: 30px;padding:4px 5px;cursor:pointer;" onclick="nextpage()">下一页</a>
+			</div>
+		</div>
+	</div>
+
+{include file=footer.html}
+<script type="text/javascript">
+	var serverUrl = "http://wgcapp.59jiaju.com/",
+		page = 1;
+
+	$(function(){
+		jQuery.support.cors = true;
+		cai_select(page);
+	});
+
+	//分页
+	function uppage(){
+		if(page<1){
+			page=1;
+		}
+		page--;
+		cai_select(page);
+	}
+
+	function nextpage(){
+		page++;
+		cai_select(page);
+	}
+
+	//材料列表
+	function cai_select(page){
+		if(page == 1){
+			$('#uppage').hide();
+		}else{
+			$('#uppage').show();
+		}
+
+		$.post("http://wgcapp.wgc2013.com/jingyi.php/Home/Material/addmaterials_list_index",{
+			page : page,
+			cai_type :2,
+		},function(ret){
+			var listHtml = '';
+			if(ret.status == 200){
+					page++;
+					var data = ret.retData;
+					   for(var i in data){
+					var j = parseInt(i)+1;
+							var pid     = data[i].pid;
+							var m_name = data[i].m_name;
+							var brand  = data[i].brand;
+							var size   = (data[i].size == '' || data[i].size == null) ? '-':data[i].size;
+							var expire_time = data[i].expire_time;
+							var number = data[i].number;
+							var danwei = data[i].danwei;
+							var danjia = (data[i].danjia == '' || data[i].danjia == null) ? '-':data[i].danjia;
+							var heji   = (data[i].heji == '' || isNaN(data[i].heji)) ? '无':data[i].heji;
+							var introduce = data[i].introduce;
+							var pid    = data[i].pid;
+
+							
+
+								listHtml += '<ul>';
+									listHtml += '<li style="width: 14.28%;" title="'+m_name+'">'+m_name+'</li>';
+									listHtml += '<li style="width: 16.28%;" title="'+brand+'">'+brand+'</li>';
+									listHtml += '<li style="width: 16.28%;" title="'+size+'">'+size+'</li>';
+									listHtml += '<li style="width: 14.28%;" title="'+danjia+'">'+danjia+'</li>';
+									listHtml += '<li style="width: 12.28%;" title="'+danwei+'">'+danwei+'</li>';
+									listHtml += '<li style="width: 14.28%;" title="'+heji+'">'+heji+'</li>';
+									listHtml += '<li style="width: 12.28%;"><a target="_blank" href="/index.php?app=search&act=cailiaocaigou_content&id='+data[i].pid+'" style="color:blue">查看详情</a></li>';
+								listHtml += '</ul>';
+				   
+						 }
+				
+				$("#weixiuMain").html(listHtml);
+				$('#nextpage').show();
+				
+			}else if(ret.status == 202){
+				$('#nextpage').hide();
+				$("#weixiuMain").html('<div style="border: none;width:100px;height:100px;margin:50px auto;font-size:20px;color:#999;line-height:50px;" class="empty">暂无数据</div>');
+			}else{
+				return false;
+			
+			}
+			
+		
+		},"json");
+
+	}
+</script>
+</body>
+</html>

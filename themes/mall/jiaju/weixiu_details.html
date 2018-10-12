@@ -102,7 +102,7 @@
 			 	var user_id = '<?php echo $_SESSION["user_info"]["user_id"];?>';
 			 	var id = date.id;
 			 	var mobile = date.mobile;
-			 	var mobphone = mobile.replace(/(\d{3})\d{5}(\d{3})/, '$1*****$2');
+			 	// var mobphone = mobile.replace(/(\d{3})\d{5}(\d{3})/, '$1*****$2');
 			 	var office_name = date.office_name;
 
 			 	$('#xiangmmc').html('<span>项目名称：</span>'+office_name);
@@ -116,7 +116,7 @@
 			   	$('#weixiu_price').html('<span>维修报价：</span>'+date.weixiu_price);//
 			   	$('#shop_call').html(date.restaurant_phone);//
 			   	$('#shop_time').html(date.come_time);//
-			   	$('#call').html('<span>联系方式：</span>'+mobphone);//
+			   	$('#call').html('<span>联系方式：</span>'+mobile);//
 			   	$('#name').html('<span>发布人：</span>'+date.name);//
 			   	$('#time').html('<span>发布时间：</span>'+_trans_php_time_to_str(date.addtime,5));//
 			   	var UserPhoto=date.img;
