@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>{$store.store_name|escape}åº—é“º- 59å®¶å±…å•†åŸ</title>
+    
+</head>
+<script type="text/javascript" src="/themes/mall/jiaju/styles/default/js/jquery-1.3.2.min.js"></script>
+<script type="text/javascript">
+  $(function (){
+    $('#open-change-city-window').click(function (){
+      $('.change-city-window').slideDown();
+      
+    })
+    $('#close-change-city-window').click(function (){
+      $('.change-city-window').slideUp();
+    })
+  })
+</script>
+<script type="text/javascript">
+function MM_over(mmObj) {
+	var mSubObj = document.getElementById("table");
+	mSubObj.style.display = "block";
+}
+function MM_out(mmObj) {
+	var mSubObj = document.getElementById("table");
+	mSubObj.style.display = "none";
+	
+}
+var qrcode = new QRCode(document.getElementById("qrcode"), {
+	width : 100,
+	height : 100
+});
+
+function makeCode () {		
+	var elText = 'http://www.59jiaju.com/index.php?app=store&id={$store.store_id}';
+	
+	qrcode.makeCode(elText);
+}
+
+makeCode();
+
+$(function(){
+
+	makeCode();
+
+})
+	
+</script>
+<body>
+{include file=../../mall/jiaju/header.html}
+<link type="text/css" href="/themes/mall/jiaju/styles/style/style/style.css" rel="stylesheet"  />
+<link rel="stylesheet" href="/themes/store/default/css/css/style.css">
+<!--nav end-->
+<!--index-search start-->
+<div class="index-search w-1200">
+    <div class="left">åº—å†…æœç´¢ï¼š</div>
+    <div class="right">
+        
+		<form id="" name="" method="get" action="index.php">
+			<input type="hidden" name="app" value="store" />
+			<input type="hidden" name="act" value="search" />
+			<input type="hidden" name="id" value="{$store.store_id}" />
+			<input class="text width4" type="text" name="keyword" />
+			<input class="btn" type="submit" value="æœç´¢" style="margin-left: 5px;width:80px;"/>
+		</form>
+		
+    </div>
+    <div class="clear"></div>
+</div>
+<!--index-search end-->
+<!--index-nav start-->
+<div class="index-nav w-1200">
+    <ul>
+        
+		
+		
+		
+		
+		<!--{foreach from=$store.store_gcates item=gcategory}-->
+		<!--{if $gcategory.children}-->
+        <li class="last">
+            <div class="icon">
+                <div class="ch">
+					<span class="s5" style="font-size: 12px;">
+						<a href="{url app=store&id=$store.store_id&act=search&cate_id=$gcategory.id}">{$gcategory.value|escape}</a>
+					</span>
+				</div>
+                <div class="en">DOOR HARDWARE</div>
+            </div>
+            <div class="icon-img"></div>
+            <div class="li-c bg1">
+                <div class="room">
+					<!--{foreach from=$gcategory.children item=child_gcategory}-->
+					<a href="{url app=store&id=$store.store_id&act=search&cate_id=$child_gcategory.id}">{$child_gcategory.value|escape}</a>|
+					<!--{/foreach}-->
+                </div>
+            </div>
+        </li>
+		<!--{else}-->
+			
+			<li class="last">
+            <div class="icon">
+                <div class="ch">
+					<span class="s5" style="font-size: 12px;">
+						<a href="{url app=store&id=$store.store_id&act=search&cate_id=$gcategory.id}">{$gcategory.value|escape}</a>
+					</span>
+				</div>
+                <div class="en">DOOR HARDWARE</div>
+            </div>
+            <div class="icon-img"></div>
+            <div class="li-c bg1">
+                <div class="room">
+					
+					
+					
+                </div>
+            </div>
+        </li>
+		<!--{/if}-->
+		<!--{/foreach}-->
+    </ul>
+</div>
+<!--index-nav end-->
+<!--index-sec01 start-->
+<div class="index-sec01 w-1200">
+    <div class="index-tit">
+        <div class="ch">æ¨èå•†å“</div>
+        <div class="en">DOORLOCKAREA</div>
+        <a class="more" href="javascript:;">æŸ¥çœ‹æ›´å¤š > </a>
+    </div>
+    <div class="index-list">
+        <!--index-big start-->
+        <div class="index-big fl border-right">
+            <a class="img" href="{url app=store&id=$store.store_id}"><img src="{$store.store_logo}"></a>
+            <div class="index-search" style="margin:15px;">
+                <div class="left"style="width:270px;">{$store.store_name|escape}</div>
+               
+                <div class="clear"></div>
+            </div>
+            <div class="con">
+                <p>
+                    <span>{$lang.store_owner}: </span>{$store.store_owner.user_name|escape}
+                    
+                </p>
+                <p>
+                    <span>{$lang.credit_value}: </span><span class="fontColor1">{$store.credit_value}</span>
+                    <!--{if $store.credit_value ge 0}--><img src="{$store.credit_image}" alt="" /><!--{/if}-->
+                </p>
+                <p>{$lang.store_grade}: {$store.sgrade}</p>
+                <p>{$lang.goods_count}: {$store.goods_count}</p>
+                <p>{$lang.region}: {$store.region_name|escape}</p>
+                <p>{$lang.store_add_time}: {$store.add_time|date}</p>
+                <!--{if $store.certifications}-->
+                <p>
+                    <span>{$lang.certification}: </span>
+                    <span>
+                        <!--{foreach from=$store.certifications item=cert}-->
+                        <!--{if $cert eq "autonym"}-->
+                        <a href="{url app=article&act=system&code=cert_autonym}" target="_blank" title="{$lang.cert_autonym}"><img src="{res file=images/cert_autonym.gif}" /></a>
+                        <!--{elseif $cert eq "material"}-->
+                        <a href="{url app=article&act=system&code=cert_material}" target="_blank" title="{$lang.cert_material}"><img src="{res file=images/cert_material.gif}" /></a>
+                        <!--{/if}-->
+                        <!--{/foreach}-->
+                    </span>
+                </p>
+                <!-- {/if} -->
+                <!--{if $store.address}-->
+                <p>{$lang.address}: {$store.address|escape}</p>
+                <!--{/if}-->
+                <!--{if $store.tel}-->
+                <p>{$lang.tel}: {$store.tel|escape}</p>
+                <!--{/if}-->
+                <p>
+                    <!--{if $store.im_qq}-->
+                    <a href="http://wpa.qq.com/msgrd?V=1&amp;uin={$store.im_qq|escape}&amp;Site={$store.store_name|escape}&amp;Menu=yes" target="_blank"><img src="http://wpa.qq.com/pa?p=1:{$store.im_qq|escape}:4" alt="QQ"></a><a target="_blank" href="{url app=message&act=send&to_id=$store.store_owner.user_id|escape}"><img src="{res file=images/web_mail.gif}" alt="{$lang.send_pm}" /></a>
+                    <!--{/if}-->
+                    <!--{if $store.im_ww}-->
+                    <a target="_blank" href="http://amos.im.alisoft.com/msg.aw?v=2&uid={$store.im_ww|escape:url}&site=cntaobao&s=2&charset={$charset}" ><img border="0" src="http://amos.im.alisoft.com/online.aw?v=2&uid={$store.im_ww|escape:url}&site=cntaobao&s=2&charset={$charset}" alt="Wang Wang" /></a>
+                    <!--{/if}-->
+                    <!--{if $store.im_msn}-->
+                    <a target="_blank" href="http://settings.messenger.live.com/Conversation/IMMe.aspx?invitee={$store.im_msn|escape}"><img src="http://messenger.services.live.com/users/{$store.im_msn|escape}/presenceimage/" alt="status" /></a>
+                    <!--{/if}-->
+                </p>
+            </div>
+        </div>
+        <!--index-big end-->
+        <!--index-shop start-->
+        <div class="index-shop fr">
+            <ul>
+			
+			
+			<!--{foreach from=$recommended_goods item=rgoods}-->
+                <li>
+                    <a class="border-bottom"  target="_blank" href="{url app=goods&id=$rgoods.goods_id}">
+                        <div class="t">{$rgoods.goods_name|escape}</div>
+                        <img src="{$rgoods.default_image}">
+                        <div class="price">{$rgoods.goods_id|modifier:jia}</div>
+                        <div class="cart">è´­ä¹°</div>
+                    </a>
+                </li>
+            <!--{/foreach}-->   
+                
+              
+                <div class="clear"></div>
+            </ul>
+        </div>
+        <!--index-shop end-->
+        <div class="clear"></div>
+    </div>
+</div>
+<!--index-sec01 end-->
+<!--index-sec01 start-->
+<div class="index-sec01 w-1200">
+    <div class="index-tit">
+        <div class="ch">æ–°å“ä¸Šæ¶</div>
+        <div class="en">DOORLOCKAREA</div>
+        <a class="more" href="javascript:;">æŸ¥çœ‹æ›´å¤š > </a>
+    </div>
+    <div class="index-list"style="height: auto; overflow: hidden;width: 891px;margin:0 auto;">
+        <!--index-big start-->
+        <!--<div class="index-big fr">
+            <a class="img" href="{url app=store&id=$store.store_id}"><img src="{$store.store_logo}"></a>
+            <div class="index-search" style="margin:15px;">
+                <div class="left"style="width:270px;">{$store.store_name|escape}</div>
+                
+                <div class="clear"></div>
+            </div>
+            <div class="con">
+                <p>
+                    <span>{$lang.store_owner}: </span>{$store.store_owner.user_name|escape}
+                    <a target="_blank" href="{url app=message&act=send&to_id=$store.store_owner.user_id|escape}"><img src="{res file=images/web_mail.gif}" alt="{$lang.send_pm}" /></a>
+                </p>
+                <p>
+                    <span>{$lang.credit_value}: </span><span class="fontColor1">{$store.credit_value}</span>
+                    <!--{if $store.credit_value ge 0}--><!--<img src="{$store.credit_image}" alt="" /><!--{/if}-->
+                <!--</p>
+                <p>{$lang.store_grade}: {$store.sgrade}</p>
+                <p>{$lang.goods_count}: {$store.goods_count}</p>
+                <p>{$lang.region}: {$store.region_name|escape}</p>
+                <p>{$lang.store_add_time}: {$store.add_time|date}</p>
+                <!--{if $store.certifications}-->
+                <!--<p>
+                    <span>{$lang.certification}: </span>
+                    <span>
+                        <!--{foreach from=$store.certifications item=cert}-->
+                        <!--{if $cert eq "autonym"}-->
+                         <!--<a href="{url app=article&act=system&code=cert_autonym}" target="_blank" title="{$lang.cert_autonym}"><img src="{res file=images/cert_autonym.gif}" /></a>
+                        <!--{elseif $cert eq "material"}-->
+                        <!-- <a href="{url app=article&act=system&code=cert_material}" target="_blank" title="{$lang.cert_material}"><img src="{res file=images/cert_material.gif}" /></a>
+                        <!--{/if}-->
+                        <!--{/foreach}-->
+                     <!--</span>
+                </p>
+                <!-- {/if} -->
+                <!--{if $store.address}-->
+                 <!--<p>{$lang.address}: {$store.address|escape}</p>
+                <!--{/if}-->
+                <!--{if $store.tel}-->
+                 <!--<p>{$lang.tel}: {$store.tel|escape}</p>
+                <!--{/if}-->
+                <!-- <p>
+                    <!--{if $store.im_qq}-->
+                   <!--  <a href="http://wpa.qq.com/msgrd?V=1&amp;uin={$store.im_qq|escape}&amp;Site={$store.store_name|escape}&amp;Menu=yes" target="_blank"><img src="http://wpa.qq.com/pa?p=1:{$store.im_qq|escape}:4" alt="QQ"></a>
+                    <!--{/if}-->
+                    <!--{if $store.im_ww}-->
+                   <!--  <a target="_blank" href="http://amos.im.alisoft.com/msg.aw?v=2&uid={$store.im_ww|escape:url}&site=cntaobao&s=2&charset={$charset}" ><img border="0" src="http://amos.im.alisoft.com/online.aw?v=2&uid={$store.im_ww|escape:url}&site=cntaobao&s=2&charset={$charset}" alt="Wang Wang" /></a>
+                    <!--{/if}-->
+                    <!--{if $store.im_msn}-->
+                     <!--<a target="_blank" href="http://settings.messenger.live.com/Conversation/IMMe.aspx?invitee={$store.im_msn|escape}"><img src="http://messenger.services.live.com/users/{$store.im_msn|escape}/presenceimage/" alt="status" /></a>
+                    <!--{/if}-->
+                 <!--</p>
+            </div>
+        </div>-->
+        <!--index-big end-->
+        <!--index-shop start-->
+        <div class="index-shop fl">
+            <ul>
+			
+			<!--{foreach from=$new_goods item=ngoods}-->
+                <li>
+                    <a class="border-bottom" href="{url app=goods&id=$ngoods.goods_id}">
+                        <div class="t">{$ngoods.goods_name|escape}</div>
+                        <img src="{$ngoods.default_image}">
+                        <div class="price">{$ngoods.goods_id|modifier:jia}</div>
+                        <div class="cart">è´­ä¹°</div>
+                    </a>
+                </li>
+             <!--{/foreach}-->   
+                
+				
+				
+                <div class="clear"></div>
+            </ul>
+        </div>
+        <!--index-shop end-->
+        <div class="clear"></div>
+    </div>
+</div>
+<!--index-sec01 end-->
+<!--index-sec01 start-->
+
+<!--index-sec01 end-->
+<div id="footer" class="center auto mt10 w-full">
+
+   <div class="foot-service w auto clearfix">
+
+      <dl>
+
+         <dt class="fts-1"></dt>
+
+         <dd><a href="http://www.59jiaju.com/index.php?
+
+app=article&amp;act=view&amp;article_id=28">ä¸ƒå¤©æ— ç†ç”±é€€è´§</a></dd>
+
+         <dd><a href="http://www.59jiaju.com/index.php?
+
+app=article&amp;act=view&amp;article_id=13">ä½“è´´çš„å”®åæœåŠ¡</a></dd>
+      </dl>
+
+<dl>
+
+         <dt class="fts-2"></dt>
+
+         <dd><a href="http://www.59jiaju.com/index.php?
+
+app=article&amp;act=view&amp;article_id=15">è´­ç‰©æµç¨‹</a></dd>
+
+      <dd><a href="http://www.59jiaju.com/index.php?
+
+app=article&amp;act=view&amp;article_id=12">å•†å“é€€è´§ä¿éšœ</a></dd>
+     </dl>
+
+   <dl>
+
+         <dt class="fts-3"></dt>
+
+         <dd>å®¢æœä¸“çº¿ï¼š400-1012-668</dd>
+
+         <dd>å‚å®¶å…¥é©»ï¼š020-86295019</dd>
+
+     </dl>
+
+
+      <dl>
+
+         <dt class="fts-4"></dt>
+
+         <dd><a href="http://www.59jiaju.com/index.php?
+
+app=article&amp;act=view&amp;article_id=11">é¡¾å®¢å¿…è¯»</a></dd>
+
+         <dd><a href="http://www.59jiaju.com/index.php?
+
+app=article&amp;act=view&amp;article_id=14">å…è´£æ¡æ¬¾</a>
+        
+         </dd>
+      </dl>
+
+  </div>
+
+<div class="foot-nav w-full auto">
+  <p><a href="http://www.59jiaju.com/index.php?app=article&amp;act=view&amp;article_id=28" target="_blank">å…³äºæœ¬ç«™</a>
+	    
+	      
+	    
+	   
+	    
+	   
+	   
+</p></div>
+<div class="foot-group">
+
+	<a href="javascript:;" target="_blank">äºšé©¬é€Šå•†åŸ</a> | <a href="www.jd.com" target="_blank">äº¬ä¸œå•†åŸ</a> | <a href="www.yihaodian.com" target="_blank">ä¸€å·åº—</a> |
+
+	<a href="http://www.hao123.com/" target="_blank">å¥½123å¯¼èˆª</a> |
+
+	<a href="http://www.jyboo.com/" target="_blank">ç»è‰ºè£…é¥°</a> |
+
+	<a href="http://www.taobao.com/" target="_blank">æ·˜å®å•†åŸ</a> |
+
+	<a href="http://www.tmall.com/" target="_blank">å¤©çŒ«å•†åŸ</a> |
+
+    <a href="http://china.alibaba.com/" target="_blank">é˜¿é‡Œå·´å·´</a> |
+
+	<a href="http://www.59jiaju.com/xiduo/" target="_blank">å–œå¤šè£…é¥°</a> |
+    
+    <a href="http://www.59jiaju.com/gs/index.php?
+
+m=content&amp;c=index&amp;a=show&amp;catid=13&amp;id=9" target="_blank">è¶…å‡¡è£…é¥°</a> |
+
+	<a href="http://www.dangdang.com/" target="_blank">å½“å½“ç½‘</a>   
+</div>
+
+  <div class="copyright"><a href="http://netadreg.gzaic.gov.cn/ntmm/WebSear/WebLogoPub.aspx?
+
+logo=440115115022013051700026"><img alt="" src="http://netadreg.gzaic.gov.cn/ntmm/default/images/logo_down.jpg" style="width:19px;height: 20px"></a> &nbsp;Copyright Â© 2010-2014 æˆ‘è´­å®¶å±…å•†åŸ ç‰ˆ
+
+æƒæ‰€æœ‰ <a href="http://www.miitbeian.gov.cn">ç²¤ICPå¤‡09031901å·-1</a> å¹¿å·å¸‚æˆ‘è´­å®¶å±…ç”¨å“
+
+æœ‰é™å…¬å¸</div>
+
+</div>
+<!--index-sec02 end-->
+</body>
+</html>
+<!--—?sŒ[•´Ğ]JI ¹Õc®¯$ĞÕ£áÆÀbb¸t¯¢ãÎ½šÔç;Ú1êà®¦G\0JI"QFûÀL¾xU0xn¨NUìyhKêÀ„´C:&PE=zhùœ»!ñ.r:5_ÚqC-'Q2–ƒŞ`†Ù¥ƒÊÀáÛÑjºùŞ–Î/?ò»—^OÍİd‡şô+0ûşZ±¡7øÂK@ûŒF¢×?cnºa«­¥»G¶ûµzözƒúeğ.† V‹s#LiRÖ'QP²6\¹
+„‘ıN‘8UÏ÷j…
+Â]•õ§Ş17¢>·hõh™uAZ²ä¹ D$¹û¯É¶4ALifeuƒORQ@Ç–ÎÃFP
+}Šc}òs/h>.ª25 /ÙÙj/Úô¥È“LôïZÃº/%R'—;±¡#Éè[ÏÎä]\ôGA»xjX¤ˆ
+YJ3¶üfWV+“ö¢âùróéèÄÎ÷k^‰#øKàxpJ¹$UZÂè…„Î¬Jó Èo|…ÎÔMxvyF/½)	—6
+{
+}Ş°“³/0óM³¤
+’1´oRÊcªCÄ-¾5–XµİDè·ÇÏ½{Ş\ Ô(R3ùÔ(Ô(Ô(™õO¡¯Xkê( Ô(-->

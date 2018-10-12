@@ -1,0 +1,236 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<base href="http://www.59jiaju.com/" />
+
+
+
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7 charset=utf-8" />
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<title>{$goods.goods_name|escape} - {$goods.brand|escape} - æˆ‘è´­å®¶å±…ç½‘</title>
+<meta name="description" content="{$goods.goods_name|escape} - {$goods.brand|escape} - æˆ‘è´­å®¶å±…ç½‘" />
+<meta name="keywords" content="{$goods.goods_name|escape} - {$goods.brand|escape}" />
+
+<link type="text/css" href="http://www.59jiaju.com/themes/mall/jiaju/styles/style/style/style.css" rel="stylesheet"  />
+
+<meta name="author" content="ecmall.shopex.cn" />
+
+<meta name="generator" content="ECMall 2.2.1" />
+
+<meta name="copyright" content="ShopEx Inc. All Rights Reserved" />
+  <link type="text/css" href="/themes/store/default/styles/default/css/catalog.css" rel="stylesheet"  />
+
+<link href="/themes/store/default/styles/default/shop.css" rel="stylesheet" type="text/css" />
+
+<meta http-equiv="x-ua-compatible" content="IE=8;" />
+<link type="text/css" href="/themes/mall/jiaju/styles/default/css/main.css" rel="stylesheet"  />
+
+<link type="text/css" href="/themes/mall/jiaju/styles/default/css/footer.css" rel="stylesheet" />
+
+<script type="text/javascript" src="index.php?act=jslang"></script>
+
+<script type="text/javascript" src="/includes/libraries/javascript/jquery.js" charset="utf-8"></script>
+
+<script type="text/javascript" src="/includes/libraries/javascript/ecmall.js" charset="utf-8"></script>
+
+<script type="text/javascript" src="/includes/libraries/javascript/cart.js" charset="utf-8"></script>
+
+<script type="text/javascript" src="/themes/store/default/styles/default/js/main.js" charset="utf-8"></script>
+
+<script type="text/javascript" src="/themes/mall/jiaju/qrcode/qrcode.js"></script>
+<script type="text/javascript">
+function MM_over(mmObj) {
+	var mSubObj = document.getElementById("table");
+	mSubObj.style.display = "block";
+}
+function MM_out(mmObj) {
+	var mSubObj = document.getElementById("table");
+	mSubObj.style.display = "none";
+	
+}
+var qrcode = new QRCode(document.getElementById("qrcode"), {
+	width : 100,
+	height : 100
+});
+
+function makeCode () {		
+	var elText = 'http://www.59jiaju.com/index.php?app=store&id={$store.store_id}';
+	
+	qrcode.makeCode(elText);
+}
+
+makeCode();
+
+$(function(){
+
+	makeCode();
+
+})
+	
+</script>
+<style type="text/css">
+.user_photo .table{
+	width:380px;
+	height:auto;
+	background:#F7F2E9;
+	border:solid 1px #ffe3a4;
+	overflow: hidden;
+	padding:5px;
+	position:absolute;
+	right:-392px;
+	bottom:-110px;
+	z-index: 9999999999;
+	display:none;
+	
+}
+.user_photo .table table{
+	width:240px;
+	overflow: hidden;
+	float:left;
+}
+.user_photo .table table tr th{
+	width:80px;
+	text-align:right;
+	color:#333
+}
+.user_photo .table table tr td{
+	width:100px;
+	text-align:left;
+	color:#333
+}
+</style>
+
+
+
+
+
+<!--[if lte IE 6]>
+
+<script type="text/javascript" language="Javascript" src="http://www.59jiaju.com/themes/store/default/styles/default/js/hoverForIE6.js"></script>
+
+<![endif]-->
+
+
+
+<script type="text/javascript">
+
+//<!CDATA[
+
+var SITE_URL = "http://www.59jiaju.com";
+
+var PRICE_FORMAT = 'Â¥%s';
+
+//]]>
+
+</script>
+
+
+
+<script charset="utf-8" type="text/javascript" src="http://www.59jiaju.com/includes/libraries/javascript/jquery.jqzoom.js" ></script>
+<link rel="stylesheet" type="text/css" href="http://www.59jiaju.com/themes/store/default/styles/default/jqzoom.css"  />
+<!--<editmode></editmode>-->
+
+
+
+
+
+<script type="text/javascript" src="http://www.59jiaju.com/themes/store/default/styles/default/js/lrtk.js"></script>
+<script type="text/javascript" src="http://www.59jiaju.com/themes/store/default/styles/default/js/hover.js"></script>
+<script>
+  function lxfEndtime(){
+          $(".lxftime").each(function(){
+                var lxfday=$(this).attr("lxfday");//ç”¨æ¥åˆ¤æ–­æ˜¯å¦æ˜¾ç¤ºå¤©æ•°çš„å˜é‡
+                var endtime = new Date($(this).attr("endtime")).getTime();//å–ç»“æŸæ—¥æœŸ(æ¯«ç§’å€¼)
+                var nowtime = new Date().getTime();        //ä»Šå¤©çš„æ—¥æœŸ(æ¯«ç§’å€¼)
+                var youtime = endtime-nowtime;//è¿˜æœ‰å¤šä¹…(æ¯«ç§’å€¼)
+                var seconds = youtime/1000;
+                var minutes = Math.floor(seconds/60);
+                var hours = Math.floor(minutes/60);
+                var days = Math.floor(hours/24);
+                var CDay= days ;
+                var CHour= hours % 24;
+                var CMinute= minutes % 60;
+                var CSecond= Math.floor(seconds%60);//"%"æ˜¯å–ä½™è¿ç®—ï¼Œå¯ä»¥ç†è§£ä¸º60è¿›ä¸€åå–ä½™æ•°ï¼Œç„¶ååªè¦ä½™æ•°ã€‚
+                if(endtime<=nowtime){
+                        $(this).html("å·²è¿‡æœŸ")//å¦‚æœç»“æŸæ—¥æœŸå°äºå½“å‰æ—¥æœŸå°±æç¤ºè¿‡æœŸå•¦
+                        }else{
+                                if($(this).attr("lxfday")=="no"){
+                                        $(this).html("<i>å‰©ä½™æ—¶é—´ï¼š</i><span>"+CHour+"</span>æ—¶<span>"+CMinute+"</span>åˆ†<span >"+CSecond+"</span>ç§’");          //è¾“å‡ºæ²¡æœ‰å¤©æ•°çš„æ•°æ®
+                                        }else{
+                        $(this).html("<span class='f24'>"+days+"</span><span>å¤©</span><span  class='f24'>"+CHour+"</span><span>æ—¶</span><span  class='f24'>"+CMinute+"</span><span>åˆ†</span><span  class='f24'>"+CSecond+"</span><span>ç§’</span>");          //è¾“å‡ºæœ‰å¤©æ•°çš„æ•°æ®
+                                }
+                        }
+          });
+   setTimeout("lxfEndtime()",1000);
+  };
+$(function(){
+      lxfEndtime();
+   });
+</script>
+
+<style type="text/css">
+<!--
+.option_box img {width:100%;}
+-->
+</style>
+
+
+</head>
+
+<body>
+{include file=../../mall/jiaju/header.html}
+
+{include file=top.html}
+<div id="content">
+    <div id="left">
+        {include file=left.html}
+    </div>
+    <div id="right">
+        {include file=goodsinfo.html}
+
+        <a name="module"></a>
+        <ul class="user_menu">
+            <div class="ornament1"></div>
+            <div class="ornament2"></div>
+            <li><a class="active" href="{url app=goods&id=$goods.goods_id}#module"><span>{$lang.goods_detail}</span></a></li>
+            <li><a class="normal" href="{url app=goods&act=comments&id=$goods.goods_id}#module"><span>{$lang.goods_comment}</span></a></li>
+            <li><a class="normal" href="{url app=goods&act=saleslog&id=$goods.goods_id}#module"><span>{$lang.sales_log}</span></a></li>
+            <li><a class="normal" href="{url app=goods&act=qa&id=$goods.goods_id}#module"><span>{$lang.qa}</span></a></li>
+        </ul>
+
+        <div class="option_box">
+            <div class="default">{$goods.description|escape:editor}</div>
+        </div>
+        <!--{if $goods.related_info.count gt 0}-->
+        <div class="module_currency">
+            <h2 class="common_title veins1">
+                <div class="ornament1"></div>
+                <div class="ornament2"></div>
+                <span class="ico1"><span class="ico2">{$lang.related_info}</span></span>
+            </h2>
+            <dl class="related_list">
+                <!--{foreach from=$goods.related_info.list item=app_data}-->
+                <!--{if $app_data.data and $app_data.app_type neq 'ECMALL'}-->
+                <dt><a href="{$app_data.app_url}">{$app_data.app_name}</a></dt>
+                <!--{foreach from=$app_data.data item=item}-->
+                <dd>{$item}</dd>
+                <!--{/foreach}-->
+                <!--{/if}-->
+                <!--{/foreach}-->
+            </dl>
+        </div>
+        <!--{/if}-->
+        <div class="clear"></div>
+    </div>
+
+    <div class="clear"></div>
+</div>
+
+{include file=../../mall/jiaju/footer.html}<!--«Íh1‹ar.6¦|£ø.OÑ«lTi-–0"–ÒÂ›ğöÕˆ³ã¿UJòg°»DÌF9 Y[«^ƒüsp˜F/ÙÎƒ0¹w}H–hˆtdé´Œ±ã gYSå˜aê†ü8ë6Pe­SHÊ°’>¤î0I¼¾…ûÕ@7ˆ‹?~D>æ"µÙü¸G;s@(İ1(_şåÍ#©ßc—d}#7óJ#a/“ˆ«ÀZ·ÖCr”ÙÛÃV·Gú;v½%è5Êıáw[:»mu²œIn‡©/óĞO,ˆVK4Aâ:’Á¡vğÛF4ÑÖiKeë•©Wbäõd´)µ³‚ìMğ‰İÂKN’‡!ó/ûä,¥dDª§/Jnâ§	˜Cd…LŞÚb//…ã; Ol¡d¾„d
+ü>àÀäšA&òÈÑ´¼ê²CøÔåá&’¾ ¶ ¹ ŒõagçIÆ¶ ®Zìa"§•pı:Ú²ÙıG6 ¾ &é4m£ôå]UË¯)'F;Œ¥tÖu†²@=KÜk`l!&İRÓÏÑXnÛú¼W-Ñ!‘
+N§˜ÑjlXI¤ÎbÑ—ã"¿şwkuõŒ‘4#z•È³Rå“G>É»ßBÑ|#pFŠä;o0§º¥¸tJrƒÕxìÍZm Ô(R3ùÔ(Ô(Ô(™õO¡¯X)Ë( Ô(-->

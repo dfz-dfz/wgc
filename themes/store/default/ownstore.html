@@ -1,0 +1,269 @@
+{include file=header.html}
+<style type="text/css">
+.main{margin:0px;padding:0px;}
+.head2{
+width:100%;height:25px;background-color:#C4261D;
+}
+.main_body{
+margin:auto;padding:0px;margin-top: 10px;margin-bottom: 10px; width:1100px;overflow:hidden;
+}
+.main_body .main_left{width:19%;float:left;margin-right:10px;}
+.main_body .main_right{width:75%;float:left;border-left:1px solid #808080;margin-left:10px;padding-left:10px;padding-top: 0px;}
+
+
+.box {height:140px; float:left; width:90%; overflow: hidden; position:relative; } 
+.box li { display:block; float:left; margin-left:5px; margin-right:5px; width:117px; height:140px;background:#FFFFFF;font-size:50px;color:#ccc;line-height:66px;text-decoration:none;text-align:center; cursor:pointer;} 
+.box li:hover { color:#999; } 
+.box li.active { background-position:-174px 0; color:#555;cursor:default;} 
+.box li img{width:100%;height:100%;}
+span.prev, span.next {background:url(http://59jiaju.com/themes/store/default/images/zuo.jpg) no-repeat 0 0;background-color: #FDFCEA; display:block;width:36px;height:86px; float:left; margin:15px 0 0 0; cursor:pointer;} 
+span.next { background-image:url(http://59jiaju.com/themes/store/default/images/you.jpg)} 
+.scroll_list{ width:10000em; position:absolute; } 
+
+.box2 {height:160px; float:left; width:90%; overflow: hidden; position:relative; } 
+.box2 li { display:block; float:left; margin-left:5px; margin-right:5px; width:238px; height:160px;background:#FFFFFF;font-size:50px;color:#ccc;line-height:66px;text-decoration:none;text-align:center; cursor:pointer;} 
+.box2 li:hover { color:#999; } 
+.box2 li img{width:100%;height:100%;}
+.box2 li.active { background-position:-174px 0; color:#555;cursor:default;} 
+span.prev2, span.next2 {background:url(http://59jiaju.com/themes/store/default/images/zuo.jpg) no-repeat 0 0;background-color: #FDFCEA; display:block;width:36px;height:86px; float:left; margin:15px 0 0 0; cursor:pointer;} 
+span.next2 { background-image:url(http://59jiaju.com/themes/store/default/images/you.jpg)} 
+.scroll_list2{ width:10000em; position:absolute; } 
+</style>
+<script type="text/javascript"> 
+$(function(){ 
+var page= 1; 
+var i = 6;//每版四个图片 
+//向右滚动 
+$(".next").click(function(){ //点击事件 
+var v_wrap = $(this).parents(".scroll"); // 根据当前点击的元素获取到父元素 
+var v_show = v_wrap.find(".scroll_list"); //找到视频展示的区域 
+var v_cont = v_wrap.find(".box"); //找到视频展示区域的外围区域 
+var v_width = v_cont.width(); 
+var len = v_show.find("li").length; //我的视频图片个数 
+var page_count = Math.ceil(len/i); //只要不是整数，就往大的方向取最小的整数 
+if(!v_show.is(":animated")){ 
+if(page == page_count){ 
+v_show.animate({left:'0px'},"slow"); 
+page =1; 
+}else{ 
+v_show.animate({left:'-='+v_width},"slow"); 
+page++; 
+} 
+} 
+}); 
+//向左滚动 
+$(".prev").click(function(){ //点击事件 
+var v_wrap = $(this).parents(".scroll"); // 根据当前点击的元素获取到父元素 
+var v_show = v_wrap.find(".scroll_list"); //找到视频展示的区域 
+var v_cont = v_wrap.find(".box"); //找到视频展示区域的外围区域 
+var v_width = v_cont.width(); 
+var len = v_show.find("li").length; //我的视频图片个数 
+var page_count = Math.ceil(len/i); //只要不是整数，就往大的方向取最小的整数 
+if(!v_show.is(":animated")){ 
+if(page == 1){ 
+v_show.animate({left:'-='+ v_width*(page_count-1)},"slow"); 
+page =page_count; 
+}else{ 
+v_show.animate({left:'+='+ v_width},"slow"); 
+page--; 
+} 
+} 
+}); 
+}); 
+</script>
+<script type="text/javascript"> 
+$(function(){ 
+var page2 = 1; 
+var i2 = 3;//每版四个图片 
+//向右滚动 
+$(".next2").click(function(){ //点击事件 
+var v_wrap = $(this).parents(".scroll2"); // 根据当前点击的元素获取到父元素 
+var v_show = v_wrap.find(".scroll_list2"); //找到视频展示的区域 
+var v_cont = v_wrap.find(".box2"); //找到视频展示区域的外围区域 
+var v_width = v_cont.width(); 
+var len = v_show.find("li").length; //我的视频图片个数 
+var page_count = Math.ceil(len/i2); //只要不是整数，就往大的方向取最小的整数 
+if(!v_show.is(":animated")){ 
+if(page2 == page_count){ 
+v_show.animate({left:'0px'},"slow"); 
+page2 =1; 
+}else{ 
+v_show.animate({left:'-='+v_width},"slow"); 
+page2++; 
+} 
+} 
+}); 
+//向左滚动 
+$(".prev2").click(function(){ //点击事件 
+var v_wrap = $(this).parents(".scroll2"); // 根据当前点击的元素获取到父元素 
+var v_show = v_wrap.find(".scroll_list2"); //找到视频展示的区域 
+var v_cont = v_wrap.find(".box2"); //找到视频展示区域的外围区域 
+var v_width = v_cont.width(); 
+var len = v_show.find("li").length; //我的视频图片个数 
+var page_count = Math.ceil(len/i2); //只要不是整数，就往大的方向取最小的整数 
+if(!v_show.is(":animated")){ 
+if(page2 == 1){ 
+v_show.animate({left:'-='+ v_width*(page_count-1)},"slow"); 
+page2 =page_count; 
+}else{ 
+v_show.animate({left:'+='+ v_width},"slow"); 
+page2--; 
+} 
+} 
+}); 
+}); 
+</script> 
+<div class="main">
+	<div style="width:100%;height:100px;">
+		<div style="margin:auto;padding:auto;width:1100px;overflow:hidden;">
+			<div style="float:left;width:100px;height:100px;">
+				<div style="border-right:1px solid #808080;"><img width="100%" height="100px" src="{$list.gslogourl}"></div>
+			</div>
+			<div style="float:left;text-align:left;">
+					<div style="margin-top:15px;margin-left:15px;"><span style="font-size:30px; color:#000000;">{$list.gname}</span></div>
+					<div style="margin-top:10px;margin-left:15px;"><span style="background-color:#C4261D;color:#FFFFFF;">办公空间&nbsp;|&nbsp;餐饮空间 </span></div>
+			</div>
+		</div>
+	</div>
+	<div class="head2">
+		<div style="margin:auto;padding:auto;width:1100px;"><span style='float:left;color:#FFFFFF;font-size:17px;font-family:黑体;margin-top:2px;'>首页</span></div>
+	</div>
+	<!-- 主体 -->
+	<div class="main_body">
+		<!-- 左边 -->
+		<div class="main_left">
+			<div style="border:1px solid #808080;">
+				<div style="width:100%;height:30px;border-bottom:1px solid #808080;"><img width="100%" height="100%" src="http://59jiaju.com/themes/store/default/images/Image 006.png"></div>
+				<div style="width:100%;height:90px;border-bottom:1px dotted #808080;"><img width="100%" height="100%" src="{$list.gslogourl}"></div>
+				<div style="width:100%;height:120px;border-bottom:1px dotted #808080;">
+					<div>
+						<table style="margin-left:auto;margin-right:auto;line-height:25px;text-align:right;width:60%;margin-bottom: 2px;">
+							<tr><td>QQ：</td><td><img  src="http://59jiaju.com/themes/store/default/images/Image 018.png"></td></tr>
+							<tr><td>店铺：</td><td><img src="http://59jiaju.com/themes/store/default/images/Image 019.png"></td></tr>
+						</table>
+						<span style="border:1px solid #808080;margin-right:3px;padding:2px;">进入店铺</span><span style="border:1px solid #808080;margin-left:5px;margin-left:3px;padding:2px;">收藏店铺</span><br/>
+						<div style="border:1px solid #808080;margin-left:auto;margin-right:auto;margin-top:10px;width:70%;height:25px;"><img src="http://59jiaju.com/themes/store/default/images/Image 020.png"><span>点击查看企业资源</span></div>
+					</div>
+				</div>
+				<div style="width:100%;height:90px;">
+					<table style="margin-left:auto;margin-right:auto;line-height:25px;width:90%">
+						<tr><td>商品评价</td><td>9.54&nbsp;&nbsp;<img src="http://59jiaju.com/themes/store/default/images/Image 022.png"></td></tr>
+						<tr><td>服务态度</td><td>9.55&nbsp;&nbsp;<img src="http://59jiaju.com/themes/store/default/images/Image 022.png"></td></tr>
+						<tr><td>物流速度</td><td>9.56&nbsp;&nbsp;<img src="http://59jiaju.com/themes/store/default/images/Image 022.png"></td></tr>
+					</table>
+				</div>
+			</div>
+			<div style="border:1px solid #808080;margin-top:10px;">
+				<div style="width:100%;height:30px;border-bottom:1px solid #808080;"><img width="100%" height="100%" src="http://59jiaju.com/themes/store/default/images/Image 007.png"></div>
+				<div style="width:100%;height:290px;">
+					<table style="margin-left:auto;margin-right:auto;line-height:25px;width:90%;text-align:left;">
+						<tr><td>地址：{$list.s_province}{$list.s_city}{$list.s_county}{$list.xiangxi}</td></tr>
+						<tr><td>电话：{$list.phone}</td></tr>
+						<tr><td>邮箱：{$list.email}</td></tr>
+						<tr><td>网址：{$list.weburl}</td></tr>
+						<tr><td>微信公众号：</td></tr>
+					</table>
+					<div style="width:100%;">
+						<img src="http://59jiaju.com/themes/store/default/images/erweima.png" style="width:105px;height:105px;" alt="二维码"><br/>二维码
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 左边结束 -->
+		<!-- 右边 -->
+		<div class="main_right" >
+			<div style="width:100%;height:306px;"><img width="100%" height="100%" src="{$list.hburl}"></div>
+			<div style="margin-top:10px;width:100%;text-align:center;">
+				<div style="width:100%;height:35px;"><img width="100%" height="100%" src="http://59jiaju.com/themes/store/default/images/Image 002.png"></div>
+				<div style="width:100%;height:80px;text-align:left;"><span style="color:#000000;text-align:left;">&nbsp;　{$list.jianjie}</span></div>
+			</div>
+			<div style="margin-top:10px;width:100%;text-align:center;">
+				<div style="width:100%;height:35px;"><img width="100%" height="100%" src="http://59jiaju.com/themes/store/default/images/Image 003.png"></div>
+				<div style="width:100%;height:80px;margin:0px;text-align:left;" ><span style="color:#000000;text-align:left;">&nbsp;　{$list.fanwei}</span></div>
+			</div>
+			<div style="margin-top:10px;width:100%;">
+				<div style="width:100%;height:35px;"><img width="100%" height="100%" src="http://59jiaju.com/themes/store/default/images/Image 004.png"></div>
+				<div class="scroll"> 
+					<!-- "prev page" link --> 
+					<span class="prev" style="width:37px;height:140px;margin:0px;"></span> 
+					<div class="box"> 
+						<div class="scroll_list"> 
+							<ul> 
+								{foreach  item=url from=$list.teamurl2}
+									 <li><img src="{$url}"/></li> 
+								{/foreach}
+
+								<!--<li><img src="http://59jiaju.com/themes/store/default/images/tuandui.png"/></li> 
+								<li><img src="http://59jiaju.com/themes/store/default/images/tuandui.png"/></li> 
+								<li><img src="http://59jiaju.com/themes/store/default/images/tuandui.png"/></li> 
+								<li><img src="http://59jiaju.com/themes/store/default/images/tuandui.png"/></li> 
+								<li><img src="http://59jiaju.com/themes/store/default/images/tuandui.png"/></li> 
+								<li><img src="http://59jiaju.com/themes/store/default/images/tuandui.png"/></li> 
+								<li><img src="http://59jiaju.com/themes/store/default/images/tuandui.png"/></li> 
+								<li><img src="http://59jiaju.com/themes/store/default/images/tuandui.png"/></li> 
+								<li><img src="http://59jiaju.com/themes/store/default/images/tuandui.png"/></li> 
+								<li><img src="http://59jiaju.com/themes/store/default/images/tuandui.png"/></li> 
+								<li><img src="http://59jiaju.com/themes/store/default/images/tuandui.png"/></li> 
+								<li><img src="http://59jiaju.com/themes/store/default/images/tuandui.png"/></li> 
+								<li><img src="http://59jiaju.com/themes/store/default/images/tuandui.png"/></li> 
+								<li><img src="http://59jiaju.com/themes/store/default/images/tuandui.png"/></li>
+								<li><img src="http://59jiaju.com/themes/store/default/images/tuandui.png"/></li> 
+								<li><img src="http://59jiaju.com/themes/store/default/images/tuandui.png"/></li> 
+								<li><img src="http://59jiaju.com/themes/store/default/images/tuandui.png"/></li>-->
+							</ul> 
+						</div> 
+					</div> 
+					<!-- "next page" link --> 
+					<span class="next" style="width:37px;height:140px;margin:0px;"></span> 
+				</div> 
+			</div>
+			<div style="margin-top:10px;width:100%;overflow:hidden;">
+				<div style="width:100%;height:35px;"><img width="100%" height="100%" src="http://59jiaju.com/themes/store/default/images/Image 005.png"></div>
+				<!--<div style="width:100%;height:150px;margin-top:5px;">
+					暂无经典案例
+					<div style="width:16px;height:149px;background-color:#646464;float:left;"></div>
+					<div style="width:22%;height:149px;float:left;margin-left:10px;border:1px solid #808080;"></div>
+					<div style="width:22%;height:149px;float:left;margin-left:10px;border:1px solid #808080;"></div>
+					<div style="width:22%;height:149px;float:left;margin-left:10px;border:1px solid #808080;"></div>
+					<div style="width:22%;height:149px;float:left;margin-left:10px;border:1px solid #808080;"></div>
+					<div style="width:16px;height:149px;background-color:#646464;float:left;margin-left:10px;"></div>
+				</div>-->
+				<div class="scroll2"> 
+					<!-- "prev page" link --> 
+					<span class="prev2" style="width:37px;height:140px;margin:0px;"></span> 
+					<div class="box2"> 
+						<div class="scroll_list2"> 
+							<ul> 
+								{foreach  item=url from=$list.jdurl2}
+									 <li><img src="{$url}"/></li> 
+								{/foreach}
+								<!--<li><img src="http://59jiaju.com/themes/store/default/images/tuandui.png"/></li> 
+								<li><img src="http://59jiaju.com/themes/store/default/images/tuandui.png"/></li> 
+								<li><img src="http://59jiaju.com/themes/store/default/images/tuandui.png"/></li> 
+								<li><img src="http://59jiaju.com/themes/store/default/images/tuandui.png"/></li> 
+								<li><img src="http://59jiaju.com/themes/store/default/images/tuandui.png"/></li> 
+								<li><img src="http://59jiaju.com/themes/store/default/images/tuandui.png"/></li> 
+								<li><img src="http://59jiaju.com/themes/store/default/images/tuandui.png"/></li> 
+								<li><img src="http://59jiaju.com/themes/store/default/images/tuandui.png"/></li> 
+								<li><img src="http://59jiaju.com/themes/store/default/images/tuandui.png"/></li> 
+								<li><img src="http://59jiaju.com/themes/store/default/images/tuandui.png"/></li> 
+								<li><img src="http://59jiaju.com/themes/store/default/images/tuandui.png"/></li> 
+								<li><img src="http://59jiaju.com/themes/store/default/images/tuandui.png"/></li> 
+								<li><img src="http://59jiaju.com/themes/store/default/images/tuandui.png"/></li> 
+								<li><img src="http://59jiaju.com/themes/store/default/images/tuandui.png"/></li>
+								<li><img src="http://59jiaju.com/themes/store/default/images/tuandui.png"/></li> 
+								<li><img src="http://59jiaju.com/themes/store/default/images/tuandui.png"/></li> 
+								<li><img src="http://59jiaju.com/themes/store/default/images/tuandui.png"/></li>-->
+							</ul> 
+						</div> 
+					</div> 
+					<!-- "next page" link --> 
+					<span class="next2" style="width:37px;height:140px;margin:0px;"></span> 
+				</div> 
+			</div>
+		</div>
+		<!-- 右边结束 -->
+	</div>
+{include file=footer2.html}
+<!-- 底部include file=footer2.html--><!--���O��i����:��P"��D<>�!Ul5�g��[I��N��q���)��?H��D�����8�<%�7\��/��%����|8�7^7���A�.a�>�D}�pqGT)���������2o���h��7Q#d��i��&�£��%Iѣ^��(����\�`�5|�W}� rܾ�7T{�"̫@Zj5���V�Y��k6#��m�����
+mj��� �&v�fUf$��A�ZWi�P����<0���[��.���=�����~�S�>I��"�X�]���;�o�-�eY �C��s7�HW������GP-���' f�������	lH�f�To�1qAU��Z�xs������.�(4�� �(R3��(�(�(��O���X�( �(-->
