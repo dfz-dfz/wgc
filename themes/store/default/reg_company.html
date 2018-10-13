@@ -63,47 +63,57 @@
 <body>
 {include file=../../mall/jiaju/header.html}
   <div style="width: 1100px;margin: 0 auto;">
+    <form action="http://wgcapp.wgc2013.com/jingyi.php/Home/index/UserReg_pc" method="post" onsubmit="return jugdment()">
     <ul id="typeList">
       <li>
         <div>公司名称：</div>
-        <input type="text" / placeholder="请输入与单位证件资料一致的单位全称，2-30个中文">
+        <input id="company_name" type="text" / name="fenxiaoshang_name" placeholder="请输入与单位证件资料一致的单位全称">
+        <input id="company_name_hidden" type="hidden" name="kehu" value="" />
       </li>
       <li>
         <div>所在城市：</div>
-        <input type="text" id="cityChoice" placeholder="请选择城市">
+        <input type="text" id="cityChoice" name="city" placeholder="请选择城市">
       </li>
       <li>
         <div>联系人：</div>
-        <input type="text" / placeholder="请输入企业联系人">
+        <input type="text" id="linkman" name="linkman" placeholder="请输入企业联系人">
       </li>
       <li>
         <div>手机号码：</div>
-        <input type="text" / placeholder="请输入手机号码">
+        <input type="text" id="user_name" name="user_name" placeholder="请输入手机号码">
       </li>
       <li>
         <div>验证码：</div>
-        <input type="text" / placeholder="请输入验证码" style="width: 170px;">
-        <input type="button" value="获取短信验证码" style="width: 120px;border: 0;padding: 6px;margin-left: 18px;cursor: pointer;color: #fff;background-color: #ea4740;letter-spacing: 1px;" />
+        <input type="text" id="codes" placeholder="请输入验证码" style="width: 170px;">
+        <!-- <input type="button" id="codes" value="" style="width: 120px;border: 0;padding: 6px;margin-left: 18px;cursor: pointer;color: #fff;background-color: #ea4740;letter-spacing: 1px;" /> -->
+        <img src="http://wgcapp.wgc2013.com/jingyi.php/Home/index/codes" alt="" width="100" onclick="this.src='http://wgcapp.wgc2013.com/jingyi.php/Home/index/codes'"/ style="margin-left: 38px;">
       </li>
       <li>
         <div>电子邮箱：</div>
-        <input type="text" / placeholder="请输入电子邮箱，邮箱为找回密码使用">
+        <input type="text" id="email" name="email" placeholder="请输入电子邮箱">
       </li>
       <li>
         <div>用户名称：</div>
-        <input type="text" / placeholder="请输入用户名称，中文或英文组成">
+        <input type="text" id="username" name="username" placeholder="请输入用户名称，中文或英文组成">
       </li>
       <li>
         <div>密码：</div>
-        <input type="text" autocomplete="new-password" / placeholder="设置密码，8-20个字母和数字组成">
+        <input type="text" id="password" name="password" maxlength="16" autocomplete="new-password" / placeholder="设置密码,最多16位">
       </li>
       <li>
         <div>企业法人：</div>
-        <input type="text" / placeholder="设置密码，8-20个字母和数字组成">
+        <input type="text" id="legal_person" / name="legal_person" placeholder="设置密码">
       </li>
     </ul>
+    <input type="hidden" value="" id="ImgPath" name="businesslicense" />
+    <input type="hidden" value="4" name="shenfentype" />
+    <input type="hidden" value="8" name="types" />
+    <input type="hidden" value="" id="s_city" name="s_city" />
+    <input type="hidden" value="" id="s_province" name="s_province" />
+    <input type="hidden" value="38" name="postion" />
+    <input type="hidden" value="2" name="fenxiaoshang" />
     <div style="width: 1100px;margin: 0 auto;margin-bottom: 30px;">
-        <div style="width:410px;overflow: hidden;margin:0px auto;">
+        <div style="width:430px;overflow: hidden;margin:0px auto;">
           <div class="cl">
             <label class="form-label col-xs-4 col-sm-2" style="width: 120px;padding: 0;text-align: right;font-size: 16px;">企业印业执照：</label>
             <div class="formControls col-xs-8 col-sm-9" style="width: 70%;padding: 0;">
@@ -119,7 +129,7 @@
                   <div class="info"></div>
                   <div class="btns" style="top: -45px;right: 0;">
                     <div id="filePicker2"></div>
-                    <div class="uploadBtn">开始上传</div>
+                    <div class="uploadBtn" onclick="uploadBtn()">开始上传</div>
                   </div>
                 </div>
               </div>
@@ -127,23 +137,24 @@
           </div>
         </div>
         <div style="width: 450px;text-align: left;margin-left: 42%;">
-          <div><span style="color: red">*</span>营业执照名称与公司名称保持一致</div>
-          <div><span style="color: red">*</span>营业执照需要加盖公司红章</div>
-          <div><span style="color: red">*</span>营业执照需要清晰可见</div>
-          <div><input type="checkbox" />提交后是否愿意公开自己的资料信息在微工程网站上招聘、查询、发布、采集</div>
+          <div style="margin: 2px 0;"><span style="color: red">*</span>营业执照名称与公司名称保持一致</div>
+          <div style="margin-bottom: 2px;"><span style="color: red">*</span>营业执照需要加盖公司红章</div>
+          <div style="margin-bottom: 2px;"><span style="color: red">*</span>营业执照需要清晰可见</div>
+          <div><input type="checkbox" id="open_item" />提交后是否愿意公开自己的资料信息在微工程网站上招聘、查询、发布、采集</div>
         </div>
         
     </div>
     <div>
       <div>
-        <input type="checkbox" />
+        <input type="checkbox" style="margin-left: 10px;" id="read_item" />
         我已阅读并同意微工程服务条框
       </div>
-      <div style="position: relative;margin-top: 20px;">
+      <div style="position: relative;margin: 20px 0;">
         <a href="/index.php?app=store&act=reg" style="color: red;font-size: 20px;font-weight: 600;cursor: pointer;margin-right: 50px" title="返回重新选择注册类型">《返回</a>
-        <div style="color: #fff;background-color: #ea4740;letter-spacing: 2px;font-size: 20px;width: 150px;margin: 0 auto;height: 32px;line-height: 32px;display: inline-block;">立即注册</div>
+        <input type="submit" style="color: #fff;background-color: #ea4740;letter-spacing: 2px;font-size: 18px;width: 150px;margin: 0 auto;height: 32px;line-height: 32px;display: inline-block;cursor: pointer;text-align: center;border:none;" value="立即注册">
       </div>
-      <div style="text-align: right;width: 300px;margin: 0 auto;">已有账号，去<a href="/index.php?app=member&act=login&ret_url=" target="_blank"><span style="color: red;cursor: pointer;">登录</span></a></div>
+      </form>
+      <div style="text-align: right;width: 262px;margin: 0 auto;letter-spacing: 1px;">已有微工程账号，去<a href="/index.php?app=member&act=login&ret_url=" target="_blank"><span style="color: red;cursor: pointer;">登录</span></a></div>
     </div>
 
   </div>
@@ -173,11 +184,61 @@
 <script type="text/javascript" src="/Public/lib/jquery.validation/1.14.0/validate-methods.js"></script> 
 <script type="text/javascript" src="/Public/lib/jquery.validation/1.14.0/messages_zh.js"></script>
 <script>
+  $(function(){
+    
+  });
+
   function register(type){
     $('#register_type').hide();
     $('#register_message').show();
   }
 
+  // 表单提价判断
+  function jugdment(){
+    if($('#company_name').val() == ''){
+      alert('请输入公司名称');
+      return false;
+    }else if($('#cityChoice').val() == ''){
+      alert('请选择城市');
+      return false;
+    }else if($('#linkman').val() == ''){
+      alert('请输入联系人');
+      return false;
+    }else if($('#user_name').val() == ''){
+      alert('请输入手机号码');
+      return false;
+    }else if($('#codes').val() == ''){
+      alert('请输入验证码');
+      return false;
+    }else if($('#email').val() == ''){
+      alert('请输入邮箱');
+      return false;
+    }else if($('#username').val() == ''){
+      alert('请输入用户名称')
+      return false;
+    }else if($('#password').val() == ''){
+      alert('请输入密码');
+      return false;
+    }else if($('#legal_person').val() == ''){
+      alert('请输入法人');
+      return false;
+    }else if($('#ImgPath').val() == ''){
+      alert('请上传相关证件');
+      return false;
+    }else if($('#open_item').is(':checked') != true){
+      alert('请同意公开相关信息之后在进行注册')
+      return false;
+    }else if($('#read_item').is(':checked') != true){
+      alert('请阅读微工程之后在进行注册');
+      return false;
+    }else if(!$('#user_name').val().match(/^1\d{10}$/)){
+      alert('请输入争取的手机号码');
+      return false
+    }
+
+  }
+
+  // 城市选择
   var cityPicker = new HzwCityPicker({
         data: data,
         target: 'cityChoice',
@@ -196,6 +257,11 @@
             var city = $('#city').val().replace(/[^\u4E00-\u9FA5]/g,'');
             var citys = province+city;
             $('#cityChoice').val(citys);
+            $('#province').val(shengfen);
+            $('#city').val(city);
+            $('#s_province').val(shengfen)
+            $('#s_city').val(city);
+            $('#company_name_hidden').val($('#company_name').val());
         }
     });
 

@@ -8,11 +8,32 @@
   <meta name="description" content="微工程，微工程APP，装修、材料、家具、饰品一站式服务，让装修更简单，价格更透明！！" />
   <meta name="keywords" content="微工程，微工程，家居商城，微工程家居商城，微工程家居装修商城，办公室装修，写字楼装修，材料，装修材料，家居，办公家具，家居，家具，装修，装饰" />
 </head>
+<style>
+  .list_box {
+    margin-top: 10px;
+  }
+
+  .list_box .type_list{
+    width: 280px;
+    margin:0 auto;
+    margin-bottom: 8px;
+  }
+
+  .list_box .type_list>div{
+    display: inline-block;
+    width: 60px;
+    text-align: right;
+  }
+
+  .list_box .type_list>input{
+    width: 200px;
+  }
+</style>
 <body>
 {include file=../../mall/jiaju/header.html}
 
   <div style="width: 100%;height: 550px;background:url('../../themes/mall/jiaju/images/register_bg.jpg') no-repeat;background-size: 100% 100%;position: relative;">
-      <div style="position: absolute;width: 350px;height: 300px;background-color: #fff;top: 8%;left: 50%;border-radius: 10px;padding: 20px;">
+      <div style="position: absolute;width: 350px;height: 350px;background-color: #fff;top: 8%;left: 50%;border-radius: 10px;padding: 20px;">
         <!-- 注册类别 -->
         <div id="register_type">
           <div style="height: 120px;line-height: 120px;text-align: center;color: #2c99d9;font-size: 28px;">会员注册中心</div>
@@ -20,12 +41,12 @@
           <div>
             <ul style="margin:0;padding: 0;list-style: none;">
               <li style="float: left;width:50%;text-align: center;">
-                <img src="../../themes/mall/jiaju/images/reg_company.jpg" alt="" style="width: 60px;height:60px;border:2px solid #c1c1c1;padding:10px;cursor: pointer;" onclick="register(1)">
+                <img src="../../themes/mall/jiaju/images/reg_company.jpg" alt="" style="width: 65px;height:65px;border:2px solid #c1c1c1;padding:5px;cursor: pointer;" onclick="register(1)">
                 <div style="padding-top: 12px;">个人用户注册</div>
               </li>
               <li style="float: left;width:50%;text-align: center;">
                 <a href="/index.php?app=store&act=reg_company">
-                  <img src="../../themes/mall/jiaju/images/reg_person.jpg" alt="" style="width: 60px;height:60px;border:2px solid #c1c1c1;padding:10px;cursor: pointer;">
+                  <img src="../../themes/mall/jiaju/images/reg_person.jpg" alt="" style="width: 65px;height:65px;border:2px solid #c1c1c1;padding:5px;cursor: pointer;">
                   <div style="padding-top: 12px;">企业用户注册</div>
                 </a>
               </li>
@@ -35,47 +56,49 @@
   
         <!-- 注册信息 -->
         <div style="display: none;" id="register_message">
-          <div style="text-align: left;font-size: 30px;height: 12px;color: #2198dc;cursor: pointer;" title="返回选择注册类型" onclick="backtype()">←</div>
-          <div style="height: 30px;line-height: 10px;text-align: center;font-size: 20px;">注册中心</div>
-          <div style="border-bottom: 1px solid #999;"></div>
-          <div>
-            <div style="width: 280px;margin:8px auto;">
-              <span>姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名</span>
-              <span>：</span>
-              <input type="text" style="height: 20px;">
+          <form action="http://wgcapp.wgc2013.com/jingyi.php/Home/index/UserReg_pc" method="post" onsubmit="return jugdment()">
+            <div style="text-align: left;font-size: 30px;height: 12px;color: #2198dc;cursor: pointer;" title="返回选择注册类型" onclick="backtype()">←</div>
+            <div style="height: 30px;line-height: 10px;text-align: center;font-size: 20px;">个人注册中心</div>
+            <div style="border-bottom: 1px solid #999;"></div>
+            <div class="list_box">
+              <div class="type_list">
+                <div>姓名：</div>
+                <input type="text" id="name" name="name" placeholder="请输入您的姓名">
+              </div>
+              <div class="type_list">
+                <div>职位：</div>
+                <input type="text" id="position" placeholder="请输入您的职位名称">
+                <input type="hidden" value="15" name="position" />
+              </div>
+              <div class="type_list">
+                <div>手机号码：</div>
+                <input type="text" id="user_name" name="user_name" placeholder="请输入手机号码">
+              </div>
+              <div class="type_list">
+                <div>邮箱：</div>
+                <input type="text" id="email" name="email" placeholder="请输入邮箱">
+              </div>
+              <div class="type_list">
+                <div>登录密码：</div>
+                <input type="password" id="password" name="password" maxlength="16" placeholder="请输入密码,最多16位">
+              </div>
+              <div class="type_list">
+                <div>确认密码：</div>
+                <input type="password" id="password_again" maxlength="16" placeholder="再次输入密码">
+              </div>
+              <div class="type_list">
+                <div>验证码：</div>
+                <input type="text" id="codes" style="width: 90px;margin-right: 5px;" placeholder="请输入验证码">
+                <img src="http://wgcapp.wgc2013.com/jingyi.php/Home/index/codes" alt="" style="width:100px;cursor: pointer;" onclick="this.src='http://wgcapp.wgc2013.com/jingyi.php/Home/index/codes'"/>
+              </div>
             </div>
-            <div style="width: 280px;margin:0 auto;margin-bottom: 8px;">
-              <span>职&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;位</span>
-              <span>：</span>
-              <input type="text" style="height: 20px;">
+            <div style="margin-bottom: 16px;">
+              <input type="checkbox" id="check_term" />
+              <span style="font-size:12px">我已阅读并同意<a style="color:#3498db;" target="_blank" href="/index.php?app=search&amp;act=tiaokuan">《微工程服务》</a>条款</span>
             </div>
-            <div style="width: 280px;margin:0 auto;margin-bottom: 8px;">
-              <span>公&nbsp;司&nbsp;名&nbsp;称</span>
-              <span>：</span>
-              <input type="text" style="height: 20px;">
-            </div>
-            <div style="width: 280px;margin:0 auto;margin-bottom: 8px;">
-              <span>手&nbsp;机&nbsp;号&nbsp;码</span>
-              <span>：</span>
-              <input type="text" style="height: 20px;">
-            </div>
-            <div style="width: 280px;margin:0 auto;margin-bottom: 8px;">
-              <span>邮&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;箱</span>
-              <span>：</span>
-              <input type="text" style="height: 20px;">
-            </div>
-            <div style="width: 280px;margin:0 auto;margin-bottom: 8px;">
-              <span>登&nbsp;录&nbsp;密&nbsp;码</span>
-              <span>：</span>
-              <input type="text" style="height: 20px;">
-            </div>
-            <div style="width: 280px;margin:0 auto;margin-bottom: 8px;">
-              <span>手机验证码</span>
-              <span>：</span>
-              <input type="text" style="height: 20px;">
-            </div>
-          </div>
-          <div style="width: 110px;height: 30px;border-radius: 4px;background-color: #2c99d9;text-align: center;color: #fff;line-height: 30px;margin: 0 auto;">注册并登录</div>
+            <input type="submit" style="width: 110px;height: 30px;border-radius: 4px;background-color: #2c99d9;text-align: center;color: #fff;line-height: 30px;margin: 0 auto;text-align: center;border:none;cursor: pointer;" value="立即注册">
+          </form>
+          <div style="text-align: right;width: 262px;margin: 0 auto;letter-spacing: 1px;">已有微工程账号，去<a href="/index.php?app=member&act=login&ret_url=" target="_blank"><span style="color: red;cursor: pointer;">登录</span></a></div>
         </div>
       </div>
   </div>
@@ -91,6 +114,38 @@
   function backtype(){
     $('#register_type').show();
     $('#register_message').hide();
+  }
+
+  // 表单判断
+  function jugdment(){
+    if($('#name').val() == ''){
+      alert('请输入您的姓名');
+      return false;
+    }else if($('#position').val() == ''){
+      alert('请输入您的职位');
+      return false;
+    }else if($('#user_name').val() == ''){
+      alert('请输入手机号码');
+      return false;
+    }else if($('#email').val() == ''){
+      alert('请输入邮箱');
+      return false;
+    }else if($('#password').val() == ''){
+      alert('请输入密码');
+      return false;
+    }else if($('#codes').val() == ''){
+      alert('请输入验证码');
+      return false;
+    }else if($('#password').val() != $('#password_again').val()){
+      alert('您输入的两次密码不一样，请重新填写');
+      return false;
+    }else if($('#check_term').is(':checked') != true){
+      alert('请同意微工程服务在注册')
+      return false;
+    }else if(!$('#user_name').val().match(/^1\d{10}$/)){
+      alert('请输入正确的手机号码')
+      return false;
+    }
   }
 </script>
 </html>
