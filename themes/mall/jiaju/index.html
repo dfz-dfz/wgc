@@ -303,7 +303,7 @@ border:1px solid #808080;width:100%;height:66px;margin-bottom:3px;
 					while($rows1=@mysql_fetch_array($result)){
 						 
 						  echo  "<li style='height:24px;line-height:24px;margin-bottom:1px;'>";
-						  echo  "<a target='_blank' href='index.php?app=search&act=content_caigou&id=".$rows1['id']."&cai_type=2'>";
+						  echo  "<a target='_blank' href='index.php?app=search&act=cailiaocaigou_content&id=".$rows1['pid']."'>";
 						  echo  "  <span style='float:right;margin-right:5px;'>".date('Y-m-d H:i:s',$rows1['atime'])."</span>";
 						  echo  "&nbsp;".$rows1['m_name']."</a>";
 						  echo  "</li>";

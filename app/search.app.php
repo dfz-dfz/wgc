@@ -69,7 +69,12 @@ class SearchApp extends MallbaseApp
 	}
 	//个人中心个人信息
 	function user_baseinfo(){
-		$this->display('user_baseinfo.html');
+		$types = $_SESSION['user_info']['types'];
+		if($types == 3 || $types == 8 || $types == 9){
+			$this->display('company_baseinfo.html');
+		}else{
+			$this->display('user_baseinfo.html');
+		}
 	}
 	//个人中心个人消息
 	function user_message(){
@@ -144,6 +149,9 @@ class SearchApp extends MallbaseApp
 	}//个人中心主材iframe
 	function user_iframe_fc(){
 		$this->display('user_iframe_fc.html');
+	}//劳动力资源
+	function laodongli(){
+		$this->display('laodongli.html');
 	}
 	function companycenter(){
 		$this->display('companycenter.html');
@@ -289,6 +297,9 @@ class SearchApp extends MallbaseApp
 		$data['userphoto'] = $_GET['userphoto'];
 		$data['regtime'] = $_GET['regtime'];
 		$data['utype'] = $_GET['utype'];
+		$data['types'] = $_GET['types'];
+		$data['shenfen'] = $_GET['shenfen'];
+		$data['shenfentype'] = $_GET['shenfentype'];
 		$_SESSION["user_info"] = $data;
 	
 		header('location:index.php?app=search&act=user_baseinfo');
@@ -1037,6 +1048,15 @@ class SearchApp extends MallbaseApp
 	// 材料询价详情
 	function cailiaoxunjia_content(){
 		$this->display('cailiaoxunjia_details.html');
+	}
+	// 材料采购列表
+	function cailiaocaigou(){
+		$this->display('cailiaocaigou_list.html');
+	}
+
+	// 材料采购详情
+	function cailiaocaigou_content(){
+		$this->display('cailiaocaigou_details.html');
 	}
 
 	// 材料推广详情

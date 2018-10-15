@@ -152,18 +152,18 @@ body{background:url('') no-repeat center top }
 						<div class="user_collection_name user_public_name" style="color: #5e5a59;">发布地址：</div>
 						<div class="user_collection_input user_public_input"><input id="xiangxi" type="text" /></div>
 					</li>
-					<li>
+					<!-- <li>
 						<div class="user_collection_name user_public_name" style="color: #5e5a59;">材料价格：</div>
 						<div class="user_collection_input user_public_input"><input id="price" type="text" /></div>
-					</li>
-					<li>
+					</li> -->
+					<!-- <li>
 						<div class="user_collection_name user_public_name" style="color: #5e5a59;">运费包含：</div>
 						<div class="user_collection_input user_public_input"><input id="yunfei" type="text" placeholder="如包含运费请说明价格，否则无！" /></div>
-					</li>
-					<li>
+					</li> -->
+					<!-- <li>
 						<div class="user_collection_name user_public_name" style="color: #5e5a59;">含税价格：</div>
 						<div class="user_collection_input user_public_input"><input id="hanshui" type="text" placeholder="若有含税价请说明金额，否则无！" /></div>
-					</li>								
+					</li>	 -->							
  				</ul>
 				<div style="width:100%;overflow: hidden;margin:0px auto;">
 					<div class="cl">
@@ -208,26 +208,7 @@ body{background:url('') no-repeat center top }
 							<a class="share_btn" href="javascript:;" style="display: inline-block;width: 60px;height: 30px;line-height: 30px;font-size: 16px;color: #2d2a2a;font-weight: bold;letter-spacing: 4px; background-color: #facd89;border-radius: 5px;position: relative;left: 110px;top:-5px;text-decoration: none;" onclick="showUserList()">分享</a>							
 						</div>					
 				<div class="list_show" style="overflow: hidden;min-height:300px;">
-				<!--<div>
-				 <div style="text-align:right;padding-right: 20px;"><input type="checkbox"></div>
-					<div class="list_right" style="float: left;width: 50%;">
-
-						<ul style="margin-left:15%;">
-							<li>公司名称：广州经艺设计工程有限公司</li>
-							<li style="margin:10px 0;">材料品牌：马可波罗</li>
-							<li>发布地址：广州白云区</li>
-						</ul>
-					</div>
-					<div class="list_left" style="float: right;width: 50%;">
-						<ul style="margin-left:15%;">
-							<li>材料名称：卡娜卡石瓷砖</li>
-							<li style="margin:10px 0;">材料描述：吸水率较高</li>
-							
-						</ul>
-					</div>
-					<div style="width:100%;height:40px;float:left;margin-top:30px;"><img src="/themes/mall/jiaju/images/list_bg.jpg" style="width:100%;height:100%;"/></div>
-					</div>
-				</div>	-->			
+						
  			</div>
 			<!--集采列表end -->
 			<!-- 分享弹窗 -->
@@ -283,7 +264,7 @@ body{background:url('') no-repeat center top }
 
 			</div>
 			<div class="yewu_body_share" style="min-height:300px;">
-				<table style="width: 100%;" border="0" cellspacing="0" cellpadding="0">
+				<!-- <table style="width: 100%;" border="0" cellspacing="0" cellpadding="0">
 					<tbody>
 						<tr style="background-color:#eee;">
 						<td>公司名称</td>
@@ -293,7 +274,10 @@ body{background:url('') no-repeat center top }
 						<td>分享人</td>
 						<tr>
 					</tbody>
-				</table>				
+				</table> -->	
+				<div class="list_show_share" style="overflow: hidden;min-height:300px;">
+						
+ 				</div>			
 			</div>
 					<!-- 分页 -->
 					<div class="price_page" style="text-align: center;">
@@ -1146,6 +1130,7 @@ $(function(){
 <script type="text/javascript">
 $().ready(function(){
 	cai_list();
+	messagelist(spage,0);
 })
 
 	//点击预算列表切换
@@ -1311,7 +1296,7 @@ $().ready(function(){
 						//status++;
 				listHtml   +='<div style="overflow: hidden;position:relative;">';
 				listHtml +=	'<div style="text-align: left;"><span style="display: inline-block;width: 60px;height: 25px;line-height: 25px;background-color: red;font-size: 14px;text-align: center;letter-spacing: 2px;position:absolute;top:0px;color:#fff;margin:5px 5px;" onclick="del('+pid+','+id+')">删除</span></div>';
-				listHtml   += '<div style="text-align:right;padding-right: 20px;margin-top: 10px;height:40px;"><input name="id" type="checkbox"></div>';
+				listHtml   += '<div style="text-align:right;padding-right: 20px;margin-top: 10px;height:40px;"><input name="id" type="checkbox" value="'+pid+'"></div>';
 				listHtml   +=	'<div class="list_right" style="float: left;width: 50%;">';
 				listHtml   +=		'<ul style="margin-left:15%;">';
 				listHtml   +=			'<li>公司名称：'+office_name+'</li>';
@@ -1503,7 +1488,7 @@ $().ready(function(){
 				                console.log(tvals)
 
 				                $.post('http://wgcapp.wgc2013.com/jingyi.php/Home/index/share',{
-				                	"type":1,
+				                	"type":8,
 				                	"arr":arr,
 				                	"tarry":tarry
 				                },function(ret){
@@ -1636,6 +1621,106 @@ function prepageUser(){
 		}
 	
 }
+
+//分享列表
+var spage = 1;
+	function messagelist(spage,types){
+	var url = 'http://wgcapp.wgc2013.com/jingyi.php/Home/Material/materialListe_pc_share';
+	
+	if(spage == 1){
+		$("#share_pre").hide();
+	}else{
+		$("#share_pre").show();
+	}
+		$("#search_after").hide();   
+		$("#search_before").show();
+		$.ajax({
+				type:"POST",
+				url:url,
+				data:{
+					
+					user_id : '<?php echo $_SESSION["user_info"]["user_id"];?>',
+					page     : spage,
+					type     : 8,
+					cai_type : 3,
+				},
+				cache:false,
+				crossDomain: true == !(document.all),
+				dataType: "json",
+				success:function(ret){
+					//console.log(ret)
+						if(ret.code == 200){
+				var listHtml = '';
+				var imgHtml = '';
+				var data = ret.message;
+				for(var i in data){
+						listHtml = "";
+						imgHtml = "";
+					var id = data[i].user_id,
+						pid = data[i].id,
+						m_name = data[i].m_name,
+						m_introduce = data[i].m_introduce,
+						office_name = data[i].office_name,
+						brand       = data[i].brand,
+						address     = data[i].address,
+						addtime = timestampToTime(data[i].addtime);
+						var img = data[i].m_photo;
+						var imgArray = img.split(",");
+						for(var j=0;j<imgArray.length;j++){
+								//console.log(imgArray[j]);
+								imgHtml += '<a href="http://wgcapp.wgc2013.com'+imgArray[j]+'" target="_blank"><img src="http://wgcapp.wgc2013.com'+imgArray[j]+'" alt="" style="width:100px;height:100px;margin-right:10px;"/></a>';
+							}
+						//console.log(imgArray);
+						
+
+						//status++;
+				listHtml   +='<div style="overflow: hidden;position:relative;">';
+				listHtml   +=	'<div class="list_right" style="float: left;width: 50%;">';
+				listHtml   +=		'<ul style="margin-left:15%;margin-top:10px;">';
+				listHtml   +=			'<li>公司名称：'+office_name+'</li>';
+				listHtml   +=			'<li style="margin:10px 0;">材料品牌：'+brand+'</li>';
+				listHtml   +=			'<li>发布地址：'+address+'</li>';
+				listHtml   +=		'</ul>';
+				listHtml   +=	'</div>';
+				listHtml   +=	'<div class="list_left" style="float: right;width: 50%;margin-top:10px;">';
+				listHtml   +=		'<ul style="margin-left:15%;">';
+				listHtml   +=			'<li>材料名称：'+m_name+'</li>';
+				listHtml   +=			'<li style="margin:10px 0;">材料描述：'+m_introduce+'</li>';							
+				listHtml   +=		'</ul>';
+				listHtml   +=	'</div>';
+				listHtml   +=	'<div id="imglists'+i+'" style="width:100%;float:left;margin-top:10px;padding: 0 10px;text-align:center;"></div>';
+				listHtml   +=	'<div style="width:100%;height:40px;float:left;margin-top:30px;"><img src="/themes/mall/jiaju/images/list_bg.jpg" style="width:100%;height:100%;"/></div>';
+				listHtml   +=	'</div>';
+
+							
+							$(".list_show_share").append(listHtml);
+							$("#imglists"+i).append(imgHtml);
+					
+					
+				}
+				
+				
+				
+			}else if(ret.status == 202){
+						if(types == 1){
+							$(".yewu_body_share tbody").html("");
+							$("#nulls").show();
+							$("#share_next").hide();
+						}
+						if(types == 0){
+							$("#share_next").hide();
+							$("#backshare").hide();
+							$("#nulls").show();
+						}
+					}
+
+				},
+				error:function(err){
+					console.log(err)
+				}
+			});
+
+	}
 </script>
 </body>
 </html>

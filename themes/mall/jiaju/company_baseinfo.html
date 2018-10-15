@@ -4,7 +4,7 @@
 <meta http-equiv="Access-Control-Allow-Origin" content="*">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=8"/>
-<title>用户中心-公司信息</title>
+<title>企业中心-公司信息</title>
 <meta name="description" content="微工程，微工程APP，装修、材料、家具、饰品一站式服务，让装修更简单，价格更透明！！" />
 <meta name="keywords" content="微工程，微工程，家居商城，微工程家居商城，微工程家居装修商城，办公室装修，写字楼装修，材料，装修材料，家居，办公家具，家居，家具，装修，装饰" />
 
@@ -37,53 +37,18 @@ var PRICE_FORMAT = '&yen;%s';
 body{background:url('') no-repeat center top }
 .mainnav{width:990px; overflow:hidden; margin:0 auto}
 .STYLE1 {color: red}
+
+.base_right ul {
+	width: 315px;
+	float: left;
+}
+
+.base_right ul li {
+	text-align:left;
+}
 </style>
 <script type="text/javascript" src="http://www.wgc2013.com/themes/mall/jiaju/styles/default/js/hover.js"></script>
-<script>
-  function lxfEndtime(){
-          $(".lxftime").each(function(){
-                var lxfday=$(this).attr("lxfday");//用来判断是否显示天数的变量
-                var endtime = new Date($(this).attr("endtime")).getTime();//取结束日期(毫秒值)
-                var nowtime = new Date().getTime();        //今天的日期(毫秒值)
-                var youtime = endtime-nowtime;//还有多久(毫秒值)
-                var seconds = youtime/1000;
-                var minutes = Math.floor(seconds/60);
-                var hours = Math.floor(minutes/60);
-                var days = Math.floor(hours/24);
-                var CDay= days ;
-                var CHour= hours % 24;
-                var CMinute= minutes % 60;
-                var CSecond= Math.floor(seconds%60);//"%"是取余运算，可以理解为60进一后取余数，然后只要余数。
-                if(endtime<=nowtime){
-                        $(this).html("已过期")//如果结束日期小于当前日期就提示过期啦
-                        }else{
-                                if($(this).attr("lxfday")=="no"){
-                                        $(this).html("<i>剩余时间：</i><span>"+CHour+"</span>时<span>"+CMinute+"</span>分<span >"+CSecond+"</span>秒");          //输出没有天数的数据
-                                        }else{
-                        $(this).html("<span class='f24'>"+days+"</span><span>天</span><span  class='f24'>"+CHour+"</span><span>时</span><span  class='f24'>"+CMinute+"</span><span>分</span><span  class='f24'>"+CSecond+"</span><span>秒</span>");          //输出有天数的数据
-                                }
-                        }
-          });
-   setTimeout("lxfEndtime()",1000);
-  };
-$(function(){
-      lxfEndtime();
-   });
-</script>
 <script charset="utf-8" type="text/javascript" src="http://www.wgc2013.com/includes/libraries/javascript/jquery.plugins/jquery.validate.js" ></script>
-<script type="text/javascript">
-  $(function (){
-    $('#open-change-city-window').click(function (){
-      $('.change-city-window').slideDown();
-      
-    })
-    $('#close-change-city-window').click(function (){
-      $('.change-city-window').slideUp();
-    })
-
-  
-  })
-</script>
 </head>
 <body>
 {include file=header.html}
@@ -97,7 +62,7 @@ $(function(){
  	<div class="container_right" style="width: 78.5%;border: 1px solid #cacaca;float: right;background-color: #f7f7f7;padding: 0 10px 10px 10px;">
 
 		<!-- 公司信息 -->
-		<div class="budget base_ui_public" style="/*display: none;*/position: relative;">
+		<div class="budget base_ui_public" style="position: relative;">
 			<ul class="budget_ul user_public_ul">
  				<li class="change_bg_li" style="margin-right: 10px;">基本信息</li>
  				<li style="margin-right: 10px;">修改密码</li>
@@ -111,39 +76,47 @@ $(function(){
 				<div class="base_left">
 					<!-- 更换logo -->
 					<div style="width: 150px;height:auto;margin-left: auto;margin-right: auto;">
-						<div style="width:150px;height:70px;background-color: #f4f4f4;border:1px solid #cfcfcf;" id="localImag">
-					        <img src="/themes/mall/jiaju/images/shangchuan.jpg" id="preview" alt="">
+						<div style="width:120px;height:90px;background-color: #f4f4f4;border:1px solid #cfcfcf;" id="localImag">
+					        <img src="/themes/mall/jiaju/images/shangchuan.jpg" id="preview" alt="" width="120">
 						</div>
 						<input type="file" id="doc" name="pic" style="display: none;">
-						<label for="doc" style="width: 80px;height: 20px;display: block;border: 1px solid #cfcfcf;text-align: center;line-height: 20px;letter-spacing: 2px;background-color: #5bcdff;border-radius: 5px;margin-left: auto;margin-right: auto;margin-top: 20px;cursor: pointer;">
-							更换LoGo
+						<label for="doc" style="width: 100px;height: 26px;display: block;border: 1px solid #cfcfcf;text-align: center;line-height: 26px;letter-spacing: 2px;background-color: #5bcdff;border-radius: 5px;margin-left: 10px;margin-top: 20px;cursor: pointer;">
+							更换营业执照
 						</label>
 					</div>
 					<!-- 更换logo end -->
 				</div>
 				<div class="base_right">
-					<ul>
-						<li style="text-align: left;">
-							<span class="input_type">公司名称</span><span class="colon">:</span><input type="text" class="left_input" />
-							<span class="input_type">公司类型</span><span class="colon">:</span>
-							<select>
-								<option value ="volvo">装饰公司</option>
-								<option value ="saab">饰公司</option>
-								<option value="opel">公司</option>
-								<option value="audi">司</option>
-							</select>
-						</li>
-						<li style="text-align: left;">
-							<span class="input_type">公司法人</span><span class="colon">:</span><input type="text" class="left_input" />
-							<span class="input_type">公司地址</span><span class="colon">:</span><input type="text" />
-						</li>
-						<li style="text-align: left;">
-							<span class="input_type">微 信 号 </span><span class="colon" style="margin-left: 2px">:</span><input type="text" class="left_input" />
-							<span class="input_type">邮	  箱</span><span class="colon" style="margin: 5px">:</span><input type="text" />
-						</li>
-					</ul>
-					<div class="textarea_box">
-						<span class="input_type" style="float: left;">公司简介</span><span class="colon" style="float:left;">:</span>
+					<div style="height: auto;overflow:hidden;">
+						<ul>
+							<li style="text-align: left;">
+								<span class="input_type">公司名称：</span><span id="fenxiaoshang_name"></span>
+							</li>
+							<li style="text-align: left;">
+								<span class="input_type">公司法人：</span><span id="legal_person"></span>
+							</li>
+							<li style="text-align: left;">
+								<span class="input_type">手机号码：</span><span id="mobile"></span>
+							</li>
+							<li style="text-align: left;">
+								<span class="input_type" style="letter-spacing: 7px;">联系人：</span><span id="linkman"></span>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<span class="input_type">公司类型：</span><span id="company_type"></span>
+							</li>
+							<li>
+								<span class="input_type">公司地址：</span><span id="address"></span>
+							</li>
+							<li>
+								<span class="input_type">邮	  箱：</span><span id="e-mail"></span>
+							</li>
+						</ul>
+					</div>
+					
+					<div class="textarea_box" style="margin-top: 10px;">
+						<span class="input_type" style="float: left;">公司简介：</span>
 						<textarea name="" id="" cols="30" rows="10" ></textarea>
 					</div>
 				</div>
@@ -155,13 +128,13 @@ $(function(){
 				<div class="change_password">
 					<ul>
 						<li>
-							<span class="input_type">您的密码</span><span class="colon">:</span><input id="old_password" type="password" />
+							<span class="input_type">您的密码</span><input id="old_password" type="password" />
 						</li>
 						<li>
-							<span class="input_type">新的密码</span><span class="colon">:</span><input id="password" type="password" />
+							<span class="input_type">新的密码</span><input id="password" type="password" />
 						</li>
 						<li>
-							<span class="input_type">确认密码</span><span class="colon">:</span><input id="psw" type="password" />
+							<span class="input_type">确认密码</span><input id="psw" type="password" />
 						</li>
 					</ul>
 					<input type="button" class="sub_btn" value="提交" onclick="clickSubmit()" />
@@ -185,8 +158,57 @@ $(function(){
 {include file=footer.html}
 <script type="text/javascript">
 	$(document).ready(function(){
-
+		messageReload();
 	});
+
+	// 信息加载
+	function messageReload(){
+		jQuery.support.cors = true;
+		var url = 'http://wgcapp.wgc2013.com/jingyi.php/Home/Jifen/user/a/'+new Date().getTime();
+		$.post(url,{
+			uid : '<?php echo $_SESSION["user_info"]["user_id"];?>',
+			"r":Math.random()
+		},function(ret){
+			if(ret.code == 200){
+				var user = ret.user,
+					name = user.name,//用户名称
+					linkman = user.linkman,//联系人
+					legal_person = user.legal_person,//法人
+					businesslicense = user.businesslicense,//营业执照
+					kehu = user.kehu,//公司名称
+					fenxiaoshang_name = user.fenxiaoshang_name,//公司名称
+					province = user.province,//省
+					city = user.city,//市
+					email = user.email,//邮箱
+					mobile = user.mobile,//手机号码
+					businesslicense = user.businesslicense,//头像
+					types = user.types,//公司类型
+					address = user.province+user.city;//地址
+				
+				var company_type = '';	
+				if(types = 3){
+					company_type = '装修公司';
+				}else if(types = 8){
+					company_type = '材料商';
+				}else if(types = 9){
+					company_type = '施工队长';
+				}
+				
+				$("#preview").attr('src','http://wgcapp.wgc2013.com'+businesslicense);
+				$("#fenxiaoshang_name").html(fenxiaoshang_name);
+				$("#legal_person").html(legal_person);
+				$("#mobile").html(mobile);
+				$("#company_type").html(company_type);
+				$("#address").html(address);
+				$("#e-mail").html(email);
+				$('#linkman').html(linkman);
+
+			}else{
+				alert("请检查网络连接")
+			}
+		},'json');
+	}
+
 	// 更换logo
 	$("input[name='pic']").live('change',function(){
         var file = $(this).val();
@@ -219,16 +241,16 @@ $(function(){
 	    if (docObj.files && docObj.files[0]) {
 	       //火狐下，直接设img属性
 	       imgObjPreview.style.display = 'block';
-	       imgObjPreview.style.width = '150px';
-	       imgObjPreview.style.height = '70px';
+	       imgObjPreview.style.width = '120px';
+	       imgObjPreview.style.height = '90px';
 	       imgObjPreview.src = window.URL.createObjectURL(docObj.files[0]);
 	    } else {
 	       //IE下，使用滤镜
 	       docObj.select();
 	       var imgSrc = document.selection.createRange().text;
 	       var localImagId = document.getElementById("localImag");
-	       localImagId.style.width = "150px";
-	       localImagId.style.height = "70px";
+	       localImagId.style.width = "120px";
+	       localImagId.style.height = "90px";
 	       //图片异常的捕捉，防止用户修改后缀来伪造图片
 	       try {
 	           localImagId.style.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale)"

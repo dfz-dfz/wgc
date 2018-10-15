@@ -71,6 +71,19 @@ body{background:url('') no-repeat center top }
 .meterial_buy_detail table thead th span{
 	border: none;
 }
+.meterial_buy_detail_share table tbody td{
+	border-bottom: 1px solid #000;
+	padding: 15px 0;
+}
+.meterial_buy_detail_share table thead tr{
+	border-bottom: 1px solid #000;
+}
+.meterial_buy_detail_share table thead th{
+	padding: 10px 0px;
+}
+.meterial_buy_detail_share table thead th span{
+	border: none;
+}
 </style>
 </head>
 <body>
@@ -288,7 +301,7 @@ body{background:url('') no-repeat center top }
 								</tr>
 								</thead>
 								<tbody>
-								<tr class="tbody" style="background-color: #eee;">
+								<!-- <tr class="tbody" style="background-color: #eee;">
 									<th style="width: 29%"><span style="border-left:  2px solid #bcbcbc">材料申购单位</span></th>
 									<th style="width: 20%"><span>收货地址</span></th>
 									<th style="width: 12%"><span>申购日期</span></th>
@@ -296,7 +309,7 @@ body{background:url('') no-repeat center top }
 									<th style="width: 6%"><span>联系电话</span></th>
 									<th style="width: 6%"><span>申购人</span></th>
 									<th style="width: 18%"><span style="border-right:  2px solid #bcbcbc">备注</span></th>
-								</tr>
+								</tr> -->
 								</tbody>
 						</table>
 					</div>
@@ -329,7 +342,7 @@ body{background:url('') no-repeat center top }
 							<th style="width: 8%"><span>品牌</span></th>
 							<th style="width: 10%"><span>型号</span></th>
 							<th style="width: 10%"><span>需到货时间</span></th>
-							<th style="width: 6%"><span>数量</span></th>
+							<th style="width: 6%"><span>分享人</span></th>
 							<th style="width: 6%"><span>单位</span></th>
 							<th style="width: 6%"><span>单价</span></th>
 							<th style="width: 6%"><span>合计</span></th>
@@ -356,7 +369,7 @@ body{background:url('') no-repeat center top }
 				
 				</div>
 					<div class="meterial_buy_detail_share" style="position: absolute;top:100px;left: 50px;background-color: #9e9e9e;display: none;opacity: 0.95;width: 845px;">
-					<div class="quxiao" style="position: absolute;font-size: 20px;top: -15px;left: 99%;background-color: #9e9e9e;border-radius: 10px;width: 20px;height: 20px;line-height: 20px;cursor:default;">×</div>
+					<div class="quxiao_share" style="position: absolute;font-size: 20px;top: -15px;left: 99%;background-color: #9e9e9e;border-radius: 10px;width: 20px;height: 20px;line-height: 20px;cursor:default;">×</div>
 						<table style="width: 100%;" border="1" cellspacing="0" cellpadding="0">
 							<thead>
 								<tr class="thead" style="">
@@ -420,6 +433,7 @@ body{background:url('') no-repeat center top }
 <script type="text/javascript">
 	(function (){
 		caigou_list();
+		messagelist();
 	}())
 
 	var index = 0;
@@ -1010,12 +1024,15 @@ function prepageUser(){
   $(".quxiao").unbind('click').click(function(){
   	$(".meterial_buy_detail").hide();
   })
+  $(".quxiao_share").unbind('click').click(function(){
+  	$(".meterial_buy_detail_share").hide();
+  })
 
 //分享列表
 var sharepage = 1;
 	function messagelist(){
-	var url = 'http://wgcapp.wgc2013.com/jingyi.php/Home/Dinge/baojia_list_share';
-
+	var url = 'http://wgcapp.wgc2013.com/jingyi.php/Home/Material/addmaterials_user_share';
+	var key='';
 	$.ajax({
 				type:"POST",
 				url:url,
@@ -1023,13 +1040,13 @@ var sharepage = 1;
 					key      : key,
 			    	user_id  : '<?php echo $_SESSION["user_info"]["user_id"];?>',
 			    	page     : sharepage,
-			    	type     : 5
+			    	
 				},
 				cache:false,
 				crossDomain: true == !(document.all),
 				dataType: "json",
 				success:function(ret){
-					console.log(ret)
+					console.log("share"+ret)
 					var listHtml = '';
 					if(ret.status == 200){
 						var listHtml = "";
@@ -1046,6 +1063,8 @@ var sharepage = 1;
 							var heji   = data[i].heji;
 							var introduce = data[i].introduce;
 							var pid    = data[i].pid;
+							var total  = data[i].total;
+							var username = data[i].username;
 
 							var office_name = data[i].office_name;
 							var worker_address = data[i].worker_address;
@@ -1060,17 +1079,18 @@ var sharepage = 1;
 							listHtml += '<td style="width: 8%"><span>'+brand+'</span></td>';
 							listHtml += '<td style="width: 10%"><span>'+size+'</span></td>';
 							listHtml += '<td style="width: 10%"><span>'+expire_time+'</span></td>';
-							listHtml += '<td style="width: 6%"><span>'+number+'</span></td>';
+							listHtml += '<td style="width: 6%"><span>'+username+'</span></td>';
 							listHtml += '<td style="width: 6%"><span>'+danwei+'</span></td>';
 							listHtml += '<td style="width: 6%"><span>'+danjia+'</span></td>';
 							listHtml += '<td style="width: 6%"><span>'+heji+'</span></td>';
 							listHtml += '<td style="width: 15%;"><span>'+introduce+'</span></td>';
-							listHtml += '<td style="width: 3%;border-right:2px solid #bcbcbc;"><a href="javascript:;" style="color:blue;" onclick="details('+pid+')">详情</a></td>';
+							listHtml += '<td style="width: 3%;border-right:2px solid #bcbcbc;"><a href="javascript:;" style="color:blue;" onclick="detailshare('+pid+')">详情</a></td>';
 							listHtml += '</tr>';
 
 
 						}
-						$("budget_list_share tbody").html(listHtml);
+						$("#budget_list_share tbody").html(listHtml);
+						
 					}
 				},
 				error:function(err){
@@ -1079,6 +1099,51 @@ var sharepage = 1;
 			});
 
 	}
+
+function detailshare(pid){
+	var url = "http://wgcapp.wgc2013.com/jingyi.php/Home/Material/addmaterials_user_share_content"
+				$.ajax({
+				type:"POST",
+				url:url,
+				data:{
+					pid : pid,
+					
+				},
+				cache:false,
+				crossDomain: true == !(document.all),
+				dataType: "json",
+				success:function(ret){
+					//console.log(ret)
+					if(ret.status ==200){
+						$(".meterial_buy_detail_share tbody").html("");
+						var data = ret.retData;
+						var listHtml = "";
+						for(var i in data){
+							var office_name = data[i].office_name;
+							var worker_address = data[i].worker_address;
+							var dateofpurchase = data[i].dateofpurchase;
+							var tel = data[i].tel;
+							var sgperson = data[i].sgperson;
+							var ps = data[i].ps;
+
+							listHtml +=	'<tr class="tbody" style="background-color: #eee;">';
+							listHtml +=		'<td style="width: 29%"><span style="">'+office_name+'</span></td>';
+							listHtml +=		'<td style="width: 20%"><span>'+worker_address+'</span></td>';
+							listHtml +=		'<td style="width: 12%"><span>'+dateofpurchase+'</span></td>';	
+							listHtml +=		'<td style="width: 6%"><span>'+tel+'</span></td>';
+							listHtml +=		'<td style="width: 6%"><span>'+sgperson+'</span></td>';
+							listHtml +=		'<td style="width: 18%"><span style="">'+ps+'</span></td>';
+							listHtml +=	'</tr>';
+						}
+						$(".meterial_buy_detail_share tbody").append(listHtml)
+						$(".meterial_buy_detail_share").show();
+					}
+				},
+				error:function(err){
+					//console.log(err)
+				}
+			});
+}
 </script>
 </body>
 </html>

@@ -312,6 +312,7 @@ body{background:url('') no-repeat center top }
 					<ul class="content_ul" id="show_list">
 						
 					</ul>
+					<div id="nullslist" style="margin-top: 100px;text-align: center;font-size: 18px;display: none;">暂无数据！！！</div>
 				</div>
 				<!-- 分页导航 -->
 				<div class="page_list" style="text-align:center;">
@@ -325,8 +326,8 @@ body{background:url('') no-repeat center top }
 				<!-- 搜索框 -->
 					<div class="search_ys">
 						<input type="text" style="width: 400px;height: 30px;" id="search_zc" placeholder="请输入关键词">
-						<label class="search_zc" for="search_zc" style="width: 50px;height: 30px;display:inline-block;position: relative;top: -1px;"><img src="/themes/mall/jiaju/images/search_button.jpg" alt="" style="width: 100%;height: 100%;" onclick="searchZC()"></label>
-						<button class="quxiao_zc" style="padding:0;width: 50px;height: 30px;position: relative;top: 3px;cursor:pointer;line-height:30px;background-color: #ec6941;display:none;">取消</button>							
+						<label class="search_zc" for="search_zc" style="width: 50px;height: 30px;display:inline-block;position: relative;top: -1px;"><img src="/themes/mall/jiaju/images/search_button.jpg" alt="" style="width: 100%;height: 100%;" onclick="searchs(spage,0)"></label>
+						<button class="quxiao_zc" id="backshare" style="padding:0;width: 50px;height: 30px;position: relative;top: -3px;cursor:pointer;line-height:30px;background-color: #ec6941;display:none;" onclick="messagelist(spage,0)">取消</button>							
 					</div>	
 					<div class="budget_table" style="margin: 10px 0;">
 						<div>
@@ -336,7 +337,7 @@ body{background:url('') no-repeat center top }
 							<ul class="content_ul">
 								<li class="tab_head">
 									<ul>
-										<li style="width:7.5%;">序号</li>
+										<li style="width:7.5%;">分享人</li>
 										<li style="width:14.5%;">项目名称</li>
 										<li style="width:10.5%;">计价单位</li>
 										<li style="width:10.5%;">数量/范围</li>
@@ -344,6 +345,7 @@ body{background:url('') no-repeat center top }
 										<li style="width:31.5%;">工作地点</li>
 										<!-- <li>备注</li> -->
 										<li style="width:15.5%">发布时间</li>
+										<li style="width:7.5%">操作</li>
 									</ul>
 								</li>
 							
@@ -351,11 +353,18 @@ body{background:url('') no-repeat center top }
 							<ul class="content_ul" id="show_list_share">
 								
 							</ul>
+							<div id="nulls" style="margin-top: 100px;text-align: center;font-size: 18px;display: none;">暂无数据！！！</div>
 						</div>
+						
 								<!-- 分页 -->
-						<div class="page_list" style="text-align:center;">
-							<a href="javascript:;" style="display: inline-block;width: 50px;background-color: #9c9393;color: #ffffff;height: 20px;line-height: 20px;margin-right:20px;" onclick="prepage()">上一页</a>
-							<a href="javascript:;" style="display: inline-block;width: 50px;background-color: #9c9393;color: #ffffff;height: 20px;line-height: 20px;" onclick="nextpage()">下一页</a>
+						<div class="page_list" id="search_before" style="text-align:center;">
+							<a href="javascript:;" id="share_pre" style="display: inline-block;width: 50px;background-color: #9c9393;color: #ffffff;height: 20px;line-height: 20px;margin-right:20px;" onclick="preshare()">上一页</a>
+							<a href="javascript:;" id="share_next" style="display: inline-block;width: 50px;background-color: #9c9393;color: #ffffff;height: 20px;line-height: 20px;" onclick="nextshare()">下一页</a>
+						</div>
+						<!-- 搜索分页 -->
+						<div class="page_list" id="search_after" style="text-align:center;">
+							<a href="javascript:;" id="share_pre_search" style="display: inline-block;width: 50px;background-color: #9c9393;color: #ffffff;height: 20px;line-height: 20px;margin-right:20px;" onclick="searchpagePre()">上一页</a>
+							<a href="javascript:;" id="share_next_search" style="display: inline-block;width: 50px;background-color: #9c9393;color: #ffffff;height: 20px;line-height: 20px;" onclick="searchpageNext()">下一页</a>
 						</div>
 					</div>
 				</div>
@@ -1254,6 +1263,7 @@ $(function(){
 <script type="text/javascript">
 $(document).ready(function() {
 	showList();
+	messagelist(spage,0)
 });
 //列表切换
 	$(".budget_ul li:first").click(function(){
@@ -1356,12 +1366,15 @@ function fabu(){
 	
 	//询价列表
 var page =1,upage =1;;
-	function showList(){
+	function showList(page,types){
+			$("#search_list_after").hide();
+			$("#search_list_before").show();
 		$.post('http://wgcapp.wgc2013.com/jingyi.php/Home/User/xunjia_list',{
 			userid      : '<?php echo $_SESSION["user_info"]["user_id"];?>',
-			page        : 1
+			page        : page
 		},function(ret){
 			if(ret.code == 200){
+				$("#nullslist").hide();
 				var html ='';
 				var data = ret.message;
 				for(var i in data){
@@ -1377,7 +1390,7 @@ var page =1,upage =1;;
 						
 					html += '<li class="tab_content">';
 						html += '<ul>';
-							html += '<li style="width:7.5%;"><input name="id" type="checkbox" />'+codenum+'</li>';
+							html += '<li style="width:7.5%;"><input name="id" type="checkbox" value="'+id+'"/>'+codenum+'</li>';
 							html += '<li style="width:14.5%;">'+title+'</li>';
 							html += '<li style="width:10.5%;">'+unit+'</li>';
 							html += '<li style="width:10.5%;">'+num+'</li>';
@@ -1390,69 +1403,78 @@ var page =1,upage =1;;
 					html += '</li>';
 				}
 				$('#show_list').html(html);
-			}else{
+			}else if(ret.code == 201){
+				if(types == 1){
+				// alert("111")
+				$("#listnext").hide();
+				$("#show_list").html("")
+				$("#nullslist").show();
+			}else if(types == 0){
+				$("#show_list").html("")
+				$("#nullslist").show();
+			}
+				
 				//alert('列表获取失败');
 			}
 		},'json');
 	}
+
 //分页控制
-
-function pageindex(pindex){
-		//console.log(index)
-		if(pindex < 1){
-			pindex = 1;
-			page=1;
-		}
-	$('#show_list').html("");
-		$.post('http://wgcapp.wgc2013.com/jingyi.php/Home/User/xunjia_list',{
-			userid      : '<?php echo $_SESSION["user_info"]["user_id"];?>',
-			page        : pindex
-		},function(ret){
-			if(ret.code == 200){
-				var html ='';
-				var data = ret.message;
-				for(var i in data){
-					var codenum = parseInt(i)+1;
-						title = data[i].title,
-						unit = data[i].unit,
-						num = data[i].num,
-						ps = data[i].ps,
-						address = data[i].address,
-						tel = data[i].tel,
-						id  = data[i].id,
-						addtime = data[i].addtime;
-						
-					html += '<li class="tab_content">';
-						html += '<ul>';
-							html += '<li style="width:7.5%;"><input name="id" type="checkbox" />'+codenum+'</li>';
-							html += '<li style="width:14.5%;">'+title+'</li>';
-							html += '<li style="width:10.5%;">'+unit+'</li>';
-							html += '<li style="width:10.5%;">'+num+'</li>';
-							// html += '<li>'+tel+'</li>';
-							html += '<li style="width:31.5%;">'+address+'</li>';
-							//html += '<li><img src="" alt=""></li>';
-							html += '<li style="width:15.5%;">'+addtime+'</li>';
-							html += '<li style="width:7.5%;"><a href="/index.php?app=search&act=gongjiaxunjia_content&id='+id+'" target="_blank" style="color:blue;">详情</a></li>';
-						html += '</ul>';
-					html += '</li>';
-				}
-				$('#show_list').html(html);
-			}else{
-				//alert('列表获取失败');
-			}
-		},'json');
-
-	}
 //下一页
 function nextpage(){
 	
-	pageindex(++page);
+	showList(++page,1);
 
 	}
 //上一页
 function prepage(){
-		pageindex(--page);
+	if(page == 1){
+		page=2
 	}
+		showList(--page,1);
+	}
+//搜索列表
+function searchlist(page,types){
+	$.post('http://wgcapp.wgc2013.com/jingyi.php/Home/User/xunjia_list',{
+			userid      : '<?php echo $_SESSION["user_info"]["user_id"];?>',
+			page        : 1,
+		},function(ret){
+			if(ret.code == 200){
+				$("#nullslist").hide();
+				var html ='';
+				var data = ret.message;
+				for(var i in data){
+					var codenum = parseInt(i)+1;
+						title = data[i].title,
+						unit = data[i].unit,
+						num = data[i].num,
+						ps = data[i].ps,
+						address = data[i].address,
+						tel = data[i].tel,
+						id  = data[i].id,
+						addtime = data[i].addtime;
+						
+					html += '<li class="tab_content">';
+						html += '<ul>';
+							html += '<li style="width:7.5%;"><input name="id" type="checkbox" value="'+id+'"/>'+codenum+'</li>';
+							html += '<li style="width:14.5%;">'+title+'</li>';
+							html += '<li style="width:10.5%;">'+unit+'</li>';
+							html += '<li style="width:10.5%;">'+num+'</li>';
+							// html += '<li>'+tel+'</li>';
+							html += '<li style="width:31.5%;">'+address+'</li>';
+							//html += '<li><img src="" alt=""></li>';
+							html += '<li style="width:15.5%;">'+addtime+'</li>';
+							html += '<li style="width:7.5%;"><a href="/index.php?app=search&act=gongjiaxunjia_content&id='+id+'" target="_blank" style="color:blue;">详情</a></li>';
+						html += '</ul>';
+					html += '</li>';
+				}
+				$('#show_list').html(html);
+			}else if(ret.code == 201){
+				$("#nullslist").show();
+				//alert('列表获取失败');
+			}
+		},'json');
+}
 	
 	//分享
 	function share(){
@@ -1610,7 +1632,7 @@ function prepage(){
 				                console.log(tvals)
 
 				                $.post('http://wgcapp.wgc2013.com/jingyi.php/Home/index/share',{
-				                	"type":1,
+				                	"type":10,
 				                	"arr":arr,
 				                	"tarry":tarry
 				                },function(ret){
@@ -1718,6 +1740,204 @@ $(".quxiao").click(function(){
 		$('#search_text').val('');
 		showUserList();
 	}
+//分享列表
+var spage = 1;
+	function messagelist(spage,types){
+	var url = 'http://wgcapp.wgc2013.com/jingyi.php/Home/User/xunjia_list_share';
+	var key = '';
+	if(spage == 1){
+		$("#share_pre").hide();
+	}else{
+		$("#share_pre").show();
+	}
+		$("#search_after").hide();   
+		$("#search_before").show();
+		$.ajax({
+				type:"POST",
+				url:url,
+				data:{
+					key      : key,
+					user_id : '<?php echo $_SESSION["user_info"]["user_id"];?>',
+					page     : spage,
+					type     : 10
+				},
+				cache:false,
+				crossDomain: true == !(document.all),
+				dataType: "json",
+				success:function(ret){
+					//console.log(ret)
+						if(ret.code == 200){
+							$("#backshare").hide();
+							$("#nulls").hide();
+							$("#share_next").show();
+				var html ='';
+				var data = ret.message;
+				for(var i in data){
+					var codenum = parseInt(i)+1;
+						title = data[i].title,
+						unit = data[i].unit,
+						num = data[i].num,
+						ps = data[i].ps,
+						address = data[i].address,
+						tel = data[i].tel,
+						id  = data[i].id,
+						name = data[i].name,
+						addtime = timestampToTime(data[i].addtime);
+						
+					html += '<li class="tab_content">';
+						html += '<ul>';
+							html += '<li style="width:7.5%;">'+name+'</li>';
+							html += '<li style="width:14.5%;">'+title+'</li>';
+							html += '<li style="width:10.5%;">'+unit+'</li>';
+							html += '<li style="width:10.5%;">'+num+'</li>';
+							// html += '<li>'+tel+'</li>';
+							html += '<li style="width:31.5%;">'+address+'</li>';
+							//html += '<li><img src="" alt=""></li>';
+							html += '<li style="width:15.5%;">'+addtime+'</li>';
+							html += '<li style="width:7.5%;"><a href="/index.php?app=search&act=gongjiaxunjia_content&id='+id+'" target="_blank" style="color:blue;">详情</a></li>';
+						html += '</ul>';
+					html += '</li>';
+				}
+				$('#show_list_share').html(html);
+			}else if(ret.code == 201){
+						if(types == 1){
+							$("#show_list_share").html("");
+							$("#nulls").show();
+							$("#share_next").hide();
+						}
+						if(types == 0){
+							$("#share_next").hide();
+							$("#backshare").hide();
+							$("#nulls").show();
+						}
+					}
+
+				},
+				error:function(err){
+					console.log(err)
+				}
+			});
+
+	}
+	//分享分页
+	function preshare(){
+		if(spage == 1){
+			spage = 2;
+		}
+		messagelist(--spage,1)
+	}
+	function nextshare(){
+		messagelist(++spage,1)
+	}
+
+
+//搜索分享列表
+	function searchs(spage,types){
+		var url = 'http://wgcapp.wgc2013.com/jingyi.php/Home/User/xunjia_list_share';
+		var key = $("#search_zc").val();
+
+	if(spage == 1){
+		$("#share_pre_search").hide();
+	}else{
+		$("#share_pre_search").show();
+	}
+	if(key){
+
+		$("#search_after").show();   //点击搜索后的分页
+		$("#search_before").hide();
+		$("#backshare").show();
+		$.ajax({
+				type:"POST",
+				url:url,
+				data:{
+					key      : key,
+					user_id : '<?php echo $_SESSION["user_info"]["user_id"];?>',
+					page     : spage,
+					type     : 10
+				},
+				cache:false,
+				crossDomain: true == !(document.all),
+				dataType: "json",
+				success:function(ret){
+					//console.log(ret)
+						if(ret.code == 200){
+							$("#nulls").hide();
+							$("#share_next").show();
+				var html ='';
+				var data = ret.message;
+				for(var i in data){
+					var codenum = parseInt(i)+1;
+						title = data[i].title,
+						unit = data[i].unit,
+						num = data[i].num,
+						ps = data[i].ps,
+						address = data[i].address,
+						tel = data[i].tel,
+						id  = data[i].id,
+						name = data[i].name,
+						addtime = timestampToTime(data[i].addtime);
+						
+					html += '<li class="tab_content">';
+						html += '<ul>';
+							html += '<li style="width:7.5%;">'+name+'</li>';
+							html += '<li style="width:14.5%;">'+title+'</li>';
+							html += '<li style="width:10.5%;">'+unit+'</li>';
+							html += '<li style="width:10.5%;">'+num+'</li>';
+							// html += '<li>'+tel+'</li>';
+							html += '<li style="width:31.5%;">'+address+'</li>';
+							//html += '<li><img src="" alt=""></li>';
+							html += '<li style="width:15.5%;">'+addtime+'</li>';
+							html += '<li style="width:7.5%;"><a href="/index.php?app=search&act=gongjiaxunjia_content&id='+id+'" target="_blank" style="color:blue;">详情</a></li>';
+						html += '</ul>';
+					html += '</li>';
+				}
+				$('#show_list_share').html(html);
+			}else if(ret.code == 201){
+						if(types == 1){
+							$("#show_list_share").html("");
+							$("#nulls").show();
+							$("#share_next").hide();
+						}
+						if(types == 0){
+							$("#share_next").hide();
+							$("#backshare").hide();
+							$("#nulls").show();
+						}
+					}
+
+				},
+				error:function(err){
+					console.log(err)
+				}
+			});
+	}else{
+		alert("关键词不能为空!")
+		return false;
+	}
+	}
+
+	//搜索后的分页
+	function searchpageNext(){
+		searchs(++spage,1);
+	}
+	function searchpagePre(){
+		if(spage == 1){
+			spage=2
+		}
+		searchs(--spage,1);
+	}
+
+		//时间转换
+	function timestampToTime(timestamp) {
+        var date = new Date(timestamp * 1000);//时间戳为10位需*1000，时间戳为13位的话不需乘1000
+        Y = date.getFullYear() + '-';
+        M = (date.getMonth()+1 < 10 ? '0'+(date.getMonth()+1) : date.getMonth()+1) + '-';
+        D = date.getDate() + ' ';
+        h = date.getHours() + ':';
+        m = date.getMinutes() + ':';
+        s = date.getSeconds();
+        return Y+M+D;
+    }
 </script>
 </body>
 </html>

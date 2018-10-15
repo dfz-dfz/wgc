@@ -286,7 +286,7 @@ body{background:url('') no-repeat center top }
 
 						</div>
 						<div class="yewu_body_share" style="min-height:300px;">
-							<table style="width: 100%;" border="0" cellspacing="0" cellpadding="0">
+							<!-- <table style="width: 100%;" border="0" cellspacing="0" cellpadding="0">
 								<tbody>
 									<tr style="background-color:#eee;">
 									<td>公司名称</td>
@@ -296,7 +296,10 @@ body{background:url('') no-repeat center top }
 									<td>分享人</td>
 									<tr>
 								</tbody>
-							</table>				
+							</table> -->	
+							<div class="listShow_share" style="min-height: 480px;">
+						
+							</div>			
 						</div>
 						<!-- 分页 -->
 						<div class="price_page" style="text-align: center;">
@@ -1154,6 +1157,7 @@ $(function(){
 
 	$().ready(function(){
 		username();
+		messagelist(spage,0)
 		list();//获取项目分包列表
 	})
 
@@ -1245,7 +1249,7 @@ $(function(){
 					if(send_uid == myid ){
 						listHtml +=	'<div class="list_index" style="height:auto;overflow:hidden;position:relative;">';
 						listHtml +=	'<div style="text-align: left;"><span style="display: inline-block;width: 60px;height: 25px;line-height: 25px;background-color: red;font-size: 14px;text-align: center;letter-spacing: 2px;position:absolute;top:0px;color:#fff;margin:5px 5px;" onclick="del('+id+','+userid+')">删除</span></div>';
-							listHtml +=	'<div style="text-align:right;padding-right: 20px;margin-top: 10px;"><input name="'+id+'" type="checkbox"></div>';
+							listHtml +=	'<div style="text-align:right;padding-right: 20px;margin-top: 10px;"><input name="id" type="checkbox" value="'+id+'"></div>';
 							listHtml +=	'<p style="padding-left:70px;line-height:50px;">项目名称：<span style="font-size:18px;color:#f34c26 ;">'+prj_name+'</span></p>';
 							listHtml +=	'<div class="list_right" style="float: left;width: 50%;">';
 								listHtml +=	'<ul style="margin-left:15%;">';
@@ -1539,7 +1543,7 @@ function pageindex(index){
         var tvals = tarry.join(",");
 
         $.post('http://wgcapp.wgc2013.com/jingyi.php/Home/index/share',{
-        	"type":7,
+        	"type":9,
         	"arr":arr,
         	"tarry":tarry
         },function(ret){
@@ -1649,6 +1653,113 @@ function pageindex(index){
 		}
 	
 }
+
+//分享列表
+//分享列表
+var spage = 1;
+	function messagelist(spage,types){
+	var url = 'http://wgcapp.wgc2013.com/jingyi.php/Home/Jianli/projectSubcontract_lists_share';
+	var key = '';
+	if(spage == 1){
+		$("#share_pre").hide();
+	}else{
+		$("#share_pre").show();
+	}
+		$("#search_after").hide();   
+		$("#search_before").show();
+		$.ajax({
+				type:"POST",
+				url:url,
+				data:{
+					key      : key,
+					user_id : '<?php echo $_SESSION["user_info"]["user_id"];?>',
+					page     : spage,
+					type     : 9
+				},
+				cache:false,
+				crossDomain: true == !(document.all),
+				dataType: "json",
+				success:function(ret){
+					//console.log(ret)
+						if(ret.code == 200){
+				var data = ret.message;
+				dataLength = data.length;
+				for(var i in data){
+					listHtml = '';
+					imgHtml  = '';
+					imgArray = [];
+					var 	name = data[i].name;//联系人
+							content = data[i].content,//内容描述
+							id = data[i].id,
+							userid = data[i].user_id,
+							send_uid = data[i].user_id,
+							worker_address = data[i].worker_address,//装修地址
+							tel = data[i].tel,//联系人电话
+							time = data[i].time, //装修时长
+							area = data[i].area, //装修大小
+							addtime = timestampToTime(data[i].addtime), //发布时间
+							expect_price = data[i].expect_price, //装修预算
+							dd_time = data[i].dd_time,//截止时间
+							fabudizhi = data[i].fabudizhi,//发布地址
+							prj_name = data[i].prj_name;//项目名称
+							var img      = data[i].img;
+							console.log(img);
+							imgArray = img.split(",");
+							for(var j=0;j<imgArray.length;j++){
+								//console.log(imgArray[j]);
+								imgHtml += '<a href="http://wgcapp.wgc2013.com'+imgArray[j]+'" target="_blank"><img src="http://wgcapp.wgc2013.com'+imgArray[j]+'" alt="" style="width:100px;height:100px;margin-right:10px;"/></a>';
+							}
+					
+						
+						listHtml +=	'<div class="list_index" style="height:auto;overflow:hidden;position:relative;">';
+							listHtml +=	'<p style="padding-left:70px;line-height:50px;">项目名称：<span style="font-size:18px;color:#f34c26 ;">'+prj_name+'</span></p>';
+							listHtml +=	'<div class="list_right" style="float: left;width: 50%;">';
+								listHtml +=	'<ul style="margin-left:15%;">';
+									listHtml +=	'<li>联系人：'+name+'</li>';
+									listHtml +=	'<li style="margin:10px 0;">发布地址：'+fabudizhi+'</li>';
+									listHtml +=	'<li>装修预算：'+expect_price+'</li>';
+									listHtml +=	'<li style="margin:10px 0;">截止时间：'+dd_time+'</li>';					
+								listHtml +=	'</ul>';
+							listHtml +=	'</div>';
+							listHtml +=	'<div class="list_left" style="float: right;width: 50%;">';
+								listHtml +=	'<ul style="margin-left:15%;">';
+									listHtml +=	'<li>发布时间：'+addtime+'</li>';
+									listHtml +=	'<li style="margin:10px 0;">装修地址：'+worker_address+'</li>';
+									listHtml +=	'<li>装修时长：'+time+'</li>';
+									listHtml +=	'<li style="margin:10px 0;">装修大小：'+area+'</li>';						
+								listHtml +=	'</ul>';
+							listHtml +=	'</div>';
+							listHtml +=	'<p style="padding-left:70px;">内容描述：'+content+'</p>';
+							listHtml   +=	'<div id="imglists'+i+'" style="width:100%;margin-top:10px;padding 0 10px;text-align:center;"></div>';
+							listHtml +=	'<div style="width:100%;height:40px;float:left;margin-top:30px;"><img src="/themes/mall/jiaju/images/list_bg.jpg" style="width:100%;height:100%;"/></div>';
+						listHtml += '</div>';
+						$(".listShow_share").append(listHtml);
+						$("#imglists"+i).append(imgHtml);
+					
+				}
+				
+				$('#nextpage').show();
+			}else if(ret.status == 202){
+						if(types == 1){
+							$(".yewu_body_share tbody").html("");
+							$("#nulls").show();
+							$("#share_next").hide();
+						}
+						if(types == 0){
+							$("#share_next").hide();
+							$("#backshare").hide();
+							$("#nulls").show();
+						}
+					}
+
+				},
+				error:function(err){
+					console.log(err)
+				}
+			});
+
+	}
+
 	
 	//时间转换
 	function timestampToTime(timestamp) {
