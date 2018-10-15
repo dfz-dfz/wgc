@@ -112,6 +112,9 @@ body{background:url('') no-repeat center top }
 							<li>
 								<span class="input_type">邮	  箱：</span><span id="e-mail"></span>
 							</li>
+							<li>
+								<span class="input_type">职	  位：</span><span id="zhiwei"></span>
+							</li>
 						</ul>
 					</div>
 					
@@ -183,7 +186,8 @@ body{background:url('') no-repeat center top }
 					mobile = user.mobile,//手机号码
 					businesslicense = user.businesslicense,//头像
 					types = user.types,//公司类型
-					address = user.province+user.city;//地址
+					address = user.province+user.city,//地址
+					zhiwei = user.zhiwei;//职位
 				
 				var company_type = '';	
 				if(types = 3){
@@ -202,6 +206,7 @@ body{background:url('') no-repeat center top }
 				$("#address").html(address);
 				$("#e-mail").html(email);
 				$('#linkman').html(linkman);
+				$('#zhiwei').html(zhiwei);
 
 			}else{
 				alert("请检查网络连接")

@@ -243,6 +243,12 @@ body{background:url('') no-repeat center top }
 						<span style="letter-spacing: 0;">数量/范围</span><span class="colon">:</span><input type="text" id="num">
 					</li>
 					<li>
+						<span style="">开始时间</span><span class="colon">:</span><input type="text" id="come_time" readonly="readonly">
+					</li>
+					<li>
+						<span style="">截止时间</span><span class="colon">:</span><input type="text" id="end_time" readonly="readonly">
+					</li>
+					<li>
 						<span>联系方式</span><span class="colon">:</span><input type="text" id="tel">
 					</li>
 					<li>
@@ -286,8 +292,9 @@ body{background:url('') no-repeat center top }
 			<div class="sect current wages_list" style="display:none;min-height: 420px;height: auto;overflow: hidden;">
 				<div class="search">
 					<div class="search_box">
-						<input class="search_input" type="text" placeholder="输入关键字">
-						<input class="search_btn" type="button" value="搜索">
+						<input class="search_input"  type="text" placeholder="输入关键字">
+						<input class="search_btn" id="search_list" type="button" value="搜索" onclick="searchlist(page,0)">
+						<input class="search_btn" id="search_back" type="button" value="返回" style="display: none;" onclick="showList(page,0)">
 						<input type="button" value="分享" class="share_btn" onclick="showUserList()" />
 					</div>
 				</div>
@@ -453,6 +460,7 @@ body{background:url('') no-repeat center top }
 <script type="text/javascript" src="/Public/lib/jquery.validation/1.14.0/validate-methods.js"></script> 
 <script type="text/javascript" src="/Public/lib/jquery.validation/1.14.0/messages_zh.js"></script>
 <!-- 多图片上传 -->
+<script type="text/javascript" src="/themes/mall/jiaju/js/JTimer_1.3.js"></script>
 <script type="text/javascript">
 $(function(){
 	$('.skin-minimal input').iCheck({
@@ -1349,6 +1357,8 @@ function fabu(){
 						    ps          : $("#ps").val(),
 						    address     : $("#address").val(),
 							tel         : $("#tel").val(),
+							endtime     : $("#end_time").val(),
+							starttime   : $("#come_time").val(),
 							img         : img
 			
 			},function(ret){
@@ -1435,9 +1445,13 @@ function prepage(){
 	}
 //搜索列表
 function searchlist(page,types){
+	var key = $("#search_list").val();
+	if(key){
+
 	$.post('http://wgcapp.wgc2013.com/jingyi.php/Home/User/xunjia_list',{
 			userid      : '<?php echo $_SESSION["user_info"]["user_id"];?>',
-			page        : 1,
+			page        : page,
+			key         : key
 		},function(ret){
 			if(ret.code == 200){
 				$("#nullslist").hide();
@@ -1474,6 +1488,9 @@ function searchlist(page,types){
 				//alert('列表获取失败');
 			}
 		},'json');
+	}else {
+
+	}
 }
 	
 	//分享
@@ -1926,6 +1943,38 @@ var spage = 1;
 		}
 		searchs(--spage,1);
 	}
+
+	//日历插件
+	   //获取当前日期
+    function getNowFormatDate() {
+        var date = new Date();
+        var seperator1 = "-";
+        var year = date.getFullYear();
+        var month = date.getMonth() + 1;
+        var strDate = date.getDate();
+        if (month >= 1 && month <= 9) {
+            month = "0" + month;
+        }
+        if (strDate >= 0 && strDate <= 9) {
+            strDate = "0" + strDate;
+        }
+        var currentdate = year + seperator1 + month + seperator1 + strDate;
+        return currentdate;
+    }
+		JTC.setDateRange(getNowFormatDate(), '2021-01-01', true);  //设置可选日期范围 
+    	var timeclick = getNowFormatDate();
+    	var addTimeDateForm = "JTC.setday({minDate:'"+timeclick+"',maxDate:'2021-01-01',ranged: true})";
+  
+	$("#come_time").click(function(){
+		JTC.setDateRange(getNowFormatDate(), '2021-01-01', true);  //设置可选日期范围 
+    	var timeclick = getNowFormatDate();
+    	JTC.setday({minDate:timeclick,maxDate:'2021-01-01',ranged: true});
+	})
+	$("#end_time").click(function(){
+		JTC.setDateRange(getNowFormatDate(), '2021-01-01', true);  //设置可选日期范围 
+    	var timeclick = getNowFormatDate();
+    	JTC.setday({minDate:timeclick,maxDate:'2021-01-01',ranged: true});
+	})
 
 		//时间转换
 	function timestampToTime(timestamp) {

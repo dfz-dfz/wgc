@@ -320,7 +320,20 @@ class SearchApp extends MallbaseApp
 		$this->display('member.index.html');
 	}
 	
+	// 建筑装饰公司
+	function jianzhuzhuangshi(){
+		$this->display('jianzhuzhuangshi.html');
+	}
 	
+	// 材料商
+	function cailiaoshang(){
+		$this->display('cailiaoshang.html');
+	}
+
+	// 人才推荐
+	function rencaituijian(){
+		$this->display('rencaituijian.html');
+	}
 	
 	function zhaopin(){
 

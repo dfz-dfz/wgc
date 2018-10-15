@@ -56,12 +56,14 @@
 						<table style="width: 100%;" border="1" cellspacing="0" cellpadding="0">
 							<thead>
 								<tr class="thead" style="">
-									<th style="width: 29%"><span style="">材料申购单位</span></th>
-									<th style="width: 20%"><span>收货地址</span></th>
-									<th style="width: 12%"><span>申购日期</span></th>
-									
-									<th style="width: 6%"><span>联系电话</span></th>
-									<th style="width: 6%"><span>申购人</span></th>
+									<th style="width: 15%"><span style="">材料名称</span></th>
+									<th style="width: 10%"><span>品牌</span></th>
+									<th style="width: 10%"><span>型号</span></th>
+									<th style="width: 15%"><span>到货时间</span></th>
+									<th style="width: 6%"><span>数量</span></th>
+									<th style="width: 6%"><span>单位</span></th>
+									<th style="width: 6%"><span>单价</span></th>
+									<th style="width: 6%"><span>合计</span></th>
 									<th style="width: 18%"><span style="">备注</span></th>
 								</tr>
 								</thead>
@@ -78,7 +80,8 @@
 								</tbody>
 						</table>
 					</div>
-		<div style="height:40px;background-color: #e41d22;color: #fff;font-size: 20px;letter-spacing: 4px;font-weight: 600;text-align: center;line-height: 40px;width: 20%;margin: 0 auto;cursor:pointer;" onclick="tolink()">点击查看</div>
+		<div style="height:40px;background-color: #e41d22;color: #fff;font-size: 20px;letter-spacing: 4px;font-weight: 600;text-align: center;line-height: 40px;width: 20%;margin: 0 auto;cursor:pointer;" onclick="caigou_list()">点击查看</div>
+		<div class="ck" style="text-align:center;display:none;">请<a href="index.php?app=member&act=login&ret_url=" target="_blank" style="cursor:pointer;color:blue;">登录</a>之后再查看</div>
 	</div>
 
 	<div style="width: 200px;float: right;height: 587px;border-left: 10px solid #e5e5e5;padding-right: 0;">
@@ -96,7 +99,7 @@
 
 	$(function(){
 		detail();
-		caigou_list();
+		
 	})
 
 	//获取材料id
@@ -141,51 +144,24 @@
 		},'json');
 
 	}
-// 获取联系人
-	function tolink(){
-		$(".meterial_buy_detail").show();
-		$.post('http://wgcapp.wgc2013.com/jingyi.php/Home/Material/addmaterials_list_content', {
-			pid : prj_id
-		}, function(ret) {
-			if(ret.status == 200){
-				var data = ret.retData;
-						var listHtml = "";
-						for(var i in data){
-							var office_name = data[i].office_name;
-							var worker_address = data[i].worker_address;
-							var dateofpurchase = data[i].dateofpurchase;
-							var tel = data[i].tel;
-							var sgperson = data[i].sgperson;
-							var ps = data[i].ps;
 
-							listHtml +=	'<tr class="tbody" style="background-color: #eee;">';
-							listHtml +=		'<td style="width: 29%"><span style="">'+office_name+'</span></td>';
-							listHtml +=		'<td style="width: 20%"><span>'+worker_address+'</span></td>';
-							listHtml +=		'<td style="width: 12%"><span>'+dateofpurchase+'</span></td>';	
-							listHtml +=		'<td style="width: 6%"><span>'+tel+'</span></td>';
-							listHtml +=		'<td style="width: 6%"><span>'+sgperson+'</span></td>';
-							listHtml +=		'<td style="width: 18%"><span style="">'+ps+'</span></td>';
-							listHtml +=	'</tr>';
-						}
-						$(".meterial_buy_detail tbody").append(listHtml)
-						
-			}else if(ret.code == status){
-				var logoHtml = '<div>请<a href="index.php?app=member&act=login&ret_url=" target="_blank" style="cursor:pointer;color:blue;">登录</a>之后在联系</div>';
-				$('.link').html(logoHtml);
-			}
-		},'json');
-	}
 	$(".quxiao").unbind('click').click(function(){
 		$(".meterial_buy_detail").hide();
   })
   function caigou_list(){
 		var page = 1;
-		var url = "http://wgcapp.wgc2013.com/jingyi.php/Home/Material/addmaterials_list";
+		var uid  = '<?php echo $_SESSION["user_info"]["user_id"];?>';
+		var url = "http://wgcapp.wgc2013.com/jingyi.php/Home/Material/addmaterials_index_list";
+		if(uid == ''){
+					$(".ck").show();
+					return false;
+					}else{
+					$(".meterial_buy_detail").show();
 					$.ajax({
 				type:"POST",
 				url:url,
 				data:{
-					user_id : '<?php echo $_SESSION["user_info"]["user_id"];?>',
+					pid     : prj_id,
 					page    : page
 
 				},
@@ -193,7 +169,10 @@
 				crossDomain: true == !(document.all),
 				dataType: "json",
 				success:function(ret){
-					console.log(ret)
+					//console.log(ret)
+					$(".meterial_buy_detail tbody").html("");
+					
+					$(".ck").hide();
 					if(ret.status == 200){
 						var listHtml = "";
 						var data = ret.retData;
@@ -210,36 +189,34 @@
 							var introduce = data[i].introduce;
 							var pid    = data[i].pid;
 
-							var office_name = data[i].office_name;
-							var worker_address = data[i].worker_address;
-							var dateofpurchase = data[i].dateofpurchase;
-							var tel = data[i].tel;
-							var sgperson = data[i].sgperson;
-							var ps = data[i].ps;
-
-							listHtml += '<tr class="tmain">';
-							listHtml += '<td style="width: 5%"><span>'+j+'</span></td>';
-							listHtml += '<td style="width: 16%"><span>'+m_name+'</span></td>';
-							listHtml += '<td style="width: 8%"><span>'+brand+'</span></td>';
+							if(pid == prj_id){
+							
+							listHtml += '<tr class="tmain" style="background-color:#fff;">';							
+							listHtml += '<td style="width: 15%"><span>'+m_name+'</span></td>';
+							listHtml += '<td style="width: 10%"><span>'+brand+'</span></td>';
 							listHtml += '<td style="width: 10%"><span>'+size+'</span></td>';
-							listHtml += '<td style="width: 10%"><span>'+expire_time+'</span></td>';
+							listHtml += '<td style="width: 15%"><span>'+expire_time+'</span></td>';
 							listHtml += '<td style="width: 6%"><span>'+number+'</span></td>';
 							listHtml += '<td style="width: 6%"><span>'+danwei+'</span></td>';
 							listHtml += '<td style="width: 6%"><span>'+danjia+'</span></td>';
 							listHtml += '<td style="width: 6%"><span>'+heji+'</span></td>';
-							listHtml += '<td style="width: 15%;"><span>'+introduce+'</span></td>';
-							listHtml += '<td style="width: 3%;border-right:2px solid #bcbcbc;"><a href="javascript:;" style="color:blue;" onclick="details('+pid+')">详情</a></td>';
+							listHtml += '<td style="width: 18%;border-right:2px solid #bcbcbc;"><span>'+introduce+'</span></td>';
 							listHtml += '</tr>';
+							}else{
+								
+							}
 
 
 						}
-						$("#budget_list tbody").append(listHtml);
+						$(".meterial_buy_detail tbody").append(listHtml);
 					}
+					
 				},
 				error:function(err){
 					//console.log(err)
 				}
 			});
+					}
 	}
 </script>
 </html>

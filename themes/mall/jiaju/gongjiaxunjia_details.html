@@ -32,6 +32,8 @@
 							<div class="shejifenbao_list"><span>数量/范围：</span><span id="slfw"></span></div>
 							<!-- <div class="shejifenbao_list"><span>联系方式：</span><span id="lxfs"></span></div> -->
 							<div class="shejifenbao_list"><span>工作地点：</span><span id="gzdd"></span></div>
+							<div class="shejifenbao_list"><span>开始时间：</span><span id="come_time"></span></div>
+							<div class="shejifenbao_list"><span>结束时间：</span><span id="end_time"></span></div>
 							<div class="shejifenbao_list"><span>发布时间：</span><span id="fbsj"></span></div>
 							<div class="shejifenbao_list" style="height: auto;overflow:hidden;"><span>备注：</span><span id="bz"></span></div>
 							<div id="gjxj_img"></div>
@@ -115,6 +117,8 @@
 					tel = data.tel,//号码
 					title = data.title,//项目名称
 					unit = data.unit,//计价单位
+					cometime = data.starttime,
+					endtime  = data.endtime,
 					img = data.img;
 					var imgs = img.split(',');
 
@@ -122,6 +126,8 @@
 				$('#jjdw').html(data.unit);
 				$('#slfw').html(data.num);
 				$('#lxfs').html(data.tel.replace(/(\d{3})\d{5}(\d{3})/, '$1*****$2'));
+				$('#come_time').html(cometime)
+				$('#end_time').html(endtime)
 				$('#gzdd').html(data.address);
 				$('#fbsj').html(data.addtime);
 				$('#bz').html(data.ps);

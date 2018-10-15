@@ -103,12 +103,13 @@
 				var retData = ret.message;
 				var html = '';
 				for(var i in retData){
-					var office_name = (retData[i].office_name == null || retData[i].office_name == '') ? '未设定':retData[i].office_name,
+					var office_name = (retData[i].office_name == '未设定' || retData[i].office_name == '') ? '未设定':retData[i].office_name,
 						id = retData[i].id, 
 						weixiu_price = retData[i].weixiu_price,
-						worker_address = (retData[i].worker_address == null || retData[i].worker_address == '') ? '未设定':retData[i].worker_address,
+						worker_address = (retData[i].restaurant_address == null || retData[i].restaurant_address == '') ? '未设定':retData[i].restaurant_address,
 						addtime = retData[i].addtime,
-						endtime = (retData[i].endtime == null || retData[i].endtime == '') ? '未设定':retData[i].endtime;
+						endtime = (retData[i].endtime == null || retData[i].endtime == '') ? '未设定':retData[i].endtime,
+						office_name = (office_name == '未设定') ? retData[i].restaurant:retData[i].restaurant;
 
 						html += '<ul>';
 							html += '<li style="width:28.16%;color:red;font-weight:600;">'+office_name+'</li>';

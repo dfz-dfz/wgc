@@ -480,7 +480,7 @@ $(".container_nav ul li").click(function(){
 				
 				$(".userphoto_img").attr('src',photourl);
 				$("#name").val(user.name);
-				$("#mobile").val(user.mobile);
+				$("#mobile").val(user.phone_mob);
 				$("#sex").val(user.sex);
 				$("#nianling").val(user.nianling);
 				$("#huji").val(user.huji);
@@ -491,9 +491,7 @@ $(".container_nav ul li").click(function(){
 	         	$("#skill").val(user.skill);
 	         	$("#kname").val(user.kname);
 	         	$("#kahao").val(user.kahao);
-				if(mobile){
-				$("#mobile").attr("readOnly",true);
-				}
+				
 				if(level == "0"){
 					$("#leven").html('<span style="display: inline-block;margin: 5px 0px;color:#9e9e9e;">普通用户</span>');
 				}else if(level == "1"){
@@ -507,7 +505,7 @@ $(".container_nav ul li").click(function(){
 	//修改
 	function edit(){
 				var name  =  $("#name").val();
-				var mobile=  $("#mobile").val();
+				var phone_mob=  $("#mobile").val();
 				var nianling = $("#nianling").val();
 				var huji  =  $("#huji").val();
 				var bumen =  $("#bumen").val();
@@ -539,7 +537,7 @@ $(".container_nav ul li").click(function(){
 						xinzi 		: $("#xinzi").val(),
 						skill 		: $("#skill").val(),
 						intension 	: $("#gz_jingyan").val(),
-						mobile 		: $("#mobile").val(),
+						phone_mob 		: $("#mobile").val(),
 						shenfen     : '技术工人',
 						
 				},function(ret){
