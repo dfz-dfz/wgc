@@ -1,0 +1,597 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>微工程-城市区域</title>
+<meta name="description" content="微工程，微工程APP，装修、材料、家具、饰品一站式服务，让装修更简单，价格更透明！！" />
+	<meta name="keywords" content="微工程，微工程，家居商城，微工程家居商城，微工程家居装修商城，办公室装修，写字楼装修，材料，装修材料，家居，办公家具，家居，家具，装修，装饰" />
+<link type="text/css" href="css/style.css" rel="stylesheet"  />
+<link type="text/css" href="css/demo.css" rel="stylesheet"  />
+<link type="text/css" href="css/style.css" rel="stylesheet"  />
+<script type="text/javascript">
+	$(function (){
+		$('#open-change-city-window').click(function (){
+			$('.change-city-window').slideDown();
+		})
+		$('#close-change-city-window').click(function (){
+			$('.change-city-window').slideUp();
+		})
+	})
+</script>
+<style type="text/css">
+body,ul,h1,h2,form,p,dl,dt,dd,p{margin:0; padding:0; list-style:none}img{border:none}a{color:#0000CC; margin: 0px 3px; text-decoration:none} a:hover{color:#e40000;}.c6{color:#585858}#logo,#qianm,#postgg{background:url(images/wpic_2.gif) no-repeat}#header{background:#fff;width:100%; border-bottom:2px solid #ff7200}#headerinside{height:240px;position:relative;width:990px; margin:0 auto;z-index: 10000}#logo{background-position:9px 63px;position:absolute;left:20px;top:98px; width:230px; padding-bottom:22px; z-index:999;}#postgg{background-position:0 -54px; width:443px; height:105px; position:absolute; right:-50px; bottom:0; line-height:26px; padding:105px 40px 0 60px; z-index:666}#postgg a{font-size:14px}#qianm{background-position:-474px 0; width:70px; height:50px; position:absolute; left:185px; bottom:10px; display:inline-block; z-index:999}#flashimg{position:absolute; width:300px; height:240px; overflow:hidden; left:232px; bottom:0; z-index:662}#flashimg img{position:absolute; left:0px; bottom:0; background:#fff}.gray{color:#565656;}#clist dd a.lr{color: #e40000;}.ml{margin-left:50px}.c{clear: both}.co16{clear:#0000cc; font-size:16px}.index_bo{width:990px; margin:0 auto; text-align:center; overflow:hidden}.index_bo a{color:#000;}.index_bo a:hover{color:#e40000;}.index_bo a strong{font-weight:normal;}.topcity{width:100%; margin-top:1px;}.topcity .index_bo{padding:28px 20px 20px; width:970px; padding-right:0}.topcity a{margin-right:8px;}#citysear{display:none;line-height:22px; font-size:14px; float:right}#clist{width:990px; margin:0 auto;clear:both;overflow:hidden;zoom:1;padding:0 0 20px;}#clist dt{color:#545454;float: left;width: 50px;font-family: Arial, Helvetica, sans-serif; font-size: 12px;clear: both;font-weight: bold;margin: 0;padding:3px 0 3px 4px;}#clist dd{width:936px;float: left;margin-left: 0px;padding: 3px 0;}#clist dd a{display: inline-block;font-size: 12px; margin-right:12px; white-space:nowrap; text-decoration:none}.footer{width:990px; margin:0 auto; text-align: center;border-top: 1px solid #ccc;padding: 15px 0px;font-size: 12px;line-height: 180%; overflow:hidden}.footer a{font-size: 12px;color: #666;text-decoration: underline}a.entrance{background:url(images/bgenter.gif) no-repeat 0 0 ;width:205px;margin:0;font-size:18px; line-height:40px;text-align:center;color:#fff;display:block; margin:0 auto 10px;}a.entrance:hover{background-position:0 -42px; color:#fff;}#around{display:none}#clist dt.searchcity{width:287px;}#inputdiv{border:1px solid #cdcdcd;display:inline-block;width:135px;*display:inline;*zoom:1;}#clist dt.searchcity input{vertical-align:middle; height:20px; line-height:20px; padding:2px 4px;border:0;width:127px}#searchspan{padding:3px 14px 3px 0;}#popularspan{padding:3px 14px 3px 34px;}#clist dd.popular{width:681px;}.tooltip{border:1px solid #ccc;background:#fff;margin:-3px 0 0 -1px;*margin:-3px 0 0 0;}.tooltip li{padding:0 5px;overflow:hidden;zoom:1}.tooltip li a{color:#545454;text-decoration:none}.tooltip li a b{color:#545454;font-weight:normal;}.tooltip li .tool_r{float:right;color:#090;font-size:11px}.tooltip li.selected a b,.tooltip li.selected a,.tooltip li.selected .tool_r{color:#545454}.tooltip li.selected,.tag_options li.open_hover{background:#f2f2f2;color:#545454}#tooltipdiv2{width:135px;font-size:12px;text-align:left;}#clist dt.quyu{color:#dcdcdc;width:990px;line-height:34px;height:34px;padding-left:2px;font-size: 16px;background:url(images/line_dot.gif) repeat-x left center;clear:none;}#clist dt.quyu span{background:#f9f9f9;padding-right:4px;}#clist dd.quyu{height:34px;width:952px;background:url(images/line_dot.gif) repeat-x left center;}
+</style>
+<link type="text/css" href="css/main.css" rel="stylesheet"  />
+<link type="text/css" href="css/global.css" rel="stylesheet"  />
+<link type="text/css" href="css/catalog.css" rel="stylesheet"  />
+<body>
+<div id="header" class="w-full">
+	<!--头部导航开始-->
+		<div id="site-nav" class="w-full" style="background:#333;border-bottom:1px solid #fff;text-align:left;">
+			<div style="overflow:hidden;color:#fff;text-align:left;width:77%;min-width:1100px;margin:0 auto;">http://www.wgc2013.com</div>
+		</div>
+		<div id="site-nav" class="w-full" style="background:#333;height:50px;">
+		  <div class="shoptop w clearfix" style="height:50px">
+				<div class="login_info" style="height:50px;line-height:50px">
+				
+					<a href="javascript:;" style="color:#fff;font-size:18px;">
+						APP下载
+						<font style="margin-left:5px;">&or;</font>
+					</a>					
+				
+					
+				</div>
+				<ul class="quick-menu"style="min-width:190px;overflow:hidden;">
+				  
+					<li class="service" style="margin-right:10px;height:50px;line-height:50px;background:none;">
+						<a href="http://www.59jiaju.com/index.php?app=member&amp;act=login&amp;ret_url=" style="color:#fff;font-size:18px;">企业服务</a>        
+					</li>
+					<li class="service" style="margin-right:10px;height:50px;line-height:50px;background:none;">
+						<a href="javascript:;" style="color:#fff;font-size:18px;">|</a>        
+					</li>
+					<li style="background:red;margin-right:0px;padding:0 30px;height:50px;line-height:50px;">
+						 &nbsp;&nbsp;&nbsp;
+						<a  style="color:#fff;margin:0;font-size:18px;" href="http://www.59jiaju.com/index.php?app=member&amp;act=login&amp;ret_url=">登录</a>
+						<span style="color:#fff;margin:0 5px;">/</span>
+						<a  style="color:#fff;margin:0;font-size:18px;" href="http://www.59jiaju.com/index.php?app=store&act=reg">注册</a>
+						&nbsp;&nbsp;&nbsp;
+					</li>
+				</ul>
+		   </div>
+		 </div>	
+	<!---头部导航结束-->
+    <div class="shop-t w clearfix" style="width: 100%;min-width: 1100px;">
+	
+		<!--logo部分开始--->
+		<div id="h_logos" style="overflow:hidden;" >
+		
+			<div class="logo" style="width:290px;float:left;">
+				 <a href="/"  title="微工程">
+					<img alt="微工程" src='/data/files/mall/settings/logo.png' />
+				  </a>			  
+			</div>
+			<div style="height:100px;line-height:80px;width:100px;float:left;">装修行业平台</div>
+			<div id="searchbar" style="width:460px;float:left;">
+				
+				<form method="GET" action="index.php?app=search"style="display:block;overflow:hidden">
+                    <div id="saerkey"style="float:left;padding-left:10px">
+						<a href="javascript:;" style="color:#999;margin:0;">全文<b style="margin:0 5px;">&or;</b><font style="color:#ccc">|</font></a>
+                        <span id="key" style="margin-left:10px">
+							<input style="width:56%"id="keyword" name="keyword" class="keyword" value="关键字" onblur="win.closeToolTipWindow();if(this.value=='')this.value='关键字',this.className='keyword'" onkeyup="win.GetContentData();" onfocus="if(this.value=='关键字')this.value=''" autocomplete="off" type="text">
+						</span>
+						<span style="color:#999">
+						|
+						<font style="margin:3px 6px;">广州市</font>
+						<a href="http://www.59jiaju.com/city/"style=""><b style="color:red;font-size:18px;">+</b></a>
+						</span>
+                    </div>
+                    <div class="inputcon">
+						<input type="hidden" name="app" value="search">
+						<input type="hidden" name="act" value="index">
+                        <input id="searchbtn" class="btnall" value="搜&nbsp;索" onclick="if(document.getElementById('keyword').value=='关键字')return false;" type="submit">
+                    </div>
+					
+                </form>    
+				<span id="hot" style="overflow:hidden;width:94%;">
+					<a href="http://www.59jiaju.com/index.php?app=search&cate_id=6431">螺丝刀</a>
+					<a href="http://www.59jiaju.com/index.php?app=search&cate_id=6489">扳手</a>
+					<a href="http://www.59jiaju.com/index.php?app=search&cate_id=6490">钢丝钳</a>
+					<a style="float:right;">客服热线：<span class="textred" style="color: red;">400-643-9788</span></a>
+				</span>				
+            </div>
+			
+			<?php
+			$row11=mysql_num_rows(mysql_query("SELECT user_id FROM ecm_member where types=2"));
+			$row12=mysql_num_rows(mysql_query("SELECT user_id FROM ecm_member where types=3"));
+			?>
+			
+			<!--注册-登陆-->
+			<div style="overflow:hidden;float:right;width:240px;height:100px;">
+				<a href="index.php?app=member&amp;act=login&amp;ret_url="  title="微工程">
+					<img alt="微工程" src='/data/files/mall/settings/user.png' style="width:100%;height:100%" />
+				  </a>	
+			</div>
+			
+		</div>
+		
+   	</div>
+	<!---logo部分结束-->
+	
+	
+	<div class="mainnav w-full">
+		<div class="menu">
+			<ul style="overflow:hidden;float:left;">
+				<li class="line"style="width:18%"><a style="font-size:22px;" href="http://www.59jiaju.com/index.php?app=search&act=zhaopin">热门招聘</a></li>
+				<li class="line"style="width:18%"><a style="font-size:22px;" href="http://www.59jiaju.com/index.php?app=search&act=caigou">集采信息</a></li>
+				<li class="line"style="width:18%"><a style="font-size:22px;" href="http://www.59jiaju.com/index.php?app=search&act=joblist2">劳动力资源</a></li>
+				<li class="line"style="width:18%"><a style="font-size:22px;" href="http://www.59jiaju.com/index.php?app=member&act=login&ret_url=">会员登录</a></li>
+				<li class="line"style="width:20%"><a style="font-size:22px;" href="http://www.59jiaju.com/index.php?app=store&act=reg">会员注册</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<div class="topcity">
+    <dl id="clist">
+    <dt class="quyu"></dt>
+    <dt class="searchcity" style="width:50px;">
+		<span id="popularspan" style="padding:0">热门</span>
+    </dt>
+
+    <dd class="popular">
+		<a href="javascript:;" >北京</a>
+		<a href="javascript:;" >上海</a>
+		<a href="http://guangzhou.59jiaju.com" >广州</a>
+		<a href="http://shenzhen.59jiaju.com" >深圳</a>
+		<a href="javascript:;" >成都</a>
+		<a href="javascript:;" >杭州</a>
+		<a href="javascript:;" >南京</a>
+		<a href="javascript:;" >天津</a>
+		<a href="http://wuhan.59jiaju.com" >武汉</a>
+		<a href="javascript:;" >重庆</a>
+	</dd>
+    <dt class="quyu"><span>华南</span></dt>
+    <dt>广东</dt>
+	<dd>
+		<a href="http://guangzhou.59jiaju.com" id="广州市">广州 </a>
+        <a href="http://shenzhen.59jiaju.com" id="深圳市">深圳</a>
+        <a href="http://zhuhai.59jiaju.com" id="珠海市" >珠海</a>
+        <a href="http://shantou.59jiaju.com" id="汕头市" >汕头</a>
+		<a href="http://foshan.59jiaju.com" id="佛山市" >佛山</a>
+		<a href="http://dongguan.59jiaju.com" id="东莞市" >东莞</a>
+		<a href="http://zhongshan.59jiaju.com" id="中山市" >中山</a>
+		<a href="http://jiangmen.59jiaju.com" id="江门市" >江门</a>
+		<a href="http://huizhou.59jiaju.com" id="惠州市" >惠州</a>
+		<a href="http://zhaoqing.59jiaju.com" id="肇庆市" >肇庆</a>
+		<a href="http://yangjiang.59jiaju.com" id="阳江市" >阳江</a>
+		<a href="http://shaoguan.59jiaju.com" id="韶关市" >韶关</a>
+		<a href="http://heyuan.59jiaju.com" id="河源市" >河源</a>
+		<a href="http://meizhou.59jiaju.com" id="梅州市" >梅州</a>
+		<a href="http://qingyuan.59jiaju.com" id="清远市" >清远</a>
+		<a href="http://yunfu.59jiaju.com" id="云浮市" >云浮</a>
+		<a href="http://maoming.59jiaju.com" id="茂名市" >茂名</a>
+		<a href="http://shanwei.59jiaju.com" id="汕尾市" >汕尾</a>
+		<a href="http://jieyang.59jiaju.com" id="揭阳市" >揭阳</a>
+		<a href="http://chaozhou.59jiaju.com" id="潮州市" >潮州</a>
+		<a href="http://zhanjiang.59jiaju.com" id="湛江市" >湛江</a>	
+	</dd>
+    <dt>福建</dt>
+	<dd>
+		<a href="javascript:;" id="福州市市" >福州市</a>
+		<a href="javascript:;" id="厦门市市" >厦门市</a>
+		<a href="javascript:;" id="莆田市市" >莆田市</a>
+		<a href="javascript:;" id="三明市市" >三明市</a>
+		<a href="javascript:;" id="泉州市市" >泉州市</a>
+		<a href="javascript:;" id="漳州市市" >漳州市</a>
+		<a href="javascript:;" id="南平市市" >南平市</a>
+		<a href="javascript:;" id="龙岩市市" >龙岩市</a>
+		<a href="javascript:;" id="宁德市市" >宁德市</a>	
+	</dd>
+    <dt>广西</dt>
+	<dd>
+
+		<a href="javascript:;" id="南宁市" >南宁</a>
+		<a href="javascript:;" id="柳州市" >柳州</a>
+		<a href="javascript:;" id="桂林市" >桂林</a>
+		<a href="javascript:;" id="梧州市" >梧州</a>
+		<a href="javascript:;" id="北海市" >北海</a>
+		<a href="javascript:;" id="防城港市" >防城港</a>
+		<a href="javascript:;" id="钦州市" >钦州</a>
+		<a href="javascript:;" id="贵港市" >贵港</a>
+		<a href="javascript:;" id="玉林市" >玉林</a>
+		<a href="javascript:;" id="百色市" >百色</a>
+		<a href="javascript:;" id="贺州市" >贺州</a>
+		<a href="javascript:;" id="河池市" >河池</a>
+		<a href="javascript:;" id="来宾市" >来宾</a>
+		<a href="javascript:;" id="崇左市" >崇左</a>	
+	</dd>
+    <dt>海南</dt>
+	<dd>
+		<a href="javascript:;" id="海口市市" >海口市</a>
+		<a href="javascript:;" id="三亚市市" >三亚市</a>	
+	</dd>
+	<dt class="quyu"><span>华东</span></dt>
+    <dt>山东</dt>
+	<dd>
+		<a href="javascript:;" id="济南市" >济南</a>
+		<a href="javascript:;" id="青岛市" >青岛</a>
+		<a href="javascript:;" id="淄博市" >淄博</a>
+		<a href="javascript:;" id="泰安市" >泰安</a>
+		<a href="javascript:;" id="济宁市" >济宁</a>
+		<a href="javascript:;" id="德州市" >德州</a>
+		<a href="javascript:;" id="日照市" >日照</a>
+		<a href="javascript:;" id="潍坊市" >潍坊</a>
+		<a href="javascript:;" id="枣庄市" >枣庄</a>
+		<a href="javascript:;" id="临沂市" >临沂</a>
+		<a href="javascript:;" id="莱芜市" >莱芜</a>
+		<a href="javascript:;" id="滨州市" >滨州</a>
+		<a href="javascript:;" id="聊城市" >聊城</a>
+		<a href="javascript:;" id="菏泽市" >菏泽</a>
+		<a href="javascript:;" id="烟台市" >烟台</a>
+		<a href="javascript:;" id="威海市" >威海</a>
+		<a href="javascript:;" id="东营市" >东营</a>	
+	</dd>
+    <dt>江苏</dt>
+	<dd>
+		<a href="javascript:;" id="南京市" >南京</a>
+		<a href="javascript:;" id="苏州市" >苏州</a>
+		<a href="javascript:;" id="无锡市" >无锡</a>
+		<a href="javascript:;" id="常州市" >常州</a>
+		<a href="javascript:;" id="扬州市" >扬州</a>
+		<a href="javascript:;" id="南通市" >南通</a>
+		<a href="javascript:;" id="镇江市" >镇江</a>
+		<a href="javascript:;" id="泰州市" >泰州</a>
+		<a href="javascript:;" id="淮安市" >淮安</a>
+		<a href="javascript:;" id="徐州市" >徐州</a>
+		<a href="javascript:;" id="盐城市" >盐城</a>
+		<a href="javascript:;" id="宿迁市" >宿迁</a>
+		<a href="javascript:;" id="连云港市" >连云港</a>	
+	</dd>
+    <dt>浙江</dt>
+	<dd>
+		<a href="javascript:;" id="杭州市" >杭州</a>
+		<a href="javascript:;" id="宁波市" >宁波</a>
+		<a href="javascript:;" id="温州市" >温州</a>
+		<a href="javascript:;" id="嘉兴市" >嘉兴</a>
+		<a href="javascript:;" id="湖州市" >湖州</a>
+		<a href="javascript:;" id="绍兴市" >绍兴</a>
+		<a href="javascript:;" id="金华市" >金华</a>
+		<a href="javascript:;" id="衢州市" >衢州</a>
+		<a href="javascript:;" id="舟山市" >舟山</a>
+		<a href="javascript:;" id="台州市" >台州</a>
+		<a href="javascript:;" id="丽水市" >丽水</a>	
+	</dd>
+    <dt>安徽</dt>
+	<dd>
+		<a href="javascript:;" id="淮北市市" >淮北市</a>
+		<a href="javascript:;" id="合肥市市" >合肥市</a>
+		<a href="javascript:;" id="六安市市" >六安市</a>
+		<a href="javascript:;" id="亳州市市" >亳州市</a>
+		<a href="javascript:;" id="宿州市市" >宿州市</a>
+		<a href="javascript:;" id="阜阳市市" >阜阳市</a>
+		<a href="javascript:;" id="蚌埠市市" >蚌埠市</a>
+		<a href="javascript:;" id="淮南市市" >淮南市</a>
+		<a href="javascript:;" id="滁州市市" >滁州市</a>
+		<a href="javascript:;" id="巢湖市市" >巢湖市</a>
+		<a href="javascript:;" id="芜湖市市" >芜湖市</a>
+		<a href="javascript:;" id="马鞍山市" >马鞍山</a>
+		<a href="javascript:;" id="安庆市市" >安庆市</a>
+		<a href="javascript:;" id="池州市市" >池州市</a>
+		<a href="javascript:;" id="铜陵市市" >铜陵市</a>
+		<a href="javascript:;" id="宣城市市" >宣城市</a>
+		<a href="javascript:;" id="黄山市市" >黄山市</a>	
+	</dd>
+    <dt class="quyu"><span>中南</span></dt>
+    <dt>河南</dt>
+	<dd>
+		<a href="javascript:;" id="郑州市市" >郑州市</a>
+		<a href="javascript:;" id="洛阳市市" >洛阳市</a>
+		<a href="javascript:;" id="开封市市" >开封市</a>
+		<a href="javascript:;" id="平顶山市市" >平顶山市</a>
+		<a href="javascript:;" id="南阳市市" >南阳市</a>
+		<a href="javascript:;" id="焦作市市" >焦作市</a>
+		<a href="javascript:;" id="信阳市市" >信阳市</a>
+		<a href="javascript:;" id="济源市市" >济源市</a>
+		<a href="javascript:;" id="周口市市" >周口市</a>
+		<a href="javascript:;" id="安阳市市" >安阳市</a>
+		<a href="javascript:;" id="驻马店市市" >驻马店市</a>
+		<a href="javascript:;" id="新乡市市" >新乡市</a>
+		<a href="javascript:;" id="鹤壁市市" >鹤壁市</a>
+		<a href="javascript:;" id="商丘市市" >商丘市</a>
+		<a href="javascript:;" id="漯河市市" >漯河市</a>
+		<a href="javascript:;" id="许昌市市" >许昌市</a>
+		<a href="javascript:;" id="三门峡市市" >三门峡市</a>
+		<a href="javascript:;" id="濮阳市市" >濮阳市</a>	
+	</dd>
+    <dt>湖北</dt>
+	<dd>
+		<a href="http://wuhan.59jiaju.com" id="武汉市" >武汉</a>
+		<a href="javascript:;" id="宜昌市" >宜昌</a>
+		<a href="javascript:;" id="荆州市" >荆州</a>
+		<a href="javascript:;" id="十堰市" >十堰</a>
+		<a href="javascript:;" id="襄樊市" >襄樊</a>
+		<a href="javascript:;" id="黄石市" >黄石</a>
+		<a href="javascript:;" id="黄冈市" >黄冈</a>
+		<a href="javascript:;" id="恩施市" >恩施</a>
+		<a href="javascript:;" id="荆门市" >荆门</a>
+		<a href="javascript:;" id="咸宁市" >咸宁</a>
+		<a href="javascript:;" id="孝感市" >孝感</a>
+		<a href="javascript:;" id="鄂州市" >鄂州</a>
+		<a href="javascript:;" id="天门市" >天门</a>
+		<a href="javascript:;" id="仙桃市" >仙桃</a>
+		<a href="javascript:;" id="随州市" >随州</a>
+		<a href="javascript:;" id="潜江市" >潜江</a>
+		<a href="javascript:;" id="神农架市" >神农架</a>	
+	</dd>
+    <dt>湖南</dt>
+	<dd>
+		<a href="javascript:;" id="长沙市市" >长沙市</a>
+		<a href="javascript:;" id="株洲市市" >株洲市</a>
+		<a href="javascript:;" id="湘潭市市" >湘潭市</a>
+		<a href="javascript:;" id="邵阳市市" >邵阳市</a>
+		<a href="javascript:;" id="吉首市市" >吉首市</a>
+		<a href="javascript:;" id="岳阳市市" >岳阳市</a>
+		<a href="javascript:;" id="娄底市市" >娄底市</a>
+		<a href="javascript:;" id="怀化市市" >怀化市</a>
+		<a href="javascript:;" id="永州市市" >永州市</a>
+		<a href="javascript:;" id="郴州市市" >郴州市</a>
+		<a href="javascript:;" id="常德市市" >常德市</a>
+		<a href="javascript:;" id="衡阳市市" >衡阳市</a>
+		<a href="javascript:;" id="益阳市市" >益阳市</a>
+		<a href="javascript:;" id="张家界市" >张家界</a>
+		<a href="javascript:;" id="湘西州市" >湘西州</a>	
+	</dd>
+    <dt>江西</dt>
+	<dd>
+		<a href="javascript:;" id="南昌市市" >南昌市</a>
+		<a href="javascript:;" id="景德镇市市" >景德镇市</a>
+		<a href="javascript:;" id="萍乡市市" >萍乡市</a>
+		<a href="javascript:;" id="九江市市" >九江市</a>
+		<a href="javascript:;" id="新余市市" >新余市</a>
+		<a href="javascript:;" id="鹰潭市市" >鹰潭市</a>
+		<a href="javascript:;" id="赣州市市" >赣州市</a>
+		<a href="javascript:;" id="吉安市市" >吉安市</a>
+		<a href="javascript:;" id="宜春市市" >宜春市</a>
+		<a href="javascript:;" id="抚州市市" >抚州市</a>
+		<a href="javascript:;" id="上饶市市" >上饶市</a>	
+	</dd>
+    <dt class="quyu"><span>东北</span></dt>
+    <dt>辽宁</dt>
+	<dd>
+		<a href="javascript:;" id="沈阳市" >沈阳</a>
+		<a href="javascript:;" id="大连市" >大连</a>
+		<a href="javascript:;" id="鞍山市" >鞍山</a>
+		<a href="javascript:;" id="抚顺市" >抚顺</a>
+		<a href="javascript:;" id="本溪市" >本溪</a>
+		<a href="javascript:;" id="丹东市" >丹东</a>
+		<a href="javascript:;" id="锦州市" >锦州</a>
+		<a href="javascript:;" id="营口市" >营口</a>
+		<a href="javascript:;" id="阜新市" >阜新</a>
+		<a href="javascript:;" id="辽阳市" >辽阳</a>
+		<a href="javascript:;" id="铁岭市" >铁岭</a>
+		<a href="javascript:;" id="朝阳市" >朝阳</a>
+		<a href="javascript:;" id="盘锦市" >盘锦</a>
+		<a href="javascript:;" id="葫芦岛市" >葫芦岛</a>	
+	</dd>
+    <dt>黑龙江</dt>
+	<dd>
+		<a href="javascript:;" id="哈尔滨市" >哈尔滨</a>
+		<a href="javascript:;" id="齐齐哈尔市" >齐齐哈尔</a>
+		<a href="javascript:;" id="牡丹江市" >牡丹江</a>
+		<a href="javascript:;" id="佳木斯市" >佳木斯</a>
+		<a href="javascript:;" id="大庆市" >大庆</a>
+		<a href="javascript:;" id="鸡西市" >鸡西</a>
+		<a href="javascript:;" id="伊春市" >伊春</a>
+		<a href="javascript:;" id="双鸭山市" >双鸭山</a>
+		<a href="javascript:;" id="七台河市" >七台河</a>
+		<a href="javascript:;" id="鹤岗市" >鹤岗</a>
+		<a href="javascript:;" id="黑河市" >黑河</a>
+		<a href="javascript:;" id="绥化市" >绥化</a>
+		<a href="javascript:;" id="大兴安岭市" >大兴安岭</a>	
+	</dd>
+    <dt>吉林</dt>
+	<dd>
+		<a href="javascript:;" id="长春市市" >长春市</a>
+		<a href="javascript:;" id="吉林市市" >吉林市</a>
+		<a href="javascript:;" id="四平市市" >四平市</a>
+		<a href="javascript:;" id="辽源市市" >辽源市</a>
+		<a href="javascript:;" id="通化市市" >通化市</a>
+		<a href="javascript:;" id="白山市市" >白山市</a>
+		<a href="javascript:;" id="松原市市" >松原市</a>
+		<a href="javascript:;" id="白城市市" >白城市</a>
+		<a href="javascript:;" id="延边州市" >延边州</a>	
+	</dd>
+    <dt class="quyu"><span>西南</span></dt>
+    <dt>四川</dt>
+	<dd>
+		<a href="javascript:;" id="成都市" >成都</a>
+		<a href="javascript:;" id="自贡市" >自贡</a>
+		<a href="javascript:;" id="攀枝花市" >攀枝花</a>
+		<a href="javascript:;" id="泸州市" >泸州</a>
+		<a href="javascript:;" id="德阳市" >德阳</a>
+		<a href="javascript:;" id="绵阳市" >绵阳</a>
+		<a href="javascript:;" id="广元市" >广元</a>
+		<a href="javascript:;" id="遂宁市" >遂宁</a>
+		<a href="javascript:;" id="内江市" >内江</a>
+		<a href="javascript:;" id="资阳市" >资阳</a>
+		<a href="javascript:;" id="乐山市" >乐山</a>
+		<a href="javascript:;" id="眉山市" >眉山</a>
+		<a href="javascript:;" id="南充市" >南充</a>
+		<a href="javascript:;" id="宜宾市" >宜宾</a>
+		<a href="javascript:;" id="广安市" >广安</a>
+		<a href="javascript:;" id="达州市" >达州</a>
+		<a href="javascript:;" id="巴中市" >巴中</a>
+		<a href="javascript:;" id="雅安市" >雅安</a>
+		<a href="javascript:;" id="阿坝市" >阿坝</a>
+		<a href="javascript:;" id="甘孜市" >甘孜</a>
+		<a href="javascript:;" id="凉山市" >凉山</a>	
+	</dd>
+    <dt>云南</dt>
+	<dd>
+		<a href="javascript:;" id="昆明市市" >昆明市</a>
+		<a href="javascript:;" id="曲靖市市" >曲靖市</a>
+		<a href="javascript:;" id="红河哈尼族彝族自治州市" >红河哈尼族彝族自治州</a>
+		<a href="javascript:;" id="昭通市市" >昭通市</a>
+		<a href="javascript:;" id="玉溪市市" >玉溪市</a>
+		<a href="javascript:;" id="德宏傣族景颇族自治州市" >德宏傣族景颇族自治州</a>
+		<a href="javascript:;" id="丽江市市" >丽江市</a>
+		<a href="javascript:;" id="迪庆藏族自治州市" >迪庆藏族自治州</a>
+		<a href="javascript:;" id="文山壮族苗族自治州市" >文山壮族苗族自治州</a>
+		<a href="javascript:;" id="思茅市市" >思茅市</a>
+		<a href="javascript:;" id="大理白族自治州市" >大理白族自治州</a>
+		<a href="javascript:;" id="怒江傈僳族自治州市" >怒江傈僳族自治州</a>
+		<a href="javascript:;" id="保山市市" >保山市</a>
+		<a href="javascript:;" id="楚雄彝族自治州市" >楚雄彝族自治州</a>
+		<a href="javascript:;" id="西双版纳傣族自治州市" >西双版纳傣族自治州</a>
+		<a href="javascript:;" id="临沧市市" >临沧市</a>	
+	</dd>
+    <dt>贵州</dt>
+	<dd>
+		<a href="javascript:;" id="贵阳市市" >贵阳市</a>
+		<a href="javascript:;" id="遵义市市" >遵义市</a>
+		<a href="javascript:;" id="安顺市市" >安顺市</a>
+		<a href="javascript:;" id="六盘水市市" >六盘水市</a>
+		<a href="javascript:;" id="毕节地区市" >毕节地区</a>
+		<a href="javascript:;" id="铜仁地区市" >铜仁地区</a>
+		<a href="javascript:;" id="黔东南州市" >黔东南州</a>
+		<a href="javascript:;" id="黔南州市" >黔南州</a>
+		<a href="javascript:;" id="黔西南州市" >黔西南州</a>	
+	</dd>
+    <dt>西藏</dt>
+	<dd>
+		<a href="javascript:;" id="拉萨市" >拉萨</a>
+		<a href="javascript:;" id="日喀则市" >日喀则</a>
+		<a href="javascript:;" id="林芝市" >林芝</a>
+		<a href="javascript:;" id="山南市" >山南</a>
+		<a href="javascript:;" id="那曲市" >那曲</a>
+		<a href="javascript:;" id="昌都市" >昌都</a>
+		<a href="javascript:;" id="阿里市" >阿里</a>	
+	</dd>
+    <dt class="quyu"><span>华北</span></dt>
+    <dt>河北</dt>
+	<dd>
+		<a href="javascript:;" id="石家庄市" >石家庄</a>
+		<a href="javascript:;" id="衡水市" >衡水</a>
+		<a href="javascript:;" id="唐山市" >唐山</a>
+		<a href="javascript:;" id="秦皇岛市" >秦皇岛</a>
+		<a href="javascript:;" id="张家口市" >张家口</a>
+		<a href="javascript:;" id="承德市" >承德</a>
+		<a href="javascript:;" id="邯郸市" >邯郸</a>
+		<a href="javascript:;" id="沧州市" >沧州</a>
+		<a href="javascript:;" id="邢台市" >邢台</a>
+		<a href="javascript:;" id="保定市" >保定</a>
+		<a href="javascript:;" id="廊坊市" >廊坊</a>	
+	</dd>
+    <dt>山西</dt>
+	<dd>
+		<a href="javascript:;" id="太原市市" >太原市</a>
+		<a href="javascript:;" id="大同市市" >大同市</a>
+		<a href="javascript:;" id="朔州市市" >朔州市</a>
+		<a href="javascript:;" id="忻州市市" >忻州市</a>
+		<a href="javascript:;" id="长治市市" >长治市</a>
+		<a href="javascript:;" id="阳泉市市" >阳泉市</a>
+		<a href="javascript:;" id="晋中市市" >晋中市</a>
+		<a href="javascript:;" id="吕梁市市" >吕梁市</a>
+		<a href="javascript:;" id="晋城市市" >晋城市</a>
+		<a href="javascript:;" id="临汾市市" >临汾市</a>
+		<a href="javascript:;" id="运城市市" >运城市</a>	
+	</dd>
+    <dt>内蒙古</dt>
+    <dd>
+		<a href="javascript:;" id="呼和浩特市市" >呼和浩特市</a>
+		<a href="javascript:;" id="包头市市" >包头市</a>
+		<a href="javascript:;" id="乌海市市" >乌海市</a>
+		<a href="javascript:;" id="赤峰市市" >赤峰市</a>
+		<a href="javascript:;" id="通辽市市" >通辽市</a>
+		<a href="javascript:;" id="鄂尔多斯市市" >鄂尔多斯市</a>
+		<a href="javascript:;" id="呼伦贝尔市市" >呼伦贝尔市</a>
+		<a href="javascript:;" id="巴彦淖尔市市" >巴彦淖尔市</a>
+		<a href="javascript:;" id="乌兰察布市市" >乌兰察布市</a>
+		<a href="javascript:;" id="锡林郭勒盟市" >锡林郭勒盟</a>
+		<a href="javascript:;" id="兴安盟市" >兴安盟</a>
+		<a href="javascript:;" id="阿拉善盟市" >阿拉善盟</a>	
+	</dd>
+    <dt class="quyu"><span>西北</span></dt>
+    <dt>陕西</dt>
+    <dd>
+		<a href="javascript:;" id="西安市市" >西安市</a>
+		<a href="javascript:;" id="铜川市市" >铜川市</a>
+		<a href="javascript:;" id="宝鸡市市" >宝鸡市</a>
+		<a href="javascript:;" id="咸阳市市" >咸阳市</a>
+		<a href="javascript:;" id="渭南市市" >渭南市</a>
+		<a href="javascript:;" id="延安市市" >延安市</a>
+		<a href="javascript:;" id="汉中市市" >汉中市</a>
+		<a href="javascript:;" id="榆林市市" >榆林市</a>
+		<a href="javascript:;" id="安康市市" >安康市</a>
+		<a href="javascript:;" id="商洛市市" >商洛市</a>	
+	</dd>
+    <dt>新疆</dt>
+    <dd>
+		<a href="javascript:;" id="伊犁哈萨克自治州市" >伊犁哈萨克自治州</a>
+		<a href="javascript:;" id="乌鲁木齐市市" >乌鲁木齐市</a>
+		<a href="javascript:;" id="昌吉回族自治州市" >昌吉回族自治州</a>
+		<a href="javascript:;" id="石河子市市" >石河子市</a>
+		<a href="javascript:;" id="克拉玛依市市" >克拉玛依市</a>
+		<a href="javascript:;" id="阿勒泰地区市" >阿勒泰地区</a>
+		<a href="javascript:;" id="博尔塔拉蒙古自治州市" >博尔塔拉蒙古自治州</a>
+		<a href="javascript:;" id="塔城地区市" >塔城地区</a>
+		<a href="javascript:;" id="和田地区市" >和田地区</a>
+		<a href="javascript:;" id="克孜勒苏克尔克孜自治州市" >克孜勒苏克尔克孜自治州</a>
+		<a href="javascript:;" id="喀什地区市" >喀什地区</a>
+		<a href="javascript:;" id="阿克苏地区市" >阿克苏地区</a>
+		<a href="javascript:;" id="巴音郭楞蒙古自治州市" >巴音郭楞蒙古自治州</a>
+		<a href="javascript:;" id="吐鲁番地区市" >吐鲁番地区</a>
+		<a href="javascript:;" id="哈密地区市" >哈密地区</a>
+		<a href="javascript:;" id="五家渠市市" >五家渠市</a>
+		<a href="javascript:;" id="阿拉尔市市" >阿拉尔市</a>
+		<a href="javascript:;" id="图木舒克市市" >图木舒克市</a>	
+	</dd>
+    <dt>甘肃</dt>
+    <dd>
+		<a href="javascript:;" id="兰州市市" >兰州市</a>
+		<a href="javascript:;" id="嘉峪关市" >嘉峪关</a>
+		<a href="javascript:;" id="金昌市市" >金昌市</a>
+		<a href="javascript:;" id="白银市市" >白银市</a>
+		<a href="javascript:;" id="天水市市" >天水市</a>
+		<a href="javascript:;" id="酒泉市市" >酒泉市</a>
+		<a href="javascript:;" id="张掖市市" >张掖市</a>
+		<a href="javascript:;" id="武威市市" >武威市</a>
+		<a href="javascript:;" id="定西市市" >定西市</a>
+		<a href="javascript:;" id="陇南市市" >陇南市</a>
+		<a href="javascript:;" id="平凉市市" >平凉市</a>
+		<a href="javascript:;" id="庆阳市市" >庆阳市</a>
+		<a href="javascript:;" id="临夏州市" >临夏州</a>
+		<a href="javascript:;" id="甘南州市" >甘南州</a>	
+	</dd>
+    <dt>宁夏</dt>
+    <dd>
+		<a href="javascript:;" id="银川市市" >银川市</a>
+		<a href="javascript:;" id="石嘴山市市" >石嘴山市</a>
+		<a href="javascript:;" id="吴忠市市" >吴忠市</a>
+		<a href="javascript:;" id="固原市市" >固原市</a>
+		<a href="javascript:;" id="中卫市市" >中卫市</a>
+	</dd>
+    <dt>青海</dt>
+    <dd>
+		<a href="javascript:;" id="西宁市市" >西宁市</a>
+		<a href="javascript:;" id="海东行署市" >海东行署</a>
+		<a href="javascript:;" id="海北藏族自治州市" >海北藏族自治州</a>
+		<a href="javascript:;" id="海南藏族自治州市" >海南藏族自治州</a>
+		<a href="javascript:;" id="海西州市" >海西州</a>
+		<a href="javascript:;" id="黄南藏族自治州市" >黄南藏族自治州</a>
+		<a href="javascript:;" id="玉树藏族自治州市" >玉树藏族自治州</a>
+		<a href="javascript:;" id="果洛藏族自治州市" >果洛藏族自治州</a>	
+	</dd>
+    <dt class="quyu"><span>其他</span></dt>
+    <dt>其他</dt>
+    <dd>
+		<a href="javascript:;" id="香港" >香港</a>
+		<a href="javascript:;" id="澳门" >澳门</a>
+		<a href="javascript:;" id="台湾" >台湾</a>
+		<a href="javascript:;" id="全国" >全国</a>
+		<a href="javascript:;" id="其他" >其他</a>
+	</dd>
+</dl>
+</div>
+</body>
+</html>

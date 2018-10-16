@@ -1,0 +1,135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Access-Control-Allow-Origin" content="*">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=8"/>
+  <title>会员注册中心-微工程</title>
+  <meta name="description" content="微工程，微工程APP，装修、材料、家具、饰品一站式服务，让装修更简单，价格更透明！！" />
+  <meta name="keywords" content="微工程，微工程，家居商城，微工程家居商城，微工程家居装修商城，办公室装修，写字楼装修，材料，装修材料，家居，办公家具，家居，家具，装修，装饰" />
+  <link rel="stylesheet" type="text/css" href="/themes/store/default/css/hzw-city-picker.css">
+  <!-- 引入个人中心 -->
+<!--[if lt IE 9]>
+<script type="text/javascript" src="/Public/lib/html5shiv.js"></script>
+<script type="text/javascript" src="/Public/lib/respond.min.js"></script>
+
+<![endif]-->
+<!--[if IE 6]>
+<script type="text/javascript" src="/Public/lib/DD_belatedPNG_0.0.8a-min.js" ></script>
+<script>DD_belatedPNG.fix('*');</script>
+<![endif]-->
+<!--/meta 作为公共模版分离出去-->
+
+</head>
+<style>
+.list_box {
+    margin-top: 10px;
+  }
+
+  .list_box .type_list{
+    width: 280px;
+    margin:0 auto;
+    margin-bottom: 8px;
+  }
+
+  .list_box .type_list>span{
+    display: inline-block;
+    width: 60px;
+    text-align: right;
+  }
+
+  .list_box .type_list>input{
+    width: 200px;
+  }
+</style>
+<body>
+{include file=../../mall/jiaju/header.html}
+  <div style="width: 1100px;margin: 0 auto;">
+    <!-- 注册信息 -->
+      <div style="" id="register_message">
+        <form action="http://wgcapp.wgc2013.com/jingyi.php/Home/index/UserReg_pc" method="post" onsubmit="return jugdment()">
+          <a href="/index.php?app=store&act=reg"><div style="text-align: left;font-size: 30px;height: 12px;color: #2198dc;cursor: pointer;" title="返回选择注册类型" ">←</div></a>
+          <div style="height: 30px;line-height: 10px;text-align: center;font-size: 20px;">个人注册中心</div>
+          <div style="border-bottom: 1px solid #999;"></div>
+          <div class="list_box">
+            <div class="type_list">
+              <span>姓名：</span>
+              <input type="text" id="name" name="name" placeholder="请输入您的姓名">
+            </div>
+            <div class="type_list">
+              <span>职位：</span>
+              <input type="text" id="position" placeholder="请输入您的职位名称">
+              <input type="hidden" value="15" name="position" />
+            </div>
+            <div class="type_list">
+              <span>手机号码：</span>
+              <input type="text" id="user_name" name="user_name" placeholder="请输入手机号码">
+            </div>
+            <div class="type_list">
+              <span>邮箱：</span>
+              <input type="text" id="email" name="email" placeholder="请输入邮箱">
+            </div>
+            <div class="type_list">
+              <span>登录密码：</span>
+              <input type="password" id="password" name="password" maxlength="16" placeholder="请输入密码,最多16位">
+            </div>
+            <div class="type_list">
+              <span>确认密码：</span>
+              <input type="password" id="password_again" maxlength="16" placeholder="再次输入密码">
+            </div>
+            <div class="type_list">
+              <span>验证码：</span>
+              <input type="text" id="codes" style="width: 90px;margin-right: 5px;" placeholder="请输入验证码">
+              <img src="http://wgcapp.wgc2013.com/jingyi.php/Home/index/codes" alt="" style="width:100px;cursor: pointer;" onclick="this.src='http://wgcapp.wgc2013.com/jingyi.php/Home/index/codes'"/>
+            </div>
+          </div>
+          <div style="margin-bottom: 16px;">
+            <input type="checkbox" id="check_term" />
+            <span style="font-size:12px">我已阅读并同意<a style="color:#3498db;" target="_blank" href="/index.php?app=search&amp;act=tiaokuan">《微工程服务》</a>条款</span>
+          </div>
+          <input type="submit" style="width: 110px;height: 30px;border-radius: 4px;background-color: #2c99d9;text-align: center;color: #fff;line-height: 30px;margin: 0 auto;text-align: center;border:none;cursor: pointer;" value="立即注册">
+        </form>
+        <div style="text-align: right;width: 262px;margin: 0 auto;letter-spacing: 1px;">已有微工程账号，去<a href="/index.php?app=member&act=login&ret_url=" target="_blank"><span style="color: red;cursor: pointer;">登录</span></a></div>
+      </div>
+  </div>
+{include file=../../mall/jiaju/footer.html}
+</body>
+<script type="text/javascript" src="/Public/lib/jquery/1.9.1/jquery.min.js"></script>
+<script>
+  $(function(){
+    
+  });
+
+  // 表单判断
+  function jugdment(){
+    if($('#name').val() == ''){
+      alert('请输入您的姓名');
+      return false;
+    }else if($('#position').val() == ''){
+      alert('请输入您的职位');
+      return false;
+    }else if($('#user_name').val() == ''){
+      alert('请输入手机号码');
+      return false;
+    }else if($('#email').val() == ''){
+      alert('请输入邮箱');
+      return false;
+    }else if($('#password').val() == ''){
+      alert('请输入密码');
+      return false;
+    }else if($('#codes').val() == ''){
+      alert('请输入验证码');
+      return false;
+    }else if($('#password').val() != $('#password_again').val()){
+      alert('您输入的两次密码不一样，请重新填写');
+      return false;
+    }else if($('#check_term').is(':checked') != true){
+      alert('请同意微工程服务在注册')
+      return false;
+    }else if(!$('#user_name').val().match(/^1\d{10}$/)){
+      alert('请输入正确的手机号码')
+      return false;
+    }
+  }
+</script>
+</html>

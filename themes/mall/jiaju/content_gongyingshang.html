@@ -58,7 +58,7 @@ margin:auto;padding:0px;margin-top: 10px;margin-bottom: 10px; width:1200px;overf
 {include file=header.html}
 <?php
 	$id = $_GET['id'];
-	$query="select id,title,office_name,businessscope,description,web,addr,type,addtime from ecm_cailiaoshang_mianpian where id=$id order by id desc"; //定义sql
+	$query="select id,name,tel,mobile,email,web,title,office_name,businessscope,description,web,addr,type,addtime from ecm_cailiaoshang_mianpian where id=$id order by id desc"; //定义sql
 	$result=mysql_query($query);
 	$rows1 = @mysql_fetch_array($result);
 	//var_dump($rows1);
@@ -110,11 +110,11 @@ margin:auto;padding:0px;margin-top: 10px;margin-bottom: 10px; width:1200px;overf
 					<ul class="aui-list aui-media-list" id="lists" style="width:100%;min-height:300px;overflow:hidden">
 						<li style="width:100%;height:40px;line-height:40px;color:#333">
 							<div style="margin-right:10px;float:left;width:150px;text-align:right;color:#333">联系人:</div>
-							<?php echo empty($rows1['title'])?'未填写':$rows1['name'];?>
+							<?php echo empty($rows1['name'])?'未填写':$rows1['name'];?>
 						</li>
 						<li style="width:100%;height:40px;line-height:40px;color:#333">
 							<div style="margin-right:10px;float:left;width:150px;text-align:right;color:#333">联系电话:</div>
-							<?php echo empty($rows1['title'])?'未填写':$rows1['tel'];?>
+							<?php echo empty($rows1['tel'])?$rows1['mobile']:$rows1['tel'];?>
 						</li>
 						<li style="width:100%;height:40px;line-height:40px;color:#333">
 							<div style="margin-right:10px;float:left;width:150px;text-align:right;color:#333">职位:</div>
@@ -144,7 +144,7 @@ margin:auto;padding:0px;margin-top: 10px;margin-bottom: 10px; width:1200px;overf
 					</ul>
 				</div>
 			</div>
-				<button style="margin-top:50px;cursor:pointer;width:250px;font-size:16px;height:40px;border:1px solid red;background:red;color:#fff;text-align:center;"  onclick="yingying(<?php echo $rows1['id'];?>)">立即查看</button>
+				<!-- <button style="margin-top:50px;cursor:pointer;width:250px;font-size:16px;height:40px;border:1px solid red;background:red;color:#fff;text-align:center;"  onclick="yingying(<?php echo $rows1['id'];?>)">立即查看</button> -->
 			
 		</div>
 		<!-- 左边结束 -->

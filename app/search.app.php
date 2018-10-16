@@ -125,6 +125,11 @@ class SearchApp extends MallbaseApp
 	}//个人中心维修报价
 	function user_baojia(){
 		$this->display('user_baojia.html');
+	}function user_yun(){
+		$this->display('user_yun.html');
+	}//个人中心我的网盘详情
+	function user_yun_content(){
+		$this->display('user_yun_content.html');
 	}//个人中心个人发布集采
 	function user_collection(){
 		$this->display('user_collection.html');
@@ -952,15 +957,15 @@ class SearchApp extends MallbaseApp
 			$key = $_POST['key'];
 			$zhiwei = array_search($key,$arr);
 			var_dump($zhiwei);
-			$query="select id,today,xinzi,company_name,zhiwei from ecm_recruit where zhiwei like'%".$arr[$zhiwei]."%' or company_name like'%".$key."%' or xinzi like'%".$key."%' order by id desc ".$page.""; //定义sql
+			$query="select id,today,xinzi,company_name,zhiwei,company_addr from ecm_recruit where zhiwei like'%".$arr[$zhiwei]."%' or company_name like'%".$key."%' or xinzi like'%".$key."%' or company_addr like'%".$key."%' order by id desc ".$page.""; //定义sql
 
 			
 		}else{
 			if(!empty($_GET['typeid'])){
 				$typeid = $arr[$_GET['typeid']];
-				$query="select id,today,xinzi,company_name,zhiwei from ecm_recruit where zhiwei='".$typeid."' order by id desc ".$page.""; //定义sql
+				$query="select id,today,xinzi,company_name,zhiwei,company_addr from ecm_recruit where zhiwei='".$typeid."' order by id desc ".$page.""; //定义sql
 			}else{
-				$query="select id,today,xinzi,company_name,zhiwei from ecm_recruit order by id desc ".$page.""; //定义sql
+				$query="select id,today,xinzi,company_name,zhiwei,company_addr from ecm_recruit order by id desc ".$page.""; //定义sql
 			}
 		}
 
@@ -976,6 +981,7 @@ class SearchApp extends MallbaseApp
 				$data .= '<li>';	
 					$data .= '<p class="title"><a href="index.php?app=search&amp;act=content&amp;id='.$row['id'].'">'.$row['zhiwei'].'</a></p>';
 					$data .= '<p class="gname"><a href="index.php?app=search&amp;act=content&amp;id='.$row['id'].'">'.$row['company_name'].'</a></p>';
+					$data .= '<p class="address">'.$row['company_addr'].'/元</p>';
 					$data .= '<p class="xinzi">'.$row['xinzi'].'/元</p>';
 					$data .= '<p class="time">'.$row['today'].'</p>';
 				$data .= '</li>';

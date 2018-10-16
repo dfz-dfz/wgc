@@ -102,7 +102,7 @@ margin:auto;padding:0px;margin-top: 10px;margin-bottom: 10px; width:1100px;overf
 							<div class="aui-list-item-inner">
 								<div class="aui-list-item-label" style="width:100px;text-align:right;font-size:14px">公司名称：</div>
 								<div class="aui-list-item-input">
-									<input style="border:1px solid #999;height:36px;margin:0;border-radius: 5px;font-size:14px;" type="text" placeholder="公司名称" name="company_name" id="company_name">
+									<input style="border:1px solid #999;height:36px;margin:0;border-radius: 5px;font-size:14px;" type="text" placeholder="公司名称" name="cname" id="cname">
 								</div>
 							</div>
 						</li>
@@ -110,7 +110,7 @@ margin:auto;padding:0px;margin-top: 10px;margin-bottom: 10px; width:1100px;overf
 							<div class="aui-list-item-inner">
 								<div class="aui-list-item-label" style="width:100px;text-align:right;font-size:14px">公司地址：</div>
 								<div class="aui-list-item-input">
-									<input style="border:1px solid #999;height:36px;margin:0;border-radius: 5px;font-size:14px;" type="text" placeholder="公司地址" name="company_address" id="company_address">
+									<input style="border:1px solid #999;height:36px;margin:0;border-radius: 5px;font-size:14px;" type="text" placeholder="公司地址" name="addres" id="addres">
 								</div>
 							</div>
 						</li>
@@ -150,7 +150,7 @@ margin:auto;padding:0px;margin-top: 10px;margin-bottom: 10px; width:1100px;overf
 							<div class="aui-list-item-inner">
 								<div class="aui-list-item-label" style="width:100px;text-align:right;font-size:14px">备&nbsp;&nbsp;&nbsp;注：</div>
 								<div class="aui-list-item-input">
-									<textarea style="border:1px solid #999;height:100px;padding:5px;border-radius: 5px;font-size:14px;" type="text" placeholder="备注" name="beizhu" id="beizhu" ></textarea>
+									<textarea style="border:1px solid #999;height:100px;padding:5px;border-radius: 5px;font-size:14px;" type="text" placeholder="备注" name="cailiaobeizhu" id="cailiaobeizhu" ></textarea>
 								</div>
 							</div>
 						</li>
@@ -176,6 +176,9 @@ function tijiaos(){
 	var cailiaomingcheng = $("#cailiaomingcheng").val();
 	var cailiaopinpai = $("#cailiaopinpai").val();
 	var cailiaomiansu = $("#cailiaomiansu").val();
+	var addres = $('#addres').val();
+	var cname = $('#cname').val();
+	var cailiaobeizhu = $('#cailiaobeizhu').val();
 	
 	if(name == ''){
 		alert('请输入联系人');
@@ -212,7 +215,29 @@ function tijiaos(){
 		$("#cailiaomiansu").focus();
 		return false;
 	}
-	$.post(serverUrl+"jingyi.php/Home/Material/cailiaoshangshenqing",{city : city,name : name,zhiwu : zhiwu,tel : tel,email : email,cailiaomingcheng : cailiaomingcheng,cailiaopinpai : cailiaopinpai,cailiaomiansu : cailiaomiansu},function(ret){
+	if(cname == ''){
+		alert('请输入公司名称');
+		$("#cname").focus();
+		return false;
+	}
+	if(addres == ''){
+		alert('请输入公司地址');
+		$("#addres").focus();
+		return false;
+	}
+	$.post(serverUrl+"jingyi.php/Home/Material/cailiaoshangshenqing",{
+		city : city,
+		name : name,
+		zhiwu : zhiwu,
+		tel : tel,
+		email : email,
+		cailiaomingcheng : cailiaomingcheng,
+		cailiaopinpai : cailiaopinpai,
+		cailiaomiansu : cailiaomiansu,
+		addres : addres,
+		cname :cname,
+		cailiaobeizhu : cailiaobeizhu
+	},function(ret){
 		if(ret.status == 200){
 			alert('提交成功！');
 			window.location.reload();

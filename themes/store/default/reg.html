@@ -28,77 +28,75 @@
   .list_box .type_list>input{
     width: 200px;
   }
+  .content {
+    width: 460px;
+    height: 420px;
+    margin: 0 auto;
+    text-align: left;
+    font-size: 16px;
+  }
 </style>
 <body>
 {include file=../../mall/jiaju/header.html}
-
-  <div style="width: 100%;height: 550px;background:url('../../themes/mall/jiaju/images/register_bg.jpg') no-repeat;background-size: 100% 100%;position: relative;">
-      <div style="position: absolute;width: 350px;height: 350px;background-color: #fff;top: 8%;left: 50%;border-radius: 10px;padding: 20px;">
+  <div style="width: 100%;height: 660px;background:url('../../themes/mall/jiaju/images/register_bg.jpg') no-repeat;background-size: 100% 100%;position: relative;filter: blur(3px)"></div>
+  <div style="position: absolute;top: 260px;width: 100%;height: 620px;">
+      <div style="width: 100%;height:100%;">
         <!-- 注册类别 -->
-        <div id="register_type">
-          <div style="height: 120px;line-height: 120px;text-align: center;color: #2c99d9;font-size: 28px;">会员注册中心</div>
-          <div style="border-bottom: 1px solid #999;margin-bottom: 40px;"></div>
-          <div>
-            <ul style="margin:0;padding: 0;list-style: none;">
-              <li style="float: left;width:50%;text-align: center;">
-                <img src="../../themes/mall/jiaju/images/reg_company.jpg" alt="" style="width: 65px;height:65px;border:2px solid #c1c1c1;padding:5px;cursor: pointer;" onclick="register(1)">
-                <div style="padding-top: 12px;">个人用户注册</div>
-              </li>
-              <li style="float: left;width:50%;text-align: center;">
-                <a href="/index.php?app=store&act=reg_company">
-                  <img src="../../themes/mall/jiaju/images/reg_person.jpg" alt="" style="width: 65px;height:65px;border:2px solid #c1c1c1;padding:5px;cursor: pointer;">
-                  <div style="padding-top: 12px;">企业用户注册</div>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-  
-        <!-- 注册信息 -->
-        <div style="display: none;" id="register_message">
-          <form action="http://wgcapp.wgc2013.com/jingyi.php/Home/index/UserReg_pc" method="post" onsubmit="return jugdment()">
-            <div style="text-align: left;font-size: 30px;height: 12px;color: #2198dc;cursor: pointer;" title="返回选择注册类型" onclick="backtype()">←</div>
-            <div style="height: 30px;line-height: 10px;text-align: center;font-size: 20px;">个人注册中心</div>
-            <div style="border-bottom: 1px solid #999;"></div>
-            <div class="list_box">
-              <div class="type_list">
-                <div>姓名：</div>
-                <input type="text" id="name" name="name" placeholder="请输入您的姓名">
-              </div>
-              <div class="type_list">
-                <div>职位：</div>
-                <input type="text" id="position" placeholder="请输入您的职位名称">
-                <input type="hidden" value="15" name="position" />
-              </div>
-              <div class="type_list">
-                <div>手机号码：</div>
-                <input type="text" id="user_name" name="user_name" placeholder="请输入手机号码">
-              </div>
-              <div class="type_list">
-                <div>邮箱：</div>
-                <input type="text" id="email" name="email" placeholder="请输入邮箱">
-              </div>
-              <div class="type_list">
-                <div>登录密码：</div>
-                <input type="password" id="password" name="password" maxlength="16" placeholder="请输入密码,最多16位">
-              </div>
-              <div class="type_list">
-                <div>确认密码：</div>
-                <input type="password" id="password_again" maxlength="16" placeholder="再次输入密码">
-              </div>
-              <div class="type_list">
-                <div>验证码：</div>
-                <input type="text" id="codes" style="width: 90px;margin-right: 5px;" placeholder="请输入验证码">
-                <img src="http://wgcapp.wgc2013.com/jingyi.php/Home/index/codes" alt="" style="width:100px;cursor: pointer;" onclick="this.src='http://wgcapp.wgc2013.com/jingyi.php/Home/index/codes'"/>
-              </div>
-            </div>
-            <div style="margin-bottom: 16px;">
-              <input type="checkbox" id="check_term" />
-              <span style="font-size:12px">我已阅读并同意<a style="color:#3498db;" target="_blank" href="/index.php?app=search&amp;act=tiaokuan">《微工程服务》</a>条款</span>
-            </div>
-            <input type="submit" style="width: 110px;height: 30px;border-radius: 4px;background-color: #2c99d9;text-align: center;color: #fff;line-height: 30px;margin: 0 auto;text-align: center;border:none;cursor: pointer;" value="立即注册">
-          </form>
-          <div style="text-align: right;width: 262px;margin: 0 auto;letter-spacing: 1px;">已有微工程账号，去<a href="/index.php?app=member&act=login&ret_url=" target="_blank"><span style="color: red;cursor: pointer;">登录</span></a></div>
+        <div style="text-align: center;font-size: 22px;color: #fff;width: 1100px;margin: 0 auto;padding-bottom: 5px;border-bottom: 1px solid #fff;">会员注册中心</div>
+          <ul style="margin:0;padding: 0;list-style: none;color: #fff;height: auto;overflow: hidden;">
+            <li style="float: left;width:49%;text-align: center;margin-right: 2%;">
+              <a href="/index.php?app=store&act=reg_person" title="个人用户注册">
+                <img src="../../themes/mall/jiaju/images/reg_company.png" alt="" style="width: 100px;height:100px;padding:5px;cursor: pointer;">
+                <div style="padding: 12px 0;color: red;font-size: 18px;">个人用户注册</div>
+              
+                <div class="content" style="color: #fff;border: 1px solid #fff;padding: 0 20px;">
+                  <div style="margin:5px 0;font-size: 18px;font-weight: bold;text-align: center;">个人用户注册使用权限</div>
+                  <div>1、可在网站投放发布个人招聘和个人简历</div>
+                  <div>2、可搜索查询和发布推广相应的材料品牌及材料商用户信息</div>
+                  <div>3、可搜索查询装饰行业的工程项目经理和工人用户具体信息</div>
+                  <div>4、注册账号，绑定网页PC端及APP应用端</div>
+                  <div>5、设置权限，确定身份</div>
+                  <div>6、数据建档、保存、调用、删减、分享</div>
+                  <div>7、可以快速找到名下注册人数明细、备注</div>
+                  <div>8、添加、删除家装需求信息，可同步与留言人对话</div>
+                  <div>9、可以即时与客服联系，重要信息提醒</div>
+                  <div>10、管理上传的文档、图片、视频、笔记</div>
+                  <div>11、集进度、请款、审批、质检、隐藏报验等11个常用功能</div>
+                  <div>12、发布最新资讯，可同步到微工程APP端</div>
+                  <div>13、发布自己产品及信息、装修公司及客户能找到并联系</div>
+                  <div>14、发布集采需求，新增材料询价功能</div>
+                </div>
+              </a>
+            </li>
+            <li style="float: left;width:49%;text-align: center;">
+              <a href="/index.php?app=store&act=reg_company" title="企业用户注册">
+                <img src="../../themes/mall/jiaju/images/reg_person.png" alt="" style="width: 100px;height:100px;padding:5px;cursor: pointer;">
+                <div style="padding: 12px 0;color: red;font-size: 18px;">企业用户注册</div>
+
+                <div class="content" style="color: #fff;border: 1px solid #fff;padding: 0 20px;">
+                  <div style="margin:5px 0;font-size: 18px;font-weight: bold;text-align: center;">企业用户注册使用权限</div>
+                  <div>1、可在网站投放发布企业招聘和用人单位信息</div>
+                  <div>2、可发布企业装饰项目和工程派单</div>
+                  <div>3、可推广发布企业新闻咨询信息广告信息</div>
+                  <div>4、可搜索查询和发布推广相应的才材料品牌及材料商用户信息</div>
+                  <div>5、可搜索查询装饰行业的工程项目经理和工人用户具体信息</div>
+                  <div>6、20个职位发布，10周知名企业标签</div>
+                  <div>7、自动匹配最适合的岗位推送</div>
+                  <div>8、查询各种材料最新价格</div>
+                  <div>9、项目当中的设计细分、外包</div>
+                  <div>10、收集到材料商发布的活动推广</div>
+                  <div>11、查询当地最新的工作照工明细</div>
+                  <div>12、网页位置广告位使用</div>
+                  <div>13、搜索到你需要的材料目前的供给公司、价格</div>
+                  <div>14、微工程首页广告位链接*1</div>
+                  <div>15、200G大空间享用</div>
+                  <div>16、微工程板块复制(安卓系统)、(苹果系统)</div>
+                  <div>17、预约公司人员功能使用培训，1次/季</div>
+                  <div>18、后台数据协助管理</div>
+                </div>
+              </a>
+            </li>
+          </ul>
         </div>
       </div>
   </div>
@@ -106,46 +104,6 @@
 </body>
 <script type="text/javascript" src="../../themes/mall/jiaju/styles/default/js/jquery-1.3.2.min.js"></script>
 <script>
-  function register(type){
-    $('#register_type').hide();
-    $('#register_message').show();
-  }
 
-  function backtype(){
-    $('#register_type').show();
-    $('#register_message').hide();
-  }
-
-  // 表单判断
-  function jugdment(){
-    if($('#name').val() == ''){
-      alert('请输入您的姓名');
-      return false;
-    }else if($('#position').val() == ''){
-      alert('请输入您的职位');
-      return false;
-    }else if($('#user_name').val() == ''){
-      alert('请输入手机号码');
-      return false;
-    }else if($('#email').val() == ''){
-      alert('请输入邮箱');
-      return false;
-    }else if($('#password').val() == ''){
-      alert('请输入密码');
-      return false;
-    }else if($('#codes').val() == ''){
-      alert('请输入验证码');
-      return false;
-    }else if($('#password').val() != $('#password_again').val()){
-      alert('您输入的两次密码不一样，请重新填写');
-      return false;
-    }else if($('#check_term').is(':checked') != true){
-      alert('请同意微工程服务在注册')
-      return false;
-    }else if(!$('#user_name').val().match(/^1\d{10}$/)){
-      alert('请输入正确的手机号码')
-      return false;
-    }
-  }
 </script>
 </html>

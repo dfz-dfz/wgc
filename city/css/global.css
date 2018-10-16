@@ -1,0 +1,180 @@
+/* 公共样式 */
+@charset "utf-8";body,h1,h2,h3,h4,h5,h6,dl,dt,dd,ul,ol,li,table,th,td,p,blockquote,pre,form,fieldset,legend,hr,img{margin:0;padding:0;border:0}
+em,i,cite{font-style:normal}
+body{background:#fff;font-size:12px;font-family:simsun;color:#666}
+h1,h2,h3,h4,h5,h6{font-weight:normal;font-size:12px}
+ul,ol{list-style-type:none}
+select,input,textarea,img{vertical-align:middle;padding:0;margin:0;line-height:150%}:focus{outline:0}
+.overflow{overflow:hidden}
+.overflow_x{overflow_y:auto;overflow_x:hidden}
+.overflow_y{overflow_x:auto;overflow_y:hidden}
+.clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden}
+.clearfix{display:inline-block}
+*html ,*{margin:0;padding:0;list-style-type:none;}
+html,body{text-align:center;background-image:url(../other/.com/themes/mall/jiaju/styles/style/zp/about:blank);background-attachment:fixed;}
+a,img{border:0;}
+.mb10{text-align:left;}
+.topcity{text-align:left;} 
+.reg ul li p{text-align:center;}
+#goodslist{text-align:left;}
+.ware_text{text-align:left;}
+/* select */
+.fixed-top /* 头部固定 */{
+	position:fixed;bottom:auto;top:200px;
+}
+
+.fixed-bottom /* 底部固定 */{
+	position:fixed;bottom:0px;top:auto;
+}
+
+.fixed-left /* 左侧固定 */{
+	position:fixed;right:auto;left:0px; z-index:1000;
+}
+
+.fixed-right /* 右侧固定 */{
+	position:fixed;right:0px;left:auto;
+}
+/* 上面的是除了IE6的主流浏览器通用的方法 */
+
+* html,* html body /* 修正IE6振动bug */{
+	background-image:url(../other/.com/themes/mall/jiaju/styles/style/zp/about:blank);background-attachment:fixed;
+}
+
+* html .fixed-top /* IE6 头部固定 */{
+	position:absolute;bottom:auto;top:expression(eval(document.documentElement.scrollTop)+200);
+}
+
+* html .fixed-right /* IE6 右侧固定 */ {
+	position:absolute;right:auto;left:expression(eval(document.documentElement.scrollLeft+document.documentElement.clientWidth-this.offsetWidth)-(parseInt(this.currentStyle.marginLeft,10)||0)-(parseInt(this.currentStyle.marginRight,10)||0));
+}
+* html .fixed-bottom /* IE6 底部固定  */{
+	position:absolute;bottom:auto;top:expression(eval(document.documentElement.scrollTop+document.documentElement.clientHeight-this.offsetHeight-(parseInt(this.currentStyle.marginTop,10)||0)-(parseInt(this.currentStyle.marginBottom,10)||0)));
+}
+
+* html .fixed-left /* IE6 左侧固定 */{
+	position:absolute;right:auto;left:expression(eval(document.documentElement.scrollLeft));
+}
+
+/* header */
+#header{ position: relative; width: 100%;min-width:1100px;margin:0 auto;overflow:hidden;}
+#header.w-full{width: 100%;min-width:1100px;margin:0 auto;overflow:hidden;}
+#header.w-full{width: 100%;min-width:1100px;margin:0 auto;overflow:hidden;}
+#site-nav .shoptop{ width: 77%;min-width:1100px;margin:0 auto;overflow:hidden;height:22px;padding-top:2px;padding-bottom:2px; line-height:22px; z-index:999; vertical-align:baseline}
+#site-nav .login_info{width: 45%;min-width:450px;float:left; font-family:Arial;text-align: left;}
+#site-nav .quick-menu { min-width:300px;float:right; font-family:Arial;text-align: right;}
+
+/*logo部分*/
+.w{width: 100%;min-width:1100px; margin:0 auto;height:100px;overflow:hidden;}
+#header #h_logos{ position: relative;width: 77%;min-width:1100px;margin:20px auto 0 auto;overflow:hidden;height:100px;}
+
+#header .logo{float:left;margin-left:0px;width: 30%;}
+#header .logo a{display: block;height:100px;width: 285px;float: left;overflow:hidden;}
+#header .logo a imgl{display: block;width: 100%;height:72px;float: left;}
+/*搜索框区域*/
+#header  #searchbar, #fabu {
+	height: 100px;
+	overflow: hidden;
+	width: 50%;
+	margin-top: 15px;
+}
+#header  #saerkey {
+    height: 38px;
+    width: 250px;
+    line-height: 38px;
+    padding-left: 34px;
+    float: left;
+    overflow: hidden;
+    border: 2px solid #ff552e;
+    border-right: 0;
+    background-position: 10px -105px;
+    background-color: #fff;
+}
+#header  #saerkey {
+	width:70%;	
+    line-height: 30px;
+	height: 38px;
+	
+}
+#header  #keyword {
+    width: 100%;
+    font-size: 14px;
+    color: #ccc;
+    border: 0;
+    height: 38px;
+	_height:40px;
+    line-height: 38px;
+    overflow: hidden;
+}
+#header .inputcon {
+    float: left;
+}
+#header  input.btnall {
+    background: #ff552e;
+}
+#header  input.btnall {
+    -webkit-appearance: none;
+    -webkit-border-radius: 0;
+    height: 42px;
+    line-height: 40px;
+    width: 100px;
+    font-size: 16px;
+    border: 0;
+    cursor: pointer;
+    overflow: hidden;
+    text-align: center;
+    color: #fff;
+	height: 42px;
+}
+#hot{
+width: 300px;
+display: block;
+height: 30px;
+text-align: left;
+line-height: 30px;
+}
+.user_num{
+position:absolute;
+top: 25px;
+right:42px;
+min-width: 15%;
+
+}
+
+.menu ul .line{
+    padding: 0;
+    margin: 0 5px;
+
+}
+
+/**招聘详细页*/
+.zhaopin_con2,.ylcon .tit,p,#actions{text-align:left;}
+.zhaopin_text{height: 36px;}
+
+/*五金店详细*/
+
+.titles{height:30px;line-height:30px;}
+.uls{text-align:left;padding:0 10px;}
+.uls li{margin:20px 0;width:100%;height: auto;overflow: hidden;}
+.uls li span{float:left;}
+.uls li input{width:400px;height:30px;line-height:30px;float:left;}
+.uls li textarea{width:400px;height:120px;float:left;}
+
+..index-tit,.more-article{text-align:left;}
+
+/*多条件选择*/
+/* select */
+.select{padding:0;border-radius:4px;width:100%;margin:0 auto;font-size:12px}
+.select li{list-style:none;padding:10px 0 5px 100px}
+.select .select-list{border-bottom:#eee 1px dashed}
+.select dl{zoom:1;position:relative;line-height:24px;}
+.select dl:after{content:" ";display:block;clear:both;height:0;overflow:hidden}
+.select dt{width:100px;margin-bottom:5px;position:absolute;top:0;left:-100px;text-align:right;color:#666;height:24px;line-height:24px}
+.select dd{float:left;display:inline;margin:0 0 5px 5px;}
+.select a{display:inline-block;white-space:nowrap;height:24px;padding:0 10px;text-decoration:none;color:#039;border-radius:2px;}
+.select a:hover{color:#f60;background-color:#f3edc2}
+.select .selected a{color:#fff;background-color:#f60}
+.select-result dt{font-weight:bold}
+.select-no{color:#999}
+.select .select-result a{padding-right:20px;background:#f60 url("../images/close.gif") right 9px no-repeat}
+.select .select-result a:hover{background-position:right -15px}
+

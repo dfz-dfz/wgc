@@ -104,7 +104,7 @@
 		}, function(ret) {
 			if(ret.code == 200){
 				$.post(url+'jingyi.php/Home/Jianli/projectSubcontract_listss_content', {id : id}, function(ret) {
-					var mobiles = (ret.message.mobile == '' || ret.message.mobile == null)?'该信息没有填写联系方式!':'联系方式：'+ret.message.mobile;
+					var mobiles = (ret.retData.tel == '' || ret.retData.tel == null)?'该信息没有填写联系方式!':'联系方式：'+ret.retData.tel;
 					$('.link').html('<div id="mobile">'+mobiles+'</div>');
 				},"json");
 			}else if(ret.code == 202){
@@ -112,7 +112,7 @@
 				$('.link').html(logoHtml);
 			}else if(ret.code == 203){
 				$.post(url+'jingyi.php/Home/Jianli/projectSubcontract_listss_content', {id : id}, function(ret) {
-					var mobiles = (ret.message.mobile == '' || ret.message.mobile == null)?'该信息没有填写联系方式!':'联系方式：'+ret.message.mobile;
+					var mobiles = (ret.retData.tel == '' || ret.retData.tel == null)?'该信息没有填写联系方式!':'联系方式：'+ret.retData.tel;
 					$('.link').html('<div id="mobile">'+mobiles+'</div>');
 				},"json");
 			}

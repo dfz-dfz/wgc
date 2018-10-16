@@ -94,13 +94,15 @@
 		  }
 		  #search input[type=text] {
 			font-size: 18px;
-			width: 705px;
+			width: 1088px;
 		  }
 		  #search .button {
 			padding: 10px;
-			width: 90px;
-			background:green;
+			width: 100px;
+			background:#fe6200;
 			color:#fff;
+			font-size: 16px;
+			margin-left: 10px;
 		  }
 		
 		/*主体*/
@@ -133,9 +135,7 @@
 		}
 		
 		.category-items .types{
-			width:99%;
 			height:125px;
-			padding:10px 4px;
 			background:#fff;
 			border:#ccc solid 1px;
 			text-align:left;
@@ -161,7 +161,7 @@
 			overflow:hidden;
 		}
 		.list-ul li .title{
-			width:290px;
+			width:160px;
 			height:30px;
 			line-height:30px;
 			display:block;
@@ -182,6 +182,17 @@
 			margin:0 10px;
 			float:left;
 		}
+		.list-ul li .address{
+			width:290px;
+			height:30px;
+			line-height:30px;
+			overflow:hidden;
+			text-overflow:ellipsis;
+			-o-text-overflow:ellipsis;
+			white-space:nowrap;
+			float:left;
+			text-align:center;
+		}
 		.list-ul li .xinzi{
 			width:150px;
 			height:30px;
@@ -194,7 +205,7 @@
 			text-align:center;
 		}
 		.list-ul li .time{
-			width:200px;
+			width:90px;
 			height:30px;
 			line-height:30px;
 			overflow:hidden;
@@ -203,7 +214,7 @@
 			white-space:nowrap;
 			display:block;white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
 			float:left;
-			text-align:right;
+			text-align:center;
 		}
 	</style>
 
@@ -212,14 +223,17 @@
 <body>
 {include file=header.html}
 
-<div class="wrapper" >
+<div class="wrapper" style="background-image: none;">
 
+	<div>
+		<img src="/themes/mall/jiaju/images/zp_picture.jpg" alt="" / width="100%">
+	</div>
 
 	<div class="container" style="margin:20px auto;">
-	
+		
 		<div id="search">
 			<form action="index.php?app=search&amp;act=joblist" method="post">
-				<input type="text" name="key" value="{$key}"/>
+				<input type="text" name="key" value="{$key}" placeholder="请输入关键字" />
 				<input type="hidden" name="cate_id" value="全部"/> 
 				<input class="button" type="submit" value="搜 索"/>
 			</form>
@@ -231,7 +245,7 @@
 
     <div class="main">
 	    <div class="maincontent">
-		    <div style="width:980px;height:auto;overflow:hidden;margin: auto;">
+		    <div style="width:1000px;height:auto;overflow:hidden;float: left;">
 			 	
 			 	<!-- 招聘职位列表 -->
 				<div class="category-items" style="width:99%;margin:0 auto;">
@@ -247,11 +261,21 @@
 				</div>		
 				
 				<!-- 招聘信息列表 -->
-				<div class="category-items" style="width:99%;margin:0 auto;">
+				<div class="category-items" style="width:98.5%;margin:0 auto;">
 						<div class="tile-head">
 							<p class="type-left">最新招聘</p>
 						</div>
-						
+						<div class="types" style="height: 32px;font-size: 18px;">
+							<ul class="list-ul">
+								<li>
+									<p class="title" style="font-size: 18px;">职位名称</p>
+									<p class="gname" style="font-size: 18px;">公司名称</p>
+									<p class="address" style="font-size: 18px;">工作地址</p>
+									<p class="xinzi" style="font-size: 18px;">薪资</p>
+									<p class="time" style="font-size: 18px;">发布时间</p>
+								</li>
+							</ul>
+						</div>
 						<div class="types" style="height: auto;overflow: hidden;" id="zhaopin_list">	
 							{$data}		
 						</div>
@@ -264,6 +288,10 @@
 			</div>
 	      
 	    </div>
+
+	    <div style="width: 200px;float: right;height: 587px;border-left: 10px solid #e5e5e5;padding-right: 0;">
+			<img src="http://www.wgc2013.com/themes/mall/jiaju/images/guanggao.png" alt="" width="100%">
+		</div>
     </div>
 </div>
 	
