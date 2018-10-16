@@ -475,13 +475,13 @@ $(".container_nav ul li").click(function(){
 				var userphoto = user.userphoto;
 				var zhiwei    = user.zhiwei;
 				var level     = user.level;
+				var sex       = user.sex;
 				var photourl = 'http://wgcapp.wgc2013.com' + userphoto;
 				//头像
 				
 				$(".userphoto_img").attr('src',photourl);
 				$("#name").val(user.name);
 				$("#mobile").val(user.phone_mob);
-				$("#sex").val(user.sex);
 				$("#nianling").val(user.nianling);
 				$("#huji").val(user.huji);
 				$("#bumen").val(user.bumen);
@@ -492,6 +492,16 @@ $(".container_nav ul li").click(function(){
 	         	$("#kname").val(user.kname);
 	         	$("#kahao").val(user.kahao);
 				
+				if(sex == '1'){
+				
+					$(".girl").attr('src','/themes/mall/jiaju/images/center/bg_radio_full.jpg'); 
+					$(".boy").attr('src','/themes/mall/jiaju/images/center/bg_radio_empty.jpg');
+				}
+				if(sex == '0'){
+				
+					$(".boy").attr('src','/themes/mall/jiaju/images/center/bg_radio_full.jpg');
+					$(".girl").attr('src','/themes/mall/jiaju/images/center/bg_radio_empty.jpg');
+				}
 				if(level == "0"){
 					$("#leven").html('<span style="display: inline-block;margin: 5px 0px;color:#9e9e9e;">普通用户</span>');
 				}else if(level == "1"){
