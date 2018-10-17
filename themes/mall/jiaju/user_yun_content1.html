@@ -219,8 +219,8 @@ body{background:url('') no-repeat center top }
 		<!-- 公司信息 -->
 		<div class="budget base_ui_public" style="/*display: none;*/position: relative;">
 			<ul class="budget_ul user_public_ul">
- 				<li class="change_bg_li" style="margin-right: 10px;">我的文档</li>
- 				<li style="margin-right: 10px;">图片</li>
+ 				<li style="margin-right: 10px;">我的文档</li>
+ 				<li class="change_bg_li" style="margin-right: 10px;">图片</li>
 				<li style="margin-right: 10px;">笔记</li>
 				<li style="margin-right: 10px;">视频</li>
 				<li style="margin-right: 10px;">PDF</li>
@@ -1167,8 +1167,9 @@ $(document).ready(function() {
 
 });
 //列表切换
-var filestype = 2;
-var aid = '<?php echo $_GET["id"];?>';
+//列表切换
+var filestype = 1;
+	var aid = '<?php echo $_GET["id"];?>';
 	$(".budget_ul li:first").click(function(){
 		
     	window.location.href = "/index.php?app=search&act=user_yun_content&id="+aid;
@@ -1195,7 +1196,6 @@ var aid = '<?php echo $_GET["id"];?>';
     	
     	window.location.href = "/index.php?app=search&act=user_yun_content5&id="+aid;
     })
-
 	$(".share_btn").click(function(e){
 		e.stopPropagation(); 
 		$(".confirm").show();

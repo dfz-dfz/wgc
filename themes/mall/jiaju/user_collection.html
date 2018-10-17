@@ -152,6 +152,18 @@ body{background:url('') no-repeat center top }
 						<div class="user_collection_name user_public_name" style="color: #5e5a59;">发布地址：</div>
 						<div class="user_collection_input user_public_input"><input id="xiangxi" type="text" /></div>
 					</li>
+					<li>
+						<div class="user_collection_name user_public_name" style="color: #5e5a59;">材料价格：</div>
+						<div class="user_collection_input user_public_input"><input id="price" type="text" /></div>
+					</li>
+					<li>
+						<div class="user_collection_name user_public_name" style="color: #5e5a59;">含税价格：</div>
+						<div class="user_collection_input user_public_input"><input id="hanshui" type="text" /></div>
+					</li>
+					<li>
+						<div class="user_collection_name user_public_name" style="color: #5e5a59;">运费：</div>
+						<div class="user_collection_input user_public_input"><input id="yunfei" type="text" /></div>
+					</li>
 					<!-- <li>
 						<div class="user_collection_name user_public_name" style="color: #5e5a59;">材料价格：</div>
 						<div class="user_collection_input user_public_input"><input id="price" type="text" /></div>
@@ -1128,13 +1140,13 @@ $(function(){
 
 </script>
 <script type="text/javascript">
-$().ready(function(){
-	cai_list();
-	messagelist(spage,0);
-})
+	$().ready(function(){
+		cai_list();
+		messagelist(spage,0);
+	})
 
 	//点击预算列表切换
-	  $(".user_collection_ul li:first").click(function(){
+  	$(".user_collection_ul li:first").click(function(){
     	
     	$(this).addClass("change_bg_li")
     	$(".user_collection_ul li:last").removeClass("change_bg_li")
@@ -1143,7 +1155,7 @@ $().ready(function(){
     	$(".user_collection_list").hide();
 		$(".message_list").hide();
     })
-	  $(".user_collection_ul li:eq(1)").click(function(){
+	$(".user_collection_ul li:eq(1)").click(function(){
     	$(this).addClass("change_bg_li")
     	$(".user_collection_ul li:last").removeClass("change_bg_li")
     	$(".user_collection_ul li:first").removeClass("change_bg_li")
@@ -1163,18 +1175,10 @@ $().ready(function(){
 		$(".message_list").show();
     })
 
-
-
 	$(".container_nav ul li").click(function(){
 		$(".container_nav ul li").removeClass("bg_li")
 		$(this).addClass("bg_li")
 	})
-
-
-	$(document).ready(function() {
-
-	});
-
 
 	//发布集采
 	page = 1,tcity='广州市';
@@ -1195,8 +1199,6 @@ $().ready(function(){
 		var yunfei          = $("#yunfei").val();
 		var hanshui         = $("#hanshui").val();
 		var price           = $("#price").val();
-
-		//alert(price)
 
 		if(title == ''){
 			alert('必填项!');
@@ -1283,6 +1285,9 @@ $().ready(function(){
 						office_name = data[i].office_name,
 						brand       = data[i].brand,
 						address     = data[i].address,
+						price = data[i].price,
+						hanshui = data[i].hanshui,
+						yunfei = data[i].yunfei,
 						addtime = timestampToTime(data[i].addtime);
 						var img = data[i].m_photo;
 						var imgArray = img.split(",");
@@ -1297,19 +1302,24 @@ $().ready(function(){
 				listHtml   +='<div style="overflow: hidden;position:relative;">';
 				listHtml +=	'<div style="text-align: left;"><span style="display: inline-block;width: 60px;height: 25px;line-height: 25px;background-color: red;font-size: 14px;text-align: center;letter-spacing: 2px;position:absolute;top:0px;color:#fff;margin:5px 5px;" onclick="del('+pid+','+id+')">删除</span></div>';
 				listHtml   += '<div style="text-align:right;padding-right: 20px;margin-top: 10px;height:40px;"><input name="id" type="checkbox" value="'+pid+'"></div>';
+				listHtml   +=   '<div style="height:auto;overflow:hidden;">';
 				listHtml   +=	'<div class="list_right" style="float: left;width: 50%;">';
 				listHtml   +=		'<ul style="margin-left:15%;">';
 				listHtml   +=			'<li>公司名称：'+office_name+'</li>';
 				listHtml   +=			'<li style="margin:10px 0;">材料品牌：'+brand+'</li>';
 				listHtml   +=			'<li>发布地址：'+address+'</li>';
+				listHtml   +=			'<li style="margin-top: 10px;">运费：'+yunfei+'</li>';
 				listHtml   +=		'</ul>';
 				listHtml   +=	'</div>';
 				listHtml   +=	'<div class="list_left" style="float: right;width: 50%;">';
 				listHtml   +=		'<ul style="margin-left:15%;">';
 				listHtml   +=			'<li>材料名称：'+m_name+'</li>';
-				listHtml   +=			'<li style="margin:10px 0;">材料描述：'+m_introduce+'</li>';							
+				listHtml   +=			'<li style="margin: 10px 0;">材料价格：'+price+'</li>';
+				listHtml   +=			'<li>含税价格：'+hanshui+'</li>';					
 				listHtml   +=		'</ul>';
 				listHtml   +=	'</div>';
+				listHtml   +=	'</div>';
+				listHtml   +=   '<div style="padding:10px 60px 10px 67px;text-align:left;">材料描述：'+m_introduce+'</div>';
 				listHtml   +=	'<div id="imglist'+i+'" style="width:100%;float:left;margin-top:10px;"></div>';
 				listHtml   +=	'<div style="width:100%;height:40px;float:left;margin-top:30px;"><img src="/themes/mall/jiaju/images/list_bg.jpg" style="width:100%;height:100%;"/></div>';
 				listHtml   +=	'</div>';

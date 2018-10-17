@@ -19,11 +19,137 @@
 var SITE_URL = "http://www.wgc2013.com";
 var PRICE_FORMAT = '&yen;%s';
 </script>
+<style>
+	.list_box li {
+		height: 50px;
+		line-height: 50px;
+	}
 
+	.list_box li .li_list li {
+		float: left;
+		width: 33.33%;
+		text-align: center;
+		border-bottom: 1px solid #e1e1e1;
+	}
+
+	.list_box li .li_list li div {
+		background-color: #f3962c;
+		width: 200px;
+		display: inline-block;
+		height: 30px;
+		line-height: 30px;
+		margin-top: 10px;
+		color:#fff;
+		font-size: 18px;
+	}
+
+	.table {
+		border:1px solid #f74c35;
+		height: auto;
+		overflow:hidden;
+	}
+
+	.table li .table_list li {
+		float: left;
+		width: 16.66%;
+		text-align: center;
+		height: 30px;
+		line-height: 30px;
+		border-right: 1px solid #f74c35;
+		font-size: 14px;
+		font-weight: bold;
+	}
+</style>
 </head>
 <body>
 {include file=header.html}
-<div style="text-align: center;font-weight: 600;color: #999;font-size: 20px;line-height: 50px;">该功能暂未开放，敬请期待</div>
+	<div>
+		<div>
+			<img src="/themes/mall/jiaju/images/rencaituijian_gg.jpg" alt="" style="width: 100%;" />
+			<div style="border-bottom: 1px solid #e1e1e1;">
+				<div style="width: 1100px;margin: 0 auto;text-align: left;color: #707070;line-height: 40px;font-size: 18px;">首页-人才推荐</div>
+			</div>
+		</div>
+		<div style="width: 1100px;margin: 10px auto;">
+			<div style="border-bottom: 1px solid #999;font-weight: 600;font-size: 22px;text-align: left;">人才推荐：</div>
+
+			<div style="width: 880px;float: left;">
+				<ul class="list_box">
+					<li>
+						<ul class="li_list">
+							<li><div>环境设计艺术工程师</div></li>
+							<li><div>结构设计工程师</div></li>
+							<li><div>室内设计工程师</div></li>
+						</ul>
+					</li>
+					<li>
+						<ul class="li_list">
+							<li><div>机电一级建造师</div></li>
+							<li><div>机电二级建造师</div></li>
+							<li><div>建筑设计工程师</div></li>
+						</ul>
+					</li>
+					<li>
+						<ul class="li_list">
+							<li><div>电气工程师</div></li>
+							<li><div>焊接工程师</div></li>
+							<li><div>给排水工程师</div></li>
+						</ul>
+					</li>
+					<li>
+						<ul class="li_list">
+							<li><div>暖通空调工程师</div></li>
+							<li><div>自动化按制工程师</div></li>
+							<li></li>
+						</ul>
+					</li>
+				</ul>
+
+				<div style="margin-top: 30px;">
+					<div style="color: #f74c35;font-size: 20px;font-weight: bold;">人才推荐收费准则</div>
+					<ul class="table">
+						<li style="border-bottom:1px solid #f74c35;height: 30px;">
+							<ul class="table_list">
+								<li>用户类别</li>
+								<li>个人用户</li>
+								<li>招聘用户</li>
+								<li>企业专属版</li>
+								<li>企业至尊版</li>
+								<li style="border-right: none">企业转石版</li>
+							</ul>
+						</li>
+						<li>
+							<ul class="table_list">
+								<li>收费标准</li>
+								<li>50元/次</li>
+								<li>50元/次</li>
+								<li>980元/次</li>
+								<li>5980元/次</li>
+								<li style="border-right: none">9980元/次</li>
+							</ul>
+						</li>
+					</ul>
+
+					<div style="margin-top: 20px;font-size: 24px;font-weight: bold;letter-spacing: 2px;">微工程网站推荐人才以上职位了解详情请联系客服</div>
+					<div style="font-size: 16px;letter-spacing: 1px;">扫描下方客服二维码或电话联系客服咨询了解根据您的招聘要求</div>
+					<div style="font-size: 16px;letter-spacing: 1px;">向您推荐优秀的专业人员</div>
+					<div style="margin-top: 20px;">
+						<img src="/themes/mall/jiaju/images/kefu1.png" alt="" width="150" style="margin-right: 20px;" />
+						<img src="/themes/mall/jiaju/images/kefu2.png" alt="" width="150" />
+					</div>
+					<div style="margin-top: 4px;">
+						<span style="margin-right: 90px;">微工程客服01</span>
+						<span>微工程客服02</span>
+					</div>
+					<div style="margin-top: 50px;background-color: #f74c35;color: #fff;font-size: 20px;height: 40px;line-height: 40px;"><span style="margin-right: 30px;">咨询热线：020-61973261</span><span>客服专线：13143543973/1521730545</span></div>
+				</div>
+			</div>
+
+			<div style="width: 200px;float: right;height: 587px;border-left: 10px solid #e5e5e5;padding-right: 0;">
+				<img src="http://www.wgc2013.com/themes/mall/jiaju/images/guanggao.png" alt="" width="100%">
+			</div>
+		</div>
+	</div>
 {include file=footer.html}
 <script type="text/javascript">
 

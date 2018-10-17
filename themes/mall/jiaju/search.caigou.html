@@ -59,7 +59,7 @@
 						<li style="width: 12.28%;">查看详情</li>
 					</ul>
 
-					<div id="weixiuMain" style="border:1px solid #6d6d6d;border-top: 0;min-height: 415px;">
+					<div id="weixiuMain" style="border:1px solid #6d6d6d;border-top: 0;min-height: 415px;height: auto;overflow:hidden;">
 						
 					</div>
 				</div>
@@ -154,6 +154,66 @@
 		
 		},"json");
 
+	}
+
+	function backList(){
+		cai_select(page);
+		$('#back_btn').hide();
+	}
+
+	// 搜索列表
+	function searchList(){
+		$('#back_btn').show();
+		if(page == 1){
+			$('#uppage').hide();
+		}else{
+			$('#uppage').show();
+		}
+		var key = $('#key').val();
+
+		$.post(serverUrl+"jingyi.php/Home/Material/materialListe_jicai_key",{
+			key : key,
+			cai_type :2
+		},function(ret){
+			var listHtml = '';
+			if(ret.code == 200){
+					page++;
+					var data = ret.message;
+					   for (var i in data) {
+						  	var m_name=(data[i].m_name == '' || data[i].m_name == null)?'未填写':data[i].m_name,
+						  		cai_type=data[i].cai_type,
+						  		expire_time=data[i].expire_time,
+						  		m_introduce=data[i].m_introduce,
+						  		count=data[i].count,
+						  		addtime = _trans_php_time_to_str(data[i].addtime,1),
+						  		office_name = (data[i].office_name == '' || data[i].office_name == null)?'未填写':data[i].office_name,
+						  		brand = (data[i].brand == '' || data[i].brand == null)?'未填写':data[i].brand;
+
+								listHtml += '<ul>';
+									listHtml += '<li style="width: 14.28%;" title="'+m_name+'">'+m_name+'</li>';
+									listHtml += '<li style="width: 16.28%;" title="'+office_name+'">'+office_name+'</li>';
+									listHtml += '<li style="width: 16.28%;" title="'+brand+'">'+brand+'</li>';
+									listHtml += '<li style="width: 14.28%;">未填写</li>';
+									listHtml += '<li style="width: 12.28%;">未填写</li>';
+									listHtml += '<li style="width: 14.28%;">未填写</li>';
+									listHtml += '<li style="width: 12.28%;"><a target="_blank" href="/index.php?app=search&act=content_caigou&id='+data[i].id+'&cai_type=2" style="color:blue">查看详情</a></li>';
+								listHtml += '</ul>';
+				   
+						 }
+				
+				$("#weixiuMain").html(listHtml);
+				$('#nextpage').show();
+				
+			}else if(ret.code == 202){
+				$('#nextpage').hide();
+				$("#weixiuMain").html('<div style="border: none;width:100px;height:100px;margin:50px auto;font-size:20px;color:#999;line-height:50px;" class="empty">暂无数据</div>');
+			}else{
+				return false;
+			
+			}
+			
+		
+		},"json");
 	}
 </script>
 </body>

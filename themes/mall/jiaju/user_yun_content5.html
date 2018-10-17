@@ -219,12 +219,12 @@ body{background:url('') no-repeat center top }
 		<!-- 公司信息 -->
 		<div class="budget base_ui_public" style="/*display: none;*/position: relative;">
 			<ul class="budget_ul user_public_ul">
- 				<li class="change_bg_li" style="margin-right: 10px;">我的文档</li>
+ 				<li style="margin-right: 10px;">我的文档</li>
  				<li style="margin-right: 10px;">图片</li>
 				<li style="margin-right: 10px;">笔记</li>
 				<li style="margin-right: 10px;">视频</li>
 				<li style="margin-right: 10px;">PDF</li>
-				<li style="margin-right: 10px;">压缩包</li>
+				<li class="change_bg_li" style="margin-right: 10px;">压缩包</li>
 				<li id="addwenjian" style="float: right;background-color: #0092d2;color: #fff;cursor: pointer;">上传文件</li>
  			</ul>
  			<div class="company_info base_info_public" style="overflow: hidden;/*padding-left: 15%;*/min-height: 250px;">
@@ -704,13 +704,13 @@ $(function(){
 			method : 'POST',
 			fileNumLimit : 15,
 			fileSizeLimit : 15,
-            chunkSize: 512 * 1024,
+            chunkSize: 50 * 1024*1024,
             server: "http://wgcapp.wgc2013.com/jingyi.php/home/uploads/wanpan/id/<?php echo $_GET['id'];?>/userid/<?php echo $_SESSION['user_info']['user_id'];?>/types/"+filestype,
             runtimeOrder: 'flash',
 			fileVal:'gimg',
             accept: {
                  title: 'Images',
-                 extensions: 'gif,jpg,jpeg,bmp,png,txt',
+                 extensions: 'gif,jpg,jpeg,bmp,png,txt,rar,zip',
                  mimeTypes: 'image/*'
             },
             // 禁掉全局的拖拽功能。这样不会出现图片拖进页面的时候，把图片打开。
@@ -1167,7 +1167,8 @@ $(document).ready(function() {
 
 });
 //列表切换
-var filestype = 2;
+//列表切换
+var filestype = 6;
 var aid = '<?php echo $_GET["id"];?>';
 	$(".budget_ul li:first").click(function(){
 		

@@ -221,9 +221,11 @@ body{background:url('') no-repeat center top }
 			<ul class="budget_ul user_public_ul">
  				<li class="change_bg_li" style="margin-right: 10px;">我的文件</li>
  				<li style="margin-right: 10px;">图片</li>
-				<li style="margin-right: 10px;">文档</li>
+				<li style="margin-right: 10px;">笔记</li>
 				<li style="margin-right: 10px;">视频</li>
-				<li id="addwenjian" style="float: right;background-color: #0092d2;color: #fff;cursor: pointer;" onclick="addFile()">新建文件夹</li>
+				<li style="margin-right: 10px;">PDF</li>
+				<li style="margin-right: 10px;">压缩包</li>
+				<li id="addwenjian" style="float: right;background-color: #0092d2;color: #fff;cursor: pointer;">新建文件夹</li>
  			</ul>
  			<div class="company_info base_info_public" style="overflow: hidden;/*padding-left: 15%;*/min-height: 250px;">
  			<!-- 预算报价 -->
@@ -231,137 +233,66 @@ body{background:url('') no-repeat center top }
 			<div style="overflow: hidden;margin-top: 10px;">
 			<!-- 基本信息 -->
 			<div class="section" style="border: none;">
-			
-			<!-- 自定工价 -->
-			<div class="sect current wages_custom" style="border: none;position: relative;overflow: hidden;min-height: 300px;height: auto;">
-
-				<div id="filename" style="width:400px;height: 140px;position: absolute;top: 100px;left: 230px;background-color: #9e9e9e;display: none;">
-					<div style="margin-top: 20px;">
+				<div id="filename" style="width:400px;height: 140px;position: absolute;top: 100px;left: 230px;background-color: #9e9e9e;display: none;z-index: 100;">
 					<form action="http://wgcapp.wgc2013.com/jingyi.php/Home/Wangpan/Folder_add" method="post" id="fileform">
+					<div style="margin-top: 20px;">
 					<label for="newfile" style="text-align: left;">请输入文件夹名称：</label>
 					<input id="newfile" name="filename" type="text" style="width: 80%;"/>
 					</div>
-					<div style="margin-top: 10px;">
-						<button id="cancel" style="padding: 5px 20px;background-color: red;color: #fff;margin: 5px 20px;border-radius: 5px;border: 0;">取消</button>
-						<button id="sure" style="padding: 5px 20px;background-color: red;color: #fff;margin: 5px 20px;border-radius: 5px;border: 0;">确认</button>
+					<div style="margin-top: 20px;">
+						<a id="cancelfile" style="padding: 5px 20px;background-color: red;color: #fff;margin: 5px 20px;border-radius: 5px;border: 0;">取消</a>
+						<a id="sure" style="padding: 5px 20px;background-color: red;color: #fff;margin: 5px 20px;border-radius: 5px;border: 0;">确认</a>
 					</div>
 					<input type="hidden" id="usid" name="userid"/>
+					<input type="hidden" id="ftype" name="type"/>
 					</form>
 				</div>
+			<!-- 我的文件 -->
+			<div class="sect current wages_custom" style="border: none;position: relative;overflow: hidden;min-height: 300px;height: auto;">
+
+				
 				<div class="filelist">
 					<!-- <div style="width: 20%;float: left;height: auto;overflow: hidden;">
 					<img src="/themes/mall/jiaju/images/wenjiajia.png" alt="" style="width: 50%;height: 70px;"/>
 					<span style="display: block;">我的资源</span>
 					</div>
-					<div style="width: 20%;float: left;height: auto;overflow: hidden;">
-					<img src="/themes/mall/jiaju/images/wenjiajia.png" alt="" style="width: 50%;height: 70px;"/>
-					<span style="display: block;">我的资源</span>
-					</div>
-					<div style="width: 20%;float: left;height: auto;overflow: hidden;">
-					<img src="/themes/mall/jiaju/images/wenjiajia.png" alt="" style="width: 50%;height: 70px;"/>
-					<span style="display: block;">我的资源</span>
-					</div>
-					<div style="width: 20%;float: left;height: auto;overflow: hidden;">
-					<img src="/themes/mall/jiaju/images/wenjiajia.png" alt="" style="width: 50%;height: 70px;"/>
-					<span style="display: block;">我的资源</span>
-					</div>
-					<div style="width: 20%;float: left;height: auto;overflow: hidden;">
-					<img src="/themes/mall/jiaju/images/wenjiajia.png" alt="" style="width: 50%;height: 70px;"/>
-					<span style="display: block;">我的资源</span>
-					</div> -->
+					 -->
 				</div>
-				<div class="nulls" style="font-size: 20px;color: #9e9e9e;width: 100%;text-align: center;margin-top:20px;">暂无列表</div>
+				<!-- <div class="nulls" style="font-size: 20px;color: #9e9e9e;width: 100%;text-align: center;margin-top:20px;">暂无列表</div> -->
 			</div>
 			<!-- 自定工价 end -->
 			
-			<!-- 工价列表 -->
-			<div class="sect current wages_list" style="display:none;min-height: 420px;height: auto;overflow: hidden;">
-				<div class="search">
-					<div class="search_box">
-						<input class="search_input"  type="text" placeholder="输入关键字">
-						<input class="search_btn" id="search_list" type="button" value="搜索" onclick="searchlist(page,0)">
-						<input class="search_btn" id="search_back" type="button" value="返回" style="display: none;" onclick="showList(page,0)">
-						<input type="button" value="分享" class="share_btn" onclick="showUserList()" />
-					</div>
+			<!-- 图片 -->
+			<div class="sect current wages_pic" style="display:none;min-height: 300px;height: auto;overflow: hidden;display: none;">
+				<div class="filelist_pic">
+
 				</div>
-				<!-- 显示列表 -->
-				<div class="content" style="text-align:center;min-height:300px;">
-					<ul class="content_ul">
-						<li class="tab_head">
-							<ul>
-								<li style="width:7.5%;">序号</li>
-								<li style="width:14.5%;">项目名称</li>
-								<li style="width:10.5%;">计价单位</li>
-								<li style="width:10.5%;">数量/范围</li>
-								<!-- <li>联系方式</li> -->
-								<li style="width:31.5%;">工作地点</li>
-								<!-- <li>备注</li> -->
-								<li style="width:15.5%">发布时间</li>
-								<li style="width:7.5%">操作</li>
-							</ul>
-						</li>
-					
-					</ul>
-					<ul class="content_ul" id="show_list">
-						
-					</ul>
-					<div id="nullslist" style="margin-top: 100px;text-align: center;font-size: 18px;display: none;">暂无数据！！！</div>
-				</div>
-				<!-- 分页导航 -->
-				<div class="page_list" style="text-align:center;">
-					<a href="javascript:;" style="display: inline-block;width: 50px;background-color: #9c9393;color: #ffffff;height: 20px;line-height: 20px;margin-right:20px;" onclick="prepage()">上一页</a>
-					<a href="javascript:;" style="display: inline-block;width: 50px;background-color: #9c9393;color: #ffffff;height: 20px;line-height: 20px;" onclick="nextpage()">下一页</a>
+
+			</div>
+			<!-- 笔记-->
+ 			<div class="sect current wages_txt" style="position: relative;min-height: 300px;display:none;height: auto;overflow: hidden;display: none;">
+				<div class="filelist_txt">
+
 				</div>
 			</div>
-			<!-- 分享列表-->
- 			<div class="message_list base_info_public" style="position: relative;display:none;">
-				<div style="overflow: hidden;margin-top: 10px;">
-				<!-- 搜索框 -->
-					<div class="search_ys">
-						<input type="text" style="width: 400px;height: 30px;" id="search_zc" placeholder="请输入关键词">
-						<label class="search_zc" for="search_zc" style="width: 50px;height: 30px;display:inline-block;position: relative;top: -1px;"><img src="/themes/mall/jiaju/images/search_button.jpg" alt="" style="width: 100%;height: 100%;" onclick="searchs(spage,0)"></label>
-						<button class="quxiao_zc" id="backshare" style="padding:0;width: 50px;height: 30px;position: relative;top: -3px;cursor:pointer;line-height:30px;background-color: #ec6941;display:none;" onclick="messagelist(spage,0)">取消</button>							
-					</div>	
-					<div class="budget_table" style="margin: 10px 0;">
-						<div>
+			<!-- 视频 -->
+			<div class="sect current wages_vedio" style="border: none;position: relative;overflow: hidden;min-height: 300px;height: auto;display: none;">
+				<div class="filelist_vedio">
 
-						</div>
-						<div class="content" style="text-align:center;min-height:300px;width: 90%;margin: 0 auto;"
-							<ul class="content_ul">
-								<li class="tab_head">
-									<ul>
-										<li style="width:7.5%;">分享人</li>
-										<li style="width:14.5%;">项目名称</li>
-										<li style="width:10.5%;">计价单位</li>
-										<li style="width:10.5%;">数量/范围</li>
-										<!-- <li>联系方式</li> -->
-										<li style="width:31.5%;">工作地点</li>
-										<!-- <li>备注</li> -->
-										<li style="width:15.5%">发布时间</li>
-										<li style="width:7.5%">操作</li>
-									</ul>
-								</li>
-							
-							</ul>
-							<ul class="content_ul" id="show_list_share">
-								
-							</ul>
-							<div id="nulls" style="margin-top: 100px;text-align: center;font-size: 18px;display: none;">暂无数据！！！</div>
-						</div>
-						
-								<!-- 分页 -->
-						<div class="page_list" id="search_before" style="text-align:center;">
-							<a href="javascript:;" id="share_pre" style="display: inline-block;width: 50px;background-color: #9c9393;color: #ffffff;height: 20px;line-height: 20px;margin-right:20px;" onclick="preshare()">上一页</a>
-							<a href="javascript:;" id="share_next" style="display: inline-block;width: 50px;background-color: #9c9393;color: #ffffff;height: 20px;line-height: 20px;" onclick="nextshare()">下一页</a>
-						</div>
-						<!-- 搜索分页 -->
-						<div class="page_list" id="search_after" style="text-align:center;">
-							<a href="javascript:;" id="share_pre_search" style="display: inline-block;width: 50px;background-color: #9c9393;color: #ffffff;height: 20px;line-height: 20px;margin-right:20px;" onclick="searchpagePre()">上一页</a>
-							<a href="javascript:;" id="share_next_search" style="display: inline-block;width: 50px;background-color: #9c9393;color: #ffffff;height: 20px;line-height: 20px;" onclick="searchpageNext()">下一页</a>
-						</div>
-					</div>
 				</div>
+			</div>
+			<!-- PDF -->
+			<div class="sect current wages_pdf" style="border: none;position: relative;overflow: hidden;min-height: 300px;height: auto;display: none;">
+				<div class="filelist_pdf">
 
+				</div>
+			</div>
+			<!-- 压缩包 -->
+			<div class="sect current wages_tar" style="border: none;position: relative;overflow: hidden;min-height: 300px;height: auto;display: none;">
+				<div class="filelist_tar">
+
+				</div>
+			</div>
 			</div>
 		</div>
 			
@@ -1256,36 +1187,117 @@ $(function(){
 </script>
 <script type="text/javascript">
 $(document).ready(function() {
-	showList();
-	messagelist(spage,0)
+	
+	$("#ftype").val(2)
 	list();
 });
+
 //列表切换
 	$(".budget_ul li:first").click(function(){
     	$(this).addClass("change_bg_li")
-    	$(".budget_ul li:eq(2)").removeClass("change_bg_li")
-		$(".budget_ul li:eq(1)").removeClass("change_bg_li")
+    	$(".budget_ul li:eq(1)").removeClass("change_bg_li")
+		$(".budget_ul li:eq(2)").removeClass("change_bg_li")
+		$(".budget_ul li:eq(3)").removeClass("change_bg_li")
+		$(".budget_ul li:eq(4)").removeClass("change_bg_li")
+		$(".budget_ul li:eq(5)").removeClass("change_bg_li")
     	$(".wages_custom").show();
-    	$(".wages_list").hide();
-		$(".message_list").hide();
+    	$(".wages_pic").hide();
+		$(".wages_txt").hide();
+		$(".wages_vedio").hide();
+		$(".wages_pdf").hide();
+		$(".wages_tar").hide();
+		$("#ftype").val(2)
+		list();
     })
-
+//图片
 	$(".budget_ul li:eq(1)").click(function(){
     	$(this).addClass("change_bg_li")
-    	$(".budget_ul li:eq(2)").removeClass("change_bg_li")
     	$(".budget_ul li:first").removeClass("change_bg_li")
-    	$(".wages_list").show();
+    	
+		$(".budget_ul li:eq(2)").removeClass("change_bg_li")
+		$(".budget_ul li:eq(3)").removeClass("change_bg_li")
+		$(".budget_ul li:eq(4)").removeClass("change_bg_li")
+		$(".budget_ul li:eq(5)").removeClass("change_bg_li")
     	$(".wages_custom").hide();
-    	$(".message_list").hide();
+    	$(".wages_pic").show();
+		$(".wages_txt").hide();
+		$(".wages_vedio").hide();
+		$(".wages_pdf").hide();
+		$(".wages_tar").hide();
+		$("#ftype").val(1)
+		list();
     })
-
+//笔记
     $(".budget_ul li:eq(2)").click(function(){
     	$(this).addClass("change_bg_li")
     	$(".budget_ul li:first").removeClass("change_bg_li")
-		$(".budget_ul li:eq(1)").removeClass("change_bg_li")
+    	$(".budget_ul li:eq(1)").removeClass("change_bg_li")
+		
+		$(".budget_ul li:eq(3)").removeClass("change_bg_li")
+		$(".budget_ul li:eq(4)").removeClass("change_bg_li")
+		$(".budget_ul li:eq(5)").removeClass("change_bg_li")
     	$(".wages_custom").hide();
-    	$(".wages_list").hide();
-		$(".message_list").show();
+    	$(".wages_pic").hide();
+		$(".wages_txt").show();
+		$(".wages_vedio").hide();
+		$(".wages_pdf").hide();
+		$(".wages_tar").hide();
+		$("#ftype").val(4)
+		list();
+    })
+    //视频
+    $(".budget_ul li:eq(3)").click(function(){
+    	$(this).addClass("change_bg_li")
+    	$(".budget_ul li:first").removeClass("change_bg_li")
+    	$(".budget_ul li:eq(1)").removeClass("change_bg_li")
+		$(".budget_ul li:eq(2)").removeClass("change_bg_li")
+		
+		$(".budget_ul li:eq(4)").removeClass("change_bg_li")
+		$(".budget_ul li:eq(5)").removeClass("change_bg_li")
+    	$(".wages_custom").hide();
+    	$(".wages_pic").hide();
+		$(".wages_txt").hide();
+		$(".wages_vedio").show();
+		$(".wages_pdf").hide();
+		$(".wages_tar").hide();
+		$("#ftype").val(5)
+		list();
+    })
+    //PDF
+    $(".budget_ul li:eq(4)").click(function(){
+    	$(this).addClass("change_bg_li")
+    	$(".budget_ul li:first").removeClass("change_bg_li")
+    	$(".budget_ul li:eq(1)").removeClass("change_bg_li")
+		$(".budget_ul li:eq(2)").removeClass("change_bg_li")
+		$(".budget_ul li:eq(3)").removeClass("change_bg_li")
+		
+		$(".budget_ul li:eq(5)").removeClass("change_bg_li")
+    	$(".wages_custom").hide();
+    	$(".wages_pic").hide();
+		$(".wages_txt").hide();
+		$(".wages_vedio").hide();
+		$(".wages_pdf").show();
+		$(".wages_tar").hide();
+		$("#ftype").val(3)
+		list();
+    })
+    //压缩包
+    $(".budget_ul li:eq(5)").click(function(){
+    	$(this).addClass("change_bg_li")
+    	$(".budget_ul li:first").removeClass("change_bg_li")
+    	$(".budget_ul li:eq(1)").removeClass("change_bg_li")
+		$(".budget_ul li:eq(2)").removeClass("change_bg_li")
+		$(".budget_ul li:eq(3)").removeClass("change_bg_li")
+		$(".budget_ul li:eq(4)").removeClass("change_bg_li")
+		
+    	$(".wages_custom").hide();
+    	$(".wages_pic").hide();
+		$(".wages_txt").hide();
+		$(".wages_vedio").hide();
+		$(".wages_pdf").hide();
+		$(".wages_tar").show();
+		$("#ftype").val(6)
+		list();
     })
 
 	$(".share_btn").click(function(e){
@@ -1305,122 +1317,9 @@ $(document).ready(function() {
 
 	//询价列表
 var page =1,upage =1;;
-	function showList(page,types){
-			$("#search_list_after").hide();
-			$("#search_list_before").show();
-		$.post('http://wgcapp.wgc2013.com/jingyi.php/Home/User/xunjia_list',{
-			userid      : '<?php echo $_SESSION["user_info"]["user_id"];?>',
-			page        : page
-		},function(ret){
-			if(ret.code == 200){
-				$("#nullslist").hide();
-				var html ='';
-				var data = ret.message;
-				for(var i in data){
-					var codenum = parseInt(i)+1;
-						title = data[i].title,
-						unit = data[i].unit,
-						num = data[i].num,
-						ps = data[i].ps,
-						address = data[i].address,
-						tel = data[i].tel,
-						id  = data[i].id,
-						addtime = data[i].addtime;
-						
-					html += '<li class="tab_content">';
-						html += '<ul>';
-							html += '<li style="width:7.5%;"><input name="id" type="checkbox" value="'+id+'"/>'+codenum+'</li>';
-							html += '<li style="width:14.5%;">'+title+'</li>';
-							html += '<li style="width:10.5%;">'+unit+'</li>';
-							html += '<li style="width:10.5%;">'+num+'</li>';
-							// html += '<li>'+tel+'</li>';
-							html += '<li style="width:31.5%;">'+address+'</li>';
-							//html += '<li><img src="" alt=""></li>';
-							html += '<li style="width:15.5%;">'+addtime+'</li>';
-							html += '<li style="width:7.5%;"><a href="/index.php?app=search&act=gongjiaxunjia_content&id='+id+'" target="_blank" style="color:blue;">详情</a></li>';
-						html += '</ul>';
-					html += '</li>';
-				}
-				$('#show_list').html(html);
-			}else if(ret.code == 201){
-				if(types == 1){
-				// alert("111")
-				$("#listnext").hide();
-				$("#show_list").html("")
-				$("#nullslist").show();
-			}else if(types == 0){
-				$("#show_list").html("")
-				$("#nullslist").show();
-			}
-				
-				//alert('列表获取失败');
-			}
-		},'json');
-	}
-
-//分页控制
-//下一页
-function nextpage(){
 	
-	showList(++page,1);
 
-	}
-//上一页
-function prepage(){
-	if(page == 1){
-		page=2
-	}
-		showList(--page,1);
-	}
-//搜索列表
-function searchlist(page,types){
-	var key = $("#search_list").val();
-	if(key){
 
-	$.post('http://wgcapp.wgc2013.com/jingyi.php/Home/User/xunjia_list',{
-			userid      : '<?php echo $_SESSION["user_info"]["user_id"];?>',
-			page        : page,
-			key         : key
-		},function(ret){
-			if(ret.code == 200){
-				$("#nullslist").hide();
-				var html ='';
-				var data = ret.message;
-				for(var i in data){
-					var codenum = parseInt(i)+1;
-						title = data[i].title,
-						unit = data[i].unit,
-						num = data[i].num,
-						ps = data[i].ps,
-						address = data[i].address,
-						tel = data[i].tel,
-						id  = data[i].id,
-						addtime = data[i].addtime;
-						
-					html += '<li class="tab_content">';
-						html += '<ul>';
-							html += '<li style="width:7.5%;"><input name="id" type="checkbox" value="'+id+'"/>'+codenum+'</li>';
-							html += '<li style="width:14.5%;">'+title+'</li>';
-							html += '<li style="width:10.5%;">'+unit+'</li>';
-							html += '<li style="width:10.5%;">'+num+'</li>';
-							// html += '<li>'+tel+'</li>';
-							html += '<li style="width:31.5%;">'+address+'</li>';
-							//html += '<li><img src="" alt=""></li>';
-							html += '<li style="width:15.5%;">'+addtime+'</li>';
-							html += '<li style="width:7.5%;"><a href="/index.php?app=search&act=gongjiaxunjia_content&id='+id+'" target="_blank" style="color:blue;">详情</a></li>';
-						html += '</ul>';
-					html += '</li>';
-				}
-				$('#show_list').html(html);
-			}else if(ret.code == 201){
-				$("#nullslist").show();
-				//alert('列表获取失败');
-			}
-		},'json');
-	}else {
-
-	}
-}
 	
 	//分享
 	function share(){
@@ -1686,192 +1585,7 @@ $(".quxiao").click(function(){
 		$('#search_text').val('');
 		showUserList();
 	}
-//分享列表
-var spage = 1;
-	function messagelist(spage,types){
-	var url = 'http://wgcapp.wgc2013.com/jingyi.php/Home/User/xunjia_list_share';
-	var key = '';
-	if(spage == 1){
-		$("#share_pre").hide();
-	}else{
-		$("#share_pre").show();
-	}
-		$("#search_after").hide();   
-		$("#search_before").show();
-		$.ajax({
-				type:"POST",
-				url:url,
-				data:{
-					key      : key,
-					user_id : '<?php echo $_SESSION["user_info"]["user_id"];?>',
-					page     : spage,
-					type     : 10
-				},
-				cache:false,
-				crossDomain: true == !(document.all),
-				dataType: "json",
-				success:function(ret){
-					//console.log(ret)
-						if(ret.code == 200){
-							$("#backshare").hide();
-							$("#nulls").hide();
-							$("#share_next").show();
-				var html ='';
-				var data = ret.message;
-				for(var i in data){
-					var codenum = parseInt(i)+1;
-						title = data[i].title,
-						unit = data[i].unit,
-						num = data[i].num,
-						ps = data[i].ps,
-						address = data[i].address,
-						tel = data[i].tel,
-						id  = data[i].id,
-						name = data[i].name,
-						addtime = timestampToTime(data[i].addtime);
-						
-					html += '<li class="tab_content">';
-						html += '<ul>';
-							html += '<li style="width:7.5%;">'+name+'</li>';
-							html += '<li style="width:14.5%;">'+title+'</li>';
-							html += '<li style="width:10.5%;">'+unit+'</li>';
-							html += '<li style="width:10.5%;">'+num+'</li>';
-							// html += '<li>'+tel+'</li>';
-							html += '<li style="width:31.5%;">'+address+'</li>';
-							//html += '<li><img src="" alt=""></li>';
-							html += '<li style="width:15.5%;">'+addtime+'</li>';
-							html += '<li style="width:7.5%;"><a href="/index.php?app=search&act=gongjiaxunjia_content&id='+id+'" target="_blank" style="color:blue;">详情</a></li>';
-						html += '</ul>';
-					html += '</li>';
-				}
-				$('#show_list_share').html(html);
-			}else if(ret.code == 201){
-						if(types == 1){
-							$("#show_list_share").html("");
-							$("#nulls").show();
-							$("#share_next").hide();
-						}
-						if(types == 0){
-							$("#share_next").hide();
-							$("#backshare").hide();
-							$("#nulls").show();
-						}
-					}
 
-				},
-				error:function(err){
-					console.log(err)
-				}
-			});
-
-	}
-	//分享分页
-	function preshare(){
-		if(spage == 1){
-			spage = 2;
-		}
-		messagelist(--spage,1)
-	}
-	function nextshare(){
-		messagelist(++spage,1)
-	}
-
-
-//搜索分享列表
-	function searchs(spage,types){
-		var url = 'http://wgcapp.wgc2013.com/jingyi.php/Home/User/xunjia_list_share';
-		var key = $("#search_zc").val();
-
-	if(spage == 1){
-		$("#share_pre_search").hide();
-	}else{
-		$("#share_pre_search").show();
-	}
-	if(key){
-
-		$("#search_after").show();   //点击搜索后的分页
-		$("#search_before").hide();
-		$("#backshare").show();
-		$.ajax({
-				type:"POST",
-				url:url,
-				data:{
-					key      : key,
-					user_id : '<?php echo $_SESSION["user_info"]["user_id"];?>',
-					page     : spage,
-					type     : 10
-				},
-				cache:false,
-				crossDomain: true == !(document.all),
-				dataType: "json",
-				success:function(ret){
-					//console.log(ret)
-						if(ret.code == 200){
-							$("#nulls").hide();
-							$("#share_next").show();
-				var html ='';
-				var data = ret.message;
-				for(var i in data){
-					var codenum = parseInt(i)+1;
-						title = data[i].title,
-						unit = data[i].unit,
-						num = data[i].num,
-						ps = data[i].ps,
-						address = data[i].address,
-						tel = data[i].tel,
-						id  = data[i].id,
-						name = data[i].name,
-						addtime = timestampToTime(data[i].addtime);
-						
-					html += '<li class="tab_content">';
-						html += '<ul>';
-							html += '<li style="width:7.5%;">'+name+'</li>';
-							html += '<li style="width:14.5%;">'+title+'</li>';
-							html += '<li style="width:10.5%;">'+unit+'</li>';
-							html += '<li style="width:10.5%;">'+num+'</li>';
-							// html += '<li>'+tel+'</li>';
-							html += '<li style="width:31.5%;">'+address+'</li>';
-							//html += '<li><img src="" alt=""></li>';
-							html += '<li style="width:15.5%;">'+addtime+'</li>';
-							html += '<li style="width:7.5%;"><a href="/index.php?app=search&act=gongjiaxunjia_content&id='+id+'" target="_blank" style="color:blue;">详情</a></li>';
-						html += '</ul>';
-					html += '</li>';
-				}
-				$('#show_list_share').html(html);
-			}else if(ret.code == 201){
-						if(types == 1){
-							$("#show_list_share").html("");
-							$("#nulls").show();
-							$("#share_next").hide();
-						}
-						if(types == 0){
-							$("#share_next").hide();
-							$("#backshare").hide();
-							$("#nulls").show();
-						}
-					}
-
-				},
-				error:function(err){
-					console.log(err)
-				}
-			});
-	}else{
-		alert("关键词不能为空!")
-		return false;
-	}
-	}
-
-	//搜索后的分页
-	function searchpageNext(){
-		searchs(++spage,1);
-	}
-	function searchpagePre(){
-		if(spage == 1){
-			spage=2
-		}
-		searchs(--spage,1);
-	}
 
 	//日历插件
 	   //获取当前日期
@@ -1918,8 +1632,8 @@ var spage = 1;
     }
 
     //点击新建文件
- $("#cancel").click(function(){
- 	$(this).parent().parent().hide();
+ $("#cancelfile").click(function(){
+ 	$("#filename").hide();
  })
  $("#addwenjian").click(function(){
  	$("#filename").show();
@@ -1927,10 +1641,16 @@ var spage = 1;
 $("#sure").click(function(){
 	var uid = '<?php echo $_SESSION["user_info"]["user_id"];?>';
 	$("#usid").val(uid);
-	$("#fileform").submit();
+	var vals = $("#newfile").val();
+	if(vals){
+		$("#fileform").submit();
+	}else{
+		alert("请输入文件名");
+	}
+	
 })
 function list(){
-	
+		var types = $("#ftype").val();
 		var page = 1;
 		uid= '<?php echo $_SESSION["user_info"]["user_id"];?>';
 		$.ajax({
@@ -1939,6 +1659,7 @@ function list(){
 				data:{
 						userid:'<?php echo $_SESSION["user_info"]["user_id"];?>',
 		            	page : page,
+		            	type : types
 				},
 				cache:false,
 				crossDomain: true == !(document.all),
@@ -1962,9 +1683,37 @@ function list(){
 							listHtml += '<span style="display: block;">'+filename+'</span>';
 							listHtml += '</div>';
 						}
+						
+						if(types == 2){
+
 						$(".filelist").html(listHtml);
+						}else if(types == 1){
+						$(".filelist_pic").html(listHtml);
+						}else if(types == 4){
+						$(".filelist_txt").html(listHtml);
+						}else if(types == 5){
+						$(".filelist_vedio").html(listHtml);
+						}else if(types == 3){
+						$(".filelist_pdf").html(listHtml);
+						}else if(types == 6){
+						$(".filelist_tar").html(listHtml);
+						}
 					}else if(ret.code == 202){
 						$(".filelist").html('<div class="nulls" style="font-size: 20px;color: #9e9e9e;width: 100%;text-align: center;margin-top:20px;">暂无列表</div>');
+						if(types == 2){
+
+						$(".filelist").html('<div class="nulls" style="font-size: 20px;color: #9e9e9e;width: 100%;text-align: center;margin-top:20px;">暂无列表</div>');
+						}else if(types == 1){
+						$(".filelist_pic").html('<div class="nulls" style="font-size: 20px;color: #9e9e9e;width: 100%;text-align: center;margin-top:20px;">暂无列表</div>');
+						}else if(types == 4){
+						$(".filelist_txt").html('<div class="nulls" style="font-size: 20px;color: #9e9e9e;width: 100%;text-align: center;margin-top:20px;">暂无列表</div>');
+						}else if(types == 5){
+						$(".filelist_vedio").html('<div class="nulls" style="font-size: 20px;color: #9e9e9e;width: 100%;text-align: center;margin-top:20px;">暂无列表</div>');
+						}else if(types == 3){
+						$(".filelist_pdf").html('<div class="nulls" style="font-size: 20px;color: #9e9e9e;width: 100%;text-align: center;margin-top:20px;">暂无列表</div>');
+						}else if(types == 6){
+						$(".filelist_tar").html('<div class="nulls" style="font-size: 20px;color: #9e9e9e;width: 100%;text-align: center;margin-top:20px;">暂无列表</div>');
+						}
 						
 					}
 					},

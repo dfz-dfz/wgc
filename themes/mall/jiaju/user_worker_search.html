@@ -510,7 +510,7 @@ function detail(id){
 				var xinzi = user.xinzi;
 				var zhiwei = user.zhiwei;
 				var intension = user.intension;
-
+				var user_name = user.user_name;
 
 				if(skill == null){
 					skill = "无";
@@ -521,7 +521,7 @@ function detail(id){
 				//头像
 				
 				var html = "";
-				html += '<div class="person_info" style="overflow: hidden;border-bottom: 1px solid #eee;margin-top: 10px;position:relative;">';
+				html += '<div class="person_info" style="overflow: hidden;border-bottom: 1px solid #eee;margin-top: 10px;position:relative;height:125px;">';
 				html += '<div class="quxiao" style="position: absolute;font-size: 20px;top: 0px;left: 725px;background-color: #9e9e9e;border-radius: 10px;width: 20px;height: 20px;line-height: 20px;cursor:default;" onclick="quxiao()">×</div>';
 				html +=	'<div style="width: 20%;height: 80px; float: left;margin:10px 10px;">';
 				html +=	'<img src="'+photourl+'" alt="个人图片" style="width:80px;height:80px;border-radius:40px;"/>';
@@ -534,6 +534,7 @@ function detail(id){
 				html +=			'<li>性别：'+sex+'</li>';
 				html +=			'<li style="margin: 10px 0;">行业：建筑装饰</li>';
 				html +=			'<li>工种：'+zhiwei+'</li>';
+				html +=			'<li style="margin-top:10px;">联系方式：'+mobile+'</li>';
 				html +=		'</ul>';
 				html +=	'</div>';
 
@@ -543,7 +544,6 @@ function detail(id){
 				html +=			'<li style="margin: 10px 0;">薪资：'+xinzi+'</li>';
 				html +=			'<li>从业工龄：'+nianling+'</li>';
 				html +=			'<li style="margin: 10px 0;">专业技能：'+skill+'</li>';
-				html +=			'<li>联系方式：'+mobile+'</li>';
 				html +=		'</ul>';
 				html +=	'</div>';
 				html +='</div>';
