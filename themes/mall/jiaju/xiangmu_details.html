@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>项目分包详情</title>
-	<link rel="stylesheet" href="">
+	<link rel="stylesheet" href="themes/mall/jiaju/css/checkPicture.css" />
 	<style>
 		.shejifenbao_list {
 			border-bottom: 2px solid #dfdfdf;
@@ -36,6 +36,7 @@
 						<div class="shejifenbao_list"><span>预约装修时间：</span><span id="yuyuezhuangxiushijan"></span></div>
 						<div class="shejifenbao_list"><span>装修大小：</span><span id="zhuangxiudaxiao"></span></div>
 						<div class="shejifenbao_list" style="height: auto;"><span>内容描述：</span><span id="neirongmiaosu"></span></div>
+						<div id="xmfb_img"></div>
 					</div>
 				</div>
 			</div>
@@ -50,7 +51,17 @@
 	</div>
 
 	{include file=footer.html}
+<!---图片放大-->
+<div class="motai" id="mo" >
+	<span class="close" id="close" onclick="closes()">×</span>
+	<div id="imgList">
+		<span id="prevs" onclick="uppage()"><</span>
+		<div id="listBox"></div>
+		<span id="nexts" onclick="nextpage()">></span>
+	</div>
+</div>
 </body>
+<script src="/themes/mall/jiaju/js/checkPicture.js"></script>
 <script type="text/javascript" src="/themes/mall/jiaju/styles/default/js/jquery-1.3.2.min.js"></script>
 <script>
 	var url = "http://wgcapp.wgc2013.com/";
@@ -90,6 +101,14 @@
 				$('#dd_time').html(data.dd_time);
 				$('#zhuangxiudaxiao').html(data.area);
 				$('#neirongmiaosu').html(data.content);
+
+				var arr = new Array();
+				var imgs = data.img;
+				arr = imgs.split(',');
+				for(var i in arr){
+					$('#xmfb_img').append('<img class="imagemsg" onclick="openImg(this,'+arr.length+')" style="width:3.8rem;float:left;margin:0.15rem;height:3.8rem;"style="width:3.8rem;float:left;margin:0.15rem;height:3.8rem;" src="http://wgcapp.wgc2013.com/'+arr[i]+'">');
+					$('#listBox').append('<img src="http://wgcapp.wgc2013.com/'+arr[i]+'" id="moimg" >');	
+				}
 			}else{
 
 			}

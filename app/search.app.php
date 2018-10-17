@@ -127,9 +127,25 @@ class SearchApp extends MallbaseApp
 		$this->display('user_baojia.html');
 	}function user_yun(){
 		$this->display('user_yun.html');
-	}//个人中心我的网盘详情
+	}//个人中心我的网盘详情1
 	function user_yun_content(){
 		$this->display('user_yun_content.html');
+	}
+	//个人中心我的网盘详情2
+	function user_yun_content1(){
+		$this->display('user_yun_content1.html');
+	}//个人中心我的网盘详情3
+	function user_yun_content2(){
+		$this->display('user_yun_content2.html');
+	}//个人中心我的网盘详情4
+	function user_yun_content3(){
+		$this->display('user_yun_content3.html');
+	}//个人中心我的网盘详情5
+	function user_yun_content4(){
+		$this->display('user_yun_content4.html');
+	}//个人中心我的网盘详情6
+	function user_yun_content5(){
+		$this->display('user_yun_content5.html');
 	}//个人中心个人发布集采
 	function user_collection(){
 		$this->display('user_collection.html');

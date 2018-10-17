@@ -7,6 +7,7 @@
 <link rel="stylesheet" type="text/css" href="/themes/mall/jiaju/css/api.css"/>
 <link rel="stylesheet" type="text/css" href="/themes/mall/jiaju/css/aui.css" />
 <link rel="stylesheet" type="text/css" href="/themes/mall/jiaju/css/aui.1.0.css"/>
+<link rel="stylesheet" href="themes/mall/jiaju/css/checkPicture.css" />
 <style type="text/css">
 .jodsearch{margin:0px;padding:0px;vertical-align: middle;}
 .jodsearch .dosearch{margin-left:auto;margin-right:auto;margin-top:10px;padding:0px;width:1100px;height:52px;background-color:#F5F5F5;}
@@ -26,60 +27,7 @@ margin:auto;padding:0px;margin-top: 10px;margin-bottom: 10px; width:1100px;overf
 .text-left a{width:23%;background:#ff552e;border-radius:10px;float:left;margin:1%;height:50px;line-height:50px;overflow:hidden;display:block;color:#fff;font-size:16px;font-weight:bold;}
 .aui-list-item-middle{width:16.222222222%;margin:10px 0.11111111111rem;float:left;overflow: hidden;}
  #lefttime>span{color:red}
- #mo{
-	  display: none;/*隐藏模态框*/
-	  width: 100%;
-	  height: 100%;
-	  position: fixed;/*定位方式为固定定位*/
-	  overflow: auto;/*不滚动*/
-	  background-color: rgba(0,0,0,0.7);
-	  top: 0px;
-	  left: 0px;
-	  z-index: 99999999;/*置于页面图层之上*/
- }
-.close{
-	 font-size: 40px;
-	 font-weight: bold;
-	 position: absolute;
-	 top: 0px;
-	 right: 0px;
-	 color:#f1f1f1;
-}
-.close:hover,
-.close:focus{
-	 color:#bbb;
-	 cursor:pointer;
-}
 
-	#imgList {
-		width: 800px;
-		height: 90%;
-		margin: 0 auto;
-		overflow: hidden;
-		position: relative;
-	}
-
-	#listBox {
-		width: auto;
-		height: 100%;
-	}
-
-#moimg{
-	display: block;/*图片表现为块*/
-	margin:25px auto;/*图片居中对齐*/
-	width: 800px;
-	max-width: 95%;/*自适应布局*/
-	max-height: 95%;/*自适应布局*/
-	float: left;
-}
-#caption{
-	text-align: center;/*文本居中*/
-	margin: 15px auto;
-	width: 60%;
-	max-height: 750px;
-	font-size: 20px;
-	color:#ccc;
- }
 /*#moimg,#caption{
  -webkit-animation: first 1s;
  -o-animation: first 1s;
@@ -278,14 +226,15 @@ section .aui-list .aui-list-item {
 	
 {include file=footer.html}
 <!---图片放大-->
-<div class="motai" id="mo" style="display: none;">
+<div class="motai" id="mo">
 	<span class="close" id="close" onclick="closes()">×</span>
 	<div id="imgList">
-		<span style="position: absolute;left: 0;top: 50%;font-size: 70px;margin-top:-35px;z-index: 999;cursor: pointer;" id="prevs" onclick="uppage()"><</span>
-		<div id="listBox" style="position: absolute;"></div>
-		<span style="position: absolute;right: 0;top: 50%;font-size: 70px;margin-top:-35px;z-index: 999;cursor: pointer;" id="nexts" onclick="nextpage()">></span>
+		<span id="prevs" onclick="uppage()"><</span>
+		<div id="listBox"></div>
+		<span id="nexts" onclick="nextpage()">></span>
 	</div>
 </div>
+<script src="/themes/mall/jiaju/js/checkPicture.js"></script>
 <script src="/themes/mall/jiaju/js/jquery-2.2.3.min.js"></script>
 <script type="text/javascript">
 
@@ -307,53 +256,6 @@ function removeNum(){
 		i=1;
 	}
 	$('#quantity').val(i);
-}
-
-// function openImg(obj){
-// 	var motai=document.getElementById('mo');
-// 	var moimg=document.getElementById("moimg");
-// 	var realimg=document.getElementById("real");
-// 	var caption=document.getElementById("caption");
-	 
-// 	motai.style.display="block"
-// 	moimg.src=obj.src;
-//     caption.innerHTML=$(this).attr('alt')
-// }
-
-function openImg(obj,num){
-	var boxWidth = parseInt(num*800)+'px';
-	$('#listBox').css('width', boxWidth);
-	$('#mo').css('display','block');
-}
-
-function uppage(){
-	var boxLength = $('#listBox').css('width');
-	var leftWidth =  $('#listBox').css('left');
-	var nextWidth = parseInt(leftWidth);
-	nextWidth = nextWidth+800;
-	$('#listBox').css('left',nextWidth+'px');
-	var leavWidth = parseInt(leftWidth)+1600;
-	var theEnd = -parseInt(boxLength)+800;
-	if(leavWidth>0){
-		$('#listBox').css('left',theEnd);
-	}
-}
-function nextpage(){
-	var boxLength = $('#listBox').css('width');
-	var leftWidth =  $('#listBox').css('left');
-	var nextWidth = parseInt(leftWidth);
-	nextWidth = nextWidth-800;
-	$('#listBox').css('left',nextWidth+'px');
-	var leavWidth = Math.abs(parseInt(leftWidth));
-	var boxWidth = Math.abs(parseInt(boxLength))-1600;
-	if(leavWidth>boxWidth){
-		$('#listBox').css('left','0');
-	}
-}
-
-function closes(){
-	$("#mo").hide();
-	$('#listBox').css('left','0');
 }
  
  // PHP时间戳转时间

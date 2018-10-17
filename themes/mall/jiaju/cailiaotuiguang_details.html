@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>材料推广详情</title>
-	<link rel="stylesheet" href="">
+	<link rel="stylesheet" href="themes/mall/jiaju/css/checkPicture.css" />
 	
 	<style>
 		.shejifenbao_list {
@@ -45,7 +45,17 @@
 </div>
 
 	{include file=footer.html}
+<!---图片放大-->
+<div class="motai" id="mo" >
+	<span class="close" id="close" onclick="closes()">×</span>
+	<div id="imgList">
+		<span id="prevs" onclick="uppage()"><</span>
+		<div id="listBox"></div>
+		<span id="nexts" onclick="nextpage()">></span>
+	</div>
+</div>
 </body>
+<script src="/themes/mall/jiaju/js/checkPicture.js"></script>
 <script type="text/javascript" src="/themes/mall/jiaju/styles/default/js/jquery-1.3.2.min.js"></script>
 <script>
 	var url = "http://wgcapp.wgc2013.com/";
@@ -89,9 +99,9 @@
 
 			   	html += '<p id="message-content" style="width:100%;height:auto;overflow: hidden;margin:5px auto;padding-left: 0.35rem">';
 			   		for(var i in m_photo){
-			   			html += '<a href="http://wgcapp.wgc2013.com/'+m_photo[i]+'" target="_blank">';	  
-						   	html += '<img class="imagemsg" style="width:3.8rem;float:left;margin:0.15rem;height:3.8rem;" src="http://wgcapp.wgc2013.com/'+m_photo[i]+'">'; 
-					   	html += '</a>';
+					   	html += '<img class="imagemsg" onclick="openImg(this,'+m_photo.length+')" style="width:3.8rem;float:left;margin:0.15rem;height:3.8rem;" src="http://wgcapp.wgc2013.com/'+m_photo[i]+'">'; 
+
+					   	$('#listBox').append('<img id="moimg" src="http://wgcapp.wgc2013.com/'+m_photo[i]+'">');
 			   		}
 			   	html += '</p>';
 
