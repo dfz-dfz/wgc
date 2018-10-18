@@ -186,6 +186,7 @@
 		uploadUrl = "http://wgcapp.59jiaju.com/",
 		id = '',
 		type = '';
+	var time = Math.random();
 	$(function(){
 		jQuery.support.cors = true;
 		cai_select();
@@ -217,6 +218,15 @@
 					var	huji        = (data[i].huji =='' || data[i].huji == null)?'未填写':data[i].huji;
 					var	gz_jingyan  = (data[i].gz_jingyan =='' || data[i].gz_jingyan == null)?'未填写':data[i].gz_jingyan;
 					var	userphoto   = uploadUrl + data[i].userphoto;
+					if(data[i].userphoto == '/Public/logo.png'){
+						if(Math.random() < 0.3){
+							userphoto = '/themes/mall/jiaju/images/header_picture1.png';
+						}else if(Math.random() > 0.3 && Math.random() < 0.6){
+							userphoto = '/themes/mall/jiaju/images/header_picture2.png';
+						}else if(Math.random() > 0.6 && Math.random() < 1){
+							userphoto = '/themes/mall/jiaju/images/header_picture3.png';
+						}
+					}
 						
 					if(name != '匿名'){
 						listHtml += '<li>';
@@ -281,7 +291,16 @@
 					var	huji        = (data[i].huji =='' || data[i].huji == null)?'未填写':data[i].huji;
 					var	gz_jingyan  = (data[i].gz_jingyan =='' || data[i].gz_jingyan == null)?'未填写':data[i].gz_jingyan;
 					var	userphoto   = uploadUrl + data[i].userphoto;
-						
+					if(data[i].userphoto == '/Public/logo.png'){
+						if(Math.random() < 0.3){
+							userphoto = '/themes/mall/jiaju/images/header_picture1.png';
+						}else if(Math.random() > 0.3 && Math.random() < 0.6){
+							userphoto = '/themes/mall/jiaju/images/header_picture2.png';
+						}else if(Math.random() > 0.6 && Math.random() < 1){
+							userphoto = '/themes/mall/jiaju/images/header_picture3.png';
+						}
+					}
+
 					if(name != '匿名'){
 						listHtml += '<li>';
 							listHtml += '<div class="gongjiang_box">';
@@ -348,6 +367,15 @@
 						var	huji        = (data[i].huji =='' || data[i].huji == null)?'未填写':data[i].huji;
 						var	gz_jingyan  = (data[i].gz_jingyan =='' || data[i].gz_jingyan == null)?'未填写':data[i].gz_jingyan;
 						var	userphoto   = uploadUrl + data[i].userphoto;
+						if(data[i].userphoto == '/Public/logo.png'){
+							if(Math.random() < 0.3){
+								userphoto = '/themes/mall/jiaju/images/header_picture1.png';
+							}else if(Math.random() > 0.3 && Math.random() < 0.6){
+								userphoto = '/themes/mall/jiaju/images/header_picture2.png';
+							}else if(Math.random() > 0.6 && Math.random() < 1){
+								userphoto = '/themes/mall/jiaju/images/header_picture3.png';
+							}
+						}
 							
 						if(name != '匿名'){
 							listHtml += '<li>';

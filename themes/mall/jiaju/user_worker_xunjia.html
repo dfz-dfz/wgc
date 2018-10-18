@@ -34,24 +34,38 @@
 <link type="text/css" href="/themes/mall/jiaju/styles/css/worker_quota_price.css" rel="stylesheet" />
 <link rel="stylesheet" href="themes/mall/jiaju/styles/css/tel_list.css">
 <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
-<!-- <script type="text/javascript" src="www.wgc2013.com/themes/mall/jiaju/js/jquery-1.8.3.min.js"></script> -->
+<link type="text/css" href="themes/mall/jiaju/styles/default/css/main.css" rel="stylesheet"  />
+<link type="text/css" href="themes/mall/jiaju/styles/css/global.css" rel="stylesheet"  />
+<link type="text/css" href="http://www.wgc2013.com/themes/mall/jiaju/styles/default/css/catalog.css" rel="stylesheet"  />
+<link type="text/css" href="http://www.wgc2013.com/themes/mall/jiaju/styles/default/css/footer.css" rel="stylesheet" />
+<link type="text/css" href="themes/mall/jiaju/styles/css/style.css" rel="stylesheet"  />
+<script type="text/javascript" src="index.php?act=jslang"></script>
+<script type="text/javascript" src="http://www.wgc2013.com/includes/libraries/javascript/ecmall.js" charset="utf-8"></script>
+<script type="text/javascript" src="http://www.wgc2013.com/includes/libraries/javascript/cart.js" charset="utf-8"></script>
+<script type="text/javascript" src="http://www.wgc2013.com/themes/mall/jiaju/styles/default/js/main.js" charset="utf-8"></script>
+<!--[if lte IE 6]>
+<script type="text/javascript" language="Javascript" src="http://www.wgc2013.com/themes/mall/jiaju/styles/default/js/hoverForIE6.js"></script>
+<![endif]-->
+<!--[if IE 8]>
+<link type="text/css" href="themes/mall/jiaju/css/ie8.css" rel="stylesheet"  />
+<![endif]-->
 <script type="text/javascript">
 	jQuery.support.cors = true;
 
 </script>
-
-</head>
 <style>
-	.mainnav {
-		background-color: #fff;
-	}
-	.menu{
-		border: none;
-	}
-	.line{
-		border: none;
-	}
-
+.w-full {
+	background-color: #fff;
+}
+.menu {
+	border:none;
+}
+.line {
+	border:none;
+}
+input {
+    -webkit-appearance: button;
+}
 .content {
 	width: auto;
 	height: auto;
@@ -150,59 +164,27 @@
 
 	}
 
+	#description li {
+		margin: 0;
+		padding: 0;
+	    margin: 0;
+	    padding: 0;
+	    text-align: left;
+	    line-height: 16px;
+	    height: 16px;
+	    color: #999;
+	    font-weight: normal;
+	}
 
 </style>
-<body style="background:#fff;">
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<!-- <base href="http://www.wgc2013.com/" /> -->
-<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7 charset=utf-8" />
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-<link type="text/css" href="themes/mall/jiaju/styles/default/css/main.css" rel="stylesheet"  />
-<link type="text/css" href="themes/mall/jiaju/styles/css/global.css" rel="stylesheet"  />
-<link type="text/css" href="http://www.wgc2013.com/themes/mall/jiaju/styles/default/css/catalog.css" rel="stylesheet"  />
-<link type="text/css" href="http://www.wgc2013.com/themes/mall/jiaju/styles/default/css/footer.css" rel="stylesheet" />
-<link type="text/css" href="themes/mall/jiaju/styles/css/style.css" rel="stylesheet"  />
-<script type="text/javascript" src="index.php?act=jslang"></script>
-<script type="text/javascript" src="http://www.wgc2013.com/includes/libraries/javascript/ecmall.js" charset="utf-8"></script>
-<script type="text/javascript" src="http://www.wgc2013.com/includes/libraries/javascript/cart.js" charset="utf-8"></script>
-<script type="text/javascript" src="http://www.wgc2013.com/themes/mall/jiaju/styles/default/js/main.js" charset="utf-8"></script>
-<!-- 引入的是个人中心的 -->
-
-
-<!--[if lte IE 6]>
-<script type="text/javascript" language="Javascript" src="http://www.wgc2013.com/themes/mall/jiaju/styles/default/js/hoverForIE6.js"></script>
-<![endif]-->
-<!--[if IE 8]>
-<link type="text/css" href="themes/mall/jiaju/css/ie8.css" rel="stylesheet"  />
-<![endif]-->
 <script type="text/javascript">
 var SITE_URL = "http://www.wgc2013.com";
 var PRICE_FORMAT = '&yen;%s';
 </script>
-<script charset="utf-8" type="text/javascript" src="http://www.wgc2013.com/includes/libraries/javascript/jquery.plugins/jquery.validate.js" ></script><style type="text/css">
-body{background:url('') no-repeat center top }
-.mainnav{width:990px; overflow:hidden; margin:0 auto}
-.STYLE1 {color: red}
-</style>
-<script type="text/javascript" src="http://www.wgc2013.com/themes/mall/jiaju/styles/default/js/hover.js"></script>
-
 <script charset="utf-8" type="text/javascript" src="http://www.wgc2013.com/includes/libraries/javascript/jquery.plugins/jquery.validate.js" ></script>
-<script type="text/javascript">
-  $(function (){
-    $('#open-change-city-window').click(function (){
-      $('.change-city-window').slideDown();
-      
-    })
-    $('#close-change-city-window').click(function (){
-      $('.change-city-window').slideUp();
-    })
-
-  
-  })
-</script>
+<script type="text/javascript" src="http://www.wgc2013.com/themes/mall/jiaju/styles/default/js/hover.js"></script>
+<script charset="utf-8" type="text/javascript" src="http://www.wgc2013.com/includes/libraries/javascript/jquery.plugins/jquery.validate.js" ></script>
 </head>
 <body>
 {include file=header.html}
@@ -217,15 +199,15 @@ body{background:url('') no-repeat center top }
  	<div class="container_right" style="width: 78.5%;border: 1px solid #cacaca;float: right;background-color: #f7f7f7;padding: 0 10px 10px 10px;">
 
 		<!-- 公司信息 -->
-		<div class="budget base_ui_public" style="/*display: none;*/position: relative;">
+		<div class="budget base_ui_public" style="position: relative;">
 			<ul class="budget_ul user_public_ul">
  				<li class="change_bg_li" style="margin-right: 10px;">工价询价</li>
 				<li style="margin-right: 10px;">询价列表</li>
 				<li style="margin-right: 10px;">分享列表</li>
  			</ul>
- 			<div class="company_info base_info_public" style="overflow: hidden;/*padding-left: 15%;*/min-height: 250px;">
+ 			<div class="company_info base_info_public" style="overflow: hidden;min-height: 250px;">
  			<!-- 预算报价 -->
- 			<div class="company_detail" style="position: relative;/*left: -16%;*//*width: 115%;*/">
+ 			<div class="company_detail" style="position: relative;">
 			<div style="overflow: hidden;margin-top: 10px;">
 			<!-- 基本信息 -->
 			<div class="section" style="border: none;">
@@ -285,7 +267,18 @@ body{background:url('') no-repeat center top }
 					<div class="btn confirm_btn" style="padding: 0;" onclick="fabu()">确认发布</div>
 					<input type="hidden" id="ImgPath"/>
 				</div>
+				<div style="color: #999;text-align: left;margin-left: 40px;">
+					<span style="color:red;">*</span>资费说明：
+					<ul id="description" style="padding: 0;text-align: left;">
+						<li>1.个人用户：发布20元/次；</li>
+						<li>2.招聘用户：发布20元/次；</li>
+						<li>3.企业专属版：发布20元/次；</li>
+						<li>4.企业至尊版：免费发布，网站位置广告使用；</li>
+						<li>5.企业砖石版：免费发布，网站位置广告使用。</li>
+					</ul>
+				</div>
 			</div>
+			
 			<!-- 自定工价 end -->
 			
 			<!-- 工价列表 -->

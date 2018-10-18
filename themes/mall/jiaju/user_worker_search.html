@@ -129,21 +129,7 @@ body{background:url('') no-repeat center top }
 	}
 </style>
 <script type="text/javascript" src="http://www.wgc2013.com/themes/mall/jiaju/styles/default/js/hover.js"></script>
-
 <script charset="utf-8" type="text/javascript" src="http://www.wgc2013.com/includes/libraries/javascript/jquery.plugins/jquery.validate.js" ></script>
-<script type="text/javascript">
-  $(function (){
-    $('#open-change-city-window').click(function (){
-      $('.change-city-window').slideDown();
-      
-    })
-    $('#close-change-city-window').click(function (){
-      $('.change-city-window').slideUp();
-    })
-
-  
-  })
-</script>
 </head>
 <body>
 {include file=header.html}
@@ -171,39 +157,49 @@ body{background:url('') no-repeat center top }
 			<div class="section" style="border: none;">
 			<!-- 搜索工人 -->
 				<div style="overflow: hidden;">
-				<div class="ser_main">
-					<div class="ser_left"><span style="color:red;">*</span>行业:</div>
-					<div class="ser_right">
-						<select class="ser_right_sec">
-						  <option value ="0"></option>
-						  <option value ="volvo">装饰建筑</option>
-						</select>
+					<div class="ser_main">
+						<div class="ser_left"><span style="color:red;">*</span>行业:</div>
+						<div class="ser_right">
+							<select class="ser_right_sec">
+							  <option value ="0"></option>
+							  <option value ="volvo">装饰建筑</option>
+							</select>
+						</div>
 					</div>
-				</div>
-				<div class="ser_main" style="position: relative;overflow: visible;">
-					<div class="ser_left"><span style="color:red;">*</span>工种:</div>
-					<div class="ser_right"><input type="text" id="gongzhong"></div>
-					<div style="position: absolute;top: 10px;left: 277px;" onclick="jobtypes()"><img src="themes/mall/jiaju/images/center/xiala.png" alt="" style="width: 10px;height: 10px;" /></div>
-					<div class="jobtype" style="position: absolute;width: 182px;left: 90px;background-color: #eee;top: 29px;border: 1px solid #40e5ec;height: 80px;overflow-y: scroll;display: none;">
-						<div style="width: 100%;height: 20px;">1</div>
-						<div style="width: 100%;height: 20px;">2</div>
-						<div style="width: 100%;height: 20px;">3</div>
+					<div class="ser_main" style="position: relative;overflow: visible;">
+						<div class="ser_left"><span style="color:red;">*</span>工种:</div>
+						<div class="ser_right"><input type="text" id="gongzhong"></div>
+						<div style="position: absolute;top: 10px;left: 277px;" onclick="jobtypes()"><img src="themes/mall/jiaju/images/center/xiala.png" alt="" style="width: 10px;height: 10px;" /></div>
+						<div class="jobtype" style="position: absolute;width: 182px;left: 90px;background-color: #eee;top: 29px;border: 1px solid #40e5ec;height: 80px;overflow-y: scroll;display: none;">
+							<div style="width: 100%;height: 20px;">1</div>
+							<div style="width: 100%;height: 20px;">2</div>
+							<div style="width: 100%;height: 20px;">3</div>
+						</div>
 					</div>
-				</div>
-				<div class="ser_main">
-					<div class="ser_left">工龄:</div>
-					<div class="ser_right"><input type="text"></div>
-				</div>
-				<div class="ser_main">
-					<div class="ser_left">技能:</div>
-					<div class="ser_right"><input type="text"></div>
-				</div>
-				<div class="ser_main" style="width:65%;">
-					<div class="ser_left">项目经验:</div>
-					<div class="ser_right" style="width:76%;"><input type="text"></div>
-				</div>
+					<div class="ser_main">
+						<div class="ser_left">工龄:</div>
+						<div class="ser_right"><input type="text"></div>
+					</div>
+					<div class="ser_main">
+						<div class="ser_left">技能:</div>
+						<div class="ser_right"><input type="text"></div>
+					</div>
+					<div class="ser_main" style="width:65%;">
+						<div class="ser_left">项目经验:</div>
+						<div class="ser_right" style="width:76%;"><input type="text"></div>
+					</div>
 				</div>
 				<div class="ser_ser" onclick="search()">查询</div>
+				<div style="color: #999;text-align: left;margin-left: 40px;">
+					<span style="color:red;">*</span>资费说明：
+					<ul style="padding: 0;">
+						<li>1.个人用户：查询20元/次；</li>
+						<li>2.招聘用户：查询20元/次；</li>
+						<li>3.企业专属版：查询20元/次；</li>
+						<li>4.企业至尊版：免费查看；</li>
+						<li>5.企业砖石版：免费查看。</li>
+					</ul>
+				</div>
 				<!-- 搜索工人end -->
 			</div>
 
@@ -237,7 +233,7 @@ body{background:url('') no-repeat center top }
 				</div>
 			</div>
 <!--查询历史列表 -->
- 			<div class="company_detail_list" style="position: relative;/*left: -16%;*//*width: 115%;*/;display:none;">
+ 			<div class="company_detail_list" style="position: relative;display:none;">
 			<div id="details_lists" style="">
 			<!--详细列表 -->
 		    <div class="result_lists" style="width: 100%;min-height: 480px;">

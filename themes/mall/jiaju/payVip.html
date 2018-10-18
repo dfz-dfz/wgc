@@ -203,8 +203,19 @@
 					id = data.id,
 					money = data.money,
 					username = data.username;
+
+				if(cycle == 680){
+					cycle = '招聘用户';
+				}else if(cycle == 980){
+					cycle = '企业专属版';
+				}else if(cycle == 5980){
+					cycle = '企业至尊版';
+				}else if(cycle == 9980){
+					cycle = '企业砖石版';
+				}
+				
 				$('#name').html(username+',您好!');
-				$('#cycle').html(cycle+'天');
+				$('#cycle').html(cycle);
 				$('#money').html(money+'元');
 			}
 		},'json');

@@ -55,51 +55,7 @@ input{
 }
 </style>
 <script type="text/javascript" src="http://www.wgc2013.com/themes/mall/jiaju/styles/default/js/hover.js"></script>
-<script>
-  function lxfEndtime(){
-          $(".lxftime").each(function(){
-                var lxfday=$(this).attr("lxfday");//用来判断是否显示天数的变量
-                var endtime = new Date($(this).attr("endtime")).getTime();//取结束日期(毫秒值)
-                var nowtime = new Date().getTime();        //今天的日期(毫秒值)
-                var youtime = endtime-nowtime;//还有多久(毫秒值)
-                var seconds = youtime/1000;
-                var minutes = Math.floor(seconds/60);
-                var hours = Math.floor(minutes/60);
-                var days = Math.floor(hours/24);
-                var CDay= days ;
-                var CHour= hours % 24;
-                var CMinute= minutes % 60;
-                var CSecond= Math.floor(seconds%60);//"%"是取余运算，可以理解为60进一后取余数，然后只要余数。
-                if(endtime<=nowtime){
-                        $(this).html("已过期")//如果结束日期小于当前日期就提示过期啦
-                        }else{
-                                if($(this).attr("lxfday")=="no"){
-                                        $(this).html("<i>剩余时间：</i><span>"+CHour+"</span>时<span>"+CMinute+"</span>分<span >"+CSecond+"</span>秒");          //输出没有天数的数据
-                                        }else{
-                        $(this).html("<span class='f24'>"+days+"</span><span>天</span><span  class='f24'>"+CHour+"</span><span>时</span><span  class='f24'>"+CMinute+"</span><span>分</span><span  class='f24'>"+CSecond+"</span><span>秒</span>");          //输出有天数的数据
-                                }
-                        }
-          });
-   setTimeout("lxfEndtime()",1000);
-  };
-$(function(){
-      lxfEndtime();
-   });
-</script>
 <script charset="utf-8" type="text/javascript" src="http://www.wgc2013.com/includes/libraries/javascript/jquery.plugins/jquery.validate.js" ></script>
-<script type="text/javascript">
-  $(function (){
-    $('#open-change-city-window').click(function (){
-      $('.change-city-window').slideDown();
-      
-    })
-    $('#close-change-city-window').click(function (){
-      $('.change-city-window').slideUp();
-    })
-
-  
-  })
-</script>
 </head>
 <body>
 {include file=header.html}
@@ -117,12 +73,11 @@ $(function(){
 
 		<!-- 发布招聘 -->
 				
-		<div class="user_employ base_ui_public" style="/*display: none;*/">
+		<div class="user_employ base_ui_public">
 			<ul class="user_employ_ul user_public_ul">
  				<li class="change_bg_li" style="margin-right: 10px;">发布招聘</li>
 				<li style="margin-right: 10px;">招聘列表</li>
 				<li style="margin-right: 10px;">分享列表</li>
-				
  			</ul>
  			<div class="user_employ_info base_info_public" style="overflow: hidden;padding-left: 5%;">
  				<h3 style="font-size: 16px;color: #ff552e;text-align: left;font-weight: bold;margin-bottom: 20px;">招聘信息</h3>
@@ -185,6 +140,16 @@ $(function(){
  				<!-- <a href="javascript:;">保存</a> -->
 
 				<a href="javascript:;" style="margin-left: -80px;" onclick="fabu()">立即发布</a>
+				<div style="color: #999;text-align: left;">
+					<span style="color:red;">*</span>资费说明：
+					<ul>
+						<li>1.个人用户：发布招聘信息将收取1元/条；</li>
+						<li>2.招聘用户：20个职位发布，10周知名企业标签，顺序置顶，加大曝光率，自动匹配最适合的岗位推送；</li>
+						<li>3.企业专属版：5个职位发布，2周知名企业标签，自动匹配最适合的岗位推送；</li>
+						<li>4.企业至尊版：10个职位发布，4周知名企业标签，顺序置顶，加大曝光率，自动匹配最适合的岗位推送；</li>
+						<li>5.企业砖石版：20个职位发布，10周知名企业标签，顺序置顶，加大曝光率，自动匹配最适合的岗位推送。</li>
+					</ul>
+				</div>
  				</div>
  			</div>
 		<!--招聘列表 -->
