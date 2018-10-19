@@ -30,13 +30,6 @@ margin:auto;padding:0px;margin-top: 10px;margin-bottom: 10px; width:1100px;overf
 .text-left a{width:23%;background:#ff552e;border-radius:10px;float:left;margin:1%;height:50px;line-height:50px;overflow:hidden;display:block;color:#fff;font-size:16px;font-weight:bold;}
 .aui-list-item-middle{width:19.88888888888%;margin:10px 0.11111111111rem;float:left;overflow: hidden;}
 </style>
-
-</head>
-<body>
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
 <base href="{$site_url}/" />
 <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7 charset={$charset}" />
 <meta http-equiv="Content-Type" content="text/html; charset={$charset}" />
@@ -61,7 +54,25 @@ margin:auto;padding:0px;margin-top: 10px;margin-bottom: 10px; width:1100px;overf
 <script type="text/javascript" language="Javascript" src="{res file=js/hoverForIE6.js}"></script>
 <![endif]-->
 <script type="text/javascript" src="{res file=js/hover.js}"></script>
+<style>
+#banner { position: relative; width: 400px; height: 300px; border: 1px solid #666; overflow: hidden; }
 
+#banner_list img { border: 0px;width: 400px;height: 248px;}
+
+#banner_bg { position: absolute; bottom: 0; background-color: #ce5f68; height: 50px; /*filter: Alpha(Opacity=30); opacity: 0.3;*/ z-index: 1000; cursor: pointer; width: 100%;line-height: 50px;color:#fff;}
+
+#banner_info { position: absolute; bottom: 16px; left: 5px; height: 22px; color: #fff; z-index: 1001; cursor: pointer;font-size: 18px; }
+
+#banner_text { position: absolute; width: 120px; z-index: 1002; right: 3px; bottom: 3px; }
+
+#banner ul { position: absolute; list-style-type: none; /*filter: Alpha(Opacity=80); opacity: 0.8;*/ z-index: 1002; margin: 0; padding: 0; bottom: 20px; right: 5px; }
+
+#banner ul li { padding: 0px 8px;height: 6px; float: left; display: block; color: #fff; background: #999; cursor: pointer; border: 1px solid #333; margin-right: 6px;border-radius: 4px;color: #ce5f68;}
+
+#banner ul li.on { background-color: #fff; }
+
+#banner_list a { position: absolute; }
+</style>
 </head>
 <body>
 {include file=header.html}
@@ -72,51 +83,117 @@ margin:auto;padding:0px;margin-top: 10px;margin-bottom: 10px; width:1100px;overf
 		<!-- 左边 -->
 		<div class="main_left" style="width:100%">
 			<div style="background-color:#fff;width:100%;">
-					<div style="height: 54px;">
-						<input id="key" type="text" style="height: 10px;width: 1016px;padding: 20px;float: left;" placeholder="请输入关键词搜索">
-						<img onclick="searchList()" src="themes/mall/jiaju/images/search.png" alt="" style="float: left;width: 84px;height: 42px;cursor: pointer;">
+				<!-- <div style="height: 54px;">
+					<input id="key" type="text" style="height: 10px;width: 1016px;padding: 20px;float: left;" placeholder="请输入关键词搜索">
+					<img onclick="searchList()" src="themes/mall/jiaju/images/search.png" alt="" style="float: left;width: 84px;height: 42px;cursor: pointer;">
+				</div> -->
+
+				<div style="border-bottom: 1px solid #000;height: 40px;">
+					<img src="themes/mall/jiaju/images/hyzx.jpg" alt="" width="150" style="float: left;"/>
+					<span style="float: right;font-weight: bold;line-height: 50px;color: #000;letter-spacing: 1px;">您当前位置:>首页>行业资讯</span>
+				</div>
+				
+				<!--列表开始-->
+				<div style="overflow:hidden;float:left;margin:20px 0;width:80%;">
+					<!-- 第一模块 -->
+					<div style="width: 100%;height: 320px;border-bottom: 2px solid #e70012;">
+						<div style="min-width: 400px;float: left;width: 50%;">
+							<div id="banner">
+							<div id="banner_bg"></div>
+
+							<div id="banner_info"></div>
+
+							<ul>
+								<li class="on">1</li>
+								<li>2</li>
+								<li>3</li>
+							</ul>
+							<div id="banner_list">
+								<a id="link1" href="#" target="_blank"><img class="pic1" src="" title="" alt="" /></a>
+								<a id="link2" href="#" target="_blank"><img class="pic2" src="" title="" alt="" /></a>
+								<a id="link3" href="#" target="_blank"><img class="pic3" src="" title="" alt="" /></a>
+							</div>
+							</div>
+						</div>
+						<div style="float: right;width: 50%">
+							<ul>
+								<li style="height: 72px;background-color: #f2f2f2;cursor: pointer;">
+									<a href="/index.php?app=search&act=news_content&id=1083&title=微工程免费为装饰公司提供APP管理软件" target="_blank">
+										<div style="float: left;width: 15%;background-color: #b9000e;color: #fff;height: 72px;text-align: center;">
+											<div style="font-size: 25px;margin-top: 5px;">05</div>
+											<div>2018.09</div>
+										</div>
+										<div style="float: right;width: 85%;padding:0 2%">
+											<p style="font-size: 12px;font-size: 14px;line-height: 30px;color: #000;font-weight: bold;">微工程免费为装饰公司提供APP管理软件</p>
+											<p style="font-size: 12px;">广州市我购科技有限公司成立于2013年，2013-2018，历时5年，经过大量的测试和完全试用，专为装饰公司量身打造的“微工程”管...</p>
+										</div>
+									</a>
+								</li>
+								<li style="height: 72px;background-color: #f2f2f2;margin: 4px 0;cursor: pointer;">
+									<a href="/index.php?app=search&act=news_content&id=1084&title=微工程内部管理功能介绍——简单高效的移动办公" target="_blank">
+										<div style="float: left;width: 15%;background-color: #b9000e;color: #fff;height: 72px;text-align: center;">
+											<div style="font-size: 25px;margin-top: 5px;">05</div>
+											<div>2018.09</div>
+										</div>
+										<div style="float: right;width: 85%;padding:0 2%">
+											<p style="font-size: 12px;font-size: 14px;line-height: 30px;color: #000;font-weight: bold;">微工程内部管理功能介绍——简单高效的移动办公</p>
+											<p style="font-size: 12px;">微工程提供独立管理后台，支持数据导出，数据永久存档，信息安全可靠。专门针对装饰公司设计，免费为装饰公司提供宣传...</p>
+										</div>
+									</a>
+								</li>
+								<li style="height: 72px;background-color: #f2f2f2;cursor: pointer;">
+									<a href="/index.php?app=search&act=news_content&id=1085&title=微工程APP下载和使用指南" target="_blank">
+										<div style="float: left;width: 15%;background-color: #b9000e;color: #fff;height: 72px;text-align: center;">
+											<div style="font-size: 25px;margin-top: 5px;">05</div>
+											<div>2018.09</div>
+										</div>
+										<div style="float: right;width: 85%;padding:0 2%">
+											<p style="font-size: 12px;font-size: 14px;line-height: 30px;color: #000;font-weight: bold;">微工程APP下载和使用指南</p>
+											<p style="font-size: 12px;">微工程APP使用指南微工程是一款手机APP软件，免费为装饰公司提供宣传、签单、内部管理、维修管理和项目管理的功能，在线...</p>
+										</div>
+									</a>
+								</li>
+								<li style="height: 72px;background-color: #f2f2f2;margin-top: 4px;cursor: pointer;">
+									<a href="/index.php?app=search&act=news_content&id=1087&title=轻松管项目、管人、管事——微工程项目管理功能介绍" target="_blank">
+										<div style="float: left;width: 15%;background-color: #b9000e;color: #fff;height: 72px;text-align: center;">
+											<div style="font-size: 25px;margin-top: 5px;">05</div>
+											<div>2018.09</div>
+										</div>
+										<div style="float: right;width: 85%;padding:0 2%">
+											<p style="font-size: 12px;font-size: 14px;line-height: 30px;color: #000;font-weight: bold;">轻松管项目、管人、管事——微工程项目管理功能介绍</p>
+											<p style="font-size: 12px;">微工程提供独立管理后台，支持数据导出，数据永久存档，信息安全可靠。专门针对装饰公司设计，免费为装饰公司提供宣传...</p>
+										</div>
+									</a>
+								</li>
+							</ul>
+						</div>
 					</div>
 
-					<div style="border-bottom: 1px solid #000;height: 40px;">
-						<img src="themes/mall/jiaju/images/hyzx.jpg" alt="" width="150" style="float: left;"/>
-						<span style="float: right;font-weight: bold;line-height: 50px;">您当前位置:>首页>行业资讯</span>
-					</div>
-					
-					<!--列表开始-->
-					<div style="overflow:hidden;float:left;margin:20px 0;width:80%;">
+					<!-- 第二模块 -->
+					<ul id="twoBox" style="width: 100%;height: auto;overflow: hidden;border-bottom: 2px solid #e70012;">
 						
-						<ul class="aui-list aui-media-list" id="news" style="min-height:50px;border:none;"></ul>
-						<!-- 显示分页 -->
-		               	<div class="unpages" id="unpage" style="margin:20px auto;width: 200px;text-align: center;">
-							<a style="background:red;color:#fff;width: 70px;height: 30px;line-height: 30px;padding:4px 5px;cursor:pointer;margin-right: 20px;" onclick="uppage()">上一页</a>
-							<a style="background:red;color:#fff;width: 70px;height: 30px;line-height: 30px;padding:4px 5px;cursor:pointer;" onclick="nextpage()" id="nextpage">下一页</a>
-						</div>
-					</div>
-					<div style="overflow:hidden;float:right;margin:20px 0;width:20%;">
-						<!---今日--要闻---->
-						<!-- <div style="overflow:hidden;height:auto;width:99%;border:1px solid #e3e3e3;">
-							<h3 style="font-size:18px;color:#333;line-height:40px;background:#e2e2e2;overflow:hidden;height:40px;width:100%;border-bottom:1px solid #e3e3e3;">今日要闻</h3>
-							<ul class="aui-list aui-media-list" id="newsHost"></ul>
-						</div> -->
-						<!--今日工价--->
-						<!-- <div style="overflow:hidden;height:auto;width:99%;border:1px solid #e3e3e3;">
-							<h3 style="font-size:18px;color:#333;line-height:40px;background:#e2e2e2;overflow:hidden;height:40px;width:100%;border-bottom:1px solid #e3e3e3;">今日工价</h3>
-							<table style="border-collapse:collapse;border:1px solid #e3e3e3;margin:20px auto;width:100%;background:#fff;" id="gongjia"></table>
-						</div> -->
-						<!--加盟商-->
-						<!-- <div style="overflow:hidden;height:auto;width:99%;border:1px solid #e3e3e3;">
-							<a href="index.php?app=search&amp;act=caigou"><img style="width:100%;" src="/themes/mall/jiaju/images/Image_004.png"></a>
-							<a href="index.php?app=search&amp;act=caigou"><img style="width:100%;" src="/themes/mall/jiaju/images/Image_015.png"></a>
-							<a href="index.php?app=search&amp;act=caigou"><img style="width:100%;" src="/themes/mall/jiaju/images/Image_017.png"></a>
-							<a href="index.php?app=search&amp;act=caigou"><img style="width:100%;" src="/themes/mall/jiaju/images/Image_020.png"></a>
-						</div> -->
-						<div style="width: 200px;float: right;height: 587px;padding-right: 0;">
-							<img src="http://www.wgc2013.com/themes/mall/jiaju/images/guanggao.png" alt="" width="100%">
-						</div>
-					</div>
+					</ul>
 					
-				
-				
+					<!-- 第三模块 -->
+					<ul class="aui-list aui-media-list" id="news" style="min-height:50px;border:none;border-bottom: 2px solid #e70012;height: auto;overflow: hidden;"></ul>
+
+					<!-- 显示分页 -->
+	               	<div class="unpages" id="unpage" style="margin:20px auto;width: 200px;text-align: center;">
+						<a style="background:red;color:#fff;width: 70px;height: 30px;line-height: 30px;padding:4px 5px;cursor:pointer;margin-right: 20px;" onclick="uppage()">上一页</a>
+						<a style="background:red;color:#fff;width: 70px;height: 30px;line-height: 30px;padding:4px 5px;cursor:pointer;" onclick="nextpage()" id="nextpage">下一页</a>
+					</div>
+				</div>
+				<div style="overflow:hidden;float:right;margin:20px 0;width:20%;">
+					<!---今日--要闻---->
+					<!-- <div style="overflow:hidden;height:auto;width:99%;border:1px solid #e3e3e3;">
+						<h3 style="font-size:18px;color:#333;line-height:40px;background:#e2e2e2;overflow:hidden;height:40px;width:100%;border-bottom:1px solid #e3e3e3;">今日要闻</h3>
+						<ul class="aui-list aui-media-list" id="newsHost"></ul>
+					</div> -->
+					<div style="width: 200px;float: right;height: auto;padding-right: 0;">
+						<img src="http://www.wgc2013.com/themes/mall/jiaju/images/guanggao.png" alt="" width="100%">
+						<img src="http://www.wgc2013.com/themes/mall/jiaju/images/guanggao.png" alt="" width="100%" style="margin-top: 50px;">
+					</div>
+				</div>
 			</div>
 			
 		</div>
@@ -126,93 +203,114 @@ margin:auto;padding:0px;margin-top: 10px;margin-bottom: 10px; width:1100px;overf
 	</div>
 {include file=footer.html}
 <!-- 底部include file=footer2.html-->
-<script src="/themes/mall/jiaju/js/jquery-1.5.2.min.js"></script>
 <script type="text/javascript" src="/themes/mall/jiaju/js/aui-scroll.js" ></script>
-
+<script type="text/javascript">
+var t = n =0, count;
+$(document).ready(function(){
+	count=$("#banner_list a").length;
+	$("#banner_list a:not(:first-child)").hide();
+	$("#banner_info").html($("#banner_list a:first-child").find("img").attr('alt'));
+	$("#banner_info").click(function(){window.open($("#banner_list a:first-child").attr('href'), "_blank")});
+	$("#banner li").click(function() {
+		var i = $(this).text() -1;//获取Li元素内的值，即1，2，3，4
+		n = i;
+		if (i >= count) return;
+		$("#banner_info").html($("#banner_list a").eq(i).find("img").attr('alt'));
+		$("#banner_info").unbind().click(function(){window.open($("#banner_list a").eq(i).attr('href'), "_blank")})
+		$("#banner_list a").filter(":visible").fadeOut(500).parent().children().eq(i).fadeIn(1000);
+		document.getElementById("banner").style.background="";
+		$(this).toggleClass("on");
+		$(this).siblings().removeAttr("class");
+	});
+	t = setInterval("showAuto()", 4000);
+	$("#banner").hover(function(){clearInterval(t)}, function(){t = setInterval("showAuto()", 4000);});
+})
+function showAuto(){
+	n = n >=(count -1) ?0 : ++n;
+	$("#banner li").eq(n).trigger('click');
+}
+</script>
 <script type="text/javascript">
 var serverUrl = "http://wgcapp.59jiaju.com/index.php/Home/",page = 1,uploadUrl = "http://wgcapp.59jiaju.com/";
 $(function(){
 	jQuery.support.cors = true;
-	gongjia_select();
 	newsHost_select();
 	news_select();
 });
-//下一页
-/*var scroll = new auiScroll({
-    listen:false, //是否监听滚动高度，开启后将实时返回滚动高度
-    distance:0 //判断到达底部的距离，isToBottom为true
-},function(ret){
-   
-   if(ret.isToBottom){
-		news_select();
-   }
-});*/
- // PHP时间戳转时间
-function _trans_php_time_to_str(timestamp, n) {
-	update = new Date(timestamp * 1000);
-	//时间戳要乘1000
-	year = update.getFullYear();
-	month = (update.getMonth() + 1 < 10) ? ('0' + (update.getMonth() + 1)) : (update.getMonth() + 1);
-	day = (update.getDate() < 10) ? ('0' + update.getDate()) : (update.getDate());
-	hour = (update.getHours() < 10) ? ('0' + update.getHours()) : (update.getHours());
-	minute = (update.getMinutes() < 10) ? ('0' + update.getMinutes()) : (update.getMinutes());
-	second = (update.getSeconds() < 10) ? ('0' + update.getSeconds()) : (update.getSeconds());
-	if (n == 1) {
-		return (year + '-' + month + '-' + day + ' ' + hour + ':' + minute + ':' + second);
-	} else if (n == 2) {
-		return (year + '-' + month + '-' + day);
-	} else if (n == 3) {
-		return (month + '-' + day);
-	} else if (n == 4) {
-		return (hour + ':' + minute + ':' + second);
-	} else if (n == 5) {
-		return (year + '-' + month + '-' + day + ' ' + hour + ':' + minute );
-	} else {
-		return 0;
-	}
-}
+
 //行业要闻列表
 var page = 1;
 function news_select(page){
 	
 	var url = serverUrl+"Systemmsg/AdvertisementPage";
 	$.post(url,{
-		limit : 5,
+		limit : 8,
 		type : 0,
 		page : page,
 		infotype : 'news_pc'
 	},function(ret){
 		if(ret.code == 200){
-				page++;
-				var data = ret.message;
-				var listHtml  = '';
-				var listHtmlS  = '';
-				for (var i in data) {
-							
-					var id=data[i].id,
-						title=data[i].title,
-						pic=data[i].pic,
-						describe=data[i].describe,
-						times = _trans_php_time_to_str(data[i].times,1),
-						content=data[i].content;
-						var cont = content.replace(/<[^>]+>/g,'');
-				
-				    listHtml += '<li style="cursor:pointer;margin:10px auto;height:140px;width:880px;" title="'+title+'" onclick="openNewsContents(this,'+id+')">';
+			page++;
+			var data = ret.message;
+			var html = '';
+			var listHtml  = '';
+			var listHtmlS  = '';
+			for (var i in data) {
+				var id=data[i].id,
+					title=data[i].title,
+					pic=data[i].pic,
+					describe=data[i].describe,
+					times = _trans_php_time_to_str(data[i].times,1),
+					content=data[i].content;
+				var cont = content.replace(/<[^>]+>/g,'');
+				if(i<4){
+					html += '<li style="float: left;width: 50%;cursor:pointer;" title="'+title+'" onclick="openNewsContents(this,'+id+')">';
+						html += '<div style="float:left;height:120px;overflow: hidden;width:150px;padding: 2px;border: 1px solid #999;margin-top:7.5px;margin-right:20px;">';
+			                html += '<img src="http://wgcmanage.wgc2013.com/'+pic+'" style="height:120px;width:150px;" onerror="javascript:this.src=\'../image/Advertisement.jpg\';">';
+			            html += '</div>';
+			            html += '<div class="aui-list-item-inner" style="height:140px;float:left;width:240px;">';
+			                html += '<div class="aui-list-item-text" style="border-bottom:1px solid #999;">';
+				                html += '<span style="font-size:14px;">'+times+'</span>';
+			               html += ' </div>';
+			                html += '<div>';
+			                	html += '<span style="color:#000;font-size:14px;height:20px;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:1;overflow:hidden;">'+title+'</span>';
+			                	html += '<div style="height:88px;overflow:hidden;font-size:14px;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:4;">'+cont+'</div>';
+			                html += '</div>';
+			            html += '</div>';
+					html += '</li>';
+				}else{
+					listHtml += '<li style="cursor:pointer;margin:10px auto;height:165px;width:880px;border-bottom:1px solid #999;" title="'+title+'" onclick="openNewsContents(this,'+id+')">';
+				    listHtml += '            <div>';
+				    listHtml += '                <span style="color:#000;">'+title+'</span>';
+				    listHtml += '            <span style="float:right;font-size:14px;">'+times+'</span>';
+				    listHtml += '            </div>';
 				    listHtml += '        <div style="float:left;height:120px;overflow: hidden;width:150px;padding: 2px;border: 1px solid #999;margin-top:7.5px;margin-right:20px;">';
 				    listHtml += '            <img src="http://wgcmanage.wgc2013.com/'+pic+'" style="height:120px;width:150px;" onerror="javascript:this.src=\'../image/Advertisement.jpg\';">';
 				    listHtml += '        </div>';
 				    listHtml += '        <div class="aui-list-item-inner" style="height:140px;float:left;width:710px;">';
-				    listHtml += '            <div class="aui-list-item-text" style="border-bottom:1px solid #999;">';
-				    listHtml += '                <span style="color:#000;">'+title+'</span>';
-				    listHtml += '            <span style="float:right;font-size:14px;">'+times+'</span>';
-				    listHtml += '            </div>';
-				    listHtml += '            <div style="height:88px;overflow:hidden;font-size:14px;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:4;" id="contentMain">'+cont+'</div>';
+				    listHtml += '            <div style="height:110px;overflow:hidden;font-size:14px;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:5;" id="contentMain">'+cont+'</div>';
 				    listHtml += '        </div>';
 				    listHtml += '</li>';
 				    listHtmlS += '<p class="aui-ellipsis-1" id="'+title+'"><span class="bottonTitle">推荐</span>'+title+'</p>';
+				}
+			    
 			}
+
+			$('.pic1').attr('src', 'http://wgcmanage.wgc2013.com/'+data[0].pic);
+			$('.pic2').attr('src', 'http://wgcmanage.wgc2013.com/'+data[1].pic);
+			$('.pic3').attr('src', 'http://wgcmanage.wgc2013.com/'+data[2].pic);
+			$('.pic1').attr('title', data[0].title);
+			$('.pic2').attr('title', data[1].title);
+			$('.pic3').attr('title', data[2].title);
+			$('.pic1').attr('alt', data[0].title);
+			$('.pic2').attr('alt', data[1].title);
+			$('.pic3').attr('alt', data[2].title);
+			$('#link1').attr('href','/index.php?app=search&act=news_content&id='+data[0].id+'&title='+data[0].title+'');
+			$('#link2').attr('href','/index.php?app=search&act=news_content&id='+data[1].id+'&title='+data[1].title+'');
+			$('#link3').attr('href','/index.php?app=search&act=news_content&id='+data[2].id+'&title='+data[2].title+'');
 		   
 			$("#news").show();
+			$('#twoBox').html(html);
 			$("#news").html(listHtml);
 			
 		}else if(ret.code == 202)	{
@@ -223,23 +321,22 @@ function news_select(page){
 			}
 		}else{
 			return false;
-		
 		}
-		
-	
 	},"json");
 }
-	function uppage(){
-		if(page<1){
-			page=1;
-		}
-		page--;
-		news_select(page);
+
+function uppage(){
+	if(page<1){
+		page=1;
 	}
-	function nextpage(){
-		page++;
-		news_select(page);
-	}
+	page--;
+	news_select(page);
+}
+function nextpage(){
+	page++;
+	news_select(page);
+}
+
 //今日要闻列表
 function newsHost_select(){
 	
@@ -252,7 +349,6 @@ function newsHost_select(){
 				for (var i in data) {
 							
 					var id=data[i].id, title=data[i].title,content=data[i].content,pic=data[i].pic,describe=data[i].describe,times = _trans_php_time_to_str(data[i].times,1);
-					   
 				
 					listHtml += '<li class="aui-list-item" title="'+title+'" style="cursor:pointer" onclick="openNewsContents(this,'+id+')">';
 				   listHtml += '    <div class="aui-media-list-item-inner">';
@@ -289,69 +385,12 @@ function newsHost_select(){
 	
 	},"json");
 }
-//工价列表
-function gongjia_select(){
-	
-	var url = serverUrl+"Jysearch/searchlist";
-	$.post(url,{user_id:'',page : 1,infotype:'news_pc'},function(ret){
-		if(ret.status == 200){
-				
-				var list=['施工队长','水电工长','空调安装工长','空调安装工','泥水工','水电工','电焊工','家具安装工','木工','扇灰工','保洁工','杂工','设计师','预算员','其它','维修工','网络维修'];
-				var data = ret.retData;
-				var listHtml = '';
-				for (var i in data) {
-							
-					var id          = data[i].id,
-						name        = data[i].title,
-						xiangxi     = data[i].xiangxi,
-						unit        = data[i].unit,
-						user_id     = data[i].userid,
-						postions    = data[i].postion,
-						postion 	= (parseInt(data[i].postion) > 1)?list[parseInt(data[i].postion)]:'无工种',
-						xinzi       = (data[i].total_price == 0)?'面议':data[i].total_price+'元',
-						addtime     = data[i].addtime;
-				
-					listHtml += '<tr style="cursor:pointer" title="'+name+'" onclick="openConten('+id+','+user_id+')">';
-					listHtml += '	<td style="font-size:16px;color:#333;text-align:left;height:40px;"><div style="width:200px;" class="aui-ellipsis-1"><i style="margin:0 5px;">&bull;</i>'+name+'</div></td>';
-					listHtml += '	<td style="font-size:16px;color:#333;height:40px;">'+xinzi+'/'+unit+'<br><span style="color:#ccc;font-size:2px;">'+addtime+'</span></td>';
-					listHtml += '</tr>';
-				
-			}
-		   
-			$("#gongjia").show();
-			$("#gongjia").append(listHtml);
-			
-		}else if(ret.status == 202)	{
-			if(page == 1){
-				$("#gongjia").html('<div style="border: none;width:80px;margin:10px auto;" class="empty"><img src="/themes/mall/jiaju/images/empty.png"/></div>');
-			}else{
-				//alert('暂无更多了');
-			}
-		}else{
-			return false;
-		
-		}
-		
-	
-	},"json");
-}
-//打开工价详情
-function openConten(id,user_id){
-	
-	var url = '/index.php?app=search&act=gongjia_content&id='+id+'&name=详细介绍';
-	window.open(url);
-	//_openWin('gongzuo_content_win','../gongzuo/gongzuo_content_win.html',{id : id,type : 1,touid : user_id,f_type : '招工'});
-	
-	
-}
+
 //打开新闻详情
 function openNewsContents(obj,id){
-	
 	var url = '/index.php?app=search&act=news_content&id='+id+'&title='+obj.title+'';
 	window.open(url);
 	//_openWin('gongzuo_content_win','../gongzuo/gongzuo_content_win.html',{id : id,type : 1,touid : user_id,f_type : '招工'});
-	
-	
 }
 </script>
 </body>

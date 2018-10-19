@@ -245,7 +245,8 @@ body{background:url('') no-repeat center top }
 			<input type="text" style="width: 265px;height: 30px;float: left;border: 1px solid #808080;border-radius: 0;" />
 
 			<div style="float: left;">
-				<a href="#" style="display: inline-block;width: 75px;height: 30px;line-height: 30px;font-size: 16px;color: #f3552d;border: 1px solid #808080; background-color: #facd89;">搜索</a>
+				<a href="javascript:;" style="display: inline-block;width: 75px;height: 30px;line-height: 30px;font-size: 16px;color: #f3552d;border: 1px solid #808080; background-color: #facd89;" onclick="searchlist(spage,0)">搜索</a>
+				<a id="backlist" href="javascript:;" style="display: inline-block;width: 75px;height: 30px;line-height: 30px;font-size: 16px;color: #f3552d;border: 1px solid #808080; background-color: #facd89;" onclick="caigou_list(page,0)">返回</a>
 				<!-- <a class="share_dinge" href="javascript:;" style="display: inline-block;width: 60px;height: 30px;line-height: 30px;font-size: 16px;color: #2d2a2a;font-weight: bold;letter-spacing: 4px; background-color: #facd89;border-radius: 5px;position: relative;left: 385px;text-decoration: none;">分享</a> -->
 			</div>
 			</div>
@@ -284,7 +285,7 @@ body{background:url('') no-repeat center top }
 						</tr> -->
 					</tbody>
 				</table>
-				
+				<div class="nullslist" style="width: 100%;"></div>
 				</div>
 					<div class="meterial_buy_detail" style="position: absolute;top:100px;left: 50px;background-color: #9e9e9e;display: none;opacity: 0.95;width: 845px;">
 					<div class="quxiao" style="position: absolute;font-size: 20px;top: -15px;left: 99%;background-color: #9e9e9e;border-radius: 10px;width: 20px;height: 20px;line-height: 20px;cursor:default;">×</div>
@@ -314,10 +315,15 @@ body{background:url('') no-repeat center top }
 						</table>
 					</div>
 				<!-- 分页 -->
-				<div style="margin: 10px auto;">
-						<a href="javascript:;" style="display: inline-block;width: 50px;height: 25px;line-height: 23px;border: 1px solid #eee;background-color: red;color:#fff;" onclick="prepage()">上一页</a>
+				<div id="pagelist" style="margin: 10px auto;">
+						<a id="pre" href="javascript:;" style="display: inline-block;width: 50px;height: 25px;line-height: 23px;border: 1px solid #eee;background-color: red;color:#fff;" onclick="prepage()">上一页</a>
 						<a id="next" href="javascript:;" style="display: inline-block;width: 50px;height: 25px;line-height: 23px;border: 1px solid #eee;background-color: red;color:#fff;" onclick="nextpage()">下一页</a>
-				</div>					
+				</div>		
+				<!-- 搜索分页 -->
+				<div id="pagesearch" style="margin: 10px auto;display: none;"">
+						<a id="searchpre" href="javascript:;" style="display: inline-block;width: 50px;height: 25px;line-height: 23px;border: 1px solid #eee;background-color: red;color:#fff;" onclick="prespage()">上一页</a>
+						<a id="searchnext" href="javascript:;" style="display: inline-block;width: 50px;height: 25px;line-height: 23px;border: 1px solid #eee;background-color: red;color:#fff;" onclick="nextspage()">下一页</a>
+				</div>				
 			</div>
 			</div>			
 			<!--采购列表end -->
@@ -328,7 +334,7 @@ body{background:url('') no-repeat center top }
 				<div class="table_lists_share" style="overflow: hidden;margin-top: 10px;min-height: 300px;">
 						<div class="search_ys_list_share">
 							<input type="text" style="width: 400px;height: 30px;" id="search_list_share" placeholder="请输入关键词">
-							<label class="search_list" for="search_list_share" style="width: 50px;height: 30px;display:inline-block;position: relative;top: -8px;"><img src="/themes/mall/jiaju/images/search_button.jpg" alt="" style="width: 100%;height: 100%;" onclick="searchList()"></label>
+							<label class="search_list" for="search_list_share" style="width: 50px;height: 30px;display:inline-block;position: relative;top: -8px;"><img src="/themes/mall/jiaju/images/search_button.jpg" alt="" style="width: 100%;height: 100%;" onclick="caigou_list(page,3)"></label>
 							<input type="button" value="取消" class="quxiao_btn_share" style="display: inline-block;padding:0;width: 50px;height: 30px;position: relative;top: -8px;cursor:pointer;line-height:30px;background-color: #ec6941;display:none;" />
 						</div>
 				<!-- 预算表格 -->
@@ -366,7 +372,7 @@ body{background:url('') no-repeat center top }
 						</tr> -->
 					</tbody>
 				</table>
-				
+				<div class="nullslists" style="width: 100%;"></div>
 				</div>
 					<div class="meterial_buy_detail_share" style="position: absolute;top:100px;left: 50px;background-color: #9e9e9e;display: none;opacity: 0.95;width: 845px;">
 					<div class="quxiao_share" style="position: absolute;font-size: 20px;top: -15px;left: 99%;background-color: #9e9e9e;border-radius: 10px;width: 20px;height: 20px;line-height: 20px;cursor:default;">×</div>
@@ -396,10 +402,16 @@ body{background:url('') no-repeat center top }
 						</table>
 					</div>
 				<!-- 分页 -->
-				<div style="margin: 10px auto;">
-						<a href="javascript:;" style="display: inline-block;width: 50px;height: 25px;line-height: 23px;border: 1px solid #eee;" onclick="prepage()">上一页</a>
-						<a id="next" href="javascript:;" style="display: inline-block;width: 50px;height: 25px;line-height: 23px;border: 1px solid #eee;" onclick="nextpage()">下一页</a>
-				</div>					
+				<div id="spagelist" style="margin: 10px auto;">
+						<a id="spre" href="javascript:;" style="display: inline-block;width: 50px;height: 25px;line-height: 23px;border: 1px solid #eee;background-color: red;color:#fff;" onclick="sprepage()">上一页</a>
+						<a id="snext" href="javascript:;" style="display: inline-block;width: 50px;height: 25px;line-height: 23px;border: 1px solid #eee;background-color: red;color:#fff;" onclick="snextpage()">下一页</a>
+				</div>		
+				<!-- 搜索分页 -->
+				<div id="spagesearch" style="margin: 10px auto;display: none;display: none;">
+						<a id="sharepre" href="javascript:;" style="display: inline-block;width: 50px;height: 25px;line-height: 23px;border: 1px solid #eee;background-color: red;color:#fff;" onclick="sprespage()">上一页</a>
+						<a id="sharenext" href="javascript:;" style="display: inline-block;width: 50px;height: 25px;line-height: 23px;border: 1px solid #eee;background-color: red;color:#fff;" onclick="snextspage()">下一页</a>
+				</div>				
+			</div>			
 				</div>
 				</div>
 
@@ -432,8 +444,8 @@ body{background:url('') no-repeat center top }
 <script type="text/javascript" src="/themes/mall/jiaju/js/JTimer_1.3.js"></script>
 <script type="text/javascript">
 	(function (){
-		caigou_list();
-		messagelist();
+		caigou_list(1,0);
+		messagelist(1,0);
 	}())
 
 	var index = 0;
@@ -520,23 +532,239 @@ body{background:url('') no-repeat center top }
 	}
 
 	//材料采购列表
-	function caigou_list(){
-		var page = 1;
+	function caigou_list(page,types){
+		
+		if(page == 1){
+			
+			$("#pre").hide();
+		}else{
+			$("#pre").show();
+		}
+		
+		
+
 		var url = "http://wgcapp.wgc2013.com/jingyi.php/Home/Material/addmaterials_list";
 					$.ajax({
 				type:"POST",
 				url:url,
 				data:{
 					user_id : '<?php echo $_SESSION["user_info"]["user_id"];?>',
-					page    : page
+					page    : page,
+					
 
 				},
 				cache:false,
 				crossDomain: true == !(document.all),
 				dataType: "json",
 				success:function(ret){
-					console.log(ret)
+					//console.log(ret)
 					if(ret.status == 200){
+						$("#pagesearch").hide();
+						$("#pagelist").show();
+						$("#backlist").hide();
+						$("#next").show();
+						$(".nullslist").html("")
+						var listHtml = "";
+						var data = ret.retData;
+						for(var i in data){
+							var j = parseInt(i)+1;
+							var m_name = data[i].m_name;
+							var brand  = data[i].brand;
+							var size   = data[i].size;
+							var expire_time = data[i].expire_time;
+							var number = data[i].number;
+							var danwei = data[i].danwei;
+							var danjia = data[i].danjia;
+							var heji   = data[i].heji;
+							var introduce = data[i].introduce;
+							var pid    = data[i].pid;
+
+							var office_name = data[i].office_name;
+							var worker_address = data[i].worker_address;
+							var dateofpurchase = data[i].dateofpurchase;
+							var tel = data[i].tel;
+							var sgperson = data[i].sgperson;
+							var ps = data[i].ps;
+
+							listHtml += '<tr class="tmain">';
+							listHtml += '<td style="width: 5%"><span>'+j+'</span></td>';
+							listHtml += '<td style="width: 16%"><span>'+m_name+'</span></td>';
+							listHtml += '<td style="width: 8%"><span>'+brand+'</span></td>';
+							listHtml += '<td style="width: 10%"><span>'+size+'</span></td>';
+							listHtml += '<td style="width: 10%"><span>'+expire_time+'</span></td>';
+							listHtml += '<td style="width: 6%"><span>'+number+'</span></td>';
+							listHtml += '<td style="width: 6%"><span>'+danwei+'</span></td>';
+							listHtml += '<td style="width: 6%"><span>'+danjia+'</span></td>';
+							listHtml += '<td style="width: 6%"><span>'+heji+'</span></td>';
+							listHtml += '<td style="width: 15%;"><span>'+introduce+'</span></td>';
+							listHtml += '<td style="width: 3%;border-right:2px solid #bcbcbc;"><a href="javascript:;" style="color:blue;" onclick="details('+pid+')">详情</a><a href="javascript:;" style="color:red;" onclick="shachu('+pid+')">删除</a></td>';
+							listHtml += '</tr>';
+
+
+						}
+						$("#budget_list tbody").html(listHtml);
+					}else if(ret.status == 202){
+						if(types == 0){
+							$("#next").hide();
+							$(".nullslist").append('<div id="nulls" style="margin-top: 100px;text-align: center;font-size: 18px;">暂无数据！！！</div>');
+						}
+						if(types == 1){
+							$("#budget_list tbody").html("");
+							$(".nullslist").append('<div id="nulls" style="margin-top: 100px;text-align: center;font-size: 18px;">暂无数据！！！</div>');
+							$("#next").hide();
+						}
+						if(types == 2){
+							$("#budget_list tbody").html("");
+							$(".nullslist").append('<div id="nulls" style="margin-top: 100px;text-align: center;font-size: 18px;">暂无数据！！！</div>');
+						}
+					}
+				},
+				error:function(err){
+					//console.log(err)
+				}
+			});
+	}
+
+//分享列表
+var sharepage = 1;
+function messagelist(sharepage,types){
+		
+		if(sharepage == 1){
+			
+			$("#spre").hide();
+		}else{
+			$("#spre").show();
+		}
+		
+		
+
+		var url = "http://wgcapp.wgc2013.com/jingyi.php/Home/Material/addmaterials_user_share";
+					$.ajax({
+				type:"POST",
+				url:url,
+				data:{
+					user_id : '<?php echo $_SESSION["user_info"]["user_id"];?>',
+					page    : sharepage,
+					
+
+				},
+				cache:false,
+				crossDomain: true == !(document.all),
+				dataType: "json",
+				success:function(ret){
+					//console.log(ret)
+					if(ret.status == 200){
+						$("#spagesearch").hide();
+						$("#spagelist").show();
+						$("#sbacklist").hide();
+						$("#snext").show();
+						$(".nullslists").html("")
+						var listHtml = "";
+						var data = ret.retData;
+						for(var i in data){
+							var j = parseInt(i)+1;
+							var m_name = data[i].m_name;
+							var brand  = data[i].brand;
+							var size   = data[i].size;
+							var expire_time = data[i].expire_time;
+							var number = data[i].number;
+							var danwei = data[i].danwei;
+							var danjia = data[i].danjia;
+							var heji   = data[i].heji;
+							var introduce = data[i].introduce;
+							var pid    = data[i].pid;
+							var username = data[i].username;
+
+							var office_name = data[i].office_name;
+							var worker_address = data[i].worker_address;
+							var dateofpurchase = data[i].dateofpurchase;
+							var tel = data[i].tel;
+							var sgperson = data[i].sgperson;
+							var ps = data[i].ps;
+
+							listHtml += '<tr class="tmain">';
+							listHtml += '<td style="width: 5%"><span>'+j+'</span></td>';
+							listHtml += '<td style="width: 16%"><span>'+m_name+'</span></td>';
+							listHtml += '<td style="width: 8%"><span>'+brand+'</span></td>';
+							listHtml += '<td style="width: 10%"><span>'+size+'</span></td>';
+							listHtml += '<td style="width: 10%"><span>'+expire_time+'</span></td>';
+							listHtml += '<td style="width: 6%"><span>'+username+'</span></td>';
+							listHtml += '<td style="width: 6%"><span>'+danwei+'</span></td>';
+							listHtml += '<td style="width: 6%"><span>'+danjia+'</span></td>';
+							listHtml += '<td style="width: 6%"><span>'+heji+'</span></td>';
+							listHtml += '<td style="width: 15%;"><span>'+introduce+'</span></td>';
+							listHtml += '<td style="width: 3%;border-right:2px solid #bcbcbc;"><a href="javascript:;" style="color:blue;" onclick="detailshare('+pid+')">详情</a></td>';
+							listHtml += '</tr>';
+
+
+						}
+						$("#budget_list_share tbody").html(listHtml);
+						
+					}else if(ret.status == 202){
+						if(types == 0){
+							$("#snext").hide();
+							$(".nullslists").append('<div id="nulls" style="margin-top: 100px;text-align: center;font-size: 18px;">暂无数据！！！</div>');
+						}
+						if(types == 1){
+							$("#budget_list_share tbody").html("");
+							$(".nullslists").append('<div id="nulls" style="margin-top: 100px;text-align: center;font-size: 18px;">暂无数据！！！</div>');
+							$("#snext").hide();
+						}
+						
+					}
+				},
+				error:function(err){
+					//console.log(err)
+				}
+			});
+	}
+//分享分页
+//下一页
+function snextpage(){
+	
+	messagelist(++sharepage,1);
+
+	}
+//上一页
+function sprepage(){
+		if(sharepage == 1){
+			sharepage = 2;
+		}
+		messagelist(--sharepage,1);
+	}
+
+//搜索列表
+var spage = 1;
+function searchlist(spage,types){
+		if(spage == 1){
+			$("#searchpre").hide();
+		}else{
+			$("#searchpre").show();
+		}
+		
+		var key = $("#search_list_share").val();
+
+		var url = "http://wgcapp.wgc2013.com/jingyi.php/Home/Material/addmaterials_list";
+					$.ajax({
+				type:"POST",
+				url:url,
+				data:{
+					user_id : '<?php echo $_SESSION["user_info"]["user_id"];?>',
+					page    : spage,
+					key     : key
+
+				},
+				cache:false,
+				crossDomain: true == !(document.all),
+				dataType: "json",
+				success:function(ret){
+					//console.log(ret)
+					if(ret.status == 200){
+						$("#pagesearch").show();
+						$("#pagelist").hide();
+						$("#backlist").show();
+						$("#searchnext").show();
+						$(".nullslist").html("")
 						var listHtml = "";
 						var data = ret.retData;
 						for(var i in data){
@@ -575,7 +803,18 @@ body{background:url('') no-repeat center top }
 
 
 						}
-						$("#budget_list tbody").append(listHtml);
+						$("#budget_list tbody").html(listHtml);
+					}else if(ret.status == 202){
+						if(types == 0){
+
+							$(".nullslist").append('<div id="nulls" style="margin-top: 100px;text-align: center;font-size: 18px;">暂无数据！！！</div>');
+						}
+						if(types == 1){
+							$("#budget_list tbody").html("");
+							$(".nullslist").append('<div id="nulls" style="margin-top: 100px;text-align: center;font-size: 18px;">暂无数据！！！</div>');
+							$("#searchnext").hide();
+						}
+						
 					}
 				},
 				error:function(err){
@@ -583,6 +822,113 @@ body{background:url('') no-repeat center top }
 				}
 			});
 	}
+
+
+//搜索分页
+function nextspage(){
+	searchlist(++spage,1)
+}
+function prespage(){
+	if(spage == 1){
+		spage = 2;
+	}
+	searchlist(--spage,1)
+}
+
+//分享列表搜索
+var sindex = 1;
+function shareSearch(sindex,types){
+		
+		if(sindex == 1){
+			
+			$("#spre").hide();
+		}else{
+			$("#spre").show();
+		}
+		
+		
+
+		var url = "http://wgcapp.wgc2013.com/jingyi.php/Home/Material/addmaterials_user_share";
+					$.ajax({
+				type:"POST",
+				url:url,
+				data:{
+					user_id : '<?php echo $_SESSION["user_info"]["user_id"];?>',
+					page    : sindex,
+					
+
+				},
+				cache:false,
+				crossDomain: true == !(document.all),
+				dataType: "json",
+				success:function(ret){
+					//console.log(ret)
+					if(ret.status == 200){
+						$("#spagesearch").hide();
+						$("#spagelist").show();
+						$("#sbacklist").hide();
+						$("#snext").show();
+						$(".nullslists").html("")
+						var listHtml = "";
+						var data = ret.retData;
+						for(var i in data){
+							var j = parseInt(i)+1;
+							var m_name = data[i].m_name;
+							var brand  = data[i].brand;
+							var size   = data[i].size;
+							var expire_time = data[i].expire_time;
+							var number = data[i].number;
+							var danwei = data[i].danwei;
+							var danjia = data[i].danjia;
+							var heji   = data[i].heji;
+							var introduce = data[i].introduce;
+							var pid    = data[i].pid;
+							var username = data[i].username;
+
+							var office_name = data[i].office_name;
+							var worker_address = data[i].worker_address;
+							var dateofpurchase = data[i].dateofpurchase;
+							var tel = data[i].tel;
+							var sgperson = data[i].sgperson;
+							var ps = data[i].ps;
+
+							listHtml += '<tr class="tmain">';
+							listHtml += '<td style="width: 5%"><span>'+j+'</span></td>';
+							listHtml += '<td style="width: 16%"><span>'+m_name+'</span></td>';
+							listHtml += '<td style="width: 8%"><span>'+brand+'</span></td>';
+							listHtml += '<td style="width: 10%"><span>'+size+'</span></td>';
+							listHtml += '<td style="width: 10%"><span>'+expire_time+'</span></td>';
+							listHtml += '<td style="width: 6%"><span>'+username+'</span></td>';
+							listHtml += '<td style="width: 6%"><span>'+danwei+'</span></td>';
+							listHtml += '<td style="width: 6%"><span>'+danjia+'</span></td>';
+							listHtml += '<td style="width: 6%"><span>'+heji+'</span></td>';
+							listHtml += '<td style="width: 15%;"><span>'+introduce+'</span></td>';
+							listHtml += '<td style="width: 3%;border-right:2px solid #bcbcbc;"><a href="javascript:;" style="color:blue;" onclick="detailshare('+pid+')">详情</a></td>';
+							listHtml += '</tr>';
+
+
+						}
+						$("#budget_list_share tbody").html(listHtml);
+						
+					}else if(ret.status == 202){
+						if(types == 0){
+							$("#snext").hide();
+							$(".nullslists").append('<div id="nulls" style="margin-top: 100px;text-align: center;font-size: 18px;">暂无数据！！！</div>');
+						}
+						if(types == 1){
+							$("#budget_list_share tbody").html("");
+							$(".nullslists").append('<div id="nulls" style="margin-top: 100px;text-align: center;font-size: 18px;">暂无数据！！！</div>');
+							$("#snext").hide();
+						}
+						
+					}
+				},
+				error:function(err){
+					//console.log(err)
+				}
+			});
+	}
+
 function details(pid){
 	var url = "http://wgcapp.wgc2013.com/jingyi.php/Home/Material/addmaterials_list_content"
 				$.ajax({
@@ -630,89 +976,17 @@ function details(pid){
 //下一页
 function nextpage(){
 	
-	pageindex(++page);
+	caigou_list(++page,1);
 
 	}
 //上一页
 function prepage(){
-		pageindex(--page);
-	}
-//分页
-function pageindex(pindex){
-		
-		if(pindex < 1){
-			pindex = 1;
-			page=1;
+		if(page == 1){
+			page = 2;
 		}
-		//console.log(pindex)
-	var url = 'http://wgcapp.wgc2013.com/jingyi.php/Home/Material/addmaterials_list';
-		$.ajax({
-				type:"POST",
-				url:url,
-				data:{
-			    	user_id  : '<?php echo $_SESSION["user_info"]["user_id"];?>',
-			    	page     : pindex,
-				},
-				cache:false,
-				crossDomain: true == !(document.all),
-				dataType: "json",
-				success:function(ret){
-					//console.log(ret)
-					if(ret.status == 200){
-						$("#next").show();
-						$("#budget_list tbody").html("");
-						var data = ret.retData;
-						var listHtml = '';
-						for(var i in data){
-							
-							var id       = data[i].id;							
-							var j = parseInt(i)+1;
-							var m_name = data[i].m_name;
-							var brand  = data[i].brand;
-							var size   = data[i].size;
-							var expire_time = data[i].expire_time;
-							var number = data[i].number;
-							var danwei = data[i].danwei;
-							var danjia = data[i].danjia;
-							var heji   = data[i].heji;
-							var introduce = data[i].introduce;
-							var pid    = data[i].pid;
-
-							var office_name = data[i].office_name;
-							var worker_address = data[i].worker_address;
-							var dateofpurchase = data[i].dateofpurchase;
-							var tel = data[i].tel;
-							var sgperson = data[i].sgperson;
-							var ps = data[i].ps;
-
-							listHtml += '<tr class="tmain">';
-							listHtml += '<td style="width: 5%"><span>'+j+'</span></td>';
-							listHtml += '<td style="width: 16%"><span>'+m_name+'</span></td>';
-							listHtml += '<td style="width: 8%"><span>'+brand+'</span></td>';
-							listHtml += '<td style="width: 10%"><span>'+size+'</span></td>';
-							listHtml += '<td style="width: 10%"><span>'+expire_time+'</span></td>';
-							listHtml += '<td style="width: 6%"><span>'+number+'</span></td>';
-							listHtml += '<td style="width: 6%"><span>'+danwei+'</span></td>';
-							listHtml += '<td style="width: 6%"><span>'+danjia+'</span></td>';
-							listHtml += '<td style="width: 6%"><span>'+heji+'</span></td>';
-							listHtml += '<td style="width: 15%;"><span>'+introduce+'</span></td>';
-							listHtml += '<td style="width: 3%;border-right:2px solid #bcbcbc;"><a href="javascript:;" onclick="details('+pid+')">详情</a></td>';
-							listHtml += '</tr>';
-								
-								
-						}
-						$("#budget_list tbody").append(listHtml);
-					}else if(ret.status == 202){
-						$("#next").hide();
-					}
-				},
-				error:function(err){
-					console.log(err)
-				}
-			});
-
-
+		caigou_list(--page,1);
 	}
+
 	
 	//分享
 	$(".share_btn").click(function(e){
@@ -831,7 +1105,7 @@ function pageindex(pindex){
 								html += '<ul>';
 									html += '<li class="tel_li">';
 										html += '<div class="check">';
-											html += '<input type="checkbox" value="'+touid+'" name="checkbox" />';
+											html += '<input name="tid" type="checkbox" value="'+touid+'" name="checkbox" />';
 										html += '</div>';
 										html += '<div class="head_img">';
 											html += '<img src="'+url+imgUrl+'" alt=""/>';
@@ -1029,76 +1303,76 @@ function prepageUser(){
   })
 
 //分享列表
-var sharepage = 1;
-	function messagelist(){
-	var url = 'http://wgcapp.wgc2013.com/jingyi.php/Home/Material/addmaterials_user_share';
-	var key='';
-	$.ajax({
-				type:"POST",
-				url:url,
-				data:{
-					key      : key,
-			    	user_id  : '<?php echo $_SESSION["user_info"]["user_id"];?>',
-			    	page     : sharepage,
+// var sharepage = 1;
+// 	function messagelist(sharepage,types){
+// 	var url = 'http://wgcapp.wgc2013.com/jingyi.php/Home/Material/addmaterials_user_share';
+// 	var key='';
+// 	$.ajax({
+// 				type:"POST",
+// 				url:url,
+// 				data:{
+// 					key      : key,
+// 			    	user_id  : '<?php echo $_SESSION["user_info"]["user_id"];?>',
+// 			    	page     : sharepage,
 			    	
-				},
-				cache:false,
-				crossDomain: true == !(document.all),
-				dataType: "json",
-				success:function(ret){
-					console.log("share"+ret)
-					var listHtml = '';
-					if(ret.status == 200){
-						var listHtml = "";
-						var data = ret.retData;
-						for(var i in data){
-							var j = parseInt(i)+1;
-							var m_name = data[i].m_name;
-							var brand  = data[i].brand;
-							var size   = data[i].size;
-							var expire_time = data[i].expire_time;
-							var number = data[i].number;
-							var danwei = data[i].danwei;
-							var danjia = data[i].danjia;
-							var heji   = data[i].heji;
-							var introduce = data[i].introduce;
-							var pid    = data[i].pid;
-							var total  = data[i].total;
-							var username = data[i].username;
+// 				},
+// 				cache:false,
+// 				crossDomain: true == !(document.all),
+// 				dataType: "json",
+// 				success:function(ret){
+// 					console.log("share"+ret)
+// 					var listHtml = '';
+// 					if(ret.status == 200){
+// 						var listHtml = "";
+// 						var data = ret.retData;
+// 						for(var i in data){
+// 							var j = parseInt(i)+1;
+// 							var m_name = data[i].m_name;
+// 							var brand  = data[i].brand;
+// 							var size   = data[i].size;
+// 							var expire_time = data[i].expire_time;
+// 							var number = data[i].number;
+// 							var danwei = data[i].danwei;
+// 							var danjia = data[i].danjia;
+// 							var heji   = data[i].heji;
+// 							var introduce = data[i].introduce;
+// 							var pid    = data[i].pid;
+// 							var total  = data[i].total;
+// 							var username = data[i].username;
 
-							var office_name = data[i].office_name;
-							var worker_address = data[i].worker_address;
-							var dateofpurchase = data[i].dateofpurchase;
-							var tel = data[i].tel;
-							var sgperson = data[i].sgperson;
-							var ps = data[i].ps;
+// 							var office_name = data[i].office_name;
+// 							var worker_address = data[i].worker_address;
+// 							var dateofpurchase = data[i].dateofpurchase;
+// 							var tel = data[i].tel;
+// 							var sgperson = data[i].sgperson;
+// 							var ps = data[i].ps;
 
-							listHtml += '<tr class="tmain">';
-							listHtml += '<td style="width: 5%"><span>'+j+'</span></td>';
-							listHtml += '<td style="width: 16%"><span>'+m_name+'</span></td>';
-							listHtml += '<td style="width: 8%"><span>'+brand+'</span></td>';
-							listHtml += '<td style="width: 10%"><span>'+size+'</span></td>';
-							listHtml += '<td style="width: 10%"><span>'+expire_time+'</span></td>';
-							listHtml += '<td style="width: 6%"><span>'+username+'</span></td>';
-							listHtml += '<td style="width: 6%"><span>'+danwei+'</span></td>';
-							listHtml += '<td style="width: 6%"><span>'+danjia+'</span></td>';
-							listHtml += '<td style="width: 6%"><span>'+heji+'</span></td>';
-							listHtml += '<td style="width: 15%;"><span>'+introduce+'</span></td>';
-							listHtml += '<td style="width: 3%;border-right:2px solid #bcbcbc;"><a href="javascript:;" style="color:blue;" onclick="detailshare('+pid+')">详情</a></td>';
-							listHtml += '</tr>';
+// 							listHtml += '<tr class="tmain">';
+// 							listHtml += '<td style="width: 5%"><span>'+j+'</span></td>';
+// 							listHtml += '<td style="width: 16%"><span>'+m_name+'</span></td>';
+// 							listHtml += '<td style="width: 8%"><span>'+brand+'</span></td>';
+// 							listHtml += '<td style="width: 10%"><span>'+size+'</span></td>';
+// 							listHtml += '<td style="width: 10%"><span>'+expire_time+'</span></td>';
+// 							listHtml += '<td style="width: 6%"><span>'+username+'</span></td>';
+// 							listHtml += '<td style="width: 6%"><span>'+danwei+'</span></td>';
+// 							listHtml += '<td style="width: 6%"><span>'+danjia+'</span></td>';
+// 							listHtml += '<td style="width: 6%"><span>'+heji+'</span></td>';
+// 							listHtml += '<td style="width: 15%;"><span>'+introduce+'</span></td>';
+// 							listHtml += '<td style="width: 3%;border-right:2px solid #bcbcbc;"><a href="javascript:;" style="color:blue;" onclick="detailshare('+pid+')">详情</a></td>';
+// 							listHtml += '</tr>';
 
 
-						}
-						$("#budget_list_share tbody").html(listHtml);
+// 						}
+// 						$("#budget_list_share tbody").html(listHtml);
 						
-					}
-				},
-				error:function(err){
-					console.log(err)
-				}
-			});
+// 					}
+// 				},
+// 				error:function(err){
+// 					console.log(err)
+// 				}
+// 			});
 
-	}
+// 	}
 
 function detailshare(pid){
 	var url = "http://wgcapp.wgc2013.com/jingyi.php/Home/Material/addmaterials_user_share_content"
@@ -1143,6 +1417,15 @@ function detailshare(pid){
 					//console.log(err)
 				}
 			});
+}
+
+//删除
+function shachu(pid){
+	var uid = '<?php echo $_SESSION["user_info"]["user_id"];?>';
+	var f = confirm("确认删除此采购信息吗？");
+	if(f){
+		window.location.href="http://wgcapp.wgc2013.com/jingyi.php/Home/Material/addmaterials_list_del/userid/"+uid+"/id/"+pid;
+	}
 }
 </script>
 </body>

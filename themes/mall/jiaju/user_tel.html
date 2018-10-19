@@ -137,9 +137,14 @@ body{background:url('') no-repeat center top }
 {include file=footer.html}
 
 <script type="text/javascript">
+	(function(){
+		$(".user_tel_li").addClass("bg_li");
+	}())
+		
+	
 	$(".container_nav ul li").click(function(){
 		$(".container_nav ul li").removeClass("bg_li")
-		$(this).addClass("bg_li")
+		$(this).addClass("bg_li");
 	})
 	// 弹窗控制
 	$('.add_btn').click(function() {
