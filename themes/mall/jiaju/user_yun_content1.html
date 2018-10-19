@@ -4,7 +4,7 @@
 <meta http-equiv="Access-Control-Allow-Origin" content="*">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=8"/>
-<title>用户中心-工价询价</title>
+<title>用户中心-我的网盘</title>
 <meta name="description" content="微工程，微工程APP，装修、材料、家具、饰品一站式服务，让装修更简单，价格更透明！！" />
 <meta name="keywords" content="微工程，微工程，家居商城，微工程家居商城，微工程家居装修商城，办公室装修，写字楼装修，材料，装修材料，家居，办公家具，家居，家具，装修，装饰" />
 <link rel="stylesheet" type="text/css" href="/themes/mall/jiaju/css/api.css"/>
@@ -221,7 +221,7 @@ body{background:url('') no-repeat center top }
 			<ul class="budget_ul user_public_ul">
  				<li style="margin-right: 10px;">我的文档</li>
  				<li class="change_bg_li" style="margin-right: 10px;">图片</li>
-				<li style="margin-right: 10px;">笔记</li>
+				<!-- <li style="margin-right: 10px;">笔记</li> -->
 				<li style="margin-right: 10px;">视频</li>
 				<li style="margin-right: 10px;">PDF</li>
 				<li style="margin-right: 10px;">压缩包</li>
@@ -236,8 +236,8 @@ body{background:url('') no-repeat center top }
 			
 			<!-- 自定工价 -->
 			<div class="sect current wages_custom" style="border: none;position: relative;overflow: hidden;min-height: 500px;height: auto;padding-top: 20px;">
-				<div class="canceled" style="width:30px;height: 30px;line-height: 25px;font-size: 30px;text-align: center;position: absolute;left: 833px;top: 8px;    border-radius: 15px;background-color: #9e9e9e;cursor: pointer;">×</div>
-				<div id="filesname" style="width:80%;height: auto;position: absolute;left:82px;background-color: #9e9e9e;overflow: hidden;">
+				<div class="canceled" style="width:30px;height: 30px;line-height: 25px;font-size: 30px;text-align: center;position: absolute;left: 833px;top: 8px;    border-radius: 15px;background-color: #9e9e9e;cursor: pointer;display: none;">×</div>
+				<div id="filesname" style="width:80%;height: auto;position: absolute;left:82px;background-color: #9e9e9e;overflow: hidden;display: none;">
 					
 					<div style="width:100%;overflow: hidden;margin:0px auto;">
 					<div class="cl">
@@ -266,9 +266,40 @@ body{background:url('') no-repeat center top }
 					
 				</div>
 				<div class="fileslist">
-					
+					<?php
+					$uid = $_SESSION["user_info"]["user_id"];
+					$pid = $_GET["id"];
+					$page = $_GET["page"];
+					$pageNext = $_GET["page"]+1;
+					$types = $_GET["types"];
+					$pagePre = ($_GET["page"] < 1)? 0 :$_GET["page"]-1;
+					$limit = $page*25;
+					$query="select * from ecm_wangpan where userid='".$uid."' and pid='".$pid."' and types='".$types."' order by id desc limit ".$limit.",25"; //定义sql
+					$result=mysql_query($query);
+					$count = mysql_num_rows ($result );
+					//echo $count;
+					if($count >= 1){
+						while($rows1=@mysql_fetch_array($result)){
+							  	echo	'<div class="filelistson" style="width: 20%;float: left;height: auto;overflow: hidden;position:relative;margin-top:15px;padding:10px 0;">';
+								echo '<div class="cancels" style="text-align:right;position:absolute;left:85%;display:none;"><img src="/themes/mall/jiaju/images/center/rename.png" alt="" style="width:20px;height:20px;cursor:pointer;"/></div>';
+								echo '<div class="cancel" style="text-align:right;position:absolute;left:10px;display: none;" onclick="shanchu('.$rows1['id'].')"><img src="/themes/mall/jiaju/images/center/cancel1.png" alt="" style="width:20px;height:20px;cursor:pointer;"/></div>';
+								echo '<img src="http://wgcapp.wgc2013.com'.$rows1['dir'].'" alt="" style="width: 50%;height: 70px;"/>';
+								echo '<span class="filenamebox" style="display: block;">'.$rows1['filename'].'</span>';
+								echo '<div class="renamebox" style="display: none;"><input class="rename" type="text" value="'.$rows1['filename'].'" style="width:75px;"/></div>';
+								echo '</div>';
+						}
+						if($count > 25){
+							echo '<div class="nulls" style="font-size: 20px;color: #9e9e9e;width: 100%;text-align: center;margin-top:20px;">下一页</div>';
+						}
+						if($count > 25 && $count < 25*$page){
+							echo '<div class="nulls" style="font-size: 20px;color: #9e9e9e;width: 100%;text-align: center;margin-top:20px;">上一页</div>';
+						}
+					}else{
+						echo '<div class="nulls" style="font-size: 20px;color: #9e9e9e;width: 100%;text-align: center;margin-top:20px;">暂无列表</div>';
+					}
+				?>
 				</div>
-				<div class="nulls" style="font-size: 20px;color: #9e9e9e;width: 100%;text-align: center;margin-top:20px;">暂无列表</div>
+				<!-- <div class="nulls" style="font-size: 20px;color: #9e9e9e;width: 100%;text-align: center;margin-top:20px;">暂无列表</div> -->
 			</div>
 			<!-- 自定工价 end -->
 			
@@ -1164,38 +1195,38 @@ $(function(){
 </script>
 <script type="text/javascript">
 $(document).ready(function() {
-	list();
+	//list();
 });
 //列表切换
 //列表切换
 var filestype = 1;
 	var aid = '<?php echo $_GET["id"];?>';
-	$(".budget_ul li:first").click(function(){
+	// $(".budget_ul li:first").click(function(){
 		
-    	window.location.href = "/index.php?app=search&act=user_yun_content&id="+aid;
-    })
+ //    	window.location.href = "/index.php?app=search&act=user_yun_content&id="+aid+"&types="+2;
+ //    })
 
 	$(".budget_ul li:eq(1)").click(function(){
 		
-    	window.location.href = "/index.php?app=search&act=user_yun_content1&id="+aid;
+    	window.location.href = "/index.php?app=search&act=user_yun_content1&id="+aid+"&types="+1;
     })
 
-    $(".budget_ul li:eq(2)").click(function(){
+    // $(".budget_ul li:eq(2)").click(function(){
     	
-    	window.location.href = "/index.php?app=search&act=user_yun_content2&id="+aid;
-    })
-     $(".budget_ul li:eq(3)").click(function(){
+    // 	window.location.href = "/index.php?app=search&act=user_yun_content2&id="+aid;
+    // })
+    //  $(".budget_ul li:eq(2)").click(function(){
     	
-    	window.location.href = "/index.php?app=search&act=user_yun_content3&id="+aid;
-    })
-     $(".budget_ul li:eq(4)").click(function(){
+    // 	window.location.href = "/index.php?app=search&act=user_yun_content3&id="+aid+"&types="+5;
+    // })
+    //  $(".budget_ul li:eq(3)").click(function(){
     	
-    	window.location.href = "/index.php?app=search&act=user_yun_content4&id="+aid;
-    })
-     $(".budget_ul li:eq(5)").click(function(){
+    // 	window.location.href = "/index.php?app=search&act=user_yun_content4&id="+aid+"&types="+3;
+    // })
+    //  $(".budget_ul li:eq(4)").click(function(){
     	
-    	window.location.href = "/index.php?app=search&act=user_yun_content5&id="+aid;
-    })
+    // 	window.location.href = "/index.php?app=search&act=user_yun_content5&id="+aid+"&types="+6;
+    // })
 	$(".share_btn").click(function(e){
 		e.stopPropagation(); 
 		$(".confirm").show();
@@ -1532,6 +1563,10 @@ $(".quxiao").click(function(){
  $("#addwenjian").click(function(){
  	$("#filesname").show();
  	$(".canceled").show();
+ 	$(".webuploader-pick").next().css({
+ 		"width" : "100%",
+ 		"height": "100%"
+ 	})
  })
  $(".canceled").click(function(){
  	$("#filesname").hide();
@@ -1594,16 +1629,45 @@ function list(){
 }
 function shanchu(id){
 	var uid = '<?php echo $_SESSION["user_info"]["user_id"];?>';
-	window.location.href="http://wgcapp.wgc2013.com/jingyi.php/Home/Wangpan/Folder_del"+"/userid/"+uid+"/id/"+id;
+	var f = confirm("确认删除此压缩文件吗？");
+	if(f){
+
+	window.location.href="http://wgcapp.wgc2013.com/jingyi.php/Home/Wangpan/file_del"+"/userid/"+uid+"/id/"+id;
+	}else{
+		return false;
+	}
 }
-// $(".filelist").on('mouseenter','.filelistson',function(){
-// 	$(this).css('background-color','#9e9e9e');
-// 	$(this).children().first().show();
-// })
-// $(".filelist").on('mouseleave','.filelistson',function(){
-// 	$(this).css('background-color','#fff');
-// 	$(this).children().first().hide();
-// })
+$(".cancels").unbind().click(function(e){
+	event.stopPropagation();
+	$(this).next().next().hide();
+	$(this).next().next().next().show();
+	$(this).next().next().next().children().focus();
+})
+$(".rename").unbind().on({
+	"click":function(e){
+		event.stopPropagation();
+	},
+	"blur":function(e){
+		event.stopPropagation();
+		var vals = $(this).val();
+		$(this).parent().prev().text(vals);
+	}
+})
+
+$(document).click(function(){
+	$(".renamebox").hide();
+	$(".filenamebox").show();
+})
+$(".fileslist").on('mouseenter','.filelistson',function(){
+	$(this).css('background-color','#9e9e9e');
+	$(this).children().first().show();
+	$(this).children().eq(1).show();
+})
+$(".fileslist").on('mouseleave','.filelistson',function(){
+	$(this).css('background-color','#fff');
+	$(this).children().first().hide();
+	$(this).children().eq(1).hide();
+})
 
 </script>
 </body>

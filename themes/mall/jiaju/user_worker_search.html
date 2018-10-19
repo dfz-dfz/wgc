@@ -17,19 +17,7 @@
 <!-- <script type="text/javascript" src="www.wgc2013.com/themes/mall/jiaju/js/jquery-1.8.3.min.js"></script> -->
 <script type="text/javascript">
 	jQuery.support.cors = true;
-
 </script>
-
-</head>
-
-<body style="background:#fff;">
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<!-- <base href="http://www.wgc2013.com/" /> -->
-<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7 charset=utf-8" />
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-
 <link type="text/css" href="themes/mall/jiaju/styles/default/css/main.css" rel="stylesheet"  />
 <link type="text/css" href="themes/mall/jiaju/styles/css/global.css" rel="stylesheet"  />
 <link type="text/css" href="http://www.wgc2013.com/themes/mall/jiaju/styles/default/css/catalog.css" rel="stylesheet"  />
@@ -40,9 +28,6 @@
 <script type="text/javascript" src="http://www.wgc2013.com/includes/libraries/javascript/ecmall.js" charset="utf-8"></script>
 <script type="text/javascript" src="http://www.wgc2013.com/includes/libraries/javascript/cart.js" charset="utf-8"></script>
 <script type="text/javascript" src="http://www.wgc2013.com/themes/mall/jiaju/styles/default/js/main.js" charset="utf-8"></script>
-<!-- 引入的是个人中心的 -->
-
-
 <!--[if lte IE 6]>
 <script type="text/javascript" language="Javascript" src="http://www.wgc2013.com/themes/mall/jiaju/styles/default/js/hoverForIE6.js"></script>
 <![endif]-->
@@ -232,44 +217,43 @@ body{background:url('') no-repeat center top }
 				
 				</div>
 			</div>
-<!--查询历史列表 -->
+			<!--查询历史列表 -->
  			<div class="company_detail_list" style="position: relative;display:none;">
-			<div id="details_lists" style="">
-			<!--详细列表 -->
-		    <div class="result_lists" style="width: 100%;min-height: 480px;">
-				  <table class="ser_table">
-					<thead>
-						<tr>
-							<th>序号</th>
-							<th style="width: 10%;">头像</th>
-							<th>姓名</th>
-							<th>工龄</th>
-							<th>行业</th>
-							<th>工种</th>
-							<th>操作</th>
-						</tr>
-					</thead>
-					<tbody id="show_lists">
-											
-					  </tbody>
-				  </table>
-			   </div> 	
-			   <!-- 分页 -->
+				<div id="details_lists" style="">
+					<!--详细列表 -->
+				    <div class="result_lists" style="width: 100%;min-height: 480px;">
+						<table class="ser_table">
+							<thead>
+								<tr>
+									<th>序号</th>
+									<th style="width: 10%;">头像</th>
+									<th>姓名</th>
+									<th>工龄</th>
+									<th>行业</th>
+									<th>工种</th>
+									<th>操作</th>
+								</tr>
+							</thead>
+							<tbody id="show_lists">
+													
+							</tbody>
+						</table>
+					</div> 	
+				    <!-- 分页 -->
 					<div style="margin: 10px auto;">
 						<a href="javascript:;" style="display: inline-block;width: 50px;height: 25px;line-height: 23px;border: 1px solid #eee;" onclick="prepage()">上一页</a>
 						<a href="javascript:;" style="display: inline-block;width: 50px;height: 25px;line-height: 23px;border: 1px solid #eee;" onclick="nextpage()">下一页</a>
 					</div>					
+				</div>
 			</div>
-			</div>
+			<!--查询历史列表end -->	
 
-<!--查询历史列表end -->	
-
-<!--详情显示 -->
+			<!--详情显示 -->
 			<div class="show_detai" style="width: 750px;height: 200px;position: absolute;top: 260px;left:85px;display: none;background-color: #9bbbe2;color: #fff">
-			<div class="quxiao" style="position: absolute;font-size: 20px;top: 0px;left: 730px;background-color: #9e9e9e;border-radius: 10px;width: 20px;height: 20px;line-height: 20px;cursor:default;">×</div>
+				<div class="quxiao" style="position: absolute;font-size: 20px;top: 0px;left: 730px;background-color: #9e9e9e;border-radius: 10px;width: 20px;height: 20px;line-height: 20px;cursor:default;">×</div>
 				<div class="person_info" style="overflow: hidden;border-bottom: 1px solid #eee;margin-top: 10px;">
 					<div style="width: 20%;height: 80px; float: left;margin:10px 10px;">
-					<img src="" alt="个人图片" />
+						<img src="" alt="个人图片" />
 					</div>
 
 					<div style="width:33%;height: 80px; float: left;">
@@ -301,31 +285,20 @@ body{background:url('') no-repeat center top }
 				</div>
 				
 			</div>
-<!--详情显示end -->
+			<!--详情显示end -->
  			</div>
-			
-			
 		</div>
-		
-		
  		</div>
-
- 		
  	</div>
-
-
-
 
 {include file=footer.html}
 
 <script type="text/javascript">
-
 (function (){
 	
 }())
 	//点击预算列表切换
-	  $(".budget_ul li:first").click(function(){
-    	//alert("hello")
+	$(".budget_ul li:first").click(function(){
     	$(this).addClass("change_bg_li")
     	$("#ser_his").removeClass("change_bg_li")
     	$(".company_detail").show();
@@ -333,7 +306,6 @@ body{background:url('') no-repeat center top }
     })
 
     $("#ser_his").click(function(){
-    	//alert("hello")
     	$(this).addClass("change_bg_li")
     	$(".budget_ul li:first").removeClass("change_bg_li")
  		$(".company_detail").hide();
@@ -344,7 +316,6 @@ body{background:url('') no-repeat center top }
 servermsg = 'http://wgcapp.wgc2013.com/index.php/Home/';
 imgUrl = 'http://wgcapp.wgc2013.com/';
 page = 1;
-
 
 //查询
 function search(){
@@ -443,7 +414,6 @@ function search(){
 		type   :  position,
 		s_city :  '广州'
 	},function(ret){
-	console.log(ret)
 		var data = ret.message;
 		var html = '';
 		
@@ -460,6 +430,83 @@ function search(){
 				var userphoto 	= data[i].userphoto;
 				var photourl 	= 'http://wgcapp.wgc2013.com' + userphoto;
 				var j = parseInt(i)+1;
+
+				if(worktype == 1){
+					worktype = '施工队长';
+				}else if(worktype == 2){
+					worktype = '水电工长';
+				}else if(worktype == 3){
+					worktype = '空调安装工长';
+				}else if(worktype == 4){
+					worktype = '空调安装工';
+				}else if(worktype == 5){
+					worktype = '泥水工';
+				}else if(worktype == 6){
+					worktype = '水电工';
+				}else if(worktype == 7){
+					worktype = '电焊工';
+				}else if(worktype == 8){
+					worktype = '家具安装工';
+				}else if(worktype == 9){
+					worktype = '木工';
+				}else if(worktype == 10){
+					worktype = '扇灰工';
+				}else if(worktype == 11){
+					worktype = '保洁工';
+				}else if(worktype == 12){
+					worktype = '杂工';
+				}else if(worktype == 13){
+					worktype = '设计师';
+				}else if(worktype == 14){
+					worktype = '预算员';
+				}else if(worktype == 15){
+					worktype = '其他';
+				}else if(worktype == 16){
+					worktype = '维修工';
+				}else if(worktype == 17){
+					worktype = '网络维修';
+				}else if(worktype == 18){
+					worktype = '实习预结算员';
+				}else if(worktype == 19){
+					worktype = '室内设计师';
+				}else if(worktype == 20){
+					worktype = '工程经理';
+				}else if(worktype == 21){
+					worktype = '机电工程师';
+				}else if(worktype == 22){
+					worktype = '暖通设计师';
+				}else if(worktype == 23){
+					worktype = '采购经理';
+				}else if(worktype == 24){
+					worktype = '文室';
+				}else if(worktype == 25){
+					worktype = '平面设计';
+				}else if(worktype == 26){
+					worktype = '效果图设计师';
+				}else if(worktype == 27){
+					worktype = '客服专员';
+				}else if(worktype == 28){
+					worktype = '行政助理';
+				}else if(worktype == 29){
+					worktype = '软件销售经理';
+				}else if(worktype == 30){
+					worktype = '业务员';
+				}else if(worktype == 31){
+					worktype = '项目经理';
+				}else if(worktype == 32){
+					worktype = '水电维修';
+				}else if(worktype == 33){
+					worktype = '空调维修';
+				}else if(worktype == 34){
+					worktype = '装饰维修';
+				}else if(worktype == 35){
+					worktype = '设备维修';
+				}else if(worktype == 37){
+					worktype = '分销商';
+				}else if(worktype == 0){
+					worktype = '暂未分类';
+				}
+
 				html += '<tr>';
 					html += '<td>'+j+'</td>';
 					html += '<td><div style="width:25px;height:25px;padding: 5px 0px;margin: 0 auto;"><img src="'+photourl+'" style="width:100%;height:100%;border-radius: 12px;"/></div></td>';
@@ -471,15 +518,14 @@ function search(){
 				html += '</tr>';
 			}
 			$('#show_list').html(html);
-			
 		}
 	},'json');
 }
 
+// 查看工人详情
 function detail(id){
 
 	var url = 'http://wgcapp.wgc2013.com/jingyi.php/Home/Jifen/user';
-	//alert(id);
 	var uid = id;
 			$.ajax({
 				type:"POST",
@@ -491,72 +537,70 @@ function detail(id){
 				crossDomain: true == !(document.all),
 				dataType: "json",
 				success:function(ret){
-					//console.log(ret)
-				if(ret.code == 200){
-				var user = ret.user;
-				var mobile = user.mobile;
-				var userphoto = user.userphoto;
-				var photourl = 'http://wgcapp.wgc2013.com' + userphoto;
-				var name = user.name;
-				var sex  = user.sex;
-				var nianling = user.nianling;
-				var bumen = user.bumen;
-				var skill = user.skill;
-				var gz_jingyan = user.gz_jingyan;
-				var xinzi = user.xinzi;
-				var zhiwei = user.zhiwei;
-				var intension = user.intension;
-				var user_name = user.user_name;
+					if(ret.code == 200){
+						var user = ret.user;
+						var mobile = user.mobile;
+						var userphoto = user.userphoto;
+						var photourl = 'http://wgcapp.wgc2013.com' + userphoto;
+						var name = user.name;
+						var sex  = user.sex;
+						var nianling = user.nianling;
+						var bumen = user.bumen;
+						var skill = user.skill;
+						var gz_jingyan = user.gz_jingyan;
+						var xinzi = user.xinzi;
+						var zhiwei = user.zhiwei;
+						var intension = user.intension;
+						var user_name = user.user_name;
 
-				if(skill == null){
-					skill = "无";
-				}
-				if(intension == null){
-					intension = "无以往案例介绍";
-				}
-				//头像
-				
-				var html = "";
-				html += '<div class="person_info" style="overflow: hidden;border-bottom: 1px solid #eee;margin-top: 10px;position:relative;height:125px;">';
-				html += '<div class="quxiao" style="position: absolute;font-size: 20px;top: 0px;left: 725px;background-color: #9e9e9e;border-radius: 10px;width: 20px;height: 20px;line-height: 20px;cursor:default;" onclick="quxiao()">×</div>';
-				html +=	'<div style="width: 20%;height: 80px; float: left;margin:10px 10px;">';
-				html +=	'<img src="'+photourl+'" alt="个人图片" style="width:80px;height:80px;border-radius:40px;"/>';
-				html +=	'</div>';
+						if(skill == null){
+							skill = "无";
+						}
+						if(intension == null){
+							intension = "无以往案例介绍";
+						}
+						//头像
+						
+						var html = "";
+						html += '<div class="person_info" style="overflow: hidden;border-bottom: 1px solid #eee;margin-top: 10px;position:relative;height:125px;">';
+						html += '<div class="quxiao" style="position: absolute;font-size: 20px;top: 0px;left: 725px;background-color: #9e9e9e;border-radius: 10px;width: 20px;height: 20px;line-height: 20px;cursor:default;" onclick="quxiao()">×</div>';
+						html +=	'<div style="width: 20%;height: 80px; float: left;margin:10px 10px;">';
+						html +=	'<img src="'+photourl+'" alt="个人图片" style="width:80px;height:80px;border-radius:40px;"/>';
+						html +=	'</div>';
 
-				html +=	'<div style="width:33%;height: 80px; float: left;">';
-				html +=		'<h3 style="font-size: 16px;text-align: left;margin-bottom: 5px;">'+name+'</h3>';
+						html +=	'<div style="width:33%;height: 80px; float: left;">';
+						html +=		'<h3 style="font-size: 16px;text-align: left;margin-bottom: 5px;">'+name+'</h3>';
 
-				html +=		'<ul>';
-				html +=			'<li>性别：'+sex+'</li>';
-				html +=			'<li style="margin: 10px 0;">行业：建筑装饰</li>';
-				html +=			'<li>工种：'+zhiwei+'</li>';
-				html +=			'<li style="margin-top:10px;">联系方式：'+mobile+'</li>';
-				html +=		'</ul>';
-				html +=	'</div>';
+						html +=		'<ul>';
+						html +=			'<li>性别：'+sex+'</li>';
+						html +=			'<li style="margin: 10px 0;">行业：建筑装饰</li>';
+						html +=			'<li>工种：'+zhiwei+'</li>';
+						html +=			'<li style="margin-top:10px;">联系方式：'+mobile+'</li>';
+						html +=		'</ul>';
+						html +=	'</div>';
 
-				html +=	'<div style="width: 40%;height: 80px;float: left;">';
-				html +=		'<ul>';
-				html +=			'<li>实名认证信息：已认证</li>';
-				html +=			'<li style="margin: 10px 0;">薪资：'+xinzi+'</li>';
-				html +=			'<li>从业工龄：'+nianling+'</li>';
-				html +=			'<li style="margin: 10px 0;">专业技能：'+skill+'</li>';
-				html +=		'</ul>';
-				html +=	'</div>';
-				html +='</div>';
+						html +=	'<div style="width: 40%;height: 80px;float: left;">';
+						html +=		'<ul>';
+						html +=			'<li>实名认证信息：已认证</li>';
+						html +=			'<li style="margin: 10px 0;">薪资：'+xinzi+'</li>';
+						html +=			'<li>从业工龄：'+nianling+'</li>';
+						html +=			'<li style="margin: 10px 0;">专业技能：'+skill+'</li>';
+						html +=		'</ul>';
+						html +=	'</div>';
+						html +='</div>';
 
-				html +='<div class="pr_detail" style="width: 100%;height: 80px;">';
-				html +=	'<ul>';
-				html +=		'<li style="margin: 10px 10px;">工作经验：'+gz_jingyan+'</li>';
-				html +=		'<li style="margin: 10px 10px;">以往案例介绍：'+intension+'</li>';
-				html +=	'</ul>';
-				html +='</div>';
-				$(".show_detai").html(html);
-				$(".show_detai").show();
+						html +='<div class="pr_detail" style="width: 100%;height: 80px;">';
+						html +=	'<ul>';
+						html +=		'<li style="margin: 10px 10px;">工作经验：'+gz_jingyan+'</li>';
+						html +=		'<li style="margin: 10px 10px;">以往案例介绍：'+intension+'</li>';
+						html +=	'</ul>';
+						html +='</div>';
+						$(".show_detai").html(html);
+						$(".show_detai").show();
 
-
-			}else{
-				alert("请检查网络连接")
-			}					
+					}else{
+						alert("请检查网络连接")
+					}					
 				},
 				error:function(err){
 					//console.log(err)
@@ -583,8 +627,6 @@ function list_history(){
 				crossDomain: true == !(document.all),
 				dataType: "json",
 				success:function(ret){
-					//console.log(ret)
-					
 					var html = "";
 					if(ret.code == 200){
 						var data = ret.message;
@@ -599,9 +641,86 @@ function list_history(){
 							var userphoto 	= data[i].userphoto;
 							var photourl 	= 'http://wgcapp.wgc2013.com' + userphoto;
 							var j = parseInt(i)+1;
+
+							if(worktype == 1){
+								worktype = '施工队长';
+							}else if(worktype == 2){
+								worktype = '水电工长';
+							}else if(worktype == 3){
+								worktype = '空调安装工长';
+							}else if(worktype == 4){
+								worktype = '空调安装工';
+							}else if(worktype == 5){
+								worktype = '泥水工';
+							}else if(worktype == 6){
+								worktype = '水电工';
+							}else if(worktype == 7){
+								worktype = '电焊工';
+							}else if(worktype == 8){
+								worktype = '家具安装工';
+							}else if(worktype == 9){
+								worktype = '木工';
+							}else if(worktype == 10){
+								worktype = '扇灰工';
+							}else if(worktype == 11){
+								worktype = '保洁工';
+							}else if(worktype == 12){
+								worktype = '杂工';
+							}else if(worktype == 13){
+								worktype = '设计师';
+							}else if(worktype == 14){
+								worktype = '预算员';
+							}else if(worktype == 15){
+								worktype = '其他';
+							}else if(worktype == 16){
+								worktype = '维修工';
+							}else if(worktype == 17){
+								worktype = '网络维修';
+							}else if(worktype == 18){
+								worktype = '实习预结算员';
+							}else if(worktype == 19){
+								worktype = '室内设计师';
+							}else if(worktype == 20){
+								worktype = '工程经理';
+							}else if(worktype == 21){
+								worktype = '机电工程师';
+							}else if(worktype == 22){
+								worktype = '暖通设计师';
+							}else if(worktype == 23){
+								worktype = '采购经理';
+							}else if(worktype == 24){
+								worktype = '文室';
+							}else if(worktype == 25){
+								worktype = '平面设计';
+							}else if(worktype == 26){
+								worktype = '效果图设计师';
+							}else if(worktype == 27){
+								worktype = '客服专员';
+							}else if(worktype == 28){
+								worktype = '行政助理';
+							}else if(worktype == 29){
+								worktype = '软件销售经理';
+							}else if(worktype == 30){
+								worktype = '业务员';
+							}else if(worktype == 31){
+								worktype = '项目经理';
+							}else if(worktype == 32){
+								worktype = '水电维修';
+							}else if(worktype == 33){
+								worktype = '空调维修';
+							}else if(worktype == 34){
+								worktype = '装饰维修';
+							}else if(worktype == 35){
+								worktype = '设备维修';
+							}else if(worktype == 37){
+								worktype = '分销商';
+							}else if(worktype == 0){
+								worktype = '暂未分类';
+							}
+
 							html += '<tr>';
 								html += '<td>'+j+'</td>';
-								html += '<td><div style="width:25px;height:25px;padding: 5px 0px;margin: 0 auto;"><img src="'+photourl+'" style="width:100%;height:100%;border-radius: 12px;"/></div></td>';							
+								html += '<td><div style="width:25px;height:25px;padding: 5px 0px;margin: 0 auto;"><img src="'+photourl+'" style="width:100%;height:100%;border-radius: 12px;"/></div></td>';
 								html += '<td>'+name+'</td>';
 								html += '<td>'+nianling+'年</td>';
 								html += '<td>装饰建筑</td>';
@@ -619,104 +738,95 @@ function list_history(){
 }
 //查询历史的分页
 function pageindex(pindex){
-		
-		if(pindex < 1){
-			pindex = 1;
-			page=1;
-		}
+	if(pindex < 1){
+		pindex = 1;
+		page=1;
+	}
 	var url = 'http://wgcapp.wgc2013.com/index.php/Home/Systemmsg/Jobdetails_history';
 	
-		$.ajax({
-				type:"POST",
-				url:url,
-				data:{
-					userid : '<?php echo $_SESSION["user_info"]["user_id"];?>',
-					page: pindex
-				},
-				cache:false,
-				crossDomain: true == !(document.all),
-				dataType: "json",
-				success:function(ret){
-					//console.log(ret)
-					if(ret.code == 200){
-						var data = ret.message;
-						$('#show_lists').html("");
-						var html = "";
-						for(var i in data){
-							var id          = data[i].user_id;
-							var worktype    = data[i].postion;
-							var type        = (data[i].type =='' || data[i].type == null)?'未分类':data[i].type;
-							var	name        = (data[i].name =='' || data[i].name == null)?'匿名':data[i].name;
-							var	zhiwei 	    = (data[i].zhiwei =='' || data[i].zhiwei == null)?'未填写':data[i].zhiwei;
-							var nianling    = data[i].nianling;
-							var userphoto 	= data[i].userphoto;
-							var photourl 	= 'http://wgcapp.wgc2013.com' + userphoto;
-							var j = parseInt(i)+1;
-							html += '<tr>';
-								html += '<td>'+j+'</td>';
-								html += '<td><div style="width:25px;height:25px;padding: 5px 0px;margin: 0 auto;"><img src="'+photourl+'" style="width:100%;height:100%;border-radius: 12px;"/></div></td>';
-								html += '<td>'+name+'</td>';
-								html += '<td>'+nianling+'年</td>';
-								html += '<td>装饰建筑</td>';
-								html += '<td>'+worktype+'</td>';
-								html += '<td><a href="javascript:;" onclick="detail('+id+')">详情</a></td>';
-								html += '</tr>';
-						}
-						$('#show_lists').append(html);						
-					}else if(ret.code == 202){
-						
-					}
-				},
-				error:function(err){
+	$.ajax({
+		type:"POST",
+		url:url,
+		data:{
+			userid : '<?php echo $_SESSION["user_info"]["user_id"];?>',
+			page: pindex
+		},
+		cache:false,
+		crossDomain: true == !(document.all),
+		dataType: "json",
+		success:function(ret){
+			if(ret.code == 200){
+				var data = ret.message;
+				$('#show_lists').html("");
+				var html = "";
+				for(var i in data){
+					var id          = data[i].user_id;
+					var worktype    = data[i].postion;
+					var type        = (data[i].type =='' || data[i].type == null)?'未分类':data[i].type;
+					var	name        = (data[i].name =='' || data[i].name == null)?'匿名':data[i].name;
+					var	zhiwei 	    = (data[i].zhiwei =='' || data[i].zhiwei == null)?'未填写':data[i].zhiwei;
+					var nianling    = data[i].nianling;
+					var userphoto 	= data[i].userphoto;
+					var photourl 	= 'http://wgcapp.wgc2013.com' + userphoto;
+					var j = parseInt(i)+1;
+					html += '<tr>';
+						html += '<td>'+j+'</td>';
+						html += '<td><div style="width:25px;height:25px;padding: 5px 0px;margin: 0 auto;"><img src="'+photourl+'" style="width:100%;height:100%;border-radius: 12px;"/></div></td>';
+						html += '<td>'+name+'</td>';
+						html += '<td>'+nianling+'年</td>';
+						html += '<td>装饰建筑</td>';
+						html += '<td>'+worktype+'</td>';
+						html += '<td><a href="javascript:;" onclick="detail('+id+')">详情</a></td>';
+						html += '</tr>';
 				}
-			});
+				$('#show_lists').append(html);						
+			}else if(ret.code == 202){
+				
+			}
+		},
+		error:function(err){
+		}
+	});
 
 
-	}
+}
 //下一页
 function nextpage(){
-	
 	pageindex(++page);
-
-	}
+}
 //上一页
 function prepage(){
-		pageindex(--page);
-	}
-	//获取分类
-    function jobtypes(){
-    	$(".jobtype").show();
-        var url = window.servermsg+"Systemmsg/jobtype";
-        $.post(url,{
-	        show : 'show',
-	        type : 2,
-		},function(ret){    
-            var listHtml  = '';
-            if(ret.code == 200){
-            	
-                var data = ret.message;
-                
-                $.each( data, function(k, v){
-                	// list.push(v);
-                	listHtml +='<div style="width: 100%;height: 20px;cursor:pointer;" onclick="sel(\''+v+'\')">'+v+'</div>';
-					// listHtml += '<option value="'+v+'" onclick="">'+v+'</option>';
-				});
-                
-            	
-                $(".jobtype").html(listHtml);
-                
-            }
+	pageindex(--page);
+}
+//获取分类
+function jobtypes(){
+	$(".jobtype").show();
+    var url = window.servermsg+"Systemmsg/jobtype";
+    $.post(url,{
+        show : 'show',
+        type : 2,
+	},function(ret){    
+        var listHtml  = '';
+        if(ret.code == 200){
+        	
+            var data = ret.message;
             
-        },'json');
-   }
-   function sel(v){
-   	$("#gongzhong").val(v)
-   	$(".jobtype").hide();
-   }
+            $.each( data, function(k, v){
+            	listHtml +='<div style="width: 100%;height: 20px;cursor:pointer;" onclick="sel(\''+v+'\')">'+v+'</div>';
+			});
+            $(".jobtype").html(listHtml);
+            
+        }
+    },'json');
+}
+function sel(v){
+	$("#gongzhong").val(v)
+	$(".jobtype").hide();
+}
 
-   $("#gongzhong").focus(function(){
-   	$(".jobtype").hide();
-   })
+$("#gongzhong").focus(function(){
+	$(".jobtype").hide();
+})
 
 //搜索
 //function doSearch(){

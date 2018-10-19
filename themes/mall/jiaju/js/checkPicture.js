@@ -33,3 +33,15 @@
 		$("#mo").hide();
 		$('#listBox').css('left','0');
 	}
+
+	$(document).keydown(function(event){ 
+		var e = event || window.event; 
+		var k = e.keyCode || e.which; 
+		switch(k) { 
+			case 37 : uppage()
+			break; 
+
+			case 39: nextpage()
+			break; 
+		} 
+	})

@@ -84,12 +84,10 @@
 	</div>
 </div>
 </body>
+<script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
 <script src="/themes/mall/jiaju/js/checkPicture.js"></script>
-<script type="text/javascript" src="/themes/mall/jiaju/styles/default/js/jquery-1.3.2.min.js"></script>
 <script>
 	var url = "http://wgcapp.wgc2013.com/";
-	var uploadUrl = 'http://wgcapp.wgc2013.com/';
-	var imgUrl = 'http://wgcapp.wgc2013.com/';
 	var servermsg= "http://wgcapp.wgc2013.com/index.php/Home/";
 	var userid = '<?php echo $_SESSION["user_info"]["user_id"];?>';
 
@@ -143,10 +141,12 @@
 				$('#bz').html(data.ps);
 
 				pto += '<p id="message-content" style="width:100%;height:auto;overflow: hidden;margin:5px auto;padding-left: 0.35rem">';
-			   		for(var i in imgs){
-					   	pto += '<img class="imagemsg" onclick="openImg(this,'+imgs.length+')" style="width:3.8rem;float:left;margin:0.15rem;height:3.8rem;" src="http://wgcapp.wgc2013.com/'+imgs[i]+'">'; 
-					   	$('#listBox').append('<img id="moimg" src="http://wgcapp.wgc2013.com/'+imgs[i]+'">');
-			   		}
+					if(imgs != ''){
+						for(var i in imgs){
+						   	pto += '<img class="imagemsg" onclick="openImg(this,'+imgs.length+')" style="width:3.8rem;float:left;margin:0.15rem;height:3.8rem;" src="http://wgcapp.wgc2013.com/'+imgs[i]+'">'; 
+						   	$('#listBox').append('<img id="moimg" src="http://wgcapp.wgc2013.com/'+imgs[i]+'">');
+				   		}
+					}
 			   	pto += '</p>';
 
 				// 获取回复列表

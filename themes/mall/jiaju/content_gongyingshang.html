@@ -30,6 +30,7 @@ margin:auto;padding:0px;margin-top: 10px;margin-bottom: 10px; width:1200px;overf
 .text-left a{width:23%;background:#ff552e;border-radius:10px;float:left;margin:1%;height:50px;line-height:50px;overflow:hidden;display:block;color:#fff;font-size:16px;font-weight:bold;}
 .aui-list-item-middle{width:19.88888888888%;margin:10px 0.11111111111rem;float:left;overflow: hidden;}
 </style>
+<script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
 <script type="text/javascript">
 	$(document).ready(function(){
 	$(".tiaojian > .qy > a").click(function(){
@@ -157,11 +158,11 @@ margin:auto;padding:0px;margin-top: 10px;margin-bottom: 10px; width:1200px;overf
 </div>
 {include file=footer.html}
 <!-- 底部include file=footer2.html-->
-<script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
 <script type="text/javascript" src="/themes/mall/jiaju/js/aui-scroll.js" ></script>
-
 <script type="text/javascript">
-var serverUrl = "http://wgcapp.59jiaju.com/index.php/Home/",page = 1,uploadUrl = "http://wgcapp.59jiaju.com/";
+var serverUrl = "http://wgcapp.59jiaju.com/index.php/Home/",
+	page = 1,
+	uploadUrl = "http://wgcapp.59jiaju.com/";
 $(function(){
 	jQuery.support.cors = true;
 });

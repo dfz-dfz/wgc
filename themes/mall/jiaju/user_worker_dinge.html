@@ -193,6 +193,7 @@ body{background:url('') no-repeat center top }
 				<!-- 工价分享列表 -->
 				<input type="text" class="search_input" />
 				<input type="button" value="搜索" class="search_btn" onclick="search()" style="width: 80px;height: 24px;background-color: #f7c67a;color: #f2552a;border: 1px solid #cfcfcf;cursor: pointer;" />
+				<input type="button" style="height: 24px;width: 70px;border: none;background-color: #f7c67a;text-align: center;font-weight: 600;position: absolute;right: 80px;border-radius: 5px;cursor: pointer" value="分享" class="share_btn" onclick="showUserList()"/>
 				<ul class="list_ul_head">
 				
 						<li>项目名称</li>
@@ -235,6 +236,7 @@ body{background:url('') no-repeat center top }
 								<input type="text" id="search_text" placeholder="请输入搜索的联系人" />
 								<input class="confirm_btn" type="button" onclick="UserSearch()" value="搜索" />
 								<input id="back_btn" type="button" onclick="back()" value="返回" style="width: 40px;margin-top: 0px;height: 20px;display: none;"/>
+								
 							</div>
 							<div style="overflow-y: scroll;height:300px;">
 							<div class="getUserList" style="min-height:270px;">
@@ -462,6 +464,7 @@ body{background:url('') no-repeat center top }
 							content = data[i].content;
 							
 						listHtml 	+= 	'<li style="overflow:hidden;list-style:none;cursor:pointer;">';
+						listHtml 	+=	'<input name="id" type="checkbox" class="checkbox" value="'+id+'"style="position:absolute;left:0;top:20px;"/>';
 						listHtml 	+=  '<div onclick="details(\''+gongzuodidian+'\',\''+shigonggongyi+'\',\''+content+'\',\''+lianxifangshi+'\')">';
 						listHtml 	+=	'<div class="list_name" style="float:left;width:10%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center;">'+name+'</div>';
 						listHtml 	+=	'<div class="list_name" style="float:left;width:10%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center;">'+fabujiage+'/'+danwei+'</div>';

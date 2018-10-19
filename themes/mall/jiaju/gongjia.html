@@ -30,13 +30,6 @@ margin:auto;padding:0px;margin-top: 10px;margin-bottom: 10px; width:1100px;overf
 .text-left a{width:23%;background:#ff552e;border-radius:10px;float:left;margin:1%;height:50px;line-height:50px;overflow:hidden;display:block;color:#fff;font-size:16px;font-weight:bold;}
 .aui-list-item-middle{width:19.88888888888%;margin:10px 0.11111111111rem;float:left;overflow: hidden;}
 </style>
-
-</head>
-<body>
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
 <base href="{$site_url}/" />
 <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7 charset={$charset}" />
 <meta http-equiv="Content-Type" content="text/html; charset={$charset}" />
@@ -244,7 +237,6 @@ function cai_select(page){
 						xinzi       = (data[i].total_price == 0)?'面议':data[i].total_price+'元',
 						addtime     = data[i].addtime;
 						today       = addtime.slice(0,10);
-						console.log(today)
 						if(mydates == today){
 							listHtml += '<tr style="cursor:pointer;" title="'+name+'" onclick="openConten('+id+','+user_id+')">';
 							listHtml += '	<td style="font-size:16px;color:#e20c0c;text-align:left;height:40px;width:30%;"><i style="margin:0 15px;">&bull;</i>'+name+'</td>';

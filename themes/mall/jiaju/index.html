@@ -108,22 +108,16 @@ border:1px solid #808080;width:100%;height:66px;margin-bottom:3px;
 	text-decoration: underline;
 }
 </style>
-<script type="text/javascript">
-
+<!-- <script type="text/javascript">
 	$(function (){
 		$('#open-change-city-window').click(function (){
 			$('.change-city-window').slideDown();
-			
 		})
 		$('#close-change-city-window').click(function (){
 			$('.change-city-window').slideUp();
 		})
-
 	})
-	
-
-	
-</script>
+</script> -->
 
 </head>
 
@@ -490,7 +484,7 @@ border:1px solid #808080;width:100%;height:66px;margin-bottom:3px;
 </div>
 
 {include file=footer.html}
-<script type="text/javascript" src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
 <script type="text/javascript">
 	var serverUrl = "http://wgcapp.59jiaju.com/",
 		page = 1,
@@ -613,7 +607,7 @@ border:1px solid #808080;width:100%;height:66px;margin-bottom:3px;
 			return 0;
 		}
 	}
-	jQuery(".fullSlide").hover(function() {
+	/*jQuery(".fullSlide").hover(function() {
 	  jQuery(this).find(".prev,.next").stop(true, true).fadeTo("show", 0.5)
 	},
 	function() {
@@ -633,7 +627,7 @@ border:1px solid #808080;width:100%;height:66px;margin-bottom:3px;
 	          curLi.css("background-image", curLi.attr("_src")).removeAttr("_src")
 	      }
 	  }
-	});
+	});*/
 
 
 
@@ -882,7 +876,7 @@ border:1px solid #808080;width:100%;height:66px;margin-bottom:3px;
 
 						html += '<a style="height:38px;" href="/index.php?app=search&act=gongjiaxunjia_content&id='+id+'" title="'+title+'" target="_blank">';
 							html += '<ul style="cursor:pointer;width:100%;height:38px;line-height:38px;margin-top:0;">';
-								html += '<li style="font-family: none;font-size:16px;color:#333;height:38px;width:44.33%;float:left;list-style:inside;margin-left:10px;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;">'+title+'</li>';
+								html += '<li style="font-family: none;font-size:16px;color:#333;height:38px;width:44.33%;float:left;margin-right: 4px;margin-left:10px;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;">'+title+'</li>';
 								html += '<li title="'+num+'&nbsp;'+unit+'" style="font-family: none;font-size:16px;color:#333;height:38px;width:27.33%;float:left;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;">'+unit+'</li>';
 								html += '<li style="font-family: none;font-size:12px;color:#999;height:38px;width:25.33%;float:left;">'+addtime+'</li>';
 							html += '</ul>';

@@ -42,6 +42,7 @@ section .aui-list .aui-list-item {
 }*/
 
 </style>
+<script src="/themes/mall/jiaju/js/jquery-2.2.3.min.js"></script>
 <script type="text/javascript">
 	$(document).ready(function(){
 	$(".tiaojian > .qy > a").click(function(){
@@ -174,7 +175,12 @@ section .aui-list .aui-list-item {
 											//echo "<pre>";
 											//var_dump($rows1);
 											 foreach($imgarr as $k=>$m_photo){
-													echo '<a style="background:#fff;display: none;" href="http://wgcapp.59jiaju.com/'.$m_photo.'" target="_blank"><img style="display:none;float:left;width:250px;height:250px;margin-left: 20px;margin-top:20rem" id="real" src="http://wgcapp.59jiaju.com/'.$m_photo.'"/></a>'; 
+											 		if($m_photo != ''){
+														echo '<a style="background:#fff;" href="http://wgcapp.59jiaju.com/'.$m_photo.'" target="_blank"><img style="float:left;width:250px;height:250px;margin-left: 20px;margin-top:20rem" id="real" src="http://wgcapp.59jiaju.com/'.$m_photo.'"/></a>'; 
+												 	}else{
+														echo '<div style="background:#fff;">暂无图片</div>'; 
+													}
+													
 												}
 											
 										 }
@@ -235,7 +241,6 @@ section .aui-list .aui-list-item {
 	</div>
 </div>
 <script src="/themes/mall/jiaju/js/checkPicture.js"></script>
-<script src="/themes/mall/jiaju/js/jquery-2.2.3.min.js"></script>
 <script type="text/javascript">
 
 $(function(){

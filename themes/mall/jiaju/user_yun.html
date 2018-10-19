@@ -219,9 +219,9 @@ body{background:url('') no-repeat center top }
 		<!-- 公司信息 -->
 		<div class="budget base_ui_public" style="/*display: none;*/position: relative;">
 			<ul class="budget_ul user_public_ul">
- 				<li class="change_bg_li" style="margin-right: 10px;">我的文件</li>
+ 				<li class="change_bg_li" style="margin-right: 10px;">我的文档</li>
  				<li style="margin-right: 10px;">图片</li>
-				<li style="margin-right: 10px;">笔记</li>
+				<li style="margin-right: 10px;display: none;">笔记</li>
 				<li style="margin-right: 10px;">视频</li>
 				<li style="margin-right: 10px;">PDF</li>
 				<li style="margin-right: 10px;">压缩包</li>
@@ -1191,7 +1191,7 @@ $(document).ready(function() {
 	$("#ftype").val(2)
 	list();
 });
-
+var sindex = '';
 //列表切换
 	$(".budget_ul li:first").click(function(){
     	$(this).addClass("change_bg_li")
@@ -1207,6 +1207,7 @@ $(document).ready(function() {
 		$(".wages_pdf").hide();
 		$(".wages_tar").hide();
 		$("#ftype").val(2)
+		sindex = '';
 		list();
     })
 //图片
@@ -1225,6 +1226,7 @@ $(document).ready(function() {
 		$(".wages_pdf").hide();
 		$(".wages_tar").hide();
 		$("#ftype").val(1)
+		sindex = 1;
 		list();
     })
 //笔记
@@ -1262,6 +1264,7 @@ $(document).ready(function() {
 		$(".wages_tar").hide();
 		$("#ftype").val(5)
 		list();
+		sindex = 3;
     })
     //PDF
     $(".budget_ul li:eq(4)").click(function(){
@@ -1280,6 +1283,7 @@ $(document).ready(function() {
 		$(".wages_tar").hide();
 		$("#ftype").val(3)
 		list();
+		sindex = 4;
     })
     //压缩包
     $(".budget_ul li:eq(5)").click(function(){
@@ -1298,6 +1302,7 @@ $(document).ready(function() {
 		$(".wages_tar").show();
 		$("#ftype").val(6)
 		list();
+		sindex = 5;
     })
 
 	$(".share_btn").click(function(e){
@@ -1677,10 +1682,12 @@ function list(){
 								addtime  = data[i].addtime,
 								id       = data[i].id;
 
-							listHtml +=	'<div class="filelistson" style="width: 20%;float: left;height: auto;overflow: hidden;position:relative;cursor:pointer;" onclick="enterfile('+id+')">';
+							listHtml +=	'<div class="filelistson" style="width: 20%;float: left;height: auto;overflow: hidden;position:relative;cursor:pointer;">';
 							listHtml += '<div class="cancels" style="text-align:right;position:absolute;left:85%;display:none;" onclick="shanchu('+id+')"><img src="/themes/mall/jiaju/images/center/cancel1.png" alt="" style="width:20px;height:20px;cursor:pointer;"/></div>';
+							listHtml += '<div onclick="enterfile('+id+','+types+')">';
 							listHtml += '<img src="/themes/mall/jiaju/images/wenjiajia.png" alt="" style="width: 50%;height: 70px;"/>';
 							listHtml += '<span style="display: block;">'+filename+'</span>';
+							listHtml += '</div>';
 							listHtml += '</div>';
 						}
 						
@@ -1728,14 +1735,48 @@ function shanchu(id){
 	var uid = '<?php echo $_SESSION["user_info"]["user_id"];?>';
 	window.location.href="http://wgcapp.wgc2013.com/jingyi.php/Home/Wangpan/Folder_del"+"/userid/"+uid+"/id/"+id;
 }
-function enterfile(id){
-	window.location.href = "/index.php?app=search&act=user_yun_content&id="+id;
+function enterfile(id,types){
+	var surl = "/index.php?app=search&act=user_yun_content"+sindex+"&id="+id+"&types="+types;
+	window.open(surl);
 }
+//鼠标移动背景更换
 $(".filelist").on('mouseenter','.filelistson',function(){
 	$(this).css('background-color','#9e9e9e');
 	$(this).children().first().show();
 })
 $(".filelist").on('mouseleave','.filelistson',function(){
+	$(this).css('background-color','#fff');
+	$(this).children().first().hide();
+})
+$(".filelist_pic").on('mouseenter','.filelistson',function(){
+	$(this).css('background-color','#9e9e9e');
+	$(this).children().first().show();
+})
+$(".filelist_pic").on('mouseleave','.filelistson',function(){
+	$(this).css('background-color','#fff');
+	$(this).children().first().hide();
+})
+$(".filelist_vedio").on('mouseenter','.filelistson',function(){
+	$(this).css('background-color','#9e9e9e');
+	$(this).children().first().show();
+})
+$(".filelist_vedio").on('mouseleave','.filelistson',function(){
+	$(this).css('background-color','#fff');
+	$(this).children().first().hide();
+})
+$(".filelist_pdf").on('mouseenter','.filelistson',function(){
+	$(this).css('background-color','#9e9e9e');
+	$(this).children().first().show();
+})
+$(".filelist_pdf").on('mouseleave','.filelistson',function(){
+	$(this).css('background-color','#fff');
+	$(this).children().first().hide();
+})
+$(".filelist_tar").on('mouseenter','.filelistson',function(){
+	$(this).css('background-color','#9e9e9e');
+	$(this).children().first().show();
+})
+$(".filelist_tar").on('mouseleave','.filelistson',function(){
 	$(this).css('background-color','#fff');
 	$(this).children().first().hide();
 })
