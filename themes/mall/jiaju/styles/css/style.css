@@ -174,7 +174,7 @@ margin:10px auto;
 #site-nav .quick-menu {
     position: absolute;
     right: 0;
-    top: 1px;
+    top: 0;
 }
 #site-nav .quick-menu li {
     background: rgba(0, 0, 0, 0) url("http://www.59jiaju.com/themes/mall/jiaju/styles/default/images/T1CCRNXmRFXXXXXXXX.png") no-repeat scroll right 6px;

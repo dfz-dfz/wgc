@@ -109,9 +109,9 @@ margin:auto;padding:0px;margin-top: 10px;margin-bottom: 10px; width:1100px;overf
 								<li>3</li>
 							</ul>
 							<div id="banner_list">
-								<a id="link1" href="#" target="_blank"><img class="pic1" src="" title="" alt="" /></a>
-								<a id="link2" href="#" target="_blank"><img class="pic2" src="" title="" alt="" /></a>
-								<a id="link3" href="#" target="_blank"><img class="pic3" src="" title="" alt="" /></a>
+								<a id="link1" href="/index.php?app=search&act=news_content&id=1122&title=杰程装饰为微工程代言" target="_blank"><img class="pic1" src="http://wgcmanage.59jiaju.com/ueditor/php/upload/image/20181019/1539930907171180.jpg" title="杰程装饰为微工程代言" alt="杰程装饰为微工程代言" /></a>
+								<a id="link2" href="/index.php?app=search&act=news_content&id=1121&title=广州新百年装饰为微工程代言" target="_blank"><img class="pic2" src="http://wgcmanage.59jiaju.com/ueditor/php/upload/image/20181019/1539930350214986.jpg" title="广州新百年装饰为微工程代言" alt="广州新百年装饰为微工程代言" /></a>
+								<a id="link3" href="/index.php?app=search&act=news_content&id=1120&title=广州三旺装饰为微工程代言" target="_blank"><img class="pic3" src="http://wgcmanage.59jiaju.com/ueditor/php/upload/image/20181019/1539929865107768.jpg" title="广州三旺装饰为微工程代言" alt="广州三旺装饰为微工程代言" /></a>
 							</div>
 							</div>
 						</div>
@@ -175,13 +175,9 @@ margin:auto;padding:0px;margin-top: 10px;margin-bottom: 10px; width:1100px;overf
 					</ul>
 					
 					<!-- 第三模块 -->
-					<ul class="aui-list aui-media-list" id="news" style="min-height:50px;border:none;border-bottom: 2px solid #e70012;height: auto;overflow: hidden;"></ul>
-
-					<!-- 显示分页 -->
-	               	<div class="unpages" id="unpage" style="margin:20px auto;width: 200px;text-align: center;">
-						<a style="background:red;color:#fff;width: 70px;height: 30px;line-height: 30px;padding:4px 5px;cursor:pointer;margin-right: 20px;" onclick="uppage()">上一页</a>
-						<a style="background:red;color:#fff;width: 70px;height: 30px;line-height: 30px;padding:4px 5px;cursor:pointer;" onclick="nextpage()" id="nextpage">下一页</a>
-					</div>
+					<ul class="aui-list aui-media-list" id="news" style="min-height:50px;border:none;border-bottom: 2px solid #e70012;height: auto;overflow: hidden;">
+						
+					</ul>
 				</div>
 				<div style="overflow:hidden;float:right;margin:20px 0;width:20%;">
 					<!---今日--要闻---->
@@ -198,9 +194,13 @@ margin:auto;padding:0px;margin-top: 10px;margin-bottom: 10px; width:1100px;overf
 			
 		</div>
 		<!-- 左边结束 -->
-		
-		<!-- 右边结束 -->
+		<!-- 显示分页 -->
+       	<div class="unpages" id="unpage" style="margin:20px auto;width: 200px;text-align: center;">
+			<a id="prePage" style="background:red;color:#fff;width: 70px;height: 30px;line-height: 30px;padding:4px 5px;cursor:pointer;margin-right: 20px;" onclick="uppage()">上一页</a>
+			<a style="background:red;color:#fff;width: 70px;height: 30px;line-height: 30px;padding:4px 5px;cursor:pointer;" onclick="nextpage()" id="nextpage">下一页</a>
+		</div>
 	</div>
+</div>
 {include file=footer.html}
 <!-- 底部include file=footer2.html-->
 <script type="text/javascript" src="/themes/mall/jiaju/js/aui-scroll.js" ></script>
@@ -235,7 +235,7 @@ var serverUrl = "http://wgcapp.59jiaju.com/index.php/Home/",page = 1,uploadUrl =
 $(function(){
 	jQuery.support.cors = true;
 	newsHost_select();
-	news_select();
+	news_select(page);
 });
 
 //行业要闻列表
@@ -295,19 +295,6 @@ function news_select(page){
 				}
 			    
 			}
-
-			$('.pic1').attr('src', 'http://wgcmanage.wgc2013.com/'+data[0].pic);
-			$('.pic2').attr('src', 'http://wgcmanage.wgc2013.com/'+data[1].pic);
-			$('.pic3').attr('src', 'http://wgcmanage.wgc2013.com/'+data[2].pic);
-			$('.pic1').attr('title', data[0].title);
-			$('.pic2').attr('title', data[1].title);
-			$('.pic3').attr('title', data[2].title);
-			$('.pic1').attr('alt', data[0].title);
-			$('.pic2').attr('alt', data[1].title);
-			$('.pic3').attr('alt', data[2].title);
-			$('#link1').attr('href','/index.php?app=search&act=news_content&id='+data[0].id+'&title='+data[0].title+'');
-			$('#link2').attr('href','/index.php?app=search&act=news_content&id='+data[1].id+'&title='+data[1].title+'');
-			$('#link3').attr('href','/index.php?app=search&act=news_content&id='+data[2].id+'&title='+data[2].title+'');
 		   
 			$("#news").show();
 			$('#twoBox').html(html);

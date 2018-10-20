@@ -301,6 +301,7 @@ body{background:url('') no-repeat center top }
 								}
 								
 							  	echo	'<div class="filelistson" style="width: 20%;float: left;height: auto;overflow: hidden;position:relative;margin-top:15px;padding:10px 0;">';
+							  	echo '<div class="sharefile" style="text-align:right;position:absolute;left:30px;display:none;" onclick="showUserList()"><img src="/themes/mall/jiaju/images/center/share.png" alt="" style="width:20px;height:20px;cursor:pointer;"/></div>';
 							  	echo '<div class="download" style="text-align:right;position:absolute;left:72%;display:none;" onclick="download(\''.$rows1['dir'].'\',\''.$rows1['types'].'\')"><img src="/themes/mall/jiaju/images/center/xiazai.png" alt="" style="width:20px;height:20px;cursor:pointer;"/></div>';
 								echo '<div class="cancels" style="text-align:right;position:absolute;left:85%;display:none;"><img src="/themes/mall/jiaju/images/center/rename.png" alt="" style="width:20px;height:20px;cursor:pointer;"/></div>';								
 								echo '<div class="cancel" style="text-align:right;position:absolute;left:10px;display: none;" onclick="shanchu('.$rows1['id'].')"><img src="/themes/mall/jiaju/images/center/cancel1.png" alt="" style="width:20px;height:20px;cursor:pointer;"/></div>';
@@ -1712,12 +1713,14 @@ $(".fileslist").on('mouseenter','.filelistson',function(){
 	$(this).children().first().show();
 	$(this).children().eq(1).show();
 	$(this).children().eq(2).show();
+	$(this).children().eq(3).show();
 })
 $(".fileslist").on('mouseleave','.filelistson',function(){
 	$(this).css('background-color','#fff');
 	$(this).children().first().hide();
 	$(this).children().eq(1).hide();
 	$(this).children().eq(2).hide();
+	$(this).children().eq(3).hide();
 })
 
 </script>
