@@ -708,40 +708,42 @@ border:1px solid #808080;width:100%;height:66px;margin-bottom:3px;
 					var data = ret.retData;
 					var html = '';
 					for(var i in data){
-						var expect_price = (data[i].expect_price == null || data[i].expect_price == '') ? '未设定':data[i].expect_price,
-			            	name = data[i].name,
-			            	worker_address = (data[i].worker_address == null || data[i].worker_address == '') ? '未设定':data[i].worker_address,
-			            	prj_name = (data[i].prj_name == null || data[i].prj_name == '') ? '未设定':data[i].prj_name,//项目名称
-			            	ps = (data[i].ps == null || data[i].ps == '') ? '未设定':data[i].ps,//备注
-			            	send_uid = data[i].user_id,
-			            	unit = data[i].unit,
-			            	tell = data[i].tell,
-			            	type = data[i].type,
-			            	dd_time = (data[i].dd_time == null || data[i].dd_time == '') ? '未设定':data[i].dd_time,//截止时间
-							addtime = _trans_php_time_to_str(data[i].addtime,5),//添加时间
-							content = data[i].content,
-			            	autoaddress = data[i].autoaddress,
-			            	id = data[i].id;
+						if(i<4){
+							var expect_price = (data[i].expect_price == null || data[i].expect_price == '') ? '未设定':data[i].expect_price,
+				            	name = data[i].name,
+				            	worker_address = (data[i].worker_address == null || data[i].worker_address == '') ? '未设定':data[i].worker_address,
+				            	prj_name = (data[i].prj_name == null || data[i].prj_name == '') ? '未设定':data[i].prj_name,//项目名称
+				            	ps = (data[i].ps == null || data[i].ps == '') ? '未设定':data[i].ps,//备注
+				            	send_uid = data[i].user_id,
+				            	unit = data[i].unit,
+				            	tell = data[i].tell,
+				            	type = data[i].type,
+				            	dd_time = (data[i].dd_time == null || data[i].dd_time == '') ? '未设定':data[i].dd_time,//截止时间
+								addtime = _trans_php_time_to_str(data[i].addtime,5),//添加时间
+								content = data[i].content,
+				            	autoaddress = data[i].autoaddress,
+				            	id = data[i].id;
 
-							html +=			'<div style="overflow: hidden;border-bottom: 1px solid #ccc;height:82px;">';
-							html +=					'<a href="/index.php?app=search&act=xiangmu_details&id='+id+'" style="text-decoration: none;" target="_blank">';
-							html +=			'<p style="float: left;font-size: 18px;color: red;font-weight: 600;letter-spacing: 2px;margin: 10px 0 10px 5px;">'+prj_name+'</p>';
-							html +=				'<p style="float: right;font-size: 18px;color: red;font-weight: 600;letter-spacing: 2px;margin: 10px 20px 10px 0;">'+expect_price+'</p>';
-							html +=				'<ul id="" style="width:100%;height:auto;overflow:hidden">';
-							html +=						'<li style="width: 100%;height: auto;">';
-							html +=							'<div style="margin-left: 5px;">';
-							html +=								'<span style="letter-spacing: 2px;">地址:</span>';
-							html +=								'<span style="color: #000;display: inline-block;margin-left: 10px;letter-spacing: 2px;">'+worker_address+'</span>';
-							html +=							'</div>';
-							html +=							'<div style="overflow: hidden;margin-left: 5px;">';
-							html +=								'<span style="letter-spacing: 2px;">截止时间:</span>';
-							html +=								'<span style="color: #000;display: inline-block;margin-left: 10px;letter-spacing: 1px;">'+dd_time+'</span>';
-							html +=							'<span style="float: right;margin-right:5px;">'+addtime+'</span>';
-							html +=							'</div>';
-							html +=						'</li>';
-							html +=				'</ul>';
-							html +=					'</a>';
-							html +=				'</div>';
+								html +=			'<div style="overflow: hidden;border-bottom: 1px solid #ccc;height:82px;">';
+								html +=					'<a href="/index.php?app=search&act=xiangmu_details&id='+id+'" style="text-decoration: none;" target="_blank">';
+								html +=			'<p style="float: left;font-size: 18px;color: red;font-weight: 600;letter-spacing: 2px;margin: 10px 0 10px 5px;">'+prj_name+'</p>';
+								html +=				'<p style="float: right;font-size: 18px;color: red;font-weight: 600;letter-spacing: 2px;margin: 10px 20px 10px 0;">'+expect_price+'</p>';
+								html +=				'<ul id="" style="width:100%;height:auto;overflow:hidden">';
+								html +=						'<li style="width: 100%;height: auto;">';
+								html +=							'<div style="margin-left: 5px;">';
+								html +=								'<span style="letter-spacing: 2px;">地址:</span>';
+								html +=								'<span style="color: #000;display: inline-block;margin-left: 10px;letter-spacing: 2px;">'+worker_address+'</span>';
+								html +=							'</div>';
+								html +=							'<div style="overflow: hidden;margin-left: 5px;">';
+								html +=								'<span style="letter-spacing: 2px;">截止时间:</span>';
+								html +=								'<span style="color: #000;display: inline-block;margin-left: 10px;letter-spacing: 1px;">'+dd_time+'</span>';
+								html +=							'<span style="float: right;margin-right:5px;">'+addtime+'</span>';
+								html +=							'</div>';
+								html +=						'</li>';
+								html +=				'</ul>';
+								html +=					'</a>';
+								html +=				'</div>';
+						}
 					}
 					$("#prj_list").append(html);
 				}
@@ -763,40 +765,41 @@ border:1px solid #808080;width:100%;height:66px;margin-bottom:3px;
 			if(ret.code == 200){
 				var data = ret.message;
 				for(var i in data){
-		            var price = data[i].price,
-		            	name = data[i].name,
-		            	address = data[i].address,
-		            	bj_name = data[i].ps,
-		            	send_uid = data[i].user_id,
-		            	unit = data[i].unit,
-		            	tell = data[i].tell,
-		            	type = data[i].type,
-						addtime = timestampToTime(data[i].addtime),
-						content = data[i].content,
-		            	autoaddress = data[i].autoaddress,
-		            	id = data[i].id,
-		            	project_name = data[i].project_name;
-				
-					listHtml +=		'<div style="overflow: hidden;border-bottom: 1px solid #ccc;height:82px;">';
-					listHtml +=				'<a href="/index.php?app=search&act=shejifenbao_details&id='+id+'" style="text-decoration: none;" target="_blank">';
-					listHtml +=			'<p style="float: left;font-size: 18px;color: red;font-weight: 600;letter-spacing: 2px;margin: 10px 0 10px 5px;">'+project_name+'</p>';
-					listHtml +=			'<p style="float: right;font-size: 18px;color: red;font-weight: 600;letter-spacing: 2px;margin: 10px 30px 10px 0;">'+price+'</p>';
-					listHtml +=			'<ul id="" style="width:100%;height:auto;overflow:hidden">';
-					listHtml +=					'<li style="width: 100%;height: auto;">';
-					listHtml +=					'<div style="margin-left: 5px;height: auto;border: none;">';
-					listHtml +=					'<span style="letter-spacing: 2px;">地址:</span>';
-					listHtml +=					'<span style="color: #000;display: inline-block;margin-left: 10px;letter-spacing: 2px;">'+address+'</span>';
-					listHtml +=					'</div>';
-					listHtml +=					'<div style="overflow: hidden;margin-left: 5px;height: auto;border: none;">';
-					listHtml +=					'<span style="letter-spacing: 2px;">发布时间:</span>';
-					listHtml +=					'<span style="color: #000;display: inline-block;margin-left: 10px;letter-spacing: 1px;">'+addtime+'</span>';
-					listHtml +=					'<span style="float: right;margin-right: 5px;">2018-8-20</span>';
-					listHtml +=					'</div>';
-					listHtml +=					'</li>';
-					listHtml +=			'</ul>';
-					listHtml +=				'</a>';
-					listHtml +=		'</div>	';
-						
+					if(i<4){
+			            var price = data[i].price,
+			            	name = data[i].name,
+			            	address = data[i].address,
+			            	bj_name = data[i].ps,
+			            	send_uid = data[i].user_id,
+			            	unit = data[i].unit,
+			            	tell = data[i].tell,
+			            	type = data[i].type,
+							addtime = timestampToTime(data[i].addtime),
+							content = data[i].content,
+			            	autoaddress = data[i].autoaddress,
+			            	id = data[i].id,
+			            	project_name = data[i].project_name;
+					
+						listHtml +=		'<div style="overflow: hidden;border-bottom: 1px solid #ccc;height:82px;">';
+						listHtml +=				'<a href="/index.php?app=search&act=shejifenbao_details&id='+id+'" style="text-decoration: none;" target="_blank">';
+						listHtml +=			'<p style="float: left;font-size: 18px;color: red;font-weight: 600;letter-spacing: 2px;margin: 10px 0 10px 5px;">'+project_name+'</p>';
+						listHtml +=			'<p style="float: right;font-size: 18px;color: red;font-weight: 600;letter-spacing: 2px;margin: 10px 30px 10px 0;">'+price+'</p>';
+						listHtml +=			'<ul id="" style="width:100%;height:auto;overflow:hidden">';
+						listHtml +=					'<li style="width: 100%;height: auto;">';
+						listHtml +=					'<div style="margin-left: 5px;height: auto;border: none;">';
+						listHtml +=					'<span style="letter-spacing: 2px;">地址:</span>';
+						listHtml +=					'<span style="color: #000;display: inline-block;margin-left: 10px;letter-spacing: 2px;">'+address+'</span>';
+						listHtml +=					'</div>';
+						listHtml +=					'<div style="overflow: hidden;margin-left: 5px;height: auto;border: none;">';
+						listHtml +=					'<span style="letter-spacing: 2px;">发布时间:</span>';
+						listHtml +=					'<span style="color: #000;display: inline-block;margin-left: 10px;letter-spacing: 1px;">'+addtime+'</span>';
+						listHtml +=					'<span style="float: right;margin-right: 5px;">2018-8-20</span>';
+						listHtml +=					'</div>';
+						listHtml +=					'</li>';
+						listHtml +=			'</ul>';
+						listHtml +=				'</a>';
+						listHtml +=		'</div>	';
+					}
 				}
 				$("#design_list").append(listHtml);
 				
@@ -818,35 +821,36 @@ border:1px solid #808080;width:100%;height:66px;margin-bottom:3px;
 				var html = '';
 
 				for(var i in retData){
-					var restaurant = (retData[i].office_name == null || retData[i].office_name == '') ? '未设定':retData[i].office_name,
-						office_name = (restaurant == '未设定') ? retData[i].restaurant:restaurant,
-						id = retData[i].id, 
-						weixiu_price = retData[i].weixiu_price,
-						worker_address = retData[i].restaurant_address,
-						addtime = retData[i].addtime,
-						endtime = (retData[i].endtime == null || retData[i].endtime == '') ? '未设定':retData[i].endtime,
-						name = retData[i].name;
-		           		
-						html += '<div style="overflow: hidden;border-bottom: 1px solid #ccc;height:82px;">';
-						html +=		'<a href="/index.php?app=search&act=weixiu_details&id='+id+'" style="text-decoration: none;" target="_blank">';
-						html +=	'<p style="float: left;font-size: 18px;color: red;font-weight: 600;letter-spacing: 2px;margin: 10px 0 10px 5px;">'+office_name+'</p>';
-						html +=	'<p style="float: right;font-size: 18px;color: red;font-weight: 600;letter-spacing: 2px;margin: 10px 10px 10px 0;">'+name+'</p>';
-						html +=	'<ul id="" style="width:100%;height:auto;overflow:hidden">';
-						html +=			'<li style="width: 100%;height: auto;" target="_blank">';
-						html +=			'<div style="margin-left: 5px;height: auto;border: none;">';
-						html +=			'<span style="letter-spacing: 2px;">地址:</span>';
-						html +=			'<span style="color: #000;display: inline-block;margin-left: 10px;">'+worker_address+'</span>';
-						html +=			'</div>';
-						html +=			'<div style="overflow: hidden;margin-left: 5px;height: auto;border: none;">';
-						html +=			'<span style="letter-spacing: 2px;">截止时间:</span>';
-						html +=			'<span style="color: #000;display: inline-block;margin-left: 10px;letter-spacing: 2px;">'+endtime+'</span>';
-						html +=			'<span style="float: right;letter-spacing: 1px;margin-right: 5px;">'+addtime+'</span>';
-						html +=			'</div>';
-						html +=			'</li>';
-						html +=	'</ul>';
-						html +=		'</a>';
-						html += '</div>';
-					
+					if(i<3){
+						var restaurant = (retData[i].office_name == null || retData[i].office_name == '') ? '未设定':retData[i].office_name,
+							office_name = (restaurant == '未设定') ? retData[i].restaurant:restaurant,
+							id = retData[i].id, 
+							weixiu_price = retData[i].weixiu_price,
+							worker_address = retData[i].restaurant_address,
+							addtime = retData[i].addtime,
+							endtime = (retData[i].endtime == null || retData[i].endtime == '') ? '未设定':retData[i].endtime,
+							name = retData[i].name;
+			           		
+							html += '<div style="overflow: hidden;border-bottom: 1px solid #ccc;height:82px;">';
+							html +=		'<a href="/index.php?app=search&act=weixiu_details&id='+id+'" style="text-decoration: none;" target="_blank">';
+							html +=	'<p style="float: left;font-size: 18px;color: red;font-weight: 600;letter-spacing: 2px;margin: 10px 0 10px 5px;">'+office_name+'</p>';
+							html +=	'<p style="float: right;font-size: 18px;color: red;font-weight: 600;letter-spacing: 2px;margin: 10px 10px 10px 0;">'+name+'</p>';
+							html +=	'<ul id="" style="width:100%;height:auto;overflow:hidden">';
+							html +=			'<li style="width: 100%;height: auto;" target="_blank">';
+							html +=			'<div style="margin-left: 5px;height: auto;border: none;">';
+							html +=			'<span style="letter-spacing: 2px;">地址:</span>';
+							html +=			'<span style="color: #000;display: inline-block;margin-left: 10px;">'+worker_address+'</span>';
+							html +=			'</div>';
+							html +=			'<div style="overflow: hidden;margin-left: 5px;height: auto;border: none;">';
+							html +=			'<span style="letter-spacing: 2px;">截止时间:</span>';
+							html +=			'<span style="color: #000;display: inline-block;margin-left: 10px;letter-spacing: 2px;">'+endtime+'</span>';
+							html +=			'<span style="float: right;letter-spacing: 1px;margin-right: 5px;">'+addtime+'</span>';
+							html +=			'</div>';
+							html +=			'</li>';
+							html +=	'</ul>';
+							html +=		'</a>';
+							html += '</div>';
+					}
 				}
 				$('#repair_list').append(html);
 			}else if(ret.status == 202){	
@@ -873,24 +877,25 @@ border:1px solid #808080;width:100%;height:66px;margin-bottom:3px;
 				var data = ret.message;
 				var html = '';
 				for(var i in data){
-					var address = data[i].address,//地址
-						addtime = data[i].addtime,//添加时间
-						id = data[i].id,//列表id
-						num = data[i].num,//数量/范围
-						ps = data[i].ps,//备注
-						tel = data[i].tel,//号码
-						title = data[i].title,//项目名称
-						office_name = data[i].office_name,//公司名称
-						unit = data[i].unit;//计价单位
+					if(i<7){
+						var address = data[i].address,//地址
+							addtime = data[i].addtime,//添加时间
+							id = data[i].id,//列表id
+							num = data[i].num,//数量/范围
+							ps = data[i].ps,//备注
+							tel = data[i].tel,//号码
+							title = data[i].title,//项目名称
+							office_name = data[i].office_name,//公司名称
+							unit = data[i].unit;//计价单位
 
-						html += '<a style="height:38px;" href="/index.php?app=search&act=gongjiaxunjia_content&id='+id+'" title="'+title+'" target="_blank">';
-							html += '<ul style="cursor:pointer;width:100%;height:38px;line-height:38px;margin-top:0;">';
-								html += '<li style="font-family: none;font-size:16px;color:#333;height:38px;width:44%;float:left;margin-right: 2px;margin-left:10px;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;">'+title+'</li>';
-								html += '<li title="'+unit+'" style="font-family: none;font-size:16px;color:#333;height:38px;width:27.33%;float:left;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;">'+office_name+'</li>';
-								html += '<li style="font-family: none;font-size:12px;color:#999;height:38px;width:25.33%;float:left;">'+addtime+'</li>';
-							html += '</ul>';
-						html += '</a>';
-					
+							html += '<a style="height:38px;" href="/index.php?app=search&act=gongjiaxunjia_content&id='+id+'" title="'+title+'" target="_blank">';
+								html += '<ul style="cursor:pointer;width:100%;height:38px;line-height:38px;margin-top:0;">';
+									html += '<li style="font-family: none;font-size:16px;color:#333;height:38px;width:44%;float:left;margin-right: 2px;margin-left:10px;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;">'+title+'</li>';
+									html += '<li title="'+unit+'" style="font-family: none;font-size:16px;color:#333;height:38px;width:27.33%;float:left;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;">'+office_name+'</li>';
+									html += '<li style="font-family: none;font-size:12px;color:#999;height:38px;width:25.33%;float:left;">'+addtime+'</li>';
+								html += '</ul>';
+							html += '</a>';
+					}
 				}
 				$('#gjxj').append(html);
 			}else if(ret.code == 201){
@@ -914,34 +919,36 @@ border:1px solid #808080;width:100%;height:66px;margin-bottom:3px;
 				var data = ret.message;
 				var html = '';
 				for(var i in data){
-					var id = data[i].id,
-						m_name = data[i].m_name,
-						m_introduce = data[i].m_introduce,
-						office_name = data[i].office_name,
-						brand       = data[i].brand,
-						address     = data[i].address,
-						addtime = timestampToTime(data[i].addtime),
-						expire_time = data[i].expire_time,
-						m_introduce = data[i].m_introduce;
+					if(i<3){
+						var id = data[i].id,
+							m_name = data[i].m_name,
+							m_introduce = data[i].m_introduce,
+							office_name = data[i].office_name,
+							brand       = data[i].brand,
+							address     = data[i].address,
+							addtime = timestampToTime(data[i].addtime),
+							expire_time = data[i].expire_time,
+							m_introduce = data[i].m_introduce;
 
-					html +=			'<div style="overflow: hidden;border-bottom: 1px solid #ccc;height:82px;">';
-					html +=					'<a href="/index.php?app=search&act=cailiaotuiguang_content&id='+id+'" style="text-decoration: none;" target="_blank">';
-					html +=			'<p style="float: left;font-size: 18px;color: red;font-weight: 600;letter-spacing: 2px;margin: 10px 0 10px 5px;overflow:hidden;height:25px;">'+m_name+'</p>';
-					html +=				'<ul id="" style="width:100%;height:auto;overflow:hidden">';
-					html +=						'<li style="width: 100%;height: auto;">';
-					html +=							'<div style="margin-left: 5px;float:left;">';
-					html +=								'<span style="letter-spacing: 2px;float:left;">公司名称:</span>';
-					html +=								'<span style="color: #000;margin-left: 10px;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;width:390px;float:left;" title="'+office_name+'">'+office_name+'</span>';
-					html +=							'</div>';
-					html +=							'<div style="overflow: hidden;margin-left: 5px;float:left;">';
-					html +=								'<span style="letter-spacing: 2px;">截止时间:</span>';
-					html +=								'<span style="display: inline-block;margin-left: 10px;color:#000;margin-right:120px;letter-spacing:1px;">'+expire_time+'</span>';
-					html +=							'<span style="float: right;font-size:12px;">'+addtime+'</span>';
-					html +=							'</div>';
-					html +=						'</li>';
-					html +=				'</ul>';
-					html +=					'</a>';
-					html +=				'</div>';
+						html +=			'<div style="overflow: hidden;border-bottom: 1px solid #ccc;height:82px;">';
+						html +=					'<a href="/index.php?app=search&act=cailiaotuiguang_content&id='+id+'" style="text-decoration: none;" target="_blank">';
+						html +=			'<p style="float: left;font-size: 18px;color: red;font-weight: 600;letter-spacing: 2px;margin: 10px 0 10px 5px;overflow:hidden;height:25px;">'+m_name+'</p>';
+						html +=				'<ul id="" style="width:100%;height:auto;overflow:hidden">';
+						html +=						'<li style="width: 100%;height: auto;">';
+						html +=							'<div style="margin-left: 5px;float:left;">';
+						html +=								'<span style="letter-spacing: 2px;float:left;">公司名称:</span>';
+						html +=								'<span style="color: #000;margin-left: 10px;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;width:390px;float:left;" title="'+office_name+'">'+office_name+'</span>';
+						html +=							'</div>';
+						html +=							'<div style="overflow: hidden;margin-left: 5px;float:left;">';
+						html +=								'<span style="letter-spacing: 2px;">截止时间:</span>';
+						html +=								'<span style="display: inline-block;margin-left: 10px;color:#000;margin-right:120px;letter-spacing:1px;">'+expire_time+'</span>';
+						html +=							'<span style="float: right;font-size:12px;">'+addtime+'</span>';
+						html +=							'</div>';
+						html +=						'</li>';
+						html +=				'</ul>';
+						html +=					'</a>';
+						html +=				'</div>';
+					}
 				}
 				$('#cailiao_list').append(html);	
 			}else{
