@@ -221,10 +221,11 @@ body{background:url('') no-repeat center top }
 			<ul class="budget_ul user_public_ul">
  				<li style="margin-right: 10px;">我的文档</li>
  				<li class="change_bg_li" style="margin-right: 10px;">图片</li>
-				<!-- <li style="margin-right: 10px;">笔记</li> -->
+				<li style="margin-right: 10px;display: none;">笔记</li>
 				<li style="margin-right: 10px;">视频</li>
 				<li style="margin-right: 10px;">PDF</li>
 				<li style="margin-right: 10px;">压缩包</li>
+				<li style="margin-right: 10px;">分享列表</li>
 				<li id="addwenjian" style="float: right;background-color: #0092d2;color: #fff;cursor: pointer;">上传文件</li>
  			</ul>
  			<div class="company_info base_info_public" style="overflow: hidden;/*padding-left: 15%;*/min-height: 250px;">
@@ -266,6 +267,7 @@ body{background:url('') no-repeat center top }
 					
 				</div>
 				<div class="fileslist">
+				<input type="hidden" id="power" />
 					<?php
 					$uid = $_SESSION["user_info"]["user_id"];
 					$pid = $_GET["id"];
@@ -281,6 +283,7 @@ body{background:url('') no-repeat center top }
 					if($count >= 1){
 						while($rows1=@mysql_fetch_array($result)){
 							  	echo	'<div class="filelistson" style="width: 20%;float: left;height: auto;overflow: hidden;position:relative;margin-top:15px;padding:10px 0;">';
+							  	echo '<div class="sharefile" style="text-align:right;position:absolute;left:30px;display:none;" onclick="showUserList('.$rows1['id'].')"><img src="/themes/mall/jiaju/images/center/share.png" alt="" style="width:20px;height:20px;cursor:pointer;"/></div>';
 							  	echo '<div class="download" style="text-align:right;position:absolute;left:72%;display:none;" onclick="download(\''.$rows1['dir'].'\',\''.$rows1['types'].'\')"><img src="/themes/mall/jiaju/images/center/xiazai.png" alt="" style="width:20px;height:20px;cursor:pointer;"/></div>';
 								echo '<div class="cancels" style="text-align:right;position:absolute;left:85%;display:none;"><img src="/themes/mall/jiaju/images/center/rename.png" alt="" style="width:20px;height:20px;cursor:pointer;"/></div>';
 								echo '<div class="cancel" style="text-align:right;position:absolute;left:10px;display: none;" onclick="shanchu('.$rows1['id'].')"><img src="/themes/mall/jiaju/images/center/cancel1.png" alt="" style="width:20px;height:20px;cursor:pointer;"/></div>';
@@ -1094,6 +1097,7 @@ $(function(){
                     stats = uploader.getStats();
                     if ( stats.successNum ) {
 						layer.msg('上传成功',{icon:1,time:3000});
+						window.location.reload();
                     } else {
                         // 没有成功的图片，重设
                         state = 'done';
@@ -1203,32 +1207,43 @@ $(document).ready(function() {
 //列表切换
 var filestype = 1;
 	var aid = '<?php echo $_GET["id"];?>';
-	// $(".budget_ul li:first").click(function(){
+	$(".budget_ul li:first").click(function(){
 		
- //    	window.location.href = "/index.php?app=search&act=user_yun_content&id="+aid+"&types="+2;
- //    })
-
-	$(".budget_ul li:eq(1)").click(function(){
-		
-    	window.location.href = "/index.php?app=search&act=user_yun_content1&id="+aid+"&types="+1;
+    	window.location.href = "/index.php?app=search&act=user_yun";
     })
+    //图片
+	$(".budget_ul li:eq(1)").click(function(){
+		window.location.href = "/index.php?app=search&act=user_yun_pic";
 
-    // $(".budget_ul li:eq(2)").click(function(){
+		
+    })
+//笔记
+    $(".budget_ul li:eq(2)").click(function(){
     	
-    // 	window.location.href = "/index.php?app=search&act=user_yun_content2&id="+aid;
-    // })
-    //  $(".budget_ul li:eq(2)").click(function(){
+		
+    })
+    //视频
+    $(".budget_ul li:eq(3)").click(function(){
+    	window.location.href = "/index.php?app=search&act=user_yun_vedio";
+    
+    })
+    //PDF
+    $(".budget_ul li:eq(4)").click(function(){
+    	window.location.href = "/index.php?app=search&act=user_yun_pdf";
     	
-    // 	window.location.href = "/index.php?app=search&act=user_yun_content3&id="+aid+"&types="+5;
-    // })
-    //  $(".budget_ul li:eq(3)").click(function(){
-    	
-    // 	window.location.href = "/index.php?app=search&act=user_yun_content4&id="+aid+"&types="+3;
-    // })
-    //  $(".budget_ul li:eq(4)").click(function(){
-    	
-    // 	window.location.href = "/index.php?app=search&act=user_yun_content5&id="+aid+"&types="+6;
-    // })
+    })
+    //压缩包
+    $(".budget_ul li:eq(5)").click(function(){
+    	window.location.href = "/index.php?app=search&act=user_yun_tar";
+ 
+    })
+    $(".budget_ul li:eq(6)").click(function(){
+    	window.location.href = "/index.php?app=search&act=user_yun_share";
+  
+		$(".wages_share").show();
+		$("#addwenjian").hide();
+		
+    })
 	$(".share_btn").click(function(e){
 		e.stopPropagation(); 
 		$(".confirm").show();
@@ -1254,7 +1269,9 @@ var filestype = 1;
 	}
 	
 	//分享选择接收人
-	function  showUserList(){
+	function  showUserList(id){
+		$(".confirm").show();
+		$("#power").val(id)
 		var page = 1;
 		uid= '<?php echo $_SESSION["user_info"]["user_id"];?>';
 		$.ajax({
@@ -1384,16 +1401,17 @@ var filestype = 1;
 
 	//确认分享
 	function sharebox(){
+
 								//获取数据id
 								var arr = new Array();
 								var tarry = new Array();
-				                $('input[name="id"]:checked').each(function(i){
-				                    arr[i] = $(this).val();
-				                });
-				                var vals = arr.join(",");
+				                // $('input[name="id"]:checked').each(function(i){
+				                //     arr[i] = $(this).val();
+				                // });
+				                // var vals = arr.join(",");
 
-				                console.log(vals);
-
+				                // console.log(vals);
+				                var fileid = $("#power").val();
 				                //获取通讯录id
 				          		$('input[name="tid"]:checked').each(function(j){
 				                    tarry[j] = $(this).val();
@@ -1401,10 +1419,10 @@ var filestype = 1;
 				                var tvals = tarry.join(",");
 				                console.log(tvals)
 
-				                $.post('http://wgcapp.wgc2013.com/jingyi.php/Home/index/share',{
-				                	"type":10,
-				                	"arr":arr,
-				                	"tarry":tarry
+				                $.post('http://wgcapp.wgc2013.com/jingyi.php/Home/Wangpan/file_share',{
+				                	id : fileid,
+				                	userid : '<?php echo $_SESSION["user_info"]["user_id"];?>',
+				                	"recipient" : tarry
 				                },function(ret){
 				                	console.log(ret)
 				                	if(ret.code == 200){
@@ -1413,6 +1431,7 @@ var filestype = 1;
 				                	}
 				                },'json')
 	}
+	
 	
 //通讯录分页控制
 
@@ -1631,7 +1650,7 @@ function list(){
 }
 function shanchu(id){
 	var uid = '<?php echo $_SESSION["user_info"]["user_id"];?>';
-	var f = confirm("确认删除此压缩文件吗？");
+	var f = confirm("确认删除此图片吗？");
 	if(f){
 
 	window.location.href="http://wgcapp.wgc2013.com/jingyi.php/Home/Wangpan/file_del"+"/userid/"+uid+"/id/"+id;
@@ -1691,14 +1710,15 @@ $(".fileslist").on('mouseenter','.filelistson',function(){
 	$(this).children().first().show();
 	$(this).children().eq(1).show();
 	$(this).children().eq(2).show();
+	$(this).children().eq(3).show();
 })
 $(".fileslist").on('mouseleave','.filelistson',function(){
 	$(this).css('background-color','#fff');
 	$(this).children().first().hide();
 	$(this).children().eq(1).hide();
 	$(this).children().eq(2).hide();
+	$(this).children().eq(3).hide();
 })
-
 </script>
 </body>
 </html>

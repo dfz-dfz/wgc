@@ -43,6 +43,9 @@
 				<div style="width:1100px;">
 					<div class="shejifenbao_list" id="xiangmmc"></div>
 					<div class="shejifenbao_list" id="content"></div>
+					<div class="shejifenbao_list" id="brand"></div>
+					<div class="shejifenbao_list" id="m_name"></div>
+					<div class="shejifenbao_list" id="price"></div>
 					<div class="shejifenbao_list" id="cailiao" style="height: auto;overflow: hidden;"></div>
 					<div class="shejifenbao_list" id="shop_address"></div>
 					<div class="shejifenbao_list" id="fb_address"></div>
@@ -124,6 +127,9 @@
 			 	
 			 	$('#xiangmmc').html('<span>材料申购单位：</span>'+date.office_name);
 			   	$('#content').html('<span>收货地址：</span>'+date.worker_address);//
+			   	$('#brand').html('<spna>材料品牌：</span>'+date.brand);
+			   	$('#m_name').html('<span>材料名称：</span>'+date.m_name);
+			   	$('#price').html('<span>材料价格：</span>'+date.danjia+'/'+date.danwei);
 			   	$('#cailiao').html('<span style="float:left;">备注：</span><span style="width:765px;float:left;">'+date.ps+'</span>');
 			   	$('#fb_address').html('<span>申购日期：</span>'+date.dateofpurchase);
 			   	$('#shop_address').html('<span>申购人：</span>'+date.sgperson);

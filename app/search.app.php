@@ -108,6 +108,10 @@ class SearchApp extends MallbaseApp
 	function user_material_purchase(){
 		$this->display('user_material_purchase.html');
 	}
+	//总后台材料采购
+	function user_material_purchase_admin(){
+		$this->display('user_material_purchase_admin.html');
+	}
 	//个人中心个人业务信息
 	function user_customer_message(){
 		$this->display('user_customer_message.html');
@@ -125,8 +129,34 @@ class SearchApp extends MallbaseApp
 	}//个人中心维修报价
 	function user_baojia(){
 		$this->display('user_baojia.html');
-	}function user_yun(){
+	}
+	//个人中心我的网盘ul连接
+	function user_yun(){
 		$this->display('user_yun.html');
+	}
+	//个人中心我的网盘-文档
+	function user_yun_doc(){
+		$this->display('user_yun_doc.html');
+	}
+	//个人中心我的网盘-图片
+	function user_yun_pic(){
+		$this->display('user_yun_pic.html');
+	}
+	//个人中心我的网盘-视频
+	function user_yun_vedio(){
+		$this->display('user_yun_vedio.html');
+	}
+	//个人中心我的网盘-pdf
+	function user_yun_pdf(){
+		$this->display('user_yun_pdf.html');
+	}
+	//个人中心我的网盘-分享
+	function user_yun_share(){
+		$this->display('user_yun_share.html');
+	}
+	//个人中心我的网盘-压缩包
+	function user_yun_tar(){
+		$this->display('user_yun_tar.html');
 	}//个人中心我的网盘详情1
 	function user_yun_content(){
 		$this->display('user_yun_content.html');
@@ -997,7 +1027,7 @@ class SearchApp extends MallbaseApp
 				$data .= '<li>';	
 					$data .= '<p class="title"><a href="index.php?app=search&amp;act=content&amp;id='.$row['id'].'">'.$row['zhiwei'].'</a></p>';
 					$data .= '<p class="gname"><a href="index.php?app=search&amp;act=content&amp;id='.$row['id'].'">'.$row['company_name'].'</a></p>';
-					$data .= '<p class="address">'.$row['company_addr'].'/元</p>';
+					$data .= '<p class="address">'.$row['company_addr'].'</p>';
 					$data .= '<p class="xinzi">'.$row['xinzi'].'/元</p>';
 					$data .= '<p class="time">'.$row['today'].'</p>';
 				$data .= '</li>';

@@ -76,17 +76,17 @@
 					<div class="box" style="height: 228px;padding:10px;">
 						<div style="margin-bottom: 10px;">选择购买VIP的类型:</div>
 						<div id="radio_list">
-							<input type="radio" name="vip" id="vip1" value="680" checked="checked" /><label for="vip1">招聘用户</label>
-							<input type="radio" name="vip" id="vip2" value="980"/><label for="vip2">企业专属版</label>
-							<input type="radio" name="vip" id="vip3" value="5980"/><label for="vip3">企业至尊版</label>
-							<input type="radio" name="vip" id="vip4" value="9980" /><label for="vip4">企业砖石版</label>
+							<input type="radio" name="vip" id="vip1" value="1680" checked="checked" /><label for="vip1">招聘用户</label>
+							<input type="radio" name="vip" id="vip2" value="1980"/><label for="vip2">企业专属版</label>
+							<input type="radio" name="vip" id="vip3" value="15980"/><label for="vip3">企业至尊版</label>
+							<input type="radio" name="vip" id="vip4" value="19980" /><label for="vip4">企业砖石版</label>
 						</div>
 						<div style="text-align: center;margin-top: 80px;">
 							<span>
 								您当前选择的是：<label id="vipType">招聘用户</label>
 							</span>
 							<span>
-								直接购买需支付<label id="price">660</label>元
+								直接购买需支付<label id="price">1680</label>元
 							</span>
 						</div>
 						<div style="text-align: center;margin-top: 10px;">
@@ -163,13 +163,13 @@
 	$('#radio_list').click(function() {
 		var type = $('input:radio[name="vip"]:checked').val();
 		var vipType = '';
-		if(type == 680){
+		if(type == 1680){
 			vipType = '招聘用户';
-		}else if(type == 980){
+		}else if(type == 1980){
 			vipType = '企业专属版';
-		}else if(type == 5980){
+		}else if(type == 15980){
 			vipType = '企业至尊版';
-		}else if(type == 9980){
+		}else if(type == 19980){
 			vipType = '企业砖石版';
 		}
 		$('#vipType').html(vipType);

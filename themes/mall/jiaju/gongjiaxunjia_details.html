@@ -28,6 +28,7 @@
 							<div id="prj_name_price" style="border-bottom: 2px solid #dfdfdf; height: 80px;line-height: 80px;font-size: 22px;font-weight: 600;padding-left: 6px;">
 								
 							</div>
+							<div class="shejifenbao_list"><span>公司名称：</span><span id="office_name"></span></div>
 							<div class="shejifenbao_list"><span>计价单位：</span><span id="jjdw"></span></div>
 							<div class="shejifenbao_list"><span>数量/范围：</span><span id="slfw"></span></div>
 							<!-- <div class="shejifenbao_list"><span>联系方式：</span><span id="lxfs"></span></div> -->
@@ -127,9 +128,11 @@
 					unit = data.unit,//计价单位
 					cometime = data.starttime,
 					endtime  = data.endtime,
+					office_name = data.office_name,
 					img = data.img;
 					var imgs = img.split(',');
 
+				$('#office_name').html(data.office_name);
 				$('#prj_name_price').html(data.title);
 				$('#jjdw').html(data.unit);
 				$('#slfw').html(data.num);

@@ -172,7 +172,7 @@ input {
 	    text-align: left;
 	    line-height: 16px;
 	    height: 16px;
-	    color: #999;
+	    color: #ea4747;
 	    font-weight: normal;
 	}
 
@@ -215,6 +215,9 @@ var PRICE_FORMAT = '&yen;%s';
 			<!-- 自定工价 -->
 			<div class="sect current wages_custom" style="border: none;">
 				<ul style="padding: 20px 0;text-align: center;letter-spacing: 2px;width: 500px;">
+					<li>
+						<span>公司名称</span><span class="colon">:</span><input type="text" id="office_name">
+					</li>
 					<li>
 						<span>项目名称</span><span class="colon">:</span><input type="text" id="title">
 					</li>
@@ -267,7 +270,7 @@ var PRICE_FORMAT = '&yen;%s';
 					<div class="btn confirm_btn" style="padding: 0;" onclick="fabu()">确认发布</div>
 					<input type="hidden" id="ImgPath"/>
 				</div>
-				<div style="color: #999;text-align: left;margin-left: 40px;">
+				<div style="color: #ea4747;text-align: left;margin-left: 40px;">
 					<span style="color:red;">*</span>资费说明：
 					<ul id="description" style="padding: 0;text-align: left;">
 						<li>1.个人用户：发布20元/次；</li>
@@ -1298,20 +1301,14 @@ $(document).ready(function() {
 	$(".share_btn").click(function(e){
 		e.stopPropagation(); 
 		$(".confirm").show();
-
-
-
-
 	})
 	$(".wages_list").click(function(){
-			$(".confirm").hide();
-			$(".wages_list").css("background-color","#fff")
-
-			
-		})
+		$(".confirm").hide();
+		$(".wages_list").css("background-color","#fff")
+	})
 		//提交发布
-function fabu(){
-		
+	function fabu(){
+		var office_name = $('#office_name');
 	    var title 		= $("#title");
 	    var unit 		= $("#unit");
 	    var num 		= $("#num"); 
@@ -1319,8 +1316,11 @@ function fabu(){
 	    var ps          = $("#ps");
 		var tel         = $("#tel");
 		var img         = $('#ImgPath').val();
-	    
-		if(title.val() == ''){
+	    if(office_name.val() == ''){
+			alert('必填项');
+			office_name.focus();
+			return false;
+	    }else if(title.val() == ''){
 			alert('必填项');
 			title.focus();
 			return false;
@@ -1344,20 +1344,20 @@ function fabu(){
 		
 			var url = 'http://wgcapp.wgc2013.com/'+"jingyi.php/Home/User/xunjia";
 			$.post(url,{
-							userid      : '<?php echo $_SESSION["user_info"]["user_id"];?>',
-						    title       : $("#title").val(),
-						    unit        : $("#unit").val(),
-						    num         : $("#num").val(),
-						    ps          : $("#ps").val(),
-						    address     : $("#address").val(),
-							tel         : $("#tel").val(),
-							endtime     : $("#end_time").val(),
-							starttime   : $("#come_time").val(),
-							img         : img
+				userid      : '<?php echo $_SESSION["user_info"]["user_id"];?>',
+				office_name : $('#office_name').val(),
+			    title       : $("#title").val(),
+			    unit        : $("#unit").val(),
+			    num         : $("#num").val(),
+			    ps          : $("#ps").val(),
+			    address     : $("#address").val(),
+				tel         : $("#tel").val(),
+				endtime     : $("#end_time").val(),
+				starttime   : $("#come_time").val(),
+				img         : img
 			
 			},function(ret){
 				if(ret.code == 200){
-						//alert('发布成功')
 						window.location.reload();
 				}else{
 					alert('发布失败')
@@ -1382,7 +1382,8 @@ var page =1,upage =1;;
 				var html ='';
 				var data = ret.message;
 				for(var i in data){
-					var codenum = parseInt(i)+1;
+					var codenum = parseInt(i)+1,
+						office_name = data[i].office_name,
 						title = data[i].title,
 						unit = data[i].unit,
 						num = data[i].num,
@@ -1625,39 +1626,39 @@ function searchlist(page,types){
 
 	//确认分享
 	function sharebox(){
-								//获取数据id
-								var arr = new Array();
-								var tarry = new Array();
-				                $('input[name="id"]:checked').each(function(i){
-				                    arr[i] = $(this).val();
-				                });
-				                var vals = arr.join(",");
+		//获取数据id
+		var arr = new Array();
+		var tarry = new Array();
+        $('input[name="id"]:checked').each(function(i){
+            arr[i] = $(this).val();
+        });
+        var vals = arr.join(",");
 
-				                console.log(vals);
+        console.log(vals);
 
-				                //获取通讯录id
-				          		$('input[name="tid"]:checked').each(function(j){
-				                    tarry[j] = $(this).val();
-				                });
-				                var tvals = tarry.join(",");
-				                console.log(tvals)
+        //获取通讯录id
+  		$('input[name="tid"]:checked').each(function(j){
+            tarry[j] = $(this).val();
+        });
+        var tvals = tarry.join(",");
+        console.log(tvals)
 
-				                $.post('http://wgcapp.wgc2013.com/jingyi.php/Home/index/share',{
-				                	"type":10,
-				                	"arr":arr,
-				                	"tarry":tarry
-				                },function(ret){
-				                	console.log(ret)
-				                	if(ret.code == 200){
+        $.post('http://wgcapp.wgc2013.com/jingyi.php/Home/index/share',{
+        	"type":10,
+        	"arr":arr,
+        	"tarry":tarry
+        },function(ret){
+        	console.log(ret)
+        	if(ret.code == 200){
 
-				                		window.location.reload();
-				                	}
-				                },'json')
-	}
+        		window.location.reload();
+        	}
+        },'json')
+}
 	
 //通讯录分页控制
 
-function pageindexUser(pindex){
+	function pageindexUser(pindex){
 		//console.log(index)
 		if(pindex < 1){
 			pindex = 1;

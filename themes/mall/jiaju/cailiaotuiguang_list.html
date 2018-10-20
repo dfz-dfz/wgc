@@ -49,8 +49,9 @@
 				<!-- 材料推广列表 -->
 				<div id="sjfbList" style="margin-top: 5px;"> 
 					<ul id="headerlist" style="width: 880px;background-color: #efa913;">
-						<li style="width: 30%;">材料名称</li>
-						<li style="width: 40%;">材料简介</li>
+						<li style="width: 20%;">公司名称</li>
+						<li style="width: 20%;">材料名称</li>
+						<li style="width: 30%;">材料简介</li>
 						<li style="width: 20%;">发布时间</li>
 						<li style="width: 10%;">详情</li>
 					</ul>
@@ -113,7 +114,7 @@
 					var id = data[i].id,
 						m_name = data[i].m_name,
 						m_introduce = data[i].m_introduce,
-						office_name = data[i].office_name,
+						office_name = (data[i].office_name == '' || data[i].office_name == null)?'暂未填写':data[i].office_name,
 						brand       = data[i].brand,
 						address     = data[i].address,
 						addtime = _trans_php_time_to_str(data[i].addtime,5),
@@ -121,8 +122,9 @@
 						m_introduce = data[i].m_introduce;
 
 						html += '<ul>';
-							html += '<li style="width:30%;color:red;font-weight:600;">'+m_name+'</li>';
-							html += '<li style="width:40%" title="'+m_introduce+'">'+m_introduce+'</li>';
+							html += '<li style="width:20%;font-weight:600;">'+office_name+'</li>';
+							html += '<li style="width:20%;color:red;font-weight:600;">'+m_name+'</li>';
+							html += '<li style="width:30%" title="'+m_introduce+'">'+m_introduce+'</li>';
 							html += '<li style="width:20%;">'+addtime+'</li>';
 							html += '<li style="width:10%;cursor: pointer;"><a style="color:blue;" href="/index.php?app=search&act=cailiaotuiguang_content&id='+id+'">查看</a></li>';
 						html += '</ul>';
@@ -154,7 +156,7 @@
 					var id = data[i].id,
 						m_name = data[i].m_name,
 						m_introduce = data[i].m_introduce,
-						office_name = data[i].office_name,
+						office_name = (data[i].office_name == '' || data[i].office_name == null)?'暂未填写':data[i].office_name,
 						brand       = data[i].brand,
 						address     = data[i].address,
 						addtime = _trans_php_time_to_str(data[i].addtime,5),
@@ -162,8 +164,9 @@
 						m_introduce = data[i].m_introduce;
 
 						html += '<ul>';
-							html += '<li style="width:30%;color:red;font-weight:600;">'+m_name+'</li>';
-							html += '<li style="width:40%" title="'+m_introduce+'">'+m_introduce+'</li>';
+							html += '<li style="width:20%;font-weight:600;">'+office_name+'</li>';
+							html += '<li style="width:20%;color:red;font-weight:600;">'+m_name+'</li>';
+							html += '<li style="width:30%" title="'+m_introduce+'">'+m_introduce+'</li>';
 							html += '<li style="width:20%;">'+addtime+'</li>';
 							html += '<li style="width:10%;cursor: pointer;"><a style="color:blue;" href="/index.php?app=search&act=cailiaotuiguang_content&id='+id+'">查看</a></li>';
 						html += '</ul>';

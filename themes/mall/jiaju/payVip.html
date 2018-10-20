@@ -85,9 +85,9 @@
 						<div style="margin-bottom: 10px;">
 							<span id="name" style="margin-right: 20px;"></span>
 							<span>您将购买<span id="cycle" style="color:blue;"></span>会员</span>
-							<span><a href="index.php?app=search&act=vip">(重选)</a></span>
+							<span><a href="index.php?app=search&act=vip" style="color: #969494">(重选)</a></span>
 						</div>
-						<div>应付金额：<span id="money" style="color: red;"></span></div>
+						<div>应付金额：<span id="money" style="color: red;"></span><span>/年</span></div>
 					</div>
 					<!-- 支付方式 -->
 					<div style="line-height: 30px;position: relative;font-weight: bold;">
@@ -203,13 +203,13 @@
 					money = data.money,
 					username = data.username;
 
-				if(cycle == 680){
+				if(cycle == 1680){
 					cycle = '招聘用户';
-				}else if(cycle == 980){
+				}else if(cycle == 1980){
 					cycle = '企业专属版';
-				}else if(cycle == 5980){
+				}else if(cycle == 15980){
 					cycle = '企业至尊版';
-				}else if(cycle == 9980){
+				}else if(cycle == 19980){
 					cycle = '企业砖石版';
 				}
 

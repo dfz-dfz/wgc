@@ -50,12 +50,12 @@
 				<!-- 维修设计列表 -->
 				<div id="sjfbList" style="margin-top: 5px;"> 
 					<ul id="headerlist" style="width: 880px;background-color: #efa913;">
-						<li style="width: 14.28%;">材料名称</li>					
-						<li style="width: 16.28%;">材料品牌</li>
-						<li style="width: 16.28%;">型号</li>
-						<li style="width: 14.28%;">单价</li>
-						<li style="width: 12.28%;">单位</li>
-						<li style="width: 14.28%;">合计</li>
+						<li style="width: 12.28%;">材料名称</li>					
+						<li style="width: 14.28%;">材料品牌</li>
+						<li style="width: 14.28%;">型号</li>
+						<li style="width: 22.28%;">公司名称</li>
+						<li style="width: 12.28%;">单价/单位</li>
+						<li style="width: 12.28%;">合计</li>
 						<li style="width: 12.28%;">查看详情</li>
 					</ul>
 
@@ -129,16 +129,16 @@
 							var heji   = (data[i].heji == '' || isNaN(data[i].heji)) ? '无':data[i].heji;
 							var introduce = data[i].introduce;
 							var pid    = data[i].pid;
-
+							var office_name = data[i].office_name;//公司名称
 							
 
 								listHtml += '<ul>';
-									listHtml += '<li style="width: 14.28%;" title="'+m_name+'">'+m_name+'</li>';
-									listHtml += '<li style="width: 16.28%;" title="'+brand+'">'+brand+'</li>';
-									listHtml += '<li style="width: 16.28%;" title="'+size+'">'+size+'</li>';
-									listHtml += '<li style="width: 14.28%;" title="'+danjia+'">'+danjia+'</li>';
-									listHtml += '<li style="width: 12.28%;" title="'+danwei+'">'+danwei+'</li>';
-									listHtml += '<li style="width: 14.28%;" title="'+heji+'">'+heji+'</li>';
+									listHtml += '<li style="width: 12.28%;" title="'+m_name+'">'+m_name+'</li>';
+									listHtml += '<li style="width: 14.28%;" title="'+brand+'">'+brand+'</li>';
+									listHtml += '<li style="width: 14.28%;" title="'+size+'">'+size+'</li>';
+									listHtml += '<li style="width: 22.28%;" title="'+office_name+'">'+office_name+'</li>';
+									listHtml += '<li style="width: 12.28%;" title="'+danwei+'">'+danjia+'/'+danwei+'</li>';
+									listHtml += '<li style="width: 12.28%;" title="'+heji+'">'+heji+'</li>';
 									listHtml += '<li style="width: 12.28%;"><a target="_blank" href="/index.php?app=search&act=cailiaocaigou_content&id='+data[i].pid+'" style="color:blue">查看详情</a></li>';
 								listHtml += '</ul>';
 				   

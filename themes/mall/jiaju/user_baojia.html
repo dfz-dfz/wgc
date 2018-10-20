@@ -119,51 +119,7 @@ input{
 	}
 </style>
 <script type="text/javascript" src="http://www.wgc2013.com/themes/mall/jiaju/styles/default/js/hover.js"></script>
-<script>
-  function lxfEndtime(){
-          $(".lxftime").each(function(){
-                var lxfday=$(this).attr("lxfday");//用来判断是否显示天数的变量
-                var endtime = new Date($(this).attr("endtime")).getTime();//取结束日期(毫秒值)
-                var nowtime = new Date().getTime();        //今天的日期(毫秒值)
-                var youtime = endtime-nowtime;//还有多久(毫秒值)
-                var seconds = youtime/1000;
-                var minutes = Math.floor(seconds/60);
-                var hours = Math.floor(minutes/60);
-                var days = Math.floor(hours/24);
-                var CDay= days ;
-                var CHour= hours % 24;
-                var CMinute= minutes % 60;
-                var CSecond= Math.floor(seconds%60);//"%"是取余运算，可以理解为60进一后取余数，然后只要余数。
-                if(endtime<=nowtime){
-                        $(this).html("已过期")//如果结束日期小于当前日期就提示过期啦
-                        }else{
-                                if($(this).attr("lxfday")=="no"){
-                                        $(this).html("<i>剩余时间：</i><span>"+CHour+"</span>时<span>"+CMinute+"</span>分<span >"+CSecond+"</span>秒");          //输出没有天数的数据
-                                        }else{
-                        $(this).html("<span class='f24'>"+days+"</span><span>天</span><span  class='f24'>"+CHour+"</span><span>时</span><span  class='f24'>"+CMinute+"</span><span>分</span><span  class='f24'>"+CSecond+"</span><span>秒</span>");          //输出有天数的数据
-                                }
-                        }
-          });
-   setTimeout("lxfEndtime()",1000);
-  };
-$(function(){
-      lxfEndtime();
-   });
-</script>
 <script charset="utf-8" type="text/javascript" src="http://www.wgc2013.com/includes/libraries/javascript/jquery.plugins/jquery.validate.js" ></script>
-<script type="text/javascript">
-  $(function (){
-    $('#open-change-city-window').click(function (){
-      $('.change-city-window').slideDown();
-      
-    })
-    $('#close-change-city-window').click(function (){
-      $('.change-city-window').slideUp();
-    })
-
-  
-  })
-</script>
 </head>
 <body>
 {include file=header.html}
@@ -191,7 +147,7 @@ $(function(){
  			<div class="user_employ_info base_info_public" style="overflow: hidden;padding-left: 5%;">
  				<ul style="margin: 10px 0 0 0;">
  					<li>
-						<div class="user_employ_name" style="color: #5e5a59;text-align: left;width: 80px;">*项目名称:</div>
+						<div class="user_employ_name" style="color: #5e5a59;text-align: left;width: 80px;">*公司名称:</div>
 						<div class="user_employ_input"><input type="text" id='office_name'/></div>
 					</li>
 					<li>
@@ -266,7 +222,7 @@ $(function(){
 					<!-- 维修设计列表 -->
 					<div id="sjfbList" style="margin-top: 5px;"> 
 						<ul id="headerlist" style="width: 100%;background-color: #efa913;">
-							<li style="width: 28.16%;">项目名称</li>
+							<li style="width: 28.16%;">公司名称</li>
 							<li style="width: 28.36%;">项目地址</li>
 							<li style="width: 15.16%;">截止时间</li>
 							<li style="width: 15.16%;">发布时间</li>
@@ -1244,42 +1200,41 @@ $(function(){
 	
 	//发布报价
 	function fabu(){
-			  var content         = $('#content').val();
-			  var projectname     = $("#office_name").val();
-		      var call            = $("#call").val();
-		      var weixiu_price    = $("#weixiu_price").val();
-		      var UserPhoto       = $("#doc").val();
-		      var endtime         = $("#endtime").val();
-		      var worker_address  = $("#worker_address").val();
-		      var region          = "广东省";//显示区域
-		      var img             = $("#ImgPath").val()
+		var content         = $('#content').val();
+		var projectname     = $("#office_name").val();
+		var call            = $("#call").val();
+		var weixiu_price    = $("#weixiu_price").val();
+		var UserPhoto       = $("#doc").val();
+		var endtime         = $("#endtime").val();
+		var worker_address  = $("#worker_address").val();
+		var region          = "广东省";//显示区域
+		var img             = $("#ImgPath").val()
 
-		  $.post('http://wgcapp.wgc2013.com/jingyi.php/Home/Weixiumsg/addweixiumsg',{
-						        send_uid 	          : '<?php echo $_SESSION["user_info"]["user_id"];?>',
-							    restaurant_address    : '',
-							    office_name           : projectname,
-							    restaurant_phone      : call,
-							    weitype               : 1,
-							    endtime               : endtime,
-							    content               : content,
-							    weixiu_price          : weixiu_price,
-							    UserPhoto             : img,
-							    s_province            : '广东省',
-								s_city                : '广州市',
-								s_county              : '白云区',
-								region                : '',
-							    worker_address        : worker_address,
-							    hasmoney              : 10,
-							    publishingarea        : $("#Publishingarea").val()
-							   
-		  },function(ret){
+		$.post('http://wgcapp.wgc2013.com/jingyi.php/Home/Weixiumsg/addweixiumsg',{
+	        send_uid 	          : '<?php echo $_SESSION["user_info"]["user_id"];?>',
+		    restaurant_address    : '',
+		    office_name           : projectname,
+		    restaurant_phone      : call,
+		    weitype               : 1,
+		    endtime               : endtime,
+		    content               : content,
+		    weixiu_price          : weixiu_price,
+		    UserPhoto             : img,
+		    s_province            : '广东省',
+			s_city                : '广州市',
+			s_county              : '白云区',
+			region                : '',
+		    worker_address        : worker_address,
+		    hasmoney              : 10,
+		    publishingarea        : $("#Publishingarea").val()
+						   
+		},function(ret){
 
-		  		if(ret.code == 200){
-		  			window.location.reload();
-		  		}
-				//alert('发布成功！');
-				
-		  },'json')
+			if(ret.code == 200){
+				window.location.reload();
+			}
+			
+		},'json')
 	}
 
 	//获取发布列表
