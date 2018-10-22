@@ -59,6 +59,12 @@ class SearchApp extends MallbaseApp
 		$this->display('user_worker_dinge.html');
 		
 	}
+	//个人用户中心今日公价
+	function user_worker_today()
+    {
+		$this->display('user_worker_today.html');
+		
+	}
 	//个人中心主材定额
 	function user_zhucai_dingjia(){
 		$this->display('user_zhucai_dingjia.html');

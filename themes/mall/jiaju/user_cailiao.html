@@ -118,7 +118,11 @@ body{background:url('') no-repeat center top }
 						<div class="user_collection_input user_public_input"><input id="title" type="text" /></div>
 					</li>
 					<li>
-						<div class="user_collection_name user_public_name" style="color: #5e5a59;">商店名称：</div>
+						<div class="user_collection_name user_public_name" style="color: #5e5a59;">材料价格：</div>
+						<div class="user_collection_input user_public_input"><input id="price" type="text" /></div>
+					</li>
+					<li>
+						<div class="user_collection_name user_public_name" style="color: #5e5a59;">公司名称：</div>
 						<div class="user_collection_input user_public_input"><input id="office_name" type="text" /></div>
 					</li>
 					<li>
@@ -127,12 +131,28 @@ body{background:url('') no-repeat center top }
 						<div class="user_collection_input user_public_input"><input id="brand" type="text" /></div>
 					</li>
 					<li>
-						<div class="user_collection_name user_public_name" style="color: #5e5a59;">商店地址：</div>
+						<div class="user_collection_name user_public_name" style="color: #5e5a59;">公司地址：</div>
 						<div class="user_collection_input user_public_input"><input id="worker_address" type="text" /></div>
+					</li>
+					<li>
+						<div class="user_collection_name user_public_name" style="color: #5e5a59;">公司网址：</div>
+						<div class="user_collection_input user_public_input"><input id="web" type="text" /></div>
 					</li>
 					<li>
 						<div class="user_collection_name user_public_name" style="color: #5e5a59;">发布地址：</div>
 						<div class="user_collection_input user_public_input"><input id="xiangxi" type="text" /></div>
+					</li>
+					<li>
+						<div class="user_collection_name user_public_name" style="color: #5e5a59;">咨询电话：</div>
+						<div class="user_collection_input user_public_input"><input id="tel" type="text" /></div>
+					</li>
+					<li>
+						<div class="user_collection_name user_public_name" style="color: #5e5a59;">QQ号码：</div>
+						<div class="user_collection_input user_public_input"><input id="qq" type="text" /></div>
+					</li>
+					<li>
+						<div class="user_collection_name user_public_name" style="color: #5e5a59;">微信号码：</div>
+						<div class="user_collection_input user_public_input"><input id="weixin" type="text" /></div>
 					</li>
 
 					
@@ -1146,7 +1166,16 @@ $(function(){
 		var worker_address 	= $("#worker_address").val();//商店地址
 		var xiangxi 		= $('#xiangxi').val();		//发布地址
 		var miaoshu 		= $('#miaoshu').val();		//材料描述
+		var price           = $("#price").val();        //材料价格
+		var web             = $("#web").val();          //公司网址
+		var tel             = $("#tel").val();          //咨询电话
+		var qq              = $("#qq").val();           //qq
+		var weixin          = $("#weixin").val();       //微信
 		var img 			= $('#ImgPath').val();		//图片
+
+		if(!price){
+			alert("请填写材料价格")
+		}else{
 
 		$.post('http://wgcapp.wgc2013.com/jingyi.php/Home/Material/addmaterial', {
 			user_id 	   : '<?php echo $_SESSION["user_info"]["user_id"];?>',
@@ -1161,6 +1190,11 @@ $(function(){
 		    worker_address : worker_address,
 		    office_name    : office_name,
 		    brand          : brand,
+		    price          : price,
+		    qq             : qq,
+		    weixin         : weixin,
+		    tel            : tel,
+		    web            : web,
 		    cai_type       : 2,
 		    hasmoney       : 10,
 		    publishingarea : $("#Publishingarea").val(),
@@ -1177,6 +1211,7 @@ $(function(){
 				alert('网络连接失败，请检查网络!');
 			}
 		},'json');
+		}
 	}
 	
 	//材料推广列表
@@ -1206,9 +1241,14 @@ $(function(){
 		            	count=data[i].count,
 		            	addtime = timestampToTime(data[i].addtime),
 		            	brand = data[i].brand,
-		            	address = data[i].address
+		            	address = data[i].address,
 		            	worker_address = data[i].worker_address,
 		            	office_name = data[i].office_name,
+		            	price       = data[i].price,
+		            	tel         = (data[i].tel == "" || data[i].tel == null)?"暂无联系电话":data[i].tel,
+		            	web         = (data[i].web == "" || data[i].web == null)?"暂无网址":data[i].web,
+		            	qq          = (data[i].qq == "" || data[i].qq == null)?"暂无qq":data[i].qq,
+		            	weixin      = (data[i].weixin == "" || data[i].weixin == null)?"暂无微信":data[i].weixin,
 		            	m_photo = data[i].m_photo;
 		            var photoArr = new Array();
 		            	photoArr = m_photo.split(',');
@@ -1222,14 +1262,18 @@ $(function(){
 						listHtml +=			'<li>材料名称：'+m_name+'</li>';
 						listHtml +=			'<li style="margin:10px 0;">发布地址：'+address+'</li>';
 						listHtml +=			'<li>材料品牌：'+brand+'</li>';
+						listHtml +=			'<li style="margin:10px 0;">Q&nbsp;Q号码：'+qq+'</li>';
+						listHtml +=			'<li>微信号码：'+weixin+'</li>';
 						listHtml +=			'<li style="margin:10px 0;"><span style="float:left;">材料描述：</span><span style="float:left;">'+m_introduce+'</span></li>';
 						listHtml +=		'</ul>';
 						listHtml +=	'</div>';
 						listHtml +=	'<div class="list_left" style="float: right;width: 50%;">';
 						listHtml +=		'<ul style="margin-left:15%;">';
-						listHtml +=			'<li>发布时间：'+addtime+'</li>';
-						listHtml +=			'<li style="margin:10px 0;">商店地址：'+worker_address+'</li>';
-						listHtml +=			'<li>商店名称：'+office_name+'</li>';
+						listHtml +=			'<li>材料价格：'+price+'</li>';
+						listHtml +=			'<li style="margin:10px 0;">发布时间：'+addtime+'</li>';
+						listHtml +=			'<li>公司地址：'+worker_address+'</li>';
+						listHtml +=			'<li style="margin:10px 0;">公司名称：'+office_name+'</li>';
+						listHtml +=			'<li>公司网址：'+web+'</li>';
 						listHtml +=		'</ul>';
 						listHtml +=	'</div>';
 						listHtml += '</div>';

@@ -40,7 +40,14 @@ section .aui-list .aui-list-item {
  from{transform: scale(0.1);}
  to{transform: scale(1);}
 }*/
-
+section li {
+	height: auto;
+	line-height: 40px;
+    min-height: 40px;
+    width: 100%;
+    overflow: hidden;
+    border-bottom: 1px solid #eee;
+}
 </style>
 <script src="/themes/mall/jiaju/js/jquery-2.2.3.min.js"></script>
 <script type="text/javascript">
@@ -90,83 +97,66 @@ section .aui-list .aui-list-item {
 			</div> -->
 			<div style="width:100%;background-color:#FFFFFF;height: auto;overflow: hidden;">
 				<div class="text-left">
-					<section class="aui-content" style="width: 886px;float: left;">
+					<section class="aui-content" style="width:60%;float: left;">
 						<ul class="aui-list">
 							
 							<li class="aui-list-item" style="background-color: #e5e5e5;border:none;">
 								<div class="aui-list-item-inner">
-									<div class="aui-list-item-title" style="font-size:32px;color:#333;padding:20px 0;font-weight: 600;" id='title'><?php echo $rows1['m_name'];?></div>
+									<div class="aui-list-item-title" style="font-size:24px;color:#333;padding-top:20px;font-weight: 600;" id='title'><?php echo $rows1['m_name'];?></div>
 									<div style="float: right;color:red;width: 200px;line-height: 100px;font-size: 28px;"><?php echo $rows1['price'];?></div>
 								</div>
 							</li>
-							<li class="aui-list-item" style="background-color: #e5e5e5;">
+							<li style="background-color: #e5e5e5;margin-bottom: 40px;">
 								<div>
-									<div id="ltime" style="width:100%;font-size: 18px;line-height:1.5rem;padding-top:0.25rem;padding-bottom:0.25rem;color:#333" id="lefttime">
-										 发布时间:&nbsp;&nbsp;&nbsp;<?php echo date('Y-m-d H:i:s',$rows1['addtime']);?>
+									<div id="ltime" style="width:100%;font-size: 14px;line-height:1.5rem;color:#333;padding-left: 0.75rem;" id="lefttime">
+										 发布时间：<?php echo date('Y-m-d H:i:s',$rows1['addtime']);?>
 									</div>
 								</div>
 							</li>
-							<li class="aui-list-item">
-								<div style="line-height: 50px;">
-									<img src="themes/mall/jiaju/images/shangdianmc.png" style="float: left;width: 20px;margin-top: 16px;margin-right: 10px;">
-									<?php 
-										if($_GET['cai_type'] == 2){
-											echo "<div class='aui-list-item-title' style='font-size:16px;color:#333;height:30px;float: left;' id='office_name'>商店名称：".$rows1['office_name']."</div>";
-										}else{
-											echo "<div class='aui-list-item-title' style='font-size:16px;color:#333;height:30px;float: left;' id='office_name'>公司名称：".$rows1['office_name']."</div>";
-										}
-									?>
-								</div>
+							<li>
+								<div class="aui-list-item-title" style="font-size:16px;color:#333;height:30px;">材料名称：<?php echo $rows1['m_name'];?></div>
 							</li>
-							<li class="aui-list-item">
-								<div style="width: 100%;line-height: 50px;">
-									<img src="themes/mall/jiaju/images/cailiaopp.png" style="float: left;width: 20px;margin-top: 16px;margin-right: 10px;">
-									<div class="aui-list-item-title" style="font-size:16px;color:#333;height:30px;" id='brand'>材料品牌：<?php echo $rows1['brand'];?></div>
-								</div>
+							<li>
+								<?php 
+									if($_GET['cai_type'] == 2){
+										echo "<div class='aui-list-item-title' style='font-size:16px;color:#333;height:30px;float: left;' id='office_name'>商店名称：".$rows1['office_name']."</div>";
+									}else{
+										echo "<div class='aui-list-item-title' style='font-size:16px;color:#333;height:30px;float: left;' id='office_name'>公司名称：".$rows1['office_name']."</div>";
+									}
+								?>
 							</li>
-							<li class="aui-list-item">
-								<div style="width: 50%;line-height: 50px;float: left;">
-									<img src="themes/mall/jiaju/images/yunfeibh.png" style="float: left;width: 20px;margin-top: 16px;margin-right: 10px;">
-									<div class="aui-list-item-title" style="font-size:16px;color:#333;height:30px;" id='yunfei'>运费包含：<?php echo $rows1['yunfei'];?></div>
-								</div>
-								<div style="width: 50%;line-height: 50px;float: left;">
-									<img src="themes/mall/jiaju/images/hanshuijg.png" style="float: left;width: 20px;margin-top: 16px;margin-right: 10px;">
-									<div class="aui-list-item-title" style="font-size:16px;color:#333;height:30px;" id='hanshui'>含税价格：<?php echo $rows1['hanshui'];?></div>
-								</div>
+							<li>
+								<div class="aui-list-item-title" style="font-size:16px;color:#333;height:30px;" id='brand'>材料品牌：<?php echo $rows1['brand'];?></div>
+							</li>
+							<li>
+								<div class="aui-list-item-title" style="font-size:16px;color:#333;height:30px;" id='price'>材料价格：<?php echo $rows1['price'];?></div>
+							</li>
+							<li>
+								<div class="aui-list-item-title" style="font-size:16px;color:#333;height:30px;" id='yunfei'>运费包含：<?php echo $rows1['yunfei'];?></div>
+							</li>
+							<li>
+								<div class="aui-list-item-title" style="font-size:16px;color:#333;height:30px;" id='hanshui'>含税价格：<?php echo $rows1['hanshui'];?></div>
 							</li>
 							<li class="aui-list-item rev_power">
-								<div class="aui-list-item-inner">
-									<div class="aui-list-item-title" style="font-size:16px;color:#333;height:30px;" id='rev_power'><?php echo $rows1['rev_power'];?></div>
-								</div>
+								<div class="aui-list-item-title" style="font-size:16px;color:#333;height:30px;" id='rev_power'><?php echo $rows1['rev_power'];?></div>
 							</li>
-							<li class="aui-list-item">
-								<div class="aui-list-item-inner" style="min-height:150px;line-height:30px;font-size:16px;color:#333;position: relative;" ><img src="themes/mall/jiaju/images/cailiaoms.png" style="float: left;width: 20px;height:20px;margin-right: 10px;position: absolute;"><div id="content" style="position: absolute;left: 30px;">材料描述: <?php echo $rows1['m_introduce'];?></div>
-								</div>
+							<li>
+								<div class="aui-list-item-title" style="font-size:16px;color:#333" id='address'>发布地址：<?php echo $rows1['address'];?></div>
 							</li>
-							<li class="aui-list-item">
-								<div style="width: 100%;line-height: 50px;">
-									<img src="themes/mall/jiaju/images/fabudz.png" style="float: left;width: 20px;height:20px;margin-top: 16px;margin-right: 10px;">
-									<div class="aui-list-item-title" style="font-size:16px;color:#333" id='address'>发布地址：<?php echo $rows1['address'];?></div>
-								</div>
+							 <li>
+								<?php 
+									if($_GET['cai_type'] == 2){
+										
+										echo "<div class='aui-list-item-title' style='font-size:16px;color:#333;height:30px;' id='worker_address'>商店地址：".$rows1['worker_address']."</div>";
+									}else{
+										echo "<div class='aui-list-item-title' style='font-size:16px;color:#333;height:30px;' id='worker_address'>送货地址：".$rows1['address']."</div>";
+									}
+								?>
 							</li>
-							 <li class="aui-list-item">
-								<div style="width: 100%;line-height: 50px;">
-									<img src="themes/mall/jiaju/images/fabudz.png" style="float: left;width: 20px;height:20px;margin-top: 16px;margin-right: 10px;">
-									<?php 
-										if($_GET['cai_type'] == 2){
-											
-											echo "<div class='aui-list-item-title' style='font-size:16px;color:#333;height:30px;' id='worker_address'>商店地址：".$rows1['worker_address']."</div>";
-										}else{
-											echo "<div class='aui-list-item-title' style='font-size:16px;color:#333;height:30px;' id='worker_address'>送货地址：".$rows1['address']."</div>";
-										}
-									?>
-									
-									
-									
-									
-								</div>
+							<li>
+								<div id="content" style="font-size:16px;color:#333;height:30px;">材料描述: <?php echo $rows1['m_introduce'];?></div>
 							</li>
-							<li class="aui-list-item" id='list_img'>
+							<li id='list_img' style="display: block;">
 								<div class="aui-list-item-inner" style="padding-right: 20px" >
 									<p id="img_list">
 										<?php
@@ -188,7 +178,7 @@ section .aui-list .aui-list-item {
 									</p>
 								</div>
 							</li>
-							<!-- <li class="aui-list-item">
+							<!-- <li>
 								<div class="aui-list-item-inner">
 									<p id="ltime" style="text-align: center;width:100%;font-size: 1.0rem;line-height:1.5rem;padding-top:0.25rem;padding-bottom:0.25rem;color:#000" id="lefttime">
 										 距离结束时间还有<br>
@@ -196,37 +186,40 @@ section .aui-list .aui-list-item {
 									</p>
 								</div>
 							</li>-->
-							 <!-- <li class="aui-list-item">
+							 <!-- <li>
 								<div class="aui-list-item-inner">
 									<p style="text-align: right;width:100%;padding-right: 1.0rem">已有<span id="num">0<?php echo $rows1['count'];?></span>人联系</p>
 								</div>
 							</li> -->
 						</ul>
+ 						
+ 						<div style="width: 100%;">
+							<span>下单数量</span>
+							<input type="button" value="+" style="height: 20px;width: 20px;margin-top: -4px;cursor: pointer;" onclick="addNum()" />
+							<input type="text" id="quantity" value="1"/ style="height: 20px;width: 50px;margin-top: 10px;text-align: center;padding: 0;">
+							<input type="button" value="-" style="height: 20px;width: 20px;margin-top: -4px;cursor: pointer;" onclick="removeNum()"/>
+							<span>件</span>
 						</div>
- 
+						<div class="aui-content-padded aui-margin-b-15 aui-margin-t-15" style="width: 50%;margin: 0 auto;">
+							<div onclick="yingying()" class="aui-btn aui-btn-danger" style="width: 50%;height: 40px;line-height: 10px;padding: 15px 0;margin-bottom: 0;font-size: 18px;">点击下单</div>
+							<input type="hidden" id="vid" />
+							<div class="vipbox" style="text-align: center;position: relative;right: 140px;margin-top: 20px;display: none;">
+								<span>你目前是普通用户无法继续下单，马上升级&nbsp;&nbsp;<a href="/index.php?app=search&act=vip" style="color: red;" target="_blank">VIP会员</a></span>
+							</div>
+						</div>
 					</section>
 					
-					<div style="width: 200px;float: right;height: 587px;">
-						<img src="http://www.wgc2013.com/themes/mall/jiaju/images/guanggao.png" alt="" width="100%">
+					<div style="width: 40%;float: right;height: 587px;min-height: 600px;height: auto;overflow: hidden;">
+						<div style="background-color: #fea900;font-size: 70px;color: #fff;min-height: 600px;position: relative;    margin-left: 20px;">
+							<div style="padding-top: 130px;">广</div>
+							<div>告</div>
+							<div>位</div>
+							<div style="position: absolute;border-bottom: 2px solid #fff;top: 50%;width: 100%;"></div>
+						</div>
 					</div>
 				</div>
 			</div>
 			
-		</div>
-
-		<div style="width: 87%;">
-			<span>下单数量</span>
-			<input type="button" value="+" style="height: 20px;width: 20px;margin-top: -4px;cursor: pointer;" onclick="addNum()" />
-			<input type="text" id="quantity" value="1"/ style="height: 20px;width: 50px;margin-top: 10px;text-align: center;padding: 0;">
-			<input type="button" value="-" style="height: 20px;width: 20px;margin-top: -4px;cursor: pointer;" onclick="removeNum()"/>
-			<span>件</span>
-		</div>
-		<div class="aui-content-padded aui-margin-b-15 aui-margin-t-15" style="width: 50%;margin: 0 auto;">
-			<div onclick="yingying()" class="aui-btn aui-btn-danger aui-btn-block" style="width: 16%;left: 205px;height: 40px;line-height: 10px;">点击下单</div>
-			<input type="hidden" id="vid" />
-			<div class="vipbox" style="text-align: center;position: relative;right: 140px;margin-top: 20px;display: none;">
-				<span>你目前是普通用户无法继续下单，马上升级&nbsp;&nbsp;<a href="/index.php?app=search&act=vip" style="color: red;" target="_blank">VIP会员</a></span>
-			</div>
 		</div>
 	</div>
 	
@@ -356,6 +349,7 @@ function selectUser(){
 							}
 						$("#img_list").append(list);
 						$('#listBox').append(html);
+						$("#list_img").css('display','block');
                      }else{
                         $("#list_img").css('display','none');
                      }

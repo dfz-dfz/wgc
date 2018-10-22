@@ -1,0 +1,992 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Access-Control-Allow-Origin" content="*">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=8"/>
+<title>用户中心-工人定额</title>
+<meta name="description" content="微工程，微工程APP，装修、材料、家具、饰品一站式服务，让装修更简单，价格更透明！！" />
+<meta name="keywords" content="微工程，微工程，家居商城，微工程家居商城，微工程家居装修商城，办公室装修，写字楼装修，材料，装修材料，家居，办公家具，家居，家具，装修，装饰" />
+<link rel="stylesheet" type="text/css" href="themes/mall/jiaju/css/api.css"/>
+<link rel="stylesheet" href="themes/mall/jiaju/styles/css/tel_list.css">
+<link type="text/css" href="/themes/mall/jiaju/styles/default/css/center.css" rel="stylesheet"  />
+<script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+<script type="text/javascript">
+	jQuery.support.cors = true;
+</script>
+<!-- <base href="http://www.wgc2013.com/" /> -->
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7 charset=utf-8" />
+
+<!--[if IE]>
+	<style>
+	.confirm_{background-color:#f7f7f7;}
+	</style>
+<![endif]-->
+
+<!--[if lte IE 6]>
+<script type="text/javascript" language="Javascript" src="/themes/mall/jiaju/styles/default/js/hoverForIE6.js"></script>
+<![endif]-->
+<!--[if IE 8]>
+<link type="text/css" href="themes/mall/jiaju/css/ie8.css" rel="stylesheet"  />
+<![endif]-->
+<script type="text/javascript">
+var SITE_URL = "http://www.wgc2013.com";
+var PRICE_FORMAT = '&yen;%s';
+</script>
+<script charset="utf-8" type="text/javascript" src="http://www.wgc2013.com/includes/libraries/javascript/jquery.plugins/jquery.validate.js" ></script>
+<style type="text/css">
+body{background:url('') no-repeat center top }
+.mainnav{width:990px; overflow:hidden; margin:0 auto}
+.STYLE1 {color: red}
+.list_ul_head{
+	margin: 10px 0px;
+	overflow: hidden;
+	border: 1px solid #eee;
+    background-color: #9e9e9e;
+    color: #fff;
+}
+.list_ul_head li{
+	float: left;
+	width: 10%;
+	margin-right: 20px;
+	text-align: center;
+}
+.detail_list p{
+	font-size: 16px;
+	color: #000;
+	margin: 20px 0;
+	padding: 0 20px;
+}
+.detail_list_share p{
+	font-size: 16px;
+	color: #000;
+	margin: 20px 0;
+	padding: 0 20px;
+}
+#mess_list li:hover{
+	background-color: #eee;
+}
+#messlist_ul li:hover{
+	background-color: #eee;
+}
+.list_name{
+	height: 50px;
+}
+</style>
+<script type="text/javascript" src="http://www.wgc2013.com/themes/mall/jiaju/styles/default/js/hover.js"></script>
+<script charset="utf-8" type="text/javascript" src="http://www.wgc2013.com/includes/libraries/javascript/jquery.plugins/jquery.validate.js" ></script>
+<script type="text/javascript">
+	$(function (){
+		$('#open-change-city-window').click(function (){
+			$('.change-city-window').slideDown();
+		})
+		$('#close-change-city-window').click(function (){
+			$('.change-city-window').slideUp();
+		})
+	})
+</script>
+</head>
+<body>
+{include file=header.html}
+
+<!-- 中部主要内容 -->
+ <div class="container" style="overflow: hidden;width: 1200px;margin: 10px auto;position: relative;">
+ <!-- 左上的导航栏 -->
+ {include file=companycenter.html}
+
+ 	<!-- 右边的内容 -->
+ 	<div class="container_right" style="width: 78.5%;border: 1px solid #cacaca;float: right;background-color: #f7f7f7;padding: 0 10px 10px 10px;">
+
+		<!-- 公司信息 -->
+		<div class="budget base_ui_public" style="/*display: none;*/position: relative;">
+			<ul class="budget_ul user_public_ul">
+ 				<li class="change_bg_li" style="margin-right: 10px;">自定工价</li>
+ 				<li style="margin-right: 10px;">工价列表</li>
+				<li style="margin-right: 10px;">分享授权</li>
+ 			</ul>
+ 			<div class="company_info base_info_public" style="overflow: hidden;/*padding-left: 15%;*/min-height: 400px;">
+ 			<!-- 预算报价 -->
+ 			<div class="company_detail" style="position: relative;/*left: -16%;*//*width: 115%;*/">
+			<div style="overflow: hidden;margin-top: 10px;">
+			<!-- 基本信息 -->
+			<div class="section" style="border: none;">
+			<div class="sect current wages_custom">
+				<ul style="padding: 20px 0;text-align: center;letter-spacing: 2px;">
+					<li>
+						<span>项目名称</span><span class="colon">:</span><input type="text" id="name">
+					</li>
+					<li>
+						<span>施工工艺</span><span class="colon">:</span><input type="text" id="shigonggongyi">
+					</li>
+					<li>
+						<span>计价单位</span><span class="colon">:</span><input type="text" id="danwei">
+					</li>
+					<li>
+						<span style="letter-spacing: 0;">数量/范围</span><span class="colon">:</span><input type="text" id="shuliang">
+					</li>
+					<li>
+						<span>纯人工费</span><span class="colon">:</span><input type="text" id="rengongfei">
+					</li>
+					<li>
+						<span>发布价格</span><span class="colon">:</span><input type="text" id="fabujiage">
+					</li>
+					<li>
+						<span>联系方式</span><span class="colon">:</span><input type="text" id="lianxifangshi">
+					</li>
+					<li>
+						<span>工作地点</span><span class="colon">:</span><input type="text" id="gongzuodidian">
+					</li>
+					<li>
+						<span style="white-space: pre-wrap;">备     注</span><span class="colon">:</span><input type="text" id="content">
+					</li>
+				</ul>
+				<div class="btn_list">
+					<div class="btn confirm_btn" style="margin-left: 110px;" onclick="add()">确认发布</div>
+				</div>
+
+			</div>
+			<!-- 自定工价 end -->
+			<!-- 工价列表 -->
+			<div class="sect wages_list" style="display: none;min-height: 480px;position: relative;">
+				<input type="text" class="search_input" />
+				<input type="button" value="搜索" class="search_btn" onclick="search()"/>
+				<input type="button" style="height: 24px;width: 70px;" value="分享" class="share_btn" onclick="showUserList()"/>
+
+				<ul class="list_ul_head">
+
+						<li>项目名称</li>
+						<li>发布价格</li>
+						<li>数量</li>
+						<li>人工费</li>
+						<li>联系人</li>
+						<li>工作单位</li>
+						<li>施工工艺</li>
+						<li>备注</li>
+								
+				</ul>
+				<ul class="list_ul" id="mess_list" style="min-height: 400px;">
+					
+				</ul>
+				
+				<ul class="page" style="float: none;">
+					
+					<li class="page_btn" style="margin-left: 75px;background-color: red;color:#fff;line-height: 24px;" onclick="prepage()">上一页</li>
+					<li class="page_btn" style="background-color: red;color:#fff;line-height: 24px;" onclick="nextpage()">下一页</li>
+					
+				</ul>
+				<div class="detail" style="position: absolute;top: 200px;left:100px;width: 730px;height: 300px;background-color: #eee;display: none;border-radius: 25px;box-shadow: 5px 5px 5px;opacity: 0.9;">
+					<div class="cancel" style="font-size: 41px;position: absolute;top: -5px;left: 700px;cursor: pointer;">×</div>
+					<div class="detail_list">
+
+					<p>联系方式：</p>
+					<p>施工工艺：</p>
+					<p>工作地点：</p>
+					<p>备注：</p>
+					</div>
+				</div>
+			</div>
+			<!-- 工价列表 end -->
+			
+			<!-- 分享授权-->
+				<div class="message_list base_info_public" style="display: none;width: 90%;border: none;margin: 0px auto;min-height: 480px;">
+
+				<!-- 工价分享列表 -->
+				<input type="text" class="search_input" />
+				<input type="button" value="搜索" class="search_btn" onclick="search()" style="width: 80px;height: 24px;background-color: #f7c67a;color: #f2552a;border: 1px solid #cfcfcf;cursor: pointer;" />
+				<input type="button" style="height: 24px;width: 70px;border: none;background-color: #f7c67a;text-align: center;font-weight: 600;position: absolute;right: 80px;border-radius: 5px;cursor: pointer" value="分享" class="share_btn" onclick="showUserList()"/>
+				<ul class="list_ul_head">
+				
+						<li>项目名称</li>
+						<li>发布价格</li>
+						<li>数量</li>
+						<li>人工费</li>
+						<li>联系人</li>
+						<li>工作单位</li>
+						<li>施工工艺</li>
+						<li>备注</li>
+								
+				</ul>				
+					
+				<ul class="list_ul" id="messlist_ul" style="min-height: 400px;">
+
+				</ul>
+				<div class="detail_share" style="position: absolute;top: 200px;left:100px;width: 730px;height: 300px;background-color: #eee;display: none;border-radius: 25px;box-shadow: 5px 5px 5px;opacity: 0.9;">
+					<div class="cancel" style="font-size: 41px;position: absolute;top: -5px;left: 700px;cursor: pointer;">×</div>
+					<div class="detail_list_share">
+
+					<p>联系方式：</p>
+					<p>施工工艺：</p>
+					<p>工作地点：</p>
+					<p>备注：</p>
+					</div>
+				</div>				
+				<ul class="page" style="float: none;">
+					
+					<li class="page_btn" style="margin-left: 75px;background-color: red;color:#fff;line-height: 24px;" onclick="prepages()">上一页</li>
+					<li class="page_btn" id="s_next" style="background-color: red;color:#fff;line-height: 24px;" onclick="nextpages()">下一页</li>
+					
+				</ul>
+			</div>
+			<!-- 分享授权 end -->
+			<!-- 分享弹窗 -->
+					<div class="confirm" style="display: none;">
+							<div class="tel_con" style="display: block;display: block;width: 50%;margin: 10px auto;background-color: #fff;padding-top: 10px;padding-bottom: 10px;height: 400px;box-shadow: 5px 5px 5px;">
+							<div class="quxiao" style="position: absolute;font-size: 20px;top: 0px;left: 695px;background-color: #9e9e9e;border-radius: 10px;width: 20px;height: 20px;line-height: 20px;cursor:default;">×</div>
+							<div class="confirm_head" style="margin-bottom: 10px;">
+								<input type="text" id="search_text" placeholder="请输入搜索的联系人" />
+								<input class="confirm_btn" type="button" onclick="UserSearch()" value="搜索" />
+								<input id="back_btn" type="button" onclick="back()" value="返回" style="width: 40px;margin-top: 0px;height: 20px;display: none;"/>
+								
+							</div>
+							<div style="overflow-y: scroll;height:300px;">
+							<div class="getUserList" style="min-height:270px;">
+								
+							</div>
+							<!--分页 -->
+							<div>
+								<a href="javascript:;" style="display: inline-block;width: 50px;background-color: #9c9393;color: #ffffff;height: 20px;line-height: 20px;margin-right:20px;" onclick="prepageUser()">上一页</a>
+								<a href="javascript:;" style="display: inline-block;width: 50px;background-color: #9c9393;color: #ffffff;height: 20px;line-height: 20px;" onclick="nextpageUser()">下一页</a>							
+							</div>
+							</div>
+							<div style="margin-top:30px;">
+								<input class="confirm_btn" type="button"  value="确认分享" style="display: inline-block;width: 100px;height: 30px;line-height: 25px;font-size: 18px;border-radius: 5px;background-color: #f8c67b;color: #fff;" onclick="sharebox()"/>
+							</div>
+						</div>
+						
+					</div>
+					<!-- 分享弹窗 end -->
+			</div>
+			</div>
+			</div>
+	
+ 			</div>
+ 			
+		</div>
+		
+ 		</div>
+
+ 	</div>
+
+{include file=footer.html}
+<script type="text/javascript" src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		list();
+		messagelist();
+	});
+  //列表切换
+     $(".budget_ul li:first").click(function(){
+    	$(this).addClass("change_bg_li")
+    	$(".budget_ul li:last").removeClass("change_bg_li")
+    	$(".budget_ul li:eq(1)").removeClass("change_bg_li")
+    	$(".wages_custom").show();
+    	$(".wages_list").hide();
+    	$(".message_list").hide();
+    })
+	
+    $(".budget_ul li:eq(1)").click(function(){
+    	$(this).addClass("change_bg_li")
+    	$(".budget_ul li:last").removeClass("change_bg_li")
+    	$(".budget_ul li:first").removeClass("change_bg_li")
+    	$(".wages_list").show();
+    	$(".wages_custom").hide();
+    	$(".message_list").hide();
+    })
+	
+    $(".budget_ul li:last").click(function(){
+    	
+    	$(this).addClass("change_bg_li")
+    	$(".budget_ul li:first").removeClass("change_bg_li")
+    	$(".budget_ul li:eq(1)").removeClass("change_bg_li")
+ 		$(".wages_custom").hide();
+    	$(".message_list").show();
+    	$(".wages_list").hide();
+    })
+	$(".share_btn").click(function(e){
+		e.stopPropagation(); 
+		var checkArray = $('input[name="id"]:checked');
+		var count = 0;
+		for(var i=0;i<checkArray.length;i++){
+			if(checkArray[i].checked == true){
+				count++;
+			}
+		}
+		if(count < 1){
+			alert("请选择你要添加的内容！！！！！")
+			return false;
+		}
+		$(".confirm").show();
+	})
+	$(".wages_list").click(function(){
+		$(".confirm").hide();
+		$(".wages_list").css("background-color","#fff");
+	})
+	// 弹窗控制 end
+
+	// 分页设置
+	$('.page_num').on('click',function() {
+		$('.page_num').removeClass('current');
+		$(this).toggleClass('current');
+	});
+	// 分页设置
+	$('.page_num').on('click',function() {
+		$('.page_num').removeClass('current');
+		$(this).toggleClass('current');
+	});
+// 分页设置 end
+
+	//发布自定工价
+	function add(){
+		var name          = $('#name'); //项目名称
+		var danwei        = $('#danwei'); //计价单位
+		var shuliang      = $('#shuliang'); //数量/范围
+		var rengongfei    = $('#rengongfei');//纯人工费
+		var fabujiage     = $('#fabujiage');//发布价格
+		var lianxifangshi = $('#lianxifangshi');//联系方式
+		var gongzuodidian = $('#gongzuodidian');//工作地点
+		var shigonggongyi = $('#shigonggongyi');//施工工艺
+		var content       = $('#content');//备注
+
+		$.ajax({
+			type:"POST",
+			url:'http://wgcapp.wgc2013.com/jingyi.php/Home/Dinge/rengong_add',
+			data:{
+				userid         : '<?php echo $_SESSION["user_info"]["user_id"];?>',
+				name           : name.val(),           //项目名称
+		        danwei         : danwei.val(),         //计价单位
+		        shuliang       : shuliang.val(),       //数量/范围
+		        rengongfei     : rengongfei.val(),     //纯人工费
+		        fabujiage      : fabujiage.val(),      //发布价格
+		        lianxifangshi  : lianxifangshi.val(),  //联系方式
+		        gongzuodidian  : gongzuodidian.val(),  //工作地点
+			    shigonggongyi  : shigonggongyi.val(),  //施工工艺
+			    content        : content.val(),        //备　　注
+			},
+			cache:false,
+			crossDomain: true == !(document.all),
+			dataType: "json",
+			success:function(ret){
+				if(ret.code == 200){
+					window.location.reload();
+				}
+			},
+			error:function(err){
+				console.log(err)
+			}
+		});
+	}
+
+	//工价列表
+	userid = <?php echo $_SESSION["user_info"]["user_id"];?>;
+	var page = 1,spage=1,key = '';
+	function list(){
+		var url = 'http://wgcapp.wgc2013.com/jingyi.php/Home/Dinge/rengong_list';
+		$.ajax({
+			type:"POST",
+			url:url,
+			data:{
+				key      : key,
+		    	user_id  : userid,
+		    	page     : page
+			},
+			cache:false,
+			crossDomain: true == !(document.all),
+			dataType: "json",
+			success:function(ret){
+				if(ret.status == 200){
+					var data = ret.retData;
+					var listHtml = '';
+					for(i in data){
+						var id       = data[i].id,
+							name     = data[i].name,
+							danwei   = data[i].danwei,
+							fabujiage= data[i].fabujiage,
+							shuliang = data[i].shuliang,
+							rengongfei = data[i].rengongfei,
+							lianxifangshi = data[i].lianxifangshi,
+							gongzuodidian = data[i].gongzuodidian,
+							shigonggongyi = data[i].shigonggongyi,
+							user_id       = data[i].user_id,
+							content = data[i].content;
+							
+						listHtml 	+= 	'<li style="overflow:hidden;list-style:none;cursor:pointer;position:relative;">';
+						listHtml 	+=	'<input name="id" type="checkbox" class="checkbox" value="'+id+'"style="position:absolute;left:0;top:20px;"/>';
+						listHtml 	+=  '<div style="overflow:hidden;" onclick="detail(\''+gongzuodidian+'\',\''+shigonggongyi+'\',\''+content+'\',\''+lianxifangshi+'\')">';
+						listHtml 	+=	'<div class="list_name" style="float:left;width:10%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center;">'+name+'</div>';
+						listHtml 	+=	'<div class="list_name" style="float:left;width:10%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center;">'+fabujiage+'/'+danwei+'</div>';
+						listHtml 	+=	'<div class="list_name" style="float:left;width:10%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center;">'+shuliang+'</div>';
+						listHtml 	+=	'<div class="list_name" style="float:left;width:10%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center;">'+rengongfei+'</div>';
+						listHtml 	+=	'<div class="list_name" style="float:left;width:10%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center;">'+lianxifangshi+'</div>';
+						listHtml 	+=	'<div class="list_name" style="float:left;width:10%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center;">'+gongzuodidian+'</div>';
+						listHtml 	+=	'<div class="list_name" style="float:left;width:10%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center;">'+shigonggongyi+'</div>';
+						listHtml 	+=	'<div class="list_name" style="float:left;width:10%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center;">'+content+'</div>';
+						listHtml 	+=  '</div>';
+						listHtml 	+=  '<a href="http://wgcapp.wgc2013.com/jingyi.php/Home/Dinge/DelRengong_list/id/'+id+'/user_id/'+user_id+'" style="background:red;color:#fff;padding:2px 5px;font-size:12px;position:absolute;top:10px;right:0;height:25px;line-height:25px;border-radius:5px;">删除</a></div>';
+						listHtml 	+=	'</li>';
+					}
+					$("#mess_list").append(listHtml);
+				}
+			},
+			error:function(err){
+				console.log(err)
+			}
+		});
+	}
+	
+	//分享授权
+	function messagelist(){
+		var url = 'http://wgcapp.wgc2013.com/jingyi.php/Home/Dinge/rengong_list_share';
+		$.ajax({
+			type:"POST",
+			url:url,
+			data:{
+				key      : key,
+		    	user_id  : userid,
+		    	page     : page
+			},
+			cache:false,
+			crossDomain: true == !(document.all),
+			dataType: "json",
+			success:function(ret){
+				if(ret.status == 200){
+					var data = ret.retData;
+					var listHtml = '';
+					for(i in data){
+						var id       = data[i].id,
+							name     = data[i].name,
+							danwei   = data[i].danwei,
+							fabujiage= data[i].fabujiage,
+							shuliang = data[i].shuliang,
+							rengongfei = data[i].rengongfei,
+							lianxifangshi = data[i].lianxifangshi,
+							gongzuodidian = data[i].gongzuodidian,
+							shigonggongyi = data[i].shigonggongyi,
+							content = data[i].content;
+							
+						listHtml 	+= 	'<li style="overflow:hidden;list-style:none;cursor:pointer;">';
+						listHtml 	+=	'<input name="id" type="checkbox" class="checkbox" value="'+id+'"style="position:absolute;left:0;top:20px;"/>';
+						listHtml 	+=  '<div onclick="details(\''+gongzuodidian+'\',\''+shigonggongyi+'\',\''+content+'\',\''+lianxifangshi+'\')">';
+						listHtml 	+=	'<div class="list_name" style="float:left;width:10%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center;">'+name+'</div>';
+						listHtml 	+=	'<div class="list_name" style="float:left;width:10%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center;">'+fabujiage+'/'+danwei+'</div>';
+						listHtml 	+=	'<div class="list_name" style="float:left;width:10%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center;">'+shuliang+'</div>';
+						listHtml 	+=	'<div class="list_name" style="float:left;width:10%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center;">'+rengongfei+'</div>';
+						listHtml 	+=	'<div class="list_name" style="float:left;width:10%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center;">'+lianxifangshi+'</div>';
+						listHtml 	+=	'<div class="list_name" style="float:left;width:10%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center;">'+gongzuodidian+'</div>';
+						listHtml 	+=	'<div class="list_name" style="float:left;width:10%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center;">'+shigonggongyi+'</div>';
+						listHtml 	+=	'<div class="list_name" style="float:left;width:10%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center;">'+content+'</div>';
+						listHtml 	+=  '</div>';
+						listHtml 	+=	'</li>';
+					}
+					$("#messlist_ul").html(listHtml);
+				}
+			},
+			error:function(err){
+				console.log(err)
+			}
+		});
+	}
+	function search(){
+		var url = 'http://wgcapp.wgc2013.com/jingyi.php/Home/Dinge/rengong_list';
+		var value = $(".search_input").val();
+		if(value){
+
+		$.ajax({
+			type:"POST",
+			url:url,
+			data:{
+				user_id:   userid
+			},
+			cache:false,
+			crossDomain: true == !(document.all),
+			dataType: "json",
+			success:function(ret){
+				if(ret.status == 200){
+					var data = ret.retData;
+					var listHtml = '';
+					for(i in data){
+					
+						if(data[i].name === value){
+						
+						var id       = data[i].id,
+							name     = data[i].name,
+							danwei   = data[i].danwei,
+							fabujiage= data[i].fabujiage,
+							shuliang = data[i].shuliang,
+							rengongfei = data[i].rengongfei,
+							lianxifangshi = data[i].lianxifangshi,
+							gongzuodidian = data[i].gongzuodidian,
+							shigonggongyi = data[i].shigonggongyi,
+							user_id       = data[i].user_id,
+							content = data[i].content;
+							
+						listHtml 	+= 	'<li style="overflow:hidden;list-style:none;cursor:pointer;position:relative;">';
+						listHtml 	+=	'<input name="id" type="checkbox" class="checkbox" value="'+id+'"style="position:absolute;left:0;top:20px;"/>';
+						listHtml 	+=  '<div style="overflow:hidden;" onclick="detail(\''+gongzuodidian+'\',\''+shigonggongyi+'\',\''+content+'\',\''+lianxifangshi+'\')">';
+						listHtml 	+=	'<div class="list_name" style="float:left;width:10%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center;">'+name+'</div>';
+						listHtml 	+=	'<div class="list_name" style="float:left;width:10%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center;">'+fabujiage+'/'+danwei+'</div>';
+						listHtml 	+=	'<div class="list_name" style="float:left;width:10%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center;">'+shuliang+'</div>';
+						listHtml 	+=	'<div class="list_name" style="float:left;width:10%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center;">'+rengongfei+'</div>';
+						listHtml 	+=	'<div class="list_name" style="float:left;width:10%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center;">'+lianxifangshi+'</div>';
+						listHtml 	+=	'<div class="list_name" style="float:left;width:10%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center;">'+gongzuodidian+'</div>';
+						listHtml 	+=	'<div class="list_name" style="float:left;width:10%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center;">'+shigonggongyi+'</div>';
+						listHtml 	+=	'<div class="list_name" style="float:left;width:10%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center;">'+content+'</div>';
+						listHtml 	+=  '</div>';
+						listHtml 	+=  '<a href="http://wgcapp.wgc2013.com/jingyi.php/Home/Dinge/DelRengong_list/id/'+id+'/user_id/'+user_id+'" style="background:red;color:#fff;padding:2px 5px;font-size:12px;position:absolute;top:10px;right:0;height:25px;line-height:25px;border-radius:5px;">删除</a></div>';
+						listHtml 	+=	'</li>';
+							$("#mess_list").html("");
+							$("#mess_list").append(listHtml);
+						
+						}
+					}
+				}
+			},
+			error:function(err){
+				console.log(err)
+			}
+		});
+
+		}else{
+		alert("请输入搜索内容")
+		}
+					
+	}
+
+	//下一页
+	function nextpage(){
+		pageindex(++page);
+	}
+	//上一页
+	function prepage(){
+		if(page = 1){
+			page = 2;
+		}
+		pageindex(--page);
+	}
+//第二页
+
+//点击页面页数
+	function pageindex(index){
+		var url = 'http://wgcapp.wgc2013.com/jingyi.php/Home/Dinge/rengong_list';
+		$(".list_ul").html("");
+		$.ajax({
+				type:"POST",
+				url:url,
+				data:{
+					key      : key,
+			    	user_id  : userid,
+			    	page     : index
+				},
+				cache:false,
+				crossDomain: true == !(document.all),
+				dataType: "json",
+				success:function(ret){
+					$("#mess_list").html("");
+				if(ret.status == 200){
+					var data = ret.retData;
+					var listHtml = '';
+					for(i in data){
+						var id       = data[i].id,
+							name     = data[i].name,
+							danwei   = data[i].danwei,
+							fabujiage= data[i].fabujiage,
+							shuliang = data[i].shuliang,
+							rengongfei = data[i].rengongfei,
+							lianxifangshi = data[i].lianxifangshi,
+							gongzuodidian = data[i].gongzuodidian,
+							shigonggongyi = data[i].shigonggongyi,
+							user_id       = data[i].user_id,
+							content = data[i].content;
+							
+						listHtml 	+= 	'<li style="overflow:hidden;list-style:none;cursor:pointer;position:relative;">';
+						listHtml 	+=	'<input name="id" type="checkbox" class="checkbox" value="'+id+'"style="position:absolute;left:0;top:20px;"/>';
+						listHtml 	+=  '<div style="overflow:hidden;" onclick="detail(\''+gongzuodidian+'\',\''+shigonggongyi+'\',\''+content+'\',\''+lianxifangshi+'\')">';
+						listHtml 	+=	'<div class="list_name" style="float:left;width:10%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center;">'+name+'</div>';
+						listHtml 	+=	'<div class="list_name" style="float:left;width:10%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center;">'+fabujiage+'/'+danwei+'</div>';
+						listHtml 	+=	'<div class="list_name" style="float:left;width:10%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center;">'+shuliang+'</div>';
+						listHtml 	+=	'<div class="list_name" style="float:left;width:10%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center;">'+rengongfei+'</div>';
+						listHtml 	+=	'<div class="list_name" style="float:left;width:10%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center;">'+lianxifangshi+'</div>';
+						listHtml 	+=	'<div class="list_name" style="float:left;width:10%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center;">'+gongzuodidian+'</div>';
+						listHtml 	+=	'<div class="list_name" style="float:left;width:10%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center;">'+shigonggongyi+'</div>';
+						listHtml 	+=	'<div class="list_name" style="float:left;width:10%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center;">'+content+'</div>';
+						listHtml 	+=  '</div>';
+						listHtml 	+=  '<a href="http://wgcapp.wgc2013.com/jingyi.php/Home/Dinge/DelRengong_list/id/'+id+'/user_id/'+user_id+'" style="background:red;color:#fff;padding:2px 5px;font-size:12px;position:absolute;top:10px;right:0;height:25px;line-height:25px;border-radius:5px;">删除</a></div>';
+						listHtml 	+=	'</li>';
+					}
+					$("#mess_list").html(listHtml);
+				}else if(ret.status == 202){
+						//alert("暂无更多数据")
+					}
+				},
+				error:function(err){
+					console.log(err)
+				}
+			});
+	}
+
+	//下一页
+	function nextpages(){
+		pageindexs(++spage);
+	}
+	//上一页
+	function prepages(){
+		if(spage = 1){
+			spage = 2;
+		}
+		pageindexs(--spage);
+	}
+//第二页
+
+//分享分页
+	function pageindexs(index){
+		var url = 'http://wgcapp.wgc2013.com/jingyi.php/Home/Dinge/rengong_list_share';
+		$(".list_ul").html("");
+		$.ajax({
+				type:"POST",
+				url:url,
+				data:{
+					key      : key,
+			    	user_id  : userid,
+			    	page     : index
+				},
+				cache:false,
+				crossDomain: true == !(document.all),
+				dataType: "json",
+				success:function(ret){
+					$("#messlist_ul").html("");
+				if(ret.status == 200){
+					$("#s_next").show();
+					var data = ret.retData;
+					var listHtml = '';
+					for(i in data){
+						var id       = data[i].id,
+							name     = data[i].name,
+							danwei   = data[i].danwei,
+							fabujiage= data[i].fabujiage,
+							shuliang = data[i].shuliang,
+							rengongfei = data[i].rengongfei,
+							lianxifangshi = data[i].lianxifangshi,
+							gongzuodidian = data[i].gongzuodidian,
+							shigonggongyi = data[i].shigonggongyi,
+							content = data[i].content;
+							
+						listHtml 	+= 	'<li style="overflow:hidden;list-style:none;cursor:pointer;">';
+						listHtml 	+=  '<div onclick="details(\''+gongzuodidian+'\',\''+shigonggongyi+'\',\''+content+'\',\''+lianxifangshi+'\')">';
+						listHtml 	+=	'<div class="list_name" style="float:left;width:10%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center;">'+name+'</div>';
+						listHtml 	+=	'<div class="list_name" style="float:left;width:10%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center;">'+fabujiage+'/'+danwei+'</div>';
+						listHtml 	+=	'<div class="list_name" style="float:left;width:10%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center;">'+shuliang+'</div>';
+						listHtml 	+=	'<div class="list_name" style="float:left;width:10%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center;">'+rengongfei+'</div>';
+						listHtml 	+=	'<div class="list_name" style="float:left;width:10%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center;">'+lianxifangshi+'</div>';
+						listHtml 	+=	'<div class="list_name" style="float:left;width:10%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center;">'+gongzuodidian+'</div>';
+						listHtml 	+=	'<div class="list_name" style="float:left;width:10%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center;">'+shigonggongyi+'</div>';
+						listHtml 	+=	'<div class="list_name" style="float:left;width:10%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center;">'+content+'</div>';
+						listHtml 	+=  '</div>';
+						listHtml 	+=	'</li>';
+					}
+					$("#messlist_ul").html(listHtml);
+				}else if(ret.status == 202){
+						//alert("暂无更多数据")
+						$("#s_next").hide();
+					}
+				},
+				error:function(err){
+					console.log(err)
+				}
+			});
+	}
+	
+		function  showUserList(){
+		$('.getUserList').html("");		
+		var page = 1;
+		uid= '<?php echo $_SESSION["user_info"]["user_id"];?>';
+		$.ajax({
+				type:"POST",
+				url:'http://wgcapp.wgc2013.com/jingyi.php/Home/index/getAllMyRelative',
+				data:{
+						uid:'<?php echo $_SESSION["user_info"]["user_id"];?>',
+		            	type:'PRIVATE',
+		            	types:'user_list',
+		            	page : page,
+				},
+				cache:false,
+				crossDomain: true == !(document.all),
+				dataType: "JSON",
+				success:function(ret){
+					var html = '';
+					var datas = ret.data;
+			
+					if(ret.code == 200){
+						//page ++;
+						for(var j in datas){
+							var data = datas[j];
+							var message = datas[j].message;
+							html += '<div class="tel_list">'+data.zhiwei+'</div>';
+							for(var i in message){
+								var zhiwei = message[i].zhiwei,
+									id     = message[i].id,
+									touid = message[i].touid,
+									name = message[i].name,
+									names = message[i].user_name, 
+									imgUrl = message[i].userphoto;
+								html += '<ul>';
+									html += '<li class="tel_li">';
+										html += '<div class="check">';
+											html += '<input name="tid" type="checkbox" value="'+touid+'" name="checkbox" />';
+										html += '</div>';
+										html += '<div class="head_img">';
+											html += '<img src="'+url+imgUrl+'" alt=""/>';
+										html += '</div>';
+										html += '<div class="tel_data">';
+											html += '<span>'+name+'</span>';
+											html += '<span>'+names+'</span>';
+										html += '</div>';
+									html += '</li>';
+								html += '</ul>';
+							}
+						}
+
+						$('.getUserList').append(html);
+						//获取数据id
+								var arr = new Array();
+				                $('input[name="id"]:checked').each(function(i){
+				                    arr[i] = $(this).val();
+				                });
+				                var vals = arr.join(",");
+					}else {
+						alert('数据加载失败，请检查网络!');
+					}
+				},
+				error:function(err){
+					console.log("错误是");
+					console.log(err);
+				}
+			});
+	}
+
+	//通讯录搜索
+	function UserSearch(){
+		var key_word = $('#search_text').val();
+
+		if(key_word == ''){
+			showUserList();
+		}else{
+			$.post(url+'jingyi.php/Home/index/searchMyRelatives', {
+				uid : '<?php echo $_SESSION["user_info"]["user_id"];?>',
+				type:'PRIVATE',
+				types:'user_list',
+	        	keyword : key_word,
+			}, function(ret,err) {
+				var datas = ret.data;
+				var html = '';
+
+				if(ret.code == 200){
+					$('.getUserList').html('');
+						page ++;
+						for(var j in datas){
+							var data = datas[j];
+							var message = datas[j].message;
+							html += '<div class="tel_list">'+data.zhiwei+'</div>';
+							for(var i in message){
+								var zhiwei = message[i].zhiwei,
+									touid = message[i].touid,
+									name = message[i].name,
+									names = message[i].user_name, 
+									imgUrl = message[i].userphoto;
+								html += '<ul>';
+									html += '<li class="tel_li">';
+										html += '<div class="check">';
+											html += '<input type="checkbox" value="'+touid+'" name="tid" />';
+										html += '</div>';
+										html += '<div class="head_img">';
+											html += '<img src="'+url+imgUrl+'" alt=""/>';
+										html += '</div>';
+										html += '<div class="tel_data">';
+											html += '<span>'+name+'</span>';
+											html += '<span>'+names+'</span>';
+										html += '</div>';
+									html += '</li>';
+								html += '</ul>';
+							}
+						}
+
+					$('.getUserList').append(html);
+					$('#back_btn').show();
+				}else if(ret.code == 201){
+					$('.getUserList').html('暂无数据');
+				}else{
+					alert('请检查网络连接');
+					return false;
+				}
+			},'json');
+		}
+	}
+
+	//确认分享
+	function sharebox(){
+		//获取数据id
+		var arr = new Array();
+		var tarry = new Array();
+		var telcount = 0;
+		var telArray = $('input[name="tid"]:checked');
+		for(var i=0;i<telArray.length;i++){
+			if(telArray[i].checked == true){
+				telcount++;
+			}
+		}
+		if(telcount < 1){
+			alert("请选择你要分享的好友！！！！！")
+			return false;
+		}
+        $('input[name="id"]:checked').each(function(i){
+            arr[i] = $(this).val();
+        });
+        var vals = arr.join(",");
+        console.log(vals);
+
+        //获取通讯录id
+  		$('input[name="tid"]:checked').each(function(j){
+            tarry[j] = $(this).val();
+        });
+        var tvals = tarry.join(",");
+        console.log(tvals)
+
+        $.post('http://wgcapp.wgc2013.com/jingyi.php/Home/index/share',{
+        	"type":3,
+        	"arr":arr,
+        	"tarry":tarry
+        },function(ret){
+        	console.log(ret)
+			if(ret.code == 200){
+
+        		window.location.reload();
+        	}
+        },'json')
+	}
+//通讯录分页控制
+var upage = 1;
+function pageindexUser(pindex){
+		//console.log(index)
+		if(pindex < 1){
+			pindex = 1;
+			upage=1;
+		}
+	$('.getUserList').html("");
+		uid= '<?php echo $_SESSION["user_info"]["user_id"];?>';
+		$.ajax({
+				type:"POST",
+				url:'http://wgcapp.wgc2013.com/jingyi.php/Home/index/getAllMyRelative',
+				data:{
+						uid:'<?php echo $_SESSION["user_info"]["user_id"];?>',
+		            	type:'PRIVATE',
+		            	types:'user_list',
+		            	page : pindex,
+				},
+				cache:false,
+				crossDomain: true == !(document.all),
+				dataType: "JSON",
+				success:function(ret){
+					console.log("成功");
+					console.log(ret)
+					var html = '';
+					var datas = ret.data;
+					$('.getUserList').html("")
+					if(ret.code == 200){
+						page ++;
+						for(var j in datas){
+							var data = datas[j];
+							var message = datas[j].message;
+							html += '<div class="tel_list">'+data.zhiwei+'</div>';
+							for(var i in message){
+								var zhiwei = message[i].zhiwei,
+									id     = message[i].id,
+									touid = message[i].touid,
+									name = message[i].name,
+									names = message[i].user_name, 
+									imgUrl = message[i].userphoto;
+								html += '<ul>';
+									html += '<li class="tel_li">';
+										html += '<div class="check">';
+											html += '<input name="tid" type="checkbox" value="'+touid+'" name="checkbox" />';
+										html += '</div>';
+										html += '<div class="head_img">';
+											html += '<img src="'+url+imgUrl+'" alt=""/>';
+										html += '</div>';
+										html += '<div class="tel_data">';
+											html += '<span>'+name+'</span>';
+											html += '<span>'+names+'</span>';
+										html += '</div>';
+									html += '</li>';
+								html += '</ul>';
+							}
+						}
+
+						$('.getUserList').append(html);
+						//获取数据id
+								var arr = new Array();
+				                $('input[name="id"]:checked').each(function(i){
+				                    arr[i] = $(this).val();
+				                });
+				                var vals = arr.join(",");
+				                console.log(vals);
+					}else {
+						alert('数据加载失败，请检查网络!');
+					}
+				},
+				error:function(err){
+					console.log("错误是");
+					console.log(err);
+				}
+			});
+
+	}
+//下一页
+function nextpageUser(){
+	
+	pageindexUser(++upage);
+
+	}
+//上一页
+function prepageUser(){
+		pageindexUser(--upage);
+	}
+
+	function detail(work,gy,ps,tel){
+		$(".detail").show();
+		var listHtml = "";
+		listHtml +=			'<p>联系方式：'+tel+'</p>';
+		listHtml +=				'<p>施工工艺：'+gy+'</p>';
+		listHtml +=			'<p>工作地点：'+work+'</p>';
+		listHtml +=			'<p>备注：'+ps+'</p>';
+		$(".detail_list").html(listHtml);
+	}
+
+	function details(work,gy,ps,tel){
+		$(".detail_share").show();
+		var listHtml = "";
+		listHtml +=			'<p>联系方式：'+tel+'</p>';
+		listHtml +=				'<p>施工工艺：'+gy+'</p>';
+		listHtml +=			'<p>工作地点：'+work+'</p>';
+		listHtml +=			'<p>备注：'+ps+'</p>';
+		$(".detail_list_share").html(listHtml);
+	}
+
+$(".quxiao").click(function(){
+	$(this).parent().parent().hide();
+})
+	//返回检索列表
+	function back(){
+		$('#back_btn').hide();
+		$('#search_text').val('');
+		showUserList();
+	}
+	$(".cancel").click(function(){
+		$(this).parent().hide();
+	})
+
+	// $("#mess_list").on("click","input",function(e){
+	// 	e.stopPropagation();
+	// 	console.log(e)
+		
+	// })
+</script>
+</body>
+</html>
