@@ -782,8 +782,8 @@ $(function(){
 			
 			
 			var paths = response.path;
-			// console.log("file"+file)
-			// console.log("str"+response.path)
+			// //console.log("file"+file)
+			// //console.log("str"+response.path)
 
 			var $ImgPath = $("#ImgPath").val();
 
@@ -800,7 +800,7 @@ $(function(){
 			
 			
 			$("#ImgPath").val(vals);
-			console.log(vals);
+			//console.log(vals);
 			
 
 			$("#gimg").append("<input type='hidden' value='"+response._raw+"' name='gimg[]'/>");
@@ -829,7 +829,7 @@ $(function(){
         });
 
         uploader.on('dialogOpen', function() {
-            console.log('here');
+            //console.log('here');
         });
 
         // uploader.on('filesQueued', function() {
@@ -932,7 +932,7 @@ $(function(){
 
                 // 成功
                 if ( cur === 'error' || cur === 'invalid' ) {
-                    console.log( file.statusText );
+                    //console.log( file.statusText );
                     showError( file.statusText );
                     percentages[ file.id ][ 1 ] = 1;
                 } else if ( cur === 'interrupt' ) {
@@ -1286,10 +1286,11 @@ var aid = '<?php echo $_GET["id"];?>';
 	function share(){
 		//获取选择的内容的id值
 		var $list = $("input[type='checkbox']");
-		console.log($list)
+		//console.log($list)
 	}
 	
 	//分享选择接收人
+	var upage = 1;
 	function  showUserList(id){
 		$(".confirm").show();
 		$("#power").val(id)
@@ -1308,8 +1309,8 @@ var aid = '<?php echo $_GET["id"];?>';
 				crossDomain: true == !(document.all),
 				dataType: "JSON",
 				success:function(ret){
-					console.log("成功");
-					console.log(ret)
+					//console.log("成功");
+					//console.log(ret)
 					var html = '';
 					var datas = ret.data;
 					$('.getUserList').html("")
@@ -1350,14 +1351,14 @@ var aid = '<?php echo $_GET["id"];?>';
 				                    arr[i] = $(this).val();
 				                });
 				                var vals = arr.join(",");
-				                console.log(vals);
+				                //console.log(vals);
 					}else {
 						alert('数据加载失败，请检查网络!');
 					}
 				},
 				error:function(err){
-					console.log("错误是");
-					console.log(err);
+					//console.log("错误是");
+					//console.log(err);
 				}
 			});
 	}
@@ -1380,7 +1381,7 @@ var aid = '<?php echo $_GET["id"];?>';
 
 				if(ret.code == 200){
 					$('.getUserList').html('');
-						page ++;
+						// page ++;
 						for(var j in datas){
 							var data = datas[j];
 							var message = datas[j].message;
@@ -1431,21 +1432,21 @@ var aid = '<?php echo $_GET["id"];?>';
 				                // });
 				                // var vals = arr.join(",");
 
-				                // console.log(vals);
+				                // //console.log(vals);
 				                var fileid = $("#power").val();
 				                //获取通讯录id
 				          		$('input[name="tid"]:checked').each(function(j){
 				                    tarry[j] = $(this).val();
 				                });
 				                var tvals = tarry.join(",");
-				                console.log(tvals)
+				                //console.log(tvals)
 
 				                $.post('http://wgcapp.wgc2013.com/jingyi.php/Home/Wangpan/file_share',{
 				                	id : fileid,
 				                	userid : '<?php echo $_SESSION["user_info"]["user_id"];?>',
 				                	"recipient" : tarry
 				                },function(ret){
-				                	console.log(ret)
+				                	//console.log(ret)
 				                	if(ret.code == 200){
 
 				                		window.location.reload();
@@ -1456,7 +1457,7 @@ var aid = '<?php echo $_GET["id"];?>';
 //通讯录分页控制
 
 function pageindexUser(pindex){
-		//console.log(index)
+		////console.log(index)
 		if(pindex < 1){
 			pindex = 1;
 			upage=1;
@@ -1476,13 +1477,13 @@ function pageindexUser(pindex){
 				crossDomain: true == !(document.all),
 				dataType: "JSON",
 				success:function(ret){
-					console.log("成功");
-					console.log(ret)
+					//console.log("成功");
+					//console.log(ret)
 					var html = '';
 					var datas = ret.data;
 					$('.getUserList').html("")
 					if(ret.code == 200){
-						page ++;
+						// page ++;
 						for(var j in datas){
 							var data = datas[j];
 							var message = datas[j].message;
@@ -1518,14 +1519,14 @@ function pageindexUser(pindex){
 				                    arr[i] = $(this).val();
 				                });
 				                var vals = arr.join(",");
-				                console.log(vals);
-					}else {
-						alert('数据加载失败，请检查网络!');
+				                //console.log(vals);
+					}else if(ret.code == 201){
+						$('.getUserList').append('<div style="text-align:center;font-size:18px;width:100%;margin-top:50px;">暂无更多数据</div>')
 					}
 				},
 				error:function(err){
-					console.log("错误是");
-					console.log(err);
+					//console.log("错误是");
+					//console.log(err);
 				}
 			});
 
@@ -1633,8 +1634,8 @@ function list(){
 		// 		crossDomain: true == !(document.all),
 		// 		dataType: "JSON",
 		// 		success:function(ret){
-		// 			//console.log("成功");
-		// 			//console.log(ret)
+		// 			////console.log("成功");
+		// 			////console.log(ret)
 		// 			var listHtml = "";
 		// 			if(ret.code == 200){
 		// 				$(".nulls").hide();
@@ -1659,8 +1660,8 @@ function list(){
 		// 			},
 					
 		// 		error:function(err){
-		// 			console.log("错误是");
-		// 			console.log(err);
+		// 			//console.log("错误是");
+		// 			//console.log(err);
 		// 		}
 		// 	});
 }
@@ -1710,8 +1711,8 @@ $(".rename").unbind().on({
 					},
 					
 				error:function(err){
-					console.log("错误是");
-					console.log(err);
+					//console.log("错误是");
+					//console.log(err);
 				}
 			});
 	}

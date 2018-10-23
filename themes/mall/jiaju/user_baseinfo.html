@@ -495,7 +495,7 @@ $(".container_nav ul li").click(function(){
 	         	$("#skill").val(user.skill);
 	         	$("#kname").val(user.kname);
 	         	$("#kahao").val(user.kahao);
-				
+				//alert(sex)
 				if(sex == '1'){
 				
 					$(".girl").attr('src','/themes/mall/jiaju/images/center/bg_radio_full.jpg'); 
@@ -558,7 +558,7 @@ $(".container_nav ul li").click(function(){
 						console.log(ret)
 						if(ret.code == 200){
 						alert("修改成功");
-						window.location.reload();
+						//window.location.reload();
 						}else if(ret.code){
 							alert("修改失败,数据无更新")
 						}

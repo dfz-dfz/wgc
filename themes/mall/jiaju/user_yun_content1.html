@@ -1269,6 +1269,7 @@ var filestype = 1;
 	}
 	
 	//分享选择接收人
+	var upage =1;
 	function  showUserList(id){
 		$(".confirm").show();
 		$("#power").val(id)
@@ -1359,7 +1360,7 @@ var filestype = 1;
 
 				if(ret.code == 200){
 					$('.getUserList').html('');
-						page ++;
+						// page ++;
 						for(var j in datas){
 							var data = datas[j];
 							var message = datas[j].message;
@@ -1462,7 +1463,7 @@ function pageindexUser(pindex){
 					var datas = ret.data;
 					$('.getUserList').html("")
 					if(ret.code == 200){
-						page ++;
+						// page ++;
 						for(var j in datas){
 							var data = datas[j];
 							var message = datas[j].message;
@@ -1499,8 +1500,8 @@ function pageindexUser(pindex){
 				                });
 				                var vals = arr.join(",");
 				                console.log(vals);
-					}else {
-						alert('数据加载失败，请检查网络!');
+					}else if(ret.code == 201){
+						$('.getUserList').append('<div style="text-align:center;font-size:18px;width:100%;margin-top:50px;">暂无更多数据</div>')
 					}
 				},
 				error:function(err){
