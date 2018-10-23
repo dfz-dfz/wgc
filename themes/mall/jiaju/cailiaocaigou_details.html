@@ -82,6 +82,7 @@
 								</tr> -->
 								</tbody>
 						</table>
+						<div id="tel_box"></div>
 					</div>
 		<div style="height:40px;background-color: #e41d22;color: #fff;font-size: 20px;letter-spacing: 4px;font-weight: 600;text-align: center;line-height: 40px;width: 20%;margin: 0 auto;cursor:pointer;" onclick="caigou_list()">点击查看</div>
 		<div class="ck" style="text-align:center;display:none;">请<a href="index.php?app=member&act=login&ret_url=" target="_blank" style="cursor:pointer;color:blue;">登录</a>之后再查看</div>
@@ -204,8 +205,8 @@
 							}
 
 						}
-						$('.meterial_buy_detail').append('<div style="line-height:30px;color:red;">联系方式：'+$('#tel').val()+'</div>');
-						$(".meterial_buy_detail tbody").append(listHtml);
+						$(".meterial_buy_detail tbody").html(listHtml);
+						$('#tel_box').html('<div style="line-height:30px;color:red;">联系方式：'+$('#tel').val()+'</div>');
 					}
 					
 				},

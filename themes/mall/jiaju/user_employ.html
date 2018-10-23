@@ -370,25 +370,25 @@ input{
 			return false;
 		}
 		  $.post('http://wgcapp.wgc2013.com/jingyi.php/Home/Recruit/addRecruit_s',{
-		  						user_id 	      : '<?php echo $_SESSION["user_info"]["user_id"];?>',
-						        renshu 	          : num, 
-						        zhiwei            : jobtype,
-						        ask 		      : ask,
-						        s_province        : '广东省',
-								s_city            : '广州市',
-								s_county          : '白云区',
-								region            : region,
-						        company_name      : officename,
-						        company_addr      : xiangxi,
-						        company_web       : office_url,
-						        company_introduce : officetro,
-						        expire_time       : 30,
-						        xinzi             : xinzhi,
-						        hasmoney          : 1,
-								work_age          : work_age,
-								zuidixueli        : zuidixueli,
-								age               : age,
-								other             : other
+					user_id 	      : '<?php echo $_SESSION["user_info"]["user_id"];?>',
+		        renshu 	          : num, 
+		        zhiwei            : jobtype,
+		        ask 		      : ask,
+		        s_province        : '广东省',
+				s_city            : '广州市',
+				s_county          : '白云区',
+				region            : region,
+		        company_name      : officename,
+		        company_addr      : xiangxi,
+		        company_web       : office_url,
+		        company_introduce : officetro,
+		        expire_time       : 30,
+		        xinzi             : xinzhi,
+		        hasmoney          : 1,
+				work_age          : work_age,
+				zuidixueli        : zuidixueli,
+				age               : age,
+				other             : other
 		  },function(ret){
 				//alert('发布成功！');
 				location.reload();
@@ -739,34 +739,34 @@ input{
 
 	//确认分享
 	function sharebox(){
-								//获取数据id
-								var arr = new Array();
-								var tarry = new Array();
-				                $('input[name="id"]:checked').each(function(i){
-				                    arr[i] = $(this).val();
-				                });
-				                var vals = arr.join(",");
+		//获取数据id
+		var arr = new Array();
+		var tarry = new Array();
+        $('input[name="id"]:checked').each(function(i){
+            arr[i] = $(this).val();
+        });
+        var vals = arr.join(",");
 
-				                console.log(vals);
+        console.log(vals);
 
-				                //获取通讯录id
-				          		$('input[name="tid"]:checked').each(function(j){
-				                    tarry[j] = $(this).val();
-				                });
-				                var tvals = tarry.join(",");
-				                console.log(tvals)
+        //获取通讯录id
+  		$('input[name="tid"]:checked').each(function(j){
+            tarry[j] = $(this).val();
+        });
+        var tvals = tarry.join(",");
+        console.log(tvals)
 
-				                $.post('http://wgcapp.wgc2013.com/jingyi.php/Home/index/share',{
-				                	"type":1,
-				                	"arr":arr,
-				                	"tarry":tarry
-				                },function(ret){
-				                	console.log(ret)
-				                	if(ret.code == 200){
+        $.post('http://wgcapp.wgc2013.com/jingyi.php/Home/index/share',{
+        	"type":1,
+        	"arr":arr,
+        	"tarry":tarry
+        },function(ret){
+        	console.log(ret)
+        	if(ret.code == 200){
 
-				                		window.location.reload();
-				                	}
-				                },'json')
+        		window.location.reload();
+        	}
+        },'json')
 	}
 	
 	//取消
@@ -776,11 +776,10 @@ $(".quxiao").click(function(){
 //通讯录分页控制
 var upage = 1;
 function pageindexUser(pindex){
-		//console.log(index)
-		if(pindex < 1){
-			pindex = 1;
-			upage=1;
-		}
+	if(pindex < 1){
+		pindex = 1;
+		upage=1;
+	}
 	$('.getUserList').html("");
 		uid= '<?php echo $_SESSION["user_info"]["user_id"];?>';
 		$.ajax({

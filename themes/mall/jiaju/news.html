@@ -72,6 +72,22 @@ margin:auto;padding:0px;margin-top: 10px;margin-bottom: 10px; width:1100px;overf
 #banner ul li.on { background-color: #fff; }
 
 #banner_list a { position: absolute; }
+
+#header_zixun li p:nth-child(1) {
+    overflow: hidden;
+    font-size: 14px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+}
+
+#header_zixun li p:nth-child(2) {
+    overflow: hidden;
+    font-size: 14px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
 </style>
 </head>
 <body>
@@ -116,7 +132,7 @@ margin:auto;padding:0px;margin-top: 10px;margin-bottom: 10px; width:1100px;overf
 							</div>
 						</div>
 						<div style="float: right;width: 50%">
-							<ul>
+							<ul id="header_zixun">
 								<li style="height: 72px;background-color: #f2f2f2;cursor: pointer;">
 									<a href="/index.php?app=search&act=news_content&id=1083&title=微工程免费为装饰公司提供APP管理软件" target="_blank">
 										<div style="float: left;width: 15%;background-color: #b9000e;color: #fff;height: 72px;text-align: center;">
@@ -170,14 +186,20 @@ margin:auto;padding:0px;margin-top: 10px;margin-bottom: 10px; width:1100px;overf
 					</div>
 
 					<!-- 第二模块 -->
+					<div style="text-align: right;line-height: 30px;font-weight: bold;font-size: 18px;border-bottom: 1px dashed #999;cursor: pointer;"><a href="/index.php?app=search&act=news_list" target="_blank" style="color: red;">更多>></a></div>
 					<ul id="twoBox" style="width: 100%;height: auto;overflow: hidden;border-bottom: 2px solid #e70012;">
 						
 					</ul>
 					
 					<!-- 第三模块 -->
-					<ul class="aui-list aui-media-list" id="news" style="min-height:50px;border:none;border-bottom: 2px solid #e70012;height: auto;overflow: hidden;">
+					<ul class="aui-list aui-media-list" id="news" style="min-height:50px;height: auto;overflow: hidden;">
 						
 					</ul>
+					<!-- 显示分页 -->
+			       	<div class="unpages" id="unpage" style="margin:20px auto;width: 200px;text-align: center;">
+						<a id="prePage" style="background:red;color:#fff;width: 70px;height: 30px;line-height: 30px;padding:4px 5px;cursor:pointer;margin-right: 20px;" onclick="uppage()">上一页</a>
+						<a style="background:red;color:#fff;width: 70px;height: 30px;line-height: 30px;padding:4px 5px;cursor:pointer;" onclick="nextpage()" id="nextpage">下一页</a>
+					</div>
 				</div>
 				<div style="overflow:hidden;float:right;margin:20px 0;width:20%;">
 					<!---今日--要闻---->
@@ -187,18 +209,14 @@ margin:auto;padding:0px;margin-top: 10px;margin-bottom: 10px; width:1100px;overf
 					</div> -->
 					<div style="width: 200px;float: right;height: auto;padding-right: 0;">
 						<img src="http://www.wgc2013.com/themes/mall/jiaju/images/guanggao.png" alt="" width="100%">
-						<img src="http://www.wgc2013.com/themes/mall/jiaju/images/guanggao.png" alt="" width="100%" style="margin-top: 50px;">
+						<img src="http://www.wgc2013.com/themes/mall/jiaju/images/guanggao.png" alt="" width="100%" style="margin-top: 20px;">
 					</div>
 				</div>
 			</div>
 			
 		</div>
 		<!-- 左边结束 -->
-		<!-- 显示分页 -->
-       	<div class="unpages" id="unpage" style="margin:20px auto;width: 200px;text-align: center;">
-			<a id="prePage" style="background:red;color:#fff;width: 70px;height: 30px;line-height: 30px;padding:4px 5px;cursor:pointer;margin-right: 20px;" onclick="uppage()">上一页</a>
-			<a style="background:red;color:#fff;width: 70px;height: 30px;line-height: 30px;padding:4px 5px;cursor:pointer;" onclick="nextpage()" id="nextpage">下一页</a>
-		</div>
+		
 	</div>
 </div>
 {include file=footer.html}
@@ -236,6 +254,7 @@ $(function(){
 	jQuery.support.cors = true;
 	newsHost_select();
 	news_select(page);
+	zhaopinList(page);
 });
 
 //行业要闻列表
@@ -244,10 +263,10 @@ function news_select(page){
 	
 	var url = serverUrl+"Systemmsg/AdvertisementPage";
 	$.post(url,{
-		limit : 8,
-		type : 0,
-		page : page,
-		infotype : 'news_pc'
+		limit : 4,
+		type : '10,11,12,13,14,15,52',
+		page : 1,
+		kehu : '微工程'
 	},function(ret){
 		if(ret.code == 200){
 			page++;
@@ -263,42 +282,26 @@ function news_select(page){
 					times = _trans_php_time_to_str(data[i].times,1),
 					content=data[i].content;
 				var cont = content.replace(/<[^>]+>/g,'');
-				if(i<4){
-					html += '<li style="float: left;width: 50%;cursor:pointer;" title="'+title+'" onclick="openNewsContents(this,'+id+')">';
-						html += '<div style="float:left;height:120px;overflow: hidden;width:150px;padding: 2px;border: 1px solid #999;margin-top:7.5px;margin-right:20px;">';
-			                html += '<img src="http://wgcmanage.wgc2013.com/'+pic+'" style="height:120px;width:150px;" onerror="javascript:this.src=\'../image/Advertisement.jpg\';">';
-			            html += '</div>';
-			            html += '<div class="aui-list-item-inner" style="height:140px;float:left;width:240px;">';
-			                html += '<div class="aui-list-item-text" style="border-bottom:1px solid #999;">';
-				                html += '<span style="font-size:14px;">'+times+'</span>';
-			               html += ' </div>';
-			                html += '<div>';
-			                	html += '<span style="color:#000;font-size:14px;height:20px;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:1;overflow:hidden;">'+title+'</span>';
-			                	html += '<div style="height:88px;overflow:hidden;font-size:14px;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:4;">'+cont+'</div>';
-			                html += '</div>';
-			            html += '</div>';
-					html += '</li>';
-				}else{
-					listHtml += '<li style="cursor:pointer;margin:10px auto;height:165px;width:880px;border-bottom:1px solid #999;" title="'+title+'" onclick="openNewsContents(this,'+id+')">';
-				    listHtml += '            <div>';
-				    listHtml += '                <span style="color:#000;">'+title+'</span>';
-				    listHtml += '            <span style="float:right;font-size:14px;">'+times+'</span>';
-				    listHtml += '            </div>';
-				    listHtml += '        <div style="float:left;height:120px;overflow: hidden;width:150px;padding: 2px;border: 1px solid #999;margin-top:7.5px;margin-right:20px;">';
-				    listHtml += '            <img src="http://wgcmanage.wgc2013.com/'+pic+'" style="height:120px;width:150px;" onerror="javascript:this.src=\'../image/Advertisement.jpg\';">';
-				    listHtml += '        </div>';
-				    listHtml += '        <div class="aui-list-item-inner" style="height:140px;float:left;width:710px;">';
-				    listHtml += '            <div style="height:110px;overflow:hidden;font-size:14px;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:5;" id="contentMain">'+cont+'</div>';
-				    listHtml += '        </div>';
-				    listHtml += '</li>';
-				    listHtmlS += '<p class="aui-ellipsis-1" id="'+title+'"><span class="bottonTitle">推荐</span>'+title+'</p>';
-				}
+				
+				html += '<li style="float: left;width: 50%;cursor:pointer;margin-bottom:20px;" title="'+title+'" onclick="openNewsContents(this,'+id+')">';
+					html += '<div style="float:left;height:150px;overflow: hidden;width:150px;padding: 2px;border: 1px solid #999;margin-top:7.5px;margin-right:20px;">';
+		                html += '<img src="http://wgcmanage.wgc2013.com/'+pic+'" style="height:150px;width:150px;" onerror="javascript:this.src=\'../image/Advertisement.jpg\';">';
+		            html += '</div>';
+		            html += '<div class="aui-list-item-inner" style="height:140px;float:left;width:240px;">';
+		                html += '<div class="aui-list-item-text" style="border-bottom:1px solid #999;font-size:14px;line-height:40px;">';
+			                html += times;
+		               html += ' </div>';
+		                html += '<div>';
+		                	html += '<div style="color:#000;font-size:14px;height:30px;line-height:30px;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:1;overflow:hidden;">'+title+'</div>';
+		                	html += '<div style="height:88px;overflow:hidden;font-size:14px;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:4;">'+cont+'</div>';
+		                html += '</div>';
+		            html += '</div>';
+				html += '</li>';
 			    
 			}
 		   
 			$("#news").show();
 			$('#twoBox').html(html);
-			$("#news").html(listHtml);
 			
 		}else if(ret.code == 202)	{
 			if(page == 1){
@@ -312,16 +315,60 @@ function news_select(page){
 	},"json");
 }
 
+// 招聘信息列表
+function zhaopinList(page){
+	var url = serverUrl+"Systemmsg/AdvertisementPage_list";
+	$.post(url,{
+		limit : 15,
+		type : '10,11,12,13,14,15,52',
+		page : page,
+		kehu : '微工程'
+	},function(ret){
+		if(ret.code == 200){
+			page++;
+			var data = ret.message;
+			var html = '';
+			var listHtml  = '';
+			var listHtmlS  = '';
+			for (var i in data) {
+				var id=data[i].id,
+					title=data[i].title,
+					pic=data[i].pic,
+					describe=data[i].describe,
+					times = _trans_php_time_to_str(data[i].times,1),
+					content=data[i].content;
+				var cont = content.replace(/<[^>]+>/g,'');
+
+				listHtml += '<li style="cursor:pointer;margin:10px auto;height:230px;width:33%;float:left;" title="'+title+'" onclick="openNewsContents(this,'+id+')">';
+			    listHtml += '    <div style="height:200px;overflow: hidden;width:100%;padding: 2px;">';
+			    listHtml += '        <img src="http://wgcmanage.wgc2013.com/'+pic+'" style="height:200px;width:90%;margin:0 auto;" onerror="javascript:this.src=\'../image/Advertisement.jpg\';">';
+			    listHtml += '    </div>';
+			    listHtml += '    <div style="color:#000;text-align:center;font-size:16px;line-height:40px;">'+title+'</div>';
+			    listHtml += '</li>';
+			}
+		   
+			$("#news").show();
+			$("#news").html(listHtml);
+			
+		}else if(ret.code == 202){
+			$("#news").html('<div style="border: none;width:80px;margin:10px auto;" class="empty"><img src="/themes/mall/jiaju/images/empty.png"/></div>');
+			$('#unpage').hide();
+		}else{
+			return false;
+		}
+	},"json");
+}
+
 function uppage(){
 	if(page<1){
 		page=1;
 	}
 	page--;
-	news_select(page);
+	zhaopinList(page);
 }
 function nextpage(){
 	page++;
-	news_select(page);
+	zhaopinList(page);
 }
 
 //今日要闻列表
@@ -330,28 +377,28 @@ function newsHost_select(){
 	var url = serverUrl+"Systemmsg/Advertisement";
 	$.post(url,{limit:5,type : 0,page:1},function(ret){
 		if(ret.code == 200){
-				var data = ret.message;
-				var listHtml  = '';
-				var listHtmlS  = '';
-				for (var i in data) {
-							
-					var id=data[i].id, title=data[i].title,content=data[i].content,pic=data[i].pic,describe=data[i].describe,times = _trans_php_time_to_str(data[i].times,1);
-				
-					listHtml += '<li class="aui-list-item" title="'+title+'" style="cursor:pointer" onclick="openNewsContents(this,'+id+')">';
-				   listHtml += '    <div class="aui-media-list-item-inner">';
-				   listHtml += '        <div class="aui-list-item-media" style="overflow: hidden;width:60px;">';
-				   listHtml += '            <img src="http://wgcmanage.wgc2013.com/'+pic+'" style="height:60px;width:60px" onerror="javascript:this.src=\'../image/Advertisement.jpg\';">';
-				   listHtml += '        </div>';
-				   listHtml += '        <div class="aui-list-item-inner">';
-				   listHtml += '            <div class="aui-list-item-text">';
-				   listHtml += '                <div class="aui-list-item-title aui-ellipsis-1" style="width:100%;">'+title+'</div>';
-				   listHtml += '            </div>';
-				   listHtml += '            <div class="aui-list-item-text">'+times+'</div>';
-				   listHtml += '        </div>';
-				   listHtml += '    </div>';
-				   listHtml += '</li>';
-				   
-				   listHtmlS += '<p class="aui-ellipsis-1" id="'+title+'"><span class="bottonTitle">推荐</span>'+title+'</p>';
+			var data = ret.message;
+			var listHtml  = '';
+			var listHtmlS  = '';
+			for (var i in data) {
+						
+				var id=data[i].id, title=data[i].title,content=data[i].content,pic=data[i].pic,describe=data[i].describe,times = _trans_php_time_to_str(data[i].times,1);
+			
+				listHtml += '<li class="aui-list-item" title="'+title+'" style="cursor:pointer" onclick="openNewsContents(this,'+id+')">';
+				listHtml += '    <div class="aui-media-list-item-inner">';
+			    listHtml += '        <div class="aui-list-item-media" style="overflow: hidden;width:60px;">';
+			    listHtml += '            <img src="http://wgcmanage.wgc2013.com/'+pic+'" style="height:60px;width:60px" onerror="javascript:this.src=\'../image/Advertisement.jpg\';">';
+			    listHtml += '        </div>';
+			    listHtml += '        <div class="aui-list-item-inner">';
+			    listHtml += '            <div class="aui-list-item-text">';
+			    listHtml += '                <div class="aui-list-item-title aui-ellipsis-1" style="width:100%;">'+title+'</div>';
+			    listHtml += '            </div>';
+			    listHtml += '            <div class="aui-list-item-text">'+times+'</div>';
+			    listHtml += '        </div>';
+			    listHtml += '    </div>';
+			    listHtml += '</li>';
+			   
+			    listHtmlS += '<p class="aui-ellipsis-1" id="'+title+'"><span class="bottonTitle">推荐</span>'+title+'</p>';
 				
 			}
 		   

@@ -52,7 +52,7 @@
 		<!-- 回复内容 end -->
 
 		<!-- 发表回复 -->
-		<form action="http://wgcapp.wgc2013.com/jingyi.php/Home/User/xunjia_huifu" method="post">
+		<form action="http://wgcapp.wgc2013.com/jingyi.php/Home/User/xunjia_huifu" method="post" onsubmit="return sub();">
 			<div style="height: 300px;width: 100%;margin-top: 30px;background-color: #eee;position: relative;">
 				<span><img style="width: 20px;padding: 10px 10px 10px 22px;" src="themes/mall/jiaju/images/bianji.png" alt=""></span>
 				<span style="font-weight: bold;color: #000;font-size: 16px;position: absolute;margin-top: 10px;">发表回复</span>
@@ -60,7 +60,7 @@
 				<input type="hidden" name="xid" value="<?php echo $_GET['id'];?>" id="xq">
 				<input type="hidden" name="type" value="2">
 				<textarea name="content" id="" cols="30" rows="10" style="width: 96%;margin: 0 2%;height: 170px;resize: none;border: 2px solid #7db7ca;"></textarea>
-				<input type="submit" onclick="sub()" value="发表" style="text-align: center;height: 40px;line-height: 40px;letter-spacing: 5px;background-color:#f24c24;color: #fff;width: 96%;margin: 20px 2%;border:none;">
+				<input type="submit" value="发表" style="text-align: center;height: 40px;line-height: 40px;letter-spacing: 5px;background-color:#f24c24;color: #fff;width: 96%;margin: 20px 2%;border:none;">
 			</div>
 		</form>
 		<!-- 发表回复 end -->

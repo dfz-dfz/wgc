@@ -64,9 +64,17 @@ ul,li{list-style:none;}
 			<div style="width: 1100px;margin: auto;padding: 10px 0;">
 				<div style="height: 40px;line-height: 40px;">
 					<div style="width: 50%;float: left;font-size: 26px;font-weight: 600;letter-spacing: 2px;" id="zhiwei"></div>
-					<div style="width: 50%;float: left;color: #f24c24;font-size: 16px;">
+					<div style="width: 50%;float: left;color: #f24c24;font-size: 16px;position: relative;">
 						<div style="float: left;font-size: 20px;" id="xinzi"></div>
-						<div style="float: right;color: #fff;background-color: #f24c24;width: 150px;border-radius: 5px;text-align: center;">投放简历</div>
+						<div style="float: right;color: #fff;background-color: #f24c24;width: 150px;border-radius: 5px;text-align: center;" onclick="resumes()">投放简历</div>
+						<div class="jobstyle" style="width: 150px;height: auto;overflow: hidden;position: absolute;left: 251px;top: 38px;background-color: #c3bfbf;color: #fff;">
+							<ul class="jobtypelist" style="padding: 0 10px;">
+								<li><span style="display: inline-block;width:100px; ">施工队长</span><input type="radio" name="jobtype"/></li>
+								<li><span>水泥工</span><input type="radio" name="jobtype"/></li>
+								<li><span>装修工</span><input type="radio" name="jobtype"/></li>
+							</ul>
+						</div>
+						<div style="float: right;color: #fff;background-color: #f24c24;width: 150px;border-radius: 5px;text-align: center;" onclick="resumes()">已投放简历</div>
 					</div>
 				</div>
 				<div id="company_name"></div>
@@ -138,6 +146,7 @@ var serverUrl = "http://wgcapp.59jiaju.com/",page = 1;
 $(function(){
 	selectUser();
 	liuyan_select();
+	resumesId();
 });
 //下一页
 var scroll = new auiScroll({
@@ -188,7 +197,7 @@ function selectUser(){
 	
 
 	var url = "http://wgcapp.59jiaju.com/index.php/Home/Recruit/recruitDetail";
-	$.post(url,{id : {$id},infotype : 'weixin'},function(ret){
+	$.post(url,{id : {$id},infotype : 'weixin',userid : '<?php echo $_SESSION["user_info"]["user_id"];?>'},function(ret){
 	
 		var data = ret.message;
 		
@@ -268,7 +277,59 @@ function liuyan_select(){
 	
 	},"json");
 
-}	
+}
+
+//投递简历
+function resumes(){
+	var f = confirm("是否继续投简历！");
+	if(f){
+		//获取当前
+		var url = window.location.href;
+		var urlArray = url.split("&");
+		var pidStr = urlArray[urlArray.length-1];
+		var pidArray = pidStr.split("=");
+		var pid    = pidArray[pidArray.length-1];
+		
+		//获取用户id
+		var userid = '<?php echo $_SESSION["user_info"]["user_id"];?>';
+		$.post("http://wgcapp.wgc2013.com/jingyi.php/Home/Jianli/Resumes",{
+			jid: pid,
+			userid :　userid,
+			tid    : tid
+		},function(ret){
+			if(ret.code == 200){
+
+			}else if(ret.code == 202){
+				alert("投递失败，请重新投递简历！")
+			}else if(ret.code == 203){
+				alert("请先登陆后再继续投递简历！")
+			}else if(ret.code == 204){
+				alert("没有找到相关招聘职位！")
+			}
+		},'json')
+
+	}
+}
+
+//获取简历id
+function resumesId(){
+	$.post('http://wgcapp.wgc2013.com/jingyi.php/Home/Jianli/lists',{
+		user_id : '<?php echo $_SESSION["user_info"]["user_id"];?>'
+	},function(ret){
+		var listHtml = "";
+		if(ret.status == 200){
+			var data = ret.retData;
+			for(var i in data){
+				var id = data[i].id,
+					zhiwei = data[i].zhiwei;
+
+					listHtml += '<li><span style="display: inline-block;width:100px; ">'+zhiwei+'</span><input type="radio" name="jobtype"/></li>';
+			}
+			$(".jobtypelist").html(listHtml)
+		}
+	},'json')
+}
+
 function actions(){
 
 	if($("#content").val() == ''){

@@ -310,7 +310,7 @@ body{background:url('') no-repeat center top }
 							备注：
 						</div>
 						<div class="ps_right" style="float: right;width: 695px;text-align: left;font-size: 16px;color: #fff;">
-							我不做大哥好多年！我不做大哥好多年！我不做大哥好多年！我不做大哥好多年！我不做大哥好多年！我不做大哥好多年！我不做大哥好多年！我不做大哥好多年！我不做大哥好多年！我不做大哥好多年！我不做大哥好多年！我不做大哥好多年！我不做大哥好多年！我不做大哥好多年！我不做大哥好多年！我不做大哥好多年！我不做大哥好多年！我不做大哥好多年！我不做大哥好多年！我不做大哥好多年！我不做大哥好多年！我不做大哥好多年！我不做大哥好多年！我不做大哥好多年！我不做大哥好多年！我不做大哥好多年！我不做大哥好多年！我不做大哥好多年！我不做大哥好多年！我不做大哥好多年！我不做大哥好多年！我不做大哥好多年！我不做大哥好多年！我不做大哥好多年！我不做大哥好多年！我不做大哥好多年！我不做大哥好多年！我不做大哥好多年！
+							
 						</div>
 					</div>
 				</div>
@@ -329,6 +329,7 @@ body{background:url('') no-repeat center top }
 				<!-- 工价分享列表 -->
 				<input type="text" class="search_input" />
 				<input type="button" value="搜索" class="search_btn" onclick="search()" style="width: 80px;height: 24px;background-color: #f7c67a;color: #f2552a;border: 1px solid #cfcfcf;cursor: pointer;" />
+				<input type="button" value="分享" class="share_btn" style="display: inline-block;width: 60px;height: 30px;line-height: 30px;font-size: 16px;color: #2d2a2a;font-weight: bold;letter-spacing: 4px;background-color: #facd89;border-radius: 5px;position: relative;left: 110px;top: 0px;text-decoration: none;" onclick="showUserList()" />
 				<!-- <input type="button" value="分享" class="share_btn" onclick="showUserList()" style="width: 80px;height: 22px;border: none;background-color: #f7c67a;text-align: center;font-weight: 600;position: absolute;right: 80px;border-radius: 5px;cursor: pointer;" /> -->
 					
 
@@ -1527,13 +1528,7 @@ $(function(){
 	var spage = 1;
 	function messagelist(){
 	var url = 'http://wgcapp.wgc2013.com/jingyi.php/Home/Dinge/zhucai_list_share';
-	// $.post('http://wgcapp.wgc2013.com/jingyi.php/Home/Dinge/zhucai_list_share',{
-	// 	key      : key,
-	// 	user_id : userid,
-	// 	page     : pageindex
-	// },function(ret){
-	// 	console.log(ret)
-	// },'json')
+	
 		$.ajax({
 				type:"POST",
 				url:url,
@@ -1574,12 +1569,13 @@ $(function(){
 								email   = data[i].email,
 								content   = data[i].content,
 								type      = 1,
+								username  = data[i].username,
 								img       = data[i].img,
 								defaults     = (data[i].defaults<1)?'':'checked="checked"';
 
 
 								listHtml += '<tr class="tmain">';
-								listHtml +=		'<td style="width: 5%"><span>'+i+'</span></td>';
+								listHtml +=		'<td style="width: 5%"><input name="id" type="checkbox" value="'+id+'"/><span>'+i+'</span></td>';
 								listHtml +=		'<td style="width: 16%"><span>'+name+'</span></td>';
 								listHtml +=		'<td style="width: 8%"><span>'+pingpai+'</span></td>';
 								listHtml +=		'<td style="width: 10%"><span>'+xinghao+'</span></td>';
@@ -1589,7 +1585,7 @@ $(function(){
 								listHtml +=		'<td style="width: 6%"><span>'+hanshuijiage+'</span></td>';
 								listHtml +=		'<td style="width: 6%"><span>'+gongyingshang+'</span></td>';
 								listHtml +=		'<td style="width: 10%;"><span>'+content+'</span></td>';
-								listHtml +=		'<td style="width: 8%;border-right:2px solid #bcbcbc;"><span><a href="javascript:;" style="color: blue;" onclick="detailsShare(\''+lianxiren+'\',\''+dianhua+'\',\''+weixin+'\',\''+email+'\',\''+web+'\',\''+content+'\',\''+img+'\')">详情</a></span></td>';
+								listHtml +=		'<td style="width: 8%;border-right:2px solid #bcbcbc;"><span><a href="javascript:;" style="color: blue;" onclick="detailsShare(\''+lianxiren+'\',\''+dianhua+'\',\''+weixin+'\',\''+email+'\',\''+web+'\',\''+content+'\',\''+img+'\',\''+username+'\')">详情</a></span></td>';
 								listHtml +=		'</tr>';
 
 					
@@ -1807,6 +1803,7 @@ function pageshare(index){
 								email   = data[i].email,
 								content   = data[i].content,
 								type      = 1,
+								username  = data[i].username,
 								img       = data[i].img,
 								defaults     = (data[i].defaults<1)?'':'checked="checked"';
 
@@ -1822,7 +1819,7 @@ function pageshare(index){
 								listHtml +=		'<td style="width: 6%"><span>'+hanshuijiage+'</span></td>';
 								listHtml +=		'<td style="width: 6%"><span>'+gongyingshang+'</span></td>';
 								listHtml +=		'<td style="width: 10%;"><span>'+content+'</span></td>';
-								listHtml +=		'<td style="width: 8%;border-right:2px solid #bcbcbc;"><span><a href="javascript:;" style="color: blue;" onclick="detailsShare(\''+lianxiren+'\',\''+dianhua+'\',\''+weixin+'\',\''+email+'\',\''+web+'\',\''+content+'\',\''+img+'\')">详情</a></span></td>';
+								listHtml +=		'<td style="width: 8%;border-right:2px solid #bcbcbc;"><span><a href="javascript:;" style="color: blue;" onclick="detailsShare(\''+lianxiren+'\',\''+dianhua+'\',\''+weixin+'\',\''+email+'\',\''+web+'\',\''+content+'\',\''+img+'\',\''+username+'\')">详情</a></span></td>';
 								listHtml +=		'</tr>';
 
 					
@@ -2172,7 +2169,7 @@ $(".quxiao").click(function(){
 				$('.ps_right').html(psHtml); 
 
 	}
-	function detailsShare(name,tel,weixin,email,web,ps,img){
+	function detailsShare(name,tel,weixin,email,web,ps,img,username){
 				$(".details_share").show();
 				var imgHtml = '';
 				var detailHtml = '';
@@ -2184,6 +2181,7 @@ $(".quxiao").click(function(){
 				detailHtml +=			'<li>微信号：'+weixin+'</li>';
 				detailHtml +=			'<li>邮箱：'+email+'</li>';
 				detailHtml +=			'<li>网址：'+web+'</li>';
+				detailHtml +=			'<li>分享人：'+username+'</li>';
 				detailHtml +=		'</ul>		';
 
 				$(".list_left_share").html(detailHtml)

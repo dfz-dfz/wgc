@@ -191,8 +191,9 @@ body{background:url('') no-repeat center top }
 				<div class="message_list base_info_public" style="display: none;width: 90%;border: none;margin: 0px auto;min-height: 480px;">
 
 				<!-- 工价分享列表 -->
-				<input type="text" class="search_input" />
-				<input type="button" value="搜索" class="search_btn" onclick="search()" style="width: 80px;height: 24px;background-color: #f7c67a;color: #f2552a;border: 1px solid #cfcfcf;cursor: pointer;" />
+				<input type="text" id="share_search" class="search_input" />
+				<input type="button" value="搜索" class="search_btn" onclick="search_share_list()" style="width: 80px;height: 24px;background-color: #f7c67a;color: #f2552a;border: 1px solid #cfcfcf;cursor: pointer;" />
+				<input type="button" value="返回" id="back_share_list" style="width: 80px;height: 24px;background-color: #f7c67a;color: #f2552a;border: 1px solid #cfcfcf;cursor: pointer;display: none;" onclick="back_share_list()" />
 				<input type="button" style="height: 24px;width: 70px;border: none;background-color: #f7c67a;text-align: center;font-weight: 600;position: absolute;right: 80px;border-radius: 5px;cursor: pointer" value="分享" class="share_btn" onclick="showUserList()"/>
 				<ul class="list_ul_head">
 				
@@ -434,7 +435,7 @@ body{background:url('') no-repeat center top }
 		});
 	}
 	
-	//分享授权
+	//获取工价分享列表
 	function messagelist(){
 		var url = 'http://wgcapp.wgc2013.com/jingyi.php/Home/Dinge/rengong_list_share';
 		$.ajax({
@@ -486,6 +487,69 @@ body{background:url('') no-repeat center top }
 			}
 		});
 	}
+
+	// 搜索工价分享列表
+	function search_share_list(){
+		var key = $('#share_search').val();
+		var url = 'http://wgcapp.wgc2013.com/jingyi.php/Home/Dinge/rengong_list_share';
+		$.ajax({
+			type:"POST",
+			url:url,
+			data:{
+				key      : key,
+		    	user_id  : userid,
+		    	page     : page
+			},
+			cache:false,
+			crossDomain: true == !(document.all),
+			dataType: "json",
+			success:function(ret){
+				if(ret.status == 200){
+					var data = ret.retData;
+					var listHtml = '';
+					for(i in data){
+						var id       = data[i].id,
+							name     = data[i].name,
+							danwei   = data[i].danwei,
+							fabujiage= data[i].fabujiage,
+							shuliang = data[i].shuliang,
+							rengongfei = data[i].rengongfei,
+							lianxifangshi = data[i].lianxifangshi,
+							gongzuodidian = data[i].gongzuodidian,
+							shigonggongyi = data[i].shigonggongyi,
+							content = data[i].content;
+							
+						listHtml 	+= 	'<li style="overflow:hidden;list-style:none;cursor:pointer;">';
+						listHtml 	+=	'<input name="id" type="checkbox" class="checkbox" value="'+id+'"style="position:absolute;left:0;top:20px;"/>';
+						listHtml 	+=  '<div onclick="details(\''+gongzuodidian+'\',\''+shigonggongyi+'\',\''+content+'\',\''+lianxifangshi+'\')">';
+						listHtml 	+=	'<div class="list_name" style="float:left;width:10%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center;">'+name+'</div>';
+						listHtml 	+=	'<div class="list_name" style="float:left;width:10%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center;">'+fabujiage+'/'+danwei+'</div>';
+						listHtml 	+=	'<div class="list_name" style="float:left;width:10%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center;">'+shuliang+'</div>';
+						listHtml 	+=	'<div class="list_name" style="float:left;width:10%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center;">'+rengongfei+'</div>';
+						listHtml 	+=	'<div class="list_name" style="float:left;width:10%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center;">'+lianxifangshi+'</div>';
+						listHtml 	+=	'<div class="list_name" style="float:left;width:10%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center;">'+gongzuodidian+'</div>';
+						listHtml 	+=	'<div class="list_name" style="float:left;width:10%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center;">'+shigonggongyi+'</div>';
+						listHtml 	+=	'<div class="list_name" style="float:left;width:10%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center;">'+content+'</div>';
+						listHtml 	+=  '</div>';
+						listHtml 	+=	'</li>';
+					}
+					$("#messlist_ul").html(listHtml);
+					$('#back_share_list').show();
+				}
+			},
+			error:function(err){
+				console.log(err)
+			}
+		});
+	}
+
+	//返回工价分享列表
+	function back_share_list(){
+		messagelist();
+		$('#back_share_list').hide();
+	}
+
+	// 搜索工价列表
 	function search(){
 		var url = 'http://wgcapp.wgc2013.com/jingyi.php/Home/Dinge/rengong_list';
 		var value = $(".search_input").val();
@@ -695,72 +759,72 @@ body{background:url('') no-repeat center top }
 			});
 	}
 	
-		function  showUserList(){
-		$('.getUserList').html("");		
-		var page = 1;
-		uid= '<?php echo $_SESSION["user_info"]["user_id"];?>';
-		$.ajax({
-				type:"POST",
-				url:'http://wgcapp.wgc2013.com/jingyi.php/Home/index/getAllMyRelative',
-				data:{
-						uid:'<?php echo $_SESSION["user_info"]["user_id"];?>',
-		            	type:'PRIVATE',
-		            	types:'user_list',
-		            	page : page,
-				},
-				cache:false,
-				crossDomain: true == !(document.all),
-				dataType: "JSON",
-				success:function(ret){
-					var html = '';
-					var datas = ret.data;
-			
-					if(ret.code == 200){
-						//page ++;
-						for(var j in datas){
-							var data = datas[j];
-							var message = datas[j].message;
-							html += '<div class="tel_list">'+data.zhiwei+'</div>';
-							for(var i in message){
-								var zhiwei = message[i].zhiwei,
-									id     = message[i].id,
-									touid = message[i].touid,
-									name = message[i].name,
-									names = message[i].user_name, 
-									imgUrl = message[i].userphoto;
-								html += '<ul>';
-									html += '<li class="tel_li">';
-										html += '<div class="check">';
-											html += '<input name="tid" type="checkbox" value="'+touid+'" name="checkbox" />';
-										html += '</div>';
-										html += '<div class="head_img">';
-											html += '<img src="'+url+imgUrl+'" alt=""/>';
-										html += '</div>';
-										html += '<div class="tel_data">';
-											html += '<span>'+name+'</span>';
-											html += '<span>'+names+'</span>';
-										html += '</div>';
-									html += '</li>';
-								html += '</ul>';
-							}
+	function  showUserList(){
+	$('.getUserList').html("");		
+	var page = 1;
+	uid= '<?php echo $_SESSION["user_info"]["user_id"];?>';
+	$.ajax({
+			type:"POST",
+			url:'http://wgcapp.wgc2013.com/jingyi.php/Home/index/getAllMyRelative',
+			data:{
+					uid:'<?php echo $_SESSION["user_info"]["user_id"];?>',
+	            	type:'PRIVATE',
+	            	types:'user_list',
+	            	page : page,
+			},
+			cache:false,
+			crossDomain: true == !(document.all),
+			dataType: "JSON",
+			success:function(ret){
+				var html = '';
+				var datas = ret.data;
+		
+				if(ret.code == 200){
+					//page ++;
+					for(var j in datas){
+						var data = datas[j];
+						var message = datas[j].message;
+						html += '<div class="tel_list">'+data.zhiwei+'</div>';
+						for(var i in message){
+							var zhiwei = message[i].zhiwei,
+								id     = message[i].id,
+								touid = message[i].touid,
+								name = message[i].name,
+								names = message[i].user_name, 
+								imgUrl = message[i].userphoto;
+							html += '<ul>';
+								html += '<li class="tel_li">';
+									html += '<div class="check">';
+										html += '<input name="tid" type="checkbox" value="'+touid+'" name="checkbox" />';
+									html += '</div>';
+									html += '<div class="head_img">';
+										html += '<img src="'+url+imgUrl+'" alt=""/>';
+									html += '</div>';
+									html += '<div class="tel_data">';
+										html += '<span>'+name+'</span>';
+										html += '<span>'+names+'</span>';
+									html += '</div>';
+								html += '</li>';
+							html += '</ul>';
 						}
-
-						$('.getUserList').append(html);
-						//获取数据id
-								var arr = new Array();
-				                $('input[name="id"]:checked').each(function(i){
-				                    arr[i] = $(this).val();
-				                });
-				                var vals = arr.join(",");
-					}else {
-						alert('数据加载失败，请检查网络!');
 					}
-				},
-				error:function(err){
-					console.log("错误是");
-					console.log(err);
+
+					$('.getUserList').append(html);
+					//获取数据id
+							var arr = new Array();
+			                $('input[name="id"]:checked').each(function(i){
+			                    arr[i] = $(this).val();
+			                });
+			                var vals = arr.join(",");
+				}else {
+					alert('数据加载失败，请检查网络!');
 				}
-			});
+			},
+			error:function(err){
+				console.log("错误是");
+				console.log(err);
+			}
+		});
 	}
 
 	//通讯录搜索

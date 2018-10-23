@@ -44,7 +44,7 @@ $cate = array(
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>微工程首页 - 微工程</title>
+<title>劳动力资源 - 微工程</title>
 <meta name="description" content="微工程，微工程APP，装修、材料、家具、饰品一站式服务，让装修更简单，价格更透明！！" />
 <meta name="keywords" content="微工程，微工程，家居商城，微工程家居商城，微工程家居装修商城，办公室装修，写字楼装修，材料，装修材料，家居，办公家具，家居，家具，装修，装饰" />
 <meta baidu-gxt-verify-token="157c32576b1f0c225a36806c50679560">
@@ -293,7 +293,7 @@ border:1px solid #808080;width:100%;height:66px;margin-bottom:3px;
 					<ul id="" style="width:100%;height:auto;overflow:hidden;float:left;">
 						<?php
 						
-							$query="select * from ecm_member as A,ecm_gongyingshang as B where A.user_id=B.user_id and A.pai=1 and A.postion='37' and A.user_id<>'1473404764' order by A.user_id desc limit 0,6";
+							$query="select * from ecm_member as A,ecm_gongyingshang as B where A.user_id=B.user_id and A.pai=1 and A.postion in ('5,6,7,9,10,16,37') and A.user_id<>'1473404764' order by A.user_id desc limit 0,6";
 							$result=mysql_query($query);
 							while($rows1=@mysql_fetch_array($result)){
 								  $bumen = ($rows1['bumen'] == "")?1:$rows1['bumen'];

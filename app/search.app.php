@@ -1169,8 +1169,12 @@ class SearchApp extends MallbaseApp
 	
 	//行业资讯
 	function news(){
-		
 		$this->display('news.html');
+	}
+
+	//行业资讯列表
+	function news_list(){
+		$this->display('news_list.html');
 	}
 
 	//项目合作

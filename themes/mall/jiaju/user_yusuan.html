@@ -228,43 +228,7 @@
 			<!--列表详情页面end -->
 			</div>
 			<!-- 预算列表end-->
-			<!-- 分享弹窗 -->
-					<div class="confirm" style="display: none;">
-<!-- 						<form class="confirm_" action="post" method="">
-							<div class="share_text">
-								<span>分享内容</span><span class="colon">:</span>
-								<textarea name="" id="" cols="30" rows="10" placeholder="内容获取"></textarea>
-							</div>
-							<div class="share_sendee">
-								<span style="letter-spacing: 5px;">接收人</span><span class="colon">:</span>
-								<input type="text" placeholder="选择接收人">
-							</div>
-							<input class="share_btn" type="button" value="分享确认">
-						</form> -->
-							<div class="tel_con" style="display: block;display: block;width: 50%;margin: 10px auto;background-color: #fff;padding-top: 10px;padding-bottom: 10px;height: 435px;box-shadow: 5px 5px 5px;position:relative;">
-							<div class="quxiao_tel" style="position: absolute;font-size: 20px;top: -8px;left: 460px;background-color: #9e9e9e;border-radius: 10px;width: 20px;height: 20px;line-height: 20px;">×</div>
-							<div class="confirm_head" style="margin-bottom: 10px;text-align: center;">
-								<input type="text" id="search_text" placeholder="请输入搜索的联系人" style="width:40%;height:30px;"/>
-								<input class="confirm_btn" type="button" onclick="UserSearch()" value="搜索" style="width: 40px;margin-top: -15px;height: 20px;"/>
-								<input id="back_btn" type="button" onclick="back()" value="返回" style="width: 40px;margin-top: -15px;height: 20px;display: none;"/>
-							</div>
-							<div style="overflow-y: scroll;height:300px;">
-							<div class="getUserList" style="min-height:270px;">
-								
-							</div>
-							<!--分页 -->
-							<div style="text-align: center;">
-								<a href="javascript:;" style="display: inline-block;width: 50px;background-color: #9c9393;color: #ffffff;height: 20px;line-height: 20px;margin-right:20px;" onclick="prepageUser()">上一页</a>
-								<a href="javascript:;" style="display: inline-block;width: 50px;background-color: #9c9393;color: #ffffff;height: 20px;line-height: 20px;" onclick="nextpageUser()">下一页</a>							
-							</div>
-							</div>
-							<div style="margin-top:30px;text-align: center;">
-								<input class="confirm_btn" type="button"  value="确认分享" style="display: inline-block;width: 100px;height: 30px;line-height: 25px;font-size: 18px;border-radius: 5px;background-color: #f8c67b;color: #fff;" onclick="sharebox()"/>
-							</div>
-
-						</div>
-						
-					</div>
+					
 			</div>
 
 			<!-- 分享列表-->
@@ -352,28 +316,43 @@
 			</div>	
 			<!--分享列表end -->		
 			<!-- 分享框 -->
-					<div class="share_form" style="width: 365px;background-color: #fff; height: 230px;padding: 15px 0;position: absolute;top: 30%;left: 30%;display: none;z-index: 5;">
- 					<div style="overflow: hidden;margin-left: 20px;">
- 						<div style="float: left;width: 80px;font-size: 14px;font-weight: bold;text-align: right;margin-right: 5px;letter-spacing: 2px;">内容获取:</div>
- 						<div  style="float: left;">
- 							
- 						<textarea name="share_content" id="con_share" placeholder="内容获取" style="width: 200px;height: 80px;padding-left: 10px;"></textarea>
- 						</div>
- 					</div>
- 					<div style="overflow: hidden;margin-top: 15px;margin-left: 20px;">
- 						<div style="float: left;width: 80px;font-size: 14px;font-weight: bold;text-align: right;margin-right: 5px;letter-spacing: 2px;">接收人:</div>
-						
-						<div style="float: left;">
-							
-						<input type="text" placeholder="选择接收人" style="width: 200px;height: 25px;" />
-						</div>	
-						
- 					</div>
+					<!-- 分享弹窗 -->
+					<div class="confirm" style="display: none;left: 0;top: 40px;">
+<!-- 						<form class="confirm_" action="post" method="">
+							<div class="share_text">
+								<span>分享内容</span><span class="colon">:</span>
+								<textarea name="" id="" cols="30" rows="10" placeholder="内容获取"></textarea>
+							</div>
+							<div class="share_sendee">
+								<span style="letter-spacing: 5px;">接收人</span><span class="colon">:</span>
+								<input type="text" placeholder="选择接收人">
+							</div>
+							<input class="share_btn" type="button" value="分享确认">
+						</form> -->
+							<div class="tel_con" style="display: block;display: block;width: 50%;margin: 10px auto;background-color: #fff;padding-top: 10px;padding-bottom: 10px;height: 435px;box-shadow: 5px 5px 5px;position:relative;">
+							<div class="quxiao_tel" style="position: absolute;font-size: 20px;top: -8px;left: 460px;background-color: #9e9e9e;border-radius: 10px;width: 20px;height: 20px;line-height: 20px;">×</div>
+							<div class="confirm_head" style="margin-bottom: 10px;text-align: center;">
+								<input type="text" id="search_text" placeholder="请输入搜索的联系人" style="width:40%;height:30px;"/>
+								<input class="confirm_btn" type="button" onclick="UserSearch()" value="搜索" style="width: 40px;margin-top: -15px;height: 20px;"/>
+								<input id="back_btn" type="button" onclick="back()" value="返回" style="width: 40px;margin-top: -15px;height: 20px;display: none;"/>
+							</div>
+							<div style="overflow-y: scroll;height:300px;">
+							<div class="getUserList" style="min-height:270px;">
+								
+							</div>
+							<!--分页 -->
+							<div style="text-align: center;">
+								<a href="javascript:;" style="display: inline-block;width: 50px;background-color: #9c9393;color: #ffffff;height: 20px;line-height: 20px;margin-right:20px;" onclick="prepageUser()">上一页</a>
+								<a href="javascript:;" style="display: inline-block;width: 50px;background-color: #9c9393;color: #ffffff;height: 20px;line-height: 20px;" onclick="nextpageUser()">下一页</a>							
+							</div>
+							</div>
+							<div style="margin-top:30px;text-align: center;">
+								<input class="confirm_btn" type="button"  value="确认分享" style="display: inline-block;width: 100px;height: 30px;line-height: 25px;font-size: 18px;border-radius: 5px;background-color: #f8c67b;color: #fff;" onclick="sharebox()"/>
+							</div>
 
- 					<div style="position: relative;top: 45px;">
- 						<a class="share_sure" href="javascript:;" style="display: inline-block;width: 90px;height: 26px;background-color: #facd89;color: #fff;font-size: 15px;line-height: 26px;text-decoration: none;">分享确认</a>
- 					</div>
- 				</div>
+						</div>
+						
+					</div>
 
  				<!-- 点击人工弹框 -->
  				<div class="worker_form" style="width: 365px;height: 100px;line-height: 100px; position: absolute;top: 25%;left: 30%;z-index: 6;background-color: #fff;border: 1px solid #eee;display: none;">
@@ -2605,7 +2584,7 @@ var sharepage = 1;
 							html += '<td style="width:184px;">'+sgdanwei+'</td>';
 							html += '<td style="width:171px;">'+gczongzaojia+'</td>';
 							html += '<td style="width:171px;">'+time+'</td>';
-							html += '<td class="t_detail"><a href="javascript:;" style="color:blue;width:80px;" onclick="tDetails('+id+','+gczongzaojia+')">详情</a></td>';
+							html += '<td class="t_detail"><a href="javascript:;" style="color:blue;width:80px;" onclick="tDetails('+id+','+gczongzaojia+')">详情</a><a href="javascript:;" style="color:#e8435a;width:35px;display:inline-block;" onclick="shareBtn('+id+')">分享</a></td>';
 							html += '<td style="width:91px;">'+name+'</td>';
 						html += '</tr>';
 					}

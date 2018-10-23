@@ -89,7 +89,7 @@ body{background:url('') no-repeat center top }
 		<!-- 发布招聘 -->
 
 		<!-- 发布集采 -->
-				<div class="user_collection base_ui_public" style="/*display: none;*/">
+				<div class="user_collection base_ui_public" style="/*display: none;*/position: relative;">
 			<ul class="user_collection_ul user_public_ul">
  				<li class="change_bg_li" style="margin-right: 10px;">材料询价</li>
 				<li style="margin-right: 10px;">询价列表</li>
@@ -110,10 +110,6 @@ body{background:url('') no-repeat center top }
 						<div class="user_collection_input user_public_input"><input id="brand" type="text" /></div>
 					</li>
 					<li>
-						<div class="user_collection_name user_public_name" style="color: #5e5a59;">材料描述：</div>
-						<div class="user_collection_input user_public_input"><input id="miaoshu" type="text" /></div>
-					</li>
-					<li>
 						<div class="user_collection_name user_public_name" style="color: #5e5a59;">发布地址：</div>
 						<div class="user_collection_input user_public_input"><input id="xiangxi" type="text" /></div>
 					</li>
@@ -128,6 +124,10 @@ body{background:url('') no-repeat center top }
 					<li>
 						<div class="user_collection_name user_public_name" style="color: #5e5a59;">运费：</div>
 						<div class="user_collection_input user_public_input"><input id="yunfei" type="text" /></div>
+					</li>
+					<li style="height: 150px;">
+						<div class="user_collection_name user_public_name" style="color: #5e5a59;">材料描述：</div>
+						<div class="user_collection_input user_public_input"><textarea id="miaoshu" style="width: 635px;height: 150px;padding-left: 10px;"></textarea></div>
 					</li>
 					<!-- <li>
 						<div class="user_collection_name user_public_name" style="color: #5e5a59;">材料价格：</div>
@@ -195,8 +195,51 @@ body{background:url('') no-repeat center top }
 						
  			</div>
 			<!--集采列表end -->
-			<!-- 分享弹窗 -->
-					<div class="confirm" style="display: none;">
+			
+		</div>
+			
+			<!-- 分享列表-->
+ 			<div class="message_list base_info_public" style="position: relative;display:none;">
+			<div style="overflow: hidden;margin-top: 10px;">
+			<!-- 搜索框 -->
+						<div class="search_ys">
+							<input type="text" style="width: 400px;height: 30px;" id="search_zc" placeholder="请输入关键词">
+							<label class="search_zc" for="search_zc" style="width: 50px;height: 30px;display:inline-block;position: relative;top: -8px;"><img src="/themes/mall/jiaju/images/search_button.jpg" alt="" style="width: 100%;height: 100%;" onclick="searchZC()"></label>
+							<button class="quxiao_zc" style="padding:0;width: 50px;height: 30px;position: relative;top: -8px;cursor:pointer;line-height:30px;background-color: #ec6941;display:none;">取消</button>	
+							<a class="share_btn" href="javascript:;" style="display: inline-block;width: 60px;height: 30px;line-height: 30px;font-size: 16px;color: #2d2a2a;font-weight: bold;letter-spacing: 4px; background-color: #facd89;border-radius: 5px;position: relative;left: 110px;top:-5px;text-decoration: none;" onclick="showUserList()">分享</a>						
+						</div>	
+				<div class="budget_table">
+				<div>
+
+			</div>
+			<div class="yewu_body_share" style="min-height:300px;">
+				<!-- <table style="width: 100%;" border="0" cellspacing="0" cellpadding="0">
+					<tbody>
+						<tr style="background-color:#eee;">
+						<td>公司名称</td>
+						<td>材料名称</td>
+						<td>材料品牌</td>
+						<td>材料描述</td>
+						<td>分享人</td>
+						<tr>
+					</tbody>
+				</table> -->	
+				<div class="list_show_share" style="overflow: hidden;min-height:300px;">
+						
+ 				</div>			
+			</div>
+					<!-- 分页 -->
+					<div class="price_page" style="text-align: center;">
+				
+					<a href="#">上一页</a>
+					<a href="#">下一页</a>
+					
+					</div>
+				</div>
+			</div>
+			</div>
+				<!-- 分享弹窗 -->
+					<div class="confirm" style="display: none;top: 40px;">
 <!-- 						<form class="confirm_" action="post" method="">
 							<div class="share_text">
 								<span>分享内容</span><span class="colon">:</span>
@@ -232,52 +275,10 @@ body{background:url('') no-repeat center top }
 						
 					</div>
 					<!-- 分享弹窗 end -->
-		</div>
-			
-			<!-- 分享列表-->
- 			<div class="message_list base_info_public" style="position: relative;display:none;">
-			<div style="overflow: hidden;margin-top: 10px;">
-			<!-- 搜索框 -->
-						<div class="search_ys">
-							<input type="text" style="width: 400px;height: 30px;" id="search_zc" placeholder="请输入关键词">
-							<label class="search_zc" for="search_zc" style="width: 50px;height: 30px;display:inline-block;position: relative;top: -8px;"><img src="/themes/mall/jiaju/images/search_button.jpg" alt="" style="width: 100%;height: 100%;" onclick="searchZC()"></label>
-							<button class="quxiao_zc" style="padding:0;width: 50px;height: 30px;position: relative;top: -8px;cursor:pointer;line-height:30px;background-color: #ec6941;display:none;">取消</button>							
-						</div>	
-				<div class="budget_table">
-				<div>
-
-			</div>
-			<div class="yewu_body_share" style="min-height:300px;">
-				<!-- <table style="width: 100%;" border="0" cellspacing="0" cellpadding="0">
-					<tbody>
-						<tr style="background-color:#eee;">
-						<td>公司名称</td>
-						<td>材料名称</td>
-						<td>材料品牌</td>
-						<td>材料描述</td>
-						<td>分享人</td>
-						<tr>
-					</tbody>
-				</table> -->	
-				<div class="list_show_share" style="overflow: hidden;min-height:300px;">
-						
- 				</div>			
-			</div>
-					<!-- 分页 -->
-					<div class="price_page" style="text-align: center;">
-				
-					<a href="#">上一页</a>
-					<a href="#">下一页</a>
-					
-					</div>
-				</div>
-			</div>
-			</div>
-
  		</div>
  		
  	</div>
-
+</div>
 
 
 
@@ -1645,6 +1646,10 @@ var spage = 1;
 						office_name = data[i].office_name,
 						brand       = data[i].brand,
 						address     = data[i].address,
+						yunfei      = data[i].yunfei,
+						price       = data[i].price,
+						hanshui     = data[i].hanshui,
+						name        = data[i].name,
 						addtime = timestampToTime(data[i].addtime);
 						var img = data[i].m_photo;
 						var imgArray = img.split(",");
@@ -1657,20 +1662,27 @@ var spage = 1;
 
 						//status++;
 				listHtml   +='<div style="overflow: hidden;position:relative;">';
+				listHtml +=	'<div style="text-align: left;"><span style="display: inline-block;width: 160px;height: 25px;line-height: 25px;background-color: red;font-size: 14px;text-align: center;letter-spacing: 2px;position:absolute;top:0px;color:#fff;margin:5px 5px;">分享人：'+name+'</span></div>';
+				listHtml   += '<div style="text-align:right;padding-right: 20px;margin-top: 10px;height:40px;"><input name="id" type="checkbox" value="'+pid+'"></div>';
+				listHtml   +=   '<div style="height:auto;overflow:hidden;">';
 				listHtml   +=	'<div class="list_right" style="float: left;width: 50%;">';
-				listHtml   +=		'<ul style="margin-left:15%;margin-top:10px;">';
+				listHtml   +=		'<ul style="margin-left:15%;">';
 				listHtml   +=			'<li>公司名称：'+office_name+'</li>';
 				listHtml   +=			'<li style="margin:10px 0;">材料品牌：'+brand+'</li>';
 				listHtml   +=			'<li>发布地址：'+address+'</li>';
+				listHtml   +=			'<li style="margin-top: 10px;">运&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;费：'+yunfei+'</li>';
 				listHtml   +=		'</ul>';
 				listHtml   +=	'</div>';
-				listHtml   +=	'<div class="list_left" style="float: right;width: 50%;margin-top:10px;">';
+				listHtml   +=	'<div class="list_left" style="float: right;width: 50%;">';
 				listHtml   +=		'<ul style="margin-left:15%;">';
 				listHtml   +=			'<li>材料名称：'+m_name+'</li>';
-				listHtml   +=			'<li style="margin:10px 0;">材料描述：'+m_introduce+'</li>';							
+				listHtml   +=			'<li style="margin: 10px 0;">材料价格：'+price+'</li>';
+				listHtml   +=			'<li>含税价格：'+hanshui+'</li>';					
 				listHtml   +=		'</ul>';
 				listHtml   +=	'</div>';
-				listHtml   +=	'<div id="imglists'+i+'" style="width:100%;float:left;margin-top:10px;padding: 0 10px;text-align:center;"></div>';
+				listHtml   +=	'</div>';
+				listHtml   +=   '<div style="padding:10px 60px 10px 67px;text-align:left;">材料描述：'+m_introduce+'</div>';
+				listHtml   +=	'<div id="imglist'+i+'" style="width:100%;float:left;margin-top:10px;"></div>';
 				listHtml   +=	'<div style="width:100%;height:40px;float:left;margin-top:30px;"><img src="/themes/mall/jiaju/images/list_bg.jpg" style="width:100%;height:100%;"/></div>';
 				listHtml   +=	'</div>';
 

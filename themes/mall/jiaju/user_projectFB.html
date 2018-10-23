@@ -127,7 +127,7 @@ body{background:url('') no-repeat center top }
 		<!-- 发布招聘 -->
 
 		<!-- 发布项目分包 -->
-				<div class="user_collection base_ui_public" style="/*display: none;*/">
+				<div class="user_collection base_ui_public" style="/*display: none;*/position: relative;">
 			<ul class="user_collection_ul user_public_ul">
  				<li class="change_bg_li" style="margin-right: 10px;">项目分包</li>
 				<li style="margin-right: 10px;">分包列表</li>
@@ -236,8 +236,54 @@ body{background:url('') no-repeat center top }
 					</div>
 				</div>	
 
-			        <!-- 分享弹窗 -->
-					<div class="confirm" style="display: none;">
+			        			
+ 			</div>
+			<!--项目分包列表end -->
+
+			<!-- 分享列表-->
+ 			<div class="message_list base_info_public" style="position: relative;display:none;">
+				<div style="overflow: hidden;margin-top: 10px;">
+				<!-- 搜索框 -->
+					<div class="search_ys">
+						<input type="text" style="width: 400px;height: 30px;" id="search_zc" placeholder="请输入关键词">
+						<label class="search_zc" for="search_zc" style="width: 50px;height: 30px;display:inline-block;position: relative;top: -8px;"><img src="/themes/mall/jiaju/images/search_button.jpg" alt="" style="width: 100%;height: 100%;" onclick="searchZC()"></label>
+						<button class="quxiao_zc" style="padding:0;width: 50px;height: 30px;position: relative;top: -8px;cursor:pointer;line-height:30px;background-color: #ec6941;display:none;">取消</button>
+						<a class="share_btn" href="javascript:;" style="display: inline-block;width: 60px;height: 30px;line-height: 30px;font-size: 16px;color: #2d2a2a;font-weight: bold;letter-spacing: 4px; background-color: #facd89;border-radius: 5px;position: relative;left: 110px;top:-5px;text-decoration: none;" onclick="showUserList()">分享</a>							
+					</div>	
+					<div class="budget_table">
+						<div>
+
+						</div>
+						<div class="yewu_body_share" style="min-height:300px;">
+							<!-- <table style="width: 100%;" border="0" cellspacing="0" cellpadding="0">
+								<tbody>
+									<tr style="background-color:#eee;">
+									<td>公司名称</td>
+									<td>材料名称</td>
+									<td>材料品牌</td>
+									<td>材料描述</td>
+									<td>分享人</td>
+									<tr>
+								</tbody>
+							</table> -->	
+							<div class="listShow_share" style="min-height: 480px;">
+						
+							</div>			
+						</div>
+						<!-- 分页 -->
+						<div class="price_page" style="text-align: center;">
+							
+							<a href="#">上一页</a>
+	
+							<a href="#">下一页</a>
+							
+						</div>
+					</div>
+				</div>
+
+			</div>
+			<!-- 分享弹窗 -->
+					<div class="confirm" style="display: none;top: 40px;height: 94%;">
 					<!--<form class="confirm_" action="post" method="">
 							<div class="share_text">
 								<span>分享内容</span><span class="colon">:</span>
@@ -272,51 +318,7 @@ body{background:url('') no-repeat center top }
 						</div>
 						
 					</div>
-					<!-- 分享弹窗 end -->				
- 			</div>
-			<!--项目分包列表end -->
-
-			<!-- 分享列表-->
- 			<div class="message_list base_info_public" style="position: relative;display:none;">
-				<div style="overflow: hidden;margin-top: 10px;">
-				<!-- 搜索框 -->
-					<div class="search_ys">
-						<input type="text" style="width: 400px;height: 30px;" id="search_zc" placeholder="请输入关键词">
-						<label class="search_zc" for="search_zc" style="width: 50px;height: 30px;display:inline-block;position: relative;top: -8px;"><img src="/themes/mall/jiaju/images/search_button.jpg" alt="" style="width: 100%;height: 100%;" onclick="searchZC()"></label>
-						<button class="quxiao_zc" style="padding:0;width: 50px;height: 30px;position: relative;top: -8px;cursor:pointer;line-height:30px;background-color: #ec6941;display:none;">取消</button>							
-					</div>	
-					<div class="budget_table">
-						<div>
-
-						</div>
-						<div class="yewu_body_share" style="min-height:300px;">
-							<!-- <table style="width: 100%;" border="0" cellspacing="0" cellpadding="0">
-								<tbody>
-									<tr style="background-color:#eee;">
-									<td>公司名称</td>
-									<td>材料名称</td>
-									<td>材料品牌</td>
-									<td>材料描述</td>
-									<td>分享人</td>
-									<tr>
-								</tbody>
-							</table> -->	
-							<div class="listShow_share" style="min-height: 480px;">
-						
-							</div>			
-						</div>
-						<!-- 分页 -->
-						<div class="price_page" style="text-align: center;">
-							
-							<a href="#">上一页</a>
-	
-							<a href="#">下一页</a>
-							
-						</div>
-					</div>
-				</div>
-
-			</div>
+					<!-- 分享弹窗 end -->	
 		</div>
 
 
@@ -1275,7 +1277,7 @@ $(function(){
 									listHtml +=	'</ul>';
 								listHtml +=	'</div>';
 							listHtml += '</div>';
-							listHtml +=	'<p style="padding-left:70px;">内容描述：'+content+'</p>';
+							listHtml +=	'<p style="padding-left:70px;margin: 10px 0;">内容描述：'+content+'</p>';
 							listHtml   +=	'<div id="imglist'+i+'" style="width:100%;margin-top:10px;"></div>';
 							listHtml +=	'<div style="width:100%;height:40px;float:left;margin-top:30px;"><img src="/themes/mall/jiaju/images/list_bg.jpg" style="width:100%;height:100%;"/></div>';
 						listHtml += '</div>';
@@ -1715,6 +1717,7 @@ var spage = 1;
 							dd_time = data[i].dd_time,//截止时间
 							fabudizhi = data[i].fabudizhi,//发布地址
 							prj_name = data[i].prj_name,//项目名称
+							username  = data[i].name,
 							tel = data[i].tel;
 							var img      = data[i].img;
 							console.log(img);
@@ -1726,15 +1729,17 @@ var spage = 1;
 					
 						
 						listHtml +=	'<div class="list_index" style="height:auto;overflow:hidden;position:relative;">';
+						listHtml +=	'<div style="text-align: left;"><span style="display: inline-block;width: 160px;height: 25px;line-height: 25px;background-color: red;font-size: 14px;text-align: center;letter-spacing: 2px;position:absolute;top:0px;color:#fff;margin:5px 5px;" onclick="del('+id+','+userid+')">分享人：'+username+'</span></div>';
+							listHtml +=	'<div style="text-align:right;padding-right: 20px;margin-top: 10px;"><input name="id" type="checkbox" value="'+id+'"></div>';
 							listHtml +=	'<p style="padding-left:70px;line-height:50px;">项目名称：<span style="font-size:18px;color:#f34c26 ;">'+prj_name+'</span></p>';
-							listHtml += '<div style="height:auto;overflow:hidden;">'
+							listHtml += '<div style="height:auto;overflow:hidden;">';
 								listHtml +=	'<div class="list_right" style="float: left;width: 50%;">';
 									listHtml +=	'<ul style="margin-left:15%;">';
 										listHtml +=	'<li>联系人：'+name+'</li>';
 										listHtml +=	'<li style="margin:10px 0;">发布地址：'+fabudizhi+'</li>';
 										listHtml +=	'<li>装修预算：'+expect_price+'</li>';
-										listHtml +=	'<li style="margin:10px 0;">截止时间：'+dd_time+'</li>';
-										listHtml +=	'<li>联系方式：'+tel+'</li>';					
+										listHtml +=	'<li style="margin:10px 0;">截止时间：'+dd_time+'</li>';					
+										listHtml +=	'<li>联系方式：'+tel+'</li>';
 									listHtml +=	'</ul>';
 								listHtml +=	'</div>';
 								listHtml +=	'<div class="list_left" style="float: right;width: 50%;">';
@@ -1746,8 +1751,8 @@ var spage = 1;
 									listHtml +=	'</ul>';
 								listHtml +=	'</div>';
 							listHtml += '</div>';
-							listHtml +=	'<p style="padding-left:70px;">内容描述：'+content+'</p>';
-							listHtml   +=	'<div id="imglists'+i+'" style="width:100%;margin-top:10px;padding 0 10px;text-align:center;"></div>';
+							listHtml +=	'<p style="padding-left:67px;margin: 10px 0;font-size:12px;">内容描述：'+content+'</p>';
+							listHtml   +=	'<div id="imglist'+i+'" style="width:100%;margin-top:10px;"></div>';
 							listHtml +=	'<div style="width:100%;height:40px;float:left;margin-top:30px;"><img src="/themes/mall/jiaju/images/list_bg.jpg" style="width:100%;height:100%;"/></div>';
 						listHtml += '</div>';
 						$(".listShow_share").append(listHtml);
