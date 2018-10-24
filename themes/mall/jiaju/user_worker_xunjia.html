@@ -291,8 +291,8 @@ var PRICE_FORMAT = '&yen;%s';
 			<div class="sect current wages_list" style="display:none;min-height: 420px;height: auto;overflow: hidden;">
 				<div class="search">
 					<div class="search_box">
-						<input class="search_input"  type="text" placeholder="输入关键字">
-						<input class="search_btn" id="search_list" type="button" value="搜索" onclick="searchlist(page,0)">
+						<input class="search_input" id="search_list" type="text" placeholder="输入关键字">
+						<input class="search_btn" type="button" value="搜索" onclick="searchlist(page,0)">
 						<input class="search_btn" id="search_back" type="button" value="返回" style="display: none;" onclick="showList(page,0)">
 						<input type="button" value="分享" class="share_btn" onclick="showUserList()" />
 					</div>
@@ -1321,28 +1321,24 @@ $(document).ready(function() {
 		var tel         = $("#tel");
 		var img         = $('#ImgPath').val();
 	    if(office_name.val() == ''){
-			alert('必填项');
+			alert('请填写公司名称');
 			office_name.focus();
 			return false;
 	    }else if(title.val() == ''){
-			alert('必填项');
+			alert('请填写项目名称');
 			title.focus();
 			return false;
 		}else if(unit.val() == ''){
-			alert('必填项');
+			alert('请填写计价单位');
 			unit.focus();
 			return false;
 		}else if(num.val() == ''){
-			alert('必填项');
+			alert('请填写数量');
 			num.focus();
 			return false;
 		}else if(address.val() == ''){
-			alert('必填项');
+			alert('必请填写地址');
 			address.focus();
-			return false;
-		}else if(ps.val() == ''){
-			alert('必填项');
-			ps.focus();
 			return false;
 		}else{
 		
@@ -1382,6 +1378,7 @@ var page =1,upage =1;;
 			page        : page
 		},function(ret){
 			if(ret.code == 200){
+				$("#search_back").hide();
 				$("#nullslist").hide();
 				var html ='';
 				var data = ret.message;
@@ -1453,6 +1450,7 @@ function searchlist(page,types){
 			key         : key
 		},function(ret){
 			if(ret.code == 200){
+				$("#search_back").show();
 				$("#nullslist").hide();
 				var html ='';
 				var data = ret.message;

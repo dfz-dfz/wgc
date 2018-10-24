@@ -246,9 +246,9 @@ body{background:url('') no-repeat center top }
 			<!-- 自定工价 end -->
 			<!-- 工价列表 -->
 			<div class="sect wages_list" style="display: none;">
-				<input type="text" class="search_input" />
+				<input type="text" class="search_input" id="search_list" />
 				<input type="button" value="搜索" class="search_btn" onclick="search()"/>
-				<input type="button" value="取消" class="search_btn" id="se_cancel" onclick="pageindex(1)" style="display: none;" />
+				<input type="button" value="取消" class="search_btn" id="se_cancel" onclick="pageindex(page)" style="display: none;" />
 				<input type="button" value="分享" class="share_btn" onclick="showUserList()" />
 		
 				<div class="budget_table_list" style="min-height: 300px;position: relative;margin-top: 20px;">
@@ -327,8 +327,9 @@ body{background:url('') no-repeat center top }
 			<div class="message_list base_info_public" style="display: none;">
 
 				<!-- 工价分享列表 -->
-				<input type="text" class="search_input" />
-				<input type="button" value="搜索" class="search_btn" onclick="search()" style="width: 80px;height: 24px;background-color: #f7c67a;color: #f2552a;border: 1px solid #cfcfcf;cursor: pointer;" />
+				<input type="text" class="search_input" id="search_share" />
+				<input type="button" value="搜索" class="search_btn" onclick="searchShare()" style="width: 80px;height: 24px;background-color: #f7c67a;color: #f2552a;border: 1px solid #cfcfcf;cursor: pointer;" />
+				<input type="button" value="返回" class="search_btn" id="se_share_cancel" onclick="pageshare(spage)" style="display: none;width: 80px;height: 24px;background-color: #f7c67a;color: #f2552a;border: 1px solid #cfcfcf;cursor: pointer;" />
 				<input type="button" value="分享" class="share_btn" style="display: inline-block;width: 60px;height: 30px;line-height: 30px;font-size: 16px;color: #2d2a2a;font-weight: bold;letter-spacing: 4px;background-color: #facd89;border-radius: 5px;position: relative;left: 110px;top: 0px;text-decoration: none;" onclick="showUserList()" />
 				<!-- <input type="button" value="分享" class="share_btn" onclick="showUserList()" style="width: 80px;height: 22px;border: none;background-color: #f7c67a;text-align: center;font-weight: 600;position: absolute;right: 80px;border-radius: 5px;cursor: pointer;" /> -->
 					
@@ -1544,6 +1545,7 @@ $(function(){
 				success:function(ret){
 					//console.log(ret)
 						if(ret.status == 200){
+							
 							$("#share_next").show();
 						//page++;
 						var data = ret.retData;
@@ -1610,13 +1612,13 @@ $(function(){
 	}
 	//搜索
 	function search(){
-					
+					var key = $("#search_list").val();
 					var url = 'http://wgcapp.wgc2013.com/jingyi.php/Home/Dinge/zhucai_list';
-					var value = $(".search_input").val();
-					if(value){
+					if(key){
 					$.post(url,{
 						user_id:   '<?php echo $_SESSION["user_info"]["user_id"];?>',
-						type   : 1
+						type   : 1,
+						key    : key
 					},function(ret){
 						$("#budget_list tbody").html(" ");
 							if(ret.status == 200){
@@ -1626,7 +1628,7 @@ $(function(){
 								var listHtml = '';
 								for(i in data){
 								
-								if(data[i].name === value){
+								
 								
 							var	pingpai  = data[i].pingpai,
 							    id       = data[i].id,
@@ -1661,17 +1663,99 @@ $(function(){
 								listHtml +=		'<td style="width: 8%;border-right:2px solid #bcbcbc;"><span><a href="javascript:;" style="color: blue;" onclick="details(\''+lianxiren+'\',\''+dianhua+'\',\''+weixin+'\',\''+email+'\',\''+web+'\',\''+content+'\',\''+img+'\')">详情</a></span></td>';
 								listHtml +=		'</tr>';
 								//$("#list_ul li").remove();
-								$("#budget_list tbody").append(listHtml);
+								$("#budget_list tbody").html(listHtml);
 								
 								}
 								}
-							}
+							
 					},'json')
 					}else{
 					alert("请输入搜索内容")
 					}
 					
 	}
+
+//分享搜索
+function searchShare(){
+	var url = 'http://wgcapp.wgc2013.com/jingyi.php/Home/Dinge/zhucai_list_share';
+		var key = $("#search_share").val();
+		if(key){
+
+		$.ajax({
+				type:"POST",
+				url:url,
+				data:{
+					key      : key,
+					user_id : '<?php echo $_SESSION["user_info"]["user_id"];?>',
+					page     : spage,
+					type     : 1
+				},
+				cache:false,
+				crossDomain: true == !(document.all),
+				dataType: "json",
+				success:function(ret){
+					//console.log(ret)
+						if(ret.status == 200){
+							$("#se_share_cancel").show();
+							$("#share_next").show();
+						//page++;
+						var data = ret.retData;
+						var listHtml = '';
+						var imgHtml = '';
+						var detailHtml = '';
+						for(i in data){
+							var imgArray = [];
+							var id       = data[i].id;
+							
+							var	pingpai  = data[i].pingpai,
+								name     = data[i].name,
+								danwei   = data[i].danwei,
+								danjia   = data[i].danjia,
+								xinghao  = data[i].xinghao,
+								hanshuijiage   = data[i].hanshuijiage,
+								peisongtime   = data[i].peisongtime,
+								gongyingshang   = data[i].gongyingshang,
+								lianxiren   = data[i].lianxiren,
+								dianhua   = data[i].dianhua,
+								weixin   = data[i].weixin,
+								web   = data[i].web,
+								email   = data[i].email,
+								content   = data[i].content,
+								type      = 1,
+								username  = data[i].username,
+								img       = data[i].img,
+								defaults     = (data[i].defaults<1)?'':'checked="checked"';
+
+
+								listHtml += '<tr class="tmain">';
+								listHtml +=		'<td style="width: 5%"><input name="id" type="checkbox" value="'+id+'"/><span>'+i+'</span></td>';
+								listHtml +=		'<td style="width: 16%"><span>'+name+'</span></td>';
+								listHtml +=		'<td style="width: 8%"><span>'+pingpai+'</span></td>';
+								listHtml +=		'<td style="width: 10%"><span>'+xinghao+'</span></td>';
+								listHtml +=		'<td style="width: 10%"><span>'+peisongtime+'</span></td>';
+								listHtml +=		'<td style="width: 6%"><span>'+danwei+'</span></td>';
+								listHtml +=		'<td style="width: 6%"><span>'+danjia+'</span></td>';
+								listHtml +=		'<td style="width: 6%"><span>'+hanshuijiage+'</span></td>';
+								listHtml +=		'<td style="width: 6%"><span>'+gongyingshang+'</span></td>';
+								listHtml +=		'<td style="width: 10%;"><span>'+content+'</span></td>';
+								listHtml +=		'<td style="width: 8%;border-right:2px solid #bcbcbc;"><span><a href="javascript:;" style="color: blue;" onclick="detailsShare(\''+lianxiren+'\',\''+dianhua+'\',\''+weixin+'\',\''+email+'\',\''+web+'\',\''+content+'\',\''+img+'\',\''+username+'\')">详情</a></span></td>';
+								listHtml +=		'</tr>';
+
+					
+						}
+						$("#budget_list_share tbody").html(listHtml);
+					}
+
+				},
+				error:function(err){
+					console.log(err)
+				}
+			});
+		}else{
+			alert("请输入关键词");
+		}
+}
+
 //分页控制
 function pageindex(index){
 	if(index < 1){
@@ -1778,6 +1862,7 @@ function pageshare(index){
 					//console.log(ret)
 					$("#budget_list_share tbody").html("");
 						if(ret.status == 200){
+							$("#se_share_cancel").hide();
 							$("#share_next").show();
 						//page++;
 						var data = ret.retData;
@@ -1809,7 +1894,7 @@ function pageshare(index){
 
 
 								listHtml += '<tr class="tmain">';
-								listHtml +=		'<td style="width: 5%"><span>'+i+'</span></td>';
+								listHtml +=		'<td style="width: 5%"><input name="id" type="checkbox" value="'+id+'"/><span>'+i+'</span></td>';
 								listHtml +=		'<td style="width: 16%"><span>'+name+'</span></td>';
 								listHtml +=		'<td style="width: 8%"><span>'+pingpai+'</span></td>';
 								listHtml +=		'<td style="width: 10%"><span>'+xinghao+'</span></td>';
@@ -2205,77 +2290,7 @@ $(".quxiao").click(function(){
 				$('.ps_right_share').html(psHtml); 
 
 	}
-	// function messagelist(){
-	// var url = 'http://wgcapp.wgc2013.com/jingyi.php/Home/Dinge/zhucai_list';
-	// 	$.ajax({
-	// 			type:"POST",
-	// 			url:url,
-	// 			data:{
-	// 				key      : key,
-	// 				user_id : userid,
-	// 				page     : page
-	// 			},
-	// 			cache:false,
-	// 			crossDomain: true == !(document.all),
-	// 			dataType: "json",
-	// 			success:function(ret){
-	// 				console.log(ret)
-	// 									if(ret.status == 200){
-	// 					page++;
-	// 					var data = ret.retData;
-	// 					var listHtml = '';
-	// 					for(i in data){
-							
-	// 						var id       = data[i].id;
-							
-	// 						var	pingpai  = data[i].pingpai,
-	// 							name     = data[i].name,
-	// 							danwei   = data[i].danwei,
-	// 							danjia   = data[i].danjia,
-	// 							xinghao  = data[i].xinghao,
-	// 							hanshuijiage   = data[i].hanshuijiage,
-	// 							peisongtime   = data[i].peisongtime,
-	// 							gongyingshang   = data[i].gongyingshang,
-	// 							lianxiren   = data[i].lianxiren,
-	// 							dianhua   = data[i].dianhua,
-	// 							weixin   = data[i].weixin,
-	// 							web   = data[i].web,
-	// 							email   = data[i].email,
-	// 							content   = data[i].content,
-	// 							defaults     = (data[i].defaults<1)?'':'checked="checked"';
-								
-								
-	// 							listHtml += '<li>';
-	// 							listHtml +=		'<ul class="main_list">';
-	// 							listHtml +=		'<li><input name="id" type="checkbox"  value="'+id+'" onclick="opencotent('+id+')"/>'+i+'</li>';
-	// 							listHtml +=		'<li class="material_name">'+name+'</li>';
-	// 							listHtml +=		'<li>'+pingpai+'</li>';
-	// 							listHtml +=		'<li>'+xinghao+'</li>';
-	// 							listHtml +=		'<li>'+danwei+'</li>';
-	// 							listHtml +=		'<li>'+danjia+'</li>';
-	// 							listHtml +=		'<li>'+hanshuijiage+'</li>';
-	// 							listHtml +=		'<li>'+peisongtime+'</li>';
-	// 							listHtml +=		'<li>'+gongyingshang+'</li>';
-	// 							listHtml +=		'<li>'+lianxiren+'</li>';
-	// 							listHtml +=		'<li>'+dianhua+'</li>';
-	// 							listHtml +=		'<li>'+web+'</li>';
-	// 							listHtml +=		'<li>'+email+'</li>';
-	// 							listHtml +=		'<li>'+weixin+'</li>';
-	// 							listHtml +=		'<li>'+content+'</li>';
-	// 							listHtml +=		'<li></li>';
-	// 							listHtml +=		'</ul>';
-	// 							listHtml +=	'</li>';
-	// 					}
-	// 					$("#messlist_ul").append(listHtml);
-	// 				}
-
-	// 			},
-	// 			error:function(err){
-	// 				console.log(err)
-	// 			}
-	// 		});
-
-	// }
+	
 
 </script>
 </body>

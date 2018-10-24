@@ -13,7 +13,7 @@
 <link rel="stylesheet" type="text/css" href="/themes/mall/jiaju/css/aui.1.0.css"/>
 <style type="text/css">
 .jodsearch{margin:0px;padding:0px;vertical-align: middle;}
-.jodsearch .dosearch{margin-left:auto;margin-right:auto;margin-top:10px;padding:0px;width:1100px;height:52px;background-color:#F5F5F5;}
+.jodsearch .dosearch{margin-left:auto;margin-right:auto;margin-top:10px;padding:0px;width:1200px;height:52px;background-color:#F5F5F5;}
 .jodsearch .dosearch input{margin-top:10px;}
 .jodsearch .dosearch *{vertical-align:middle;}
 .tiaojian a{color:#0066CB;}
@@ -22,129 +22,61 @@
 .jobtable tr td{border-bottom:1px solid #F0F0F0;}
 .main{margin:0px;padding:0px;}
 .main_body{
-margin:auto;padding:0px;margin-top: 10px;margin-bottom: 10px; width:1100px;overflow:hidden;
+margin:auto;padding:0px;margin-bottom: 10px; width:1200px;overflow:hidden;
 }
 .main_body .main_left{width:79%;float:left;margin-right:10px;}
 .main_body .main_right{width:19%;float:left;margin-left:10px;}
-/**劳务资源*/
 .text-left a{width:23%;background:#ff552e;border-radius:10px;float:left;margin:1%;height:50px;line-height:50px;overflow:hidden;display:block;color:#fff;font-size:16px;font-weight:bold;}
 .aui-list-item-middle{width:19.88888888888%;margin:10px 0.11111111111rem;float:left;overflow: hidden;}
 </style>
-<base href="{$site_url}/" />
-<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7 charset={$charset}" />
-<meta http-equiv="Content-Type" content="text/html; charset={$charset}" />
-<link rel="stylesheet" type="text/css" href="/themes/mall/jiaju/css/api.css"/>
-<link rel="stylesheet" type="text/css" href="/themes/mall/jiaju/css/aui.css" />
-<link type="text/css" href="{res file=css/main.css}" rel="stylesheet"  />
-<link type="text/css" href="/themes/mall/jiaju/styles/css/global.css" rel="stylesheet"  />
-<link type="text/css" href="{res file=css/catalog.css}" rel="stylesheet"  />
-<link type="text/css" href="{res file=css/footer.css}" rel="stylesheet" />
-<link type="text/css" href="/themes/mall/jiaju/styles/css/style.css" rel="stylesheet"  />
-<script type="text/javascript" src="index.php?act=jslang"></script>
-<script type="text/javascript" src="{lib file=jquery.js}" charset="utf-8"></script>
-<script type="text/javascript" src="{lib file=ecmall.js}" charset="utf-8"></script>
-<script type="text/javascript" src="{lib file=cart.js}" charset="utf-8"></script>
-<script type="text/javascript" src="{res file=js/main.js}" charset="utf-8"></script>
-<!--{if $index}-->
-<script type="text/javascript" src="{lib file=kissy/build/kissy.js}"></script>
-<script type="text/javascript" src="{lib file=kissy/build/switchable/switchable-pkg.js}"></script>
-<script type="text/javascript" src="{res file=js/lrtk.js}"></script>
-<!--{/if}-->
-<!--[if lte IE 6]>
-<script type="text/javascript" language="Javascript" src="{res file=js/hoverForIE6.js}"></script>
-<![endif]-->
-<script type="text/javascript" src="{res file=js/hover.js}"></script>
-
 </head>
 <body>
 {include file=header.html}
 
 <!-- 搜索 -->
 <div class="jodsearch" style="padding-bottom: 8px;">
-		<div class="dosearch" style="background:red;overflow:hidden;color:#fff;height:50px;line-height:50px;font-size:22px;">
-			今日工价
-		</div>
+	<div class="dosearch" style="background:red;overflow:hidden;color:#fff;height:50px;line-height:50px;font-size:22px;">
+		今日工价
+	</div>
 </div>
 
-<div style="height: 54px;width: 1100px;margin: 20px auto;">
-	<input id="key" type="text" style="height: 10px;width: 1020px;padding: 20px;float: left;" placeholder="请输入关键词搜索">
+<div style="height: 54px;width: 1200px;margin: 0 auto;margin-top: 20px;">
+	<input id="key" type="text" style="height: 10px;width: 1120px;padding: 20px;float: left;" placeholder="请输入关键词搜索">
 	<img onclick="searchList()" src="themes/mall/jiaju/images/search.png" alt="" style="float: left;width: 80px;height: 42px;">
 </div>
 
 <div class="main">
 	<!-- 主体 -->
 	<div class="main_body">
-		<!-- 左边 -->
-		<div class="main_left" style="width:880px;float: left;">
+		
+		<div class="main_left" style="width:1200px;float: left;">
 			<div style="background-color:#fff;width:100%;">
-				
-<!-- 					<div style="width:100%;height:auto;overflow:hidden;">
-						<span style="display:block;width:100%;overflow:hidden;height:30px;color:#333;font-size:20px;float:left;text-align:left">区域：----------------------------------------------------------------------------------------------------------------</span>
-					</div>
-					<div style="width:100%;height:auto;overflow:hidden;margin:20px auto;">
-						<strong class="aui-list-item-input" style="line-height:31px;text-align:left;margin-bottom:10px;float:left;display:block;width:20%;overflow:hidden;"><label><input class="aui-checkbox"  type="radio" value="福建" name="city"/><font style="padding-left:10px">福建</font></label></strong>
-						<strong class="aui-list-item-input"style="line-height:31px;text-align:left;margin-bottom:10px;float:left;display:block;width:20%;overflow:hidden;"><label><input class="aui-checkbox"  type="radio" value="重庆" name="city"/><font style="padding-left:10px">重庆</font></label></strong>
-						<strong class="aui-list-item-input"style="line-height:31px;text-align:left;margin-bottom:10px;float:left;display:block;width:20%;overflow:hidden;"><label><input class="aui-checkbox"  type="radio" value="北京" name="city"/><font style="padding-left:10px">北京</font></label></strong>
-						<strong class="aui-list-item-input"style="line-height:31px;text-align:left;margin-bottom:10px;float:left;display:block;width:20%;overflow:hidden;"><label><input class="aui-checkbox"  type="radio" value="贵州" name="city"/><font style="padding-left:10px">贵州</font></label></strong>
-						<strong class="aui-list-item-input"style="line-height:31px;text-align:left;margin-bottom:10px;float:left;display:block;width:20%;overflow:hidden;"><label><input class="aui-checkbox"  type="radio" value="天津" name="city"/><font style="padding-left:10px">天津</font></label></strong>
-						<strong class="aui-list-item-input"style="line-height:31px;text-align:left;margin-bottom:10px;float:left;display:block;width:20%;overflow:hidden;"><label><input class="aui-checkbox"  type="radio" value="安徽" name="city"/><font style="padding-left:10px">安徽</font></label></strong>
-						<strong class="aui-list-item-input"style="line-height:31px;text-align:left;margin-bottom:10px;float:left;display:block;width:20%;overflow:hidden;"><label><input class="aui-checkbox"  type="radio" value="河南" name="city"/><font style="padding-left:10px">河南</font></label></strong>
-						<strong class="aui-list-item-input"style="line-height:31px;text-align:left;margin-bottom:10px;float:left;display:block;width:20%;overflow:hidden;"><label><input class="aui-checkbox"  type="radio" value="江苏" name="city"/><font style="padding-left:10px">江苏</font></label></strong>
-						<strong class="aui-list-item-input"style="line-height:31px;text-align:left;margin-bottom:10px;float:left;display:block;width:20%;overflow:hidden;"><label><input class="aui-checkbox"  type="radio" value="四川" name="city" /><font style="padding-left:10px">四川</font></label></strong>
-						<strong class="aui-list-item-input"style="line-height:31px;text-align:left;margin-bottom:10px;float:left;display:block;width:20%;overflow:hidden;"><label><input class="aui-checkbox"  type="radio" value="辽宁" name="city"/><font style="padding-left:10px">辽宁</font></label></strong>
-						<strong class="aui-list-item-input"style="line-height:31px;text-align:left;margin-bottom:10px;float:left;display:block;width:20%;overflow:hidden;"><label><input class="aui-checkbox"  type="radio" value="河北" name="city"/><font style="padding-left:10px">河北</font></label></strong>
-						<strong class="aui-list-item-input"style="line-height:31px;text-align:left;margin-bottom:10px;float:left;display:block;width:20%;overflow:hidden;"><label><input class="aui-checkbox"  type="radio" value="山西" name="city"/><font style="padding-left:10px">山西</font></label></strong>
-						<strong class="aui-list-item-input"style="line-height:31px;text-align:left;margin-bottom:10px;float:left;display:block;width:20%;overflow:hidden;"><label><input class="aui-checkbox"  type="radio" value="吉林" name="city"/><font style="padding-left:10px">吉林</font></label></strong>
-						<strong class="aui-list-item-input"style="line-height:31px;text-align:left;margin-bottom:10px;float:left;display:block;width:20%;overflow:hidden;"><label><input class="aui-checkbox"  type="radio" value="黑龙江" name="city"/><font style="padding-left:10px">黑龙江</font></label></strong>
-						<strong class="aui-list-item-input"style="line-height:31px;text-align:left;margin-bottom:10px;float:left;display:block;width:20%;overflow:hidden;"><label><input class="aui-checkbox"  type="radio" value="上海" name="city"/><font style="padding-left:10px">上海</font></label></strong>
-						<strong class="aui-list-item-input"style="line-height:31px;text-align:left;margin-bottom:10px;float:left;display:block;width:20%;overflow:hidden;"><label><input class="aui-checkbox"  type="radio" value="浙江" name="city"/><font style="padding-left:10px">浙江</font></label></strong>
-						<strong class="aui-list-item-input"style="line-height:31px;text-align:left;margin-bottom:10px;float:left;display:block;width:20%;overflow:hidden;"><label><input class="aui-checkbox"  type="radio" value="江西" name="city"/><font style="padding-left:10px">江西</font></label></strong>
-						<strong class="aui-list-item-input"style="line-height:31px;text-align:left;margin-bottom:10px;float:left;display:block;width:20%;overflow:hidden;"><label><input class="aui-checkbox"  type="radio" value="广东" name="city" checked="checked"/><font style="padding-left:10px">广东</font></label></strong>
-						<strong class="aui-list-item-input"style="line-height:31px;text-align:left;margin-bottom:10px;float:left;display:block;width:20%;overflow:hidden;"><label><input class="aui-checkbox"  type="radio" value="陕西" name="city"/><font style="padding-left:10px">陕西</font></label></strong>
-					</div> -->
-					<div style="width:100%;height:40px;text-align:left;line-height:40px;color:#333;font-size:16px;border-top:1px solid #999;">
-						发布时间：
-						<a href="/index.php?app=search&act=gongjia&times=1">所有</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-						<a href="/index.php?app=search&act=gongjia&times=2">最新</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-						<a href="/index.php?app=search&act=gongjia&times=3">近三天</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-						<a href="/index.php?app=search&act=gongjia&times=4">近一周</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-						<a href="/index.php?app=search&act=gongjia&times=5">近一月</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					</div>
-					<table border="1" style="border-collapse:collapse;border:1px solid #e3e3e3;margin:20px auto;width:100%;background:#fff;">
-						<tr style="background:#e3e3e3;text-align: center;font-weight:bold;height:50px;font-size:18px;color:#333;">
-							<td style="border:1px solid #e3e3e3;width: 30%;">名称</td>
-							<td style="border:1px solid #e3e3e3;width: 22%;">单位</td>
-							<td style="border:1px solid #e3e3e3;width: 22%;">工价</td>
-							<td style="border:1px solid #e3e3e3;width: 24%;">发布时间</td>
-						</tr>
-					</table>
+				<div style="width:100%;height:40px;text-align:left;line-height:40px;color:#333;font-size:16px;">
+					发布时间：
+					<a href="/index.php?app=search&act=gongjia&times=1">所有</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<a href="/index.php?app=search&act=gongjia&times=2">最新</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<a href="/index.php?app=search&act=gongjia&times=3">近三天</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<a href="/index.php?app=search&act=gongjia&times=4">近一周</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<a href="/index.php?app=search&act=gongjia&times=5">近一月</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				</div>
 
-					<table border="1" style="border-collapse:collapse;border:1px solid #e3e3e3;margin:20px auto;width:100%;background:#fff;" id="list_table">
-						
-						<!--列表开始-->
-						
-					</table>
+				<!--列表开始-->
+				<table border="1" style="border-collapse:collapse;margin:10px auto;width:100%;background:#fff;" id="list_table">
 					
-					<div class="unpages" id="unpage" style="margin:50px auto;width: 200px;text-align: center;">
-						<a id="uppage" style="background:red;color:#fff;width: 70px;height: 30px;line-height: 30px;padding:4px 5px;cursor:pointer;margin-right: 20px;" onclick="uppage()">上一页</a>
-						<a id="nextpage" style="background:red;color:#fff;width: 70px;height: 30px;line-height: 30px;padding:4px 5px;cursor:pointer;" onclick="nextpage()" id="nextpage">下一页</a>
-					</div>
+				</table>
+				
+				<div class="unpages" id="unpage" style="margin:50px auto;width: 200px;text-align: center;">
+					<a id="uppage" style="background:red;color:#fff;width: 70px;height: 30px;line-height: 30px;padding:4px 5px;cursor:pointer;margin-right: 20px;" onclick="uppage()">上一页</a>
+					<a id="nextpage" style="background:red;color:#fff;width: 70px;height: 30px;line-height: 30px;padding:4px 5px;cursor:pointer;" onclick="nextpage()" id="nextpage">下一页</a>
+				</div>
 				
 			</div>
 			
 		</div>
-		<!-- 左边结束 -->
-		
-		<!-- 右边 -->
-		<div style="width: 200px;float: right;height: 587px;border-left: 10px solid #e5e5e5;padding-right: 0;">
-			<img src="http://www.wgc2013.com/themes/mall/jiaju/images/guanggao.png" alt="" width="100%">
-		</div>
 	</div>
+</div>
 {include file=footer.html}
-<!-- 底部include file=footer2.html-->
 <script src="/themes/mall/jiaju/js/jquery-1.5.2.min.js"></script>
-<script type="text/javascript" src="/themes/mall/jiaju/js/aui-scroll.js" ></script>
-
 <script type="text/javascript">
 var serverUrl = "http://wgcapp.59jiaju.com/index.php/Home/",
 	page = 1,
@@ -155,30 +87,6 @@ $(function(){
 	cai_select(page);
 });
 
-// PHP时间戳转时间
-function _trans_php_time_to_str(timestamp, n) {
-	update = new Date(timestamp * 1000);
-	//时间戳要乘1000
-	year = update.getFullYear();
-	month = (update.getMonth() + 1 < 10) ? ('0' + (update.getMonth() + 1)) : (update.getMonth() + 1);
-	day = (update.getDate() < 10) ? ('0' + update.getDate()) : (update.getDate());
-	hour = (update.getHours() < 10) ? ('0' + update.getHours()) : (update.getHours());
-	minute = (update.getMinutes() < 10) ? ('0' + update.getMinutes()) : (update.getMinutes());
-	second = (update.getSeconds() < 10) ? ('0' + update.getSeconds()) : (update.getSeconds());
-	if (n == 1) {
-		return (year + '-' + month + '-' + day + ' ' + hour + ':' + minute + ':' + second);
-	} else if (n == 2) {
-		return (year + '-' + month + '-' + day);
-	} else if (n == 3) {
-		return (month + '-' + day);
-	} else if (n == 4) {
-		return (hour + ':' + minute + ':' + second);
-	} else if (n == 5) {
-		return (year + '-' + month + '-' + day + ' ' + hour + ':' + minute );
-	} else {
-		return 0;
-	}
-}
 function getdate(){
 	var myDate = new Date();
 	var year   = myDate.getFullYear();
@@ -204,7 +112,8 @@ function getdate(){
 	return curDateTime;
 
 }
-//列表
+
+//今日工价列表
 function cai_select(page){
 	var url = serverUrl+"Jysearch/searchlist";
 	if(page == 1){
@@ -218,44 +127,61 @@ function cai_select(page){
 		infotype:'pc'
 	},function(ret){
 		if(ret.status == 200){
-				page++;
-				var mydates     = getdate();                    
-				//alert(mydates);
+			page++;
+			var mydates = getdate();
 
-				var list=['施工队长','水电工长','空调安装工长','空调安装工','泥水工','水电工','电焊工','家具安装工','木工','扇灰工','保洁工','杂工','设计师','预算员','其它','维修工','网络维修'];
-				var data = ret.retData;
-				var listHtml = '';
-				for (var i in data) {
-							
-					var id          = data[i].id,		
-						name        = data[i].title,
-						xiangxi     = data[i].xiangxi,
-						unit        = data[i].unit,
-						user_id     = data[i].userid,
-						postions    = data[i].postion,
-						postion 	= (parseInt(data[i].postion) > 1)?list[parseInt(data[i].postion)]:'无工种',
-						xinzi       = (data[i].total_price == 0)?'面议':data[i].total_price+'元',
-						addtime     = data[i].addtime;
-						today       = addtime.slice(0,10);
-						if(mydates == today){
-							listHtml += '<tr style="cursor:pointer;" title="'+name+'" onclick="openConten('+id+','+user_id+')">';
-							listHtml += '	<td style="font-size:16px;color:#e20c0c;text-align:left;height:40px;width:30%;"><i style="margin:0 15px;">&bull;</i>'+name+'</td>';
-							listHtml += '	<td style="font-size:16px;color:#e20c0c;height:40px;width:22%;">'+unit+'</td>';
-							listHtml += '	<td style="font-size:16px;color:#e20c0c;height:40px;width:22%;">'+xinzi+'</td>';
-							listHtml += '	<td style="font-size:16px;color:#e20c0c;height:40px;width:24%;">'+addtime+'</td>';
-							listHtml += '</tr>';
-						}else{
-							listHtml += '<tr style="cursor:pointer;" title="'+name+'" onclick="openConten('+id+','+user_id+')">';
-							listHtml += '	<td style="font-size:16px;color:#333;text-align:left;height:40px;width:30%;"><i style="margin:0 15px;">&bull;</i>'+name+'</td>';
-							listHtml += '	<td style="font-size:16px;color:#333;height:40px;width:22%;">'+unit+'</td>';
-							listHtml += '	<td style="font-size:16px;color:#333;height:40px;width:22%;">'+xinzi+'</td>';
-							listHtml += '	<td style="font-size:16px;color:#333;height:40px;width:24%;">'+addtime+'</td>';
-							listHtml += '</tr>';
-						}
-				
-					
-					
-				
+			var list=['施工队长','水电工长','空调安装工长','空调安装工','泥水工','水电工','电焊工','家具安装工','木工','扇灰工','保洁工','杂工','设计师','预算员','其它','维修工','网络维修'];
+			var data = ret.retData;
+			var listHtml = '';
+			for (var i in data) {
+						
+				var id          = data[i].id,		
+					name        = data[i].title,
+					xiangxi     = data[i].xiangxi,
+					unit        = data[i].unit,
+					user_id     = data[i].userid,
+					postions    = data[i].postion,
+					postion 	= (parseInt(data[i].postion) > 1)?list[parseInt(data[i].postion)]:'无工种',
+					xinzi       = (data[i].total_price == 0)?'面议':data[i].total_price+'元',
+					img         = (data[i].img == '' || data[i].img == null) ? 'themes/mall/jiaju/images/no_picture.jpg':data[i].img,
+					addtime     = data[i].addtime,
+					time = addtime.substr(0,10),
+					today       = addtime.slice(0,10);
+				var num = parseInt(i)+1;
+
+				if(num%4 == 0){
+					listHtml += '<div class="little_box" style="width: 22%;margin-right: 0;display: inline-block;float:left;">';
+						listHtml += '<img src="'+img+'" alt="" />';
+						listHtml += '<div style="line-height:30px;font-weight:600;font-size:16px;padding-top:5px;">'+name+'</div>';
+						listHtml += '<div style="width: 100%;height: auto;overflow: hidden;padding: 5px 0;">';
+							listHtml += '<span style="float: left;">工价：<span style="color:red;">'+xinzi+'/'+unit+'</span></span>';
+							listHtml += '<span style="float:right;">发布时间：'+time+'</span>';
+						listHtml += '</div>';
+						listHtml += '<div style="cursor:pointer;line-height: 30px;background-color:red;color:#fff;font-size:16px;" title="'+name+'" onclick="openConten('+id+','+user_id+')">查看详情</div>';
+					listHtml += '</div>';
+				}else{
+					if(mydates == today){
+						listHtml += '<div class="little_box" style="width: 22%;margin-right: 4%;display: inline-block;float:left;">';
+							listHtml += '<img src="'+img+'" alt="" />';
+							listHtml += '<div style="line-height:30px;font-weight:600;font-size:16px;padding-top:5px;">'+name+'</div>';
+							listHtml += '<div style="width: 100%;height: auto;overflow: hidden;padding: 5px 0;">';
+								listHtml += '<span style="float: left;">工价：<span style="color:red;">'+xinzi+'/'+unit+'</span></span>';
+								listHtml += '<span style="float:right;">发布时间：'+time+'</span>';
+							listHtml += '</div>';
+							listHtml += '<div style="cursor:pointer;line-height: 30px;background-color:red;color:#fff;font-size:16px;" title="'+name+'" onclick="openConten('+id+','+user_id+')">查看详情</div>';
+						listHtml += '</div>';
+					}else{
+						listHtml += '<div class="little_box" style="width: 22%;margin-right: 4%;display: inline-block;float:left;">';
+							listHtml += '<img src="'+img+'" alt="" />';
+							listHtml += '<div style="line-height:30px;font-weight:600;font-size:16px;padding-top:5px;">'+name+'</div>';
+							listHtml += '<div style="width: 100%;height: auto;overflow: hidden;padding: 5px 0;">';
+								listHtml += '<span style="float: left;">工价：<span style="color:red;">'+xinzi+'/'+unit+'</span></span>';
+								listHtml += '<span style="float:right;">发布时间：'+time+'</span>';
+							listHtml += '</div>';
+							listHtml += '<div style="cursor:pointer;line-height: 30px;background-color:red;color:#fff;font-size:16px;" title="'+name+'" onclick="openConten('+id+','+user_id+')">查看详情</div>';
+						listHtml += '</div>';
+					}
+				}
 			}
 		   
 			$("#list_table").show();
@@ -267,12 +193,8 @@ function cai_select(page){
 			$("#list_table").html('<div style="border: none;width:100px;margin:50px auto;" class="empty"><img src="/themes/mall/jiaju/images/empty.png"/></div>');
 		}else{
 			return false;
-		
 		}
-		
-	
 	},"json");
-
 }
 
 //分页
@@ -289,18 +211,97 @@ function nextpage(){
 	cai_select(page);
 }
 
-//搜索
-function searchList(){
-	
+//搜索今日工价列表
+function searchList(page){
+	var keywords = $('#key').val();
+	var url = serverUrl+"Jysearch/searchlist";
+	if(page == 1){
+		$('#uppage').hide();
+	}else{
+		$('#uppage').show();
+	}
+	$.post(url,{
+		user_id : '',
+		page : page,
+		infotype : 'pc',
+		keywords : keywords
+	},function(ret){
+		if(ret.status == 200){
+			page++;
+			var mydates = getdate();
+
+			var list=['施工队长','水电工长','空调安装工长','空调安装工','泥水工','水电工','电焊工','家具安装工','木工','扇灰工','保洁工','杂工','设计师','预算员','其它','维修工','网络维修'];
+			var data = ret.retData;
+			var listHtml = '';
+			for (var i in data) {
+						
+				var id          = data[i].id,		
+					name        = data[i].title,
+					xiangxi     = data[i].xiangxi,
+					unit        = data[i].unit,
+					user_id     = data[i].userid,
+					postions    = data[i].postion,
+					postion 	= (parseInt(data[i].postion) > 1)?list[parseInt(data[i].postion)]:'无工种',
+					xinzi       = (data[i].total_price == 0)?'面议':data[i].total_price+'元',
+					img         = (data[i].img == '' || data[i].img == null) ? 'themes/mall/jiaju/images/no_picture.jpg':data[i].img,
+					addtime     = data[i].addtime,
+					time = addtime.substr(0,10),
+					today       = addtime.slice(0,10);
+				var num = parseInt(i)+1;
+
+				if(num%4 == 0){
+					listHtml += '<div class="little_box" style="width: 22%;margin-right: 0;display: inline-block;float:left;">';
+						listHtml += '<img src="'+img+'" alt="" />';
+						listHtml += '<div style="line-height:30px;font-weight:600;font-size:16px;padding-top:5px;">'+name+'</div>';
+						listHtml += '<div style="width: 100%;height: auto;overflow: hidden;padding: 5px 0;">';
+							listHtml += '<span style="float: left;">工价：<span style="color:red;">'+xinzi+'/'+unit+'</span></span>';
+							listHtml += '<span style="float:right;">发布时间：'+time+'</span>';
+						listHtml += '</div>';
+						listHtml += '<div style="cursor:pointer;line-height: 30px;background-color:red;color:#fff;font-size:16px;" title="'+name+'" onclick="openConten('+id+','+user_id+')">查看详情</div>';
+					listHtml += '</div>';
+				}else{
+					if(mydates == today){
+						listHtml += '<div class="little_box" style="width: 22%;margin-right: 4%;display: inline-block;float:left;">';
+							listHtml += '<img src="'+img+'" alt="" />';
+							listHtml += '<div style="line-height:30px;font-weight:600;font-size:16px;padding-top:5px;">'+name+'</div>';
+							listHtml += '<div style="width: 100%;height: auto;overflow: hidden;padding: 5px 0;">';
+								listHtml += '<span style="float: left;">工价：<span style="color:red;">'+xinzi+'/'+unit+'</span></span>';
+								listHtml += '<span style="float:right;">发布时间：'+time+'</span>';
+							listHtml += '</div>';
+							listHtml += '<div style="cursor:pointer;line-height: 30px;background-color:red;color:#fff;font-size:16px;" title="'+name+'" onclick="openConten('+id+','+user_id+')">查看详情</div>';
+						listHtml += '</div>';
+					}else{
+						listHtml += '<div class="little_box" style="width: 22%;margin-right: 4%;display: inline-block;float:left;">';
+							listHtml += '<img src="'+img+'" alt="" />';
+							listHtml += '<div style="line-height:30px;font-weight:600;font-size:16px;padding-top:5px;">'+name+'</div>';
+							listHtml += '<div style="width: 100%;height: auto;overflow: hidden;padding: 5px 0;">';
+								listHtml += '<span style="float: left;">工价：<span style="color:red;">'+xinzi+'/'+unit+'</span></span>';
+								listHtml += '<span style="float:right;">发布时间：'+time+'</span>';
+							listHtml += '</div>';
+							listHtml += '<div style="cursor:pointer;line-height: 30px;background-color:red;color:#fff;font-size:16px;" title="'+name+'" onclick="openConten('+id+','+user_id+')">查看详情</div>';
+						listHtml += '</div>';
+					}
+				}
+			}
+		   
+			$("#list_table").show();
+			$("#list_table").html(listHtml);
+			$('#nextpage').show();
+			
+		}else if(ret.status == 202)	{
+			$('#nextpage').hide();
+			$("#list_table").html('<div style="border: none;width:100px;margin:50px auto;" class="empty"><img src="/themes/mall/jiaju/images/empty.png"/></div>');
+		}else{
+			return false;
+		}
+	},"json");
 }
 
 //打开详情
 function openConten(id,user_id){
-	
 	var url = '/index.php?app=search&act=gongjia_content&id='+id+'&name=详细介绍';
 	window.open(url);
 	//_openWin('gongzuo_content_win','../gongzuo/gongzuo_content_win.html',{id : id,type : 1,touid : user_id,f_type : '招工'});
-	
 }
 </script>
 </body>

@@ -1826,7 +1826,7 @@ function messagelist(spage,typesindex){
 								}
 
 							listHtml +=	'<div class="filelistson" style="width: 20%;float: left;height: auto;overflow: hidden;position:relative;margin-top:15px;padding:10px 0;">';
-							listHtml += '<div class="download" style="text-align:right;position:absolute;left:85%;display:none;" title="下载" onclick="download(\''+dir+'\',\''+types+'\')"><img src="/themes/mall/jiaju/images/center/xiazai.png" alt="" style="width:20px;height:20px;cursor:pointer;"/></div>';
+							listHtml += '<div class="download" style="text-align:right;position:absolute;left:85%;display:none;" title="下载" onclick="download(\''+id+'\')"><img src="/themes/mall/jiaju/images/center/xiazai.png" alt="" style="width:20px;height:20px;cursor:pointer;"/></div>';
 							listHtml += '<span style="display: block;">分享人：'+username+'</span>';
 							listHtml += '<img src="'+Suffix+'" alt="" style="width: 50%;height: 70px;"/>';
 							listHtml += '<span style="display: block;">'+filename+'</span>';
@@ -1876,9 +1876,9 @@ function enterfile(id,types){
 	// window.open(surl);
 	window.location.href = surl;
 }
-function download(url,types){
+function download(id){
 	
-	window.location.href = "http://wgcapp.wgc2013.com/jingyi.php/Home/Wangpan/file_download/path"+url+"/type/"+types;
+	window.location.href = "http://wgcapp.wgc2013.com/jingyi.php/Home/Wangpan/file_download/id/"+id;
 }
 //重命名
 $(".filesmore").on('click','.renamefile',function(e){

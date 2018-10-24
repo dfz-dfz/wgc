@@ -150,6 +150,7 @@ body{background:url('') no-repeat center top }
 			<div class="sect wages_list" style="display: none;min-height: 480px;position: relative;">
 				<input type="text" class="search_input" />
 				<input type="button" value="搜索" class="search_btn" onclick="search()"/>
+				<input type="button" value="返回" id="back_list" style="width: 80px;height: 24px;background-color: #f7c67a;color: #f2552a;border: 1px solid #cfcfcf;cursor: pointer;display: none;" onclick="backlist()" />
 				<input type="button" style="height: 24px;width: 70px;" value="分享" class="share_btn" onclick="showUserList()"/>
 
 				<ul class="list_ul_head">
@@ -273,7 +274,7 @@ body{background:url('') no-repeat center top }
 <script type="text/javascript">
 	$(function(){
 	$(".user_workerDE_li").addClass("bg_li")
-		list();
+		list(page);
 		messagelist();
 	});
   //列表切换
@@ -381,7 +382,7 @@ body{background:url('') no-repeat center top }
 	//工价列表
 	userid = <?php echo $_SESSION["user_info"]["user_id"];?>;
 	var page = 1,spage=1,key = '';
-	function list(){
+	function list(page){
 		var url = 'http://wgcapp.wgc2013.com/jingyi.php/Home/Dinge/rengong_list';
 		$.ajax({
 			type:"POST",
@@ -396,6 +397,7 @@ body{background:url('') no-repeat center top }
 			dataType: "json",
 			success:function(ret){
 				if(ret.status == 200){
+					$("#back_list").hide();
 					var data = ret.retData;
 					var listHtml = '';
 					for(i in data){
@@ -433,6 +435,10 @@ body{background:url('') no-repeat center top }
 				console.log(err)
 			}
 		});
+	}
+
+	function backlist(){
+		list(page);
 	}
 	
 	//获取工价分享列表
@@ -566,6 +572,7 @@ body{background:url('') no-repeat center top }
 			dataType: "json",
 			success:function(ret){
 				if(ret.status == 200){
+					$("#back_list").show();
 					var data = ret.retData;
 					var listHtml = '';
 					for(i in data){

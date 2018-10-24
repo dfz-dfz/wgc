@@ -26,6 +26,12 @@ ul,li{list-style:none;}
 .story_time{color:rgba(154,154,154,1);padding:2px 0;}
 .story_hf{background:rgb(245,245,245);font-size:1.2em;border:1px solid rgba(204,204,204,0.2);border-radius:2px;color:rgba(110,110,110,1);padding:4px;margin-bottom:5px;}
 .opbtn{position:absolute;top: 0;right: 0;}
+.jobtypelist li{
+	height:45px;
+	line-height: 45px;
+	font-size: 14px;
+
+}
 </style>
 
 <link type="text/css" href="/themes/mall/jiaju/styles/style/zp/demo.css" rel="stylesheet"  />
@@ -57,8 +63,26 @@ ul,li{list-style:none;}
 	
 ?>
 <!-- main start -->
-<div id="main">
-    
+<div id="main" style="position: relative;">
+   	<!-- 投递简历的窗口 --> 
+		<div class="jobstyle" style="width: 40%;min-width: 600px;height: auto;overflow: hidden;position: absolute;left: 20%;top: 40px;background-color: #c3bfbf;color: #fff;padding: 15px 15px;display: none;">
+			<div class="jobtypebox" style="background-color: #fff;position: relative;">
+				<h3 style="height: 35px;background-color: #00b38a;font-size: 18px;padding-left: 20px;line-height: 35px;text-align: left;">投个简历</h3>
+				<div id="quxiao" style="position: absolute;width: 40px;height: 40px;line-height: 40px;font-size: 40px;left: 94%;top: -5px;z-index: 999;">×</div>
+				<div class="jobtypelistbox" style="padding: 10px 10px 10px 25px;color: #555555;text-align: left;">
+					<h3 style="font-size: 18px;margin: 10px 0;">请选择你要投递的简历:</h3>
+					<ul class="jobtypelist" style="">
+						<!-- <li><input type="radio" name="jobtype" value="" /><span style="display: inline-block;width:90%;padding-left: 5px; ">123</span><a href="/index.php?app=search&act=user_myresume" style="text-align: right;text-decoration: underline;">预览</a></li> -->
+
+					</ul>
+					<div class="toudiways" style="width: 100%;">
+						<div id="resumebox" style="width: 150px;height: 35px;line-height: 35px;font-size: 18px;color: #fff;text-align: center;margin:20px auto;background-color: #a3a3a3;cursor: pointer;">确认投递简历</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+   	<!-- 投递简历的窗口end --> 
 	<div style="background-color:#e5e5e5;width: 100%;height: 100px;margin-top:10px;text-align:left;">
 			<!-- 招聘基本信息 -->
 			<div style="width: 1100px;margin: auto;padding: 10px 0;">
@@ -66,15 +90,8 @@ ul,li{list-style:none;}
 					<div style="width: 50%;float: left;font-size: 26px;font-weight: 600;letter-spacing: 2px;" id="zhiwei"></div>
 					<div style="width: 50%;float: left;color: #f24c24;font-size: 16px;position: relative;">
 						<div style="float: left;font-size: 20px;" id="xinzi"></div>
-						<div style="float: right;color: #fff;background-color: #f24c24;width: 150px;border-radius: 5px;text-align: center;" onclick="resumes()">投放简历</div>
-						<div class="jobstyle" style="width: 150px;height: auto;overflow: hidden;position: absolute;left: 251px;top: 38px;background-color: #c3bfbf;color: #fff;">
-							<ul class="jobtypelist" style="padding: 0 10px;">
-								<li><span style="display: inline-block;width:100px; ">施工队长</span><input type="radio" name="jobtype"/></li>
-								<li><span>水泥工</span><input type="radio" name="jobtype"/></li>
-								<li><span>装修工</span><input type="radio" name="jobtype"/></li>
-							</ul>
-						</div>
-						<div style="float: right;color: #fff;background-color: #f24c24;width: 150px;border-radius: 5px;text-align: center;" onclick="resumes()">已投放简历</div>
+						<div id="toujianli" style="float: right;color: #fff;background-color: #f24c24;width: 150px;border-radius: 5px;text-align: center;">投放简历</div>
+						<div id="havetoudi" style="float: right;color: #fff;background-color: #f24c24;width: 150px;border-radius: 5px;text-align: center;display: none;">已投放简历</div>
 					</div>
 				</div>
 				<div id="company_name"></div>
@@ -203,6 +220,14 @@ function selectUser(){
 		
 		if(ret.code == 200){
 				var Data  = ret.message;
+				var resumes = Data.resumes;
+					//alert(resumes)
+					
+					if(resumes > 0){
+						//alert("heloo");
+						$("#havetoudi").show();
+						$("#toujianli").hide();
+					}
 				var addtime = _trans_php_time_to_str(Data.addtime,1);
 				$("#zhiwei").html(Data.zhiwei);	//职位
 				$("#xinzi").html(Data.xinzi+'/元');	//薪资
@@ -279,16 +304,32 @@ function liuyan_select(){
 
 }
 
+//点击投递简历
+$("#toujianli").click(function(e){
+	e.stopPropagation();
+	$(".jobstyle").show();
+})
+// $(document).click(function(){
+// 	$(".jobstyle").hide();
+// })
+//点击取消关闭投递简历弹窗
+$("#quxiao").click(function(){
+	$(this).parent().parent().hide();
+})
 //投递简历
 function resumes(){
-	var f = confirm("是否继续投简历！");
-	if(f){
-		//获取当前
+	
+		
+		//获取当前url
 		var url = window.location.href;
 		var urlArray = url.split("&");
 		var pidStr = urlArray[urlArray.length-1];
 		var pidArray = pidStr.split("=");
 		var pid    = pidArray[pidArray.length-1];
+		var tid    = $("input[name='jobtype']:checked").val();
+		if(!tid){
+			alert("请选择自己的职位后再投递简历！");
+		}
 		
 		//获取用户id
 		var userid = '<?php echo $_SESSION["user_info"]["user_id"];?>';
@@ -297,22 +338,30 @@ function resumes(){
 			userid :　userid,
 			tid    : tid
 		},function(ret){
-			if(ret.code == 200){
-
-			}else if(ret.code == 202){
+			if(ret.status == 200){
+				alert("投递简历成功!")
+				$(".jobstyle").hide();
+				$("#havetoudi").show();
+				$("#toujianli").hide();
+			}else if(ret.status == 202){
 				alert("投递失败，请重新投递简历！")
-			}else if(ret.code == 203){
+			}else if(ret.status == 203){
 				alert("请先登陆后再继续投递简历！")
-			}else if(ret.code == 204){
+			}else if(ret.status == 204){
 				alert("没有找到相关招聘职位！")
+			}else if(ret.status == 205){
+				alert("还未创建简历")
 			}
 		},'json')
 
-	}
+	
 }
 
 //获取简历id
 function resumesId(){
+
+	var userid = '<?php echo $_SESSION["user_info"]["user_id"];?>';
+
 	$.post('http://wgcapp.wgc2013.com/jingyi.php/Home/Jianli/lists',{
 		user_id : '<?php echo $_SESSION["user_info"]["user_id"];?>'
 	},function(ret){
@@ -323,11 +372,26 @@ function resumesId(){
 				var id = data[i].id,
 					zhiwei = data[i].zhiwei;
 
-					listHtml += '<li><span style="display: inline-block;width:100px; ">'+zhiwei+'</span><input type="radio" name="jobtype"/></li>';
+					listHtml += '<li><input type="radio" name="jobtype" value="'+id+'" /><span style="display: inline-block;width:90%;padding-left: 5px; ">'+zhiwei+'</span><a href="/index.php?app=search&act=user_myresume" style="text-align: right;text-decoration: underline;">预览</a></li>';
 			}
 			$(".jobtypelist").html(listHtml)
+			$(".toudiways").html('<div id="resumebox" style="width: 150px;height: 35px;line-height: 35px;font-size: 18px;color: #fff;text-align: center;margin:20px auto;background-color: #a3a3a3;cursor: pointer;" onclick="resumes()">确认投递简历</div>')
+		}else if(!userid){
+			$(".toudiways").html('<div id="login" style="width: 150px;height: 35px;line-height: 35px;font-size: 18px;color: #fff;text-align: center;margin:20px auto;background-color: #a3a3a3;cursor: pointer;" onclick="toudi(1)">请登陆</div>');
+			return false;
+		}else if(ret.status == 202){
+			$(".toudiways").html('<div id="createresumebox" style="width: 150px;height: 35px;line-height: 35px;font-size: 18px;color: #fff;text-align: center;margin:20px auto;background-color: #a3a3a3;cursor: pointer;" onclick="toudi(2)">请创建简历</div>')
 		}
 	},'json')
+}
+
+function toudi(ways){
+	if(ways == 1){
+		window.location.href = '/index.php?app=member&act=login&ret_url=';
+	}
+	if(ways == 2){
+		window.location.href = '/index.php?app=search&act=user_resume';
+	}
 }
 
 function actions(){
