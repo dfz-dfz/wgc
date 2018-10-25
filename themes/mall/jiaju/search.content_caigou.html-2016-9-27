@@ -1,0 +1,273 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>商城首页 - 59家居商城</title>
+	<meta name="description" content="59，59家居，59家居商城，装修、材料、家具、饰品一站式服务，让装修更简单，价格更透明！！" />
+	<meta name="keywords" content="59，59家居，家居商城，59家居商城，59家居装修商城，办公室装修，写字楼装修，材料，装修材料，家居，办公家具，家居，家具，装修，装饰" />
+	
+
+<link type="text/css" href="/themes/mall/jiaju/styles/style/zp/demo.css" rel="stylesheet"  />
+<link type="text/css" href="/themes/mall/jiaju/styles/style/style/style.css" rel="stylesheet"  />
+
+<script type="text/javascript" src="http://www.59jiaju.com/themes/mall/jiaju/styles/default/js/jquery-1.3.2.min.js"></script>
+<script type="text/javascript">
+	$(function (){
+		$('#open-change-city-window').click(function (){
+			$('.change-city-window').slideDown();
+			
+		})
+		$('#close-change-city-window').click(function (){
+			$('.change-city-window').slideUp();
+		})
+	})
+</script>
+<style type="text/css">
+th{text-align:center;font-size:12px;}
+td p{margin-left:10px;font-size:12px;}
+</style>
+</head>
+
+<body>
+
+{include file=header.html}
+<style type="text/css">
+.zhaopin_con2{width:100%;display:block;float:left;overflow: hidden;}
+.zhaopin_con2 img{width:100%;}
+
+</style>
+<!-- main start -->
+<div id="main">
+    
+
+
+
+<div class="zhaopin_area w">
+	 	<form action="index.php?app=search&act=caigou" method="post">
+	       <div class="zhaopin_header">
+	       	<h1 style="height: auto;overflow: hidden;">
+	       		<span  style="margin-top: 15px;float:left">采购招标</span>
+				<div class="zhaopin_header_con" style="float:right;width:520px;">
+	       		
+                <input value="请输入关键字" type="text" name="key" class="zhaopin_text"style="height: 35px;line-height:35px;">  
+                <input value="搜索" type="submit" class="zhaopin_btn">  
+	       	</div>
+	       	</h1>
+	       	
+	       </div>		
+		</form>
+		<div class="zhaopin_con">
+			<div class="zhaopin_con1">
+				<table style="width: 100%;height: 100px;background-color: #ccc;"border="1    border: 1px solid #fff;">
+					<tr>
+						<th style="border: 1px solid #fff;">公司名称</th><td style="border: 1px solid #fff;"><p>{$rows.gname}</p></td>
+						<th style="border: 1px solid #fff;">联系电话</th><td style="border: 1px solid #fff;"><p>{$rows.dianhua}</p></td>
+					</tr>
+					<tr>
+						<th style="border: 1px solid #fff;">公司地址</th><td style="border: 1px solid #fff;"><p>{$rows.s_province}{$rows.s_city}{$rows.s_county}{$rows.xiangxi}</p></td>
+						<th style="border: 1px solid #fff;">联　系　人</th><td style="border: 1px solid #fff;"><p>{$rows.lianxiren}</p></td>
+					</tr>
+				
+				
+				</table>
+			    <!--<ul>
+					<li style='text-align:center;overflow:hidden;text-overflow:ellipsis;-o-text-overflow:ellipsis;white-space:nowrap;width:200px;float:left'>公司</li>
+					<li style='text-align:center;overflow:hidden;text-overflow:ellipsis;-o-text-overflow:ellipsis;white-space:nowrap;width:300px;float:left'>采购招标</li>
+					
+					<li style='text-align:center;overflow:hidden;text-overflow:ellipsis;-o-text-overflow:ellipsis;white-space:nowrap;width:150px;float:left'>联系人</li>
+					
+					<li style='text-align:center;overflow:hidden;text-overflow:ellipsis;-o-text-overflow:ellipsis;white-space:nowrap;width:120px;float:left'>电话</li>
+					
+					<li style='text-align:center;overflow:hidden;text-overflow:ellipsis;-o-text-overflow:ellipsis;white-space:nowrap;width:290px;float:left'>公司地址</li>
+					<div class="clear"></div>
+					<ul style='border-top:1px dashed #ccc'>
+					<li style='text-align:center;overflow:hidden;text-overflow:ellipsis;-o-text-overflow:ellipsis;white-space:nowrap;width:200px;float:left'>{$rows.gname}</li>
+						<li style='text-align:center;overflow:hidden;text-overflow:ellipsis;-o-text-overflow:ellipsis;white-space:nowrap;width:300px;float:left'>{$rows.title}</li>
+						<li style='text-align:center;overflow:hidden;text-overflow:ellipsis;-o-text-overflow:ellipsis;white-space:nowrap;width:150px;float:left'>{$rows.lianxiren}</li>
+						<li style='text-align:center;overflow:hidden;text-overflow:ellipsis;-o-text-overflow:ellipsis;white-space:nowrap;width:120px;float:left'>{$rows.dianhua}</li>
+						<li style='text-align:center;overflow:hidden;text-overflow:ellipsis;-o-text-overflow:ellipsis;white-space:nowrap;width:290px;float:left'>{$rows.s_province}{$rows.s_city}{$rows.s_county}{$rows.xiangxi}</li>
+						
+					</ul>
+				<div class='clear'></div>
+				
+				</ul>-->
+				
+			</div>
+			<div class="zhaopin_con2">
+				
+			
+			
+			
+			
+			<div style="text-align:left;width:100%;min-height:300px;overflow:hidden;margin:40px auto 20px auto;float:left">
+			
+			{$rows.content}	
+
+			
+				
+				
+			</div>
+			
+		</div>
+		
+		<div style="width:98%;margin:10px; auto;border-top:1px solid #ccc">
+			<div class="ylcon">
+				<p class="tit">
+				
+				</p>
+				<!--<div id="messDivId">
+				
+					<?php
+						$con=mysql_connect('localhost','root','jy0304103') or die("Unable to connect to the MySQL!");
+						mysql_query("SET NAMES UTF8");
+						mysql_query("set character_set_client=utf8"); 
+						mysql_query("set character_set_results=utf8");
+						$db = mysql_select_db('zt55o1_db',$con);
+						$id = $_GET['id'];
+						$wj=@mysql_query("SELECT * FROM ecm_zhaobiao_pinlun where pid='$id' order by id desc");
+						while($wjd = @mysql_fetch_array($wj)){
+							
+							if(!empty($wjd)){
+			
+								echo '	<div class="story">';
+								echo '		<div class="opbtn"></div>';
+								echo '		<p class="story_t">'.$wjd['uname'].'</p>';
+								echo '		<p class="story_time">'.$wjd['addtime'].'</p>';
+								echo '		<p class="story_m">'.$wjd['content'].'</p>';
+								echo '		<p class="story_hf"></p>';
+								echo '	</div>';
+							
+							}else{
+								echo '	<div class="story"><div class="opbtn">暂无评论！</div></div>';
+							}
+					
+						
+						
+					}
+						
+					?> 
+					
+				</div>-->
+			</div>
+		
+			<div style="width:98%;margin:10px auto;">
+				<form action="index.php?app=search&act=content"method="post"id="actions">
+				<p>如有符合上述所述材料的供应商请留下联系方式，供应商名称及地址：</p><br />
+				<input type="hidden" name="zhaobiao" value="zhaobiao"/>
+				<input type="hidden" name="pid" value="<?php echo $_GET['id']?>"/>
+				<textarea name="content" id="content" style="width:800px;height:100px;border:1px solid #999999;resize:none;border-radius:5px"></textarea><br />				
+				<input type="button" value="提交" onclick="actions()" style="width:100px;height:30px;border:1px solid #999999;text-align:center;margin-top:30px;"/>
+				</form>
+			</div>
+		</div>
+		
+		
+		
+		
+		
+		
+	</div>
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" src="/themes/mall/jiaju/styles/style/js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="/themes/mall/jiaju/styles/style/js/superslide.2.1.js"></script>
+<script type="text/javascript">
+  jQuery(".fullSlide").hover(function() {
+      jQuery(this).find(".prev,.next").stop(true, true).fadeTo("show", 0.5)
+  },
+  function() {
+      jQuery(this).find(".prev,.next").fadeOut()
+  });
+  jQuery(".fullSlide").slide({
+      titCell: ".hd ul",
+      mainCell: ".bd ul",
+      effect: "fold",
+      autoPlay: true,
+      autoPage: true,
+      trigger: "click",
+      startFun: function(i) {
+          var curLi = jQuery(".fullSlide .bd li").eq(i);
+          if ( !! curLi.attr("_src")) {
+              curLi.css("background-image", curLi.attr("_src")).removeAttr("_src")
+          }
+      }
+  });
+</script>
+
+<script type='text/javascript' src='/themes/mall/jiaju/styles/style/js/lanrenzhijia.js'></script>
+        <script language="javascript" type="text/javascript">
+function actions(){
+
+	if($("#content").val() == ''){
+		alert('请输入内容');
+		return false;
+	}
+	$("#actions").submit();
+
+}
+            $(function() {
+                $(".webwidget_scroller_tab").webwidget_scroller_tab({
+                    scroller_time_interval: '500000000000',
+                    scroller_window_padding: '10',
+                    scroller_window_width: '1212',
+                    scroller_window_height: '520',
+                    scroller_head_text_color: '#0099FF',
+                    scroller_head_current_text_color: '#fff',
+                    directory: 'images'
+                });
+                $(".webwidget_scroller_tab1").webwidget_scroller_tab({
+                    scroller_time_interval: '500000000000',
+                    scroller_window_padding: '10',
+                    scroller_window_width: '1212',
+                    scroller_window_height: '520',
+                    scroller_head_text_color: '#0099FF',
+                    scroller_head_current_text_color: '#fff',
+                    directory: 'images'
+                });
+                $(".webwidget_scroller_tab2").webwidget_scroller_tab({
+                    scroller_time_interval: '500000000000',
+                    scroller_window_padding: '10',
+                    scroller_window_width: '1212',
+                    scroller_window_height: '600',
+                    scroller_head_text_color: '#0099FF',
+                    scroller_head_current_text_color: '#fff',
+                    directory: 'images'
+                });
+                $(".webwidget_scroller_tab3").webwidget_scroller_tab({
+                    scroller_time_interval: '500000000000',
+                    scroller_window_padding: '10',
+                    scroller_window_width: '1212',
+                    scroller_window_height: '600',
+                    scroller_head_text_color: '#0099FF',
+                    scroller_head_current_text_color: '#fff',
+                    directory: 'images'
+                });
+                $(".webwidget_scroller_tab4").webwidget_scroller_tab({
+                    scroller_time_interval: '500000000000',
+                    scroller_window_padding: '10',
+                    scroller_window_width: '1212',
+                    scroller_window_height: '520',
+                    scroller_head_text_color: '#0099FF',
+                    scroller_head_current_text_color: '#fff',
+                    directory: 'images'
+                });
+                $(".webwidget_scroller_tab5").webwidget_scroller_tab({
+                    scroller_time_interval: '500000000000',
+                    scroller_window_padding: '10',
+                    scroller_window_width: '1212',
+                    scroller_window_height: '520',
+                    scroller_head_text_color: '#0099FF',
+                    scroller_head_current_text_color: '#fff',
+                    directory: 'images'
+                });
+            });
+        </script>
+</body>
+</html>

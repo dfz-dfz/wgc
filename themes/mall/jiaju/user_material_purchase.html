@@ -334,8 +334,8 @@ body{background:url('') no-repeat center top }
 				<div class="table_lists_share" style="overflow: hidden;margin-top: 10px;min-height: 300px;">
 						<div class="search_ys_list_share">
 							<input type="text" style="width: 400px;height: 30px;" id="search_list_share" placeholder="请输入关键词">
-							<label class="search_list" for="search_list_share" style="width: 50px;height: 30px;display:inline-block;position: relative;top: -8px;"><img src="/themes/mall/jiaju/images/search_button.jpg" alt="" style="width: 100%;height: 100%;" onclick="caigou_list(page,3)"></label>
-							<input type="button" value="取消" class="quxiao_btn_share" style="display: inline-block;padding:0;width: 50px;height: 30px;position: relative;top: -8px;cursor:pointer;line-height:30px;background-color: #ec6941;display:none;" />
+							<label class="search_list" for="search_list_share" style="width: 50px;height: 30px;display:inline-block;position: relative;top: -8px;"><img src="/themes/mall/jiaju/images/search_button.jpg" alt="" style="width: 100%;height: 100%;" onclick="shareSearch(page,3)"></label>
+							<input type="button" value="取消" class="quxiao_btn_share" style="display: inline-block;padding:0;width: 50px;height: 30px;position: relative;top: -8px;cursor:pointer;line-height:30px;background-color: #ec6941;display:none;" onclick="messagelist(sharepage,0)" />
 						</div>
 				<!-- 预算表格 -->
 				<div class="budget_table_list_share" style="min-height: 300px;">
@@ -654,6 +654,7 @@ function messagelist(sharepage,types){
 				success:function(ret){
 					//console.log(ret)
 					if(ret.status == 200){
+						$(".quxiao_btn_share").hide();
 						$("#spagesearch").hide();
 						$("#spagelist").show();
 						$("#sbacklist").hide();
@@ -847,15 +848,17 @@ function shareSearch(sindex,types){
 		}
 		
 		
-
+		var key = $("#search_list_share").val();
 		var url = "http://wgcapp.wgc2013.com/jingyi.php/Home/Material/addmaterials_user_share";
-					$.ajax({
+		if(key){
+
+			$.ajax({
 				type:"POST",
 				url:url,
 				data:{
 					user_id : '<?php echo $_SESSION["user_info"]["user_id"];?>',
 					page    : sindex,
-					
+					key     : key
 
 				},
 				cache:false,
@@ -864,6 +867,7 @@ function shareSearch(sindex,types){
 				success:function(ret){
 					//console.log(ret)
 					if(ret.status == 200){
+						$(".quxiao_btn_share").show();
 						$("#spagesearch").hide();
 						$("#spagelist").show();
 						$("#sbacklist").hide();
@@ -927,6 +931,7 @@ function shareSearch(sindex,types){
 					//console.log(err)
 				}
 			});
+		}
 	}
 
 function details(pid){

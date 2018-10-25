@@ -2,17 +2,17 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>材料询价 - 微工程</title>
+<title>集采价格详情 - 微工程</title>
 
 <link rel="stylesheet" type="text/css" href="/themes/mall/jiaju/css/api.css"/>
 <link rel="stylesheet" type="text/css" href="/themes/mall/jiaju/css/aui.css" />
 <link rel="stylesheet" type="text/css" href="/themes/mall/jiaju/css/aui.1.0.css"/>
+<link rel="stylesheet" href="themes/mall/jiaju/css/checkPicture.css" />
 <style type="text/css">
 .jodsearch{margin:0px;padding:0px;vertical-align: middle;}
 .jodsearch .dosearch{margin-left:auto;margin-right:auto;margin-top:10px;padding:0px;width:1100px;height:52px;background-color:#F5F5F5;}
 .jodsearch .dosearch input{margin-top:10px;}
 .jodsearch .dosearch *{vertical-align:middle;}
-.tiaojian a{color:#0066CB;}
 .jobtable{width:100%;text-align:left;margin-left:3px;font-size:13px;}
 .jobtable tr{line-height:30px;}
 .jobtable tr td{border-bottom:1px solid #F0F0F0;}
@@ -26,175 +26,64 @@ margin:auto;padding:0px;margin-top: 10px;margin-bottom: 10px; width:1100px;overf
 .text-left a{width:23%;background:#ff552e;border-radius:10px;float:left;margin:1%;height:50px;line-height:50px;overflow:hidden;display:block;color:#fff;font-size:16px;font-weight:bold;}
 .aui-list-item-middle{width:16.222222222%;margin:10px 0.11111111111rem;float:left;overflow: hidden;}
  #lefttime>span{color:red}
-		 #mo{
-  display: none;/*隐藏模态框*/
-  width: 100%;
-  height: 100%;
-  position: fixed;/*定位方式为固定定位*/
-  overflow: auto;/*不滚动*/
-  background-color: rgba(0,0,0,0.7);
-  top: 0px;
-  left: 0px;
-  z-index: 99999999;/*置于页面图层之上*/
- }
-.close{
- font-size: 40px;
- font-weight: bold;
- position: absolute;
- top: 0px;
- right: 0px;
- color:#f1f1f1;
-}
-.close:hover,
-.close:focus{
- color:#bbb;
- cursor:pointer;
-}
-#moimg{
-  display: block;/*图片表现为块*/
-  margin:25px auto;/*图片居中对齐*/
-  width: 90%;
-  max-width: 95%;/*自适应布局*/
-  max-height: 95%;/*自适应布局*/
- }
-#caption{
-  text-align: center;/*文本居中*/
-  margin: 15px auto;
-  width: 60%;
-  max-height: 750px;
-  font-size: 20px;
-  color:#ccc;
- }
-#moimg,#caption{
- -webkit-animation: first 1s;
- -o-animation: first 1s;
- animation: first 1s;
-}
-section .aui-list .aui-list-item {
-	border-bottom: 1px solid #ccc;
-}
-@keyframes first{
- from{transform: scale(0.1);}
- to{transform: scale(1);}
-}
-
 </style>
-<script type="text/javascript">
-	$(document).ready(function(){
-	$(".tiaojian > .qy > a").click(function(){
-	　　　　$(".tiaojian > .qy > a").css("background-color","F5F5F5");
-			$(this).css("background-color","#62AF00");
-			//这里使用ajax取数据
-			/*var url=$(this).attr("href");
-			$.get(url,function(data,status){
-				alert("Data: " + data + "\nStatus: " + status);
-			  });*/
-	　　});
-	$(".tiaojian > .xz > a").click(function(){
-	　　　　$(".tiaojian > .xz > a").css("background-color","F5F5F5");
-			$(this).css("background-color","#62AF00");
-			//这里使用ajax取数据
-			//var url=$(this).attr("href");
-			/*$.get(url,function(data,status){
-				alert("Data: " + data + "\nStatus: " + status);
-			  });*/
-	　　});
-	}); 
-	
-</script>
 </head>
 <body>
 {include file=header.html}
-<?php
-	$query="select * from ecm_material as A,ecm_member as B,ecm_gongyingshang as C where C.user_id=A.user_id and B.user_id=A.user_id and A.id =".$_GET['id'].""; //定义sql
-	$result=mysql_query($query);
-	$rows1=@mysql_fetch_assoc($result);
-	//echo "<pre>";
-	//var_dump($rows1);
-	
-?>
-
+<img src="/themes/mall/jiaju/images/rencaituijian_gg.jpg" alt="" style="width: 100%;" />
 <div class="main">
 	<!-- 主体 -->
 	<div class="main_body">
 		<!-- 左边 -->
-		<div class="main_left"style="width:100%">
-			<div style="background-color:#F5F5F5;width:100%;border-bottom:1px solid #999;">
-				<div style="width:100%;height:30px;border-bottom:1px solid #999;overflow:hidden;"><span style="width:15%;height:30px;color:#333;font-size:20px;float:left;text-align:left">材料询价</span></div>
-				
-				
-			</div>
+		<div class="main_left" style="width:100%">
 			<div style="width:100%;background-color:#FFFFFF;height: auto;overflow: hidden;">
 				<div class="text-left">
-					<section class="aui-content" style="width: 886px;float: left;">
+					<section class="aui-content" style="width: 60%;float: left;">
 						<ul class="aui-list">
 							
-							<li class="aui-list-item">
+							<li style="background-color: #e0e0e0;padding: 10px;">
+								<div>
+									<div class="aui-list-item-title" style="font-size:24px;color:#333;padding-top:20px;font-weight: 600;" id='title'></div>
+								</div>
+								<div>
+									<div style="width:100%;font-size: 16px;line-height:1.5rem;padding-bottom:0.25rem;color:#333" id="lefttime">
+										 
+									</div>
+								</div>
+							</li>
+							<li class="aui-list-item" style="margin-top: 30px;">
 								<div class="aui-list-item-inner">
-									<div class="aui-list-item-title" style="font-size:22px;color:#333;padding:20px 0;font-weight: 600;" id='title'><?php echo $rows1['m_name'];?></div>
+									<div class="aui-list-item-title" style="font-size:16px;color:#333;height:30px;" id='cailiao_name'></div>
 								</div>
 							</li>
 							<li class="aui-list-item">
 								<div class="aui-list-item-inner">
-									<?php 
-										if($_GET['cai_type'] == 2){
-											echo "<div class='aui-list-item-title' style='font-size:16px;color:#333;height:30px;' id='office_name'>商店名称：".$rows1['office_name']."</div>";
-										}else{
-											echo "<div class='aui-list-item-title' style='font-size:16px;color:#333;height:30px;' id='office_name'>公司名称：".$rows1['office_name']."</div>";
-										}
-									?>
+									<div class="aui-list-item-title" style="font-size:16px;color:#333;height:30px;" id='brand'></div>
 								</div>
 							</li>
 							<li class="aui-list-item">
 								<div class="aui-list-item-inner">
-									<div class="aui-list-item-title" style="font-size:16px;color:#333;height:30px;" id='brand'>材料品牌：<?php echo $rows1['brand'];?></div>
+									<div class="aui-list-item-title" style="font-size:16px;color:#333;height:30px;" id='price'></div>
+								</div>
+							</li>
+							<li class="aui-list-item">
+								<div class="aui-list-item-inner">
+									<div class="aui-list-item-title" style="font-size:16px;color:#333;height:30px;" id='hanshui'></div>
+								</div>
+							</li>
+							<li class="aui-list-item">
+								<div class="aui-list-item-inner">
+									<div class="aui-list-item-title" style="font-size:16px;color:#333;height:30px;" id='yunfei'></div>
 								</div>
 							</li>
 							<li class="aui-list-item rev_power">
 								<div class="aui-list-item-inner">
-									<div class="aui-list-item-title" style="font-size:16px;color:#333;height:30px;" id='rev_power'><?php echo $rows1['rev_power'];?></div>
-								</div>
-							</li>
-							<li class="aui-list-item">
-								<div class="aui-list-item-inner" style="min-height:150px;line-height:30px;font-size:16px;color:#333" id="content">材料描述: <?php echo $rows1['m_introduce'];?>
+									<div class="aui-list-item-title" style="font-size:16px;color:#333;height:30px;" id='rev_power'></div>
 								</div>
 							</li>
 							<li class="aui-list-item">
 								<div class="aui-list-item-inner">
-									<div class="aui-list-item-title" style="font-size:16px;color:#333" id='address'>发布地址：<?php echo $rows1['address'];?></div>
-								</div>
-							</li>
-							 <li class="aui-list-item">
-								<div class="aui-list-item-inner">
-									<?php 
-										if($_GET['cai_type'] == 2){
-											
-											echo "<div class='aui-list-item-title' style='font-size:16px;color:#333;height:30px;' id='worker_address'>商店地址：".$rows1['worker_address']."</div>";
-										}else{
-											echo "<div class='aui-list-item-title' style='font-size:16px;color:#333;height:30px;' id='worker_address'>送货地址：".$rows1['address']."</div>";
-										}
-									?>
-									
-									
-									
-									
-								</div>
-							</li>
-							<li class="aui-list-item" id='list_img'>
-								<div class="aui-list-item-inner" style="padding-right: 20px" >
-									<p id="img_list">
-										<?php
-										$imgarr=explode(",",$rows1['m_photo']);
-										 if(count($imgarr)>0){ 
-											//echo "<pre>";
-											//var_dump($rows1);
-											 foreach($imgarr as $k=>$m_photo){
-													echo '<a style="background:#fff;display: none;" href="http://wgcapp.59jiaju.com/'.$m_photo.'" target="_blank"><img style="display:none;float:left;width:250px;height:250px;margin-left: 20px;margin-top:20rem" id="real" src="http://wgcapp.59jiaju.com/'.$m_photo.'"/></a>'; 
-												}
-											
-										 }
-										?>
-									</p>
+									<div class="aui-list-item-title" style="font-size:16px;color:#333" id='address'>
 								</div>
 							</li>
 							<!-- <li class="aui-list-item">
@@ -205,12 +94,15 @@ section .aui-list .aui-list-item {
 									</p>
 								</div>
 							</li>-->
-							
-							 <li class="aui-list-item">
-								<div class="aui-list-item-inner">
-									<div id="ltime" style="width:100%;font-size: 0.7rem;line-height:1.5rem;padding-top:0.25rem;padding-bottom:0.25rem;color:#333" id="lefttime">
-										 发布时间:<?php echo date('Y-m-d H:i:s',$rows1['addtime']);?>
-									</div>
+							<li class="aui-list-item">
+								<div class="aui-list-item-inner" style="min-height:150px;line-height:30px;font-size:16px;color:#333" id="content">
+								</div>
+							</li>
+							<li class="aui-list-item" id='list_img'>
+								<div class="aui-list-item-inner" style="padding-right: 20px" >
+									<p id="img_list">
+										
+									</p>
 								</div>
 							</li>
 							 <!-- <li class="aui-list-item">
@@ -219,147 +111,83 @@ section .aui-list .aui-list-item {
 								</div>
 							</li> -->
 						</ul>
-						</div>
- 
-					</section>
-					
-					<div style="width: 200px;float: right;height: 587px;padding: 4px;border-left: 10px solid #e5e5e5;padding-right: 0;">
-						<img src="http://www.wgc2013.com/themes/mall/jiaju/images/guanggao.png" alt="" width="100%">
+
+							<div class="aui-content-padded aui-margin-b-15 aui-margin-t-15" id="check_box" style="margin: 0 auto;" onclick="yingying()">
+								<div class="aui-btn aui-btn-danger aui-btn-block" style="width: 16%;margin: 0 auto;height: 40px;line-height: 10px;">点击下单</div>
+								<input type="hidden" id="vid" />
+								<div class="vipbox" style="text-align: center;position: relative;right: 140px;margin-top: 20px;display: none;">
+									<span>你目前是普通用户无法继续下单，马上升级&nbsp;&nbsp;<a href="/index.php?app=search&act=vip" style="color: red;" target="_blank">VIP会员</a></span>
+								</div>
+							</div>
+						</section>
 					</div>
-					<!--描述-->
+					
+					<!-- 广告位 -->
+					<div style="width: 40%;float: right;height: 587px;min-height: 600px;height: auto;overflow: hidden;">
+						<div style="background-color: #fea900;font-size: 70px;color: #fff;min-height: 600px;position: relative;    margin-left: 20px;">
+							<div style="padding-top: 130px;">广</div>
+							<div>告</div>
+							<div>位</div>
+							<div style="position: absolute;border-bottom: 2px solid #fff;top: 50%;width: 100%;"></div>
+						</div>
+					</div>
 					
 				</div>
 			</div>
 			
-		</div>
-
-		<div class="aui-content-padded aui-margin-b-15 aui-margin-t-15" style="width: 50%;margin: 0 auto;" onclick="yingying()">
-			<div class="aui-btn aui-btn-danger aui-btn-block" style="width: 16%;left: 205px;height: 40px;line-height: 10px;">点击下单</div>
-			<input type="hidden" id="vid" />
-			<div class="vipbox" style="text-align: center;position: relative;right: 140px;margin-top: 20px;display: none;">
-				<span>你目前是普通用户无法继续下单，马上升级&nbsp;&nbsp;<a href="/index.php?app=search&act=vip" style="color: red;" target="_blank">VIP会员</a></span>
-			</div>
-		</div>
 	</div>
+
+</div>
 	
 {include file=footer.html}
 <!---图片放大-->
-<div class="motai" id="mo">
- <span class="close" id="close" onclick="closes()">×</span>
- <img class="motaiimg" id="moimg">
- 
+<div class="motai" id="mo" >
+	<span class="close" id="close" onclick="closes()">×</span>
+	<div id="imgList">
+		<span id="prevs" onclick="uppage()"><</span>
+		<div id="listBox"></div>
+		<span id="nexts" onclick="nextpage()">></span>
+	</div>
 </div>
 
+
+</body>
 <!-- 底部include file=footer2.html-->
 <script src="/themes/mall/jiaju/js/jquery-2.2.3.min.js"></script>
-
+<script src="/themes/mall/jiaju/js/tool.js"></script>
+<script src="/themes/mall/jiaju/js/checkPicture.js"></script>
 <script type="text/javascript">
 
 $(function(){
 	selectUser();
-	
 });
-
-function openImg(obj){
-	
-	var motai=document.getElementById('mo')
-	 var moimg=document.getElementById("moimg")
-	 var realimg=document.getElementById("real")
-	 var caption=document.getElementById("caption")
-	 
-	 
-	motai.style.display="block"
-	moimg.src=obj.src;
-    caption.innerHTML=$(this).attr('alt')
-	 
-	 
-}
-
-function closes(){
-	$("#mo").hide();
-}
- 
- // PHP时间戳转时间
-function _trans_php_time_to_str(timestamp, n) {
-
-	update = new Date(timestamp * 1000);
-	//时间戳要乘1000
-	year = update.getFullYear();
-	month = (update.getMonth() + 1 < 10) ? ('0' + (update.getMonth() + 1)) : (update.getMonth() + 1);
-	day = (update.getDate() < 10) ? ('0' + update.getDate()) : (update.getDate());
-	hour = (update.getHours() < 10) ? ('0' + update.getHours()) : (update.getHours());
-	minute = (update.getMinutes() < 10) ? ('0' + update.getMinutes()) : (update.getMinutes());
-	second = (update.getSeconds() < 10) ? ('0' + update.getSeconds()) : (update.getSeconds());
-	if (n == 1) {
-		return (year + '-' + month + '-' + day + ' ' + hour + ':' + minute + ':' + second);
-	} else if (n == 2) {
-		return (year + '-' + month + '-' + day);
-	} else if (n == 3) {
-		return (month + '-' + day);
-	} else if (n == 4) {
-		return (hour + ':' + minute + ':' + second);
-	} else if (n == 5) {
-		return (year + '-' + month + '-' + day + ' ' + hour + ':' + minute );
-	} else {
-		return 0;
-	}
-}
-function yingying(){
-	// if(window.confirm('请使用微工程APP进行操作，是否前往去下载？')){
-	// 	 window.open('http://wgcapp.59jiaju.com/apk/index.html');
-	// 	 return true;
-	//   }else{
-	// 	 //alert("取消");
-	// 	 return false;
-	//  }
-
-	$.post('http://wgcapp.wgc2013.com/index.php/Home/index/userCheck', {
-			user_id : '<?php echo $_SESSION["user_info"]["user_id"];?>',
-		}, function(ret) {
-			if(ret.code == 200){
-				$(".vipbox").hide();
-				var id = $("#vid").val();
-				window.open('/index.php?app=search&act=xiadan&id='+id);
-			}else if(ret.code == 202){
-				window.location.href = "/index.php?app=member&act=login&ret_url="
-				// var id = $("#vid").val();
-				// alert(id)
-				// window.open('/index.php?app=search&act=xiadan&id='+id);
-			}else if(ret.code == 203){
-				$(".vipbox").show();
-				return false;
-			}
-		},'json');
-	
-}
 
 function selectUser(){
 	
-
 	var url = "http://wgcapp.59jiaju.com/index.php/Home/Material/materialDetail";
 	$.post(url,{id : {$id}},function(ret){
-	
-		
 		if(ret.code == 200){
-			var data=ret.message;
-				    tel = data.mobile;
-				    var id = data.id;
-				    $("#vid").val(id)
+			var data=ret.message,
+			    tel = data.mobile,
+			    id = data.id;
+				    $("#vid").val(id);
 					$('#title').html(data.m_name);
-					$('#content').html('材料描述:  '+data.m_introduce);
-					//$('#time').html(_trans_php_time_to_str(data.addtime,2));
+					$('#cailiao_name').html('材料名称：'+data.m_name);
+					$('#content').html('产品描述:  '+data.m_introduce);
 					$('#num').html(data.count);
-					//个人信息
 
-                    	$("#name").html(data.name);	
-						$("#userimg").attr('src','http://wgcapp.59jiaju.com/'+data.userphoto);
-						$("#LeftTimee").html(_trans_php_time_to_str(data.addtime,1));
-						$("#huji").html(data.huji);
-						$("#zhiwei").html(data.zhiwei);
-						$("#emali").html(data.email);	
-						$("#tel").html(data.mobile);	
-						$("#sex").html(data.sex);
-						$("#m_introduce").html(data.m_introduce);
+                	$("#name").html(data.name);
+					$("#userimg").attr('src','http://wgcapp.59jiaju.com/'+data.userphoto);
+					$("#lefttime").html('发布时间：'+_trans_php_time_to_str(data.addtime,1));
+					$("#huji").html(data.huji);
+					$("#zhiwei").html(data.zhiwei);
+					$("#emali").html(data.email);
+					$("#tel").html(data.mobile);
+					$("#sex").html(data.sex);
+					$("#m_introduce").html(data.m_introduce);
+					$('#price').html('单价价格：'+data.price);
+					$('#hanshui').html('含税价格：'+data.hanshui);
+					$('#yunfei').html('物流价格：'+data.yunfei);
 					
 					if({$cai_type} == 2){
 					    $('#office_name').html('商店名称：'+data.office_name);
@@ -381,8 +209,10 @@ function selectUser(){
 					var list='';
                      if(m_photo.length>0){ 
 	                     for(var c in m_photo){
-								list +='<img onclick="openImg(this)" style="float:left;width:3.5rem;height:3.5rem;margin-left: 0.25rem;margin-top:0.25rem" id="real" src="'+'http://wgcapp.59jiaju.com/'+m_photo[c]+'"/>'; 
-							}
+							list +='<img onclick="openImg(this,'+m_photo.length+')" style="float:left;width:3.5rem;height:3.5rem;margin-left: 0.25rem;margin-top:0.25rem" id="real" src="'+'http://wgcapp.59jiaju.com/'+m_photo[c]+'"/>';
+							$('#listBox').append('<img src="http://wgcapp.wgc2013.com/'+m_photo[c]+'" id="moimg" >');
+						}
+
 						$("#img_list").append(list);
                      }else{
                         $("#list_img").css('display','none');
@@ -392,13 +222,29 @@ function selectUser(){
 			return false;
 		
 		}
-		
-	
 	},"json");
-
 }
-	
 
+function yingying(){
+	$.post('http://wgcapp.wgc2013.com/index.php/Home/index/userCheck', {
+		user_id : '<?php echo $_SESSION["user_info"]["user_id"];?>',
+	}, function(ret) {
+		if(ret.code == 200){
+			$('#check_box').html('<div style="font-size:18px;">请联系客服询问下单：①：13143543973②：15217310540</div>');
+			// $(".vipbox").hide();
+			// var id = $("#vid").val();
+			// window.open('/index.php?app=search&act=xiadan&id='+id);
+		}else if(ret.code == 202){
+			window.location.href = "/index.php?app=member&act=login&ret_url="
+			// var id = $("#vid").val();
+			// alert(id)
+			// window.open('/index.php?app=search&act=xiadan&id='+id);
+		}else if(ret.code == 203){
+			$('#check_box').html('<div style="font-size:18px;">请联系客服询问下单：①：13143543973②：15217310540</div>');
+			// $(".vipbox").show();
+			return false;
+		}
+	},'json');
+}
 </script>
-</body>
 </html>

@@ -4,7 +4,7 @@
 <meta http-equiv="Access-Control-Allow-Origin" content="*">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=8"/>
-<title>用户中心-微工程</title>
+<title>用户中心-创建简历</title>
 <meta name="description" content="微工程，微工程APP，装修、材料、家具、饰品一站式服务，让装修更简单，价格更透明！！" />
 <meta name="keywords" content="微工程，微工程，家居商城，微工程家居商城，微工程家居装修商城，办公室装修，写字楼装修，材料，装修材料，家居，办公家具，家居，家具，装修，装饰" />
 <link rel="stylesheet" type="text/css" href="/themes/mall/jiaju/css/api.css"/>
@@ -300,8 +300,25 @@ body{background:url('') no-repeat center top }
 
  					</ul>
  					<div class="user_resume_agree">
- 						<input type="checkbox" style="display: inline-block;margin-top: -3px;" />
- 						<span style="color: #3e3c3c;font-weight: bold;letter-spacing: 2px;">是否愿意发布后公开自己的简历信息在微工程网站上找工作</span>
+ 						<span style="color: #3e3c3c;font-weight: bold;letter-spacing: 2px;display: inline-block;margin-right: 15px;">是否愿意接受推荐</span>
+                        <input type="radio" name="agree" id="agree" style="display: inline-block;margin-top: -3px;" />是
+                        <input type="radio" name="agree" id="noagree" style="display: inline-block;margin-top: -3px;" />否
+                        <div class="rctype" style="width: 200px;height: auto;overflow: hidden;margin-top: 15px;display: none;">
+                            <select name="rctypes" id="choose" style="padding-left: 5px;">
+                                <option value="0">-----请选择你要推荐的种类-----</option>
+                                <option value="1">环境设计艺术工程师</option>
+                                <option value="2">自动化按制工程师</option>
+                                <option value="3">给排水工程师</option>
+                                <option value="4">室内设计工程师</option>
+                                <option value="5">结构设计工程师</option>
+                                <option value="6">焊接工程师</option>
+                                <option value="7">建筑设计工程师</option>
+                                <option value="8">暖通空调工程师</option>
+                                <option value="9">电器工程师</option>
+                                <option value="10">机电一级建造师</option>
+                                <option value="11">机电二级建造师</option>
+                            </select>
+                        </div>
  					</div>
  					<div class="user_resume_button" style="margin: 20px 0;">
  						<!-- <button class="user_resume_button_keep" style="width: 100px;height: 30px;line-height: 15px;background-color: #ff552e;color: #fff;position: relative;left: -100px;">保存</button> -->
@@ -371,6 +388,17 @@ body{background:url('') no-repeat center top }
 			return false;
 		}
 	})
+
+//点击同意后的选择框
+$("#agree").click(function(){
+    $(".rctype").show();
+})
+
+$("#noagree").click(function(){
+    $(".rctype").hide();
+    $("#choose").val(0)
+})
+
 //获取数据
 function addsume(){
 	var name = $("#name").val();   //姓名
@@ -393,6 +421,7 @@ function addsume(){
 	var hangye = $("#hangye").val();   //行业
 	var self = $("#self").val();    //个人标签
 	var selfpingjia = $("#selfpingjia").val();  //自我评价
+    var jobtype     = $("#choose").val();
 	var checked = $("input[type='checkbox']").is(':checked');  //同意协议
 
 
@@ -455,6 +484,7 @@ function addsume(){
 			self        :self,
 			selfpingjia :selfpingjia,
 			checked     :checked,
+            jobtype     :jobtype
 
 		},function(ret){
 			console.log(ret)

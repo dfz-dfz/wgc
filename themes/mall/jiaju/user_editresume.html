@@ -471,8 +471,19 @@ function addsume(){
 }
 
 function edit(){
-    var id = $.cookie('id');
-    var userid = $.cookie('userid');
+    //获取url的id
+    var urls = window.location.href;
+    var urlArray = urls.split("&");
+    var idStr    = urlArray[urlArray.length - 2];
+    var useridStr   = urlArray[urlArray.length - 1];
+    var idArray   = idStr.split("=");
+    var useridArray = useridStr.split("=");
+
+    var id = idArray[idArray.length - 1];
+    var userid = useridArray[useridArray.length - 1];
+    //alert(urlArray)
+    // var id = $.cookie('id');
+    // var userid = $.cookie('userid');
             $.ajax({
                 type:"POST",
                 url:'http://wgcapp.wgc2013.com/jingyi.php/Home/Jianli/save',
@@ -536,24 +547,24 @@ function edit(){
                             $("#userid").val(userid)
                             if(sex == "0"){
                                 //alert(sex)
-                                $("#male").prop("checked",true)
+                                // $("#male").prop("checked",true)
                                     $(".resume_boy")[0].src = "/themes/mall/jiaju/images/center/bg_radio_full.jpg";
                                     $(".resume_girl")[0].src = "/themes/mall/jiaju/images/center/bg_radio_empty.jpg";
                                 
                             }else{
-                                $("#female").prop("checked",true);
+                                // $("#female").prop("checked",true);
                                     $(".resume_girl")[0].src = "/themes/mall/jiaju/images/center/bg_radio_full.jpg";
                                     $(".resume_boy")[0].src = "/themes/mall/jiaju/images/center/bg_radio_empty.jpg";
                             }
                             if(marry == "marry"){
-                                $("#marry").prop("checked",true)
+                                // $("#marry").prop("checked",true)
                                 $(".resume_demarry")[0].src = "/themes/mall/jiaju/images/center/bg_radio_empty.jpg";
                                 $(".resume_marry")[0].src = "/themes/mall/jiaju/images/center/bg_radio_full.jpg";
                             }
                             if(marry == "femarry"){
                                 $(".resume_marry")[0].src = "/themes/mall/jiaju/images/center/bg_radio_empty.jpg";
                                 $(".resume_demarry")[0].src = "/themes/mall/jiaju/images/center/bg_radio_full.jpg";
-                                $("#femarry").prop("checked",true)
+                                // $("#femarry").prop("checked",true)
                             }
                      
                        

@@ -1,0 +1,429 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<base href="{$site_url}/" />
+
+<!-- Use IE7 mode -->
+
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7 charset={$charset}" />
+
+<meta http-equiv="Content-Type" content="text/html; charset={$charset}" />
+
+{$page_seo}
+
+
+
+<meta name="author" content="ecmall.shopex.cn" />
+
+<meta name="generator" content="ECMall {$ecmall_version}" />
+
+<meta name="copyright" content="ShopEx Inc. All Rights Reserved" />
+  <link type="text/css" href="{res file=css/catalog.css}" rel="stylesheet"  />
+
+
+
+<link type="text/css" href="{res file=css/main.css}" rel="stylesheet"  />
+
+<link type="text/css" href="{res file=css/footer.css}" rel="stylesheet" />
+
+<script type="text/javascript" src="index.php?act=jslang"></script>
+
+<script type="text/javascript" src="{lib file=jquery.js}" charset="utf-8"></script>
+
+<script type="text/javascript" src="{lib file=ecmall.js}" charset="utf-8"></script>
+
+<script type="text/javascript" src="{lib file=cart.js}" charset="utf-8"></script>
+
+<script type="text/javascript" src="{res file=js/main.js}" charset="utf-8"></script>
+
+
+
+<!--{if $index}-->
+
+<script type="text/javascript" src="{lib file=kissy/build/kissy.js}"></script>
+
+<script type="text/javascript" src="{lib file=kissy/build/switchable/switchable-pkg.js}"></script>
+
+<!--{/if}-->
+
+
+
+<!--[if lte IE 6]>
+
+<script type="text/javascript" language="Javascript" src="{res file=js/hoverForIE6.js}"></script>
+
+<![endif]-->
+
+
+
+<script type="text/javascript">
+
+//<!CDATA[
+
+var SITE_URL = "{$site_url}";
+
+var PRICE_FORMAT = '{$price_format}';
+
+//]]>
+
+</script>
+
+
+
+{$_head_tags}
+
+<!--<editmode></editmode>-->
+
+
+
+<!--{if $site_poster_status && $site_poster}-->
+
+<style type="text/css">
+
+body{background:url('{$site_poster}') no-repeat center top }
+
+.mainnav{width:990px; overflow:hidden; margin:0 auto}
+
+</style>
+
+<!--{/if}-->
+
+<script src="{res file=js/jquery-1.3.2.min.js}" type="text/javascript"></script>
+<script type="text/javascript" src="{res file=js/lrtk.js}"></script>
+<script type="text/javascript" src="{res file=js/hover.js}"></script>
+<script>
+  function lxfEndtime(){
+          $(".lxftime").each(function(){
+                var lxfday=$(this).attr("lxfday");//用来判断是否显示天数的变量
+                var endtime = new Date($(this).attr("endtime")).getTime();//取结束日期(毫秒值)
+                var nowtime = new Date().getTime();        //今天的日期(毫秒值)
+                var youtime = endtime-nowtime;//还有多久(毫秒值)
+                var seconds = youtime/1000;
+                var minutes = Math.floor(seconds/60);
+                var hours = Math.floor(minutes/60);
+                var days = Math.floor(hours/24);
+                var CDay= days ;
+                var CHour= hours % 24;
+                var CMinute= minutes % 60;
+                var CSecond= Math.floor(seconds%60);//"%"是取余运算，可以理解为60进一后取余数，然后只要余数。
+                if(endtime<=nowtime){
+                        $(this).html("已过期")//如果结束日期小于当前日期就提示过期啦
+                        }else{
+                                if($(this).attr("lxfday")=="no"){
+                                        $(this).html("<i>剩余时间：</i><span>"+CHour+"</span>时<span>"+CMinute+"</span>分<span >"+CSecond+"</span>秒");          //输出没有天数的数据
+                                        }else{
+                        $(this).html("<span class='f24'>"+days+"</span><span>天</span><span  class='f24'>"+CHour+"</span><span>时</span><span  class='f24'>"+CMinute+"</span><span>分</span><span  class='f24'>"+CSecond+"</span><span>秒</span>");          //输出有天数的数据
+                                }
+                        }
+          });
+   setTimeout("lxfEndtime()",1000);
+  };
+$(function(){
+      lxfEndtime();
+   });
+</script>
+
+</head>
+
+<body>
+
+<div id="site-nav" class="w-full">
+
+   <div class="shoptop w clearfix">
+
+      <div class="login_info">
+
+         {$lang.hello},
+
+         <!--{if !$visitor.user_id}-->
+
+         {$visitor.user_name|escape}
+
+         <a href="{url app=member&act=login&ret_url=$ret_url}">{$lang.login}</a>
+
+         <a href="{url app=member&act=register&ret_url=$ret_url}">{$lang.register}</a>
+
+         <!--{else}-->
+
+         <a href="{url app=member}"><span>{$visitor.user_name|escape}</span></a>
+
+         <a href="{url app=member&act=logout}">{$lang.logout}</a>
+
+         <a href="{url app=message&act=newpm}">{$lang.pm}<!--{if $new_message}-->(<span>{$new_message}</span>)<!--{/if}--></a>
+
+         <!--{/if}-->
+
+      </div>
+
+	
+
+      <ul class="quick-menu"><li class="item">
+
+         <div class="menu iwantbuy">
+
+            <a class="menu-hd" href="{url app=category}">{$lang.i_want_buy}<b></b></a>
+
+            <div class="menu-bd">
+
+               <div class="menu-bd-panel">
+
+                  <div>
+
+                     <p><a href="{url app=category}">{$lang.gcategory}</a></p>
+
+                     <p><a href="www.59jiaju.com">大家正在买</a></p>
+                  </div>
+               </div>
+            </div>
+         </div>
+
+         </li>
+
+         <li class="item">
+
+            <div class="menu mytb">
+
+               <a class="menu-hd" href="{url app=member}">我是买家<b></b></a>
+
+               <div class="menu-bd">
+
+                  <div class="menu-bd-panel">
+
+                     <div>
+
+                        <p><a href="{url app=buyer_order}">已买到的宝贝</a></p>
+
+                        <p><a href="{url app=friend}">我的好友</a></p>
+
+                        <p><a href="{url app=my_question}">我的咨询</a></p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </li>
+
+         <li class="item">
+
+            <div class="menu seller-center">
+
+               <a class="menu-hd" href="{url app=member}">卖家中心<b></b></a>
+
+               <div class="menu-bd">
+
+                  <div class="menu-bd-panel">
+
+                     <div>
+
+                        <p><a href="{url app=seller_order}">已卖出的宝贝</a></p>
+
+                        <p><a href="{url app=my_goods}">出售中的宝贝</a></p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </li>
+
+         <li class="service">
+
+            <a href="{url app=article&code=help}">帮助中心</a>         </li>
+
+         <li class="item">
+
+            <div class="menu mini-cart">
+
+               <a class="ac" href="{url app=cart}">
+
+                  <s></s>购物车<strong>{$cart_goods_kinds}</strong>件<b></b>               </a>
+
+               <div class="mini-cart-content menu-bd">
+
+                  <dl class="mini-cart-bd">
+
+                     <!--{if $cart_goods_kinds}-->
+
+                     <dt class="mini-cart-hd">最近加入的宝贝：</dt>
+
+                     <!--{foreach from=$carts_top item=cart}-->
+
+                     <dd class="mini-cart-each clearfix" id="cart_goods{$cart.rec_id}">
+
+                        <div class="mini-cart-img">
+
+                           <a href="{url app=goods&id=$cart.goods_id}" target="_top">
+
+                              <img alt="{$cart.goods_name}" src="{$cart.goods_image}" width="40" height="40">                           </a>                        </div>
+
+                        <div class="mini-cart-title">
+
+                           <a title="{$cart.goods_name}" href="{url app=goods&id=$cart.goods_id}" target="_top">{$cart.goods_name}</a>                        </div>
+
+                        <div class="price-admin">
+
+                           <div class="mini-cart-count"><strong class="mini-cart-price">{$cart.price|price}</strong></div>
+
+                           <div class="mini-cart-del"><a href="javascript:;" onclick="drop_cart_item({$cart.store_id}, {$cart.rec_id});">删除</a></div>
+                        </div>
+                     </dd>
+
+                     <!--{/foreach}-->
+
+                     <!--{else}-->
+
+                     <dt class="mt10 fleft mini-cart-empty">您购物车里还没有任何宝贝</dt>
+
+                     <!--{/if}-->
+
+                     <dd class="mini-cart-bt">
+
+                        <a href="{url app=cart}">查看我的购物车</a>                     </dd>                          
+                  </dl>
+               </div>
+            </div>
+         </li>
+
+         <li class="service">
+
+            <a hidefocus="true"  target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=461666210&site=qq&menu=yes">在线客服</a>         </li>
+
+         <li class="item">
+
+            <div class="menu favorite">
+
+               <a class="menu-hd" href="{url app=my_favorite}">收藏夹<b></b></a>
+
+               <div class="menu-bd">
+
+                  <div class="menu-bd-panel">
+
+                     <div>
+
+                       <p><a href="{url app=my_favorite}">收藏的宝贝</a></p>
+
+                       <p><a href="{url app=my_favorite&type=store}">收藏的店铺</a></p>
+                    </div>
+                 </div>
+               </div>
+           </div>
+         </li>
+
+         <li class="item" style="background:none">
+
+            <div class="menu sites">
+
+               <a class="menu-hd" href="javascript:;">网站导航<b></b></a>
+
+               <div class="menu-bd padding10">
+
+                  <!--{foreach from=$navs.header item=nav}-->
+
+                  <a href="{$nav.link}"{if $nav.open_new} target="_blank"{/if}>{$nav.title|escape}</a>
+
+                  <!--{/foreach}-->
+               </div>
+            </div>
+        </li>
+     </ul>
+
+   </div>
+
+  <div class="fixed">
+
+      <a id="gotop" href="javascript:window.scroll(0,0)" class="gotop"></a>
+
+      <a href="javascript:;" class="feedbacklink"></a>
+
+      <a href="javascript:;" class="zhaoping"></a>
+
+   </div>
+
+   
+
+   
+
+   <style>
+
+.fixed-top /* 头部固定 */{position:fixed;bottom:auto;top:200px;}
+
+.fixed-bottom /* 底部固定 */{position:fixed;bottom:0px;top:auto;}
+
+.fixed-left /* 左侧固定 */{position:fixed;right:auto;left:0px;}
+
+.fixed-right /* 右侧固定 */{position:fixed;right:0px;left:auto;}
+
+/* 上面的是除了IE6的主流浏览器通用的方法 */
+
+* html,* html body /* 修正IE6振动bug */{background-image:url(about:blank);background-attachment:fixed;}
+
+* html .fixed-top /* IE6 头部固定 */{position:absolute;bottom:auto;top:expression(eval(document.documentElement.scrollTop)+200);}
+
+* html .fixed-right /* IE6 右侧固定 */ {position:absolute;right:auto;left:expression(eval(document.documentElement.scrollLeft+document.documentElement.clientWidth-this.offsetWidth)-(parseInt(this.currentStyle.marginLeft,10)||0)-(parseInt(this.currentStyle.marginRight,10)||0));}
+
+* html .fixed-bottom /* IE6 底部固定  */{position:absolute;bottom:auto;top:expression(eval(document.documentElement.scrollTop+document.documentElement.clientHeight-this.offsetHeight-(parseInt(this.currentStyle.marginTop,10)||0)-(parseInt(this.currentStyle.marginBottom,10)||0)));}
+
+* html .fixed-left /* IE6 左侧固定 */{position:absolute;right:auto;left:expression(eval(document.documentElement.scrollLeft));}
+
+</style>
+
+ 
+
+
+
+<DIV id=backi_OK class="fixed-right fixed-top">
+
+	<table border="0" cellpadding="0" cellspacing="0" width="55">
+
+	<tr><td style="padding:0"><a hidefocus="true" id="hidden" href="javascript:void(0);" title="close"><IMG src="{res file=images/1.gif}" border=0></a></td></tr>
+
+	
+
+    
+
+	<tr><td style="padding:0"><a hidefocus="true"  target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=2355428687&site=qq&menu=yes"><img border="0" SRC='{res file=images/3.gif}' alt="QQ咨询"></a></td></tr>
+    
+    <tr><td style="padding:0"><a hidefocus="true"  target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=2355428680&site=qq&menu=yes"><img border="0" SRC='{res file=images/3.gif}' alt="QQ咨询"></a></td></tr>
+
+
+	
+
+	<tr><td style="padding:0"><a hidefocus="true"  target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=2355428689&site=qq&menu=yes"><img border="0" SRC='{res file=images/3.gif}' alt="QQ咨询"></a></td></tr>
+
+    
+	
+
+   <!--
+
+	<tr><td style="padding:0"><a hidefocus="true"  target="_blank" href="http://settings.messenger.live.com/Conversation/IMMe.aspx?invitee={$store.im_msn}"><img src="http://messenger.services.live.com/users/{$store.im_msn}/presenceimage/" alt="status" /></a></td></tr>
+
+	
+
+    
+
+    
+
+	
+
+	
+
+    -->
+
+	
+
+	<tr><td style="padding:0"><A hidefocus="true"  href="{url app=cart}"><IMG src="{res file=images/6.gif}" border=0 alt="我的购物车"></A></td></tr>
+
+	
+
+	
+
+    <tr><td style="padding:0"><A hidefocus="true" id="gotop" href="javascript:void(0);"><IMG src="{res file=images/7.gif}" border=0></A></td></tr>
+
+	</table>
+
+	</DIV>
+   
+
+   
+
+</div>

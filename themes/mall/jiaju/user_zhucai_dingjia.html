@@ -1479,7 +1479,7 @@ $(function(){
 						for(i in data){
 							var imgArray = [];
 							var id       = data[i].id;
-							
+							var j = parseInt(i)+1;
 							var	pingpai  = data[i].pingpai,
 								name     = data[i].name,
 								danwei   = data[i].danwei,
@@ -1500,7 +1500,7 @@ $(function(){
 
 
 								listHtml += '<tr class="tmain">';
-								listHtml +=		'<td style="width: 5%"><input name="id" type="checkbox"  value="'+id+'" onclick="opencotent('+id+')"/><span>'+i+'</span></td>';
+								listHtml +=		'<td style="width: 5%"><input name="id" type="checkbox"  value="'+id+'" onclick="opencotent('+id+')"/><span>'+j+'</span></td>';
 								listHtml +=		'<td style="width: 16%"><span>'+name+'</span></td>';
 								listHtml +=		'<td style="width: 8%"><span>'+pingpai+'</span></td>';
 								listHtml +=		'<td style="width: 10%"><span>'+xinghao+'</span></td>';
@@ -1555,7 +1555,7 @@ $(function(){
 						for(i in data){
 							var imgArray = [];
 							var id       = data[i].id;
-							
+							var j = parseInt(i)+1;
 							var	pingpai  = data[i].pingpai,
 								name     = data[i].name,
 								danwei   = data[i].danwei,
@@ -1577,7 +1577,7 @@ $(function(){
 
 
 								listHtml += '<tr class="tmain">';
-								listHtml +=		'<td style="width: 5%"><input name="id" type="checkbox" value="'+id+'"/><span>'+i+'</span></td>';
+								listHtml +=		'<td style="width: 5%"><input name="id" type="checkbox" value="'+id+'"/><span>'+j+'</span></td>';
 								listHtml +=		'<td style="width: 16%"><span>'+name+'</span></td>';
 								listHtml +=		'<td style="width: 8%"><span>'+pingpai+'</span></td>';
 								listHtml +=		'<td style="width: 10%"><span>'+xinghao+'</span></td>';
@@ -1628,7 +1628,7 @@ $(function(){
 								var listHtml = '';
 								for(i in data){
 								
-								
+							var j = parseInt(i)+1;	
 								
 							var	pingpai  = data[i].pingpai,
 							    id       = data[i].id,
@@ -1650,7 +1650,7 @@ $(function(){
 								defaults     = (data[i].defaults<1)?'':'checked="checked"';
 								
 								listHtml += '<tr class="tmain">';
-								listHtml +=		'<td style="width: 5%"><input name="id" type="checkbox"  value="'+id+'" onclick="opencotent('+id+')"/><span>'+i+'</span></td>';
+								listHtml +=		'<td style="width: 5%"><input name="id" type="checkbox"  value="'+id+'" onclick="opencotent('+id+')"/><span>'+j+'</span></td>';
 								listHtml +=		'<td style="width: 16%"><span>'+name+'</span></td>';
 								listHtml +=		'<td style="width: 8%"><span>'+pingpai+'</span></td>';
 								listHtml +=		'<td style="width: 10%"><span>'+xinghao+'</span></td>';
@@ -1706,7 +1706,7 @@ function searchShare(){
 						for(i in data){
 							var imgArray = [];
 							var id       = data[i].id;
-							
+							var j = parseInt(i)+1;
 							var	pingpai  = data[i].pingpai,
 								name     = data[i].name,
 								danwei   = data[i].danwei,
@@ -1728,7 +1728,7 @@ function searchShare(){
 
 
 								listHtml += '<tr class="tmain">';
-								listHtml +=		'<td style="width: 5%"><input name="id" type="checkbox" value="'+id+'"/><span>'+i+'</span></td>';
+								listHtml +=		'<td style="width: 5%"><input name="id" type="checkbox" value="'+id+'"/><span>'+j+'</span></td>';
 								listHtml +=		'<td style="width: 16%"><span>'+name+'</span></td>';
 								listHtml +=		'<td style="width: 8%"><span>'+pingpai+'</span></td>';
 								listHtml +=		'<td style="width: 10%"><span>'+xinghao+'</span></td>';
@@ -1785,7 +1785,7 @@ function pageindex(index){
 						for(i in data){
 							var imgArray = [];
 							var id       = data[i].id;
-							
+							var j = parseInt(i)+1;
 							var	pingpai  = data[i].pingpai,
 								name     = data[i].name,
 								danwei   = data[i].danwei,
@@ -1806,7 +1806,7 @@ function pageindex(index){
 
 
 								listHtml += '<tr class="tmain">';
-								listHtml +=		'<td style="width: 5%"><input name="id" type="checkbox"  value="'+id+'" onclick="opencotent('+id+')"/><span>'+i+'</span></td>';
+								listHtml +=		'<td style="width: 5%"><input name="id" type="checkbox"  value="'+id+'" onclick="opencotent('+id+')"/><span>'+j+'</span></td>';
 								listHtml +=		'<td style="width: 16%"><span>'+name+'</span></td>';
 								listHtml +=		'<td style="width: 8%"><span>'+pingpai+'</span></td>';
 								listHtml +=		'<td style="width: 10%"><span>'+xinghao+'</span></td>';
@@ -1872,7 +1872,7 @@ function pageshare(index){
 						for(i in data){
 							var imgArray = [];
 							var id       = data[i].id;
-							
+							var j = parseInt(i)+1;
 							var	pingpai  = data[i].pingpai,
 								name     = data[i].name,
 								danwei   = data[i].danwei,
@@ -1894,7 +1894,7 @@ function pageshare(index){
 
 
 								listHtml += '<tr class="tmain">';
-								listHtml +=		'<td style="width: 5%"><input name="id" type="checkbox" value="'+id+'"/><span>'+i+'</span></td>';
+								listHtml +=		'<td style="width: 5%"><input name="id" type="checkbox" value="'+id+'"/><span>'+j+'</span></td>';
 								listHtml +=		'<td style="width: 16%"><span>'+name+'</span></td>';
 								listHtml +=		'<td style="width: 8%"><span>'+pingpai+'</span></td>';
 								listHtml +=		'<td style="width: 10%"><span>'+xinghao+'</span></td>';

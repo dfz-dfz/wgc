@@ -90,6 +90,36 @@ var PRICE_FORMAT = '&yen;%s';
 		display: inline-block;
 		width: 300px;
  	}
+ 	.jobtype{
+ 		padding: 10px 20px;
+ 		position: absolute;
+ 		top: 145px;
+ 		left:25px;
+ 	}
+ 	.jobtype ul li{
+ 		width: 25%;
+ 		float: left;
+ 		margin: 5px 0;
+ 		overflow: hidden;
+ 	}
+ 	.jobtype .listname{
+ 		color: #f8452c;
+ 		font-size: 23px;
+	    font-weight: 600;
+	    letter-spacing: 2px;
+	    float: left;
+	    cursor: pointer;
+ 	}
+ 	.jobtype .listname a{
+ 		color: #f8452c;
+ 	}
+ 	.jobtype .list{
+ 		color: #f8452c;
+ 		font-size: 18px;
+	    font-weight: 600;
+	    float: right;
+	    margin-right: 20px;
+ 	}
 </style>
 </head>
 <body>
@@ -101,9 +131,58 @@ var PRICE_FORMAT = '&yen;%s';
 				<div style="width: 1100px;margin: 0 auto;text-align: left;color: #707070;line-height: 40px;font-size: 18px;">首页-人才推荐</div>
 			</div>
 		</div>
-		<div style="width: 1100px;margin: 10px auto;">
+		<div style="width: 1100px;margin: 10px auto;position: relative;">
 			<div style="border-bottom: 1px solid #999;font-weight: 600;font-size: 20px;text-align: left;margin-bottom: 10px;">人才推荐：</div>
-			<img src="/themes/mall/jiaju/images/tjrc01.png" alt="" style="width: 100%;" />
+			<div class="jobtype" style="width: 100%;height: auto;overflow: hidden;">
+				<ul>
+					<li class="jobtypelist">
+						<span class="listname"><a href="/index.php?app=search&act=recaituijianlist&types=1">环境设计艺术工程师</a></span>
+						<span class="list">|</span>
+					</li>
+					<li class="jobtypelist">
+						<span class="listname"><a href="/index.php?app=search&act=recaituijianlist&types=4">室内设计工程师</a></span>
+						<span class="list">|</span>
+					</li>
+					<li class="jobtypelist">
+						<span class="listname"><a href="/index.php?app=search&act=recaituijianlist&types=7">建筑设计工程师</a></span>
+						<span class="list">|</span>
+					</li>
+					<li class="jobtypelist">
+						<span class="listname"><a href="/index.php?app=search&act=recaituijianlist&types=10">机电一级建造师</a></span>
+						<span class="list"></span>
+					</li>
+					<li class="jobtypelist">
+						<span class="listname"><a href="/index.php?app=search&act=recaituijianlist&types=2">自动化按制工程师</a></span>
+						<span class="list">|</span>
+					</li>
+					<li class="jobtypelist">
+						<span class="listname"><a href="/index.php?app=search&act=recaituijianlist&types=5">结构设计工程师</a></span>
+						<span class="list">|</span>
+					</li>
+					<li class="jobtypelist">
+						<span class="listname"><a href="/index.php?app=search&act=recaituijianlist&types=8">暖通空调工程师</a></span>
+						<span class="list">|</span>
+					</li>
+					<li class="jobtypelist">
+						<span class="listname"><a href="/index.php?app=search&act=recaituijianlist&types=11">机电二级建造师</a></span>
+						<span class="list"></span>
+					</li>
+					<li class="jobtypelist">
+						<span class="listname"><a href="/index.php?app=search&act=recaituijianlist&types=3">给排水工程师</a></span>
+						<span class="list">|</span>
+					</li>
+					<li class="jobtypelist">
+						<span class="listname"><a href="/index.php?app=search&act=recaituijianlist&types=6">焊接工程师</a></span>
+						<span class="list">|</span>
+					</li>
+					<li class="jobtypelist">
+						<span class="listname"><a href="/index.php?app=search&act=recaituijianlist&types=9">电器工程师</a></span>
+						<span class="list">|</span>
+					</li>
+					
+				</ul>
+			</div>
+			<img src="/themes/mall/jiaju/images/tjrc01.jpg" alt="" style="width: 100%;" />
 			<div style="margin-top: 30px;">
 				<div style="width:60%;float: left;">
 					<div style="border-bottom: 1px solid #999;font-weight: 600;font-size: 20px;text-align: left;">工作推荐</div>

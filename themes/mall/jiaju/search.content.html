@@ -372,7 +372,7 @@ function resumesId(){
 				var id = data[i].id,
 					zhiwei = data[i].zhiwei;
 
-					listHtml += '<li><input type="radio" name="jobtype" value="'+id+'" /><span style="display: inline-block;width:90%;padding-left: 5px; ">'+zhiwei+'</span><a href="/index.php?app=search&act=user_myresume" style="text-align: right;text-decoration: underline;">预览</a></li>';
+					listHtml += '<li><input type="radio" name="jobtype" value="'+id+'" /><span style="display: inline-block;width:90%;padding-left: 5px; ">'+zhiwei+'</span><a href="/index.php?app=search&act=user_myresume" target="_blank" style="text-align: right;text-decoration: underline;">预览</a></li>';
 			}
 			$(".jobtypelist").html(listHtml)
 			$(".toudiways").html('<div id="resumebox" style="width: 150px;height: 35px;line-height: 35px;font-size: 18px;color: #fff;text-align: center;margin:20px auto;background-color: #a3a3a3;cursor: pointer;" onclick="resumes()">确认投递简历</div>')

@@ -100,21 +100,6 @@ body{background:url('') no-repeat center top }
 .mainnav{width:990px; overflow:hidden; margin:0 auto}
 .STYLE1 {color: red}
 </style>
-<script type="text/javascript" src="http://www.wgc2013.com/themes/mall/jiaju/styles/default/js/hover.js"></script>
-
-<script charset="utf-8" type="text/javascript" src="http://www.wgc2013.com/includes/libraries/javascript/jquery.plugins/jquery.validate.js" ></script>
-<script type="text/javascript">
-  $(function (){
-    $('#open-change-city-window').click(function (){
-      $('.change-city-window').slideDown();
-      
-    })
-    $('#close-change-city-window').click(function (){
-      $('.change-city-window').slideUp();
-    })
-
-  
-  })
 </script>
 </head>
 <body>
@@ -1171,10 +1156,10 @@ $(function(){
 
 </script>
 <script type="text/javascript">
-$().ready(function(){
-	username();
-	list();
-})
+	$().ready(function(){
+		username();
+		list();
+	})
 	//点击预算列表切换
 	  $(".user_collection_ul li:first").click(function(){
     	
@@ -1205,24 +1190,16 @@ $().ready(function(){
 		$(".message_list").show();
     })
 
-
-	$(document).ready(function() {
-
-	});
-
-
-//获取当前人的姓名
+	//获取当前人的姓名
 	function username(){
 		var url = 'http://wgcapp.wgc2013.com/jingyi.php/Home/Jifen/user_ziliao';
 		$.post(url,{
 			uid:'<?php echo $_SESSION["user_info"]["user_id"];?>',
 		},function(ret){
-		if(ret.code == 200){
-			//console.log(ret.user.name)
-			$("#name").val(ret.user.name);
-			$("#tell").val(ret.user.mobile)
-		}
-			
+			if(ret.code == 200){
+				$("#name").val(ret.user.name);
+				$("#tell").val(ret.user.mobile)
+			}
 		},'json')
 	}
 	
@@ -1244,7 +1221,7 @@ $().ready(function(){
 		var Publishingarea = $('#Publishingarea').val();
 		var region         = region;//显示区域
 		var img 		   = $('#ImgPath').val();
-
+		var company_name   = $('#company_name').val();
 
 		if(address == ''){
 			alert('地址必填项!');
@@ -1262,24 +1239,23 @@ $().ready(function(){
 
 		$.post('http://wgcapp.wgc2013.com/index.php/Home/Designoffer/addoffer', {
 			user_id 	   : '<?php echo $_SESSION["user_info"]["user_id"];?>',
-								project_name   : office_name,
-								dpid     	   : id,
-						        autoaddress    : address, 
-						        s_province     : s_province,
-								s_city         : s_city,
-								s_county       : s_county,
-								region         : region,
-						        address  	   : worker_address,
-							    tel    		   : tell,
-							    unit    	   : price,
-							    type   	   	   : type,
-							    img   	       : img,
-							    inner_content  : inner_content,
-								ps             : content,
-							    hasmoney       : 10,
-							    publishingarea : $("#Publishingarea").val()
+			project_name   : office_name,
+			dpid     	   : id,
+	        autoaddress    : address, 
+	        s_province     : s_province,
+			s_city         : s_city,
+			s_county       : s_county,
+			region         : region,
+	        address  	   : worker_address,
+		    tel    		   : tell,
+		    unit    	   : price,
+		    type   	   	   : type,
+		    img   	       : img,
+		    inner_content  : inner_content,
+			ps             : content,
+		    hasmoney       : 10,
+		    publishingarea : $("#Publishingarea").val()
 		}, function(ret) {
-		//console.log(ret);
 			if(ret.code == 200){
 				//alert('发布材料成功!');
 				window.location.reload();
@@ -1310,64 +1286,60 @@ $().ready(function(){
 			if(ret.code == 200){
 				var data = ret.message;
 				for(var i in data){
-							listHtml = "";
-							imgHtml = "";
-				            var price = data[i].price, //单价
-			            	name = data[i].name,
-			            	userid = data[i].user_id,
-			            	address = data[i].address,
-			            	bj_name = data[i].ps,
-			            	send_uid = data[i].user_id,
-			            	unit = data[i].unit,
-			            	tell = data[i].tell,
-			            	type = data[i].type,
-							addtime = timestampToTime(data[i].addtime),
-							content = data[i].content,
-							img     = data[i].img,
-							inner_content = data[i].inner_content,
-							project_name  = data[i].project_name,
-							id         = data[i].id,
-			            	autoaddress = data[i].autoaddress;
+					listHtml = "";
+					imgHtml = "";
+		            var price = data[i].price, //单价
+	            	name = data[i].name,
+	            	userid = data[i].user_id,
+	            	address = data[i].address,
+	            	bj_name = data[i].ps,
+	            	send_uid = data[i].user_id,
+	            	unit = data[i].unit,
+	            	tell = data[i].tell,
+	            	type = data[i].type,
+					addtime = timestampToTime(data[i].addtime),
+					content = data[i].content,
+					img     = data[i].img,
+					inner_content = data[i].inner_content,
+					project_name  = data[i].project_name,
+					id         = data[i].id,
+	            	autoaddress = data[i].autoaddress;
 
-			            	var imgArray = img.split(",");
-			            	for(var j=0;j<imgArray.length;j++){
-								//console.log(imgArray[j]);
-								imgHtml += '<a href="http://wgcapp.wgc2013.com'+imgArray[j]+'" target="_blank"><img src="http://wgcapp.wgc2013.com'+imgArray[j]+'" alt="" style="width:100px;height:100px;margin-right:10px;"/></a>';
-							}
-							
+	            	var imgArray = img.split(",");
+	            	for(var j=0;j<imgArray.length;j++){
+						imgHtml += '<a href="http://wgcapp.wgc2013.com'+imgArray[j]+'" target="_blank"><img src="http://wgcapp.wgc2013.com'+imgArray[j]+'" alt="" style="width:100px;height:100px;margin-right:10px;"/></a>';
+					}
 					
 					if(send_uid == myid ){
-						// console.log('hello')
 					
-							listHtml += '<div style="overflow:hidden;position:relative;">';
-							listHtml +=	'<div style="text-align: left;"><span style="display: inline-block;width: 60px;height: 25px;line-height: 25px;background-color: red;font-size: 14px;text-align: center;letter-spacing: 2px;position:absolute;top:0px;color:#fff;margin:5px 5px;" onclick="del('+id+','+userid+')">删除</span></div>';
-							listHtml += '<div  style="text-align:right;padding-right: 20px;margin-top: 10px;height:20px;"><input name="id" type="checkbox" value="'+id+'"></div>';
-							listHtml +=	'<div class="list_right" style="float: left;width: 50%;">';
-							listHtml +=		'<ul style="margin-left:15%;">';
-							listHtml +=			'<li>项目名称：'+project_name+'</li>';
-							listHtml +=			'<li style="margin:10px 0;">联系人：'+name+'</li>';
-							listHtml +=			'<li>类别：'+type+'</li>';
-							listHtml +=			'<li style="margin:10px 0;">备注说明：'+bj_name+'</li>';									
-							listHtml +=		'</ul>';
-							listHtml +=	'</div>';
-							listHtml +=	'<div class="list_left" style="float: right;width: 50%;">';
-							listHtml +=		'<ul style="margin-left:15%;">';
-							listHtml +=			'<li>发布时间：'+addtime+'</li>';
-							listHtml +=			'<li style="margin:10px 0;">设计地址：'+address+'</li>';
-							listHtml +=			'<li>单位：1个月</li>';
-							listHtml +=			'<li style="margin:10px 0;">包含设计：'+inner_content+'</li>	';						
-							listHtml +=		'</ul>';
-							listHtml +=	'</div>';
-							listHtml +=	'<div id="imglist'+i+'" style="width:100%;float:left;margin-top:10px;"></div>';
-							listHtml +=	'<div style="width:100%;height:40px;float:left;margin-top:30px;"><img src="/themes/mall/jiaju/images/list_bg.jpg" style="width:100%;height:100%;"/></div>';
-							listHtml +='</div>';	
-						
-							$(".list_show").append(listHtml);
-							$("#imglist"+i).append(imgHtml);
+						listHtml += '<div style="overflow:hidden;position:relative;">';
+						listHtml +=	'<div style="text-align: left;"><span style="display: inline-block;width: 60px;height: 25px;line-height: 25px;background-color: red;font-size: 14px;text-align: center;letter-spacing: 2px;position:absolute;top:0px;color:#fff;margin:5px 5px;" onclick="del('+id+','+userid+')">删除</span></div>';
+						listHtml += '<div  style="text-align:right;padding-right: 20px;margin-top: 10px;height:20px;"><input name="id" type="checkbox" value="'+id+'"></div>';
+						listHtml +=	'<div class="list_right" style="float: left;width: 50%;">';
+						listHtml +=		'<ul style="margin-left:15%;">';
+						listHtml +=			'<li>项目名称：'+project_name+'</li>';
+						listHtml +=			'<li style="margin:10px 0;">联系人：'+name+'</li>';
+						listHtml +=			'<li>类别：'+type+'</li>';
+						listHtml +=			'<li style="margin:10px 0;">备注说明：'+bj_name+'</li>';									
+						listHtml +=		'</ul>';
+						listHtml +=	'</div>';
+						listHtml +=	'<div class="list_left" style="float: right;width: 50%;">';
+						listHtml +=		'<ul style="margin-left:15%;">';
+						listHtml +=			'<li>发布时间：'+addtime+'</li>';
+						listHtml +=			'<li style="margin:10px 0;">设计地址：'+address+'</li>';
+						listHtml +=			'<li>单位：1个月</li>';
+						listHtml +=			'<li style="margin:10px 0;">包含设计：'+inner_content+'</li>	';						
+						listHtml +=		'</ul>';
+						listHtml +=	'</div>';
+						listHtml +=	'<div id="imglist'+i+'" style="width:100%;float:left;margin-top:10px;"></div>';
+						listHtml +=	'<div style="width:100%;height:40px;float:left;margin-top:30px;"><img src="/themes/mall/jiaju/images/list_bg.jpg" style="width:100%;height:100%;"/></div>';
+						listHtml +='</div>';	
+					
+						$(".list_show").append(listHtml);
+						$("#imglist"+i).append(imgHtml);
 						
 					}
 				}
-					
 					
 			}
 		},'json')
@@ -1376,18 +1348,17 @@ $().ready(function(){
 	//分享
 	$(".share_btn").click(function(e){
 		e.stopPropagation;
-		
 		var checkArray = $('input[name="id"]:checked');
 		var count = 0;
 		for(var i=0;i<checkArray.length;i++){
 			if(checkArray[i].checked == true){
-			count++;
+				count++;
 			}
-				}
-			if(count < 1){
-				alert("请选择你要添加的内容！！！！！")
-				return false;
-						}
+		}
+		if(count < 1){
+			alert("请选择你要添加的内容！！！！！")
+			return false;
+		}
 		$(".confirm").show();		
 	})
 
@@ -1403,70 +1374,67 @@ $().ready(function(){
 		uid= '<?php echo $_SESSION["user_info"]["user_id"];?>';
 		$('.getUserList').html("")
 		$.ajax({
-				type:"POST",
-				url:'http://wgcapp.wgc2013.com/jingyi.php/Home/index/getAllMyRelative',
-				data:{
-						uid:'<?php echo $_SESSION["user_info"]["user_id"];?>',
-		            	type:'PRIVATE',
-		            	types:'user_list',
-		            	page : page,
-				},
-				cache:false,
-				crossDomain: true == !(document.all),
-				dataType: "JSON",
-				success:function(ret){
-					//console.log("成功");
-					//console.log(ret)
-					var html = '';
-					var datas = ret.data;
-			
-					if(ret.code == 200){
-						//page ++;
-						for(var j in datas){
-							var data = datas[j];
-							var message = datas[j].message;
-							html += '<div class="tel_list">'+data.zhiwei+'</div>';
-							for(var i in message){
-								var zhiwei = message[i].zhiwei,
-									id     = message[i].id,
-									touid = message[i].touid,
-									name = message[i].name,
-									names = message[i].user_name, 
-									imgUrl = message[i].userphoto;
-								html += '<ul>';
-									html += '<li class="tel_li">';
-										html += '<div class="check">';
-											html += '<input name="tid" type="checkbox" value="'+touid+'" name="checkbox" />';
-										html += '</div>';
-										html += '<div class="head_img">';
-											html += '<img src="'+url+imgUrl+'" alt=""/>';
-										html += '</div>';
-										html += '<div class="tel_data">';
-											html += '<span>'+name+'</span>';
-											html += '<span>'+names+'</span>';
-										html += '</div>';
-									html += '</li>';
-								html += '</ul>';
-							}
+			type:"POST",
+			url:'http://wgcapp.wgc2013.com/jingyi.php/Home/index/getAllMyRelative',
+			data:{
+					uid:'<?php echo $_SESSION["user_info"]["user_id"];?>',
+	            	type:'PRIVATE',
+	            	types:'user_list',
+	            	page : page,
+			},
+			cache:false,
+			crossDomain: true == !(document.all),
+			dataType: "JSON",
+			success:function(ret){
+				var html = '';
+				var datas = ret.data;
+		
+				if(ret.code == 200){
+					//page ++;
+					for(var j in datas){
+						var data = datas[j];
+						var message = datas[j].message;
+						html += '<div class="tel_list">'+data.zhiwei+'</div>';
+						for(var i in message){
+							var zhiwei = message[i].zhiwei,
+								id     = message[i].id,
+								touid = message[i].touid,
+								name = message[i].name,
+								names = message[i].user_name, 
+								imgUrl = message[i].userphoto;
+							html += '<ul>';
+								html += '<li class="tel_li">';
+									html += '<div class="check">';
+										html += '<input name="tid" type="checkbox" value="'+touid+'" name="checkbox" />';
+									html += '</div>';
+									html += '<div class="head_img">';
+										html += '<img src="'+url+imgUrl+'" alt=""/>';
+									html += '</div>';
+									html += '<div class="tel_data">';
+										html += '<span>'+name+'</span>';
+										html += '<span>'+names+'</span>';
+									html += '</div>';
+								html += '</li>';
+							html += '</ul>';
 						}
-
-						$('.getUserList').append(html);
-						//获取数据id
-								var arr = new Array();
-				                $('input[name="id"]:checked').each(function(i){
-				                    arr[i] = $(this).val();
-				                });
-				                var vals = arr.join(",");
-				                //console.log(vals);
-					}else {
-						alert('数据加载失败，请检查网络!');
 					}
-				},
-				error:function(err){
-					console.log("错误是");
-					console.log(err);
+
+					$('.getUserList').append(html);
+					//获取数据id
+							var arr = new Array();
+			                $('input[name="id"]:checked').each(function(i){
+			                    arr[i] = $(this).val();
+			                });
+			                var vals = arr.join(",");
+				}else {
+					alert('数据加载失败，请检查网络!');
 				}
-			});
+			},
+			error:function(err){
+				console.log("错误是");
+				console.log(err);
+			}
+		});
 	}
 
 	//通讯录搜索
@@ -1529,50 +1497,43 @@ $().ready(function(){
 
 	//确认分享
 	function sharebox(){
-								//获取数据id
-								var arr = new Array();
-								var tarry = new Array();
-								var telcount = 0;
-								var telArray = $('input[name="tid"]:checked');
-								for(var i=0;i<telArray.length;i++){
-									if(telArray[i].checked == true){
-										telcount++;
-									}
-								}
-								if(telcount < 1){
-									alert("请选择你要分享的好友！！！！！")
-									return false;
-								}
+		//获取数据id
+		var arr = new Array();
+		var tarry = new Array();
+		var telcount = 0;
+		var telArray = $('input[name="tid"]:checked');
+		for(var i=0;i<telArray.length;i++){
+			if(telArray[i].checked == true){
+				telcount++;
+			}
+		}
+		if(telcount < 1){
+			alert("请选择你要分享的好友！！！！！")
+			return false;
+		}
 
-				                $('input[name="id"]:checked').each(function(i){
-				                    arr[i] = $(this).val();
-				                   
-				                });
+        $('input[name="id"]:checked').each(function(i){
+            arr[i] = $(this).val();
+           
+        });
 
-				                var vals = arr.join(",");
+        var vals = arr.join(",");
 
-				                console.log(vals);
+        //获取通讯录id
+  		$('input[name="tid"]:checked').each(function(j){
+            tarry[j] = $(this).val();
+        });
+        var tvals = tarry.join(",");
 
-
-
-				                //获取通讯录id
-				          		$('input[name="tid"]:checked').each(function(j){
-				                    tarry[j] = $(this).val();
-				                });
-				                var tvals = tarry.join(",");
-				                console.log(tvals)
-
-				                $.post('http://wgcapp.wgc2013.com/jingyi.php/Home/index/share',{
-				                	"type":5,
-				                	"arr":arr,
-				                	"tarry":tarry
-				                },function(ret){
-				                	console.log(ret)
-				                	if(ret.code == 200){
-
-				                		window.location.reload();
-				                	}
-				                },'json')
+        $.post('http://wgcapp.wgc2013.com/jingyi.php/Home/index/share',{
+        	"type":5,
+        	"arr":arr,
+        	"tarry":tarry
+        },function(ret){
+        	if(ret.code == 200){
+        		window.location.reload();
+        	}
+        },'json')
 	}
 	
 	//取消
@@ -1582,7 +1543,6 @@ $(".quxiao").click(function(){
 //通讯录分页控制
 var upage = 1;
 function pageindexUser(pindex){
-		//console.log(index)
 		if(pindex < 1){
 			pindex = 1;
 			upage=1;
@@ -1602,8 +1562,6 @@ function pageindexUser(pindex){
 				crossDomain: true == !(document.all),
 				dataType: "JSON",
 				success:function(ret){
-					console.log("成功");
-					console.log(ret)
 					var html = '';
 					var datas = ret.data;
 					$('.getUserList').html("")
@@ -1644,7 +1602,6 @@ function pageindexUser(pindex){
 				                    arr[i] = $(this).val();
 				                });
 				                var vals = arr.join(",");
-				                console.log(vals);
 					}else {
 						alert('数据加载失败，请检查网络!');
 					}
@@ -1658,14 +1615,12 @@ function pageindexUser(pindex){
 	}
 //下一页
 function nextpageUser(){
-	
 	pageindexUser(++upage);
-
-	}
+}
 //上一页
 function prepageUser(){
-		pageindexUser(--upage);
-	}	
+	pageindexUser(--upage);
+}	
 
 //分享列表
 var sharepage = 1;
@@ -1673,109 +1628,96 @@ var sharepage = 1;
 	var url = 'http://wgcapp.wgc2013.com/index.php/Home/Designoffer/getLists_share';
 	var key = "";
 	$.ajax({
-				type:"POST",
-				url:url,
-				data:{
-					key      : key,
-			    	user_id  : '<?php echo $_SESSION["user_info"]["user_id"];?>',
-			    	page     : sharepage,
-			    	type     : 5
-				},
-				cache:false,
-				crossDomain: true == !(document.all),
-				dataType: "json",
-				success:function(ret){
-					console.log("分享",ret)
-					var html = '';
-				if(ret.code == 200){
+		type:"POST",
+		url:url,
+		data:{
+			key      : key,
+	    	user_id  : '<?php echo $_SESSION["user_info"]["user_id"];?>',
+	    	page     : sharepage,
+	    	type     : 5
+		},
+		cache:false,
+		crossDomain: true == !(document.all),
+		dataType: "json",
+		success:function(ret){
+			var html = '';
+			if(ret.code == 200){
 				var data = ret.message;
 				for(var i in data){
-							listHtml = "";
-							imgHtml = "";
-				            var price = data[i].price, //单价
-			            	name = data[i].name,
-			            	address = data[i].address,
-			            	bj_name = data[i].ps,
-			            	send_uid = data[i].user_id,
-			            	id       = data[i].id,
-			            	unit = data[i].unit,
-			            	tell = data[i].tell,
-			            	type = data[i].type,
-							addtime = timestampToTime(data[i].addtime),
-							content = data[i].content,
-							img     = data[i].img,
-							inner_content = data[i].inner_content,
-							project_name  = data[i].project_name,
-							username      = data[i].username,
-			            	autoaddress = data[i].autoaddress;
+					listHtml = "";
+					imgHtml = "";
+		            var price = data[i].price, //单价
+		        	name = data[i].name,
+		        	address = data[i].address,
+		        	bj_name = data[i].ps,
+		        	send_uid = data[i].user_id,
+		        	id       = data[i].id,
+		        	unit = data[i].unit,
+		        	tell = data[i].tell,
+		        	type = data[i].type,
+					addtime = timestampToTime(data[i].addtime),
+					content = data[i].content,
+					img     = data[i].img,
+					inner_content = data[i].inner_content,
+					project_name  = data[i].project_name,
+					username      = data[i].username,
+		        	autoaddress = data[i].autoaddress;
 
+		        	var imgArray = img.split(",");
 
-			            	var imgArray = img.split(",");
-			            	//console.log(i+":"+imgArray[0])
-
-			            	if(imgArray[0] != null){
-
-			            	for(var j=0;j<imgArray.length;j++){
-								//console.log(imgArray[j]);
-								imgHtml += '<a href="http://wgcapp.wgc2013.com'+imgArray[j]+'" target="_blank"><img src="http://wgcapp.wgc2013.com'+imgArray[j]+'" alt="" style="width:100px;height:100px;margin-right:10px;"/></a>';
-							}
-			            	}
-							
+		        	if(imgArray[0] != null){
+		            	for(var j=0;j<imgArray.length;j++){
+							imgHtml += '<a href="http://wgcapp.wgc2013.com'+imgArray[j]+'" target="_blank"><img src="http://wgcapp.wgc2013.com'+imgArray[j]+'" alt="" style="width:100px;height:100px;margin-right:10px;"/></a>';
+						}
+		        	}
 					
-					
-						// console.log('hello')
-					
-							listHtml += '<div style="overflow:hidden;">';
-							listHtml += '<div  style="text-align:right;padding-right: 20px;margin-top: 10px;height:20px;"><input name="id" type="checkbox" value="'+id+'"></div>';
-							listHtml +=	'<div class="list_right" style="float: left;width: 50%;">';
-							listHtml +=		'<ul style="margin-left:15%;">';
-							listHtml +=			'<li>项目名称：'+project_name+'</li>';
-							listHtml +=			'<li style="margin:10px 0;">联系人：'+name+'</li>';
-							listHtml +=			'<li>类别：'+type+'</li>';
-							listHtml +=			'<li style="margin:10px 0;">备注说明：'+bj_name+'</li>';									
-							listHtml +=		'</ul>';
-							listHtml +=	'</div>';
-							listHtml +=	'<div class="list_left" style="float: right;width: 50%;">';
-							listHtml +=		'<ul style="margin-left:15%;">';
-							listHtml +=			'<li>发布时间：'+addtime+'</li>';
-							listHtml +=			'<li style="margin:10px 0;">设计地址：'+address+'</li>';
-							listHtml +=			'<li>单位：1个月</li>';
-							listHtml +=			'<li style="margin:10px 0;">包含设计：'+inner_content+'</li>	';						
-							listHtml +=		'</ul>';
-							listHtml +=	'</div>';
-							listHtml +=	'<div id="imglist_share'+i+'" style="width:100%;float:left;margin-top:10px;text-align:center;"></div>';
-							listHtml +=	'<div class="clearfix" style="width:96%;margin-top:10px;text-align:right;margin-right:20px;height:20px;">分享人:'+username+'</div>';
-							listHtml +=	'<div style="width:100%;height:40px;float:left;margin-top:30px;"><img src="/themes/mall/jiaju/images/list_bg.jpg" style="width:100%;height:100%;"/></div>';
-							listHtml +='</div>';	
-						
-							$(".design_body_share").append(listHtml);
-							$("#imglist_share"+i).append(imgHtml);
-						
-					
+					listHtml += '<div style="overflow:hidden;">';
+					listHtml += '<div  style="text-align:right;padding-right: 20px;margin-top: 10px;height:20px;"><input name="id" type="checkbox" value="'+id+'"></div>';
+					listHtml +=	'<div class="list_right" style="float: left;width: 50%;">';
+					listHtml +=		'<ul style="margin-left:15%;">';
+					listHtml +=			'<li>项目名称：'+project_name+'</li>';
+					listHtml +=			'<li style="margin:10px 0;">联系人：'+name+'</li>';
+					listHtml +=			'<li>类别：'+type+'</li>';
+					listHtml +=			'<li style="margin:10px 0;">备注说明：'+bj_name+'</li>';									
+					listHtml +=		'</ul>';
+					listHtml +=	'</div>';
+					listHtml +=	'<div class="list_left" style="float: right;width: 50%;">';
+					listHtml +=		'<ul style="margin-left:15%;">';
+					listHtml +=			'<li>发布时间：'+addtime+'</li>';
+					listHtml +=			'<li style="margin:10px 0;">设计地址：'+address+'</li>';
+					listHtml +=			'<li>单位：1个月</li>';
+					listHtml +=			'<li style="margin:10px 0;">包含设计：'+inner_content+'</li>	';						
+					listHtml +=		'</ul>';
+					listHtml +=	'</div>';
+					listHtml +=	'<div id="imglist_share'+i+'" style="width:100%;float:left;margin-top:10px;text-align:center;"></div>';
+					listHtml +=	'<div class="clearfix" style="width:96%;margin-top:10px;text-align:right;margin-right:20px;height:20px;">分享人:'+username+'</div>';
+					listHtml +=	'<div style="width:100%;height:40px;float:left;margin-top:30px;"><img src="/themes/mall/jiaju/images/list_bg.jpg" style="width:100%;height:100%;"/></div>';
+					listHtml +='</div>';	
+				
+					$(".design_body_share").append(listHtml);
+					$("#imglist_share"+i).append(imgHtml);
 				}
 			}
-				},
-				error:function(err){
-					console.log(err)
-				}
-			});
+		},
+		error:function(err){
+			console.log(err)
+		}
+	});
 
-	}
+}
 	//删除列表
 	function del(id,userid){
-
 		var status = confirm("是否确认删除此设计分包信息！")
 		if(status){
-
-		window.location.href = 'http://wgcapp.wgc2013.com/index.php/Home/Designoffer/getList_del/id/'+id+'/user_id/'+userid;
+			window.location.href = 'http://wgcapp.wgc2013.com/index.php/Home/Designoffer/getList_del/id/'+id+'/user_id/'+userid;
 		}else{
 			return false;
 		}
 	
-}
+	}
 
-//时间戳转换
-function timestampToTime(timestamp) {
+	//时间戳转换
+	function timestampToTime(timestamp) {
         var date = new Date(timestamp * 1000);//时间戳为10位需*1000，时间戳为13位的话不需乘1000
         var Y = date.getFullYear() + '-';
         var M = (date.getMonth()+1 < 10 ? '0'+(date.getMonth()+1) : date.getMonth()+1) + '-';
@@ -1785,7 +1727,7 @@ function timestampToTime(timestamp) {
         var s = date.getSeconds();
         return Y+M+D+h+m+s;
     }
-//返回检索列表
+	//返回检索列表
 	function back(){
 		$('#back_btn').hide();
 		$('#search_text').val('');

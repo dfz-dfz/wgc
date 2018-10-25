@@ -238,7 +238,7 @@
 				<div class="table_lists_share" style="overflow: hidden;margin-top: 10px;min-height: 300px;">
 						<div class="search_ys_list_share">
 							<input type="text" style="width: 400px;height: 30px;" id="search_list_share" placeholder="请输入关键词">
-							<label class="search_list" for="search_list_share" style="width: 50px;height: 30px;display:inline-block;position: relative;top: -8px;"><img src="/themes/mall/jiaju/images/search_button.jpg" alt="" style="width: 100%;height: 100%;" onclick="searchList()"></label>
+							<label class="search_list" for="search_list_share" style="width: 50px;height: 30px;display:inline-block;position: relative;top: -8px;"><img src="/themes/mall/jiaju/images/search_button.jpg" alt="" style="width: 100%;height: 100%;"  onclick="searchShare()"></label>
 							<input type="button" value="取消" class="quxiao_btn_share" style="display: inline-block;padding:0;width: 50px;height: 30px;position: relative;top: -8px;cursor:pointer;line-height:30px;background-color: #ec6941;display:none;" />
 						</div>
 					<div class="table_list_head">
@@ -2545,7 +2545,7 @@ function prepageUser(){
 	}
 
 //分享列表
-var sharepage = 1;
+	var sharepage = 1;
 	function messagelist(){
 	var url = 'http://wgcapp.wgc2013.com/jingyi.php/Home/Dinge/baojia_list_share';
 
@@ -2597,6 +2597,65 @@ var sharepage = 1;
 			});
 
 	}
+
+//分享列表搜索
+function searchShare(){
+	var url = 'http://wgcapp.wgc2013.com/jingyi.php/Home/Dinge/baojia_list_share';
+	var key = $("#search_list_share").val();
+
+	if(key){
+
+	$.ajax({
+				type:"POST",
+				url:url,
+				data:{
+					key      : key,
+			    	user_id  : '<?php echo $_SESSION["user_info"]["user_id"];?>',
+			    	page     : sharepage,
+			    	type     : 4
+				},
+				cache:false,
+				crossDomain: true == !(document.all),
+				dataType: "json",
+				success:function(ret){
+					//console.log(ret)
+					var html = '';
+				if(ret.status == 200){
+					$("#listpage").show();
+					var data = ret.retData;
+					for(var i in data){
+						var jsdanwei = data[i].jsdanwei,
+							sgdanwei = data[i].sgdanwei,
+							riqi = data[i].riqi,
+							shuijin = data[i].shuijin,
+							guanlifei = data[i].guanlifei,
+							gczongzaojia = data[i].gczongzaojia,
+							addtime = data[i].addtime,
+							time = timestampToTime(addtime);
+							id = data[i].tid;
+							name = data[i].name;
+							
+						html += '<tr>';
+							html += '<td style="width:184px;">'+jsdanwei+'</td>';
+							html += '<td style="width:184px;">'+sgdanwei+'</td>';
+							html += '<td style="width:171px;">'+gczongzaojia+'</td>';
+							html += '<td style="width:171px;">'+time+'</td>';
+							html += '<td class="t_detail"><a href="javascript:;" style="color:blue;width:80px;" onclick="tDetails('+id+','+gczongzaojia+')">详情</a><a href="javascript:;" style="color:#e8435a;width:35px;display:inline-block;" onclick="shareBtn('+id+')">分享</a></td>';
+							html += '<td style="width:91px;">'+name+'</td>';
+						html += '</tr>';
+					}
+					$('#ysbj_share_list').html(html);
+				}
+				},
+				error:function(err){
+					console.log(err)
+				}
+			});
+	}else{
+		alert("关键词不能为空!!!!!")
+	}
+}
+
 //分享列表详情
 function tDetails(id,zj){
 	$(".t_detail_all_share").show();

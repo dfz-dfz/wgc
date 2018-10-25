@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>人才推荐列表</title>
+	<link rel="stylesheet" href="">
+	<script type="text/javascript" src="/themes/mall/jiaju/styles/default/js/jquery-1.3.2.min.js"></script>
+</head>
+<style>
+	.weixiulist ul {
+		border-bottom: 1px solid #d4d4d4;
+		height: 40px;
+		line-height: 40px;
+		text-align: center;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	.weixiulist li {
+		float: left;
+	    overflow: hidden;
+	    text-overflow: ellipsis;
+	    white-space: nowrap;
+	    text-align: center;
+	    font-size: 14px;
+	}
+
+	#headerlist li {
+		font-size: 20px;
+		font-weight: bold;
+	}
+</style>
+<body>{include file=header.html}
+
+
+	<div style="width: 1100px;margin: 10px auto;text-align: left;">
+		<!-- 搜索 -->
+		<div style="height: 54px;">
+			<input id="key" type="text" style="height: 10px;width: 970px;padding: 20px;float: left;" placeholder="请输入关键词：例如：肯德基设计">
+			<img onclick="searchList()" src="themes/mall/jiaju/images/search.png" alt="" style="float: left;width: 84px;height: 54px;">
+		</div>
+		<div style="width: 880px;float: left;">
+			<div class="weixiulist" style="margin: 20px auto;position: relative;">
+				<img src="themes/mall/jiaju/images/rencaituijian.jpg" alt="" width="200px">
+				<span id="back_btn" style="width: 100px;color: #fff;background-color: #efa913;padding: 9px;font-size: 16px;position: absolute;text-align: center;display: none;top: 0;left: 210px;cursor: pointer;" onclick="backList()">返回列表</span>
+				<!-- 维修设计列表 -->
+				<div id="sjfbList" style="margin-top: 5px;"> 
+					<ul id="headerlist" style="width: 880px;background-color: #efa913;">
+						<li style="width: 28.16%;">姓名</li>
+						<li style="width: 28.36%;">工作地点</li>
+						<li style="width: 15.16%;">职位</li>
+						<li style="width: 15.16%;">学历</li>
+						<li style="width: 13.16%;">详情</li>
+					</ul>
+
+					<div id="weixiuMain" style="border:1px solid #6d6d6d;border-top: 0;min-height: 415px;">
+						
+					</div>
+				</div>
+
+				<div class="unpages" id="unpage" style="margin:50px auto;width: 200px;text-align: center;">
+					<a style="background:red;color:#fff;width: 70px;height: 30px;line-height: 30px;padding:4px 5px;cursor:pointer;margin-right: 20px;" onclick="uppage()">上一页</a>
+					<a style="background:red;color:#fff;width: 70px;height: 30px;line-height: 30px;padding:4px 5px;cursor:pointer;" onclick="nextpage()">下一页</a>
+				</div>
+			</div>
+		</div>
+
+		<div style="width: 200px;float: right;height: 587px;border-left: 10px solid #e5e5e5;padding-right: 0;margin-top: 20px;">
+			<img src="http://www.wgc2013.com/themes/mall/jiaju/images/guanggao.png" alt="" width="100%">
+		</div>
+	</div>
+
+{include file=footer.html}
+</body>
+<script>
+	var url = "http://wgcapp.wgc2013.com/";
+	var page = 1;
+
+	$(document).ready(function() {
+		repair_list();
+	});
+
+	function uppage(){
+		if(page<1){
+			page=1;
+		}
+		page--;
+		repair_list(page);
+	}
+
+	function nextpage(){
+		page++;
+		repair_list(page);
+	}
+
+	//维修列表
+	function repair_list(page){
+	
+		$.post(url+'jingyi.php/Home/Jymember/lonAndlats', {
+			status   : 2,
+			page     : page,
+			ptype    : 2,
+		}, function(ret) {
+			
+			if(ret.code == 200){
+				var retData = ret.message;
+				var html = '';
+				for(var i in retData){
+					var office_name = (retData[i].office_name == null || retData[i].office_name == '') ? '未设定':retData[i].office_name,
+						id = retData[i].id, 
+						weixiu_price = retData[i].weixiu_price,
+						worker_address = (retData[i].restaurant_address == null || retData[i].restaurant_address == '') ? retData[i].worker_address:retData[i].restaurant_address,
+						addtime = retData[i].addtime,
+						endtime = (retData[i].endtime == null || retData[i].endtime == '') ? '未设定':retData[i].endtime,
+						office_name = (office_name == '未设定') ? retData[i].restaurant:retData[i].office_name;
+
+						html += '<ul>';
+							html += '<li style="width:28.16%;color:red;font-weight:600;">'+office_name+'</li>';
+							html += '<li style="width:28.36%">'+worker_address+'</li>';
+							html += '<li style="width:15.16%">'+endtime+'</li>';
+							html += '<li style="width:15.16%;">'+addtime+'</li>';
+							html += '<li style="width:13.16%;cursor: pointer;"><a style="color:blue;" href="/index.php?app=search&act=weixiu_details&id='+id+'">查看</a></li>';
+						html += '</ul>';
+					
+				}
+				$('#weixiuMain').html(html);
+			}else if(ret.code == 202){	
+				$("#weixiuMain").html('<div style="text-align:center;color:#999;font-size:20px;line-height:50px;">暂无数据</div>');
+			}else{
+				alert('网络连接失败，请检查网络');
+				return false;
+			}
+		},'json');
+	}
+
+	//维修项目搜索
+	function searchList(){
+		var key = $('#key').val();
+		$('.unpages').hide();
+		$.post(url+'jingyi.php/Home/Jymember/lonAndlats_key', {
+			status   : 2,
+			ptype    : 2,
+			key      : key
+		}, function(ret) {
+			if(ret.code == 200){
+				var retData = ret.message;
+				var html = '';
+				for(var i in retData){
+					var office_name = (retData[i].office_name == null || retData[i].office_name == '') ? '未设定':retData[i].office_name,
+						id = retData[i].id, 
+						weixiu_price = retData[i].weixiu_price,
+						worker_address = (retData[i].worker_address == null || retData[i].worker_address == '') ? '未设定':retData[i].worker_address,
+						addtime = retData[i].addtime,
+						endtime = (retData[i].endtime == null || retData[i].endtime == '') ? '未设定':retData[i].endtime;
+
+						html += '<ul>';
+							html += '<li style="width:28.16%;color:red;font-weight:600;">'+office_name+'</li>';
+							html += '<li style="width:28.36%">'+worker_address+'</li>';
+							html += '<li style="width:15.16%">'+endtime+'</li>';
+							html += '<li style="width:15.16%;">'+addtime+'</li>';
+							html += '<li style="width:13.16%;cursor: pointer;"><a style="color:blue;" href="/index.php?app=search&act=weixiu_details&id='+id+'">查看</a></li>';
+						html += '</ul>';
+					
+				}
+				$('#weixiuMain').html(html);
+			}else if(ret.code == 202){	
+				$("#weixiuMain").html('<div style="text-align:center;color:#999;font-size:20px;line-height:50px;">暂无数据</div>');
+			}else{
+				alert('网络连接失败，请检查网络');
+				return false;
+			}
+		},'json');
+
+		$('#sjfbList').css({
+			height: 'auto',
+			overflow: 'hidden'
+		});
+
+		$('#back_btn').css({
+			display: 'block'
+		});
+	}
+
+	//返回列表
+	function backList(){
+		repair_list(page);
+		$('#back_btn').css({
+			display: 'none'
+		});
+		$('.unpages').show();
+	}
+</script>
+</html>

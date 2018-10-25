@@ -1,0 +1,155 @@
+{include file=header.html}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>59家具-套餐详情</title>
+<link type="text/css" href="/themes/mall/jiaju/styles/taocan/style/style.css" rel="stylesheet"  />
+<link type="text/css" href="/themes/mall/jiaju/styles/taocan/css/demo.css" rel="stylesheet"  />
+</head>
+
+<body>
+<div class="tc_area1 tc_w">
+   <div id="banner_tabs" class="flexslider">
+		<ul class="slides"style="width:100%">
+			<li>
+				<a title="" target="_blank" href="javascript:;">
+					<img width="1230" height="500" alt="" style="background: url(http://www.59jiaju.com/themes/mall/jiaju/images/th.jpg) no-repeat center;background-size:100%" src="/themes/mall/jiaju/styles/taocan/images/alpha.png">
+				</a>
+			</li>
+			<li>
+				<a title="" href="javascript:;">
+					<img width="1230" height="500" alt="" style="background: url(http://www.59jiaju.com/themes/mall/jiaju/images/dm.jpg) no-repeat center;background-size:100%" src="/themes/mall/jiaju/styles/taocan/images/alpha.png">
+				</a>
+			</li>
+			<li>
+				<a title="" href="javascript:;">
+					<img width="1230" height="500" alt="" style="background: url(http://www.59jiaju.com/themes/mall/jiaju/images/qm.jpg) no-repeat center;background-size:100%" src="/themes/mall/jiaju/styles/taocan/images/alpha.png">
+				</a>
+			</li>
+		</ul>
+		<ul class="flex-direction-nav">
+			<li><a class="flex-prev" href="javascript:;">Previous</a></li>
+			<li><a class="flex-next" href="javascript:;">Next</a></li>
+		</ul>
+		<ol id="bannerCtrl" class="flex-control-nav flex-control-paging">
+			<li><a>1</a></li>
+			<li><a>2</a></li>
+			<li><a>2</a></li>
+		</ol>
+   </div> 
+</div>
+<div class="tc_area2">
+	<div class="tc_area2_title"><h2 class="colorred">立即预约<i> To make an appointment immediately</i></h2></div>
+	<div class="tc_area2_con">
+		<div class="tc_area2_con tc_w">
+		
+		
+		{$jianjie}
+		
+		
+		
+		</div>
+	</div>
+</div>
+<div class="tc_area3 tc_w">
+	<div class="tc_area3_title">
+		<h3>套餐亮点<br><span>Package Highlight</span><div class="tc_area3_title1"></div></h3>
+		<dl class="tc_area3_con">
+		
+		
+		
+		
+		
+			{$liangdian}
+			
+			
+			
+			
+			<div class="clear"></div>
+		</dl>
+	</div>
+</div>
+<div class="tc_area3 tc_w">
+	<div class="tc_area3_title">
+		<h3>套餐说明<br><span>Package instructions</span><div class="tc_area3_title1 tc_area3_title2"></div></h3>
+		<div class="tc_area3_con tc_area3_con1">
+	
+				
+			{$shuoming}	
+				
+				
+				
+				
+		</div>
+	</div>
+</div>
+<div class="tc_area4 tc_w">
+	<div class="tc_area3_title">
+		<h3>五大功能区<br><span>The five functional areas</span><div class="tc_area3_title1 tc_area3_title3"></div></h3>
+	</div>
+	   
+	    
+		
+		{$gnqu}	
+		
+		
+		
+		
+</div>
+<div class="tc_area5 tc_w">
+	<div class="tc_area3_title">
+		<h3>独特设计风格<br><span>Unique design style</span><div class="tc_area3_title1 tc_area3_title2"></div></h3>
+	</div>	
+	<div class="tc_area5_con">
+		
+		
+		{$fengge}
+		
+		
+		
+		
+		
+		
+	</div>
+</div>
+<div class="tc_area6">
+	<div class="tc_area2_title"><h2 class="colorred">立即预约<i> To make an appointment immediately</i></h2></div>
+	<div class="tc_area6_con">
+		<div class="tc_area6_cona">
+		<form action="index.php?app=search&act=taocan_mes" method="post">
+			<ul>
+				<li><span>姓名：</span><input name="name" type="text"></li>
+				<li><span>手机：</span><input name="tel" type="text"></li>
+				<li><span>地址：</span><input name="dis" type="text"></li>
+				<li><span>其他要求：</span><textarea name="txt"style="width:315px;height:60px;resize:none;"></textarea></li>
+			</ul>
+			
+			<input type="hidden" name="id" value="{$tid}">
+			<input value="提交" type="submit" class="tc_ptn">
+		</form>
+		</div>
+	</div>
+</div>
+<script src="/themes/mall/jiaju/styles/taocan/js/jquery-1.10.2.min.js"></script>
+<script src="/themes/mall/jiaju/styles/taocan/js/slider.js"></script>
+<script type="text/javascript">
+$(function() {
+	var bannerSlider = new Slider($('#banner_tabs'), {
+		time: 5000,
+		delay: 400,
+		event: 'hover',
+		auto: true,
+		mode: 'fade',
+		controller: $('#bannerCtrl'),
+		activeControllerCls: 'active'
+	});
+	$('#banner_tabs .flex-prev').click(function() {
+		bannerSlider.prev()
+	});
+	$('#banner_tabs .flex-next').click(function() {
+		bannerSlider.next()
+	});
+})
+</script>
+{include file=footer.html}

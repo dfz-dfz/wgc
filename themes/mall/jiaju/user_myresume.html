@@ -238,10 +238,10 @@ function list(){
 //编辑简历
 function edit(id,userid){
 	
-	$.cookie('id', id);
-	$.cookie('userid', userid);
+	// $.cookie('id', id);
+	// $.cookie('userid', userid);
 	//alert($.cookie('userid'));
-	window.location.href = '/index.php?app=search&act=user_editresume';
+	window.location.href = '/index.php?app=search&act=user_editresume&id='+id+'&userid='+userid;
 }
 
 function del(id,userid){

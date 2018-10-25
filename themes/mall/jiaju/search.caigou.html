@@ -36,43 +36,36 @@
 </style>
 <body>
 {include file=header.html}
-
-	<div style="width: 1100px;margin: 10px auto;text-align: left;">
+	
+	<img src="/themes/mall/jiaju/images/rencaituijian_gg.jpg" alt="" style="width: 100%;" />
+	<div style="width: 1100px;margin: 10px auto;">
 		<!-- 搜索 -->
-		<div style="height: 54px;">
-			<input id="key" type="text" style="height: 10px;width: 970px;padding: 20px;float: left;" placeholder="请输入关键词搜索">
-			<img onclick="searchList()" src="themes/mall/jiaju/images/search.png" alt="" style="float: left;width: 84px;height: 54px;">
-		</div>
-		<div style="width: 880px;float: left;">
-			<div class="weixiulist" style="margin: 20px auto;position: relative;">
-				<img src="themes/mall/jiaju/images/jicaijg.jpg" alt="" width="200px">
-				<span id="back_btn" style="width: 100px;color: #fff;background-color: #efa913;padding: 9px;font-size: 16px;position: absolute;text-align: center;display: none;top: 0;left: 210px;cursor: pointer;" onclick="backList()">返回列表</span>
-				<!-- 维修设计列表 -->
-				<div id="sjfbList" style="margin-top: 5px;"> 
-					<ul id="headerlist" style="width: 880px;background-color: #efa913;">
-						<li style="width: 14.28%;">材料名称</li>
-						<li style="width: 16.28%;">商店名称</li>
-						<li style="width: 16.28%;">材料品牌</li>
-						<li style="width: 14.28%;">材料价格</li>
-						<li style="width: 12.28%;">运费包含</li>
-						<li style="width: 14.28%;">含税价格</li>
-						<li style="width: 12.28%;">查看详情</li>
-					</ul>
-
-					<div id="weixiuMain" style="border:1px solid #6d6d6d;border-top: 0;min-height: 415px;height: auto;overflow:hidden;">
-						
-					</div>
+		<div>
+			<div style="width: 1100px;margin: 10px auto;">
+				<div style="width: 130px;background-color: #fe6200;color: #fff;text-align:center;">
+					<div style="font-size: 16px;">集采价格</div>
+					<div>COLLECTION PRICE</div>
 				</div>
-
-				<div class="unpages" id="unpage" style="margin:50px auto;width: 200px;text-align: center;">
-					<a id="uppage" style="background:red;color:#fff;width: 70px;height: 30px;line-height: 30px;padding:4px 5px;cursor:pointer;margin-right: 20px;" onclick="uppage()">上一页</a>
-					<a id="nextpage" style="background:red;color:#fff;width: 70px;height: 30px;line-height: 30px;padding:4px 5px;cursor:pointer;" onclick="nextpage()">下一页</a>
-				</div>
+			</div>
+			<div style="height: 54px;margin: 15px auto;">
+				<input id="key" type="text" style="height: 52px;width: 1010px;border: 1px solid #fe6200;font-size: 18px;" placeholder="请输入关键词搜索">
+				<input type="button" onclick="searchList()" alt="" style="background-color:#fe6200;color:#fff;width: 84px;height: 54px;cursor: pointer;border:none;" value="搜索">
 			</div>
 		</div>
 
-		<div style="width: 200px;float: right;height: 587px;border-left: 10px solid #e5e5e5;padding-right: 0;margin-top: 20px;">
-			<img src="http://www.wgc2013.com/themes/mall/jiaju/images/guanggao.png" alt="" width="100%">
+		<div class="weixiulist" style="margin: 20px auto;position: relative;">
+			
+			<!-- 维修设计列表 -->
+			<div id="sjfbList" style="margin-top: 5px;"> 
+				<div id="weixiuMain" style="height: auto;overflow:hidden;">
+					
+				</div>
+			</div>
+
+			<div class="unpages" id="unpage" style="margin:50px auto;width: 200px;text-align: center;">
+				<a id="uppage" style="background:red;color:#fff;width: 70px;height: 30px;line-height: 30px;padding:4px 5px;cursor:pointer;margin-right: 20px;" onclick="uppage()">上一页</a>
+				<a id="nextpage" style="background:red;color:#fff;width: 70px;height: 30px;line-height: 30px;padding:4px 5px;cursor:pointer;" onclick="nextpage()">下一页</a>
+			</div>
 		</div>
 	</div>
 
@@ -118,7 +111,7 @@
 			if(ret.code == 200){
 					page++;
 					var data = ret.message;
-					   for (var i in data) {
+					    for (var i in data) {
 						  	var m_name=(data[i].m_name == '' || data[i].m_name == null)?'未填写':data[i].m_name,
 						  		cai_type=data[i].cai_type,
 						  		expire_time=data[i].expire_time,
@@ -126,19 +119,41 @@
 						  		count=data[i].count,
 						  		addtime = _trans_php_time_to_str(data[i].addtime,1),
 						  		office_name = (data[i].office_name == '' || data[i].office_name == null)?'未填写':data[i].office_name,
-						  		brand = (data[i].brand == '' || data[i].brand == null)?'未填写':data[i].brand;
+						  		brand = (data[i].brand == '' || data[i].brand == null)?'未填写':data[i].brand,
+						  		price = (data[i].price == null || data[i].price == '')?'未填写':data[i].price,
+						  		m_introduce = data[i].m_introduce;
+					  		var photo = data[i].m_photo;
+						  	var str = new Array();
+						  		str = photo.split(",");
+						  		img = (str[0] == '' || str[0] == null)?'themes/mall/jiaju/images/no_picture.jpg':'http://wgcapp.59jiaju.com/'+str[0];
+						  	var num = parseInt(i)+1;
 
-								listHtml += '<ul>';
-									listHtml += '<li style="width: 14.28%;" title="'+m_name+'">'+m_name+'</li>';
-									listHtml += '<li style="width: 16.28%;" title="'+office_name+'">'+office_name+'</li>';
-									listHtml += '<li style="width: 16.28%;" title="'+brand+'">'+brand+'</li>';
-									listHtml += '<li style="width: 14.28%;">未填写</li>';
-									listHtml += '<li style="width: 12.28%;">未填写</li>';
-									listHtml += '<li style="width: 14.28%;">未填写</li>';
-									listHtml += '<li style="width: 12.28%;"><a target="_blank" href="/index.php?app=search&act=content_caigou&id='+data[i].id+'&cai_type=2" style="color:blue">查看详情</a></li>';
-								listHtml += '</ul>';
-				   
-						 }
+						  	if(num%5 == 0){
+						  		listHtml += '<a target="_blank" href="/index.php?app=search&act=content_caigou&id='+data[i].id+'&cai_type=2">';
+									listHtml += '<div class="little_box" style="width: 18%;margin-right: 0;display: inline-block;float:left;margin-bottom:30px;">';
+										listHtml += '<img src="'+img+'" alt="" style="width:100%;height:180px;"/>';
+										listHtml += '<div style="line-height:30px;font-weight:600;font-size:16px;padding-top:5px;">'+name+'</div>';
+										listHtml += '<div style="width: 100%;height: auto;overflow: hidden;padding: 5px 0;">';
+											listHtml += '<span style="height:36px;"><span style="color:red;">'+price+'</span></span>';
+											listHtml += '<div style="overflow : hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: 3;-webkit-box-orient: vertical;height:50px;">'+m_introduce+'</div>';
+										listHtml += '</div>';
+										listHtml += '<div>'+brand+'</div>';
+									listHtml += '</div>';
+								listHtml += '</a>';
+						  	}else{
+						  		listHtml += '<a target="_blank" href="/index.php?app=search&act=content_caigou&id='+data[i].id+'&cai_type=2">';
+									listHtml += '<div class="little_box" style="width: 18%;margin-right: 2.5%;display: inline-block;float:left;margin-bottom:30px;">';
+										listHtml += '<img src="'+img+'" alt="" style="width:100%;height:180px;"/>';
+										listHtml += '<div style="line-height:30px;font-weight:600;font-size:16px;padding-top:5px;">'+name+'</div>';
+										listHtml += '<div style="width: 100%;height: auto;overflow: hidden;padding: 5px 0;">';
+											listHtml += '<span style="height:36px;"><span style="color:red;">'+price+'</span></span>';
+											listHtml += '<div style="overflow : hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: 3;-webkit-box-orient: vertical;height:50px;">'+m_introduce+'</div>';
+										listHtml += '</div>';
+										listHtml += '<div>'+brand+'</div>';
+									listHtml += '</div>';
+								listHtml += '</a>';
+						  	}
+						}
 				
 				$("#weixiuMain").html(listHtml);
 				$('#nextpage').show();
@@ -179,7 +194,7 @@
 			if(ret.code == 200){
 					page++;
 					var data = ret.message;
-					   for (var i in data) {
+					    for (var i in data) {
 						  	var m_name=(data[i].m_name == '' || data[i].m_name == null)?'未填写':data[i].m_name,
 						  		cai_type=data[i].cai_type,
 						  		expire_time=data[i].expire_time,
@@ -187,19 +202,42 @@
 						  		count=data[i].count,
 						  		addtime = _trans_php_time_to_str(data[i].addtime,1),
 						  		office_name = (data[i].office_name == '' || data[i].office_name == null)?'未填写':data[i].office_name,
-						  		brand = (data[i].brand == '' || data[i].brand == null)?'未填写':data[i].brand;
+						  		brand = (data[i].brand == '' || data[i].brand == null)?'未填写':data[i].brand,
+						  		price = (data[i].price == null || data[i].price == '')?'未填写':data[i].price,
+						  		m_introduce = data[i].m_introduce;
+					  		var photo = data[i].m_photo;
+						  	var str = new Array();
+						  		str = photo.split(",");
+						  		img = (str[0] == '' || str[0] == null)?'themes/mall/jiaju/images/no_picture.jpg':'http://wgcapp.59jiaju.com/'+str[0];
+						  	var num = parseInt(i)+1;
 
-								listHtml += '<ul>';
-									listHtml += '<li style="width: 14.28%;" title="'+m_name+'">'+m_name+'</li>';
-									listHtml += '<li style="width: 16.28%;" title="'+office_name+'">'+office_name+'</li>';
-									listHtml += '<li style="width: 16.28%;" title="'+brand+'">'+brand+'</li>';
-									listHtml += '<li style="width: 14.28%;">未填写</li>';
-									listHtml += '<li style="width: 12.28%;">未填写</li>';
-									listHtml += '<li style="width: 14.28%;">未填写</li>';
-									listHtml += '<li style="width: 12.28%;"><a target="_blank" href="/index.php?app=search&act=content_caigou&id='+data[i].id+'&cai_type=2" style="color:blue">查看详情</a></li>';
-								listHtml += '</ul>';
+						  	if(num%5 == 0){
+						  		listHtml += '<a target="_blank" href="/index.php?app=search&act=content_caigou&id='+data[i].id+'&cai_type=2">';
+									listHtml += '<div class="little_box" style="width: 18%;margin-right: 0;display: inline-block;float:left;margin-bottom:30px;">';
+										listHtml += '<img src="'+img+'" alt="" style="width:100%;height:180px;"/>';
+										listHtml += '<div style="line-height:30px;font-weight:600;font-size:16px;padding-top:5px;">'+name+'</div>';
+										listHtml += '<div style="width: 100%;height: auto;overflow: hidden;padding: 5px 0;">';
+											listHtml += '<span style="height:36px;"><span style="color:red;">'+price+'</span></span>';
+											listHtml += '<div style="overflow : hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: 3;-webkit-box-orient: vertical;height:50px;">'+m_introduce+'</div>';
+										listHtml += '</div>';
+										listHtml += '<div>'+brand+'</div>';
+									listHtml += '</div>';
+								listHtml += '</a>';
+						  	}else{
+						  		listHtml += '<a target="_blank" href="/index.php?app=search&act=content_caigou&id='+data[i].id+'&cai_type=2">';
+									listHtml += '<div class="little_box" style="width: 18%;margin-right: 2.5%;display: inline-block;float:left;margin-bottom:30px;">';
+										listHtml += '<img src="'+img+'" alt="" style="width:100%;height:180px;"/>';
+										listHtml += '<div style="line-height:30px;font-weight:600;font-size:16px;padding-top:5px;">'+name+'</div>';
+										listHtml += '<div style="width: 100%;height: auto;overflow: hidden;padding: 5px 0;">';
+											listHtml += '<span style="height:36px;"><span style="color:red;">'+price+'</span></span>';
+											listHtml += '<div style="overflow : hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: 3;-webkit-box-orient: vertical;height:50px;">'+m_introduce+'</div>';
+										listHtml += '</div>';
+										listHtml += '<div>'+brand+'</div>';
+									listHtml += '</div>';
+								listHtml += '</a>';
+						  	}
 				   
-						 }
+						}
 				
 				$("#weixiuMain").html(listHtml);
 				$('#nextpage').show();
