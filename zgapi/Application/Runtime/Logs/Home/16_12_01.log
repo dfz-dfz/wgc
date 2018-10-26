@@ -1,0 +1,513 @@
+[ 2016-12-01T15:10:21+08:00 ] 116.23.8.137 /zgapi/index.php/Home/Jymember/te
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.000000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-12-01T15:10:55+08:00 ] 116.23.8.137 /zgapi/index.php/Home/Jymember/zhz
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-12-01T15:11:02+08:00 ] 116.23.8.137 /zgapi/index.php/Home/Jymember/zhz
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-12-01T15:21:07+08:00 ] 116.23.8.137 /zgapi/index.php/Home/Jymember/zhz
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `ecm_member` [ RunTime:0.000000s ]
+SQL: SELECT COUNT(user_id) AS tp_count FROM `ecm_member` WHERE `user_name` LIKE '%18606934634%' LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT COUNT(user_id) AS tp_count FROM `ecm_member` WHERE `user_name` LIKE '%2654565454544%' LIMIT 1   [ RunTime:0.015625s ]
+
+[ 2016-12-01T15:22:17+08:00 ] 116.23.8.137 /zgapi/index.php/Home/Jymember/zhz
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `ecm_member` [ RunTime:0.015625s ]
+SQL: SELECT COUNT(user_id) AS tp_count FROM `ecm_member` WHERE `user_name` LIKE '%18606934634%' LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT COUNT(user_id) AS tp_count FROM `ecm_member` WHERE `user_name` LIKE '%2654565454544%' LIMIT 1   [ RunTime:0.015625s ]
+
+[ 2016-12-01T15:25:36+08:00 ] 116.23.8.137 /zgapi/index.php/Home/Jymember/zhz
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `ecm_member` [ RunTime:0.015625s ]
+SQL: SELECT COUNT(user_id) AS tp_count FROM `ecm_member` WHERE `user_name` LIKE '%18922273436%' LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT COUNT(user_id) AS tp_count FROM `ecm_member` WHERE `user_name` LIKE '%2654565454544%' LIMIT 1   [ RunTime:0.000000s ]
+
+[ 2016-12-01T15:33:36+08:00 ] 116.23.8.137 /zgapi/index.php/Home/Jymember/zhz
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `ecm_member` [ RunTime:0.000000s ]
+SQL: SELECT COUNT(user_id) AS tp_count FROM `ecm_member` WHERE `user_name` LIKE '%18922273436%' LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT COUNT(user_id) AS tp_count FROM `ecm_member` WHERE `user_name` LIKE '%13044244495%' LIMIT 1   [ RunTime:0.015625s ]
+
+[ 2016-12-01T15:36:10+08:00 ] 116.23.8.137 /zgapi/index.php/Home/Jymember/zhz
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `ecm_member` [ RunTime:0.000000s ]
+SQL: SELECT COUNT(user_id) AS tp_count FROM `ecm_member` WHERE `user_name` LIKE '%18922273436%' LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT COUNT(user_id) AS tp_count FROM `ecm_member` WHERE `user_name` LIKE '%13044244495%' LIMIT 1   [ RunTime:0.015625s ]
+
+[ 2016-12-01T15:36:15+08:00 ] 116.23.8.137 /zgapi/index.php/Home/Jymember/zhz
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `ecm_member` [ RunTime:0.000000s ]
+SQL: SELECT COUNT(user_id) AS tp_count FROM `ecm_member` WHERE `user_name` LIKE '%18922273433%' LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT COUNT(user_id) AS tp_count FROM `ecm_member` WHERE `user_name` LIKE '%13044244495%' LIMIT 1   [ RunTime:0.015625s ]
+
+[ 2016-12-01T15:37:25+08:00 ] 116.23.8.137 /zgapi/index.php/Home/Jymember/zhz
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `ecm_member` [ RunTime:0.000000s ]
+SQL: SELECT COUNT(user_id) AS tp_count FROM `ecm_member` WHERE `user_name` LIKE '%18922273433%' LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT COUNT(user_id) AS tp_count FROM `ecm_member` WHERE `user_name` LIKE '%13044244495%' LIMIT 1   [ RunTime:0.015625s ]
+
+[ 2016-12-01T15:37:34+08:00 ] 116.23.8.137 /zgapi/index.php/Home/Jymember/zhz
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `ecm_member` [ RunTime:0.000000s ]
+SQL: SELECT COUNT(user_id) AS tp_count FROM `ecm_member` WHERE `user_name` LIKE '%18922273434%' LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT COUNT(user_id) AS tp_count FROM `ecm_member` WHERE `user_name` LIKE '%13044244493%' LIMIT 1   [ RunTime:0.015625s ]
+
+[ 2016-12-01T15:37:50+08:00 ] 116.23.8.137 /zgapi/index.php/Home/Jymember/zhz
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `ecm_member` [ RunTime:0.000000s ]
+SQL: SELECT COUNT(user_id) AS tp_count FROM `ecm_member` WHERE `user_name` LIKE '%18606934634%' LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT COUNT(user_id) AS tp_count FROM `ecm_member` WHERE `user_name` LIKE '%13044244493%' LIMIT 1   [ RunTime:0.015625s ]
+
+[ 2016-12-01T15:38:06+08:00 ] 116.23.8.137 /zgapi/index.php/Home/Jymember/zhz
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `ecm_member` [ RunTime:0.000000s ]
+SQL: SELECT COUNT(user_id) AS tp_count FROM `ecm_member` WHERE `user_name` LIKE '%18606934634%' LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT COUNT(user_id) AS tp_count FROM `ecm_member` WHERE `user_name` LIKE '%13044244495%' LIMIT 1   [ RunTime:0.015625s ]
+
+[ 2016-12-01T15:42:31+08:00 ] 116.23.8.137 /zgapi/index.php/Home/Jymember/zhz
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.015625s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.015625s ]
+SQL: SHOW COLUMNS FROM `ecm_member` [ RunTime:0.000000s ]
+SQL: SELECT COUNT(user_id) AS tp_count FROM `ecm_member` WHERE `user_name` LIKE '%18606934634%' LIMIT 1   [ RunTime:0.015625s ]
+SQL: SELECT COUNT(user_id) AS tp_count FROM `ecm_member` WHERE `user_name` LIKE '%13044244495%' LIMIT 1   [ RunTime:0.000000s ]
+
+[ 2016-12-01T15:42:47+08:00 ] 116.23.8.137 /zgapi/index.php/Home/Jymember/zhz
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `ecm_member` [ RunTime:0.000000s ]
+SQL: SELECT COUNT(user_id) AS tp_count FROM `ecm_member` WHERE `user_name` LIKE '%18606934634%' LIMIT 1   [ RunTime:0.015625s ]
+SQL: SELECT COUNT(user_id) AS tp_count FROM `ecm_member` WHERE `user_name` LIKE '%13044244495%' LIMIT 1   [ RunTime:0.000000s ]
+
+[ 2016-12-01T15:42:54+08:00 ] 116.23.8.137 /zgapi/index.php/Home/Jymember/zhz
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `ecm_member` [ RunTime:0.000000s ]
+SQL: SELECT COUNT(user_id) AS tp_count FROM `ecm_member` WHERE `user_name` LIKE '%18606934634%' LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT COUNT(user_id) AS tp_count FROM `ecm_member` WHERE `user_name` LIKE '%13044244495%' LIMIT 1   [ RunTime:0.015625s ]
+
+[ 2016-12-01T15:43:00+08:00 ] 116.23.8.137 /zgapi/index.php/Home/Jymember/zhz
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `ecm_member` [ RunTime:0.000000s ]
+SQL: SELECT COUNT(user_id) AS tp_count FROM `ecm_member` WHERE `user_name` LIKE '%18606934634%' LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT COUNT(user_id) AS tp_count FROM `ecm_member` WHERE `user_name` LIKE '%13044244495%' LIMIT 1   [ RunTime:0.015625s ]
+
+[ 2016-12-01T15:43:07+08:00 ] 116.23.8.137 /zgapi/index.php/Home/Jymember/zhz
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `ecm_member` [ RunTime:0.000000s ]
+SQL: SELECT COUNT(user_id) AS tp_count FROM `ecm_member` WHERE `user_name` LIKE '%18606934634%' LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT COUNT(user_id) AS tp_count FROM `ecm_member` WHERE `user_name` LIKE '%13044244495%' LIMIT 1   [ RunTime:0.015625s ]
+
+[ 2016-12-01T15:44:00+08:00 ] 116.23.8.137 /zgapi/index.php/Home/Jymember/zhz
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `ecm_member` [ RunTime:0.000000s ]
+SQL: SELECT COUNT(user_id) AS tp_count FROM `ecm_member` WHERE `user_name` LIKE '%18606934634%' LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT COUNT(user_id) AS tp_count FROM `ecm_member` WHERE `user_name` LIKE '%13044244495%' LIMIT 1   [ RunTime:0.000000s ]
+
+[ 2016-12-01T15:44:03+08:00 ] 116.23.8.137 /zgapi/index.php/Home/Jymember/zhz
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `ecm_member` [ RunTime:0.000000s ]
+SQL: SELECT COUNT(user_id) AS tp_count FROM `ecm_member` WHERE `user_name` LIKE '%18606934634%' LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT COUNT(user_id) AS tp_count FROM `ecm_member` WHERE `user_name` LIKE '%13044244495%' LIMIT 1   [ RunTime:0.015625s ]
+
+[ 2016-12-01T15:44:30+08:00 ] 116.23.8.137 /zgapi/index.php/Home/Jymember/zhz
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `ecm_member` [ RunTime:0.000000s ]
+SQL: SELECT COUNT(user_id) AS tp_count FROM `ecm_member` WHERE `user_name` LIKE '%18606934634%' LIMIT 1   [ RunTime:0.015625s ]
+SQL: SELECT COUNT(user_id) AS tp_count FROM `ecm_member` WHERE `user_name` LIKE '%13044244495%' LIMIT 1   [ RunTime:0.000000s ]
+
+[ 2016-12-01T15:48:03+08:00 ] 116.23.8.137 /zgapi/index.php/Home/Jymember/zhz
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `ecm_member` [ RunTime:0.000000s ]
+SQL: SELECT `user_id` FROM `ecm_member` WHERE `user_name` LIKE '%18606934634%' LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `user_id` FROM `ecm_member` WHERE `user_name` LIKE '%13044244495%' LIMIT 1   [ RunTime:0.015625s ]
+
+[ 2016-12-01T15:48:11+08:00 ] 116.23.8.137 /zgapi/index.php/Home/Jymember/zhz
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `ecm_member` [ RunTime:0.000000s ]
+SQL: SELECT `user_id` FROM `ecm_member` WHERE `user_name` LIKE '%18606934634%' LIMIT 1   [ RunTime:0.015625s ]
+SQL: SELECT `user_id` FROM `ecm_member` WHERE `user_name` LIKE '%13044244494%' LIMIT 1   [ RunTime:0.000000s ]
+
+[ 2016-12-01T15:48:15+08:00 ] 116.23.8.137 /zgapi/index.php/Home/Jymember/zhz
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `ecm_member` [ RunTime:0.000000s ]
+SQL: SELECT `user_id` FROM `ecm_member` WHERE `user_name` LIKE '%18606934634%' LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `user_id` FROM `ecm_member` WHERE `user_name` LIKE '%13044244495%' LIMIT 1   [ RunTime:0.015625s ]
+
+[ 2016-12-01T15:49:09+08:00 ] 116.23.8.137 /zgapi/index.php/Home/Jymember/zhz
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `ecm_member` [ RunTime:0.000000s ]
+SQL: SELECT `user_id` FROM `ecm_member` WHERE `user_name` LIKE '%18606934634%' LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `user_id` FROM `ecm_member` WHERE `user_name` LIKE '%13044244495%' LIMIT 1   [ RunTime:0.015625s ]
+
+[ 2016-12-01T15:49:30+08:00 ] 116.23.8.137 /zgapi/index.php/Home/Jymember/zhz
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `ecm_member` [ RunTime:0.000000s ]
+SQL: SELECT `user_id` FROM `ecm_member` WHERE `user_name` LIKE '%18606934634%' LIMIT 1   [ RunTime:0.015625s ]
+SQL: SELECT `user_id` FROM `ecm_member` WHERE `user_name` LIKE '%13044244495%' LIMIT 1   [ RunTime:0.000000s ]
+
+[ 2016-12-01T16:11:34+08:00 ] 116.23.8.137 /zgapi/index.php/Home/Jymember/zhz
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `ecm_member` [ RunTime:0.015625s ]
+SQL: SELECT `user_id` FROM `ecm_member` WHERE `user_name` LIKE '%18606934634%' LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `user_id` FROM `ecm_member` WHERE `user_name` LIKE '%13044244495%' LIMIT 1   [ RunTime:0.015625s ]
+NOTIC: [8] Undefined variable: capital D:\wwwroot\59jiaju\wwwroot\zgapi\Application\Home\Controller\JymemberController.class.php 第 232 行.
+
+[ 2016-12-01T16:13:05+08:00 ] 116.23.8.137 /zgapi/index.php/Home/Jymember/zhz
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `ecm_member` [ RunTime:0.000000s ]
+SQL: SELECT `user_id` FROM `ecm_member` WHERE `user_name` LIKE '%18606934634%' LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `user_id` FROM `ecm_member` WHERE `user_name` LIKE '%13044244495%' LIMIT 1   [ RunTime:0.015625s ]
+SQL: SHOW COLUMNS FROM `ecm_capital` [ RunTime:0.000000s ]
+SQL: SELECT * FROM `ecm_capital` WHERE `user_id` = 1473403871 LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `ecm_capital` WHERE `user_id` = 1473403872 LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `hasmoney` FROM `ecm_capital` WHERE `user_id` = 1473403871 LIMIT 1   [ RunTime:0.000000s ]
+SQL: UPDATE `ecm_capital` SET `hasmoney`=88,`user_id`=1473403871 WHERE `user_id` = 1473403871 [ RunTime:0.000000s ]
+SQL: SELECT `hasmoney` FROM `ecm_capital` WHERE `user_id` = 1473403872 LIMIT 1   [ RunTime:0.000000s ]
+SQL: UPDATE `ecm_capital` SET `hasmoney`=112,`user_id`=1473403872 WHERE `user_id` = 1473403872 [ RunTime:0.000000s ]
+SQL: INSERT INTO  `ecm_jfdetail` (`user_id`,`capital_id`,`fenzhi`,`cause`,`addtime`,`ps`) VALUES (1473403871,12,'-12','转账',1480579985,红包) [ RunTime:0.000000s ]
+ERR: 1054:Unknown column '红包' in 'field list'
+ [ SQL语句 ] : INSERT INTO  `ecm_jfdetail` (`user_id`,`capital_id`,`fenzhi`,`cause`,`addtime`,`ps`) VALUES (1473403871,12,'-12','转账',1480579985,红包)
+SQL: INSERT INTO  `ecm_jfdetail` (`user_id`,`capital_id`,`fenzhi`,`cause`,`addtime`,`ps`) VALUES (1473403872,13,'+12','转账',1480579985,红包) [ RunTime:0.000000s ]
+ERR: 1054:Unknown column '红包' in 'field list'
+ [ SQL语句 ] : INSERT INTO  `ecm_jfdetail` (`user_id`,`capital_id`,`fenzhi`,`cause`,`addtime`,`ps`) VALUES (1473403872,13,'+12','转账',1480579985,红包)
+
+[ 2016-12-01T16:17:05+08:00 ] 116.23.8.137 /zgapi/index.php/Home/Jymember/zhz
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `ecm_member` [ RunTime:0.015625s ]
+SQL: SELECT `user_id` FROM `ecm_member` WHERE `user_name` LIKE '%13044244495%' LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `user_id` FROM `ecm_member` WHERE `user_name` LIKE '%18606934634%' LIMIT 1   [ RunTime:0.015625s ]
+SQL: SHOW COLUMNS FROM `ecm_capital` [ RunTime:0.000000s ]
+SQL: SELECT * FROM `ecm_capital` WHERE `user_id` = 1473403872 LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `ecm_capital` WHERE `user_id` = 1473403871 LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `hasmoney` FROM `ecm_capital` WHERE `user_id` = 1473403872 LIMIT 1   [ RunTime:0.000000s ]
+SQL: UPDATE `ecm_capital` SET `hasmoney`=100,`user_id`=1473403872 WHERE `user_id` = 1473403872 [ RunTime:0.000000s ]
+SQL: SELECT `hasmoney` FROM `ecm_capital` WHERE `user_id` = 1473403871 LIMIT 1   [ RunTime:0.000000s ]
+SQL: UPDATE `ecm_capital` SET `hasmoney`=100,`user_id`=1473403871 WHERE `user_id` = 1473403871 [ RunTime:0.000000s ]
+SQL: INSERT INTO  `ecm_jfdetail` (`user_id`,`capital_id`,`fenzhi`,`cause`,`addtime`,`ps`) VALUES (1473403872,13,'-12','转账',1480580225,'红包') [ RunTime:0.000000s ]
+SQL: INSERT INTO  `ecm_jfdetail` (`user_id`,`capital_id`,`fenzhi`,`cause`,`addtime`,`ps`) VALUES (1473403871,12,'+12','转账',1480580225,'红包') [ RunTime:0.000000s ]
+
+[ 2016-12-01T16:52:42+08:00 ] 116.23.8.137 /zgapi/index.php/Home/Jymember/te
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015625s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015625s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-12-01T17:11:16+08:00 ] 116.23.8.137 /zgapi/index.php/Home/Jymember/te
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.000000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-12-01T17:13:41+08:00 ] 116.23.8.137 /zgapi/index.php/Home/Jymember/te
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.000000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.015625s ]
+INFO: [ app_end ] --END-- [ RunTime:0.015625s ]
+
+[ 2016-12-01T17:14:44+08:00 ] 116.23.8.137 /zgapi/index.php/Home/Jymember/qiuzhi
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `ecm_member` [ RunTime:0.000000s ]
+
+[ 2016-12-01T17:14:48+08:00 ] 116.23.8.137 /zgapi/index.php/Home/Jymember/qiuzhi
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `ecm_member` [ RunTime:0.000000s ]
+
+[ 2016-12-01T17:19:05+08:00 ] 116.23.8.137 /zgapi/index.php/Home/Jymember/te
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.000000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-12-01T17:20:14+08:00 ] 116.23.8.137 /zgapi/index.php/Home/Jymember/qiuzhi
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `ecm_member` [ RunTime:0.015625s ]
+
+[ 2016-12-01T17:24:24+08:00 ] 116.23.8.137 /zgapi/index.php/Home/Jymember/qiuzhi
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `ecm_member` [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: data D:\wwwroot\59jiaju\wwwroot\zgapi\Application\Home\Controller\JymemberController.class.php 第 167 行.
+
+[ 2016-12-01T17:25:42+08:00 ] 116.23.8.137 /zgapi/index.php/Home/Jymember/qiuzhi
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `ecm_member` [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: data D:\wwwroot\59jiaju\wwwroot\zgapi\Application\Home\Controller\JymemberController.class.php 第 167 行.
+
+[ 2016-12-01T17:28:00+08:00 ] 116.23.8.137 /zgapi/index.php/Home/Jymember/qiuzhi
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `ecm_member` [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: data D:\wwwroot\59jiaju\wwwroot\zgapi\Application\Home\Controller\JymemberController.class.php 第 167 行.
+
+[ 2016-12-01T17:29:07+08:00 ] 116.23.8.137 /zgapi/index.php/Home/Jymember/qiuzhi
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `ecm_member` [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `ecm_capital` [ RunTime:0.000000s ]
+SQL: SELECT `hasmoney` FROM `ecm_capital` WHERE `user_id` = 1473403871 LIMIT 1   [ RunTime:0.000000s ]
+SQL: UPDATE `ecm_capital` SET `hasmoney`=90,`user_id`=1473403871 WHERE `user_id` = 1473403871 [ RunTime:0.000000s ]
+SQL: UPDATE `ecm_member` SET `user_name`='18606934634',`gender`=1,`phone_mob`='18606934634',`age`='22',`huji`='广东',`id_card`='3241343213246513465',`jobtype`=14,`job_exp`='3年',`job_live`='某某公司',`skill`='php mysql',`intension`='php 工程师',`is_show`=1 WHERE `user_id` = 1473403871 [ RunTime:0.000000s ]
+SQL: INSERT INTO  `ecm_jfdetail` (`user_id`,`fenzhi`,`cause`,`addtime`) VALUES (1473403871,'-10','发布求职',1480584547) [ RunTime:0.000000s ]
+NOTIC: [2] mysql_num_rows() expects parameter 1 to be resource, boolean given D:\wwwroot\59jiaju\wwwroot\zgapi\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 102 行.
+
+[ 2016-12-01T17:36:37+08:00 ] 116.23.8.137 /zgapi/index.php/Home/Jymember/qiuzhi
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `ecm_member` [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `ecm_capital` [ RunTime:0.000000s ]
+SQL: SELECT * FROM `ecm_capital` WHERE `user_id` = 1473403871 LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `hasmoney` FROM `ecm_capital` WHERE `user_id` = 1473403871 LIMIT 1   [ RunTime:0.000000s ]
+SQL: UPDATE `ecm_capital` SET `hasmoney`=80,`user_id`=1473403871 WHERE `user_id` = 1473403871 [ RunTime:0.000000s ]
+SQL: UPDATE `ecm_member` SET `user_name`='18606934634',`gender`=0,`phone_mob`='18606934634',`age`='22',`huji`='广东',`id_card`='3241343213246513465',`jobtype`=3,`job_exp`='5年',`job_live`='某某公司',`skill`='php mysql',`intension`='php 工程师',`is_show`=1 WHERE `user_id` = 1473403871 [ RunTime:0.000000s ]
+SQL: INSERT INTO  `ecm_jfdetail` (`user_id`,`capital_id`,`fenzhi`,`cause`,`addtime`) VALUES (1473403871,12,'-10','发布求职',1480584997) [ RunTime:0.000000s ]
+NOTIC: [2] mysql_num_rows() expects parameter 1 to be resource, boolean given D:\wwwroot\59jiaju\wwwroot\zgapi\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 102 行.
+

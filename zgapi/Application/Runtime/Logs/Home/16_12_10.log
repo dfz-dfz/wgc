@@ -1,0 +1,301 @@
+[ 2016-12-10T15:47:01+08:00 ] 219.136.64.155 /zgapi/index.php/Home/Jymember/projstatus
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-12-10T15:47:07+08:00 ] 219.136.64.155 /zgapi/index.php/Home/Jymember/te
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015625s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015625s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-12-10T16:16:44+08:00 ] 219.136.64.155 /zgapi/index.php/Home/Jymember/te
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031250s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031250s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-12-10T16:16:48+08:00 ] 219.136.64.155 /zgapi/index.php/Home/Jymember/tuijian
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-12-10T16:16:52+08:00 ] 219.136.64.155 /zgapi/index.php/Home/Jymember/tuijian
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-12-10T16:19:53+08:00 ] 219.136.64.155 /zgapi/index.php/Home/Jymember/te
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.000000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-12-10T16:19:55+08:00 ] 219.136.64.155 /zgapi/index.php/Home/Jymember/tuijian
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-12-10T16:27:12+08:00 ] 219.136.64.155 /zgapi/index.php/Home/Jymember/tuijian
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-12-10T16:28:04+08:00 ] 219.136.64.155 /zgapi/index.php/Home/Jymember/tuijian
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-12-10T16:32:59+08:00 ] 219.136.64.155 /zgapi/index.php/Home/Jymember/te
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.000000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-12-10T16:33:00+08:00 ] 219.136.64.155 /zgapi/index.php/Home/Jymember/tuijian
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.015625s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.015625s ]
+NOTIC: [8] Undefined variable: recomjob D:\wwwroot\59jiaju\wwwroot\zgapi\Application\Home\Controller\JymemberController.class.php 第 32 行.
+
+[ 2016-12-10T16:33:35+08:00 ] 219.136.64.155 /zgapi/index.php/Home/Jymember/tuijian
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `ecm_recomjob` [ RunTime:0.000000s ]
+SQL: INSERT INTO `ecm_recomjob` (`name`,`user_name`,`prj_name`,`shijian`,`didian`,`reason`,`shixiao`,`ps`,`baojia`,`jobtype`,`addtime`) VALUES ('张三','13024521248','肯德基维修','2月','广州白云大鹏岭','下水道堵','及','多名哈','80万',3,'1481358815') [ RunTime:0.000000s ]
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\wwwroot\59jiaju\wwwroot\zgapi\Application\Home\Controller\JymemberController.class.php 第 33 行.
+SQL: SHOW COLUMNS FROM `ecm_recmsg` [ RunTime:0.000000s ]
+SQL: INSERT INTO `ecm_recmsg` (`p_id`,`mtype`,`sender`,`receiver`,`status`,`addtime`) VALUES (1,'1','13024521248','18606457821','0','1481358815') [ RunTime:0.000000s ]
+
+[ 2016-12-10T16:34:27+08:00 ] 219.136.64.155 /zgapi/index.php/Home/Jymember/tuijian
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `ecm_recomjob` [ RunTime:0.000000s ]
+SQL: INSERT INTO `ecm_recomjob` (`name`,`user_name`,`prj_name`,`shijian`,`didian`,`reason`,`shixiao`,`ps`,`baojia`,`jobtype`,`addtime`) VALUES ('李四','13024521247','肯德基维修2','2月','广州白云大鹏岭','下水道堵','及','多名哈','80万',3,'1481358867') [ RunTime:0.000000s ]
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\wwwroot\59jiaju\wwwroot\zgapi\Application\Home\Controller\JymemberController.class.php 第 33 行.
+SQL: SHOW COLUMNS FROM `ecm_recmsg` [ RunTime:0.000000s ]
+SQL: INSERT INTO `ecm_recmsg` (`p_id`,`mtype`,`sender`,`receiver`,`status`,`addtime`) VALUES (2,'1','13024521247','18606457821','0','1481358867') [ RunTime:0.000000s ]
+
+[ 2016-12-10T16:39:35+08:00 ] 219.136.64.155 /zgapi/index.php/Home/Jymember/tuijian
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `ecm_recomjob` [ RunTime:0.000000s ]
+SQL: INSERT INTO `ecm_recomjob` (`name`,`user_name`,`prj_name`,`shijian`,`didian`,`reason`,`shixiao`,`ps`,`baojia`,`jobtype`,`addtime`) VALUES ('王五','13024521211','肯德基维修3','1月','广州白云大鹏岭','下水道堵','及','多名哈','60万',3,'1481359175') [ RunTime:0.000000s ]
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\wwwroot\59jiaju\wwwroot\zgapi\Application\Home\Controller\JymemberController.class.php 第 33 行.
+SQL: SHOW COLUMNS FROM `ecm_recmsg` [ RunTime:0.000000s ]
+SQL: INSERT INTO `ecm_recmsg` (`p_id`,`mtype`,`sender`,`receiver`,`status`,`addtime`) VALUES (3,'1','13024521211','18606457821','0','1481359175') [ RunTime:0.000000s ]
+
+[ 2016-12-10T16:42:42+08:00 ] 219.136.64.155 /zgapi/index.php/Home/Jymember/tuijian
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.015625s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.015625s ]
+SQL: SHOW COLUMNS FROM `ecm_recomjob` [ RunTime:0.000000s ]
+SQL: INSERT INTO `ecm_recomjob` (`name`,`user_name`,`prj_name`,`shijian`,`didian`,`reason`,`shixiao`,`ps`,`baojia`,`jobtype`,`addtime`) VALUES ('王五','13024521211','牟牧工程3','4月','广州白云大鹏岭','下水道堵','及','多名哈','60万',3,'1481359362') [ RunTime:0.000000s ]
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\wwwroot\59jiaju\wwwroot\zgapi\Application\Home\Controller\JymemberController.class.php 第 33 行.
+SQL: SHOW COLUMNS FROM `ecm_recmsg` [ RunTime:0.000000s ]
+SQL: INSERT INTO `ecm_recmsg` (`p_id`,`mtype`,`sender`,`receiver`,`status`,`addtime`) VALUES (4,'1','13024521211','18606457821','0','1481359362') [ RunTime:0.000000s ]
+
+[ 2016-12-10T16:44:52+08:00 ] 219.136.64.155 /zgapi/index.php/Home/Jymember/tuijian
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `ecm_recomjob` [ RunTime:0.000000s ]
+SQL: INSERT INTO `ecm_recomjob` (`name`,`user_name`,`prj_name`,`shijian`,`didian`,`reason`,`shixiao`,`ps`,`baojia`,`jobtype`,`addtime`) VALUES ('玛丽','13024521233','牟牧工程2','4月','广州白云大鹏岭','下水道堵','及','多名哈','10万',3,'1481359492') [ RunTime:0.000000s ]
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\wwwroot\59jiaju\wwwroot\zgapi\Application\Home\Controller\JymemberController.class.php 第 22 行.
+SQL: SHOW COLUMNS FROM `ecm_recmsg` [ RunTime:0.000000s ]
+SQL: INSERT INTO `ecm_recmsg` (`p_id`,`mtype`,`sender`,`receiver`,`status`,`addtime`) VALUES (5,'1','13024521233','18606457821','0','1481359492') [ RunTime:0.000000s ]
+
+[ 2016-12-10T17:23:41+08:00 ] 219.136.64.155 /zgapi/index.php/Home/Jymember/getrecmsg/user_name/18606457821/type/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `ecm_recmsg` [ RunTime:0.000000s ]
+SQL: SELECT m.id,m.sender,m.addtime,r.recom_id,r.name,r.user_name,r.prj_name,r.shijian,r.didian,r.reason,r.shixiao,r.ps,r.baojia FROM ecm_recmsg m INNER JOIN ecm_recomjob r ON m.p_id = r.recom_id  WHERE m.receiver = '18606457821' AND m.mtype = '1' AND m.status = '1'  [ RunTime:0.000000s ]
+
+[ 2016-12-10T17:23:46+08:00 ] 219.136.64.155 /zgapi/index.php/Home/Jymember/getrecmsg/user_name/18606457821/type/0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `ecm_recmsg` [ RunTime:0.000000s ]
+SQL: SELECT m.id,m.sender,m.addtime,r.recom_id,r.name,r.user_name,r.prj_name,r.shijian,r.didian,r.reason,r.shixiao,r.ps,r.baojia FROM ecm_recmsg m INNER JOIN ecm_recomjob r ON m.p_id = r.recom_id  WHERE m.receiver = '18606457821' AND m.mtype = '1' AND m.status = '0'  [ RunTime:0.000000s ]
+
+[ 2016-12-10T17:23:51+08:00 ] 219.136.64.155 /zgapi/index.php/Home/Jymember/getrecmsg/user_name/18606457821/type/0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `ecm_recmsg` [ RunTime:0.000000s ]
+SQL: SELECT m.id,m.sender,m.addtime,r.recom_id,r.name,r.user_name,r.prj_name,r.shijian,r.didian,r.reason,r.shixiao,r.ps,r.baojia FROM ecm_recmsg m INNER JOIN ecm_recomjob r ON m.p_id = r.recom_id  WHERE m.receiver = '18606457821' AND m.mtype = '1' AND m.status = '0'  [ RunTime:0.000000s ]
+
+[ 2016-12-10T17:24:55+08:00 ] 219.136.64.155 /zgapi/index.php/Home/Jymember/getrecmsg/user_name/18606457821/type/2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `ecm_recmsg` [ RunTime:0.000000s ]
+SQL: SELECT m.id,m.sender,m.addtime,r.recom_id,r.name,r.user_name,r.prj_name,r.shijian,r.didian,r.reason,r.shixiao,r.ps,r.baojia FROM ecm_recmsg m INNER JOIN ecm_recomjob r ON m.p_id = r.recom_id  WHERE m.receiver = '18606457821' AND m.mtype = '1'  [ RunTime:0.000000s ]
+
+[ 2016-12-10T17:25:15+08:00 ] 219.136.64.155 /zgapi/index.php/Home/Jymember/getrecmsg/user_name/18606457821/type/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `ecm_recmsg` [ RunTime:0.000000s ]
+SQL: SELECT m.id,m.sender,m.addtime,r.recom_id,r.name,r.user_name,r.prj_name,r.shijian,r.didian,r.reason,r.shixiao,r.ps,r.baojia FROM ecm_recmsg m INNER JOIN ecm_recomjob r ON m.p_id = r.recom_id  WHERE m.receiver = '18606457821' AND m.mtype = '1' AND m.status = '1'  [ RunTime:0.000000s ]
+
+[ 2016-12-10T17:25:59+08:00 ] 219.136.64.155 /zgapi/index.php/Home/Jymember/getrecmsg/user_name/18606457821
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: type D:\wwwroot\59jiaju\wwwroot\zgapi\Application\Home\Controller\JymemberController.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `ecm_recmsg` [ RunTime:0.000000s ]
+SQL: SELECT m.id,m.sender,m.addtime,r.recom_id,r.name,r.user_name,r.prj_name,r.shijian,r.didian,r.reason,r.shixiao,r.ps,r.baojia FROM ecm_recmsg m INNER JOIN ecm_recomjob r ON m.p_id = r.recom_id  WHERE m.receiver = '18606457821' AND m.mtype = '1' AND m.status = '0'  [ RunTime:0.000000s ]
+
+[ 2016-12-10T17:26:06+08:00 ] 219.136.64.155 /zgapi/index.php/Home/Jymember/getrecmsg/user_name/18606457821/type/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `ecm_recmsg` [ RunTime:0.000000s ]
+SQL: SELECT m.id,m.sender,m.addtime,r.recom_id,r.name,r.user_name,r.prj_name,r.shijian,r.didian,r.reason,r.shixiao,r.ps,r.baojia FROM ecm_recmsg m INNER JOIN ecm_recomjob r ON m.p_id = r.recom_id  WHERE m.receiver = '18606457821' AND m.mtype = '1' AND m.status = '1'  [ RunTime:0.000000s ]
+
+[ 2016-12-10T17:26:53+08:00 ] 219.136.64.155 /zgapi/index.php/Home/Jymember/getrecmsg/user_name/18606457821/type/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `ecm_recmsg` [ RunTime:0.000000s ]
+SQL: SELECT m.id,m.sender,m.addtime,r.recom_id,r.name,r.user_name,r.prj_name,r.shijian,r.didian,r.reason,r.shixiao,r.ps,r.baojia FROM ecm_recmsg m INNER JOIN ecm_recomjob r ON m.p_id = r.recom_id  WHERE m.receiver = '18606457821' AND m.mtype = '1' AND m.status = '1'  [ RunTime:0.000000s ]
+
+[ 2016-12-10T17:26:58+08:00 ] 219.136.64.155 /zgapi/index.php/Home/Jymember/getrecmsg/user_name/18606457821/type/2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `ecm_recmsg` [ RunTime:0.000000s ]
+SQL: SELECT m.id,m.sender,m.addtime,r.recom_id,r.name,r.user_name,r.prj_name,r.shijian,r.didian,r.reason,r.shixiao,r.ps,r.baojia FROM ecm_recmsg m INNER JOIN ecm_recomjob r ON m.p_id = r.recom_id  WHERE m.receiver = '18606457821' AND m.mtype = '1'  [ RunTime:0.000000s ]
+
+[ 2016-12-10T17:29:26+08:00 ] 219.136.64.155 /zgapi/index.php/Home/Jymember/getrecmsg/user_name/18606457821/type/2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+

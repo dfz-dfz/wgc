@@ -1,0 +1,93 @@
+[ 2016-11-26T16:10:32+08:00 ] 116.22.248.28 /zgapi/index.php/Home/View/viewinfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-11-26T16:12:25+08:00 ] 116.22.248.28 /zgapi/index.php/Home/View/viewinfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 没有定义数据库配置
+
+[ 2016-11-26T16:13:49+08:00 ] 116.22.248.28 /zgapi/index.php/Home/View/viewinfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `ecm_view` [ RunTime:0.000000s ]
+SQL: SELECT ecm_view.*,ecm_search.`title`,ecm_search.`gname`,ecm_search.`s_province`,ecm_search.`s_city`,ecm_search.`s_county`,ecm_search.`addtime` as fabutime ,ecm_search.`sender`,ecm_search.`xiangxi`  FROM  ecm_view JOIN ecm_search ON `ecm_view`.`sid` = `ecm_search`.`id` WHERE 1=1  AND `ecm_view`.`user_id`=1473403835  AND `ecm_view`.`v_id`=1  ORDER BY `ecm_view`.`v_id` desc  [ RunTime:0.000000s ]
+
+[ 2016-11-26T16:17:18+08:00 ] 116.22.248.28 /zgapi/index.php/Home/View/viewinfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `ecm_view` [ RunTime:0.000000s ]
+SQL: SELECT ecm_view.*,ecm_search.`title`,ecm_search.`gname`,ecm_search.`s_province`,ecm_search.`s_city`,ecm_search.`s_county`,ecm_search.`addtime` as fabutime ,ecm_search.`sender`,ecm_search.`xiangxi`  FROM  ecm_view JOIN ecm_search ON `ecm_view`.`sid` = `ecm_search`.`id` WHERE 1=1  AND `ecm_view`.`user_id`=1473403835  AND `ecm_view`.`v_id`=1  ORDER BY `ecm_view`.`v_id` desc  [ RunTime:0.000000s ]
+
+[ 2016-11-26T16:25:31+08:00 ] 116.22.248.28 /zgapi/index.php/Home/View/viewinfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `ecm_view` [ RunTime:0.000000s ]
+SQL: SELECT ecm_view.*,ecm_search.`title`,ecm_search.`gname`,ecm_search.`s_province`,ecm_search.`s_city`,ecm_search.`s_county`,ecm_search.`addtime` as fabutime ,ecm_search.`sender`,ecm_search.`xiangxi`  FROM  ecm_view JOIN ecm_search ON `ecm_view`.`sid` = `ecm_search`.`id` WHERE 1=1  AND `ecm_view`.`user_id`=1473403835  AND `ecm_view`.`v_id`=1  ORDER BY `ecm_view`.`v_id` desc  [ RunTime:0.000000s ]
+
+[ 2016-11-26T16:25:41+08:00 ] 116.22.248.28 /zgapi/index.php/Home/Jsearch/myqg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Jsearch
+
+[ 2016-11-26T16:25:49+08:00 ] 116.22.248.28 /zgapi/index.php/Home/Jysearch/myqg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-11-26T16:26:37+08:00 ] 116.22.248.28 /zgapi/index.php/Home/Jysearch/myqg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `ecm_search` [ RunTime:0.000000s ]
+SQL: select * from ecm_search where id in (select zp_id as id from ecm_shenqing where user_id=1473403835 and xingzhi=1) [ RunTime:0.000000s ]
+
+[ 2016-11-26T16:32:57+08:00 ] 116.22.248.28 /zgapi/index.php/Home/Jysearch/jobinfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-11-26T16:33:49+08:00 ] 116.22.248.28 /zgapi/index.php/Home/Jysearch/jobinfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `ecm_search` [ RunTime:0.000000s ]
+SQL: SELECT * FROM `ecm_search` WHERE `id` = 80 LIMIT 1   [ RunTime:0.000000s ]
+SQL: select jobtype_name from ecm_jobtype WHERE jobtype_id=3 [ RunTime:0.000000s ]
+

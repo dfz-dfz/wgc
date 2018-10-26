@@ -1,0 +1,351 @@
+[ 2016-11-30T15:39:33+08:00 ] 116.23.8.137 /zgapi/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-11-30T15:39:33+08:00 ] 116.23.8.137 /zgapi/index.php/Home/Member/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015625s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015625s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-11-30T15:39:49+08:00 ] 116.23.8.137 /zgapi/index.php/Home/Jymember/tuijan
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-11-30T15:40:28+08:00 ] 116.23.8.137 /zgapi/index.php/Home/Jymember/tuijan
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 非法操作:tuijan
+
+[ 2016-11-30T15:40:49+08:00 ] 116.23.8.137 /zgapi/index.php/Home/Jymember/tuijian
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-11-30T15:43:57+08:00 ] 116.23.8.137 /zgapi/index.php/Home/Jymember/tuijian
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `ecm_recomjob` [ RunTime:0.000000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ecm_recomjob` LIMIT 1   [ RunTime:0.000000s ]
+
+[ 2016-11-30T15:44:45+08:00 ] 116.23.8.137 /zgapi/index.php/Home/Jymember/tuijian
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `ecm_recomjob` [ RunTime:0.007813s ]
+SQL: SELECT * FROM `ecm_recomjob`  [ RunTime:0.000000s ]
+
+[ 2016-11-30T15:46:29+08:00 ] 116.23.8.137 /zgapi/index.php/Home/Jymember/te
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-11-30T15:47:41+08:00 ] 116.23.8.137 /zgapi/index.php/Home/Jymember/te
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: info D:\wwwroot\59jiaju\wwwroot\zgapi\Application\Runtime\Cache\Home\141ae9c4a40553ed04a568c070192ba0.php 第 243 行.
+NOTIC: [8] Undefined variable: info D:\wwwroot\59jiaju\wwwroot\zgapi\Application\Runtime\Cache\Home\141ae9c4a40553ed04a568c070192ba0.php 第 244 行.
+NOTIC: [8] Undefined variable: info D:\wwwroot\59jiaju\wwwroot\zgapi\Application\Runtime\Cache\Home\141ae9c4a40553ed04a568c070192ba0.php 第 246 行.
+NOTIC: [8] Undefined variable: info D:\wwwroot\59jiaju\wwwroot\zgapi\Application\Runtime\Cache\Home\141ae9c4a40553ed04a568c070192ba0.php 第 252 行.
+NOTIC: [8] Undefined variable: info D:\wwwroot\59jiaju\wwwroot\zgapi\Application\Runtime\Cache\Home\141ae9c4a40553ed04a568c070192ba0.php 第 269 行.
+NOTIC: [8] Undefined variable: info D:\wwwroot\59jiaju\wwwroot\zgapi\Application\Runtime\Cache\Home\141ae9c4a40553ed04a568c070192ba0.php 第 276 行.
+NOTIC: [8] Undefined variable: info D:\wwwroot\59jiaju\wwwroot\zgapi\Application\Runtime\Cache\Home\141ae9c4a40553ed04a568c070192ba0.php 第 283 行.
+NOTIC: [8] Undefined variable: info D:\wwwroot\59jiaju\wwwroot\zgapi\Application\Runtime\Cache\Home\141ae9c4a40553ed04a568c070192ba0.php 第 290 行.
+NOTIC: [8] Undefined variable: info D:\wwwroot\59jiaju\wwwroot\zgapi\Application\Runtime\Cache\Home\141ae9c4a40553ed04a568c070192ba0.php 第 312 行.
+NOTIC: [8] Undefined variable: info D:\wwwroot\59jiaju\wwwroot\zgapi\Application\Runtime\Cache\Home\141ae9c4a40553ed04a568c070192ba0.php 第 319 行.
+NOTIC: [8] Undefined variable: info D:\wwwroot\59jiaju\wwwroot\zgapi\Application\Runtime\Cache\Home\141ae9c4a40553ed04a568c070192ba0.php 第 326 行.
+NOTIC: [8] Undefined variable: info D:\wwwroot\59jiaju\wwwroot\zgapi\Application\Runtime\Cache\Home\141ae9c4a40553ed04a568c070192ba0.php 第 333 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007812s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007812s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-11-30T15:51:25+08:00 ] 116.23.8.137 /zgapi/index.php/Home/Jymember/te
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.007813s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.007813s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: info D:\wwwroot\59jiaju\wwwroot\zgapi\Application\Runtime\Cache\Home\141ae9c4a40553ed04a568c070192ba0.php 第 215 行.
+NOTIC: [8] Undefined variable: info D:\wwwroot\59jiaju\wwwroot\zgapi\Application\Runtime\Cache\Home\141ae9c4a40553ed04a568c070192ba0.php 第 238 行.
+NOTIC: [8] Undefined variable: info D:\wwwroot\59jiaju\wwwroot\zgapi\Application\Runtime\Cache\Home\141ae9c4a40553ed04a568c070192ba0.php 第 245 行.
+NOTIC: [8] Undefined variable: info D:\wwwroot\59jiaju\wwwroot\zgapi\Application\Runtime\Cache\Home\141ae9c4a40553ed04a568c070192ba0.php 第 252 行.
+NOTIC: [8] Undefined variable: info D:\wwwroot\59jiaju\wwwroot\zgapi\Application\Runtime\Cache\Home\141ae9c4a40553ed04a568c070192ba0.php 第 259 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007812s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007812s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-11-30T15:58:42+08:00 ] 116.23.8.137 /zgapi/index.php/Home/Jymember/te
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007813s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007813s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.007812s ]
+INFO: [ app_end ] --END-- [ RunTime:0.007812s ]
+
+[ 2016-11-30T15:58:57+08:00 ] 116.23.8.137 /zgapi/index.php/Home/Jymember/tuijian
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000976s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000976s ]
+SQL: SHOW COLUMNS FROM `ecm_recomjob` [ RunTime:0.000000s ]
+SQL: SELECT * FROM `ecm_recomjob`  [ RunTime:0.000000s ]
+
+[ 2016-11-30T16:00:38+08:00 ] 116.23.8.137 /zgapi/index.php/Home/Jymember/tuijian
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `ecm_recomjob` [ RunTime:0.000000s ]
+
+[ 2016-11-30T16:00:44+08:00 ] 116.23.8.137 /zgapi/index.php/Home/Jymember/tuijian
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.007813s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.007813s ]
+
+[ 2016-11-30T16:03:21+08:00 ] 116.23.8.137 /zgapi/index.php/Home/Jymember/tuijian
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `ecm_recomjob` [ RunTime:0.000000s ]
+
+[ 2016-11-30T16:03:25+08:00 ] 116.23.8.137 /zgapi/index.php/Home/Jymember/tuijian
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `ecm_recomjob` [ RunTime:0.000000s ]
+
+[ 2016-11-30T16:10:17+08:00 ] 116.23.8.137 /zgapi/index.php/Home/Jymember/tuijian
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `ecm_recomjob` [ RunTime:0.007812s ]
+SQL: INSERT INTO `ecm_recomjob` (`user_realname`,`user_name`,`prj_name`,`shijian`,`didian`,`shixiao`,`baojia`,`frd_realname`,`frd_name`,`jobtype`,`ps`,`reason`) VALUES ('张三','11111111111','维修项目','2016-12-22','广州白云','及','98','李四','11111111112',3,'很谨慎','下水道堵塞') [ RunTime:0.000000s ]
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\wwwroot\59jiaju\wwwroot\zgapi\Application\Home\Controller\JymemberController.class.php 第 13 行.
+SQL: SELECT * FROM `ecm_recomjob` WHERE `recom_id` = 1 LIMIT 1   [ RunTime:0.000000s ]
+
+[ 2016-11-30T16:14:07+08:00 ] 116.23.8.137 /zgapi/index.php/Home/Jymember/tuijian
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `ecm_recomjob` [ RunTime:0.007812s ]
+SQL: INSERT INTO `ecm_recomjob` (`user_realname`,`user_name`,`prj_name`,`shijian`,`didian`,`shixiao`,`baojia`,`frd_realname`,`frd_name`,`jobtype`,`ps`,`reason`,`addtime`) VALUES ('张三','11111111111','书店维修项目','2016-12-22','广州白云','及','98','王五','11111111113',4,'很谨慎','下水道堵塞','2016-11-30 16:14:07') [ RunTime:0.000000s ]
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\wwwroot\59jiaju\wwwroot\zgapi\Application\Home\Controller\JymemberController.class.php 第 15 行.
+SQL: SELECT * FROM `ecm_recomjob` WHERE `recom_id` = 2 LIMIT 1   [ RunTime:0.000000s ]
+
+[ 2016-11-30T17:52:57+08:00 ] 116.23.8.137 /zgapi/index.php/Home/Jymember/tuijian
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-11-30T17:53:03+08:00 ] 116.23.8.137 /zgapi/index.php/Home/Jymember/moneydeal
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `ecm_capital` [ RunTime:0.002930s ]
+SQL: SELECT * FROM `ecm_capital` WHERE `user_id` = 1473403835 LIMIT 1   [ RunTime:0.000000s ]
+
+[ 2016-11-30T18:39:44+08:00 ] 116.23.8.137 /zgapi/index.php/Home/Jymember/te
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.021485s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.021485s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-11-30T18:46:38+08:00 ] 116.23.8.137 /zgapi/index.php/Home/Jymember/te
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007812s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007812s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-11-30T18:47:40+08:00 ] 116.23.8.137 /zgapi/index.php/Home/Jymember/moneydeal
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.007812s ]
+INFO: [ app_init ] --END-- [ RunTime:0.007812s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-11-30T18:48:53+08:00 ] 116.23.8.137 /zgapi/index.php/Home/Jymember/moneydeal
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000977s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000977s ]
+SQL: SHOW COLUMNS FROM `ecm_capital` [ RunTime:0.001953s ]
+SQL: SELECT * FROM `ecm_capital` WHERE `user_id` = 1473403835 LIMIT 1   [ RunTime:0.000000s ]
+SQL: INSERT INTO  `ecm_jfdetail` (`user_id`,`capital_id`,`paycount`,`order_id`,`deal`,`paytype`,`fenzhi`,`cause`,`addtime`) VALUES (1473403835,5,'s213425345343246545324','d1223233',1,2,'123','充值',1480502933) [ RunTime:0.000976s ]
+SQL: SELECT `hasmoney` FROM `ecm_capital` WHERE `user_id` = 1473403835 LIMIT 1   [ RunTime:0.000000s ]
+SQL: UPDATE `ecm_capital` SET `hasmoney`=1003,`user_id`=1473403835 WHERE `user_id` = 1473403835 [ RunTime:0.000977s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-11-30T18:48:55+08:00 ] 116.23.8.137 /zgapi/index.php/Home/Jymember/moneydeal
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000976s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000976s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000977s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000977s ]
+SQL: SHOW COLUMNS FROM `ecm_capital` [ RunTime:0.000976s ]
+SQL: SELECT * FROM `ecm_capital` WHERE `user_id` = 1473403835 LIMIT 1   [ RunTime:0.000000s ]
+SQL: INSERT INTO  `ecm_jfdetail` (`user_id`,`capital_id`,`paycount`,`order_id`,`deal`,`paytype`,`fenzhi`,`cause`,`addtime`) VALUES (1473403835,5,'s213425345343246545324','d1223233',1,2,'123','充值',1480502935) [ RunTime:0.000000s ]
+SQL: SELECT `hasmoney` FROM `ecm_capital` WHERE `user_id` = 1473403835 LIMIT 1   [ RunTime:0.000000s ]
+SQL: UPDATE `ecm_capital` SET `hasmoney`=1126,`user_id`=1473403835 WHERE `user_id` = 1473403835 [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-11-30T18:52:30+08:00 ] 116.23.8.137 /zgapi/index.php/Home/Jymember/moneydeal
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000977s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000977s ]
+SQL: SHOW COLUMNS FROM `ecm_capital` [ RunTime:0.000000s ]
+SQL: SELECT * FROM `ecm_capital` WHERE `user_id` = 1473403835 LIMIT 1   [ RunTime:0.000000s ]
+SQL: INSERT INTO  `ecm_jfdetail` (`user_id`,`capital_id`,`paycount`,`order_id`,`deal`,`paytype`,`fenzhi`,`cause`,`addtime`) VALUES (1473403835,5,'s213425345343246545324','d1223233',1,2,'1','充值',1480503150) [ RunTime:0.000000s ]
+SQL: SELECT `hasmoney` FROM `ecm_capital` WHERE `user_id` = 1473403835 LIMIT 1   [ RunTime:0.000000s ]
+SQL: UPDATE `ecm_capital` SET `hasmoney`=1127,`user_id`=1473403835 WHERE `user_id` = 1473403835 [ RunTime:0.000000s ]
+
+[ 2016-11-30T18:52:57+08:00 ] 116.23.8.137 /zgapi/index.php/Home/Jymember/moneydeal
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `ecm_capital` [ RunTime:0.008789s ]
+SQL: SELECT * FROM `ecm_capital` WHERE `user_id` = 1473403835 LIMIT 1   [ RunTime:0.000000s ]
+SQL: INSERT INTO  `ecm_jfdetail` (`user_id`,`capital_id`,`paycount`,`order_id`,`deal`,`paytype`,`fenzhi`,`cause`,`addtime`) VALUES (1473403835,5,'s213425345343246545324','d1223233',2,2,'100','提现',1480503177) [ RunTime:0.000976s ]
+SQL: SELECT `hasmoney` FROM `ecm_capital` WHERE `user_id` = 1473403835 LIMIT 1   [ RunTime:0.000000s ]
+SQL: UPDATE `ecm_capital` SET `hasmoney`=1027,`user_id`=1473403835 WHERE `user_id` = 1473403835 [ RunTime:0.000000s ]
+

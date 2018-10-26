@@ -1,0 +1,148 @@
+[ 2016-12-09T12:27:34+08:00 ] 119.131.216.102 /zgapi/index.php/Home/Jymember/projstatus
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-12-09T12:29:22+08:00 ] 119.131.216.102 /zgapi/index.php/Home/Jymember/lonAndlat
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: user_id D:\wwwroot\59jiaju\wwwroot\zgapi\Application\Home\Controller\JymemberController.class.php 第 285 行.
+SQL: SHOW COLUMNS FROM `ecm_project` [ RunTime:0.000000s ]
+SQL: SELECT `prj_id`,`jingdu`,`weidu` FROM `ecm_project` WHERE `user_id` = null  [ RunTime:0.000000s ]
+
+[ 2016-12-09T12:30:36+08:00 ] 119.131.216.102 /zgapi/index.php/Home/Jymember/lonAndlat/user_id/1473403870
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.015625s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.015625s ]
+SQL: SHOW COLUMNS FROM `ecm_project` [ RunTime:0.000000s ]
+SQL: SELECT `prj_id`,`jingdu`,`weidu` FROM `ecm_project` WHERE `user_id` = '1473403870'  [ RunTime:0.000000s ]
+
+[ 2016-12-09T12:33:50+08:00 ] 119.131.216.102 /zgapi/index.php/Home/Jymember/projUser/p_id/2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `ecm_usertoproj` [ RunTime:0.000000s ]
+SQL: SELECT `user_id` FROM `ecm_usertoproj` WHERE `p_id` = '2'  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `ecm_bangongrenyuan` [ RunTime:0.000000s ]
+SQL: SELECT `name` FROM `ecm_bangongrenyuan` WHERE `user_id` = '1473403875' LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `ecm_member` [ RunTime:0.000000s ]
+SQL: SELECT `userphoto` FROM `ecm_member` WHERE `user_id` = 1473403875 LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `name` FROM `ecm_bangongrenyuan` WHERE `user_id` = '1473403874' LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `userphoto` FROM `ecm_member` WHERE `user_id` = 1473403874 LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `name` FROM `ecm_bangongrenyuan` WHERE `user_id` = '1473403867' LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `userphoto` FROM `ecm_member` WHERE `user_id` = 1473403867 LIMIT 1   [ RunTime:0.000000s ]
+
+[ 2016-12-09T12:33:58+08:00 ] 119.131.216.102 /zgapi/index.php/Home/Jymember/projUser/p_id/3
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `ecm_usertoproj` [ RunTime:0.000000s ]
+SQL: SELECT `user_id` FROM `ecm_usertoproj` WHERE `p_id` = '3'  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `ecm_bangongrenyuan` [ RunTime:0.000000s ]
+SQL: SELECT `name` FROM `ecm_bangongrenyuan` WHERE `user_id` = '1473403874' LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `ecm_member` [ RunTime:0.000000s ]
+SQL: SELECT `userphoto` FROM `ecm_member` WHERE `user_id` = 1473403874 LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `name` FROM `ecm_bangongrenyuan` WHERE `user_id` = '1473403867' LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `userphoto` FROM `ecm_member` WHERE `user_id` = 1473403867 LIMIT 1   [ RunTime:0.000000s ]
+
+[ 2016-12-09T12:34:00+08:00 ] 119.131.216.102 /zgapi/index.php/Home/Jymember/projUser/p_id/2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `ecm_usertoproj` [ RunTime:0.000000s ]
+SQL: SELECT `user_id` FROM `ecm_usertoproj` WHERE `p_id` = '2'  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `ecm_bangongrenyuan` [ RunTime:0.000000s ]
+SQL: SELECT `name` FROM `ecm_bangongrenyuan` WHERE `user_id` = '1473403875' LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `ecm_member` [ RunTime:0.000000s ]
+SQL: SELECT `userphoto` FROM `ecm_member` WHERE `user_id` = 1473403875 LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `name` FROM `ecm_bangongrenyuan` WHERE `user_id` = '1473403874' LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `userphoto` FROM `ecm_member` WHERE `user_id` = 1473403874 LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `name` FROM `ecm_bangongrenyuan` WHERE `user_id` = '1473403867' LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `userphoto` FROM `ecm_member` WHERE `user_id` = 1473403867 LIMIT 1   [ RunTime:0.000000s ]
+
+[ 2016-12-09T12:34:05+08:00 ] 119.131.216.102 /zgapi/index.php/Home/Jymember/projUser/p_id/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `ecm_usertoproj` [ RunTime:0.000000s ]
+SQL: SELECT `user_id` FROM `ecm_usertoproj` WHERE `p_id` = '1'  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `ecm_bangongrenyuan` [ RunTime:0.015625s ]
+SQL: SELECT `name` FROM `ecm_bangongrenyuan` WHERE `user_id` = '1473403874' LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `ecm_member` [ RunTime:0.000000s ]
+SQL: SELECT `userphoto` FROM `ecm_member` WHERE `user_id` = 1473403874 LIMIT 1   [ RunTime:0.000000s ]
+
+[ 2016-12-09T12:34:12+08:00 ] 119.131.216.102 /zgapi/index.php/Home/Jymember/projUser/p_id/2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.015625s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.015625s ]
+SQL: SHOW COLUMNS FROM `ecm_usertoproj` [ RunTime:0.000000s ]
+SQL: SELECT `user_id` FROM `ecm_usertoproj` WHERE `p_id` = '2'  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `ecm_bangongrenyuan` [ RunTime:0.000000s ]
+SQL: SELECT `name` FROM `ecm_bangongrenyuan` WHERE `user_id` = '1473403875' LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `ecm_member` [ RunTime:0.015625s ]
+SQL: SELECT `userphoto` FROM `ecm_member` WHERE `user_id` = 1473403875 LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `name` FROM `ecm_bangongrenyuan` WHERE `user_id` = '1473403874' LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `userphoto` FROM `ecm_member` WHERE `user_id` = 1473403874 LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `name` FROM `ecm_bangongrenyuan` WHERE `user_id` = '1473403867' LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `userphoto` FROM `ecm_member` WHERE `user_id` = 1473403867 LIMIT 1   [ RunTime:0.000000s ]
+
+[ 2016-12-09T12:34:17+08:00 ] 119.131.216.102 /zgapi/index.php/Home/Jymember/projUser/p_id/3
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `ecm_usertoproj` [ RunTime:0.015625s ]
+SQL: SELECT `user_id` FROM `ecm_usertoproj` WHERE `p_id` = '3'  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `ecm_bangongrenyuan` [ RunTime:0.000000s ]
+SQL: SELECT `name` FROM `ecm_bangongrenyuan` WHERE `user_id` = '1473403874' LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `ecm_member` [ RunTime:0.000000s ]
+SQL: SELECT `userphoto` FROM `ecm_member` WHERE `user_id` = 1473403874 LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `name` FROM `ecm_bangongrenyuan` WHERE `user_id` = '1473403867' LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `userphoto` FROM `ecm_member` WHERE `user_id` = 1473403867 LIMIT 1   [ RunTime:0.000000s ]
+
+[ 2016-12-09T12:34:22+08:00 ] 119.131.216.102 /zgapi/index.php/Home/Jymember/projUser/p_id/4
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `ecm_usertoproj` [ RunTime:0.000000s ]
+SQL: SELECT `user_id` FROM `ecm_usertoproj` WHERE `p_id` = '4'  [ RunTime:0.000000s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\wwwroot\59jiaju\wwwroot\zgapi\Application\Home\Controller\JymemberController.class.php 第 297 行.
+
+[ 2016-12-09T12:37:06+08:00 ] 119.131.216.102 /zgapi/index.php/Home/Jymember/projUser/p_id/4
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+

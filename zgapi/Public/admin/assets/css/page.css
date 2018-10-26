@@ -1,0 +1,27 @@
+.page{
+	width:100%;
+	padding: 0 16px;
+}
+.page span.current{
+	padding: 0 8px;
+	display: inline-block;
+	line-height: 24px;
+	font-size: 13px;
+	color: #fff;
+	background: #438eb9;
+	border:1px solid #438eb9;
+	margin: 0 6px;
+}
+.page a{
+	padding: 0 8px;
+	display: inline-block;
+	line-height: 24px;
+	font-size: 13px;
+	color: #a1a1a1;
+	border:1px solid #d1d1d1;
+}
+.page a:hover{
+	border-color: #438eb9;
+	color: #438eb9;
+	text-decoration: none;
+}

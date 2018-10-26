@@ -1,0 +1,92 @@
+[ 2016-12-28T10:51:45+08:00 ] 116.22.251.229 /zgapi/index.php/Home/Jymember/te
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015625s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015625s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-12-28T10:53:16+08:00 ] 116.22.251.229 /zgapi/index.php/Home/Jymember/te
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `ecm_project` [ RunTime:0.000000s ]
+SQL: SELECT * FROM `ecm_project`  [ RunTime:0.000000s ]
+
+[ 2016-12-28T10:53:26+08:00 ] 116.22.251.229 /zgapi/index.php/Home/Jymember/te
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `ecm_project` [ RunTime:0.000000s ]
+SQL: SELECT * FROM `ecm_project`  [ RunTime:0.000000s ]
+
+[ 2016-12-28T10:54:23+08:00 ] 116.22.251.229 /zgapi/index.php/Home/Jymember/te
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `ecm_project` [ RunTime:0.015625s ]
+SQL: SELECT * FROM `ecm_project`  [ RunTime:0.000000s ]
+
+[ 2016-12-28T10:55:21+08:00 ] 116.22.251.229 /zgapi/index.php/Home/Jymember/te
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `ecm_project` [ RunTime:0.000000s ]
+SQL: SELECT * FROM `ecm_project`  [ RunTime:0.000000s ]
+
+[ 2016-12-28T10:55:28+08:00 ] 116.22.251.229 /zgapi/index.php/Home/Jymember/te
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `ecm_project` [ RunTime:0.000000s ]
+SQL: SELECT * FROM `ecm_project`  [ RunTime:0.000000s ]
+
+[ 2016-12-28T10:58:54+08:00 ] 116.22.251.229 /zgapi/index.php/Home/Jymember/te
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `ecm_project` [ RunTime:0.000000s ]
+SQL: SELECT * FROM `ecm_project`  [ RunTime:0.000000s ]
+NOTIC: [8] Uninitialized string offset: 26 D:\wwwroot\59jiaju\wwwroot\zgapi\Application\Common\Common\function.php 第 99 行.
+
+[ 2016-12-28T15:51:10+08:00 ] 116.22.251.229 /zgapi/index.php/Home/Jymember/te
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `ecm_project` [ RunTime:0.000000s ]
+SQL: SELECT * FROM `ecm_project`  [ RunTime:0.000000s ]
+NOTIC: [8] Uninitialized string offset: 26 D:\wwwroot\59jiaju\wwwroot\zgapi\Application\Common\Common\function.php 第 99 行.
+

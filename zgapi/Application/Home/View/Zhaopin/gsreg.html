@@ -1,0 +1,136 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>59家居网</title>
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/jobs/css/aui.2.0.css" />
+
+    <script type="text/javascript" src="__PUBLIC__/jobs/script/jquery-1.7.2.min.js" ></script>
+    <script type="text/javascript">
+        function goBack(){ 
+        if ((navigator.userAgent.indexOf('MSIE') >= 0) && (navigator.userAgent.indexOf('Opera') < 0)){
+                // IE 
+                if(history.length > 0){ 
+                    window.history.go( -1 ); 
+                }else{
+                    window.opener=null;window.close(); 
+                } 
+            }else{ 
+                //非IE浏览器 
+                if (navigator.userAgent.indexOf('Firefox') >= 0 || navigator.userAgent.indexOf('Opera') >= 0 || navigator.userAgent.indexOf('Safari') >= 0 || navigator.userAgent.indexOf('Chrome') >= 0 || navigator.userAgent.indexOf('WebKit') >= 0){ 
+                    if(window.history.length > 1){ 
+                        window.history.go( -1 ); 
+                    }else{
+                        window.opener=null;window.close(); 
+                    } 
+                }else{ 
+                    //未知的浏览器 
+                    window.history.go( -1 );
+                } 
+            }
+  } 
+</script>
+<style type="text/css">
+.aui-content-padded p{width:80%;max-width:80%;margin-left:auto;margin-right: auto;margin-bottom: 10px;background-color: #FE7113;}
+</style>
+</head>
+<body>
+<header class="aui-bar aui-bar-nav" style="background-color:#FE7213;">
+    <a class="aui-pull-left aui-btn" onclick="goBack()">
+        <span class="aui-iconfont aui-icon-left"></span>
+    </a>
+    <span style="color:#FFFFFF;float:left;" ><a onclick="goBack()" href="javascript:;"><span id='s_city'>返回</span></a></span>
+    <div class="aui-title">注册</div>
+</header>
+<div style="width:100%;max-width:100%;">
+  <img width="100%" src="__PUBLIC__/jobs/img/reglogo.png">
+</div>
+<div class="aui-content aui-margin-b-15">
+     <ul class="aui-list aui-form-list">
+        <li class="aui-list-item">
+            <div class="aui-list-item-inner">
+                <div class="aui-list-item-input">
+                    <input type="text" placeholder="|请输入手机号码">
+                </div>
+            </div>
+        </li>
+        <li class="aui-list-item">
+            <div class="aui-list-item-inner">
+                <div class="aui-list-item-input">
+                    <input type="text" placeholder="|公司名称">
+                </div>
+            </div>
+        </li>
+        <li class="aui-list-item">
+            <div class="aui-list-item-inner">
+                <div class="aui-list-item-input">
+                    <input type="text" placeholder="|所属行业">
+                </div>
+            </div>
+        </li>
+        <li class="aui-list-item">
+            <div class="aui-list-item-inner">
+                <div class="aui-list-item-input">
+                    <input type="text" placeholder="|地址">
+                </div>
+            </div>
+        </li>
+         <li class="aui-list-item">
+            <div class="aui-list-item-inner">
+                <div class="aui-list-item-input">
+                    <input type="text" placeholder="|网址">
+                </div>
+            </div>
+        </li>
+         <li class="aui-list-item">
+            <div class="aui-list-item-inner">
+                <div class="aui-list-item-input">
+                    <input type="text" placeholder="|邮箱">
+                </div>
+            </div>
+        </li>
+        <li class="aui-list-item">
+            <div class="aui-list-item-inner">
+                <div class="aui-list-item-input">
+                    <textarea placeholder="|经营范围"></textarea>
+                </div>
+            </div>
+        </li>
+        <li class="aui-list-item">
+            <div class="aui-list-item-inner">
+                <div class="aui-list-item-input">
+                    <input type="text" placeholder="|验证码">
+                </div>
+                <p style="margin:10px;"><div class="aui-btn aui-btn-info">获取验证码</div></p>
+            </div>
+        </li>
+     </ul>
+</div>
+<div class="aui-content-padded">
+    <p><div class="aui-btn aui-btn-warning aui-btn-block">下一步</div></p>
+</div>
+</body>
+
+<script type="text/javascript">
+    apiready = function(){
+        api.parseTapmode();
+    }
+    function openWin(name){
+        var delay = 0;
+        if(api.systemType != 'ios'){
+            delay = 300;
+        }
+        api.openWin({
+            name: ''+name+'',
+            url: ''+name+'.html',
+            bounces:false,
+            delay: delay,
+            slidBackEnabled:true,
+            vScrollBarEnabled:false
+        });
+    }
+
+</script>
+</html>
