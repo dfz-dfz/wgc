@@ -8,9 +8,9 @@
 <meta name="description" content="微工程，微工程APP，装修、材料、家具、饰品一站式服务，让装修更简单，价格更透明！！" />
 <meta name="keywords" content="微工程，微工程，家居商城，微工程家居商城，微工程家居装修商城，办公室装修，写字楼装修，材料，装修材料，家居，办公家具，家居，家具，装修，装饰" />
 <link rel="stylesheet" type="text/css" href="themes/mall/jiaju/css/api.css"/>
-
 <link rel="stylesheet" type="text/css" href="themes/mall/jiaju/css/aui.1.0.css"/>
 <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+<script src="/themes/mall/jiaju/js/tool.js"></script>
 <script type="text/javascript">
 	jQuery.support.cors = true;
 </script>
@@ -32,9 +32,6 @@ var PRICE_FORMAT = '&yen;%s';
 		overflow: hidden;
 		line-height: 30px;
 	    font-size: 16px;
-	}
-	.mainList {
-		height: 1100px;
 	}
 	.mainList li {
 		border-bottom: 1px solid #eee;
@@ -65,6 +62,8 @@ var PRICE_FORMAT = '&yen;%s';
 		background-color: #fe6200;
 		color: #fff;
 		cursor: pointer;
+		letter-spacing: 2px;
+	    font-size: 14px;
 	}
 </style>
 </head>
@@ -81,14 +80,43 @@ var PRICE_FORMAT = '&yen;%s';
 			</div>
 			<div style="height: 54px;margin: 15px auto;">
 				<input id="key" type="text" style="height: 54px;width: 1012px;padding: 20px;border: 1px solid #fe6200;font-size: 18px;" placeholder="请输入关键词搜索">
-				<input type="button" onclick="searchList()" alt="" style="background-color:#fe6200;color:#fff;width: 84px;height: 54px;margin-top: -16px;cursor: pointer;" value="搜索">
+				<input type="button" onclick="cailiaoshang_list()" alt="" style="background-color:#fe6200;color:#fff;width: 84px;height: 54px;margin-top: -16px;cursor: pointer;font-size: 24px;letter-spacing: 2px;" value="搜索">
 			</div>
 			<div id="apply_box">
-				<span>公司名称:</span><input type="text" />
-				<span>公司网址:</span><input type="text" />
-				<span>类别:</span><input type="text" />
-				<span>地址:</span><input type="text" />
-				<input type="button" class="apply" value="确认申请" />
+				<span>公司名称:</span><input id="company_name" type="text" />
+				<span>公司网址:</span><input id="company_url" type="text" />
+				<span>类别:</span>
+				<select name="type" id="type" style="width: 182px;
+			    height: 30px;padding-left: 10px;">
+                	<option value="">-----请选择-----</option>
+                	<option value="1">厨房设备</option>
+                	<option value="2">瓷砖石材</option>
+                	<option value="3">板材</option>
+                	<option value="4">家具</option>
+                	<option value="5">门窗</option>
+                	<option value="6">家饰</option>
+                	<option value="7">地板</option>
+                	<option value="8">卫浴洁具</option>
+                	<option value="9">五金管件</option>
+                	<option value="10">油漆涂装</option>
+                	
+                	<option value="14">消防</option>
+                	<option value="15">防水涂料</option>
+                	<option value="16">电气</option>
+                	<option value="17">给排水</option>
+                	<option value="18">智能化</option>
+                	<option value="19">环评</option>
+                	<option value="20">钢材</option>
+                	<option value="21">饰面板</option>
+                	<option value="22">粘合剂</option>
+                	<option value="23">定制加工</option>
+                	<option value="24">暖通空调</option>
+                	<option value="25">不锈钢制品 </option>
+                	<option value="26">地毯 </option>
+                	<option value="13">其它种类</option>
+                </select>
+				<span>地址:</span><input id="address" type="text" />
+				<input type="button" class="apply" value="确认申请" onclick="apply_cls()" />
 			</div>
 		</div>
 		<div style="width: 1100px;margin: 10px auto;">
@@ -96,22 +124,16 @@ var PRICE_FORMAT = '&yen;%s';
 			<div class="leftBox" style="width: 60%;float: left;margin-bottom: 60px;">
 				<ul class="headerList">
 					<li style="width: 40%">公司名称</li>
-					<li style="width: 30%">类别</li>
-					<li style="width: 30%">地址</li>
+					<li style="width: 20%">类别</li>
+					<li style="width: 40%">地址</li>
 				</ul>
 
 				<ul class="mainList">
-					<!-- <li>
-						<ul class="littleBox">
-							<li style="width: 40%">公司名称</li>
-							<li style="width: 30%">类别</li>
-							<li style="width: 30%">地址</li>
-						</ul>
-					</li> -->
+					
 				</ul>
 				<div class="unpages" id="unpage" style="margin:50px auto;width: 200px;text-align: center;">
-					<a style="background:red;color:#fff;width: 70px;height: 30px;line-height: 30px;padding:4px 5px;cursor:pointer;margin-right: 20px;" onclick="uppage()">上一页</a>
-					<a style="background:red;color:#fff;width: 70px;height: 30px;line-height: 30px;padding:4px 5px;cursor:pointer;" onclick="nextpage()">下一页</a>
+					<a id="prepage" style="background:red;color:#fff;width: 70px;height: 30px;line-height: 30px;padding:4px 5px;cursor:pointer;margin-right: 20px;" onclick="prepage()">上一页</a>
+					<a id="nextpage" style="background:red;color:#fff;width: 70px;height: 30px;line-height: 30px;padding:4px 5px;cursor:pointer;" onclick="nextpage()">下一页</a>
 				</div>
 			</div>
 			
@@ -139,7 +161,157 @@ var PRICE_FORMAT = '&yen;%s';
 	</div>
 {include file=footer.html}
 <script type="text/javascript">
+	var page = 1;
 
+	$().ready(function() {
+		cailiaoshang_list();
+	});
+
+	function apply_cls(){
+		var company_name = $('#company_name').val();
+		var company_url = $('#company_url').val();
+		var type = $('#type').val();
+		var address = $('#address').val();
+		var name = '未填写';
+		var title = '未填写';
+		var tel = '未填写';
+		var fax = '未填写';
+		var mobile = '未填写';
+		var email = '未填写';
+		var businessscope = '未填写';
+		var description = '未填写';
+		var hasmoney = '未填写';
+
+		if(company_name == '' || url == '' || type == '' || address == ''){
+			alert('请填写完整的信息在提交!');
+			return false;
+		}
+
+		$.post(url+'jingyi.php/Home/Material/cailiaoshangadd', {
+			userid 	       : '<?php echo $_SESSION["user_info"]["user_id"];?>',
+	        name           : name,
+	        title          : title,
+	        office_name    : company_name, 
+	        tel            : tel,
+	        fax            : fax,
+	        mobile         : mobile,
+	        email          : email,
+		    businessscope  : businessscope,
+		    description    : description,
+		    addr           : address,
+		    type           : type,
+		    hasmoney       : hasmoney,
+		    web            : company_url
+		}, function(ret) {
+			if(ret.code == 200){
+				window.location.reload();
+			}else{
+				alert('添加失败!');
+			}
+		},'json');
+	}
+
+	function cailiaoshang_list(page){
+		var key = $('#key').val();
+		$.post(url+'jingyi.php/Home/Material/cailiaoshanglist', {
+			page    : page,
+	    	key     : key,
+	    	limit   : 30
+		}, function(ret) {
+			page++;
+			if(ret.code == 200){
+				var html = '';
+				var data = ret.message;
+				for(var i in data){
+					var office_name = data[i].office_name,
+						type = data[i].type,
+						addr = data[i].addr,
+						web = (data[i].web == '' || data[i].web == null)?'javascript:(void)':'http://'+data[i].web;
+
+					if(type == '1'){
+						type = '厨房设备';
+					}else if(type == 2){
+						type = '瓷砖石材';
+					}else if(type == 3){
+						type = '板材';
+					}else if(type == 4){
+						type = '家具';
+					}else if(type == 5){
+						type = '门窗';
+					}else if(type == 6){
+						type = '家饰';
+					}else if(type == 7){
+						type = '地板';
+					}else if(type == 8){
+						type = '卫浴洁具';
+					}else if(type == 9){
+						type = '五金管件';
+					}else if(type == 10){
+						type = '油漆涂装';
+					}else if(type == 14){
+						type = '消防';
+					}else if(type == 15){
+						type = '防水涂料';
+					}else if(type == 16){
+						type = '电气';
+					}else if(type == 17){
+						type = '给排水';
+					}else if(type == 18){
+						type = '智能化';
+					}else if(type == 19){
+						type = '环评';
+					}else if(type == 20){
+						type = '钢材';
+					}else if(type == 21){
+						type = '饰面板';
+					}else if(type == 22){
+						type = '粘合剂';
+					}else if(type == 23){
+						type = '定制加工';
+					}else if(type == 24){
+						type = '暖通空调';
+					}else if(type == 25){
+						type = '不锈钢制品';
+					}else if(type == 26){
+						type = '地毯';
+					}else if(type == 13){
+						type = '其他';
+					}
+
+					html += '<li style="">';
+						html += '<a href="'+web+'" target="_blank">';
+						html += '<ul class="littleBox">';
+							html += '<li style="width: 40%;overflow : hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: 1;-webkit-box-orient: vertical;" title="'+office_name+'">'+office_name+'</li>';
+							html += '<li style="width: 20%">'+type+'</li>';
+							html += '<li style="width: 40%;overflow : hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: 1;-webkit-box-orient: vertical;" title="'+addr+'">'+addr+'</li>';
+						html += '</ul>';
+						html += '</a>';
+					html += '</li>';
+				}
+				$('.mainList').html(html);
+				$('#nextpage').show();
+
+			}else if(ret.code == 202){
+				$('.mainList').html('暂无更多');
+				$('#nextpage').hide();
+			}else{
+				$('.mainList').html('加载失败，请检查网络!');
+			}
+		},'json');
+	}
+
+	function prepage(){
+		page--;
+		if(page<1){
+			page = 1;
+		}
+		cailiaoshang_list(page);
+	}
+
+	function nextpage(){
+		page++;
+		cailiaoshang_list(page);
+	}
 </script>
 </body>
 </html>

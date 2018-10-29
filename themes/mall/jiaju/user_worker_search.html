@@ -123,20 +123,19 @@ body{background:url('') no-repeat center top }
  <div class="container" style="overflow: hidden;width: 1200px;margin: 10px auto;position: relative;">
  <!-- 左上的导航栏 -->
  {include file=companycenter.html}
-<!-- 	<include file="usercenter.html"/> -->
 
  	<!-- 右边的内容 -->
  	<div class="container_right" style="width: 78.5%;border: 1px solid #cacaca;float: right;background-color: #f7f7f7;padding: 0 10px 10px 10px;">
 
 		<!-- 公司信息 -->
-		<div class="budget base_ui_public" style="/*display: none;*/position: relative;">
+		<div class="budget base_ui_public" style="position: relative;">
 			<ul class="budget_ul user_public_ul">
  				<li class="change_bg_li" style="margin-right: 10px;">查询工人</li>
 				<li id="ser_his" style="margin-right: 10px;">查询历史</li>
  			</ul>
  			<div class="company_info base_info_public" style="overflow: hidden;min-height: 600px;postion:relative;">
  			<!-- 预算报价 -->
- 			<div class="company_detail" style="position: relative;/*left: -16%;*//*width: 115%;*/">
+ 			<div class="company_detail" style="position: relative;">
 			<div style="overflow: hidden;margin-top: 10px;">
 			<!-- 基本信息 -->
 			<div class="section" style="border: none;">
@@ -323,6 +322,10 @@ function search(){
 	var positionName = $('#gongzhong').val();
 	var vals = $(".ser_right_sec").val();
 	var gz   = $("#gongzhong").val();
+
+	alert('普通用户查询当地最新的工作找工明细需要收取20元/次!');
+	return false;
+
 	if(vals == 0){
 		alert('行业必填！');
 		return false;

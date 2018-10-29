@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>无活招工详情</title>
+	<link rel="stylesheet" href="">
+	
+	<style>
+		.shejifenbao_list {
+			border-bottom: 1px solid #ccc;
+			height: 40px;
+			line-height: 40px;
+			padding-left: 6px;
+			font-size: 16px;
+		}
+	</style>
+</head>
+<body>
+{include file=header.html}
+<div style="width: 1100px;margin: 10px auto;">
+	<div style="width: 850px;height: auto;overflow: hidden;text-align: left;float: left;">
+		<div style="background-color: #eee;width: 100%;height: 40px;border-bottom: 2px solid #999;padding-left: 6px;font-size: 22px;line-height: 40px;text-align: center;color: #000;" id="title"></div>
+		<div style="height: 600px;">
+			<div style="height: auto;overflow: hidden;margin-top: 10px;">
+				<div style="width:1100px;">
+					<div class="shejifenbao_list" id="xiangmmc"></div>
+					<div class="shejifenbao_list" id="content"></div>
+					<div class="shejifenbao_list" id="cailiao" style="height: auto;overflow: hidden;"></div>
+					<div class="shejifenbao_list" id="shop_address"></div>
+					<div class="shejifenbao_list" id="fb_address"></div>
+					<div class="shejifenbao_list" id="time"></div>
+					<div class="shejifenbao_list" id="skill"></div>
+					<div class="shejifenbao_list" id="yixiang"></div>
+					<div class="shejifenbao_list" id="xiangxi"></div>
+					<div id="lists"></div>
+				</div>
+			</div>
+		</div>
+		<div style="height:40px;background-color: #e41d22;color: #fff;font-size: 20px;letter-spacing: 4px;font-weight: 600;text-align: center;line-height: 40px;width: 20%;margin: 0 auto;">点击联系</div>
+	</div>
+
+	<div style="width: 200px;float: right;height: 587px;border-left: 10px solid #e5e5e5;padding-right: 0;">
+		<img src="http://www.wgc2013.com/themes/mall/jiaju/images/guanggao.png" alt="" width="100%">
+	</div>
+</div>
+
+	{include file=footer.html}
+</body>
+<script type="text/javascript" src="/themes/mall/jiaju/styles/default/js/jquery-1.3.2.min.js"></script>
+<script>
+	var url = "http://wgcapp.wgc2013.com/";
+	var uploadUrl = 'http://wgcapp.wgc2013.com/';
+	var imgUrl = 'http://wgcapp.wgc2013.com/';
+
+	$(function(){
+		detail();
+		content();
+	})
+
+	//获取材料uid
+	function GetUrlPara(){
+　　　　var url = document.location.toString();
+　　　　var arrUrl = url.split("&");
+　　　　var para = arrUrl[arrUrl.length - 1];
+　　　　return para;
+　　}
+//获取招工id
+	function GetUrlId(){
+　　　　var url = document.location.toString();
+　　　　var arrUrl = url.split("&");
+　　　　var para = arrUrl[arrUrl.length - 2];
+　　　　return para;
+　　}
+	var URL = GetUrlPara();
+	var arr = URL.split('=');
+	var uid = arr.pop();
+	var idUrl = GetUrlId();
+	var idArray = idUrl.split("=");
+	var id      = idArray.pop();
+
+	function detail(){
+
+		$.post(url+'jingyi.php/Home/Jifen/user',{
+			uid : uid
+		}, function(ret) {
+			var html = '';
+			if(ret.code == 200){
+					var date = ret.user;
+					var userphoto = date.userphoto;
+			 	$('#title').html("详情");
+			 	// $('#xiangmmc').html('<span>浏览量：</span>'+date.click);
+			   	$('#content').html('<span>年龄：</span>'+date.nianling+'岁');//
+			   	$('#cailiao').html('<span style="float:left;">户籍：</span><span style="width:765px;float:left;">'+date.huji+'</span>');
+			   	$('#fb_address').html('<span>职位：</span>'+date.zhiwei);
+			   	$('#shop_address').html('<span>期望薪资：</span>'+date.xinzi);
+			   	$('#time').html('<span>工作经验：</span>'+date.gz_jingyan);
+			   	$('#skill').html('<span>技能：</span>'+date.skill);
+			   	$('#yixiang').html('<span>求职意向：</span>'+date.intension);
+			   	// $('#xiangxi').html('<span>地址：</span>'+date.worker_address);
+
+
+			   	html += '<p id="message-content" style="width:100%;height:auto;overflow: hidden;margin:5px auto;padding-left: 0.35rem">';
+			   		
+			   			html += '<a href="http://wgcapp.wgc2013.com/'+userphoto+'" target="_blank">';	  
+						   	html += '<img class="imagemsg" style="width:3.8rem;float:left;margin:0.15rem;height:3.8rem;" src="http://wgcapp.wgc2013.com/'+userphoto+'">'; 
+					   	html += '</a>';
+			   		
+			   	html += '</p>';
+
+			   	$('#lists').html(html);
+			}else if(ret.code == 202){
+				return false;
+			}else{
+				return false;
+			}
+		},'json');
+	}
+	function content(){
+		$.post(url+'jingyi.php/Home/Jymember/qiuzhidetail',{
+			id : id
+		}, function(ret) {
+			var html = '';
+			if(ret.status == 200){
+					var date = ret.retData,
+					click    = date.click,
+					userphoto = date.userphoto;
+
+			 	$('#xiangmmc').html('<span>浏览量：</span>'+date.click);
+			 	$('#xiangxi').html('<span>地址：</span>'+date.xiangxi);
+			   	// html += '<p id="message-content" style="width:100%;height:auto;overflow: hidden;margin:5px auto;padding-left: 0.35rem">';
+			   	// 	for(var i in m_photo){
+			   	// 		html += '<a href="http://wgcapp.wgc2013.com/'+m_photo[i]+'" target="_blank">';	  
+						 //   	html += '<img class="imagemsg" style="width:3.8rem;float:left;margin:0.15rem;height:3.8rem;" src="http://wgcapp.wgc2013.com/'+m_photo[i]+'">'; 
+					  //  	html += '</a>';
+			   	// 	}
+			   	// html += '</p>';
+
+			   	$('#lists').html(html);
+			}else if(ret.code == 202){
+				return false;
+			}else{
+				return false;
+			}
+		},'json');
+	}
+</script>
+</html>

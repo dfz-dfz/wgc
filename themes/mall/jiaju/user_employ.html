@@ -67,9 +67,6 @@ input{
 
  	<!-- 右边的内容 -->
  	<div class="container_right" style="width: 80%;border: 1px solid #cacaca;float: right;background-color: #f7f7f7;padding: 0 10px 10px 10px;">
- 		<!-- 消息中心 -->
-
-		<!-- 积分 -->
 
 		<!-- 发布招聘 -->
 				
@@ -337,6 +334,8 @@ input{
 		var zuidixueli      = $('#zuidixueli').val();
 		var age             = $('#age').val();
 		var other           = $('#other').val();
+		alert('普通用户发布招聘信息需要收取50块/次！');
+		return false;
 
 		if(!jobtype){
 			alert("请输入招聘岗位！")
@@ -369,30 +368,31 @@ input{
 			alert("请输入你年龄")
 			return false;
 		}
-		  $.post('http://wgcapp.wgc2013.com/jingyi.php/Home/Recruit/addRecruit_s',{
-					user_id 	      : '<?php echo $_SESSION["user_info"]["user_id"];?>',
-		        renshu 	          : num, 
-		        zhiwei            : jobtype,
-		        ask 		      : ask,
-		        s_province        : '广东省',
-				s_city            : '广州市',
-				s_county          : '白云区',
-				region            : region,
-		        company_name      : officename,
-		        company_addr      : xiangxi,
-		        company_web       : office_url,
-		        company_introduce : officetro,
-		        expire_time       : 30,
-		        xinzi             : xinzhi,
-		        hasmoney          : 1,
-				work_age          : work_age,
-				zuidixueli        : zuidixueli,
-				age               : age,
-				other             : other
-		  },function(ret){
-				//alert('发布成功！');
-				location.reload();
-		  },'json')
+
+		$.post('http://wgcapp.wgc2013.com/jingyi.php/Home/Recruit/addRecruit_s',{
+			user_id 	      : '<?php echo $_SESSION["user_info"]["user_id"];?>',
+		    renshu 	          : num, 
+		    zhiwei            : jobtype,
+		    ask 		      : ask,
+		    s_province        : '广东省',
+			s_city            : '广州市',
+			s_county          : '白云区',
+			region            : region,
+		    company_name      : officename,
+		    company_addr      : xiangxi,
+		    company_web       : office_url,
+		    company_introduce : officetro,
+		    expire_time       : 30,
+		    xinzi             : xinzhi,
+		    hasmoney          : 1,
+			work_age          : work_age,
+			zuidixueli        : zuidixueli,
+			age               : age,
+			other             : other
+		},function(ret){
+			//alert('发布成功！');
+			location.reload();
+		},'json')
 	}
 
 	//获取发布列表
@@ -405,9 +405,7 @@ input{
 	        s_city : '广州市',
 			s_area : '白云区',
 		},function(ret){
-			//console.log(ret)
 			var uid = '<?php echo $_SESSION["user_info"]["user_id"];?>';
-			//console.log(uid)
 			var html  = '';
 			if(ret.code == 200){
 				//page++;
@@ -625,8 +623,6 @@ input{
 				crossDomain: true == !(document.all),
 				dataType: "JSON",
 				success:function(ret){
-					//console.log("成功");
-					//console.log(ret)
 					var html = '';
 					var datas = ret.data;
 			
@@ -662,12 +658,11 @@ input{
 
 						$('.getUserList').append(html);
 						//获取数据id
-								var arr = new Array();
-				                $('input[name="id"]:checked').each(function(i){
-				                    arr[i] = $(this).val();
-				                });
-				                var vals = arr.join(",");
-				                //console.log(vals);
+						var arr = new Array();
+		                $('input[name="id"]:checked').each(function(i){
+		                    arr[i] = $(this).val();
+		                });
+		                var vals = arr.join(",");
 					}else {
 						alert('数据加载失败，请检查网络!');
 					}

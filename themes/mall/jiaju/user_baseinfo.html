@@ -130,7 +130,7 @@ body{background:url('') no-repeat center top }
  									性别：
  								</div>
  								<div class="user_info_input">
- 									<input type="radio" id="male" checked="checked" name="sex" value="男" style="height: 30px;line-height: 30px;font-size: 14px;" />
+ 									<input type="radio" id="male" name="sex" value="男" style="height: 30px;line-height: 30px;font-size: 14px;" />
  									<label for="male" class="male"><img class="boy" src="/themes/mall/jiaju/images/center/bg_radio_full.jpg" alt="" width="15" height="15" />&nbsp;&nbsp;&nbsp;男</label>
  									<input type="radio" id="female" name="sex" value="女" style="height: 30px;line-height: 30px;font-size: 14px;" />
  									<label for="female"><img class="girl" src="/themes/mall/jiaju/images/center/bg_radio_empty.jpg" alt="" width="15" height="15" />&nbsp;&nbsp;&nbsp;女</label>
@@ -160,9 +160,9 @@ body{background:url('') no-repeat center top }
  									工种：
  								</div>
  								<div class="user_info_input">
- 								<input type="text" style="height: 30px;font-size: 14px;" id="zhiwei"/>
-<!--  									<select id="zhiwei" style="padding-left: 15px;height:30px;">
-										<option value="">--请选择--</option>
+ 								<!-- <input type="text" style="height: 30px;font-size: 14px;" id="zhiweis"/> -->
+ 									<select id="zhiwei" style="padding-left: 15px;height:30px;">
+										<option value="0">--请选择--</option>
 										<option value="1">施工队长</option>
 										<option value="2">水电工长</option>
 										<option value="3">空调安装工长</option>
@@ -192,8 +192,15 @@ body{background:url('') no-repeat center top }
 										<option value="28">行政助理</option>
 										<option value="29">软件销售经理</option>
 										<option value="30">业务员</option>
+										<option value="31">项目经理</option>
+										<option value="32">水电维修</option>
+										<option value="33">空调维修</option>
+										<option value="34">装饰维修</option>
+										<option value="35">设备维修</option>
+										<option value="36">设备维修</option>
+										<option value="37">分销商</option>
 										<option value="15">其它</option>
-									</select> -->
+									</select>
  								</div>
  							</li>
 
@@ -394,15 +401,18 @@ $(".container_nav ul li").click(function(){
     	// console.log()
     	$(this)[0].src = "/themes/mall/jiaju/images/center//bg_radio_full.jpg";
     	$(".boy")[0].src = "/themes/mall/jiaju/images/center/bg_radio_empty.jpg";
-		$("#female").attr("checked",true)
-		$("#male").attr("checked",false)
+		$("#female").prop("checked",true)
+		$("#male").prop("checked",false)
+		
+		
     })
     $(".boy").click(function(){
     	// console.log()
     	$(this)[0].src = "/themes/mall/jiaju/images/center/bg_radio_full.jpg";
     	$(".girl")[0].src = "/themes/mall/jiaju/images/center/bg_radio_empty.jpg";
-		$("#female").attr("checked",false)
-		$("#male").attr("checked",true)
+		$("#female").prop("checked",false)
+		$("#male").prop("checked",true)
+		
     })
 
 
@@ -449,24 +459,26 @@ $(".container_nav ul li").click(function(){
 		//alert('<?php echo $_SESSION["user_info"]["user_id"];?>');
 			jQuery.support.cors = true;
 			//alert("heloo")
+			
+										
 			var url = 'http://wgcapp.wgc2013.com/jingyi.php/Home/Jifen/user/a/'+new Date().getTime();
-			$.ajax({
-				type:"POST",
-				url:url,
-				data:{
-					uid : '<?php echo $_SESSION["user_info"]["user_id"];?>'
-				},
-				cache:false,
-				crossDomain: true == !(document.all),
-				dataType: "json",
-				success:function(ret){
-					//console.log(ret)
-					//alert("ie"+ret.user.user_id);
-				},
-				error:function(err){
-					//console.log(err)
-				}
-			});
+			// $.ajax({
+			// 	type:"POST",
+			// 	url:url,
+			// 	data:{
+			// 		uid : '<?php echo $_SESSION["user_info"]["user_id"];?>'
+			// 	},
+			// 	cache:false,
+			// 	crossDomain: true == !(document.all),
+			// 	dataType: "json",
+			// 	success:function(ret){
+			// 		console.log(ret)
+			// 		alert("ie"+ret.user.user_id);
+			// 	},
+			// 	error:function(err){
+			// 		console.log(err)
+			// 	}
+			// });
 			$.post(url,{
 				uid : '<?php echo $_SESSION["user_info"]["user_id"];?>',
 				"r":Math.random()
@@ -483,7 +495,123 @@ $(".container_nav ul li").click(function(){
 				var sex       = user.sex;
 				var photourl = 'http://wgcapp.wgc2013.com' + userphoto;
 				//头像
-				
+				switch(zhiwei){
+					case "施工队长":
+						zhiwei = 1;
+						break;
+					case "水电工长":
+						zhiwei = 2;
+						break;
+					case "空调安装工长":
+						zhiwei = 3;
+						break;
+					case "空调安装工":
+						zhiwei = 4;
+						break;
+					case "泥水工":
+						zhiwei = 5;
+						break;
+					case "水电工":
+						zhiwei = 6;
+						break;
+					case "电焊工":
+						zhiwei = 7;
+						break;
+					case "家具安装工":
+						zhiwei = 8;
+						break;
+					case "木工":
+						zhiwei = 9;
+						break;
+					case "扇灰工":
+						zhiwei = 10;
+						break;
+					case "保洁工":
+						zhiwei = 11;
+						break;
+					case "杂工":
+						zhiwei = 12;
+						break;
+					case "设计师":
+						zhiwei = 13;
+						break;
+					case "预算员":
+						zhiwei = 14;
+						break;
+					case "其它":
+						zhiwei = 15;
+						break;
+					case "维修工":
+						zhiwei = 16;
+						break;
+					case "网络维修":
+						zhiwei = 17;
+						break;
+					case "实习预结算员":
+						zhiwei = 18;
+						break;
+					case "室内设计师":
+						zhiwei = 19;
+						break;
+					case "工程经理":
+						zhiwei = 20;
+						break;
+					case "机电工程师":
+						zhiwei = 21;
+						break;
+					case "暖通设计师":
+						zhiwei = 22;
+						break;
+					case "采购经理":
+						zhiwei = 23;
+						break;
+					case "文案":
+						zhiwei = 24;
+						break;
+					case "平面设计":
+						zhiwei = 25;
+						break;
+					case "效果图设计师":
+						zhiwei = 26;
+						break;
+					case "行政助理":
+						zhiwei = 27;
+						break;
+					case "行政助理":
+						zhiwei = 28;
+						break;
+					case "软件销售经理":
+						zhiwei = 29;
+						break;
+					case "业务员":
+						zhiwei = 30;
+						break;
+					case "项目经理":
+						zhiwei = 31;
+						break;
+					case "水电维修":
+						zhiwei = 32;
+						break;
+					case "空调维修":
+						zhiwei = 33;
+						break;
+					case "装饰维修":
+						zhiwei = 34;
+						break;
+					case "设备维修":
+						zhiwei = 35;
+						break;
+					case "分销商":
+						zhiwei = 36;
+						break;
+					case "工匠":
+						zhiwei = 37;
+						break;
+					default:
+					zhiwei = "未填写";
+				}
+						// 1施工队长2水电工长3空调安装工长4空调安装工5泥水工6水电工7电焊工8家具安装工9木工10扇灰工11保洁工12杂工13设计师14预算员16维修工17网络维修18实习预结算员19室内设计师20工程经理21机电工程师22暖通设计师23采购经理24文案25平面设计26效果图设计师27客服专员28行政助理29软件销售经理30业务员15其它
+
 				$(".userphoto_img").attr('src',photourl);
 				$("#name").val(user.name);
 				$("#mobile").val(user.phone_mob);
@@ -496,7 +624,7 @@ $(".container_nav ul li").click(function(){
 	         	$("#skill").val(user.skill);
 	         	$("#kname").val(user.kname);
 	         	$("#kahao").val(user.kahao);
-	         	$("#inten").val(user.inten);
+	         	$("#intension").val(user.inten);
 				//alert(sex)
 				if(sex == '女'){
 				
@@ -531,7 +659,7 @@ $(".container_nav ul li").click(function(){
 	         	var kname =  $("#kname").val();
 	         	var kahao =  $("#kahao").val();
 				var email =  $("#email").val();
-				var sex   = $("input[name='sex'][checked]").val()
+				var sex   = $("input[name='sex']:checked").val()
 				$.post('http://wgcapp.wgc2013.com/jingyi.php/Home/Jifen/user_edit',{
 						user_id     : '<?php echo $_SESSION["user_info"]["user_id"];?>',
 						/*gy_type 	: $("#gy_type").val(),
@@ -560,7 +688,7 @@ $(".container_nav ul li").click(function(){
 						console.log(ret)
 						if(ret.code == 200){
 						alert("修改成功");
-						//window.location.reload();
+						window.location.reload();
 						}else if(ret.code){
 							alert("修改失败,数据无更新")
 						}

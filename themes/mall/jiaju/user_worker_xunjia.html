@@ -28,6 +28,7 @@
 <![endif]-->
 <!--/meta 作为公共模版分离出去-->
 <link href="/Public/lib/webuploader/0.1.5/webuploader.css" rel="stylesheet" type="text/css" />
+<link href="/Public/lib/webuploader/0.1.5/buchong.css" rel="stylesheet" type="text/css" />
 
 <!-- 引入个人中心 -->
 <link type="text/css" href="/themes/mall/jiaju/styles/default/css/center.css" rel="stylesheet"  />
@@ -194,9 +195,8 @@ var PRICE_FORMAT = '&yen;%s';
 
 <!-- 中部主要内容 -->
  <div class="container" style="overflow: hidden;width: 1200px;margin: 10px auto;position: relative;">
- <!-- 左上的导航栏 -->
- 	 {include file=companycenter.html}
-<!-- 	<include file="usercenter.html"/> -->
+<!-- 左上的导航栏 -->
+{include file=companycenter.html}
 
  	<!-- 右边的内容 -->
  	<div class="container_right" style="width: 78.5%;border: 1px solid #cacaca;float: right;background-color: #f7f7f7;padding: 0 10px 10px 10px;">
@@ -1320,6 +1320,10 @@ $(document).ready(function() {
 	    var ps          = $("#ps");
 		var tel         = $("#tel");
 		var img         = $('#ImgPath').val();
+
+		alert('普通用户发布工价询价需要收取20元/次!');
+		return false;
+
 	    if(office_name.val() == ''){
 			alert('请填写公司名称');
 			office_name.focus();
