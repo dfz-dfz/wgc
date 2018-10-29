@@ -1,0 +1,143 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Access-Control-Allow-Origin" content="*">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=8" /> 
+<title>建筑装饰公司-微工程</title>
+<meta name="description" content="微工程，微工程APP，装修、材料、家具、饰品一站式服务，让装修更简单，价格更透明！！" />
+<meta name="keywords" content="微工程，微工程，家居商城，微工程家居商城，微工程家居装修商城，办公室装修，写字楼装修，材料，装修材料，家居，办公家具，家居，家具，装修，装饰" />
+<link rel="stylesheet" type="text/css" href="themes/mall/jiaju/css/api.css"/>
+
+<link rel="stylesheet" type="text/css" href="themes/mall/jiaju/css/aui.1.0.css"/>
+<script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+<script src="/themes/mall/jiaju/js/tool.js"></script>
+<script type="text/javascript">
+	jQuery.support.cors = true;
+</script>
+
+<script type="text/javascript">
+var SITE_URL = "http://www.wgc2013.com";
+var PRICE_FORMAT = '&yen;%s';
+</script>
+<style>
+	.leftBox ul li{
+		float: left;
+		text-align: center;
+	}
+	.headerList {
+		border:1px solid #999;
+		border-left: 0;
+		border-right: 0;
+		height: auto;
+		overflow: hidden;
+		line-height: 30px;
+	    font-size: 16px;
+	}
+	.mainList {
+		height: 1100px;
+	}
+	.mainList li {
+		border-bottom: 1px solid #eee;
+		line-height: 40px;
+		width: 100%;
+	}
+	.littleBox li {
+		float: left;
+	}
+
+	#apply_box {
+		width: 1100px;
+		margin: 0 auto;
+	}
+	
+	#apply_box span {
+		color: #000;
+	}
+
+	#apply_box input {
+		width: 240px;
+		margin: 0 10px;
+		height: 30px;
+	}
+
+	#apply_box .apply {
+		width: 100px;
+		background-color: #fe6200;
+		color: #fff;
+		cursor: pointer;
+		letter-spacing: 2px;
+	    font-size: 14px;
+	}
+</style>
+</head>
+<body>
+{include file=header.html}
+<div>
+	<div>
+		<img src="/themes/mall/jiaju/images/rencaituijian_gg.jpg" alt="" style="width: 100%;" />
+		<div style="width: 1100px;margin: 10px auto;">
+			<div style="width: 210px;background-color: #fe6200;color: #fff;">
+				<div style="font-size: 16px;">建筑装饰公司</div>
+				<div>CONSTRUCTION DECORATION</div>
+			</div>
+		</div>
+		<div style="height: 54px;margin: 15px auto;">
+			<input id="key" type="text" style="height: 54px;width: 1012px;padding: 20px;border: 1px solid #fe6200;font-size: 18px;" placeholder="请输入关键词搜索">
+			<input type="button" onclick="searchList()" alt="" style="background-color:#fe6200;color:#fff;width: 84px;height: 54px;margin-top: -16px;cursor: pointer;font-size: 24px;letter-spacing: 2px;" value="搜索">
+		</div>
+		<div id="apply_box">
+			<span>公司名称:</span><input type="text" />
+			<span>公司网址:</span><input type="text" />
+			<span>所在取区域:</span><input type="text" />
+			<input type="button" class="apply" value="确认申请" />
+		</div>
+	</div>
+	<div style="width: 1100px;margin: 10px auto;">
+		<!-- 左边内容 -->
+		<div class="leftBox" style="width: 60%;float: left;margin-bottom: 60px;">
+			<ul class="headerList">
+				<li style="width: 70%">公司名称</li>
+				<li style="width: 30%">区域</li>
+			</ul>
+
+			<ul class="mainList">
+				<!-- <li>
+					<ul class="littleBox">
+						<li style="width: 70%">公司名称</li>
+						<li style="width: 30%">区域</li>
+					</ul>
+				</li> -->
+			</ul>
+			<div class="unpages" id="unpage" style="margin:50px auto;width: 200px;text-align: center;">
+				<a style="background:red;color:#fff;width: 70px;height: 30px;line-height: 30px;padding:4px 5px;cursor:pointer;margin-right: 20px;" onclick="uppage()">上一页</a>
+				<a style="background:red;color:#fff;width: 70px;height: 30px;line-height: 30px;padding:4px 5px;cursor:pointer;" onclick="nextpage()">下一页</a>
+			</div>
+		</div>
+		
+		<!-- 广告位 -->
+		<div style="width: 40%;float: right;height: 587px;min-height: 600px;height: auto;overflow: hidden;">
+			<div style="background-color: #fea900;font-size: 70px;color: #fff;min-height: 600px;position: relative;    margin-left: 20px;">
+				<div style="padding-top: 130px;">广</div>
+				<div>告</div>
+				<div>位</div>
+				<div style="position: absolute;border-bottom: 2px solid #fff;top: 50%;width: 100%;"></div>
+			</div>
+			<div style="background-color: #fea900;font-size: 70px;color: #fff;min-height: 600px;position: relative;    margin-left: 20px;margin-top: 20px;">
+				<div style="padding-top: 130px;">广</div>
+				<div>告</div>
+				<div>位</div>
+				<div style="position: absolute;border-bottom: 2px solid #fff;top: 50%;width: 100%;"></div>
+			</div>
+		</div>
+	</div>
+</div>
+{include file=footer.html}
+<script type="text/javascript">
+	$().ready(function() {
+		
+	});
+	
+</script>
+</body>
+</html>

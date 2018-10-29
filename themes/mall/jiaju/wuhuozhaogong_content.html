@@ -23,7 +23,7 @@
 		<div style="background-color: #eee;width: 100%;height: 40px;border-bottom: 2px solid #999;padding-left: 6px;font-size: 22px;line-height: 40px;text-align: center;color: #000;" id="title"></div>
 		<div style="height: 600px;">
 			<div style="height: auto;overflow: hidden;margin-top: 10px;">
-				<div style="width:1100px;">
+				<div style="">
 					<div class="shejifenbao_list" id="xiangmmc"></div>
 					<div class="shejifenbao_list" id="content"></div>
 					<div class="shejifenbao_list" id="cailiao" style="height: auto;overflow: hidden;"></div>
@@ -48,6 +48,7 @@
 	{include file=footer.html}
 </body>
 <script type="text/javascript" src="/themes/mall/jiaju/styles/default/js/jquery-1.3.2.min.js"></script>
+<script src="/themes/mall/jiaju/js/tool.js"></script>
 <script>
 	var url = "http://wgcapp.wgc2013.com/";
 	var uploadUrl = 'http://wgcapp.wgc2013.com/';
@@ -88,6 +89,7 @@
 			if(ret.code == 200){
 					var date = ret.user;
 					var userphoto = date.userphoto;
+					
 			 	$('#title').html("详情");
 			 	// $('#xiangmmc').html('<span>浏览量：</span>'+date.click);
 			   	$('#content').html('<span>年龄：</span>'+date.nianling+'岁');//
@@ -100,13 +102,14 @@
 			   	// $('#xiangxi').html('<span>地址：</span>'+date.worker_address);
 
 
-			   	html += '<p id="message-content" style="width:100%;height:auto;overflow: hidden;margin:5px auto;padding-left: 0.35rem">';
+			   	// html += '<p id="message-content" style="width:100%;height:auto;overflow: hidden;margin:5px auto;padding-left: 0.35rem">';
 			   		
-			   			html += '<a href="http://wgcapp.wgc2013.com/'+userphoto+'" target="_blank">';	  
-						   	html += '<img class="imagemsg" style="width:3.8rem;float:left;margin:0.15rem;height:3.8rem;" src="http://wgcapp.wgc2013.com/'+userphoto+'">'; 
-					   	html += '</a>';
-			   		
-			   	html += '</p>';
+			   	// 		html += '<a href="http://wgcapp.wgc2013.com/'+userphoto+'" target="_blank">';	  
+						 //   	html += '<img class="imagemsg" style="width:3.8rem;float:left;margin:0.15rem;height:3.8rem;border-radius: 30px;" src="http://wgcapp.wgc2013.com/'+userphoto+'">'; 
+					  //  	html += '</a>';
+			   	// 		html += '<div>'+date.name+'</div>';
+			   	// 		html += '<div>'+addtime+'</div>';
+			   	// html += '</p>';
 
 			   	$('#lists').html(html);
 			}else if(ret.code == 202){
@@ -125,16 +128,18 @@
 					var date = ret.retData,
 					click    = date.click,
 					userphoto = date.userphoto;
-
+					addtime = _trans_php_time_to_str(date.addtime,2);
 			 	$('#xiangmmc').html('<span>浏览量：</span>'+date.click);
 			 	$('#xiangxi').html('<span>地址：</span>'+date.xiangxi);
-			   	// html += '<p id="message-content" style="width:100%;height:auto;overflow: hidden;margin:5px auto;padding-left: 0.35rem">';
-			   	// 	for(var i in m_photo){
-			   	// 		html += '<a href="http://wgcapp.wgc2013.com/'+m_photo[i]+'" target="_blank">';	  
-						 //   	html += '<img class="imagemsg" style="width:3.8rem;float:left;margin:0.15rem;height:3.8rem;" src="http://wgcapp.wgc2013.com/'+m_photo[i]+'">'; 
-					  //  	html += '</a>';
-			   	// 	}
-			   	// html += '</p>';
+			   	html += '<p id="message-content" style="width:100%;height:auto;overflow: hidden;margin:20px auto;padding-left: 0.35rem;border-bottom: 1px solid #ccc;border-top: 1px solid #ccc;">';
+			   		
+			   			html += '<a href="http://wgcapp.wgc2013.com/'+userphoto+'" target="_blank" style="overflow:hidden;">';	  
+						   	html += '<img class="imagemsg" style="width:3.8rem;float:left;margin:0.15rem;height:3.8rem;border-radius: 30px;" src="http://wgcapp.wgc2013.com/'+userphoto+'">'; 
+						   	html += '<span style="display:block;margin: 10px 0 0 90px;">'+date.name+'</span>';
+			   				html += '<span style="display:block;margin: 10px 0 0 90px;">发布时间:'+addtime+'</span>';	
+					   	html += '</a>';
+			   		
+			   	html += '</p>';
 
 			   	$('#lists').html(html);
 			}else if(ret.code == 202){

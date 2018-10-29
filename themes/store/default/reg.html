@@ -7,103 +7,1163 @@
   <title>会员注册中心-微工程</title>
   <meta name="description" content="微工程，微工程APP，装修、材料、家具、饰品一站式服务，让装修更简单，价格更透明！！" />
   <meta name="keywords" content="微工程，微工程，家居商城，微工程家居商城，微工程家居装修商城，办公室装修，写字楼装修，材料，装修材料，家居，办公家具，家居，家具，装修，装饰" />
+  <link href="/Public/lib/webuploader/0.1.5/webuploader.css" rel="stylesheet" type="text/css" />
+  <link href="/Public/lib/webuploader/0.1.5/buchong.css" rel="stylesheet" type="text/css" />
 </head>
 <style>
+  .reg_main {
+    width: 100%;
+    height: 550px;
+    background:url('../../themes/mall/jiaju/images/register_bg.jpg') no-repeat;
+    background-size: 100% 100%;
+    position: relative;
+    margin-top: 20px;
+  }
+  .reg_box {
+    position: absolute;
+    width: 434px;
+    min-height: 350px;
+    background-color: #fff;
+    top: 2%;
+    left: 50%;
+    border-radius: 10px;
+    padding: 20px;
+    height: auto;
+    overflow: hidden;
+  }
+  .reg_title {
+    height: 120px;
+    line-height: 120px;
+    text-align: center;
+    color: #2c99d9;
+    font-size: 28px;
+  }
   .list_box {
     margin-top: 10px;
   }
-
   .list_box .type_list{
-    width: 280px;
+    width: 400px;
     margin:0 auto;
-    margin-bottom: 8px;
+    margin-bottom: 2px;
   }
-
   .list_box .type_list>div{
     display: inline-block;
     width: 60px;
     text-align: right;
+    font-weight: 600;
   }
-
   .list_box .type_list>input{
-    width: 200px;
+    width: 300px;
   }
-  .content {
-    width: 460px;
-    height: 420px;
-    margin: 0 auto;
+  .list_title {
+    height: 30px;
+    line-height: 10px;
+    text-align: center;
+    font-size: 26px;
+    font-weight: 600;
+  }
+  .power {
     text-align: left;
-    font-size: 16px;
+    color:#2c99d9;
+  }
+  .power div {
+    margin-bottom: 2px;
+  }
+  .uploader-list-container .placeholder .webuploader-pick {
+    padding: 2px 4px;
+    margin: 0;
+    line-height: 22px;
+    font-size: 12px;
   }
 </style>
 <body>
 {include file=../../mall/jiaju/header.html}
-  <div style="width: 100%;height: 660px;background:url('../../themes/mall/jiaju/images/register_bg.jpg') no-repeat;background-size: 100% 100%;position: relative;filter: blur(3px)"></div>
-  <div style="position: absolute;top: 260px;width: 100%;height: 620px;">
-      <div style="width: 100%;height:100%;">
+<div class="reg_main">
+      <div class="reg_box">
         <!-- 注册类别 -->
-        <div style="text-align: center;font-size: 22px;color: #fff;width: 1100px;margin: 0 auto;padding-bottom: 5px;border-bottom: 1px solid #fff;">会员注册中心</div>
-          <ul style="margin:0;padding: 0;list-style: none;color: #fff;height: auto;overflow: hidden;">
-            <li style="float: left;width:49%;text-align: center;margin-right: 2%;">
-              <a href="/index.php?app=store&act=reg_person" title="个人用户注册">
-                <img src="../../themes/mall/jiaju/images/reg_company.png" alt="" style="width: 100px;height:100px;padding:5px;cursor: pointer;">
-                <div style="padding: 12px 0;color: red;font-size: 18px;">个人用户注册</div>
-              
-                <div class="content" style="color: #fff;border: 1px solid #fff;padding: 0 20px;">
-                  <div style="margin:5px 0;font-size: 18px;font-weight: bold;text-align: center;">个人用户注册使用权限</div>
-                  <div>1、可在网站投放发布个人招聘和个人简历</div>
-                  <div>2、可搜索查询和发布推广相应的材料品牌及材料商用户信息</div>
-                  <div>3、可搜索查询装饰行业的工程项目经理和工人用户具体信息</div>
-                  <div>4、注册账号，绑定网页PC端及APP应用端</div>
-                  <div>5、设置权限，确定身份</div>
-                  <div>6、数据建档、保存、调用、删减、分享</div>
-                  <div>7、可以快速找到名下注册人数明细、备注</div>
-                  <div>8、添加、删除家装需求信息，可同步与留言人对话</div>
-                  <div>9、可以即时与客服联系，重要信息提醒</div>
-                  <div>10、管理上传的文档、图片、视频、笔记</div>
-                  <div>11、集进度、请款、审批、质检、隐藏报验等11个常用功能</div>
-                  <div>12、发布最新资讯，可同步到微工程APP端</div>
-                  <div>13、发布自己产品及信息、装修公司及客户能找到并联系</div>
-                  <div>14、发布集采需求，新增材料询价功能</div>
-                </div>
-              </a>
-            </li>
-            <li style="float: left;width:49%;text-align: center;">
-              <a href="/index.php?app=store&act=reg_company" title="企业用户注册">
-                <img src="../../themes/mall/jiaju/images/reg_person.png" alt="" style="width: 100px;height:100px;padding:5px;cursor: pointer;">
-                <div style="padding: 12px 0;color: red;font-size: 18px;">企业用户注册</div>
+        <div id="register_type">
+          <div class="reg_title">会员注册中心</div>
+          <div style="border-bottom: 1px solid #999;margin-bottom: 40px;"></div>
+          <div>
+            <ul style="margin:0;padding: 0;list-style: none;">
+              <li style="float: left;width:50%;text-align: center;">
+                <img src="../../themes/mall/jiaju/images/reg_company.jpg" alt="" style="width: 65px;height:65px;padding:5px;cursor: pointer;" onclick="register(1)">
+                <div style="padding-top: 12px;color: #2c99d9;">个人用户注册</div>
+              </li>
+              <li style="float: left;width:50%;text-align: center;">
+                <img src="../../themes/mall/jiaju/images/reg_person.jpg" alt="" style="width: 65px;height:65px;padding:5px;cursor: pointer;" onclick="register(2)">
+                <div style="padding-top: 12px;color: #2c99d9;">企业用户注册</div>
+              </li>
+            </ul>
+          </div>
+        </div>
+  
+        <!-- 个人用户注册信息 -->
+        <div style="display: none;" id="register_message">
+          <form action="http://wgcapp.wgc2013.com/jingyi.php/Home/index/UserReg_pc" method="post" onsubmit="return jugdment()">
+            <div style="text-align: left;font-size: 30px;height: 12px;color: #2198dc;cursor: pointer;" title="返回选择注册类型" onclick="backtype(1)">←</div>
+            <div class="list_title">个人注册中心</div>
+            <div style="border-bottom: 1px solid #999;"></div>
+            <div class="list_box">
+              <div class="type_list">
+                <div>姓名：</div>
+                <input type="text" id="name" name="name" placeholder="请输入您的姓名">
+              </div>
+              <div class="type_list">
+                <div>职位：</div>
+                <input type="text" id="position" placeholder="请输入您的职位名称">
+                <input type="hidden" value="15" name="position" />
+              </div>
+              <div class="type_list">
+                <div>手机号码：</div>
+                <input type="text" id="user_name" name="user_name" placeholder="请输入手机号码">
+              </div>
+              <div class="type_list">
+                <div>邮箱：</div>
+                <input type="text" id="email" name="email" placeholder="请输入邮箱">
+              </div>
+              <div class="type_list">
+                <div>登录密码：</div>
+                <input type="password" id="password" name="password" maxlength="16" placeholder="请输入密码,最多16位">
+              </div>
+              <div class="type_list">
+                <div>确认密码：</div>
+                <input type="password" id="password_again" maxlength="16" placeholder="再次输入密码">
+              </div>
+              <div class="type_list">
+                <div>验证码：</div>
+                <input type="text" class="codes" style="width: 130px;margin-right: 66px;" placeholder="请输入验证码">
+                <img src="http://wgcapp.wgc2013.com/jingyi.php/Home/index/codes" alt="" style="width:100px;cursor: pointer;" onclick="this.src='http://wgcapp.wgc2013.com/jingyi.php/Home/index/codes'"/>
+              </div>
+            </div>
+            <div style="margin-bottom: 16px;">
+              <input type="checkbox" id="check_term" />
+              <span style="font-size:12px">我已阅读并同意<a style="color:#3498db;" target="_blank" href="/index.php?app=search&amp;act=tiaokuan">《微工程服务》</a>条款</span>
+            </div>
+            <input type="submit" style="width: 110px;height: 30px;border-radius: 4px;background-color: #2c99d9;text-align: center;color: #fff;line-height: 30px;margin: 0 auto;text-align: center;border:none;cursor: pointer;" value="立即注册">
+          </form>
+          <div style="width: 262px;margin: 0 auto;letter-spacing: 1px;">已有微工程账号，去<a href="/index.php?app=member&act=login&ret_url=" target="_blank"><span style="color: red;cursor: pointer;">登录</span></a></div>
 
-                <div class="content" style="color: #fff;border: 1px solid #fff;padding: 0 20px;">
-                  <div style="margin:5px 0;font-size: 18px;font-weight: bold;text-align: center;">企业用户注册使用权限</div>
-                  <div>1、可在网站投放发布企业招聘和用人单位信息</div>
-                  <div>2、可发布企业装饰项目和工程派单</div>
-                  <div>3、可推广发布企业新闻咨询信息广告信息</div>
-                  <div>4、可搜索查询和发布推广相应的才材料品牌及材料商用户信息</div>
-                  <div>5、可搜索查询装饰行业的工程项目经理和工人用户具体信息</div>
-                  <div>6、20个职位发布，10周知名企业标签</div>
-                  <div>7、自动匹配最适合的岗位推送</div>
-                  <div>8、查询各种材料最新价格</div>
-                  <div>9、项目当中的设计细分、外包</div>
-                  <div>10、收集到材料商发布的活动推广</div>
-                  <div>11、查询当地最新的工作照工明细</div>
-                  <div>12、网页位置广告位使用</div>
-                  <div>13、搜索到你需要的材料目前的供给公司、价格</div>
-                  <div>14、微工程首页广告位链接*1</div>
-                  <div>15、200G大空间享用</div>
-                  <div>16、微工程板块复制(安卓系统)、(苹果系统)</div>
-                  <div>17、预约公司人员功能使用培训，1次/季</div>
-                  <div>18、后台数据协助管理</div>
+          <div class="power">
+            <div style="font-size: 18px;margin-bottom: 4px;">个人用户注册</div>
+            <div>1)注册独立账号，PC端手机端通用;</div>
+            <div>2)分销商后台绑定:可设置权限、确定身份、数据建档、保存、调用、删减、分享、200G大空间;</div>
+            <div>3)基础应用功能:通讯录管理、项目管理、维修管理、内部管理、业务管理、积分等;</div>
+            <div>4)招聘功能:发布招聘;</div>
+            <div>5)推广功能:项目/预算分包、设计分包、材料推广;</div>
+            <div>6)查询功能:工人查询、工价查询、材料询价。</div>
+          </div>
+        </div>
+
+        <!-- 企业用户注册 -->
+        <div style="display: none;" id="register_company">
+          <form action="http://wgcapp.wgc2013.com/jingyi.php/Home/index/UserReg_pc" method="post" onsubmit="return jugdments()">
+            <div style="text-align: left;font-size: 30px;height: 12px;color: #2198dc;cursor: pointer;" title="返回选择注册类型" onclick="backtype(2)">←</div>
+            <div class="list_title">企业注册中心</div>
+            <div style="border-bottom: 1px solid #999;"></div>
+            <div class="list_box">
+              <div class="type_list">
+                <div>公司名称：</div>
+                <input type="text" id="company_name" name="fenxiaoshang_name" placeholder="">
+                <input id="company_name_hidden" type="hidden" name="kehu" value="" />
+              </div>
+              <div class="type_list" style="height: 24px;line-height: 24px;">
+                <div>公司类别：</div>
+                <div style="width:304px;text-align: center;">
+                  <label style="margin-right: 35px;"><input name="types" type="radio" value="3" />装修公司 </label> 
+                  <label style="margin-right: 35px;"><input name="types" type="radio" value="8" />材料商 </label> 
+                  <label><input name="types" type="radio" value="9" />施工队长 </label> 
                 </div>
-              </a>
-            </li>
-          </ul>
+              </div>
+              <div class="type_list">
+                <div>手机号码：</div>
+                <input type="text" id="user_names" name="user_name" placeholder="">
+              </div>
+              <div class="type_list">
+                <div>电子邮箱：</div>
+                <input type="text" id="emails" name="email" placeholder="">
+              </div>
+              <div class="type_list">
+                <div>用户名称：</div>
+                <input type="text" id="username" name="username" placeholder="">
+              </div>
+              <div class="type_list">
+                <div>登录密码：</div>
+                <input type="password" id="passwords" name="password" maxlength="16" placeholder="请输入密码,最多16位">
+              </div>
+              <div class="type_list">
+                <div>验证码：</div>
+                <input type="text" id="codes" style="width: 130px;margin-right: 66px;">
+                <img src="http://wgcapp.wgc2013.com/jingyi.php/Home/index/codes" alt="" style="width:100px;cursor: pointer;" onclick="this.src='http://wgcapp.wgc2013.com/jingyi.php/Home/index/codes'"/>
+              </div>
+              <div class="type_list">
+                <div>企业法人：</div>
+                <input type="text" id="legal_person" name="legal_person">
+              </div>
+              <div class="type_list" style="width: 434px;">
+                <div>营业执照：</div>
+                <div class="formControls col-xs-8 col-sm-9" style="width: 70%;padding: 0;">
+                  <div class="uploader-list-container" style="width: 100%;">
+                    <div class="queueList">
+                      <div id="dndArea" class="placeholder" style="min-height: 0;background-image: none;padding-top: 10px;">
+                        <div id="filePicker-2"></div>
+                        <p style="text-align: center;font-size: 14px;font-weight: 100;">请上传与单位证明资料一致的营业执照照片</p>
+                      </div>
+                    </div>
+                    <div class="statusBar" style="display:none;height: 40px;line-height: 40px;">
+                      <div class="progress"> <span class="text">0%</span> <span class="percentage"></span> </div>
+                      <div class="info"></div>
+                      <div class="btns" style="top: -45px;right: 0;">
+                        <div id="filePicker2"></div>
+                        <div class="uploadBtn" onclick="uploadBtn()">开始上传</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div>
+              <input type="checkbox" id="" />
+              <span style="font-size:12px">是否愿意公开企业资料在微工程平台招聘等信息</span>
+            </div>
+            <div style="margin-bottom: 10px;">
+              <input type="checkbox" id="check_terms" />
+              <span style="font-size:12px">我已阅读并同意<a style="color:#3498db;" target="_blank" href="/index.php?app=search&amp;act=tiaokuan">《微工程服务》</a>条款</span>
+            </div>
+              <input type="hidden" value="" id="ImgPath" name="businesslicense" />
+              <input type="hidden" value="4" name="shenfentype" />
+              <input type="hidden" value="8" name="types" />
+              <input type="hidden" value="" id="s_city" name="s_city" />
+              <input type="hidden" value="" id="s_province" name="s_province" />
+              <input type="hidden" value="38" name="postion" />
+              <input type="hidden" value="2" name="fenxiaoshang" />
+            <input type="submit" style="width: 110px;height: 30px;border-radius: 4px;background-color: #2c99d9;text-align: center;color: #fff;line-height: 30px;margin: 0 auto;text-align: center;border:none;cursor: pointer;" value="立即注册">
+          </form>
+          <div style="width: 262px;margin: 0 auto;letter-spacing: 1px;">已有微工程账号，去<a href="/index.php?app=member&act=login&ret_url=" target="_blank"><span style="color: red;cursor: pointer;">登录</span></a></div>
+
+          <div class="power">
+            <div style="font-size: 18px;margin-bottom: 4px;">企业用户权限</div>
+            <div>1)包含个人用户所有权限;</div>
+            <div>2)企业认证：上传营业执照，注册微工程VIP会员;</div>
+            <div>3)多职位发布招聘，智能匹配岗位推送;</div>
+            <div>4)增值服务功能：网页广告(加链接)/独立APP(安卓版)/预约培训，预约微工程人员功能使用培训1次/季;</div>
+            <div>5)KPI数据管理;</div>
+          </div>
         </div>
       </div>
-  </div>
+</div>
 {include file=../../mall/jiaju/footer.html}
 </body>
 <script type="text/javascript" src="../../themes/mall/jiaju/styles/default/js/jquery-1.3.2.min.js"></script>
-<script>
+<script type="text/javascript" src="../../themes/store/default/css/jquery-2.1.3.min.js"></script>
+<script type="text/javascript" src="../../themes/store/default/css/city-data.js"></script>
+<script type="text/javascript" src="../../themes/store/default/css/hzw-city-picker.min.js"></script>
+<!--_footer 作为公共模版分离出去-->
+<script type="text/javascript" src="/Public/lib/jquery/1.9.1/jquery.min.js"></script> 
+<script type="text/javascript" src="/Public/lib/layer/2.4/layer.js"></script>
+<script type="text/javascript" src="/Public/static/h-ui/js/H-ui.min.js"></script> 
+<script type="text/javascript" src="/Public/static/h-ui.admin/js/H-ui.admin.js"></script>
 
+<!--请在下方写此页面业务相关的脚本-->
+<script type="text/javascript" src="/Public/lib/form/jquery.form.min.js"></script>
+<script type="text/javascript" src="/Public/lib/My97DatePicker/4.8/WdatePicker.js"></script>
+<script type="text/javascript" src="/Public/lib/jquery.validation/1.14.0/jquery.validate.js"></script> 
+<script type="text/javascript" src="/Public/lib/jquery.validation/1.14.0/validate-methods.js"></script> 
+<script type="text/javascript" src="/Public/lib/jquery.validation/1.14.0/messages_zh.js"></script>
+<script type="text/javascript" src="/Public/lib/webuploader/0.1.5/webuploader.min.js"></script> 
+<script type="text/javascript" src="/Public/lib/ueditor/1.4.3/ueditor.config.js"></script>
+<script type="text/javascript" src="/Public/lib/ueditor/1.4.3/ueditor.all.min.js"> </script>
+<script type="text/javascript" src="/Public/lib/ueditor/1.4.3/lang/zh-cn/zh-cn.js"></script>
+<!--表单验证-->
+<script type="text/javascript" src="/Public/lib/jquery.validation/1.14.0/jquery.validate.js"></script> 
+<script type="text/javascript" src="/Public/lib/jquery.validation/1.14.0/validate-methods.js"></script> 
+<script type="text/javascript" src="/Public/lib/jquery.validation/1.14.0/messages_zh.js"></script>
+<script>
+  function register(type){
+    if(type==1){
+      $('.reg_main').css('height', '550px');
+      $('#register_type').hide();
+      $('#register_message').show();  
+    }else if(type==2){
+      $('.reg_main').css('height', '738px');
+      $('#register_type').hide();
+      $('#register_company').show();
+      $(".webuploader-pick").next().css({
+        "width" : "100%",
+        "height": "100%"
+      })
+    }
+  }
+  function backtype(type){
+    $('.reg_main').css('height', '500px');
+    if(type==1){
+      $('#register_type').show();
+      $('#register_message').hide();  
+    }else if(type==2){
+      $('#register_type').show();
+      $('#register_company').hide(); 
+    }
+  }
+  // 个人用户注册表单判断
+  function jugdment(){
+    if($('#name').val() == ''){
+      alert('请输入您的姓名');
+      return false;
+    }else if($('#position').val() == ''){
+      alert('请输入您的职位');
+      return false;
+    }else if($('#user_name').val() == ''){
+      alert('请输入手机号码');
+      return false;
+    }else if($('#email').val() == ''){
+      alert('请输入邮箱');
+      return false;
+    }else if($('#password').val() == ''){
+      alert('请输入密码');
+      return false;
+    }else if($('.codes').val() == ''){
+      alert('请输入验证码');
+      return false;
+    }else if($('#password').val() != $('#password_again').val()){
+      alert('您输入的两次密码不一样，请重新填写');
+      return false;
+    }else if($('#check_term').is(':checked') != true){
+      alert('请同意微工程服务在注册')
+      return false;
+    }else if(!$('#user_name').val().match(/^1\d{10}$/)){
+      alert('请输入正确的手机号码')
+      return false;
+    }
+  }
+
+  // 企业注册表单验证
+  function jugdments(){
+    if($('#company_name').val() == ''){
+      alert('请输入公司名称');
+      return false;
+    }else if($('#cityChoice').val() == ''){
+      alert('请选择城市');
+      return false;
+    }else if($('#linkman').val() == ''){
+      alert('请输入联系人');
+      return false;
+    }else if($('#user_names').val() == ''){
+      alert('请输入手机号码');
+      return false;
+    }else if($('#codes').val() == ''){
+      alert('请输入验证码');
+      return false;
+    }else if($('#emails').val() == ''){
+      alert('请输入邮箱');
+      return false;
+    }else if($('#username').val() == ''){
+      alert('请输入用户名称')
+      return false;
+    }else if($('#passwords').val() == ''){
+      alert('请输入密码');
+      return false;
+    }else if($('#legal_person').val() == ''){
+      alert('请输入法人');
+      return false;
+    }else if($('#ImgPath').val() == ''){
+      alert('请上传相关证件');
+      return false;
+    }else if($('#check_terms').is(':checked') != true){
+      alert('请阅读微工程之后在进行注册');
+      return false;
+    }else if(!$('#user_names').val().match(/^1\d{10}$/)){
+      alert('请输入正确的手机号码');
+      return false
+    }
+  }
+</script>
+<!-- 图片上传 -->
+<script type="text/javascript">
+$(function(){
+  $('.skin-minimal input').iCheck({
+    checkboxClass: 'icheckbox-blue',
+    radioClass: 'iradio-blue',
+    increaseArea: '20%'
+  });
+  
+  $list = $("#fileList"),
+  $btn = $("#btn-star"),
+  state = "pending",
+  uploader;
+
+  var uploader = WebUploader.create({
+    auto: true,
+    swf: '/Public/lib/webuploader/0.1.5/Uploader.swf',
+  
+    // 文件接收服务端。
+    server: '/Public/lib/webuploader/0.1.5/server/fileupload.php',
+  
+    // 选择文件的按钮。可选。
+    // 内部根据当前运行是创建，可能是input元素，也可能是flash.
+    pick: '#filePicker',
+  
+    // 不压缩image, 默认如果是jpeg，文件上传前会压缩一把再上传！
+    resize: false,
+    // 只允许选择图片文件。
+    accept: {
+      title: 'Images',
+      extensions: 'gif,jpg,jpeg,bmp,png',
+      mimeTypes: 'image/*'
+    }
+  });
+  
+  //表单验证
+  $("#form-admin-add").validate({
+    rules:{
+      logo:{
+        required:true, 
+      },
+      title:{
+        required:true, 
+      },
+      cid:{
+        required:true,
+      },
+      stock:{
+        required:true,
+      },
+      freight:{
+        required:true,
+      },
+      company:{
+        required:true,
+      },
+      deliverymode:{
+        required:true,
+      },
+      AfterSaleService:{
+        required:true,
+      },
+      colors:{
+        required:true,
+      },
+      placeoforigin:{
+        required:true,
+      },
+      material:{
+        required:true,
+      },
+      company:{
+        required:true,
+      },
+      weight:{
+        required:true,
+      },
+      sellingprice:{
+        required:true,
+      },
+      marketvalue:{
+        required:true,
+      },
+      costprice:{
+        required:true,
+      },
+      abbreviatedtitle:{
+        required:true,
+      },
+      weburl:{
+        required:true,
+      }
+    },
+    onkeyup:false,
+    focusCleanup:true,
+    success:"valid",
+    submitHandler:function(form){
+      $(form).ajaxSubmit({
+        type: 'post',
+        url: "<{:U('Goods/add_form')}>" ,
+        success: function(data){
+          if(data.status == 200){
+            layer.msg(data.content,{icon:1,time:8000});
+            var index = parent.layer.getFrameIndex(window.name);
+            parent.location.reload();
+            parent.$('.btn-refresh').click();
+            parent.layer.close(index);
+          }else{
+            layer.msg(data.content,{icon:1,time:8000});
+          }
+          
+        },
+                error: function(XmlHttpRequest, textStatus, errorThrown){
+          layer.msg('error!',{icon:1,time:8000});
+        }
+      });
+      //var index = parent.layer.getFrameIndex(window.name);
+      //parent.$('.btn-refresh').click();
+      //parent.layer.close(index);
+    }
+  });
+  
+  uploader.on( 'fileQueued', function( file ) {
+    var $li = $(
+      '<div id="' + file.id + '" class="item">' +
+        '<div class="pic-box"><img></div>'+
+        '<div class="info">' + file.name + '</div>' +
+        '<p class="state">等待上传...</p>'+
+      '</div>'
+    ),
+    $img = $li.find('img');
+    $list.append( $li );
+  
+    // 创建缩略图
+    // 如果为非图片文件，可以不用调用此方法。
+    // thumbnailWidth x thumbnailHeight 为 100 x 100
+    uploader.makeThumb( file, function( error, src ) {
+      if ( error ) {
+        $img.replaceWith('<span>不能预览</span>');
+        return;
+      }
+  
+      $img.attr( 'src', src );
+    }, thumbnailWidth, thumbnailHeight );
+  });
+  // 文件上传过程中创建进度条实时显示。
+  uploader.on( 'uploadProgress', function( file, percentage ) {
+    var $li = $( '#'+file.id ),
+      $percent = $li.find('.progress-box .sr-only');
+  
+    // 避免重复创建
+    if ( !$percent.length ) {
+      $percent = $('<div class="progress-box"><span class="progress-bar radius"><span class="sr-only" style="width:0%"></span></span></div>').appendTo( $li ).find('.sr-only');
+    }
+    $li.find(".state").text("上传中");
+    $percent.css( 'width', percentage * 100 + '%' );
+  });
+  
+  
+  
+  // 文件上传失败，显示上传出错。
+  uploader.on( 'uploadError', function( file ) {
+    $( '#'+file.id ).addClass('upload-state-error').find(".state").text("上传出错");
+  });
+  
+  // 完成上传完了，成功或者失败，先删除进度条。
+  uploader.on( 'uploadComplete', function( file ) {
+    $( '#'+file.id ).find('.progress-box').fadeOut();
+  });
+  uploader.on('all', function (type) {
+        if (type === 'startUpload') {
+            state = 'uploading';
+        } else if (type === 'stopUpload') {
+            state = 'paused';
+        } else if (type === 'uploadFinished') {
+            state = 'done';
+        }
+
+        if (state === 'uploading') {
+            $btn.text('暂停上传');
+        } else {
+            $btn.text('开始上传');
+        }
+    });
+
+    $btn.on('click', function () {
+        if (state === 'uploading') {
+            uploader.stop();
+        } else {
+            uploader.upload();
+        }
+    });
+
+});
+
+(function( $ ){
+    // 当domReady的时候开始初始化
+    $(function() {
+        var $wrap = $('.uploader-list-container'),
+
+            // 图片容器
+            $queue = $( '<ul class="filelist"></ul>' )
+                .appendTo( $wrap.find( '.queueList' ) ),
+
+            // 状态栏，包括进度和控制按钮
+            $statusBar = $wrap.find( '.statusBar' ),
+
+            // 文件总体选择信息。
+            $info = $statusBar.find( '.info' ),
+
+            // 上传按钮
+            $upload = $wrap.find( '.uploadBtn' ),
+
+            // 没选择文件之前的内容。
+            $placeHolder = $wrap.find( '.placeholder' ),
+
+            $progress = $statusBar.find( '.progress' ).hide(),
+
+            // 添加的文件数量
+            fileCount = 0,
+
+            // 添加的文件总大小
+            fileSize = 0,
+
+            // 优化retina, 在retina下这个值是2
+            ratio = window.devicePixelRatio || 1,
+
+            // 缩略图大小
+            thumbnailWidth = 110 * ratio,
+            thumbnailHeight = 110 * ratio,
+
+            // 可能有pedding, ready, uploading, confirm, done.
+            state = 'pedding',
+
+            // 所有文件的进度信息，key为file id
+            percentages = {},
+            // 判断浏览器是否支持图片的base64
+            isSupportBase64 = ( function() {
+                var data = new Image();
+                var support = true;
+                data.onload = data.onerror = function() {
+                    if( this.width != 1 || this.height != 1 ) {
+                        support = false;
+                    }
+                }
+                data.src = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==";
+                return support;
+            } )(),
+
+            // 检测是否已经安装flash，检测flash的版本
+            flashVersion = ( function() {
+                var version;
+
+                try {
+                    version = navigator.plugins[ 'Shockwave Flash' ];
+                    version = version.description;
+                } catch ( ex ) {
+                    try {
+                        version = new ActiveXObject('ShockwaveFlash.ShockwaveFlash')
+                                .GetVariable('$version');
+                    } catch ( ex2 ) {
+                        version = '0.0';
+                    }
+                }
+                version = version.match( /\d+/g );
+                return parseFloat( version[ 0 ] + '.' + version[ 1 ], 10 );
+            } )(),
+
+            supportTransition = (function(){
+                var s = document.createElement('p').style,
+                    r = 'transition' in s ||
+                            'WebkitTransition' in s ||
+                            'MozTransition' in s ||
+                            'msTransition' in s ||
+                            'OTransition' in s;
+                s = null;
+                return r;
+            })(),
+
+            // WebUploader实例
+            uploader;
+
+        if ( !WebUploader.Uploader.support('flash') && WebUploader.browser.ie ) {
+
+            // flash 安装了但是版本过低。
+            if (flashVersion) {
+                (function(container) {
+                    window['expressinstallcallback'] = function( state ) {
+                        switch(state) {
+                            case 'Download.Cancelled':
+                                alert('您取消了更新！')
+                                break;
+
+                            case 'Download.Failed':
+                                alert('安装失败')
+                                break;
+
+                            default:
+                                alert('安装已成功，请刷新！');
+                                break;
+                        }
+                        delete window['expressinstallcallback'];
+                    };
+
+                    var swf = 'expressInstall.swf';
+                    // insert flash object
+                    var html = '<object type="application/' +
+                            'x-shockwave-flash" data="' +  swf + '" ';
+
+                    if (WebUploader.browser.ie) {
+                        html += 'classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" ';
+                    }
+
+                    html += 'width="100%" height="100%" style="outline:0">'  +
+                        '<param name="movie" value="' + swf + '" />' +
+                        '<param name="wmode" value="transparent" />' +
+                        '<param name="allowscriptaccess" value="always" />' +
+                    '</object>';
+
+                    container.html(html);
+
+                })($wrap);
+
+            // 压根就没有安转。
+            } else {
+                $wrap.html('<a href="http://www.adobe.com/go/getflashplayer" target="_blank" border="0"><img alt="get flash player" src="http://www.adobe.com/macromedia/style_guide/images/160x41_Get_Flash_Player.jpg" /></a>');
+            }
+
+            return;
+        } else if (!WebUploader.Uploader.support()) {
+            alert( 'Web Uploader 不支持您的浏览器！');
+            return;
+        }
+
+        // 实例化
+        uploader = WebUploader.create({
+            pick: {
+                id: '#filePicker-2',
+                label: '点击选择图片'
+            },
+            formData: {
+                uid: 123
+            },
+            dnd: '#dndArea',
+            paste: '#uploader',
+            swf: '/Public/lib/webuploader/0.1.5/Uploader.swf',
+            chunked: true,
+      method : 'POST',
+      fileNumLimit : 1,
+      fileSizeLimit : 1,
+            chunkSize: 512 * 1024,
+            server: "http://wgcapp.wgc2013.com/jingyi.php/Home/uploads/user_index",
+            runtimeOrder: 'flash',
+      fileVal:'gimg',
+            accept: {
+                 title: 'Images',
+                 extensions: 'gif,jpg,jpeg,bmp,png',
+                 mimeTypes: 'image/*'
+            },
+            // 禁掉全局的拖拽功能。这样不会出现图片拖进页面的时候，把图片打开。
+            disableGlobalDnd: true,
+            fileNumLimit: 1,
+            fileSizeLimit: 200 * 1024 * 1024,        // 200 M
+            fileSingleSizeLimit: 50 * 1024 * 1024    // 50 M
+        });
+    
+    // 文件上传成功，给item添加成功class, 用样式标记上传成功。
+    uploader.on( 'uploadSuccess', function(file,response ) {
+      //var str = JSON.stringify(response);  
+      //var filepath = JSON.stringify(file);  
+      
+      
+      var paths = response.path;
+      // console.log("file"+file)
+      // console.log("str"+response.path)
+
+      var $ImgPath = $("#ImgPath").val();
+
+      var ImgUrl = $ImgPath+','+paths;
+
+      if(ImgUrl.substr(0,1) == ","){
+        ImgUrl = ImgUrl.substr(1)
+      }
+
+      $("#ImgPath").val(ImgUrl);
+
+      var vals = $("#ImgPath").val();
+
+      
+      
+      $("#ImgPath").val(vals);
+      console.log(vals);
+      
+
+      $("#gimg").append("<input type='hidden' value='"+response._raw+"' name='gimg[]'/>");
+      $( '#'+file.id ).addClass('upload-state-success').find(".state").text("已上传");
+    });
+    
+    
+
+        // 拖拽时不接受 js, txt 文件。
+        uploader.on( 'dndAccept', function( items ) {
+            var denied = false,
+                len = items.length,
+                i = 0,
+                // 修改js类型
+                unAllowed = 'text/plain;application/javascript ';
+
+            for ( ; i < len; i++ ) {
+                // 如果在列表里面
+                if ( ~unAllowed.indexOf( items[ i ].type ) ) {
+                    denied = true;
+                    break;
+                }
+            }
+
+            return !denied;
+        });
+
+        uploader.on('dialogOpen', function() {
+            console.log('here');
+        });
+
+        uploader.on('ready', function() {
+            window.uploader = uploader;
+        });
+
+        // 当有文件添加进来时执行，负责view的创建
+        function addFile( file ) {
+            var $li = $( '<li id="' + file.id + '">' +
+                    '<p class="title">' + file.name + '</p>' +
+                    '<p class="imgWrap"></p>'+
+                    '<p class="progress"><span></span></p>' +
+                    '</li>' ),
+
+                $btns = $('<div class="file-panel">' +
+                    '<span class="cancel">删除</span>' +
+                    '<span class="rotateRight">向右旋转</span>' +
+                    '<span class="rotateLeft">向左旋转</span></div>').appendTo( $li ),
+                $prgress = $li.find('p.progress span'),
+                $wrap = $li.find( 'p.imgWrap' ),
+                $info = $('<p class="error"></p>'),
+
+                showError = function( code ) {
+                    switch( code ) {
+                        case 'exceed_size':
+                            text = '文件大小超出';
+                            break;
+
+                        case 'interrupt':
+                            text = '上传暂停';
+                            break;
+
+                        default:
+                            text = '上传失败，请重试';
+                            break;
+                    }
+
+                    $info.text( text ).appendTo( $li );
+                };
+
+            if ( file.getStatus() === 'invalid' ) {
+                showError( file.statusText );
+            } else {
+                // @todo lazyload
+                $wrap.text( '预览中' );
+                uploader.makeThumb( file, function( error, src ) {
+                    var img;
+
+                    if ( error ) {
+                        $wrap.text( '不能预览' );
+                        return;
+                    }
+
+                    if( isSupportBase64 ) {
+                        img = $('<img src="'+src+'">');
+                        $wrap.empty().append( img );
+                    } else {
+                        $.ajax('/Public/lib/webuploader/0.1.5/server/preview.php', {
+                            method: 'POST',
+                            data: src,
+                            dataType:'json'
+                        }).done(function( response ) {
+                            if (response.result) {
+                                img = $('<img src="'+response.result+'">');
+                                $wrap.empty().append( img );
+                            } else {
+                                $wrap.text("预览出错");
+                            }
+                        });
+                    }
+                }, thumbnailWidth, thumbnailHeight );
+
+                percentages[ file.id ] = [ file.size, 0 ];
+                file.rotation = 0;
+            }
+
+            file.on('statuschange', function( cur, prev ) {
+                if ( prev === 'progress' ) {
+                    $prgress.hide().width(0);
+                } else if ( prev === 'queued' ) {
+                    $li.off( 'mouseenter mouseleave' );
+                    $btns.remove();
+                }
+
+                // 成功
+                if ( cur === 'error' || cur === 'invalid' ) {
+                    console.log( file.statusText );
+                    showError( file.statusText );
+                    percentages[ file.id ][ 1 ] = 1;
+                } else if ( cur === 'interrupt' ) {
+                    showError( 'interrupt' );
+                } else if ( cur === 'queued' ) {
+                    percentages[ file.id ][ 1 ] = 0;
+                } else if ( cur === 'progress' ) {
+                    $info.remove();
+                    $prgress.css('display', 'block');
+                } else if ( cur === 'complete' ) {
+                    $li.append( '<span class="success"></span>' );
+                }
+
+                $li.removeClass( 'state-' + prev ).addClass( 'state-' + cur );
+            });
+
+            $li.on( 'mouseenter', function() {
+                $btns.stop().animate({height: 30});
+            });
+
+            $li.on( 'mouseleave', function() {
+                $btns.stop().animate({height: 0});
+            });
+
+            $btns.on( 'click', 'span', function() {
+                var index = $(this).index(),
+                    deg;
+
+                switch ( index ) {
+                    case 0:
+                        uploader.removeFile( file );
+                        return;
+
+                    case 1:
+                        file.rotation += 90;
+                        break;
+
+                    case 2:
+                        file.rotation -= 90;
+                        break;
+                }
+
+                if ( supportTransition ) {
+                    deg = 'rotate(' + file.rotation + 'deg)';
+                    $wrap.css({
+                        '-webkit-transform': deg,
+                        '-mos-transform': deg,
+                        '-o-transform': deg,
+                        'transform': deg
+                    });
+                } else {
+                    $wrap.css( 'filter', 'progid:DXImageTransform.Microsoft.BasicImage(rotation='+ (~~((file.rotation/90)%4 + 4)%4) +')');
+                    // use jquery animate to rotation
+                    // $({
+                    //     rotation: rotation
+                    // }).animate({
+                    //     rotation: file.rotation
+                    // }, {
+                    //     easing: 'linear',
+                    //     step: function( now ) {
+                    //         now = now * Math.PI / 180;
+
+                    //         var cos = Math.cos( now ),
+                    //             sin = Math.sin( now );
+
+                    //         $wrap.css( 'filter', "progid:DXImageTransform.Microsoft.Matrix(M11=" + cos + ",M12=" + (-sin) + ",M21=" + sin + ",M22=" + cos + ",SizingMethod='auto expand')");
+                    //     }
+                    // });
+                }
+
+
+            });
+
+            $li.appendTo( $queue );
+        }
+
+        // 负责view的销毁
+        function removeFile( file ) {
+            var $li = $('#'+file.id);
+
+            delete percentages[ file.id ];
+            updateTotalProgress();
+            $li.off().find('.file-panel').off().end().remove();
+        }
+
+        function updateTotalProgress() {
+            var loaded = 0,
+                total = 0,
+                spans = $progress.children(),
+                percent;
+
+            $.each( percentages, function( k, v ) {
+                total += v[ 0 ];
+                loaded += v[ 0 ] * v[ 1 ];
+            } );
+
+            percent = total ? loaded / total : 0;
+
+
+            spans.eq( 0 ).text( Math.round( percent * 100 ) + '%' );
+            spans.eq( 1 ).css( 'width', Math.round( percent * 100 ) + '%' );
+            updateStatus();
+        }
+
+        function updateStatus() {
+            var text = '', stats;
+
+            if ( state === 'ready' ) {
+                text = '选中' + fileCount + '张图片，共' +
+                        WebUploader.formatSize( fileSize ) + '。';
+            } else if ( state === 'confirm' ) {
+                stats = uploader.getStats();
+                if ( stats.uploadFailNum ) {
+                    text = '已成功上传' + stats.successNum+ '张照片至XX相册，'+
+                        stats.uploadFailNum + '张照片上传失败，<a class="retry" href="#">重新上传</a>失败图片或<a class="ignore" href="#">忽略</a>'
+                }
+
+            } else {
+                stats = uploader.getStats();
+                text = '共' + fileCount + '张（' +
+                        WebUploader.formatSize( fileSize )  +
+                        '），已上传' + stats.successNum + '张';
+
+                if ( stats.uploadFailNum ) {
+                    text += '，失败' + stats.uploadFailNum + '张';
+                }
+            }
+
+            $info.html( text );
+        }
+
+        function setState( val ) {
+            var file, stats;
+
+            if ( val === state ) {
+                return;
+            }
+
+            $upload.removeClass( 'state-' + state );
+            $upload.addClass( 'state-' + val );
+            state = val;
+      
+            switch ( state ) {
+                case 'pedding':
+                    $placeHolder.removeClass( 'element-invisible' );
+                    $queue.hide();
+                    $statusBar.addClass( 'element-invisible' );
+                    uploader.refresh();
+                    break;
+
+                case 'ready':
+                    $placeHolder.addClass( 'element-invisible' );
+                    $( '#filePicker2' ).removeClass( 'element-invisible');
+                    $queue.show();
+                    $statusBar.removeClass('element-invisible');
+                    uploader.refresh();
+                    break;
+
+                case 'uploading':
+                    $( '#filePicker2' ).addClass( 'element-invisible' );
+                    $progress.show();
+                    $upload.text( '暂停上传' );
+                    break;
+
+                case 'paused':
+                    $progress.show();
+                    $upload.text( '继续上传' );
+                    break;
+
+                case 'confirm':
+                    $progress.hide();
+                    $( '#filePicker2' ).removeClass( 'element-invisible' );
+                    $upload.text( '开始上传' );
+
+                    stats = uploader.getStats();
+                    if ( stats.successNum && !stats.uploadFailNum ) {
+                        setState( 'finish' );
+                        return;
+                    }
+                    break;
+                case 'finish':
+                    stats = uploader.getStats();
+                    if ( stats.successNum ) {
+            layer.msg('上传成功',{icon:1,time:3000});
+                    } else {
+                        // 没有成功的图片，重设
+                        state = 'done';
+                        location.reload();
+                    }
+                    break;
+            }
+
+            updateStatus();
+        }
+
+        uploader.onUploadProgress = function( file, percentage ) {
+            var $li = $('#'+file.id),
+                $percent = $li.find('.progress span');
+
+            $percent.css( 'width', percentage * 100 + '%' );
+            percentages[ file.id ][ 1 ] = percentage;
+            updateTotalProgress();
+        };
+
+        uploader.onFileQueued = function( file ) {
+            fileCount++;
+            fileSize += file.size;
+
+            if ( fileCount === 1 ) {
+                $placeHolder.addClass( 'element-invisible' );
+                $statusBar.show();
+            }
+
+            addFile( file );
+            setState( 'ready' );
+            updateTotalProgress();
+        };
+
+        uploader.onFileDequeued = function( file ) {
+            fileCount--;
+            fileSize -= file.size;
+
+            if ( !fileCount ) {
+                setState( 'pedding' );
+            }
+
+            removeFile( file );
+            updateTotalProgress();
+
+        };
+
+        uploader.on( 'all', function( type ) {
+            var stats;
+            switch( type ) {
+                case 'uploadFinished':
+                    setState( 'confirm' );
+                    break;
+
+                case 'startUpload':
+                    setState( 'uploading' );
+                    break;
+
+                case 'stopUpload':
+                    setState( 'paused' );
+                    break;
+
+            }
+        });
+
+        uploader.onError = function( code ) {
+            alert( 'Eroor: ' + code );
+        };
+
+        $upload.on('click', function() {
+            if ( $(this).hasClass( 'disabled' ) ) {
+                return false;
+            }
+
+            if ( state === 'ready' ) {
+                uploader.upload();
+            } else if ( state === 'paused' ) {
+                uploader.upload();
+            } else if ( state === 'uploading' ) {
+                uploader.stop();
+            }
+        });
+
+        $info.on( 'click', '.retry', function() {
+            uploader.retry();
+        } );
+
+        $info.on( 'click', '.ignore', function() {
+            alert( 'todo' );
+        } );
+
+        $upload.addClass( 'state-' + state );
+        updateTotalProgress();
+    });
+
+})( jQuery );
 </script>
 </html>
