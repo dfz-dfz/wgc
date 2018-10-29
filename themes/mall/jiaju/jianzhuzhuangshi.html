@@ -8,7 +8,6 @@
 <meta name="description" content="微工程，微工程APP，装修、材料、家具、饰品一站式服务，让装修更简单，价格更透明！！" />
 <meta name="keywords" content="微工程，微工程，家居商城，微工程家居商城，微工程家居装修商城，办公室装修，写字楼装修，材料，装修材料，家居，办公家具，家居，家具，装修，装饰" />
 <link rel="stylesheet" type="text/css" href="themes/mall/jiaju/css/api.css"/>
-
 <link rel="stylesheet" type="text/css" href="themes/mall/jiaju/css/aui.1.0.css"/>
 <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
 <script src="/themes/mall/jiaju/js/tool.js"></script>
@@ -87,10 +86,24 @@ var PRICE_FORMAT = '&yen;%s';
 			<input type="button" onclick="searchList()" alt="" style="background-color:#fe6200;color:#fff;width: 84px;height: 54px;margin-top: -16px;cursor: pointer;font-size: 24px;letter-spacing: 2px;" value="搜索">
 		</div>
 		<div id="apply_box">
-			<span>公司名称:</span><input type="text" />
-			<span>公司网址:</span><input type="text" />
-			<span>所在取区域:</span><input type="text" />
-			<input type="button" class="apply" value="确认申请" />
+			<form action="http://wgcapp.wgc2013.com/jingyi.php/Home/Material/cailiaoshangadd" method="post" onsubmit="return jugdment()">
+				<span>公司名称:</span><input id="office_name" name="office_name" type="text" />
+				<span>公司网址:</span><input id="web" name="web" type="text" />
+				<span>所在取区域:</span><input id="addr" name="addr" type="text" />
+				<input type="hidden" name="listtype" value="2"/>
+				<input type="hidden" name="name" value=""/>
+				<input type="hidden" name="title" value=""/>
+				<input type="hidden" name="tel" value=""/>
+				<input type="hidden" name="fax" value=""/>
+				<input type="hidden" name="mobile" value=""/>
+				<input type="hidden" name="email" value=""/>
+				<input type="hidden" name="businessscope" value=""/>
+				<input type="hidden" name="description" value=""/>
+				<input type="hidden" name="hasmoney" value="0"/>
+				<input type="hidden" name="type" value=""/>
+				<input type="hidden" name="userid" value="<?php echo $_SESSION["user_info"]["user_id"];?>"/>
+				<input type="submit" class="apply" value="确认申请" />
+			</form>
 		</div>
 	</div>
 	<div style="width: 1100px;margin: 10px auto;">
@@ -138,6 +151,17 @@ var PRICE_FORMAT = '&yen;%s';
 		
 	});
 	
+	// 表单验证
+	function jugdment(){
+		var office_name = $('#office_name').val();
+		var web = $('#web').val();
+		var addr = $('#addr').val();
+
+		if(office_name == '' || web == '' || addr == ''){
+			alert('请填写完整的信息之后在提交!');
+			return false;
+		}
+	}
 </script>
 </body>
 </html>

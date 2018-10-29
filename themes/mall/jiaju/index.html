@@ -279,15 +279,17 @@ border:1px solid #808080;width:100%;height:66px;margin-bottom:3px;
 					</a>
 				</div>
 				<div class="aui-content aui-margin-b-15" id='lists'>
-					<?php
-						$query="select * from ecm_material WHERE cai_type=3 or rev_uid='' order by id desc limit 0,10"; //定义sql
+					<?php					
+						$query="SELECT a.*, b.postion FROM ecm_qiuzhi a LEFT JOIN ecm_member b ON a.user_id = b.user_id order by A.user_id desc limit 0,10"; //定义sql
 						$result=mysql_query($query);
 						while($rows1=@mysql_fetch_array($result)){
-							 
+							$index = $rows1['postion'];
+							var_dump($cate[1]);
+							$postion = ($index > 0)?$cate[1]:'无工种';
 							  echo  "<li style='height:24px;line-height:24px;margin-bottom:1px;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;'>";
 							  echo  "<a target='_blank' href='index.php?app=search&act=cailiaoxunjia_content&id=".$rows1['id']."'>";
-							  echo  "<span style='display: inline-block;width: 150px;margin-left: 2px;overflow: hidden;text-overflow: ellipsis;' title=''>".$rows1['m_name']."</span>";
-							  echo  "<span style='margin-left: 2px;width: 200px;display: inline-block;overflow: hidden;text-overflow: ellipsis;'>".$rows1['office_name']."</span>";
+							  echo  "<span style='display: inline-block;width: 150px;margin-left: 2px;overflow: hidden;text-overflow: ellipsis;' title=''>".$rows1['postion']."</span>";
+							  echo  "<span style='margin-left: 2px;width: 200px;display: inline-block;overflow: hidden;text-overflow: ellipsis;'>".$rows1['xiangxi']."</span>";
 							  echo  "  <span style='float:right;margin-right:5px;'>".date('Y-m-d H:i:s',$rows1['addtime'])."</span>";
 							  echo  "</a>";
 							  echo  "</li>";
@@ -316,7 +318,7 @@ border:1px solid #808080;width:100%;height:66px;margin-bottom:3px;
 				</div>
 				<div class="aui-content aui-margin-b-15" id='lists'>
 					<?php
-						$query="select * from ecm_material WHERE cai_type=1 or rev_uid='' order by id desc limit 0,10"; //定义sql
+						$query="select * from ecm_qiuzhi WHERE cai_type=1 or rev_uid='' order by id desc limit 0,10"; //定义sql
 						$result=mysql_query($query);
 						while($rows1=@mysql_fetch_array($result)){
 							 
