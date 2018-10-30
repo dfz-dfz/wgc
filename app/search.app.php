@@ -1,5 +1,14 @@
 ﻿<?php
 session_start(); 
+//判断是否登陆
+$userid = $_SESSION["user_info"]["user_id"];
+
+
+if($userid < 1 && $_GET['user_id'] < 1){
+	echo "<script>alert('请先登陆！');window.location.href='/index.php?app=member&act=login&ret_url=';</script>";exit;
+}
+
+
 /* 定义like语句转换为in语句的条件 */
 define('MAX_ID_NUM_OF_IN', 10000); // IN语句的最大ID数
 define('MAX_HIT_RATE', 0.05);      // 最大命中率（满足条件的记录数除以总记录数）
@@ -188,6 +197,18 @@ class SearchApp extends MallbaseApp
 	}//个人中心个人发布列表
 	function user_cailiao(){
 		$this->display('user_cailiao.html');
+	}
+	//个人中心无活找工
+	function user_wuhuo(){
+		$this->display('user_wuhuo.html');
+	}
+	//个人中心招工
+	function user_zhaogong(){
+		$this->display('user_zhaogong.html');
+	}
+	//个人中心个人发布材料合作商
+	function user_cailiaohzs(){
+		$this->display('user_cailiaohzs.html');
 	}
 	function user_show_list(){
 		$this->display('user_show_list.html');
@@ -1061,6 +1082,11 @@ class SearchApp extends MallbaseApp
 		$this->display('zhaopinsearch.html');
 	}
 
+	//人才推荐列表
+	function recaituijianlist(){
+		$this->display('recaituijianlist.html');	
+	}
+
 	//维修报价列表
 	function weixiulist(){
 		$this->display('weixiusearch.html');	
@@ -1154,6 +1180,27 @@ class SearchApp extends MallbaseApp
 	function gongjia_content(){
 		$this->assign('id', $_GET['id']);
 		$this->display('gongjia_content.html');
+	}
+
+	//无活找工
+	function wuhuozhaogong(){
+		
+		$this->display('wuhuozhaogong_list.html');
+	}
+	//无活找工详情
+	function wuhuozhaogong_content(){
+		
+		$this->display('wuhuozhaogong_content.html');
+	}
+	//招工
+	function zhaogong(){
+		
+		$this->display('zhaogong_list.html');
+	}
+	//无活找工详情
+	function zhaogong_content(){
+		
+		$this->display('zhaogong_content.html');
 	}
 	//APP下载
 	function xiazai(){
