@@ -69,7 +69,7 @@ var PRICE_FORMAT = '&yen;%s';
 </head>
 <body>
 {include file=header.html}
-	<div>
+	<div style="height: auto;overflow: hidden;padding-bottom: 10px;">
 		<div>
 			<img src="/themes/mall/jiaju/images/rencaituijian_gg.jpg" alt="" style="width: 100%;" />
 			<div style="width: 1100px;margin: 10px auto;">
@@ -152,13 +152,12 @@ var PRICE_FORMAT = '&yen;%s';
 					<div style="position: absolute;border-bottom: 2px solid #fff;top: 50%;width: 100%;"></div>
 				</div>
 			</div>
-
-			<!-- 集采合作供应商 -->
-			<a target="_blank" href="/index.php?app=search&amp;act=gongyingshang">
-				<img src="/themes/mall/jiaju/images/jchzgys.jpg" alt="" style="width: 100%;cursor: pointer;"/>
-			</a>
 		</div>
 	</div>
+	<!-- 集采合作供应商 -->
+	<a target="_blank" href="/index.php?app=search&amp;act=gongyingshang">
+		<img src="/themes/mall/jiaju/images/jchzgys.jpg" alt="" style="width: 1100px;margin:0 auto;cursor: pointer;"/>
+	</a>
 {include file=footer.html}
 <script type="text/javascript">
 	var page = 1;
@@ -201,7 +200,8 @@ var PRICE_FORMAT = '&yen;%s';
 		    addr           : address,
 		    type           : type,
 		    hasmoney       : hasmoney,
-		    web            : company_url
+		    web            : company_url,
+		    listtype       : 1
 		}, function(ret) {
 			if(ret.code == 200){
 				window.location.reload();
@@ -216,7 +216,8 @@ var PRICE_FORMAT = '&yen;%s';
 		$.post(url+'jingyi.php/Home/Material/cailiaoshanglist', {
 			page    : page,
 	    	key     : key,
-	    	limit   : 30
+	    	limit   : 30,
+	    	listtype : 1
 		}, function(ret) {
 			page++;
 			if(ret.code == 200){

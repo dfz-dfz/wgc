@@ -209,7 +209,7 @@
 			if(ret.code == 200){
 				$.post(url+'jingyi.php/Home/User/xunjia_lists_content', {id : id,type : 1}, function(ret) {
 					var mobiles = (ret.message.tel == '' || ret.message.tel == null)?'该信息没有填写联系方式!':'联系方式：'+ret.message.tel;
-					$('.link').html('<div id="mobile">'+mobiles+'</div>');
+					$('.link').html('<div id="mobile" style="font-size:18px;">'+mobiles+'</div>');
 				},"json");
 			}else if(ret.code == 202){
 				var logoHtml = '<div>请<a href="index.php?app=member&act=login&ret_url=" target="_blank" style="cursor:pointer;color:blue;">登录</a>之后在联系</div>';
@@ -217,7 +217,7 @@
 			}else if(ret.code == 203){
 				$.post(url+'jingyi.php/Home/User/xunjia_lists_content', {id : id,type : 1}, function(ret) {
 					var mobiles = (ret.message.tel == '' || ret.message.tel == null)?'该信息没有填写联系方式!':'联系方式：'+ret.message.tel;
-					$('.link').html('<div id="mobile">'+mobiles+'</div>');
+					$('.link').html('<div id="mobile" style="font-size:18px;">'+mobiles+'</div>');
 				},"json");
 			}
 		},'json');

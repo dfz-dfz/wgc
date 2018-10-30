@@ -259,7 +259,7 @@ border:1px solid #808080;width:100%;height:66px;margin-bottom:3px;
 <!--无活招工-->
 <div style="padding:0px; margin-left:auto;margin-right:auto;margin-bottom:10px;width:1200px;">
 	<div class="divcss0"style="border-bottom: 1px solid #999;">
-		<span class="span010"><a target='_blank' href="index.php?app=search&act=caigou">无活招工</a></span>
+		<span class="span010"><a target='_blank' href="index.php?app=search&act=caigou">无活找工</a></span>
 		<span class="span011"><a target='_blank' href="index.php?app=search&act=caigou"></a></span>
 	</div>
 	<div style="margin:0px;padding:0px;width:100%;min-height:280px;">
@@ -272,7 +272,7 @@ border:1px solid #808080;width:100%;height:66px;margin-bottom:3px;
 			
 				<div class="divcsschld">
 					<div class="divcsschld1">
-						<span style="background-color: #e8e8e8;font-size: 14px;display: inline-block;width: 60px;height: 100%;line-height: 25px;">无活招工</span>
+						<span style="background-color: #e8e8e8;font-size: 14px;display: inline-block;width: 60px;height: 100%;line-height: 25px;">无活找工</span>
 					</div>
 					<a target='_blank' href="index.php?app=search&act=wuhuozhaogong">
 						<span class="span011">更多</span>
@@ -280,15 +280,15 @@ border:1px solid #808080;width:100%;height:66px;margin-bottom:3px;
 				</div>
 				<div class="aui-content aui-margin-b-15" id='lists'>
 					<?php					
-						$query="SELECT a.*, b.postion FROM ecm_qiuzhi a LEFT JOIN ecm_member b ON a.user_id = b.user_id order by A.user_id desc limit 0,10"; //定义sql
+						$query="SELECT a.*, b.postion FROM ecm_qiuzhi a LEFT JOIN ecm_member b ON a.user_id = b.user_id where a.type=1 order by a.id desc limit 0,10"; //定义sql
 						$result=mysql_query($query);
 						while($rows1=@mysql_fetch_array($result)){
 							$index = $rows1['postion'];
-							var_dump($cate[1]);
-							$postion = ($index > 0)?$cate[1]:'无工种';
+							//var_dump($cate[1]);
+							$postion = ($index > 0)?$cate[$index]:'无工种';
 							  echo  "<li style='height:24px;line-height:24px;margin-bottom:1px;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;'>";
-							  echo  "<a target='_blank' href='index.php?app=search&act=cailiaoxunjia_content&id=".$rows1['id']."'>";
-							  echo  "<span style='display: inline-block;width: 150px;margin-left: 2px;overflow: hidden;text-overflow: ellipsis;' title=''>".$rows1['postion']."</span>";
+							  echo  "<a target='_blank' href='/index.php?app=search&act=wuhuozhaogong_content&id=".$rows1['id']."&uid=".$rows1['user_id']."'>";
+							  echo  "<span style='display: inline-block;width: 150px;margin-left: 2px;overflow: hidden;text-overflow: ellipsis;' title=''>".$rows1['title']."</span>";
 							  echo  "<span style='margin-left: 2px;width: 200px;display: inline-block;overflow: hidden;text-overflow: ellipsis;'>".$rows1['xiangxi']."</span>";
 							  echo  "  <span style='float:right;margin-right:5px;'>".date('Y-m-d H:i:s',$rows1['addtime'])."</span>";
 							  echo  "</a>";
@@ -318,14 +318,16 @@ border:1px solid #808080;width:100%;height:66px;margin-bottom:3px;
 				</div>
 				<div class="aui-content aui-margin-b-15" id='lists'>
 					<?php
-						$query="select * from ecm_qiuzhi WHERE cai_type=1 or rev_uid='' order by id desc limit 0,10"; //定义sql
+						$query="SELECT a.*, b.postion FROM ecm_qiuzhi a LEFT JOIN ecm_member b ON a.user_id = b.user_id where a.type=2 order by a.id desc limit 0,10"; //定义sql
 						$result=mysql_query($query);
 						while($rows1=@mysql_fetch_array($result)){
-							 
+							 $index = $rows1['jobtype'];
+							//var_dump($cate[1]);
+							$postion = ($index > 0)?$cate[$index]:'无工种';
 							  echo  "<li style='height:24px;line-height:24px;margin-bottom:1px;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;'>";
-							  echo  "<a target='_blank' href='index.php?app=search&act=content_caigou&id=".$rows1['id']."&cai_type=2'>";
-							  echo  "<span style='display: inline-block;width: 150px;margin-left: 2px;overflow: hidden;text-overflow: ellipsis;' title=''>".$rows1['m_name']."</span>";
-							  echo  "<span style='margin-left: 2px;width: 200px;display: inline-block;overflow: hidden;text-overflow: ellipsis;'>".$rows1['office_name']."</span>";
+							  echo  "<a target='_blank' href='/index.php?app=search&act=zhaogong_content&id=".$rows1['id']."&uid=".$rows1['user_id']."'>";
+							  echo  "<span style='display: inline-block;width: 150px;margin-left: 2px;overflow: hidden;text-overflow: ellipsis;' title=''>".$postion."</span>";
+							  echo  "<span style='margin-left: 2px;width: 200px;display: inline-block;overflow: hidden;text-overflow: ellipsis;'>".$rows1['xiangxi']."</span>";
 							  echo  "  <span style='float:right;margin-right:5px;'>".date('Y-m-d H:i:s',$rows1['addtime'])."</span>";
 							  echo  "</a>";
 							  echo  "</li>";

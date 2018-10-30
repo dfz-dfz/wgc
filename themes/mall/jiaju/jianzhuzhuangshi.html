@@ -83,7 +83,7 @@ var PRICE_FORMAT = '&yen;%s';
 		</div>
 		<div style="height: 54px;margin: 15px auto;">
 			<input id="key" type="text" style="height: 54px;width: 1012px;padding: 20px;border: 1px solid #fe6200;font-size: 18px;" placeholder="请输入关键词搜索">
-			<input type="button" onclick="searchList()" alt="" style="background-color:#fe6200;color:#fff;width: 84px;height: 54px;margin-top: -16px;cursor: pointer;font-size: 24px;letter-spacing: 2px;" value="搜索">
+			<input type="button" onclick="jianzhuzhuangshi_list()" alt="" style="background-color:#fe6200;color:#fff;width: 84px;height: 54px;margin-top: -16px;cursor: pointer;font-size: 24px;letter-spacing: 2px;" value="搜索">
 		</div>
 		<div id="apply_box">
 			<form action="http://wgcapp.wgc2013.com/jingyi.php/Home/Material/cailiaoshangadd" method="post" onsubmit="return jugdment()">
@@ -115,16 +115,11 @@ var PRICE_FORMAT = '&yen;%s';
 			</ul>
 
 			<ul class="mainList">
-				<!-- <li>
-					<ul class="littleBox">
-						<li style="width: 70%">公司名称</li>
-						<li style="width: 30%">区域</li>
-					</ul>
-				</li> -->
+				
 			</ul>
 			<div class="unpages" id="unpage" style="margin:50px auto;width: 200px;text-align: center;">
-				<a style="background:red;color:#fff;width: 70px;height: 30px;line-height: 30px;padding:4px 5px;cursor:pointer;margin-right: 20px;" onclick="uppage()">上一页</a>
-				<a style="background:red;color:#fff;width: 70px;height: 30px;line-height: 30px;padding:4px 5px;cursor:pointer;" onclick="nextpage()">下一页</a>
+				<a id="prepage" style="background:red;color:#fff;width: 70px;height: 30px;line-height: 30px;padding:4px 5px;cursor:pointer;margin-right: 20px;" onclick="prepage()">上一页</a>
+				<a id="nextpage" style="background:red;color:#fff;width: 70px;height: 30px;line-height: 30px;padding:4px 5px;cursor:pointer;" onclick="nextpage()">下一页</a>
 			</div>
 		</div>
 		
@@ -147,8 +142,10 @@ var PRICE_FORMAT = '&yen;%s';
 </div>
 {include file=footer.html}
 <script type="text/javascript">
+	var page = 1;
+
 	$().ready(function() {
-		
+		jianzhuzhuangshi_list(page);
 	});
 	
 	// 表单验证
@@ -161,6 +158,53 @@ var PRICE_FORMAT = '&yen;%s';
 			alert('请填写完整的信息之后在提交!');
 			return false;
 		}
+	}
+
+	// 获取建筑装饰列表
+	function jianzhuzhuangshi_list(page){
+		var key = $('#key').val();
+		$.post(url+'jingyi.php/Home/Material/cailiaoshanglist', {
+			page    : page,
+	    	key     : key,
+	    	limit   : 30,
+	    	listtype : 2
+		}, function(ret) {
+			if(ret.code == 200){
+				page++;
+				var html = '';
+				var data = ret.message;
+
+				for(var i in data){
+					var office_name = data[i].office_name,
+						addr = data[i].adr;
+					html += '<li>';
+						html += '<ul class="littleBox">';
+							html += '<li style="width: 70%">'+office_name+'</li>';
+							html += '<li style="width: 30%">'+addr+'</li>';
+						html += '</ul>';
+					html += '</li>';
+				}
+				$('#mainList').html(html);
+				$('#nextpage').show();
+			}else if(ret.code == 202){
+				$('#mainList').html('暂无数据');
+				$('#nextpage').hide();
+			}else{
+				$('#mainList').html('加载失败，请检查网络!');
+			}
+		},'json');
+	}
+
+	function prepage(){
+		page--;
+		if(page<1){
+			page = 1;
+		}
+		jianzhuzhuangshi_list(page);
+	}
+	function nextpage(){
+		page++;
+		jianzhuzhuangshi_list(page);
 	}
 </script>
 </body>

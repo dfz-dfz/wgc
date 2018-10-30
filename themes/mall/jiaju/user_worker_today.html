@@ -4,12 +4,14 @@
 <meta http-equiv="Access-Control-Allow-Origin" content="*">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=8"/>
-<title>用户中心-工人定额</title>
+<title>用户中心-今日工价</title>
 <meta name="description" content="微工程，微工程APP，装修、材料、家具、饰品一站式服务，让装修更简单，价格更透明！！" />
 <meta name="keywords" content="微工程，微工程，家居商城，微工程家居商城，微工程家居装修商城，办公室装修，写字楼装修，材料，装修材料，家居，办公家具，家居，家具，装修，装饰" />
 <link rel="stylesheet" type="text/css" href="themes/mall/jiaju/css/api.css"/>
 <link rel="stylesheet" href="themes/mall/jiaju/styles/css/tel_list.css">
 <link type="text/css" href="/themes/mall/jiaju/styles/default/css/center.css" rel="stylesheet"  />
+<link href="/Public/lib/webuploader/0.1.5/webuploader.css" rel="stylesheet" type="text/css" />
+<link href="/Public/lib/webuploader/0.1.5/buchong.css" rel="stylesheet" type="text/css" />
 <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
 <script type="text/javascript">
 	jQuery.support.cors = true;
@@ -72,19 +74,32 @@ body{background:url('') no-repeat center top }
 .list_name{
 	height: 50px;
 }
+.base_info_public ul li {
+    margin-top: 5px;
+    text-align: left;
+}
+.base_info_public ul li .li_div {
+	width: 50px;
+    width: 90px;
+    display: inline-block;
+    text-align: right;
+}
+.base_info_public ul li input {
+	width: 190px;
+	height: 22px;
+}
+.uploader-list-container .placeholder {
+	min-height: 120px;
+    padding-top: 90px;
+    background: url(http://wgc2013.com/Public/lib/webuploader/0.1.5/images/image.png) center 15px no-repeat;
+}
+.base_info_public ul li input[type="checkbox"] {
+    width: 14px;
+    height: 14px;
+}
 </style>
 <script type="text/javascript" src="http://www.wgc2013.com/themes/mall/jiaju/styles/default/js/hover.js"></script>
 <script charset="utf-8" type="text/javascript" src="http://www.wgc2013.com/includes/libraries/javascript/jquery.plugins/jquery.validate.js" ></script>
-<script type="text/javascript">
-	$(function (){
-		$('#open-change-city-window').click(function (){
-			$('.change-city-window').slideDown();
-		})
-		$('#close-change-city-window').click(function (){
-			$('.change-city-window').slideUp();
-		})
-	})
-</script>
 </head>
 <body>
 {include file=header.html}
@@ -98,47 +113,55 @@ body{background:url('') no-repeat center top }
  	<div class="container_right" style="width: 78.5%;border: 1px solid #cacaca;float: right;background-color: #f7f7f7;padding: 0 10px 10px 10px;">
 
 		<!-- 公司信息 -->
-		<div class="budget base_ui_public" style="/*display: none;*/position: relative;">
+		<div class="budget base_ui_public" style="position: relative;">
 			<ul class="budget_ul user_public_ul">
  				<li class="change_bg_li" style="margin-right: 10px;">自定工价</li>
  				<li style="margin-right: 10px;">工价列表</li>
 				<li style="margin-right: 10px;">分享授权</li>
  			</ul>
- 			<div class="company_info base_info_public" style="overflow: hidden;/*padding-left: 15%;*/min-height: 400px;">
+ 			<div class="company_info base_info_public" style="overflow: hidden;min-height: 400px;">
  			<!-- 预算报价 -->
- 			<div class="company_detail" style="position: relative;/*left: -16%;*//*width: 115%;*/">
+ 			<div class="company_detail" style="position: relative;">
 			<div style="overflow: hidden;margin-top: 10px;">
 			<!-- 基本信息 -->
 			<div class="section" style="border: none;">
 			<div class="sect current wages_custom">
-				<ul style="padding: 20px 0;text-align: center;letter-spacing: 2px;">
+				<ul style="padding: 20px 130px;text-align: center;letter-spacing: 2px;height: auto;overflow: hidden;">
 					<li>
-						<span>项目名称</span><span class="colon">:</span><input type="text" id="name">
+						<div class="li_div">项目名称：</div><input type="text" id="name">
 					</li>
 					<li>
-						<span>施工工艺</span><span class="colon">:</span><input type="text" id="shigonggongyi">
+						<div class="li_div">工&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;价：</div><input type="text" id="fabujiage" placeholder="请输入元/㎡">
 					</li>
 					<li>
-						<span>计价单位</span><span class="colon">:</span><input type="text" id="danwei">
+						<div class="li_div">联系方式：</div><input type="text" id="lianxifangshi">
 					</li>
-					<li>
-						<span style="letter-spacing: 0;">数量/范围</span><span class="colon">:</span><input type="text" id="shuliang">
+					<li style="height: 103px;">
+						<div class="li_div" style="float: left;">施工工艺：</div>
+						<textarea name="shigonggongyi" id="shigonggongyi" cols="30" rows="10" style="float: left;height: 100px;width: 580px;resize: none;"></textarea>
 					</li>
-					<li>
-						<span>纯人工费</span><span class="colon">:</span><input type="text" id="rengongfei">
+					<li style="height: auto;overflow:hidden;">
+						<div class="li_div" style="float: left;">图片展示：</div>
+						<div class="formControls col-xs-8 col-sm-9" style="padding: 0;float: left;margin-top: 0;">
+							<div class="uploader-list-container" style="width: 580px;">
+								<div class="queueList">
+									<div id="dndArea" class="placeholder">
+										<div id="filePicker-2"></div>
+										<p style="text-align: center;">或将照片拖到这里，单次最多可选15张</p>
+									</div>
+								</div>
+								<div class="statusBar" style="display:none;">
+									<div class="progress"> <span class="text">0%</span> <span class="percentage"></span> </div>
+									<div class="info"></div>
+									<div class="btns">
+										<div id="filePicker2"></div>
+										<div class="uploadBtn">开始上传</div>
+									</div>
+								</div>
+							</div>
+						</div>
 					</li>
-					<li>
-						<span>发布价格</span><span class="colon">:</span><input type="text" id="fabujiage">
-					</li>
-					<li>
-						<span>联系方式</span><span class="colon">:</span><input type="text" id="lianxifangshi">
-					</li>
-					<li>
-						<span>工作地点</span><span class="colon">:</span><input type="text" id="gongzuodidian">
-					</li>
-					<li>
-						<span style="white-space: pre-wrap;">备     注</span><span class="colon">:</span><input type="text" id="content">
-					</li>
+					<input type="hidden" id="ImgPath"/>
 				</ul>
 				<div class="btn_list">
 					<div class="btn confirm_btn" style="margin-left: 110px;" onclick="add()">确认发布</div>
@@ -150,40 +173,18 @@ body{background:url('') no-repeat center top }
 			<div class="sect wages_list" style="display: none;min-height: 480px;position: relative;">
 				<input type="text" class="search_input" />
 				<input type="button" value="搜索" class="search_btn" onclick="search()"/>
+				<input type="button" id="back_list" class="search_btn" onclick="back_list()" value="返回" style="display: none;" />
 				<input type="button" style="height: 24px;width: 70px;" value="分享" class="share_btn" onclick="showUserList()"/>
-
-				<ul class="list_ul_head">
-
-						<li>项目名称</li>
-						<li>发布价格</li>
-						<li>数量</li>
-						<li>人工费</li>
-						<li>联系人</li>
-						<li>工作单位</li>
-						<li>施工工艺</li>
-						<li>备注</li>
-								
-				</ul>
-				<ul class="list_ul" id="mess_list" style="min-height: 400px;">
+				<div id="mess_list" style="min-height: 400px;">
 					
-				</ul>
+				</div>
 				
 				<ul class="page" style="float: none;">
 					
-					<li class="page_btn" style="margin-left: 75px;background-color: red;color:#fff;line-height: 24px;" onclick="prepage()">上一页</li>
-					<li class="page_btn" style="background-color: red;color:#fff;line-height: 24px;" onclick="nextpage()">下一页</li>
+					<li class="page_btn" style="margin-left: 75px;background-color: red;color:#fff;line-height: 24px;text-align: center;" onclick="prepage()">上一页</li>
+					<li class="page_btn" style="background-color: red;color:#fff;line-height: 24px;text-align: center;" onclick="nextpage()">下一页</li>
 					
 				</ul>
-				<div class="detail" style="position: absolute;top: 200px;left:100px;width: 730px;height: 300px;background-color: #eee;display: none;border-radius: 25px;box-shadow: 5px 5px 5px;opacity: 0.9;">
-					<div class="cancel" style="font-size: 41px;position: absolute;top: -5px;left: 700px;cursor: pointer;">×</div>
-					<div class="detail_list">
-
-					<p>联系方式：</p>
-					<p>施工工艺：</p>
-					<p>工作地点：</p>
-					<p>备注：</p>
-					</div>
-				</div>
 			</div>
 			<!-- 工价列表 end -->
 			
@@ -191,39 +192,17 @@ body{background:url('') no-repeat center top }
 				<div class="message_list base_info_public" style="display: none;width: 90%;border: none;margin: 0px auto;min-height: 480px;">
 
 				<!-- 工价分享列表 -->
-				<input type="text" class="search_input" />
-				<input type="button" value="搜索" class="search_btn" onclick="search()" style="width: 80px;height: 24px;background-color: #f7c67a;color: #f2552a;border: 1px solid #cfcfcf;cursor: pointer;" />
+				<input type="text" class="search_input" id="share_search" />
+				<input type="button" value="搜索" class="search_btn" onclick="search_share()" style="width: 80px;height: 24px;background-color: #f7c67a;color: #f2552a;border: 1px solid #cfcfcf;cursor: pointer;" />
+				<input type="button" class="search_btn" value="返回" onclick="back_share()" id="back_share" style="display: none;width: 80px;height: 24px;background-color: #f7c67a;color: #f2552a;border: 1px solid #cfcfcf;cursor: pointer;" />
 				<input type="button" style="height: 24px;width: 70px;border: none;background-color: #f7c67a;text-align: center;font-weight: 600;position: absolute;right: 80px;border-radius: 5px;cursor: pointer" value="分享" class="share_btn" onclick="showUserList()"/>
-				<ul class="list_ul_head">
-				
-						<li>项目名称</li>
-						<li>发布价格</li>
-						<li>数量</li>
-						<li>人工费</li>
-						<li>联系人</li>
-						<li>工作单位</li>
-						<li>施工工艺</li>
-						<li>备注</li>
-								
-				</ul>				
-					
-				<ul class="list_ul" id="messlist_ul" style="min-height: 400px;">
+				<div id="messlist_ul" style="min-height: 400px;">
 
-				</ul>
-				<div class="detail_share" style="position: absolute;top: 200px;left:100px;width: 730px;height: 300px;background-color: #eee;display: none;border-radius: 25px;box-shadow: 5px 5px 5px;opacity: 0.9;">
-					<div class="cancel" style="font-size: 41px;position: absolute;top: -5px;left: 700px;cursor: pointer;">×</div>
-					<div class="detail_list_share">
-
-					<p>联系方式：</p>
-					<p>施工工艺：</p>
-					<p>工作地点：</p>
-					<p>备注：</p>
-					</div>
-				</div>				
+				</div>			
 				<ul class="page" style="float: none;">
 					
-					<li class="page_btn" style="margin-left: 75px;background-color: red;color:#fff;line-height: 24px;" onclick="prepages()">上一页</li>
-					<li class="page_btn" id="s_next" style="background-color: red;color:#fff;line-height: 24px;" onclick="nextpages()">下一页</li>
+					<li class="page_btn" style="margin-left: 75px;background-color: red;color:#fff;line-height: 24px;text-align: center;" onclick="prepages()">上一页</li>
+					<li class="page_btn" id="s_next" style="background-color: red;color:#fff;line-height: 24px;text-align: center;" onclick="nextpages()">下一页</li>
 					
 				</ul>
 			</div>
@@ -268,7 +247,26 @@ body{background:url('') no-repeat center top }
  	</div>
 
 {include file=footer.html}
-<script type="text/javascript" src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
+<script type="text/javascript" src="/Public/lib/jquery/1.9.1/jquery.min.js"></script> 
+<script type="text/javascript" src="/Public/lib/layer/2.4/layer.js"></script>
+<script type="text/javascript" src="/Public/static/h-ui/js/H-ui.min.js"></script> 
+<script type="text/javascript" src="/Public/static/h-ui.admin/js/H-ui.admin.js"></script>
+<!--请在下方写此页面业务相关的脚本-->
+<script type="text/javascript" src="/Public/lib/form/jquery.form.min.js"></script>
+<script type="text/javascript" src="/Public/lib/My97DatePicker/4.8/WdatePicker.js"></script>
+<script type="text/javascript" src="/Public/lib/jquery.validation/1.14.0/jquery.validate.js"></script> 
+<script type="text/javascript" src="/Public/lib/jquery.validation/1.14.0/validate-methods.js"></script> 
+<script type="text/javascript" src="/Public/lib/jquery.validation/1.14.0/messages_zh.js"></script>
+<script type="text/javascript" src="/Public/lib/webuploader/0.1.5/webuploader.min.js"></script> 
+<script type="text/javascript" src="/Public/lib/ueditor/1.4.3/ueditor.config.js"></script>
+<script type="text/javascript" src="/Public/lib/ueditor/1.4.3/ueditor.all.min.js"> </script>
+<script type="text/javascript" src="/Public/lib/ueditor/1.4.3/lang/zh-cn/zh-cn.js"></script>
+<!--表单验证-->
+<script type="text/javascript" src="/Public/lib/jquery.validation/1.14.0/jquery.validate.js"></script> 
+<script type="text/javascript" src="/Public/lib/jquery.validation/1.14.0/validate-methods.js"></script> 
+<script type="text/javascript" src="/Public/lib/jquery.validation/1.14.0/messages_zh.js"></script>
+<!-- 多图片上传 -->
+<script type="text/javascript" src="/themes/mall/jiaju/js/JTimer_1.3.js"></script>
 <script type="text/javascript">
 	$(function(){
 		list();
@@ -321,46 +319,38 @@ body{background:url('') no-repeat center top }
 		$(".confirm").hide();
 		$(".wages_list").css("background-color","#fff");
 	})
-	// 弹窗控制 end
+	//弹窗控制 end
 
-	// 分页设置
+	//分页设置
 	$('.page_num').on('click',function() {
 		$('.page_num').removeClass('current');
 		$(this).toggleClass('current');
 	});
-	// 分页设置
+	//分页设置
 	$('.page_num').on('click',function() {
 		$('.page_num').removeClass('current');
 		$(this).toggleClass('current');
 	});
-// 分页设置 end
+	//分页设置 end
 
 	//发布自定工价
 	function add(){
-		var name          = $('#name'); //项目名称
-		var danwei        = $('#danwei'); //计价单位
-		var shuliang      = $('#shuliang'); //数量/范围
-		var rengongfei    = $('#rengongfei');//纯人工费
-		var fabujiage     = $('#fabujiage');//发布价格
-		var lianxifangshi = $('#lianxifangshi');//联系方式
-		var gongzuodidian = $('#gongzuodidian');//工作地点
-		var shigonggongyi = $('#shigonggongyi');//施工工艺
-		var content       = $('#content');//备注
+		var name          = $('#name').val(); //项目名称
+		var fabujiage     = $('#fabujiage').val();//发布价格
+		var lianxifangshi = $('#lianxifangshi').val();//联系方式
+		var shigonggongyi = $('#shigonggongyi').val();//施工工艺
+		var ImgPath       = $('#ImgPath').val();//图片
 
 		$.ajax({
 			type:"POST",
 			url:'http://wgcapp.wgc2013.com/jingyi.php/Home/Dinge/rengong_add',
 			data:{
 				userid         : '<?php echo $_SESSION["user_info"]["user_id"];?>',
-				name           : name.val(),           //项目名称
-		        danwei         : danwei.val(),         //计价单位
-		        shuliang       : shuliang.val(),       //数量/范围
-		        rengongfei     : rengongfei.val(),     //纯人工费
-		        fabujiage      : fabujiage.val(),      //发布价格
-		        lianxifangshi  : lianxifangshi.val(),  //联系方式
-		        gongzuodidian  : gongzuodidian.val(),  //工作地点
-			    shigonggongyi  : shigonggongyi.val(),  //施工工艺
-			    content        : content.val(),        //备　　注
+				name           : name,           //项目名称
+		        fabujiage      : fabujiage,      //发布价格
+		        lianxifangshi  : lianxifangshi,  //联系方式
+			    shigonggongyi  : shigonggongyi,  //施工工艺
+			    img            : ImgPath             //图片
 			},
 			cache:false,
 			crossDomain: true == !(document.all),
@@ -407,24 +397,45 @@ body{background:url('') no-repeat center top }
 							gongzuodidian = data[i].gongzuodidian,
 							shigonggongyi = data[i].shigonggongyi,
 							user_id       = data[i].user_id,
-							content = data[i].content;
-							
-						listHtml 	+= 	'<li style="overflow:hidden;list-style:none;cursor:pointer;position:relative;">';
-						listHtml 	+=	'<input name="id" type="checkbox" class="checkbox" value="'+id+'"style="position:absolute;left:0;top:20px;"/>';
-						listHtml 	+=  '<div style="overflow:hidden;" onclick="detail(\''+gongzuodidian+'\',\''+shigonggongyi+'\',\''+content+'\',\''+lianxifangshi+'\')">';
-						listHtml 	+=	'<div class="list_name" style="float:left;width:10%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center;">'+name+'</div>';
-						listHtml 	+=	'<div class="list_name" style="float:left;width:10%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center;">'+fabujiage+'/'+danwei+'</div>';
-						listHtml 	+=	'<div class="list_name" style="float:left;width:10%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center;">'+shuliang+'</div>';
-						listHtml 	+=	'<div class="list_name" style="float:left;width:10%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center;">'+rengongfei+'</div>';
-						listHtml 	+=	'<div class="list_name" style="float:left;width:10%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center;">'+lianxifangshi+'</div>';
-						listHtml 	+=	'<div class="list_name" style="float:left;width:10%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center;">'+gongzuodidian+'</div>';
-						listHtml 	+=	'<div class="list_name" style="float:left;width:10%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center;">'+shigonggongyi+'</div>';
-						listHtml 	+=	'<div class="list_name" style="float:left;width:10%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center;">'+content+'</div>';
-						listHtml 	+=  '</div>';
-						listHtml 	+=  '<a href="http://wgcapp.wgc2013.com/jingyi.php/Home/Dinge/DelRengong_list/id/'+id+'/user_id/'+user_id+'" style="background:red;color:#fff;padding:2px 5px;font-size:12px;position:absolute;top:10px;right:0;height:25px;line-height:25px;border-radius:5px;">删除</a></div>';
-						listHtml 	+=	'</li>';
+							content = data[i].content,
+							username = data[i].userName,
+							zhiwei = data[i].zhiwei,
+							addtime = _trans_php_time_to_str(data[i].addtime,2),
+							img = data[i].img;
+						var arr = new Array();
+							arr = img.split(',');
+						var imgHtml = '';
+						for(var j=0;j<arr.length;j++){
+							imgHtml += '<a href="http://wgcapp.wgc2013.com'+arr[j]+'" target="_blank"><img src="http://wgcapp.wgc2013.com'+arr[j]+'" alt="" style="width:100px;height:100px;margin-right:10px;"/></a>';
+						}
+
+						listHtml +=	'<div class="list_index" style="height:auto;overflow:hidden;position:relative;">';
+						listHtml +=	'<div style="text-align: left;"><a href="http://wgcapp.wgc2013.com/jingyi.php/Home/Dinge/DelRengong_list/id/'+id+'/user_id/'+user_id+'"><span style="display: inline-block;width: 60px;height: 25px;line-height: 25px;background-color: red;font-size: 14px;text-align: center;letter-spacing: 2px;position:absolute;top:0px;color:#fff;margin:5px 5px;">删除</span></a></div>';
+							listHtml +=	'<div style="text-align:right;padding-right: 20px;margin-top: 10px;"><input name="id" type="checkbox" value="'+id+'"></div>';
+							listHtml +=	'<p style="padding-left:62px;line-height:50px;font-size:20px;">项目名称：<span style="color:#f34c26 ;">'+name+'</span></p>';
+							listHtml += '<div style="height:auto;overflow:hidden;">';
+								listHtml +=	'<div class="list_right" style="float: left;width: 50%;">';
+									listHtml +=	'<ul style="margin-left:15%;">';
+										listHtml +=	'<li>联系人：'+username+'</li>';
+										listHtml +=	'<li style="margin:10px 0;">联系方式：'+lianxifangshi+'</li>';
+										listHtml +=	'<li>职位：'+zhiwei+'</li>';
+									listHtml +=	'</ul>';
+								listHtml +=	'</div>';
+								listHtml +=	'<div class="list_left" style="float: right;width: 50%;">';
+									listHtml +=	'<ul style="margin-left:15%;">';
+										listHtml +=	'<li>发布时间：'+addtime+'</li>';
+										listHtml +=	'<li style="margin:10px 0;">发布价格：'+fabujiage+'</li>';
+									listHtml +=	'</ul>';
+								listHtml +=	'</div>';
+							listHtml += '</div>';
+							listHtml +=	'<p style="padding-left:63px;padding-top: 10px;">施工工艺：'+shigonggongyi+'</p>';
+							listHtml   +=	'<div id="imglist'+i+'" style="width:100%;margin-top:10px;"></div>';
+							listHtml +=	'<div style="width:100%;height:40px;float:left;margin-top:30px;"><img src="/themes/mall/jiaju/images/list_bg.jpg" style="width:100%;height:100%;"/></div>';
+						listHtml += '</div>';
+
+						$("#mess_list").html(listHtml);
+						$("#imglist"+i).append(imgHtml);
 					}
-					$("#mess_list").append(listHtml);
 				}
 			},
 			error:function(err){
@@ -432,9 +443,15 @@ body{background:url('') no-repeat center top }
 			}
 		});
 	}
+
+	function back_list(){
+		list();
+		$('#back_list').hide();
+	}
 	
-	//分享授权
+	//获取分享列表
 	function messagelist(){
+		var key = $('#share_search').val();
 		var url = 'http://wgcapp.wgc2013.com/jingyi.php/Home/Dinge/rengong_list_share';
 		$.ajax({
 			type:"POST",
@@ -461,23 +478,50 @@ body{background:url('') no-repeat center top }
 							lianxifangshi = data[i].lianxifangshi,
 							gongzuodidian = data[i].gongzuodidian,
 							shigonggongyi = data[i].shigonggongyi,
-							content = data[i].content;
-							
-						listHtml 	+= 	'<li style="overflow:hidden;list-style:none;cursor:pointer;">';
-						listHtml 	+=	'<input name="id" type="checkbox" class="checkbox" value="'+id+'"style="position:absolute;left:0;top:20px;"/>';
-						listHtml 	+=  '<div onclick="details(\''+gongzuodidian+'\',\''+shigonggongyi+'\',\''+content+'\',\''+lianxifangshi+'\')">';
-						listHtml 	+=	'<div class="list_name" style="float:left;width:10%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center;">'+name+'</div>';
-						listHtml 	+=	'<div class="list_name" style="float:left;width:10%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center;">'+fabujiage+'/'+danwei+'</div>';
-						listHtml 	+=	'<div class="list_name" style="float:left;width:10%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center;">'+shuliang+'</div>';
-						listHtml 	+=	'<div class="list_name" style="float:left;width:10%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center;">'+rengongfei+'</div>';
-						listHtml 	+=	'<div class="list_name" style="float:left;width:10%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center;">'+lianxifangshi+'</div>';
-						listHtml 	+=	'<div class="list_name" style="float:left;width:10%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center;">'+gongzuodidian+'</div>';
-						listHtml 	+=	'<div class="list_name" style="float:left;width:10%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center;">'+shigonggongyi+'</div>';
-						listHtml 	+=	'<div class="list_name" style="float:left;width:10%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center;">'+content+'</div>';
-						listHtml 	+=  '</div>';
-						listHtml 	+=	'</li>';
+							user_id       = data[i].user_id,
+							content = data[i].content,
+							username = data[i].userName,
+							zhiwei = data[i].zhiwei,
+							addtime = _trans_php_time_to_str(data[i].addtime,2),
+							img = data[i].img;
+							if(img == '' || img == null){
+								
+							}else{
+								var arr = new Array();
+									arr = img.split(',');
+								var imgHtml = '';
+								for(var j=0;j<arr.length;j++){
+									imgHtml += '<a href="http://wgcapp.wgc2013.com'+arr[j]+'" target="_blank"><img src="http://wgcapp.wgc2013.com'+arr[j]+'" alt="" style="width:100px;height:100px;margin-right:10px;"/></a>';
+								}
+							}
+
+						listHtml +=	'<div class="list_index" style="height:auto;overflow:hidden;position:relative;">';
+						listHtml +=	'<div style="text-align: left;"><a href="http://wgcapp.wgc2013.com/jingyi.php/Home/Dinge/DelRengong_list/id/'+id+'/user_id/'+user_id+'"><span style="display: inline-block;width: 60px;height: 25px;line-height: 25px;background-color: red;font-size: 14px;text-align: center;letter-spacing: 2px;position:absolute;top:0px;color:#fff;margin:5px 5px;">删除</span></a></div>';
+							listHtml +=	'<div style="text-align:right;padding-right: 20px;margin-top: 10px;"><input name="id" type="checkbox" value="'+id+'"></div>';
+							listHtml +=	'<p style="padding-left:62px;line-height:50px;font-size:20px;">项目名称：<span style="color:#f34c26 ;">'+name+'</span></p>';
+							listHtml += '<div style="height:auto;overflow:hidden;">';
+								listHtml +=	'<div class="list_right" style="float: left;width: 50%;">';
+									listHtml +=	'<ul style="margin-left:15%;">';
+										listHtml +=	'<li>联系人：'+username+'</li>';
+										listHtml +=	'<li style="margin:10px 0;">联系方式：'+lianxifangshi+'</li>';
+										listHtml +=	'<li>职位：'+zhiwei+'</li>';
+									listHtml +=	'</ul>';
+								listHtml +=	'</div>';
+								listHtml +=	'<div class="list_left" style="float: right;width: 50%;">';
+									listHtml +=	'<ul style="margin-left:15%;">';
+										listHtml +=	'<li>发布时间：'+addtime+'</li>';
+										listHtml +=	'<li style="margin:10px 0;">发布价格：'+fabujiage+'</li>';
+									listHtml +=	'</ul>';
+								listHtml +=	'</div>';
+							listHtml += '</div>';
+							listHtml +=	'<p style="padding-left:63px;padding-top: 10px;">施工工艺：'+shigonggongyi+'</p>';
+							listHtml   +=	'<div id="imglist'+i+'" style="width:100%;margin-top:10px;"></div>';
+							listHtml +=	'<div style="width:100%;height:40px;float:left;margin-top:30px;"><img src="/themes/mall/jiaju/images/list_bg.jpg" style="width:100%;height:100%;"/></div>';
+						listHtml += '</div>';
+
+						$("#messlist_ul").html(listHtml);
+						$("#imglist"+i).append(imgHtml);
 					}
-					$("#messlist_ul").html(listHtml);
 				}
 			},
 			error:function(err){
@@ -485,7 +529,20 @@ body{background:url('') no-repeat center top }
 			}
 		});
 	}
+	// 分享列表搜索
+	function search_share(){
+		messagelist();
+		$('#back_share').show();
+	}
+	// 返回分享列表
+	function back_share(){
+		var key = $('#share_search').val('');
+		messagelist();
+		$('#back_share').hide();
+	}
+	// 搜索工价列表
 	function search(){
+		$('#back_list').show();
 		var url = 'http://wgcapp.wgc2013.com/jingyi.php/Home/Dinge/rengong_list';
 		var value = $(".search_input").val();
 		if(value){
@@ -504,38 +561,55 @@ body{background:url('') no-repeat center top }
 					var data = ret.retData;
 					var listHtml = '';
 					for(i in data){
-					
 						if(data[i].name === value){
-						
-						var id       = data[i].id,
-							name     = data[i].name,
-							danwei   = data[i].danwei,
-							fabujiage= data[i].fabujiage,
-							shuliang = data[i].shuliang,
-							rengongfei = data[i].rengongfei,
-							lianxifangshi = data[i].lianxifangshi,
-							gongzuodidian = data[i].gongzuodidian,
-							shigonggongyi = data[i].shigonggongyi,
-							user_id       = data[i].user_id,
-							content = data[i].content;
-							
-						listHtml 	+= 	'<li style="overflow:hidden;list-style:none;cursor:pointer;position:relative;">';
-						listHtml 	+=	'<input name="id" type="checkbox" class="checkbox" value="'+id+'"style="position:absolute;left:0;top:20px;"/>';
-						listHtml 	+=  '<div style="overflow:hidden;" onclick="detail(\''+gongzuodidian+'\',\''+shigonggongyi+'\',\''+content+'\',\''+lianxifangshi+'\')">';
-						listHtml 	+=	'<div class="list_name" style="float:left;width:10%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center;">'+name+'</div>';
-						listHtml 	+=	'<div class="list_name" style="float:left;width:10%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center;">'+fabujiage+'/'+danwei+'</div>';
-						listHtml 	+=	'<div class="list_name" style="float:left;width:10%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center;">'+shuliang+'</div>';
-						listHtml 	+=	'<div class="list_name" style="float:left;width:10%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center;">'+rengongfei+'</div>';
-						listHtml 	+=	'<div class="list_name" style="float:left;width:10%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center;">'+lianxifangshi+'</div>';
-						listHtml 	+=	'<div class="list_name" style="float:left;width:10%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center;">'+gongzuodidian+'</div>';
-						listHtml 	+=	'<div class="list_name" style="float:left;width:10%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center;">'+shigonggongyi+'</div>';
-						listHtml 	+=	'<div class="list_name" style="float:left;width:10%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center;">'+content+'</div>';
-						listHtml 	+=  '</div>';
-						listHtml 	+=  '<a href="http://wgcapp.wgc2013.com/jingyi.php/Home/Dinge/DelRengong_list/id/'+id+'/user_id/'+user_id+'" style="background:red;color:#fff;padding:2px 5px;font-size:12px;position:absolute;top:10px;right:0;height:25px;line-height:25px;border-radius:5px;">删除</a></div>';
-						listHtml 	+=	'</li>';
-							$("#mess_list").html("");
-							$("#mess_list").append(listHtml);
-						
+							var id       = data[i].id,
+								name     = data[i].name,
+								danwei   = data[i].danwei,
+								fabujiage= data[i].fabujiage,
+								shuliang = data[i].shuliang,
+								rengongfei = data[i].rengongfei,
+								lianxifangshi = data[i].lianxifangshi,
+								gongzuodidian = data[i].gongzuodidian,
+								shigonggongyi = data[i].shigonggongyi,
+								user_id       = data[i].user_id,
+								content = data[i].content,
+								username = data[i].userName,
+								zhiwei = data[i].zhiwei,
+								addtime = _trans_php_time_to_str(data[i].addtime,2),
+								img = data[i].img;
+							var arr = new Array();
+								arr = img.split(',');
+							var imgHtml = '';
+							for(var j=0;j<arr.length;j++){
+								imgHtml += '<a href="http://wgcapp.wgc2013.com'+arr[j]+'" target="_blank"><img src="http://wgcapp.wgc2013.com'+arr[j]+'" alt="" style="width:100px;height:100px;margin-right:10px;"/></a>';
+							}
+
+							listHtml +=	'<div class="list_index" style="height:auto;overflow:hidden;position:relative;">';
+							listHtml +=	'<div style="text-align: left;"><a href="http://wgcapp.wgc2013.com/jingyi.php/Home/Dinge/DelRengong_list/id/'+id+'/user_id/'+user_id+'"><span style="display: inline-block;width: 60px;height: 25px;line-height: 25px;background-color: red;font-size: 14px;text-align: center;letter-spacing: 2px;position:absolute;top:0px;color:#fff;margin:5px 5px;">删除</span></a></div>';
+								listHtml +=	'<div style="text-align:right;padding-right: 20px;margin-top: 10px;"><input name="id" type="checkbox" value="'+id+'"></div>';
+								listHtml +=	'<p style="padding-left:62px;line-height:50px;font-size:20px;">项目名称：<span style="color:#f34c26 ;">'+name+'</span></p>';
+								listHtml += '<div style="height:auto;overflow:hidden;">';
+									listHtml +=	'<div class="list_right" style="float: left;width: 50%;">';
+										listHtml +=	'<ul style="margin-left:15%;">';
+											listHtml +=	'<li>联系人：'+username+'</li>';
+											listHtml +=	'<li style="margin:10px 0;">联系方式：'+lianxifangshi+'</li>';
+											listHtml +=	'<li>职位：'+zhiwei+'</li>';
+										listHtml +=	'</ul>';
+									listHtml +=	'</div>';
+									listHtml +=	'<div class="list_left" style="float: right;width: 50%;">';
+										listHtml +=	'<ul style="margin-left:15%;">';
+											listHtml +=	'<li>发布时间：'+addtime+'</li>';
+											listHtml +=	'<li style="margin:10px 0;">发布价格：'+fabujiage+'</li>';
+										listHtml +=	'</ul>';
+									listHtml +=	'</div>';
+								listHtml += '</div>';
+								listHtml +=	'<p style="padding-left:63px;padding-top: 10px;">施工工艺：'+shigonggongyi+'</p>';
+								listHtml   +=	'<div id="imglist'+i+'" style="width:100%;margin-top:10px;"></div>';
+								listHtml +=	'<div style="width:100%;height:40px;float:left;margin-top:30px;"><img src="/themes/mall/jiaju/images/list_bg.jpg" style="width:100%;height:100%;"/></div>';
+							listHtml += '</div>';
+
+							$("#mess_list").html(listHtml);
+							$("#imglist"+i).append(imgHtml);
 						}
 					}
 				}
@@ -938,40 +1012,19 @@ function pageindexUser(pindex){
 			});
 
 	}
-//下一页
-function nextpageUser(){
-	
-	pageindexUser(++upage);
-
+	//下一页
+	function nextpageUser(){		
+		pageindexUser(++upage);
 	}
-//上一页
-function prepageUser(){
+	//上一页
+	function prepageUser(){
 		pageindexUser(--upage);
 	}
 
-	function detail(work,gy,ps,tel){
-		$(".detail").show();
-		var listHtml = "";
-		listHtml +=			'<p>联系方式：'+tel+'</p>';
-		listHtml +=				'<p>施工工艺：'+gy+'</p>';
-		listHtml +=			'<p>工作地点：'+work+'</p>';
-		listHtml +=			'<p>备注：'+ps+'</p>';
-		$(".detail_list").html(listHtml);
-	}
+	$(".quxiao").click(function(){
+		$(this).parent().parent().hide();
+	})
 
-	function details(work,gy,ps,tel){
-		$(".detail_share").show();
-		var listHtml = "";
-		listHtml +=			'<p>联系方式：'+tel+'</p>';
-		listHtml +=				'<p>施工工艺：'+gy+'</p>';
-		listHtml +=			'<p>工作地点：'+work+'</p>';
-		listHtml +=			'<p>备注：'+ps+'</p>';
-		$(".detail_list_share").html(listHtml);
-	}
-
-$(".quxiao").click(function(){
-	$(this).parent().parent().hide();
-})
 	//返回检索列表
 	function back(){
 		$('#back_btn').hide();
@@ -987,6 +1040,813 @@ $(".quxiao").click(function(){
 	// 	console.log(e)
 		
 	// })
+</script>
+<script type="text/javascript">
+$(function(){
+	$('.skin-minimal input').iCheck({
+		checkboxClass: 'icheckbox-blue',
+		radioClass: 'iradio-blue',
+		increaseArea: '20%'
+	});
+	
+	$list = $("#fileList"),
+	$btn = $("#btn-star"),
+	state = "pending",
+	uploader;
+
+	var uploader = WebUploader.create({
+		auto: true,
+		swf: '/Public/lib/webuploader/0.1.5/Uploader.swf',
+	
+		// 文件接收服务端。
+		server: '/Public/lib/webuploader/0.1.5/server/fileupload.php',
+	
+		// 选择文件的按钮。可选。
+		// 内部根据当前运行是创建，可能是input元素，也可能是flash.
+		pick: '#filePicker',
+	
+		// 不压缩image, 默认如果是jpeg，文件上传前会压缩一把再上传！
+		resize: false,
+		// 只允许选择图片文件。
+		accept: {
+			title: 'Images',
+			extensions: 'gif,jpg,jpeg,bmp,png',
+			mimeTypes: 'image/*'
+		}
+	});
+	
+	//表单验证
+	$("#form-admin-add").validate({
+		rules:{
+			logo:{
+				required:true, 
+			},
+			title:{
+				required:true, 
+			},
+			cid:{
+				required:true,
+			},
+			stock:{
+				required:true,
+			},
+			freight:{
+				required:true,
+			},
+			company:{
+				required:true,
+			},
+			deliverymode:{
+				required:true,
+			},
+			AfterSaleService:{
+				required:true,
+			},
+			colors:{
+				required:true,
+			},
+			placeoforigin:{
+				required:true,
+			},
+			material:{
+				required:true,
+			},
+			company:{
+				required:true,
+			},
+			weight:{
+				required:true,
+			},
+			sellingprice:{
+				required:true,
+			},
+			marketvalue:{
+				required:true,
+			},
+			costprice:{
+				required:true,
+			},
+			abbreviatedtitle:{
+				required:true,
+			},
+			weburl:{
+				required:true,
+			}
+		},
+		onkeyup:false,
+		focusCleanup:true,
+		success:"valid",
+		submitHandler:function(form){
+			$(form).ajaxSubmit({
+				type: 'post',
+				url: "<{:U('Goods/add_form')}>" ,
+				success: function(data){
+					if(data.status == 200){
+						layer.msg(data.content,{icon:1,time:8000});
+						var index = parent.layer.getFrameIndex(window.name);
+						parent.location.reload();
+						parent.$('.btn-refresh').click();
+						parent.layer.close(index);
+					}else{
+						layer.msg(data.content,{icon:1,time:8000});
+					}
+					
+				},
+                error: function(XmlHttpRequest, textStatus, errorThrown){
+					layer.msg('error!',{icon:1,time:8000});
+				}
+			});
+			//var index = parent.layer.getFrameIndex(window.name);
+			//parent.$('.btn-refresh').click();
+			//parent.layer.close(index);
+		}
+	});
+	
+	uploader.on( 'fileQueued', function( file ) {
+		var $li = $(
+			'<div id="' + file.id + '" class="item">' +
+				'<div class="pic-box"><img></div>'+
+				'<div class="info">' + file.name + '</div>' +
+				'<p class="state">等待上传...</p>'+
+			'</div>'
+		),
+		$img = $li.find('img');
+		$list.append( $li );
+	
+		// 创建缩略图
+		// 如果为非图片文件，可以不用调用此方法。
+		// thumbnailWidth x thumbnailHeight 为 100 x 100
+		uploader.makeThumb( file, function( error, src ) {
+			if ( error ) {
+				$img.replaceWith('<span>不能预览</span>');
+				return;
+			}
+	
+			$img.attr( 'src', src );
+		}, thumbnailWidth, thumbnailHeight );
+	});
+	// 文件上传过程中创建进度条实时显示。
+	uploader.on( 'uploadProgress', function( file, percentage ) {
+		var $li = $( '#'+file.id ),
+			$percent = $li.find('.progress-box .sr-only');
+	
+		// 避免重复创建
+		if ( !$percent.length ) {
+			$percent = $('<div class="progress-box"><span class="progress-bar radius"><span class="sr-only" style="width:0%"></span></span></div>').appendTo( $li ).find('.sr-only');
+		}
+		$li.find(".state").text("上传中");
+		$percent.css( 'width', percentage * 100 + '%' );
+	});
+	
+	
+	
+	// 文件上传失败，显示上传出错。
+	uploader.on( 'uploadError', function( file ) {
+		$( '#'+file.id ).addClass('upload-state-error').find(".state").text("上传出错");
+	});
+	
+	// 完成上传完了，成功或者失败，先删除进度条。
+	uploader.on( 'uploadComplete', function( file ) {
+		$( '#'+file.id ).find('.progress-box').fadeOut();
+	});
+	uploader.on('all', function (type) {
+        if (type === 'startUpload') {
+            state = 'uploading';
+        } else if (type === 'stopUpload') {
+            state = 'paused';
+        } else if (type === 'uploadFinished') {
+            state = 'done';
+        }
+
+        if (state === 'uploading') {
+            $btn.text('暂停上传');
+        } else {
+            $btn.text('开始上传');
+        }
+    });
+
+    $btn.on('click', function () {
+        if (state === 'uploading') {
+            uploader.stop();
+        } else {
+            uploader.upload();
+        }
+    });
+
+});
+
+(function( $ ){
+    // 当domReady的时候开始初始化
+    $(function() {
+        var $wrap = $('.uploader-list-container'),
+
+            // 图片容器
+            $queue = $( '<ul class="filelist"></ul>' )
+                .appendTo( $wrap.find( '.queueList' ) ),
+
+            // 状态栏，包括进度和控制按钮
+            $statusBar = $wrap.find( '.statusBar' ),
+
+            // 文件总体选择信息。
+            $info = $statusBar.find( '.info' ),
+
+            // 上传按钮
+            $upload = $wrap.find( '.uploadBtn' ),
+
+            // 没选择文件之前的内容。
+            $placeHolder = $wrap.find( '.placeholder' ),
+
+            $progress = $statusBar.find( '.progress' ).hide(),
+
+            // 添加的文件数量
+            fileCount = 0,
+
+            // 添加的文件总大小
+            fileSize = 0,
+
+            // 优化retina, 在retina下这个值是2
+            ratio = window.devicePixelRatio || 1,
+
+            // 缩略图大小
+            thumbnailWidth = 110 * ratio,
+            thumbnailHeight = 110 * ratio,
+
+            // 可能有pedding, ready, uploading, confirm, done.
+            state = 'pedding',
+
+            // 所有文件的进度信息，key为file id
+            percentages = {},
+            // 判断浏览器是否支持图片的base64
+            isSupportBase64 = ( function() {
+                var data = new Image();
+                var support = true;
+                data.onload = data.onerror = function() {
+                    if( this.width != 1 || this.height != 1 ) {
+                        support = false;
+                    }
+                }
+                data.src = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==";
+                return support;
+            } )(),
+
+            // 检测是否已经安装flash，检测flash的版本
+            flashVersion = ( function() {
+                var version;
+
+                try {
+                    version = navigator.plugins[ 'Shockwave Flash' ];
+                    version = version.description;
+                } catch ( ex ) {
+                    try {
+                        version = new ActiveXObject('ShockwaveFlash.ShockwaveFlash')
+                                .GetVariable('$version');
+                    } catch ( ex2 ) {
+                        version = '0.0';
+                    }
+                }
+                version = version.match( /\d+/g );
+                return parseFloat( version[ 0 ] + '.' + version[ 1 ], 10 );
+            } )(),
+
+            supportTransition = (function(){
+                var s = document.createElement('p').style,
+                    r = 'transition' in s ||
+                            'WebkitTransition' in s ||
+                            'MozTransition' in s ||
+                            'msTransition' in s ||
+                            'OTransition' in s;
+                s = null;
+                return r;
+            })(),
+
+            // WebUploader实例
+            uploader;
+
+        if ( !WebUploader.Uploader.support('flash') && WebUploader.browser.ie ) {
+
+            // flash 安装了但是版本过低。
+            if (flashVersion) {
+                (function(container) {
+                    window['expressinstallcallback'] = function( state ) {
+                        switch(state) {
+                            case 'Download.Cancelled':
+                                alert('您取消了更新！')
+                                break;
+
+                            case 'Download.Failed':
+                                alert('安装失败')
+                                break;
+
+                            default:
+                                alert('安装已成功，请刷新！');
+                                break;
+                        }
+                        delete window['expressinstallcallback'];
+                    };
+
+                    var swf = 'expressInstall.swf';
+                    // insert flash object
+                    var html = '<object type="application/' +
+                            'x-shockwave-flash" data="' +  swf + '" ';
+
+                    if (WebUploader.browser.ie) {
+                        html += 'classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" ';
+                    }
+
+                    html += 'width="100%" height="100%" style="outline:0">'  +
+                        '<param name="movie" value="' + swf + '" />' +
+                        '<param name="wmode" value="transparent" />' +
+                        '<param name="allowscriptaccess" value="always" />' +
+                    '</object>';
+
+                    container.html(html);
+
+                })($wrap);
+
+            // 压根就没有安转。
+            } else {
+                $wrap.html('<a href="http://www.adobe.com/go/getflashplayer" target="_blank" border="0"><img alt="get flash player" src="http://www.adobe.com/macromedia/style_guide/images/160x41_Get_Flash_Player.jpg" /></a>');
+            }
+
+            return;
+        } else if (!WebUploader.Uploader.support()) {
+            alert( 'Web Uploader 不支持您的浏览器！');
+            return;
+        }
+
+        // 实例化
+        uploader = WebUploader.create({
+            pick: {
+                id: '#filePicker-2',
+                label: '点击选择图片'
+            },
+            formData: {
+                uid: 123
+            },
+            dnd: '#dndArea',
+            paste: '#uploader',
+            swf: '/Public/lib/webuploader/0.1.5/Uploader.swf',
+            chunked: true,
+			method : 'POST',
+			fileNumLimit : 15,
+			fileSizeLimit : 15,
+            chunkSize: 512 * 1024,
+            server: "http://wgcapp.wgc2013.com/upload.php",
+            runtimeOrder: 'flash',
+			fileVal:'gimg',
+            accept: {
+                 title: 'Images',
+                 extensions: 'gif,jpg,jpeg,bmp,png',
+                 mimeTypes: 'image/*'
+            },
+            // 禁掉全局的拖拽功能。这样不会出现图片拖进页面的时候，把图片打开。
+            disableGlobalDnd: true,
+            fileNumLimit: 15,
+            fileSizeLimit: 200 * 1024 * 1024,        // 200 M
+            fileSingleSizeLimit: 50 * 1024 * 1024    // 50 M
+        });
+		
+		// 文件上传成功，给item添加成功class, 用样式标记上传成功。
+		uploader.on( 'uploadSuccess', function(file,response ) {
+			//var str = JSON.stringify(response);  
+			//var filepath = JSON.stringify(file);  
+			
+			
+			var paths = response.path;
+			// //console.log("file"+file)
+			// //console.log("str"+response.path)
+
+			var $ImgPath = $("#ImgPath").val();
+
+			var ImgUrl = $ImgPath+','+paths;
+
+			if(ImgUrl.substr(0,1) == ","){
+				ImgUrl = ImgUrl.substr(1)
+			}
+
+			$("#ImgPath").val(ImgUrl);
+
+			var vals = $("#ImgPath").val();
+
+			
+			
+			$("#ImgPath").val(vals);
+			//console.log(vals);
+			
+
+			$("#gimg").append("<input type='hidden' value='"+response._raw+"' name='gimg[]'/>");
+			$( '#'+file.id ).addClass('upload-state-success').find(".state").text("已上传");
+		});
+		
+		
+
+        // 拖拽时不接受 js, txt 文件。
+        uploader.on( 'dndAccept', function( items ) {
+            var denied = false,
+                len = items.length,
+                i = 0,
+                // 修改js类型
+                unAllowed = 'text/plain;application/javascript ';
+
+            for ( ; i < len; i++ ) {
+                // 如果在列表里面
+                if ( ~unAllowed.indexOf( items[ i ].type ) ) {
+                    denied = true;
+                    break;
+                }
+            }
+
+            return !denied;
+        });
+
+        uploader.on('dialogOpen', function() {
+            //console.log('here');
+        });
+
+        // uploader.on('filesQueued', function() {
+        //     uploader.sort(function( a, b ) {
+        //         if ( a.name < b.name )
+        //           return -1;
+        //         if ( a.name > b.name )
+        //           return 1;
+        //         return 0;
+        //     });
+        // });
+
+        // 添加“添加文件”的按钮，
+        uploader.addButton({
+            id: '#filePicker2',
+            label: '继续添加'
+        });
+
+        uploader.on('ready', function() {
+            window.uploader = uploader;
+        });
+
+        // 当有文件添加进来时执行，负责view的创建
+        function addFile( file ) {
+            var $li = $( '<li id="' + file.id + '">' +
+                    '<p class="title">' + file.name + '</p>' +
+                    '<p class="imgWrap"></p>'+
+                    '<p class="progress"><span></span></p>' +
+                    '</li>' ),
+
+                $btns = $('<div class="file-panel">' +
+                    '<span class="cancel">删除</span>' +
+                    '<span class="rotateRight">向右旋转</span>' +
+                    '<span class="rotateLeft">向左旋转</span></div>').appendTo( $li ),
+                $prgress = $li.find('p.progress span'),
+                $wrap = $li.find( 'p.imgWrap' ),
+                $info = $('<p class="error"></p>'),
+
+                showError = function( code ) {
+                    switch( code ) {
+                        case 'exceed_size':
+                            text = '文件大小超出';
+                            break;
+
+                        case 'interrupt':
+                            text = '上传暂停';
+                            break;
+
+                        default:
+                            text = '上传失败，请重试';
+                            break;
+                    }
+
+                    $info.text( text ).appendTo( $li );
+                };
+
+            if ( file.getStatus() === 'invalid' ) {
+                showError( file.statusText );
+            } else {
+                // @todo lazyload
+                $wrap.text( '预览中' );
+                uploader.makeThumb( file, function( error, src ) {
+                    var img;
+
+                    if ( error ) {
+                        $wrap.text( '不能预览' );
+                        return;
+                    }
+
+                    if( isSupportBase64 ) {
+                        img = $('<img src="'+src+'">');
+                        $wrap.empty().append( img );
+                    } else {
+                        $.ajax('/Public/lib/webuploader/0.1.5/server/preview.php', {
+                            method: 'POST',
+                            data: src,
+                            dataType:'json'
+                        }).done(function( response ) {
+                            if (response.result) {
+                                img = $('<img src="'+response.result+'">');
+                                $wrap.empty().append( img );
+                            } else {
+                                $wrap.text("预览出错");
+                            }
+                        });
+                    }
+                }, thumbnailWidth, thumbnailHeight );
+
+                percentages[ file.id ] = [ file.size, 0 ];
+                file.rotation = 0;
+            }
+
+            file.on('statuschange', function( cur, prev ) {
+                if ( prev === 'progress' ) {
+                    $prgress.hide().width(0);
+                } else if ( prev === 'queued' ) {
+                    $li.off( 'mouseenter mouseleave' );
+                    $btns.remove();
+                }
+
+                // 成功
+                if ( cur === 'error' || cur === 'invalid' ) {
+                    //console.log( file.statusText );
+                    showError( file.statusText );
+                    percentages[ file.id ][ 1 ] = 1;
+                } else if ( cur === 'interrupt' ) {
+                    showError( 'interrupt' );
+                } else if ( cur === 'queued' ) {
+                    percentages[ file.id ][ 1 ] = 0;
+                } else if ( cur === 'progress' ) {
+                    $info.remove();
+                    $prgress.css('display', 'block');
+                } else if ( cur === 'complete' ) {
+                    $li.append( '<span class="success"></span>' );
+                }
+
+                $li.removeClass( 'state-' + prev ).addClass( 'state-' + cur );
+            });
+
+            $li.on( 'mouseenter', function() {
+                $btns.stop().animate({height: 30});
+            });
+
+            $li.on( 'mouseleave', function() {
+                $btns.stop().animate({height: 0});
+            });
+
+            $btns.on( 'click', 'span', function() {
+                var index = $(this).index(),
+                    deg;
+
+                switch ( index ) {
+                    case 0:
+                        uploader.removeFile( file );
+                        return;
+
+                    case 1:
+                        file.rotation += 90;
+                        break;
+
+                    case 2:
+                        file.rotation -= 90;
+                        break;
+                }
+
+                if ( supportTransition ) {
+                    deg = 'rotate(' + file.rotation + 'deg)';
+                    $wrap.css({
+                        '-webkit-transform': deg,
+                        '-mos-transform': deg,
+                        '-o-transform': deg,
+                        'transform': deg
+                    });
+                } else {
+                    $wrap.css( 'filter', 'progid:DXImageTransform.Microsoft.BasicImage(rotation='+ (~~((file.rotation/90)%4 + 4)%4) +')');
+                    // use jquery animate to rotation
+                    // $({
+                    //     rotation: rotation
+                    // }).animate({
+                    //     rotation: file.rotation
+                    // }, {
+                    //     easing: 'linear',
+                    //     step: function( now ) {
+                    //         now = now * Math.PI / 180;
+
+                    //         var cos = Math.cos( now ),
+                    //             sin = Math.sin( now );
+
+                    //         $wrap.css( 'filter', "progid:DXImageTransform.Microsoft.Matrix(M11=" + cos + ",M12=" + (-sin) + ",M21=" + sin + ",M22=" + cos + ",SizingMethod='auto expand')");
+                    //     }
+                    // });
+                }
+
+
+            });
+
+            $li.appendTo( $queue );
+        }
+
+        // 负责view的销毁
+        function removeFile( file ) {
+            var $li = $('#'+file.id);
+
+            delete percentages[ file.id ];
+            updateTotalProgress();
+            $li.off().find('.file-panel').off().end().remove();
+        }
+
+        function updateTotalProgress() {
+            var loaded = 0,
+                total = 0,
+                spans = $progress.children(),
+                percent;
+
+            $.each( percentages, function( k, v ) {
+                total += v[ 0 ];
+                loaded += v[ 0 ] * v[ 1 ];
+            } );
+
+            percent = total ? loaded / total : 0;
+
+
+            spans.eq( 0 ).text( Math.round( percent * 100 ) + '%' );
+            spans.eq( 1 ).css( 'width', Math.round( percent * 100 ) + '%' );
+            updateStatus();
+        }
+
+        function updateStatus() {
+            var text = '', stats;
+
+            if ( state === 'ready' ) {
+                text = '选中' + fileCount + '张图片，共' +
+                        WebUploader.formatSize( fileSize ) + '。';
+            } else if ( state === 'confirm' ) {
+                stats = uploader.getStats();
+                if ( stats.uploadFailNum ) {
+                    text = '已成功上传' + stats.successNum+ '张照片至XX相册，'+
+                        stats.uploadFailNum + '张照片上传失败，<a class="retry" href="#">重新上传</a>失败图片或<a class="ignore" href="#">忽略</a>'
+                }
+
+            } else {
+                stats = uploader.getStats();
+                text = '共' + fileCount + '张（' +
+                        WebUploader.formatSize( fileSize )  +
+                        '），已上传' + stats.successNum + '张';
+
+                if ( stats.uploadFailNum ) {
+                    text += '，失败' + stats.uploadFailNum + '张';
+                }
+            }
+
+            $info.html( text );
+        }
+
+        function setState( val ) {
+            var file, stats;
+
+            if ( val === state ) {
+                return;
+            }
+
+            $upload.removeClass( 'state-' + state );
+            $upload.addClass( 'state-' + val );
+            state = val;
+			
+            switch ( state ) {
+                case 'pedding':
+                    $placeHolder.removeClass( 'element-invisible' );
+                    $queue.hide();
+                    $statusBar.addClass( 'element-invisible' );
+                    uploader.refresh();
+                    break;
+
+                case 'ready':
+                    $placeHolder.addClass( 'element-invisible' );
+                    $( '#filePicker2' ).removeClass( 'element-invisible');
+                    $queue.show();
+                    $statusBar.removeClass('element-invisible');
+                    uploader.refresh();
+                    break;
+
+                case 'uploading':
+                    $( '#filePicker2' ).addClass( 'element-invisible' );
+                    $progress.show();
+                    $upload.text( '暂停上传' );
+                    break;
+
+                case 'paused':
+                    $progress.show();
+                    $upload.text( '继续上传' );
+                    break;
+
+                case 'confirm':
+                    $progress.hide();
+                    $( '#filePicker2' ).removeClass( 'element-invisible' );
+                    $upload.text( '开始上传' );
+
+                    stats = uploader.getStats();
+                    if ( stats.successNum && !stats.uploadFailNum ) {
+                        setState( 'finish' );
+                        return;
+                    }
+                    break;
+                case 'finish':
+                    stats = uploader.getStats();
+                    if ( stats.successNum ) {
+						layer.msg('上传成功',{icon:1,time:3000});
+                    } else {
+                        // 没有成功的图片，重设
+                        state = 'done';
+                        location.reload();
+                    }
+                    break;
+            }
+
+            updateStatus();
+        }
+
+        uploader.onUploadProgress = function( file, percentage ) {
+            var $li = $('#'+file.id),
+                $percent = $li.find('.progress span');
+
+            $percent.css( 'width', percentage * 100 + '%' );
+            percentages[ file.id ][ 1 ] = percentage;
+            updateTotalProgress();
+        };
+
+        uploader.onFileQueued = function( file ) {
+            fileCount++;
+            fileSize += file.size;
+
+            if ( fileCount === 1 ) {
+                $placeHolder.addClass( 'element-invisible' );
+                $statusBar.show();
+            }
+
+            addFile( file );
+            setState( 'ready' );
+            updateTotalProgress();
+        };
+
+        uploader.onFileDequeued = function( file ) {
+            fileCount--;
+            fileSize -= file.size;
+
+            if ( !fileCount ) {
+                setState( 'pedding' );
+            }
+
+            removeFile( file );
+            updateTotalProgress();
+
+        };
+
+        uploader.on( 'all', function( type ) {
+            var stats;
+            switch( type ) {
+                case 'uploadFinished':
+                    setState( 'confirm' );
+                    break;
+
+                case 'startUpload':
+                    setState( 'uploading' );
+                    break;
+
+                case 'stopUpload':
+                    setState( 'paused' );
+                    break;
+
+            }
+        });
+
+        uploader.onError = function( code ) {
+            alert( 'Eroor: ' + code );
+        };
+
+        $upload.on('click', function() {
+            if ( $(this).hasClass( 'disabled' ) ) {
+                return false;
+            }
+
+            if ( state === 'ready' ) {
+                uploader.upload();
+            } else if ( state === 'paused' ) {
+                uploader.upload();
+            } else if ( state === 'uploading' ) {
+                uploader.stop();
+            }
+        });
+
+        $info.on( 'click', '.retry', function() {
+            uploader.retry();
+        } );
+
+        $info.on( 'click', '.ignore', function() {
+            alert( 'todo' );
+        } );
+
+        $upload.addClass( 'state-' + state );
+        updateTotalProgress();
+    });
+
+})( jQuery );
+
+
+
 </script>
 </body>
 </html>

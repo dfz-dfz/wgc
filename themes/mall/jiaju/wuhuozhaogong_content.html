@@ -37,7 +37,8 @@
 				</div>
 			</div>
 		</div>
-		<div style="height:40px;background-color: #e41d22;color: #fff;font-size: 20px;letter-spacing: 4px;font-weight: 600;text-align: center;line-height: 40px;width: 20%;margin: 0 auto;">点击联系</div>
+		<div class="click_tel" style="height:40px;background-color: #e41d22;color: #fff;font-size: 20px;letter-spacing: 4px;font-weight: 600;text-align: center;line-height: 40px;width: 20%;margin: 0 auto;cursor: pointer;" onclick="kefu()">点击联系</div>
+		<div class="kefu" style="font-size: 18px;text-align: center;height: 30px;line-height: 30px;margin: 15px 0;display: none;">请联系客服：①：13143543973②：15217310540</div>
 	</div>
 
 	<div style="width: 200px;float: right;height: 587px;border-left: 10px solid #e5e5e5;padding-right: 0;">
@@ -55,7 +56,7 @@
 	var imgUrl = 'http://wgcapp.wgc2013.com/';
 
 	$(function(){
-		detail();
+		// detail();
 		content();
 	})
 
@@ -89,16 +90,18 @@
 			if(ret.code == 200){
 					var date = ret.user;
 					var userphoto = date.userphoto;
+					var skill = (date.skill == null || date.skill == '')?"无":date.skill;
+					var intension = (date.intension == null || date.intension == '')?"无":date.intension;
 					
 			 	$('#title').html("详情");
 			 	// $('#xiangmmc').html('<span>浏览量：</span>'+date.click);
 			   	$('#content').html('<span>年龄：</span>'+date.nianling+'岁');//
 			   	$('#cailiao').html('<span style="float:left;">户籍：</span><span style="width:765px;float:left;">'+date.huji+'</span>');
-			   	$('#fb_address').html('<span>职位：</span>'+date.zhiwei);
+			   	$('#fb_address').html('<span>职位：</span>'+date.title);
 			   	$('#shop_address').html('<span>期望薪资：</span>'+date.xinzi);
 			   	$('#time').html('<span>工作经验：</span>'+date.gz_jingyan);
-			   	$('#skill').html('<span>技能：</span>'+date.skill);
-			   	$('#yixiang').html('<span>求职意向：</span>'+date.intension);
+			   	$('#skill').html('<span>技能：</span>'+skill);
+			   	$('#yixiang').html('<span>求职意向：</span>'+intension);
 			   	// $('#xiangxi').html('<span>地址：</span>'+date.worker_address);
 
 
@@ -125,10 +128,20 @@
 		}, function(ret) {
 			var html = '';
 			if(ret.status == 200){
-					var date = ret.retData,
-					click    = date.click,
+					var date = ret.retData;
+					var skill = (date.skill == null || date.skill == '')?"无":date.skill;
+					var intension = (date.intension == null || date.intension == '')?"无":date.intension;
+					var click    = date.click,
 					userphoto = date.userphoto;
 					addtime = _trans_php_time_to_str(date.addtime,2);
+				$('#title').html("详情");
+				$('#content').html('<span>年龄：</span>'+date.age+'岁');//
+			   	$('#cailiao').html('<span style="float:left;">户籍：</span><span style="width:765px;float:left;">'+date.huji+'</span>');
+			   	$('#fb_address').html('<span>职位：</span>'+date.title);
+			   	$('#shop_address').html('<span>期望薪资：</span>'+date.xinzi);
+			   	$('#time').html('<span>工作经验：</span>'+date.job_exp);
+			   	$('#skill').html('<span>技能：</span>'+skill);
+			   	$('#yixiang').html('<span>求职意向：</span>'+intension);
 			 	$('#xiangmmc').html('<span>浏览量：</span>'+date.click);
 			 	$('#xiangxi').html('<span>地址：</span>'+date.xiangxi);
 			   	html += '<p id="message-content" style="width:100%;height:auto;overflow: hidden;margin:20px auto;padding-left: 0.35rem;border-bottom: 1px solid #ccc;border-top: 1px solid #ccc;">';
@@ -149,5 +162,10 @@
 			}
 		},'json');
 	}
+	//点击联系客服
+function kefu(){
+	$(".kefu").show();
+	$(".click_tel").hide();
+}
 </script>
 </html>

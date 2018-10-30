@@ -119,10 +119,10 @@
 						addtime = _trans_php_time_to_str(data[i].addtime,2);
 
 						html += '<ul>';
-							html += '<li style="width:30%;color:red;font-weight:600;">'+postion+'</li>';
+							html += '<li style="width:30%;color:red;font-weight:600;">'+title+'</li>';
 							html += '<li style="width:40%" title="'+xiangxi+'">'+xiangxi+'</li>';
 							html += '<li style="width:20%;">'+addtime+'</li>';
-							html += '<li style="width:10%;cursor: pointer;"><a style="color:blue;" href="/index.php?app=search&act=wuhuozhaogong_content&id='+id+'&uid='+uid+'">查看</a></li>';
+							html += '<li style="width:10%;cursor: pointer;"><a target="_blank" style="color:blue;" href="/index.php?app=search&act=wuhuozhaogong_content&id='+id+'&uid='+uid+'">查看</a></li>';
 						html += '</ul>';
 					
 				}
@@ -154,7 +154,7 @@
 				for(var i in data){
 					var id = data[i].id,
 						uid = data[i].user_id,
-						jobtype = (parseInt(data[i].jobtype) > 0)?list[parseInt(data[i].jobtype)]:'无工种',
+						jobtype = (parseInt(data[i].jobtype) > 0)?list[parseInt(data[i].jobtype)-1]:'无工种',
 						title = data[i].title,
 						is_show = (data[i].is_show == 1)?"有活":"无活",
 						xiangxi = data[i].xiangxi,
@@ -164,7 +164,7 @@
 							html += '<li style="width:30%;color:red;font-weight:600;">'+jobtype+'</li>';
 							html += '<li style="width:40%" title="'+xiangxi+'">'+xiangxi+'</li>';
 							html += '<li style="width:20%;">'+addtime+'</li>';
-							html += '<li style="width:10%;cursor: pointer;"><a style="color:blue;" href="/index.php?app=search&act=wuhuozhaogong_content&id='+id+'&uid='+uid+'">查看</a></li>';
+							html += '<li style="width:10%;cursor: pointer;"><a target="_blank" style="color:blue;" href="/index.php?app=search&act=wuhuozhaogong_content&id='+id+'&uid='+uid+'">查看</a></li>';
 						html += '</ul>';
 				}
 				$('#shejiMain').html(html);

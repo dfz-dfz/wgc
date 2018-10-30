@@ -60,8 +60,8 @@ margin:auto;padding:0px;margin-top: 10px;margin-bottom: 10px; width:1200px;overf
 			</div>
 		</div>
 
-		<div class="link" style="float:left;margin-left: 50%;">
-			<div style="height:40px;background-color: #ff3332;color: #fff;font-size: 18px;letter-spacing: 2px;font-weight: 600;text-align: center;line-height: 40px;cursor: pointer;padding: 0 30px;border-radius: 14px;" onclick="tolink()">点击联系</div>
+		<div class="link" style="text-align: center;">
+			<div style="height:40px;background-color: #ff3332;color: #fff;font-size: 18px;letter-spacing: 2px;font-weight: 600;text-align: center;line-height: 40px;cursor: pointer;padding: 0 30px;border-radius: 14px;width: 20%;margin:0 auto;" onclick="tolink()">点击联系</div>
 		</div>
 	</div>
 	
@@ -122,12 +122,12 @@ function tolink(){
 		user_id : userid
 	}, function(ret) {
 		if(ret.code == 200){
-				$('.link').html('<div id="mobile">请联系客服询问工人的联系方式：①：13143543973②：15217310540</div>');
+				$('.link').html('<div id="mobile" style="font-size:18px;">请联系客服询问工人的联系方式：①：13143543973②：15217310540</div>');
 		}else if(ret.code == 202){
 			var logoHtml = '<div>请<a href="index.php?app=member&act=login&ret_url=" target="_blank" style="cursor:pointer;color:blue;">登录</a>之后在联系</div>';
 			$('.link').html(logoHtml);
 		}else if(ret.code == 203){
-			$('.link').html('<div id="mobile">请联系客服询问工人的联系方式：①：13143543973②：15217310540</div>');
+			$('.link').html('<div id="mobile" style="font-size:18px;">请联系客服询问工人的联系方式：①：13143543973②：15217310540</div>');
 		}
 	},'json');
 }
