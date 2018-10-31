@@ -91,6 +91,9 @@ body{background:url('') no-repeat center top }
 	height: 30px;
 	line-height: 30px;
 }
+.resume_left li span:nth-of-type(even){
+	width: 159px;
+}
 </style>
 <script type="text/javascript" src="http://www.wgc2013.com/themes/mall/jiaju/styles/default/js/hover.js"></script>
 <script charset="utf-8" type="text/javascript" src="http://www.wgc2013.com/includes/libraries/javascript/jquery.plugins/jquery.validate.js" ></script>
@@ -154,6 +157,18 @@ body{background:url('') no-repeat center top }
 				<input type="text" class="search_input" />
 				<input type="button" value="搜索" class="search_btn" onclick="search()"/>
 				<input type="button" value="返回" id="back_list" style="width: 80px;height: 24px;background-color: #f7c67a;color: #f2552a;border: 1px solid #cfcfcf;cursor: pointer;display: none;" onclick="backlist()" />
+				<div class="resume" style="display: none;">
+					<div style="width: 100%;">
+	 					<img src="/themes/mall/jiaju/images/center/resume_bg1.jpg" alt="" width="100%" height="55px;" />
+	 				</div>
+					<!-- 简历详情 -->
+					<div class="resume_content">
+						<div style="margin-top: 50px;font-size: 18px;">暂无简历</div>
+					</div>
+	 				<div style="width: 100%;position: absolute;bottom: 0;">
+	 					<img src="/themes/mall/jiaju/images/center/resume_bg2.jpg" alt="" width="100%" height="55px;" />
+	 				</div>
+				</div>
 				<!-- <input type="button" style="height: 24px;width: 70px;" value="分享" class="share_btn" onclick="showUserList()"/> -->
 
 				<!-- <ul class="list_ul_head">
@@ -287,7 +302,7 @@ body{background:url('') no-repeat center top }
 <script src="/themes/mall/jiaju/js/tool.js"></script>
 <script type="text/javascript">
 	$(function(){
-	$(".user_workerDE_li").addClass("bg_li")
+	$(".user_companyresume_li").addClass("bg_li")
 		list(page);
 		messagelist();
 	});
@@ -415,21 +430,48 @@ body{background:url('') no-repeat center top }
 					var listHtml = '';
 					for(i in data){
 						var id       = data[i].id,
+							jid      = data[i].jid,
 							company_name     = data[i].company_name,
+							name     = data[i].name,
 							xinzi   = data[i].xinzi,
-							zhiwei= data[i].zhiwei,
+							r_zhiwei= data[i].r_zhiwei,
+							tel   = data[i].tel,
+							time   = _trans_php_time_to_str(data[i].time,2);
 							addtime = _trans_php_time_to_str(data[i].addtime,2);
+
+							var birthtime   = data[i].birthtime;	//出生日期
+							var email       = data[i].email;		//个人邮件
+							var hangye      = data[i].hangye;		//行业
+							var id          = data[i].id;			//id
+							var marry  		= data[i].marry;		//婚配情况
+							var name 		= data[i].name;			//姓名
+							var palce 		= data[i].palce;		//居住地
+							var salary		= data[i].salary;		//期望薪资
+							var school 		= data[i].school;		//学校学院
+							var self 		= data[i].self;			//个人标签
+							var selfpingjia = data[i].selfpingjia;	//个人评价
+							var sex 		= data[i].sex;			//性别
+							var starttime 	= data[i].starttime;	//教育开始时间
+							var tel  		= data[i].tel;			//联系电话
+							var userid 		= data[i].user_id;		//用户id
+							var workpalce 	= data[i].workpalce;	//工作地点
+							var workjingyan = data[i].workjingyan;	//工作经验
+							var xuewei 		= data[i].xuewei;		//学历
+							var zhineng 	= data[i].zhineng;		//职能
+							var zhiwei 		= data[i].zhiwei;		//职位
+							var zhuanye 	= data[i].zhuanye; 		//专业
+							var huji        = data[i].huji;			//户籍
 							
 							
 						listHtml 	+= 	'<li>';
 						listHtml 	+='<div class="left" style="float: left;">';
-						listHtml 	+=	'<div>'+zhiwei+'</div>';
-						listHtml 	+=	'<div style="color:#f10606;">'+xinzi+'</div>';
-						listHtml 	+=	'<div style="color: #504d4d;font-size: 14px;">'+company_name+'</div>';
+						listHtml 	+=	'<div>'+r_zhiwei+'<a href="/index.php?app=search&act=content&id='+jid+'" target="_blank" style="color:#9e9d9d;display:inline-block;margin-left:10px;font-size:12px;">查看招聘</a></div>';
+						listHtml 	+=	'<div style="color:#f10606;">薪资：'+xinzi+'</div>';
+						listHtml 	+=	'<div style="color: #504d4d;font-size: 14px;">投递人：'+name+'&nbsp;&nbsp;&nbsp;联系电话：'+tel+'<a href="javascript:;" target="_blank" style="color:#9e9d9d;display:inline-block;margin-left:10px;font-size:12px;" onclick="find(\''+birthtime+'\',\''+email+'\',\''+hangye+'\',\''+id+'\',\''+marry+'\',\''+name+'\',\''+palce+'\',\''+salary+'\',\''+school+'\',\''+self+'\',\''+selfpingjia+'\',\''+sex+'\',\''+starttime+'\',\''+tel+'\',\''+userid+'\',\''+workpalce+'\',\''+workjingyan+'\',\''+xuewei+'\',\''+zhineng+'\',\''+zhiwei+'\',\''+zhuanye+'\',\''+huji+'\')">查看简历</a></div>';
 						listHtml 	+='</div>';
 						listHtml 	+='<div class="right" style="float: right;">';
-						listHtml 	+=	'<div>已查看</div>';
-						listHtml 	+=	'<div style="margin-top: 30px;">'+addtime+'</div>';
+						listHtml 	+=	'<div style="color: #ab5d5d;font-size: 14px;">发布时间:'+addtime+'</div>';
+						listHtml 	+=	'<div style="margin-top: 30px;color: #ab5d5d;font-size: 14px;">投递时间:'+time+'</div>';
 						listHtml 	+='</div>';
 						listHtml 	+='</li>';
 					}
@@ -567,7 +609,7 @@ body{background:url('') no-repeat center top }
 
 	// 搜索工价列表
 	function search(){
-		var url = 'http://wgcapp.wgc2013.com/jingyi.php/Home/Jianli/Resumes_lists';
+		var url = 'http://wgcapp.wgc2013.com/jingyi.php/Home/Jianli/user_Resumes_lists';
 		var value = $(".search_input").val();
 		if(value){
 			$("#back_list").show();
@@ -589,21 +631,48 @@ body{background:url('') no-repeat center top }
 					var listHtml = '';
 					for(i in data){
 						var id       = data[i].id,
+							jid      = data[i].jid,
 							company_name     = data[i].company_name,
+							name     = data[i].name,
 							xinzi   = data[i].xinzi,
-							zhiwei= data[i].zhiwei,
+							r_zhiwei= data[i].r_zhiwei,
+							tel   = data[i].tel,
+							time   = _trans_php_time_to_str(data[i].time,2);
 							addtime = _trans_php_time_to_str(data[i].addtime,2);
+
+							var birthtime   = data[i].birthtime;	//出生日期
+							var email       = data[i].email;		//个人邮件
+							var hangye      = data[i].hangye;		//行业
+							var id          = data[i].id;			//id
+							var marry  		= data[i].marry;		//婚配情况
+							var name 		= data[i].name;			//姓名
+							var palce 		= data[i].palce;		//居住地
+							var salary		= data[i].salary;		//期望薪资
+							var school 		= data[i].school;		//学校学院
+							var self 		= data[i].self;			//个人标签
+							var selfpingjia = data[i].selfpingjia;	//个人评价
+							var sex 		= data[i].sex;			//性别
+							var starttime 	= data[i].starttime;	//教育开始时间
+							var tel  		= data[i].tel;			//联系电话
+							var userid 		= data[i].user_id;		//用户id
+							var workpalce 	= data[i].workpalce;	//工作地点
+							var workjingyan = data[i].workjingyan;	//工作经验
+							var xuewei 		= data[i].xuewei;		//学历
+							var zhineng 	= data[i].zhineng;		//职能
+							var zhiwei 		= data[i].zhiwei;		//职位
+							var zhuanye 	= data[i].zhuanye; 		//专业
+							var huji        = data[i].huji;			//户籍
 							
 							
 						listHtml 	+= 	'<li>';
 						listHtml 	+='<div class="left" style="float: left;">';
-						listHtml 	+=	'<div>'+zhiwei+'</div>';
-						listHtml 	+=	'<div style="color:#f10606;">'+xinzi+'</div>';
-						listHtml 	+=	'<div style="color: #504d4d;font-size: 14px;">'+company_name+'</div>';
+						listHtml 	+=	'<div>'+r_zhiwei+'<a href="/index.php?app=search&act=content&id='+jid+'" target="_blank" style="color:#9e9d9d;display:inline-block;margin-left:10px;font-size:12px;">查看招聘</a></div>';
+						listHtml 	+=	'<div style="color:#f10606;">薪资：'+xinzi+'</div>';
+						listHtml 	+=	'<div style="color: #504d4d;font-size: 14px;">投递人：'+name+'&nbsp;&nbsp;&nbsp;联系电话：'+tel+'<a href="javascript:;" target="_blank" style="color:#9e9d9d;display:inline-block;margin-left:10px;font-size:12px;" onclick="find(\''+birthtime+'\',\''+email+'\',\''+hangye+'\',\''+id+'\',\''+marry+'\',\''+name+'\',\''+palce+'\',\''+salary+'\',\''+school+'\',\''+self+'\',\''+selfpingjia+'\',\''+sex+'\',\''+starttime+'\',\''+tel+'\',\''+userid+'\',\''+workpalce+'\',\''+workjingyan+'\',\''+xuewei+'\',\''+zhineng+'\',\''+zhiwei+'\',\''+zhuanye+'\',\''+huji+'\')">查看简历</a></div>';
 						listHtml 	+='</div>';
 						listHtml 	+='<div class="right" style="float: right;">';
-						listHtml 	+=	'<div>已查看</div>';
-						listHtml 	+=	'<div style="margin-top: 30px;">'+addtime+'</div>';
+						listHtml 	+=	'<div style="color: #ab5d5d;font-size: 14px;">发布时间:'+addtime+'</div>';
+						listHtml 	+=	'<div style="margin-top: 30px;color: #ab5d5d;font-size: 14px;">投递时间:'+time+'</div>';
 						listHtml 	+='</div>';
 						listHtml 	+='</li>';
 					}
@@ -1062,6 +1131,76 @@ $(".quxiao").click(function(){
 	// 	console.log(e)
 		
 	// })
+//查看简历
+function find(birthtime,email,hangye,id,marry,name,palce,salary,school,self,selfpingjia,sex,starttime,tel,userid,workpalce,workjingyan,xuewei,zhineng,zhiwei,zhuanye,huji){
+	$(".resume").show();
+				var listHtml = '';					
+						//判断性别
+							if(sex == "0"){
+								sex = "男";
+							}else if(sex =="1"){
+								sex = "女";
+							}
+
+							//判断婚嫁
+							if(marry == "marry"){
+								marry ="已婚";
+							}else if(marry == "femarry"){
+								marry = "未婚";
+							}
+						//拼接数据
+ 			listHtml += '<div class="worker_make_info base_info_public" style="overflow: hidden;min-height: 250px;margin-top: 10px;padding-top: 0;position: relative;">';
+ 			listHtml +=	'<div style="width: 100%;">';
+ 			listHtml +=		'<img src="/themes/mall/jiaju/images/center/resume_bg1.jpg" alt="" width="100%" height="55px;" />';
+ 			listHtml +=	'</div>';
+			listHtml +=	'<div class="resume_content" style="position:relative;">';
+			listHtml +=	'<div style="text-align: right;position:absolute;right:0px;"><span style="display: inline-block;width: 80px;height: 25px;line-height: 25px;background-color: #eee;font-size: 20px;text-align: center;margin:10px 20px 0 0;letter-spacing: 2px;cursor:pointer;" onclick="yincang()">隐藏</span></div>';
+			listHtml +=		'<div class="resume_left" style="width: 32%;height: 60%;border-right: 2px solid #eee; float: left;margin-top: 100px;">';
+			listHtml +=			'<div style="margin-left: 30%;position: relative;top: -40px;">';
+			listHtml +=				'<a href="#"><img src="/themes/mall/jiaju/images/center/user-head.png" alt="用户头像" width="120" height="120" /></a>';
+			listHtml +=			'</div>';
+			listHtml +=			'<div style="margin: -20px 0px 50% 15%;">';
+			listHtml +=				'<ul>';
+			listHtml +=					'<li><h1 style="font-size: 18px;font-weight: bold;letter-spacing: 2px;margin-bottom: 10px;">'+name+'</h1></li>';
+			listHtml +=					'<li style="margin-bottom: 20px;"><span style="width: 40px;color: #000;">'+sex+'</span><span style="display: inline-block; width: 150px;">'+birthtime+'</span><span style="width: 40px;color: #000;">'+marry+'</span></li>';
+			listHtml +=					'<li><span>贯&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;籍：</span><span>'+huji+'</span></li>';
+			listHtml +=					'<li><span>居&nbsp;住&nbsp;&nbsp;地：</span><span>'+palce+'</span></li>';
+			listHtml +=					'<li><span>手&nbsp;机&nbsp;&nbsp;号：</span><span>'+tel+'</span></li>';
+			listHtml +=					'<li><span>邮&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;箱：</span><span>'+email+'</span></li>';
+			listHtml +=					'<li><h3 style="font-size: 15px;color: #fc9b84;margin: 10px 0;font-weight: bold;">教育经历</h3></li>';
+			listHtml +=					'<li><span>专&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;业：</span><span>'+zhuanye+'</span></li>';
+			listHtml +=					'<li><span>学院名称：</span><span>'+school+'</span></li>';
+			listHtml +=					'<li><span>学历学位：</span><span>'+xuewei+'</span></li>';
+			listHtml +=				'</ul>';
+			listHtml +=			'</div>';
+			listHtml +=		'</div>';
+			listHtml +=		'<div class="resume_right" style="width: 62%;float: left;margin-top: 140px;padding-right: 5%;">';
+			listHtml +=			'<div style="margin-left: 5%;">';
+			listHtml +=			'<h3 style="font-size: 15px;color: #fc9b84;margin: 10px 0;font-weight: bold;text-align: left;margin: 20px 0;">个人工作经验</h3>';
+			listHtml +=			'<p style="text-align: left;color: #000;font-size: 12px;letter-spacing: 2px;"><b>'+workjingyan+'</b></p>';
+			listHtml +=			'<h3 style="font-size: 15px;color: #fc9b84;margin: 10px 0;font-weight: bold;text-align: left;margin: 20px 0;">求职意向</h3>';
+			listHtml +=			'<ul>';
+			listHtml +=				'<li><span>期望资薪：</span><span>'+salary+'</span></li>';
+			listHtml +=				'<li><span>工作地点：</span><span>'+workpalce+'</span></li>';
+			listHtml +=				'<li><span>职&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;能：</span><span>'+zhineng+'</span></li>';
+			listHtml +=				'<li><span>职&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;位：</span><span>'+zhiwei+'</span></li>';
+			listHtml +=				'<li><span>行&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;业：</span><span>'+hangye+'</span></li>';
+			listHtml +=				'<li><span>个人标签：</span><span>'+self+'</span></li>';
+			listHtml +=				'<li><span>自我评价：</span><span>'+selfpingjia+'</span></li>';
+			listHtml +=			'</ul>';
+			listHtml +=			'</div>';
+			listHtml +=		'</div>';
+			listHtml +=	'</div>';
+ 			listHtml +='</div>';
+							
+					
+					$(".resume").html(listHtml);
+
+	}
+//隐藏简历
+function yincang(){
+	$(".resume").hide();
+}
 </script>
 </body>
 </html>

@@ -323,8 +323,13 @@ function search(){
 	var vals = $(".ser_right_sec").val();
 	var gz   = $("#gongzhong").val();
 
-	alert('普通用户查询当地最新的工作找工明细需要收取20元/次!');
-	return false;
+	var conf=confirm("普通用户查询当地最新的工作找工明细需要收取20元/次!");
+    if(conf==true){  
+		alert("您选择了：继续");  
+    }else {  
+        alert("您选择了：取消")  
+        return false;
+    }
 
 	if(vals == 0){
 		alert('行业必填！');

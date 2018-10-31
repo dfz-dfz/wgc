@@ -196,20 +196,25 @@ margin:auto;padding:0px;margin-top: 10px;margin-bottom: 10px; width:1100px;overf
 						
 					</ul>
 					<!-- 显示分页 -->
-			       	<div class="unpages" id="unpage" style="margin:20px auto;width: 200px;text-align: center;">
+			       	<div class="unpages" style="margin:20px auto;width: 200px;text-align: center;">
 						<a id="prePage" style="background:red;color:#fff;width: 70px;height: 30px;line-height: 30px;padding:4px 5px;cursor:pointer;margin-right: 20px;" onclick="uppage()">上一页</a>
-						<a style="background:red;color:#fff;width: 70px;height: 30px;line-height: 30px;padding:4px 5px;cursor:pointer;" onclick="nextpage()" id="nextpage">下一页</a>
+						<a id="unpage" style="background:red;color:#fff;width: 70px;height: 30px;line-height: 30px;padding:4px 5px;cursor:pointer;" onclick="nextpage()" id="nextpage">下一页</a>
 					</div>
 				</div>
-				<div style="overflow:hidden;float:right;margin:20px 0;width:20%;">
-					<!---今日--要闻---->
-					<!-- <div style="overflow:hidden;height:auto;width:99%;border:1px solid #e3e3e3;">
-						<h3 style="font-size:18px;color:#333;line-height:40px;background:#e2e2e2;overflow:hidden;height:40px;width:100%;border-bottom:1px solid #e3e3e3;">今日要闻</h3>
-						<ul class="aui-list aui-media-list" id="newsHost"></ul>
-					</div> -->
+				<div style="overflow:hidden;float:right;margin:10px 0;width:20%;">
 					<div style="width: 200px;float: right;height: auto;padding-right: 0;">
-						<img src="http://www.wgc2013.com/themes/mall/jiaju/images/guanggao.png" alt="" width="100%">
-						<img src="http://www.wgc2013.com/themes/mall/jiaju/images/guanggao.png" alt="" width="100%" style="margin-top: 20px;">
+						<!-- <img src="http://www.wgc2013.com/themes/mall/jiaju/images/guanggao.png" alt="" width="100%">
+						<img src="http://www.wgc2013.com/themes/mall/jiaju/images/guanggao.png" alt="" width="100%" style="margin-top: 20px;"> -->
+						<div style="height: 101px;margin-bottom: 10px;" id="message_advertisement1"></div>
+						<div style="height: 101px;margin-bottom: 10px;" class="id_inner" id="message_advertisement2"></div>
+						<div style="height: 101px;margin-bottom: 10px;" class="id_inner" id="message_advertisement3"></div>
+						<div style="height: 101px;margin-bottom: 10px;" class="id_inner" id="message_advertisement4"></div>
+						<div style="height: 101px;margin-bottom: 10px;" class="id_inner" id="message_advertisement5"></div>
+						<div style="height: 101px;margin-bottom: 10px;" class="id_inner" id="message_advertisement6"></div>
+						<div style="height: 101px;margin-bottom: 10px;" class="id_inner" id="message_advertisement7"></div>
+						<div style="height: 101px;margin-bottom: 10px;" class="id_inner" id="message_advertisement8"></div>
+						<div style="height: 101px;margin-bottom: 10px;" class="id_inner" id="message_advertisement9"></div>
+						<div style="height: 101px;margin-bottom: 10px;" class="id_inner" id="message_advertisement10"></div>
 					</div>
 				</div>
 			</div>
@@ -225,6 +230,17 @@ margin:auto;padding:0px;margin-top: 10px;margin-bottom: 10px; width:1100px;overf
 <script type="text/javascript">
 var t = n =0, count;
 $(document).ready(function(){
+	var test=document.getElementsByClassName('id_inner');
+	advertisement(10,'message_advertisement1');
+	advertisement(11,'message_advertisement2');
+	advertisement(12,'message_advertisement3');
+	advertisement(13,'message_advertisement4');
+	advertisement(14,'message_advertisement5');
+	advertisement(15,'message_advertisement6');
+	advertisement(16,'message_advertisement7');
+	advertisement(17,'message_advertisement8');
+	advertisement(18,'message_advertisement9');
+	advertisement(19,'message_advertisement10');
 	count=$("#banner_list a").length;
 	$("#banner_list a:not(:first-child)").hide();
 	$("#banner_info").html($("#banner_list a:first-child").find("img").attr('alt'));
@@ -317,6 +333,7 @@ function news_select(page){
 
 // 招聘信息列表
 function zhaopinList(page){
+	
 	var url = serverUrl+"Systemmsg/AdvertisementPage_list";
 	$.post(url,{
 		limit : 15,
@@ -326,6 +343,9 @@ function zhaopinList(page){
 	},function(ret){
 		if(ret.code == 200){
 			page++;
+			if(page = 1){
+				$('#prePage').hide();
+			}
 			var data = ret.message;
 			var html = '';
 			var listHtml  = '';
@@ -365,10 +385,12 @@ function uppage(){
 	}
 	page--;
 	zhaopinList(page);
+	$('#unpage').show();
 }
 function nextpage(){
 	page++;
 	zhaopinList(page);
+	$('#prePage').show();
 }
 
 //今日要闻列表

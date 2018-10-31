@@ -334,8 +334,14 @@ input{
 		var zuidixueli      = $('#zuidixueli').val();
 		var age             = $('#age').val();
 		var other           = $('#other').val();
-		alert('普通用户发布招聘信息需要收取50块/次！');
-		return false;
+		
+		var conf=confirm("普通用户发布招聘信息需要收取50块/次！");
+	    if(conf==true){  
+			alert("您选择了：继续");  
+	    }else {  
+	        alert("您选择了：取消")  
+	        return false;
+	    }
 
 		if(!jobtype){
 			alert("请输入招聘岗位！")

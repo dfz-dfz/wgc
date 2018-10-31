@@ -1167,8 +1167,13 @@ $(function(){
 		var hanshui         = $("#hanshui").val();
 		var price           = $("#price").val();
 
-		alert('普通用户发布材料询价需要收取30元/次!');
-		return false;
+		var conf=confirm("普通用户发布材料询价需要收取30元/次!");
+	    if(conf==true){  
+			alert("您选择了：继续");  
+	    }else {  
+	        alert("您选择了：取消")  
+	        return false;
+	    }
 
 		if(title == ''){
 			alert('必填项!');

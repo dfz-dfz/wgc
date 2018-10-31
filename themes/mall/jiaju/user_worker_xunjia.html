@@ -1321,8 +1321,13 @@ $(document).ready(function() {
 		var tel         = $("#tel");
 		var img         = $('#ImgPath').val();
 
-		alert('普通用户发布工价询价需要收取20元/次!');
-		return false;
+		var conf=confirm("普通用户发布工价询价需要收取20元/次!");
+	    if(conf==true){  
+			alert("您选择了：继续");  
+	    }else {  
+	        alert("您选择了：取消")  
+	        return false;
+	    }
 
 	    if(office_name.val() == ''){
 			alert('请填写公司名称');
