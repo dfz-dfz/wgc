@@ -47,12 +47,35 @@ input{
 }
 
 .user_employ_list ul li{
-	margin-bottom:10px;
+	/*margin-bottom:10px;*/
 }
 .user_employ_list h1{
 	margin:10px 0;
 	padding-left:5%;
 }
+.shejilist ul {
+		border-bottom: 1px solid #d4d4d4;
+		height: 40px;
+		line-height: 40px;
+		text-align: center;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	.shejilist li {
+		float: left;
+	    overflow: hidden;
+	    text-overflow: ellipsis;
+	    white-space: nowrap;
+	    text-align: center;
+	    font-size: 14px;
+	}
+
+	#headerlist li {
+		font-size: 20px;
+		font-weight: bold;
+	}
 </style>
 <script type="text/javascript" src="http://www.wgc2013.com/themes/mall/jiaju/styles/default/js/hover.js"></script>
 <script charset="utf-8" type="text/javascript" src="http://www.wgc2013.com/includes/libraries/javascript/jquery.plugins/jquery.validate.js" ></script>
@@ -160,48 +183,34 @@ input{
 		<!--招聘列表 -->
 		
  			<div class="user_employ_list base_info_public" id="zhaopin_list" style="overflow: hidden;display:none;position:relative;min-height:480px;">
-			<!-- 搜索-->
-						<div class="search_ys">
-							<!-- <input type="text" style="width: 400px;height: 30px;" id="search" placeholder="请输入关键词:公司名称/职位">
-							<label for="search_fc" style="width: 50px;height: 30px;display:inline-block;position: relative;top: -8px;" onclick="search()"><img src="/themes/mall/jiaju/images/search_button.jpg" alt="" style="width: 100%;height: 100%;"></label>
-							<button class="quxiao_zc" style="padding:0;width: 50px;height: 30px;position: relative;top: -8px;cursor:pointer;line-height:30px;background-color: #ec6941;display:none;">取消</button>	 -->
-							<a class="share_btn" href="javascript:;" style="display: inline-block;width: 60px;height: 30px;line-height: 30px;font-size: 16px;color: #2d2a2a;font-weight: bold;letter-spacing: 4px; background-color: #facd89;border-radius: 5px;position: relative;left: 200px;top:-5px;text-decoration: none;display: none;" onclick="showUserList()">分享</a>
-						</div>
-			<!-- 搜索end-->
-				<div class="list_detail">
-				<!-- <div class="list_box">
-					<h1 style="color: #ec6941;font-size:18px;text-align:left;">个人信息</h1>
-					<div class="ul_left" style="float: left;width: 50%;">
-						<ul style="margin-left:10%;">
-							<li>公司名称：广州市经艺装饰设计工程有限公司</li>
-							<li>发布城市：广州市</li>
-							<li>公司网址：http://yxj.jyboo.com</li>
+			<!-- 搜索 -->
+				<div style="height: 54px;">
+					<input id="key" type="text" style="height: 10px;width: 90%;padding: 20px;float: left;" placeholder="请输入关键词">
+					<img onclick="searchList()" src="themes/mall/jiaju/images/search.png" alt="" style="float: left;width: 70px;height: 42px;">
+				</div>
+
+				<div class="shejilist" style="margin: 20px auto;position: relative;">
+					
+					<span id="back_btn" style="width: 100px;color: #fff;background-color: #efa913;padding: 9px;font-size: 16px;text-align: center;display: none;top: 0;left: 210px;cursor: pointer;" onclick="backList()">返回列表</span>
+					<!-- 材料询价列表 -->
+					<div id="sjfbList" style="margin-top: 5px;"> 
+						<ul id="headerlist" style="width: 100%;background-color: #efa913;">
+							<li style="width: 30%;">公司名称</li>
+							<li style="width: 20%;">招聘岗位</li>
+							<li style="width: 20%;">发布时间</li>
+							<li style="width: 20%;">公司地址</li>
+							<li style="width: 10%;">详情</li>
 						</ul>
+
+						<div id="shejiMain" style="border:1px solid #6d6d6d;border-top: 0;min-height: 415px;height: auto;overflow: hidden;">
+							
+						</div>
 					</div>
 
-					<div class="ul_right" style="float: right;width: 50%;">
-						<ul>
-							<li>招聘岗位：平面设计师</li>
-							<li>招聘人数：3人</li>
-							<li>薪资：4000-6000元</li>
-						</ul>
+					<div class="unpages" id="unpage" style="margin:50px auto;width: 200px;text-align: center;">
+						<a style="background:red;color:#fff;width: 70px;height: 30px;line-height: 30px;padding:4px 5px;cursor:pointer;margin-right: 20px;" onclick="uppage()">上一页</a>
+						<a style="background:red;color:#fff;width: 70px;height: 30px;line-height: 30px;padding:4px 5px;cursor:pointer;" onclick="nextpage()" id="nextpage">下一页</a>
 					</div>
-					<p class="clearfix" style="color:#000;padding-left:4%;">岗位描述：负责公司平面设计相关的各类创意策划。提出是你卡死你法拉盛你法拉盛疯狂拉升放假啊可是浪费奥斯卡了富马酸克里夫马卡龙洒。</p>
-					<h1 style="color: #ec6941;font-size:18px;text-align:left;">岗位要求</h1>
-					<div class="ul_left" style="float: left;width: 50%;">
-						<ul style="margin-left:10%;">
-							<li>工作年龄：3-5年</li>
-							<li>年龄：22-38</li>
-						</ul>
-					</div>
-					<div class="ul_right" style="float: right;width: 50%;">
-						<ul>
-							<li>最低学历：大专</li>
-							<li>其他：有相关经验优先</li>
-						</ul>
-					</div>
-					<div style="width:100%;height:40px;float:left;margin-top:30px;"><img src="/themes/mall/jiaju/images/list_bg.jpg" style="width:100%;height:100%;"/></div>
-				</div>-->
 				</div>
 			<!-- 分享弹窗 -->
 					<div class="confirm" style="width: 100%;height: 100%;background-color: rgba(0,0,0,.1);position: absolute;top: 0;display:none;">
@@ -289,8 +298,11 @@ input{
  	</div>
 
 {include file=footer.html}
+<script src="/themes/mall/jiaju/js/tool.js"></script>
 <script type="text/javascript">
 	var page = 1;
+	var key = '';
+
 
 	//点击预算列表切换
 	  $(".user_employ_ul li:first").click(function(){
@@ -852,9 +864,130 @@ function del(id,userid){
    
 //全局加载
 $().ready(function(){
-	jobtypes();
-	zhaopinlist();
+	// jobtypes();
+	// zhaopinlist();
+	repair_list(1);
 })
+function uppage(){
+		if(page<1){
+			page=1;
+		}
+		page--;
+		repair_list(page);
+	}
+
+	function nextpage(){
+		page++;
+		repair_list(page);
+	}
+
+	//材料询价列表
+	function repair_list(spage){
+		var list=['施工队长','水电工长','空调安装工长','空调安装工','泥水工','水电工','电焊工','家具安装工','木工','扇灰工','保洁工','杂工','设计师','预算员','其它','维修工','网络维修', '实习预结算员','室内设计师','工程经理','机电工程师','暖通设计师','采购经理','文案','平面设计','效果图设计师','客服专员','行政助理','软件销售经理','业务员','项目经理','水电维修','空调维修','装饰维修','设备维修','分销商','工匠','公司','材料商','前端开发','后端开发'];
+		$.post('http://wgcapp.wgc2013.com/jingyi.php/Home/Jymember/getqiuzhi', {
+			page   :spage,
+			type : 2,
+			s_city : "广州市",
+			s_area : "白云区",
+			user_id : ""
+
+			
+		}, function(ret) {
+			var userid = '<?php echo $_SESSION["user_info"]["user_id"];?>';
+			if(ret.status == 200){
+				var data = ret.retData;
+				var html = '';
+				for(var i in data){
+					var id = data[i].id,
+						uid = data[i].user_id,
+						jobtype 	= (parseInt(data[i].jobtype) > 0)?list[parseInt(data[i].jobtype)-1]:'无工种',
+						xiangxi = data[i].xiangxi,
+						office_name = (data[i].office_name == '')?"未定义":data[i].office_name,
+						addtime = _trans_php_time_to_str(data[i].addtime,2);
+						if(userid == uid){
+
+						html += '<ul>';
+							html += '<li style="width:30%;color:red;font-weight:600;">'+office_name+'</li>';
+							html += '<li style="width:20%" title="'+jobtype+'">'+jobtype+'</li>';
+							html += '<li style="width:20%">'+addtime+'</li>';
+							html += '<li style="width:20%;">'+xiangxi+'</li>';
+							html += '<li style="width:10%;cursor: pointer;"><a target="_blank" style="color:blue;display:inline-block;width:40px;" href="/index.php?app=search&act=zhaogong_content&id='+id+'&uid='+uid+'">查看</a><a style="color:red;" href="http://wgcapp.wgc2013.com/jingyi.php/Home/Jymember/getqiuzhi_del/id/'+id+'/user_id/'+uid+'">删除</a></li>';
+						html += '</ul>';
+						}
+					
+				}
+				$('#shejiMain').html(html);
+				$('#nextpage').show();
+			}else if(ret.status == 202){
+				$('#nextpage').hide();
+				$("#shejiMain").html('<div style="text-align:center;color:#999;font-size:20px;line-height:150px;">暂无数据</div>');
+			}else{
+				return false;
+			}
+		},'json');
+	}
+
+	//材料询价搜索
+	function searchList(){
+		key = $('#key').val();
+		$('.unpages').hide();
+		var list=['施工队长','水电工长','空调安装工长','空调安装工','泥水工','水电工','电焊工','家具安装工','木工','扇灰工','保洁工','杂工','设计师','预算员','其它','维修工','网络维修', '实习预结算员','室内设计师','工程经理','机电工程师','暖通设计师','采购经理','文案','平面设计','效果图设计师','客服专员','行政助理','软件销售经理','业务员','项目经理','水电维修','空调维修','装饰维修','设备维修','分销商','工匠','公司','材料商','前端开发','后端开发'];
+		$.post('http://wgcapp.wgc2013.com/jingyi.php/Home/Jymember/searchqiuzhi', {
+			keywords  : key,
+			s_city : "广州市",
+			s_county : "白云区",
+			type     : 2
+		}, function(ret) {
+			var userid = '<?php echo $_SESSION["user_info"]["user_id"];?>';
+			if(ret.status == 200){
+				var data = ret.retData;
+				var html = '';
+				for(var i in data){
+					var id = data[i].id,
+						uid = data[i].user_id,
+						jobtype = (parseInt(data[i].jobtype) > 0)?list[parseInt(data[i].jobtype)]:'无工种',
+						title = data[i].title,
+						is_show = (data[i].is_show == 1)?"有活":"无活",
+						xiangxi = data[i].xiangxi,
+						addtime = _trans_php_time_to_str(data[i].addtime,2);
+						if(userid == uid){
+
+						html += '<ul>';
+							html += '<li style="width:30%;color:red;font-weight:600;">'+jobtype+'</li>';
+							html += '<li style="width:40%" title="'+xiangxi+'">'+xiangxi+'</li>';
+							html += '<li style="width:20%;">'+addtime+'</li>';
+							html += '<li style="width:10%;cursor: pointer;"><a style="color:blue;display:inline-block;width:40px;" href="/index.php?app=search&act=wuhuozhaogong_content&id='+id+'&uid='+uid+'">查看</a><a style="color:red;" href="http://wgcapp.wgc2013.com/jingyi.php/Home/Jymember/getqiuzhi_del/id/'+id+'/user_id/'+uid+'">删除</a></li>';
+						html += '</ul>';
+						}
+				}
+				$('#shejiMain').html(html);
+				$('#nextpage').show();
+			}else if(ret.status == 202){
+				$('#nextpage').hide();
+				$("#shejiMain").html('<div style="text-align:center;color:#999;font-size:20px;line-height:150px;">暂无数据</div>');
+			}else{
+				return false;
+			}
+		},'json');
+
+		$('#sjfbList').css({
+			height: 'auto',
+			overflow: 'hidden'
+		});
+
+		$('#back_btn').css({
+			display: 'block'
+		});
+	}
+
+	//返回列表
+	function backList(){
+		repair_list(page);
+		$('#back_btn').css({
+			display: 'none'
+		});
+		$('.unpages').show();
+	}
 </script>
 </body>
 </html>

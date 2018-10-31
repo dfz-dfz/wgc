@@ -31,3 +31,18 @@ function _trans_php_time_to_str(timestamp, n) {
         return 0;
     }
 }
+
+// 广告位（图片位置，位置id）
+function advertisement(show_type,id){
+    var iD = "#"+id;
+    $.post(url+'jingyi.php/Home/Index/Advertising', {
+        limit : 1,
+        show_type : show_type
+    }, function(ret) {
+        if(ret.status == 200){
+            var data = ret.retData;
+            $(""+iD+"").html('<a href="'+data[0].company_url+'" target="_blank"><img class="allimg" src="http://admin.wgc2013.com/'+data[0].pic+'"></a>');
+            
+        }
+    },'json');
+}

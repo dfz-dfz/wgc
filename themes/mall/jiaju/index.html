@@ -210,11 +210,11 @@ border:1px solid #808080;width:100%;height:66px;margin-bottom:3px;
 	</div>
 	<div style="margin:0px;padding:0px;width:100%;overflow:hidden;display:inline;">
 		<div class="divcss1p">
-		<div class="divcss1">
+		<div class="divcss1" id="header_advertisement1">
 			<a href="index.php?app=search&act=joblist">
 				<img class="allimg" src="/themes/mall/jiaju/images/Image_001.png">
 			</a>
-		</div> 
+		</div>
 		</div>
 		<!-- 热门职位 -->
 		<div class="divcss2p">
@@ -264,7 +264,9 @@ border:1px solid #808080;width:100%;height:66px;margin-bottom:3px;
 	</div>
 	<div style="margin:0px;padding:0px;width:100%;min-height:280px;">
 		<div class="divcss1p">
-		<div class="divcss1"><a  target='_blank' href="index.php?app=search&act=caigou"><img class="allimg" src="/themes/mall/jiaju/images/wuhuozhaogong.jpg"></a></div> 
+		<div class="divcss1" id="header_advertisement2">
+			<a  target='_blank' href="index.php?app=search&act=caigou"><img class="allimg" src="/themes/mall/jiaju/images/wuhuozhaogong.jpg"></a>
+		</div> 
 		</div>
 		<div class="divcss2p">
 			<!-- 材料询价 -->
@@ -348,7 +350,9 @@ border:1px solid #808080;width:100%;height:66px;margin-bottom:3px;
 	</div>
 	<div style="margin:0px;padding:0px;width:100%;min-height:280px;">
 		<div class="divcss1p" style="height: 292px;">
-		<div class="divcss1" style="height: 292px;"><a target='_blank' href="index.php?app=search&act=caigou"><img class="allimg" src="/themes/mall/jiaju/images/Image_012.png"></a></div> 
+		<div class="divcss1" style="height: 292px;" id="header_advertisement3">
+			<a target='_blank' href="index.php?app=search&act=caigou"><img class="allimg" src="/themes/mall/jiaju/images/Image_012.png"></a>
+		</div> 
 		</div>
 		<!-- 材料采购 -->
 		<div class="divcss2p" style="height: 292px;">
@@ -396,7 +400,9 @@ border:1px solid #808080;width:100%;height:66px;margin-bottom:3px;
 	</div>
 	<div style="margin:0px;padding:0px;width:100%;min-height:280px;">
 		<div class="divcss1p">
-		<div class="divcss1"><a  target='_blank' href="index.php?app=search&act=caigou"><img class="allimg" src="/themes/mall/jiaju/images/Image_012.png"></a></div> 
+		<div class="divcss1" id="header_advertisement4">
+			<a  target='_blank' href="index.php?app=search&act=caigou"><img class="allimg" src="/themes/mall/jiaju/images/Image_012.png"></a>
+		</div> 
 		</div>
 		<div class="divcss2p">
 			<!-- 材料询价 -->
@@ -475,7 +481,7 @@ border:1px solid #808080;width:100%;height:66px;margin-bottom:3px;
 	</div>
 	<div style="margin:0px;padding:0px;width:100%;height:auto;overflow: hidden;">
 		<div class="divcss1p"style="width:18%;overflow:hidden;height:auto;">
-			<div class="divcss1" style="width:99%;height:310px;overflow:hidden;">
+			<div class="divcss1" style="width:99%;height:310px;overflow:hidden;" id="header_advertisement5">
 				<a href="index.php?app=search&act=joblist3&type=装饰建筑""><img class="allimg" src="/themes/mall/jiaju/images/zz1.png"></a>
 			</div> 
 		</div>
@@ -534,7 +540,7 @@ border:1px solid #808080;width:100%;height:66px;margin-bottom:3px;
 	</div>
 	<div style="margin:0px;padding:0px;width:100%;height:auto;overflow: hidden;">
 		<div class="divcss1p" style="width:18%;overflow:hidden;height:auto;">
-			<div class="divcss1" style="width:99%;height:360px;overflow:hidden;">
+			<div class="divcss1" style="width:99%;height:360px;overflow:hidden;" id="header_advertisement6">
 				<a href="index.php?app=search&act=xiangmu"><img class="allimg" src="/themes/mall/jiaju/images/zz2.png"></a>
 			</div> 
 		</div>
@@ -568,6 +574,7 @@ border:1px solid #808080;width:100%;height:66px;margin-bottom:3px;
 
 {include file=footer.html}
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+<script src="/themes/mall/jiaju/js/tool.js"></script>
 <script type="text/javascript">
 	var serverUrl = "http://wgcapp.59jiaju.com/",
 		page = 1,
@@ -575,6 +582,12 @@ border:1px solid #808080;width:100%;height:66px;margin-bottom:3px;
 		uploadUrl = "http://wgcapp.59jiaju.com/",
 		key = '';
 	$(function(){
+		advertisement(4,'header_advertisement1');//首页广告1
+		advertisement(5,'header_advertisement2');
+		advertisement(6,'header_advertisement3');
+		advertisement(7,'header_advertisement4');
+		advertisement(8,'header_advertisement5');
+		advertisement(9,'header_advertisement6');
 		project();
 		designList();
 		repair_list();
