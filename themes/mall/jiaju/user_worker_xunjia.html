@@ -273,7 +273,7 @@ var PRICE_FORMAT = '&yen;%s';
 					<div class="btn confirm_btn" style="padding: 0;" onclick="fabu()">确认发布</div>
 					<input type="hidden" id="ImgPath"/>
 				</div>
-				<div style="color: #ea4747;text-align: left;margin-left: 40px;">
+				<!-- <div style="color: #ea4747;text-align: left;margin-left: 40px;">
 					<span style="color:red;">*</span>资费说明：
 					<ul id="description" style="padding: 0;text-align: left;">
 						<li>1.个人用户：发布20元/次；</li>
@@ -282,7 +282,7 @@ var PRICE_FORMAT = '&yen;%s';
 						<li>4.企业至尊版：免费发布，网站位置广告使用；</li>
 						<li>5.企业砖石版：免费发布，网站位置广告使用。</li>
 					</ul>
-				</div>
+				</div> -->
 			</div>
 			
 			<!-- 自定工价 end -->
@@ -1321,7 +1321,7 @@ $(document).ready(function() {
 		var tel         = $("#tel");
 		var img         = $('#ImgPath').val();
 
-		var conf=confirm("普通用户发布工价询价需要收取20元/次!");
+		var conf=confirm("普通用户发布工价询价需要收取10元/次!");
 	    if(conf==true){  
 			alert("您选择了：继续");  
 	    }else {  

@@ -350,6 +350,13 @@ body{background:url('') no-repeat center top }
 		var shigonggongyi = $('#shigonggongyi');//施工工艺
 		var content       = $('#content');//备注
 
+		var conf=confirm("普通用户发布人工定额需要收取10块/次！");
+	    if(conf==true){  
+			alert("您选择了：继续");  
+	    }else {  
+	        alert("您选择了：取消")  
+	        return false;
+	    }
 		$.ajax({
 			type:"POST",
 			url:'http://wgcapp.wgc2013.com/jingyi.php/Home/Dinge/rengong_add',

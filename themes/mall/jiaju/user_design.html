@@ -1237,7 +1237,13 @@ $(function(){
 			alert('单价必须填')
 			return false;
 		}
-
+		var conf=confirm("普通用户发布设计分包需要收取10元/次!");
+	    if(conf==true){  
+			alert("您选择了：继续");  
+	    }else {  
+	        alert("您选择了：取消")  
+	        return false;
+	    }
 		$.post('http://wgcapp.wgc2013.com/index.php/Home/Designoffer/addoffer', {
 			user_id 	   : '<?php echo $_SESSION["user_info"]["user_id"];?>',
 			project_name   : office_name,

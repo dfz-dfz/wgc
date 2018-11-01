@@ -342,8 +342,14 @@ input{
 		var address         = $('#address').val();
 		var xiangxi         = $('#xiangxi').val();
 		var ps              = $('#ps').val();
-		alert(xinzhi)
-		
+		//alert(xinzhi)
+		var conf=confirm("普通用户发布招工需要收取10元/次!");
+	    if(conf==true){  
+			alert("您选择了：继续");  
+	    }else {  
+	        alert("您选择了：取消")  
+	        return false;
+	    }
 		  $.post('http://wgcapp.wgc2013.com/jingyi.php/Home/Jymember/qiuzhi',{
 		  							user_id 	   : '<?php echo $_SESSION["user_info"]["user_id"];?>',
 									type           : 2,

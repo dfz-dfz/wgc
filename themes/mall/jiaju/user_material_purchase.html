@@ -1008,6 +1008,13 @@ function prepage(){
 	
 	//分享选择接收人
 	function  showUserList(){
+		var conf=confirm("普通用户发布材料采购需要收取10元/次!");
+	    if(conf==true){  
+			alert("您选择了：继续");  
+	    }else {  
+	        alert("您选择了：取消")  
+	        return false;
+	    }
 		var page = 1;
 		uid= '<?php echo $_SESSION["user_info"]["user_id"];?>';
 		$('.getUserList').html("")

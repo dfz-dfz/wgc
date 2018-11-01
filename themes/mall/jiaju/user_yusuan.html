@@ -73,7 +73,7 @@
  				<li style="margin-right: 10px;">预算列表</li>
  				<li style="margin-right: 10px;">分享列表</li>
  			</ul>
-		<form action="http://wgcapp.wgc2013.com/jingyi.php/Home/yewu/yusuan_add" method="post" >
+		<form action="http://wgcapp.wgc2013.com/jingyi.php/Home/yewu/yusuan_add" method="post" id="myforms">
  			<div class="budget_info base_info_public" style="overflow: hidden;padding-left: 15%;min-height: 250px;">
  			<!-- 预算报价 -->
  			<div class="budget_detail" style="position: relative;left: -16%;width: 115%;">
@@ -142,7 +142,7 @@
 				</div>
 				<div class="share_dow" style="display: inline-block; position: relative;left: 90%;">
 					<!-- <a class="share_yusuan" href="javascript:;">分享</a> -->
-					<input type="submit" onclick="yusuanbaojia()" value="发布" style="text-decoration: none;display: block;font-size: 16px;color: #fff;width: 105px;height: 30px;line-height: 30px;text-align: center;margin-bottom: 10px;background-color: #f8b551;">
+					<input type="button" onclick="yusuanbaojia()" value="发布" style="text-decoration: none;display: block;font-size: 16px;color: #fff;width: 105px;height: 30px;line-height: 30px;text-align: center;margin-bottom: 10px;background-color: #f8b551;">
 				</div>
 				</div>
 			</div>
@@ -1418,7 +1418,13 @@ function fabu(){
 			alert('请输入备注');
 			return false;
 		}
-
+		var conf=confirm("普通用户发布预算报价需要收取10元/次!");
+	    if(conf==true){  
+			alert("您选择了：继续");  
+	    }else {  
+	        alert("您选择了：取消")  
+	        return false;
+	    }
 		$.post('http://wgcapp.wgc2013.com/jingyi.php/Home/Dinge/zhucai_add', {
 			        userid 	     : '<?php echo $_SESSION["user_info"]["user_id"];?>',
 			        name         : name,           
@@ -2083,6 +2089,14 @@ function timestampToTime(timestamp) {
 //下载预算报价
 function yusuanbaojia(){
 	//alert('发布成功')
+	var conf=confirm("普通用户发布预算报价需要收取10元/次!");
+	    if(conf==true){  
+			alert("您选择了：继续");  
+	    }else {  
+	        alert("您选择了：取消")  
+	        return false;
+	    }
+	$("#myforms").submit();
 }
 
 //预算列表显示

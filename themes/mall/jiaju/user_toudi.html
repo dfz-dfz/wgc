@@ -287,7 +287,7 @@ body{background:url('') no-repeat center top }
 <script src="/themes/mall/jiaju/js/tool.js"></script>
 <script type="text/javascript">
 	$(function(){
-	$(".user_workerDE_li").addClass("bg_li")
+	$(".user_toudi_li").addClass("bg_li")
 		list(page);
 		messagelist();
 	});
@@ -415,6 +415,7 @@ body{background:url('') no-repeat center top }
 					var listHtml = '';
 					for(i in data){
 						var id       = data[i].id,
+							jid      = data[i].jid,
 							company_name     = data[i].company_name,
 							xinzi   = data[i].xinzi,
 							zhiwei= data[i].zhiwei,
@@ -423,7 +424,7 @@ body{background:url('') no-repeat center top }
 							
 						listHtml 	+= 	'<li>';
 						listHtml 	+='<div class="left" style="float: left;">';
-						listHtml 	+=	'<div>'+zhiwei+'</div>';
+						listHtml 	+=	'<div>'+zhiwei+'<a href="/index.php?app=search&act=content&id='+jid+'" target="_blank" style="color:#9e9d9d;display:inline-block;margin-left:10px;font-size:12px;">查看招聘</a></div>';
 						listHtml 	+=	'<div style="color:#f10606;">'+xinzi+'</div>';
 						listHtml 	+=	'<div style="color: #504d4d;font-size: 14px;">'+company_name+'</div>';
 						listHtml 	+='</div>';
@@ -589,6 +590,7 @@ body{background:url('') no-repeat center top }
 					var listHtml = '';
 					for(i in data){
 						var id       = data[i].id,
+							jid      = data[i].jid,
 							company_name     = data[i].company_name,
 							xinzi   = data[i].xinzi,
 							zhiwei= data[i].zhiwei,
@@ -597,7 +599,7 @@ body{background:url('') no-repeat center top }
 							
 						listHtml 	+= 	'<li>';
 						listHtml 	+='<div class="left" style="float: left;">';
-						listHtml 	+=	'<div>'+zhiwei+'</div>';
+						listHtml 	+=	'<div>'+zhiwei+'<a href="/index.php?app=search&act=content&id='+jid+'" target="_blank" style="color:#9e9d9d;display:inline-block;margin-left:10px;font-size:12px;">查看招聘</a></div>';
 						listHtml 	+=	'<div style="color:#f10606;">'+xinzi+'</div>';
 						listHtml 	+=	'<div style="color: #504d4d;font-size: 14px;">'+company_name+'</div>';
 						listHtml 	+='</div>';

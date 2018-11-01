@@ -1214,7 +1214,13 @@ $(function(){
 		}else if(!mobile){
 			alert("请填写手机号码")
 		}else{
-
+			var conf=confirm("普通用户发布材料商合作需要收取10元/次!");
+	    if(conf==true){  
+			alert("您选择了：继续");  
+	    }else {  
+	        alert("您选择了：取消")  
+	        return false;
+	    }
 		$.post('http://wgcapp.wgc2013.com/jingyi.php/Home/Material/cailiaoshangadd', {
 			userid 	   : '<?php echo $_SESSION["user_info"]["user_id"];?>',
 	        name           : name,

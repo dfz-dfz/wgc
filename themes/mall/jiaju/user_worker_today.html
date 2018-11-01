@@ -341,6 +341,13 @@ body{background:url('') no-repeat center top }
 		var shigonggongyi = $('#shigonggongyi').val();//施工工艺
 		var ImgPath       = $('#ImgPath').val();//图片
 
+		var conf=confirm("普通用户发布今日工价需要收取10元/次!");
+	    if(conf==true){  
+			alert("您选择了：继续");  
+	    }else {  
+	        alert("您选择了：取消")  
+	        return false;
+	    }
 		$.ajax({
 			type:"POST",
 			url:'http://wgcapp.wgc2013.com/jingyi.php/Home/Dinge/rengong_add',

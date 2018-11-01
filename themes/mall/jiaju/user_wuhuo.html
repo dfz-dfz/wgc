@@ -403,6 +403,13 @@ function joblist(){
 		var district      = $("#district1").val();
 
 		// alert(province+","+city+","+district);
+		var conf=confirm("普通用户发布无活找工需要收取10元/次!");
+	    if(conf==true){  
+			alert("您选择了：继续");  
+	    }else {  
+	        alert("您选择了：取消")  
+	        return false;
+	    }
 		$.ajax({
 			type:"POST",
 			url:'http://wgcapp.wgc2013.com/jingyi.php/Home/Jymember/qiuzhi',

@@ -136,7 +136,7 @@ body{background:url('') no-repeat center top }
  			</ul>
  			<div class="user_collection_info base_info_public" style="overflow: hidden;padding-left: 15%;">
 
-				<form action="http://wgcapp.wgc2013.com/jingyi.php/Home/Jianli/projectSubcontract_add" method="post">
+				<form action="http://wgcapp.wgc2013.com/jingyi.php/Home/Jianli/projectSubcontract_add" method="post" id="myforms">
 					<input type="hidden" name="user_id" id="user_id" value='<?php echo $_SESSION["user_info"]["user_id"];?>' />
 	 				<ul style="margin-top: 30px;">
 	 					<li>
@@ -210,7 +210,7 @@ body{background:url('') no-repeat center top }
 				</div>
 	 				<div class="user_collection_send" style="margin-top: 10px;">
 	 					<input type="hidden" id="ImgPath" name="img"/>
-						<input type="submit" href="javascript:;" style="position: relative;left: 40px;height: 40px;width: 100px;background-color: #ff552e;border-radius: 5px;color: #fff;letter-spacing: 2px;font-size: 16px;" value="立即发布">
+						<input type="button" onclick="fabu()" href="javascript:;" style="position: relative;left: 40px;height: 40px;width: 100px;background-color: #ff552e;border-radius: 5px;color: #fff;letter-spacing: 2px;font-size: 16px;" value="立即发布">
 						
 	 				</div>
  				</form>
@@ -1782,7 +1782,17 @@ var spage = 1;
 			});
 
 	}
+function fabu(){
+	var conf=confirm("普通用户发布项目分包需要收取10元/次!");
+	    if(conf==true){  
+			alert("您选择了：继续");  
+	    }else {  
+	        alert("您选择了：取消")  
+	        return false;
+	    }
 
+	    $("#myforms").submit();
+}
 	
 	//时间转换
 	function timestampToTime(timestamp) {
