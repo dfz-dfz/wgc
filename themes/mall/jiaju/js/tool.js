@@ -41,8 +41,7 @@ function advertisement(show_type,id){
     }, function(ret) {
         if(ret.status == 200){
             var data = ret.retData;
-            $(""+iD+"").html('<a href="'+data[0].company_url+'" target="_blank"><img class="allimg" src="http://admin.wgc2013.com/'+data[0].pic+'"></a>');
-            
+            $(""+iD+"").html('<a href="'+data[0].company_url+'" target="_blank"><img class="allimg" src="http://admin.wgc2013.com/'+data[0].pic+'" style="border:1px solid #999;"></a>');
         }
     },'json');
 }
