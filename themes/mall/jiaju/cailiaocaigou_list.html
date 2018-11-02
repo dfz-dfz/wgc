@@ -46,7 +46,7 @@
 		<div style="width: 880px;float: left;">
 			<div class="weixiulist" style="margin: 20px auto;position: relative;">
 				<img src="themes/mall/jiaju/images/cailiaocaigou.jpg" alt="" width="200px">
-				<span id="back_btn" style="width: 100px;color: #fff;background-color: #efa913;padding: 9px;font-size: 16px;position: absolute;text-align: center;display: none;top: 0;left: 210px;cursor: pointer;" onclick="backList()">返回列表</span>
+				<span id="back_btn" style="width: 100px;color: #fff;background-color: #efa913;padding: 9px;font-size: 16px;position: absolute;text-align: center;display: none;top: 0;left: 210px;cursor: pointer;" onclick="cai_select(page)">返回列表</span>
 				<!-- 维修设计列表 -->
 				<div id="sjfbList" style="margin-top: 5px;"> 
 					<ul id="headerlist" style="width: 880px;background-color: #efa913;">
@@ -107,20 +107,19 @@
 		}else{
 			$('#uppage').show();
 		}
-
+		$("#back_btn").hide()
 		$.post("http://wgcapp.wgc2013.com/jingyi.php/Home/Material/addmaterials_list_index",{
 			page : page,
 			cai_type :2,
 		},function(ret){
 			var listHtml = '';
 			if(ret.status == 200){
-					page++;
 					var data = ret.retData;
 					   for(var i in data){
 					var j = parseInt(i)+1;
 							var pid     = data[i].pid;
-							var m_name = data[i].m_name;
-							var brand  = data[i].brand;
+							var m_name = (data[i].m_name == '' || data[i].m_name == null)?'-':data[i].m_name;
+							var brand  = (data[i].brand == '' || data[i].brand == null)?'-':data[i].brand;
 							var size   = (data[i].size == '' || data[i].size == null) ? '-':data[i].size;
 							var expire_time = data[i].expire_time;
 							var number = data[i].number;
@@ -129,7 +128,7 @@
 							var heji   = (data[i].heji == '' || isNaN(data[i].heji)) ? '无':data[i].heji;
 							var introduce = data[i].introduce;
 							var pid    = data[i].pid;
-							var office_name = data[i].office_name;//公司名称
+							var office_name = (data[i].office_name == '' || data[i].office_name == null)?'-':data[i].office_name;//公司名称
 							
 
 								listHtml += '<ul>';
@@ -159,6 +158,61 @@
 		},"json");
 
 	}
+//搜索列表
+function searchList(){
+	$("#back_btn").show()
+	var key = $("#key").val()
+	$.post("http://wgcapp.wgc2013.com/jingyi.php/Home/Material/addmaterials_list_index",{
+			page : page,
+			cai_type :2,
+			key  : key
+		},function(ret){
+			var listHtml = '';
+			if(ret.status == 200){
+					
+					var data = ret.retData;
+					   for(var i in data){
+					var j = parseInt(i)+1;
+							var pid     = data[i].pid;
+							var m_name = (data[i].m_name == '' || data[i].m_name == null)?'-':data[i].m_name;
+							var brand  = (data[i].brand == '' || data[i].brand == null)?'-':data[i].brand;
+							var size   = (data[i].size == '' || data[i].size == null) ? '-':data[i].size;
+							var expire_time = data[i].expire_time;
+							var number = data[i].number;
+							var danwei = data[i].danwei;
+							var danjia = (data[i].danjia == '' || data[i].danjia == null) ? '-':data[i].danjia;
+							var heji   = (data[i].heji == '' || isNaN(data[i].heji)) ? '无':data[i].heji;
+							var introduce = data[i].introduce;
+							var pid    = data[i].pid;
+							var office_name = (data[i].office_name == '' || data[i].office_name == null)?'-':data[i].office_name;//公司名称
+							
+
+								listHtml += '<ul>';
+									listHtml += '<li style="width: 12.28%;" title="'+m_name+'">'+m_name+'</li>';
+									listHtml += '<li style="width: 14.28%;" title="'+brand+'">'+brand+'</li>';
+									listHtml += '<li style="width: 14.28%;" title="'+size+'">'+size+'</li>';
+									listHtml += '<li style="width: 22.28%;" title="'+office_name+'">'+office_name+'</li>';
+									listHtml += '<li style="width: 12.28%;" title="'+danwei+'">'+danjia+'/'+danwei+'</li>';
+									listHtml += '<li style="width: 12.28%;" title="'+heji+'">'+heji+'</li>';
+									listHtml += '<li style="width: 12.28%;"><a target="_blank" href="/index.php?app=search&act=cailiaocaigou_content&id='+data[i].pid+'" style="color:blue">查看详情</a></li>';
+								listHtml += '</ul>';
+				   
+						 }
+				
+				$("#weixiuMain").html(listHtml);
+				$('#nextpage').show();
+				
+			}else if(ret.status == 202){
+				$('#nextpage').hide();
+				$("#weixiuMain").html('<div style="border: none;width:100px;height:100px;margin:50px auto;font-size:20px;color:#999;line-height:50px;" class="empty">暂无数据</div>');
+			}else{
+				return false;
+			
+			}
+			
+		
+		},"json");
+}
 </script>
 </body>
 </html>

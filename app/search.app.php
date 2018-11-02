@@ -198,6 +198,10 @@ class SearchApp extends MallbaseApp
 	function user_cailiao(){
 		$this->display('user_cailiao.html');
 	}
+	//个人中心个人发布列表
+	function user_companyresume(){
+		$this->display('user_companyresume.html');
+	}
 	//个人中心无活找工
 	function user_wuhuo(){
 		$this->display('user_wuhuo.html');
@@ -205,6 +209,10 @@ class SearchApp extends MallbaseApp
 	//个人中心招工
 	function user_zhaogong(){
 		$this->display('user_zhaogong.html');
+	}
+	//个人中心人才推荐
+	function user_tuijian(){
+		$this->display('user_tuijian.html');
 	}
 	//个人中心个人发布材料合作商
 	function user_cailiaohzs(){
@@ -221,7 +229,12 @@ class SearchApp extends MallbaseApp
 	}//个人中心个人我的简历
 	function user_myresume(){
 		$this->display('user_myresume.html');
-	}//个人中心主材iframe
+	}
+	//个人中心个人投递箱
+	function user_toudi(){
+		$this->display('user_toudi.html');
+	}
+	//个人中心主材iframe
 	function user_iframe_zc(){
 		$this->display('user_iframe_zc.html');
 	}//个人中心主材iframe
