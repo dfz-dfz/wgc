@@ -8,6 +8,7 @@
 	<meta name="description" content="微工程，微工程APP，装修、材料、家具、饰品一站式服务，让装修更简单，价格更透明！！" />
 	<meta name="keywords" content="微工程，微工程，家居商城，微工程家居商城，微工程家居装修商城，办公室装修，写字楼装修，材料，装修材料，家居，办公家具，家居，家具，装修，装饰" />
 	<script type="text/javascript" src="/themes/mall/jiaju/styles/default/js/jquery-1.3.2.min.js"></script>
+	<script type="text/javascript" src="/themes/mall/jiaju/js/tool.js"></script>
 </head>
 <style>
 	.weixiulist ul {
@@ -32,6 +33,11 @@
 	#headerlist li {
 		font-size: 20px;
 		font-weight: bold;
+	}
+
+	.id_inner img {
+		width: 200px;
+		height: 100px;
 	}
 </style>
 <body>
@@ -71,8 +77,15 @@
 			</div>
 		</div>
 
-		<div style="width: 200px;float: right;height: 587px;border-left: 10px solid #e5e5e5;padding-right: 0;margin-top: 20px;">
-			<img src="http://www.wgc2013.com/themes/mall/jiaju/images/guanggao.png" alt="" width="100%">
+		<div id="img_box" style="width: 200px;float: right;min-height: 587px;padding-right: 0;margin-top: 20px;">
+			<div style="height: 101px;margin-bottom: 10px;background: url('http://www.wgc2013.com/themes/mall/jiaju/images/adverstiement.jpg') no-repeat;background-size: 100% 100%;" class="id_inner" id="cailiaocaigou_advertisement1"></div>
+			<div style="height: 101px;margin-bottom: 10px;background: url('http://www.wgc2013.com/themes/mall/jiaju/images/adverstiement.jpg') no-repeat;background-size: 100% 100%;" class="id_inner" id="cailiaocaigou_advertisement2"></div>
+			<div style="height: 101px;margin-bottom: 10px;background: url('http://www.wgc2013.com/themes/mall/jiaju/images/adverstiement.jpg') no-repeat;background-size: 100% 100%;" class="id_inner" id="cailiaocaigou_advertisement3"></div>
+			<div style="height: 101px;margin-bottom: 10px;background: url('http://www.wgc2013.com/themes/mall/jiaju/images/adverstiement.jpg') no-repeat;background-size: 100% 100%;" class="id_inner" id="cailiaocaigou_advertisement4"></div>
+			<div style="height: 101px;margin-bottom: 10px;background: url('http://www.wgc2013.com/themes/mall/jiaju/images/adverstiement.jpg') no-repeat;background-size: 100% 100%;" class="id_inner" id="cailiaocaigou_advertisement5"></div>
+			<div style="height: 101px;margin-bottom: 10px;background: url('http://www.wgc2013.com/themes/mall/jiaju/images/adverstiement.jpg') no-repeat;background-size: 100% 100%;" class="id_inner" id="cailiaocaigou_advertisement6"></div>
+			<div style="height: 101px;margin-bottom: 10px;background: url('http://www.wgc2013.com/themes/mall/jiaju/images/adverstiement.jpg') no-repeat;background-size: 100% 100%;" class="id_inner" id="cailiaocaigou_advertisement7"></div>
+			<div style="height: 101px;margin-bottom: 10px;background: url('http://www.wgc2013.com/themes/mall/jiaju/images/adverstiement.jpg') no-repeat;background-size: 100% 100%;" class="id_inner" id="cailiaocaigou_advertisement8"></div>
 		</div>
 	</div>
 
@@ -84,6 +97,15 @@
 	$(function(){
 		jQuery.support.cors = true;
 		cai_select(page);
+
+		advertisement(36,'cailiaocaigou_advertisement1');
+		advertisement(37,'cailiaocaigou_advertisement2');
+		advertisement(38,'cailiaocaigou_advertisement3');
+		advertisement(39,'cailiaocaigou_advertisement4');
+		advertisement(40,'cailiaocaigou_advertisement5');
+		advertisement(41,'cailiaocaigou_advertisement6');
+		advertisement(42,'cailiaocaigou_advertisement7');
+		advertisement(43,'cailiaocaigou_advertisement8');
 	});
 
 	//分页

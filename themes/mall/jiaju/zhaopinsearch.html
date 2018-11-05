@@ -12,6 +12,7 @@
 <meta name="description" content="微工程居提供广州各公司最新最快速的招聘信息"/>
 <link rel="stylesheet" type="text/css" href="/themes/mall/jiaju/css/common.css"/>
 <script type="text/javascript" src="/themes/mall/jiaju/styles/default/js/jquery-1.3.2.min.js"></script>
+<script type="text/javascript" src="/themes/mall/jiaju/js/tool.js"></script>
 	<style style="text/css">
 		/*搜索*/
 		input[type=text],
@@ -216,6 +217,10 @@
 			float:left;
 			text-align:center;
 		}
+		.id_inner img {
+			width: 200px;
+			height: 100px;
+		}
 	</style>
 
 </head>
@@ -289,8 +294,16 @@
 	      
 	    </div>
 
-	    <div style="width: 200px;float: right;height: 587px;border-left: 10px solid #e5e5e5;padding-right: 0;">
-			<img src="http://www.wgc2013.com/themes/mall/jiaju/images/guanggao.png" alt="" width="100%">
+	    <div style="width: 200px;float: right;min-height: 587px;height:auto;padding-right: 0;">
+			<div style="height: 101px;margin-bottom: 10px;background: url('http://www.wgc2013.com/themes/mall/jiaju/images/adverstiement.jpg') no-repeat;background-size: 100% 100%;" class="id_inner" id="zhaopin_advertisement1"></div>
+			<div style="height: 101px;margin-bottom: 10px;background: url('http://www.wgc2013.com/themes/mall/jiaju/images/adverstiement.jpg') no-repeat;background-size: 100% 100%;" class="id_inner" id="zhaopin_advertisement2"></div>
+			<div style="height: 101px;margin-bottom: 10px;background: url('http://www.wgc2013.com/themes/mall/jiaju/images/adverstiement.jpg') no-repeat;background-size: 100% 100%;" class="id_inner" id="zhaopin_advertisement3"></div>
+			<div style="height: 101px;margin-bottom: 10px;background: url('http://www.wgc2013.com/themes/mall/jiaju/images/adverstiement.jpg') no-repeat;background-size: 100% 100%;" class="id_inner" id="zhaopin_advertisement4"></div>
+			<div style="height: 101px;margin-bottom: 10px;background: url('http://www.wgc2013.com/themes/mall/jiaju/images/adverstiement.jpg') no-repeat;background-size: 100% 100%;" class="id_inner" id="zhaopin_advertisement5"></div>
+			<div style="height: 101px;margin-bottom: 10px;background: url('http://www.wgc2013.com/themes/mall/jiaju/images/adverstiement.jpg') no-repeat;background-size: 100% 100%;" class="id_inner" id="zhaopin_advertisement6"></div>
+			<div style="height: 101px;margin-bottom: 10px;background: url('http://www.wgc2013.com/themes/mall/jiaju/images/adverstiement.jpg') no-repeat;background-size: 100% 100%;" class="id_inner" id="zhaopin_advertisement7"></div>
+			<div style="height: 101px;margin-bottom: 10px;background: url('http://www.wgc2013.com/themes/mall/jiaju/images/adverstiement.jpg') no-repeat;background-size: 100% 100%;" class="id_inner" id="zhaopin_advertisement8"></div>
+
 		</div>
     </div>
 </div>
@@ -302,6 +315,15 @@
 		if({$dataNum} < 1){
 			$('#zhaopinlist').html('<li style="text-align:center;">暂无数据</li>');
 		}
+
+		advertisement(20,'zhaopin_advertisement1');
+		advertisement(21,'zhaopin_advertisement2');
+		advertisement(22,'zhaopin_advertisement3');
+		advertisement(23,'zhaopin_advertisement4');
+		advertisement(24,'zhaopin_advertisement5');
+		advertisement(25,'zhaopin_advertisement6');
+		advertisement(26,'zhaopin_advertisement7');
+		advertisement(27,'zhaopin_advertisement8');
 	});
 </script>
 </html>
