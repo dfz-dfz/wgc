@@ -68,6 +68,11 @@ var PRICE_FORMAT = '&yen;%s';
 		letter-spacing: 2px;
 	    font-size: 14px;
 	}
+
+	.id_inner img {
+		width: 100%;
+		height: 200px;
+	}
 </style>
 </head>
 <body>
@@ -125,7 +130,7 @@ var PRICE_FORMAT = '&yen;%s';
 		
 		<!-- 广告位 -->
 		<div style="width: 40%;float: right;height: 587px;min-height: 600px;height: auto;overflow: hidden;">
-			<div style="background-color: #fea900;font-size: 70px;color: #fff;min-height: 600px;position: relative;    margin-left: 20px;">
+			<!-- <div style="background-color: #fea900;font-size: 70px;color: #fff;min-height: 600px;position: relative;    margin-left: 20px;">
 				<div style="padding-top: 130px;">广</div>
 				<div>告</div>
 				<div>位</div>
@@ -136,7 +141,13 @@ var PRICE_FORMAT = '&yen;%s';
 				<div>告</div>
 				<div>位</div>
 				<div style="position: absolute;border-bottom: 2px solid #fff;top: 50%;width: 100%;"></div>
-			</div>
+			</div> -->
+			<div style="height: 201px;margin-bottom: 10px;background: url('http://www.wgc2013.com/themes/mall/jiaju/images/adverstiement.jpg') no-repeat;background-size: 100% 100%;" class="id_inner" id="jianzhuzhuangshi_advertisement1"></div>
+			<div style="height: 201px;margin-bottom: 10px;background: url('http://www.wgc2013.com/themes/mall/jiaju/images/adverstiement.jpg') no-repeat;background-size: 100% 100%;" class="id_inner" id="jianzhuzhuangshi_advertisement2"></div>
+			<div style="height: 201px;margin-bottom: 10px;background: url('http://www.wgc2013.com/themes/mall/jiaju/images/adverstiement.jpg') no-repeat;background-size: 100% 100%;" class="id_inner" id="jianzhuzhuangshi_advertisement3"></div>
+			<div style="height: 201px;margin-bottom: 10px;background: url('http://www.wgc2013.com/themes/mall/jiaju/images/adverstiement.jpg') no-repeat;background-size: 100% 100%;" class="id_inner" id="jianzhuzhuangshi_advertisement4"></div>
+			<div style="height: 201px;margin-bottom: 10px;background: url('http://www.wgc2013.com/themes/mall/jiaju/images/adverstiement.jpg') no-repeat;background-size: 100% 100%;" class="id_inner" id="jianzhuzhuangshi_advertisement5"></div>
+			<div style="height: 201px;margin-bottom: 10px;background: url('http://www.wgc2013.com/themes/mall/jiaju/images/adverstiement.jpg') no-repeat;background-size: 100% 100%;" class="id_inner" id="jianzhuzhuangshi_advertisement6"></div>
 		</div>
 	</div>
 </div>
@@ -144,8 +155,15 @@ var PRICE_FORMAT = '&yen;%s';
 <script type="text/javascript">
 	var page = 1;
 
-	$().ready(function() {
+	$(function(){
 		jianzhuzhuangshi_list(page);
+
+		advertisement(83,'jianzhuzhuangshi_advertisement1');
+		advertisement(84,'jianzhuzhuangshi_advertisement2');
+		advertisement(85,'jianzhuzhuangshi_advertisement3');
+		advertisement(86,'jianzhuzhuangshi_advertisement4');
+		advertisement(87,'jianzhuzhuangshi_advertisement5');
+		advertisement(88,'jianzhuzhuangshi_advertisement6');
 	});
 	
 	// 表单验证
