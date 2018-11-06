@@ -14,7 +14,6 @@
 
 <link rel="stylesheet" href="/themes/mall/jiaju/styles/css/address_list.css">
 <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
-
 <link type="text/css" href="/themes/mall/jiaju/styles/default/css/main.css" rel="stylesheet"  />
 <link type="text/css" href="/themes/mall/jiaju/styles/css/global.css" rel="stylesheet"  />
 <link type="text/css" href="http://www.wgc2013.com/themes/mall/jiaju/styles/default/css/catalog.css" rel="stylesheet"  />
@@ -36,27 +35,21 @@
 var SITE_URL = "http://www.wgc2013.com";
 var PRICE_FORMAT = '&yen;%s';
 </script>
-<script charset="utf-8" type="text/javascript" src="http://www.wgc2013.com/includes/libraries/javascript/jquery.plugins/jquery.validate.js" ></script><style type="text/css">
-body{background:url('') no-repeat center top }
-.mainnav{width:990px; overflow:hidden; margin:0 auto}
-.STYLE1 {color: red}
+<script charset="utf-8" type="text/javascript" src="http://www.wgc2013.com/includes/libraries/javascript/jquery.plugins/jquery.validate.js" ></script>
+<style type="text/css">
+	body{background:url('') no-repeat center top }
+	.mainnav{width:990px; overflow:hidden; margin:0 auto}
+	.STYLE1 {color: red}
+	.section {
+	    min-height: 300px;
+	    width: 500px;
+	    margin: 0 auto;
+	    padding: 10px;
+	    border: 1px solid #e8e8e8;
+	}
 </style>
 <script type="text/javascript" src="http://www.wgc2013.com/themes/mall/jiaju/styles/default/js/hover.js"></script>
-
 <script charset="utf-8" type="text/javascript" src="http://www.wgc2013.com/includes/libraries/javascript/jquery.plugins/jquery.validate.js" ></script>
-<script type="text/javascript">
-  $(function (){
-    $('#open-change-city-window').click(function (){
-      $('.change-city-window').slideDown();
-      
-    })
-    $('#close-change-city-window').click(function (){
-      $('.change-city-window').slideUp();
-    })
-	
-  
-  })
-</script>
 </head>
 <body>
 {include file=header.html}
@@ -71,76 +64,64 @@ body{background:url('') no-repeat center top }
  	<div class="container_right" style="width: 80%;border: 1px solid #cacaca;float: right;background-color: #f7f7f7;padding: 0 10px 10px 10px;">
 
 		<!-- 公司信息 -->
-		<div class="budget base_ui_public" style="/*display: none;*/position: relative;">
+		<div class="budget base_ui_public" style="position: relative;">
 			<ul class="budget_ul user_public_ul">
  				<li class="change_bg_li" style="margin-right: 10px;">通讯录</li>
  			</ul>
 			<img class="add_btn" src="/themes/mall/jiaju/images/center/add_friend.jpg" style="position:absolute;width:100px;top:17px;left:838px;"/>
- 			<div class="company_info base_info_public" style="overflow: hidden;/*padding-left: 15%;*/min-height: 250px;">
- 			<!-- 预算报价 -->
- 			<div class="company_detail" style="position: relative;/*left: -16%;*//*width: 115%;*/">
-			<div style="overflow: hidden;margin-top: 10px;">
-			<!-- 基本信息 -->
-			<div class="section" style="border: none;min-height:300px;">
-			<div class="adress_list" style="font-size: 15px;color: #000;font-weight: bold;display:none;">通讯录列表为空</div>
-			
+ 			<div class="company_info base_info_public" style="overflow: hidden;min-height: 250px;">
+	 			<!-- 预算报价 -->
+	 			<div class="company_detail" style="position: relative;">
+					<div style="overflow: hidden;margin-top: 10px;">
+						<!-- 基本信息 -->
+						<div class="section">
+							<div class="adress_list" style="font-size: 15px;color: #000;font-weight: bold;display:none;">通讯录列表为空</div>
+						</div>
+			        	<!--分页 -->
+						<div>
+							<a href="javascript:;" style="display: inline-block;width: 50px;background-color: #9c9393;color: #ffffff;height: 20px;line-height: 20px;margin-right:20px;" onclick="prepage()">上一页</a>
+							<a href="javascript:;" style="display: inline-block;width: 50px;background-color: #9c9393;color: #ffffff;height: 20px;line-height: 20px;" onclick="nextpage()">下一页</a>
+						</div>
+						<!--分页结束-->
 
-			</div>
-        <!--分页 -->
-			<div>
-					<a href="javascript:;" style="display: inline-block;width: 50px;background-color: #9c9393;color: #ffffff;height: 20px;line-height: 20px;margin-right:20px;" onclick="prepage()">上一页</a>
-					<a href="javascript:;" style="display: inline-block;width: 50px;background-color: #9c9393;color: #ffffff;height: 20px;line-height: 20px;" onclick="nextpage()">下一页</a>
-			</div>
-		<!--分页结束-->
-
-			</div>
-			</div>
+					</div>
+				</div>
 	
  			</div>
- 			
+ 				
+		</div>
 			
-		</div>
-		
-		
- 		</div>
- 		<!-- 添加好友弹窗 -->
-		<div class="confirm" style="display: none;top: 450px;left: 80px;background-color:transparent;">
-						<form class="confirm_" action="post" method="">
-							<div>
-								<div class="add_text">添加好友</div>
-								<div class="close_btn">×</div>
-							</div>
-							<div class="confirm_main">
-								<div class="gap"></div>
-								<div class="share_sendee">
-									<span style="letter-spacing: 5px;">手机号</span><span class="colon" style="margin: 0 6px;">:</span>
-									<input type="text" class="" id="phone_num">
-								</div>
-								<input class="share_btn" type="button" value="添加好友" onclick="addhaoyou()">
-							</div>
-						</form>
-		</div>
-				<!-- 添加好友弹窗 end -->
+	</div>
 
-		<!-- 积分 -->
-		<!-- 发布招聘 -->
-		<!-- 发布集采 -->
-
-		<!-- 发布列表 -->
- 		<!-- 创建简历 -->
- 		<!-- 实名认证 -->
- 		</div>
- 
-
-
+	<!-- 添加好友弹窗 -->
+	<div class="confirm" style="display: none;top: 450px;background-color:transparent;">
+		<form class="confirm_" action="post" method="" style="border: 1px solid #bcbcbc;">
+			<div>
+				<div class="add_text">添加好友</div>
+				<div class="close_btn">×</div>
+			</div>
+			<div class="confirm_main">
+				<div class="gap"></div>
+				<div class="share_sendee">
+					<span style="letter-spacing: 5px;">手机号</span><span class="colon" style="margin: 0 6px;">:</span>
+					<input type="text" class="" id="phone_num">
+				</div>
+				<input class="share_btn" type="button" value="添加好友" onclick="addhaoyou()">
+			</div>
+		</form>
+	</div>
+	<!-- 添加好友弹窗 end -->
+</div>
 
 {include file=footer.html}
 
 <script type="text/javascript">
-	(function(){
-		$(".user_tel_li").addClass("bg_li");
-	}())
-		
+	$(function(){
+		$(".user_tel_li").children().first().css({
+		"color" : "red"});
+
+		getUserList();
+	});
 	
 	$(".container_nav ul li").click(function(){
 		$(".container_nav ul li").removeClass("bg_li")
@@ -160,61 +141,56 @@ body{background:url('') no-repeat center top }
 	// 弹窗控制 end
 	pages=1;
 	//获取用户列表
-			function getUserList() {
-			var url = 'http://wgcapp.wgc2013.com/jingyi.php/Home/index/getAllMyRelative'
-			$.post(url,{
-						uid:'<?php echo $_SESSION["user_info"]["user_id"];?>',
-		            	type:'PRIVATE',
-		            	types:'user_list',
-		            	page : pages,
-			},function(ret){
-				if(ret.code == 200){
-					var listHtml = '';
-					var datas = ret.data
-					for(var j in datas){
-						var data = datas[j];
-						var message = datas[j].message;
-						var zhiwei = datas[j].zhiwei
-						
-						listHtml  += '<div class="zhiwei" style="text-align:left;background-color:#eee;">'+zhiwei+'</div>';
-						listHtml   += 	'<ul class="tel_ul">';
-						for(var i in message){
-							var touid 		= message[i].touid,
-				            	user_name 	= message[i].user_name, 
-				            	names 		= message[i].name, 
-				            	zhiwei 		= message[i].zhiwei,
-				            	imgUrl 		= 'http://wgcapp.wgc2013.com/'+message[i].userphoto;
-								
-								listHtml   +=				'<li style="margin: 0 0 10px 0;border: 1px solid #eee;">';
-								listHtml   +=				'<img src="'+ imgUrl +'" alt="" width="50" height="50" style="float: left;margin:10px;    border-radius: 100%;" />';
-								listHtml   +=				'<div class="tel_div" style="float:left;">';
-								listHtml   +=				'<span style="display:block;margin:10px 0;">'+names+'</span>';
-								listHtml   +=				'<span style="display:block;margin:5px 0;">'+user_name+'</span>';
-								listHtml   +=				'</div>';
-								listHtml   +=			'</li>';
-			
-						}
-								listHtml   +=				'</ul>';
-		
+	function getUserList() {
+		var url = 'http://wgcapp.wgc2013.com/jingyi.php/Home/index/getAllMyRelative'
+		$.post(url,{
+			uid:'<?php echo $_SESSION["user_info"]["user_id"];?>',
+        	type:'PRIVATE',
+        	types:'user_list',
+        	page : pages,
+		},function(ret){
+			if(ret.code == 200){
+				var listHtml = '';
+				var datas = ret.data
+				for(var j in datas){
+					var data = datas[j];
+					var message = datas[j].message;
+					var zhiwei = datas[j].zhiwei
+					
+					listHtml  += '<div class="zhiwei" style="text-align:left;background-color:#eee;">'+zhiwei+'</div>';
+					listHtml   += 	'<ul class="tel_ul">';
+					for(var i in message){
+						var touid 		= message[i].touid,
+			            	user_name 	= message[i].user_name, 
+			            	names 		= message[i].name, 
+			            	zhiwei 		= message[i].zhiwei,
+			            	imgUrl 		= 'http://wgcapp.wgc2013.com/'+message[i].userphoto;
+							listHtml   +='<li style="margin: 0 0 10px 0;border: 1px solid #eee;">';
+							listHtml   +=	'<img src="'+ imgUrl +'" alt="" width="50" height="50" style="float: left;margin:10px;    border-radius: 100%;" />';
+							listHtml   +=	'<div class="tel_div" style="float:left;">';
+							listHtml   +=	'<span style="display:block;margin:10px 0;">'+names+'</span>';
+							listHtml   +=	'<span style="display:block;margin:5px 0;">'+user_name+'</span>';
+							listHtml   +=	'</div>';
+							listHtml   +='</li>';
 					}
-					$('.section').append(listHtml);	
-				}else if(ret.code == 201 ){
-			        
-					if(pages == 1){
-						$("#lists").html(Emptyss);
-					}else{
-						alert('暂无更多了');
-					}
-			    }else{
-			    	alert('请检查网络连接');
-					return false;
-			    
-			    }
-
-				  
-			},'json');	
-		};
-//添加好友
+					listHtml   +=	'</ul>';
+	
+				}
+				$('.section').append(listHtml);	
+			}else if(ret.code == 201 ){
+				if(pages == 1){
+					$("#lists").html(Emptyss);
+				}else{
+					alert('暂无更多了');
+				}
+		    }else{
+		    	alert('请检查网络连接');
+				return false;
+		    
+		    }
+		},'json');	
+	};
+	//添加好友
 	function addhaoyou(){
 		var adduid = $('#phone_num').val();
 		if(!(/^1[3|5|7|8][0-9]\d{4,8}$/.test(adduid))){
@@ -234,96 +210,81 @@ body{background:url('') no-repeat center top }
 			}else if(ret.code == 205){
 				alert('添加失败,因对方长时间未登录验证!');
 				return false;
-				
 			}else if(ret.code == 203){
 				alert('已经是好友');
 				return false;
-				
 			}else if(ret.code == 204){
 				alert('不能添加自己为好友');
 				return false;
-				
 			}else{
 			   alert('网络连接失败');
-				
 			}
 		},'json');
 	}
 	
-	$(document).ready(function() {
-		getUserList();
-	});
-//分页控制
-function pageindex(pindex){
-		//console.log(index)
+	//分页控制
+	function pageindex(pindex){
 		if(pindex < 1){
 			pindex = 1;
 			pages=1;
 		}
-	var url = 'http://wgcapp.wgc2013.com/jingyi.php/Home/index/getAllMyRelative';
-	$('.section').html("");
-			$.post(url,{
-						uid:'<?php echo $_SESSION["user_info"]["user_id"];?>',
-		            	type:'PRIVATE',
-		            	types:'user_list',
-		            	page : pindex,
-			},function(ret){
-				if(ret.code == 200){
-					var listHtml = '';
-					var datas = ret.data
-					for(var j in datas){
-						var data = datas[j];
-						var message = datas[j].message;
-						var zhiwei = datas[j].zhiwei
-						
-						listHtml  += '<div class="zhiwei" style="text-align:left;background-color:#eee;">'+zhiwei+'</div>';
-						listHtml   += 	'<ul class="tel_ul">';
-						for(var i in message){
-							var touid 		= message[i].touid,
-				            	user_name 	= message[i].user_name, 
-				            	names 		= message[i].name, 
-				            	zhiwei 		= message[i].zhiwei,
-				            	imgUrl 		= 'http://wgcapp.wgc2013.com/'+message[i].userphoto;
-								
-								listHtml   +=				'<li style="margin: 0 0 10px 0;border: 1px solid #eee;">';
-								listHtml   +=				'<img src="'+ imgUrl +'" alt="" width="50" height="50" style="float: left;margin:10px;    border-radius: 100%;" />';
-								listHtml   +=				'<div class="tel_div" style="float:left;">';
-								listHtml   +=				'<span style="display:block;margin:10px 0;">'+names+'</span>';
-								listHtml   +=				'<span style="display:block;margin:5px 0;">'+user_name+'</span>';
-								listHtml   +=				'</div>';
-								listHtml   +=			'</li>';
-			
-						}
-								listHtml   +=				'</ul>';
+		var url = 'http://wgcapp.wgc2013.com/jingyi.php/Home/index/getAllMyRelative';
+		$('.section').html("");
+		$.post(url,{
+			uid:'<?php echo $_SESSION["user_info"]["user_id"];?>',
+        	type:'PRIVATE',
+        	types:'user_list',
+        	page : pindex,
+		},function(ret){
+			if(ret.code == 200){
+				var listHtml = '';
+				var datas = ret.data
+				for(var j in datas){
+					var data = datas[j];
+					var message = datas[j].message;
+					var zhiwei = datas[j].zhiwei
+					
+					listHtml  += '<div class="zhiwei" style="text-align:left;background-color:#eee;">'+zhiwei+'</div>';
+					listHtml   += 	'<ul class="tel_ul">';
+					for(var i in message){
+						var touid 		= message[i].touid,
+			            	user_name 	= message[i].user_name, 
+			            	names 		= message[i].name, 
+			            	zhiwei 		= message[i].zhiwei,
+			            	imgUrl 		= 'http://wgcapp.wgc2013.com/'+message[i].userphoto;
+							
+							listHtml   +=				'<li style="margin: 0 0 10px 0;border: 1px solid #eee;">';
+							listHtml   +=				'<img src="'+ imgUrl +'" alt="" width="50" height="50" style="float: left;margin:10px;    border-radius: 100%;" />';
+							listHtml   +=				'<div class="tel_div" style="float:left;">';
+							listHtml   +=				'<span style="display:block;margin:10px 0;">'+names+'</span>';
+							listHtml   +=				'<span style="display:block;margin:5px 0;">'+user_name+'</span>';
+							listHtml   +=				'</div>';
+							listHtml   +=			'</li>';
 		
 					}
-					$('.section').append(listHtml);	
-				}else if(ret.code == 201 ){
-			        
-					if(pages == 1){
-						$("#lists").html(Emptyss);
-					}else{
-						//alert('暂无更多了');
-						return false;
-					}
-			    }else{
-			    	alert('请检查网络连接');
-					return false;
-			    
-			    }
-
-				  
-			},'json');
-
-	}
-//下一页
-function nextpage(){
+							listHtml   +=				'</ul>';
 	
-	pageindex(++pages);
+				}
+				$('.section').append(listHtml);	
+			}else if(ret.code == 201 ){
+				if(pages == 1){
+					$("#lists").html(Emptyss);
+				}else{
+					return false;
+				}
+		    }else{
+		    	alert('请检查网络连接');
+				return false;
+		    }
+		},'json');
 
 	}
-//上一页
-function prepage(){
+	//下一页
+	function nextpage(){
+		pageindex(++pages);
+	}
+	//上一页
+	function prepage(){
 		pageindex(--pages);
 	}
 </script>

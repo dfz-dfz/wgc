@@ -16,10 +16,8 @@ mysql_query("SET NAMES utf8");//解决数据库中有汉字时显示在前台出
 <base href="{$site_url}/" />
 <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7 charset={$charset}" />
 <meta http-equiv="Content-Type" content="text/html; charset={$charset}" />
-
 <link type="text/css" href="/themes/mall/jiaju/styles/css/global.css" rel="stylesheet"/>
 <link type="text/css" href="{res file=css/catalog.css}" rel="stylesheet"/>
-
 <link type="text/css" href="/themes/mall/jiaju/styles/css/style.css" rel="stylesheet"/>
 <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
 <script type="text/javascript" src="/themes/mall/jiaju/js/tool.js"></script>
@@ -41,54 +39,45 @@ var PRICE_FORMAT = '{$price_format}';
 </script>
 {$_head_tags}
 <style type="text/css">
-body{background:url('{$site_poster}') no-repeat center top }
-.mainnav{width:990px; overflow:hidden; margin:0 auto}
+body{background:url('{$site_poster}') no-repeat center top;min-width: 1200px;}
+.mainnav{width:990px; overflow:hidden; margin:0 auto;}
 .STYLE1 {color: red}
 </style>
 <script type="text/javascript" src="{res file=js/hover.js}"></script>
 <script>
-  function lxfEndtime(){
-          $(".lxftime").each(function(){
-                var lxfday=$(this).attr("lxfday");//用来判断是否显示天数的变量
-                var endtime = new Date($(this).attr("endtime")).getTime();//取结束日期(毫秒值)
-                var nowtime = new Date().getTime();        //今天的日期(毫秒值)
-                var youtime = endtime-nowtime;//还有多久(毫秒值)
-                var seconds = youtime/1000;
-                var minutes = Math.floor(seconds/60);
-                var hours = Math.floor(minutes/60);
-                var days = Math.floor(hours/24);
-                var CDay= days ;
-                var CHour= hours % 24;
-                var CMinute= minutes % 60;
-                var CSecond= Math.floor(seconds%60);//"%"是取余运算，可以理解为60进一后取余数，然后只要余数。
-                if(endtime<=nowtime){
-                        $(this).html("已过期")//如果结束日期小于当前日期就提示过期啦
-                        }else{
-                                if($(this).attr("lxfday")=="no"){
-                                        $(this).html("<i>剩余时间：</i><span>"+CHour+"</span>时<span>"+CMinute+"</span>分<span >"+CSecond+"</span>秒");          //输出没有天数的数据
-                                        }else{
-                        $(this).html("<span class='f24'>"+days+"</span><span>天</span><span  class='f24'>"+CHour+"</span><span>时</span><span  class='f24'>"+CMinute+"</span><span>分</span><span  class='f24'>"+CSecond+"</span><span>秒</span>");          //输出有天数的数据
-                                }
-                        }
-          });
-   setTimeout("lxfEndtime()",1000);
-  };
+function lxfEndtime(){
+	$(".lxftime").each(function(){
+	    var lxfday=$(this).attr("lxfday");//用来判断是否显示天数的变量
+	    var endtime = new Date($(this).attr("endtime")).getTime();//取结束日期(毫秒值)
+	    var nowtime = new Date().getTime();        //今天的日期(毫秒值)
+	    var youtime = endtime-nowtime;//还有多久(毫秒值)
+	    var seconds = youtime/1000;
+	    var minutes = Math.floor(seconds/60);
+	    var hours = Math.floor(minutes/60);
+	    var days = Math.floor(hours/24);
+	    var CDay= days ;
+	    var CHour= hours % 24;
+	    var CMinute= minutes % 60;
+	    var CSecond= Math.floor(seconds%60);//"%"是取余运算，可以理解为60进一后取余数，然后只要余数。
+	    if(endtime<=nowtime){
+        	$(this).html("已过期")//如果结束日期小于当前日期就提示过期啦
+        }else{
+            if($(this).attr("lxfday")=="no"){
+                $(this).html("<i>剩余时间：</i><span>"+CHour+"</span>时<span>"+CMinute+"</span>分<span >"+CSecond+"</span>秒");
+                //输出没有天数的数据
+            }else{
+			    $(this).html("<span class='f24'>"+days+"</span><span>天</span><span  class='f24'>"+CHour+"</span><span>时</span><span  class='f24'>"+CMinute+"</span><span>分</span><span  class='f24'>"+CSecond+"</span><span>秒</span>");
+			    //输出有天数的数据
+            }
+        }
+	});
+	setTimeout("lxfEndtime()",1000);
+};
 $(function(){
-      lxfEndtime();
-   });
+ 	lxfEndtime();
+});
 </script>
 {$_head_tags}
-<!-- <script type="text/javascript">
-  $(function (){
-    $('#open-change-city-window').click(function (){
-      $('.change-city-window').slideDown();
-      
-    })
-    $('#close-change-city-window').click(function (){
-      $('.change-city-window').slideUp();
-    })
-  })
-</script> -->
 </head>
 <body>
 <div id="header" class="w-full">
@@ -99,13 +88,10 @@ $(function(){
 		<div id="site-nav" class="w-full" style="background:#333;height:50px;">
 		  <div class="shoptop w clearfix" style="height:50px">
 				<div class="login_info" style="height:50px;line-height:50px">
-				
 					<a href="http://wgcapp.59jiaju.com/apk/index.html" target="_blank" style="color:#fff;font-size:18px;">
 						APP下载
 						<font style="margin-left:5px;">&or;</font>
-					</a>					
-				
-					
+					</a>
 				</div>
 				<ul class="quick-menu"style="min-width:190px;overflow:hidden;">
 				  
