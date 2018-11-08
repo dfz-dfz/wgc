@@ -105,7 +105,11 @@ body{background:url('') no-repeat center top }
     $('#close-change-city-window').click(function (){
       $('.change-city-window').slideUp();
     })
-
+//收费的下拉
+		$(".fabucenter").show();
+		$(".fabucenter").prev().css({
+			"background-image":"url('/themes/mall/jiaju/images/center/form-bg2.jpg')"
+		})
   
   })
 </script>
@@ -220,8 +224,8 @@ body{background:url('') no-repeat center top }
 			
 			<div class="user_collection_list base_info_public" style="overflow: hidden;display:none;position:relative;min-height:480px;">
 				<div class="search_ys">
-					<input type="text" style="width: 400px;height: 30px;" id="search_fc" placeholder="请输入关键词">
-					<label for="search_fc" style="width: 50px;height: 30px;display:inline-block;position: relative;top: -8px;"><img src="/themes/mall/jiaju/images/search_button.jpg" alt="" style="width: 100%;height: 100%;"></label>
+					<input type="text" style="width: 400px;height: 30px;" id="search" placeholder="请输入关键词">
+					<label for="search_fc" style="width: 50px;height: 30px;display:inline-block;position: relative;top: -8px;"><img src="/themes/mall/jiaju/images/search_button.jpg" alt="" style="width: 100%;height: 100%;" onclick="search()"></label>
 					<a class="share_btn" href="javascript:;" style="display: inline-block;width: 60px;height: 30px;line-height: 30px;font-size: 16px;color: #2d2a2a;font-weight: bold;letter-spacing: 4px; background-color: #facd89;border-radius: 5px;position: relative;left: 110px;top:-5px;text-decoration: none;" onclick="showUserList()">分享</a>
 				</div>
 
@@ -231,7 +235,7 @@ body{background:url('') no-repeat center top }
 						
 					</div>
 
-					<div style="width: 100%;margin:0 auto;margin-top: 30px;">
+					<div style="width: 100%;margin:0 auto;margin-top: 30px;height: 30px;">
 						<a onclick="uppage()" style="font-size: 16px;background-color: #f8c67b;color: #f34c26;padding: 5px 10px;border:1px solid #999;margin-right: 20px;cursor: pointer;text-decoration: none;">上一页</a>
 						<a onclick="nextpage()" id="nextpage" style="font-size: 16px;background-color: #f8c67b;color: #f34c26;padding: 5px 10px;border:1px solid #999;cursor: pointer;text-decoration: none;">下一页</a>
 					</div>
@@ -246,8 +250,8 @@ body{background:url('') no-repeat center top }
 				<div style="overflow: hidden;margin-top: 10px;">
 				<!-- 搜索框 -->
 					<div class="search_ys">
-						<input type="text" style="width: 400px;height: 30px;" id="search_zc" placeholder="请输入关键词">
-						<label class="search_zc" for="search_zc" style="width: 50px;height: 30px;display:inline-block;position: relative;top: -8px;"><img src="/themes/mall/jiaju/images/search_button.jpg" alt="" style="width: 100%;height: 100%;" onclick="searchZC()"></label>
+						<input type="text" style="width: 400px;height: 30px;" id="searchShare" placeholder="请输入项目名称关键词">
+						<label class="search_zc" for="search_zc" style="width: 50px;height: 30px;display:inline-block;position: relative;top: -8px;"><img src="/themes/mall/jiaju/images/search_button.jpg" alt="" style="width: 100%;height: 100%;" onclick="searchShare()"></label>
 						<button class="quxiao_zc" style="padding:0;width: 50px;height: 30px;position: relative;top: -8px;cursor:pointer;line-height:30px;background-color: #ec6941;display:none;">取消</button>
 						<a class="share_btn" href="javascript:;" style="display: inline-block;width: 60px;height: 30px;line-height: 30px;font-size: 16px;color: #2d2a2a;font-weight: bold;letter-spacing: 4px; background-color: #facd89;border-radius: 5px;position: relative;left: 110px;top:-5px;text-decoration: none;" onclick="showUserList()">分享</a>							
 					</div>	
@@ -272,12 +276,14 @@ body{background:url('') no-repeat center top }
 							</div>			
 						</div>
 						<!-- 分页 -->
-						<div class="price_page" style="text-align: center;">
-							
-							<a href="#">上一页</a>
-	
-							<a href="#">下一页</a>
-							
+						<div id="spagelist" style="margin: 10px auto;text-align: center;">
+								<a id="spre" href="javascript:;" style="display: inline-block;width: 50px;height: 25px;line-height: 23px;border: 1px solid #eee;background-color: red;color:#fff;" onclick="sprepage()">上一页</a>
+								<a id="snext" href="javascript:;" style="display: inline-block;width: 50px;height: 25px;line-height: 23px;border: 1px solid #eee;background-color: red;color:#fff;" onclick="snextpage()">下一页</a>
+						</div>		
+						<!-- 搜索分页 -->
+						<div id="spagesearch" style="margin: 10px auto;display: none;display: none;text-align: center;">
+								<a id="sharepre" href="javascript:;" style="display: inline-block;width: 50px;height: 25px;line-height: 23px;border: 1px solid #eee;background-color: red;color:#fff;" onclick="sprespage()">上一页</a>
+								<a id="sharenext" href="javascript:;" style="display: inline-block;width: 50px;height: 25px;line-height: 23px;border: 1px solid #eee;background-color: red;color:#fff;" onclick="snextspage()">下一页</a>
 						</div>
 					</div>
 				</div>
@@ -1166,6 +1172,10 @@ $(function(){
 		username();
 		messagelist(spage,0)
 		list();//获取项目分包列表
+		$(".user_projectFB_li").children().eq(1).css({
+		"color" : "red"
+	})
+		
 	})
 
 	//点击预算列表切换
@@ -1397,6 +1407,95 @@ function pageindex(index){
 	},'json')
 
 	}
+
+	//列表搜索
+	var sindex = 1;
+	function search(){
+		var url = 'http://wgcapp.wgc2013.com/jingyi.php/Home/Jianli/projectSubcontract_lists';
+		var myid = '<?php echo $_SESSION["user_info"]["user_id"];?>';
+		var imgArray = [];
+		var key    = $("#search").val()
+		$.post(url,{
+			user_id:'<?php echo $_SESSION["user_info"]["user_id"];?>',
+			page   :sindex,
+			key    : key
+		},function(ret){
+			var listHtml = '';
+			var imgHtml  = '';
+			if(ret.status == 200){
+				var data = ret.retData;
+				dataLength = data.length;
+				for(var i in data){
+					listHtml = '';
+					imgHtml  = '';
+					imgArray = [];
+					var 	name = data[i].name;//联系人
+							content = data[i].content,//内容描述
+							id = data[i].id,
+							userid = data[i].user_id,
+							send_uid = data[i].user_id,
+							worker_address = data[i].worker_address,//装修地址
+							tel = data[i].tel,//联系人电话
+							time = data[i].time, //装修时长
+							area = data[i].area, //装修大小
+							addtime = timestampToTime(data[i].addtime), //发布时间
+							expect_price = data[i].expect_price, //装修预算
+							dd_time = data[i].dd_time,//截止时间
+							fabudizhi = data[i].fabudizhi,//发布地址
+							prj_name = data[i].prj_name,//项目名称
+							tel = data[i].tel;//联系方式
+							var img      = data[i].img;
+							console.log(img);
+							imgArray = img.split(",");
+							for(var j=0;j<imgArray.length;j++){
+								//console.log(imgArray[j]);
+								imgHtml += '<a href="http://wgcapp.wgc2013.com'+imgArray[j]+'" target="_blank"><img src="http://wgcapp.wgc2013.com'+imgArray[j]+'" alt="" style="width:100px;height:100px;margin-right:10px;"/></a>';
+							}
+					
+					if(send_uid == myid ){
+						listHtml +=	'<div class="list_index" style="height:auto;overflow:hidden;position:relative;">';
+						listHtml +=	'<div style="text-align: left;"><span style="display: inline-block;width: 60px;height: 25px;line-height: 25px;background-color: red;font-size: 14px;text-align: center;letter-spacing: 2px;position:absolute;top:0px;color:#fff;margin:5px 5px;" onclick="del('+id+','+userid+')">删除</span></div>';
+							listHtml +=	'<div style="text-align:right;padding-right: 20px;margin-top: 10px;"><input name="id" type="checkbox" value="'+id+'"></div>';
+							listHtml +=	'<p style="padding-left:70px;line-height:50px;">项目名称：<span style="font-size:18px;color:#f34c26 ;">'+prj_name+'</span></p>';
+							listHtml += '<div style="height:auto;overflow:hidden;">';
+								listHtml +=	'<div class="list_right" style="float: left;width: 50%;">';
+									listHtml +=	'<ul style="margin-left:15%;">';
+										listHtml +=	'<li>联系人：'+name+'</li>';
+										listHtml +=	'<li style="margin:10px 0;">发布地址：'+fabudizhi+'</li>';
+										listHtml +=	'<li>装修预算：'+expect_price+'</li>';
+										listHtml +=	'<li style="margin:10px 0;">截止时间：'+dd_time+'</li>';					
+										listHtml +=	'<li>联系方式：'+tel+'</li>';
+									listHtml +=	'</ul>';
+								listHtml +=	'</div>';
+								listHtml +=	'<div class="list_left" style="float: right;width: 50%;">';
+									listHtml +=	'<ul style="margin-left:15%;">';
+										listHtml +=	'<li>发布时间：'+addtime+'</li>';
+										listHtml +=	'<li style="margin:10px 0;">装修地址：'+worker_address+'</li>';
+										listHtml +=	'<li>装修时长：'+time+'</li>';
+										listHtml +=	'<li style="margin:10px 0;">装修大小：'+area+'</li>';						
+									listHtml +=	'</ul>';
+								listHtml +=	'</div>';
+							listHtml += '</div>';
+							listHtml +=	'<p style="padding-left:70px;margin: 10px 0;">内容描述：'+content+'</p>';
+							listHtml   +=	'<div id="imglist'+i+'" style="width:100%;margin-top:10px;"></div>';
+							listHtml +=	'<div style="width:100%;height:40px;float:left;margin-top:30px;"><img src="/themes/mall/jiaju/images/list_bg.jpg" style="width:100%;height:100%;"/></div>';
+						listHtml += '</div>';
+						$(".listShow").html(listHtml);
+						$("#imglist"+i).html(imgHtml);
+					}
+				}
+				
+				$('#nextpage').show();
+			}else if(ret.status == 202){
+				$('.listShow').html('<div style="text-align:center;color:#999;font-size:20px;line-height:50px;">暂无更多数据</div>');
+				// $('#nextpage').hide();
+				return false;
+			}else{}
+
+		},'json')
+		
+	}
+
 
 	//分享
 	$(".share_btn").click(function(e){
@@ -1700,6 +1799,14 @@ var spage = 1;
 						if(ret.code == 200){
 				var data = ret.message;
 				dataLength = data.length;
+				$("#spagelist").show();
+				$("#spagesearch").hide();
+				if(spage ==1){
+					$("#spre").hide();
+				}else{
+					$("#spre").show();
+				}
+				$("#snext").show();
 				for(var i in data){
 					listHtml = '';
 					imgHtml  = '';
@@ -1753,26 +1860,25 @@ var spage = 1;
 								listHtml +=	'</div>';
 							listHtml += '</div>';
 							listHtml +=	'<p style="padding-left:67px;margin: 10px 0;font-size:12px;">内容描述：'+content+'</p>';
-							listHtml   +=	'<div id="imglist'+i+'" style="width:100%;margin-top:10px;"></div>';
+							listHtml   +=	'<div id="imglists'+i+'" style="width:100%;margin-top:10px;text-align:center;"></div>';
 							listHtml +=	'<div style="width:100%;height:40px;float:left;margin-top:30px;"><img src="/themes/mall/jiaju/images/list_bg.jpg" style="width:100%;height:100%;"/></div>';
 						listHtml += '</div>';
-						$(".listShow_share").append(listHtml);
-						$("#imglists"+i).append(imgHtml);
+						$(".listShow_share").html(listHtml);
+						$("#imglists"+i).html(imgHtml);
 					
 				}
 				
 				$('#nextpage').show();
-			}else if(ret.status == 202){
-						if(types == 1){
-							$(".yewu_body_share tbody").html("");
-							$("#nulls").show();
-							$("#share_next").hide();
-						}
-						if(types == 0){
-							$("#share_next").hide();
-							$("#backshare").hide();
-							$("#nulls").show();
-						}
+			}else if(ret.code == 202){
+					$(".listShow_share").html('<div id="nulls" style="margin-top: 100px;text-align: center;font-size: 18px;">暂无数据！！！</div>');
+					if(types == 0){
+						$("#spagelist").hide();
+						$("#spagesearch").hide();
+					}
+					if(types == 1){
+						$("#snext").hide();
+						$("#spre").show();
+					}
 					}
 
 				},
@@ -1782,6 +1888,156 @@ var spage = 1;
 			});
 
 	}
+
+	//分享列表搜索
+	var searchindex = 1;
+	function searchShare(spage,types){
+	var url = 'http://wgcapp.wgc2013.com/jingyi.php/Home/Jianli/projectSubcontract_lists_share';
+	var key = $("#searchShare").val();
+	if(spage == 1){
+		$("#share_pre").hide();
+	}else{
+		$("#share_pre").show();
+	}
+		$("#search_after").hide();   
+		$("#search_before").show();
+		$.ajax({
+				type:"POST",
+				url:url,
+				data:{
+					key      : key,
+					user_id : '<?php echo $_SESSION["user_info"]["user_id"];?>',
+					page     : spage,
+					type     : 9
+				},
+				cache:false,
+				crossDomain: true == !(document.all),
+				dataType: "json",
+				success:function(ret){
+					//console.log(ret)
+						if(ret.code == 200){
+						$("#spagelist").hide();
+						$("#spagesearch").show();
+						if(sindex ==1){
+							$("#sharepre").hide();
+						}else{
+							$("#sharepre").show();
+						}
+						$("#sharenext").show();
+				var data = ret.message;
+				dataLength = data.length;
+				for(var i in data){
+					listHtml = '';
+					imgHtml  = '';
+					imgArray = [];
+					var 	name = data[i].name;//联系人
+							content = data[i].content,//内容描述
+							id = data[i].id,
+							userid = data[i].user_id,
+							send_uid = data[i].user_id,
+							worker_address = data[i].worker_address,//装修地址
+							tel = data[i].tel,//联系人电话
+							time = data[i].time, //装修时长
+							area = data[i].area, //装修大小
+							addtime = timestampToTime(data[i].addtime), //发布时间
+							expect_price = data[i].expect_price, //装修预算
+							dd_time = data[i].dd_time,//截止时间
+							fabudizhi = data[i].fabudizhi,//发布地址
+							prj_name = data[i].prj_name,//项目名称
+							username  = data[i].name,
+							tel = data[i].tel;
+							var img      = data[i].img;
+							//console.log(img);
+							imgArray = img.split(",");
+							for(var j=0;j<imgArray.length;j++){
+								//console.log(imgArray[j]);
+								imgHtml += '<a href="http://wgcapp.wgc2013.com'+imgArray[j]+'" target="_blank"><img src="http://wgcapp.wgc2013.com'+imgArray[j]+'" alt="" style="width:100px;height:100px;margin-right:10px;"/></a>';
+							}
+					
+						
+						listHtml +=	'<div class="list_index" style="height:auto;overflow:hidden;position:relative;">';
+						listHtml +=	'<div style="text-align: left;"><span style="display: inline-block;width: 160px;height: 25px;line-height: 25px;background-color: red;font-size: 14px;text-align: center;letter-spacing: 2px;position:absolute;top:0px;color:#fff;margin:5px 5px;" onclick="del('+id+','+userid+')">分享人：'+username+'</span></div>';
+							listHtml +=	'<div style="text-align:right;padding-right: 20px;margin-top: 10px;"><input name="id" type="checkbox" value="'+id+'"></div>';
+							listHtml +=	'<p style="padding-left:70px;line-height:50px;">项目名称：<span style="font-size:18px;color:#f34c26 ;">'+prj_name+'</span></p>';
+							listHtml += '<div style="height:auto;overflow:hidden;">';
+								listHtml +=	'<div class="list_right" style="float: left;width: 50%;">';
+									listHtml +=	'<ul style="margin-left:15%;">';
+										listHtml +=	'<li>联系人：'+name+'</li>';
+										listHtml +=	'<li style="margin:10px 0;">发布地址：'+fabudizhi+'</li>';
+										listHtml +=	'<li>装修预算：'+expect_price+'</li>';
+										listHtml +=	'<li style="margin:10px 0;">截止时间：'+dd_time+'</li>';					
+										listHtml +=	'<li>联系方式：'+tel+'</li>';
+									listHtml +=	'</ul>';
+								listHtml +=	'</div>';
+								listHtml +=	'<div class="list_left" style="float: right;width: 50%;">';
+									listHtml +=	'<ul style="margin-left:15%;">';
+										listHtml +=	'<li>发布时间：'+addtime+'</li>';
+										listHtml +=	'<li style="margin:10px 0;">装修地址：'+worker_address+'</li>';
+										listHtml +=	'<li>装修时长：'+time+'</li>';
+										listHtml +=	'<li style="margin:10px 0;">装修大小：'+area+'</li>';						
+									listHtml +=	'</ul>';
+								listHtml +=	'</div>';
+							listHtml += '</div>';
+							listHtml +=	'<p style="padding-left:67px;margin: 10px 0;font-size:12px;">内容描述：'+content+'</p>';
+							listHtml   +=	'<div id="imglists'+i+'" style="width:100%;margin-top:10px;text-align:center;"></div>';
+							listHtml +=	'<div style="width:100%;height:40px;float:left;margin-top:30px;"><img src="/themes/mall/jiaju/images/list_bg.jpg" style="width:100%;height:100%;"/></div>';
+						listHtml += '</div>';
+						$(".listShow_share").html(listHtml);
+						$("#imglists"+i).html(imgHtml);
+					
+				}
+				
+				
+			}else if(ret.code == 202){
+						$("#spagesearch").hide()
+						$(".listShow_share").html('<div id="nulls" style="margin-top: 100px;text-align: center;font-size: 18px;">暂无数据！！！</div>');
+						if(types == 0){
+							$("#spagelist").hide();
+							$("#spagesearch").hide();
+						}
+						if(types == 1){
+							$("#sharenext").hide();
+							$("#spagesearch").show();
+							$("#sharepre").show();
+						}	$("#share_next").hide();
+							$("#backshare").hide();
+							$("#nulls").show();
+						}
+					
+
+				},
+				error:function(err){
+					console.log(err)
+				}
+			});
+
+	}
+
+//分享列表的分页	
+function snextpage(){
+	messagelist(++spage,1);
+}
+
+function sprepage(){
+	if(spage == 1){
+		spage = 2;
+	}
+	messagelist(--spage,1);
+}
+
+//分享列表搜索的分页
+	
+function snextspage(){
+	searchShare(++searchindex,1);
+}
+
+function sprespage(){
+	if(searchindex == 1){
+		searchindex = 2;
+	}
+	searchShare(--searchindex,1);
+}
+
 function fabu(){
 	var conf=confirm("普通用户发布项目分包需要收取10元/次!");
 	    if(conf==true){  

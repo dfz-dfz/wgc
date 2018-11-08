@@ -4,7 +4,7 @@
 <meta http-equiv="Access-Control-Allow-Origin" content="*">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=8"/>
-<title>用户中心-微工程</title>
+<title>用户中心-材料询价</title>
 <meta name="description" content="微工程，微工程APP，装修、材料、家具、饰品一站式服务，让装修更简单，价格更透明！！" />
 <meta name="keywords" content="微工程，微工程，家居商城，微工程家居商城，微工程家居装修商城，办公室装修，写字楼装修，材料，装修材料，家居，办公家具，家居，家具，装修，装饰" />
 <!--[if lt IE 9]>
@@ -180,14 +180,25 @@ body{background:url('') no-repeat center top }
 			<div class="user_collection_list base_info_public" style="overflow: hidden;display:none;position:relative;min-height:480px;">
 			<!--搜索框 -->
 						<div class="search_ys">
-							<input type="text" style="width: 400px;height: 30px;" id="search_zc" placeholder="请输入关键词例：地砖">
-							<label class="search_zc" for="search_zc" style="width: 50px;height: 30px;display:inline-block;position: relative;top: -8px;"><img src="/themes/mall/jiaju/images/search_button.jpg" alt="" style="width: 100%;height: 100%;" onclick="searchZC()"></label>
+							<input type="text" style="width: 400px;height: 30px;" id="search" placeholder="请输入关键词例">
+							<label class="search_zc" for="search_zc" style="width: 50px;height: 30px;display:inline-block;position: relative;top: -8px;"><img src="/themes/mall/jiaju/images/search_button.jpg" alt="" style="width: 100%;height: 100%;" onclick="search()"></label>
 							<button class="quxiao_zc" style="padding:0;width: 50px;height: 30px;position: relative;top: -8px;cursor:pointer;line-height:30px;background-color: #ec6941;display:none;">取消</button>
 							<a class="share_btn" href="javascript:;" style="display: inline-block;width: 60px;height: 30px;line-height: 30px;font-size: 16px;color: #2d2a2a;font-weight: bold;letter-spacing: 4px; background-color: #facd89;border-radius: 5px;position: relative;left: 110px;top:-5px;text-decoration: none;" onclick="showUserList()">分享</a>							
 						</div>					
-				<div class="list_show" style="overflow: hidden;min-height:300px;">
+				<div class="list_show" style="overflow: hidden;min-height:400px;">
 						
- 			</div>
+ 				</div>
+ 				<!-- 分页 -->
+
+				<div id="pagelist" style="margin: 10px auto;">
+						<a id="pre" href="javascript:;" style="display: inline-block;width: 50px;height: 25px;line-height: 23px;border: 1px solid #eee;background-color: red;color:#fff;" onclick="prepage()">上一页</a>
+						<a id="next" href="javascript:;" style="display: inline-block;width: 50px;height: 25px;line-height: 23px;border: 1px solid #eee;background-color: red;color:#fff;" onclick="nextpage()">下一页</a>
+				</div>		
+				<!-- 搜索分页 -->
+				<div id="pagesearch" style="margin: 10px auto;display: none;"">
+						<a id="searchpre" href="javascript:;" style="display: inline-block;width: 50px;height: 25px;line-height: 23px;border: 1px solid #eee;background-color: red;color:#fff;" onclick="prespage()">上一页</a>
+						<a id="searchnext" href="javascript:;" style="display: inline-block;width: 50px;height: 25px;line-height: 23px;border: 1px solid #eee;background-color: red;color:#fff;" onclick="nextspage()">下一页</a>
+				</div>
 			<!--集采列表end -->
 			
 		</div>
@@ -198,7 +209,7 @@ body{background:url('') no-repeat center top }
 			<!-- 搜索框 -->
 						<div class="search_ys">
 							<input type="text" style="width: 400px;height: 30px;" id="search_zc" placeholder="请输入关键词">
-							<label class="search_zc" for="search_zc" style="width: 50px;height: 30px;display:inline-block;position: relative;top: -8px;"><img src="/themes/mall/jiaju/images/search_button.jpg" alt="" style="width: 100%;height: 100%;" onclick="searchZC()"></label>
+							<label class="search_zc" for="search_zc" style="width: 50px;height: 30px;display:inline-block;position: relative;top: -8px;"><img src="/themes/mall/jiaju/images/search_button.jpg" alt="" style="width: 100%;height: 100%;" onclick="searchShare()"></label>
 							<button class="quxiao_zc" style="padding:0;width: 50px;height: 30px;position: relative;top: -8px;cursor:pointer;line-height:30px;background-color: #ec6941;display:none;">取消</button>	
 							<a class="share_btn" href="javascript:;" style="display: inline-block;width: 60px;height: 30px;line-height: 30px;font-size: 16px;color: #2d2a2a;font-weight: bold;letter-spacing: 4px; background-color: #facd89;border-radius: 5px;position: relative;left: 110px;top:-5px;text-decoration: none;" onclick="showUserList()">分享</a>						
 						</div>	
@@ -206,29 +217,32 @@ body{background:url('') no-repeat center top }
 				<div>
 
 			</div>
-			<div class="yewu_body_share" style="min-height:300px;">
-				<!-- <table style="width: 100%;" border="0" cellspacing="0" cellpadding="0">
-					<tbody>
-						<tr style="background-color:#eee;">
-						<td>公司名称</td>
-						<td>材料名称</td>
-						<td>材料品牌</td>
-						<td>材料描述</td>
-						<td>分享人</td>
-						<tr>
-					</tbody>
-				</table> -->	
-				<div class="list_show_share" style="overflow: hidden;min-height:300px;">
-						
- 				</div>			
-			</div>
+				<div class="yewu_body_share" style="min-height:300px;">
+					<!-- <table style="width: 100%;" border="0" cellspacing="0" cellpadding="0">
+						<tbody>
+							<tr style="background-color:#eee;">
+							<td>公司名称</td>
+							<td>材料名称</td>
+							<td>材料品牌</td>
+							<td>材料描述</td>
+							<td>分享人</td>
+							<tr>
+						</tbody>
+					</table> -->	
+					<div class="list_show_share" style="overflow: hidden;min-height:300px;">
+							
+	 				</div>			
+				</div>
 					<!-- 分页 -->
-					<div class="price_page" style="text-align: center;">
-				
-					<a href="#">上一页</a>
-					<a href="#">下一页</a>
-					
-					</div>
+				<div id="spagelist" style="margin: 10px auto;text-align: center;">
+						<a id="spre" href="javascript:;" style="display: inline-block;width: 50px;height: 25px;line-height: 23px;border: 1px solid #eee;background-color: red;color:#fff;" onclick="sprepage()">上一页</a>
+						<a id="snext" href="javascript:;" style="display: inline-block;width: 50px;height: 25px;line-height: 23px;border: 1px solid #eee;background-color: red;color:#fff;" onclick="snextpage()">下一页</a>
+				</div>		
+				<!-- 搜索分页 -->
+				<div id="spagesearch" style="margin: 10px auto;display: none;display: none;text-align: center;">
+						<a id="sharepre" href="javascript:;" style="display: inline-block;width: 50px;height: 25px;line-height: 23px;border: 1px solid #eee;background-color: red;color:#fff;" onclick="sprespage()">上一页</a>
+						<a id="sharenext" href="javascript:;" style="display: inline-block;width: 50px;height: 25px;line-height: 23px;border: 1px solid #eee;background-color: red;color:#fff;" onclick="snextspage()">下一页</a>
+				</div>
 				</div>
 			</div>
 			</div>
@@ -1108,8 +1122,16 @@ $(function(){
 </script>
 <script type="text/javascript">
 	$().ready(function(){
-		cai_list();
+		//收费的下拉
+		$(".fabucenter").show();
+		$(".fabucenter").prev().css({
+			"background-image":"url('/themes/mall/jiaju/images/center/form-bg2.jpg')"
+		})
+		cai_list(page,0);
 		messagelist(spage,0);
+		$(".user_collection_li").children().eq(1).css({
+		"color" : "red"
+	})
 	})
 
 	//点击预算列表切换
@@ -1216,29 +1238,10 @@ $(function(){
 	}
 	
 	//集采列表
-	function cai_list(){
+	function cai_list(page,types){
+		
 		var url = serverUrl + 'jingyi.php/Home/Material/materialListe_pc';
 		var status = 0;
-		//$.ajax({
-				//type:"POST",
-				//url:url,
-				//data:{
-					//page : page,
-			    	//user_id : user_id,
-			    	//cai_type : 2,
-			    	//s_city   : tcity,
-			    	//s_area   : '白云区',
-			//	},
-			//	cache:false,
-			//	crossDomain: true == !(document.all),
-			//	dataType: "json",
-			//	success:function(ret){
-			//		console.log(ret)
-			//	},
-			//	error:function(err){
-			//		console.log(err)
-			//	}
-			//});
 		$.post(url,{
 					page : page,
 			    	user_id : user_id,
@@ -1247,6 +1250,134 @@ $(function(){
 		},function(ret){
 			//console.log(ret)
 			if(ret.code == 200){
+				var listHtml = '';
+				var imgHtml = '';
+				var data = ret.message;
+				$("#pagelist").show();
+				$("#pagesearch").hide();
+				if(page ==1){
+					$("#pre").hide();
+				}else{
+					$("#pre").show();
+				}
+				$("#next").show();
+				for(var i in data){
+						listHtml = "";
+						imgHtml = "";
+					var id = data[i].user_id,
+						pid = data[i].id,
+						m_name = data[i].m_name,
+						m_introduce = data[i].m_introduce,
+						office_name = data[i].office_name,
+						brand       = data[i].brand,
+						address     = data[i].address,
+						price = data[i].price,
+						hanshui = data[i].hanshui,
+						yunfei = data[i].yunfei,
+						addtime = timestampToTime(data[i].addtime);
+						var img = data[i].m_photo;
+						var imgArray = img.split(",");
+						for(var j=0;j<imgArray.length;j++){
+								//console.log(imgArray[j]);
+								imgHtml += '<a href="http://wgcapp.wgc2013.com'+imgArray[j]+'" target="_blank"><img src="http://wgcapp.wgc2013.com'+imgArray[j]+'" alt="" style="width:100px;height:100px;margin-right:10px;"/></a>';
+							}
+						//console.log(imgArray);
+						if(id == user_id){
+
+						//status++;
+				listHtml   +='<div style="overflow: hidden;position:relative;">';
+				listHtml +=	'<div style="text-align: left;"><span style="display: inline-block;width: 60px;height: 25px;line-height: 25px;background-color: red;font-size: 14px;text-align: center;letter-spacing: 2px;position:absolute;top:0px;color:#fff;margin:5px 5px;" onclick="del('+pid+','+id+')">删除</span></div>';
+				listHtml   += '<div style="text-align:right;padding-right: 20px;margin-top: 10px;height:40px;"><input name="id" type="checkbox" value="'+pid+'"></div>';
+				listHtml   +=   '<div style="height:auto;overflow:hidden;">';
+				listHtml   +=	'<div class="list_right" style="float: left;width: 50%;">';
+				listHtml   +=		'<ul style="margin-left:15%;">';
+				listHtml   +=			'<li>公司名称：'+office_name+'</li>';
+				listHtml   +=			'<li style="margin:10px 0;">材料品牌：'+brand+'</li>';
+				listHtml   +=			'<li>发布地址：'+address+'</li>';
+				listHtml   +=			'<li style="margin-top: 10px;">运费：'+yunfei+'</li>';
+				listHtml   +=		'</ul>';
+				listHtml   +=	'</div>';
+				listHtml   +=	'<div class="list_left" style="float: right;width: 50%;">';
+				listHtml   +=		'<ul style="margin-left:15%;">';
+				listHtml   +=			'<li>材料名称：'+m_name+'</li>';
+				listHtml   +=			'<li style="margin: 10px 0;">材料价格：'+price+'</li>';
+				listHtml   +=			'<li>含税价格：'+hanshui+'</li>';					
+				listHtml   +=		'</ul>';
+				listHtml   +=	'</div>';
+				listHtml   +=	'</div>';
+				listHtml   +=   '<div style="padding:10px 60px 10px 67px;text-align:left;">材料描述：'+m_introduce+'</div>';
+				listHtml   +=	'<div id="imglist'+i+'" style="width:100%;float:left;margin-top:10px;"></div>';
+				listHtml   +=	'<div style="width:100%;height:40px;float:left;margin-top:30px;"><img src="/themes/mall/jiaju/images/list_bg.jpg" style="width:100%;height:100%;"/></div>';
+				listHtml   +=	'</div>';
+
+
+							$(".list_show").html(listHtml);
+							$("#imglist"+i).html(imgHtml);
+					
+					}
+				}
+				
+				
+				
+			}else if(ret.code == 202){
+				$(".list_show").html('<div id="nulls" style="margin-top: 100px;text-align: center;font-size: 18px;">暂无数据！！！</div>');
+				if(types == 0){
+					$("#pagelist").hide();
+					$("#pagesearch").hide();
+				}
+				if(types == 1){
+					$("#next").hide();
+					$("#pre").show();
+				}
+			}
+		},'json')
+	}
+//列表的分页
+function nextpage(){
+	cai_list(++page,1);
+}
+
+function prepage(){
+	if(page == 1){
+		page = 2;
+	}
+	cai_list(--page,1);
+}
+
+
+
+var sindex = 1;
+	//材料询价列表的搜索
+	function search(spage,types){
+
+		var key = $("#search").val();
+
+		var url = serverUrl + 'jingyi.php/Home/Material/materialListe_pc_key';
+					$.ajax({
+				type:"POST",
+				url:url,
+				data:{
+					page : sindex,
+			    	user_id : '<?php echo $_SESSION["user_info"]["user_id"];?>',
+			    	cai_type : 3,
+			    	key      : key,
+			    	infotype : "infotype",
+
+				},
+				cache:false,
+				crossDomain: true == !(document.all),
+				dataType: "json",
+				success:function(ret){
+					//console.log(ret)
+					if(ret.code == 200){
+						$("#pagelist").hide();
+						$("#pagesearch").show();
+						if(sindex ==1){
+							$("#searchpre").hide();
+						}else{
+							$("#searchpre").show();
+						}
+						$("#searchnext").show();
 				var listHtml = '';
 				var imgHtml = '';
 				var data = ret.message;
@@ -1300,17 +1431,48 @@ $(function(){
 				listHtml   +=	'</div>';
 
 
-							$(".list_show").append(listHtml);
-							$("#imglist"+i).append(imgHtml);
+							$(".list_show").html(listHtml);
+							$("#imglist"+i).html(imgHtml);
 					
 					}
 				}
 				
 				
 				
-			}
-		},'json')
-	}	
+			}else if(ret.status == 202){
+				$("#pagesearch").hide()
+				$(".list_show").html('<div id="nulls" style="margin-top: 100px;text-align: center;font-size: 18px;">暂无数据！！！</div>');
+						if(types == 0){
+							$("#pagelist").hide();
+							$("#pagesearch").hide();
+						}
+						if(types == 1){
+							$("#searchnext").hide();
+							$("#searchpre").show();
+						}
+						
+					}
+				},
+				error:function(err){
+					//console.log(err)
+				}
+			});
+	}
+
+
+	//列表的分页
+function nextspage(){
+	search(++sindex,1);
+}
+
+function prespage(){
+	if(sindex == 1){
+		sindex = 2;
+	}
+	search(--sindex,1);
+}
+
+		
 	//分享
 	$(".share_btn").click(function(e){
 		e.stopPropagation;
@@ -1608,7 +1770,7 @@ function prepageUser(){
 }
 
 //分享列表
-var spage = 1;
+	var spage = 1;
 	function messagelist(spage,types){
 	var url = 'http://wgcapp.wgc2013.com/jingyi.php/Home/Material/materialListe_pc_share';
 	
@@ -1635,6 +1797,129 @@ var spage = 1;
 				success:function(ret){
 					//console.log(ret)
 						if(ret.code == 200){
+				var listHtml = '';
+				var imgHtml = '';
+				var data = ret.message;
+				$("#spagelist").show();
+				$("#spagesearch").hide();
+				if(spage ==1){
+					$("#spre").hide();
+				}else{
+					$("#spre").show();
+				}
+				$("#snext").show();
+				for(var i in data){
+						listHtml = "";
+						imgHtml = "";
+					var id = data[i].user_id,
+						pid = data[i].id,
+						m_name = data[i].m_name,
+						m_introduce = data[i].m_introduce,
+						office_name = data[i].office_name,
+						brand       = data[i].brand,
+						address     = data[i].address,
+						yunfei      = data[i].yunfei,
+						price       = data[i].price,
+						hanshui     = data[i].hanshui,
+						name        = data[i].name,
+						addtime = timestampToTime(data[i].addtime);
+						var img = data[i].m_photo;
+						var imgArray = img.split(",");
+						for(var j=0;j<imgArray.length;j++){
+								//console.log(imgArray[j]);
+								imgHtml += '<a href="http://wgcapp.wgc2013.com'+imgArray[j]+'" target="_blank"><img src="http://wgcapp.wgc2013.com'+imgArray[j]+'" alt="" style="width:100px;height:100px;margin-right:10px;"/></a>';
+							}
+						//console.log(imgArray);
+						
+
+						//status++;
+				listHtml   +='<div style="overflow: hidden;position:relative;">';
+				listHtml +=	'<div style="text-align: left;"><span style="display: inline-block;width: 160px;height: 25px;line-height: 25px;background-color: red;font-size: 14px;text-align: center;letter-spacing: 2px;position:absolute;top:0px;color:#fff;margin:5px 5px;">分享人：'+name+'</span></div>';
+				listHtml   += '<div style="text-align:right;padding-right: 20px;margin-top: 10px;height:40px;"><input name="id" type="checkbox" value="'+pid+'"></div>';
+				listHtml   +=   '<div style="height:auto;overflow:hidden;">';
+				listHtml   +=	'<div class="list_right" style="float: left;width: 50%;">';
+				listHtml   +=		'<ul style="margin-left:15%;">';
+				listHtml   +=			'<li>公司名称：'+office_name+'</li>';
+				listHtml   +=			'<li style="margin:10px 0;">材料品牌：'+brand+'</li>';
+				listHtml   +=			'<li>发布地址：'+address+'</li>';
+				listHtml   +=			'<li style="margin-top: 10px;">运&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;费：'+yunfei+'</li>';
+				listHtml   +=		'</ul>';
+				listHtml   +=	'</div>';
+				listHtml   +=	'<div class="list_left" style="float: right;width: 50%;">';
+				listHtml   +=		'<ul style="margin-left:15%;">';
+				listHtml   +=			'<li>材料名称：'+m_name+'</li>';
+				listHtml   +=			'<li style="margin: 10px 0;">材料价格：'+price+'</li>';
+				listHtml   +=			'<li>含税价格：'+hanshui+'</li>';					
+				listHtml   +=		'</ul>';
+				listHtml   +=	'</div>';
+				listHtml   +=	'</div>';
+				listHtml   +=   '<div style="padding:10px 60px 10px 67px;text-align:left;">材料描述：'+m_introduce+'</div>';
+				listHtml   +=	'<div id="imglist'+i+'" style="width:100%;float:left;margin-top:10px;"></div>';
+				listHtml   +=	'<div style="width:100%;height:40px;float:left;margin-top:30px;"><img src="/themes/mall/jiaju/images/list_bg.jpg" style="width:100%;height:100%;"/></div>';
+				listHtml   +=	'</div>';
+
+							
+							$(".list_show_share").html(listHtml);
+							$("#imglists"+i).html(imgHtml);
+					
+					
+				}
+				
+				
+				
+			}else if(ret.code == 202){
+				$(".list_show_share").html('<div id="nulls" style="margin-top: 100px;text-align: center;font-size: 18px;">暂无数据！！！</div>');
+				if(types == 0){
+					$("#spagelist").hide();
+					$("#spagesearch").hide();
+				}
+				if(types == 1){
+					$("#snext").hide();
+					$("#spre").show();
+				}
+			}
+
+				},
+				error:function(err){
+					console.log(err)
+				}
+			});
+
+	}
+
+	//分享搜索
+	var searchindex = 1;
+	function searchShare(spage,types){
+	var url = 'http://wgcapp.wgc2013.com/jingyi.php/Home/Material/materialListe_pc_share';
+	
+	
+		var key = $("#search_zc").val();
+		$.ajax({
+				type:"POST",
+				url:url,
+				data:{
+					
+					user_id : '<?php echo $_SESSION["user_info"]["user_id"];?>',
+					page     : spage,
+					type     : 8,
+					key      : key,
+					cai_type : 3,
+				},
+				cache:false,
+				crossDomain: true == !(document.all),
+				dataType: "json",
+				success:function(ret){
+					//console.log(ret)
+				if(ret.code == 200){
+						$("#spagelist").hide();
+						$("#spagesearch").show();
+						if(sindex ==1){
+							$("#sharepre").hide();
+						}else{
+							$("#sharepre").show();
+						}
+						$("#sharenext").show();
+
 				var listHtml = '';
 				var imgHtml = '';
 				var data = ret.message;
@@ -1689,24 +1974,25 @@ var spage = 1;
 				listHtml   +=	'</div>';
 
 							
-							$(".list_show_share").append(listHtml);
-							$("#imglists"+i).append(imgHtml);
+							$(".list_show_share").html(listHtml);
+							$("#imglists"+i).html(imgHtml);
 					
 					
 				}
 				
 				
 				
-			}else if(ret.status == 202){
-						if(types == 1){
-							$(".yewu_body_share tbody").html("");
-							$("#nulls").show();
-							$("#share_next").hide();
-						}
+			}else if(ret.code == 202){
+					$("#spagesearch").hide()
+				$(".list_show_share").html('<div id="nulls" style="margin-top: 100px;text-align: center;font-size: 18px;">暂无数据！！！</div>');
 						if(types == 0){
-							$("#share_next").hide();
-							$("#backshare").hide();
-							$("#nulls").show();
+							$("#spagelist").hide();
+							$("#spagesearch").hide();
+						}
+						if(types == 1){
+							$("#sharenext").hide();
+							$("#spagesearch").show();
+							$("#sharepre").show();
 						}
 					}
 
@@ -1717,6 +2003,32 @@ var spage = 1;
 			});
 
 	}
+
+	//分享列表的分页
+	
+function snextpage(){
+	messagelist(++spage,1);
+}
+
+function sprepage(){
+	if(spage == 1){
+		spage = 2;
+	}
+	messagelist(--spage,1);
+}
+
+//分享列表搜索的分页
+	
+function snextspage(){
+	searchShare(++searchindex,1);
+}
+
+function sprespage(){
+	if(searchindex == 1){
+		searchindex = 2;
+	}
+	searchShare(--searchindex,1);
+}
 </script>
 </body>
 </html>

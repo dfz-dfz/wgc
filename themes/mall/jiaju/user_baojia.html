@@ -1210,7 +1210,13 @@ $(function(){
 		var worker_address  = $("#worker_address").val();
 		var region          = "广东省";//显示区域
 		var img             = $("#ImgPath").val()
-
+		var conf=confirm("普通用户查询当地最新的工作找工明细需要收取20元/次!");
+	    if(conf==true){  
+			alert("您选择了：继续");  
+	    }else {  
+	        alert("您选择了：取消")  
+	        return false;
+	    }
 		$.post('http://wgcapp.wgc2013.com/jingyi.php/Home/Weixiumsg/addweixiumsg',{
 	        send_uid 	          : '<?php echo $_SESSION["user_info"]["user_id"];?>',
 		    restaurant_address    : '',
@@ -1740,9 +1746,9 @@ function repair_list(page){
 						id = retData[i].id, 
 						userid = '<?php echo $_SESSION["user_info"]["user_id"];?>',
 						weixiu_price = retData[i].weixiu_price,
-						restaurant_address = (retData[i].restaurant_address == null || retData[i].restaurant_address == '') ? '未设定':retData[i].restaurant_address,
+						restaurant_address = (retData[i].worker_address == null || retData[i].worker_address == '') ? '未设定':retData[i].worker_address,
 						addtime = retData[i].addtime,
-						end_time = (retData[i].end_time == null || retData[i].end_time == '') ? '未设定':retData[i].end_time;
+						end_time = (retData[i].endtime == null || retData[i].end_time == '') ? '未设定':retData[i].endtime;
 
 						html += '<ul>';
 							html += '<li style="width:28.16%;color:red;font-weight:600;">'+office_name+'</li>';
@@ -1851,6 +1857,9 @@ function repair_list(page){
 $(function(){
 	jobtypes();
 	zhaopinlist();
+	$(".user_baojia_li").children().eq(1).css({
+		"color" : "red"
+	})
 });
 </script>
 

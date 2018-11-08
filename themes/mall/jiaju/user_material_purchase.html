@@ -444,8 +444,16 @@ body{background:url('') no-repeat center top }
 <script type="text/javascript" src="/themes/mall/jiaju/js/JTimer_1.3.js"></script>
 <script type="text/javascript">
 	(function (){
+		//收费的下拉
+		$(".fabucenter").show();
+		$(".fabucenter").prev().css({
+			"background-image":"url('/themes/mall/jiaju/images/center/form-bg2.jpg')"
+		})
 		caigou_list(1,0);
 		messagelist(1,0);
+		$(".user_cailiaoCG_li").children().eq(1).css({
+		"color" : "red"
+	})
 	}())
 
 	var index = 0;
@@ -597,7 +605,7 @@ body{background:url('') no-repeat center top }
 							listHtml += '<td style="width: 6%"><span>'+danjia+'</span></td>';
 							listHtml += '<td style="width: 6%"><span>'+heji+'</span></td>';
 							listHtml += '<td style="width: 15%;"><span>'+introduce+'</span></td>';
-							listHtml += '<td style="width: 3%;border-right:2px solid #bcbcbc;"><a href="javascript:;" style="color:blue;" onclick="details('+pid+')">详情</a><a href="javascript:;" style="color:red;" onclick="shachu('+pid+')">删除</a></td>';
+							listHtml += '<td style="width: 3%;border-right:2px solid #bcbcbc;"><a href="javascript:;" style="color:blue;" onclick="details('+pid+')">详情</a><a href="javascript:;" style="color:red;display:inline-block;width:40px;" onclick="shachu('+pid+')">删除</a></td>';
 							listHtml += '</tr>';
 
 
@@ -799,7 +807,7 @@ function searchlist(spage,types){
 							listHtml += '<td style="width: 6%"><span>'+danjia+'</span></td>';
 							listHtml += '<td style="width: 6%"><span>'+heji+'</span></td>';
 							listHtml += '<td style="width: 15%;"><span>'+introduce+'</span></td>';
-							listHtml += '<td style="width: 3%;border-right:2px solid #bcbcbc;"><a href="javascript:;" style="color:blue;" onclick="details('+pid+')">详情</a></td>';
+							listHtml += '<td style="width: 3%;border-right:2px solid #bcbcbc;"><a href="javascript:;" style="color:blue;" onclick="details('+pid+')">详情</a><a href="javascript:;" style="color:red;display:inline-block;width:40px;" onclick="shachu('+pid+')">删除</a></td>';
 							listHtml += '</tr>';
 
 
@@ -1436,7 +1444,7 @@ function shachu(pid){
 	var uid = '<?php echo $_SESSION["user_info"]["user_id"];?>';
 	var f = confirm("确认删除此采购信息吗？");
 	if(f){
-		window.location.href="http://wgcapp.wgc2013.com/jingyi.php/Home/Material/addmaterials_list_del/userid/"+uid+"/id/"+pid;
+		window.location.href="http://wgcapp.wgc2013.com/jingyi.php/Home/Material/addmaterials_list_del/userid/"+uid+"/pid/"+pid;
 	}
 }
 </script>

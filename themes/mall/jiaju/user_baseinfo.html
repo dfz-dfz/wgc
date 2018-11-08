@@ -37,8 +37,11 @@
 	  -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";  
 	  /*IE4-IE9*/  
 	  filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=0); 
+
 }
+
 	</style>
+}
 <body style="background:#fff;">
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -339,8 +342,9 @@ body{background:url('') no-repeat center top }
 {include file=footer.html}
 <script type="text/javascript">
 (function(){
-
-	$(".user_self_li").addClass("bg_li")
+	$(".user_self_li").children().first().css({
+		"color" : "red"
+	})
 }())
 	  // 点击用户中心的li标签改变样式
 $(".container_nav ul li").click(function(){

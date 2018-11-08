@@ -1304,6 +1304,9 @@ $(function(){
 	(function(){
 		list();
 		messagelist();
+		$(".user_zhucaiDJ_li").children().eq(1).css({
+		"color" : "red"
+	})
 	}())
     //列表切换
      $(".budget_ul li:first").click(function(){
@@ -1425,13 +1428,7 @@ $(function(){
 			alert('请输入备注');
 			return false;
 		}
-		var conf=confirm("普通用户发布主材定额需要收取10元/次!");
-	    if(conf==true){  
-			alert("您选择了：继续");  
-	    }else {  
-	        alert("您选择了：取消")  
-	        return false;
-	    }
+	
 		$.post('http://wgcapp.wgc2013.com/jingyi.php/Home/Dinge/zhucai_add', {
 			        userid 	     : '<?php echo $_SESSION["user_info"]["user_id"];?>',
 			        name         : name,           

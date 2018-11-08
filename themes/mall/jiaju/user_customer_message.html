@@ -356,9 +356,17 @@ body{background:url('') no-repeat center top }
 {include file=footer.html}
 <script type="text/javascript">
 $().ready(function(){
+	//收费的下拉
+		$(".fabucenter").show();
+		$(".fabucenter").prev().css({
+			"background-image":"url('/themes/mall/jiaju/images/center/form-bg2.jpg')"
+		})
 	list();
 	showUserList()
 	messagelist(page,0);
+	$(".user_yewuXX_li").children().eq(1).css({
+		"color" : "red"
+	})
 })
 
 
@@ -911,7 +919,7 @@ var spage = 1;
 				                var vals = arr.join(",");
 				                //console.log(vals);
 					}else {
-						alert('数据加载失败，请检查网络!');
+						// alert('数据加载失败，请检查网络!');
 					}
 				},
 				error:function(err){
@@ -972,7 +980,7 @@ var spage = 1;
 				}else if(ret.code == 201){
 					$('.getUserList').html('暂无数据');
 				}else{
-					alert('请检查网络连接');
+					// alert('请检查网络连接');
 					return false;
 				}
 			},'json');
@@ -1084,7 +1092,8 @@ function pageindexUser(pindex){
 				                var vals = arr.join(",");
 				                console.log(vals);
 					}else {
-						alert('数据加载失败，请检查网络!');
+						// alert('数据加载失败，请检查网络!');
+						return false;
 					}
 				},
 				error:function(err){

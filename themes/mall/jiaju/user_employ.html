@@ -891,8 +891,16 @@ function del(id,userid){
    
 //全局加载
 $().ready(function(){
+	//收费的下拉
+		$(".fabucenter").show();
+		$(".fabucenter").prev().css({
+			"background-image":"url('/themes/mall/jiaju/images/center/form-bg2.jpg')"
+		})
 	jobtypes();
 	zhaopinlist();
+	$(".user_employ_li").children().eq(1).css({
+		"color" : "red"
+	})
 })
 </script>
 </body>

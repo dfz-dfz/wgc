@@ -169,9 +169,8 @@ var PRICE_FORMAT = '&yen;%s';
 	// 表单验证
 	function jugdment(){
 		var office_name = $('#office_name').val();
-		var web = $('#web').val();
 		var addr = $('#addr').val();
-		if(office_name == '' || web == '' || addr == ''){
+		if(office_name == '' || addr == ''){
 			alert('请填写完整的信息之后在提交!');
 			return false;
 		}

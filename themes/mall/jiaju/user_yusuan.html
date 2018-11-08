@@ -626,10 +626,35 @@
 <script type="text/javascript">
 
 $().ready(function(){
+	//收费的下拉
+	$(".yiyong").show();
+	$(".yiyong").prev().css({
+		"background-image":"url('/themes/mall/jiaju/images/center/form-bg2.jpg')"
+	})
+	$(".personcenter_down").toggle(
+	function(){
+	
+	$(this).next().slideUp("fast");
+	$(this).css({
+		"background-image":"url('/themes/mall/jiaju/images/center/form-bg3.jpg')"
+	})
+	},
+	function(){
+	$(this).next().slideDown("fast");
+	$(this).css({
+		"background-image":"url('/themes/mall/jiaju/images/center/form-bg2.jpg')"
+	})
+	}
+	
+	
+	);
 	//workerList();
 	//zhucailist();
 	showList();
 	messagelist();
+	$(".user_budget_li").children().eq(1).css({
+		"color" : "red"
+	})
 	//alert(<?php echo $_SESSION["user_info"]["user_id"];?>);
 })
 

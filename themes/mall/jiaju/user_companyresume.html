@@ -302,9 +302,12 @@ body{background:url('') no-repeat center top }
 <script src="/themes/mall/jiaju/js/tool.js"></script>
 <script type="text/javascript">
 	$(function(){
-	$(".user_companyresume_li").addClass("bg_li")
+	$(".user_companyresume_li").children().eq(1).css({
+		"color" : "red"
+	})
 		list(page);
 		messagelist();
+		
 	});
   //列表切换
      $(".budget_ul li:first").click(function(){

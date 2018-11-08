@@ -388,6 +388,9 @@ $("input[name='pic']").live('change',function(){
 		xm_show_list();
 		showUserList();
 		timestamp = new Date().getTime();
+		$(".user_project_li").children().eq(1).css({
+		"color" : "red"
+	})
 	});
 	var is_sending = false;
 	var address = null;

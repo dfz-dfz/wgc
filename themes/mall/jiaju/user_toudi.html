@@ -287,7 +287,9 @@ body{background:url('') no-repeat center top }
 <script src="/themes/mall/jiaju/js/tool.js"></script>
 <script type="text/javascript">
 	$(function(){
-	$(".user_toudi_li").addClass("bg_li")
+	$(".user_toudi_li").children().eq(1).css({
+		"color" : "red"
+	})
 		list(page);
 		messagelist();
 	});

@@ -107,7 +107,9 @@ body{background:url('') no-repeat center top }
 	$(document).ready(function() {
 		jifen_num();
 		jifen_list();
-		$(".user_vip_li").addClass("bg_li")
+		$(".user_vip_li").children().first().css({
+		"color" : "red"
+	})
 	});
 
 	//积分余额

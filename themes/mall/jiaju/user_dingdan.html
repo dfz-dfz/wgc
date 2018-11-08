@@ -158,6 +158,11 @@ body{background:url('') no-repeat center top }
 {include file=footer.html}
 
 <script type="text/javascript">
+	(function(){
+		$(".user_dingdan_li").children().eq(1).css({
+		"color" : "red"
+	})
+	}())
 	$(".container_nav ul li").click(function(){
 		$(".container_nav ul li").removeClass("bg_li")
 		$(this).addClass("bg_li")

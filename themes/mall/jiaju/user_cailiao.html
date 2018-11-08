@@ -89,6 +89,11 @@ body{background:url('') no-repeat center top }
     $('#close-change-city-window').click(function (){
       $('.change-city-window').slideUp();
     })
+    //收费的下拉
+		$(".fabucenter").show();
+		$(".fabucenter").prev().css({
+			"background-image":"url('/themes/mall/jiaju/images/center/form-bg2.jpg')"
+		})
   })
 </script>
 </head>
@@ -1127,6 +1132,9 @@ $(function(){
 		list(page);
 		$('#backShareList').hide();
 		messagelist();
+		$(".user_cailiao_li").children().eq(1).css({
+		"color" : "red"
+	})
 	})
 	//点击预算列表切换
 	  $(".user_collection_ul li:first").click(function(){

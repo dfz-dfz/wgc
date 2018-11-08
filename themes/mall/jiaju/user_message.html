@@ -120,7 +120,9 @@ body{background:url('') no-repeat center top }
 <script type="text/javascript">
 (function(){
 
-	$(".user_message_li").addClass("bg_li")
+	$(".user_message_li").children().first().css({
+        "color" : "red"
+    })
 }())
 	$(".container_nav ul li").click(function(){
 		$(".container_nav ul li").removeClass("bg_li")
