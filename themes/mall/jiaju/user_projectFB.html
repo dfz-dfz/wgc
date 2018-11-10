@@ -227,6 +227,7 @@ body{background:url('') no-repeat center top }
 					<input type="text" style="width: 400px;height: 30px;" id="search" placeholder="请输入关键词">
 					<label for="search_fc" style="width: 50px;height: 30px;display:inline-block;position: relative;top: -8px;"><img src="/themes/mall/jiaju/images/search_button.jpg" alt="" style="width: 100%;height: 100%;" onclick="search()"></label>
 					<a class="share_btn" href="javascript:;" style="display: inline-block;width: 60px;height: 30px;line-height: 30px;font-size: 16px;color: #2d2a2a;font-weight: bold;letter-spacing: 4px; background-color: #facd89;border-radius: 5px;position: relative;left: 110px;top:-5px;text-decoration: none;" onclick="showUserList()">分享</a>
+					<button class="quxiao_list" style="padding:0;width: 50px;height: 30px;position: relative;top: -8px;cursor:pointer;line-height:30px;background-color: #ec6941;display:none;left: -65px;">取消</button>
 				</div>
 
 				<!-- 项目分包列表 -->
@@ -1237,6 +1238,7 @@ $(function(){
 			if(ret.status == 200){
 				var data = ret.retData;
 				dataLength = data.length;
+				$(".quxiao_list").hide();
 				for(var i in data){
 					listHtml = '';
 					imgHtml  = '';
@@ -1292,8 +1294,8 @@ $(function(){
 							listHtml   +=	'<div id="imglist'+i+'" style="width:100%;margin-top:10px;"></div>';
 							listHtml +=	'<div style="width:100%;height:40px;float:left;margin-top:30px;"><img src="/themes/mall/jiaju/images/list_bg.jpg" style="width:100%;height:100%;"/></div>';
 						listHtml += '</div>';
-						$(".listShow").append(listHtml);
-						$("#imglist"+i).append(imgHtml);
+						$(".listShow").html(listHtml);
+						$("#imglist"+i).html(imgHtml);
 					}
 				}
 				
@@ -1423,6 +1425,7 @@ function pageindex(index){
 			var listHtml = '';
 			var imgHtml  = '';
 			if(ret.status == 200){
+				$(".quxiao_list").show();
 				var data = ret.retData;
 				dataLength = data.length;
 				for(var i in data){
@@ -1495,7 +1498,9 @@ function pageindex(index){
 		},'json')
 		
 	}
-
+$(".quxiao_list").click(function(){
+	list();
+})
 
 	//分享
 	$(".share_btn").click(function(e){
@@ -1753,6 +1758,7 @@ function pageindex(index){
 
 	//上一页
 	function prepageUser(){
+
 		pageindexUser(--upage);
 	}
 
@@ -1769,7 +1775,6 @@ function pageindex(index){
 	
 }
 
-//分享列表
 //分享列表
 var spage = 1;
 	function messagelist(spage,types){
@@ -1799,6 +1804,7 @@ var spage = 1;
 						if(ret.code == 200){
 				var data = ret.message;
 				dataLength = data.length;
+				$(".quxiao_zc").hide();
 				$("#spagelist").show();
 				$("#spagesearch").hide();
 				if(spage ==1){
@@ -1916,6 +1922,7 @@ var spage = 1;
 				success:function(ret){
 					//console.log(ret)
 						if(ret.code == 200){
+						$(".quxiao_zc").show();    //返回列表
 						$("#spagelist").hide();
 						$("#spagesearch").show();
 						if(sindex ==1){
@@ -2037,6 +2044,11 @@ function sprespage(){
 	}
 	searchShare(--searchindex,1);
 }
+
+//返回列表
+$(".quxiao_zc").click(function(){
+	messagelist(spage,0);
+})
 
 function fabu(){
 	var conf=confirm("普通用户发布项目分包需要收取10元/次!");

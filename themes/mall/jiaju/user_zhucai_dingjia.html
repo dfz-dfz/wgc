@@ -111,6 +111,15 @@
 	font-size: 16px;
 	color: #fff;
 }
+.page_btn{
+	display: inline-block;
+    width: 50px;
+    height: 25px;
+    line-height: 23px;
+    border: 1px solid #eee;
+    background-color: red;
+    color: #fff;
+}
 </style>
 <!-- <link type="text/css" href="Public/static/css/default.css" rel="stylesheet"  /> -->
 <link type="text/css" href="themes/mall/jiaju/styles/default/css/main.css" rel="stylesheet"  />
@@ -252,7 +261,7 @@ body{background:url('') no-repeat center top }
 				<input type="button" value="取消" class="search_btn" id="se_cancel" onclick="pageindex(page)" style="display: none;" />
 				<input type="button" value="分享" class="share_btn" onclick="showUserList()" />
 		
-				<div class="budget_table_list" style="min-height: 300px;position: relative;margin-top: 20px;">
+				<div class="budget_table_list" style="min-height: 400px;position: relative;margin-top: 20px;">
 							
 				<table style="width: 100%;" border="0" cellspacing="0" cellpadding="0" id="budget_list">
 					<thead>
@@ -335,7 +344,7 @@ body{background:url('') no-repeat center top }
 				<!-- <input type="button" value="分享" class="share_btn" onclick="showUserList()" style="width: 80px;height: 22px;border: none;background-color: #f7c67a;text-align: center;font-weight: 600;position: absolute;right: 80px;border-radius: 5px;cursor: pointer;" /> -->
 					
 
-				<div class="budget_table_list_share" style="min-height: 300px;position: relative;margin-top: 20px;">
+				<div class="budget_table_list_share" style="min-height: 400px;position: relative;margin-top: 20px;">
 							
 				<table style="width: 100%;" border="0" cellspacing="0" cellpadding="0" id="budget_list_share">
 					<thead>
@@ -371,7 +380,7 @@ body{background:url('') no-repeat center top }
 					</tbody>
 				</table>
 				<!-- 详情页面-->
-				<div class="details_share" style="width: 800px;position: absolute;top: 50px;left: 25px;background-color: #9bbbe2;min-height: 300px;overflow: hidden;display: none;">
+				<div class="details_share" style="width: 800px;position: absolute;top: 50px;left: 25px;background-color: #9bbbe2;min-height: 400px;overflow: hidden;display: none;">
 				<div class="cancel" style="position: absolute;top: -5px;left: 770px;font-size: 38px;cursor: pointer;">×</div>
 					<div class="list_left_share" style="width: 28%;float: left;margin-left: 7%;margin-top: 20px;">
 						<ul>
@@ -1514,7 +1523,7 @@ $(function(){
 								listHtml +=		'<td style="width: 6%"><span>'+hanshuijiage+'</span></td>';
 								listHtml +=		'<td style="width: 6%"><span>'+gongyingshang+'</span></td>';
 								listHtml +=		'<td style="width: 10%;"><span>'+content+'</span></td>';
-								listHtml +=		'<td style="width: 8%;border-right:2px solid #bcbcbc;"><span><a href="javascript:;" style="color: blue;" onclick="details(\''+lianxiren+'\',\''+dianhua+'\',\''+weixin+'\',\''+email+'\',\''+web+'\',\''+content+'\',\''+img+'\')">详情</a></span></td>';
+								listHtml +=		'<td style="width: 8%;border-right:2px solid #bcbcbc;"><span><a href="javascript:;" style="color: blue;" onclick="details(\''+lianxiren+'\',\''+dianhua+'\',\''+weixin+'\',\''+email+'\',\''+web+'\',\''+content+'\',\''+img+'\')">详情</a><a href="javascript:;" style="color:red;display:inline-block;width:40px;" onclick="shachu('+id+')">删除</a></span></td>';
 								listHtml +=		'</tr>';
 
 					
@@ -1664,7 +1673,7 @@ $(function(){
 								listHtml +=		'<td style="width: 6%"><span>'+hanshuijiage+'</span></td>';
 								listHtml +=		'<td style="width: 6%"><span>'+gongyingshang+'</span></td>';
 								listHtml +=		'<td style="width: 10%;"><span>'+content+'</span></td>';
-								listHtml +=		'<td style="width: 8%;border-right:2px solid #bcbcbc;"><span><a href="javascript:;" style="color: blue;" onclick="details(\''+lianxiren+'\',\''+dianhua+'\',\''+weixin+'\',\''+email+'\',\''+web+'\',\''+content+'\',\''+img+'\')">详情</a></span></td>';
+								listHtml +=		'<td style="width: 8%;border-right:2px solid #bcbcbc;"><span><a href="javascript:;" style="color: blue;" onclick="details(\''+lianxiren+'\',\''+dianhua+'\',\''+weixin+'\',\''+email+'\',\''+web+'\',\''+content+'\',\''+img+'\')">详情</a><a href="javascript:;" style="color:red;display:inline-block;width:40px;" onclick="shachu('+id+')">删除</a></span></td>';
 								listHtml +=		'</tr>';
 								//$("#list_ul li").remove();
 								$("#budget_list tbody").html(listHtml);
@@ -1778,6 +1787,7 @@ function pageindex(index){
 	
 					
 						if(ret.status == 200){
+
 							$("#se_cancel").prev().show();
 							$("#se_cancel").hide();
 							$("#list_next").show();
@@ -1820,7 +1830,7 @@ function pageindex(index){
 								listHtml +=		'<td style="width: 6%"><span>'+hanshuijiage+'</span></td>';
 								listHtml +=		'<td style="width: 6%"><span>'+gongyingshang+'</span></td>';
 								listHtml +=		'<td style="width: 10%;"><span>'+content+'</span></td>';
-								listHtml +=		'<td style="width: 8%;border-right:2px solid #bcbcbc;"><span><a href="javascript:;" style="color: blue;" onclick="details(\''+lianxiren+'\',\''+dianhua+'\',\''+weixin+'\',\''+email+'\',\''+web+'\',\''+content+'\',\''+img+'\')">详情</a></span></td>';
+								listHtml +=		'<td style="width: 8%;border-right:2px solid #bcbcbc;"><span><a href="javascript:;" style="color: blue;" onclick="details(\''+lianxiren+'\',\''+dianhua+'\',\''+weixin+'\',\''+email+'\',\''+web+'\',\''+content+'\',\''+img+'\')">详情</a><a href="javascript:;" style="color:red;display:inline-block;width:40px;" onclick="shachu('+id+')">删除</a></span></td>';
 								listHtml +=		'</tr>';
 
 					
@@ -2295,7 +2305,13 @@ $(".quxiao").click(function(){
 
 	}
 	
-
+function shachu(pid){
+	var uid = '<?php echo $_SESSION["user_info"]["user_id"];?>';
+	var f = confirm("确认删除此采购信息吗？");
+	if(f){
+		window.location.href="http://wgcapp.wgc2013.com/jingyi.php/Home/Dinge/zhucai_list_del/userid/"+uid+"/id/"+pid;
+	}
+}
 </script>
 </body>
 </html>

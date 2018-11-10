@@ -30,7 +30,9 @@ margin:auto;padding:0px;margin-top: 10px;margin-bottom: 10px; width:1100px;overf
 </head>
 <body>
 {include file=header.html}
+
 <img src="/themes/mall/jiaju/images/rencaituijian_gg.jpg" alt="" style="width: 100%;" />
+{include file=erweimaxiazai.html}
 <div class="main">
 	<!-- 主体 -->
 	<div class="main_body">
@@ -112,7 +114,7 @@ margin:auto;padding:0px;margin-top: 10px;margin-bottom: 10px; width:1100px;overf
 							</li> -->
 						</ul>
 
-							<div class="aui-content-padded aui-margin-b-15 aui-margin-t-15" id="check_box" style="margin: 0 auto;" onclick="yingying()">
+							<div class="aui-content-padded aui-margin-b-15 aui-margin-t-15" id="check_box" style="margin: 0 auto;" onclick="kefu()">
 								<div class="aui-btn aui-btn-danger aui-btn-block" style="width: 16%;margin: 0 auto;height: 40px;line-height: 10px;">点击下单</div>
 								<input type="hidden" id="vid" />
 								<div class="vipbox" style="text-align: center;position: relative;right: 140px;margin-top: 20px;display: none;">
@@ -172,7 +174,7 @@ function selectUser(){
 			    id = data.id;
 				    $("#vid").val(id);
 					$('#title').html(data.m_name);
-					$('#cailiao_name').html('材料名称：'+data.m_name);
+					$('#cailiao_name').html('材料名称：'+'【'+data.kehu+'】'+data.m_name);
 					$('#content').html('产品描述:  '+data.m_introduce);
 					$('#num').html(data.count);
 
@@ -245,6 +247,14 @@ function yingying(){
 			return false;
 		}
 	},'json');
+}
+$(".xiazai").click(function(){
+	$(this).hide();
+})
+function kefu(){
+
+	$(".xiazai").show();
+	
 }
 </script>
 </html>

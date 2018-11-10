@@ -229,7 +229,7 @@ function selectUser(){
 						$("#toujianli").hide();
 					}
 				var addtime = _trans_php_time_to_str(Data.addtime,1);
-				$("#zhiwei").html(Data.zhiwei);	//职位
+				$("#zhiwei").html('【'+Data.kehu+'】'+Data.zhiwei);	//职位
 				$("#xinzi").html(Data.xinzi+'/元');	//薪资
 				$("#renshu").html('招'+Data.renshu+'人');//招聘人数
 				$("#addtime").html(addtime+'  发布');//添加时间

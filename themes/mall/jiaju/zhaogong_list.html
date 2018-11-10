@@ -119,7 +119,7 @@
 						addtime = _trans_php_time_to_str(data[i].addtime,2);
 
 						html += '<ul>';
-							html += '<li style="width:30%;color:red;font-weight:600;">'+office_name+'</li>';
+							html += '<li style="width:30%;color:red;font-weight:600;">【'+data[i].kehu+'】'+office_name+'</li>';
 							html += '<li style="width:20%" title="'+jobtype+'">'+jobtype+'</li>';
 							html += '<li style="width:20%">'+addtime+'</li>';
 							html += '<li style="width:20%;">'+xiangxi+'</li>';
@@ -162,7 +162,7 @@
 						addtime = _trans_php_time_to_str(data[i].addtime,2);
 
 						html += '<ul>';
-							html += '<li style="width:30%;color:red;font-weight:600;">'+jobtype+'</li>';
+							html += '<li style="width:30%;color:red;font-weight:600;">【'+data[i].kehu+'】'+jobtype+'</li>';
 							html += '<li style="width:40%" title="'+xiangxi+'">'+xiangxi+'</li>';
 							html += '<li style="width:20%;">'+addtime+'</li>';
 							html += '<li style="width:10%;cursor: pointer;"><a style="color:blue;" href="/index.php?app=search&act=wuhuozhaogong_content&id='+id+'&uid='+uid+'">查看</a></li>';

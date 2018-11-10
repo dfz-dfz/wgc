@@ -1043,15 +1043,15 @@ class SearchApp extends MallbaseApp
 			$key = $_POST['key'];
 			$zhiwei = array_search($key,$arr);
 			var_dump($zhiwei);
-			$query="select id,today,xinzi,company_name,zhiwei,company_addr from ecm_recruit where zhiwei like'%".$arr[$zhiwei]."%' or company_name like'%".$key."%' or xinzi like'%".$key."%' or company_addr like'%".$key."%' order by id desc ".$page.""; //定义sql
+			$query="select id,today,xinzi,company_name,zhiwei,company_addr,kehu from ecm_recruit where zhiwei like'%".$arr[$zhiwei]."%' or company_name like'%".$key."%' or xinzi like'%".$key."%' or company_addr like'%".$key."%' or kehu like'%".$key."%' order by id desc ".$page.""; //定义sql
 
 			
 		}else{
 			if(!empty($_GET['typeid'])){
 				$typeid = $arr[$_GET['typeid']];
-				$query="select id,today,xinzi,company_name,zhiwei,company_addr from ecm_recruit where zhiwei='".$typeid."' order by id desc ".$page.""; //定义sql
+				$query="select id,today,xinzi,company_name,zhiwei,company_addr,kehu from ecm_recruit where zhiwei='".$typeid."' order by id desc ".$page.""; //定义sql
 			}else{
-				$query="select id,today,xinzi,company_name,zhiwei,company_addr from ecm_recruit order by id desc ".$page.""; //定义sql
+				$query="select id,today,xinzi,company_name,zhiwei,company_addr,kehu from ecm_recruit order by id desc ".$page.""; //定义sql
 			}
 		}
 
@@ -1065,7 +1065,7 @@ class SearchApp extends MallbaseApp
 
 		    $data .= '<ul class="list-ul">';
 				$data .= '<li>';	
-					$data .= '<p class="title"><a href="index.php?app=search&amp;act=content&amp;id='.$row['id'].'">'.$row['zhiwei'].'</a></p>';
+					$data .= '<p class="title"><a href="index.php?app=search&amp;act=content&amp;id='.$row['id'].'">【'.$row['kehu'].'】'.$row['zhiwei'].'</a></p>';
 					$data .= '<p class="gname"><a href="index.php?app=search&amp;act=content&amp;id='.$row['id'].'">'.$row['company_name'].'</a></p>';
 					$data .= '<p class="address">'.$row['company_addr'].'</p>';
 					$data .= '<p class="xinzi">'.$row['xinzi'].'/元</p>';

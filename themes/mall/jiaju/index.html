@@ -230,7 +230,7 @@ border:1px solid #808080;width:100%;height:66px;margin-bottom:3px;
 						while($rows1=@mysql_fetch_array($result)){
 							  echo  "<li style='height:24px;line-height:24px;margin-bottom:1px;'>";
 							  echo  "<a target='_blank' href='index.php?app=search&act=content&id=".$rows1['id']."'>";
-						  	  echo  "<span style='width:150px;display: inline-block;margin-left: 2px;overflow: hidden;text-overflow: ellipsis;'>".$rows1['zhiwei']."</span>";
+						  	  echo  "<span style='width:150px;display: inline-block;margin-left: 2px;overflow: hidden;text-overflow: ellipsis;'>【".$rows1['kehu']."】".$rows1['zhiwei']."</span>";
 							  echo  "<span style='width:200px;display: inline-block;overflow: hidden;text-overflow: ellipsis;'>".$rows1['company_name']."</span>";
 							  echo  "  <span style='float:right;margin-right:5px;'>".date('Y-m-d H:i:s',$rows1['addtime'])."</span>";
 							  echo  "</a>";
@@ -290,7 +290,7 @@ border:1px solid #808080;width:100%;height:66px;margin-bottom:3px;
 							$postion = ($index > 0)?$cate[$index]:'无工种';
 							  echo  "<li style='height:24px;line-height:24px;margin-bottom:1px;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;'>";
 							  echo  "<a target='_blank' href='/index.php?app=search&act=wuhuozhaogong_content&id=".$rows1['id']."&uid=".$rows1['user_id']."'>";
-							  echo  "<span style='display: inline-block;width: 150px;margin-left: 2px;overflow: hidden;text-overflow: ellipsis;' title=''>".$rows1['title']."</span>";
+							  echo  "<span style='display: inline-block;width: 150px;margin-left: 2px;overflow: hidden;text-overflow: ellipsis;' title=''>【".$rows1['kehu']."】".$rows1['title']."</span>";
 							  echo  "<span style='margin-left: 2px;width: 200px;display: inline-block;overflow: hidden;text-overflow: ellipsis;'>".$rows1['xiangxi']."</span>";
 							  echo  "  <span style='float:right;margin-right:5px;'>".date('Y-m-d H:i:s',$rows1['addtime'])."</span>";
 							  echo  "</a>";
@@ -307,7 +307,7 @@ border:1px solid #808080;width:100%;height:66px;margin-bottom:3px;
 				
 			</div> 
 		</div>
-		<!-- 集采价格 -->
+		<!-- 无活招工 -->
 		<div class="divcss3p">
 			<div class="divcss3" style="border: 1px solid #808080;">
 				<div class="divcsschld">
@@ -328,7 +328,7 @@ border:1px solid #808080;width:100%;height:66px;margin-bottom:3px;
 							$postion = ($index > 0)?$cate[$index]:'无工种';
 							  echo  "<li style='height:24px;line-height:24px;margin-bottom:1px;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;'>";
 							  echo  "<a target='_blank' href='/index.php?app=search&act=zhaogong_content&id=".$rows1['id']."&uid=".$rows1['user_id']."'>";
-							  echo  "<span style='display: inline-block;width: 150px;margin-left: 2px;overflow: hidden;text-overflow: ellipsis;' title=''>".$postion."</span>";
+							  echo  "<span style='display: inline-block;width: 150px;margin-left: 2px;overflow: hidden;text-overflow: ellipsis;' title=''>【".$rows1['kehu']."】".$postion."</span>";
 							  echo  "<span style='margin-left: 2px;width: 200px;display: inline-block;overflow: hidden;text-overflow: ellipsis;'>".$rows1['xiangxi']."</span>";
 							  echo  "  <span style='float:right;margin-right:5px;'>".date('Y-m-d H:i:s',$rows1['addtime'])."</span>";
 							  echo  "</a>";
@@ -342,7 +342,7 @@ border:1px solid #808080;width:100%;height:66px;margin-bottom:3px;
 
 </div>
 
-<!--集采-->
+<!--材料信息-->
 <div style="padding:0px; margin-left:auto;margin-right:auto;margin-bottom:10px;width:1200px;">
 	<div class="divcss0" style="border-bottom: 1px solid #999;">
 		<span class="span010"><a target='_blank' href="index.php?app=search&act=caigou">材料信息</a></span>
@@ -460,7 +460,7 @@ border:1px solid #808080;width:100%;height:66px;margin-bottom:3px;
 							 
 							  echo  "<li style='height:24px;line-height:24px;margin-bottom:1px;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;'>";
 							  echo  "<a target='_blank' href='index.php?app=search&act=content_caigou&id=".$rows1['id']."&cai_type=2'>";
-							  echo  "<span style='display: inline-block;width: 150px;margin-left: 2px;overflow: hidden;text-overflow: ellipsis;' title=''>".$rows1['m_name']."</span>";
+							  echo  "<span style='display: inline-block;width: 150px;margin-left: 2px;overflow: hidden;text-overflow: ellipsis;' title=''>【".$rows1['kehu']."】".$rows1['m_name']."</span>";
 							  echo  "<span style='margin-left: 2px;width: 200px;display: inline-block;overflow: hidden;text-overflow: ellipsis;'>".$rows1['office_name']."</span>";
 							  echo  "  <span style='float:right;margin-right:5px;'>".date('Y-m-d H:i:s',$rows1['addtime'])."</span>";
 							  echo  "</a>";
@@ -890,7 +890,7 @@ border:1px solid #808080;width:100%;height:66px;margin-bottom:3px;
 			           		
 							html += '<div style="overflow: hidden;border-bottom: 1px solid #ccc;height:82px;">';
 							html +=		'<a href="/index.php?app=search&act=weixiu_details&id='+id+'" style="text-decoration: none;" target="_blank">';
-							html +=	'<p style="float: left;font-size: 18px;color: red;font-weight: 600;letter-spacing: 2px;margin: 10px 0 10px 5px;">'+office_name+'</p>';
+							html +=	'<p style="float: left;font-size: 18px;color: red;font-weight: 600;letter-spacing: 2px;margin: 10px 0 10px 5px;">【'+retData[i].kehu+'】'+office_name+'</p>';
 							html +=	'<p style="float: right;font-size: 18px;color: red;font-weight: 600;letter-spacing: 2px;margin: 10px 10px 10px 0;">'+name+'</p>';
 							html +=	'<ul id="" style="width:100%;height:auto;overflow:hidden">';
 							html +=			'<li style="width: 100%;height: auto;" target="_blank">';
@@ -988,7 +988,7 @@ border:1px solid #808080;width:100%;height:66px;margin-bottom:3px;
 
 						html +=			'<div style="overflow: hidden;border-bottom: 1px solid #ccc;height:82px;">';
 						html +=					'<a href="/index.php?app=search&act=cailiaotuiguang_content&id='+id+'" style="text-decoration: none;" target="_blank">';
-						html +=			'<p style="float: left;font-size: 18px;color: red;font-weight: 600;letter-spacing: 2px;margin: 10px 0 10px 5px;overflow:hidden;height:25px;">'+m_name+'</p>';
+						html +=			'<p style="float: left;font-size: 18px;color: red;font-weight: 600;margin: 10px 0 10px 0;overflow:hidden;height:25px;">【'+data[i].kehu+'】'+m_name+'</p>';
 						html +=				'<ul id="" style="width:100%;height:auto;overflow:hidden">';
 						html +=						'<li style="width: 100%;height: auto;">';
 						html +=							'<div style="margin-left: 5px;float:left;">';
