@@ -141,7 +141,7 @@
 						unit = data[i].unit;//计价单位
 
 						html += '<ul>';
-							html += '<li style="width:24.66%;">'+office_name+'</li>';
+							html += '<li style="width:24.66%;">【'+data[i].kehu+'】'+office_name+'</li>';
 							html += '<li style="width:29.66%;">'+title+'</li>';
 							html += '<li style="width:10.66%;">'+unit+'</li>';
 							html += '<li style="width:18.66%;">'+num+'</li>';
@@ -182,7 +182,7 @@
 						unit = data[i].unit;//计价单位
 
 						html += '<ul>';
-							html += '<li style="width:24.66%;">'+office_name+'</li>';
+							html += '<li style="width:24.66%;">【'+data[i].kehu+'】'+office_name+'</li>';
 							html += '<li style="width:29.66%;">'+title+'</li>';
 							html += '<li style="width:10.66%;">'+unit+'</li>';
 							html += '<li style="width:18.66%;">'+num+'</li>';
@@ -196,7 +196,7 @@
 				$('#nextpage').hide();
 				$("#gongjiaMain").html('<div style="text-align:center;color:#999;font-size:20px;line-height:150px;">暂无数据</div>');
 			}else{
-				alert('网络连接失败，请检查网络');
+				
 				return false;
 			}
 		},'json');

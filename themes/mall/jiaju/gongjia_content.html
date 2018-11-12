@@ -105,7 +105,7 @@ function selectUser(){
 			var targetName      = name;
 			var company     = (data.company == '' || data.company == null)? '未填写':data.company;
 			//工价详情
-			$("#xmname").html(data.title);
+			$("#xmname").html('【'+data.kehu+'】'+data.title);
 			$("#unit").html(data.xinzi+"/"+data.unit);
 			$("#addtime").html('发布时间：'+data.addtime);
 			$('#company').html('发布公司：'+company);

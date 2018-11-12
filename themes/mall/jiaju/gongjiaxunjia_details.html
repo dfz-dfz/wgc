@@ -133,7 +133,7 @@
 					var imgs = img.split(',');
 
 				$('#office_name').html(data.office_name);
-				$('#prj_name_price').html(data.title);
+				$('#prj_name_price').html('【'+data.kehu+'】'+data.title);
 				$('#jjdw').html(data.unit);
 				$('#slfw').html(data.num);
 				$('#lxfs').html(data.tel.replace(/(\d{3})\d{5}(\d{3})/, '$1*****$2'));

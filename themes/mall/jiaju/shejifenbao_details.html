@@ -79,7 +79,7 @@
 		}, function(ret) {
 			var data = ret.message;
 			if(ret.code == 200){
-				$('#prj_name_price').html('公司名称：'+data.project_name+'<span style="float: right;margin-right: 20px;">'+data.price+'</span>');
+				$('#prj_name_price').html('公司名称：【'+data.kehu+'】'+data.project_name+'<span style="float: right;margin-right: 20px;">'+data.price+'</span>');
 				$('#faburen').html(data.name);
 				$('#fabushijian').html(_trans_php_time_to_str(data.addtime,2));
 				$('#fabudizhi').html(data.autoaddress);

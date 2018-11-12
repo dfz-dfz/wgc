@@ -334,7 +334,7 @@ function zhaopinList(page){
 	
 	var url = serverUrl+"Systemmsg/AdvertisementPage_list";
 	$.post(url,{
-		limit : 15,
+		limit : 10,
 		type : '10,11,12,13,14,15,52',
 		page : page,
 		kehu : '微工程'
@@ -349,20 +349,31 @@ function zhaopinList(page){
 			var listHtml  = '';
 			var listHtmlS  = '';
 			for (var i in data) {
-				var id=data[i].id,
-					title=data[i].title,
-					pic=data[i].pic,
-					describe=data[i].describe,
+				var id = data[i].id,
+					title = data[i].title,
+					pic = data[i].pic,
+					describe = data[i].describe,
 					times = _trans_php_time_to_str(data[i].times,1),
-					content=data[i].content;
+					content = data[i].content,
+					kehu = data[i].kehu;
 				var cont = content.replace(/<[^>]+>/g,'');
-
-				listHtml += '<li style="cursor:pointer;margin:10px auto;height:230px;width:33%;float:left;" title="'+title+'" onclick="openNewsContents(this,'+id+')">';
-			    listHtml += '    <div style="height:200px;overflow: hidden;width:100%;padding: 2px;">';
-			    listHtml += '        <img src="http://wgcmanage.wgc2013.com/'+pic+'" style="height:200px;width:90%;margin:0 auto;" onerror="javascript:this.src=\'../image/Advertisement.jpg\';">';
-			    listHtml += '    </div>';
-			    listHtml += '    <div style="color:#000;text-align:center;font-size:16px;line-height:40px;">'+title+'</div>';
-			    listHtml += '</li>';
+				if(kehu != '微工程'){
+					if((i+1)/4 != 0){
+						listHtml += '<li style="cursor:pointer;margin:10px auto;height:200px;width:19%;float:left;margin-right:1.25%;" title="'+title+'" onclick="openNewsContents(this,'+id+')">';
+					    listHtml += '    <div style="height:160px;overflow: hidden;width:100%;">';
+					    listHtml += '        <img src="http://wgcmanage.wgc2013.com/'+pic+'" style="height:160px;width:100%;margin:0 auto;" onerror="javascript:this.src=\'../image/Advertisement.jpg\';">';
+					    listHtml += '    </div>';
+					    listHtml += '    <div style="color:#000;text-align:center;font-size:16px;line-height:40px;overflow : hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: 1;-webkit-box-orient: vertical;">'+title+'</div>';
+					    listHtml += '</li>';	
+					}else{
+						listHtml += '<li style="cursor:pointer;margin:10px auto;height:200px;width:19%;float:left;" title="'+title+'" onclick="openNewsContents(this,'+id+')">';
+					    listHtml += '    <div style="height:160px;overflow: hidden;width:100%;">';
+					    listHtml += '        <img src="http://wgcmanage.wgc2013.com/'+pic+'" style="height:160px;width:100%;margin:0 auto;" onerror="javascript:this.src=\'../image/Advertisement.jpg\';">';
+					    listHtml += '    </div>';
+					    listHtml += '    <div style="color:#000;text-align:center;font-size:16px;line-height:40px;overflow : hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: 1;-webkit-box-orient: vertical;">'+title+'</div>';
+					    listHtml += '</li>';
+					}
+				}
 			}
 		   
 			$("#news").show();
