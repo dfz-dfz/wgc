@@ -361,7 +361,14 @@ body{background:url('') no-repeat center top }
 					
 				</div>
 				<div class="fileslist">
-				<input type="hidden" id="power" />
+					<!-- 搜索文件列表-->
+					<div class="search_ys" style="margin: 10px 10px;">
+						<input type="text" style="width: 400px;height: 30px;" id="search_fc" placeholder="请输入图片名字" name="title">
+						<label for="search_fc" style="width: 50px;height: 30px;display:inline-block;position: relative;top: 0px;" onclick="searchs()"><img src="/themes/mall/jiaju/images/search_button.jpg" alt="" style="width: 100%;height: 100%;"></label>
+						<a id="backList" href="javascript:;" style="position: relative;font-size: 16px;color: #2d2a2a;font-weight: bold;letter-spacing: 4px; background-color: #ff0000;color:#fff;border-radius: 4px;top:2px;text-decoration: none;padding: 5px 5px;display: none;" onclick="backList()">返回</a>
+					</div>
+					<input type="hidden" id="power" />
+					<div class="filesmore">
 					<?php
 					$uid = $_SESSION["user_info"]["user_id"];
 					$pid = $_GET["id"];
@@ -396,6 +403,7 @@ body{background:url('') no-repeat center top }
 						echo '<div class="nulls" style="font-size: 20px;color: #9e9e9e;width: 100%;text-align: center;margin-top:20px;">暂无列表</div>';
 					}
 				?>
+					</div>
 				</div>
 				<!-- <div class="nulls" style="font-size: 20px;color: #9e9e9e;width: 100%;text-align: center;margin-top:20px;">暂无列表</div> -->
 			</div>
@@ -1795,6 +1803,85 @@ $(".rename").unbind().on({
 			});
 	}
 })
+
+
+//搜索列表
+var stypes = 1;
+function fileSearch(key){
+	var thisUrl = window.location.href;
+	var thisUrlArray = thisUrl.split('&');
+	var typesArray = thisUrlArray[thisUrlArray.length-1].split('=');
+	var types  = typesArray[typesArray.length-1];
+
+		
+		uid= '<?php echo $_SESSION["user_info"]["user_id"];?>';
+		$.ajax({
+				type:"POST",
+				url:'http://wgcapp.wgc2013.com/jingyi.php/Home/Wangpan/file_list_key',
+				data:{
+						userid:'<?php echo $_SESSION["user_info"]["user_id"];?>',
+		            	page : stypes,
+		            	type : types,
+		            	key  : key,
+				},
+				cache:false,
+				crossDomain: true == !(document.all),
+				dataType: "JSON",
+				success:function(ret){
+					//console.log("成功");
+					//console.log(ret)
+					var listHtml = "";
+					var imgurl 	 = "";
+					if(ret.code == 200){
+						$(".nulls").hide();
+						var data = ret.message;
+						for(var i in data){
+							var filepath = data[i].filepath,
+								filename = data[i].filename,
+								addtime  = data[i].addtime,
+								dir      = data[i].dir,
+								id       = data[i].id;
+
+								
+								listHtml +=	'<div class="filelistson" style="width: 20%;float: left;height: auto;overflow: hidden;position:relative;margin-top:15px;padding:10px 0;">';
+							  	listHtml += '<div class="sharefile" style="text-align:right;position:absolute;left:30px;display:none;" onclick="showUserList('+id+')"><img src="/themes/mall/jiaju/images/center/share.png" alt="" style="width:20px;height:20px;cursor:pointer;"/></div>';
+							  	listHtml += '<div class="download" style="text-align:right;position:absolute;left:72%;display:none;" onclick="download(\''+id+'\')"><img src="/themes/mall/jiaju/images/center/xiazai.png" alt="" style="width:20px;height:20px;cursor:pointer;"/></div>';
+								listHtml += '<div class="cancels" style="text-align:right;position:absolute;left:85%;display:none;"><img src="/themes/mall/jiaju/images/center/rename.png" alt="" style="width:20px;height:20px;cursor:pointer;"/></div>';								
+								listHtml += '<div class="cancel" style="text-align:right;position:absolute;left:10px;display: none;" onclick="shanchu('+id+')"><img src="/themes/mall/jiaju/images/center/cancel1.png" alt="" style="width:20px;height:20px;cursor:pointer;"/></div>';
+								listHtml += '<img src="http://wgcapp.wgc2013.com'+dir+'" alt="" style="width: 50%;height: 70px;"/>';
+								listHtml += '<span class="filenamebox" style="display: block;">'+filename+'</span>';
+								listHtml += '<div class="renamebox" style="display: none;"><input id="wid" type="hidden" value="'+id+'"/><input class="rename" type="text" value="'+filename+'" style="width:75px;"/></div>';
+								listHtml += '</div>';
+						}					
+
+						$(".fileslist .filesmore").html(listHtml);
+						
+					}else if(ret.code == 202){
+						$(".fileslist .filesmore").html('<div class="nulls" style="font-size: 20px;color: #9e9e9e;width: 100%;text-align: center;margin-top:20px;">暂无列表</div>');
+
+					}
+					},
+					
+				error:function(err){
+					console.log("错误是");
+					console.log(err);
+				}
+			});
+	
+}
+
+//搜索
+function searchs(){
+	var values = $("#search_fc").val();
+	$("#backList").show();
+	 fileSearch(values);
+}
+//搜索返回
+function backList(){
+	$("#backList").hide();
+	var values = "";
+	fileSearch(values);
+}
 
 $(document).click(function(){
 	$(".renamebox").hide();

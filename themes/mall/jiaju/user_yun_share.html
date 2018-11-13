@@ -253,7 +253,12 @@ body{background:url('') no-repeat center top }
 				</div>
 			<!-- 我的文件 -->
 			<div class="sect current wages_custom" style="border: none;position: relative;overflow: hidden;min-height: 300px;height: auto;">
-
+				<!-- 搜索文件列表-->
+				<div class="search_ys" style="margin: 10px 10px;">
+					<input type="text" style="width: 400px;height: 30px;" id="search_fc" placeholder="请输入文件夹名字">
+					<label for="search_fc" style="width: 50px;height: 30px;display:inline-block;position: relative;top: 0px;" onclick="fileSearch(stypes,0)"><img src="/themes/mall/jiaju/images/search_button.jpg" alt="" style="width: 100%;height: 100%;"></label>
+					<a id="backList" href="javascript:;" style="position: relative;font-size: 16px;color: #2d2a2a;font-weight: bold;letter-spacing: 4px; background-color: #ff0000;color:#fff;border-radius: 4px;top:2px;text-decoration: none;padding: 5px 5px;display: none;" onclick="backList()">返回</a>
+				</div>
 				
 				<div class="filelist" style="min-height: 250px;">
 					<!-- <div style="width: 20%;float: left;height: auto;overflow: hidden;">
@@ -270,6 +275,10 @@ body{background:url('') no-repeat center top }
 				<div id="pagelist" style="margin: 10px auto;">
 						<a id="pre" href="javascript:;" style="display: inline-block;width: 50px;height: 25px;line-height: 23px;border: 1px solid #eee;background-color: red;color:#fff;" onclick="prepage()">上一页</a>
 						<a id="next" href="javascript:;" style="display: inline-block;width: 50px;height: 25px;line-height: 23px;border: 1px solid #eee;background-color: red;color:#fff;" onclick="nextpage()">下一页</a>
+				</div>
+				<div id="spagelist" style="margin: 10px auto;">
+						<a id="spre" href="javascript:;" style="display: inline-block;width: 50px;height: 25px;line-height: 23px;border: 1px solid #eee;background-color: red;color:#fff;" onclick="sprepage()">上一页</a>
+						<a id="snext" href="javascript:;" style="display: inline-block;width: 50px;height: 25px;line-height: 23px;border: 1px solid #eee;background-color: red;color:#fff;" onclick="snextpage()">下一页</a>
 				</div>
 				<!-- <div class="nulls" style="font-size: 20px;color: #9e9e9e;width: 100%;text-align: center;margin-top:20px;">暂无列表</div> -->
 			</div>
@@ -1759,6 +1768,110 @@ function list(){
 				}
 			});
 }
+
+//搜索列表
+var stypes = 1;
+function fileSearch(stypes,typesindex){
+	var key = $("#search_fc").val();
+	var types = $("#ftype").val();
+	if(spage == 1){
+		$("#spre").hide();
+	}else{
+		$("#spre").show();
+	}
+	if(key){
+		$("#backList").show();
+		uid= '<?php echo $_SESSION["user_info"]["user_id"];?>';
+		$.ajax({
+				type:"POST",
+				url:'http://wgcapp.wgc2013.com/jingyi.php/Home/Wangpan/file_share_list_key',
+				data:{
+						userid:'<?php echo $_SESSION["user_info"]["user_id"];?>',
+		            	page : page,
+		            	type : types,
+		            	key  : key,
+				},
+				cache:false,
+				crossDomain: true == !(document.all),
+				dataType: "JSON",
+				success:function(ret){
+					//console.log("成功");
+					//console.log(ret)
+					var listHtml = "";
+					if(ret.code == 200){
+						$("#spagelist").show();
+						$("#pagelist").hide();
+						$("#snext").show();
+						$(".nulls").hide();
+						var data = ret.message;
+						for(var i in data){
+							var filepath = data[i].filepath,
+								addtime  = data[i].addtime,
+								dir      = data[i].dir,
+								types    = data[i].types,
+								username = data[i].username,
+								id       = data[i].id;
+							var filename =(data[i].filename == null)?"未命名":filename = data[i].filename;
+                    		var arr    = dir.split(".");
+                    		var Suffix = arr[arr.length-1];
+                    		
+								if(Suffix == 'jpg' || Suffix == 'jpeg' || Suffix == 'png' || Suffix == 'gif'){
+									Suffix = "http://wgcapp.wgc2013.com"+dir;
+								}else{
+									Suffix = "/themes/mall/jiaju/images/center/"+ Suffix + ".png"
+								}
+							listHtml +=	'<div class="filelistson" style="width: 20%;float: left;height: auto;overflow: hidden;position:relative;margin-top:15px;padding:10px 0;">';
+							listHtml += '<div class="download" style="text-align:right;position:absolute;left:85%;display:none;" title="下载" onclick="download(\''+id+'\')"><img src="/themes/mall/jiaju/images/center/xiazai.png" alt="" style="width:20px;height:20px;cursor:pointer;"/></div>';
+							listHtml += '<span style="display: block;">分享人：'+username+'</span>';
+							listHtml += '<img src="'+Suffix+'" alt="" style="width: 50%;height: 70px;"/>';
+							listHtml += '<span style="display: block;">'+filename+'</span>';
+							listHtml += '</div>';
+						}					
+
+						$(".filelist .filesmore").html(listHtml);
+						
+					}else if(ret.code == 202){
+						if(typesindex == 0){
+						$("#snext").hide();
+						$(".filelist .filesmore").html('<div class="nulls" style="font-size: 20px;color: #9e9e9e;width: 100%;text-align: center;margin-top:20px;">暂无列表</div>');
+						}
+						if(typesindex == 1){
+							$("#snext").hide();
+						$(".filelist .filesmore").html();	
+						$(".filelist .filesmore").html('<div class="nulls" style="font-size: 20px;color: #9e9e9e;width: 100%;text-align: center;margin-top:20px;">暂无列表</div>');
+						}
+
+					}
+					},
+					
+				error:function(err){
+					console.log("错误是");
+					console.log(err);
+				}
+			});
+	}else{
+		alert("请输入关键词！！！")
+	}
+}
+//搜索返回
+function backList(){
+	$("#backList").hide();
+	messagelist(spage,0);
+}
+
+//搜索分页
+function sprepage(){
+	if(stypes == 1){
+		stypes=2;
+	}
+	fileSearch(--stypes,1)
+}
+
+function snextpage(){
+
+	fileSearch(++stypes,1)
+}
+
 //分享列表
 var spage =1;
 function messagelist(spage,typesindex){
@@ -1786,6 +1899,8 @@ function messagelist(spage,typesindex){
 					// console.log(ret)
 					var listHtml = "";
 					if(ret.code == 200){
+						$("#spagelist").hide();
+						$("#pagelist").show();
 						$("#next").show();
 						$(".nulls").hide();
 						var data = ret.message;
@@ -1800,25 +1915,6 @@ function messagelist(spage,typesindex){
                     		var arr    = dir.split(".");
                     		var Suffix = arr[arr.length-1];
                     		
-                    		//判断文件类型
-        //             		if(Suffix == 'txt'){
-								
-								// 	imgurl = '/themes/mall/jiaju/images/center/txt.png';
-								// }
-								// if(Suffix == 'doc' || $Suffix == 'docx'){
-								// 	imgurl = '/themes/mall/jiaju/images/center/doc.png';
-								// }
-								// if(Suffix == 'xls' || $Suffix == 'xlsx'){
-								// 	imgurl = '/themes/mall/jiaju/images/center/xls.png';
-								// }
-								// if(Suffix == 'ppt' || $Suffix == 'pptx'){
-								// 	imgurl = '/themes/mall/jiaju/images/center/ppt.png';
-								// }
-								// switch(Suffix){
-								// 	case txt:
-								// 		imgurl = Suffix;
-								// 	break;
-								// }
 								if(Suffix == 'jpg' || Suffix == 'jpeg' || Suffix == 'png' || Suffix == 'gif'){
 									Suffix = "http://wgcapp.wgc2013.com"+dir;
 								}else{
