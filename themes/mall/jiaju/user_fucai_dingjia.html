@@ -1439,23 +1439,24 @@ $(function(){
 		}
 		
 		$.post('http://wgcapp.wgc2013.com/jingyi.php/Home/Dinge/zhucai_add', {
-			        userid 	     : '<?php echo $_SESSION["user_info"]["user_id"];?>',
-			        name         : name,           
-			        pingpai      : pingpai,         
-			        xinghao      : xinghao,       
-			        danwei       : danwei,     
-			        danjia       : danjia,      
-			        hanshuijiage : hanshuijiage,  
-			        peisongtime  : peisongtime,  
-				    gongyingshang: gongyingshang,  
-				    lianxiren    : lianxiren,
-				    dianhua      : dianhua,  
-				    weixin       : weixin,  
-				    web          : web,  
-				    email        : email,  
-				    content      : content,  
-					type         : 2,
-				    img          : img
+	        userid 	     : '<?php echo $_SESSION["user_info"]["user_id"];?>',
+	        name         : name,           
+	        pingpai      : pingpai,         
+	        xinghao      : xinghao,       
+	        danwei       : danwei,     
+	        danjia       : danjia,      
+	        hanshuijiage : hanshuijiage,  
+	        peisongtime  : peisongtime,  
+		    gongyingshang: gongyingshang,  
+		    lianxiren    : lianxiren,
+		    dianhua      : dianhua,  
+		    weixin       : weixin,  
+		    web          : web,  
+		    email        : email,  
+		    content      : content,  
+			type         : 2,
+		    img          : img,
+		    kehu         : '微工程'
 		}, function(ret) {
 			if(ret.code == 200){
 				//alert('添加成功!')

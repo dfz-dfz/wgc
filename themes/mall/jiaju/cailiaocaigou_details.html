@@ -38,9 +38,9 @@
 <div style="width: 1100px;margin: 10px auto;">
 	<div style="width: 850px;height: auto;overflow: hidden;text-align: left;float: left;">
 		<div style="background-color: #eee;width: 100%;height: 40px;border-bottom: 2px solid #999;padding-left: 6px;font-size: 22px;line-height: 40px;text-align: center;color: #000;" id="title">材料采购详情</div>
-		<div style="height: 600px;">
+		<div style="height: auto;overflow: hidden;min-height: 600px;">
 			<div style="height: auto;overflow: hidden;margin-top: 10px;">
-				<div style="width:1100px;">
+				<div style="">
 					<div class="shejifenbao_list" id="xiangmmc"></div>
 					<div class="shejifenbao_list" id="content"></div>
 					<div class="shejifenbao_list" id="brand"></div>
@@ -51,11 +51,8 @@
 					<div class="shejifenbao_list" id="fb_address"></div>
 					<div class="shejifenbao_list" id="time"></div>
 					<div id="lists"></div>
-				</div>
-			</div>
-		</div>
-		<div class="meterial_buy_detail" style="position: absolute;top:575px;left: 12%;background-color: #9e9e9e;display: none;opacity: 0.95;width: 845px;">
-					<div class="quxiao" style="position: absolute;font-size: 20px;top: -15px;left: 99%;background-color: #9e9e9e;border-radius: 10px;width: 20px;height: 20px;line-height: 20px;cursor:default;text-align:center;">×</div>
+					<div class="meterial_buy_detail" style="background-color: #9e9e9e;display: none;opacity: 0.95;width: 845px;position: relative;">
+					<div class="quxiao" style="position: absolute;font-size: 20px;top: -10px;left: 98%;background-color: #9e9e9e;border-radius: 10px;width: 20px;height: 20px;line-height: 20px;cursor:default;text-align:center;">×</div>
 						<table id="table" style="width: 100%;" border="1" cellspacing="0" cellpadding="0">
 							<thead>
 								<tr class="thead" style="">
@@ -84,6 +81,10 @@
 						</table>
 						<div id="tel_box"></div>
 					</div>
+				</div>
+			</div>
+		</div>
+				
 		<div style="height:40px;background-color: #e41d22;color: #fff;font-size: 20px;letter-spacing: 4px;font-weight: 600;text-align: center;line-height: 40px;width: 20%;margin: 0 auto;cursor:pointer;" onclick="caigou_list()">点击查看</div>
 		<div class="ck" style="text-align:center;display:none;">请<a href="index.php?app=member&act=login&ret_url=" target="_blank" style="cursor:pointer;color:blue;">登录</a>之后再查看</div>
 	</div>

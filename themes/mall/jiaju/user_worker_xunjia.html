@@ -1372,8 +1372,8 @@ $(function(){
 				tel         : $("#tel").val(),
 				endtime     : $("#end_time").val(),
 				starttime   : $("#come_time").val(),
-				img         : img
-			
+				img         : img,
+				kehu        : '微工程'
 			},function(ret){
 				if(ret.code == 200){
 						window.location.reload();
@@ -1690,10 +1690,10 @@ function searchlist(page,types){
 				type:"POST",
 				url:'http://wgcapp.wgc2013.com/jingyi.php/Home/index/getAllMyRelative',
 				data:{
-						uid:'<?php echo $_SESSION["user_info"]["user_id"];?>',
-		            	type:'PRIVATE',
-		            	types:'user_list',
-		            	page : pindex,
+					uid:'<?php echo $_SESSION["user_info"]["user_id"];?>',
+	            	type:'PRIVATE',
+	            	types:'user_list',
+	            	page : pindex,
 				},
 				cache:false,
 				crossDomain: true == !(document.all),

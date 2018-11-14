@@ -130,16 +130,17 @@
 				</div>
 				<!--表格内容end -->
 				<div class="total">
-						<span>税金:<input name="shuijin" id="suijin" type="text" style="display: inline-block;width: 120px;height: 20px;margin-bottom: 5px;padding: 0;padding-left: 10px;" onkeyup="this.value=this.value.replace(/[^\d.]/g,'');" />%</span>
-						<span></span>
-						<span>管理费/规费:<input name="guanlifei" id="guanli" type="text" style="display: inline-block;width: 120px;height: 20px;margin-bottom: 5px;padding: 0;padding-left: 10px;" onkeyup="this.value=this.value.replace(/[^\d.]/g,'');"/>元</span>
-						<span id="click_zj" style="margin: 0px;background-color: #F42;width: 100px;text-align: center;border-radius: 5px;color: #fff;">生成工程总价</span>
-						<span id="click_zzj" style="margin: 0px;background-color: #F42;width: 100px;text-align: center;border-radius: 5px;color: #fff;    position: relative;left: 803px;margin-top:10px;">生成工程总造价</span>
+					<span>税金:<input name="shuijin" id="suijin" type="text" style="display: inline-block;width: 120px;height: 20px;margin-bottom: 5px;padding: 0;padding-left: 10px;" onkeyup="this.value=this.value.replace(/[^\d.]/g,'');" />%</span>
+					<span></span>
+					<span>管理费/规费:<input name="guanlifei" id="guanli" type="text" style="display: inline-block;width: 120px;height: 20px;margin-bottom: 5px;padding: 0;padding-left: 10px;" onkeyup="this.value=this.value.replace(/[^\d.]/g,'');"/>元</span>
+					<span id="click_zj" style="margin: 0px;background-color: #F42;width: 100px;text-align: center;border-radius: 5px;color: #fff;">生成工程总价</span>
+					<span id="click_zzj" style="margin: 0px;background-color: #F42;width: 100px;text-align: center;border-radius: 5px;color: #fff;    position: relative;left: 803px;margin-top:10px;">生成工程总造价</span>
 
 				</div>
 				<div style="margin-bottom: 20px;">
 					<h3 style="font-size: 18px;font-weight: bold;">工程总造价:<input name="gczongzaojia" id="total_gczj" style="color:blue;" readonly value=""></h3>
 				</div>
+				<input type="hidden" name="kehu" value="微工程" />
 				<div class="share_dow" style="display: inline-block; position: relative;left: 90%;">
 					<!-- <a class="share_yusuan" href="javascript:;">分享</a> -->
 					<input type="button" onclick="yusuanbaojia()" value="发布" style="text-decoration: none;display: block;font-size: 16px;color: #fff;width: 105px;height: 30px;line-height: 30px;text-align: center;margin-bottom: 10px;background-color: #f8b551;">
@@ -188,7 +189,7 @@
 				</div>
 				
 			<!--列表详情页面 -->
-			<div class="t_detail_all"style="overflow-y: scroll;margin-top: 10px;min-height: 300px;display:none;position:absolute;top:60px;background-color:#fff;width:100%;height:500px;">
+			<div class="t_detail_all" style="overflow-y: scroll;margin-top: 10px;min-height: 300px;display:none;position:absolute;top:60px;background-color:#fff;width:100%;height:500px;">
 				<div id="canel_detail" style="position:absolute;top:-15px;left:95%;font-size:40px;cursor: pointer;">×</div>
 <!-- 						<div class="search_ys_detail">
 							<input type="text" style="width: 400px;height: 30px;" id="search_detail" placeholder="请输入关键词">
@@ -216,14 +217,14 @@
 				</div>
 				<!--表格内容开始 -->
 				<div class="table_body" style="">
-				<div class="yusuanbj_list">
-				
+					<div class="yusuanbj_list">
+					
+					</div>
+					<div id="ysbaojia">
+					
+					</div>
+					
 				</div>
-				<div id="ysbaojia">
-				
-				</div>
-				
-			</div>
 			
 			<!--列表详情页面end -->
 			</div>
@@ -299,14 +300,14 @@
 							</div>
 							<!--表格内容开始 -->
 							<div class="table_body" style="">
-							<div class="yusuanbj_list_share">
-							
+								<div class="yusuanbj_list_share">
+								
+								</div>
+								<div id="ysbaojia_share">
+								
+								</div>
+								
 							</div>
-							<div id="ysbaojia_share">
-							
-							</div>
-							
-						</div>
 						
 						<!--列表详情页面end -->
 						</div>					
@@ -1371,6 +1372,7 @@ function fabu(){
 						    ps          : $("#ps").val(),
 						    address     : $("#address").val(),
 							tel         : $("#tel").val(),
+							kehu        : '微工程'
 			
 			},function(ret){
 				//console.log(ret)
@@ -1451,22 +1453,23 @@ function fabu(){
 	        return false;
 	    }
 		$.post('http://wgcapp.wgc2013.com/jingyi.php/Home/Dinge/zhucai_add', {
-			        userid 	     : '<?php echo $_SESSION["user_info"]["user_id"];?>',
-			        name         : name,           
-			        pingpai      : pingpai,         
-			        xinghao      : xinghao,       
-			        danwei       : danwei,     
-			        danjia       : danjia,      
-			        hanshuijiage : hanshuijiage,  
-			        peisongtime  : peisongtime,  
-				    gongyingshang: gongyingshang,  
-				    lianxiren    : lianxiren,
-				    dianhua      : dianhua,  
-				    weixin       : weixin,  
-				    web          : web,  
-				    email        : email,  
-				    content      : content,  
-				    img          : img
+	        userid 	     : '<?php echo $_SESSION["user_info"]["user_id"];?>',
+	        name         : name,           
+	        pingpai      : pingpai,         
+	        xinghao      : xinghao,       
+	        danwei       : danwei,     
+	        danjia       : danjia,      
+	        hanshuijiage : hanshuijiage,  
+	        peisongtime  : peisongtime,  
+		    gongyingshang: gongyingshang,  
+		    lianxiren    : lianxiren,
+		    dianhua      : dianhua,  
+		    weixin       : weixin,  
+		    web          : web,  
+		    email        : email,  
+		    content      : content,  
+		    img          : img,
+		    kehu         : kehu
 		}, function(ret) {
 			if(ret.code == 200){
 				alert('添加成功!请继续填写预算表')
@@ -1667,81 +1670,81 @@ function pageindexFc(pindex){
 	}
 //主材搜索功能
 function searchFC(){
-					$(".search_fc").hide();
-					$(".quxiao_fc").show();
-					var status = false;
-					
-					var url = 'http://wgcapp.wgc2013.com/jingyi.php/Home/Dinge/zhucai_list';
-					var value = $("#search_fc").val();
-					if(value){
+	$(".search_fc").hide();
+	$(".quxiao_fc").show();
+	var status = false;
+	
+	var url = 'http://wgcapp.wgc2013.com/jingyi.php/Home/Dinge/zhucai_list';
+	var value = $("#search_fc").val();
+	if(value){
 
-					$.ajax({
-						type:"POST",
-						url:url,
-						data:{
-							user_id:   userid,
-							type   : 2
-						},
-						cache:false,
-						crossDomain: true == !(document.all),
-						dataType: "json",
-						success:function(ret){
-							//console.log(ret)
-							if(ret.status == 200){
-								var data = ret.retData;
-								var listHtml = '';
-								for(i in data){
-								
-								if(data[i].name === value){
-								status = true;
-								$(".worker_list_zc table tbody").html('');
-								
-							var id       = data[i].id;
-							
-							var	pingpai  = data[i].pingpai,
-								name     = data[i].name,
-								danwei   = data[i].danwei,
-								danjia   = data[i].danjia,
-								xinghao  = data[i].xinghao,
-								hanshuijiage   = data[i].hanshuijiage,
-								peisongtime   = data[i].peisongtime,
-								gongyingshang   = data[i].gongyingshang,
-								lianxiren   = data[i].lianxiren,
-								dianhua   = data[i].dianhua,
-								weixin   = data[i].weixin,
-								web   = data[i].web,
-								email   = data[i].email,
-								content   = data[i].content,
-								defaults     = (data[i].defaults<1)?'':'checked="checked"';
-								
-								listHtml +=		'<tr style="text-align: center;bolder-bottom:1px solid #9e9e9e;">';
-								listHtml +=		'<td>'+name+'</td>';
-								listHtml +=		'<td>'+pingpai+'</td>';
-								listHtml +=		'<td>'+xinghao+'</td>';
-								listHtml +=		'<td>'+danwei+'</td>';
-								listHtml +=		'<td class="adds_dj'+i+'">'+danjia+'</td>';
-								listHtml +=		'<td>'+gongyingshang+'</td>';
-								listHtml +=		'<td class="adds_zc'+i+'" style="color:red;" onclick="addsZc('+i+')">添加</td>';
-								listHtml +=		'</tr>';
-								}
-								}
-								if(!status){
-									alert("暂无结果")
-								}
-							}
-							$(".worker_list_fc table tbody").append(listHtml);
-							
-						},
-						error:function(err){
-							console.log(err)
-						}
-					});
+	$.ajax({
+		type:"POST",
+		url:url,
+		data:{
+			user_id:   userid,
+			type   : 2
+		},
+		cache:false,
+		crossDomain: true == !(document.all),
+		dataType: "json",
+		success:function(ret){
+			//console.log(ret)
+			if(ret.status == 200){
+				var data = ret.retData;
+				var listHtml = '';
+				for(i in data){
+				
+				if(data[i].name === value){
+				status = true;
+				$(".worker_list_zc table tbody").html('');
+				
+			var id       = data[i].id;
+			
+			var	pingpai  = data[i].pingpai,
+				name     = data[i].name,
+				danwei   = data[i].danwei,
+				danjia   = data[i].danjia,
+				xinghao  = data[i].xinghao,
+				hanshuijiage   = data[i].hanshuijiage,
+				peisongtime   = data[i].peisongtime,
+				gongyingshang   = data[i].gongyingshang,
+				lianxiren   = data[i].lianxiren,
+				dianhua   = data[i].dianhua,
+				weixin   = data[i].weixin,
+				web   = data[i].web,
+				email   = data[i].email,
+				content   = data[i].content,
+				defaults     = (data[i].defaults<1)?'':'checked="checked"';
+				
+				listHtml +=		'<tr style="text-align: center;bolder-bottom:1px solid #9e9e9e;">';
+				listHtml +=		'<td>'+name+'</td>';
+				listHtml +=		'<td>'+pingpai+'</td>';
+				listHtml +=		'<td>'+xinghao+'</td>';
+				listHtml +=		'<td>'+danwei+'</td>';
+				listHtml +=		'<td class="adds_dj'+i+'">'+danjia+'</td>';
+				listHtml +=		'<td>'+gongyingshang+'</td>';
+				listHtml +=		'<td class="adds_zc'+i+'" style="color:red;" onclick="addsZc('+i+')">添加</td>';
+				listHtml +=		'</tr>';
+				}
+				}
+				if(!status){
+					alert("暂无结果")
+				}
+			}
+			$(".worker_list_fc table tbody").append(listHtml);
+			
+		},
+		error:function(err){
+			console.log(err)
+		}
+	});
 
-					}else{
-					alert("请输入搜索内容")
-					}
-					
+	}else{
+	alert("请输入搜索内容")
 	}
+				
+}
 	
 
 //辅材材连接数据
@@ -1821,7 +1824,8 @@ function searchFC(){
 				    email        : email,  
 				    content      : content, 
 					type         : 2,
-				    img          : img
+				    img          : img,
+				    kehu         : '微工程'
 		}, function(ret) {
 			if(ret.code == 200){
 				alert('添加成功!请继续填写预算表')
@@ -1876,59 +1880,45 @@ function searchFC(){
 	//点击添加人工后数据到表格上
 
 function adds(i){
-
-			//alert(i);
-			var gj = $(".adds_gj"+i).text();
-			$(".worker_list_adds").show();
-			$("#adds_sure").click(function(){
-				var xh = $(".sele").val();
-				//console.log(xh)
-				$(".worker_list_adds").hide();
-				$(".worker_list").hide();
-				$(".worker_form").hide();
-				$("#a_rg"+xh).text(gj);
-				
-				//return false;
-				
-			})
-			
+	var gj = $(".adds_gj"+i).text();
+	$(".worker_list_adds").show();
+	$("#adds_sure").click(function(){
+		var xh = $(".sele").val();
+		$(".worker_list_adds").hide();
+		$(".worker_list").hide();
+		$(".worker_form").hide();
+		$("#a_rg"+xh).text(gj);
+		//return false;
+	})
 }
 
 //点击添加主材数据到表格上
 function addsZc(i){
+	var dj = $(".adds_dj"+i).text();
+	$(".worker_list_adds").show();
+	$("#adds_sure").click(function(){
+		var xh = $(".sele").val();
+		//console.log(xh)
+		$(".worker_list_adds").hide();
+		$(".zhucai_form").hide();
+		$(".worker_list_zc").hide();
+		$("#a_zc"+xh).text(dj);
+		//alert("添加成功")
+		//return false;
 		
-			
-			var dj = $(".adds_dj"+i).text();
-			$(".worker_list_adds").show();
-			$("#adds_sure").click(function(){
-				var xh = $(".sele").val();
-				//console.log(xh)
-				$(".worker_list_adds").hide();
-				$(".zhucai_form").hide();
-				$(".worker_list_zc").hide();
-				$("#a_zc"+xh).text(dj);
-				//alert("添加成功")
-				//return false;
-				
-			})
-									
-
+	})
 }
 //点击添加辅材数据到表格上
 function addsFc(i){
-		
-			
-			var dj = $(".addsfc_dj"+i).text();
-			$(".worker_list_adds").show();
-			$("#adds_sure").click(function(){
-				var xh = $(".sele").val();
-				$(".worker_list_adds").hide();
-				$(".fucai_form").hide();
-				$(".worker_list_fc").hide();
-				$("#a_fc"+xh).text(dj);
-			})
-									
-
+	var dj = $(".addsfc_dj"+i).text();
+	$(".worker_list_adds").show();
+	$("#adds_sure").click(function(){
+		var xh = $(".sele").val();
+		$(".worker_list_adds").hide();
+		$(".fucai_form").hide();
+		$(".worker_list_fc").hide();
+		$("#a_fc"+xh).text(dj);
+	})
 }
 
 //点击人工详情
@@ -2442,63 +2432,61 @@ $(".quxiao_btn").click(function(){
 
 	//确认分享
 	function sharebox(){
-								//获取数据id
-								var arr = new Array();
-								var tarry = new Array();
-								var telcount = 0;
-								var telArray = $('input[name="tid"]:checked');
-								for(var i=0;i<telArray.length;i++){
-									if(telArray[i].checked == true){
-										telcount++;
-									}
-								}
-								if(telcount < 1){
-									alert("请选择你要分享的好友！！！！！")
-									return false;
-								}
-				                // $('input[name="id"]:checked').each(function(i){
-				                //     arr[i] = $(this).val();
-				                // });
-				                 
-				                // var vals = arr.join(",");
-				                var cid = $("#cid").val();
-				                arr.push(cid);
+		//获取数据id
+		var arr = new Array();
+		var tarry = new Array();
+		var telcount = 0;
+		var telArray = $('input[name="tid"]:checked');
+		for(var i=0;i<telArray.length;i++){
+			if(telArray[i].checked == true){
+				telcount++;
+			}
+		}
+		if(telcount < 1){
+			alert("请选择你要分享的好友！！！！！")
+			return false;
+		}
+        // $('input[name="id"]:checked').each(function(i){
+        //     arr[i] = $(this).val();
+        // });
+         
+        // var vals = arr.join(",");
+        var cid = $("#cid").val();
+        arr.push(cid);
 
-				               // console.log(vals);
+       // console.log(vals);
 
-				                //获取通讯录id
-				          		$('input[name="tid"]:checked').each(function(j){
-				                    tarry[j] = $(this).val();
-				                });
-				                var tvals = tarry.join(",");
-				               // console.log(tvals)
-				                $("#checker").val(tvals);
-				                $.post('http://wgcapp.wgc2013.com/jingyi.php/Home/index/share',{
-				                	"type":4,
-				                	"arr":arr,
-				                	"tarry":tarry
-				                },function(ret){
-				                	//console.log(ret)
-				                	if(ret.code == 200){
-				                		//alert("成功")
-				                		window.location.reload();
-				                	}
-				                },'json')
-
-				                //$("#myform").submit();
+        //获取通讯录id
+  		$('input[name="tid"]:checked').each(function(j){
+            tarry[j] = $(this).val();
+        });
+        var tvals = tarry.join(",");
+       // console.log(tvals)
+        $("#checker").val(tvals);
+        $.post('http://wgcapp.wgc2013.com/jingyi.php/Home/index/share',{
+        	"type":4,
+        	"arr":arr,
+        	"tarry":tarry
+        },function(ret){
+        	//console.log(ret)
+        	if(ret.code == 200){
+        		//alert("成功")
+        		window.location.reload();
+        	}
+        },'json')
+        //$("#myform").submit();
 	}
 	
 	//取消
-$(".quxiao").click(function(){
-	$(this).parent().parent().hide();
-})
-$(".quxiao_tel").click(function(){
-	$(this).parent().parent().hide();
-})
-//通讯录分页控制
-var upage = 1;
-function pageindexUser(pindex){
-		//console.log(index)
+	$(".quxiao").click(function(){
+		$(this).parent().parent().hide();
+	})
+	$(".quxiao_tel").click(function(){
+		$(this).parent().parent().hide();
+	})
+	//通讯录分页控制
+	var upage = 1;
+	function pageindexUser(pindex){
 		if(pindex < 1){
 			pindex = 1;
 			upage=1;
@@ -2518,8 +2506,6 @@ function pageindexUser(pindex){
 				crossDomain: true == !(document.all),
 				dataType: "JSON",
 				success:function(ret){
-					//console.log("成功");
-					//console.log(ret)
 					var html = '';
 					var datas = ret.data;
 					$('.getUserList').html("")
@@ -2555,12 +2541,11 @@ function pageindexUser(pindex){
 
 						$('.getUserList').append(html);
 						//获取数据id
-								var arr = new Array();
-				                $('input[name="id"]:checked').each(function(i){
-				                    arr[i] = $(this).val();
-				                });
-				                var vals = arr.join(",");
-				               // console.log(vals);
+						var arr = new Array();
+		                $('input[name="id"]:checked').each(function(i){
+		                    arr[i] = $(this).val();
+		                });
+		                var vals = arr.join(",");
 					}else {
 						alert('数据加载失败，请检查网络!');
 					}
@@ -2570,70 +2555,69 @@ function pageindexUser(pindex){
 					console.log(err);
 				}
 			});
-
 	}
-//下一页
-function nextpageUser(){
+	//下一页
+	function nextpageUser(){
 	
-	pageindexUser(++upage);
+		pageindexUser(++upage);
 
 	}
-//上一页
-function prepageUser(){
+	//上一页
+	function prepageUser(){
 		pageindexUser(--upage);
 	}
 
 //分享列表
 	var sharepage = 1;
 	function messagelist(){
-	var url = 'http://wgcapp.wgc2013.com/jingyi.php/Home/Dinge/baojia_list_share';
+		var url = 'http://wgcapp.wgc2013.com/jingyi.php/Home/Dinge/baojia_list_share';
 
-	$.ajax({
-				type:"POST",
-				url:url,
-				data:{
-					key      : key,
-			    	user_id  : '<?php echo $_SESSION["user_info"]["user_id"];?>',
-			    	page     : sharepage,
-			    	type     : 4
-				},
-				cache:false,
-				crossDomain: true == !(document.all),
-				dataType: "json",
-				success:function(ret){
-					//console.log(ret)
-					var html = '';
-				if(ret.status == 200){
-					$("#listpage").show();
-					var data = ret.retData;
-					for(var i in data){
-						var jsdanwei = data[i].jsdanwei,
-							sgdanwei = data[i].sgdanwei,
-							riqi = data[i].riqi,
-							shuijin = data[i].shuijin,
-							guanlifei = data[i].guanlifei,
-							gczongzaojia = data[i].gczongzaojia,
-							addtime = data[i].addtime,
-							time = timestampToTime(addtime);
-							id = data[i].tid;
-							name = data[i].name;
-							
-						html += '<tr>';
-							html += '<td style="width:184px;">'+jsdanwei+'</td>';
-							html += '<td style="width:184px;">'+sgdanwei+'</td>';
-							html += '<td style="width:171px;">'+gczongzaojia+'</td>';
-							html += '<td style="width:171px;">'+time+'</td>';
-							html += '<td class="t_detail"><a href="javascript:;" style="color:blue;width:80px;" onclick="tDetails('+id+','+gczongzaojia+')">详情</a><a href="javascript:;" style="color:#e8435a;width:35px;display:inline-block;" onclick="shareBtn('+id+')">分享</a></td>';
-							html += '<td style="width:91px;">'+name+'</td>';
-						html += '</tr>';
-					}
-					$('#ysbj_share_list').html(html);
+		$.ajax({
+			type:"POST",
+			url:url,
+			data:{
+				key      : key,
+		    	user_id  : '<?php echo $_SESSION["user_info"]["user_id"];?>',
+		    	page     : sharepage,
+		    	type     : 4
+			},
+			cache:false,
+			crossDomain: true == !(document.all),
+			dataType: "json",
+			success:function(ret){
+				//console.log(ret)
+				var html = '';
+			if(ret.status == 200){
+				$("#listpage").show();
+				var data = ret.retData;
+				for(var i in data){
+					var jsdanwei = data[i].jsdanwei,
+						sgdanwei = data[i].sgdanwei,
+						riqi = data[i].riqi,
+						shuijin = data[i].shuijin,
+						guanlifei = data[i].guanlifei,
+						gczongzaojia = data[i].gczongzaojia,
+						addtime = data[i].addtime,
+						time = timestampToTime(addtime);
+						id = data[i].tid;
+						name = data[i].name;
+						
+					html += '<tr>';
+						html += '<td style="width:184px;">'+jsdanwei+'</td>';
+						html += '<td style="width:184px;">'+sgdanwei+'</td>';
+						html += '<td style="width:171px;">'+gczongzaojia+'</td>';
+						html += '<td style="width:171px;">'+time+'</td>';
+						html += '<td class="t_detail"><a href="javascript:;" style="color:blue;width:80px;" onclick="tDetails('+id+','+gczongzaojia+')">详情</a><a href="javascript:;" style="color:#e8435a;width:35px;display:inline-block;" onclick="shareBtn('+id+')">分享</a></td>';
+						html += '<td style="width:91px;">'+name+'</td>';
+					html += '</tr>';
 				}
-				},
-				error:function(err){
-					console.log(err)
-				}
-			});
+				$('#ysbj_share_list').html(html);
+			}
+			},
+			error:function(err){
+				console.log(err)
+			}
+		});
 
 	}
 
@@ -2643,53 +2627,52 @@ function searchShare(){
 	var key = $("#search_list_share").val();
 
 	if(key){
-
-	$.ajax({
-				type:"POST",
-				url:url,
-				data:{
-					key      : key,
-			    	user_id  : '<?php echo $_SESSION["user_info"]["user_id"];?>',
-			    	page     : sharepage,
-			    	type     : 4
-				},
-				cache:false,
-				crossDomain: true == !(document.all),
-				dataType: "json",
-				success:function(ret){
-					//console.log(ret)
-					var html = '';
-				if(ret.status == 200){
-					$("#listpage").show();
-					var data = ret.retData;
-					for(var i in data){
-						var jsdanwei = data[i].jsdanwei,
-							sgdanwei = data[i].sgdanwei,
-							riqi = data[i].riqi,
-							shuijin = data[i].shuijin,
-							guanlifei = data[i].guanlifei,
-							gczongzaojia = data[i].gczongzaojia,
-							addtime = data[i].addtime,
-							time = timestampToTime(addtime);
-							id = data[i].tid;
-							name = data[i].name;
-							
-						html += '<tr>';
-							html += '<td style="width:184px;">'+jsdanwei+'</td>';
-							html += '<td style="width:184px;">'+sgdanwei+'</td>';
-							html += '<td style="width:171px;">'+gczongzaojia+'</td>';
-							html += '<td style="width:171px;">'+time+'</td>';
-							html += '<td class="t_detail"><a href="javascript:;" style="color:blue;width:80px;" onclick="tDetails('+id+','+gczongzaojia+')">详情</a><a href="javascript:;" style="color:#e8435a;width:35px;display:inline-block;" onclick="shareBtn('+id+')">分享</a></td>';
-							html += '<td style="width:91px;">'+name+'</td>';
-						html += '</tr>';
-					}
-					$('#ysbj_share_list').html(html);
+		$.ajax({
+			type:"POST",
+			url:url,
+			data:{
+				key      : key,
+		    	user_id  : '<?php echo $_SESSION["user_info"]["user_id"];?>',
+		    	page     : sharepage,
+		    	type     : 4
+			},
+			cache:false,
+			crossDomain: true == !(document.all),
+			dataType: "json",
+			success:function(ret){
+				//console.log(ret)
+				var html = '';
+			if(ret.status == 200){
+				$("#listpage").show();
+				var data = ret.retData;
+				for(var i in data){
+					var jsdanwei = data[i].jsdanwei,
+						sgdanwei = data[i].sgdanwei,
+						riqi = data[i].riqi,
+						shuijin = data[i].shuijin,
+						guanlifei = data[i].guanlifei,
+						gczongzaojia = data[i].gczongzaojia,
+						addtime = data[i].addtime,
+						time = timestampToTime(addtime);
+						id = data[i].tid;
+						name = data[i].name;
+						
+					html += '<tr>';
+						html += '<td style="width:184px;">'+jsdanwei+'</td>';
+						html += '<td style="width:184px;">'+sgdanwei+'</td>';
+						html += '<td style="width:171px;">'+gczongzaojia+'</td>';
+						html += '<td style="width:171px;">'+time+'</td>';
+						html += '<td class="t_detail"><a href="javascript:;" style="color:blue;width:80px;" onclick="tDetails('+id+','+gczongzaojia+')">详情</a><a href="javascript:;" style="color:#e8435a;width:35px;display:inline-block;" onclick="shareBtn('+id+')">分享</a></td>';
+						html += '<td style="width:91px;">'+name+'</td>';
+					html += '</tr>';
 				}
-				},
-				error:function(err){
-					console.log(err)
-				}
-			});
+				$('#ysbj_share_list').html(html);
+			}
+			},
+			error:function(err){
+				console.log(err)
+			}
+		});
 	}else{
 		alert("关键词不能为空!!!!!")
 	}

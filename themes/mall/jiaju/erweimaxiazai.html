@@ -1,4 +1,4 @@
-<div class="xiazai" style="width: 100%;height: 100%;overflow: hidden;margin: 10px auto;position: absolute;display: none;background-color: #000;opacity: 0.8;filter:alpha(opacity=80);z-index: 999999999;">
+<div class="xiazai" style="width: 100%;height: 100%;overflow: hidden;margin: 10px auto;position: absolute;display: none;background-color: #000;opacity: 0.8;filter:alpha(opacity=80);z-index: 999999999;min-height: 1100px;">
 			<div class="xiangce" style="height: auto;overflow: hidden;width: 25%;margin: 100px auto;min-width: 500px;">
 			<p style="text-align: center;font-size: 18px;color: #fff;">请扫一扫下载微工程app</p>
 				<div style="float: left;margin: 10px 20px;">
@@ -9,5 +9,36 @@
 				<img src="/themes/mall/jiaju/images/center/pingguoban.jpg" alt="" style="width: 170px;height: 155px;">
 					<div style="margin-top: 10px;background-color: #9e9e9e;color: #fff;padding: 2px 2px;border-radius: 5px;font-size: 16px;">苹果版微工程app</div>
 				</div>
+				<div class="miaoshu" style="float: left;">
+				<ul>
+					<li>步骤如下：</li>
+					<li>1.请使用手机扫描对应的二维码（iphone或者Android）</li>
+					<li>2.扫描完成后下载微工程app后使用当前账号登陆</li>
+				</ul>
+			</div>	
 			</div>		
 		</div>
+<script>
+	// var urls = window.location.href;
+	// var urlArray = urls.split("&");
+	// var web      = urlArray[urlArray.length-3];
+	// var webArray = web.split("=");
+	// var webtype  = webArray[webArray.length-1];
+
+	var title     = document.title;
+	if(title == '集采价格详情'){
+		title = '查找材料';
+	}else if(title == '今日工价详情'){
+		title = '工价';
+	}else if(title == '设计分包详情'){
+		title = '设计项目';
+	}	
+	var titlehtml = "";
+				titlehtml += '<ul style="margin:15px 0 0 22px;font-size:16px;color:#fff;">';
+				titlehtml += '<li style="margin: 10px 0;">步骤如下：</li>';
+				titlehtml += '<li style="margin: 10px 0;">1.请使用手机扫描对应的二维码（iphone版或者Android版）；</li>';
+				titlehtml += '<li style="margin: 10px 0;">2.扫描完成后下载微工程app并使用当前账号登陆；</li>';
+				titlehtml += '<li style="margin: 10px 0;">3.请打开微工程app中的<span style="color:#fff100;">'+title+'。</span></li>';
+				titlehtml += '</ul>';
+	$(".miaoshu").html(titlehtml); 
+</script>

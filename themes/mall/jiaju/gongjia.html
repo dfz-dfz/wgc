@@ -263,7 +263,7 @@ function searchList(page){
 					if(mydates == today){
 						listHtml += '<div class="little_box" style="width: 22%;margin-right: 4%;display: inline-block;float:left;">';
 							listHtml += '<img src="'+img+'" alt="" />';
-							listHtml += '<div style="line-height:30px;font-weight:600;font-size:16px;padding-top:5px;">'+name+'</div>';
+							listHtml += '<div style="line-height:30px;font-weight:600;font-size:16px;padding-top:5px;">【'+data[i].kehu+'】'+name+'</div>';
 							listHtml += '<div style="width: 100%;height: auto;overflow: hidden;padding: 5px 0;">';
 								listHtml += '<span style="float: left;">工价：<span style="color:red;">'+xinzi+'/'+unit+'</span></span>';
 								listHtml += '<span style="float:right;">发布时间：'+time+'</span>';
@@ -273,7 +273,7 @@ function searchList(page){
 					}else{
 						listHtml += '<div class="little_box" style="width: 22%;margin-right: 4%;display: inline-block;float:left;">';
 							listHtml += '<img src="'+img+'" alt="" />';
-							listHtml += '<div style="line-height:30px;font-weight:600;font-size:16px;padding-top:5px;">'+name+'</div>';
+							listHtml += '<div style="line-height:30px;font-weight:600;font-size:16px;padding-top:5px;">【'+data[i].kehu+'】'+name+'</div>';
 							listHtml += '<div style="width: 100%;height: auto;overflow: hidden;padding: 5px 0;">';
 								listHtml += '<span style="float: left;">工价：<span style="color:red;">'+xinzi+'/'+unit+'</span></span>';
 								listHtml += '<span style="float:right;">发布时间：'+time+'</span>';

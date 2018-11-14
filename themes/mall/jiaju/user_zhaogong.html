@@ -351,24 +351,23 @@ input{
 	        return false;
 	    }
 		  $.post('http://wgcapp.wgc2013.com/jingyi.php/Home/Jymember/qiuzhi',{
-		  							user_id 	   : '<?php echo $_SESSION["user_info"]["user_id"];?>',
-									type           : 2,
-									hasmoney       : 50,
-									jobtype        : jobtype,
-									s_province     : "广东省",
-									s_city         : "广州市",
-									s_county       : "白云区",
-									region         : 2,
-									xiangxi        : xiangxi,
-									miaoshu        : ps,
-									xinzi          : xinzhi,
-									worker_address : address,
-									office_name    : name,
-									publishingarea : address,
+				user_id 	   : '<?php echo $_SESSION["user_info"]["user_id"];?>',
+				type           : 2,
+				hasmoney       : 50,
+				jobtype        : jobtype,
+				s_province     : "广东省",
+				s_city         : "广州市",
+				s_county       : "白云区",
+				region         : 2,
+				xiangxi        : xiangxi,
+				miaoshu        : ps,
+				xinzi          : xinzhi,
+				worker_address : address,
+				office_name    : name,
+				publishingarea : address,
+				kehu           : '微工程'
 		  },function(ret){
-				//alert('发布成功！');
 				if(ret.status == 200){
-
 					location.reload();
 				}
 		  },'json')

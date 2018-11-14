@@ -429,9 +429,6 @@ function addsume(){
     var jobtype     = $("#choose").val();
 	var checked = $("input[type='checkbox']").is(':checked');  //同意协议
 
-
-
-
 	if(name == ""){
 		alert("姓名不能为空");
 		return false;
@@ -489,11 +486,10 @@ function addsume(){
 			self        :self,
 			selfpingjia :selfpingjia,
 			checked     :checked,
-            jobtype     :jobtype
-
+            jobtype     :jobtype,
+            kehu        :'微工程'
 		},function(ret){
-			console.log(ret)
-			     if(ret.status == 200){
+			if(ret.status == 200){
                 //alert("简历上传成功！")
                 window.location.reload();                   
             }else if(ret.status == 202){
