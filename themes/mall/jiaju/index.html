@@ -225,7 +225,7 @@ border:1px solid #808080;width:100%;height:66px;margin-bottom:3px;
 				</p>
 				<div class="aui-content aui-margin-b-15" id=''>
 					<?php
-						$query="select * from ecm_recruit order by id desc limit 0,10"; //定义sql
+						$query="select * from ecm_recruit where ok=0 order by id desc limit 0,10"; //定义sql
 						$result=mysql_query($query);
 						while($rows1=@mysql_fetch_array($result)){
 							  echo  "<li style='height:24px;line-height:24px;margin-bottom:1px;'>";
@@ -282,7 +282,7 @@ border:1px solid #808080;width:100%;height:66px;margin-bottom:3px;
 				</div>
 				<div class="aui-content aui-margin-b-15" id='lists'>
 					<?php					
-						$query="SELECT a.*, b.postion FROM ecm_qiuzhi a LEFT JOIN ecm_member b ON a.user_id = b.user_id where a.type=1 order by a.id desc limit 0,10"; //定义sql
+						$query="SELECT a.*, b.postion FROM ecm_qiuzhi a LEFT JOIN ecm_member b ON a.user_id = b.user_id where a.type=1 and a.ok=0 order by a.id desc limit 0,10"; //定义sql
 						$result=mysql_query($query);
 						while($rows1=@mysql_fetch_array($result)){
 							$index = $rows1['postion'];
@@ -888,27 +888,31 @@ border:1px solid #808080;width:100%;height:66px;margin-bottom:3px;
 							worker_address = retData[i].restaurant_address,
 							addtime = retData[i].addtime,
 							endtime = (retData[i].endtime == null || retData[i].endtime == '') ? '未设定':retData[i].endtime,
-							name = retData[i].name;
+							name = retData[i].name,
+							ok = retData[i].ok;
 			           		
-							html += '<div style="overflow: hidden;border-bottom: 1px solid #ccc;height:82px;">';
-							html +=		'<a href="/index.php?app=search&act=weixiu_details&id='+id+'" style="text-decoration: none;" target="_blank">';
-							html +=	'<p style="float: left;font-size: 18px;color: red;font-weight: 600;letter-spacing: 2px;margin: 10px 0 10px 5px;">【'+retData[i].kehu+'】'+office_name+'</p>';
-							html +=	'<p style="float: right;font-size: 18px;color: red;font-weight: 600;letter-spacing: 2px;margin: 10px 10px 10px 0;">'+name+'</p>';
-							html +=	'<ul id="" style="width:100%;height:auto;overflow:hidden">';
-							html +=			'<li style="width: 100%;height: auto;" target="_blank">';
-							html +=			'<div style="margin-left: 5px;height: auto;border: none;">';
-							html +=			'<span style="letter-spacing: 2px;">地址:</span>';
-							html +=			'<span style="color: #000;display: inline-block;margin-left: 10px;">'+worker_address+'</span>';
-							html +=			'</div>';
-							html +=			'<div style="overflow: hidden;margin-left: 5px;height: auto;border: none;">';
-							html +=			'<span style="letter-spacing: 2px;">截止时间:</span>';
-							html +=			'<span style="color: #000;display: inline-block;margin-left: 10px;letter-spacing: 2px;">'+endtime+'</span>';
-							html +=			'<span style="float: right;letter-spacing: 1px;margin-right: 5px;">'+addtime+'</span>';
-							html +=			'</div>';
-							html +=			'</li>';
-							html +=	'</ul>';
-							html +=		'</a>';
-							html += '</div>';
+			           		if(ok == 0){
+			           			html += '<div style="overflow: hidden;border-bottom: 1px solid #ccc;height:82px;">';
+								html +=		'<a href="/index.php?app=search&act=weixiu_details&id='+id+'" style="text-decoration: none;" target="_blank">';
+								html +=	'<p style="float: left;font-size: 18px;color: red;font-weight: 600;letter-spacing: 2px;margin: 10px 0 10px 5px;">【'+retData[i].kehu+'】'+office_name+'</p>';
+								html +=	'<p style="float: right;font-size: 18px;color: red;font-weight: 600;letter-spacing: 2px;margin: 10px 10px 10px 0;">'+name+'</p>';
+								html +=	'<ul id="" style="width:100%;height:auto;overflow:hidden">';
+								html +=			'<li style="width: 100%;height: auto;" target="_blank">';
+								html +=			'<div style="margin-left: 5px;height: auto;border: none;">';
+								html +=			'<span style="letter-spacing: 2px;">地址:</span>';
+								html +=			'<span style="color: #000;display: inline-block;margin-left: 10px;">'+worker_address+'</span>';
+								html +=			'</div>';
+								html +=			'<div style="overflow: hidden;margin-left: 5px;height: auto;border: none;">';
+								html +=			'<span style="letter-spacing: 2px;">截止时间:</span>';
+								html +=			'<span style="color: #000;display: inline-block;margin-left: 10px;letter-spacing: 2px;">'+endtime+'</span>';
+								html +=			'<span style="float: right;letter-spacing: 1px;margin-right: 5px;">'+addtime+'</span>';
+								html +=			'</div>';
+								html +=			'</li>';
+								html +=	'</ul>';
+								html +=		'</a>';
+								html += '</div>';
+			           		}
+							
 					}
 				}
 				$('#repair_list').append(html);

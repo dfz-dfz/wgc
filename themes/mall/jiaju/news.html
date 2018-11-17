@@ -341,8 +341,10 @@ function zhaopinList(page){
 	},function(ret){
 		if(ret.code == 200){
 			page++;
-			if(page = 1){
+			if(page == 1){
 				$('#prePage').hide();
+			}else{
+				$('#prePage').show();
 			}
 			var data = ret.message;
 			var html = '';
@@ -358,15 +360,15 @@ function zhaopinList(page){
 					kehu = data[i].kehu;
 				var cont = content.replace(/<[^>]+>/g,'');
 				if(kehu != '微工程'){
-					if((i+1)/4 != 0){
-						listHtml += '<li style="cursor:pointer;margin:10px auto;height:200px;width:19%;float:left;margin-right:1.25%;" title="'+title+'" onclick="openNewsContents(this,'+id+')">';
+					if((parseInt(i)+1)%5 == 0){
+						listHtml += '<li style="cursor:pointer;margin:10px auto;height:200px;width:19%;float:left;" title="'+title+'" onclick="openNewsContents(this,'+id+')">';
 					    listHtml += '    <div style="height:160px;overflow: hidden;width:100%;">';
 					    listHtml += '        <img src="http://wgcmanage.wgc2013.com/'+pic+'" style="height:160px;width:100%;margin:0 auto;" onerror="javascript:this.src=\'../image/Advertisement.jpg\';">';
 					    listHtml += '    </div>';
 					    listHtml += '    <div style="color:#000;text-align:center;font-size:16px;line-height:40px;overflow : hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: 1;-webkit-box-orient: vertical;">'+title+'</div>';
-					    listHtml += '</li>';	
+					    listHtml += '</li>';
 					}else{
-						listHtml += '<li style="cursor:pointer;margin:10px auto;height:200px;width:19%;float:left;" title="'+title+'" onclick="openNewsContents(this,'+id+')">';
+						listHtml += '<li style="cursor:pointer;margin:10px auto;height:200px;width:19%;float:left;margin-right:1.25%;" title="'+title+'" onclick="openNewsContents(this,'+id+')">';
 					    listHtml += '    <div style="height:160px;overflow: hidden;width:100%;">';
 					    listHtml += '        <img src="http://wgcmanage.wgc2013.com/'+pic+'" style="height:160px;width:100%;margin:0 auto;" onerror="javascript:this.src=\'../image/Advertisement.jpg\';">';
 					    listHtml += '    </div>';

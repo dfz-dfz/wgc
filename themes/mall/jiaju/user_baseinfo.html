@@ -106,6 +106,14 @@ body{background:url('') no-repeat center top }
  				<div class="user_input" style="width: 80%;height: 100%;float: right;margin-top: 30px;">
  					<div style="overflow: hidden;">
  						<ul  style="float: left;">
+ 							<li>
+
+ 								<div class="user_info_name">
+ 									余额：
+ 								</div>
+ 								<span id="fenzhi" style="line-height: 30px;color: red;letter-spacing: 0;font-size: 18px;"></span>
+ 								<span>元</span>
+ 							</li>
 							<li>
 
  								<div class="user_info_name">
@@ -340,7 +348,9 @@ body{background:url('') no-repeat center top }
 (function(){
 	$(".user_self_li").children().first().css({
 		"color" : "red"
-	})
+	});
+
+	getfenzhi();
 }())
 	  // 点击用户中心的li标签改变样式
 $(".container_nav ul li").click(function(){
@@ -415,7 +425,19 @@ $(".container_nav ul li").click(function(){
 		
     })
 
-
+    //获取积分
+    function getfenzhi(){
+    	$.post(url+'jingyi.php/Home/jifen/index', {
+    		uid : '<?php echo $_SESSION["user_info"]["user_id"];?>'
+    	}, function(ret) {
+    		if(ret.code == 200){
+    			$('#fenzhi').html(ret.capital.hasmoney);
+    		}else{
+    			alert('网络错误，获取积分失败!')
+    			return false;
+    		}
+    	},'json');
+    }
 
     function clickSubmit(){
         var passwords = $("#password").val();
@@ -457,36 +479,30 @@ $(".container_nav ul li").click(function(){
 
 	(function(){
 		//alert('<?php echo $_SESSION["user_info"]["user_id"];?>');
-			jQuery.support.cors = true;
-			//alert("heloo")
-			
-										
-			var url = 'http://wgcapp.wgc2013.com/jingyi.php/Home/Jifen/user/a/'+new Date().getTime();
-			// $.ajax({
-			// 	type:"POST",
-			// 	url:url,
-			// 	data:{
-			// 		uid : '<?php echo $_SESSION["user_info"]["user_id"];?>'
-			// 	},
-			// 	cache:false,
-			// 	crossDomain: true == !(document.all),
-			// 	dataType: "json",
-			// 	success:function(ret){
-			// 		console.log(ret)
-			// 		alert("ie"+ret.user.user_id);
-			// 	},
-			// 	error:function(err){
-			// 		console.log(err)
-			// 	}
-			// });
-			$.post(url,{
-				uid : '<?php echo $_SESSION["user_info"]["user_id"];?>',
-				"r":Math.random()
-			},function(ret){
-				//console.log(ret)
-				if(ret.code == 200){
-					//alert(ret)
-					// alert($.session)
+		jQuery.support.cors = true;		
+		var url = 'http://wgcapp.wgc2013.com/jingyi.php/Home/Jifen/user/a/'+new Date().getTime();
+		// $.ajax({
+		// 	type:"POST",
+		// 	url:url,
+		// 	data:{
+		// 		uid : '<?php echo $_SESSION["user_info"]["user_id"];?>'
+		// 	},
+		// 	cache:false,
+		// 	crossDomain: true == !(document.all),
+		// 	dataType: "json",
+		// 	success:function(ret){
+		// 		console.log(ret)
+		// 		alert("ie"+ret.user.user_id);
+		// 	},
+		// 	error:function(err){
+		// 		console.log(err)
+		// 	}
+		// });
+		$.post(url,{
+			uid : '<?php echo $_SESSION["user_info"]["user_id"];?>',
+			"r":Math.random()
+		},function(ret){
+			if(ret.code == 200){
 				var user = ret.user;
 				var mobile = user.mobile;
 				var userphoto = user.userphoto;
@@ -648,51 +664,51 @@ $(".container_nav ul li").click(function(){
 	}())
 	//修改
 	function edit(){
-				var name  =  $("#name").val();
-				var phone_mob=  $("#mobile").val();
-				var nianling = $("#nianling").val();
-				var huji  =  $("#huji").val();
-				var bumen =  $("#bumen").val();
-				var zhiwei=  $("#zhiwei").val();
-				var gz_jingyan = $("#gz_jingyan").val();
-	         	var skill =  $("#skill").val();
-	         	var kname =  $("#kname").val();
-	         	var kahao =  $("#kahao").val();
-				var email =  $("#email").val();
-				var sex   = $("input[name='sex']:checked").val()
-				$.post('http://wgcapp.wgc2013.com/jingyi.php/Home/Jifen/user_edit',{
-						user_id     : '<?php echo $_SESSION["user_info"]["user_id"];?>',
-						/*gy_type 	: $("#gy_type").val(),
-						gys_name 	: $("#gys_name").val(),
-						pp_name 	: $("#pp_name").val(),
-						cl_name 	: $("#cl_name").val(),
-						adds 		: $("#adds").val(),*/
-						sex         : sex,
-						name 		: $("#name").val(),
-						nianling 	: $("#nianling").val(),
-						bumen 		: $("#bumen").val(),
-						zhiwei 		: $("#zhiwei").val(),
-						huji 		: $("#huji").val(),
-						kname 		: $("#kname").val(),
-						kahao 		: $("#kahao").val(),
-						shenfenzheng: '441882199919990000',
-						gz_jingyan 	: $("#gz_jingyan").val(),
-						utype 		: 3,
-						xinzi 		: $("#xinzi").val(),
-						skill 		: $("#skill").val(),
-						inten       : $("#intension").val(),
-						phone_mob 	: $("#mobile").val(),
-						shenfen     : '技术工人',
-						
-				},function(ret){
-						console.log(ret)
-						if(ret.code == 200){
-						alert("修改成功");
-						window.location.reload();
-						}else if(ret.code){
-							alert("修改失败,数据无更新")
-						}
-				},'json')
+		var name  =  $("#name").val();
+		var phone_mob=  $("#mobile").val();
+		var nianling = $("#nianling").val();
+		var huji  =  $("#huji").val();
+		var bumen =  $("#bumen").val();
+		var zhiwei=  $("#zhiwei").val();
+		var gz_jingyan = $("#gz_jingyan").val();
+     	var skill =  $("#skill").val();
+     	var kname =  $("#kname").val();
+     	var kahao =  $("#kahao").val();
+		var email =  $("#email").val();
+		var sex   = $("input[name='sex']:checked").val()
+		$.post('http://wgcapp.wgc2013.com/jingyi.php/Home/Jifen/user_edit',{
+				user_id     : '<?php echo $_SESSION["user_info"]["user_id"];?>',
+				/*gy_type 	: $("#gy_type").val(),
+				gys_name 	: $("#gys_name").val(),
+				pp_name 	: $("#pp_name").val(),
+				cl_name 	: $("#cl_name").val(),
+				adds 		: $("#adds").val(),*/
+				sex         : sex,
+				name 		: $("#name").val(),
+				nianling 	: $("#nianling").val(),
+				bumen 		: $("#bumen").val(),
+				zhiwei 		: $("#zhiwei").val(),
+				huji 		: $("#huji").val(),
+				kname 		: $("#kname").val(),
+				kahao 		: $("#kahao").val(),
+				shenfenzheng: '441882199919990000',
+				gz_jingyan 	: $("#gz_jingyan").val(),
+				utype 		: 3,
+				xinzi 		: $("#xinzi").val(),
+				skill 		: $("#skill").val(),
+				inten       : $("#intension").val(),
+				phone_mob 	: $("#mobile").val(),
+				shenfen     : '技术工人',
+				
+		},function(ret){
+				console.log(ret)
+				if(ret.code == 200){
+				alert("修改成功");
+				window.location.reload();
+				}else if(ret.code){
+					alert("修改失败,数据无更新")
+				}
+		},'json')
 				
 	}
 

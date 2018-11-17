@@ -56,6 +56,12 @@ class SearchApp extends MallbaseApp
 		$this->display('store.tiaokuan.html');
 		
 	}
+	//服务条款
+	function public_index()
+    {
+		$this->display('index_public.html');
+		
+	}
 	//预算报价（首页）
 	function baojia()
     {
@@ -1011,7 +1017,7 @@ class SearchApp extends MallbaseApp
 			 $pageType   = $_GET['pageType'];
 			 //上一页
 			 if($pageType == 'uppage'){
-			 	if($_GET['page']>1){
+		 		if($_GET['page']>1){
 			 		$pageNum = $_GET['page']-1;
 			 		$limit = $pageNum*20;
 			 		$page = "limit ".$limit.",20";
@@ -1043,7 +1049,7 @@ class SearchApp extends MallbaseApp
 			$key = $_POST['key'];
 			$zhiwei = array_search($key,$arr);
 			var_dump($zhiwei);
-			$query="select id,today,xinzi,company_name,zhiwei,company_addr,kehu from ecm_recruit where zhiwei like'%".$arr[$zhiwei]."%' or company_name like'%".$key."%' or xinzi like'%".$key."%' or company_addr like'%".$key."%' or kehu like'%".$key."%' order by id desc ".$page.""; //定义sql
+			$query="select id,today,xinzi,company_name,zhiwei,company_addr,kehu,ok from ecm_recruit where zhiwei like'%".$arr[$zhiwei]."%' or company_name like'%".$key."%' or xinzi like'%".$key."%' or company_addr like'%".$key."%' or kehu like'%".$key."%' or ok like'%".$key."%' order by id desc ".$page.""; //定义sql
 
 			
 		}else{
@@ -1063,15 +1069,17 @@ class SearchApp extends MallbaseApp
 		while ($row = mysql_fetch_array($result)) {
 		  	$dataNum[] = $row;
 
-		    $data .= '<ul class="list-ul">';
-				$data .= '<li>';	
-					$data .= '<p class="title"><a href="index.php?app=search&amp;act=content&amp;id='.$row['id'].'">【'.$row['kehu'].'】'.$row['zhiwei'].'</a></p>';
-					$data .= '<p class="gname"><a href="index.php?app=search&amp;act=content&amp;id='.$row['id'].'">'.$row['company_name'].'</a></p>';
-					$data .= '<p class="address">'.$row['company_addr'].'</p>';
-					$data .= '<p class="xinzi">'.$row['xinzi'].'/元</p>';
-					$data .= '<p class="time">'.$row['today'].'</p>';
-				$data .= '</li>';
-			$data .= '</ul>';
+		 	if($row['ok'] == 0){
+			    $data .= '<ul class="list-ul">';
+					$data .= '<li>';	
+						$data .= '<p class="title"><a href="index.php?app=search&amp;act=content&amp;id='.$row['id'].'">【'.$row['kehu'].'】'.$row['zhiwei'].'</a></p>';
+						$data .= '<p class="gname"><a href="index.php?app=search&amp;act=content&amp;id='.$row['id'].'">'.$row['company_name'].'</a></p>';
+						$data .= '<p class="address">'.$row['company_addr'].'</p>';
+						$data .= '<p class="xinzi">'.$row['xinzi'].'/元</p>';
+						$data .= '<p class="time">'.$row['today'].'</p>';
+					$data .= '</li>';
+				$data .= '</ul>';
+			}
 		}
 		
 		
