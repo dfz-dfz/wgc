@@ -121,37 +121,40 @@
 						  		office_name = (data[i].office_name == '' || data[i].office_name == null)?'未填写':data[i].office_name,
 						  		brand = (data[i].brand == '' || data[i].brand == null)?'未填写':data[i].brand,
 						  		price = (data[i].price == null || data[i].price == '')?'未填写':data[i].price,
-						  		m_introduce = data[i].m_introduce;
+						  		m_introduce = data[i].m_introduce,
+						  		ok = data[i].ok;
 					  		var photo = data[i].m_photo;
 						  	var str = new Array();
 						  		str = photo.split(",");
 						  		img = (str[0] == '' || str[0] == null)?'themes/mall/jiaju/images/no_picture.jpg':'http://wgcapp.59jiaju.com/'+str[0];
 						  	var num = parseInt(i)+1;
 
-						  	if(num%5 == 0){
-						  		listHtml += '<a target="_blank" href="/index.php?app=search&act=content_caigou&id='+data[i].id+'&cai_type=2">';
-									listHtml += '<div class="little_box" style="width: 18%;margin-right: 0;display: inline-block;float:left;margin-bottom:30px;">';
-										listHtml += '<img src="'+img+'" alt="" style="width:100%;height:180px;"/>';
-										listHtml += '<div style="line-height:30px;font-weight:600;font-size:16px;padding-top:5px;">【'+data[i].kehu+'】'+m_name+'</div>';
-										listHtml += '<div style="width: 100%;height: auto;overflow: hidden;padding: 5px 0;">';
-											listHtml += '<span style="height:36px;"><span style="color:red;">'+price+'</span></span>';
-											listHtml += '<div style="overflow : hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: 3;-webkit-box-orient: vertical;height:50px;">'+m_introduce+'</div>';
+						  	if(ok == 0){
+							  	if(num%5 == 0){
+							  		listHtml += '<a target="_blank" href="/index.php?app=search&act=content_caigou&id='+data[i].id+'&cai_type=2">';
+										listHtml += '<div class="little_box" style="width: 18%;margin-right: 0;display: inline-block;float:left;margin-bottom:30px;">';
+											listHtml += '<img src="'+img+'" alt="" style="width:100%;height:180px;"/>';
+											listHtml += '<div style="line-height:30px;font-weight:600;font-size:16px;padding-top:5px;">【'+data[i].kehu+'】'+m_name+'</div>';
+											listHtml += '<div style="width: 100%;height: auto;overflow: hidden;padding: 5px 0;">';
+												listHtml += '<span style="height:36px;"><span style="color:red;">'+price+'</span></span>';
+												listHtml += '<div style="overflow : hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: 3;-webkit-box-orient: vertical;height:50px;">'+m_introduce+'</div>';
+											listHtml += '</div>';
+											listHtml += '<div>'+brand+'</div>';
 										listHtml += '</div>';
-										listHtml += '<div>'+brand+'</div>';
-									listHtml += '</div>';
-								listHtml += '</a>';
-						  	}else{
-						  		listHtml += '<a target="_blank" href="/index.php?app=search&act=content_caigou&id='+data[i].id+'&cai_type=2">';
-									listHtml += '<div class="little_box" style="width: 18%;margin-right: 2.5%;display: inline-block;float:left;margin-bottom:30px;">';
-										listHtml += '<img src="'+img+'" alt="" style="width:100%;height:180px;"/>';
-										listHtml += '<div style="line-height:30px;font-weight:600;font-size:16px;padding-top:5px;">【'+data[i].kehu+'】'+m_name+'</div>';
-										listHtml += '<div style="width: 100%;height: auto;overflow: hidden;padding: 5px 0;">';
-											listHtml += '<span style="height:36px;"><span style="color:red;">'+price+'</span></span>';
-											listHtml += '<div style="overflow : hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: 3;-webkit-box-orient: vertical;height:50px;">'+m_introduce+'</div>';
+									listHtml += '</a>';
+							  	}else{
+							  		listHtml += '<a target="_blank" href="/index.php?app=search&act=content_caigou&id='+data[i].id+'&cai_type=2">';
+										listHtml += '<div class="little_box" style="width: 18%;margin-right: 2.5%;display: inline-block;float:left;margin-bottom:30px;">';
+											listHtml += '<img src="'+img+'" alt="" style="width:100%;height:180px;"/>';
+											listHtml += '<div style="line-height:30px;font-weight:600;font-size:16px;padding-top:5px;">【'+data[i].kehu+'】'+m_name+'</div>';
+											listHtml += '<div style="width: 100%;height: auto;overflow: hidden;padding: 5px 0;">';
+												listHtml += '<span style="height:36px;"><span style="color:red;">'+price+'</span></span>';
+												listHtml += '<div style="overflow : hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: 3;-webkit-box-orient: vertical;height:50px;">'+m_introduce+'</div>';
+											listHtml += '</div>';
+											listHtml += '<div>'+brand+'</div>';
 										listHtml += '</div>';
-										listHtml += '<div>'+brand+'</div>';
-									listHtml += '</div>';
-								listHtml += '</a>';
+									listHtml += '</a>';
+							  	}
 						  	}
 						}
 				
@@ -204,37 +207,40 @@
 						  		office_name = (data[i].office_name == '' || data[i].office_name == null)?'未填写':data[i].office_name,
 						  		brand = (data[i].brand == '' || data[i].brand == null)?'未填写':data[i].brand,
 						  		price = (data[i].price == null || data[i].price == '')?'未填写':data[i].price,
-						  		m_introduce = data[i].m_introduce;
+						  		m_introduce = data[i].m_introduce,
+						  		ok = data[i].ok;
 					  		var photo = data[i].m_photo;
 						  	var str = new Array();
 						  		str = photo.split(",");
 						  		img = (str[0] == '' || str[0] == null)?'themes/mall/jiaju/images/no_picture.jpg':'http://wgcapp.59jiaju.com/'+str[0];
 						  	var num = parseInt(i)+1;
 
-						  	if(num%5 == 0){
-						  		listHtml += '<a target="_blank" href="/index.php?app=search&act=content_caigou&id='+data[i].id+'&cai_type=2">';
-									listHtml += '<div class="little_box" style="width: 18%;margin-right: 0;display: inline-block;float:left;margin-bottom:30px;">';
-										listHtml += '<img src="'+img+'" alt="" style="width:100%;height:180px;"/>';
-										listHtml += '<div style="line-height:30px;font-weight:600;font-size:16px;padding-top:5px;">【'+data[i].kehu+'】'+m_name+'</div>';
-										listHtml += '<div style="width: 100%;height: auto;overflow: hidden;padding: 5px 0;">';
-											listHtml += '<span style="height:36px;"><span style="color:red;">'+price+'</span></span>';
-											listHtml += '<div style="overflow : hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: 3;-webkit-box-orient: vertical;height:50px;">'+m_introduce+'</div>';
+						  	if(ok == 0){
+							  	if(num%5 == 0){
+							  		listHtml += '<a target="_blank" href="/index.php?app=search&act=content_caigou&id='+data[i].id+'&cai_type=2">';
+										listHtml += '<div class="little_box" style="width: 18%;margin-right: 0;display: inline-block;float:left;margin-bottom:30px;">';
+											listHtml += '<img src="'+img+'" alt="" style="width:100%;height:180px;"/>';
+											listHtml += '<div style="line-height:30px;font-weight:600;font-size:16px;padding-top:5px;">【'+data[i].kehu+'】'+m_name+'</div>';
+											listHtml += '<div style="width: 100%;height: auto;overflow: hidden;padding: 5px 0;">';
+												listHtml += '<span style="height:36px;"><span style="color:red;">'+price+'</span></span>';
+												listHtml += '<div style="overflow : hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: 3;-webkit-box-orient: vertical;height:50px;">'+m_introduce+'</div>';
+											listHtml += '</div>';
+											listHtml += '<div>'+brand+'</div>';
 										listHtml += '</div>';
-										listHtml += '<div>'+brand+'</div>';
-									listHtml += '</div>';
-								listHtml += '</a>';
-						  	}else{
-						  		listHtml += '<a target="_blank" href="/index.php?app=search&act=content_caigou&id='+data[i].id+'&cai_type=2">';
-									listHtml += '<div class="little_box" style="width: 18%;margin-right: 2.5%;display: inline-block;float:left;margin-bottom:30px;">';
-										listHtml += '<img src="'+img+'" alt="" style="width:100%;height:180px;"/>';
-										listHtml += '<div style="line-height:30px;font-weight:600;font-size:16px;padding-top:5px;">【'+data[i].kehu+'】'+m_name+'</div>';
-										listHtml += '<div style="width: 100%;height: auto;overflow: hidden;padding: 5px 0;">';
-											listHtml += '<span style="height:36px;"><span style="color:red;">'+price+'</span></span>';
-											listHtml += '<div style="overflow : hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: 3;-webkit-box-orient: vertical;height:50px;">'+m_introduce+'</div>';
+									listHtml += '</a>';
+							  	}else{
+							  		listHtml += '<a target="_blank" href="/index.php?app=search&act=content_caigou&id='+data[i].id+'&cai_type=2">';
+										listHtml += '<div class="little_box" style="width: 18%;margin-right: 2.5%;display: inline-block;float:left;margin-bottom:30px;">';
+											listHtml += '<img src="'+img+'" alt="" style="width:100%;height:180px;"/>';
+											listHtml += '<div style="line-height:30px;font-weight:600;font-size:16px;padding-top:5px;">【'+data[i].kehu+'】'+m_name+'</div>';
+											listHtml += '<div style="width: 100%;height: auto;overflow: hidden;padding: 5px 0;">';
+												listHtml += '<span style="height:36px;"><span style="color:red;">'+price+'</span></span>';
+												listHtml += '<div style="overflow : hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: 3;-webkit-box-orient: vertical;height:50px;">'+m_introduce+'</div>';
+											listHtml += '</div>';
+											listHtml += '<div>'+brand+'</div>';
 										listHtml += '</div>';
-										listHtml += '<div>'+brand+'</div>';
-									listHtml += '</div>';
-								listHtml += '</a>';
+									listHtml += '</a>';
+							  	}
 						  	}
 				   
 						}

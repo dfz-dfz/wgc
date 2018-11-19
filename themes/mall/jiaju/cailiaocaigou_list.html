@@ -151,8 +151,9 @@
 							var introduce = data[i].introduce;
 							var pid    = data[i].pid;
 							var office_name = (data[i].office_name == '' || data[i].office_name == null)?'-':data[i].office_name;//公司名称
+							var ok = data[i].ok;
 							
-
+							if(ok == 0){
 								listHtml += '<ul>';
 									listHtml += '<li style="width: 12.28%;" title="'+m_name+'">【'+data[i].kehu+'】'+m_name+'</li>';
 									listHtml += '<li style="width: 14.28%;" title="'+brand+'">'+brand+'</li>';
@@ -162,6 +163,7 @@
 									listHtml += '<li style="width: 12.28%;" title="'+heji+'">'+heji+'</li>';
 									listHtml += '<li style="width: 12.28%;"><a target="_blank" href="/index.php?app=search&act=cailiaocaigou_content&id='+data[i].pid+'" style="color:blue">查看详情</a></li>';
 								listHtml += '</ul>';
+							}
 				   
 						 }
 				
@@ -207,8 +209,9 @@ function searchList(){
 							var introduce = data[i].introduce;
 							var pid    = data[i].pid;
 							var office_name = (data[i].office_name == '' || data[i].office_name == null)?'-':data[i].office_name;//公司名称
-							alert(JSON.stringify(data[i].kehu));
+							var ok = data[i].ok;
 
+							if(ok == 0){
 								listHtml += '<ul>';
 									listHtml += '<li style="width: 12.28%;" title="'+m_name+'">【'+data[i].kehu+'】'+m_name+'</li>';
 									listHtml += '<li style="width: 14.28%;" title="'+brand+'">'+brand+'</li>';
@@ -218,6 +221,7 @@ function searchList(){
 									listHtml += '<li style="width: 12.28%;" title="'+heji+'">'+heji+'</li>';
 									listHtml += '<li style="width: 12.28%;"><a target="_blank" href="/index.php?app=search&act=cailiaocaigou_content&id='+data[i].pid+'" style="color:blue">查看详情</a></li>';
 								listHtml += '</ul>';
+							}
 				   
 						 }
 				

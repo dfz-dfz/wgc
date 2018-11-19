@@ -51,9 +51,9 @@
 		.nav{width: 50%;float: left;line-height: 50px;}
 			.nav-item{float: left;width: 16.6%;text-align: center;}
 				.nav-item a{color: #3f3f3f;font-weight: 600;}
-		.place{width: 400px;height: 400px;z-index: 100;background-color: #fff;position: absolute;right: 3px;top: 50px;border: 1px solid #9e9e9e;}
-			.quyu dt{width: 11%;float: left;}
-			.quyu dd{width: 89%;float: left;}
+		.place{width: 400px;height: 400px;z-index: 100;background-color: #fff;position: absolute;right: 3px;top: 50px;border: 1px solid #9e9e9e;display: none;}
+			.pro{width: 11%;float: left;}
+			.area{width: 89%;float: left;}
 		/*banner图*/
 		.banner{width: 100%;height: 100%;}
 			.banner img{width: 100%;height: 100%;max-height: 650px;}
@@ -139,37 +139,155 @@
 					<li class="nav-item">
                      	<a href="/index.php?app=search&act=laodongli" target="_blank">劳动力资源</a>
 					</li>
-					<li class="nav-item" style="border: 1px solid #9e9e9e;border-bottom: none;z-index: 101;position:relative;background-color: #fff">
-                     	<i>广州</i><a href="/index.php?app=search&act=laodongli" target="_blank" style="text-decoration: none;">【切换】</a>
+					<li class="nav-item" style="/*border: 1px solid #9e9e9e;*/border-bottom: none;z-index: 101;position:relative;background-color: #fff">
+                     	<i>广州</i><a href="javascript:;" target="_blank" style="text-decoration: none;">【切换】</a>
 					</li>
 				</ul>
 			</div>
 			<!-- 地区 -->
 			<div class="place">
-				<dt class="quyu"><span>华南</span></dt>
-			    <dt>广东</dt>
-				<dd>
-					<a href="http://www.59jiaju.com/" id="广州市">广州 </a>
-			        <a href="http://sz.59jiaju.com/" id="深圳市">深圳</a>
-			        <a href="/index.php?app=search&act=sessions_city&city=珠海" id="珠海" >珠海</a>
-			        <a href="/index.php?app=search&act=sessions_city&city=汕头" id="汕头" >汕头</a>
-					<a href="/index.php?app=search&act=sessions_city&city=佛山" id="佛山" >佛山</a>
-					<a href="/index.php?app=search&act=sessions_city&city=东莞" id="东莞" >东莞</a>
-					<a href="/index.php?app=search&act=sessions_city&city=中山" id="中山" >中山</a>
-					<a href="/index.php?app=search&act=sessions_city&city=江门" id="江门" >江门</a>
-					<a href="/index.php?app=search&act=sessions_city&city=惠州" id="惠州" >惠州</a>
-					<a href="/index.php?app=search&act=sessions_city&city=肇庆" id="肇庆" >肇庆</a>
-					<a href="/index.php?app=search&act=sessions_city&city=阳江" id="阳江" >阳江</a>
-					<a href="/index.php?app=search&act=sessions_city&city=韶关" id="韶关" >韶关</a>
-					<a href="/index.php?app=search&act=sessions_city&city=河源" id="河源" >河源</a>
-					<a href="/index.php?app=search&act=sessions_city&city=梅州" id="梅州" >梅州</a>
-					<a href="/index.php?app=search&act=sessions_city&city=清远" id="清远" >清远</a>
-					<a href="/index.php?app=search&act=sessions_city&city=云浮" id="云浮" >云浮</a>
-					<a href="/index.php?app=search&act=sessions_city&city=茂名" id="茂名" >茂名</a>
-					<a href="/index.php?app=search&act=sessions_city&city=汕尾" id="汕尾" >汕尾</a>
-					<a href="/index.php?app=search&act=sessions_city&city=揭阳" id="揭阳" >揭阳</a>
-					<a href="/index.php?app=search&act=sessions_city&city=潮州" id="潮州" >潮州</a>
-					<a href="/index.php?app=search&act=sessions_city&city=湛江" id="湛江" >湛江</a>	
+			    <dt class="pro">华北</dt>
+				<dd class="area">
+					<a href="http://www.59jiaju.com/" id="北京">北京 </a>
+			        <a href="http://sz.59jiaju.com/" id="天津">天津</a>
+			        <a href="/index.php?app=search&act=sessions_city&city=珠海" id="太原" >太原</a>
+			        <a href="/index.php?app=search&act=sessions_city&city=汕头" id="唐山" >唐山</a>
+					<a href="/index.php?app=search&act=sessions_city&city=佛山" id="呼和浩特" >呼和浩特</a>
+					<a href="/index.php?app=search&act=sessions_city&city=东莞" id="包头" >包头</a>
+					<a href="/index.php?app=search&act=sessions_city&city=中山" id="石家庄" >石家庄</a>
+					<a href="/index.php?app=search&act=sessions_city&city=江门" id="呼伦贝尔" >呼伦贝尔</a>
+					<a href="/index.php?app=search&act=sessions_city&city=惠州" id="大同" >大同</a>
+					<a href="/index.php?app=search&act=sessions_city&city=肇庆" id="济南" >济南</a>
+					<a href="/index.php?app=search&act=sessions_city&city=阳江" id="青岛" >青岛</a>
+					<a href="/index.php?app=search&act=sessions_city&city=韶关" id="日照" >日照</a>
+					<a href="/index.php?app=search&act=sessions_city&city=河源" id="烟台" >烟台</a>
+				</dd>
+				<dt class="pro">华东</dt>
+				<dd class="area">
+					<a href="http://www.59jiaju.com/" id="上海">上海 </a>
+			        <a href="http://sz.59jiaju.com/" id="南京">南京</a>
+			        <a href="/index.php?app=search&act=sessions_city&city=珠海" id="杭州" >杭州</a>
+			        <a href="/index.php?app=search&act=sessions_city&city=汕头" id="合肥" >合肥</a>
+					<a href="/index.php?app=search&act=sessions_city&city=佛山" id="厦门" >厦门</a>
+					<a href="/index.php?app=search&act=sessions_city&city=东莞" id="南昌" >南昌</a>
+					<a href="/index.php?app=search&act=sessions_city&city=中山" id="苏州" >苏州</a>
+					<a href="/index.php?app=search&act=sessions_city&city=江门" id="无锡" >无锡</a>
+					<a href="/index.php?app=search&act=sessions_city&city=惠州" id="宁波" >宁波</a>
+					<a href="/index.php?app=search&act=sessions_city&city=肇庆" id="常州" >常州</a>
+					<a href="/index.php?app=search&act=sessions_city&city=阳江" id="嘉兴" >嘉兴</a>
+					<a href="/index.php?app=search&act=sessions_city&city=韶关" id="南通" >南通</a>
+					<a href="/index.php?app=search&act=sessions_city&city=河源" id="扬州" >扬州</a>
+					<a href="/index.php?app=search&act=sessions_city&city=河源" id="镇江" >镇江</a>
+					<a href="/index.php?app=search&act=sessions_city&city=河源" id="绍兴" >绍兴</a>
+					<a href="/index.php?app=search&act=sessions_city&city=河源" id="扬州" >扬州</a>
+					<a href="/index.php?app=search&act=sessions_city&city=河源" id="温州" >温州</a>
+					<a href="/index.php?app=search&act=sessions_city&city=河源" id="金华" >金华</a>
+					<a href="/index.php?app=search&act=sessions_city&city=河源" id="台州" >台州</a>
+					<a href="/index.php?app=search&act=sessions_city&city=河源" id="盐城" >盐城</a>
+					<a href="/index.php?app=search&act=sessions_city&city=河源" id="泰安" >泰安</a>
+					<a href="/index.php?app=search&act=sessions_city&city=河源" id="芜湖" >芜湖</a>
+					<a href="/index.php?app=search&act=sessions_city&city=河源" id="黄山" >黄山</a>
+					<a href="/index.php?app=search&act=sessions_city&city=河源" id="阜阳" >阜阳</a>
+					<a href="/index.php?app=search&act=sessions_city&city=河源" id="福州" >福州</a>
+					<a href="/index.php?app=search&act=sessions_city&city=河源" id="赣州" >赣州</a>
+					<a href="/index.php?app=search&act=sessions_city&city=河源" id="宜春" >宜春</a>
+					<a href="/index.php?app=search&act=sessions_city&city=河源" id="泰州" >泰州</a>
+				</dd>
+				<dt class="pro">华北</dt>
+				<dd class="area">
+					<a href="http://www.59jiaju.com/" id="北京">北京 </a>
+			        <a href="http://sz.59jiaju.com/" id="天津">天津</a>
+			        <a href="/index.php?app=search&act=sessions_city&city=珠海" id="太原" >太原</a>
+			        <a href="/index.php?app=search&act=sessions_city&city=汕头" id="唐山" >唐山</a>
+					<a href="/index.php?app=search&act=sessions_city&city=佛山" id="呼和浩特" >呼和浩特</a>
+					<a href="/index.php?app=search&act=sessions_city&city=东莞" id="包头" >包头</a>
+					<a href="/index.php?app=search&act=sessions_city&city=中山" id="石家庄" >石家庄</a>
+					<a href="/index.php?app=search&act=sessions_city&city=江门" id="呼伦贝尔" >呼伦贝尔</a>
+					<a href="/index.php?app=search&act=sessions_city&city=惠州" id="大同" >大同</a>
+					<a href="/index.php?app=search&act=sessions_city&city=肇庆" id="济南" >济南</a>
+					<a href="/index.php?app=search&act=sessions_city&city=阳江" id="青岛" >青岛</a>
+					<a href="/index.php?app=search&act=sessions_city&city=韶关" id="日照" >日照</a>
+					<a href="/index.php?app=search&act=sessions_city&city=河源" id="烟台" >烟台</a>
+				</dd>
+				<dt class="pro">华北</dt>
+				<dd class="area">
+					<a href="http://www.59jiaju.com/" id="北京">北京 </a>
+			        <a href="http://sz.59jiaju.com/" id="天津">天津</a>
+			        <a href="/index.php?app=search&act=sessions_city&city=珠海" id="太原" >太原</a>
+			        <a href="/index.php?app=search&act=sessions_city&city=汕头" id="唐山" >唐山</a>
+					<a href="/index.php?app=search&act=sessions_city&city=佛山" id="呼和浩特" >呼和浩特</a>
+					<a href="/index.php?app=search&act=sessions_city&city=东莞" id="包头" >包头</a>
+					<a href="/index.php?app=search&act=sessions_city&city=中山" id="石家庄" >石家庄</a>
+					<a href="/index.php?app=search&act=sessions_city&city=江门" id="呼伦贝尔" >呼伦贝尔</a>
+					<a href="/index.php?app=search&act=sessions_city&city=惠州" id="大同" >大同</a>
+					<a href="/index.php?app=search&act=sessions_city&city=肇庆" id="济南" >济南</a>
+					<a href="/index.php?app=search&act=sessions_city&city=阳江" id="青岛" >青岛</a>
+					<a href="/index.php?app=search&act=sessions_city&city=韶关" id="日照" >日照</a>
+					<a href="/index.php?app=search&act=sessions_city&city=河源" id="烟台" >烟台</a>
+				</dd>
+				<dt class="pro">华北</dt>
+				<dd class="area">
+					<a href="http://www.59jiaju.com/" id="北京">北京 </a>
+			        <a href="http://sz.59jiaju.com/" id="天津">天津</a>
+			        <a href="/index.php?app=search&act=sessions_city&city=珠海" id="太原" >太原</a>
+			        <a href="/index.php?app=search&act=sessions_city&city=汕头" id="唐山" >唐山</a>
+					<a href="/index.php?app=search&act=sessions_city&city=佛山" id="呼和浩特" >呼和浩特</a>
+					<a href="/index.php?app=search&act=sessions_city&city=东莞" id="包头" >包头</a>
+					<a href="/index.php?app=search&act=sessions_city&city=中山" id="石家庄" >石家庄</a>
+					<a href="/index.php?app=search&act=sessions_city&city=江门" id="呼伦贝尔" >呼伦贝尔</a>
+					<a href="/index.php?app=search&act=sessions_city&city=惠州" id="大同" >大同</a>
+					<a href="/index.php?app=search&act=sessions_city&city=肇庆" id="济南" >济南</a>
+					<a href="/index.php?app=search&act=sessions_city&city=阳江" id="青岛" >青岛</a>
+					<a href="/index.php?app=search&act=sessions_city&city=韶关" id="日照" >日照</a>
+					<a href="/index.php?app=search&act=sessions_city&city=河源" id="烟台" >烟台</a>
+				</dd>
+				<dt class="pro">华北</dt>
+				<dd class="area">
+					<a href="http://www.59jiaju.com/" id="北京">北京 </a>
+			        <a href="http://sz.59jiaju.com/" id="天津">天津</a>
+			        <a href="/index.php?app=search&act=sessions_city&city=珠海" id="太原" >太原</a>
+			        <a href="/index.php?app=search&act=sessions_city&city=汕头" id="唐山" >唐山</a>
+					<a href="/index.php?app=search&act=sessions_city&city=佛山" id="呼和浩特" >呼和浩特</a>
+					<a href="/index.php?app=search&act=sessions_city&city=东莞" id="包头" >包头</a>
+					<a href="/index.php?app=search&act=sessions_city&city=中山" id="石家庄" >石家庄</a>
+					<a href="/index.php?app=search&act=sessions_city&city=江门" id="呼伦贝尔" >呼伦贝尔</a>
+					<a href="/index.php?app=search&act=sessions_city&city=惠州" id="大同" >大同</a>
+					<a href="/index.php?app=search&act=sessions_city&city=肇庆" id="济南" >济南</a>
+					<a href="/index.php?app=search&act=sessions_city&city=阳江" id="青岛" >青岛</a>
+					<a href="/index.php?app=search&act=sessions_city&city=韶关" id="日照" >日照</a>
+					<a href="/index.php?app=search&act=sessions_city&city=河源" id="烟台" >烟台</a>
+				</dd>
+				<dt class="pro">华北</dt>
+				<dd class="area">
+					<a href="http://www.59jiaju.com/" id="北京">北京 </a>
+			        <a href="http://sz.59jiaju.com/" id="天津">天津</a>
+			        <a href="/index.php?app=search&act=sessions_city&city=珠海" id="太原" >太原</a>
+			        <a href="/index.php?app=search&act=sessions_city&city=汕头" id="唐山" >唐山</a>
+					<a href="/index.php?app=search&act=sessions_city&city=佛山" id="呼和浩特" >呼和浩特</a>
+					<a href="/index.php?app=search&act=sessions_city&city=东莞" id="包头" >包头</a>
+					<a href="/index.php?app=search&act=sessions_city&city=中山" id="石家庄" >石家庄</a>
+					<a href="/index.php?app=search&act=sessions_city&city=江门" id="呼伦贝尔" >呼伦贝尔</a>
+					<a href="/index.php?app=search&act=sessions_city&city=惠州" id="大同" >大同</a>
+					<a href="/index.php?app=search&act=sessions_city&city=肇庆" id="济南" >济南</a>
+					<a href="/index.php?app=search&act=sessions_city&city=阳江" id="青岛" >青岛</a>
+					<a href="/index.php?app=search&act=sessions_city&city=韶关" id="日照" >日照</a>
+					<a href="/index.php?app=search&act=sessions_city&city=河源" id="烟台" >烟台</a>
+				</dd>
+				<dt class="pro">华北</dt>
+				<dd class="area">
+					<a href="http://www.59jiaju.com/" id="北京">北京 </a>
+			        <a href="http://sz.59jiaju.com/" id="天津">天津</a>
+			        <a href="/index.php?app=search&act=sessions_city&city=珠海" id="太原" >太原</a>
+			        <a href="/index.php?app=search&act=sessions_city&city=汕头" id="唐山" >唐山</a>
+					<a href="/index.php?app=search&act=sessions_city&city=佛山" id="呼和浩特" >呼和浩特</a>
+					<a href="/index.php?app=search&act=sessions_city&city=东莞" id="包头" >包头</a>
+					<a href="/index.php?app=search&act=sessions_city&city=中山" id="石家庄" >石家庄</a>
+					<a href="/index.php?app=search&act=sessions_city&city=江门" id="呼伦贝尔" >呼伦贝尔</a>
+					<a href="/index.php?app=search&act=sessions_city&city=惠州" id="大同" >大同</a>
+					<a href="/index.php?app=search&act=sessions_city&city=肇庆" id="济南" >济南</a>
+					<a href="/index.php?app=search&act=sessions_city&city=阳江" id="青岛" >青岛</a>
+					<a href="/index.php?app=search&act=sessions_city&city=韶关" id="日照" >日照</a>
+					<a href="/index.php?app=search&act=sessions_city&city=河源" id="烟台" >烟台</a>
 				</dd>
 			</div>
     	</div>

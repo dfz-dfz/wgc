@@ -150,16 +150,19 @@
 						addtime = _trans_php_time_to_str(data[i].addtime,5),//添加时间
 						content = data[i].content,
 		            	autoaddress = data[i].autoaddress,
-		            	id = data[i].id;
+		            	id = data[i].id,
+		            	ok = data[i].ok;
 
-						html += '<ul>';
-							html += '<li style="width:25.66%;color:red;font-weight:600;">【'+data[i].kehu+'】'+prj_name+'</li>';
-							html += '<li style="width:12.66%">'+expect_price+'</li>';
-							html += '<li style="width:25.66%">'+worker_address+'</li>';
-							html += '<li style="width:12.66%">'+dd_time+'</li>';
-							html += '<li style="width:12.66%;">'+addtime+'</li>';
-							html += '<li style="width:10.66%;cursor: pointer;"><a style="color:blue;" href="/index.php?app=search&act=xiangmu_details&id='+id+'">查看</a></li>';
-						html += '</ul>';
+		            	if(ok == 0){
+							html += '<ul>';
+								html += '<li style="width:25.66%;color:red;font-weight:600;">【'+data[i].kehu+'】'+prj_name+'</li>';
+								html += '<li style="width:12.66%">'+expect_price+'</li>';
+								html += '<li style="width:25.66%">'+worker_address+'</li>';
+								html += '<li style="width:12.66%">'+dd_time+'</li>';
+								html += '<li style="width:12.66%;">'+addtime+'</li>';
+								html += '<li style="width:10.66%;cursor: pointer;"><a style="color:blue;" href="/index.php?app=search&act=xiangmu_details&id='+id+'">查看</a></li>';
+							html += '</ul>';
+		            	}
 					
 				}
 				$('#shejiMain').html(html);
@@ -198,16 +201,19 @@
 						addtime = _trans_php_time_to_str(data[i].addtime,5),//添加时间
 						content = data[i].content,
 		            	autoaddress = data[i].autoaddress,
-		            	id = data[i].id;
+		            	id = data[i].id,
+		            	ok = data[i].ok;
 
-						html += '<ul>';
-							html += '<li style="width:25.66%;color:red;font-weight:600;">【'+data[i].kehu+'】'+prj_name+'</li>';
-							html += '<li style="width:12.66%">'+expect_price+'</li>';
-							html += '<li style="width:25.66%">'+worker_address+'</li>';
-							html += '<li style="width:12.66%">'+dd_time+'</li>';
-							html += '<li style="width:12.66%;">'+addtime+'</li>';
-							html += '<li style="width:10.66%;cursor: pointer;"><a style="color:blue;" href="/index.php?app=search&act=xiangmu_details&id='+id+'">查看</a></li>';
-						html += '</ul>';
+		            	if(ok == 0){
+							html += '<ul>';
+								html += '<li style="width:25.66%;color:red;font-weight:600;">【'+data[i].kehu+'】'+prj_name+'</li>';
+								html += '<li style="width:12.66%">'+expect_price+'</li>';
+								html += '<li style="width:25.66%">'+worker_address+'</li>';
+								html += '<li style="width:12.66%">'+dd_time+'</li>';
+								html += '<li style="width:12.66%;">'+addtime+'</li>';
+								html += '<li style="width:10.66%;cursor: pointer;"><a style="color:blue;" href="/index.php?app=search&act=xiangmu_details&id='+id+'">查看</a></li>';
+							html += '</ul>';
+		            	}
 					
 				}
 				$('#shejiMain').html(html);

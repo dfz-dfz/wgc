@@ -146,22 +146,13 @@ function cai_select(page){
 					img         = (data[i].img == '' || data[i].img == null) ? 'themes/mall/jiaju/images/no_picture.jpg':data[i].img,
 					addtime     = data[i].addtime,
 					time = addtime.substr(0,10),
-					today       = addtime.slice(0,10);
+					today       = addtime.slice(0,10),
+					ok = data[i].ok;
 				var num = parseInt(i)+1;
 
-				if(num%4 == 0){
-					listHtml += '<div class="little_box" style="width: 22%;margin-right: 0;display: inline-block;float:left;margin-bottom:30px;">';
-						listHtml += '<img src="'+img+'" alt="" />';
-						listHtml += '<div style="line-height:30px;font-weight:600;font-size:16px;padding-top:5px;">【'+data[i].kehu+'】'+name+'</div>';
-						listHtml += '<div style="width: 100%;height: auto;overflow: hidden;padding: 5px 0;">';
-							listHtml += '<span style="float: left;width:50%;height:36px;">工价：<span style="color:red;">'+xinzi+'/'+unit+'</span></span>';
-							listHtml += '<span style="float:right;">发布时间：'+time+'</span>';
-						listHtml += '</div>';
-						listHtml += '<div style="cursor:pointer;line-height: 30px;background-color:red;color:#fff;font-size:16px;" title="'+name+'" onclick="openConten('+id+','+user_id+')">查看详情</div>';
-					listHtml += '</div>';
-				}else{
-					if(mydates == today){
-						listHtml += '<div class="little_box" style="width: 22%;margin-right: 4%;display: inline-block;float:left;margin-bottom:30px;">';
+				if(ok == 0){
+					if(num%4 == 0){
+						listHtml += '<div class="little_box" style="width: 22%;margin-right: 0;display: inline-block;float:left;margin-bottom:30px;">';
 							listHtml += '<img src="'+img+'" alt="" />';
 							listHtml += '<div style="line-height:30px;font-weight:600;font-size:16px;padding-top:5px;">【'+data[i].kehu+'】'+name+'</div>';
 							listHtml += '<div style="width: 100%;height: auto;overflow: hidden;padding: 5px 0;">';
@@ -171,15 +162,27 @@ function cai_select(page){
 							listHtml += '<div style="cursor:pointer;line-height: 30px;background-color:red;color:#fff;font-size:16px;" title="'+name+'" onclick="openConten('+id+','+user_id+')">查看详情</div>';
 						listHtml += '</div>';
 					}else{
-						listHtml += '<div class="little_box" style="width: 22%;margin-right: 4%;display: inline-block;float:left;margin-bottom:30px;">';
-							listHtml += '<img src="'+img+'" alt="" />';
-							listHtml += '<div style="line-height:30px;font-weight:600;font-size:16px;padding-top:5px;">【'+data[i].kehu+'】'+name+'</div>';
-							listHtml += '<div style="width: 100%;height: auto;overflow: hidden;padding: 5px 0;">';
-								listHtml += '<span style="float: left;width:50%;height:36px;">工价：<span style="color:red;">'+xinzi+'/'+unit+'</span></span>';
-								listHtml += '<span style="float:right;">发布时间：'+time+'</span>';
+						if(mydates == today){
+							listHtml += '<div class="little_box" style="width: 22%;margin-right: 4%;display: inline-block;float:left;margin-bottom:30px;">';
+								listHtml += '<img src="'+img+'" alt="" />';
+								listHtml += '<div style="line-height:30px;font-weight:600;font-size:16px;padding-top:5px;">【'+data[i].kehu+'】'+name+'</div>';
+								listHtml += '<div style="width: 100%;height: auto;overflow: hidden;padding: 5px 0;">';
+									listHtml += '<span style="float: left;width:50%;height:36px;">工价：<span style="color:red;">'+xinzi+'/'+unit+'</span></span>';
+									listHtml += '<span style="float:right;">发布时间：'+time+'</span>';
+								listHtml += '</div>';
+								listHtml += '<div style="cursor:pointer;line-height: 30px;background-color:red;color:#fff;font-size:16px;" title="'+name+'" onclick="openConten('+id+','+user_id+')">查看详情</div>';
 							listHtml += '</div>';
-							listHtml += '<div style="cursor:pointer;line-height: 30px;background-color:red;color:#fff;font-size:16px;" title="'+name+'" onclick="openConten('+id+','+user_id+')">查看详情</div>';
-						listHtml += '</div>';
+						}else{
+							listHtml += '<div class="little_box" style="width: 22%;margin-right: 4%;display: inline-block;float:left;margin-bottom:30px;">';
+								listHtml += '<img src="'+img+'" alt="" />';
+								listHtml += '<div style="line-height:30px;font-weight:600;font-size:16px;padding-top:5px;">【'+data[i].kehu+'】'+name+'</div>';
+								listHtml += '<div style="width: 100%;height: auto;overflow: hidden;padding: 5px 0;">';
+									listHtml += '<span style="float: left;width:50%;height:36px;">工价：<span style="color:red;">'+xinzi+'/'+unit+'</span></span>';
+									listHtml += '<span style="float:right;">发布时间：'+time+'</span>';
+								listHtml += '</div>';
+								listHtml += '<div style="cursor:pointer;line-height: 30px;background-color:red;color:#fff;font-size:16px;" title="'+name+'" onclick="openConten('+id+','+user_id+')">查看详情</div>';
+							listHtml += '</div>';
+						}
 					}
 				}
 			}
@@ -246,22 +249,13 @@ function searchList(page){
 					img         = (data[i].img == '' || data[i].img == null) ? 'themes/mall/jiaju/images/no_picture.jpg':data[i].img,
 					addtime     = data[i].addtime,
 					time = addtime.substr(0,10),
-					today       = addtime.slice(0,10);
+					today       = addtime.slice(0,10),
+					ok = data[i].ok;
 				var num = parseInt(i)+1;
 
-				if(num%4 == 0){
-					listHtml += '<div class="little_box" style="width: 22%;margin-right: 0;display: inline-block;float:left;">';
-						listHtml += '<img src="'+img+'" alt="" />';
-						listHtml += '<div style="line-height:30px;font-weight:600;font-size:16px;padding-top:5px;">【'+data[i].kehu+'】'+name+'</div>';
-						listHtml += '<div style="width: 100%;height: auto;overflow: hidden;padding: 5px 0;">';
-							listHtml += '<span style="float: left;">工价：<span style="color:red;">'+xinzi+'/'+unit+'</span></span>';
-							listHtml += '<span style="float:right;">发布时间：'+time+'</span>';
-						listHtml += '</div>';
-						listHtml += '<div style="cursor:pointer;line-height: 30px;background-color:red;color:#fff;font-size:16px;" title="'+name+'" onclick="openConten('+id+','+user_id+')">查看详情</div>';
-					listHtml += '</div>';
-				}else{
-					if(mydates == today){
-						listHtml += '<div class="little_box" style="width: 22%;margin-right: 4%;display: inline-block;float:left;">';
+				if(ok == 0){
+					if(num%4 == 0){
+						listHtml += '<div class="little_box" style="width: 22%;margin-right: 0;display: inline-block;float:left;">';
 							listHtml += '<img src="'+img+'" alt="" />';
 							listHtml += '<div style="line-height:30px;font-weight:600;font-size:16px;padding-top:5px;">【'+data[i].kehu+'】'+name+'</div>';
 							listHtml += '<div style="width: 100%;height: auto;overflow: hidden;padding: 5px 0;">';
@@ -271,15 +265,27 @@ function searchList(page){
 							listHtml += '<div style="cursor:pointer;line-height: 30px;background-color:red;color:#fff;font-size:16px;" title="'+name+'" onclick="openConten('+id+','+user_id+')">查看详情</div>';
 						listHtml += '</div>';
 					}else{
-						listHtml += '<div class="little_box" style="width: 22%;margin-right: 4%;display: inline-block;float:left;">';
-							listHtml += '<img src="'+img+'" alt="" />';
-							listHtml += '<div style="line-height:30px;font-weight:600;font-size:16px;padding-top:5px;">【'+data[i].kehu+'】'+name+'</div>';
-							listHtml += '<div style="width: 100%;height: auto;overflow: hidden;padding: 5px 0;">';
-								listHtml += '<span style="float: left;">工价：<span style="color:red;">'+xinzi+'/'+unit+'</span></span>';
-								listHtml += '<span style="float:right;">发布时间：'+time+'</span>';
+						if(mydates == today){
+							listHtml += '<div class="little_box" style="width: 22%;margin-right: 4%;display: inline-block;float:left;">';
+								listHtml += '<img src="'+img+'" alt="" />';
+								listHtml += '<div style="line-height:30px;font-weight:600;font-size:16px;padding-top:5px;">【'+data[i].kehu+'】'+name+'</div>';
+								listHtml += '<div style="width: 100%;height: auto;overflow: hidden;padding: 5px 0;">';
+									listHtml += '<span style="float: left;">工价：<span style="color:red;">'+xinzi+'/'+unit+'</span></span>';
+									listHtml += '<span style="float:right;">发布时间：'+time+'</span>';
+								listHtml += '</div>';
+								listHtml += '<div style="cursor:pointer;line-height: 30px;background-color:red;color:#fff;font-size:16px;" title="'+name+'" onclick="openConten('+id+','+user_id+')">查看详情</div>';
 							listHtml += '</div>';
-							listHtml += '<div style="cursor:pointer;line-height: 30px;background-color:red;color:#fff;font-size:16px;" title="'+name+'" onclick="openConten('+id+','+user_id+')">查看详情</div>';
-						listHtml += '</div>';
+						}else{
+							listHtml += '<div class="little_box" style="width: 22%;margin-right: 4%;display: inline-block;float:left;">';
+								listHtml += '<img src="'+img+'" alt="" />';
+								listHtml += '<div style="line-height:30px;font-weight:600;font-size:16px;padding-top:5px;">【'+data[i].kehu+'】'+name+'</div>';
+								listHtml += '<div style="width: 100%;height: auto;overflow: hidden;padding: 5px 0;">';
+									listHtml += '<span style="float: left;">工价：<span style="color:red;">'+xinzi+'/'+unit+'</span></span>';
+									listHtml += '<span style="float:right;">发布时间：'+time+'</span>';
+								listHtml += '</div>';
+								listHtml += '<div style="cursor:pointer;line-height: 30px;background-color:red;color:#fff;font-size:16px;" title="'+name+'" onclick="openConten('+id+','+user_id+')">查看详情</div>';
+							listHtml += '</div>';
+						}
 					}
 				}
 			}

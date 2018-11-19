@@ -140,15 +140,18 @@
 						brand       = data[i].brand,
 						address     = data[i].address,
 						addtime = _trans_php_time_to_str(data[i].addtime,5),
-						expire_time = data[i].expire_time;
+						expire_time = data[i].expire_time,
+						ok = data[i].ok;
 
-						html += '<ul>';
-							html += '<li style="width:22%;font-weight:600;" title="'+office_name+'">【'+data[i].kehu+'】'+office_name+'</li>';
-							html += '<li style="width:20%;color:red;font-weight:600;" title="'+m_name+'">'+m_name+'</li>';
-							html += '<li style="width:30%" title="'+m_introduce+'">'+m_introduce+'</li>';
-							html += '<li style="width:18%;">'+addtime+'</li>';
-							html += '<li style="width:10%;cursor: pointer;"><a style="color:blue;" href="/index.php?app=search&act=cailiaotuiguang_content&id='+id+'">查看</a></li>';
-						html += '</ul>';
+						if(ok == 0){
+							html += '<ul>';
+								html += '<li style="width:22%;font-weight:600;" title="'+office_name+'">【'+data[i].kehu+'】'+office_name+'</li>';
+								html += '<li style="width:20%;color:red;font-weight:600;" title="'+m_name+'">'+m_name+'</li>';
+								html += '<li style="width:30%" title="'+m_introduce+'">'+m_introduce+'</li>';
+								html += '<li style="width:18%;">'+addtime+'</li>';
+								html += '<li style="width:10%;cursor: pointer;"><a style="color:blue;" href="/index.php?app=search&act=cailiaotuiguang_content&id='+id+'">查看</a></li>';
+							html += '</ul>';
+						}
 					
 				}
 				$('#shejiMain').html(html);
@@ -182,15 +185,18 @@
 						address     = data[i].address,
 						addtime = _trans_php_time_to_str(data[i].addtime,5),
 						expire_time = data[i].expire_time,
-						m_introduce = data[i].m_introduce;
+						m_introduce = data[i].m_introduce,
+						ok = data[i].ok;
 
-						html += '<ul>';
-							html += '<li style="width:22%;font-weight:600;" title="'+office_name+'">【'+data[i].kehu+'】'+office_name+'</li>';
-							html += '<li style="width:20%;color:red;font-weight:600;">'+m_name+'</li>';
-							html += '<li style="width:30%" title="'+m_introduce+'">'+m_introduce+'</li>';
-							html += '<li style="width:18%;">'+addtime+'</li>';
-							html += '<li style="width:10%;cursor: pointer;"><a style="color:blue;" href="/index.php?app=search&act=cailiaotuiguang_content&id='+id+'">查看</a></li>';
-						html += '</ul>';
+						if(ok == 0){
+							html += '<ul>';
+								html += '<li style="width:22%;font-weight:600;" title="'+office_name+'">【'+data[i].kehu+'】'+office_name+'</li>';
+								html += '<li style="width:20%;color:red;font-weight:600;">'+m_name+'</li>';
+								html += '<li style="width:30%" title="'+m_introduce+'">'+m_introduce+'</li>';
+								html += '<li style="width:18%;">'+addtime+'</li>';
+								html += '<li style="width:10%;cursor: pointer;"><a style="color:blue;" href="/index.php?app=search&act=cailiaotuiguang_content&id='+id+'">查看</a></li>';
+							html += '</ul>';
+						}
 					
 				}
 				$('#shejiMain').html(html);

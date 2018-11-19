@@ -116,14 +116,17 @@
 						title = data[i].title,
 						is_show = (data[i].is_show == 1)?"有活":"无活",
 						xiangxi = data[i].xiangxi,
-						addtime = _trans_php_time_to_str(data[i].addtime,2);
+						addtime = _trans_php_time_to_str(data[i].addtime,2),
+						ok = data[i].ok;
 
-						html += '<ul>';
-							html += '<li style="width:30%;color:red;font-weight:600;">【'+data[i].kehu+'】'+title+'</li>';
-							html += '<li style="width:40%" title="'+xiangxi+'">'+xiangxi+'</li>';
-							html += '<li style="width:20%;">'+addtime+'</li>';
-							html += '<li style="width:10%;cursor: pointer;"><a target="_blank" style="color:blue;" href="/index.php?app=search&act=wuhuozhaogong_content&id='+id+'&uid='+uid+'">查看</a></li>';
-						html += '</ul>';
+						if(ok == 0){
+							html += '<ul>';
+								html += '<li style="width:30%;color:red;font-weight:600;">【'+data[i].kehu+'】'+title+'</li>';
+								html += '<li style="width:40%" title="'+xiangxi+'">'+xiangxi+'</li>';
+								html += '<li style="width:20%;">'+addtime+'</li>';
+								html += '<li style="width:10%;cursor: pointer;"><a target="_blank" style="color:blue;" href="/index.php?app=search&act=wuhuozhaogong_content&id='+id+'&uid='+uid+'">查看</a></li>';
+							html += '</ul>';
+						}
 					
 				}
 				$('#shejiMain').html(html);
@@ -158,14 +161,17 @@
 						title = data[i].title,
 						is_show = (data[i].is_show == 1)?"有活":"无活",
 						xiangxi = data[i].xiangxi,
-						addtime = _trans_php_time_to_str(data[i].addtime,2);
+						addtime = _trans_php_time_to_str(data[i].addtime,2),
+						ok = data[i].ok;
 
-						html += '<ul>';
-							html += '<li style="width:30%;color:red;font-weight:600;">【'+data[i].kehu+'】'+jobtype+'</li>';
-							html += '<li style="width:40%" title="'+xiangxi+'">'+xiangxi+'</li>';
-							html += '<li style="width:20%;">'+addtime+'</li>';
-							html += '<li style="width:10%;cursor: pointer;"><a target="_blank" style="color:blue;" href="/index.php?app=search&act=wuhuozhaogong_content&id='+id+'&uid='+uid+'">查看</a></li>';
-						html += '</ul>';
+						if(ok == 0){
+							html += '<ul>';
+								html += '<li style="width:30%;color:red;font-weight:600;">【'+data[i].kehu+'】'+jobtype+'</li>';
+								html += '<li style="width:40%" title="'+xiangxi+'">'+xiangxi+'</li>';
+								html += '<li style="width:20%;">'+addtime+'</li>';
+								html += '<li style="width:10%;cursor: pointer;"><a target="_blank" style="color:blue;" href="/index.php?app=search&act=wuhuozhaogong_content&id='+id+'&uid='+uid+'">查看</a></li>';
+							html += '</ul>';
+						}
 				}
 				$('#shejiMain').html(html);
 				$('#nextpage').show();

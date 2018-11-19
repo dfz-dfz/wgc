@@ -286,7 +286,6 @@ border:1px solid #808080;width:100%;height:66px;margin-bottom:3px;
 						$result=mysql_query($query);
 						while($rows1=@mysql_fetch_array($result)){
 							$index = $rows1['postion'];
-							//var_dump($cate[1]);
 							$postion = ($index > 0)?$cate[$index]:'无工种';
 							  echo  "<li style='height:24px;line-height:24px;margin-bottom:1px;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;'>";
 							  echo  "<a target='_blank' href='/index.php?app=search&act=wuhuozhaogong_content&id=".$rows1['id']."&uid=".$rows1['user_id']."'>";
@@ -320,7 +319,7 @@ border:1px solid #808080;width:100%;height:66px;margin-bottom:3px;
 				</div>
 				<div class="aui-content aui-margin-b-15" id='lists'>
 					<?php
-						$query="SELECT a.*, b.postion FROM ecm_qiuzhi a LEFT JOIN ecm_member b ON a.user_id = b.user_id where a.type=2 order by a.id desc limit 0,10"; //定义sql
+						$query="SELECT a.*, b.postion FROM ecm_qiuzhi a LEFT JOIN ecm_member b ON a.user_id = b.user_id where a.type=2 and ok=0 order by a.id desc limit 0,10"; //定义sql
 						$result=mysql_query($query);
 						while($rows1=@mysql_fetch_array($result)){
 							 $index = $rows1['jobtype'];
@@ -363,7 +362,7 @@ border:1px solid #808080;width:100%;height:66px;margin-bottom:3px;
 				</p>
 				<div class="aui-content aui-margin-b-15" id='lists'>
 					<?php
-						$query="select * from ecm_purchase_maintable_auxiliarytable as sc join ecm_purchase_maintable as st on sc.pid=st.id order by sc.id desc limit 0,10"; //定义sql
+						$query="select * from ecm_purchase_maintable_auxiliarytable as sc join ecm_purchase_maintable as st on sc.pid=st.id and sc.ok=0 order by sc.id desc limit 0,10"; //定义sql
 						$result=mysql_query($query);
 						while($rows1=@mysql_fetch_array($result)){
 							 
@@ -418,7 +417,7 @@ border:1px solid #808080;width:100%;height:66px;margin-bottom:3px;
 				</div>
 				<div class="aui-content aui-margin-b-15" id='lists'>
 					<?php
-						$query="select * from ecm_material WHERE cai_type=3 or rev_uid='' order by id desc limit 0,10"; //定义sql
+						$query="select * from ecm_material WHERE cai_type=3 and ok=0 or rev_uid='' order by id desc limit 0,10"; //定义sql
 						$result=mysql_query($query);
 						while($rows1=@mysql_fetch_array($result)){
 							 
@@ -454,7 +453,7 @@ border:1px solid #808080;width:100%;height:66px;margin-bottom:3px;
 				</div>
 				<div class="aui-content aui-margin-b-15" id='lists'>
 					<?php
-						$query="select * from ecm_material WHERE cai_type=1 or rev_uid='' order by id desc limit 0,10"; //定义sql
+						$query="select * from ecm_material WHERE cai_type=1 and ok=0 or rev_uid='' order by id desc limit 0,10"; //定义sql
 						$result=mysql_query($query);
 						while($rows1=@mysql_fetch_array($result)){
 							 
@@ -499,7 +498,7 @@ border:1px solid #808080;width:100%;height:66px;margin-bottom:3px;
 				<div style="height:278px;overflow:hidden">
 					<table border="1" style="border-collapse:collapse;border:1px solid #e3e3e3;margin:0px auto;width:100%;background:#fff;">
 						<?php
-							$query="select * from ecm_search as A,ecm_member as B where A.userid=B.user_id order by A.id desc limit 0,7"; //定义sql
+							$query="select * from ecm_search as A,ecm_member as B where A.userid=B.user_id and A.ok=0 order by A.id desc limit 0,7"; //定义sql
 							
 							$result=mysql_query($query);
 							
@@ -781,27 +780,30 @@ border:1px solid #808080;width:100%;height:66px;margin-bottom:3px;
 								addtime = _trans_php_time_to_str(data[i].addtime,5),//添加时间
 								content = data[i].content,
 				            	autoaddress = data[i].autoaddress,
-				            	id = data[i].id;
+				            	id = data[i].id,
+				            	ok = data[i].ok;
 
-								html +=			'<div style="overflow: hidden;border-bottom: 1px solid #ccc;height:82px;">';
-								html +=					'<a href="/index.php?app=search&act=xiangmu_details&id='+id+'" style="text-decoration: none;" target="_blank">';
-								html +=			'<p style="float: left;font-size: 18px;color: red;font-weight: 600;letter-spacing: 2px;margin: 10px 0 10px 5px;">【'+kehu+'】'+prj_name+'</p>';
-								html +=				'<p style="float: right;font-size: 18px;color: red;font-weight: 600;letter-spacing: 2px;margin: 10px 20px 10px 0;">'+expect_price+'</p>';
-								html +=				'<ul id="" style="width:100%;height:auto;overflow:hidden">';
-								html +=						'<li style="width: 100%;height: auto;">';
-								html +=							'<div style="margin-left: 5px;">';
-								html +=								'<span style="letter-spacing: 2px;">地址:</span>';
-								html +=								'<span style="color: #000;display: inline-block;margin-left: 10px;letter-spacing: 2px;">'+worker_address+'</span>';
-								html +=							'</div>';
-								html +=							'<div style="overflow: hidden;margin-left: 5px;">';
-								html +=								'<span style="letter-spacing: 2px;">截止时间:</span>';
-								html +=								'<span style="color: #000;display: inline-block;margin-left: 10px;letter-spacing: 1px;">'+dd_time+'</span>';
-								html +=							'<span style="float: right;margin-right:5px;">'+addtime+'</span>';
-								html +=							'</div>';
-								html +=						'</li>';
-								html +=				'</ul>';
-								html +=					'</a>';
-								html +=				'</div>';
+				            	if(ok == 0){
+									html +=			'<div style="overflow: hidden;border-bottom: 1px solid #ccc;height:82px;">';
+									html +=					'<a href="/index.php?app=search&act=xiangmu_details&id='+id+'" style="text-decoration: none;" target="_blank">';
+									html +=			'<p style="float: left;font-size: 18px;color: red;font-weight: 600;letter-spacing: 2px;margin: 10px 0 10px 5px;">【'+kehu+'】'+prj_name+'</p>';
+									html +=				'<p style="float: right;font-size: 18px;color: red;font-weight: 600;letter-spacing: 2px;margin: 10px 20px 10px 0;">'+expect_price+'</p>';
+									html +=				'<ul id="" style="width:100%;height:auto;overflow:hidden">';
+									html +=						'<li style="width: 100%;height: auto;">';
+									html +=							'<div style="margin-left: 5px;">';
+									html +=								'<span style="letter-spacing: 2px;">地址:</span>';
+									html +=								'<span style="color: #000;display: inline-block;margin-left: 10px;letter-spacing: 2px;">'+worker_address+'</span>';
+									html +=							'</div>';
+									html +=							'<div style="overflow: hidden;margin-left: 5px;">';
+									html +=								'<span style="letter-spacing: 2px;">截止时间:</span>';
+									html +=								'<span style="color: #000;display: inline-block;margin-left: 10px;letter-spacing: 1px;">'+dd_time+'</span>';
+									html +=							'<span style="float: right;margin-right:5px;">'+addtime+'</span>';
+									html +=							'</div>';
+									html +=						'</li>';
+									html +=				'</ul>';
+									html +=					'</a>';
+									html +=				'</div>';
+				            	}
 						}
 					}
 					$("#prj_list").append(html);
@@ -838,27 +840,30 @@ border:1px solid #808080;width:100%;height:66px;margin-bottom:3px;
 							content = data[i].content,
 			            	autoaddress = data[i].autoaddress,
 			            	id = data[i].id,
-			            	project_name = data[i].project_name;
-					
-						listHtml +=		'<div style="overflow: hidden;border-bottom: 1px solid #ccc;height:82px;">';
-						listHtml +=				'<a href="/index.php?app=search&act=shejifenbao_details&id='+id+'" style="text-decoration: none;" target="_blank">';
-						listHtml +=			'<p style="float: left;font-size: 18px;color: red;font-weight: 600;letter-spacing: 2px;margin: 10px 0 10px 5px;">【'+kehu+'】'+project_name+'</p>';
-						listHtml +=			'<p style="float: right;font-size: 18px;color: red;font-weight: 600;letter-spacing: 2px;margin: 10px 30px 10px 0;">'+price+'</p>';
-						listHtml +=			'<ul id="" style="width:100%;height:auto;overflow:hidden">';
-						listHtml +=					'<li style="width: 100%;height: auto;">';
-						listHtml +=					'<div style="margin-left: 5px;height: auto;border: none;">';
-						listHtml +=					'<span style="letter-spacing: 2px;">地址:</span>';
-						listHtml +=					'<span style="color: #000;display: inline-block;margin-left: 10px;letter-spacing: 2px;">'+address+'</span>';
-						listHtml +=					'</div>';
-						listHtml +=					'<div style="overflow: hidden;margin-left: 5px;height: auto;border: none;">';
-						listHtml +=					'<span style="letter-spacing: 2px;">发布时间:</span>';
-						listHtml +=					'<span style="color: #000;display: inline-block;margin-left: 10px;letter-spacing: 1px;">'+addtime+'</span>';
-						listHtml +=					'<span style="float: right;margin-right: 5px;">2018-8-20</span>';
-						listHtml +=					'</div>';
-						listHtml +=					'</li>';
-						listHtml +=			'</ul>';
-						listHtml +=				'</a>';
-						listHtml +=		'</div>	';
+			            	project_name = data[i].project_name,
+			            	ok = data[i].ok;
+						
+						if(ok == 0){
+							listHtml +=		'<div style="overflow: hidden;border-bottom: 1px solid #ccc;height:82px;">';
+							listHtml +=				'<a href="/index.php?app=search&act=shejifenbao_details&id='+id+'" style="text-decoration: none;" target="_blank">';
+							listHtml +=			'<p style="float: left;font-size: 18px;color: red;font-weight: 600;letter-spacing: 2px;margin: 10px 0 10px 5px;">【'+kehu+'】'+project_name+'</p>';
+							listHtml +=			'<p style="float: right;font-size: 18px;color: red;font-weight: 600;letter-spacing: 2px;margin: 10px 30px 10px 0;">'+price+'</p>';
+							listHtml +=			'<ul id="" style="width:100%;height:auto;overflow:hidden">';
+							listHtml +=					'<li style="width: 100%;height: auto;">';
+							listHtml +=					'<div style="margin-left: 5px;height: auto;border: none;">';
+							listHtml +=					'<span style="letter-spacing: 2px;">地址:</span>';
+							listHtml +=					'<span style="color: #000;display: inline-block;margin-left: 10px;letter-spacing: 2px;">'+address+'</span>';
+							listHtml +=					'</div>';
+							listHtml +=					'<div style="overflow: hidden;margin-left: 5px;height: auto;border: none;">';
+							listHtml +=					'<span style="letter-spacing: 2px;">发布时间:</span>';
+							listHtml +=					'<span style="color: #000;display: inline-block;margin-left: 10px;letter-spacing: 1px;">'+addtime+'</span>';
+							listHtml +=					'<span style="float: right;margin-right: 5px;">2018-8-20</span>';
+							listHtml +=					'</div>';
+							listHtml +=					'</li>';
+							listHtml +=			'</ul>';
+							listHtml +=				'</a>';
+							listHtml +=		'</div>	';
+						}
 					}
 				}
 				$("#design_list").append(listHtml);
@@ -950,14 +955,17 @@ border:1px solid #808080;width:100%;height:66px;margin-bottom:3px;
 							title = data[i].title,//项目名称
 							office_name = data[i].office_name,//公司名称
 							unit = data[i].unit;//计价单位
+							ok = data[i].ok;
 
-							html += '<a style="height:38px;" href="/index.php?app=search&act=gongjiaxunjia_content&id='+id+'" title="'+title+'" target="_blank">';
-								html += '<ul style="cursor:pointer;width:100%;height:38px;line-height:38px;margin-top:0;">';
-									html += '<li style="font-family: none;font-size:16px;color:#333;height:38px;width:44%;float:left;margin-right: 2px;margin-left:10px;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;">【'+kehu+'】'+title+'</li>';
-									html += '<li title="'+unit+'" style="font-family: none;font-size:16px;color:#333;height:38px;width:27.33%;float:left;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;">'+office_name+'</li>';
-									html += '<li style="font-family: none;font-size:12px;color:#999;height:38px;width:25.33%;float:left;">'+addtime+'</li>';
-								html += '</ul>';
-							html += '</a>';
+							if(ok == 0){	
+								html += '<a style="height:38px;" href="/index.php?app=search&act=gongjiaxunjia_content&id='+id+'" title="'+title+'" target="_blank">';
+									html += '<ul style="cursor:pointer;width:100%;height:38px;line-height:38px;margin-top:0;">';
+										html += '<li style="font-family: none;font-size:16px;color:#333;height:38px;width:44%;float:left;margin-right: 2px;margin-left:10px;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;">【'+kehu+'】'+title+'</li>';
+										html += '<li title="'+unit+'" style="font-family: none;font-size:16px;color:#333;height:38px;width:27.33%;float:left;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;">'+office_name+'</li>';
+										html += '<li style="font-family: none;font-size:12px;color:#999;height:38px;width:25.33%;float:left;">'+addtime+'</li>';
+									html += '</ul>';
+								html += '</a>';
+							}
 					}
 				}
 				$('#gjxj').append(html);
@@ -991,26 +999,29 @@ border:1px solid #808080;width:100%;height:66px;margin-bottom:3px;
 							address     = data[i].address,
 							addtime = timestampToTime(data[i].addtime),
 							expire_time = data[i].expire_time,
-							m_introduce = data[i].m_introduce;
+							m_introduce = data[i].m_introduce,
+							ok = data[i].ok;
 
-						html +=			'<div style="overflow: hidden;border-bottom: 1px solid #ccc;height:82px;">';
-						html +=					'<a href="/index.php?app=search&act=cailiaotuiguang_content&id='+id+'" style="text-decoration: none;" target="_blank">';
-						html +=			'<p style="float: left;font-size: 18px;color: red;font-weight: 600;margin: 10px 0 10px 0;overflow:hidden;height:25px;">【'+data[i].kehu+'】'+m_name+'</p>';
-						html +=				'<ul id="" style="width:100%;height:auto;overflow:hidden">';
-						html +=						'<li style="width: 100%;height: auto;">';
-						html +=							'<div style="margin-left: 5px;float:left;">';
-						html +=								'<span style="letter-spacing: 2px;float:left;">公司名称:</span>';
-						html +=								'<span style="color: #000;margin-left: 10px;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;width:390px;float:left;" title="'+office_name+'">'+office_name+'</span>';
-						html +=							'</div>';
-						html +=							'<div style="overflow: hidden;margin-left: 5px;float:left;">';
-						html +=								'<span style="letter-spacing: 2px;">截止时间:</span>';
-						html +=								'<span style="display: inline-block;margin-left: 10px;color:#000;margin-right:120px;letter-spacing:1px;">'+expire_time+'</span>';
-						html +=							'<span style="float: right;font-size:12px;">'+addtime+'</span>';
-						html +=							'</div>';
-						html +=						'</li>';
-						html +=				'</ul>';
-						html +=					'</a>';
-						html +=				'</div>';
+						if(ok == 0){
+							html +=			'<div style="overflow: hidden;border-bottom: 1px solid #ccc;height:82px;">';
+							html +=					'<a href="/index.php?app=search&act=cailiaotuiguang_content&id='+id+'" style="text-decoration: none;" target="_blank">';
+							html +=			'<p style="float: left;font-size: 18px;color: red;font-weight: 600;margin: 10px 0 10px 0;overflow:hidden;height:25px;">【'+data[i].kehu+'】'+m_name+'</p>';
+							html +=				'<ul id="" style="width:100%;height:auto;overflow:hidden">';
+							html +=						'<li style="width: 100%;height: auto;">';
+							html +=							'<div style="margin-left: 5px;float:left;">';
+							html +=								'<span style="letter-spacing: 2px;float:left;">公司名称:</span>';
+							html +=								'<span style="color: #000;margin-left: 10px;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;width:390px;float:left;" title="'+office_name+'">'+office_name+'</span>';
+							html +=							'</div>';
+							html +=							'<div style="overflow: hidden;margin-left: 5px;float:left;">';
+							html +=								'<span style="letter-spacing: 2px;">截止时间:</span>';
+							html +=								'<span style="display: inline-block;margin-left: 10px;color:#000;margin-right:120px;letter-spacing:1px;">'+expire_time+'</span>';
+							html +=							'<span style="float: right;font-size:12px;">'+addtime+'</span>';
+							html +=							'</div>';
+							html +=						'</li>';
+							html +=				'</ul>';
+							html +=					'</a>';
+							html +=				'</div>';
+						}
 					}
 				}
 				$('#cailiao_list').append(html);	
