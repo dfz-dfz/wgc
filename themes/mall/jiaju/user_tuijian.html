@@ -211,58 +211,61 @@ input{
  			</ul>
  			<div class="user_employ_info base_info_public" style="overflow: hidden;padding-left: 5%;">
  				<div class="person_message">
+				<form action="http://wgcapp.wgc2013.com/jingyi.php/Home/Jifen/addTuijian" method="post" onsubmit="return save();">
+					<input type="hidden" name="user_id" value="<?php echo $_SESSION["user_info"]["user_id"];?>" />
+					<input type="hidden" name="user_name" value="<?php echo $_SESSION["user_info"]["user_name"];?>" />
 					<div class="message_title">个人信息</div>
 					<div>
-						<span>姓名：</span><input type="text" placeholder="请输入真实姓名" />
+						<span>姓名：</span><input type="text" id="name" name="name" placeholder="请输入真实姓名" />
 					</div>
 					<div>
 						<span>性别：</span>
-						<input type="radio" name="sex" id="man" />
+						<input type="radio" name="sex" id="man" value="0"/>
 						<label for="man">男</label>
-						<input type="radio" name="sex" id="woman" />
+						<input type="radio" name="sex" id="woman" value="1"/>
 						<label for="woman">女</label>
 					</div>
-					<div>
-						<span>出生日期：</span><input type="text" placeholder="请输入证件日期" />
+					<!-- <div>
+						<span>出生日期：</span><input id="" type="text" placeholder="请输入证件日期" />
 					</div>
 					<div>
 						<span>民族：</span><input type="text" placeholder="请输入民族" />
+					</div> -->
+					<div>
+						<span>籍贯：</span><input id="huji" name="huji" type="text" placeholder="请输入与自己证件一致的省地址" />
 					</div>
 					<div>
-						<span>籍贯：</span><input type="text" placeholder="请输入与自己证件一致的省地址" />
+						<span>最高学历：</span><input id="educational" name="educational" type="text" placeholder="请输入自己最高学历" />
 					</div>
 					<div>
-						<span>最高学历：</span><input type="text" placeholder="请输入自己最高学历" />
+						<span>手机号码：</span><input id="mobile" name="mobile" type="text" placeholder="请输入手机号码" />
 					</div>
-					<div>
-						<span>手机号码：</span><input type="text" placeholder="请输入手机号码" />
-					</div>
-					<div>
+					<!-- <div>
 						<span>&nbsp;</span><input type="text" placeholder="请输入验证码" style="width: 194px;" />
 						<input type="button" value="获取短信验证码" class="get_message_code"/>
+					</div> -->
+					<div>
+						<span>邮箱：</span><input id="email" name="email" type="text" placeholder="请输入自己接收或发送的电子邮箱" />
 					</div>
 					<div>
-						<span>邮箱：</span><input type="text" placeholder="请输入自己接收或发送的电子邮箱" />
-					</div>
-					<div>
-						<span>现居住地：</span><input type="text" placeholder="请输入目前所在地址" />
+						<span>现居住地：</span><input id="addr" name="addr" type="text" placeholder="请输入目前所在地址" />
 					</div>
 
 					<div class="message_title">求职意向</div>
 					<div>
-						<span>到岗时间：</span><input type="text" placeholder="请输入自己大概到岗时间" />
+						<span>到岗时间：</span><input id="arrive_time" name="arrive_time" type="text" placeholder="请输入自己大概到岗时间" />
 					</div>
 					<div>
-						<span>希望行业：</span><input type="text" placeholder="请输入希望的行业" />
+						<span>希望行业：</span><input id="hope_worke" name="hope_worke" type="text" placeholder="请输入希望的行业" />
 					</div>
 					<div>
-						<span>工作地址：</span><input type="text" placeholder="请输入期望的工作地址" />
+						<span>工作地址：</span><input id="hope_place" name="hope_place" type="text" placeholder="请输入期望的工作地址" />
 					</div>
 					<div>
-						<span>期望月薪：</span><input type="text" placeholder="请输入自己期望的薪资" />
+						<span>期望月薪：</span><input id="hope_wages" name="hope_wages" type="text" placeholder="请输入自己期望的薪资" />
 					</div>
 					<div>
-						<span>目标职能：</span><input type="text" placeholder="请输入自己的职能" />
+						<span>目标职能：</span><input id="skill" name="skill" type="text" placeholder="请输入自己的职能" />
 					</div>
 					<div style="height:auto">
 						<span>学业证书：</span>
@@ -286,14 +289,15 @@ input{
 							</div>
 						</div>
 					</div>
-					<input type="hidden" id="ImgPath"/>
+					<input type="hidden" id="ImgPath" name="img" />
 					<div>
 						<input type="checkbox" value="" style="width: 15px;" /><div style="display: inline-block;font-size: 12px;">我阅读并同意《微工程服务》条款</div>
 					</div>
 					<div>
-						<input type="button" value="确认保存" style="border:none;background-color: #ea4740;color: #fff;height: 35px;font-size: 16px;cursor: pointer;letter-spacing: 1px;">
+						<input type="submit" value="确认保存" style="border:none;background-color: #ea4740;color: #fff;height: 35px;font-size: 16px;cursor: pointer;letter-spacing: 1px;">
 					</div>
 				</div>
+				</form>
  			</div>
 		<!--招聘列表 -->
 		
@@ -441,11 +445,46 @@ input{
 			"background-image":"url('/themes/mall/jiaju/images/center/form-bg2.jpg')"
 		})
 		$(".user_tuijian_li").children().eq(1).css({
-		"color" : "red"
-	})
+			"color" : "red"
+		})
+
+		getMessage();
 	}())
 	var page = 1;
 	var key = '';
+
+	//获取个人资料
+	function getMessage(){
+		$.post(url+'jingyi.php/Home/Jifen/user', 
+			{
+				uid : '<?php echo $_SESSION["user_info"]["user_id"];?>'
+			}, 
+		function(ret) {
+			if(ret.code == 200){
+				var data = ret.user;
+				$('#name').val(data.name);
+				if(data.sex == 0){
+					$('#man').attr('checked','checked');
+				}else{
+					$('#woman').attr('checked','checked');
+				}
+				$('#huji').val(data.huji);
+				$('#mobile').val(data.mobile);
+				$('#email').val(data.email);
+				// $('#educational').val(data.educational);
+				$('#addr').val(data.adds);
+
+			}else{
+				alert('网络连接失败，请检查网络连接');
+				return false;
+			}
+		},'json');
+	}
+
+	//推荐人才
+	function save(){
+
+	}
 
 	//点击预算列表切换
 	$(".user_employ_ul li:first").click(function(){

@@ -103,7 +103,7 @@ $(function(){
 					</li>
 					<li style="background:red;margin-right:0px;padding:0 30px;height:50px;line-height:50px;">
 						 <?php
-							if(empty($_SESSION['user_info']))
+							if(empty($_SESSION['user_info'])|| $_GET['user_id'] ==1)
 							{
 								echo '&nbsp;&nbsp;&nbsp;';
 								echo '<a  style="color:#fff;margin:0;font-size:18px;" href="/index.php?app=member&amp;act=login&amp;ret_url=">登录</a>';
@@ -144,7 +144,7 @@ $(function(){
 			<div style="overflow:hidden;float:right;width:100px;height:100px;">
 				
 					 <?php
-							if(empty($_SESSION['user_info']))
+							if(empty($_SESSION['user_info']) || $_GET['user_id'] ==1)
 							{
 								echo '<ahref="index.php?app=member&amp;act=login&amp;ret_url="  title="微工程"><img alt="微工程" src="/data/files/mall/settings/user.png" style="width:100%;height:100%;border-radius: 100%;" /></a>';
 								
@@ -165,7 +165,7 @@ $(function(){
 	<div class="mainnav w-full">
 		<div class="menu">
 			<ul style="overflow:hidden;float:left;">
-				<li class="line" style="text-align:left;width:20%;margin: 0;"><a style="font-size:22px;" href="/index.php">首页</a></li>
+				<li class="line" style="text-align:left;width:20%;margin: 0;"><a style="font-size:22px;" href="/index.php?app=search&act=public_index">首页</a></li>
 				<!-- <li class="line" style="text-align:center;width:24%"><a style="font-size:22px;" href="/index.php?app=search&act=joblist">热门招聘</a></li>
 				<li class="line" style="text-align:center;width:24%"><a style="font-size:22px;" href="/index.php?app=search&act=caigou">集采信息</a></li>
 				<li class="line" style="text-align:right;width:24%"><a style="font-size:22px;" href="/index.php?app=search&act=laodongli">劳动力资源</a></li> -->

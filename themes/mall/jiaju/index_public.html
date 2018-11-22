@@ -1,624 +1,1054 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
-    <title>微工程公共首页</title>
+<?php
+$cate = array(
+	'1' => '施工队长',
+	'2' => '水电工长',
+	'3' => '空调安装工长',
+	'4' => '空调安装工',
+	'5' => '泥水工',
+	'6' => '水电工',
+	'7' => '电焊工',
+	'8' => '家具安装工',
+	'9' => '木工',
+	'10' => '扇灰工',
+	'11' => '保洁工',
+	'12' => '杂工',
+	'13' => '设计师',
+	'14' => '预算员',
+	'15' => '其它',
+	'16' => '维修工',
+	'17' => '网络维修',
+	'18' => '实习预结算员',
+	'19' => '室内设计师',
+	'20' => '工程经理',
+	'21' => '机电工程师',
+	'22' => '暖通设计师',
+	'23' => '采购经理',
+	'24' => '文案',
+	'25' => '平面设计',
+	'26' => '效果图设计师',
+	'27' => '客服专员',
+	'28' => '行政助理',
+	'29' => '软件销售经理',
+	'30' => '业务员',
+	'31' => '项目经理',
+	'32' => '水电维修',
+	'33' => '空调维修',
+	'34' => '装饰维修',
+	'35' => '设备维修',
+	'36' => '分销商',
+	'37' => '工匠',
+);
 
-    <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>微工程首页 - 微工程</title>
+<meta name="description" content="微工程，微工程APP，装修、材料、家具、饰品一站式服务，让装修更简单，价格更透明！！" />
+<meta name="keywords" content="微工程，微工程，家居商城，微工程家居商城，微工程家居装修商城，办公室装修，写字楼装修，材料，装修材料，家居，办公家具，家居，家具，装修，装饰" />
+<meta baidu-gxt-verify-token="157c32576b1f0c225a36806c50679560">
+<link type="text/css" href="/themes/mall/jiaju/styles/style/style/style.css" rel="stylesheet"  />
+<style type="text/css">
+.divcss0{width:100%;height:30px;border-bottom:1px solid #F00;float:left;margin-bottom:5px;margin-top:5px;}
+.divcss01{width:10px;height:25px;background-color:#F00;float:left;}
+.divcss1p{width:18%;height:280px;float:left;margin-bottom:10px;}
+.divcss2p{width:40%;height:280px;float:left;margin-bottom:10px;padding-left:8px;}
+.divcss3p{width:40%;height:280px;float:left;padding-left:16px;margin-bottom:10px;}
+.divcss1{width:100%;height:280px;border:1px solid #808080;margin-bottom:10px;}
+.divcss2{width:100%;height:280px;border:1px solid #808080;margin-bottom:10px;}
+.divcss2 ul{width:100%;margin-top:2px;padding:0px;list-style-type:disc;}
+.divcss2 ul li{ 
+width: 93%; /*如果显示三列 则width改为68px*/ 
+color:#696969;font-size:13px;font-family:黑体;
+height:24px;
+padding:0px;margin:0px;
+}
+.divcss3{width:100%;height:280px;min-height:280px;margin-bottom:10px;}
+.divcss3 ul{width:100%;margin:0px;padding:0px;}
+.divcss3 ul li{ 
+width: 49%; /*如果显示三列 则width改为68px*/ 
+float: left; 
+display: block; 
+}
+.divcss3 ul li a,.divcss2 ul li a,.mytables tr td a{
+text-decoration:none;
+}
+.divcss3 ul li div{
+border:1px solid #808080;width:100%;height:66px;margin-bottom:3px;
+}
+.span010{color:#696969;font-size:20px;font-family:黑体;text-align:center;line-height:30px;margin-left:5px;float:left;}
+.span011{color:#696969;font-size:15px;font-family:黑体;text-align:center;line-height:30px;margin-right:5px;float:right;}
+.mytables{color:#696969;font-size:10px;font-family:黑体;width:100%;line-height:29px;text-align:left;}
+.divcsschld{width:100%;height:30px;background-color:#f7f4f4;border-bottom:1px solid #808080;}
+.divcsschld1{height:27px;background-color:#777777;float:left;margin-left:5px;margin-top:3px;}
+.allimg{width:100%;height:100%;}
+/**劳务资源*/
+.text-left a{width:23%;background:#ffecdd;border-radius:10px;float:left;margin:1%;height:50px;line-height:50px;overflow:hidden;display:block;color:#333;font-size:16px;font-weight:bold;}
+/**右边的二维码*/
+.icon_right p{
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	font-size: 10px;
+	border-bottom: 1px solid #9e9e9e;
+	padding-bottom: 5px;
+}
+.icon_right div{
+	text-align: center;
+}
+.new_person ul li{
+	float: none;
+	width: 100%;
+	font-size: 18px;
+	color: #ea4740;
+	font-weight: 600;
+	height: 40px;
+	line-height: 40px;
+	text-decoration: underline;
+}
+</style>
+<!-- <script type="text/javascript">
+	$(function (){
+		$('#open-change-city-window').click(function (){
+			$('.change-city-window').slideDown();
+		})
+		$('#close-change-city-window').click(function (){
+			$('.change-city-window').slideUp();
+		})
+	})
+</script> -->
 
-    <!-- HTML5 shim 和 Respond.js 是为了让 IE8 支持 HTML5 元素和媒体查询（media queries）功能 -->
-    <!-- 警告：通过 file:// 协议（就是直接将 html 页面拖拽到浏览器中）访问页面时 Respond.js 不起作用 -->
-    <!--[if lt IE 9]>
-      <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
-      <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
-    <![endif]-->
-    <style>
-    /*样式清除*/
-    *{
-    	margin: 0;
-    	padding: 0;
-    	font-size: 14px;
-    	color: #3f3f3f;
-    	font-family:"微软雅黑";
-    }
-    body,html{
-    	width: 100%;
-    	height: 100%;
-    }
-    li{
-    	list-style: none;
-    }
-    a{
-    	text-decoration: none;
-    }
-    ul{overflow: hidden;padding: 0;margin: 0;}
+</head>
 
-    /*主盒子样式*/
-    .container{width: 100%}
-    /*公共样式*/
-    .public{width: 1170px;margin: 0 auto;overflow: hidden;}
-    /*头部样式*/
-		.header{height: 60px;min-width: 1170px;margin: 15px auto;position: relative;overflow: visible;}
-		.logo{width: 20%;float: left;}
-			.logo img{width: 150px;height: 45px;}
-		.company{width: 30%;float: left;}
-			.title{font-size: 20px;font-weight: 600;color: #5c5c5c;letter-spacing: 5px;}
-			.etitle{font-size: 12px;word-spacing: 3px;}
-		.nav{width: 50%;float: left;line-height: 50px;}
-			.nav-item{float: left;width: 16.6%;text-align: center;}
-				.nav-item a{color: #3f3f3f;font-weight: 600;}
-		.place{width: 400px;height: 400px;z-index: 100;background-color: #fff;position: absolute;right: 3px;top: 50px;border: 1px solid #9e9e9e;display: none;}
-			.pro{width: 11%;float: left;}
-			.area{width: 89%;float: left;}
-		/*banner图*/
-		.banner{width: 100%;height: 100%;}
-			.banner img{width: 100%;height: 100%;max-height: 650px;}
-		/*新闻资讯样式*/
-		.news{margin: 30px auto;overflow: hidden;}
-			.newstitle{font-size: 20px;font-weight: 600;letter-spacing: 2px;padding: 5px 0;border-bottom: 2px solid #f88f78;width: 100%;}
-			.lunbo{width: 70%;height:450px;float: left;}
-				.carousel-inner .item{height: 100%;}
-				.carousel-inner .item img{width: 100%;height: 100%;}
-				.carousel-control{top: 84.5%;width: 9%;height: 70px;background-color: rgba(0,0,0,0.5);}
-				.carousel-caption{bottom: 0px;width: 82%;left: 9%;background-color: rgba(0,0,0,0.5);font-size: 20px;padding-bottom: 22px;}
-					.count{float: left;position: relative;left: 90px;}
-					.count span{font-size: 18px;color: #fff;}
-					.count span:nth-child(1){font-size: 20px;color: #ff0101;}
-			/*资讯列表*/
-			.newslist{width: 30%;float: left;padding-left: 50px;}
-				.newslist ul li{margin: 5px 0;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;}
-					.newslist ul li:nth-child(1) a{font-size: 22px;color: #000;font-weight: 600;}
-					.newslist ul li a{color: #6d6d6d;font-size: 16px;}
+<body>
 
-		/*核心服务样式*/
-		.servce{overflow: hidden;}
-			.servce .servce-item{width: 30%;height: 250px;float: left;border: 1px solid #ededed;padding: 5px 5px;}
-			.servce .servce-item:nth-child(2){margin: 0 5%;}
-				.servce .servce-item img{width: 100%;height: 85%;}
-				.servcename{text-align: center;margin: 10px 0;}
-		/*想电视机一样的那块*/
-		.servce-content{overflow: hidden;}
-			.content-center{text-align: center;margin: 50px 0}
-			.content-center h3{text-align: center;font-size: 30px;color: #000;letter-spacing: 2px;}
-			.content-center span{font-size: 26px;color:#8c8585;word-spacing: 2px;border-top: 1px solid #bdb0b0;}
-			.servce-ul{width: 20%;float: left;}
-			.servce-ul-center{width: 60%;float: left;text-align: center;}
-				.servce-ul-center img{width: 65%;height: 240px;margin-top: 10px;}
-			.servce-ul-item{text-align: right;}
-			.servce-ul-item span:nth-child(1){font-size: 20px;color:#fea200;font-style: italic;}
-			.servce-ul-item span:nth-child(2){font-size: 18px;color:#000;}
-			.servce-ul-item p{font-size: 12px;color: #6c6c6c;margin: 5px 0;text-decoration: underline;}
-			.servce-ul-item-right{text-align: left;}
+{include file=header.html}
 
-		/*广告招租*/
-		.advertisement{margin: 50px auto;}
-			.advertisement img{width: 100%;height: 100%;}
+<!-- main start -->
+<div id="main">
+	
+	{include file=index_nva.html}
 
-		.footer{width: 100%;border-top: 1px solid #6c6c6c;padding: 20px 0;}
-			.footer p{
-				text-align: center;
-				white-space: nowrap;
-				color: #000;
-				margin: 0 0 5px 0;
-			}
 
-    </style>
-  </head>
-  <body>
-    <div class="container">
-    <!-- 头部 -->
-    	<div class="header public">
-    		<!-- logo -->
-			<div class="logo">
-				<img src="/themes/mall/jiaju/images/public_logo.png" alt="">
+<!--新增开始-->
+<div style="padding:0px; margin-left:auto;margin-right:auto; width:1200px;overflow:hidden;">
+		<!-- 最右边的二维码 -->	
+		<div class="icon_right" style="width: 60px;height: 210px;position: fixed;right: 0;top: 300px;border: 1px solid #9e9e9e;background-color: #fff;">
+		  <div class="icon_qq">
+			<div>
+				<img src="/themes/mall/jiaju/images/icon_QQ.jpg" alt="客服QQ" style="width: 30px;height: 30px;">
 			</div>
-			<!-- 公司名字 -->
-			<div class="company">
-				<div class="title">广州市我购科技有限公司</div>
-				<div class="etitle" style="white-space: nowrap;">GUANGZHOU WOGOU TECHNOLOGY CO.,LID</div>
+				<p>客服QQ</p>
+		  </div>
+		  <div class="icon_kf">
+			<div>
+				<img src="/themes/mall/jiaju/images/icon_kf.jpg" alt="联系客服" style="width: 30px;height: 30px;">
 			</div>
-			<!-- 右边的导航条 -->
-			<div class="nav">
-				<ul>
-					<li class="nav-item">
-                     	<a href="/" target="_blank">首页</a>
-					</li>
-					<li class="nav-item">
-                     	<a href="/index.php?app=search&act=jianzhuzhuangshi" target="_blank">建筑装饰公司</a>
-					</li>
-					<li class="nav-item">
-                     	<a href="/index.php?app=search&act=cailiaoshang" target="_blank">材料商</a>
-					</li>
-					<li class="nav-item">
-                     	<a href="/index.php?app=search&act=rencaituijian" target="_blank">推荐人才</a>
-					</li>
-					<li class="nav-item">
-                     	<a href="/index.php?app=search&act=laodongli" target="_blank">劳动力资源</a>
-					</li>
-					<li class="nav-item" style="/*border: 1px solid #9e9e9e;*/border-bottom: none;z-index: 101;position:relative;background-color: #fff">
-                     	<i>广州</i><a href="javascript:;" target="_blank" style="text-decoration: none;">【切换】</a>
-					</li>
+				<p>客服热线</p>
+		  </div>
+		  <div class="icon_gzh">
+			<div>
+				<img src="/themes/mall/jiaju/images/icon_gzh.jpg" alt="公众号" style="width: 30px;height: 30px;">
+			</div>
+				<p>公众号</p>
+		  </div>
+		  <div class="icon_wei">
+			<div>
+				<img src="/themes/mall/jiaju/images/icon_wei.jpg" alt="微工程" style="width: 30px;height: 30px;">
+			</div>
+				<p style="border-bottom: none;">微工程下载</p>
+		  </div>
+			
+		</div>
+		<!-- 最右边的二维码 end -->
+				<!-- 最右边的二维码显示的内容 -->
+		
+			<div class="icon_right_show_qq" style="width: 200px;height: 105px;position: fixed;right: 60px;top: 300px;background-image: url('/themes/mall/jiaju/images/jia.jpg');background-repeat: no-repeat;background-size: 200px;opacity: 0.8;display: none;">
+				<ul style="margin:10px 0 0 0px;">
+							<li style="height: 30px;text-decoration:underline;color: #fff;font-size: 18px;">
+								客服①：3215598389
+							</li>
+							<li style="height: 30px;text-decoration:underline;color: #fff;font-size: 18px;">
+								客服②：3014848718
+							</li>
+							<li style="height: 30px;text-decoration:underline;color: #fff;font-size: 18px;">
+								客服③：1934873342
+							</li>
 				</ul>
 			</div>
-			<!-- 地区 -->
-			<div class="place">
-			    <dt class="pro">华北</dt>
-				<dd class="area">
-					<a href="http://www.59jiaju.com/" id="北京">北京 </a>
-			        <a href="http://sz.59jiaju.com/" id="天津">天津</a>
-			        <a href="/index.php?app=search&act=sessions_city&city=珠海" id="太原" >太原</a>
-			        <a href="/index.php?app=search&act=sessions_city&city=汕头" id="唐山" >唐山</a>
-					<a href="/index.php?app=search&act=sessions_city&city=佛山" id="呼和浩特" >呼和浩特</a>
-					<a href="/index.php?app=search&act=sessions_city&city=东莞" id="包头" >包头</a>
-					<a href="/index.php?app=search&act=sessions_city&city=中山" id="石家庄" >石家庄</a>
-					<a href="/index.php?app=search&act=sessions_city&city=江门" id="呼伦贝尔" >呼伦贝尔</a>
-					<a href="/index.php?app=search&act=sessions_city&city=惠州" id="大同" >大同</a>
-					<a href="/index.php?app=search&act=sessions_city&city=肇庆" id="济南" >济南</a>
-					<a href="/index.php?app=search&act=sessions_city&city=阳江" id="青岛" >青岛</a>
-					<a href="/index.php?app=search&act=sessions_city&city=韶关" id="日照" >日照</a>
-					<a href="/index.php?app=search&act=sessions_city&city=河源" id="烟台" >烟台</a>
-				</dd>
-				<dt class="pro">华东</dt>
-				<dd class="area">
-					<a href="http://www.59jiaju.com/" id="上海">上海 </a>
-			        <a href="http://sz.59jiaju.com/" id="南京">南京</a>
-			        <a href="/index.php?app=search&act=sessions_city&city=珠海" id="杭州" >杭州</a>
-			        <a href="/index.php?app=search&act=sessions_city&city=汕头" id="合肥" >合肥</a>
-					<a href="/index.php?app=search&act=sessions_city&city=佛山" id="厦门" >厦门</a>
-					<a href="/index.php?app=search&act=sessions_city&city=东莞" id="南昌" >南昌</a>
-					<a href="/index.php?app=search&act=sessions_city&city=中山" id="苏州" >苏州</a>
-					<a href="/index.php?app=search&act=sessions_city&city=江门" id="无锡" >无锡</a>
-					<a href="/index.php?app=search&act=sessions_city&city=惠州" id="宁波" >宁波</a>
-					<a href="/index.php?app=search&act=sessions_city&city=肇庆" id="常州" >常州</a>
-					<a href="/index.php?app=search&act=sessions_city&city=阳江" id="嘉兴" >嘉兴</a>
-					<a href="/index.php?app=search&act=sessions_city&city=韶关" id="南通" >南通</a>
-					<a href="/index.php?app=search&act=sessions_city&city=河源" id="扬州" >扬州</a>
-					<a href="/index.php?app=search&act=sessions_city&city=河源" id="镇江" >镇江</a>
-					<a href="/index.php?app=search&act=sessions_city&city=河源" id="绍兴" >绍兴</a>
-					<a href="/index.php?app=search&act=sessions_city&city=河源" id="扬州" >扬州</a>
-					<a href="/index.php?app=search&act=sessions_city&city=河源" id="温州" >温州</a>
-					<a href="/index.php?app=search&act=sessions_city&city=河源" id="金华" >金华</a>
-					<a href="/index.php?app=search&act=sessions_city&city=河源" id="台州" >台州</a>
-					<a href="/index.php?app=search&act=sessions_city&city=河源" id="盐城" >盐城</a>
-					<a href="/index.php?app=search&act=sessions_city&city=河源" id="泰安" >泰安</a>
-					<a href="/index.php?app=search&act=sessions_city&city=河源" id="芜湖" >芜湖</a>
-					<a href="/index.php?app=search&act=sessions_city&city=河源" id="黄山" >黄山</a>
-					<a href="/index.php?app=search&act=sessions_city&city=河源" id="阜阳" >阜阳</a>
-					<a href="/index.php?app=search&act=sessions_city&city=河源" id="福州" >福州</a>
-					<a href="/index.php?app=search&act=sessions_city&city=河源" id="赣州" >赣州</a>
-					<a href="/index.php?app=search&act=sessions_city&city=河源" id="宜春" >宜春</a>
-					<a href="/index.php?app=search&act=sessions_city&city=河源" id="泰州" >泰州</a>
-				</dd>
-				<dt class="pro">华北</dt>
-				<dd class="area">
-					<a href="http://www.59jiaju.com/" id="北京">北京 </a>
-			        <a href="http://sz.59jiaju.com/" id="天津">天津</a>
-			        <a href="/index.php?app=search&act=sessions_city&city=珠海" id="太原" >太原</a>
-			        <a href="/index.php?app=search&act=sessions_city&city=汕头" id="唐山" >唐山</a>
-					<a href="/index.php?app=search&act=sessions_city&city=佛山" id="呼和浩特" >呼和浩特</a>
-					<a href="/index.php?app=search&act=sessions_city&city=东莞" id="包头" >包头</a>
-					<a href="/index.php?app=search&act=sessions_city&city=中山" id="石家庄" >石家庄</a>
-					<a href="/index.php?app=search&act=sessions_city&city=江门" id="呼伦贝尔" >呼伦贝尔</a>
-					<a href="/index.php?app=search&act=sessions_city&city=惠州" id="大同" >大同</a>
-					<a href="/index.php?app=search&act=sessions_city&city=肇庆" id="济南" >济南</a>
-					<a href="/index.php?app=search&act=sessions_city&city=阳江" id="青岛" >青岛</a>
-					<a href="/index.php?app=search&act=sessions_city&city=韶关" id="日照" >日照</a>
-					<a href="/index.php?app=search&act=sessions_city&city=河源" id="烟台" >烟台</a>
-				</dd>
-				<dt class="pro">华北</dt>
-				<dd class="area">
-					<a href="http://www.59jiaju.com/" id="北京">北京 </a>
-			        <a href="http://sz.59jiaju.com/" id="天津">天津</a>
-			        <a href="/index.php?app=search&act=sessions_city&city=珠海" id="太原" >太原</a>
-			        <a href="/index.php?app=search&act=sessions_city&city=汕头" id="唐山" >唐山</a>
-					<a href="/index.php?app=search&act=sessions_city&city=佛山" id="呼和浩特" >呼和浩特</a>
-					<a href="/index.php?app=search&act=sessions_city&city=东莞" id="包头" >包头</a>
-					<a href="/index.php?app=search&act=sessions_city&city=中山" id="石家庄" >石家庄</a>
-					<a href="/index.php?app=search&act=sessions_city&city=江门" id="呼伦贝尔" >呼伦贝尔</a>
-					<a href="/index.php?app=search&act=sessions_city&city=惠州" id="大同" >大同</a>
-					<a href="/index.php?app=search&act=sessions_city&city=肇庆" id="济南" >济南</a>
-					<a href="/index.php?app=search&act=sessions_city&city=阳江" id="青岛" >青岛</a>
-					<a href="/index.php?app=search&act=sessions_city&city=韶关" id="日照" >日照</a>
-					<a href="/index.php?app=search&act=sessions_city&city=河源" id="烟台" >烟台</a>
-				</dd>
-				<dt class="pro">华北</dt>
-				<dd class="area">
-					<a href="http://www.59jiaju.com/" id="北京">北京 </a>
-			        <a href="http://sz.59jiaju.com/" id="天津">天津</a>
-			        <a href="/index.php?app=search&act=sessions_city&city=珠海" id="太原" >太原</a>
-			        <a href="/index.php?app=search&act=sessions_city&city=汕头" id="唐山" >唐山</a>
-					<a href="/index.php?app=search&act=sessions_city&city=佛山" id="呼和浩特" >呼和浩特</a>
-					<a href="/index.php?app=search&act=sessions_city&city=东莞" id="包头" >包头</a>
-					<a href="/index.php?app=search&act=sessions_city&city=中山" id="石家庄" >石家庄</a>
-					<a href="/index.php?app=search&act=sessions_city&city=江门" id="呼伦贝尔" >呼伦贝尔</a>
-					<a href="/index.php?app=search&act=sessions_city&city=惠州" id="大同" >大同</a>
-					<a href="/index.php?app=search&act=sessions_city&city=肇庆" id="济南" >济南</a>
-					<a href="/index.php?app=search&act=sessions_city&city=阳江" id="青岛" >青岛</a>
-					<a href="/index.php?app=search&act=sessions_city&city=韶关" id="日照" >日照</a>
-					<a href="/index.php?app=search&act=sessions_city&city=河源" id="烟台" >烟台</a>
-				</dd>
-				<dt class="pro">华北</dt>
-				<dd class="area">
-					<a href="http://www.59jiaju.com/" id="北京">北京 </a>
-			        <a href="http://sz.59jiaju.com/" id="天津">天津</a>
-			        <a href="/index.php?app=search&act=sessions_city&city=珠海" id="太原" >太原</a>
-			        <a href="/index.php?app=search&act=sessions_city&city=汕头" id="唐山" >唐山</a>
-					<a href="/index.php?app=search&act=sessions_city&city=佛山" id="呼和浩特" >呼和浩特</a>
-					<a href="/index.php?app=search&act=sessions_city&city=东莞" id="包头" >包头</a>
-					<a href="/index.php?app=search&act=sessions_city&city=中山" id="石家庄" >石家庄</a>
-					<a href="/index.php?app=search&act=sessions_city&city=江门" id="呼伦贝尔" >呼伦贝尔</a>
-					<a href="/index.php?app=search&act=sessions_city&city=惠州" id="大同" >大同</a>
-					<a href="/index.php?app=search&act=sessions_city&city=肇庆" id="济南" >济南</a>
-					<a href="/index.php?app=search&act=sessions_city&city=阳江" id="青岛" >青岛</a>
-					<a href="/index.php?app=search&act=sessions_city&city=韶关" id="日照" >日照</a>
-					<a href="/index.php?app=search&act=sessions_city&city=河源" id="烟台" >烟台</a>
-				</dd>
-				<dt class="pro">华北</dt>
-				<dd class="area">
-					<a href="http://www.59jiaju.com/" id="北京">北京 </a>
-			        <a href="http://sz.59jiaju.com/" id="天津">天津</a>
-			        <a href="/index.php?app=search&act=sessions_city&city=珠海" id="太原" >太原</a>
-			        <a href="/index.php?app=search&act=sessions_city&city=汕头" id="唐山" >唐山</a>
-					<a href="/index.php?app=search&act=sessions_city&city=佛山" id="呼和浩特" >呼和浩特</a>
-					<a href="/index.php?app=search&act=sessions_city&city=东莞" id="包头" >包头</a>
-					<a href="/index.php?app=search&act=sessions_city&city=中山" id="石家庄" >石家庄</a>
-					<a href="/index.php?app=search&act=sessions_city&city=江门" id="呼伦贝尔" >呼伦贝尔</a>
-					<a href="/index.php?app=search&act=sessions_city&city=惠州" id="大同" >大同</a>
-					<a href="/index.php?app=search&act=sessions_city&city=肇庆" id="济南" >济南</a>
-					<a href="/index.php?app=search&act=sessions_city&city=阳江" id="青岛" >青岛</a>
-					<a href="/index.php?app=search&act=sessions_city&city=韶关" id="日照" >日照</a>
-					<a href="/index.php?app=search&act=sessions_city&city=河源" id="烟台" >烟台</a>
-				</dd>
-				<dt class="pro">华北</dt>
-				<dd class="area">
-					<a href="http://www.59jiaju.com/" id="北京">北京 </a>
-			        <a href="http://sz.59jiaju.com/" id="天津">天津</a>
-			        <a href="/index.php?app=search&act=sessions_city&city=珠海" id="太原" >太原</a>
-			        <a href="/index.php?app=search&act=sessions_city&city=汕头" id="唐山" >唐山</a>
-					<a href="/index.php?app=search&act=sessions_city&city=佛山" id="呼和浩特" >呼和浩特</a>
-					<a href="/index.php?app=search&act=sessions_city&city=东莞" id="包头" >包头</a>
-					<a href="/index.php?app=search&act=sessions_city&city=中山" id="石家庄" >石家庄</a>
-					<a href="/index.php?app=search&act=sessions_city&city=江门" id="呼伦贝尔" >呼伦贝尔</a>
-					<a href="/index.php?app=search&act=sessions_city&city=惠州" id="大同" >大同</a>
-					<a href="/index.php?app=search&act=sessions_city&city=肇庆" id="济南" >济南</a>
-					<a href="/index.php?app=search&act=sessions_city&city=阳江" id="青岛" >青岛</a>
-					<a href="/index.php?app=search&act=sessions_city&city=韶关" id="日照" >日照</a>
-					<a href="/index.php?app=search&act=sessions_city&city=河源" id="烟台" >烟台</a>
-				</dd>
+
+			<div class="icon_right_show_kf" style="width: 200px;height: 105px;position: fixed;right: 60px;top: 340px;background-image: url('/themes/mall/jiaju/images/jia.jpg');background-repeat: no-repeat;background-size: 200px;opacity: 0.8;display: none;">
+							<p style="text-align: center;height: 30px;text-decoration:underline;color: #fff;margin-top: 25px;font-size: 18px;">客服热线</p>
+							<p style="text-align: center;height: 30px;text-decoration:underline;color: #fff;font-size: 18px;">020-61973261</p>
 			</div>
-    	</div>
-    	<!-- baaner图的摆放 -->
-    	<div class="banner">
-			<!-- <img src="/themes/mall/jiaju/images/banner2.jpg" alt="banner图"> -->
-			<div class="banner-lunbo">
-				<div id="carousel-example-captions" class="carousel slide" data-ride="carousel" style="height: 100%;">
-				  <!-- Indicators -->
-				  <ol class="carousel-indicators">
-				    <li data-target="#carousel-example-captions" data-slide-to="0" class="active"></li>
-				    <li data-target="#carousel-example-captions" data-slide-to="1"></li>
-				    <li data-target="#carousel-example-captions" data-slide-to="2"></li>
-				  </ol>
 
-				  <!-- Wrapper for slides -->
-				  <div class="carousel-inner" role="listbox" id="lunbo" style="height: 100%;">
-				    <div class="item active">
-				      <a href="javascript:;" target="_blank"><img src="/themes/mall/jiaju/images/banner1.jpg" alt="..."></a>
-				      <!-- <div class="carousel-caption">
-				      	<div class="count">
-					      	<span>1</span>
-					      	<span>/</span>
-					      	<span class="total">6</span>
-				      	</div>
-				        深化合作,聚力共赢
-				      </div> -->
-				    </div>
-				    <div class="item">
-				      <a href="javascript:;" target="_blank"><img src="/themes/mall/jiaju/images/banner2.jpg" alt="..."></a>
-				      <!-- <div class="carousel-caption">
-				      	<div class="count">
-					      	<span>2</span>
-					      	<span>/</span>
-					      	<span class="total">/12</span>
-				      	</div>
-				        装修业的“金九银十”
-				      </div> -->
-				    </div>
-				    <div class="item">
-				      <a href="javascript:;" target="_blank"><img src="/themes/mall/jiaju/images/banner3.jpg" alt="..."></a>
-				      <!-- <div class="carousel-caption">
-				      	<div class="count">
-					      	<span>3</span>
-					      	<span>/</span>
-					      	<span class="total">/12</span>
-				      	</div>
-				        金百锐为微工程点赞
-				      </div> -->
-				    </div>
-				  </div>
+			<div class="icon_right_show_gzh" style="width: 130px;position: fixed;right: 60px;top: 300px;background-image: url('/themes/mall/jiaju/images/jia1.jpg');background-repeat: no-repeat;background-size: 120px;height: 215px;opacity: 0.8;display: none;">
+							<div>
+								<img src="/themes/mall/jiaju/images/wgcdyh.jpg" alt=""  style="width: 80px;height: 80px;margin: 10px 0 0 -14px;">
+								<p style="font-size: 10px;margin: 0px 0 0px 17px;color:#fff;">微工程订阅号</p>
+							</div>
+							<div>
+								<img src="/themes/mall/jiaju/images/wgcgzh.jpg" alt="" style="width: 80px;height: 80px;margin: 10px 0 0 -14px;">
+								<p style="font-size: 10px;margin: 0px 0 0px 17px;color:#fff;">微工程服务号</p>
+							</div>
+			</div>
 
-				  <!-- Controls -->
-				  <a class="left carousel-control" href="#carousel-example-captions" role="button" data-slide="prev" style="top: 50%;width: 3%;height: 100px;opacity: 0.5;">
-				    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-				    <span class="sr-only">Previous</span>
-				  </a>
-				  <a class="right carousel-control" href="#carousel-example-captions" role="button" data-slide="next" style="top: 50%;width: 3%;height: 100px;opacity: 0.5;">
-				    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-				    <span class="sr-only">Next</span>
-				  </a>
+			<div class="icon_right_show_wgz" style="width: 130px;height: 115px;position: fixed;right: 60px;top: 397px;background-image: url('/themes/mall/jiaju/images/jia2.jpg');background-repeat: no-repeat;background-size: 120px;opacity: 0.8;display: none;">
+				<div>
+					<img src="/themes/mall/jiaju/images/wgcxz.jpg" alt=""  style="width: 80px;height: 80px;margin: 10px 0 0 -14px;">
 				</div>
+				<p style="font-size: 10px;margin: 5px 0 0px 17px;color:#fff;">扫码下载微工程</p>
 			</div>
-    	</div>
-    	<!-- 新闻资讯模块 -->
-    	<div class="news public">
-    		<!-- 标题 -->
-    		<h3 class="newstitle">新闻资讯</h3>
-			<!-- 轮播图 -->
-			<div class="lunbo">
-				<div id="carousel-example-generic" class="carousel slide" data-ride="carousel" style="height: 100%;">
-				  <!-- Indicators -->
-				  <!-- <ol class="carousel-indicators">
-				    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-				    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-				    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-				  </ol> -->
+		
 
-				  <!-- Wrapper for slides -->
-				  <div class="carousel-inner" role="listbox" id="lunbo" style="height: 100%;">
-				    <div class="item active">
-				      <a href="/index.php?app=search&act=news_content&id=1207&title=深化合作%20聚力共赢" target="_blank"><img src="/themes/mall/jiaju/images/lunbo1.jpg" alt="..."></a>
-				      <div class="carousel-caption">
-				      	<div class="count">
-					      	<span>1</span>
-					      	<span>/</span>
-					      	<span class="total">6</span>
-				      	</div>
-				        深化合作,聚力共赢
-				      </div>
-				    </div>
-				    <div class="item">
-				      <a href="/index.php?app=search&act=news_content&id=1167&title=装修业的“金九银十”" target="_blank"><img src="/themes/mall/jiaju/images/lunbo2.jpg" alt="..."></a>
-				      <div class="carousel-caption">
-				      	<div class="count">
-					      	<span>2</span>
-					      	<span>/</span>
-					      	<span class="total">/12</span>
-				      	</div>
-				        装修业的“金九银十”
-				      </div>
-				    </div>
-				    <div class="item">
-				      <a href="/index.php?app=search&act=news_content&id=1171&title=金百锐为微工程点赞" target="_blank"><img src="/themes/mall/jiaju/images/lunbo3.jpg" alt="..."></a>
-				      <div class="carousel-caption">
-				      	<div class="count">
-					      	<span>3</span>
-					      	<span>/</span>
-					      	<span class="total">/12</span>
-				      	</div>
-				        金百锐为微工程点赞
-				      </div>
-				    </div>
-				    <div class="item">
-				      <a href="/index.php?app=search&act=news_content&id=1166&title=原驰装饰为微工程点赞" target="_blank"><img src="/themes/mall/jiaju/images/lunbo4.jpg" alt="..."></a>
-				      <div class="carousel-caption">
-				      	<div class="count">
-					      	<span>4</span>
-					      	<span>/</span>
-					      	<span class="total">/12</span>
-				      	</div>
-				       原驰装饰为微工程点赞
-				      </div>
-				    </div>
-				    <div class="item">
-				      <a href="/index.php?app=search&act=news_content&id=1165&title=三新装饰为微工程代言" target="_blank"><img src="/themes/mall/jiaju/images/lunbo5.jpg" alt="..."></a>
-				      <div class="carousel-caption">
-				      	<div class="count">
-					      	<span>5</span>
-					      	<span>/</span>
-					      	<span class="total">/12</span>
-				      	</div>
-				        三新装饰为微工程代言
-				      </div>
-				    </div>
-				    <div class="item">
-				      <a href="/index.php?app=search&act=news_content&id=1123&title=大唐鼎舍与微工程签约" target="_blank"><img src="/themes/mall/jiaju/images/lunbo6.jpg" alt="..."></a>
-				      <div class="carousel-caption">
-				      	<div class="count">
-					      	<span>6</span>
-					      	<span>/</span>
-					      	<span class="total">/12</span>
-				      	</div>
-				        装修业的“金九银十”
-				      </div>
-				    </div>
-				  </div>
-
-				  <!-- Controls -->
-				  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-				    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-				    <span class="sr-only">Previous</span>
-				  </a>
-				  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-				    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-				    <span class="sr-only">Next</span>
-				  </a>
+	<!-- 最右边的二维码显示内容end -->
+	<div class="divcss0" style="border-bottom: 1px solid #999;">
+		
+		<span class="span010"><a href="index.php?app=search&act=joblist" target='_blank' >热门招聘</a></span>
+		<span class="span011"><a href="index.php?app=search&act=joblist" target='_blank' ></a></span>
+	</div>
+	<div style="margin:0px;padding:0px;width:100%;overflow:hidden;display:inline;">
+		<div class="divcss1p">
+		<div class="divcss1" id="header_advertisement1">
+			<a href="index.php?app=search&act=joblist">
+				<img class="allimg" src="/themes/mall/jiaju/images/Image_001.png">
+			</a>
+		</div>
+		</div>
+		<!-- 热门职位 -->
+		<div class="divcss2p">
+			<div class="divcss2">
+				<p style="width: 100%;height: 30px;line-height: 30px;background-color: #f7f4f4;border-bottom: 1px solid #808080;">
+					<span style="float: left;font-size: 16px;color: #696969;padding-left: 5px;">热门职位</span>
+					<a target="_blank" href="index.php?app=search&act=joblist"><span style="float: right;font-size: 14px;color: #696969;padding-right: 5px;">更多</span></a>
+				</p>
+				<div class="aui-content aui-margin-b-15" id=''>
+					<?php
+						$query="select * from ecm_recruit where ok=0 order by id desc limit 0,10"; //定义sql
+						$result=mysql_query($query);
+						while($rows1=@mysql_fetch_array($result)){
+							  echo  "<li style='height:24px;line-height:24px;margin-bottom:1px;'>";
+							  echo  "<a target='_blank' href='index.php?app=search&act=content&id=".$rows1['id']."'>";
+						  	  echo  "<span style='width:150px;display: inline-block;margin-left: 2px;overflow: hidden;text-overflow: ellipsis;'>【".$rows1['kehu']."】".$rows1['zhiwei']."</span>";
+							  echo  "<span style='width:200px;display: inline-block;overflow: hidden;text-overflow: ellipsis;'>".$rows1['company_name']."</span>";
+							  echo  "  <span style='float:right;margin-right:5px;'>".date('Y-m-d H:i:s',$rows1['addtime'])."</span>";
+							  echo  "</a>";
+							  echo  "</li>";
+						}
+						
+					?>
+				
 				</div>
-			</div>
-			<!-- 资讯列表 -->
-	    	<div class="newslist">
-				<ul id="twoBox">
-					<li><a href="javascript:;">金白锐为微工程点赞</a></li>
-					<li><a href="javascript:;">装修行业的“金九银十”</a></li>
-					<li><a href="javascript:;">装修行业的“金九银十”</a></li>
-				</ul>
-	    	</div>
-	    </div>
+			</div> 
+		</div>
+		<!-- 维修项目 -->
+		<div class="divcss3p">
+			<div class="divcss2" id="repair_list" style="height:99%;overflow:hidden;width:99%;">
+				<p style="width: 100%;height: 30px;line-height: 30px;background-color: #f7f4f4;border-bottom: 1px solid #808080;">
+					<span style="float: left;font-size: 16px;color: #696969;padding-left: 5px;">维修项目</span>
+					<a target="_blank" href="/index.php?app=search&act=weixiulist"><span style="float: right;font-size: 14px;color: #696969;padding-right: 5px;">更多</span></a>
+				</p>
+				
+			</div> 
+		</div>
+	</div>
 
-	    <!-- 核心服务 -->
+</div>
 
-	    <!-- 三张banner图 -->
-	    <div class="servce public">
-			<div class="servce-item">
-				<img src="/themes/mall/jiaju/images/project_public.jpg" alt="">
-				<div class="servcename">项目合作</div>
-			</div>
-			<div class="servce-item">
-				<img src="/themes/mall/jiaju/images/area_public.jpg" alt="">
-				<div class="servcename">区域合作</div>
-			</div>
-			<div class="servce-item">
-				<img src="/themes/mall/jiaju/images/collection_public.jpg" alt="">
-				<div class="servcename">集采合作</div>
-			</div>
-	    </div>
-    	<div class="servce-content public">
-			<!-- 核心服务主标题 -->
-			<div class="content-center">
-				<h3>核心服务</h3>
-				<span>CORE SERVICE</span>
-			</div>
-			<div class="servce-ul">
+<!--无活招工-->
+<div style="padding:0px; margin-left:auto;margin-right:auto;margin-bottom:10px;width:1200px;">
+	<div class="divcss0"style="border-bottom: 1px solid #999;">
+		<span class="span010"><a target='_blank' href="index.php?app=search&act=caigou">无活找工</a></span>
+		<span class="span011"><a target='_blank' href="index.php?app=search&act=caigou"></a></span>
+	</div>
+	<div style="margin:0px;padding:0px;width:100%;min-height:280px;">
+		<div class="divcss1p">
+			<div class="divcss1" id="header_advertisement2">
+				<a  target='_blank' href="index.php?app=search&act=caigou"><img class="allimg" src="/themes/mall/jiaju/images/wuhuozhaogong.jpg"></a>
+			</div> 
+		</div>
+		<div class="divcss2p">
+			<!-- 材料询价 -->
+			<div class="divcss2">
+			
+				<div class="divcsschld">
+					<div class="divcsschld1">
+						<span style="background-color: #f7f4f4;font-size: 16px;display: inline-block;width: 70px;height: 100%;line-height: 25px;">无活找工</span>
+					</div>
+					<a target='_blank' href="index.php?app=search&act=wuhuozhaogong">
+						<span class="span011">更多</span>
+					</a>
+				</div>
+				<div class="aui-content aui-margin-b-15" id='lists'>
+					<?php					
+						$query="SELECT a.*, b.postion FROM ecm_qiuzhi a LEFT JOIN ecm_member b ON a.user_id = b.user_id where a.type=1 and a.ok=0 order by a.id desc limit 0,10"; //定义sql
+						$result=mysql_query($query);
+						while($rows1=@mysql_fetch_array($result)){
+							$index = $rows1['postion'];
+							$postion = ($index > 0)?$cate[$index]:'无工种';
+							  echo  "<li style='height:24px;line-height:24px;margin-bottom:1px;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;'>";
+							  echo  "<a target='_blank' href='/index.php?app=search&act=wuhuozhaogong_content&id=".$rows1['id']."&uid=".$rows1['user_id']."'>";
+							  echo  "<span style='display: inline-block;width: 150px;margin-left: 2px;overflow: hidden;text-overflow: ellipsis;' title=''>【".$rows1['kehu']."】".$rows1['title']."</span>";
+							  echo  "<span style='margin-left: 2px;width: 200px;display: inline-block;overflow: hidden;text-overflow: ellipsis;'>".$rows1['xiangxi']."</span>";
+							  echo  "  <span style='float:right;margin-right:5px;'>".date('Y-m-d H:i:s',$rows1['addtime'])."</span>";
+							  echo  "</a>";
+							  echo  "</li>";
+						}
+						
+					?>
+					
+				
+				</div>
 				<ul>
-					<li class="servce-ul-item">
-						<span>01.</span>
-						<span>热门招聘</span>
-						<p>汇集装饰行业人才招聘储备，智能匹配</p>
-					</li>
-					<li class="servce-ul-item">
-						<span>02.</span>
-						<span>维修项目</span>
-						<p>实时展示维修项目，承接维修项目</p>
-					</li>
-					<li class="servce-ul-item">
-						<span>03.</span>
-						<span>材料采购</span>
-						<p>为您提供装饰行业材料</p>
-					</li>
-					<li class="servce-ul-item">
-						<span>04.</span>
-						<span>材料推广</span>
-						<p>开拓材料市场提高效益</p>
-					</li>
-					<li class="servce-ul-item">
-						<span>05.</span>
-						<span>材料询价</span>
-						<p>查询装饰行业材料详情价格</p>
-					</li>
+
 				</ul>
-			</div>
-			<div class="servce-ul-center">
-				<img src="/themes/mall/jiaju/images/service.jpg" alt="">
-			</div>
-			<div class="servce-ul">
+				
+			</div> 
+		</div>
+		<!-- 无活招工 -->
+		<div class="divcss3p">
+			<div class="divcss3" style="border: 1px solid #808080;">
+				<div class="divcsschld">
+					<div class="divcsschld1">
+						<span style="background-color: #f7f4f4;font-size: 16px;display: inline-block;width: 35px;height: 100%;line-height: 25px;">招工</span>
+					</div>
+					<a target='_blank' href="index.php?app=search&act=zhaogong">
+						<span class="span011">更多</span>
+					</a>
+				</div>
+				<div class="aui-content aui-margin-b-15" id='lists'>
+					<?php
+						$query="SELECT a.*, b.postion FROM ecm_qiuzhi a LEFT JOIN ecm_member b ON a.user_id = b.user_id where a.type=2 and ok=0 order by a.id desc limit 0,10"; //定义sql
+						$result=mysql_query($query);
+						while($rows1=@mysql_fetch_array($result)){
+							 $index = $rows1['jobtype'];
+							//var_dump($cate[1]);
+							$postion = ($index > 0)?$cate[$index]:'无工种';
+							  echo  "<li style='height:24px;line-height:24px;margin-bottom:1px;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;'>";
+							  echo  "<a target='_blank' href='/index.php?app=search&act=zhaogong_content&id=".$rows1['id']."&uid=".$rows1['user_id']."'>";
+							  echo  "<span style='display: inline-block;width: 150px;margin-left: 2px;overflow: hidden;text-overflow: ellipsis;' title=''>【".$rows1['kehu']."】".$postion."</span>";
+							  echo  "<span style='margin-left: 2px;width: 200px;display: inline-block;overflow: hidden;text-overflow: ellipsis;'>".$rows1['xiangxi']."</span>";
+							  echo  "  <span style='float:right;margin-right:5px;'>".date('Y-m-d H:i:s',$rows1['addtime'])."</span>";
+							  echo  "</a>";
+							  echo  "</li>";
+						}
+					?>
+				</div>
+			</div> 
+		</div>
+	</div>
+
+</div>
+
+<!--材料信息-->
+<div style="padding:0px; margin-left:auto;margin-right:auto;margin-bottom:10px;width:1200px;">
+	<div class="divcss0" style="border-bottom: 1px solid #999;">
+		<span class="span010"><a target='_blank' href="index.php?app=search&act=caigou">材料信息</a></span>
+		<span class="span011"><a target='_blank' href="index.php?app=search&act=caigou"></a></span>
+	</div>
+	<div style="margin:0px;padding:0px;width:100%;min-height:280px;">
+		<div class="divcss1p" style="height: 292px;">
+			<div class="divcss1" style="height: 292px;" id="header_advertisement3">
+				<a target='_blank' href="index.php?app=search&act=caigou"><img class="allimg" src="/themes/mall/jiaju/images/Image_012.png"></a>
+			</div> 
+		</div>
+		<!-- 材料采购 -->
+		<div class="divcss2p" style="height: 292px;">
+			<div class="divcss2" style="height: 292px;">
+				<p style="width: 100%;height: 30px;line-height: 30px;background-color: #f7f4f4;border-bottom: 1px solid #808080;">
+					<span style="float: left;font-size: 16px;color: #696969;padding-left: 5px;">材料采购</span>
+					<a target="_blank" href="index.php?app=search&act=cailiaocaigou"><span style="float: right;font-size: 14px;color: #696969;padding-right: 5px;">更多</span></a>
+				</p>
+				<div class="aui-content aui-margin-b-15" id='lists'>
+					<?php
+						$query="select * from ecm_purchase_maintable_auxiliarytable as sc join ecm_purchase_maintable as st on sc.pid=st.id and sc.ok=0 order by sc.id desc limit 0,10"; //定义sql
+						$result=mysql_query($query);
+						while($rows1=@mysql_fetch_array($result)){
+							 
+							  echo  "<li style='height:24px;line-height:24px;margin-bottom:1px;'>";
+							  echo  "<a target='_blank' href='index.php?app=search&act=cailiaocaigou_content&id=".$rows1['pid']."'>";
+							  echo  "<span style='margin-left: 2px;width: 150px;display: inline-block;overflow: hidden;text-overflow: ellipsis;'>【".$rows1['kehu']."】".$rows1['m_name']."</span>";
+							  echo  "<span style='margin-left: 2px;width: 200px;display: inline-block;overflow: hidden;text-overflow: ellipsis;'>".$rows1['office_name']."</span>";
+							  echo  "<span style='float:right;margin-right:5px;'>".date('Y-m-d H:i:s',$rows1['atime'])."</span>";
+							  echo  "</a>";
+							  echo  "</li>";
+						}	
+					?>
+				</div>
+			</div> 
+		</div>
+		<!-- 材料推广 -->
+		<div class="divcss2p" style="width:478px;height:295px;overflow:hidden;float:left;padding-left: 17px;">
+			<div class="divcss2" id="cailiao_list" style="height:99%;overflow:hidden;width:99%;">
+				<p style="width: 100%;height: 30px;line-height: 30px;background-color: #f7f4f4;border-bottom: 1px solid #808080;">
+					<span style="float: left;font-size: 16px;color: #696969;padding-left: 5px;">材料推广</span>
+					<a target="_blank" href="index.php?app=search&act=cailiaotuiguang"><span style="float: right;font-size: 14px;color: #696969;padding-right: 5px;">更多</span></a>
+				</p>
+				
+			</div> 
+		</div>
+	</div>
+
+</div>
+<!--采购-->
+<div style="padding:0px; margin-left:auto;margin-right:auto;margin-bottom:10px;width:1200px;">
+	<div class="divcss0" style="border-bottom: 1px solid #999;">
+		<span class="span010"><a target='_blank' href="index.php?app=search&act=caigou">集采信息</a></span>
+		<span class="span011"><a target='_blank' href="index.php?app=search&act=caigou"></a></span>
+	</div>
+	<div style="margin:0px;padding:0px;width:100%;min-height:280px;">
+		<div class="divcss1p">
+			<div class="divcss1" id="header_advertisement4">
+				<a  target='_blank' href="index.php?app=search&act=caigou"><img class="allimg" src="/themes/mall/jiaju/images/Image_012.png"></a>
+			</div> 
+		</div>
+		<div class="divcss2p">
+			<!-- 材料询价 -->
+			<div class="divcss2">
+			
+				<div class="divcsschld">
+					<div class="divcsschld1">
+						<span style="background-color: #f7f4f4;font-size: 16px;display: inline-block;width: 70px;height: 100%;line-height: 25px;">材料询价</span>
+					</div>
+					<a target='_blank' href="index.php?app=search&act=cailiaoxunjia">
+						<span class="span011">更多</span>
+					</a>
+				</div>
+				<div class="aui-content aui-margin-b-15" id='lists'>
+					<?php
+						$query="select * from ecm_material WHERE cai_type=3 and ok=0 or rev_uid='' order by id desc limit 0,10"; //定义sql
+						$result=mysql_query($query);
+						while($rows1=@mysql_fetch_array($result)){
+							 
+							  echo  "<li style='height:24px;line-height:24px;margin-bottom:1px;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;'>";
+							  echo  "<a target='_blank' href='index.php?app=search&act=cailiaoxunjia_content&id=".$rows1['id']."'>";
+							  echo  "<span style='display: inline-block;width: 150px;margin-left: 2px;overflow: hidden;text-overflow: ellipsis;' title=''>【".$rows1['kehu']."】".$rows1['m_name']."</span>";
+							  echo  "<span style='margin-left: 2px;width: 200px;display: inline-block;overflow: hidden;text-overflow: ellipsis;'>".$rows1['office_name']."</span>";
+							  echo  "  <span style='float:right;margin-right:5px;'>".date('Y-m-d H:i:s',$rows1['addtime'])."</span>";
+							  echo  "</a>";
+							  echo  "</li>";
+						}
+						
+					?>
+					
+				
+				</div>
 				<ul>
-					<li class="servce-ul-item servce-ul-item-right">
-						<span>06.</span>
-						<span>集采价格</span>
-						<p>精确透明的建材价格</p>
-					</li>
-					<li class="servce-ul-item servce-ul-item-right">
-						<span>07.</span>
-						<span>今日工价</span>
-						<p>实时关注装饰行业工人报价</p>
-					</li>
-					<li class="servce-ul-item servce-ul-item-right">
-						<span>08.</span>
-						<span>工价询价</span>
-						<p>查询装饰行业工人详情报价</p>
-					</li>
-					<li class="servce-ul-item servce-ul-item-right">
-						<span>09.</span>
-						<span>设计预算分包</span>
-						<p>即时承接设计与预算项目分包工程</p>
-					</li>
-					<li class="servce-ul-item servce-ul-item-right">
-						<span>10.</span>
-						<span>项目分包</span>
-						<p>承接工程项目</p>
-					</li>
+
 				</ul>
-			</div>
-    	</div>
+				
+			</div> 
+		</div>
+		<!-- 集采价格 -->
+		<div class="divcss3p">
+			<div class="divcss3" style="border: 1px solid #808080;">
+				<div class="divcsschld">
+					<div class="divcsschld1">
+						<span style="background-color: #f7f4f4;font-size: 16px;display: inline-block;width: 70px;height: 100%;line-height: 25px;">集采价格</span>
+					</div>
+					<a target='_blank' href="index.php?app=search&act=caigou">
+						<span class="span011">更多</span>
+					</a>
+				</div>
+				<div class="aui-content aui-margin-b-15" id='lists'>
+					<?php
+						$query="select * from ecm_material WHERE cai_type=1 and ok=0 or rev_uid='' order by id desc limit 0,10"; //定义sql
+						$result=mysql_query($query);
+						while($rows1=@mysql_fetch_array($result)){
+							 
+							  echo  "<li style='height:24px;line-height:24px;margin-bottom:1px;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;'>";
+							  echo  "<a target='_blank' href='index.php?app=search&act=content_caigou&id=".$rows1['id']."&cai_type=2'>";
+							  echo  "<span style='display: inline-block;width: 150px;margin-left: 2px;overflow: hidden;text-overflow: ellipsis;' title=''>【".$rows1['kehu']."】".$rows1['m_name']."</span>";
+							  echo  "<span style='margin-left: 2px;width: 200px;display: inline-block;overflow: hidden;text-overflow: ellipsis;'>".$rows1['office_name']."</span>";
+							  echo  "  <span style='float:right;margin-right:5px;'>".date('Y-m-d H:i:s',$rows1['addtime'])."</span>";
+							  echo  "</a>";
+							  echo  "</li>";
+						}
+					?>
+				</div>
+			</div> 
+		</div>
+	</div>
 
-    	<!-- 广告招租 -->
-    	<div class="advertisement public">
-			<img src="/themes/mall/jiaju/images/zhaozhu.jpg" alt="广告招租">
-    	</div>
-
-    	<!-- 底部 -->
-    	<div class="footer">
-			<p>Copyright © 2013-2018 微工程 版权所有 粤ICP备09031901号-1</p>
-			<p>广州市我购科技有限公司</p>
-    	</div>
+</div>
+<!--招工/找工-->
+<div style="height:355px;overflow:hidden;padding:0px; margin-left:auto;margin-right:auto;margin-bottom:10px;width:1200px;">
+	<div class="divcss0" style="border-bottom: 1px solid #999;">
+		
+		<span class="span010"><a target='_blank' href="index.php?app=search&act=joblist3&type=装饰建筑">劳动力资源</a></span>
+	</div>
+	<div style="margin:0px;padding:0px;width:100%;height:auto;overflow: hidden;">
+		<div class="divcss1p" style="width:18%;overflow:hidden;height:auto;">
+			<div class="divcss1" style="width:99%;height:310px;overflow:hidden;" id="header_advertisement5">
+				<a href="index.php?app=search&act=joblist3&type=装饰建筑""><img class="allimg" src="/themes/mall/jiaju/images/zz1.png"></a>
+			</div> 
+		</div>
+		<!-- 今日工价 -->
+		<div class="divcss2p" style="width:486px;height:auto;overflow:hidden;">
+			<div class="divcss2" style="width:99%;height:auto;overflow:hidden;">
+				<div class="divcsschld">
+					<div class="divcsschld1">
+						<span style="background-color: #f7f4f4;font-size: 16px;display: inline-block;width: 70px;height: 100%;line-height: 25px;">今日工价</span>
+					</div>
+					<a target='_blank' href="index.php?app=search&act=gongjia&timesu=1">
+						<span class="span011">更多</span>
+					</a>
+				</div>
+				<div style="height:278px;overflow:hidden">
+					<table border="1" style="border-collapse:collapse;border:1px solid #e3e3e3;margin:0px auto;width:100%;background:#fff;">
+						<?php
+							$query="select * from ecm_search as A,ecm_member as B where A.userid=B.user_id and A.ok=0 order by A.id desc limit 0,7"; //定义sql
+							
+							$result=mysql_query($query);
+							
+							while($rows1=@mysql_fetch_array($result)){
+								//var_dump($rows1);
+								echo '<tr style="cursor:pointer" title="'.$rows1['title'].'" onclick="openGongjiaConten('.$rows1['id'].','.$rows1['user_id'].')">';
+								echo '	<td style="font-size:16px;color:#333;text-align:left;height:38px;"><i style="margin:0 15px;">&bull;</i>【'.$rows1['kehu'].'】'.$rows1['title'].'</td>';
+								echo '	<td style="font-size:16px;color:#333;height:38px;">'.$rows1['xinzi'].'</td>';
+								echo '	<td style="font-size:16px;color:#333;height:38px;">'.$rows1['unit'].'</td>';
+								echo '	<td style="font-size:12px;color:#999;height:38px;">'.$rows1['addtime'].'</td>';
+								echo '</tr>';
+							}
+							
+						?>
+					</table>
+					
+				</div>
+			</div> 
+		</div>
+		<!-- 工价询价 -->
+		<div class="divcss2p" style="width:40%;height:450px;overflow:hidden;">
+			<div class="divcss2" id="gjxj" style="width:99%;height:309px;overflow:hidden;">
+				<p style="width: 100%;height: 30px;line-height: 30px;background-color: #f7f4f4;border-bottom: 1px solid #808080;">
+					<span style="float: left;font-size: 16px;color: #696969;padding-left: 5px;">工价询价</span>
+					<a target="_blank" href="index.php?app=search&act=gongjiaxunjia"><span style="float: right;font-size: 14px;color: #696969;padding-right: 5px;">更多</span></a>
+				</p>
+			</div> 
+		</div>
 		
 	</div>
-    <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
-    <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
-    <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
-    <script>
- 	// 获取轮图的总数和当前的序号
- 	(function(){
- 		getPicIdex();
- 		news_select(page);
- 	}())
- 	function getPicIdex(){
- 		var count = $(".item").length;
- 		$(".total").html(count);
- 	}
- 	//行业要闻列表
-var page = 1;
-function news_select(page){
-	
-	var url = "http://wgcapp.wgc2013.com/index.php/Home/"+"Systemmsg/AdvertisementPage";
-	$.post(url,{
-		limit : 16,
-		type : '10,11,12,13,14,15,52',
-		page : 1,
-		kehu : '微工程'
-	},function(ret){
-		if(ret.code == 200){
-			page++;
-			var data = ret.message;
-			var html = '';
-			var listHtml  = '';
-			var listHtmlS  = '';
-			for (var i in data) {
-				var id=data[i].id,
-					title=data[i].title,
-					pic=data[i].pic,
-					describe=data[i].describe,
-					j      = parseInt(i)+1,
-					content=data[i].content;
-				var cont = content.replace(/<[^>]+>/g,'');
-				
-				html += '<li title="'+title+'" onclick="openNewsContents(this,'+id+')"><a href="javascript:;">'+title+'</a></li>';
-				
-			    
-			}
-		   
-			$('#twoBox').html(html);
-		}else if(ret.code == 202)	{
-			if(page == 1){
-				$("#news").html('<div style="border: none;width:80px;margin:10px auto;" class="empty"><img src="/themes/mall/jiaju/images/empty.png"/></div>');
-			}else{
-				//alert('暂无更多了');
-			}
-		}else{
-			return false;
-		}
-	},"json");
-}
 
-	//打开新闻详情
-function openNewsContents(obj,id){
-	var url = '/index.php?app=search&act=news_content&id='+id+'&title='+obj.title+'';
-	window.open(url);
-	//_openWin('gongzuo_content_win','../gongzuo/gongzuo_content_win.html',{id : id,type : 1,touid : user_id,f_type : '招工'});
+</div>
+<!--项目分包-->
+<!-- <div style="height:410px;overflow:hidden;padding:0px; margin-left:auto;margin-right:auto;margin-bottom:50px;width:1200px;">
+	<div class="divcss0" style="border-bottom: 1px solid #999;">
+		<span class="span010"><a target='_blank' href="index.php?app=search&act=xiangmu">项目分包</a></span>
+	</div>
+	<div style="margin:0px;padding:0px;width:100%;height:auto;overflow: hidden;">
+		<div class="divcss1p" style="width:18%;overflow:hidden;height:auto;">
+			<div class="divcss1" style="width:99%;height:360px;overflow:hidden;" id="header_advertisement6">
+				<a href="index.php?app=search&act=xiangmu"><img class="allimg" src="/themes/mall/jiaju/images/zz2.png"></a>
+			</div> 
+		</div>
+		设计、预算分包
+		<div class="divcss2p" style="width:486px;height:366px;overflow:hidden;float:left;">
+			<div class="divcss2" id="design_list" style="height:99%;overflow:hidden;width:99%;">
+				<p style="width: 100%;height: 30px;line-height: 30px;background-color: #f7f4f4;border-bottom: 1px solid #808080;">
+					<span style="float: left;font-size: 16px;color: #696969;padding-left: 5px;">设计、预算分包</span>
+					<a target="_blank" href="index.php?app=search&act=shejifenbao"><span style="float: right;font-size: 14px;color: #696969;padding-right: 5px;">更多</span></a>
+				</p>
+			</div> 
+		</div>
+		项目分包
+		<div class="divcss2p" style="width:40%;height:450px;overflow:hidden;">
+			<div class="divcss2" id="prj_list" style="width:99%;height:362px;overflow:hidden;">
+				<p style="width: 100%;height: 30px;line-height: 30px;background-color: #f7f4f4;border-bottom: 1px solid #808080;">
+					<span style="float: left;font-size: 16px;color: #696969;padding-left: 5px;">项目分包</span>
+					<a target="_blank" href="index.php?app=search&act=xiangmu"><span style="float: right;font-size: 14px;color: #696969;padding-right: 5px;">更多</span></a>
+				</p>
+			</div> 
+		</div>
+	</div>
+</div> -->
+
+<!-- 广告图 -->
+<div class="ad" style="width:100%;overflow:hidden;margin-bottom:25px;margin-top: 20px;">
+	<img src="/themes/mall/jiaju/styles/style/images/advertisment1.jpg" width="1200">
+</div>
+
+{include file=footer.html}
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+<script src="/themes/mall/jiaju/js/tool.js"></script>
+<script type="text/javascript">
+	var serverUrl = "http://wgcapp.59jiaju.com/",
+		page = 1,
+		pages = 1,
+		uploadUrl = "http://wgcapp.59jiaju.com/",
+		key = '';
+	$(function(){
+		advertisement(4,'header_advertisement1');//首页广告1
+		advertisement(5,'header_advertisement2');
+		advertisement(6,'header_advertisement3');
+		advertisement(7,'header_advertisement4');
+		advertisement(8,'header_advertisement5');
+		advertisement(9,'header_advertisement6');
+		project();
+		designList();
+		repair_list();
+		gongjiaxunjia();
+		cailiaotuiguang();
+
+		setTimeout('erwima()',3000);
+		//右边的二维码
+		$(".icon_qq").on({
+			mouseenter:function(){
+				$(".icon_right_show_qq").fadeIn();
+				$(".icon_right_show_kf").hide();
+				$(".icon_right_show_gzh").hide();
+				$(".icon_right_show_wgz").hide();
+			},
+			mouseleave:function(){
+				$(".icon_right_show_qq").hide();
+			}
+
+		});
+		$(".icon_kf").on({
+			mouseenter:function(){
+				$(".icon_right_show_kf").fadeIn();
+				$(".icon_right_show_qq").hide();
+				$(".icon_right_show_gzh").hide();
+				$(".icon_right_show_wgz").hide();
+			},
+			mouseleave:function(){
+				$(".icon_right_show_kf").hide();
+			}
+
+		});
+		$(".icon_gzh").on({
+			mouseenter:function(){
+				$(".icon_right_show_gzh").fadeIn();
+				$(".icon_right_show_kf").hide();
+				$(".icon_right_show_qq").hide();
+				$(".icon_right_show_wgz").hide();
+			},
+			mouseleave:function(){
+				$(".icon_right_show_gzh").hide();
+			}
+
+		});
+		$(".icon_wei").on({
+			mouseenter:function(){
+				$(".icon_right_show_wgz").fadeIn();
+				$(".icon_right_show_kf").hide();
+				$(".icon_right_show_gzh").hide();
+				$(".icon_right_show_qq").hide();
+			},
+			mouseleave:function(){
+				$(".icon_right_show_wgz").hide();
+			}
+
+		})
+		$(".icon_right_show_qq").on({
+			mouseenter:function(){
+				$(this).show();
+			},
+			mouseleave:function(){
+				$(this).hide();
+			}
+		})
+		$(".icon_right_show_kf").on({
+			mouseenter:function(){
+				$(this).show();
+			},
+			mouseleave:function(){
+				$(this).hide();
+			}
+		})
+		$(".icon_right_show_gzh").on({
+			mouseenter:function(){
+				$(this).show();
+			},
+			mouseleave:function(){
+				$(this).hide();
+			}
+		})
+		$(".icon_right_show_wgz").on({
+			mouseenter:function(){
+				$(this).show();
+			},
+			mouseleave:function(){
+				$(this).hide();
+			}
+		})
+	});
+	
+	/*jQuery(".fullSlide").hover(function() {
+	  jQuery(this).find(".prev,.next").stop(true, true).fadeTo("show", 0.5)
+	},
+	function() {
+	  jQuery(this).find(".prev,.next").fadeOut();
+	  
+	});
+	jQuery(".fullSlide").slide({
+	  titCell: ".hd ul",
+	  mainCell: ".bd ul",
+	  effect: "fold",
+	  autoPlay: true,
+	  autoPage: true,
+	  trigger: "click",
+	  startFun: function(i) {
+	      var curLi = jQuery(".fullSlide .bd li").eq(i);
+	      if ( !! curLi.attr("_src")) {
+	          curLi.css("background-image", curLi.attr("_src")).removeAttr("_src")
+	      }
+	  }
+	});*/
+
+	//列表
+	function gongjia_select(){
+		var url = serverUrl+"jingyi.php/Home/Jysearch/searchlist";
+		$.post(url,{user_id:'',page : 1,infotype:'pc_index'},function(ret){
+			if(ret.status == 200){
+				page++;
+				var list=['施工队长','水电工长','空调安装工长','空调安装工','泥水工','水电工','电焊工','家具安装工','木工','扇灰工','保洁工','杂工','设计师','预算员','其它','维修工','网络维修'];
+				var data = ret.retData;
+				var listHtml = '';
+				for (var i in data) {
+							
+					var id          = data[i].id,
+						name        = data[i].title,
+						xiangxi     = data[i].xiangxi,
+						unit        = data[i].unit,
+						user_id     = data[i].userid,
+						postions    = data[i].postion,
+						postion 	= (parseInt(data[i].postion) > 1)?list[parseInt(data[i].postion)]:'无工种',
+						xinzi       = (data[i].total_price == 0)?'面议':data[i].total_price+'元',
+						addtime     = data[i].addtime;
+				
+					listHtml += '<tr style="cursor:pointer" title="'+name+'" onclick="openGongjiaConten('+id+','+user_id+')">';
+					listHtml += '	<td style="font-size:16px;color:#333;text-align:left;height:38px;"><i style="margin:0 15px;">&bull;</i>'+name+'</td>';
+					listHtml += '	<td style="font-size:16px;color:#333;height:38px;">'+unit+'</td>';
+					listHtml += '	<td style="font-size:16px;color:#333;height:38px;">'+xinzi+'</td>';
+					listHtml += '	<td style="font-size:16px;color:#333;height:38px;">'+addtime+'</td>';
+					listHtml += '</tr>';
+				}
+				$("table").show();
+				$("table").append(listHtml);
+			}else if(ret.status == 202)	{
+				if(page == 1){
+					$("table").html('<div style="border: none;width:100px;margin:50px auto;" class="empty"><img src="/themes/mall/jiaju/images/empty.png"/></div>');
+					$("table").html('<div style="border: none;width:100px;margin:50px auto;" class="empty"><img src="/themes/mall/jiaju/images/empty.png"/></div>');
+				}else{
+					//alert('暂无更多了');
+				}
+			}else{
+				return false;
+			}
+		},"json");
+
+	}
+	//打开工价详情
+	function openGongjiaConten(id,user_id){
+		var url = '/index.php?app=search&act=gongjia_content&id='+id+'&name=详细介绍';
+		window.open(url);
+		//_openWin('gongzuo_content_win','../gongzuo/gongzuo_content_win.html',{id : id,type : 1,touid : user_id,f_type : '招工'});
+	}
+
+	//项目分包列表
+	page = 1;
+	function project(){
+
+		var url= 'http://wgcapp.wgc2013.com/jingyi.php/Home/Jianli/projectSubcontract_listss';
+		$.ajax({
+			type:"POST",
+			url:url,
+			data:{
+				page   :page
+			},
+			cache:false,
+			crossDomain: true == !(document.all),
+			dataType: "json",
+			success:function(ret){
+				if(ret.status == 200){
+					var data = ret.retData;
+					var html = '';
+					for(var i in data){
+						if(i<4){
+							var expect_price = (data[i].expect_price == null || data[i].expect_price == '') ? '未设定':data[i].expect_price,
+				            	name = data[i].name,
+				            	worker_address = (data[i].worker_address == null || data[i].worker_address == '') ? '未设定':data[i].worker_address,
+				            	prj_name = (data[i].prj_name == null || data[i].prj_name == '') ? '未设定':data[i].prj_name,//项目名称
+				            	ps = (data[i].ps == null || data[i].ps == '') ? '未设定':data[i].ps,//备注
+				            	send_uid = data[i].user_id,
+				            	unit = data[i].unit,
+				            	tell = data[i].tell,
+				            	type = data[i].type,
+								kehu = data[i].kehu,
+				            	dd_time = (data[i].dd_time == null || data[i].dd_time == '') ? '未设定':data[i].dd_time,//截止时间
+								addtime = _trans_php_time_to_str(data[i].addtime,5),//添加时间
+								content = data[i].content,
+				            	autoaddress = data[i].autoaddress,
+				            	id = data[i].id,
+				            	ok = data[i].ok;
+
+				            	if(ok == 0){
+									html +=			'<div style="overflow: hidden;border-bottom: 1px solid #ccc;height:82px;">';
+									html +=					'<a href="/index.php?app=search&act=xiangmu_details&id='+id+'" style="text-decoration: none;" target="_blank">';
+									html +=			'<p style="float: left;font-size: 18px;color: red;font-weight: 600;letter-spacing: 2px;margin: 10px 0 10px 5px;">【'+kehu+'】'+prj_name+'</p>';
+									html +=				'<p style="float: right;font-size: 18px;color: red;font-weight: 600;letter-spacing: 2px;margin: 10px 20px 10px 0;">'+expect_price+'</p>';
+									html +=				'<ul id="" style="width:100%;height:auto;overflow:hidden">';
+									html +=						'<li style="width: 100%;height: auto;">';
+									html +=							'<div style="margin-left: 5px;">';
+									html +=								'<span style="letter-spacing: 2px;">地址:</span>';
+									html +=								'<span style="color: #000;display: inline-block;margin-left: 10px;letter-spacing: 2px;">'+worker_address+'</span>';
+									html +=							'</div>';
+									html +=							'<div style="overflow: hidden;margin-left: 5px;">';
+									html +=								'<span style="letter-spacing: 2px;">截止时间:</span>';
+									html +=								'<span style="color: #000;display: inline-block;margin-left: 10px;letter-spacing: 1px;">'+dd_time+'</span>';
+									html +=							'<span style="float: right;margin-right:5px;">'+addtime+'</span>';
+									html +=							'</div>';
+									html +=						'</li>';
+									html +=				'</ul>';
+									html +=					'</a>';
+									html +=				'</div>';
+				            	}
+						}
+					}
+					$("#prj_list").append(html);
+				}
+			},
+			error:function(err){
+				console.log(err)
+			}
+		});
+	}
+	//设计分包列表
+	function designList(){
+		var url = 'http://wgcapp.wgc2013.com/index.php/Home/Designoffer/getList';
+		var myid = '<?php echo $_SESSION["user_info"]["user_id"];?>';
+		$.post(url,{
+			user_id:'<?php echo $_SESSION["user_info"]["user_id"];?>',
+			page   :page
+		},function(ret){
+			var listHtml = '';
+			if(ret.code == 200){
+				var data = ret.message;
+				for(var i in data){
+					if(i<4){
+			            var price = data[i].price,
+			            	name = data[i].name,
+			            	address = data[i].address,
+			            	bj_name = data[i].ps,
+			            	send_uid = data[i].user_id,
+			            	unit = data[i].unit,
+			            	tell = data[i].tell,
+			            	type = data[i].type,
+							kehu = data[i].kehu,
+							addtime = timestampToTime(data[i].addtime),
+							content = data[i].content,
+			            	autoaddress = data[i].autoaddress,
+			            	id = data[i].id,
+			            	project_name = data[i].project_name,
+			            	ok = data[i].ok;
+						
+						if(ok == 0){
+							listHtml +=		'<div style="overflow: hidden;border-bottom: 1px solid #ccc;height:82px;">';
+							listHtml +=				'<a href="/index.php?app=search&act=shejifenbao_details&id='+id+'" style="text-decoration: none;" target="_blank">';
+							listHtml +=			'<p style="float: left;font-size: 18px;color: red;font-weight: 600;letter-spacing: 2px;margin: 10px 0 10px 5px;">【'+kehu+'】'+project_name+'</p>';
+							listHtml +=			'<p style="float: right;font-size: 18px;color: red;font-weight: 600;letter-spacing: 2px;margin: 10px 30px 10px 0;">'+price+'</p>';
+							listHtml +=			'<ul id="" style="width:100%;height:auto;overflow:hidden">';
+							listHtml +=					'<li style="width: 100%;height: auto;">';
+							listHtml +=					'<div style="margin-left: 5px;height: auto;border: none;">';
+							listHtml +=					'<span style="letter-spacing: 2px;">地址:</span>';
+							listHtml +=					'<span style="color: #000;display: inline-block;margin-left: 10px;letter-spacing: 2px;">'+address+'</span>';
+							listHtml +=					'</div>';
+							listHtml +=					'<div style="overflow: hidden;margin-left: 5px;height: auto;border: none;">';
+							listHtml +=					'<span style="letter-spacing: 2px;">发布时间:</span>';
+							listHtml +=					'<span style="color: #000;display: inline-block;margin-left: 10px;letter-spacing: 1px;">'+addtime+'</span>';
+							listHtml +=					'<span style="float: right;margin-right: 5px;">2018-8-20</span>';
+							listHtml +=					'</div>';
+							listHtml +=					'</li>';
+							listHtml +=			'</ul>';
+							listHtml +=				'</a>';
+							listHtml +=		'</div>	';
+						}
+					}
+				}
+				$("#design_list").append(listHtml);
+				
+			}else{
+				$("#design_list").append('加载失败');
+			}
+		},'json')		
+	}
+	// 维修报价列表
+	function repair_list(){
+
+		$.post(url+'jingyi.php/Home/Jymember/lonAndlats', {
+			status   : 2,
+			page     : page,
+			ptype    : 2
+		}, function(ret) {
+			if(ret.code == 200){
+				var retData = ret.message;
+				var html = '';
+				for(var i in retData){
+					if(i<3){
+						var restaurant = (retData[i].office_name == null || retData[i].office_name == '') ? '未设定':retData[i].office_name,
+							office_name = (restaurant == '未设定') ? retData[i].restaurant:restaurant,
+							id = retData[i].id, 
+							weixiu_price = retData[i].weixiu_price,
+							worker_address = retData[i].restaurant_address,
+							addtime = retData[i].addtime,
+							endtime = (retData[i].endtime == null || retData[i].endtime == '') ? '未设定':retData[i].endtime,
+							name = retData[i].name,
+							ok = retData[i].ok;
+			           		
+			           		if(ok == 0){
+			           			html += '<div style="overflow: hidden;border-bottom: 1px solid #ccc;height:82px;">';
+								html +=		'<a href="/index.php?app=search&act=weixiu_details&id='+id+'" style="text-decoration: none;" target="_blank">';
+								html +=	'<p style="float: left;font-size: 18px;color: red;font-weight: 600;letter-spacing: 2px;margin: 10px 0 10px 5px;">【'+retData[i].kehu+'】'+office_name+'</p>';
+								html +=	'<p style="float: right;font-size: 18px;color: red;font-weight: 600;letter-spacing: 2px;margin: 10px 10px 10px 0;">'+name+'</p>';
+								html +=	'<ul id="" style="width:100%;height:auto;overflow:hidden">';
+								html +=			'<li style="width: 100%;height: auto;" target="_blank">';
+								html +=			'<div style="margin-left: 5px;height: auto;border: none;">';
+								html +=			'<span style="letter-spacing: 2px;">地址:</span>';
+								html +=			'<span style="color: #000;display: inline-block;margin-left: 10px;">'+worker_address+'</span>';
+								html +=			'</div>';
+								html +=			'<div style="overflow: hidden;margin-left: 5px;height: auto;border: none;">';
+								html +=			'<span style="letter-spacing: 2px;">截止时间:</span>';
+								html +=			'<span style="color: #000;display: inline-block;margin-left: 10px;letter-spacing: 2px;">'+endtime+'</span>';
+								html +=			'<span style="float: right;letter-spacing: 1px;margin-right: 5px;">'+addtime+'</span>';
+								html +=			'</div>';
+								html +=			'</li>';
+								html +=	'</ul>';
+								html +=		'</a>';
+								html += '</div>';
+			           		}
+							
+					}
+				}
+				$('#repair_list').append(html);
+			}else if(ret.status == 202){	
+				if(page == 1){
+					$("#weixiu_lists").html('暂无数据');
+					return false;
+				}else{
+					alert('暂无更多数据了');
+				}
+			}else{
+				alert('网络连接失败，请检查网络');
+				return false;
+			}
+		},'json');
+	}
+
+	//工价询价列表
+	function gongjiaxunjia(){
+		$.post('http://wgcapp.wgc2013.com/jingyi.php/Home/User/xunjia_lists', {
+			page   :page
+		}, function(ret) {
+			if(ret.code == 200){
+				var data = ret.message;
+				var html = '';
+				for(var i in data){
+					if(i<7){
+						var address = data[i].address,//地址
+							addtime = data[i].addtime,//添加时间
+							id = data[i].id,//列表id
+							num = data[i].num,//数量/范围
+							ps = data[i].ps,//备注
+							tel = data[i].tel,//号码
+							kehu = data[i].kehu,//号码
+							title = data[i].title,//项目名称
+							office_name = data[i].office_name,//公司名称
+							unit = data[i].unit;//计价单位
+							ok = data[i].ok;
+
+							if(ok == 0){	
+								html += '<a style="height:38px;" href="/index.php?app=search&act=gongjiaxunjia_content&id='+id+'" title="'+title+'" target="_blank">';
+									html += '<ul style="cursor:pointer;width:100%;height:38px;line-height:38px;margin-top:0;">';
+										html += '<li style="font-family: none;font-size:16px;color:#333;height:38px;width:44%;float:left;margin-right: 2px;margin-left:10px;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;">【'+kehu+'】'+title+'</li>';
+										html += '<li title="'+unit+'" style="font-family: none;font-size:16px;color:#333;height:38px;width:27.33%;float:left;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;">'+office_name+'</li>';
+										html += '<li style="font-family: none;font-size:12px;color:#999;height:38px;width:25.33%;float:left;">'+addtime+'</li>';
+									html += '</ul>';
+								html += '</a>';
+							}
+					}
+				}
+				$('#gjxj').append(html);
+			}else if(ret.code == 201){
+				$("#gjxj").append('<div style="text-align:center;color:#999;font-size:20px;line-height:150px;">暂无数据</div>');
+			}else{
+				alert('网络连接失败，请检查网络');
+				return false;
+			}
+		},'json');
+	}
+
+	// 材料推广列表
+	function cailiaotuiguang(){
+		$.post(url+'jingyi.php/Home/Material/materialListes', {
+			page : page,
+			cai_type : 2,
+			key : key,
+			limit : 4
+		}, function(ret) {
+			if(ret.code == 200){
+				var data = ret.message;
+				var html = '';
+				for(var i in data){
+					if(i<3){
+						var id = data[i].id,
+							m_name = data[i].m_name,
+							m_introduce = data[i].m_introduce,
+							office_name = data[i].office_name,
+							brand       = data[i].brand,
+							address     = data[i].address,
+							addtime = timestampToTime(data[i].addtime),
+							expire_time = data[i].expire_time,
+							m_introduce = data[i].m_introduce,
+							ok = data[i].ok;
+
+						if(ok == 0){
+							html +=			'<div style="overflow: hidden;border-bottom: 1px solid #ccc;height:82px;">';
+							html +=					'<a href="/index.php?app=search&act=cailiaotuiguang_content&id='+id+'" style="text-decoration: none;" target="_blank">';
+							html +=			'<p style="float: left;font-size: 18px;color: red;font-weight: 600;margin: 10px 0 10px 0;overflow:hidden;height:25px;">【'+data[i].kehu+'】'+m_name+'</p>';
+							html +=				'<ul id="" style="width:100%;height:auto;overflow:hidden">';
+							html +=						'<li style="width: 100%;height: auto;">';
+							html +=							'<div style="margin-left: 5px;float:left;">';
+							html +=								'<span style="letter-spacing: 2px;float:left;">公司名称:</span>';
+							html +=								'<span style="color: #000;margin-left: 10px;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;width:390px;float:left;" title="'+office_name+'">'+office_name+'</span>';
+							html +=							'</div>';
+							html +=							'<div style="overflow: hidden;margin-left: 5px;float:left;">';
+							html +=								'<span style="letter-spacing: 2px;">截止时间:</span>';
+							html +=								'<span style="display: inline-block;margin-left: 10px;color:#000;margin-right:120px;letter-spacing:1px;">'+expire_time+'</span>';
+							html +=							'<span style="float: right;font-size:12px;">'+addtime+'</span>';
+							html +=							'</div>';
+							html +=						'</li>';
+							html +=				'</ul>';
+							html +=					'</a>';
+							html +=				'</div>';
+						}
+					}
+				}
+				$('#cailiao_list').append(html);	
+			}else{
+
+			}
+		},'json');
+	}
+
+//计时器
+function erwima(){
+	$(".Ecode").fadeIn(3000);
 }
-    </script>
-  </body>
+function timestampToTime(timestamp) {
+        var date = new Date(timestamp * 1000);//时间戳为10位需*1000，时间戳为13位的话不需乘1000
+        var Y = date.getFullYear() + '-';
+        var M = (date.getMonth()+1 < 10 ? '0'+(date.getMonth()+1) : date.getMonth()+1) + '-';
+        var D = date.getDate() + ' ';
+        var h = date.getHours() + ':';
+        var m = date.getMinutes() + ':';
+        var s = date.getSeconds();
+        return Y+M+D+h+m+s;
+    }
+
+</script>
+
+
+       
+</body>
 </html>
