@@ -1,291 +1,201 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
-  <head>
-    <meta charset="utf-8">
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
-    <title>微工程公共首页</title>
-
-    <!-- Bootstrap -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>微工程首页</title>
+	<!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
-
+	<link rel="stylesheet" href="/themes/mall/jiaju/images/index/index_public.css">
     <!-- HTML5 shim 和 Respond.js 是为了让 IE8 支持 HTML5 元素和媒体查询（media queries）功能 -->
     <!-- 警告：通过 file:// 协议（就是直接将 html 页面拖拽到浏览器中）访问页面时 Respond.js 不起作用 -->
     <!--[if lt IE 9]>
       <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
     <![endif]-->
-    <style>
-    /*样式清除*/
-    *{
-    	margin: 0;
-    	padding: 0;
-    	font-size: 14px;
-    	color: #3f3f3f;
-    	font-family:"微软雅黑";
-    }
-    body,html{
-    	width: 100%;
-    	height: 100%;
-    }
-    li{
-    	list-style: none;
-    }
-    a{
-    	text-decoration: none;
-    }
-    ul{overflow: hidden;padding: 0;margin: 0;}
-
-    /*主盒子样式*/
-    .container{width: 100%}
-    /*公共样式*/
-    .public{width: 1170px;margin: 0 auto;overflow: hidden;}
-    /*头部样式*/
-		.header{height: 60px;min-width: 1170px;margin: 15px auto;position: relative;overflow: visible;}
-		.logo{width: 20%;float: left;}
-			.logo img{width: 150px;height: 45px;}
-		.company{width: 30%;float: left;}
-			.title{font-size: 20px;font-weight: 600;color: #5c5c5c;letter-spacing: 5px;}
-			.etitle{font-size: 12px;word-spacing: 3px;}
-		.nav{width: 50%;float: left;line-height: 50px;}
-			.nav-item{float: left;width: 16.6%;text-align: center;}
-			#scity{width: 16.8%;}
-				#city{font-weight: 600;color: #fd0d0d;font-size: 12px;}
-				 #scity a{font-size: 12px;}
-				.nav-item a{color: #3f3f3f;font-weight: 600;}
-		.place{width: 400px;height: 400px;z-index: 100;background-color: #fff;position: absolute;right: 2px;top: 50px;border: 1px solid #9e9e9e;display: none;}
-			.city_list{padding: 6px 0;overflow: hidden;zoom: 1;font-size: 12px;line-height: 20px;}
-			.city_list .pro{width: 15%;float: left;text-align: center;color: #999;}
-			.city_list .area{width: 85%;float: left;}
-				.area a{color: #333;display: inline-block;margin: 0 5px 0 0;}
-				.area a:hover{color: red;}
-		/*banner图*/
-		.banner{width: 100%;height: 100%;}
-			.banner img{width: 100%;height: 100%;max-height: 650px;}
-		/*新闻资讯样式*/
-		.news{margin: 30px auto;overflow: hidden;}
-			.newstitle{font-size: 20px;font-weight: 600;letter-spacing: 2px;padding: 5px 0;border-bottom: 2px solid #f88f78;width: 100%;}
-			.lunbo{width: 70%;height:450px;float: left;}
-				.carousel-inner .item{height: 100%;}
-				.carousel-inner .item img{width: 100%;height: 100%;}
-				.carousel-control{top: 84.5%;width: 9%;height: 70px;background-color: rgba(0,0,0,0.5);}
-				.carousel-caption{bottom: 0px;width: 82%;left: 9%;background-color: rgba(0,0,0,0.5);font-size: 20px;padding-bottom: 22px;}
-					.count{float: left;position: relative;left: 90px;}
-					.count span{font-size: 18px;color: #fff;}
-					.count span:nth-child(1){font-size: 20px;color: #ff0101;}
-			/*资讯列表*/
-			.newslist{width: 30%;float: left;padding-left: 50px;}
-				.newslist ul li{margin: 5px 0;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;}
-					.newslist ul li:nth-child(1) a{font-size: 22px;color: #000;font-weight: 600;}
-					.newslist ul li a{color: #6d6d6d;font-size: 16px;}
-
-		/*核心服务样式*/
-		.servce{overflow: hidden;}
-			.servce .servce-item{width: 30%;height: 250px;float: left;border: 1px solid #ededed;padding: 5px 5px;}
-			.servce .servce-item:nth-child(2){margin: 0 5%;}
-				.servce .servce-item img{width: 100%;height: 85%;}
-				.servcename{text-align: center;margin: 10px 0;}
-		/*想电视机一样的那块*/
-		.servce-content{overflow: hidden;}
-			.content-center{text-align: center;margin: 50px 0}
-			.content-center h3{text-align: center;font-size: 30px;color: #000;letter-spacing: 2px;}
-			.content-center span{font-size: 26px;color:#8c8585;word-spacing: 2px;border-top: 1px solid #bdb0b0;}
-			.servce-ul{width: 20%;float: left;}
-			.servce-ul-center{width: 60%;float: left;text-align: center;}
-				.servce-ul-center img{width: 65%;height: 240px;margin-top: 10px;}
-			.servce-ul-item{text-align: right;}
-			.servce-ul-item span:nth-child(1){font-size: 20px;color:#fea200;font-style: italic;}
-			.servce-ul-item span:nth-child(2){font-size: 18px;color:#000;}
-			.servce-ul-item p{font-size: 12px;color: #6c6c6c;margin: 5px 0;text-decoration: underline;}
-			.servce-ul-item-right{text-align: left;}
-
-		/*广告招租*/
-		.advertisement{margin: 50px auto;}
-			.advertisement img{width: 100%;height: 100%;}
-
-		.footer{width: 100%;border-top: 1px solid #6c6c6c;padding: 20px 0;}
-			.footer p{
-				text-align: center;
-				white-space: nowrap;
-				color: #000;
-				margin: 0 0 5px 0;
-			}
-
-    </style>
-  </head>
-  <body>
-    <div class="container">
-    <!-- 头部 -->
-    	<div class="header public">
-    		<!-- logo -->
-			<div class="logo">
-				<img src="/themes/mall/jiaju/images/public_logo.png" alt="">
-			</div>
-			<!-- 公司名字 -->
-			<div class="company">
-				<div class="title">广州市我购科技有限公司</div>
-				<div class="etitle" style="white-space: nowrap;">GUANGZHOU WOGOU TECHNOLOGY CO.,LID</div>
-			</div>
-			<!-- 右边的导航条 -->
-			<div class="nav">
-				<ul>
-					<li class="nav-item">
-                     	<a id="cindex" href="/index.php?app=search&act=public_index&user_id=1">首页</a>
-					</li>
-					<li class="nav-item">
-                     	<a href="/index.php?app=search&act=jianzhuzhuangshi" target="_blank">建筑装饰公司</a>
-					</li>
-					<li class="nav-item">
-                     	<a href="/index.php?app=search&act=cailiaoshang" target="_blank">材料商</a>
-					</li>
-					<li class="nav-item">
-                     	<a href="/index.php?app=search&act=rencaituijian" target="_blank">推荐人才</a>
-					</li>
-					<li class="nav-item">
-                     	<a href="/index.php?app=search&act=laodongli" target="_blank">劳动力资源</a>
-					</li>
-					<li class="nav-item" id="scity" style="/*border: 1px solid #9e9e9e;*/border-bottom: none;z-index: 101;position:relative;background-color: #fff">
-                     	<i id="city">广州</i><a href="javascript:;" target="_blank" style="text-decoration: none;" onclick="changecity()">【切换】</a>
-					</li>
-				</ul>
-			</div>
-			<!-- 地区 -->
-			<div class="place">
-				<div class="city_list">
+	<style>
+ 
+	</style>
+</head>
+<body>
+	<!-- 主盒子 -->
+	<div class="container">
+		
+		<!-- 头部 -->
+		<div class="header">
+			<!-- 城市切换 -->
+    		<div class="city">
+    			<div class="chcity">
+					<span id="tcity">广州</span>
+					<a href="javascript:;" class="ctcity" onclick="changecity()">【切换】</a>
+				</div>
+				<!-- 地区选择 -->
+				<div class="chpalce">
+					<div class="city_list">
 				    <dt class="pro">华北</dt>
 					<dd class="area">
-						<a href="/index.php?app=search&act=sessions_city&city=北京" id="北京">北京 </a>
-				        <a href="/index.php?app=search&act=sessions_city&city=天津" id="天津">天津</a>
-				        <a href="/index.php?app=search&act=sessions_city&city=太原" id="太原" >太原</a>
-				        <a href="/index.php?app=search&act=sessions_city&city=唐山" id="唐山" >唐山</a>
-						<a href="/index.php?app=search&act=sessions_city&city=呼和浩特" id="呼和浩特" >呼和浩特</a>
-						<a href="/index.php?app=search&act=sessions_city&city=包头" id="包头" >包头</a>
-						<a href="/index.php?app=search&act=sessions_city&city=石家庄" id="石家庄" >石家庄</a>
-						<a href="/index.php?app=search&act=sessions_city&city=呼伦贝尔" id="呼伦贝尔" >呼伦贝尔</a>
-						<a href="/index.php?app=search&act=sessions_city&city=大同" id="大同" >大同</a>
-						<a href="/index.php?app=search&act=sessions_city&city=济南" id="济南" >济南</a>
-						<a href="/index.php?app=search&act=sessions_city&city=青岛" id="青岛" >青岛</a>
-						<a href="/index.php?app=search&act=sessions_city&city=日照" id="日照" >日照</a>
-						<a href="/index.php?app=search&act=sessions_city&city=烟台" id="烟台" >烟台</a>
+						<a href="/index.php?app=search&act=sessions_city&city=北京&user_id=1" id="北京">北京 </a>
+				        <a href="/index.php?app=search&act=sessions_city&city=天津&user_id=1" id="天津">天津</a>
+				        <a href="/index.php?app=search&act=sessions_city&city=太原&user_id=1" id="太原" >太原</a>
+				        <a href="/index.php?app=search&act=sessions_city&city=唐山&user_id=1" id="唐山" >唐山</a>
+						<a href="/index.php?app=search&act=sessions_city&city=呼和浩特&user_id=1" id="呼和浩特" >呼和浩特</a>
+						<a href="/index.php?app=search&act=sessions_city&city=包头&user_id=1" id="包头" >包头</a>
+						<a href="/index.php?app=search&act=sessions_city&city=石家庄&user_id=1" id="石家庄" >石家庄</a>
+						<a href="/index.php?app=search&act=sessions_city&city=呼伦贝尔&user_id=1" id="呼伦贝尔" >呼伦贝尔</a>
+						<a href="/index.php?app=search&act=sessions_city&city=大同&user_id=1" id="大同" >大同</a>
+						<a href="/index.php?app=search&act=sessions_city&city=济南&user_id=1" id="济南" >济南</a>
+						<a href="/index.php?app=search&act=sessions_city&city=青岛&user_id=1" id="青岛" >青岛</a>
+						<a href="/index.php?app=search&act=sessions_city&city=日照&user_id=1" id="日照" >日照</a>
+						<a href="/index.php?app=search&act=sessions_city&city=烟台&user_id=1" id="烟台" >烟台</a>
 					</dd>
 				</div>
 				<div class="city_list">
 					<dt class="pro">华东</dt>
 					<dd class="area">
-						<a href="/index.php?app=search&act=sessions_city&city=上海" id="上海">上海 </a>
-				        <a href="/index.php?app=search&act=sessions_city&city=南京" id="南京">南京</a>
-				        <a href="/index.php?app=search&act=sessions_city&city=杭州" id="杭州" >杭州</a>
-				        <a href="/index.php?app=search&act=sessions_city&city=合肥" id="合肥" >合肥</a>
-						<a href="/index.php?app=search&act=sessions_city&city=厦门" id="厦门" >厦门</a>
-						<a href="/index.php?app=search&act=sessions_city&city=南昌" id="南昌" >南昌</a>
-						<a href="/index.php?app=search&act=sessions_city&city=苏州" id="苏州" >苏州</a>
-						<a href="/index.php?app=search&act=sessions_city&city=无锡" id="无锡" >无锡</a>
-						<a href="/index.php?app=search&act=sessions_city&city=宁波" id="宁波" >宁波</a>
-						<a href="/index.php?app=search&act=sessions_city&city=常州" id="常州" >常州</a>
-						<a href="/index.php?app=search&act=sessions_city&city=嘉兴" id="嘉兴" >嘉兴</a>
-						<a href="/index.php?app=search&act=sessions_city&city=南通" id="南通" >南通</a>
-						<a href="/index.php?app=search&act=sessions_city&city=扬州" id="扬州" >扬州</a>
-						<a href="/index.php?app=search&act=sessions_city&city=镇江" id="镇江" >镇江</a>
-						<a href="/index.php?app=search&act=sessions_city&city=绍兴" id="绍兴" >绍兴</a>
-						<a href="/index.php?app=search&act=sessions_city&city=扬州" id="扬州" >扬州</a>
-						<a href="/index.php?app=search&act=sessions_city&city=温州" id="温州" >温州</a>
-						<a href="/index.php?app=search&act=sessions_city&city=金华" id="金华" >金华</a>
-						<a href="/index.php?app=search&act=sessions_city&city=台州" id="台州" >台州</a>
-						<a href="/index.php?app=search&act=sessions_city&city=盐城" id="盐城" >盐城</a>
-						<a href="/index.php?app=search&act=sessions_city&city=泰安" id="泰安" >泰安</a>
-						<a href="/index.php?app=search&act=sessions_city&city=芜湖" id="芜湖" >芜湖</a>
-						<a href="/index.php?app=search&act=sessions_city&city=黄山" id="黄山" >黄山</a>
-						<a href="/index.php?app=search&act=sessions_city&city=阜阳" id="阜阳" >阜阳</a>
-						<a href="/index.php?app=search&act=sessions_city&city=福州" id="福州" >福州</a>
-						<a href="/index.php?app=search&act=sessions_city&city=赣州" id="赣州" >赣州</a>
-						<a href="/index.php?app=search&act=sessions_city&city=宜春" id="宜春" >宜春</a>
-						<a href="/index.php?app=search&act=sessions_city&city=泰州" id="泰州" >泰州</a>
+						<a href="/index.php?app=search&act=sessions_city&city=上海&user_id=1" id="上海">上海 </a>
+				        <a href="/index.php?app=search&act=sessions_city&city=南京&user_id=1" id="南京">南京</a>
+				        <a href="/index.php?app=search&act=sessions_city&city=杭州&user_id=1" id="杭州" >杭州</a>
+				        <a href="/index.php?app=search&act=sessions_city&city=合肥&user_id=1" id="合肥" >合肥</a>
+						<a href="/index.php?app=search&act=sessions_city&city=厦门&user_id=1" id="厦门" >厦门</a>
+						<a href="/index.php?app=search&act=sessions_city&city=南昌&user_id=1" id="南昌" >南昌</a>
+						<a href="/index.php?app=search&act=sessions_city&city=苏州&user_id=1" id="苏州" >苏州</a>
+						<a href="/index.php?app=search&act=sessions_city&city=无锡&user_id=1" id="无锡" >无锡</a>
+						<a href="/index.php?app=search&act=sessions_city&city=宁波&user_id=1" id="宁波" >宁波</a>
+						<a href="/index.php?app=search&act=sessions_city&city=常州&user_id=1" id="常州" >常州</a>
+						<a href="/index.php?app=search&act=sessions_city&city=嘉兴&user_id=1" id="嘉兴" >嘉兴</a>
+						<a href="/index.php?app=search&act=sessions_city&city=南通&user_id=1" id="南通" >南通</a>
+						<a href="/index.php?app=search&act=sessions_city&city=扬州&user_id=1" id="扬州" >扬州</a>
+						<a href="/index.php?app=search&act=sessions_city&city=镇江&user_id=1" id="镇江" >镇江</a>
+						<a href="/index.php?app=search&act=sessions_city&city=绍兴&user_id=1" id="绍兴" >绍兴</a>
+						<a href="/index.php?app=search&act=sessions_city&city=扬州&user_id=1" id="扬州" >扬州</a>
+						<a href="/index.php?app=search&act=sessions_city&city=温州&user_id=1" id="温州" >温州</a>
+						<a href="/index.php?app=search&act=sessions_city&city=金华&user_id=1" id="金华" >金华</a>
+						<a href="/index.php?app=search&act=sessions_city&city=台州&user_id=1" id="台州" >台州</a>
+						<a href="/index.php?app=search&act=sessions_city&city=盐城&user_id=1" id="盐城" >盐城</a>
+						<a href="/index.php?app=search&act=sessions_city&city=泰安&user_id=1" id="泰安" >泰安</a>
+						<a href="/index.php?app=search&act=sessions_city&city=芜湖&user_id=1" id="芜湖" >芜湖</a>
+						<a href="/index.php?app=search&act=sessions_city&city=黄山&user_id=1" id="黄山" >黄山</a>
+						<a href="/index.php?app=search&act=sessions_city&city=阜阳&user_id=1" id="阜阳" >阜阳</a>
+						<a href="/index.php?app=search&act=sessions_city&city=福州&user_id=1" id="福州" >福州</a>
+						<a href="/index.php?app=search&act=sessions_city&city=赣州&user_id=1" id="赣州" >赣州</a>
+						<a href="/index.php?app=search&act=sessions_city&city=宜春&user_id=1" id="宜春" >宜春</a>
+						<a href="/index.php?app=search&act=sessions_city&city=泰州&user_id=1" id="泰州" >泰州</a>
 					</dd>
 				</div>
 				<div class="city_list">
 					<dt class="pro">东北</dt>
 					<dd class="area">
-						<a href="/index.php?app=search&act=sessions_city&city=沈阳" id="沈阳">沈阳 </a>
-				        <a href="/index.php?app=search&act=sessions_city&city=大连" id="大连">大连</a>
-				        <a href="/index.php?app=search&act=sessions_city&city=哈尔滨" id="哈尔滨" >哈尔滨</a>
-				        <a href="/index.php?app=search&act=sessions_city&city=长春" id="长春" >长春</a>
-						<a href="/index.php?app=search&act=sessions_city&city=齐齐哈尔" id="齐齐哈尔" >齐齐哈尔</a>
-						<a href="/index.php?app=search&act=sessions_city&city=延边" id="延边" >延边</a>
+						<a href="/index.php?app=search&act=sessions_city&city=沈阳&user_id=1" id="沈阳">沈阳 </a>
+				        <a href="/index.php?app=search&act=sessions_city&city=大连&user_id=1" id="大连">大连</a>
+				        <a href="/index.php?app=search&act=sessions_city&city=哈尔滨&user_id=1" id="哈尔滨" >哈尔滨</a>
+				        <a href="/index.php?app=search&act=sessions_city&city=长春&user_id=1" id="长春" >长春</a>
+						<a href="/index.php?app=search&act=sessions_city&city=齐齐哈尔&user_id=1" id="齐齐哈尔" >齐齐哈尔</a>
+						<a href="/index.php?app=search&act=sessions_city&city=延边&user_id=1" id="延边" >延边</a>
 					</dd>
 				</div>
 				<div class="city_list">
 					<dt class="pro">华中</dt>
 					<dd class="area">
-						<a href="/index.php?app=search&act=sessions_city&city=武汉" id="武汉">武汉 </a>
-				        <a href="/index.php?app=search&act=sessions_city&city=洛阳" id="洛阳">洛阳</a>
-				        <a href="/index.php?app=search&act=sessions_city&city=张家界" id="张家界" >张家界</a>
-				        <a href="/index.php?app=search&act=sessions_city&city=长沙" id="长沙" >长沙</a>
-						<a href="/index.php?app=search&act=sessions_city&city=郑州" id="郑州" >郑州</a>
-						<a href="/index.php?app=search&act=sessions_city&city=焦作" id="焦作" >焦作</a>
-						<a href="/index.php?app=search&act=sessions_city&city=石家庄" id="石家庄" >石家庄</a>
-						<a href="/index.php?app=search&act=sessions_city&city=宜昌" id="宜昌" >宜昌</a>
-						<a href="/index.php?app=search&act=sessions_city&city=神农架" id="神农架" >神农架</a>
-						<a href="/index.php?app=search&act=sessions_city&city=南阳" id="南阳" >南阳</a>
+						<a href="/index.php?app=search&act=sessions_city&city=武汉&user_id=1" id="武汉">武汉 </a>
+				        <a href="/index.php?app=search&act=sessions_city&city=洛阳&user_id=1" id="洛阳">洛阳</a>
+				        <a href="/index.php?app=search&act=sessions_city&city=张家界&user_id=1" id="张家界" >张家界</a>
+				        <a href="/index.php?app=search&act=sessions_city&city=长沙&user_id=1" id="长沙" >长沙</a>
+						<a href="/index.php?app=search&act=sessions_city&city=郑州&user_id=1" id="郑州" >郑州</a>
+						<a href="/index.php?app=search&act=sessions_city&city=焦作&user_id=1" id="焦作" >焦作</a>
+						<a href="/index.php?app=search&act=sessions_city&city=石家庄&user_id=1" id="石家庄" >石家庄</a>
+						<a href="/index.php?app=search&act=sessions_city&city=宜昌&user_id=1" id="宜昌" >宜昌</a>
+						<a href="/index.php?app=search&act=sessions_city&city=神农架&user_id=1" id="神农架" >神农架</a>
+						<a href="/index.php?app=search&act=sessions_city&city=南阳&user_id=1" id="南阳" >南阳</a>
 					</dd>
 				</div>
 				<div class="city_list">
 					<dt class="pro">华南</dt>
 					<dd class="area">
-						<a href="/index.php?app=search&act=sessions_city&city=广州" id="广州">广州 </a>
-				        <a href="/index.php?app=search&act=sessions_city&city=深圳" id="深圳">深圳</a>
-				        <a href="/index.php?app=search&act=sessions_city&city=南宁" id="南宁" >南宁</a>
-				        <a href="/index.php?app=search&act=sessions_city&city=桂林" id="桂林" >桂林</a>
-						<a href="/index.php?app=search&act=sessions_city&city=海口" id="海口" >海口</a>
-						<a href="/index.php?app=search&act=sessions_city&city=三亚" id="三亚" >三亚</a>
-						<a href="/index.php?app=search&act=sessions_city&city=珠海" id="珠海" >珠海</a>
-						<a href="/index.php?app=search&act=sessions_city&city=清远" id="清远" >清远</a>
-						<a href="/index.php?app=search&act=sessions_city&city=东莞" id="东莞" >东莞</a>
+						<a href="/index.php?app=search&act=sessions_city&city=广州&user_id=1" id="广州">广州 </a>
+				        <a href="/index.php?app=search&act=sessions_city&city=深圳&user_id=1" id="深圳">深圳</a>
+				        <a href="/index.php?app=search&act=sessions_city&city=南宁&user_id=1" id="南宁" >南宁</a>
+				        <a href="/index.php?app=search&act=sessions_city&city=桂林&user_id=1" id="桂林" >桂林</a>
+						<a href="/index.php?app=search&act=sessions_city&city=海口&user_id=1" id="海口" >海口</a>
+						<a href="/index.php?app=search&act=sessions_city&city=三亚&user_id=1" id="三亚" >三亚</a>
+						<a href="/index.php?app=search&act=sessions_city&city=珠海&user_id=1" id="珠海" >珠海</a>
+						<a href="/index.php?app=search&act=sessions_city&city=清远&user_id=1" id="清远" >清远</a>
+						<a href="/index.php?app=search&act=sessions_city&city=东莞&user_id=1" id="东莞" >东莞</a>
 					</dd>
 				</div>
 				<div class="city_list">
 					<dt class="pro">华南</dt>
 					<dd class="area">
-						<a href="/index.php?app=search&act=sessions_city&city=成都" id="成都">成都 </a>
-				        <a href="/index.php?app=search&act=sessions_city&city=重庆" id="重庆">重庆</a>
-				        <a href="/index.php?app=search&act=sessions_city&city=昆明" id="昆明" >昆明</a>
-				        <a href="/index.php?app=search&act=sessions_city&city=丽江" id="丽江" >丽江</a>
-						<a href="/index.php?app=search&act=sessions_city&city=大理" id="大理" >大理</a>
-						<a href="/index.php?app=search&act=sessions_city&city=西双版纳" id="西双版纳" >西双版纳</a>
-						<a href="/index.php?app=search&act=sessions_city&city=香格里拉" id="香格里拉" >香格里拉</a>
-						<a href="/index.php?app=search&act=sessions_city&city=贵阳" id="贵阳" >贵阳</a>
-						<a href="/index.php?app=search&act=sessions_city&city=拉萨" id="拉萨" >拉萨</a>
-						<a href="/index.php?app=search&act=sessions_city&city=九赛沟" id="九赛沟" >九赛沟</a>
-						<a href="/index.php?app=search&act=sessions_city&city=西昌" id="西昌" >西昌</a>
+						<a href="/index.php?app=search&act=sessions_city&city=成都&user_id=1" id="成都">成都 </a>
+				        <a href="/index.php?app=search&act=sessions_city&city=重庆&user_id=1" id="重庆">重庆</a>
+				        <a href="/index.php?app=search&act=sessions_city&city=昆明&user_id=1" id="昆明" >昆明</a>
+				        <a href="/index.php?app=search&act=sessions_city&city=丽江&user_id=1" id="丽江" >丽江</a>
+						<a href="/index.php?app=search&act=sessions_city&city=大理&user_id=1" id="大理" >大理</a>
+						<a href="/index.php?app=search&act=sessions_city&city=西双版纳&user_id=1" id="西双版纳" >西双版纳</a>
+						<a href="/index.php?app=search&act=sessions_city&city=香格里拉&user_id=1" id="香格里拉" >香格里拉</a>
+						<a href="/index.php?app=search&act=sessions_city&city=贵阳&user_id=1" id="贵阳" >贵阳</a>
+						<a href="/index.php?app=search&act=sessions_city&city=拉萨&user_id=1" id="拉萨" >拉萨</a>
+						<a href="/index.php?app=search&act=sessions_city&city=九赛沟&user_id=1" id="九赛沟" >九赛沟</a>
+						<a href="/index.php?app=search&act=sessions_city&city=西昌&user_id=1" id="西昌" >西昌</a>
 					</dd>
 				</div>
 				<div class="city_list">
 					<dt class="pro">西北</dt>
 					<dd class="area">
-						<a href="/index.php?app=search&act=sessions_city&city=西安" id="西安">西安 </a>
-				        <a href="/index.php?app=search&act=sessions_city&city=天津" id="天津">天津</a>
-				        <a href="/index.php?app=search&act=sessions_city&city=银川" id="银川" >银川</a>
-				        <a href="/index.php?app=search&act=sessions_city&city=西宁" id="西宁" >西宁</a>
-						<a href="/index.php?app=search&act=sessions_city&city=乌鲁木齐" id="乌鲁木齐" >乌鲁木齐</a>
-						<a href="/index.php?app=search&act=sessions_city&city=兰州" id="兰州" >兰州</a>
-						<a href="/index.php?app=search&act=sessions_city&city=嘉峪关" id="嘉峪关" >嘉峪关</a>
-						<a href="/index.php?app=search&act=sessions_city&city=榆林" id="榆林" >榆林</a>
-						<a href="/index.php?app=search&act=sessions_city&city=延安" id="延安" >延安</a>
-						<a href="/index.php?app=search&act=sessions_city&city=喀什" id="喀什" >喀什</a>
-						<a href="/index.php?app=search&act=sessions_city&city=喀纳斯" id="喀纳斯" >喀纳斯</a>
+						<a href="/index.php?app=search&act=sessions_city&city=西安&user_id=1" id="西安">西安 </a>
+				        <a href="/index.php?app=search&act=sessions_city&city=天津&user_id=1" id="天津">天津</a>
+				        <a href="/index.php?app=search&act=sessions_city&city=银川&user_id=1" id="银川" >银川</a>
+				        <a href="/index.php?app=search&act=sessions_city&city=西宁&user_id=1" id="西宁" >西宁</a>
+						<a href="/index.php?app=search&act=sessions_city&city=乌鲁木齐&user_id=1" id="乌鲁木齐" >乌鲁木齐</a>
+						<a href="/index.php?app=search&act=sessions_city&city=兰州&user_id=1" id="兰州" >兰州</a>
+						<a href="/index.php?app=search&act=sessions_city&city=嘉峪关&user_id=1" id="嘉峪关" >嘉峪关</a>
+						<a href="/index.php?app=search&act=sessions_city&city=榆林&user_id=1" id="榆林" >榆林</a>
+						<a href="/index.php?app=search&act=sessions_city&city=延安&user_id=1" id="延安" >延安</a>
+						<a href="/index.php?app=search&act=sessions_city&city=喀什&user_id=1" id="喀什" >喀什</a>
+						<a href="/index.php?app=search&act=sessions_city&city=喀纳斯&user_id=1" id="喀纳斯" >喀纳斯</a>
 					</dd>
 				</div>
 				<div class="city_list">
 					<dt class="pro">港澳台</dt>
 					<dd class="area">
-				        <a href="/index.php?app=search&act=sessions_city&city=中国香港" id="中国香港">中国香港</a>
-				        <a href="/index.php?app=search&act=sessions_city&city=中国澳门" id="中国澳门" >中国澳门</a>
-				        <a href="/index.php?app=search&act=sessions_city&city=中国台湾" id="中国台湾" >中国台湾</a>
+				        <a href="/index.php?app=search&act=sessions_city&city=中国香港&user_id=1" id="中国香港">中国香港</a>
+				        <a href="/index.php?app=search&act=sessions_city&city=中国澳门&user_id=1" id="中国澳门" >中国澳门</a>
+				        <a href="/index.php?app=search&act=sessions_city&city=中国台湾&user_id=1" id="中国台湾" >中国台湾</a>
 					</dd>
 				</div>
+				</div>
+    		</div>
+			<div class="main">
+			<!-- 微工程logo -->
+				<div class="logo">
+					<a href="/"><img src="/themes/mall/jiaju/images/index/logo/wgclogo.jpg" alt="微工程"></a>
+				</div>
+
+				<!-- 公司名字 -->
+				<div class="company">
+					<img src="/themes/mall/jiaju/images/index/logo/company.png" alt="公司名字">
+				</div>
 			</div>
-    	</div>
-    	<!-- baaner图的摆放 -->
+		</div>
+		<!-- 导航栏 -->
+		<div class="info public">
+			<div class="nav">
+				<ul>
+					<li><a href="/index.php?app=search&act=public_index&user_id=1" class="active" id="cindex">首页</a></li>
+					<li><a href="/index.php?app=search&act=jianzhuzhuangshi&user_id=1" id="build">建筑装饰公司</a></li>
+					<li><a href="/index.php?app=search&act=cailiaoshang&user_id=1" id="material">材料商</a></li>
+					<li><a href="/index.php?app=search&act=rencaituijian&user_id=1" id="personnel">推荐人才</a></li>
+					<li><a href="/index.php?app=search&act=laodongli&user_id=1" id="labor">劳动力资源</a></li>
+				</ul>
+			</div>
+			<div class="tel">
+				<ul>
+					<li><img src="/themes/mall/jiaju/images/index/logo/tel.png" alt="电话"><span>13143543973</span></li>
+					<li><img src="/themes/mall/jiaju/images/index/logo/QQ.png" alt="qq"><span>1934873342</span></li>
+				</ul>
+			</div>
+		</div>
+		<!-- baaner图的摆放 -->
     	<div class="banner">
 			<!-- <img src="/themes/mall/jiaju/images/banner2.jpg" alt="banner图"> -->
 			<div class="banner-lunbo">
@@ -294,13 +204,13 @@
 				  <ol class="carousel-indicators">
 				    <li data-target="#carousel-example-captions" data-slide-to="0" class="active"></li>
 				    <li data-target="#carousel-example-captions" data-slide-to="1"></li>
-				    <li data-target="#carousel-example-captions" data-slide-to="2"></li>
+				    <!-- <li data-target="#carousel-example-captions" data-slide-to="2"></li> -->
 				  </ol>
 
 				  <!-- Wrapper for slides -->
 				  <div class="carousel-inner" role="listbox" id="lunbos" style="height: 100%;">
 				    <div class="item active">
-				      <a href="javascript:;" target="_blank"><img src="/themes/mall/jiaju/images/banner1.jpg" alt="..."></a>
+				      <a href="javascript:;" target="_blank"><img src="/themes/mall/jiaju/images/index/lunbo/banner.jpg" alt="..."></a>
 				      <!-- <div class="carousel-caption">
 				      	<div class="count">
 					      	<span>1</span>
@@ -311,7 +221,7 @@
 				      </div> -->
 				    </div>
 				    <div class="item">
-				      <a href="javascript:;" target="_blank"><img src="/themes/mall/jiaju/images/banner2.jpg" alt="..."></a>
+				      <a href="javascript:;" target="_blank"><img src="/themes/mall/jiaju/images/index/lunbo/banner2.jpg" alt="..."></a>
 				      <!-- <div class="carousel-caption">
 				      	<div class="count">
 					      	<span>2</span>
@@ -321,8 +231,8 @@
 				        装修业的“金九银十”
 				      </div> -->
 				    </div>
-				    <div class="item">
-				      <a href="javascript:;" target="_blank"><img src="/themes/mall/jiaju/images/banner3.jpg" alt="..."></a>
+				   <!--  <div class="item"> -->
+				      <!-- <a href="javascript:;" target="_blank"><img src="/themes/mall/jiaju/images/index/lunbo/banner3.jpg" alt="..."></a> -->
 				      <!-- <div class="carousel-caption">
 				      	<div class="count">
 					      	<span>3</span>
@@ -331,7 +241,7 @@
 				      	</div>
 				        金百锐为微工程点赞
 				      </div> -->
-				    </div>
+				    <!-- </div> -->
 				  </div>
 
 				  <!-- Controls -->
@@ -346,319 +256,250 @@
 				</div>
 			</div>
     	</div>
-    	<!-- 新闻资讯模块 -->
-    	<div class="news public">
-    		<!-- 标题 -->
-    		<h3 class="newstitle">新闻资讯</h3>
-			<!-- 轮播图 -->
-			<div class="lunbo">
-				<div id="carousel-example-generic" class="carousel slide" data-ride="carousel" style="height: 100%;">
-				  <!-- Indicators -->
-				  <!-- <ol class="carousel-indicators">
-				    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-				    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-				    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-				  </ol> -->
-
-				  <!-- Wrapper for slides -->
-				  <div class="carousel-inner" role="listbox" id="lunbo" style="height: 100%;">
-				    <div class="item active">
-				      <a href="/index.php?app=search&act=news_content&id=1207&title=深化合作%20聚力共赢&user_id=1" target="_blank"><img src="/themes/mall/jiaju/images/lunbo1.jpg" alt="..."></a>
-				      <div class="carousel-caption">
-				      	<div class="count">
-					      	<span>1</span>
-					      	<span>/</span>
-					      	<span class="total">6</span>
-				      	</div>
-				        深化合作,聚力共赢
-				      </div>
-				    </div>
-				    <div class="item">
-				      <a href="/index.php?app=search&act=news_content&id=1167&title=装修业的“金九银十”&user_id=1" target="_blank"><img src="/themes/mall/jiaju/images/lunbo2.jpg" alt="..."></a>
-				      <div class="carousel-caption">
-				      	<div class="count">
-					      	<span>2</span>
-					      	<span>/</span>
-					      	<span class="total">/12</span>
-				      	</div>
-				        装修业的“金九银十”
-				      </div>
-				    </div>
-				    <div class="item">
-				      <a href="/index.php?app=search&act=news_content&id=1171&title=金百锐为微工程点赞&user_id=1" target="_blank"><img src="/themes/mall/jiaju/images/lunbo3.jpg" alt="..."></a>
-				      <div class="carousel-caption">
-				      	<div class="count">
-					      	<span>3</span>
-					      	<span>/</span>
-					      	<span class="total">/12</span>
-				      	</div>
-				        金百锐为微工程点赞
-				      </div>
-				    </div>
-				    <div class="item">
-				      <a href="/index.php?app=search&act=news_content&id=1166&title=原驰装饰为微工程点赞&user_id=1" target="_blank"><img src="/themes/mall/jiaju/images/lunbo4.jpg" alt="..."></a>
-				      <div class="carousel-caption">
-				      	<div class="count">
-					      	<span>4</span>
-					      	<span>/</span>
-					      	<span class="total">/12</span>
-				      	</div>
-				       原驰装饰为微工程点赞
-				      </div>
-				    </div>
-				    <div class="item">
-				      <a href="/index.php?app=search&act=news_content&id=1165&title=三新装饰为微工程代言&user_id=1" target="_blank"><img src="/themes/mall/jiaju/images/lunbo5.jpg" alt="..."></a>
-				      <div class="carousel-caption">
-				      	<div class="count">
-					      	<span>5</span>
-					      	<span>/</span>
-					      	<span class="total">/12</span>
-				      	</div>
-				        三新装饰为微工程代言
-				      </div>
-				    </div>
-				    <div class="item">
-				      <a href="/index.php?app=search&act=news_content&id=1123&title=大唐鼎舍与微工程签约&user_id=1" target="_blank"><img src="/themes/mall/jiaju/images/lunbo6.jpg" alt="..."></a>
-				      <div class="carousel-caption">
-				      	<div class="count">
-					      	<span>6</span>
-					      	<span>/</span>
-					      	<span class="total">/12</span>
-				      	</div>
-				        装修业的“金九银十”
-				      </div>
-				    </div>
-				  </div>
-
-				  <!-- Controls -->
-				  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-				    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-				    <span class="sr-only">Previous</span>
-				  </a>
-				  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-				    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-				    <span class="sr-only">Next</span>
-				  </a>
+		<!-- 中间内容 -->
+		<div class="content public" id="lunbo">
+			<div class="content-center">
+				<h3>微工程合作客户</h3>
+				<span>各大知名装饰企业与我们携手共创 合作共赢</span>
+			</div>
+			<div class="pic">
+				<div class="hezuo">
+					<video src="/themes/mall/jiaju/images/index/hezuo/12345.mp4" controls="controls" autoplay="autoplay"></video>
+					<!-- <img src="/themes/mall/jiaju/images/index/hezuo/hezuo1.jpg" alt=""> -->
+				</div>
+				<div class="hezuo">
+					<img src="/themes/mall/jiaju/images/index/hezuo/hezuo2.jpg" alt="">
 				</div>
 			</div>
-			<!-- 资讯列表 -->
-	    	<div class="newslist">
-				<ul id="twoBox">
-					<li><a href="javascript:;">金白锐为微工程点赞</a></li>
-					<li><a href="javascript:;">装修行业的“金九银十”</a></li>
-					<li><a href="javascript:;">装修行业的“金九银十”</a></li>
-				</ul>
-	    	</div>
-	    </div>
 
-	    <!-- 核心服务 -->
+		</div>
+		<!-- 合作图片轮播 -->
+		<div class="lunbo">
+			<div class="lunbo_main public">
+				<div class="lunbo_item">
+					<div class="lunbo_img first">
+						<img src="/themes/mall/jiaju/images/index/hezuo/luban.jpg" alt="">
+						<div class="lunbo_info">
+							<h3>鲁班名匠</h3>
+							<span>（设计、施工、人员管理）</span>
+						</div>
+					</div>
+					<div class="lunbo_img">
+						<img src="/themes/mall/jiaju/images/index/hezuo/chengtuo.jpg" alt="">
+						<div class="lunbo_info">
+							<h3>大庆诚拓</h3>
+							<span>（专业商业设计二十年）</span>
+						</div>
+					</div>
+					<div class="lunbo_img">
+						<img src="/themes/mall/jiaju/images/index/hezuo/hongsen.jpg" alt="">
+						<div class="lunbo_info">
+							<h3>洪森工程</h3>
+							<span>（完善管理体系，优质工程服务）</span>
+						</div>
+					</div>
+					<div class="lunbo_img last">
+						<img src="/themes/mall/jiaju/images/index/hezuo/xinpin.jpg" alt="">
+						<div class="lunbo_info">
+							<h3>馨品装饰</h3>
+							<span>（用心拥抱每一天）</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<a class="next" href="javascript:;">></a>
+			<a class="prev" href="javascript:;"><</a>
+		</div>
 
-	    <!-- 三张banner图 -->
-	    <div class="servce public">
-			<div class="servce-item">
-				<img src="/themes/mall/jiaju/images/project_public.jpg" alt="">
-				<div class="servcename">项目合作</div>
+		<!-- 点赞 -->
+		<div class="dianzan public">
+			<div class="dianzan-center">
+				<h3>我为微工程点赞</h3>
+				<span>深化合作 聚力共赢 各合作企业齐为微工程代言</span>
 			</div>
-			<div class="servce-item">
-				<img src="/themes/mall/jiaju/images/area_public.jpg" alt="">
-				<div class="servcename">区域合作</div>
+		</div>
+		<!-- 点赞图片 -->
+		<div class="dzpic">
+			<!-- 中间相框 -->
+			<div class="xkpic public">
+				<!-- 顶部三张图片 -->
+				<div class="pic_top">
+					<div class="top_item">
+						<img src="/themes/mall/jiaju/images/index/zan/xiye.jpg" alt="">
+					</div>
+					<div class="top_item">
+						<img src="/themes/mall/jiaju/images/index/zan/pinguan.jpg" alt="">
+					</div>
+					<div class="top_item">
+						<img src="/themes/mall/jiaju/images/index/zan/pinzhi.jpg" alt="">
+					</div>
+				</div>
+				<div class="pic_main">
+					<div class="main_left_one">
+						<img src="/themes/mall/jiaju/images/index/zan/jiecheng.jpg" alt="">
+					</div>
+					<div class="main_left_two">
+						<img src="/themes/mall/jiaju/images/index/zan/xinpin.jpg" alt="">
+					</div>
+				</div>
+				<div class="pic_main">
+					<div class="main_middle_one">
+						<img src="/themes/mall/jiaju/images/index/zan/datang.jpg" alt="">
+					</div>
+					<div class="main_middle_two">
+						<img src="/themes/mall/jiaju/images/index/zan/hanzhe.jpg" alt="">
+					</div>
+				</div>
+				<div class="pic_main">
+					<div class="main_right_one">
+						<img src="/themes/mall/jiaju/images/index/zan/yuanchi.jpg" alt="">
+					</div>
+					<div class="main_right_two">
+						<div class="main_right_two_left">
+							<img src="/themes/mall/jiaju/images/index/zan/yixin.jpg" alt="">
+							<img src="/themes/mall/jiaju/images/index/zan/linmei.jpg" alt="">
+						</div>
+						<div class="main_right_two_right">
+							<img src="/themes/mall/jiaju/images/index/zan/jugong.jpg" alt="">
+						</div>
+					</div>
+				</div>
 			</div>
-			<div class="servce-item">
-				<img src="/themes/mall/jiaju/images/collection_public.jpg" alt="">
-				<div class="servcename">集采合作</div>
-			</div>
-	    </div>
-    	<div class="servce-content public">
-			<!-- 核心服务主标题 -->
-			<div class="content-center">
-				<h3>核心服务</h3>
-				<span>CORE SERVICE</span>
-			</div>
-			<div class="servce-ul">
-				<ul>
-					<li class="servce-ul-item">
-						<span>01.</span>
-						<span>热门招聘</span>
-						<p>汇集装饰行业人才招聘储备，智能匹配</p>
-					</li>
-					<li class="servce-ul-item">
-						<span>02.</span>
-						<span>维修项目</span>
-						<p>实时展示维修项目，承接维修项目</p>
-					</li>
-					<li class="servce-ul-item">
-						<span>03.</span>
-						<span>材料采购</span>
-						<p>为您提供装饰行业材料</p>
-					</li>
-					<li class="servce-ul-item">
-						<span>04.</span>
-						<span>材料推广</span>
-						<p>开拓材料市场提高效益</p>
-					</li>
-					<li class="servce-ul-item">
-						<span>05.</span>
-						<span>材料询价</span>
-						<p>查询装饰行业材料详情价格</p>
-					</li>
-				</ul>
-			</div>
-			<div class="servce-ul-center">
-				<img src="/themes/mall/jiaju/images/service.jpg" alt="">
-			</div>
-			<div class="servce-ul">
-				<ul>
-					<li class="servce-ul-item servce-ul-item-right">
-						<span>06.</span>
-						<span>集采价格</span>
-						<p>精确透明的建材价格</p>
-					</li>
-					<li class="servce-ul-item servce-ul-item-right">
-						<span>07.</span>
-						<span>今日工价</span>
-						<p>实时关注装饰行业工人报价</p>
-					</li>
-					<li class="servce-ul-item servce-ul-item-right">
-						<span>08.</span>
-						<span>工价询价</span>
-						<p>查询装饰行业工人详情报价</p>
-					</li>
-					<li class="servce-ul-item servce-ul-item-right">
-						<span>09.</span>
-						<span>设计预算分包</span>
-						<p>即时承接设计与预算项目分包工程</p>
-					</li>
-					<li class="servce-ul-item servce-ul-item-right">
-						<span>10.</span>
-						<span>项目分包</span>
-						<p>承接工程项目</p>
-					</li>
-				</ul>
-			</div>
-    	</div>
-
-    	<!-- 广告招租 -->
-    	<div class="advertisement public">
-			<img src="/themes/mall/jiaju/images/zhaozhu.jpg" alt="广告招租">
-    	</div>
-
-    	<!-- 底部 -->
-    	<div class="footer">
-			<p>Copyright © 2013-2018 微工程 版权所有 粤ICP备09031901号-1</p>
-			<p>广州市我购科技有限公司</p>
-    	</div>
-		
+		</div>
+		<!-- 尾部 -->
+		<div class="footer">
+			<img src="/themes/mall/jiaju/images/index/footer.png" alt="底部">
+			<p>Copyright © 2013-2018 微工程 版权所有 粤ICP备09031901号-1 广州市我购科技有限公司</p>
+		</div>
 	</div>
-    <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+
+
+
+	<!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
     <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
     <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
     <script>
- 	// 获取轮图的总数和当前的序号
- 	(function(){
- 		user();
- 		getPicIdex();
- 		news_select(page);
- 		var city = '<?php echo $_SESSION["city"];?>'
+    (function(){
+    	var city = '<?php echo $_SESSION["city"];?>'
  		if(city == ''){
  			city = '广州'
  		}
- 		$("#city").text(city)
- 	}())
- 	function getPicIdex(){
- 		var count = $("#lunbo .item").length;
- 		$(".total").html(count);
- 	}
+ 		$("#tcity").text(city)
+    	tianjia();
+    	time();
+    	user();
+    }())
 
-//点击切换城市
-var i =0;
-function changecity(){
-			if(i == 0){
-				$(".place").show();
-				$("#scity").css({
-					'border':'1px solid #9e9e9e',
-					'border-bottom': 'none'
-				})
-				i = 1;
-			}else if(i == 1){
-				$(".place").hide();
-				$("#scity").css({
-					'border':'none'
-				})
-				i = 0;
-			}
-		
-			// alert(i)
-		
-	
-}
-//点击城市
-$(".city_list .area a").click(function(){
-	var text = $(this).text();
-	console.log(text)
-	
-})
+    //点击切换样式
+    $(".nav ul li a").mouseenter(function(){
+    	$(".nav ul li a").removeClass('active');
+    	$(this).toggleClass('active');
 
- 	//行业要闻列表
-var page = 1;
-function news_select(page){
-	
-	var url = "http://wgcapp.wgc2013.com/index.php/Home/"+"Systemmsg/AdvertisementPage";
-	$.post(url,{
-		limit : 16,
-		type : '10,11,12,13,14,15,52',
-		page : 1,
-		kehu : '微工程'
-	},function(ret){
-		if(ret.code == 200){
-			page++;
-			var data = ret.message;
-			var html = '';
-			var listHtml  = '';
-			var listHtmlS  = '';
-			for (var i in data) {
-				var id=data[i].id,
-					title=data[i].title,
-					pic=data[i].pic,
-					describe=data[i].describe,
-					j      = parseInt(i)+1,
-					content=data[i].content;
-				var cont = content.replace(/<[^>]+>/g,'');
-				
-				html += '<li title="'+title+'" onclick="openNewsContents(this,'+id+')"><a href="javascript:;">'+title+'</a></li>';
-				
-			    
-			}
-		   
-			$('#twoBox').html(html);
-		}else if(ret.code == 202)	{
-			if(page == 1){
-				$("#news").html('<div style="border: none;width:80px;margin:10px auto;" class="empty"><img src="/themes/mall/jiaju/images/empty.png"/></div>');
-			}else{
-				//alert('暂无更多了');
-			}
-		}else{
-			return false;
-		}
-	},"json");
-}
+    })
 
-	//打开新闻详情
-function openNewsContents(obj,id){
-	var url = '/index.php?app=search&act=news_content&id='+id+'&title='+obj.title+''+'&user_id=1';
-	window.open(url);
-	//_openWin('gongzuo_content_win','../gongzuo/gongzuo_content_win.html',{id : id,type : 1,touid : user_id,f_type : '招工'});
-}
+    // 图片轮播
+    
+    var n = 4;
+    $(".next").mousedown(function(e){
+    	n++;
+    	var index = 292.5;
+    	var moveoffset = parseFloat(-index)*n+'px'
+    	$(".lunbo_item").animate({left:moveoffset},'slow',function(){
+    		if(n >=8){
+    			$(".lunbo_item").css('left','-1170px');
+    			n=4;
+    		}
+    	});
+    	
+    	
+    	
+    	
+    })
 
-//首页传个userif
+    $(".prev").mousedown(function(e){
+    	n--;
+    	var index = 292.5;
+    	var moveoffset = parseFloat(-index)*n+'px'
+    	$(".lunbo_item").animate({left:moveoffset},'slow',function(){
+    		if(n <=0){
+    			$(".lunbo_item").css('left','-1170px');
+    			n=4;
+    		}
+    	});
+
+    	
+    })
+
+    $(".lunbo").hover(function(){
+    	clearInterval(timer);
+    },function(){
+    	time();
+    })
+
+    function time(){
+    	timer = setInterval(function(){
+    		n++;
+    	var index = 292.5;
+    	var moveoffset = parseFloat(-index)*n+'px';
+    	$(".lunbo_item").animate({left:moveoffset},'slow',function(){
+    		if(n >=8){
+    			$(".lunbo_item").css('left','-1170px');
+    			n=4;
+    		}
+    	});
+    },3500)
+    	
+    }
+
+    function tianjia(){
+			var html = $(".lunbo_item").html();
+    		$(".first").before(html)
+    		$(".last").after(html)
+    		$(".lunbo_item").css('left','-1170px');
+    }
+
+    //首页传个userif
 function user(){
 	var userid = '<?php echo $_SESSION["user_info"]["user_id"];?>';
 	if(userid){
 		var url = '/index.php?app=search&act=public_index&user_id='+userid
 		$("#cindex").attr('href',url);
+		var url1 = '/index.php?app=search&act=jianzhuzhuangshi&user_id='+userid;
+		var url2 = '/index.php?app=search&act=cailiaoshang&user_id='+userid;
+		var url3 = '/index.php?app=search&act=rencaituijian&user_id='+userid;
+		var url4 = '/index.php?app=search&act=laodongli&user_id='+userid;
+
+		$("#build").attr('href',url1);  //建筑装饰公司
+		$("#material").attr('href',url2);	//材料商
+		$("#personnel").attr('href',url3);	//推荐人才
+		$("#labor").attr('href',url4);	//劳动力资源
+
 	}
 }
 
-    </script>
-  </body>
+var i =0;
+function changecity(){
+			if(i == 0){
+				$(".chpalce").show();
+				i = 1;
+			}else if(i == 1){
+				$(".chpalce").hide();
+				i = 0;
+			}
+
+}
+</script>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?cf800344977e28f2d89773a93a0e34bd";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+</body>
 </html>
+
+
