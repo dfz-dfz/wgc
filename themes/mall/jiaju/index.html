@@ -298,11 +298,46 @@
 							<span>（完善管理体系，优质工程服务）</span>
 						</div>
 					</div>
-					<div class="lunbo_img last">
+					<div class="lunbo_img">
 						<img src="/themes/mall/jiaju/images/index/hezuo/xinpin.jpg" alt="">
 						<div class="lunbo_info">
 							<h3>馨品装饰</h3>
 							<span>（用心拥抱每一天）</span>
+						</div>
+					</div>
+					<div class="lunbo_img">
+						<img src="/themes/mall/jiaju/images/index/hezuo/nanyao.jpg" alt="">
+						<div class="lunbo_info">
+							<h3>南耀工程</h3>
+							<span>（专注房屋建筑工程施工）</span>
+						</div>
+					</div>
+					<div class="lunbo_img">
+						<img src="/themes/mall/jiaju/images/index/hezuo/jingyi.jpg" alt="">
+						<div class="lunbo_info">
+							<h3>经艺装饰装饰</h3>
+							<span>（专注于连锁企业、办公室、酒店装修）</span>
+						</div>
+					</div>
+					<div class="lunbo_img">
+						<img src="/themes/mall/jiaju/images/index/hezuo/fanxiang.jpg" alt="">
+						<div class="lunbo_info">
+							<h3>梵象装饰</h3>
+							<span>（致力于为家庭创造最大的空间使用价值）</span>
+						</div>
+					</div>
+					<div class="lunbo_img">
+						<img src="/themes/mall/jiaju/images/index/hezuo/bangyigou.jpg" alt="">
+						<div class="lunbo_info">
+							<h3>邦邑购</h3>
+							<span>（社区生活好邦手）</span>
+						</div>
+					</div>
+					<div class="lunbo_img last">
+						<img src="/themes/mall/jiaju/images/index/hezuo/yixin.jpg" alt="">
+						<div class="lunbo_info">
+							<h3>艺信装饰</h3>
+							<span>（满足你对生活空间一切想象）</span>
 						</div>
 					</div>
 				</div>
@@ -387,10 +422,18 @@
  		}
  		$("#tcity").text(city)
     	tianjia();
-    	time();
+    	//time();
     	user();
     }())
 
+    	//总长度
+    	var total = 0;
+ 		// 盒子的长度
+ 		var index = 292.5;
+ 		//循环的长度
+ 		var moveoffset = parseFloat(-index)*total+'px';
+ 		alert(total)
+ 		alert(moveoffset)
     //点击切换样式
     $(".nav ul li a").mouseenter(function(){
     	$(".nav ul li a").removeClass('active');
@@ -400,15 +443,14 @@
 
     // 图片轮播
     
-    var n = 4;
+    var n = total;
     $(".next").mousedown(function(e){
     	n++;
-    	var index = 292.5;
-    	var moveoffset = parseFloat(-index)*n+'px'
-    	$(".lunbo_item").animate({left:moveoffset},'slow',function(){
-    		if(n >=8){
-    			$(".lunbo_item").css('left','-1170px');
-    			n=4;
+    	var moveindex = parseFloat(-index)*n+'px';
+    	$(".lunbo_item").animate({left:moveindex},'slow',function(){
+    		if(n >=total*2){
+    			$(".lunbo_item").css('left',moveoffset);
+    			n=total;
     		}
     	});
     	
@@ -419,33 +461,31 @@
 
     $(".prev").mousedown(function(e){
     	n--;
-    	var index = 292.5;
-    	var moveoffset = parseFloat(-index)*n+'px'
-    	$(".lunbo_item").animate({left:moveoffset},'slow',function(){
+    	var moveindex = parseFloat(-index)*n+'px';
+    	$(".lunbo_item").animate({left:moveindex},'slow',function(){
     		if(n <=0){
-    			$(".lunbo_item").css('left','-1170px');
-    			n=4;
+    			$(".lunbo_item").css('left',moveoffset);
+    			n=total;
     		}
     	});
 
     	
     })
 
-    $(".lunbo").hover(function(){
-    	clearInterval(timer);
-    },function(){
-    	time();
-    })
+    // $(".lunbo").hover(function(){
+    // 	clearInterval(timer);
+    // },function(){
+    // 	time();
+    // })
 
     function time(){
     	timer = setInterval(function(){
     		n++;
-    	var index = 292.5;
-    	var moveoffset = parseFloat(-index)*n+'px';
-    	$(".lunbo_item").animate({left:moveoffset},'slow',function(){
-    		if(n >=8){
-    			$(".lunbo_item").css('left','-1170px');
-    			n=4;
+    	var moveindex = parseFloat(-index)*n+'px';
+    	$(".lunbo_item").animate({left:moveindex},'slow',function(){
+    		if(n >=imglength*2){
+    			$(".lunbo_item").css('left',moveoffset);
+    			n=total;
     		}
     	});
     },3500)
@@ -453,13 +493,22 @@
     }
 
     function tianjia(){
+    	
+    		var index = 292.5;
+    	// 有多少张图片
+ 			var imglength = parseInt($(".lunbo_img").length);
+ 			total = imglength
+    		var imgs = imglength*3*index + 'px';
+    		alert(imgs)
+    		var moveoffset = parseFloat(-index)*imglength+'px';
+    		$(".lunbo_item").css('width',imgs);
 			var html = $(".lunbo_item").html();
     		$(".first").before(html)
     		$(".last").after(html)
-    		$(".lunbo_item").css('left','-1170px');
+    		$(".lunbo_item").css('left',moveoffset);
     }
 
-    //首页传个userif
+//首页传个userif
 function user(){
 	var userid = '<?php echo $_SESSION["user_info"]["user_id"];?>';
 	if(userid){
