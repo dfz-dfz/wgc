@@ -95,7 +95,17 @@
 			.lunbo_img .lunbo_info{display: inline-block;width: 65%;height: 100px;border: 1px solid #fff;border-top: none;}
 			.lunbo_info h3{color: #fff;font-size: 18px;}
 			.lunbo_info span{color: #fff;font-size: 12px;}
-
+			
+	/*点赞视频*/
+	.video{margin-top:50px;border:1px solid #f5efef;box-shadow: 5px 5px 5px #f5f5f5,5px -5px 5px #f5f5f5}
+		.video_item{width:100%;padding:1% 2%;text-align:center;}
+			.video_item video{width:98%;height:400px;}
+			.video_item p{font-size:16px;color:#000;text-align:center;padding:10px 0px 10px 20px;}
+			.video_item p span{font-size:12px;color:#9e9e9e;display:inline-block;margin-left:20px;}
+			.video_item .more{width:150px;margin:30px auto;height:35px;}
+				.video_item .more button{display:inline-block;font-size:14px;line-height:35px;border:1px solid #000;width:100%;}
+				
+	
 	/*点赞*/
 	.dianzan{}
 		.dianzan-center{text-align: center;margin: 50px 0}
@@ -103,13 +113,56 @@
 			.dianzan-center span{font-size: 16px;color:#8c8585;word-spacing: 2px;}
 
 	/*点赞图片*/
-	.dzpic{width: 100%;height: 900px;background: url('bg/bg4.jpg') no-repeat;}
-		.xkpic{height: 90%;background-color: #fff;margin: 0 auto;position: relative;top: 5%;padding: 15px;}
-            .pic_top{width: 100%;height: 23%;}
+	.dzpic {width: 100%;background: url('bg/bg4.jpg') no-repeat;height: 900px;}
+		.xkpic {
+            width: 90%;
+            height:90%;
+            position: relative;
+            top: 5%;
+            padding: 15px;
+            left: 50%;
+            margin-left: -45%;
+            animation:imageChange 25s infinite;
+            background: url('/themes/mall/jiaju/images/index/zan/jihe_1.jpg') no-repeat;
+            background-size: 100% 100%;
+        }
+
+        @keyframes imageChange {
+            0% {
+                background: url('/themes/mall/jiaju/images/index/zan/jihe_1.jpg') no-repeat;
+                background-size: 100% 100%;
+            }
+
+            20% {
+                background: url('/themes/mall/jiaju/images/index/zan/jihe_2.jpg') no-repeat;
+                background-size: 100% 100%;
+            }
+
+            40% {
+                background: url('/themes/mall/jiaju/images/index/zan/jihe_3.jpg') no-repeat;
+                background-size: 100% 100%;
+            }
+
+            60% {
+                background: url('/themes/mall/jiaju/images/index/zan/jihe_4.jpg') no-repeat;
+                background-size: 100% 100%;
+            }
+
+            80% {
+                background: url('/themes/mall/jiaju/images/index/zan/jihe_5.jpg') no-repeat;
+                background-size: 100% 100%;
+            }
+
+            100% {
+                background: url('/themes/mall/jiaju/images/index/zan/jihe_1.jpg') no-repeat;
+                background-size: 100% 100%;
+            }
+        }
+            /* .pic_top{width: 100%;height: 23%;}
                 .top_item{width: 32%;height: 100%;float: left;text-align: center;}
                 .top_item:nth-child(2){margin: 0 2%;}
                 .pic_top img{width: 100%;height: 100%;}
-            /*中间部分*/
+            中间部分
             .pic_main{height: 76%;float: left;margin-top: 1%;}
             .pic_main:nth-child(2){width: 20%;}
                 .main_left_one{width: 100%;height: 30%;}
@@ -127,8 +180,24 @@
                         .main_right_two_left img{width: 100%;height: 46%;}
                         .main_right_two_left img:nth-child(1){margin-bottom: 5%;}
                     .main_right_two_right{width: 48%;height: 100%;float: left;margin-left: 4%;}
-                        .main_right_two_right img{width: 100%;height: 95%;}
+                        .main_right_two_right img{width: 100%;height: 95%;} */
     /*底部*/
     .footer{width: 100%;margin: 50px 0;}
         .footer img{width: 100%;height: 100%;}
         .footer p{text-align: center;color: #999999;margin: 30px;}
+		
+		
+		
+	/*视频详情*/
+	.video_content{padding:0 1%;min-height:500px;}
+		.video_list{width:98%;}
+			.video_items{width:33.3%;padding:0 1%;float:left;}
+				.video_items video{width:98%;}
+				.video_items p{text-align:center;}
+				
+	/*分页*/
+	.video_page ul li{float:left;color:#e17764;}
+	
+	
+	
+	
