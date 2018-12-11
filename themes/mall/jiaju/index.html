@@ -204,7 +204,7 @@
 				  <ol class="carousel-indicators">
 				    <li data-target="#carousel-example-captions" data-slide-to="0" class="active"></li>
 				    <li data-target="#carousel-example-captions" data-slide-to="1"></li>
-				    <!-- <li data-target="#carousel-example-captions" data-slide-to="2"></li> -->
+				    <li data-target="#carousel-example-captions" data-slide-to="2"></li>
 				  </ol>
 
 				  <!-- Wrapper for slides -->
@@ -231,8 +231,8 @@
 				        装修业的“金九银十”
 				      </div> -->
 				    </div>
-				   <!--  <div class="item"> -->
-				      <!-- <a href="javascript:;" target="_blank"><img src="/themes/mall/jiaju/images/index/lunbo/banner3.jpg" alt="..."></a> -->
+				    <div class="item">
+				      <a href="javascript:;" target="_blank"><img src="/themes/mall/jiaju/images/index/lunbo/banner3.jpg" alt="..."></a>
 				      <!-- <div class="carousel-caption">
 				      	<div class="count">
 					      	<span>3</span>
@@ -278,6 +278,13 @@
 			<div class="lunbo_main public">
 				<div class="lunbo_item">
 					<div class="lunbo_img first">
+						<img src="/themes/mall/jiaju/images/index/hezuo/jingyi.jpg" alt="">
+						<div class="lunbo_info">
+							<h3>经艺装饰</h3>
+							<span>（专注于连锁企业、办公室、酒店装修）</span>
+						</div>
+					</div>
+					<div class="lunbo_img">
 						<img src="/themes/mall/jiaju/images/index/hezuo/luban.jpg" alt="">
 						<div class="lunbo_info">
 							<h3>鲁班名匠</h3>
@@ -313,13 +320,6 @@
 						</div>
 					</div>
 					<div class="lunbo_img">
-						<img src="/themes/mall/jiaju/images/index/hezuo/jingyi.jpg" alt="">
-						<div class="lunbo_info">
-							<h3>经艺装饰装饰</h3>
-							<span>（专注于连锁企业、办公室、酒店装修）</span>
-						</div>
-					</div>
-					<div class="lunbo_img">
 						<img src="/themes/mall/jiaju/images/index/hezuo/fanxiang.jpg" alt="">
 						<div class="lunbo_info">
 							<h3>梵象装饰</h3>
@@ -346,6 +346,18 @@
 			<a class="prev" href="javascript:;"><</a>
 		</div>
 
+		<!-- 点赞视频 -->
+		<div class="video public">
+			<div class="video_item">
+				<video src="/themes/mall/jiaju/images/index/hezuo/num1.mp4" controls="controls" autoplay="autoplay"></video>				
+				<p>装饰企业携手微工程   共创客户价值<span>致力于为装饰行业创造最大的空间使用价值，合作过的企业遍布广州各地</span></p>
+				<div class="more">
+				<button><a href="/index.php?app=search&act=index_video&user_id=1">查看更多>></a></button>
+				</div>
+			</div>
+
+		</div>
+
 		<!-- 点赞 -->
 		<div class="dianzan public">
 			<div class="dianzan-center">
@@ -356,8 +368,8 @@
 		<!-- 点赞图片 -->
 		<div class="dzpic">
 			<!-- 中间相框 -->
-			<div class="xkpic public">
-				<!-- 顶部三张图片 -->
+			<!-- <div class="xkpic public">
+				顶部三张图片
 				<div class="pic_top">
 					<div class="top_item">
 						<img src="/themes/mall/jiaju/images/index/zan/xiye.jpg" alt="">
@@ -399,7 +411,9 @@
 						</div>
 					</div>
 				</div>
-			</div>
+			</div> -->
+
+			<div class="xkpic"></div>
 		</div>
 		<!-- 尾部 -->
 		<div class="footer">
@@ -422,18 +436,15 @@
  		}
  		$("#tcity").text(city)
     	tianjia();
-    	//time();
+    	time();
     	user();
     }())
 
-    	//总长度
-    	var total = 0;
- 		// 盒子的长度
- 		var index = 292.5;
- 		//循环的长度
- 		var moveoffset = parseFloat(-index)*total+'px';
- 		alert(total)
- 		alert(moveoffset)
+    	
+ 	// 盒子的长度
+ 	var index = 292.5;
+ 	//循环的长度
+ 	var moveoffset = parseFloat(-index)*total+'px';
     //点击切换样式
     $(".nav ul li a").mouseenter(function(){
     	$(".nav ul li a").removeClass('active');
@@ -472,18 +483,18 @@
     	
     })
 
-    // $(".lunbo").hover(function(){
-    // 	clearInterval(timer);
-    // },function(){
-    // 	time();
-    // })
+    $(".lunbo").hover(function(){
+    	clearInterval(timer);
+    },function(){
+    	time();
+    })
 
     function time(){
     	timer = setInterval(function(){
     		n++;
     	var moveindex = parseFloat(-index)*n+'px';
     	$(".lunbo_item").animate({left:moveindex},'slow',function(){
-    		if(n >=imglength*2){
+    		if(n >=total*2){
     			$(".lunbo_item").css('left',moveoffset);
     			n=total;
     		}
@@ -499,13 +510,15 @@
  			var imglength = parseInt($(".lunbo_img").length);
  			total = imglength
     		var imgs = imglength*3*index + 'px';
-    		alert(imgs)
     		var moveoffset = parseFloat(-index)*imglength+'px';
     		$(".lunbo_item").css('width',imgs);
 			var html = $(".lunbo_item").html();
     		$(".first").before(html)
     		$(".last").after(html)
     		$(".lunbo_item").css('left',moveoffset);
+
+    		return total;
+
     }
 
 //首页传个userif
