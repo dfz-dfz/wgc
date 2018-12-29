@@ -79,19 +79,33 @@
 			.content-center h3{text-align: center;font-size: 30px;color: #000;letter-spacing: 2px;}
 			.content-center span{font-size: 16px;color:#8c8585;word-spacing: 2px;}
 		.pic{width: 100%;overflow: hidden;}
-			.pic .hezuo{width: 49%;float: left;height:325px;}
-				.hezuo img{width: 98%;height: 100%;}
-				.hezuo video{width: 98%;}
+			.pic .yeji,.kehu,.sao{width: 33%;float: left;height: 400px;}
+				.yeji{background: url("hezuo/hezuo_bg3.jpg") no-repeat;background-size: 100% 100%;position: relative;}
+                    .item_bottom{width: 100%;height: 60px;background-color: #000;opacity: 0.5;position: absolute;bottom: 0;padding-left: 10px;}
+                        .item_bottom p{color: #fff;margin: 10px 0;}
+                        .item_bottom span{display: inline-block;width: 50px;border: 1px solid #fff;position: absolute;bottom: 25px;}
+                .kehu{margin: 0 0.5%;}
+                    .kehu .kehu_item{width: 100%;height: 49%;background: url("hezuo/hezuo_bg.jpg") no-repeat;background-size: 100% 100%;position: relative;}
+                    .kehu .kehu_items{width: 100%;height: 49%;background: url("hezuo/hezuo_bg2.jpg") no-repeat;background-size: 100% 100%;margin-top: 2%;position: relative;}
+                .sao{background: url("hezuo/hezuo_bg4.jpg") no-repeat;background-size: 100% 100%;position: relative;}
+                    .jingyi{width: 100%;height: 110px;position: absolute;bottom: 15px;}
+                        .jingyi_p{width: 245px;height: 100%;float: left;display: table;padding-left: 50px;}
+                        .jingyi_p p{display: table-cell; vertical-align:middle; text-align:left;}
+                        .jingyi img{width: 110px;height: 110px;float: right;margin-right: 30px;}
+                    .detail{position: absolute;top: 52%;left: 65px;padding: 2px 15px;background-color: #000;opacity: 0.5;border-radius: 5px;}
+                        .detail a{color: #fff;text-decoration: none;}
+                        .detail a:hover{color: #337ab7;}
 
 	/*合作图片轮播*/
-	.lunbo{width: 100%;height: 500px;background-image: url('bg/bg3.jpg');background-size: 100% 100%;background-repeat: no-repeat;margin-top: 50px;position: relative;min-width: 1170px;}
-		.lunbo_main{position: relative;top: 20%;overflow: hidden;height: 300px;}
-            .lunbo a{position: absolute;top: 50%;text-decoration: none;font-size: 60px;width: 60px;height: 50px;background-color: #fff;opacity: 0.3;text-align: center;line-height: 50px;}
-            .lunbo .next{right: 5%;}
-            .lunbo .prev{left: 5%; }
-        .lunbo_item{position: absolute;height: 300px;width: 3510px;}
-		.lunbo_item .lunbo_img{float: left;width: 292.5px;height: 300px;text-align: center;}
-			.lunbo_img img{width: 65%;height: 200px;}
+	.lunbo{width: 100%;height: 320px;background-image: url('bg/bg3.jpg');background-size: 100% 100%;background-repeat: no-repeat;margin-top: 50px;position: relative;min-width: 1170px;}
+		.lunbo_main{position: relative;top: 10%;overflow: hidden;height: 210px;}
+            .lunbo a{position: absolute;top: 50%;text-decoration: none;font-size: 60px;width: 60px;height: 50px;background-color: #fff;opacity: 0.3;text-align: center;line-height: 50px;margin-top: -25px;}
+            .lunbo .next{right: 4%;}
+            .lunbo .prev{left: 4%; }
+        .lunbo_item{position: absolute;height: 210px;width: 3510px;}
+		.lunbo_item .lunbo_img{float: left;width: 119px;height: 210px;text-align: center;}
+			.lunbo_img img{width: 90px;height: 90px;}
+            .lunbo_img .second{margin-top: 29px;}
 			.lunbo_img .lunbo_info{display: inline-block;width: 65%;height: 100px;border: 1px solid #fff;border-top: none;}
 			.lunbo_info h3{color: #fff;font-size: 18px;}
 			.lunbo_info span{color: #fff;font-size: 12px;}
@@ -123,38 +137,38 @@
             left: 50%;
             margin-left: -45%;
             animation:imageChange 25s infinite;
-            background: url('/themes/mall/jiaju/images/index/zan/jihe_1.jpg') no-repeat;
+            background: url('/themes/mall/jiaju/images/index/zan/dianzan_1.jpg') no-repeat;
             background-size: 100% 100%;
         }
 
         @keyframes imageChange {
             0% {
-                background: url('/themes/mall/jiaju/images/index/zan/jihe_1.jpg') no-repeat;
+                background: url('/themes/mall/jiaju/images/index/zan/dianzan_1.jpg') no-repeat;
                 background-size: 100% 100%;
             }
 
             20% {
-                background: url('/themes/mall/jiaju/images/index/zan/jihe_2.jpg') no-repeat;
+                background: url('/themes/mall/jiaju/images/index/zan/dianzan_2.jpg') no-repeat;
                 background-size: 100% 100%;
             }
 
             40% {
-                background: url('/themes/mall/jiaju/images/index/zan/jihe_3.jpg') no-repeat;
+                background: url('/themes/mall/jiaju/images/index/zan/dianzan_3.jpg') no-repeat;
                 background-size: 100% 100%;
             }
 
             60% {
-                background: url('/themes/mall/jiaju/images/index/zan/jihe_4.jpg') no-repeat;
+                background: url('/themes/mall/jiaju/images/index/zan/dianzan_4.jpg') no-repeat;
                 background-size: 100% 100%;
             }
 
             80% {
-                background: url('/themes/mall/jiaju/images/index/zan/jihe_5.jpg') no-repeat;
+                background: url('/themes/mall/jiaju/images/index/zan/dianzan_5.jpg') no-repeat;
                 background-size: 100% 100%;
             }
 
             100% {
-                background: url('/themes/mall/jiaju/images/index/zan/jihe_1.jpg') no-repeat;
+                background: url('/themes/mall/jiaju/images/index/zan/dianzan_1.jpg') no-repeat;
                 background-size: 100% 100%;
             }
         }
@@ -189,7 +203,7 @@
 		
 		
 	/*视频详情*/
-	.video_content{padding:0 1%;min-height:500px;}
+	.video_content{padding:0 1%;min-height:800px;}
 		.video_main{background-color:#f7f7f7;border:1px solid #bbbbbb;padding:20px 20px;}
 		.video_list{width:98%;overflow:hidden;}
 			.video_items{width:33.3%;padding:0 1%;float:left;background-color:#fff;}
@@ -205,6 +219,14 @@
 			.video_page ul .next{width:80px;height:30px;border:1px solid #ff6136;line-height:30px;border-radius:5px;}
 			.video_page ul .link{width:50px;height:30px;border:1px solid #ff6136;line-height:30px;border-radius:5px;}
 				.video_page ul .link input{width:100%;height:90%;border:none;outline:none;padding-left:15px;}
+				
+	/*合作客户的详情页面*/
+	.content{}
+		.content_item{height:800px;width:100%;}
+		.content_item img{width:100%;height:100%;}
+		.content_logo{width:100%;overflow:hidden;text-align:center;}
+			.content_logo .content_logo_item{width:20%;float:left;margin:10px 0;}
+			.content_logo .content_logo_item p{font-size:16px;padding:10px 0;font-weight:600;}
 	
 	
 	
