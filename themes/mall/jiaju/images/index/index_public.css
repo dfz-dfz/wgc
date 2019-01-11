@@ -137,38 +137,23 @@
             left: 50%;
             margin-left: -45%;
             animation:imageChange 25s infinite;
-            background: url('/themes/mall/jiaju/images/index/zan/dianzan_1.jpg') no-repeat;
+            background: url('/themes/mall/jiaju/images/index/zan/dianzan1.jpg') no-repeat;
             background-size: 100% 100%;
         }
 
         @keyframes imageChange {
             0% {
-                background: url('/themes/mall/jiaju/images/index/zan/dianzan_1.jpg') no-repeat;
+                background: url('/themes/mall/jiaju/images/index/zan/dianzan1.jpg') no-repeat;
                 background-size: 100% 100%;
             }
 
-            20% {
-                background: url('/themes/mall/jiaju/images/index/zan/dianzan_2.jpg') no-repeat;
-                background-size: 100% 100%;
-            }
-
-            40% {
-                background: url('/themes/mall/jiaju/images/index/zan/dianzan_3.jpg') no-repeat;
-                background-size: 100% 100%;
-            }
-
-            60% {
-                background: url('/themes/mall/jiaju/images/index/zan/dianzan_4.jpg') no-repeat;
-                background-size: 100% 100%;
-            }
-
-            80% {
-                background: url('/themes/mall/jiaju/images/index/zan/dianzan_5.jpg') no-repeat;
+            50% {
+                background: url('/themes/mall/jiaju/images/index/zan/dianzan2.jpg') no-repeat;
                 background-size: 100% 100%;
             }
 
             100% {
-                background: url('/themes/mall/jiaju/images/index/zan/dianzan_1.jpg') no-repeat;
+                background: url('/themes/mall/jiaju/images/index/zan/dianzan1.jpg') no-repeat;
                 background-size: 100% 100%;
             }
         }
